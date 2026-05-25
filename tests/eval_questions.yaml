@@ -1,0 +1,56 @@
+# Bộ 10 câu hỏi gold cho RAG eval.
+# Mỗi câu có:
+#   q                  : câu hỏi
+#   expected_article   : số Điều mong đợi xuất hiện trong citations
+#   expected_keywords  : (optional) từ khoá phải có trong answer (loose match)
+#   notes              : ghi chú nguồn
+
+- q: "Bảo hiểm xã hội là gì?"
+  expected_article: 3
+  expected_keywords: ["bù đắp", "thu nhập"]
+  notes: "Định nghĩa BHXH tại Điều 3 khoản 1"
+
+- q: "Người lao động nước ngoài có thuộc đối tượng tham gia BHXH bắt buộc không?"
+  expected_article: 2
+  expected_keywords: ["nước ngoài", "hợp đồng"]
+  notes: "Điều 2 khoản 2"
+
+- q: "Người sử dụng lao động có những trách nhiệm gì về bảo hiểm xã hội?"
+  expected_article: 13
+  expected_keywords: ["đóng"]
+  notes: "Điều 13 - trách nhiệm NSDLĐ"
+
+- q: "Các hành vi nào bị nghiêm cấm trong bảo hiểm xã hội?"
+  expected_article: 9
+  expected_keywords: ["cấm"]
+  notes: "Điều 9 - hành vi bị nghiêm cấm"
+
+- q: "Đối tượng nào được hưởng trợ cấp hưu trí xã hội hằng tháng?"
+  expected_article: 21
+  expected_keywords: ["tuổi", "công dân"]
+  notes: "Điều 21 - đối tượng hưởng trợ cấp hưu trí xã hội"
+
+- q: "Cơ quan bảo hiểm xã hội có quyền hạn gì?"
+  expected_article: 17
+  expected_keywords: ["quyền", "cơ quan"]
+  notes: "Điều 17 - quyền hạn của cơ quan BHXH"
+
+- q: "Quỹ bảo hiểm xã hội gồm các quỹ thành phần nào?"
+  expected_article: 118
+  expected_keywords: ["quỹ"]
+  notes: "Điều 118 - các quỹ thành phần"
+
+- q: "Người tham gia bảo hiểm xã hội có những quyền gì?"
+  expected_article: 10
+  expected_keywords: ["quyền"]
+  notes: "Điều 10 - quyền của người tham gia"
+
+- q: "Trợ cấp một lần khi sinh con được quy định như thế nào?"
+  expected_article: 58
+  expected_keywords: ["sinh con"]
+  notes: "Điều 58 - trợ cấp một lần khi sinh con"
+
+- q: "Luật bảo hiểm xã hội 2024 có hiệu lực từ ngày nào?"
+  expected_article: 140
+  expected_keywords: ["01 tháng 7 năm 2025", "hiệu lực"]
+  notes: "Điều 140 khoản 1"

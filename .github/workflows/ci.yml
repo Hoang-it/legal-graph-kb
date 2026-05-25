@@ -1,0 +1,86 @@
+# GitHub Actions CI — chạy lint + fast tests trên Python 3.10/3.11/3.12.
+#
+# Notes:
+# - Full test suite cần Neo4j live + OpenAI API + GPU model 2GB → KHÔNG chạy
+#   trên CI. Maintainer chạy local.
+# - CI chỉ chạy tests độc lập infra (ids, schema, parse_docx) + ruff check.
+
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+# Cancel previous runs khi push commit mới
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint + format check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install ruff
+        run: pip install "ruff>=0.6.0,<0.8.0"
+
+      - name: Ruff lint
+        run: ruff check .
+
+      - name: Ruff format check
+        run: ruff format --check .
+
+  test:
+    name: Fast tests on Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: "pip"
+
+      - name: Install minimal deps (no torch/neo4j/openai)
+        run: |
+          python -m pip install --upgrade pip
+          pip install \
+            "pydantic==2.9.2" \
+            "python-docx==1.1.2" \
+            "lxml==5.3.0" \
+            "pytest==8.3.3" \
+            "pytest-cov==5.0.0"
+
+      - name: Run fast tests (no infra needed)
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          pytest tests/test_ids.py tests/test_schema.py tests/test_parse_docx.py \
+            -v --tb=short \
+            --cov=src/ids --cov=src/schema --cov=src/parse_docx \
+            --cov-report=term-missing
+
+      - name: Upload coverage
+        if: matrix.python-version == '3.12'
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: .coverage
+          if-no-files-found: ignore
+          retention-days: 7

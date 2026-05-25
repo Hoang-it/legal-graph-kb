@@ -1,0 +1,28 @@
+# EditorConfig: https://editorconfig.org
+# Top-level config — đảm bảo formatting nhất quán giữa các editor.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+max_line_length = 100
+
+# Web / config / docs dùng 2 spaces
+[*.{yml,yaml,json,toml,md,html,css,scss,js,ts}]
+indent_size = 2
+
+# Markdown: giữ trailing whitespace (line breaks)
+[*.md]
+trim_trailing_whitespace = false
+
+# PowerShell + Windows shell: CRLF
+[*.{ps1,psm1,bat,cmd}]
+end_of_line = crlf
+
+# Makefile cần tab
+[Makefile]
+indent_style = tab

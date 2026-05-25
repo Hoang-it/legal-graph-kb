@@ -1,0 +1,7 @@
+# Disable blank issues — buộc user dùng template
+blank_issues_enabled: false
+
+contact_links:
+  - name: Câu hỏi sử dụng
+    url: https://github.com/USER/legal-graph-kb/discussions
+    about: Hỏi về cách dùng, không phải bug. Mở Discussion thay vì Issue.
