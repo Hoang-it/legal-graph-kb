@@ -184,16 +184,34 @@ cython_debug/
 # legal-graph-kb project-specific
 # ---------------------------------------------------------------------------
 
-# Generated pipeline data (regenerable; do NOT commit)
-data/interim/
-data/processed/
+# Generated pipeline data (regenerable; do NOT commit ALL EXCEPT explicit
+# whitelist below). Use `dir/*` form so we CAN re-include specific files.
+data/interim/*
+data/processed/*
 data/eval/results/
 data/eval/metrics.json
 data/eval/metrics.csv
 data/eval/judge_cache.jsonl
+data/eval/multimodel/judge_cache.jsonl
 
-# User-provided evaluation data (private / may contain personally identifiable info)
+# Backup snapshots from audit fixes
+*.bak
+*.bak_*
+
+# Logs
+logs/
+
+# Auxiliary CSV outputs (regenerable)
+reports/*.csv
+
+# User-provided evaluation data — except 200-question benchmark
 data/eval/questions_*.json
+
+# ─── EXCEPTIONS: files needed for Colab notebooks to reproduce experiment ───
+!data/eval/questions_200.json
+!data/interim/structured_law.json
+!data/processed/merged_graph.json
+!data/processed/embeddings.parquet
 
 # Allow placeholder files so empty dirs are kept
 !data/**/.gitkeep
@@ -202,6 +220,10 @@ data/eval/questions_*.json
 # Generated reports (regenerable from `python -m experiments.generate_report`)
 reports/*.md
 !reports/.gitkeep
+# Human-written documentation (commit these)
+!reports/methodology_fixes.md
+!reports/FINAL_REPORT.md
+!reports/extraction_summary.md
 
 # Model caches & weights (downloaded on demand via scripts/install_b5.ps1)
 .cache/

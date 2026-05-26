@@ -66,6 +66,7 @@ from solvers.prolog_solver import PrologSolver  # type: ignore  # noqa: F401
 
 ELITE_ONTOLOGY_PATH = Path("data/eval/elite_ontology_2024.json")
 NO_RETRIEVAL_PROMPT_PATH = Path("experiments/prompts/elite_no_retrieval.md")
+IRAC_WITH_PLAIN_PROMPT_PATH = Path("experiments/prompts/irac_with_plain.md")
 
 
 # ---------------------------------------------------------------------------
@@ -76,6 +77,7 @@ NO_RETRIEVAL_PROMPT_PATH = Path("experiments/prompts/elite_no_retrieval.md")
 class EliteAnswer:
     question: str
     answer: str = ""                # IRAC rendered text
+    plain_answer: str = ""          # NEW: prose-form answer cho fair compare với prose arms
     citations: list[str] = field(default_factory=list)       # parsed [Điều X khoản Y]
     citation_ids: list[str] = field(default_factory=list)     # L41_2024.A<n>.K<m> format
     citation_indices: list[int] = field(default_factory=list)  # raw from envelope (chunk indices)
@@ -208,7 +210,9 @@ def _parse_irac_sections(text: str) -> dict[str, str]:
 class _TokenTrackingLLMClient(LLMClient):
     """Wrap OpenAILLMClient để cộng dồn token usage qua nhiều call.
 
-    Cũng cho phép override system prompt cho 1 task cụ thể (cho Arm C).
+    Cũng cho phép override system prompt cho:
+    - logic_llm_rule_gen task (Arm C / no-retrieval custom prompt)
+    - irac_render task (new: với prompt sinh ra cả IRAC + plain_answer)
 
     Reasoning-model fallback:
     - Một số model (gpt-5*, o1*, o3*, o4*) reject temperature != 1.
@@ -220,9 +224,11 @@ class _TokenTrackingLLMClient(LLMClient):
         self,
         base_client: OpenAILLMClient,
         override_logic_prompt: Optional[str] = None,
+        override_irac_prompt: Optional[str] = None,
     ):
         self._base = base_client
         self._override = override_logic_prompt
+        self._override_irac = override_irac_prompt
         self.prompt_tokens = 0
         self.completion_tokens = 0
         # Khi True → bỏ temperature khỏi mọi call sau đó
@@ -316,18 +322,51 @@ class _TokenTrackingLLMClient(LLMClient):
             return {}
 
     def _irac_with_tracking(self, payload: dict) -> dict:
-        import json
+        """Render IRAC. If `override_irac_prompt` provided, also extract
+        `plain_answer` field from JSON response.
+
+        Output dict keys:
+            - text:         IRAC text (4-section format) — backward compat
+            - plain_answer: NEW prose-form answer (only when override active)
+        """
+        import json as _json
         trace = payload.get(elite_settings.PAYLOAD_TRACE_KEY) or {}
-        user_msg = json.dumps(trace, ensure_ascii=False, indent=2, default=str)
+        user_msg = _json.dumps(trace, ensure_ascii=False, indent=2, default=str)
+        system_prompt = self._override_irac or elite_settings.IRAC_RENDER_PROMPT
+        # If overriden prompt → expect JSON output with irac + plain_answer
+        use_json = bool(self._override_irac)
         messages = [
-            {"role": "system", "content": elite_settings.IRAC_RENDER_PROMPT},
+            {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_msg},
         ]
-        resp = self._chat_with_fallback(messages, use_response_format=False)
+        resp = self._chat_with_fallback(messages, use_response_format=use_json)
         self.prompt_tokens += resp.usage.prompt_tokens
         self.completion_tokens += resp.usage.completion_tokens
-        text = resp.choices[0].message.content or ""
-        return {elite_settings.RESPONSE_TEXT_KEY: text.strip()}
+        text = (resp.choices[0].message.content or "").strip()
+        if not use_json:
+            return {elite_settings.RESPONSE_TEXT_KEY: text}
+        # Parse JSON: tolerant fallback nếu LLM trả markdown-fenced JSON
+        clean = text
+        if clean.startswith("```"):
+            # strip markdown fence
+            clean = re.sub(r"^```(?:json)?\s*", "", clean)
+            clean = re.sub(r"\s*```\s*$", "", clean)
+        try:
+            parsed = _json.loads(clean)
+        except _json.JSONDecodeError:
+            # Fallback: try regex extract for "plain_answer" + "irac"
+            m_plain = re.search(r'"plain_answer"\s*:\s*"((?:[^"\\]|\\.)*)"', clean, re.DOTALL)
+            m_irac = re.search(r'"irac"\s*:\s*"((?:[^"\\]|\\.)*)"', clean, re.DOTALL)
+            parsed = {
+                "irac": m_irac.group(1).encode().decode("unicode_escape") if m_irac else text,
+                "plain_answer": m_plain.group(1).encode().decode("unicode_escape") if m_plain else "",
+            }
+        if not isinstance(parsed, dict):
+            parsed = {"irac": text, "plain_answer": ""}
+        return {
+            elite_settings.RESPONSE_TEXT_KEY: (parsed.get("irac") or "").strip(),
+            "plain_answer": (parsed.get("plain_answer") or "").strip(),
+        }
 
     # -----------------------------------------------------------------
     # Real-API call with adaptive param fallback (reasoning models)
@@ -538,12 +577,20 @@ class _EliteBasePipeline:
         self,
         retriever: Optional[Any] = None,
         prompt_override: Optional[str] = None,
+        irac_prompt_override: Optional[str] = None,
         max_repair_rounds: int = 2,
         top_k: int = 8,
         model: Optional[str] = None,
+        enable_plain_answer: bool = True,
     ):
         self.retriever = retriever
         self.prompt_override = prompt_override
+        # IRAC prompt override: nếu None và enable_plain_answer=True, dùng
+        # IRAC_WITH_PLAIN_PROMPT_PATH (output JSON với irac + plain_answer)
+        if irac_prompt_override is None and enable_plain_answer:
+            if IRAC_WITH_PLAIN_PROMPT_PATH.exists():
+                irac_prompt_override = IRAC_WITH_PLAIN_PROMPT_PATH.read_text(encoding="utf-8")
+        self.irac_prompt_override = irac_prompt_override
         self.max_repair_rounds = max_repair_rounds
         self.top_k = top_k
         # None → dùng default của elite (gpt-4o-mini)
@@ -560,6 +607,7 @@ class _EliteBasePipeline:
         return _TokenTrackingLLMClient(
             base_client=base,
             override_logic_prompt=self.prompt_override,
+            override_irac_prompt=self.irac_prompt_override,
         )
 
     def ask(self, question: str) -> EliteAnswer:
@@ -589,6 +637,7 @@ class _EliteBasePipeline:
             trace_value = self._extract_trace(result.solutions)
 
             irac_text = ""
+            plain_answer = ""  # NEW field
             irac_sections: dict[str, str] = {}
 
             # 4. Render IRAC (only if prolog success + trace exists)
@@ -607,6 +656,7 @@ class _EliteBasePipeline:
                     or render_resp.get(elite_settings.RESPONSE_ANSWER_KEY)
                     or ""
                 ).strip()
+                plain_answer = str(render_resp.get("plain_answer") or "").strip()
                 irac_sections = _parse_irac_sections(irac_text)
 
             # 5. Citations: parse từ IRAC text + fallback từ legal_sources
@@ -630,6 +680,7 @@ class _EliteBasePipeline:
             return EliteAnswer(
                 question=question,
                 answer=irac_text or self._failure_message(result, n_rounds),
+                plain_answer=plain_answer,
                 citations=citations,
                 citation_ids=citation_ids,
                 citation_indices=list(envelope.citation_indices),

@@ -117,6 +117,7 @@ def _run_combo(
                     "stt": stt,
                     "question": q["question"],
                     "answer": ans.answer,
+                    "plain_answer": ans.plain_answer,  # NEW: prose form
                     "citations": ans.citations,
                     "citation_ids": ans.citation_ids,
                     "citation_indices": ans.citation_indices,

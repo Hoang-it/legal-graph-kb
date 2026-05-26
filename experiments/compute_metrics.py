@@ -331,8 +331,14 @@ def m_faithfulness(record: dict, neo: _Neo, client, jc: JudgeCache) -> dict:
 
 
 def m_answer_relevance(record: dict, client, jc: JudgeCache, embed_model) -> dict:
-    """Es 2024 RAGAS: LLM sinh ngược câu hỏi từ answer, đo cosine sim với Q gốc."""
-    text = record.get("answer", "")
+    """Es 2024 RAGAS: LLM sinh ngược câu hỏi từ answer, đo cosine sim với Q gốc.
+
+    AUDIT FIX (2026-05-27): nếu record có `plain_answer` (từ new IRAC+plain prompt),
+    dùng plain_answer thay vì raw IRAC text — tránh bias do "Issue:" section restate Q.
+    Cache key thêm suffix "_plain" để không hit stale cache.
+    """
+    plain = record.get("plain_answer", "")
+    text = plain if plain else record.get("answer", "")
     question = record.get("question", "")
     if not text or not question:
         return {"answer_relevance": None, "_skip": "missing"}
@@ -342,7 +348,10 @@ def m_answer_relevance(record: dict, client, jc: JudgeCache, embed_model) -> dic
         "trả lời được. Mỗi câu hỏi ngắn gọn, đầy đủ ý."
     )
     user_p = f'CÂU TRẢ LỜI:\n{text}\n\nTrả về JSON: {{"questions": ["q1", "q2", "q3"]}}'
-    key = f"relv_{record['arm']}_{record['stt']}"
+    # Cache key suffix khi dùng plain — tránh hit stale cache từ IRAC text
+    used_plain = bool(plain)
+    suffix = "_plain" if used_plain else ""
+    key = f"relv_{record['arm']}_{record['stt']}{suffix}"
     r = _judge_call(client, sys_p, user_p, jc, key)
     qs = r["data"].get("questions", []) if isinstance(r["data"], dict) else []
     if not qs:
@@ -357,6 +366,7 @@ def m_answer_relevance(record: dict, client, jc: JudgeCache, embed_model) -> dic
         "answer_relevance": round(float(np.mean(sims)), 4),
         "n_generated": len(qs),
         "sims": [round(s, 4) for s in sims],
+        "_used_plain_answer": used_plain,  # flag cho generate_report
         "_judge_usage": r["usage"],
     }
 
@@ -428,27 +438,38 @@ def m_citation_precision(record: dict, neo: _Neo, client, jc: JudgeCache) -> dic
 
 
 def m_hallucination(record: dict, neo: _Neo, client, jc: JudgeCache) -> dict:
-    """Magesh 2025 (Stanford HAI legal): đếm 3 loại hallucination:
-       1. misstates_law: nội dung sai so với text gốc
-       2. invented_citation: cite tới Điều/Khoản không tồn tại trong KG
-       3. unsupported_claim: claim không có evidence
+    """Magesh 2025 (Stanford HAI legal): đếm 3 loại hallucination.
 
-    Output rate = (# hallucinations) / (max(1, # claims))
+    AUDIT FIX (2026-05-26): tách thành 3 fields độc lập thay vì conflate:
+       1. content_hallucination_rate = (misstate + unsupported) / max(1, n_claims)
+          → claims-level hallucination (cần judge call)
+       2. invented_citation_rate = n_invented / max(1, n_total_citations)
+          → citation-level invention (deterministic, no judge)
+       3. hallucination_rate (legacy) = giữ formula cũ cho backward compat
+
+    Trước: line cũ `1.0 if n_invented > 0 else None` gán full hallu cho
+    records chỉ có 1 invented cit → conflate citation invention với content lying.
     """
     text = record.get("answer", "")
     cits = list(dict.fromkeys(record.get("citation_ids") or []))
     if not text:
-        return {"hallucination_rate": None}
+        return {"hallucination_rate": None,
+                "content_hallucination_rate": None,
+                "invented_citation_rate": None}
 
     valid_texts = neo.get_texts(cits)
     n_invented = sum(1 for c in cits if c not in valid_texts)
+    n_total_cits = len(cits)
+    invented_rate = (n_invented / n_total_cits) if n_total_cits > 0 else None
 
     if not cits or not valid_texts:
-        # Không có citation thật → không thể judge misstate; mark
+        # Không có citation thật → không judge được content hallucination
         return {
             "n_invented_citations": n_invented,
-            "n_total_citations": len(cits),
-            "hallucination_rate": 1.0 if n_invented > 0 else None,
+            "n_total_citations": n_total_cits,
+            "invented_citation_rate": invented_rate,
+            "content_hallucination_rate": None,
+            "hallucination_rate": 1.0 if n_invented > 0 else None,  # legacy
             "_skip_reason": "no_valid_citations",
         }
 
@@ -473,12 +494,20 @@ def m_hallucination(record: dict, neo: _Neo, client, jc: JudgeCache) -> dict:
     n_unsup = sum(1 for c in claims if c.get("unsupported"))
     n_halu_total = n_misstate + n_unsup + n_invented
     denom = max(1, n_claims + n_invented)
+    # AUDIT FIX: split metrics
+    content_halu_rate = ((n_misstate + n_unsup) / max(1, n_claims)
+                         if n_claims > 0 else None)
     return {
         "n_claims": n_claims,
         "n_misstate": n_misstate,
         "n_unsupported": n_unsup,
         "n_invented_citations": n_invented,
-        "hallucination_rate": round(n_halu_total / denom, 4),
+        "n_total_citations": n_total_cits,
+        "content_hallucination_rate": (round(content_halu_rate, 4)
+                                       if content_halu_rate is not None else None),
+        "invented_citation_rate": (round(invented_rate, 4)
+                                   if invented_rate is not None else None),
+        "hallucination_rate": round(n_halu_total / denom, 4),  # legacy
         "_judge_usage": r["usage"],
     }
 
@@ -513,21 +542,22 @@ def m_pairwise(record_a: dict, record_b: dict, client, jc: JudgeCache) -> dict:
     w1 = (r1["data"].get("winner") or "").lower() if isinstance(r1["data"], dict) else ""
     w2 = (r2["data"].get("winner") or "").lower() if isinstance(r2["data"], dict) else ""
 
-    # Convert to "graphrag wins" / "llm_only wins" / "tie"
-    # arm A của record là record_a["arm"]
-    def _vote(w: str, a_first: bool) -> str:
+    # FIX (2026-05-26 audit): label-content pairing trong _ask() là STABLE —
+    # label A luôn = ans_a, label B luôn = ans_b, bất kể a_first (chỉ display
+    # order swap). Old code giả định labels swapped → inverted vote_ba.
+    # → Simple mapping: w="a" → record_a, w="b" → record_b, no a_first param.
+    def _vote(w: str) -> str:
+        w = (w or "").strip().lower()
         if w == "tie":
             return "tie"
-        # Khi a_first=True: A = record_a, B = record_b
-        # Khi a_first=False: A = record_b, B = record_a (đã swap)
-        winner_label = w  # "a" or "b"
-        if (winner_label == "a" and a_first) or (winner_label == "b" and not a_first):
+        if w == "a":
             return record_a["arm"]
-        else:
+        if w == "b":
             return record_b["arm"]
+        return f"unknown:{w!r}"
 
-    vote1 = _vote(w1, True)
-    vote2 = _vote(w2, False)
+    vote1 = _vote(w1)
+    vote2 = _vote(w2)
     return {
         "vote_ab": vote1,
         "vote_ba": vote2,
@@ -579,10 +609,15 @@ def m_prolog_rollback(record: dict) -> dict:
 
 
 def compute_bertscore_all(records_with_gold: list[dict]) -> dict[tuple[str, int], dict]:
-    """Tính BERTScore F1 vs gold_answer cho list các record có gold."""
+    """Tính BERTScore F1 vs gold_answer cho list các record có gold.
+
+    AUDIT FIX (2026-05-27): nếu record có `plain_answer` (từ new IRAC+plain prompt),
+    dùng plain_answer thay vì raw IRAC text — fair compare với prose arms.
+    Records không có plain_answer fall back to `answer` (giữ backward compat).
+    """
     from bert_score import score as bertscore
 
-    cands = [r["answer"] for r in records_with_gold]
+    cands = [(r.get("plain_answer") or r["answer"]) for r in records_with_gold]
     refs = [r["gold_answer"] for r in records_with_gold]
     print(f"Computing BERTScore for {len(cands)} pairs (multilingual model)...")
     P, R, F1 = bertscore(
@@ -599,6 +634,7 @@ def compute_bertscore_all(records_with_gold: list[dict]) -> dict[tuple[str, int]
             "bertscore_p": round(float(P[i]), 4),
             "bertscore_r": round(float(R[i]), 4),
             "bertscore_f1": round(float(F1[i]), 4),
+            "_used_plain_answer": bool(r.get("plain_answer")),  # flag cho generate_report
         }
     return out
 
