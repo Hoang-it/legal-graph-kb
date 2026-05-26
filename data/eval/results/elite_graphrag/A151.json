@@ -1,0 +1,33 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 151,
+  "question": "11 năm lương 9trieu 8 trăm rút xã hội đc bao nhiêu ạ",
+  "answer": "Issue: Người dùng hỏi về số tiền trợ cấp một lần từ bảo hiểm xã hội sau 11 năm đóng góp với mức lương 9 triệu 8 trăm.\n\nRule: \"Mức hưởng trợ cấp một lần cho mỗi năm đóng cao hơn quy định tại khoản 1 Điều này bằng 0,5 lần của mức bình quân thu nhập làm căn cứ đóng bảo hiểm xã hội quy định tại Điều 104 của Luật này cho mỗi năm đóng cao hơn đến tuổi nghỉ hưu theo quy định của pháp luật.\" (Luật BHXH 2024 (41/2024/QH15), Điều 100, Khoản 2)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã sử dụng các thông tin về số năm đóng góp là 11 và mức lương bình quân là 9 triệu 8 trăm để tính toán.\n\nConclusion: Prolog đã trả về giá trị 53900000.0 cho biến Amount, cho thấy số tiền trợ cấp một lần từ bảo hiểm xã hội là 53 triệu 900 nghìn.",
+  "citations": [
+    "[Điều 104]",
+    "[Điều 100 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A104",
+    "L41_2024.A100.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_social_insurance_amount(53900000.0),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Người dùng hỏi về số tiền trợ cấp một lần từ bảo hiểm xã hội sau 11 năm đóng góp với mức lương 9 triệu 8 trăm.",
+    "rule": "\"Mức hưởng trợ cấp một lần cho mỗi năm đóng cao hơn quy định tại khoản 1 Điều này bằng 0,5 lần của mức bình quân thu nhập làm căn cứ đóng bảo hiểm xã hội quy định tại Điều 104 của Luật này cho mỗi năm đóng cao hơn đến tuổi nghỉ hưu theo quy định của pháp luật.\" (Luật BHXH 2024 (41/2024/QH15), Điều 100, Khoản 2)",
+    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã sử dụng các thông tin về số năm đóng góp là 11 và mức lương bình quân là 9 triệu 8 trăm để tính toán.",
+    "conclusion": "Prolog đã trả về giá trị 53900000.0 cho biến Amount, cho thấy số tiền trợ cấp một lần từ bảo hiểm xã hội là 53 triệu 900 nghìn."
+  },
+  "elapsed_s": 8.811,
+  "prompt_tokens": 3367,
+  "completion_tokens": 542,
+  "error": null,
+  "gold_answer": "Nếu 11 năm đóng của bạn đều từ năm 2014 trở đi thì BHXH 1 lần ước khoảng khoảng 215,6 triệu, chưa tính hệ số điều chỉnh tiền lương. Số thực nhận do cơ quan BHXH tính sẽ căn cứ mức bình quân tiền lương tháng đóng sau điều chỉnh và làm tròn thời gian đóng theo luật. Nếu có thời gian trước 2014 thì phần đó tính theo hệ số 1,5 tháng/năm.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

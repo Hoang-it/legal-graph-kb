@@ -1,0 +1,37 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 100,
+  "question": "Em đóng bh đc 3th tầm hơn 1tr. Bây h nghỉ việc, k có ý định làm lại thì có lấy lại đc khoản mình đã đóng không?",
+  "answer": "Issue: Người dùng hỏi về khả năng lấy lại khoản tiền đã đóng bảo hiểm xã hội sau khi nghỉ việc và không có ý định làm lại.\n\nRule: \"Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp.\" (Luật BHXH 2024 (41/2024/QH15), article 9, clause 2)\n\nApplication: Không có giá trị nào được gán trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng người dùng có thể nhận lại khoản tiền đã đóng thông qua điều kiện [can_refund].\n\nConclusion: Prolog đã trả về giá trị \"can_refund\" cho biến Conditions, cho thấy người dùng có thể lấy lại khoản tiền đã đóng.",
+  "citations": [
+    "[Điều 9 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A9.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,refund_conditions([can_refund]),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Người dùng hỏi về khả năng lấy lại khoản tiền đã đóng bảo hiểm xã hội sau khi nghỉ việc và không có ý định làm lại.",
+    "rule": "\"Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp.\" (Luật BHXH 2024 (41/2024/QH15), article 9, clause 2)",
+    "application": "Không có giá trị nào được gán trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng người dùng có thể nhận lại khoản tiền đã đóng thông qua điều kiện [can_refund].",
+    "conclusion": "Prolog đã trả về giá trị \"can_refund\" cho biến Conditions, cho thấy người dùng có thể lấy lại khoản tiền đã đóng."
+  },
+  "elapsed_s": 7.628,
+  "prompt_tokens": 2980,
+  "completion_tokens": 356,
+  "error": null,
+  "gold_answer": "Đóng BHXH mới 3 tháng thì chưa thể lấy lại ngay chỉ vì nghỉ việc và không muốn đi làm nữa. Muốn hưởng BHXH một lần, bạn vẫn phải thuộc trường hợp luật cho phép, thường là sau khi ngừng tham gia đủ 12 tháng và chưa đủ điều kiện hưởng lương hưu. Nếu sau này không rút, 3 tháng đó vẫn được bảo lưu. Còn phần người sử dụng lao động đã đóng vào các quỹ thì không hoàn trả riêng cho bạn như một khoản tiết kiệm.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110",
+  "plain_answer": "Bạn có thể lấy lại khoản tiền đã đóng bảo hiểm xã hội sau khi nghỉ việc theo [Điều 9 khoản 2] Luật BHXH 2024. Hệ thống cho biết bạn đủ điều kiện để nhận lại số tiền này, nên bạn có thể làm thủ tục để nhận lại.",
+  "answer_v2_irac": "Issue: Người dùng hỏi về khả năng lấy lại khoản tiền đã đóng bảo hiểm xã hội sau khi nghỉ việc và không có ý định làm lại.\nRule: \"Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp.\" (Luật BHXH 2024 (41/2024/QH15), Điều 9 khoản 2)\nApplication: Không có giá trị nào được gán trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng người dùng có thể nhận lại khoản tiền đã đóng thông qua điều kiện [can_refund].\nConclusion: Prolog đã trả về giá trị \"can_refund\" cho biến Conditions, cho thấy người dùng có thể lấy lại khoản tiền đã đóng.",
+  "plain_answer_tokens": {
+    "prompt_tokens": 1617,
+    "completion_tokens": 228
+  }
+}

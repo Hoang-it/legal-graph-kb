@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 90,
+  "question": "BHXH tự nguyện thì chuyển sang BHXH bắt buộc như thế nào cho hộ kinh doanh mới thành lập?",
+  "answer": "Issue: BHXH tự nguyện thì chuyển sang BHXH bắt buộc như thế nào cho hộ kinh doanh mới thành lập?\n\nRule: \"6. Xác nhận thời gian đóng bảo hiểm xã hội, bảo hiểm thất nghiệp cho từng người lao động; cung cấp đầy đủ và kịp thời thông tin về việc đóng, quyền được hưởng chế độ, thủ tục thực hiện bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện khi người lao động, người sử dụng lao động hoặc tổ chức công đoàn yêu cầu.\" (Luật BHXH 2024 (41/2024/QH15), article 18, clause 6)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog không thể thực hiện truy vấn do thiếu thông tin cần thiết.\n\nConclusion: Hệ thống không thể tính toán giá trị cuối cùng vì không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 18 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K3"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,transition_to_compulsory_insurance([submit_application,provide_required_documents]),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "BHXH tự nguyện thì chuyển sang BHXH bắt buộc như thế nào cho hộ kinh doanh mới thành lập?",
+    "rule": "\"6. Xác nhận thời gian đóng bảo hiểm xã hội, bảo hiểm thất nghiệp cho từng người lao động; cung cấp đầy đủ và kịp thời thông tin về việc đóng, quyền được hưởng chế độ, thủ tục thực hiện bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện khi người lao động, người sử dụng lao động hoặc tổ chức công đoàn yêu cầu.\" (Luật BHXH 2024 (41/2024/QH15), article 18, clause 6)",
+    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog không thể thực hiện truy vấn do thiếu thông tin cần thiết.",
+    "conclusion": "Hệ thống không thể tính toán giá trị cuối cùng vì không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 8.239,
+  "prompt_tokens": 2939,
+  "completion_tokens": 401,
+  "error": null,
+  "gold_answer": "Khi hộ kinh doanh mới thành lập và chủ hộ thuộc diện tham gia BHXH bắt buộc, bạn cần đăng ký tham gia bắt buộc theo mã số BHXH đang có; không phải tạo mã mới. Nếu trước đó bạn đang đóng tự nguyện, thời gian đã đóng sẽ được bảo lưu và nối tiếp trên cùng mã số. Bạn chỉ cần liên hệ cơ quan BHXH để chuyển phương thức tham gia và tránh đóng trùng cùng thời gian ở cả 2 diện.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 25, Điều 36; Nghị định 158/2025/NĐ-CP"
+}

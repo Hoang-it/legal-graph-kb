@@ -1,0 +1,33 @@
+{
+  "arm": "elite_ontology",
+  "stt": 115,
+  "question": "Mình đóng được bảo hiểm 8 tháng thì có rút được tiền trong bảo hiểu đc không?",
+  "answer": "Issue: Mình đóng được bảo hiểm 8 tháng thì có rút được tiền trong bảo hiểm được không?\n\nRule: \"1. Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm xã hội mà có đề nghị thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây: a) Đủ tuổi hưởng lương hưu mà chưa đủ 15 năm đóng bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 70, Khoản 1)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Truy vấn Prolog đã kiểm tra điều kiện dựa trên số tháng đóng góp của người dùng, nhưng không có thông tin nào để xác định khả năng rút tiền.\n\nConclusion: Hệ thống không thể tính toán được số liệu cuối cùng vì không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 2]",
+    "[Điều 70 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2",
+    "L41_2024.A70.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,withdrawal_conditions([not_eligible_for_withdrawal]),based_on(source_c070))]",
+  "irac_sections": {
+    "issue": "Mình đóng được bảo hiểm 8 tháng thì có rút được tiền trong bảo hiểm được không?",
+    "rule": "\"1. Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm xã hội mà có đề nghị thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây: a) Đủ tuổi hưởng lương hưu mà chưa đủ 15 năm đóng bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 70, Khoản 1)",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Truy vấn Prolog đã kiểm tra điều kiện dựa trên số tháng đóng góp của người dùng, nhưng không có thông tin nào để xác định khả năng rút tiền.",
+    "conclusion": "Hệ thống không thể tính toán được số liệu cuối cùng vì không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 13.027,
+  "prompt_tokens": 3698,
+  "completion_tokens": 475,
+  "error": null,
+  "gold_answer": "Đóng BHXH 8 tháng chưa đương nhiên được rút ngay. Bạn chỉ được hưởng BHXH 1 lần khi thuộc trường hợp luật cho phép, phổ biến là đã nghỉ việc và sau 12 tháng không còn thuộc diện tham gia BHXH bắt buộc, cũng không tham gia BHXH tự nguyện. Nếu chưa đủ điều kiện thì thời gian 8 tháng đó được bảo lưu để cộng nối về sau.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

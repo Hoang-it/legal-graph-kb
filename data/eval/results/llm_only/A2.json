@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 2,
+  "question": "Bà Minh Châu (Long An) ký hợp đồng lao động theo diện làm việc bán thời gian.\nBà Châu hỏi, bà có được mua BHXH bắt buộc theo đối tượng cá nhân không? Nếu được thì mức đóng được tính như thế nào?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động làm việc theo hợp đồng lao động bán thời gian có thể tham gia bảo hiểm xã hội (BHXH) bắt buộc nếu thuộc đối tượng tham gia BHXH theo quy định. \n\nCụ thể, tại Điều 4 khoản 1 quy định về đối tượng tham gia BHXH bắt buộc, người lao động làm việc theo hợp đồng lao động từ 1 tháng trở lên sẽ được tham gia BHXH bắt buộc. \n\nVề mức đóng, mức đóng BHXH bắt buộc được tính trên mức lương tháng của người lao động, theo tỷ lệ quy định tại Điều 5 khoản 1. Tỷ lệ đóng BHXH bắt buộc cho người lao động là 8% trên mức lương tháng, trong khi người sử dụng lao động đóng 17.5%.\n\nDo đó, nếu bà Minh Châu ký hợp đồng lao động bán thời gian từ 1 tháng trở lên, bà có thể tham gia BHXH bắt buộc và mức đóng sẽ được tính theo tỷ lệ trên mức lương tháng của bà.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 5.121,
+  "prompt_tokens": 213,
+  "completion_tokens": 243,
+  "gold_answer": "Pháp luật về BHXH hiện hành không có quy định đối với trường hợp người lao động tự tham gia BHXH bắt buộc.\nDo vậy, trường hợp của bà ký hợp đồng lao động làm việc không trọn thời gian, không thuộc đối tượng tham gia BHXH bắt buộc thì có thể liên hệ tới cơ quan BHXH tại nơi cư trú để tham gia BHXH tự nguyện.",
+  "gold_citations_raw": "Luật BHXH 2014"
+}

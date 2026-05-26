@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 109,
+  "question": "Đóng bảo hiểm xã hội bao nhiêu năm là được về hưu vậy?",
+  "answer": "Issue: Đóng bảo hiểm xã hội bao nhiêu năm là được về hưu vậy?\n\nRule: \"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), article 18, clause 2)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Prolog đã thực hiện truy vấn để xác định các điều kiện về hưu, nhưng không có thông tin nào được cung cấp để tính toán.\n\nConclusion: Hệ thống không thể tính toán số năm đóng bảo hiểm xã hội cần thiết để về hưu do không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 18 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,retirement_conditions([minimum_age_60_for_men,minimum_age_55_for_women,at_least_15_years_contributed]),based_on(source_c018))]",
+  "irac_sections": {
+    "issue": "Đóng bảo hiểm xã hội bao nhiêu năm là được về hưu vậy?",
+    "rule": "\"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), article 18, clause 2)",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Prolog đã thực hiện truy vấn để xác định các điều kiện về hưu, nhưng không có thông tin nào được cung cấp để tính toán.",
+    "conclusion": "Hệ thống không thể tính toán số năm đóng bảo hiểm xã hội cần thiết để về hưu do không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 8.23,
+  "prompt_tokens": 4521,
+  "completion_tokens": 387,
+  "error": null,
+  "gold_answer": "Từ 01/7/2025, điều kiện về thời gian đóng để hưởng lương hưu với nhiều nhóm lao động là từ đủ 15 năm BHXH, nhưng vẫn phải đủ tuổi nghỉ hưu theo luật. Năm 2026, tuổi nghỉ hưu trong điều kiện bình thường là 61 tuổi 6 tháng đối với nam và 57 tuổi đối với nữ, trừ trường hợp làm nghề nặng nhọc, suy giảm khả năng lao động hoặc có điều kiện đặc thù.",
+  "gold_citations_raw": "Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

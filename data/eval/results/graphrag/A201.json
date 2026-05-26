@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 201,
+  "question": "Giờ muốn lãnh bảo hiểm thất nghiệp phải làm qua dịch vụ công hả mọi người.",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 13. Trách nhiệm của người sử dụng lao động\n- Điều 18. Trách nhiệm của cơ quan bảo hiểm xã hội\n- Điều 93. Hình thức chi trả lương hưu và chế độ bảo hiểm xã hội",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A9.K2",
+      "score": 0.831009030342102,
+      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A13.K2",
+      "score": 0.8250657916069031,
+      "text_preview": "Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A93.K3",
+      "score": 0.8152117729187012,
+      "text_preview": "Thông qua người sử dụng lao động."
+    },
+    {
+      "clause_id": "L41_2024.A133.K5",
+      "score": 0.8126248121261597,
+      "text_preview": "Tổ chức bộ máy thực hiện bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A17.K1",
+      "score": 0.8123974204063416,
+      "text_preview": "Yêu cầu người sử dụng lao động xuất trình sổ quản lý lao động, thang lương, bảng lương và thông tin, tài liệu khác liên quan đến việc đóng, hưởng chế độ bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp,"
+    }
+  ],
+  "n_semantic_edges": 0,
+  "n_refs": 0,
+  "elapsed_s": 1.88,
+  "gold_answer": null,
+  "gold_citations_raw": null
+}

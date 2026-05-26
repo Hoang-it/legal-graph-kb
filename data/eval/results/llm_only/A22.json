@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 22,
+  "question": "Mẹ của bà Thị Thu Trang đã 57 tuổi, đóng BHXH được 5 năm 7 tháng, mức lương bình quân đóng BHXH là 3.641.233 đồng.\nMẹ của bà muốn đóng BHXH tự nguyện thêm 9 năm 5 tháng với mức đóng 4.000.000 đồng/tháng để tròn 15 năm được hưởng lương hưu từ ngày 1/7/2025.",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, để được hưởng lương hưu, người lao động phải có đủ 15 năm đóng bảo hiểm xã hội. Mẹ của bà Thị Thu Trang hiện đã có 5 năm 7 tháng đóng BHXH, nếu muốn đủ 15 năm, cần thêm 9 năm 5 tháng.\n\nMức đóng BHXH tự nguyện là 4.000.000 đồng/tháng, tuy nhiên, mức đóng này phải phù hợp với quy định về mức tối thiểu và tối đa theo quy định của pháp luật. Cụ thể, người tham gia BHXH tự nguyện có thể lựa chọn mức đóng từ 1.5 triệu đồng đến 30 triệu đồng/tháng, tùy thuộc vào thu nhập thực tế.\n\nNếu mẹ của bà Thị Thu Trang đóng BHXH tự nguyện với mức 4.000.000 đồng/tháng trong 9 năm 5 tháng, thì sẽ đủ điều kiện để có 15 năm đóng BHXH và đủ điều kiện hưởng lương hưu từ ngày 1/7/2025, nếu đáp ứng các điều kiện khác theo quy định.\n\nTuy nhiên, để xác định chính xác quyền lợi và các điều kiện cụ thể, bà nên tham khảo thêm ý kiến từ cơ quan bảo hiểm xã hội địa phương.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 5.985,
+  "prompt_tokens": 253,
+  "completion_tokens": 285,
+  "gold_answer": "Luật BHXH số 41/2024/QH15 của Quốc hội có hiệu lực thi hành từ ngày 1/7/2025, trong đó:\nTại Điều 98 quy định: \"Người tham gia bảo hiểm xã hội tự nguyện được hưởng lương hưu khi đủ tuổi nghỉ hưu theo quy định tại khoản 2 Điều 169 của Bộ luật Lao động và có thời gian đóng bảo hiểm xã hội từ đủ 15 năm trở lên\".\nTại khoản 11 Điều 141 quy định: \"Đối tượng quy định tại điểm a, b, c, d, đ, g, i khoản 1 Điều 2 của Luật này đã tham gia bảo hiểm xã hội trước ngày Luật này có hiệu lực thi hành mà có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 20 năm trở lên thì mức lương hưu hằng tháng thấp nhất bằng mức tham chiếu\".\nTheo thông tin bà cung cấp, mẹ của bà đã đóng BHXH bắt buộc được 5 năm 7 tháng, muốn đóng BHXH tự nguyện thêm 9 năm 5 tháng cho tròn 15 năm để nghỉ hưu từ ngày 1/7/2025 và khi tính lương hưu có mức lương hưu hằng tháng là 1.739.906 đồng, thấp hơn mức tham chiếu (nay là mức lương cơ sở); đối chiếu với quy định nêu trên thì mẹ của bà không được hưởng mức lương hưu hằng tháng thấp nhất bằng mức tham chiếu, do mẹ của bà chưa có đủ 20 năm đóng BHXH bắt buộc theo quy định tại khoản 11 Điều 141 Luật BHXH số 41/2024/QH15.",
+  "gold_citations_raw": "Luật BHXH số 41/2024/QH15"
+}

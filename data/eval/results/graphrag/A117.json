@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 117,
+  "question": "Bhxh em chốt ngày 7/5/2025. Đến ngày nào thì em đc lãnh 1 lần?",
+  "answer": "Theo quy định, thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hội ban hành quyết định hưởng bảo hiểm xã hội một lần. Nếu cơ quan bảo hiểm xã hội chốt ngày 7/5/2025, bạn sẽ được lãnh bảo hiểm xã hội một lần kể từ thời điểm này.\n\nCụ thể, bạn sẽ nhận được số tiền bảo hiểm xã hội một lần từ ngày 7/5/2025. \n\nCitation: [Điều 102 khoản 4] và [Điều 70 khoản 5].",
+  "citations": [
+    "[Điều 102 khoản 4]",
+    "[Điều 70 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A102.K4",
+    "L41_2024.A70.K5"
+  ],
+  "citation_verified": {
+    "L41_2024.A102.K4": true,
+    "L41_2024.A70.K5": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A140.K1",
+      "score": 0.8171402215957642,
+      "text_preview": "Luật này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2025."
+    },
+    {
+      "clause_id": "L41_2024.A79.K3",
+      "score": 0.8021396398544312,
+      "text_preview": "Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo"
+    },
+    {
+      "clause_id": "L41_2024.A107.K3",
+      "score": 0.8020739555358887,
+      "text_preview": "Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo"
+    },
+    {
+      "clause_id": "L41_2024.A102.K4",
+      "score": 0.7901839017868042,
+      "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm ghi trong quyết định của cơ quan bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A70.K5",
+      "score": 0.7879359722137451,
+      "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hội ban hành quyết định hưởng bảo hiểm xã hội một lần."
+    }
+  ],
+  "n_semantic_edges": 1,
+  "n_refs": 1,
+  "elapsed_s": 2.71,
+  "gold_answer": "Nếu tháng chốt cuối là 7/5/2025 thì bạn không tính từ ngày 7/5/2025 để rút ngay. Với trường hợp thông thường, bạn phải chờ đủ 12 tháng không thuộc diện tham gia BHXH bắt buộc và không tham gia BHXH tự nguyện, sau đó mới nộp hồ sơ hưởng BHXH 1 lần nếu thuộc trường hợp luật cho phép. Tính an toàn là từ khoảng 5/2026 trở đi.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

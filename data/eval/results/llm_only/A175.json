@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 175,
+  "question": "Mình đóng bảo hiểm đc 6 năm, lương trung bình 20tr/ tháng ,giờ cần tiền muốn rút thì được tầm bao nhiêu?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, nếu bạn đã đóng bảo hiểm xã hội được 6 năm và muốn rút tiền, bạn có thể rút một phần hoặc toàn bộ số tiền đã đóng. Tuy nhiên, số tiền cụ thể bạn có thể rút sẽ phụ thuộc vào nhiều yếu tố như mức lương bình quân, thời gian đóng bảo hiểm và các quy định cụ thể về bảo hiểm xã hội.\n\nĐể biết chính xác số tiền bạn có thể rút, bạn cần liên hệ với cơ quan bảo hiểm xã hội nơi bạn tham gia để được tư vấn cụ thể và chính xác hơn. Tôi không có đủ thông tin chính xác để trả lời câu hỏi này.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 3.673,
+  "prompt_tokens": 193,
+  "completion_tokens": 151,
+  "gold_answer": "Nếu 6 năm đóng BHXH của bạn đều từ 2014 trở đi, lương bình quân khoảng 20 triệu/tháng thì BHXH 1 lần ước khoảng khoảng 240,0 triệu. Số thực nhận có thể chênh do hệ số điều chỉnh tiền lương từng năm. Trước khi rút, bạn nên cân nhắc vì thời gian 6 năm đó có thể tiếp tục bảo lưu để hưởng hưu sau này.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

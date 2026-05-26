@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 117,
+  "question": "Bhxh em chốt ngày 7/5/2025. Đến ngày nào thì em đc lãnh 1 lần?",
+  "answer": "Issue: Người dùng hỏi về thời điểm nhận tiền bảo hiểm xã hội một lần sau khi chốt ngày 7/5/2025.\n\nRule: \"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)\n\nApplication: Không có giá trị nào được gán trong slot_bindings. Prolog không thể thực hiện truy vấn do thiếu thông tin cần thiết.\n\nConclusion: Hệ thống không thể tính toán được giá trị cuối cùng do không có giá trị nào trong slot_bindings.",
+  "citations": [
+    "[Điều 18 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,one_time_payment_date(7/5/2025),based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Người dùng hỏi về thời điểm nhận tiền bảo hiểm xã hội một lần sau khi chốt ngày 7/5/2025.",
+    "rule": "\"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)",
+    "application": "Không có giá trị nào được gán trong slot_bindings. Prolog không thể thực hiện truy vấn do thiếu thông tin cần thiết.",
+    "conclusion": "Hệ thống không thể tính toán được giá trị cuối cùng do không có giá trị nào trong slot_bindings."
+  },
+  "elapsed_s": 8.594,
+  "prompt_tokens": 4538,
+  "completion_tokens": 399,
+  "error": null,
+  "gold_answer": "Nếu tháng chốt cuối là 7/5/2025 thì bạn không tính từ ngày 7/5/2025 để rút ngay. Với trường hợp thông thường, bạn phải chờ đủ 12 tháng không thuộc diện tham gia BHXH bắt buộc và không tham gia BHXH tự nguyện, sau đó mới nộp hồ sơ hưởng BHXH 1 lần nếu thuộc trường hợp luật cho phép. Tính an toàn là từ khoảng 5/2026 trở đi.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

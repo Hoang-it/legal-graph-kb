@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 117,
+  "question": "Bhxh em chốt ngày 7/5/2025. Đến ngày nào thì em đc lãnh 1 lần?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động có thể nhận bảo hiểm xã hội một lần khi đủ điều kiện về thời gian tham gia bảo hiểm xã hội. Cụ thể, nếu bạn chốt sổ bảo hiểm xã hội vào ngày 7/5/2025, bạn sẽ được nhận bảo hiểm xã hội một lần sau khi có quyết định giải quyết từ cơ quan bảo hiểm xã hội, thường là trong khoảng thời gian từ 5 đến 10 ngày làm việc kể từ ngày nộp hồ sơ.\n\nTuy nhiên, để biết chính xác thời gian cụ thể, bạn cần tham khảo thêm quy định chi tiết hoặc liên hệ với cơ quan bảo hiểm xã hội địa phương.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 3.57,
+  "prompt_tokens": 185,
+  "completion_tokens": 155,
+  "gold_answer": "Nếu tháng chốt cuối là 7/5/2025 thì bạn không tính từ ngày 7/5/2025 để rút ngay. Với trường hợp thông thường, bạn phải chờ đủ 12 tháng không thuộc diện tham gia BHXH bắt buộc và không tham gia BHXH tự nguyện, sau đó mới nộp hồ sơ hưởng BHXH 1 lần nếu thuộc trường hợp luật cho phép. Tính an toàn là từ khoảng 5/2026 trở đi.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

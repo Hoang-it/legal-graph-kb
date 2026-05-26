@@ -1,0 +1,54 @@
+{
+  "arm": "graphrag",
+  "stt": 150,
+  "question": "BH thất nghiệp của mình sao lại ít hơn so với BHXH ? Mình làm nhà nước. Đóng BH từ 6/2013 đến 4/2026. Nay mình mở app lên thấy BHTN có 11 năm 9 tháng. Còn BHXH là 12năm 9 tháng ạ",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 3 khoản 6] — Giải thích về thời gian đóng bảo hiểm xã hội.\n- [Điều 5 khoản 6] — Nguyên tắc về thời gian đóng bảo hiểm xã hội.\n- [Điều 33 khoản 7] — Quy định về thời gian đóng bảo hiểm xã hội bắt buộc.",
+  "citations": [
+    "[Điều 3 khoản 6]",
+    "[Điều 5 khoản 6]",
+    "[Điều 33 khoản 7]"
+  ],
+  "citation_ids": [
+    "L41_2024.A3.K6",
+    "L41_2024.A5.K6",
+    "L41_2024.A33.K7"
+  ],
+  "citation_verified": {
+    "L41_2024.A3.K6": true,
+    "L41_2024.A5.K6": true,
+    "L41_2024.A33.K7": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A5.K6",
+      "score": 0.8305873870849609,
+      "text_preview": "Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hi"
+    },
+    {
+      "clause_id": "L41_2024.A38.K1",
+      "score": 0.8274809122085571,
+      "text_preview": "Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều "
+    },
+    {
+      "clause_id": "L41_2024.A141.K12",
+      "score": 0.8222682476043701,
+      "text_preview": "Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30"
+    },
+    {
+      "clause_id": "L41_2024.A68.K1",
+      "score": 0.8169227838516235,
+      "text_preview": "Lao động nam có thời gian đóng bảo hiểm xã hội cao hơn 35 năm, lao động nữ có thời gian đóng bảo hiểm xã hội cao hơn 30 năm thì khi nghỉ hưu, ngoài lương hưu còn được hưởng trợ cấp một lần."
+    },
+    {
+      "clause_id": "L41_2024.A100.K1",
+      "score": 0.8166087865829468,
+      "text_preview": "Lao động nam có thời gian đóng bảo hiểm xã hội cao hơn 35 năm, lao động nữ có thời gian đóng bảo hiểm xã hội cao hơn 30 năm thì khi nghỉ hưu, ngoài lương hưu còn được hưởng trợ cấp một lần."
+    }
+  ],
+  "n_semantic_edges": 5,
+  "n_refs": 10,
+  "elapsed_s": 2.18,
+  "gold_answer": "BHXH và BHTN không phải lúc nào cũng bằng nhau vì có thời gian tham gia BHXH nhưng không thuộc diện đóng BHTN. Ví dụ nhiều lao động khu vực nhà nước, thời gian trước khi thuộc diện BHTN hoặc thời gian không phải đóng BHTN thì chỉ tính BHXH. Do đó BHXH 12 năm 9 tháng nhưng BHTN 11 năm 9 tháng là có thể xảy ra, không phải lỗi nếu có 1 năm không thuộc diện BHTN.",
+  "gold_citations_raw": "Luật BHXH 2024; Luật Việc làm 2013/2025"
+}

@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 65,
+  "question": "Mình có hai mã sổ BHXH phải làm sao?",
+  "answer": "Issue: Mình có hai mã sổ BHXH phải làm sao?\n\nRule: \"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), article 18, clause 2)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để thực hiện truy vấn.\n\nConclusion: Hệ thống không thể tính toán được số liệu cuối cùng do không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 18 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,how_to_handle_multiple_insurance_records(Bạn cần liên hệ với cơ quan bảo hiểm xã hội để được hướng dẫn cụ thể về việc quản lý hai mã sổ BHXH.),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Mình có hai mã sổ BHXH phải làm sao?",
+    "rule": "\"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), article 18, clause 2)",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để thực hiện truy vấn.",
+    "conclusion": "Hệ thống không thể tính toán được số liệu cuối cùng do không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 10.769,
+  "prompt_tokens": 4607,
+  "completion_tokens": 439,
+  "error": null,
+  "gold_answer": "Một người chỉ có một mã số BHXH. Nếu bạn đang có 2 mã, cần làm thủ tục gộp sổ/mã số để cơ quan BHXH hợp nhất toàn bộ quá trình tham gia về một mã duy nhất. Bạn nên nộp tờ khai điều chỉnh thông tin kèm CCCD và các giấy tờ liên quan đến cả hai mã tại cơ quan BHXH nơi cư trú hoặc nơi đang tham gia. Sau khi gộp, quyền lợi và thời gian đóng hợp pháp của bạn được cộng nối, không bị mất.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn quản lý sổ BHXH, gộp sổ của BHXH Việt Nam"
+}

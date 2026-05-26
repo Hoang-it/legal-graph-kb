@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 66,
+  "question": "Có phải Bảo hiểm xã hội mình bắt buộc lãnh sau 1 năm không?. Nếu bận mk làm trễ vài tháng có được không?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động có quyền nhận bảo hiểm xã hội khi đủ điều kiện và thời gian tham gia. Tuy nhiên, không có quy định cụ thể nào yêu cầu phải lãnh bảo hiểm xã hội sau 1 năm. Người lao động có thể làm thủ tục nhận bảo hiểm xã hội khi đủ điều kiện mà không bị giới hạn thời gian cụ thể.\n\nNếu bạn bận rộn và làm trễ vài tháng, bạn vẫn có thể thực hiện thủ tục nhận bảo hiểm xã hội sau đó, miễn là bạn đáp ứng đủ các điều kiện theo quy định. \n\nTóm lại, bạn không bị bắt buộc phải lãnh bảo hiểm xã hội sau 1 năm và có thể làm thủ tục muộn hơn.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 4.588,
+  "prompt_tokens": 189,
+  "completion_tokens": 166,
+  "gold_answer": "Không có quy định bắt buộc phải nhận BHXH một lần ngay đúng sau 1 năm. Mốc 12 tháng chỉ là điều kiện phổ biến để phát sinh quyền yêu cầu trong một số trường hợp. Nếu bạn bận và nộp muộn vài tháng sau khi đã đủ điều kiện thì thông thường vẫn được giải quyết, miễn tại thời điểm nộp hồ sơ bạn vẫn thuộc trường hợp được hưởng theo luật. Nếu không rút, thời gian đóng vẫn được bảo lưu.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102"
+}

@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 167,
+  "question": "Trường hợp làm cho cty có đóng bảo hiểm y tế , xã hội , mà giờ bị cty đuổi việc ,,, trong khi đang mang thai vậy bảo hiểm y tế còn hạn ko hay phải mua mới lại? .. và kể cả bảo hiểm thai sản?",
+  "answer": "Trong trường hợp bạn đang mang thai và bị công ty đuổi việc, bảo hiểm y tế của bạn vẫn còn hiệu lực cho đến khi bạn không còn tham gia bảo hiểm xã hội. Theo quy định, người lao động có quyền được hưởng bảo hiểm y tế trong thời gian mang thai, và nếu bạn đã tham gia bảo hiểm y tế trước đó, bạn sẽ tiếp tục được hưởng quyền lợi này.\n\nTuy nhiên, để được hưởng chế độ thai sản, bạn cần phải đáp ứng các điều kiện theo quy định của Luật Bảo hiểm xã hội. Cụ thể, bạn phải có thời gian đóng bảo hiểm xã hội tối thiểu trong 12 tháng trước khi sinh con. Nếu bạn không còn làm việc và không có người sử dụng lao động đóng bảo hiểm cho bạn, bạn sẽ cần phải tự mua bảo hiểm y tế mới để đảm bảo quyền lợi của mình.\n\nVì vậy, bạn nên tìm hiểu thêm về việc mua bảo hiểm y tế tự nguyện hoặc tham gia bảo hiểm y tế theo hộ gia đình để đảm bảo quyền lợi cho mình và con. \n\nNếu bạn cần thông tin chi tiết hơn về các điều kiện cụ thể, tôi không có đủ thông tin chính xác để trả lời câu hỏi này.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 5.014,
+  "prompt_tokens": 213,
+  "completion_tokens": 251,
+  "gold_answer": "Nếu bị công ty cho nghỉ việc khi đang mang thai thì việc chấm dứt hợp đồng còn phải xem có đúng quy định của Bộ luật Lao động hay không. BHYT do công ty đóng chỉ còn giá trị đến hết thời hạn ghi trên thẻ/thời gian đã đóng; sau đó muốn dùng tiếp phải tham gia theo nhóm khác. Còn thai sản thì nếu bạn đã đủ điều kiện về thời gian đóng BHXH trong 12 tháng trước sinh, nghỉ việc vẫn có thể được hưởng.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Bộ luật Lao động 2019"
+}

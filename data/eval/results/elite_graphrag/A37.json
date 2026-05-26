@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 37,
+  "question": "Mình nghỉ cty cũ từ tháng 1/2026. (nghỉ ngang) nhưng cty vẫn chốt sổ cho Mình. Nhưng nay mình muốn ra lấy tờ rời BHXH, giờ mình phải làm sao?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmp0r_4lkw8.pl:1:467: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 13 khoản 2]",
+    "[Điều 25 khoản 2]",
+    "[Điều 107 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A13.K2",
+    "L41_2024.A25.K2",
+    "L41_2024.A107.K2"
+  ],
+  "citation_indices": [
+    2,
+    3,
+    4
+  ],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 17.444,
+  "prompt_tokens": 6630,
+  "completion_tokens": 1017,
+  "error": null,
+  "gold_answer": "Nếu công ty đã chốt sổ nhưng chưa trả tờ rời cho bạn thì trước hết yêu cầu công ty bàn giao lại sổ/tờ rời bằng văn bản hoặc email. Khi chấm dứt HĐLĐ, người sử dụng lao động phải phối hợp xác nhận thời gian đóng BHXH và trả lại giấy tờ liên quan cho người lao động. Nếu công ty chây ì, bạn có thể khiếu nại đến Thanh tra Sở Nội vụ/LĐTBXH hoặc cơ quan BHXH nơi đơn vị đang tham gia để được hỗ trợ cấp lại, xác nhận quá trình đóng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48"
+}

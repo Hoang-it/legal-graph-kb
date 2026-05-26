@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 119,
+  "question": "Có phải cơ quan BHXH giờ không cấp lại bìa và tờ rời nữa không? Mình nộp đủ sổ cho công ty cũ chốt bhxh mà công ty báo lại là giờ cơ quan bhxh ko cấp lại sổ giấy nữa.",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 25 khoản 2] — Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau.\n- [Điều 28 khoản 4] — Cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội trong thời hạn 05 ngày làm việc.",
+  "citations": [
+    "[Điều 25 khoản 2]",
+    "[Điều 28 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A25.K2",
+    "L41_2024.A28.K4"
+  ],
+  "citation_verified": {
+    "L41_2024.A25.K2": true,
+    "L41_2024.A28.K4": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A25.K2",
+      "score": 0.7968945503234863,
+      "text_preview": "Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau.\nChậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằn"
+    },
+    {
+      "clause_id": "L41_2024.A28.K4",
+      "score": 0.7928718328475952,
+      "text_preview": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn"
+    },
+    {
+      "clause_id": "L41_2024.A25.K1",
+      "score": 0.7763329744338989,
+      "text_preview": "Sổ bảo hiểm xã hội được cấp cho từng người lao động, trong đó chứa đựng thông tin cơ bản về nhân thân, ghi nhận việc đóng, hưởng, giải quyết các chế độ bảo hiểm xã hội và các thông tin cần thiết khác "
+    },
+    {
+      "clause_id": "L41_2024.A113.K1",
+      "score": 0.7736191749572754,
+      "text_preview": "Trường hợp nộp hồ sơ quá thời hạn quy định tại khoản 1 Điều 97, khoản 1 Điều 107, điểm a khoản 2 Điều 112 của Luật này thì phải giải trình bằng văn bản và gửi cho cơ quan bảo hiểm xã hội khi nộp hồ sơ"
+    },
+    {
+      "clause_id": "L41_2024.A130.K5",
+      "score": 0.7727589011192322,
+      "text_preview": "Việc giải quyết khiếu nại đối với quyết định, hành vi có liên quan đến việc thụ hưởng các chế độ bảo hiểm xã hội hoặc tính thời gian công tác trong khu vực nhà nước để hưởng bảo hiểm xã hội trước ngày"
+    }
+  ],
+  "n_semantic_edges": 1,
+  "n_refs": 11,
+  "elapsed_s": 2.39,
+  "gold_answer": "Không phải là cơ quan BHXH 'không cấp lại nữa'. Hiện quản lý điện tử là chính, nhưng khi cần vẫn có thể thực hiện thủ tục cấp lại/cấp quá trình đóng theo quy định. Nếu công ty nói không có sổ giấy nên không trả được thì bạn nên yêu cầu họ cung cấp xác nhận đã chốt và dữ liệu quá trình đóng; trường hợp mất sổ, bạn có thể trực tiếp làm thủ tục cấp lại tại BHXH.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 116,
+  "question": "Đi làm công ty mức lương: 5tr5 mà cty bắt đóng bảo hiểm 1tr700 là sao?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, mức đóng bảo hiểm xã hội được tính dựa trên mức lương cơ sở và các quy định cụ thể về tỷ lệ đóng. Nếu công ty bạn yêu cầu đóng bảo hiểm 1 triệu 700 nghìn đồng trong khi mức lương của bạn là 5 triệu 500 nghìn đồng, có thể có một số lý do như:\n\n1. Mức lương đóng bảo hiểm có thể thấp hơn mức lương thực tế bạn nhận, do công ty áp dụng mức lương tối thiểu hoặc mức lương đóng bảo hiểm khác.\n2. Tỷ lệ đóng bảo hiểm có thể được tính theo quy định của pháp luật, bao gồm cả phần đóng của người lao động và phần đóng của người sử dụng lao động.\n\nĐể có thông tin chính xác hơn, bạn nên yêu cầu công ty giải thích rõ về cách tính mức đóng bảo hiểm của bạn. Nếu có nghi ngờ về tính hợp pháp của việc này, bạn có thể tham khảo thêm các quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 4.794,
+  "prompt_tokens": 183,
+  "completion_tokens": 229,
+  "gold_answer": "Nếu lương đóng BHXH là 5,5 triệu thì phần người lao động phải đóng BHXH, BHYT, BHTN thông thường khoảng 10,5%, tức khoảng 577.500 đồng/tháng; doanh nghiệp đóng thêm phần của họ. Nếu công ty đang trừ bạn 1,7 triệu thì cần yêu cầu bảng tính cụ thể vì có thể đang trừ cả phần doanh nghiệp, truy thu tháng cũ hoặc trừ sai. Công ty không được bắt NLĐ gánh phần nghĩa vụ của NSDLĐ.",
+  "gold_citations_raw": "Điều 13, 14 Luật BHXH 2024; Luật BHYT; Luật Việc làm 2013/2025"
+}

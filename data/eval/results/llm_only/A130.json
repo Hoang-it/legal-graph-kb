@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 130,
+  "question": "Đóng bhxh đc 4 tháng lcb 4tr900 thì lãnh đc bao nhiêu?",
+  "answer": "Tôi không có đủ thông tin chính xác để trả lời câu hỏi này. Để tính toán số tiền bảo hiểm xã hội bạn có thể nhận được, cần biết rõ về loại chế độ bạn đang tham gia (hưu trí, ốm đau, thai sản,...) và các quy định cụ thể liên quan đến mức hưởng. Bạn nên tham khảo thêm thông tin từ cơ quan bảo hiểm xã hội hoặc chuyên gia tư vấn.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 2.458,
+  "prompt_tokens": 181,
+  "completion_tokens": 89,
+  "gold_answer": "Với 4 tháng đóng BHXH, mức hưởng BHXH 1 lần không tính như nhiều năm tròn mà theo trường hợp thời gian đóng chưa đủ 1 năm. Khi đủ điều kiện rút, mức hưởng bằng số tiền đã đóng nhưng tối đa không quá 2 tháng mức bình quân lương đóng BHXH. Với lương 4,9 triệu/tháng, số hưởng thường chỉ ở mức vài triệu đồng, không phải 8-10 triệu.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

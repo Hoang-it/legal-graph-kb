@@ -1,0 +1,54 @@
+{
+  "arm": "graphrag",
+  "stt": 59,
+  "question": "Em làm nhân viên parttime được 1,5 năm nhưng đến tháng 1/2026 bắt đầu kí hợp đồng lao động 6 tháng và đóng bhxh. Tháng 3 e có bầu, dự sinh ngày 22/11, nếu chỉ đóng đủ 6 tháng theo hợp đồng thì có được hưởng bảo hiểm thai sản không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 50 khoản 4]\n- [Điều 59 khoản 1]\n- [Điều 94 khoản 1]",
+  "citations": [
+    "[Điều 50 khoản 4]",
+    "[Điều 59 khoản 1]",
+    "[Điều 94 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A50.K4",
+    "L41_2024.A59.K1",
+    "L41_2024.A94.K1"
+  ],
+  "citation_verified": {
+    "L41_2024.A50.K4": true,
+    "L41_2024.A59.K1": true,
+    "L41_2024.A94.K1": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A50.K4",
+      "score": 0.8609575033187866,
+      "text_preview": "Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con hoặc nhận con khi nhờ mang thai "
+    },
+    {
+      "clause_id": "L41_2024.A53.K8",
+      "score": 0.8575263023376465,
+      "text_preview": "Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ "
+    },
+    {
+      "clause_id": "L41_2024.A59.K1",
+      "score": 0.8567538261413574,
+      "text_preview": "Trợ cấp thai sản một tháng của người lao động quy định tại các điều 51, 52, 53, 54, 55, 56 và 57 của Luật này bằng 100% mức bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc của 06 tháng g"
+    },
+    {
+      "clause_id": "L41_2024.A55.K1",
+      "score": 0.8530083894729614,
+      "text_preview": "Được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi. Trường hợp sinh đôi trở lên thì được nghỉ thêm 01 tháng cho mỗi con tính từ con thứ hai trở đi.\nTrường hợp "
+    },
+    {
+      "clause_id": "L41_2024.A53.K7",
+      "score": 0.848698616027832,
+      "text_preview": "Trường hợp chỉ có cha tham gia bảo hiểm xã hội bắt buộc mà mẹ chết sau khi sinh con hoặc gặp rủi ro sau khi sinh mà không đủ sức khỏe để chăm sóc con theo xác nhận của cơ sở khám bệnh, chữa bệnh thì c"
+    }
+  ],
+  "n_semantic_edges": 3,
+  "n_refs": 9,
+  "elapsed_s": 1.72,
+  "gold_answer": "Nếu bạn ký HĐLĐ từ 1/2026 và đóng BHXH bắt buộc đủ 6 tháng trong 12 tháng trước khi sinh vào 22/11/2026 thì về nguyên tắc đủ điều kiện hưởng thai sản. Thời gian làm part-time trước đó chỉ được tính nếu thuộc diện có đóng BHXH bắt buộc hợp pháp. Vì vậy, mốc quan trọng là số tháng đóng vào quỹ ốm đau - thai sản trong 12 tháng liền kề trước sinh, không phải số năm làm việc part-time.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50"
+}

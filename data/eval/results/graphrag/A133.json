@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 133,
+  "question": "Làm sao để đăng ký Bhxh không hướng lượng cho chủ doanh nghiệp?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT bao gồm:\n\n- Điều 12. Quyền của người sử dụng lao động\n- Điều 13. Trách nhiệm của người sử dụng lao động\n- Điều 38. Chậm đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp\n- Điều 41. Biện pháp xử lý hành vi trốn đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A12.K1",
+      "score": 0.7457296252250671,
+      "text_preview": "Từ chối thực hiện yêu cầu không đúng quy định của pháp luật về bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A6.K5",
+      "score": 0.7403214573860168,
+      "text_preview": "Hỗ trợ người tham gia bảo hiểm xã hội tự nguyện."
+    },
+    {
+      "clause_id": "L41_2024.A13.K2",
+      "score": 0.7390069961547852,
+      "text_preview": "Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A38.K3",
+      "score": 0.7385039329528809,
+      "text_preview": "Không đăng ký hoặc đăng ký không đầy đủ số người phải tham gia bảo hiểm thất nghiệp trong thời hạn 60 ngày kể từ ngày hết thời hạn phải tham gia bảo hiểm thất nghiệp theo quy định của pháp luật về bảo"
+    },
+    {
+      "clause_id": "L41_2024.A93.K3",
+      "score": 0.7375655174255371,
+      "text_preview": "Thông qua người sử dụng lao động."
+    }
+  ],
+  "n_semantic_edges": 0,
+  "n_refs": 1,
+  "elapsed_s": 2.11,
+  "gold_answer": "Nếu bạn là chủ doanh nghiệp/chủ hộ thuộc diện tham gia BHXH bắt buộc theo quy định mới thì phải đăng ký tham gia tại cơ quan BHXH qua đơn vị hoặc mã đơn vị của doanh nghiệp/hộ kinh doanh. Khái niệm 'không hưởng lương' chỉ ảnh hưởng căn cứ đóng ở từng nhóm đối tượng, không phải ai cũng được tự chọn không tham gia. Bạn nên đối chiếu đúng loại hình doanh nghiệp và chức danh quản lý của mình.",
+  "gold_citations_raw": "Điều 2 Luật BHXH 2024; Nghị định 158/2025/NĐ-CP"
+}

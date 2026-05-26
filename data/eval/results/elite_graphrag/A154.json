@@ -1,0 +1,31 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 154,
+  "question": "Anh chị cho em hỏi là em sinh xong 1 tháng sau em mới đi nộp giấy hưởng chế độ thai sản có được không?",
+  "answer": "Issue: Anh chị cho em hỏi là em sinh xong 1 tháng sau em mới đi nộp giấy hưởng chế độ thai sản có được không?\n\nRule: \"Hồ sơ đề nghị hưởng chế độ thai sản phải được nộp trong thời hạn 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản.\" (Luật BHXH 2024 (41/2024/QH15), Điều 61, khoản 2)\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Prolog đã thực hiện truy vấn để xác định thời hạn nộp hồ sơ hưởng chế độ thai sản, nhưng không có thông tin cụ thể nào từ các slot để tiêu thụ.\n\nConclusion: Hệ thống không thể tính toán được số liệu cuối cùng vì không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 61 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A61.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,submission_deadline(Hồ sơ đề nghị hưởng chế độ thai sản phải được nộp trong thời hạn 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản.),based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Anh chị cho em hỏi là em sinh xong 1 tháng sau em mới đi nộp giấy hưởng chế độ thai sản có được không?",
+    "rule": "\"Hồ sơ đề nghị hưởng chế độ thai sản phải được nộp trong thời hạn 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản.\" (Luật BHXH 2024 (41/2024/QH15), Điều 61, khoản 2)",
+    "application": "Không có slot nào được gán giá trị trong trường hợp này. Prolog đã thực hiện truy vấn để xác định thời hạn nộp hồ sơ hưởng chế độ thai sản, nhưng không có thông tin cụ thể nào từ các slot để tiêu thụ.",
+    "conclusion": "Hệ thống không thể tính toán được số liệu cuối cùng vì không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 7.075,
+  "prompt_tokens": 3310,
+  "completion_tokens": 404,
+  "error": null,
+  "gold_answer": "Được. Bạn sinh xong 1 tháng mới nộp hồ sơ thai sản thường vẫn không vấn đề, miễn hồ sơ đầy đủ và còn trong thời hạn giải quyết theo quy định. Nếu đang làm việc thì nộp cho công ty để công ty lập hồ sơ gửi BHXH; nếu đã nghỉ việc trước sinh mà đủ điều kiện hưởng, bạn nộp trực tiếp cho cơ quan BHXH.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

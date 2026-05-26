@@ -1,0 +1,35 @@
+{
+  "arm": "elite_ontology",
+  "stt": 177,
+  "question": "Em làm samsung Bắc Ninh từ năm 2017, e nghỉ ngang chưa chốt bảo hiểm và chưa có sổ. Giờ e làm công ty mới vẫn đóng bảo hiểm nhưng nếu nghỉ thì chưa chốt đc. Giờ e phải làm sao?",
+  "answer": "Issue: Bạn đã làm việc tại Samsung Bắc Ninh từ năm 2017 nhưng nghỉ ngang mà chưa chốt bảo hiểm. Bạn đang thắc mắc về quyền lợi bảo hiểm xã hội trong trường hợp này.\n\nRule: \"2. Đối tượng quy định tại các điểm d, đ và e khoản 1 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 15 năm trở lên thì được hưởng lương hưu nếu thuộc một trong các trường hợp sau đây: a) Có tuổi thấp hơn tối đa 05 tuổi so với tuổi quy định tại khoản 2 Điều 169 của Bộ luật Lao động, trừ trường hợp Luật Sĩ quan Quân đội nhân dân Việt Nam, Luật Công an nhân dân, Lu\" (Luật BHXH 2024 (41/2024/QH15), Điều 64, Khoản 2).\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog đã thực hiện truy vấn và xác định điều kiện liên quan đến bảo hiểm xã hội một lần, nhưng không có thông tin cụ thể nào được cung cấp từ các slot.\n\nConclusion: Hệ thống không thể tính toán giá trị cuối cùng do không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 2]",
+    "[Điều 169]",
+    "[Điều 64 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2",
+    "L41_2024.A169",
+    "L41_2024.A64.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_social_insurance_conditions([retirement_age_and_under_15_years_contributed]),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Bạn đã làm việc tại Samsung Bắc Ninh từ năm 2017 nhưng nghỉ ngang mà chưa chốt bảo hiểm. Bạn đang thắc mắc về quyền lợi bảo hiểm xã hội trong trường hợp này.",
+    "rule": "\"2. Đối tượng quy định tại các điểm d, đ và e khoản 1 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 15 năm trở lên thì được hưởng lương hưu nếu thuộc một trong các trường hợp sau đây: a) Có tuổi thấp hơn tối đa 05 tuổi so với tuổi quy định tại khoản 2 Điều 169 của Bộ luật Lao động, trừ trường hợp Luật Sĩ quan Quân đội nhân dân Việt Nam, Luật Công an nhân dân, Lu\" (Luật BHXH 2024 (41/2024/QH15), Điều 64, Khoản 2).",
+    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog đã thực hiện truy vấn và xác định điều kiện liên quan đến bảo hiểm xã hội một lần, nhưng không có thông tin cụ thể nào được cung cấp từ các slot.",
+    "conclusion": "Hệ thống không thể tính toán giá trị cuối cùng do không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 8.896,
+  "prompt_tokens": 3938,
+  "completion_tokens": 542,
+  "error": null,
+  "gold_answer": "Công ty mới vẫn có thể đóng BHXH cho bạn, nhưng hồ sơ cũ chưa chốt sẽ gây vướng khi gộp quá trình và giải quyết chế độ sau này. Bạn cần yêu cầu Samsung Bắc Ninh chốt sổ bằng văn bản; nếu họ không làm thì khiếu nại tới cơ quan BHXH quản lý đơn vị hoặc thanh tra lao động. Không nên để kéo dài vì càng lâu càng khó đối chiếu hồ sơ cũ.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

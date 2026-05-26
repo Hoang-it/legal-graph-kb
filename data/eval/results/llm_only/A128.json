@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 128,
+  "question": "mình đi làm hồ sơ lãnh lương hưu thì bên bhxh tra trên hệ thống và báo rằng tên mình có 2 số sổ, và số sổ kia đã chốt và nhận tiền rồi, mà mình chưa từng làm ở công ty đó, bây giờ mình phải làm sao?",
+  "answer": "Trong trường hợp bạn phát hiện có hai số sổ bảo hiểm xã hội (BHXH) và một trong số đó đã được chốt và nhận tiền mà bạn không hề làm việc tại công ty đó, bạn cần thực hiện các bước sau:\n\n1. **Liên hệ với cơ quan BHXH**: Bạn nên đến trực tiếp cơ quan BHXH nơi bạn đã đăng ký để trình bày sự việc. Cung cấp đầy đủ thông tin và tài liệu liên quan để họ xác minh.\n\n2. **Cung cấp chứng cứ**: Nếu có thể, bạn nên cung cấp các chứng cứ chứng minh bạn không làm việc tại công ty đó, như hợp đồng lao động, bảng lương, hoặc các tài liệu khác.\n\n3. **Yêu cầu điều chỉnh thông tin**: Đề nghị cơ quan BHXH kiểm tra và điều chỉnh thông tin của bạn, xóa bỏ số sổ không đúng và đảm bảo quyền lợi của bạn được bảo vệ.\n\n4. **Theo dõi tiến trình**: Sau khi đã nộp đơn và yêu cầu, bạn cần theo dõi tiến trình xử lý của cơ quan BHXH để đảm bảo vấn đề của bạn được giải quyết kịp thời.\n\nNếu cần thiết, bạn cũng có thể tìm đến sự hỗ trợ của luật sư hoặc tổ chức bảo vệ quyền lợi người lao động để được tư vấn thêm.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 4.809,
+  "prompt_tokens": 220,
+  "completion_tokens": 286,
+  "gold_answer": "Đây là dấu hiệu có thể bị trùng/nhầm mã số BHXH hoặc có người dùng thông tin của bạn. Bạn cần đề nghị BHXH kiểm tra, đối chiếu CCCD, quá trình đóng, hồ sơ gốc của 2 số sổ và yêu cầu tạm dừng giải quyết cho số bất thường nếu có dấu hiệu giả mạo. Nếu đúng có việc sử dụng thông tin trái phép, bạn có quyền khiếu nại và đề nghị chuyển cơ quan công an xử lý.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 201,
+  "question": "Giờ muốn lãnh bảo hiểm thất nghiệp phải làm qua dịch vụ công hả mọi người.",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động có thể nộp hồ sơ yêu cầu hưởng bảo hiểm thất nghiệp qua dịch vụ công trực tuyến hoặc nộp trực tiếp tại cơ quan bảo hiểm xã hội. Cụ thể, việc nộp hồ sơ qua dịch vụ công giúp tiết kiệm thời gian và thuận tiện hơn cho người lao động. Tuy nhiên, bạn cần kiểm tra xem dịch vụ công đã được triển khai tại địa phương của bạn hay chưa. \n\nNếu bạn cần thêm thông tin chi tiết, hãy tham khảo các quy định cụ thể trong Luật Bảo hiểm xã hội.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 3.361,
+  "prompt_tokens": 177,
+  "completion_tokens": 137,
+  "gold_answer": null,
+  "gold_citations_raw": null
+}

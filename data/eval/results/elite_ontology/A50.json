@@ -1,0 +1,33 @@
+{
+  "arm": "elite_ontology",
+  "stt": 50,
+  "question": "Mình sinh năm 1979. Thì đến năm bao nhiêu mình đủ tuổi về hưu?",
+  "answer": "Issue: Mình sinh năm 1979. Thì đến năm bao nhiêu mình đủ tuổi về hưu?\n\nRule: \"1. Công dân Việt Nam đủ tuổi nghỉ hưu có thời gian đóng bảo hiểm xã hội nhưng không đủ điều kiện hưởng lương hưu theo quy định của pháp luật và chưa đủ điều kiện hưởng trợ cấp hưu trí xã hội theo quy định tại Điều 21 của Luật này, nếu không hưởng bảo hiểm xã hội một lần và không bảo lưu mà có yêu cầu thì được hưởng trợ cấp hằng tháng từ chính khoản đóng của mình theo quy định tại khoản 2 Điều này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 23, Khoản 1)\n\nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã sử dụng thông tin về tuổi của người dùng, cụ thể là 44 tuổi, để tính toán năm đủ tuổi về hưu.\n\nConclusion: Prolog đã trả về giá trị 2040 cho biến Year, cho biết rằng người dùng sẽ đủ tuổi về hưu vào năm 2040.",
+  "citations": [
+    "[Điều 21]",
+    "[Điều 23 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A21",
+    "L41_2024.A23.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,retirement_age(2040),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Mình sinh năm 1979. Thì đến năm bao nhiêu mình đủ tuổi về hưu?",
+    "rule": "\"1. Công dân Việt Nam đủ tuổi nghỉ hưu có thời gian đóng bảo hiểm xã hội nhưng không đủ điều kiện hưởng lương hưu theo quy định của pháp luật và chưa đủ điều kiện hưởng trợ cấp hưu trí xã hội theo quy định tại Điều 21 của Luật này, nếu không hưởng bảo hiểm xã hội một lần và không bảo lưu mà có yêu cầu thì được hưởng trợ cấp hằng tháng từ chính khoản đóng của mình theo quy định tại khoản 2 Điều này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 23, Khoản 1)",
+    "application": "Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã sử dụng thông tin về tuổi của người dùng, cụ thể là 44 tuổi, để tính toán năm đủ tuổi về hưu.",
+    "conclusion": "Prolog đã trả về giá trị 2040 cho biến Year, cho biết rằng người dùng sẽ đủ tuổi về hưu vào năm 2040."
+  },
+  "elapsed_s": 8.894,
+  "prompt_tokens": 3530,
+  "completion_tokens": 455,
+  "error": null,
+  "gold_answer": "Bạn sinh năm 1979 thì thời điểm đủ tuổi nghỉ hưu còn phụ thuộc giới tính và trường hợp nghỉ hưu bình thường hay sớm. Nếu là nữ, mốc chuẩn hiện hành là đủ 60 tuổi, tương ứng khoảng năm 2039. Nếu là nam, mốc chuẩn là đủ 62 tuổi, tương ứng khoảng năm 2041. Nếu làm nghề, công việc nặng nhọc hoặc thuộc trường hợp đặc biệt thì có thể nghỉ sớm hơn theo luật.",
+  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 169; Nghị định 135/2020/NĐ-CP"
+}

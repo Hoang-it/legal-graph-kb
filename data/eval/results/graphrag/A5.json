@@ -1,0 +1,54 @@
+{
+  "arm": "graphrag",
+  "stt": 5,
+  "question": "Công ty của ông Tuấn Tú (Lào Cai) có phát sinh ký hợp đồng lao động với người lao động từ tháng 3/2024.\nÔng Tú hỏi, ông có thể kê khai thông tin qua mạng để đóng BHXH cho người lao động không? Hồ sơ kê khai gồm những gì?\nNếu kê khai qua mạng thì cần làm gì để được cấp mã đăng nhập?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 3 khoản 9] về đăng ký tham gia bảo hiểm xã hội.\n- [Điều 27 khoản 2] về hồ sơ đăng ký tham gia bảo hiểm xã hội.\n- [Điều 28 khoản 1] về trách nhiệm kê khai và nộp hồ sơ tham gia bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 3 khoản 9]",
+    "[Điều 27 khoản 2]",
+    "[Điều 28 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A3.K9",
+    "L41_2024.A27.K2",
+    "L41_2024.A28.K1"
+  ],
+  "citation_verified": {
+    "L41_2024.A3.K9": true,
+    "L41_2024.A27.K2": true,
+    "L41_2024.A28.K1": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A3.K9",
+      "score": 0.8431729674339294,
+      "text_preview": "Đăng ký tham gia bảo hiểm xã hội là việc người sử dụng lao động, người lao động nộp hồ sơ kê khai thông tin về người lao động, người sử dụng lao động, tiền lương, thu nhập làm căn cứ đóng bảo hiểm xã "
+    },
+    {
+      "clause_id": "L41_2024.A27.K2",
+      "score": 0.8316762447357178,
+      "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm m và điểm n khoản 1 Điều 2 của Luật này nếu nộp qua người sử dụng lao động thì thực hiện theo quy định tại khoản 1 Điều "
+    },
+    {
+      "clause_id": "L41_2024.A28.K1",
+      "score": 0.8299754858016968,
+      "text_preview": "Người sử dụng lao động có trách nhiệm kê khai và nộp hồ sơ tham gia bảo hiểm xã hội bắt buộc của người lao động theo quy định tại khoản 1 và khoản 2 Điều 27 của Luật này cho cơ quan bảo hiểm xã hội tr"
+    },
+    {
+      "clause_id": "L41_2024.A29.K1",
+      "score": 0.8286079168319702,
+      "text_preview": "Khi thông tin đăng ký kê khai tham gia bảo hiểm xã hội thay đổi thì người đăng ký kê khai theo quy định tại Điều 28 của Luật này nộp tờ khai điều chỉnh thông tin kèm theo bản sao giấy tờ có liên quan "
+    },
+    {
+      "clause_id": "L41_2024.A13.K2",
+      "score": 0.8284677863121033,
+      "text_preview": "Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội."
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 10,
+  "elapsed_s": 2.42,
+  "gold_answer": "Đơn vị có thể thực hiện giao dịch BHXH điện tử qua Cổng thông tin điện tử của BHXH Việt Nam hoặc qua Tổ chức cung cấp dịch vụ I-VAN để kê khai đóng BHXH cho người lao động.\nHồ sơ kê khai bao gồm: Tờ khai đơn vị tham gia, điều chỉnh thông tin BHXH, BHYT (Mẫu TK3-TS); báo cáo tình hình sử dụng lao động và danh sách tham gia BHXH, BHYT, BHTN, BHTNLĐ, BNN (Mẫu D02-LT); tờ khai tham gia, điều chỉnh thông tin BHXH, BHYT (Mẫu TK1-TS) đối với người tham gia lần đầu hoặc có mã số BHXH nhưng chưa đủ thông tin; trường hợp người lao động được hưởng quyền lợi BHYT cao hơn: Bổ sung Giấy tờ chứng minh (nếu có).\nKhi kê khai giao dịch BHXH điện tử thì cần điều kiện sau để được cấp mã đăng nhập: Đơn vị cần có chứng thư số (chữ ký số) còn hiệu lực được cấp bởi tổ chức cung cấp dịch vụ chứng thực chữ ký số cấp theo quy định; có khả năng truy cập và sử dụng mạng internet; có địa chỉ hòm thư điện tử (email) thường xuyên sử dụng.\nKhi đơn vị đã có chữ ký số thì có thể kê khai giao dịch BHXH điện tử qua các phương thức sau:\nPhương thức 1: Đăng ký qua Cổng thông tin điện tử của BHXH Việt Nam:\nĐơn vị sử dụng chữ ký số trên máy tính, mở trình duyệt bất kỳ, truy cập theo đường dẫn https://dichvucong.baohiemxahoi.gov.vn, chọn mục đăng ký, thực hiện các bước theo hướng dẫn trên hệ thống để hoàn tất đăng ký và kê khai hồ sơ theo quy định.\nPhương thức 2: Đăng ký sử dụng dịch vụ I-VAN:\nĐơn vị sử dụng phần mềm kê khai BHXH điện tử do Tổ chức I-VAN cung cấp: Đề nghị liên hệ với cơ quan BHXH để được cấp mã đơn vị lần đầu (do phần mềm kê khai BHXH điện tử của một số Tổ chức I-VAN chưa hỗ trợ đăng ký cấp mã đơn vị lần đầu cho doanh nghiệp), sau đó thực hiện đăng ký giao dịch điện tử và kê khai hồ sơ theo quy định.",
+  "gold_citations_raw": null
+}

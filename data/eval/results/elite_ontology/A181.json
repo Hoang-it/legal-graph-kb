@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 181,
+  "question": "Không có sổ bảo hiểm chỉ có tờ rời thì có đi rút bảo hiểm được không?",
+  "answer": "Issue: Không có sổ bảo hiểm chỉ có tờ rời thì có đi rút bảo hiểm được không?\n\nRule: \"5. Trường hợp chỉ có mẹ hoặc cả cha và mẹ đều tham gia bảo hiểm xã hội bắt buộc mà mẹ chết sau khi sinh con thì cha hoặc người trực tiếp nuôi dưỡng được nghỉ việc hưởng chế độ thai sản để chăm sóc con đối với thời gian còn lại của người mẹ theo quy định tại khoản 1 Điều này. Trường hợp mẹ tham gia bảo hiểm xã hội bắt buộc nhưng không đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều\" (Luật BHXH 2024 (41/2024/QH15), article 53, clause 5).\n\nApplication: Không có slot_bindings nào được cung cấp trong truy vấn. Tuy nhiên, Prolog đã xác định rằng điều kiện để rút bảo hiểm là phải có sổ bảo hiểm hoặc tài liệu liên quan. Điều này được thể hiện qua kết quả thực thi, trong đó có điều kiện \"must_have_social_insurance_book_or_document\".\n\nConclusion: Hệ thống không thể tính toán số liệu cuối cùng vì không có slot nào được liên kết. Điều kiện cần thiết để rút bảo hiểm là phải có sổ bảo hiểm hoặc tài liệu liên quan.",
+  "citations": [
+    "[Điều 70 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A70.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,withdrawal_conditions([must_have_social_insurance_book_or_document]),based_on(source_c005))]",
+  "irac_sections": {
+    "issue": "Không có sổ bảo hiểm chỉ có tờ rời thì có đi rút bảo hiểm được không?",
+    "rule": "\"5. Trường hợp chỉ có mẹ hoặc cả cha và mẹ đều tham gia bảo hiểm xã hội bắt buộc mà mẹ chết sau khi sinh con thì cha hoặc người trực tiếp nuôi dưỡng được nghỉ việc hưởng chế độ thai sản để chăm sóc con đối với thời gian còn lại của người mẹ theo quy định tại khoản 1 Điều này. Trường hợp mẹ tham gia bảo hiểm xã hội bắt buộc nhưng không đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều\" (Luật BHXH 2024 (41/2024/QH15), article 53, clause 5).",
+    "application": "Không có slot_bindings nào được cung cấp trong truy vấn. Tuy nhiên, Prolog đã xác định rằng điều kiện để rút bảo hiểm là phải có sổ bảo hiểm hoặc tài liệu liên quan. Điều này được thể hiện qua kết quả thực thi, trong đó có điều kiện \"must_have_social_insurance_book_or_document\".",
+    "conclusion": "Hệ thống không thể tính toán số liệu cuối cùng vì không có slot nào được liên kết. Điều kiện cần thiết để rút bảo hiểm là phải có sổ bảo hiểm hoặc tài liệu liên quan."
+  },
+  "elapsed_s": 11.464,
+  "prompt_tokens": 6201,
+  "completion_tokens": 632,
+  "error": null,
+  "gold_answer": "Không có sổ giấy mà chỉ có tờ rời thì vẫn không phải là trở ngại tuyệt đối. Cơ quan BHXH hiện dựa chủ yếu vào dữ liệu điện tử; nếu hồ sơ giấy thiếu bạn có thể làm thủ tục cấp lại sổ hoặc xác nhận quá trình đóng rồi nộp hồ sơ BHXH 1 lần. Quan trọng là bạn đủ điều kiện hưởng và thông tin định danh thống nhất.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 9,
+  "question": "Người lao động sinh con ngày 18/12/2023, trong tháng 12 có 12 ngày nghỉ thai sản sinh con và 2 ngày nghỉ thai sản khám thai. Công ty đã báo giảm thai sản từ tháng 12/2023 đến tháng 5/2024.\nNgày 18/6/2024, người lao động đi làm lại và nghỉ tiếp 5 ngày dưỡng sức sau sinh. Trong tháng 6/2024, có 14 ngày nghỉ thai sản sinh con và 5 ngày nghỉ dưỡng sức sau sinh.\nBà Kim Ngân hỏi, đối với trường hợp trên, tháng 6/2024, công ty báo giảm không lương, giảm thai sản hay đóng BHXH bình thường?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT bao gồm:\n\n- Điều 53: Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con.\n- Điều 59: Trợ cấp thai sản.\n- Điều 60: Dưỡng sức, phục hồi sức khoẻ sau thai sản.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A53.K8",
+      "score": 0.8620705604553223,
+      "text_preview": "Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ "
+    },
+    {
+      "clause_id": "L41_2024.A53.K1",
+      "score": 0.859067440032959,
+      "text_preview": "Thời gian nghỉ việc hưởng chế độ thai sản của lao động nữ khi sinh con được thực hiện theo quy định tại khoản 1 Điều 139 của Bộ luật Lao động.\nTrường hợp lao động nữ trở lại làm việc trước khi hết thờ"
+    },
+    {
+      "clause_id": "L41_2024.A55.K1",
+      "score": 0.8530089855194092,
+      "text_preview": "Được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi. Trường hợp sinh đôi trở lên thì được nghỉ thêm 01 tháng cho mỗi con tính từ con thứ hai trở đi.\nTrường hợp "
+    },
+    {
+      "clause_id": "L41_2024.A53.K3",
+      "score": 0.8492366075515747,
+      "text_preview": "Ngày bắt đầu nghỉ việc hưởng chế độ thai sản quy định tại khoản 2 Điều này phải trong khoảng thời gian 60 ngày kể từ ngày vợ sinh con, trường hợp người lao động nghỉ nhiều lần thì ngày bắt đầu nghỉ vi"
+    },
+    {
+      "clause_id": "L41_2024.A59.K1",
+      "score": 0.842194676399231,
+      "text_preview": "Trợ cấp thai sản một tháng của người lao động quy định tại các điều 51, 52, 53, 54, 55, 56 và 57 của Luật này bằng 100% mức bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc của 06 tháng g"
+    }
+  ],
+  "n_semantic_edges": 3,
+  "n_refs": 15,
+  "elapsed_s": 2.13,
+  "gold_answer": "Căn cứ quy định tại Khoản 1, Khoản 7 Điều 34, Khoản 2 Điều 39, Khoản 3 Điều 85 và Khoản 4 Điều 86 Luật BHXH năm 2014:\nLao động nữ sinh con được nghỉ việc hưởng chế độ thai sản trước và sau khi sinh con là 6 tháng. Trường hợp lao động nữ sinh đôi trở lên thì tính từ con thứ 2 trở đi, cứ mỗi con, người mẹ được nghỉ thêm một tháng. Thời gian hưởng chế độ thai sản tính cả ngày nghỉ lễ, nghỉ Tết, ngày nghỉ hàng tuần.\nThời gian nghỉ việc hưởng chế độ thai sản từ 14 ngày làm việc trở lên trong tháng được tính là thời gian đóng BHXH, người lao động và người sử dụng lao động không phải đóng BHXH.\nNgười lao động không làm việc và không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì cả người lao động và người sử dụng lao động không đóng BHXH tháng đó. Thời gian này không được tính để hưởng BHXH trừ trường hợp nghỉ việc hưởng chế độ thai sản.\nVì vậy, trường hợp người lao động sinh con ngày 18/12/2023, công ty đã báo giảm thai sản từ tháng 12/2023 đến tháng 5/2024. Tháng 6/2024 chỉ được tính 5 ngày dưỡng sức sau sinh là số ngày không làm việc, không hưởng tiền lương. Do đó, tháng 6/2024 người lao động và công ty vẫn phải tham gia, đóng BHXH bắt buộc theo đúng quy định của pháp luật.",
+  "gold_citations_raw": "Khoản 7 Điều 34, Khoản 2 Điều 39, Khoản 3 Điều 85 và Khoản 4 Điều 86 Luật BHXH năm 2014"
+}

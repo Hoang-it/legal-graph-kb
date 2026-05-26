@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 50,
+  "question": "Mình sinh năm 1979. Thì đến năm bao nhiêu mình đủ tuổi về hưu?",
+  "answer": "Issue: Mình sinh năm 1979. Thì đến năm bao nhiêu mình đủ tuổi về hưu?  \nRule: Không có quy định cụ thể nào được trích dẫn trong trường hợp này.  \nApplication: Không có slot nào được gán giá trị trong trace. Prolog đã sử dụng quy tắc để tính toán tuổi về hưu dựa trên tuổi của người dùng, nhưng không có thông tin nào được cung cấp để xác định tuổi hiện tại.  \nConclusion: Prolog đã trả về giá trị 2040 cho biến Year, nhưng không có thông tin nào từ slot_bindings để hỗ trợ kết luận. Do đó, không thể xác định tuổi về hưu chính xác mà không có dữ liệu đầu vào.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(calculation,retirement_age(user,2040),based_on(none))]",
+  "irac_sections": {
+    "issue": "Mình sinh năm 1979. Thì đến năm bao nhiêu mình đủ tuổi về hưu?",
+    "rule": "Không có quy định cụ thể nào được trích dẫn trong trường hợp này.",
+    "application": "Không có slot nào được gán giá trị trong trace. Prolog đã sử dụng quy tắc để tính toán tuổi về hưu dựa trên tuổi của người dùng, nhưng không có thông tin nào được cung cấp để xác định tuổi hiện tại.",
+    "conclusion": "Prolog đã trả về giá trị 2040 cho biến Year, nhưng không có thông tin nào từ slot_bindings để hỗ trợ kết luận. Do đó, không thể xác định tuổi về hưu chính xác mà không có dữ liệu đầu vào."
+  },
+  "elapsed_s": 9.751,
+  "prompt_tokens": 1864,
+  "completion_tokens": 285,
+  "error": null,
+  "gold_answer": "Bạn sinh năm 1979 thì thời điểm đủ tuổi nghỉ hưu còn phụ thuộc giới tính và trường hợp nghỉ hưu bình thường hay sớm. Nếu là nữ, mốc chuẩn hiện hành là đủ 60 tuổi, tương ứng khoảng năm 2039. Nếu là nam, mốc chuẩn là đủ 62 tuổi, tương ứng khoảng năm 2041. Nếu làm nghề, công việc nặng nhọc hoặc thuộc trường hợp đặc biệt thì có thể nghỉ sớm hơn theo luật.",
+  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 169; Nghị định 135/2020/NĐ-CP"
+}

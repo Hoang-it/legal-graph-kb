@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 55,
+  "question": "Thời điểm năm 5/2016-5/2017 em có làm việc tại công ty cổ phần nam an. Khi em nghỉ chưa lấy tờ rời quá trình tại công ty này. Nay tôi quay lại công ty họ nói tôi nghỉ ngang và phạt 7-8tr. Giờ em phải làm sao?",
+  "answer": "Issue: Bạn đã làm việc tại công ty cổ phần Nam An từ tháng 5 năm 2016 đến tháng 5 năm 2017, nhưng chưa nhận được giấy tờ rời. Công ty hiện yêu cầu bạn phải chịu phạt vì nghỉ ngang. Bạn cần biết phải làm gì trong tình huống này.\n\nRule: \"Người lao động có quyền yêu cầu công ty cung cấp giấy tờ liên quan đến quá trình làm việc và giải quyết tranh chấp theo quy định của pháp luật.\"\n\nApplication: Không có giá trị nào được gán trong slot_bindings. Prolog đã sử dụng một quy tắc để đưa ra kết luận về quyền của người lao động mà không cần thông tin bổ sung nào.\n\nConclusion: Prolog đã trả về giá trị \"Người lao động có quyền yêu cầu công ty cung cấp giấy tờ liên quan đến quá trình làm việc và giải quyết tranh chấp theo quy định của pháp luật.\" Tuy nhiên, không có thông tin nào từ slot_bindings để hỗ trợ thêm cho câu trả lời.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,answer_predicate(Người lao động có quyền yêu cầu công ty cung cấp giấy tờ liên quan đến quá trình làm việc và giải quyết tranh chấp theo quy định của pháp luật.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Bạn đã làm việc tại công ty cổ phần Nam An từ tháng 5 năm 2016 đến tháng 5 năm 2017, nhưng chưa nhận được giấy tờ rời. Công ty hiện yêu cầu bạn phải chịu phạt vì nghỉ ngang. Bạn cần biết phải làm gì trong tình huống này.",
+    "rule": "\"Người lao động có quyền yêu cầu công ty cung cấp giấy tờ liên quan đến quá trình làm việc và giải quyết tranh chấp theo quy định của pháp luật.\"",
+    "application": "Không có giá trị nào được gán trong slot_bindings. Prolog đã sử dụng một quy tắc để đưa ra kết luận về quyền của người lao động mà không cần thông tin bổ sung nào.",
+    "conclusion": "Prolog đã trả về giá trị \"Người lao động có quyền yêu cầu công ty cung cấp giấy tờ liên quan đến quá trình làm việc và giải quyết tranh chấp theo quy định của pháp luật.\" Tuy nhiên, không có thông tin nào từ slot_bindings để hỗ trợ thêm cho câu trả lời."
+  },
+  "elapsed_s": 8.774,
+  "prompt_tokens": 3290,
+  "completion_tokens": 393,
+  "error": null,
+  "gold_answer": "Công ty không được tự ý phạt bạn 7-8 triệu chỉ vì 'nghỉ ngang' nếu không có căn cứ pháp luật rõ ràng. Trường hợp đơn phương chấm dứt HĐLĐ trái luật thì nghĩa vụ bồi thường cũng phải theo Bộ luật Lao động, không phải doanh nghiệp muốn ấn định bao nhiêu cũng được. Việc chưa lấy tờ rời BHXH không làm mất quyền được nhận quá trình đóng. Bạn nên yêu cầu công ty trả sổ/tờ rời; nếu bị giữ trái luật thì khiếu nại đến cơ quan lao động hoặc BHXH.",
+  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 35, Điều 40, Điều 48; Luật BHXH 2024 Điều 13"
+}

@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 71,
+  "question": "Mình đóng bảo hiểm được 20 năm mà chưa tới tuổi lãnh hưu, mình nghỉ làm thì mình có được nhận tiền bảo hiểm thất nghiệp không?",
+  "answer": "Issue: Mình đóng bảo hiểm được 20 năm mà chưa tới tuổi lãnh hưu, mình nghỉ làm thì mình có được nhận tiền bảo hiểm thất nghiệp không?\n\nRule: Không có quy định cụ thể nào được trích dẫn trong trường hợp này.\n\nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng người dùng đã đóng bảo hiểm 20 năm, và dựa trên quy tắc, nếu số năm đóng bảo hiểm lớn hơn hoặc bằng 12, thì người dùng có quyền nhận tiền bảo hiểm thất nghiệp.\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer, xác nhận rằng người dùng có quyền nhận tiền bảo hiểm thất nghiệp.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,yes),based_on(source_a64))]",
+  "irac_sections": {
+    "issue": "Mình đóng bảo hiểm được 20 năm mà chưa tới tuổi lãnh hưu, mình nghỉ làm thì mình có được nhận tiền bảo hiểm thất nghiệp không?",
+    "rule": "Không có quy định cụ thể nào được trích dẫn trong trường hợp này.",
+    "application": "Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng người dùng đã đóng bảo hiểm 20 năm, và dựa trên quy tắc, nếu số năm đóng bảo hiểm lớn hơn hoặc bằng 12, thì người dùng có quyền nhận tiền bảo hiểm thất nghiệp.",
+    "conclusion": "Prolog đã trả về giá trị \"yes\" cho biến Answer, xác nhận rằng người dùng có quyền nhận tiền bảo hiểm thất nghiệp."
+  },
+  "elapsed_s": 6.944,
+  "prompt_tokens": 1901,
+  "completion_tokens": 296,
+  "error": null,
+  "gold_answer": "Có. Bảo hiểm thất nghiệp là chế độ riêng, không phụ thuộc việc bạn đã đủ 20 năm BHXH hay chưa. Nếu bạn nghỉ việc đúng quy định, đã đóng BHTN đủ thời gian luật định, nộp hồ sơ trong 3 tháng và sau 15 ngày chưa có việc làm thì vẫn được hưởng trợ cấp thất nghiệp. Bạn chỉ không được hưởng BHXH một lần nếu không thuộc trường hợp luật cho phép, còn BHTN vẫn xem xét riêng theo Luật Việc làm.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 49, Điều 50; Luật BHXH 2024 Điều 70"
+}

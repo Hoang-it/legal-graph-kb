@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 138,
+  "question": "Em đang nghỉ thai sản thì bhxh đc hưởng các khoản nào và cần giấy tờ gì nộp vào thời điểm nào? em mới nộp cty giấy khai sinh",
+  "answer": "Trong thời gian nghỉ thai sản, bạn sẽ được hưởng các khoản trợ cấp thai sản từ Bảo hiểm xã hội. Cụ thể, bạn sẽ nhận được trợ cấp một lần khi sinh con và trợ cấp hàng tháng trong thời gian nghỉ thai sản.\n\n1. **Các khoản được hưởng**:\n   - Trợ cấp một lần khi sinh con.\n   - Trợ cấp thai sản hàng tháng (tương ứng với thời gian nghỉ thai sản).\n\n2. **Giấy tờ cần nộp**:\n   - Giấy khai sinh của con (bạn đã nộp).\n   - Đơn đề nghị hưởng chế độ thai sản (theo mẫu).\n   - Giấy chứng sinh (nếu có).\n\n3. **Thời điểm nộp**:\n   - Bạn cần nộp hồ sơ trong thời hạn 6 tháng kể từ ngày sinh con để được hưởng chế độ thai sản.\n\nCăn cứ vào quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, bạn có thể tham khảo thêm các điều khoản liên quan đến chế độ thai sản để nắm rõ quyền lợi của mình.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 5.323,
+  "prompt_tokens": 195,
+  "completion_tokens": 235,
+  "gold_answer": "Khi nghỉ thai sản, bạn thường được hưởng tiền chế độ thai sản hằng tháng, trợ cấp một lần khi sinh con và có thể có dưỡng sức sau sinh nếu đủ điều kiện. Hồ sơ cơ bản là giấy khai sinh/trích lục khai sinh hoặc giấy chứng sinh; một số trường hợp đặc biệt cần bổ sung giấy ra viện hoặc hồ sơ y tế khác. Nếu đang làm việc, hồ sơ thường nộp qua công ty; thời điểm nộp nên thực hiện sớm sau khi sinh.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

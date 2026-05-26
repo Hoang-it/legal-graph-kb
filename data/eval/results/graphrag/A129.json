@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 129,
+  "question": "mọi người cho em hỏi em sinh 25/02, cả 2 vợ chồng đều tham gia bhxh\nem muốn làm chế độ ck nghỉ chăn con vài ngày thì làm như thế nào? và mình chọn ngày nào thì hợp lý?\ndo kê toán bên e nghỉ nên hiện tại k ai làm giúo e nên e muốn tự đi nộp",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Tuy nhiên, bạn có thể tham khảo các điều liên quan như sau:\n\n- Điều 50 quy định về đối tượng và điều kiện hưởng chế độ thai sản.\n- Điều 62 quy định về việc giải quyết hưởng chế độ thai sản đối với người tham gia bảo hiểm xã hội bắt buộc.\n\nBạn nên nộp hồ sơ cho người sử dụng lao động trong thời hạn quy định và có thể chọn ngày nghỉ phù hợp trong khoảng thời gian 60 ngày kể từ ngày vợ sinh con.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A53.K3",
+      "score": 0.8145103454589844,
+      "text_preview": "Ngày bắt đầu nghỉ việc hưởng chế độ thai sản quy định tại khoản 2 Điều này phải trong khoảng thời gian 60 ngày kể từ ngày vợ sinh con, trường hợp người lao động nghỉ nhiều lần thì ngày bắt đầu nghỉ vi"
+    },
+    {
+      "clause_id": "L41_2024.A53.K8",
+      "score": 0.807106614112854,
+      "text_preview": "Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ "
+    },
+    {
+      "clause_id": "L41_2024.A55.K1",
+      "score": 0.8032631874084473,
+      "text_preview": "Được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi. Trường hợp sinh đôi trở lên thì được nghỉ thêm 01 tháng cho mỗi con tính từ con thứ hai trở đi.\nTrường hợp "
+    },
+    {
+      "clause_id": "L41_2024.A56.K1",
+      "score": 0.8012987375259399,
+      "text_preview": "Người lao động nhận nuôi con nuôi dưới 06 tháng tuổi thì được nghỉ việc hưởng chế độ thai sản kể từ ngày giao nhận con nuôi cho đến khi con đủ 06 tháng tuổi.\nTrường hợp cả cha và mẹ cùng tham gia bảo "
+    },
+    {
+      "clause_id": "L41_2024.A62.K1",
+      "score": 0.7990820407867432,
+      "text_preview": "Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản.\n"
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 8,
+  "elapsed_s": 2.23,
+  "gold_answer": "Lao động nam đang đóng BHXH khi vợ sinh con được nghỉ hưởng chế độ thai sản theo số ngày luật định. Hồ sơ thường là bản sao giấy khai sinh/trích lục khai sinh hoặc giấy chứng sinh của con; nếu sinh mổ hoặc con dưới 32 tuần thì bổ sung giấy tờ y tế thể hiện tình trạng đó. Bạn nên chọn nghỉ gần thời điểm sinh để thuận tiện chăm con và chứng minh thực tế phát sinh.",
+  "gold_citations_raw": "Điều 50, 53, 61 Luật BHXH 2024"
+}

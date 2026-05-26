@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 193,
+  "question": "Em nghỉ cty cách đây 8/9 năm r nhưng m chưa chốt lấy bảo hiểm\nGiờ m muốn lấy bảo hiểm thì đến cty m đã lm để lấy hay lấy ở đâu?",
+  "answer": "Theo quy định, bạn cần đến công ty mà bạn đã làm việc để yêu cầu chốt sổ bảo hiểm xã hội. Sau khi có sổ bảo hiểm xã hội đã chốt, bạn có thể đến cơ quan bảo hiểm xã hội nơi bạn cư trú để làm thủ tục nhận bảo hiểm. \n\nCụ thể, bạn cần thực hiện các bước sau:\n1. Liên hệ với công ty cũ để yêu cầu chốt sổ bảo hiểm.\n2. Sau khi có sổ, đến cơ quan bảo hiểm xã hội để làm thủ tục nhận bảo hiểm.\n\nNếu công ty cũ không còn hoạt động hoặc không hợp tác, bạn có thể liên hệ với cơ quan bảo hiểm xã hội để được hướng dẫn thêm.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 3.065,
+  "prompt_tokens": 199,
+  "completion_tokens": 149,
+  "gold_answer": "Nếu bạn nghỉ công ty 8-9 năm mà chưa chốt/lấy BHXH, trước hết cần xác định công ty khi đó đã báo giảm, chốt sổ hay chưa. Nếu đã chốt, bạn có thể liên hệ trực tiếp cơ quan BHXH nơi quản lý hoặc nơi cư trú để xin xác nhận/cấp lại. Nếu chưa chốt thì vẫn phải yêu cầu công ty cũ hoàn tất thủ tục; BHXH không thể tự chốt toàn bộ nếu đơn vị chưa báo giảm và chưa hoàn thành nghĩa vụ.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

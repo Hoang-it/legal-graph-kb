@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 112,
+  "question": "Trước mình nghỉ ngang công ty cũ chưa chốt và lấy bìa xanh bây giờ ra bhxh huyện làm lại được không?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, nếu bạn đã nghỉ việc và chưa chốt sổ bảo hiểm xã hội (BHXH) tại công ty cũ, bạn vẫn có thể đến cơ quan BHXH huyện để làm lại sổ BHXH. Tuy nhiên, bạn cần cung cấp các giấy tờ liên quan như hợp đồng lao động, quyết định nghỉ việc, và bìa xanh (sổ BHXH) để được hỗ trợ. \n\nCụ thể, bạn nên liên hệ trực tiếp với cơ quan BHXH để được hướng dẫn chi tiết về thủ tục và các giấy tờ cần thiết.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 4.913,
+  "prompt_tokens": 187,
+  "completion_tokens": 133,
+  "gold_answer": "Bạn có thể đến cơ quan BHXH nơi quản lý quá trình tham gia để kiểm tra tình trạng sổ. Nếu công ty cũ chưa chốt thì BHXH huyện không thể tự chốt thay công ty, trừ khi có hồ sơ truy đóng/xác nhận quá trình. Việc cần làm là yêu cầu công ty làm thủ tục báo giảm, chốt sổ; nếu công ty không thực hiện thì khiếu nại tới cơ quan BHXH quản lý đơn vị.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,29 @@
+{
+  "arm": "elite_ontology",
+  "stt": 36,
+  "question": "Bà T.H sinh con vào ngày mùng 1 Tết Nguyên đán.\nBà hỏi, khi tính thời gian nghỉ thai sản bà được tính bắt đầu từ ngày làm việc sau kỳ nghỉ lễ hay tính từ ngày sinh con?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpxtwiikqd.pl:1:339: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 53 khoản 2]",
+    "[Điều 53 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A53.K2",
+    "L41_2024.A53.K5"
+  ],
+  "citation_indices": [
+    2,
+    5
+  ],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 14.357,
+  "prompt_tokens": 7506,
+  "completion_tokens": 906,
+  "error": null,
+  "gold_answer": "Căn cứ khoản 9 Điều 53 Luật BHXH 2024, thời gian nghỉ việc hưởng chế độ thai sản tính cả ngày nghỉ lễ, tết, ngày nghỉ hằng tuần.\nĐối chiếu quy định nêu trên, trường hợp bà T.H sinh con vào ngày mùng 1 Tết Nguyên đán thì thời gian nghỉ hưởng chế độ thai sản 6 tháng được tính từ ngày sinh con, kể cả thời gian trùng với kỳ nghỉ Tết.",
+  "gold_citations_raw": "khoản 9 Điều 53 Luật BHXH 2024"
+}

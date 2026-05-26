@@ -1,0 +1,54 @@
+{
+  "arm": "graphrag",
+  "stt": 102,
+  "question": "Mình bị đóng trùng bảo hiểm 2cty cùng 1 tháng giờ phải làm sao?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 9 khoản 2] - Các hành vi bị nghiêm cấm liên quan đến chiếm dụng tiền hưởng bảo hiểm xã hội.\n- [Điều 15 khoản 6] - Quyền và trách nhiệm của tổ chức đại diện người sử dụng lao động.\n- [Điều 92 khoản 1] - Giải quyết hưởng chế độ bảo hiểm xã hội bắt buộc chậm so với thời hạn quy định.",
+  "citations": [
+    "[Điều 9 khoản 2]",
+    "[Điều 15 khoản 6]",
+    "[Điều 92 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A9.K2",
+    "L41_2024.A15.K6",
+    "L41_2024.A92.K1"
+  ],
+  "citation_verified": {
+    "L41_2024.A9.K2": true,
+    "L41_2024.A15.K6": true,
+    "L41_2024.A92.K1": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A9.K2",
+      "score": 0.7853643894195557,
+      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A15.K6",
+      "score": 0.7851662039756775,
+      "text_preview": "Kiến nghị cơ quan nhà nước có thẩm quyền xử lý hành vi vi phạm pháp luật về bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A23.K6",
+      "score": 0.7840497493743896,
+      "text_preview": "Người đang trong thời gian hưởng trợ cấp hằng tháng thì được ngân sách nhà nước đóng bảo hiểm y tế."
+    },
+    {
+      "clause_id": "L41_2024.A92.K1",
+      "score": 0.7824307680130005,
+      "text_preview": "Trường hợp nộp hồ sơ quá thời hạn quy định tại khoản 1 và khoản 2 Điều 48, khoản 1 Điều 49, khoản 1 Điều 62, khoản 1 Điều 63, khoản 1 Điều 79, khoản 1 và khoản 2 Điều 91 của Luật này thì phải giải trì"
+    },
+    {
+      "clause_id": "L41_2024.A63.K2",
+      "score": 0.7811779975891113,
+      "text_preview": "Trong thời hạn 07 ngày làm việc kể từ ngày nhận danh sách theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do."
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 8,
+  "elapsed_s": 2.96,
+  "gold_answer": "Trường hợp đóng trùng 2 công ty cùng 1 tháng, bạn cần đề nghị cơ quan BHXH điều chỉnh, hoàn trả phần đóng trùng và thống nhất 1 nơi tham gia đúng quy định. Thường doanh nghiệp đóng trùng sẽ lập hồ sơ giảm trùng/thoái thu. Bạn nên giữ HĐLĐ, bảng lương, thông báo đóng BH để đối chiếu. Không nên để kéo dài vì sẽ ảnh hưởng chốt sổ và giải quyết chế độ.",
+  "gold_citations_raw": "Điều 33, 34 Luật BHXH 2024; Quyết định 595/QĐ-BHXH"
+}

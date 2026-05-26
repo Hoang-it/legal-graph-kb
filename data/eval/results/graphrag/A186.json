@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 186,
+  "question": "Mình nghỉ thai sản\nTính ra 25 tháng 3 vừa rồi là mình quay lại làm việc sau 6 tháng nghỉ thai sản\nNgày 23 tháng 3 mình viết đơn nghỉ việc\nbao lâu thì cty gọi mình lên cty để chi trả sổ bảo hiểm?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 62 khoản 1] — quy định về thời hạn nộp hồ sơ hưởng chế độ thai sản.\n- [Điều 63 khoản 1] — quy định về thời hạn người sử dụng lao động lập danh sách người lao động nghỉ việc hưởng trợ cấp dưỡng sức, phục hồi sức khỏe sau thai sản.",
+  "citations": [
+    "[Điều 62 khoản 1]",
+    "[Điều 63 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A62.K1",
+    "L41_2024.A63.K1"
+  ],
+  "citation_verified": {
+    "L41_2024.A62.K1": true,
+    "L41_2024.A63.K1": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A53.K1",
+      "score": 0.8452378511428833,
+      "text_preview": "Thời gian nghỉ việc hưởng chế độ thai sản của lao động nữ khi sinh con được thực hiện theo quy định tại khoản 1 Điều 139 của Bộ luật Lao động.\nTrường hợp lao động nữ trở lại làm việc trước khi hết thờ"
+    },
+    {
+      "clause_id": "L41_2024.A63.K1",
+      "score": 0.8444534540176392,
+      "text_preview": "Trong thời hạn 07 ngày làm việc kể từ ngày người lao động nghỉ việc hưởng trợ cấp dưỡng sức, phục hồi sức khỏe sau thai sản, người sử dụng lao động lập danh sách người lao động nghỉ việc hưởng trợ cấp"
+    },
+    {
+      "clause_id": "L41_2024.A62.K1",
+      "score": 0.8442133665084839,
+      "text_preview": "Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản.\n"
+    },
+    {
+      "clause_id": "L41_2024.A53.K3",
+      "score": 0.8361539840698242,
+      "text_preview": "Ngày bắt đầu nghỉ việc hưởng chế độ thai sản quy định tại khoản 2 Điều này phải trong khoảng thời gian 60 ngày kể từ ngày vợ sinh con, trường hợp người lao động nghỉ nhiều lần thì ngày bắt đầu nghỉ vi"
+    },
+    {
+      "clause_id": "L41_2024.A60.K1",
+      "score": 0.8333213329315186,
+      "text_preview": "Trong thời gian 30 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản quy định tại Điều 52, khoản 1 hoặc khoản 4 Điều 53, điểm a khoản 3 Điều 54 của Luật này, lao động nữ chưa phục hồi sức "
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 10,
+  "elapsed_s": 2.23,
+  "gold_answer": "Sau khi bạn nộp đơn nghỉ việc ngày 23/3, công ty phải thực hiện thủ tục xác nhận thời gian đóng và trả lại giấy tờ BHXH cho bạn trong thời hạn luật lao động quy định, thông thường không quá 14 ngày, trường hợp đặc biệt có thể kéo dài nhưng không quá 30 ngày. Việc thực tế nhận sổ còn phụ thuộc công ty báo giảm và cơ quan BHXH chốt dữ liệu.",
+  "gold_citations_raw": "Điều 48 Bộ luật Lao động 2019; Điều 27 Luật BHXH 2024"
+}

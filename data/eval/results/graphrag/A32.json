@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 32,
+  "question": "Sinh viên TLinh (Hà Nội) đi làm bán thời gian (6 tiếng/ngày) tại siêu thị, ký hợp đồng lao động với siêu thị và được siêu thị hỗ trợ đóng một phần tiền BHXH.\nTuy nhiên, gần lúc nghỉ việc, siêu thị yêu cầu sinh viên đóng thêm tiền BHYT (mặc dù sinh viên đã đóng BHYT tại trường và trong thời gian làm việc không bị trừ tiền BHYT).\nNếu không đóng thì không được trả lương và thẻ BHYT của sinh viên TLinh tại nhà trường sẽ bị khóa lại.\nSinh viên hỏi, việc làm trên của siêu thị là đúng hay sai? Nếu sai thì giải quyết như thế nào?",
+  "answer": "Việc siêu thị yêu cầu sinh viên TLinh đóng thêm tiền BHYT trong khi sinh viên đã đóng BHYT tại trường và không bị trừ tiền BHYT trong thời gian làm việc là không đúng. Theo quy định, người lao động chỉ phải đóng bảo hiểm xã hội và bảo hiểm y tế theo quy định của pháp luật, và không được yêu cầu đóng trùng lặp.\n\nNếu siêu thị không trả lương và khóa thẻ BHYT của sinh viên TLinh, sinh viên có thể khiếu nại đến cơ quan bảo hiểm xã hội hoặc cơ quan lao động địa phương để được giải quyết. Cơ quan này sẽ xem xét và can thiệp để bảo vệ quyền lợi hợp pháp của sinh viên.\n\nCụ thể, sinh viên có thể căn cứ vào các quy định về trách nhiệm của người sử dụng lao động trong việc đóng bảo hiểm xã hội và bảo hiểm y tế cho người lao động, cũng như các quy định về quyền lợi của người lao động khi bị yêu cầu đóng tiền không hợp lý.\n\nTuy nhiên, theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n- [Điều 13 khoản 3]\n- [Điều 117 khoản 2]",
+  "citations": [
+    "[Điều 13 khoản 3]",
+    "[Điều 117 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A13.K3",
+    "L41_2024.A117.K2"
+  ],
+  "citation_verified": {
+    "L41_2024.A13.K3": true,
+    "L41_2024.A117.K2": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.7848962545394897,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A117.K2",
+      "score": 0.7810583114624023,
+      "text_preview": "Người lao động đóng theo quy định."
+    },
+    {
+      "clause_id": "L41_2024.A13.K3",
+      "score": 0.7796304225921631,
+      "text_preview": "Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật."
+    },
+    {
+      "clause_id": "L41_2024.A37.K2",
+      "score": 0.7766914367675781,
+      "text_preview": "Người lao động đang tham gia bảo hiểm xã hội bắt buộc mà bị tạm giam, tạm đình chỉ công việc thì người lao động và người sử dụng lao động tạm dừng đóng bảo hiểm xã hội bắt buộc; trường hợp người lao đ"
+    },
+    {
+      "clause_id": "L41_2024.A33.K6",
+      "score": 0.7747921943664551,
+      "text_preview": "Trường hợp trong tháng đầu làm việc hoặc trong tháng đầu trở lại làm việc mà người lao động nghỉ việc hưởng chế độ ốm đau từ 14 ngày làm việc trở lên thì vẫn phải đóng bảo hiểm xã hội của tháng đó."
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 2,
+  "elapsed_s": 4.59,
+  "gold_answer": "Căn cứ theo khoản 10 Điều 1 Luật BHYT sửa đổi 2024, đối tượng tham gia BHYT gồm: Người lao động làm việc theo hợp đồng lao động không xác định thời hạn, hợp đồng lao động xác định thời hạn có thời hạn từ đủ 1 tháng trở lên, kể cả trường hợp người lao động và người sử dụng lao động thỏa thuận bằng tên gọi khác nhưng có nội dung thể hiện về việc làm có trả công, tiền lương và sự quản lý, điều hành, giám sát của một bên, thỏa thuận với người sử dụng lao động làm việc không trọn thời gian, có tiền lương trong tháng bằng hoặc cao hơn tiền lương làm căn cứ đóng BHXH bắt buộc thấp nhất theo quy định của pháp luật về BHXH;\nNhư vậy, nếu sinh viên làm việc không trọn thời gian theo hợp đồng có thời hạn từ 1 tháng trở lên, nếu trong tháng có mức lương bằng hoặc cao hơn mức tiền lương tối thiểu dùng để làm căn cứ đóng BHXH bắt buộc thì thuộc diện tham gia BHYT theo quy định pháp luật.\nTheo khoản 5 Điều 13 Luật BHYT sửa đổi năm 2024, trường hợp một người đồng thời thuộc nhiều đối tượng tham gia BHYT khác nhau thì đóng BHYT theo đối tượng đầu tiên mà người đó được xác định theo thứ tự.\nCăn cứ khoản 5 Điều 12 Luật BHYT sửa đổi năm 2024, thứ tự đối tượng tham gia BHYT như sau: Nhóm do người lao động và người sử dụng lao động đóng; nhóm do tổ chức BHXH đóng; nhóm do ngân sách Nhà nước đóng; nhóm được ngân sách Nhà nước hỗ trợ mức đóng; nhóm tham gia BHYT theo hộ gia đình.\nDo vậy khi sinh viên ký hợp đồng lao động nếu thuộc đối tượng tham gia BHXH bắt buộc, thì cũng thuộc đối tượng tham gia BHYT bắt buộc.\nTrường hợp siêu thị chưa trừ tiền đóng BHYT vào tiền lương của sinh viên thì sinh viên có trách nhiệm đóng phần của mình cho đơn vị, tỷ lệ 1,5% lương/tháng.\nViệc trả lương không thuộc thẩm quyền của cơ quan BHXH.\nTuy nhiên theo Điều 94 Bộ luật Lao động 2019 về nguyên tắc trả lương quy định người sử dụng lao động không được dùng việc trả lương để cưỡng ép người lao động thực hiện các nghĩa vụ khác không có trong hợp đồng hoặc trái luật.\nLương là quyền lợi cho công sức sinh viên đã bỏ ra và phải được thanh toán đầy đủ khi chấm dứt hợp đồng.",
+  "gold_citations_raw": "khoản 10 Điều 1 Luật BHYT sửa đổi 2024,"
+}

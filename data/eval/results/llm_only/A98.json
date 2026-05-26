@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 98,
+  "question": "Em nghỉ việc từ tháng 8 năm 2025 , giờ tháng 4 e mới đi rút bảo hiểm thất nghiệp được k?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, người lao động có quyền rút bảo hiểm thất nghiệp khi đã nghỉ việc và có đủ điều kiện. Thời gian để nộp hồ sơ hưởng bảo hiểm thất nghiệp là 3 tháng kể từ ngày chấm dứt hợp đồng lao động. \n\nVì bạn nghỉ việc từ tháng 8 năm 2025, đến tháng 4 năm 2026 bạn mới đi rút bảo hiểm thất nghiệp, như vậy bạn đã quá thời hạn 3 tháng để nộp hồ sơ. Do đó, bạn sẽ không đủ điều kiện để rút bảo hiểm thất nghiệp. \n\nBạn nên tham khảo thêm các quy định cụ thể trong Luật Bảo hiểm xã hội để có thông tin chi tiết hơn.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 2.906,
+  "prompt_tokens": 185,
+  "completion_tokens": 158,
+  "gold_answer": "Nếu bạn nghỉ việc từ tháng 8/2025 mà đến tháng 4/2026 mới đi nộp hồ sơ BHTN thì đã quá hạn 3 tháng kể từ ngày chấm dứt HĐLĐ, nên đợt này thường không được giải quyết hưởng trợ cấp thất nghiệp. Tuy vậy, thời gian đóng BHTN chưa hưởng sẽ được bảo lưu để cộng dồn cho lần thất nghiệp sau nếu bạn tiếp tục đi làm và đóng BHTN trở lại.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 45"
+}

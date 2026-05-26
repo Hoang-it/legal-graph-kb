@@ -1,0 +1,29 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 92,
+  "question": "E đóng bảo hiểm hiểm được 14 năm 5 tháng \nT9 2011 e đóng 1•500•000k\nĐến nay e đóng 6,837.000k\nVậy e sẽ lãnh được bao nhiêu tiền bảo hiểm xã hội?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmp9srzy_0_.pl:4:541: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 70 khoản 3]",
+    "[Điều 76 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A70.K3",
+    "L41_2024.A76.K2"
+  ],
+  "citation_indices": [
+    0,
+    1
+  ],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 23.002,
+  "prompt_tokens": 8061,
+  "completion_tokens": 1707,
+  "error": null,
+  "gold_answer": "Với 14 năm 5 tháng đóng BHXH, không thể tính chính xác số tiền BHXH một lần chỉ từ mức lương đầu kỳ 1,5 triệu và hiện tại 6.837.000 đồng. Luật tính theo mức bình quân tiền lương tháng đóng BHXH sau điều chỉnh của toàn bộ quá trình, rồi nhân với số năm tương ứng: trước 2014 tính 1,5 tháng bình quân/năm, từ 2014 trở đi tính 2 tháng bình quân/năm, tháng lẻ quy đổi theo luật. Bạn cần bảng quá trình đóng chi tiết mới tính ra số cụ thể.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 104, Điều 109"
+}

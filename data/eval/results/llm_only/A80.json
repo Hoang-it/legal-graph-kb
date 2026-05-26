@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 80,
+  "question": "E đóng bảo hiểm sớm hơn 1 tháng trước khi đủ 18 tuổi thì sau có chốt sổ được không?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, người lao động phải đủ 18 tuổi để tham gia bảo hiểm xã hội. Nếu bạn đóng bảo hiểm sớm hơn 1 tháng trước khi đủ 18 tuổi, thời gian đóng bảo hiểm đó sẽ không được công nhận. Do đó, bạn sẽ không thể chốt sổ bảo hiểm xã hội cho thời gian này. \n\nCụ thể, bạn cần đủ 18 tuổi và có thời gian tham gia bảo hiểm xã hội hợp lệ để có thể chốt sổ. Tôi không có đủ thông tin chính xác để trả lời câu hỏi này.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 3.186,
+  "prompt_tokens": 183,
+  "completion_tokens": 124,
+  "gold_answer": "Việc đóng BHXH sớm hơn 1 tháng trước khi đủ 18 tuổi không phải lúc nào cũng làm mất toàn bộ quá trình, nhưng cơ quan BHXH sẽ rà soát lại tính hợp pháp của đối tượng tham gia tại thời điểm đó. Nếu thời gian đó được ghi nhận sai đối tượng thì có thể phải điều chỉnh dữ liệu, không nhất thiết làm mất hết sổ. Bạn nên liên hệ cơ quan BHXH để kiểm tra hồ sơ gốc và được hướng dẫn điều chỉnh nếu có sai sót.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2; quy định về đối tượng tham gia BHXH"
+}

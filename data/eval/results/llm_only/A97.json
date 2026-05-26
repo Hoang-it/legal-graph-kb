@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 97,
+  "question": "Mình đã rút Bảo hiểm xã hội lần 1 nhưng chưa trả sổ giờ mình đóng đc gần 4 năm rồi, cho mình hỏi bao lâu mình mới dx trả sổ vậy?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, người lao động đã rút bảo hiểm xã hội một lần thì phải trả sổ bảo hiểm xã hội cho cơ quan bảo hiểm xã hội trong thời hạn 30 ngày kể từ ngày nhận tiền. Nếu bạn đã rút bảo hiểm xã hội lần 1 nhưng chưa trả sổ, bạn cần thực hiện việc này càng sớm càng tốt để đảm bảo quyền lợi của mình trong tương lai. \n\nTuy nhiên, nếu bạn đã đóng bảo hiểm xã hội gần 4 năm sau khi rút, bạn có thể cần tham khảo thêm để biết về quyền lợi và nghĩa vụ của mình trong trường hợp này. Tôi không có đủ thông tin chính xác để trả lời câu hỏi này.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 3.458,
+  "prompt_tokens": 199,
+  "completion_tokens": 151,
+  "gold_answer": "Sau khi đã nhận BHXH một lần, nếu bạn đi làm lại và đóng BHXH gần 4 năm thì quá trình tham gia mới vẫn được ghi nhận bình thường trên cùng mã số BHXH. Việc 'trả sổ' hiện nay chủ yếu là cập nhật dữ liệu điện tử; nếu cần bản giấy/tờ rời thì cơ quan BHXH hoặc đơn vị sẽ xác nhận khi có phát sinh chốt sổ, nghỉ việc hoặc cấp lại. Không có quy định phải chờ đủ bao lâu mới được 'trả sổ'; quan trọng là quá trình đóng mới đã được cập nhật đúng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25, Điều 102"
+}

@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 102,
+  "question": "Mình bị đóng trùng bảo hiểm 2cty cùng 1 tháng giờ phải làm sao?",
+  "answer": "Issue: Mình bị đóng trùng bảo hiểm 2cty cùng 1 tháng giờ phải làm sao?  \nRule: Không có quy định cụ thể nào được trích dẫn trong trường hợp này.  \nApplication: Không có slot nào được gán giá trị trong truy vấn Prolog. Do đó, không có thông tin nào được sử dụng để tính toán.  \nConclusion: Hệ thống đã trả về kết quả là \"Bạn cần liên hệ với cơ quan bảo hiểm xã hội để được hướng dẫn xử lý việc đóng trùng bảo hiểm.\" Tuy nhiên, không có giá trị nào được gán từ các slot, vì vậy không thể đưa ra một số liệu cuối cùng.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,handle_duplicate_insurance(Bạn cần liên hệ với cơ quan bảo hiểm xã hội để được hướng dẫn xử lý việc đóng trùng bảo hiểm.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Mình bị đóng trùng bảo hiểm 2cty cùng 1 tháng giờ phải làm sao?",
+    "rule": "Không có quy định cụ thể nào được trích dẫn trong trường hợp này.",
+    "application": "Không có slot nào được gán giá trị trong truy vấn Prolog. Do đó, không có thông tin nào được sử dụng để tính toán.",
+    "conclusion": "Hệ thống đã trả về kết quả là \"Bạn cần liên hệ với cơ quan bảo hiểm xã hội để được hướng dẫn xử lý việc đóng trùng bảo hiểm.\" Tuy nhiên, không có giá trị nào được gán từ các slot, vì vậy không thể đưa ra một số liệu cuối cùng."
+  },
+  "elapsed_s": 9.233,
+  "prompt_tokens": 3072,
+  "completion_tokens": 323,
+  "error": null,
+  "gold_answer": "Trường hợp đóng trùng 2 công ty cùng 1 tháng, bạn cần đề nghị cơ quan BHXH điều chỉnh, hoàn trả phần đóng trùng và thống nhất 1 nơi tham gia đúng quy định. Thường doanh nghiệp đóng trùng sẽ lập hồ sơ giảm trùng/thoái thu. Bạn nên giữ HĐLĐ, bảng lương, thông báo đóng BH để đối chiếu. Không nên để kéo dài vì sẽ ảnh hưởng chốt sổ và giải quyết chế độ.",
+  "gold_citations_raw": "Điều 33, 34 Luật BHXH 2024; Quyết định 595/QĐ-BHXH"
+}

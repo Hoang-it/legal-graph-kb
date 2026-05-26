@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 103,
+  "question": "Bhxh của em tầm 9 năm 2 tháng mức đóng tầm 4tr3, cho em hỏi bh thất nghiệp nhận được bao nhiêu và bhxh nhận được bao nhiêu?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 5 khoản 6: quy định về thời gian đóng bảo hiểm xã hội để xác định điều kiện hưởng lương hưu và trợ cấp tuất.\n- Điều 4 khoản 4: đề cập đến bảo hiểm thất nghiệp theo quy định của Luật Việc làm. \n\nTuy nhiên, không có thông tin cụ thể về mức hưởng bảo hiểm xã hội và bảo hiểm thất nghiệp trong CONTEXT.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A9.K2",
+      "score": 0.7993618845939636,
+      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A110.K3",
+      "score": 0.7909628748893738,
+      "text_preview": "Trường hợp người có cả thời gian đóng bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện thì mức hưởng trợ cấp tuất một lần tối thiểu bằng 03 lần của mức bình quân tiền lương và thu nhập làm căn cứ"
+    },
+    {
+      "clause_id": "L41_2024.A38.K1",
+      "score": 0.7902706861495972,
+      "text_preview": "Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều "
+    },
+    {
+      "clause_id": "L41_2024.A4.K4",
+      "score": 0.790016770362854,
+      "text_preview": "Bảo hiểm thất nghiệp theo quy định của Luật Việc làm."
+    },
+    {
+      "clause_id": "L41_2024.A5.K6",
+      "score": 0.7884377837181091,
+      "text_preview": "Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hi"
+    }
+  ],
+  "n_semantic_edges": 3,
+  "n_refs": 3,
+  "elapsed_s": 2.44,
+  "gold_answer": "Nếu toàn bộ thời gian đóng của bạn là từ 2014 trở đi, BHXH 1 lần ước khoảng khoảng 81,7 triệu; đây chỉ là ước tính thô, chưa tính hệ số điều chỉnh tiền lương. Với BHTN, nếu đủ điều kiện hưởng thì mức trợ cấp hằng tháng bằng 60% bình quân lương đóng BHTN của 6 tháng cuối, tức khoảng 2,58 triệu/tháng; thời gian hưởng khoảng 9 tháng nếu thời gian đóng BHTN là 9 năm 2 tháng.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

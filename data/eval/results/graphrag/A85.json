@@ -1,0 +1,54 @@
+{
+  "arm": "graphrag",
+  "stt": 85,
+  "question": "Em đóng BH từ tháng 8/2023 đến 2/2025, dừng t3,t4/2025. Sau đó đóng tiếp từ 5/2025 đến 5/2026. E dks cuối t10/2026. Nếu e nghỉ hẳn CTY e có đc hưởng bảo hiểm thất nghiệp không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 4 khoản 4] về bảo hiểm thất nghiệp.\n- [Điều 33 khoản 7] về thời gian đóng bảo hiểm xã hội bắt buộc.\n- [Điều 38 khoản 1] về chậm đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp.",
+  "citations": [
+    "[Điều 4 khoản 4]",
+    "[Điều 33 khoản 7]",
+    "[Điều 38 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A4.K4",
+    "L41_2024.A33.K7",
+    "L41_2024.A38.K1"
+  ],
+  "citation_verified": {
+    "L41_2024.A4.K4": true,
+    "L41_2024.A33.K7": true,
+    "L41_2024.A38.K1": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A141.K12",
+      "score": 0.8370887041091919,
+      "text_preview": "Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30"
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.8220604658126831,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A38.K1",
+      "score": 0.8200442790985107,
+      "text_preview": "Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều "
+    },
+    {
+      "clause_id": "L41_2024.A4.K4",
+      "score": 0.8139506578445435,
+      "text_preview": "Bảo hiểm thất nghiệp theo quy định của Luật Việc làm."
+    },
+    {
+      "clause_id": "L41_2024.A64.K1",
+      "score": 0.8127297163009644,
+      "text_preview": "Đối tượng quy định tại các điểm a, b, c, g, h, i, k, l, m và n khoản 1 và khoản 2 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 15 năm trở lên thì được hưởng lương"
+    }
+  ],
+  "n_semantic_edges": 5,
+  "n_refs": 15,
+  "elapsed_s": 2.34,
+  "gold_answer": "Bạn đóng BHTN từ 8/2023 đến 2/2025, nghỉ 2 tháng rồi đóng tiếp 5/2025 đến 5/2026 thì thời gian BHTN đủ dài để xét trợ cấp thất nghiệp nếu bạn nghỉ việc và đáp ứng điều kiện khác. Việc dự sinh cuối 10/2026 không ảnh hưởng trực tiếp đến quyền hưởng BHTN, miễn khi nộp hồ sơ bạn đã chấm dứt HĐLĐ hợp pháp, nộp trong 3 tháng và sau 15 ngày chưa có việc làm. Số tháng hưởng và mức hưởng sẽ tính riêng theo Luật Việc làm.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 49, Điều 50"
+}

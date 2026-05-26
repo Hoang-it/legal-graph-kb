@@ -1,0 +1,48 @@
+{
+  "arm": "graphrag",
+  "stt": 193,
+  "question": "Em nghỉ cty cách đây 8/9 năm r nhưng m chưa chốt lấy bảo hiểm\nGiờ m muốn lấy bảo hiểm thì đến cty m đã lm để lấy hay lấy ở đâu?",
+  "answer": "Bạn cần đến cơ quan bảo hiểm xã hội để thực hiện thủ tục chốt bảo hiểm. Cơ quan bảo hiểm xã hội sẽ hướng dẫn bạn về trình tự, thủ tục cần thiết để lấy bảo hiểm. \n\nTheo quy định, người sử dụng lao động có trách nhiệm phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, vì vậy bạn cũng có thể liên hệ với công ty cũ để được hỗ trợ thêm. \n\nCitation: [Điều 13 khoản 3]",
+  "citations": [
+    "[Điều 13 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A13.K3"
+  ],
+  "citation_verified": {
+    "L41_2024.A13.K3": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A114.K2",
+      "score": 0.8087441325187683,
+      "text_preview": "Trực tiếp từ cơ quan bảo hiểm xã hội hoặc tổ chức dịch vụ được cơ quan bảo hiểm xã hội ủy quyền."
+    },
+    {
+      "clause_id": "L41_2024.A93.K2",
+      "score": 0.8086779117584229,
+      "text_preview": "Trực tiếp từ cơ quan bảo hiểm xã hội hoặc tổ chức dịch vụ được cơ quan bảo hiểm xã hội ủy quyền."
+    },
+    {
+      "clause_id": "L41_2024.A9.K2",
+      "score": 0.798973023891449,
+      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A12.K3",
+      "score": 0.7983480095863342,
+      "text_preview": "Được cơ quan bảo hiểm xã hội hướng dẫn trình tự, thủ tục thực hiện bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A28.K4",
+      "score": 0.797034740447998,
+      "text_preview": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn"
+    }
+  ],
+  "n_semantic_edges": 1,
+  "n_refs": 0,
+  "elapsed_s": 3.46,
+  "gold_answer": "Nếu bạn nghỉ công ty 8-9 năm mà chưa chốt/lấy BHXH, trước hết cần xác định công ty khi đó đã báo giảm, chốt sổ hay chưa. Nếu đã chốt, bạn có thể liên hệ trực tiếp cơ quan BHXH nơi quản lý hoặc nơi cư trú để xin xác nhận/cấp lại. Nếu chưa chốt thì vẫn phải yêu cầu công ty cũ hoàn tất thủ tục; BHXH không thể tự chốt toàn bộ nếu đơn vị chưa báo giảm và chưa hoàn thành nghĩa vụ.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

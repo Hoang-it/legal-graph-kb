@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 45,
+  "question": "Em có quyết định nghỉ việc từ tháng 3/2025, giờ em muốn rút bảo hiểm xã hội đã làm thủ tục đuợc chưa ạ? em ở Phú xuyên Hà Nội thì làm thủ tục giải quyết ở đâu và hồ sơ cần những giấy tờ gì? em đóng bảo hiểm tổng 73 tháng thì  đuợc huởng tổng  bao nhiêu tiền bảo hiểm?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, bạn có quyền rút bảo hiểm xã hội khi đã nghỉ việc và đủ điều kiện. Tuy nhiên, bạn cần phải chờ đến thời điểm nghỉ việc thực tế để thực hiện thủ tục rút bảo hiểm.\n\n1. **Nơi làm thủ tục**: Bạn có thể làm thủ tục rút bảo hiểm xã hội tại cơ quan bảo hiểm xã hội huyện Phú Xuyên, Hà Nội.\n\n2. **Hồ sơ cần thiết**: Hồ sơ rút bảo hiểm xã hội bao gồm:\n   - Đơn đề nghị hưởng bảo hiểm xã hội một lần.\n   - Sổ bảo hiểm xã hội.\n   - Giấy tờ tùy thân (chứng minh nhân dân hoặc thẻ căn cước công dân).\n   - Các giấy tờ khác theo yêu cầu của cơ quan bảo hiểm xã hội.\n\n3. **Mức hưởng**: Mức hưởng bảo hiểm xã hội một lần được tính theo số tháng đóng bảo hiểm. Cụ thể, bạn sẽ được hưởng 1,5 tháng lương tối thiểu vùng cho mỗi năm đóng bảo hiểm. Tuy nhiên, tôi không có đủ thông tin chính xác để tính toán số tiền cụ thể bạn sẽ nhận được.\n\nBạn nên liên hệ trực tiếp với cơ quan bảo hiểm xã hội để được hướng dẫn chi tiết và chính xác hơn.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 8.497,
+  "prompt_tokens": 243,
+  "completion_tokens": 287,
+  "gold_answer": "Nếu bạn nghỉ từ 3/2025 thì đến nay thường đã đủ mốc 12 tháng không tham gia để xem xét hưởng BHXH một lần, nếu không thuộc diện tiếp tục bảo lưu. Hồ sơ thường gồm đơn đề nghị, CCCD và sổ/ dữ liệu BHXH theo hướng dẫn của cơ quan BHXH. Bạn nộp tại cơ quan BHXH nơi cư trú hoặc bộ phận một cửa. Với 73 tháng đóng, mức hưởng không thể tính chính xác nếu chưa có toàn bộ tiền lương đóng từng giai đoạn; công thức tính dựa trên mức bình quân tiền lương đóng BHXH.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 104, Điều 110"
+}

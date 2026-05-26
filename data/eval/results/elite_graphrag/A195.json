@@ -1,0 +1,31 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 195,
+  "question": "mik đang đi làm đóng bảo hiển xh mà mik xin nghỉ đội 1-2 tháng đi thụ tinh nhân tạo thì có được hưởng ít bảo hiểm nào không?",
+  "answer": "Issue: Người hỏi muốn biết liệu có được hưởng bảo hiểm xã hội khi nghỉ 1-2 tháng để thụ tinh nhân tạo hay không.\n\nRule: \"Đối tượng quy định tại điểm b và điểm c khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của người hành nghề khám bệnh, chữa bệnh thuộc cơ sở khám bệnh, chữa bệnh thì phải đóng bảo hiểm xã hội bắt buộc từ đủ 03 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con.\" (Luật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 3)\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Prolog không thể sử dụng thông tin nào từ các slot để đưa ra kết luận.\n\nConclusion: Hệ thống không thể tính toán được số liệu cuối cùng do không có thông tin nào được gán trong các slot.",
+  "citations": [
+    "[Điều 50 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A50.K3"
+  ],
+  "citation_indices": [
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,artificial_insemination_benefits(Không được hưởng chế độ thai sản),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết liệu có được hưởng bảo hiểm xã hội khi nghỉ 1-2 tháng để thụ tinh nhân tạo hay không.",
+    "rule": "\"Đối tượng quy định tại điểm b và điểm c khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của người hành nghề khám bệnh, chữa bệnh thuộc cơ sở khám bệnh, chữa bệnh thì phải đóng bảo hiểm xã hội bắt buộc từ đủ 03 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con.\" (Luật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 3)",
+    "application": "Không có slot nào được gán giá trị trong trường hợp này. Prolog không thể sử dụng thông tin nào từ các slot để đưa ra kết luận.",
+    "conclusion": "Hệ thống không thể tính toán được số liệu cuối cùng do không có thông tin nào được gán trong các slot."
+  },
+  "elapsed_s": 8.349,
+  "prompt_tokens": 3330,
+  "completion_tokens": 462,
+  "error": null,
+  "gold_answer": "Nếu bạn đang đóng BHXH mà xin nghỉ 1-2 tháng để đi thụ tinh nhân tạo thì quyền lợi phụ thuộc loại nghỉ và giấy tờ y tế. Nếu nghỉ ốm/điều trị theo chỉ định của cơ sở khám chữa bệnh có thẩm quyền thì có thể được xem xét chế độ ốm đau. Nếu chỉ tự nghỉ không lương mà không có hồ sơ y tế phù hợp thì thường không có chế độ BHXH riêng cho việc đó.",
+  "gold_citations_raw": "Điều 42, 43, 47 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

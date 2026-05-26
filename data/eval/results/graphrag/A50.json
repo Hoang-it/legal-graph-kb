@@ -1,0 +1,48 @@
+{
+  "arm": "graphrag",
+  "stt": 50,
+  "question": "Mình sinh năm 1979. Thì đến năm bao nhiêu mình đủ tuổi về hưu?",
+  "answer": "Theo quy định, nam giới đủ 60 tuổi để hưởng lương hưu. Nếu bạn sinh năm 1979, bạn sẽ đủ tuổi về hưu vào năm 2039 (1979 + 60 = 2039).\n\nGiải thích: Luật quy định tuổi nghỉ hưu đối với nam là 60 tuổi, do đó bạn cần tính từ năm sinh của mình cộng với 60 năm để xác định năm đủ tuổi nghỉ hưu.\n\nCitation: [Điều 141 khoản 9]",
+  "citations": [
+    "[Điều 141 khoản 9]"
+  ],
+  "citation_ids": [
+    "L41_2024.A141.K9"
+  ],
+  "citation_verified": {
+    "L41_2024.A141.K9": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A141.K9",
+      "score": 0.8095600605010986,
+      "text_preview": "Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ,"
+    },
+    {
+      "clause_id": "L41_2024.A141.K10",
+      "score": 0.7990430593490601,
+      "text_preview": "Người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên và có văn bản của cơ quan bảo hiểm xã hội xác nhận về việc chờ đủ điều kiện về tuổi đời để hưởng lương hưu được quy định tại Nghị định số 12"
+    },
+    {
+      "clause_id": "L41_2024.A21.K2",
+      "score": 0.791428804397583,
+      "text_preview": "Công dân Việt Nam từ đủ 70 tuổi đến dưới 75 tuổi thuộc hộ nghèo, hộ cận nghèo và đáp ứng đủ điều kiện quy định tại điểm b và điểm c khoản 1 Điều này thì được hưởng trợ cấp hưu trí xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A66.K5",
+      "score": 0.7819758653640747,
+      "text_preview": "Chính phủ quy định chi tiết về mức hưởng và điều kiện hưởng lương hưu."
+    },
+    {
+      "clause_id": "L41_2024.A100.K1",
+      "score": 0.7773505449295044,
+      "text_preview": "Lao động nam có thời gian đóng bảo hiểm xã hội cao hơn 35 năm, lao động nữ có thời gian đóng bảo hiểm xã hội cao hơn 30 năm thì khi nghỉ hưu, ngoài lương hưu còn được hưởng trợ cấp một lần."
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 6,
+  "elapsed_s": 2.35,
+  "gold_answer": "Bạn sinh năm 1979 thì thời điểm đủ tuổi nghỉ hưu còn phụ thuộc giới tính và trường hợp nghỉ hưu bình thường hay sớm. Nếu là nữ, mốc chuẩn hiện hành là đủ 60 tuổi, tương ứng khoảng năm 2039. Nếu là nam, mốc chuẩn là đủ 62 tuổi, tương ứng khoảng năm 2041. Nếu làm nghề, công việc nặng nhọc hoặc thuộc trường hợp đặc biệt thì có thể nghỉ sớm hơn theo luật.",
+  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 169; Nghị định 135/2020/NĐ-CP"
+}

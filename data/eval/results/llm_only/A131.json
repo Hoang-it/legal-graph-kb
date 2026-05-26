@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 131,
+  "question": "Em bị mất sổ BHXH, chỉ còn thông tin, thời gian đóng tích hợp trên VNEID thì có rút BH 1 lần được không?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động có quyền rút bảo hiểm xã hội một lần khi đáp ứng đủ các điều kiện, trong đó có việc cung cấp thông tin về thời gian đóng bảo hiểm xã hội. Nếu bạn có thông tin về thời gian đóng bảo hiểm xã hội trên VNEID, bạn có thể làm thủ tục rút bảo hiểm xã hội một lần. Tuy nhiên, bạn cần liên hệ với cơ quan bảo hiểm xã hội để được hướng dẫn cụ thể về thủ tục và các giấy tờ cần thiết. \n\nLưu ý rằng việc mất sổ BHXH có thể ảnh hưởng đến quy trình, vì vậy bạn nên làm đơn xin cấp lại sổ BHXH để đảm bảo quyền lợi của mình.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 3.889,
+  "prompt_tokens": 191,
+  "completion_tokens": 165,
+  "gold_answer": "Nếu bạn bị mất sổ BHXH nhưng dữ liệu quá trình đóng đã tích hợp trên VNeID thì vẫn có thể làm hồ sơ hưởng BHXH 1 lần. Cơ quan BHXH hiện đối chiếu dữ liệu điện tử là chính; khi cần, bạn làm thêm thủ tục cấp lại sổ hoặc xác nhận quá trình đóng. Quan trọng là bạn phải đủ điều kiện hưởng BHXH 1 lần theo luật và hồ sơ định danh phải trùng khớp.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

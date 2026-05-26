@@ -1,0 +1,17 @@
+{
+  "arm": "llm_only",
+  "stt": 120,
+  "question": "E mới đóng bảo hiểm tại công ty 8 tháng thì sinh em bé và đang bị thanh tra. Cty từ chối nộp giấy tờ liên quan. Giờ e phải làm sao để được nhận bh thai sản?",
+  "answer": "Để được nhận bảo hiểm thai sản, bạn cần đảm bảo rằng mình đã tham gia bảo hiểm xã hội đủ thời gian theo quy định. Theo Luật Bảo hiểm xã hội, bạn phải tham gia bảo hiểm xã hội từ đủ 6 tháng trở lên trong vòng 12 tháng trước khi sinh con để đủ điều kiện hưởng chế độ thai sản [Điều 31 khoản 1].\n\nNếu công ty từ chối nộp giấy tờ liên quan, bạn có thể thực hiện các bước sau:\n\n1. **Yêu cầu công ty cung cấp giấy tờ**: Gửi yêu cầu chính thức đến công ty về việc cung cấp các giấy tờ cần thiết để bạn có thể làm thủ tục nhận bảo hiểm thai sản.\n\n2. **Liên hệ với cơ quan bảo hiểm xã hội**: Nếu công ty vẫn không hợp tác, bạn có thể liên hệ với cơ quan bảo hiểm xã hội nơi bạn tham gia để được tư vấn và hỗ trợ.\n\n3. **Khiếu nại**: Nếu cần thiết, bạn có thể làm đơn khiếu nại đến cơ quan có thẩm quyền về việc công ty không thực hiện nghĩa vụ nộp bảo hiểm xã hội cho bạn.\n\nHãy lưu giữ tất cả các tài liệu và chứng cứ liên quan để bảo vệ quyền lợi của mình.",
+  "citations": [
+    "[Điều 31 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A31.K1"
+  ],
+  "elapsed_s": 5.868,
+  "prompt_tokens": 205,
+  "completion_tokens": 269,
+  "gold_answer": "Nếu bạn đủ điều kiện thai sản mà công ty không nộp hồ sơ, bạn nên lập văn bản yêu cầu công ty thực hiện ngay; đồng thời phản ánh tới cơ quan BHXH quản lý đơn vị hoặc thanh tra lao động. Luật quy định doanh nghiệp phải lập hồ sơ gửi cơ quan BHXH cho NLĐ đang tham gia. Hãy giữ hợp đồng, bảng lương, phiếu lương, sổ khám thai, giấy khai sinh/chứng sinh để bảo vệ quyền lợi.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

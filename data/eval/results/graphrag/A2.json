@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 2,
+  "question": "Bà Minh Châu (Long An) ký hợp đồng lao động theo diện làm việc bán thời gian.\nBà Châu hỏi, bà có được mua BHXH bắt buộc theo đối tượng cá nhân không? Nếu được thì mức đóng được tính như thế nào?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 2 khoản 4] quy định về đối tượng tham gia bảo hiểm xã hội.\n- [Điều 34 khoản 1] quy định về mức đóng bảo hiểm xã hội bắt buộc.",
+  "citations": [
+    "[Điều 2 khoản 4]",
+    "[Điều 34 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2.K4",
+    "L41_2024.A34.K1"
+  ],
+  "citation_verified": {
+    "L41_2024.A2.K4": true,
+    "L41_2024.A34.K1": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A5.K2",
+      "score": 0.8447620868682861,
+      "text_preview": "Mức đóng bảo hiểm xã hội bắt buộc được tính trên cơ sở tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc. Mức đóng bảo hiểm xã hội tự nguyện được tính trên cơ sở thu nhập làm căn cứ đóng bảo hiểm xã"
+    },
+    {
+      "clause_id": "L41_2024.A36.K1",
+      "score": 0.8396474123001099,
+      "text_preview": "Đối tượng quy định tại khoản 4 Điều 2 của Luật này, hằng tháng đóng bằng 22% mức thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện vào quỹ hưu trí và tử tuất.\nCăn cứ vào điều kiện phát triển kinh tế "
+    },
+    {
+      "clause_id": "L41_2024.A13.K4",
+      "score": 0.8382021188735962,
+      "text_preview": "Đóng bảo hiểm xã hội bắt buộc cho người lao động theo quy định tại Điều 34 của Luật này và hằng tháng trích khoản tiền phải đóng bảo hiểm xã hội bắt buộc theo quy định tại Điều 33 của Luật này từ tiền"
+    },
+    {
+      "clause_id": "L41_2024.A5.K1",
+      "score": 0.837225615978241,
+      "text_preview": "Mức hưởng bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện được tính trên cơ sở mức đóng và thời gian đóng bảo hiểm xã hội; có chia sẻ giữa những người tham gia bảo hiểm xã hội theo quy định của "
+    },
+    {
+      "clause_id": "L41_2024.A5.K3",
+      "score": 0.8338566422462463,
+      "text_preview": "Người vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện được hưởng chế độ trợ cấp hằng tháng, chế độ hưu trí và chế độ tử tuất trên cơ sở thời gian đã đóng"
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 5,
+  "elapsed_s": 2.31,
+  "gold_answer": "Pháp luật về BHXH hiện hành không có quy định đối với trường hợp người lao động tự tham gia BHXH bắt buộc.\nDo vậy, trường hợp của bà ký hợp đồng lao động làm việc không trọn thời gian, không thuộc đối tượng tham gia BHXH bắt buộc thì có thể liên hệ tới cơ quan BHXH tại nơi cư trú để tham gia BHXH tự nguyện.",
+  "gold_citations_raw": "Luật BHXH 2014"
+}

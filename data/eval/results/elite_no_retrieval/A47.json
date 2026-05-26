@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 47,
+  "question": "Mình vừa được thăng chức, tăng lương xong mấy ngày thì biết tin có bầu. Mình đã đóng bảo hiểm được 5 năm. Thời gian tăng lương đến khi nghỉ thai sản đúng 6 tháng trước sinh ( tăng hơn 1 triệu ) . Giờ mình xin nghỉ thai sản trước 2 tháng và nghỉ việc luôn thì có bị thanh tra không? Mình có đầy đủ quyết định điều chỉnh lương , bảng lương, quyết định bổ nhiệm nhưng nhận quyết định qua mail k có bản dấu đỏ thì khi thanh tra có được chấp nhận không?",
+  "answer": "Issue: Người dùng hỏi về khả năng bị thanh tra khi xin nghỉ thai sản trước 2 tháng và nghỉ việc, mặc dù đã có quyết định điều chỉnh lương nhưng không có bản dấu đỏ.\n\nRule: Không có trích dẫn pháp lý nào được cung cấp trong dữ liệu.\n\nApplication: Không có giá trị nào được gán cho các slot trong quá trình thực hiện truy vấn. Tuy nhiên, Prolog đã xác định rằng người dùng có thể bị thanh tra nếu có dấu hiệu lạm dụng chính sách.\n\nConclusion: Prolog đã trả về kết quả là \"Có thể bị thanh tra nếu có dấu hiệu lạm dụng chính sách.\" Tuy nhiên, không có thông tin nào về các slot cụ thể đã được sử dụng trong quá trình truy vấn.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,Có thể bị thanh tra nếu có dấu hiệu lạm dụng chính sách.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người dùng hỏi về khả năng bị thanh tra khi xin nghỉ thai sản trước 2 tháng và nghỉ việc, mặc dù đã có quyết định điều chỉnh lương nhưng không có bản dấu đỏ.",
+    "rule": "Không có trích dẫn pháp lý nào được cung cấp trong dữ liệu.",
+    "application": "Không có giá trị nào được gán cho các slot trong quá trình thực hiện truy vấn. Tuy nhiên, Prolog đã xác định rằng người dùng có thể bị thanh tra nếu có dấu hiệu lạm dụng chính sách.",
+    "conclusion": "Prolog đã trả về kết quả là \"Có thể bị thanh tra nếu có dấu hiệu lạm dụng chính sách.\" Tuy nhiên, không có thông tin nào về các slot cụ thể đã được sử dụng trong quá trình truy vấn."
+  },
+  "elapsed_s": 17.449,
+  "prompt_tokens": 3888,
+  "completion_tokens": 717,
+  "error": null,
+  "gold_answer": "Việc tăng lương rồi sau đó nghỉ thai sản không mặc nhiên bị thanh tra hay bị từ chối chế độ. Cơ quan BHXH chỉ kiểm tra khi nghi ngờ việc tăng lương không có căn cứ thực tế, không đúng quy chế hoặc đóng BHXH không đúng bản chất quan hệ lao động. Nếu bạn có quyết định điều chỉnh lương, bổ nhiệm, bảng lương, chứng từ trả lương và việc tăng lương là thật, đúng quy trình thì thường vẫn được chấp nhận. Văn bản điện tử hợp lệ không bắt buộc phải có bản dấu đỏ giấy.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 53; Bộ luật Lao động 2019 Điều 90, Điều 94; Luật Giao dịch điện tử 2023"
+}

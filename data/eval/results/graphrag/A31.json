@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 31,
+  "question": "Ông Tất Thắng (TPHCM) hỏi, người lao động ký hợp đồng dưới 1 tháng, làm đủ từ 14 công trở lên có mức lương cao hơn mức lương tối thiểu vùng thì có thuộc đối tượng đóng BHXH không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 2 khoản 2] quy định về đối tượng tham gia bảo hiểm xã hội bắt buộc.\n- [Điều 33 khoản 5] quy định về mức đóng bảo hiểm xã hội của người lao động.",
+  "citations": [
+    "[Điều 2 khoản 2]",
+    "[Điều 33 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2.K2",
+    "L41_2024.A33.K5"
+  ],
+  "citation_verified": {
+    "L41_2024.A2.K2": true,
+    "L41_2024.A33.K5": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A33.K5",
+      "score": 0.8275771141052246,
+      "text_preview": "Đối tượng quy định tại các điểm a, b, c, d và i khoản 1 và khoản 2 Điều 2 của Luật này mà không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì người lao động không phải đóng bảo hiểm xã "
+    },
+    {
+      "clause_id": "L41_2024.A33.K6",
+      "score": 0.8243335485458374,
+      "text_preview": "Trường hợp trong tháng đầu làm việc hoặc trong tháng đầu trở lại làm việc mà người lao động nghỉ việc hưởng chế độ ốm đau từ 14 ngày làm việc trở lên thì vẫn phải đóng bảo hiểm xã hội của tháng đó."
+    },
+    {
+      "clause_id": "L41_2024.A2.K2",
+      "score": 0.8097484707832336,
+      "text_preview": "Người lao động là công dân nước ngoài làm việc tại Việt Nam thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc khi làm việc theo hợp đồng lao động xác định thời hạn có thời hạn từ đủ 12 tháng trở lên v"
+    },
+    {
+      "clause_id": "L41_2024.A72.K3",
+      "score": 0.8043440580368042,
+      "text_preview": "Người lao động vừa có thời gian đóng bảo hiểm xã hội thuộc đối tượng thực hiện chế độ tiền lương do Nhà nước quy định, vừa có thời gian đóng bảo hiểm xã hội theo chế độ tiền lương do người sử dụng lao"
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.8038779497146606,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    }
+  ],
+  "n_semantic_edges": 1,
+  "n_refs": 9,
+  "elapsed_s": 2.14,
+  "gold_answer": "Căn cứ điểm a khoản 1 Điều 2 Luật BHXH 2024; Nghị định số 158/2025/NĐ-CP ngày 25/6/2025 của Chính phủ, người lao động làm việc theo hợp đồng lao động từ đủ 1 tháng trở lên thuộc đối tượng tham gia BHXH bắt buộc.\nDo đó, trường hợp người lao động ký hợp đồng lao động dưới 1 tháng không thuộc đối tượng tham gia BHXH bắt buộc, quy định làm đủ 14 ngày công trở lên chỉ áp dụng đối với người lao động có hợp đồng lao động từ đủ 1 tháng trở lên.",
+  "gold_citations_raw": "điểm a khoản 1 Điều 2 Luật BHXH 2024; Nghị định số 158/2025/NĐ-CP"
+}

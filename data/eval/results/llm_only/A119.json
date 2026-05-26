@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 119,
+  "question": "Có phải cơ quan BHXH giờ không cấp lại bìa và tờ rời nữa không? Mình nộp đủ sổ cho công ty cũ chốt bhxh mà công ty báo lại là giờ cơ quan bhxh ko cấp lại sổ giấy nữa.",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, cơ quan bảo hiểm xã hội đã chuyển sang sử dụng hình thức quản lý thông tin điện tử, do đó không cấp lại sổ bảo hiểm xã hội (BHXH) bằng giấy. Thay vào đó, thông tin về quá trình tham gia BHXH sẽ được lưu trữ và quản lý trên hệ thống điện tử. \n\nCụ thể, Điều 46 quy định về việc cấp sổ BHXH, trong đó nêu rõ việc chuyển đổi sang hình thức quản lý điện tử. Do đó, bạn cần xác nhận lại với công ty cũ về việc sử dụng thông tin điện tử thay vì sổ giấy.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 3.045,
+  "prompt_tokens": 215,
+  "completion_tokens": 151,
+  "gold_answer": "Không phải là cơ quan BHXH 'không cấp lại nữa'. Hiện quản lý điện tử là chính, nhưng khi cần vẫn có thể thực hiện thủ tục cấp lại/cấp quá trình đóng theo quy định. Nếu công ty nói không có sổ giấy nên không trả được thì bạn nên yêu cầu họ cung cấp xác nhận đã chốt và dữ liệu quá trình đóng; trường hợp mất sổ, bạn có thể trực tiếp làm thủ tục cấp lại tại BHXH.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

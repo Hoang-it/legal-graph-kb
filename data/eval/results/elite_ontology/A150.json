@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 150,
+  "question": "BH thất nghiệp của mình sao lại ít hơn so với BHXH ? Mình làm nhà nước. Đóng BH từ 6/2013 đến 4/2026. Nay mình mở app lên thấy BHTN có 11 năm 9 tháng. Còn BHXH là 12năm 9 tháng ạ",
+  "answer": "Issue: Người dùng thắc mắc về việc bảo hiểm thất nghiệp (BHTN) thấp hơn bảo hiểm xã hội (BHXH) mặc dù đã đóng bảo hiểm từ tháng 6 năm 2013 đến tháng 4 năm 2026.\n\nRule: \"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog không thể thực hiện truy vấn do không có dữ liệu đầu vào.\n\nConclusion: Hệ thống không thể tính toán được giá trị cuối cùng vì không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 18 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 2,
+  "prolog_trace": "[step(conclusion,explain_bhtn_vs_bhxh(BHTN thấp hơn BHXH có thể do tỷ lệ đóng góp và quy định khác nhau về thời gian hưởng.),based_on(source_c006))]",
+  "irac_sections": {
+    "issue": "Người dùng thắc mắc về việc bảo hiểm thất nghiệp (BHTN) thấp hơn bảo hiểm xã hội (BHXH) mặc dù đã đóng bảo hiểm từ tháng 6 năm 2013 đến tháng 4 năm 2026.",
+    "rule": "\"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)",
+    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog không thể thực hiện truy vấn do không có dữ liệu đầu vào.",
+    "conclusion": "Hệ thống không thể tính toán được giá trị cuối cùng vì không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 19.802,
+  "prompt_tokens": 7828,
+  "completion_tokens": 1143,
+  "error": null,
+  "gold_answer": "BHXH và BHTN không phải lúc nào cũng bằng nhau vì có thời gian tham gia BHXH nhưng không thuộc diện đóng BHTN. Ví dụ nhiều lao động khu vực nhà nước, thời gian trước khi thuộc diện BHTN hoặc thời gian không phải đóng BHTN thì chỉ tính BHXH. Do đó BHXH 12 năm 9 tháng nhưng BHTN 11 năm 9 tháng là có thể xảy ra, không phải lỗi nếu có 1 năm không thuộc diện BHTN.",
+  "gold_citations_raw": "Luật BHXH 2024; Luật Việc làm 2013/2025"
+}

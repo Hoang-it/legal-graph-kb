@@ -1,0 +1,54 @@
+{
+  "arm": "graphrag",
+  "stt": 64,
+  "question": "Mình ở phường xuân hòa tỉnh phú thọ. Mình đang đóng bảo hiểm tự nguyện, giờ mình  muốn chốt sổ thì làm thế nào?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 6 khoản 5] Hỗ trợ người tham gia bảo hiểm xã hội tự nguyện.\n- [Điều 12 khoản 3] Được cơ quan bảo hiểm xã hội hướng dẫn trình tự, thủ tục thực hiện bảo hiểm xã hội.\n- [Điều 3 khoản 4] Bảo hiểm xã hội tự nguyện là loại hình bảo hiểm xã hội do Nhà nước tổ chức mà công dân Việt Nam tự nguyện tham gia và được lựa chọn mức đóng, phương thức đóng phù hợp với thu nhập của mình.",
+  "citations": [
+    "[Điều 6 khoản 5]",
+    "[Điều 12 khoản 3]",
+    "[Điều 3 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A6.K5",
+    "L41_2024.A12.K3",
+    "L41_2024.A3.K4"
+  ],
+  "citation_verified": {
+    "L41_2024.A6.K5": true,
+    "L41_2024.A12.K3": true,
+    "L41_2024.A3.K4": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A6.K5",
+      "score": 0.8138027787208557,
+      "text_preview": "Hỗ trợ người tham gia bảo hiểm xã hội tự nguyện."
+    },
+    {
+      "clause_id": "L41_2024.A9.K9",
+      "score": 0.8068854212760925,
+      "text_preview": "Cầm cố, mua bán, thế chấp, đặt cọc sổ bảo hiểm xã hội dưới mọi hình thức."
+    },
+    {
+      "clause_id": "L41_2024.A12.K3",
+      "score": 0.8006088733673096,
+      "text_preview": "Được cơ quan bảo hiểm xã hội hướng dẫn trình tự, thủ tục thực hiện bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A15.K6",
+      "score": 0.7948115468025208,
+      "text_preview": "Kiến nghị cơ quan nhà nước có thẩm quyền xử lý hành vi vi phạm pháp luật về bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A133.K5",
+      "score": 0.7866907715797424,
+      "text_preview": "Tổ chức bộ máy thực hiện bảo hiểm xã hội."
+    }
+  ],
+  "n_semantic_edges": 2,
+  "n_refs": 0,
+  "elapsed_s": 2.93,
+  "gold_answer": "BHXH tự nguyện không phải 'chốt sổ' theo nghĩa như BHXH bắt buộc. Nếu bạn muốn dừng đóng, bạn chỉ cần ngừng tham gia; thời gian đã đóng sẽ được bảo lưu để sau này đóng tiếp hoặc giải quyết chế độ khi đủ điều kiện. Nếu muốn xác nhận lại quá trình tham gia, cập nhật thông tin hoặc chuyển sang diện khác thì liên hệ cơ quan BHXH nơi cư trú/cơ quan BHXH khu vực để được hướng dẫn trên cùng một mã số BHXH.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 36, Điều 102"
+}

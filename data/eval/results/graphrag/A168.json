@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 168,
+  "question": "Cho mình hỏi cuối tháng 4 mình bắt đầu làm công ty mới và đến cuối tháng 6 mình bắt đầu được đóng BHXH. Đầu tháng 5 thì mình mới xin được tờ rời và quyết định nghỉ việc của công ty cũ. Như thế thì mình có xin được trợ cấp thất nghiệp trong tháng 5 hoặc tháng 6 không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 38: Chậm đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp.\n- Điều 107: Giải quyết hưởng lương hưu, bảo hiểm xã hội một lần đối với người đang bảo lưu thời gian đóng bảo hiểm xã hội, người tham gia bảo hiểm xã hội tự nguyện.\n- Điều 79: Giải quyết hưởng lương hưu, hưởng bảo hiểm xã hội một lần.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A38.K1",
+      "score": 0.8246833086013794,
+      "text_preview": "Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều "
+    },
+    {
+      "clause_id": "L41_2024.A107.K2",
+      "score": 0.8220961689949036,
+      "text_preview": "Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.\nThời điểm kết thúc ngày cuối cùng của tháng dừng đ"
+    },
+    {
+      "clause_id": "L41_2024.A141.K1",
+      "score": 0.8193390369415283,
+      "text_preview": "Người đang hưởng trợ cấp mất sức lao động, trợ cấp tai nạn lao động, bệnh nghề nghiệp, trợ cấp tuất hằng tháng, trợ cấp hằng tháng đối với cán bộ xã, phường, thị trấn đã nghỉ việc, trợ cấp hằng tháng "
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.8189315795898438,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A94.K1",
+      "score": 0.8167999982833862,
+      "text_preview": "Đối tượng có thời gian đóng bảo hiểm xã hội tự nguyện hoặc vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện từ đủ 06 tháng trở lên trong thời gian 12 thán"
+    }
+  ],
+  "n_semantic_edges": 3,
+  "n_refs": 6,
+  "elapsed_s": 2.94,
+  "gold_answer": "Bạn chỉ được nộp hồ sơ BHTN trong 03 tháng kể từ ngày chấm dứt HĐLĐ với công ty cũ. Nếu đến tháng 5 hoặc tháng 6 vẫn còn trong hạn 03 tháng và chưa có việc làm thuộc diện phải tham gia BHTN thì có thể nộp. Tuy nhiên nếu cuối tháng 4 đã vào công ty mới và đến thời điểm nộp hồ sơ đã thuộc diện phải tham gia BHTN ở nơi mới thì nguy cơ không đủ điều kiện hưởng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

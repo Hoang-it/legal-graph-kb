@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 141,
+  "question": "em vừa nghỉ việc tại công ty, mà HR nói là giờ chốt sổ xong ko có tờ rời nữa, h chuyển sang quản lý bằng sổ bhxh điện tử. HR còn cap cho e đoạn trao đổi với bhxh Tây Hồ, cho e hỏi thế h e đi làm bảo hiểm thất nghiệp có đc ko?",
+  "answer": "Issue: Người hỏi muốn biết liệu họ có đủ điều kiện để nhận bảo hiểm thất nghiệp sau khi nghỉ việc và chuyển sang quản lý bằng sổ bảo hiểm xã hội điện tử.\n\nRule: \"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng người hỏi đủ điều kiện nhận bảo hiểm thất nghiệp với kết quả là \"yes\".\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người hỏi đủ điều kiện nhận bảo hiểm thất nghiệp.",
+  "citations": [
+    "[Điều 18 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_eligibility(yes),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết liệu họ có đủ điều kiện để nhận bảo hiểm thất nghiệp sau khi nghỉ việc và chuyển sang quản lý bằng sổ bảo hiểm xã hội điện tử.",
+    "rule": "\"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)",
+    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng người hỏi đủ điều kiện nhận bảo hiểm thất nghiệp với kết quả là \"yes\".",
+    "conclusion": "Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người hỏi đủ điều kiện nhận bảo hiểm thất nghiệp."
+  },
+  "elapsed_s": 9.796,
+  "prompt_tokens": 3071,
+  "completion_tokens": 480,
+  "error": null,
+  "gold_answer": "Việc HR nói không có tờ rời giấy nữa không đồng nghĩa bạn không làm được BHTN. Nếu dữ liệu BHXH đã chốt trên hệ thống, bạn vẫn có thể làm hồ sơ bằng giấy tờ chấm dứt HĐLĐ và tài liệu/tra cứu thể hiện quá trình đóng theo hướng dẫn của trung tâm dịch vụ việc làm. Tuy nhiên bạn nên xin công ty cung cấp xác nhận chốt sổ hoặc bản in quá trình đóng để tránh bị yêu cầu bổ sung.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

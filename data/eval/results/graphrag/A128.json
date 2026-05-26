@@ -1,0 +1,66 @@
+{
+  "arm": "graphrag",
+  "stt": 128,
+  "question": "mình đi làm hồ sơ lãnh lương hưu thì bên bhxh tra trên hệ thống và báo rằng tên mình có 2 số sổ, và số sổ kia đã chốt và nhận tiền rồi, mà mình chưa từng làm ở công ty đó, bây giờ mình phải làm sao?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 9 khoản 2] - Các hành vi bị nghiêm cấm.\n- [Điều 64 khoản 3] - Đối tượng và điều kiện hưởng lương hưu.\n- [Điều 25 khoản 3] - Sổ bảo hiểm xã hội.\n- [Điều 13 khoản 2] - Trách nhiệm của người sử dụng lao động.\n- [Điều 28 khoản 4] - Đăng ký tham gia bảo hiểm xã hội và cấp sổ bảo hiểm xã hội.\n- [Điều 75 khoản 5] - Tạm dừng, chấm dứt, tiếp tục hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng.\n- [Điều 79 khoản 3] - Giải quyết hưởng lương hưu, hưởng bảo hiểm xã hội một lần.",
+  "citations": [
+    "[Điều 9 khoản 2]",
+    "[Điều 64 khoản 3]",
+    "[Điều 25 khoản 3]",
+    "[Điều 13 khoản 2]",
+    "[Điều 28 khoản 4]",
+    "[Điều 75 khoản 5]",
+    "[Điều 79 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A9.K2",
+    "L41_2024.A64.K3",
+    "L41_2024.A25.K3",
+    "L41_2024.A13.K2",
+    "L41_2024.A28.K4",
+    "L41_2024.A75.K5",
+    "L41_2024.A79.K3"
+  ],
+  "citation_verified": {
+    "L41_2024.A9.K2": true,
+    "L41_2024.A64.K3": true,
+    "L41_2024.A25.K3": true,
+    "L41_2024.A13.K2": true,
+    "L41_2024.A28.K4": true,
+    "L41_2024.A75.K5": true,
+    "L41_2024.A79.K3": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A9.K2",
+      "score": 0.7883010506629944,
+      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A64.K3",
+      "score": 0.7856997847557068,
+      "text_preview": "Chính phủ quy định việc hưởng lương hưu đối với trường hợp không xác định được ngày, tháng sinh hoặc mất hồ sơ và các trường hợp đặc biệt khác."
+    },
+    {
+      "clause_id": "L41_2024.A25.K3",
+      "score": 0.7839382886886597,
+      "text_preview": "Dữ liệu về sổ bảo hiểm xã hội được cập nhật chính xác, kịp thời, đối chiếu thông tin và quản lý theo quy định."
+    },
+    {
+      "clause_id": "L41_2024.A13.K2",
+      "score": 0.7831225991249084,
+      "text_preview": "Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A28.K4",
+      "score": 0.7820615768432617,
+      "text_preview": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn"
+    }
+  ],
+  "n_semantic_edges": 3,
+  "n_refs": 0,
+  "elapsed_s": 3.77,
+  "gold_answer": "Đây là dấu hiệu có thể bị trùng/nhầm mã số BHXH hoặc có người dùng thông tin của bạn. Bạn cần đề nghị BHXH kiểm tra, đối chiếu CCCD, quá trình đóng, hồ sơ gốc của 2 số sổ và yêu cầu tạm dừng giải quyết cho số bất thường nếu có dấu hiệu giả mạo. Nếu đúng có việc sử dụng thông tin trái phép, bạn có quyền khiếu nại và đề nghị chuyển cơ quan công an xử lý.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

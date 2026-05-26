@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 169,
+  "question": "Em đã đóng bhxh đc 8 năm. Em định làm đến khi đóng đc 19 năm thì nghỉ hẳn và nhận 1 cục kèm theo bh thất nghiệp thì theo luật có được ko?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- Điều 64: Đối tượng và điều kiện hưởng lương hưu.\n- Điều 33: Mức đóng, phương thức và thời hạn đóng bảo hiểm xã hội bắt buộc của người lao động.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A64.K1",
+      "score": 0.815824031829834,
+      "text_preview": "Đối tượng quy định tại các điểm a, b, c, g, h, i, k, l, m và n khoản 1 và khoản 2 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 15 năm trở lên thì được hưởng lương"
+    },
+    {
+      "clause_id": "L41_2024.A64.K2",
+      "score": 0.8114712238311768,
+      "text_preview": "Đối tượng quy định tại các điểm d, đ và e khoản 1 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 15 năm trở lên thì được hưởng lương hưu nếu thuộc một trong các trư"
+    },
+    {
+      "clause_id": "L41_2024.A65.K1",
+      "score": 0.8114346265792847,
+      "text_preview": "Đối tượng quy định tại các điểm a, b, c, g, h, i, k, l, m và n khoản 1 và khoản 2 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 20 năm trở lên thì được hưởng lương"
+    },
+    {
+      "clause_id": "L41_2024.A9.K2",
+      "score": 0.8051543235778809,
+      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A65.K2",
+      "score": 0.8049957752227783,
+      "text_preview": "Đối tượng quy định tại các điểm d, đ và e khoản 1 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 20 năm trở lên, bị suy giảm khả năng lao động từ 61% trở lên thì đư"
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 20,
+  "elapsed_s": 1.53,
+  "gold_answer": "Bạn đóng đến 19 năm rồi nghỉ để 'nhận 1 cục' không phải lúc nào cũng được. Từ 01/7/2025, nhiều trường hợp có từ đủ 15 năm đóng và đủ tuổi nghỉ hưu sẽ thuộc diện hưởng lương hưu, không mặc nhiên được rút 1 lần theo ý muốn. BHTN thì là chế độ riêng: nếu chấm dứt HĐLĐ hợp pháp, đủ thời gian đóng và nộp đúng hạn, bạn vẫn có thể hưởng BHTN.",
+  "gold_citations_raw": "Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

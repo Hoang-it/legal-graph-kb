@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 168,
+  "question": "Cho mình hỏi cuối tháng 4 mình bắt đầu làm công ty mới và đến cuối tháng 6 mình bắt đầu được đóng BHXH. Đầu tháng 5 thì mình mới xin được tờ rời và quyết định nghỉ việc của công ty cũ. Như thế thì mình có xin được trợ cấp thất nghiệp trong tháng 5 hoặc tháng 6 không?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, để được hưởng trợ cấp thất nghiệp, người lao động phải đáp ứng các điều kiện như đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên và phải nộp hồ sơ xin trợ cấp thất nghiệp trong thời hạn quy định.\n\nTrong trường hợp của bạn, nếu bạn đã bắt đầu làm việc tại công ty mới vào cuối tháng 4 và đến cuối tháng 6 mới bắt đầu đóng BHXH, thì bạn sẽ không đủ điều kiện để nhận trợ cấp thất nghiệp trong tháng 5 hoặc tháng 6, vì bạn chưa có thời gian đóng bảo hiểm thất nghiệp tại công ty mới.\n\nNgoài ra, bạn cũng cần có quyết định nghỉ việc từ công ty cũ trước khi nộp hồ sơ xin trợ cấp thất nghiệp. Nếu bạn không có quyết định nghỉ việc trước khi nộp hồ sơ, bạn cũng không đủ điều kiện để nhận trợ cấp thất nghiệp.\n\nTóm lại, bạn không đủ điều kiện để xin trợ cấp thất nghiệp trong tháng 5 hoặc tháng 6.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 4.284,
+  "prompt_tokens": 233,
+  "completion_tokens": 218,
+  "gold_answer": "Bạn chỉ được nộp hồ sơ BHTN trong 03 tháng kể từ ngày chấm dứt HĐLĐ với công ty cũ. Nếu đến tháng 5 hoặc tháng 6 vẫn còn trong hạn 03 tháng và chưa có việc làm thuộc diện phải tham gia BHTN thì có thể nộp. Tuy nhiên nếu cuối tháng 4 đã vào công ty mới và đến thời điểm nộp hồ sơ đã thuộc diện phải tham gia BHTN ở nơi mới thì nguy cơ không đủ điều kiện hưởng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

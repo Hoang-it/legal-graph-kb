@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 136,
+  "question": "các bước nhận bhxh thất nghiệp như thế nào?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 38. Chậm đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp\n- Điều 12. Quyền của người sử dụng lao động\n- Điều 13. Trách nhiệm của người sử dụng lao động\n\nNếu bạn cần thông tin cụ thể hơn về quy trình nhận bảo hiểm thất nghiệp, vui lòng cung cấp thêm thông tin hoặc tham khảo các điều luật khác.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A13.K2",
+      "score": 0.7916972637176514,
+      "text_preview": "Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A12.K3",
+      "score": 0.7789819836616516,
+      "text_preview": "Được cơ quan bảo hiểm xã hội hướng dẫn trình tự, thủ tục thực hiện bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A107.K2",
+      "score": 0.7775375247001648,
+      "text_preview": "Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.\nThời điểm kết thúc ngày cuối cùng của tháng dừng đ"
+    },
+    {
+      "clause_id": "L41_2024.A62.K1",
+      "score": 0.7771667242050171,
+      "text_preview": "Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản.\n"
+    },
+    {
+      "clause_id": "L41_2024.A61.K5",
+      "score": 0.7760460376739502,
+      "text_preview": "Hồ sơ đề nghị nghỉ việc hưởng chế độ thai sản hoặc hưởng trợ cấp một lần đối với lao động nam khi vợ sinh con là bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con; t"
+    }
+  ],
+  "n_semantic_edges": 3,
+  "n_refs": 8,
+  "elapsed_s": 2.33,
+  "gold_answer": "Các bước cơ bản nhận BHTN: (1) chuẩn bị hồ sơ gồm đơn đề nghị, CCCD, tài liệu chấm dứt HĐLĐ; (2) nộp tại trung tâm dịch vụ việc làm trong 03 tháng từ ngày nghỉ việc; (3) chờ 15 ngày làm việc nếu chưa có việc làm; (4) nhận quyết định hưởng và tiền trợ cấp; (5) thực hiện thông báo tìm kiếm việc làm hằng tháng đúng lịch hẹn.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

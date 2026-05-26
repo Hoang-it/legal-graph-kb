@@ -1,0 +1,20 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 5,
+  "question": "Công ty của ông Tuấn Tú (Lào Cai) có phát sinh ký hợp đồng lao động với người lao động từ tháng 3/2024.\nÔng Tú hỏi, ông có thể kê khai thông tin qua mạng để đóng BHXH cho người lao động không? Hồ sơ kê khai gồm những gì?\nNếu kê khai qua mạng thì cần làm gì để được cấp mã đăng nhập?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'declaration_documents(user']",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "invalid_query",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 15.895,
+  "prompt_tokens": 4247,
+  "completion_tokens": 780,
+  "error": null,
+  "gold_answer": "Đơn vị có thể thực hiện giao dịch BHXH điện tử qua Cổng thông tin điện tử của BHXH Việt Nam hoặc qua Tổ chức cung cấp dịch vụ I-VAN để kê khai đóng BHXH cho người lao động.\nHồ sơ kê khai bao gồm: Tờ khai đơn vị tham gia, điều chỉnh thông tin BHXH, BHYT (Mẫu TK3-TS); báo cáo tình hình sử dụng lao động và danh sách tham gia BHXH, BHYT, BHTN, BHTNLĐ, BNN (Mẫu D02-LT); tờ khai tham gia, điều chỉnh thông tin BHXH, BHYT (Mẫu TK1-TS) đối với người tham gia lần đầu hoặc có mã số BHXH nhưng chưa đủ thông tin; trường hợp người lao động được hưởng quyền lợi BHYT cao hơn: Bổ sung Giấy tờ chứng minh (nếu có).\nKhi kê khai giao dịch BHXH điện tử thì cần điều kiện sau để được cấp mã đăng nhập: Đơn vị cần có chứng thư số (chữ ký số) còn hiệu lực được cấp bởi tổ chức cung cấp dịch vụ chứng thực chữ ký số cấp theo quy định; có khả năng truy cập và sử dụng mạng internet; có địa chỉ hòm thư điện tử (email) thường xuyên sử dụng.\nKhi đơn vị đã có chữ ký số thì có thể kê khai giao dịch BHXH điện tử qua các phương thức sau:\nPhương thức 1: Đăng ký qua Cổng thông tin điện tử của BHXH Việt Nam:\nĐơn vị sử dụng chữ ký số trên máy tính, mở trình duyệt bất kỳ, truy cập theo đường dẫn https://dichvucong.baohiemxahoi.gov.vn, chọn mục đăng ký, thực hiện các bước theo hướng dẫn trên hệ thống để hoàn tất đăng ký và kê khai hồ sơ theo quy định.\nPhương thức 2: Đăng ký sử dụng dịch vụ I-VAN:\nĐơn vị sử dụng phần mềm kê khai BHXH điện tử do Tổ chức I-VAN cung cấp: Đề nghị liên hệ với cơ quan BHXH để được cấp mã đơn vị lần đầu (do phần mềm kê khai BHXH điện tử của một số Tổ chức I-VAN chưa hỗ trợ đăng ký cấp mã đơn vị lần đầu cho doanh nghiệp), sau đó thực hiện đăng ký giao dịch điện tử và kê khai hồ sơ theo quy định.",
+  "gold_citations_raw": null
+}

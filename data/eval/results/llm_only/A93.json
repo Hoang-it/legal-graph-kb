@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 93,
+  "question": "Chồng mình bộ đội 19 năm ra quân 31/3/2025 thì khi nào đc lãnh BHXH 1 lần của Bộ quốc phòng?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động có quyền nhận bảo hiểm xã hội một lần khi đủ điều kiện về thời gian tham gia bảo hiểm và đã ra quân. \n\nChồng bạn ra quân vào ngày 31/3/2025, do đó, nếu đủ điều kiện theo quy định, chồng bạn có thể làm thủ tục để nhận bảo hiểm xã hội một lần ngay sau khi ra quân. Tuy nhiên, thời gian cụ thể để nhận tiền sẽ phụ thuộc vào quy trình giải quyết của cơ quan bảo hiểm xã hội và các thủ tục cần thiết mà chồng bạn phải thực hiện. \n\nBạn nên liên hệ với cơ quan bảo hiểm xã hội hoặc đơn vị quân đội nơi chồng bạn công tác để được hướng dẫn cụ thể hơn.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 3.369,
+  "prompt_tokens": 192,
+  "completion_tokens": 168,
+  "gold_answer": "Nếu chồng bạn ra quân ngày 31/3/2025 thì thời điểm hưởng BHXH một lần còn phải xem hồ sơ xuất ngũ, quyết định phục viên/xuất ngũ, tình trạng có tiếp tục tham gia BHXH ở đơn vị khác hay không và thủ tục giải quyết của BHXH Bộ Quốc phòng. Trường hợp thông thường, sau khi đủ điều kiện luật định và hoàn tất hồ sơ, cơ quan có thẩm quyền sẽ giải quyết theo thời hạn luật định; không phải cứ ra quân là nhận ngay trong ngày.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 110; quy định BHXH trong quân đội"
+}

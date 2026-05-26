@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 124,
+  "question": "gộp sổ thì bên bảo hiểm để tầm mấy ngày?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 28 khoản 4: quy định về thời hạn cấp sổ bảo hiểm xã hội.\n- Điều 91 khoản 3: quy định về thời hạn giải quyết hưởng chế độ tử tuất.\n- Điều 81 khoản 2: quy định về thời hạn giải quyết tiếp tục hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng.\n- Điều 76 khoản 5: quy định về thời hạn giải quyết trợ cấp một lần đối với người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng ra nước ngoài để định cư.\n- Điều 97 khoản 2: quy định về thời hạn giải quyết hưởng trợ cấp thai sản.\n- Điều 63 khoản 2: quy định về thời hạn giải quyết hưởng trợ cấp dưỡng sức, phục hồi sức khoẻ sau thai sản.\n- Điều 49 khoản 2: quy định về thời hạn giải quyết hưởng trợ cấp dưỡng sức, phục hồi sức khoẻ sau khi ốm đau.\n- Điều 62 khoản 3: quy định về thời hạn giải quyết hưởng chế độ thai sản đối với người tham gia bảo hiểm xã hội bắt buộc.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A28.K4",
+      "score": 0.8268499374389648,
+      "text_preview": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn"
+    },
+    {
+      "clause_id": "L41_2024.A91.K3",
+      "score": 0.813068151473999,
+      "text_preview": "Trong thời hạn 10 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do."
+    },
+    {
+      "clause_id": "L41_2024.A81.K2",
+      "score": 0.813068151473999,
+      "text_preview": "Trong thời hạn 10 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do."
+    },
+    {
+      "clause_id": "L41_2024.A76.K5",
+      "score": 0.8118648529052734,
+      "text_preview": "Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do."
+    },
+    {
+      "clause_id": "L41_2024.A97.K2",
+      "score": 0.8097281455993652,
+      "text_preview": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do."
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 0,
+  "elapsed_s": 4.02,
+  "gold_answer": "Thời gian gộp sổ BHXH thường không quá 10 ngày làm việc kể từ khi nhận đủ hồ sơ; trường hợp cần xác minh quá trình ở nhiều nơi thì có thể kéo dài nhưng không quá 45 ngày. Bạn nên xin giấy hẹn hoặc tra cứu mã hồ sơ để theo dõi. Nếu quá hạn mà chưa có kết quả, có thể phản ánh trực tiếp với cơ quan BHXH nơi nộp.",
+  "gold_citations_raw": "Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

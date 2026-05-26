@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 121,
+  "question": "Nộp sổ lm bh 1 lần xong có hẹn ngày lấy quyết định. Trong tờ quyết định đó nó có ghi số tiền mình được hưởng là bao nhiêu ko?",
+  "answer": "Issue: Người lao động nộp sổ bảo hiểm xã hội một lần và muốn biết trong tờ quyết định có ghi số tiền được hưởng hay không.\n\nRule: Không có quy định cụ thể nào được trích dẫn trong trường hợp này.\n\nApplication: Không có slot nào được gán giá trị trong quá trình truy vấn. Prolog đã trả về một câu trả lời mà không cần sử dụng bất kỳ thông tin nào từ các slot.\n\nConclusion: Prolog đã trả về câu trả lời rằng \"Trong tờ quyết định sẽ ghi rõ số tiền được hưởng, tùy thuộc vào các điều kiện và mức đóng bảo hiểm xã hội của người lao động.\" Tuy nhiên, không có số tiền cụ thể nào được cung cấp, và không có slot nào bị thiếu.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,Trong tờ quyết định sẽ ghi rõ số tiền được hưởng, tùy thuộc vào các điều kiện và mức đóng bảo hiểm xã hội của người lao động.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người lao động nộp sổ bảo hiểm xã hội một lần và muốn biết trong tờ quyết định có ghi số tiền được hưởng hay không.",
+    "rule": "Không có quy định cụ thể nào được trích dẫn trong trường hợp này.",
+    "application": "Không có slot nào được gán giá trị trong quá trình truy vấn. Prolog đã trả về một câu trả lời mà không cần sử dụng bất kỳ thông tin nào từ các slot.",
+    "conclusion": "Prolog đã trả về câu trả lời rằng \"Trong tờ quyết định sẽ ghi rõ số tiền được hưởng, tùy thuộc vào các điều kiện và mức đóng bảo hiểm xã hội của người lao động.\" Tuy nhiên, không có số tiền cụ thể nào được cung cấp, và không có slot nào bị thiếu."
+  },
+  "elapsed_s": 6.941,
+  "prompt_tokens": 2015,
+  "completion_tokens": 287,
+  "error": null,
+  "gold_answer": "Có. Quyết định hưởng BHXH 1 lần thường thể hiện rõ căn cứ giải quyết, thời gian đóng được tính hưởng và số tiền được chi trả. Bạn nên kiểm tra kỹ họ tên, số sổ, số tài khoản, thời gian đóng và số tiền trong quyết định. Nếu sai thì khiếu nại ngay trước khi nhận tiền để tránh phải điều chỉnh lại sau.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

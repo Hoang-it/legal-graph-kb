@@ -1,0 +1,19 @@
+{
+  "arm": "llm_only",
+  "stt": 100,
+  "question": "Em đóng bh đc 3th tầm hơn 1tr. Bây h nghỉ việc, k có ý định làm lại thì có lấy lại đc khoản mình đã đóng không?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, nếu bạn đã đóng bảo hiểm xã hội nhưng không có ý định tiếp tục làm việc và muốn rút tiền, bạn có thể làm thủ tục để nhận lại số tiền đã đóng. Tuy nhiên, bạn sẽ chỉ được rút bảo hiểm xã hội một lần trong trường hợp bạn không còn tham gia bảo hiểm xã hội và không có nhu cầu tiếp tục tham gia.\n\nCụ thể, bạn cần đáp ứng các điều kiện theo quy định tại [Điều 60 khoản 1] và [Điều 60 khoản 2]. Bạn nên liên hệ với cơ quan bảo hiểm xã hội nơi bạn cư trú để được hướng dẫn chi tiết về thủ tục và hồ sơ cần thiết.",
+  "citations": [
+    "[Điều 60 khoản 1]",
+    "[Điều 60 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1",
+    "L41_2024.A60.K2"
+  ],
+  "elapsed_s": 2.863,
+  "prompt_tokens": 196,
+  "completion_tokens": 159,
+  "gold_answer": "Đóng BHXH mới 3 tháng thì chưa thể lấy lại ngay chỉ vì nghỉ việc và không muốn đi làm nữa. Muốn hưởng BHXH một lần, bạn vẫn phải thuộc trường hợp luật cho phép, thường là sau khi ngừng tham gia đủ 12 tháng và chưa đủ điều kiện hưởng lương hưu. Nếu sau này không rút, 3 tháng đó vẫn được bảo lưu. Còn phần người sử dụng lao động đã đóng vào các quỹ thì không hoàn trả riêng cho bạn như một khoản tiết kiệm.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110"
+}

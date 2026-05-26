@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 66,
+  "question": "Có phải Bảo hiểm xã hội mình bắt buộc lãnh sau 1 năm không?. Nếu bận mk làm trễ vài tháng có được không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 5 khoản 6]\n- [Điều 33 khoản 7]",
+  "citations": [
+    "[Điều 5 khoản 6]",
+    "[Điều 33 khoản 7]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K6",
+    "L41_2024.A33.K7"
+  ],
+  "citation_verified": {
+    "L41_2024.A5.K6": true,
+    "L41_2024.A33.K7": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.8419839143753052,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A33.K6",
+      "score": 0.8278526067733765,
+      "text_preview": "Trường hợp trong tháng đầu làm việc hoặc trong tháng đầu trở lại làm việc mà người lao động nghỉ việc hưởng chế độ ốm đau từ 14 ngày làm việc trở lên thì vẫn phải đóng bảo hiểm xã hội của tháng đó."
+    },
+    {
+      "clause_id": "L41_2024.A5.K6",
+      "score": 0.8263547420501709,
+      "text_preview": "Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hi"
+    },
+    {
+      "clause_id": "L41_2024.A50.K2",
+      "score": 0.8261569738388062,
+      "text_preview": "Đối tượng quy định tại các điểm b, c, d và đ khoản 1 Điều này phải đóng bảo hiểm xã hội bắt buộc từ đủ 06 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con hoặc nhận con khi nhờ mang t"
+    },
+    {
+      "clause_id": "L41_2024.A50.K3",
+      "score": 0.8252031803131104,
+      "text_preview": "Đối tượng quy định tại điểm b và điểm c khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của người hành nghề khám bệ"
+    }
+  ],
+  "n_semantic_edges": 2,
+  "n_refs": 4,
+  "elapsed_s": 1.5,
+  "gold_answer": "Không có quy định bắt buộc phải nhận BHXH một lần ngay đúng sau 1 năm. Mốc 12 tháng chỉ là điều kiện phổ biến để phát sinh quyền yêu cầu trong một số trường hợp. Nếu bạn bận và nộp muộn vài tháng sau khi đã đủ điều kiện thì thông thường vẫn được giải quyết, miễn tại thời điểm nộp hồ sơ bạn vẫn thuộc trường hợp được hưởng theo luật. Nếu không rút, thời gian đóng vẫn được bảo lưu.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102"
+}

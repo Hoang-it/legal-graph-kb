@@ -1,0 +1,20 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 139,
+  "question": "E đóng BH từ tháng 8 năm 2023 thì bây giờ có thể rút BHXH đc không?\nVà BH thất nghiệp có rút đc không? Quy trình rút BHTN như thế nào cần giấy tờ gì?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'unemployment_benefit_process(Conditions']",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "invalid_query",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 16.041,
+  "prompt_tokens": 4214,
+  "completion_tokens": 874,
+  "error": null,
+  "gold_answer": "BHXH đóng từ 8/2023 đến nay không phải cứ nghỉ là rút được ngay; với BHXH 1 lần, thông thường phải sau 12 tháng không tiếp tục tham gia và thuộc trường hợp luật cho phép. Còn BHTN chỉ được nộp trong 03 tháng từ ngày chấm dứt HĐLĐ. Hồ sơ BHTN gồm đơn đề nghị, CCCD, giấy tờ chấm dứt HĐLĐ; mức hưởng bằng 60% bình quân lương 6 tháng cuối.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

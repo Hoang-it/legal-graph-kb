@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 78,
+  "question": "Giờ luật bảo hiểm nữ bao nhiêu tuổi thì về hưu?",
+  "answer": "Issue: Giờ luật bảo hiểm nữ bao nhiêu tuổi thì về hưu?  \nRule: \"Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), article 141, clause 9)  \nApplication: Không có slot nào được gán giá trị. Prolog đã sử dụng quy tắc để xác định tuổi nghỉ hưu của nữ là 55.  \nConclusion: Hệ thống đã xác định rằng tuổi nghỉ hưu của nữ là 55 (Age).",
+  "citations": [
+    "[Điều 98]"
+  ],
+  "citation_ids": [
+    "L41_2024.A98"
+  ],
+  "citation_indices": [
+    0,
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,retirement_age_female(55),based_on(source_c041))]",
+  "irac_sections": {
+    "issue": "Giờ luật bảo hiểm nữ bao nhiêu tuổi thì về hưu?",
+    "rule": "\"Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), article 141, clause 9)",
+    "application": "Không có slot nào được gán giá trị. Prolog đã sử dụng quy tắc để xác định tuổi nghỉ hưu của nữ là 55.",
+    "conclusion": "Hệ thống đã xác định rằng tuổi nghỉ hưu của nữ là 55 (Age)."
+  },
+  "elapsed_s": 11.396,
+  "prompt_tokens": 3382,
+  "completion_tokens": 576,
+  "error": null,
+  "gold_answer": "Theo lộ trình tuổi nghỉ hưu hiện hành, lao động nữ nghỉ hưu ở tuổi 60 trong điều kiện bình thường. Từ năm 2021 đến năm 2035 tuổi nghỉ hưu của nữ tăng dần mỗi năm 4 tháng cho đến khi đủ 60 tuổi. Vì vậy hiện nay không phải cứ tất cả lao động nữ đều nghỉ đúng 60 ngay, mà phải đối chiếu năm sinh, năm nghỉ hưu và trường hợp làm việc bình thường hay nặng nhọc, đặc biệt nặng nhọc.",
+  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 169; Nghị định 135/2020/NĐ-CP"
+}

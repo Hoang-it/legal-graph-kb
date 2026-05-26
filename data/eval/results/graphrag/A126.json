@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 126,
+  "question": "Trên app hiện ngày QĐ hưởng là 16/4, giấy hẹn kết quả 20/4 thì ngày nào em sẽ nhận được tiền BHXH 1 lần? Với mình có cần đến để nhận quyết định thì mới nhận được tiền không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 70 khoản 5]\n- [Điều 102 khoản 4]",
+  "citations": [
+    "[Điều 70 khoản 5]",
+    "[Điều 102 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A70.K5",
+    "L41_2024.A102.K4"
+  ],
+  "citation_verified": {
+    "L41_2024.A70.K5": true,
+    "L41_2024.A102.K4": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A79.K3",
+      "score": 0.834668755531311,
+      "text_preview": "Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo"
+    },
+    {
+      "clause_id": "L41_2024.A107.K3",
+      "score": 0.834662675857544,
+      "text_preview": "Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo"
+    },
+    {
+      "clause_id": "L41_2024.A25.K2",
+      "score": 0.8237327337265015,
+      "text_preview": "Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau.\nChậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằn"
+    },
+    {
+      "clause_id": "L41_2024.A70.K5",
+      "score": 0.8201717138290405,
+      "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hội ban hành quyết định hưởng bảo hiểm xã hội một lần."
+    },
+    {
+      "clause_id": "L41_2024.A102.K4",
+      "score": 0.8176254034042358,
+      "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm ghi trong quyết định của cơ quan bảo hiểm xã hội."
+    }
+  ],
+  "n_semantic_edges": 3,
+  "n_refs": 0,
+  "elapsed_s": 1.47,
+  "gold_answer": "Thông thường, tiền BHXH 1 lần được chuyển sau khi có quyết định giải quyết, nếu bạn đã đăng ký nhận qua tài khoản thì không nhất thiết phải đến nhận quyết định mới được trả tiền. Ngày app hiện QĐ hưởng 16/4 nghĩa là hồ sơ đã được phê duyệt; giấy hẹn 20/4 là ngày trả kết quả. Thực tế tiền thường về gần thời điểm trả kết quả hoặc vài ngày làm việc sau đó.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

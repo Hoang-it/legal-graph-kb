@@ -1,0 +1,48 @@
+{
+  "arm": "graphrag",
+  "stt": 198,
+  "question": "Mình đang nộplãnh bhxh 1 lần. Giờ đi làm lại cty mua bh tiếp thì có lãnh đc nữa k ?",
+  "answer": "Theo các điều luật được cung cấp, bạn có thể tiếp tục tham gia bảo hiểm xã hội và hưởng lương hưu nếu bạn đã đủ điều kiện. Cụ thể, nếu bạn đã nộp hồ sơ để hưởng bảo hiểm xã hội một lần, bạn vẫn có quyền tham gia bảo hiểm xã hội bắt buộc tại công ty mới. \n\nNếu bạn tiếp tục đóng bảo hiểm xã hội tự nguyện sau khi đã đủ điều kiện hưởng lương hưu, thời điểm hưởng lương hưu sẽ là ngày đầu tiên của tháng liền kề sau tháng dừng đóng và có yêu cầu hưởng lương hưu [Điều 101 khoản 2].\n\nTóm lại, bạn có thể vừa làm việc và vừa tham gia bảo hiểm xã hội, và sau này có thể hưởng lương hưu nếu đủ điều kiện.\n\nCitation: [Điều 101 khoản 2].",
+  "citations": [
+    "[Điều 101 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A101.K2"
+  ],
+  "citation_verified": {
+    "L41_2024.A101.K2": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A9.K2",
+      "score": 0.7832045555114746,
+      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.7762688398361206,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A33.K6",
+      "score": 0.7731276750564575,
+      "text_preview": "Trường hợp trong tháng đầu làm việc hoặc trong tháng đầu trở lại làm việc mà người lao động nghỉ việc hưởng chế độ ốm đau từ 14 ngày làm việc trở lên thì vẫn phải đóng bảo hiểm xã hội của tháng đó."
+    },
+    {
+      "clause_id": "L41_2024.A102.K4",
+      "score": 0.7669673562049866,
+      "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm ghi trong quyết định của cơ quan bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A101.K2",
+      "score": 0.7654695510864258,
+      "text_preview": "Trường hợp người tham gia bảo hiểm xã hội tiếp tục đóng bảo hiểm xã hội tự nguyện sau khi đã đủ điều kiện hưởng lương hưu thì thời điểm hưởng lương hưu là ngày đầu tiên của tháng liền kề sau tháng dừn"
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 3,
+  "elapsed_s": 2.86,
+  "gold_answer": "Nếu bạn đang nộp hồ sơ hưởng BHXH 1 lần mà đi làm lại và thuộc diện tham gia BHXH bắt buộc trước khi có quyết định hưởng, hồ sơ có thể bị ảnh hưởng vì bạn không còn ở tình trạng ngừng tham gia. Nếu cơ quan BHXH đã ra quyết định và chi trả rồi thì thời gian đã hưởng sẽ không được tính lại; sau này đi làm lại sẽ mở quá trình tham gia mới cho phần thời gian tiếp theo.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

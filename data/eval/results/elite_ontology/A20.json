@@ -1,0 +1,20 @@
+{
+  "arm": "elite_ontology",
+  "stt": 20,
+  "question": "Vợ chồng bà Hải Bắc làm chung một cơ quan, đã đóng BHXH trên 3 năm.\nBà Bắc hỏi, khi bà nghỉ sinh con thì chồng của bà có được hưởng tiền trợ cấp thai sản không?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=unable_to_conclude, repair_rounds=2, error=Connection error.]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "unable_to_conclude",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 4.075,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "error": null,
+  "gold_answer": "Tại Điểm e Khoản 1 Điều 31 và Khoản 2 Điều 34 Luật BHXH năm 2014 quy định lao động nam đang đóng BHXH có vợ sinh con được nghỉ việc hưởng chế độ thai sản 5 ngày làm việc.\nTrường hợp vợ sinh con phải phẫu thuật, sinh con dưới 32 tuần tuổi được nghỉ 7 ngày làm việc. Trường hợp vợ sinh đôi thì được nghỉ 10 ngày làm việc, từ sinh ba trở lên thì cứ thêm mỗi con được nghỉ thêm 3 ngày làm việc.\nTrường hợp vợ sinh đôi trở lên mà phải phẫu thuật thì được nghỉ 14 ngày làm việc. Thời gian nghỉ việc hưởng chế độ thai sản quy định nêu trên được tính trong khoảng thời gian 30 ngày đầu kể từ ngày vợ sinh con.\nBHXH Việt Nam thông tin để bà Bắc nắm được các quyền lợi về chế độ thai sản.",
+  "gold_citations_raw": "Điểm e Khoản 1 Điều 31 và Khoản 2 Điều 34 Luật BHXH năm 2014"
+}

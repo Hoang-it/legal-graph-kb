@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 181,
+  "question": "Không có sổ bảo hiểm chỉ có tờ rời thì có đi rút bảo hiểm được không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 28 khoản 4] về việc cấp sổ bảo hiểm xã hội.\n- [Điều 18 khoản 4] về trách nhiệm của cơ quan bảo hiểm xã hội trong việc cấp sổ bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 28 khoản 4]",
+    "[Điều 18 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A28.K4",
+    "L41_2024.A18.K4"
+  ],
+  "citation_verified": {
+    "L41_2024.A28.K4": true,
+    "L41_2024.A18.K4": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A9.K9",
+      "score": 0.7834327220916748,
+      "text_preview": "Cầm cố, mua bán, thế chấp, đặt cọc sổ bảo hiểm xã hội dưới mọi hình thức."
+    },
+    {
+      "clause_id": "L41_2024.A9.K2",
+      "score": 0.7830683588981628,
+      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A28.K4",
+      "score": 0.7796816825866699,
+      "text_preview": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn"
+    },
+    {
+      "clause_id": "L41_2024.A25.K2",
+      "score": 0.7742618322372437,
+      "text_preview": "Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau.\nChậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằn"
+    },
+    {
+      "clause_id": "L41_2024.A13.K2",
+      "score": 0.7737825512886047,
+      "text_preview": "Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội."
+    }
+  ],
+  "n_semantic_edges": 2,
+  "n_refs": 0,
+  "elapsed_s": 2.03,
+  "gold_answer": "Không có sổ giấy mà chỉ có tờ rời thì vẫn không phải là trở ngại tuyệt đối. Cơ quan BHXH hiện dựa chủ yếu vào dữ liệu điện tử; nếu hồ sơ giấy thiếu bạn có thể làm thủ tục cấp lại sổ hoặc xác nhận quá trình đóng rồi nộp hồ sơ BHXH 1 lần. Quan trọng là bạn đủ điều kiện hưởng và thông tin định danh thống nhất.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

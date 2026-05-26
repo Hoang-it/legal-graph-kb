@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 39,
+  "question": "Mình ngưng đóng bảo hiểm xã hội từ 2017 đến bây giờ là năm 2026 rồi. Liệu mình có đi thanh toán bhxh đc k ạ?",
+  "answer": "Issue: Người dùng đã ngưng đóng bảo hiểm xã hội từ năm 2017 đến năm 2026. Họ muốn biết liệu có thể thanh toán bảo hiểm xã hội hay không.\n\nRule: Không có trích dẫn nào được cung cấp.\n\nApplication: Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được Prolog sử dụng để đưa ra kết luận.\n\nConclusion: Prolog đã trả về kết quả là \"không thể thanh toán\" nhưng không có giá trị nào từ các slot để tính toán. Do đó, không thể đưa ra kết luận chính xác về khả năng thanh toán bảo hiểm xã hội.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,không thể thanh toán),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người dùng đã ngưng đóng bảo hiểm xã hội từ năm 2017 đến năm 2026. Họ muốn biết liệu có thể thanh toán bảo hiểm xã hội hay không.",
+    "rule": "Không có trích dẫn nào được cung cấp.",
+    "application": "Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được Prolog sử dụng để đưa ra kết luận.",
+    "conclusion": "Prolog đã trả về kết quả là \"không thể thanh toán\" nhưng không có giá trị nào từ các slot để tính toán. Do đó, không thể đưa ra kết luận chính xác về khả năng thanh toán bảo hiểm xã hội."
+  },
+  "elapsed_s": 6.371,
+  "prompt_tokens": 1933,
+  "completion_tokens": 281,
+  "error": null,
+  "gold_answer": "Nếu bạn đã ngừng đóng từ năm 2017 đến nay và không tiếp tục tham gia BHXH, thì thường có thể làm thủ tục hưởng BHXH một lần nếu thuộc trường hợp luật cho phép, nhất là đã ngừng tham gia từ đủ 12 tháng trở lên mà chưa đủ thời gian hưởng lương hưu. Nếu không rút một lần, bạn cũng có thể bảo lưu thời gian đã đóng để sau này tham gia tiếp hoặc chuyển sang BHXH tự nguyện.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110"
+}

@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 82,
+  "question": "bhxh e đc 6 tháng có được rút không? E nghĩ cty cũng 2 năm hơn rồi",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động có thể rút bảo hiểm xã hội một lần khi đã đủ điều kiện, cụ thể là phải có thời gian tham gia bảo hiểm xã hội tối thiểu là 1 năm. Tuy nhiên, nếu bạn chỉ tham gia bảo hiểm xã hội được 6 tháng thì chưa đủ điều kiện để rút bảo hiểm xã hội một lần.\n\nNếu bạn có thêm thông tin về thời gian tham gia bảo hiểm xã hội của công ty hoặc các trường hợp đặc biệt khác, tôi có thể hỗ trợ thêm.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 2.773,
+  "prompt_tokens": 181,
+  "completion_tokens": 125,
+  "gold_answer": "Thông thường đóng BHXH mới 6 tháng thì chưa thể rút ngay nếu bạn chưa thuộc trường hợp luật cho phép. Trường hợp phổ biến nhất là phải sau 12 tháng không tiếp tục tham gia BHXH mà vẫn chưa đủ điều kiện hưởng lương hưu thì mới đề nghị hưởng BHXH một lần. Vì vậy nếu bạn mới đóng 6 tháng và nghỉ đã hơn 2 năm thì cần kiểm tra hiện tại có còn tham gia nơi nào khác không; nếu không, thường có thể nộp hồ sơ theo diện BHXH một lần.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 110"
+}

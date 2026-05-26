@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 3,
+  "question": "Bà H.T. T đã chấm dứt hợp đồng lao động với doanh nghiệp từ năm 2018. Hiện tại, bà phát hiện là tháng 9/2018 bà chưa được chốt sổ BHXH.\nBà T. hỏi, bà có thể tự chốt sổ BHXH với cơ quan bảo hiểm quận qua hình thức nộp hồ sơ online được không?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpl82w3lru.pl:1:467: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 13 khoản 3]",
+    "[Điều 106 khoản 2]",
+    "[Điều 28 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A13.K3",
+    "L41_2024.A106.K2",
+    "L41_2024.A28.K4"
+  ],
+  "citation_indices": [
+    0,
+    1,
+    2
+  ],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 18.243,
+  "prompt_tokens": 6826,
+  "completion_tokens": 1011,
+  "error": null,
+  "gold_answer": "Khoản 5 Điều 21 Luật BHXH 2014 quy định: \"Người sử dụng lao động có trách nhiệm phối hợp với cơ quan BHXH trả sổ BHXH cho người lao động, xác nhận thời gian đóng BHXH khi người lao động chấm dứt HĐLĐ, HĐLV hoặc thôi việc theo quy định của pháp luật\".\nTheo Khoản 3, Điều 48 Bộ luật lao động năm 2019 quy định trách nhiệm của người sử dụng lao động khi hợp đồng lao động chấm dứt như sau:\n\"Người sử dụng lao động có trách nhiệm hoàn thành thủ tục xác nhận thời gian đóng BHXH, BH thất nghiệp và trả lại cùng với bản chính giấy tờ khác nếu người sử dụng lao động đã giữ của người lao động.\"\nTừ những căn cứ trên, thì trách nhiệm chốt sổ BHXH do người sử dụng lao động thực hiện, đồng thời có sự phối hợp của cơ quan BHXH.\nQua kiểm tra theo thông tin bà T. cung cấp trên hệ thống phần mềm của Bảo hiểm xã hội Việt Nam thì bà có quá trình tham gia BHXH như sau:\nThời gian từ tháng 1/2017 đến tháng 9/2018 làm việc và đóng BHXH tại Chi nhánh doanh nghiệp.\nThời gian làm việc và đóng BHXH tại Chi nhánh doanh nghiệp đã được đơn vị đề nghị BHXH chốt sổ và in tờ rời cho bà.\nĐề nghị bà T. liên hệ với các đơn vị cũ của bà để nhận lại sổ và tờ rời quá trình tham gia BHXH.",
+  "gold_citations_raw": "Khoản 5 Điều 21 Luật BHXH 2014\nKhoản 3, Điều 48 Bộ luật lao động năm 2019"
+}

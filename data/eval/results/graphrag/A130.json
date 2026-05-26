@@ -1,0 +1,54 @@
+{
+  "arm": "graphrag",
+  "stt": 130,
+  "question": "Đóng bhxh đc 4 tháng lcb 4tr900 thì lãnh đc bao nhiêu?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 5 khoản 6]\n- [Điều 59 khoản 1]\n- [Điều 36 khoản 1]",
+  "citations": [
+    "[Điều 5 khoản 6]",
+    "[Điều 59 khoản 1]",
+    "[Điều 36 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K6",
+    "L41_2024.A59.K1",
+    "L41_2024.A36.K1"
+  ],
+  "citation_verified": {
+    "L41_2024.A5.K6": true,
+    "L41_2024.A59.K1": true,
+    "L41_2024.A36.K1": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A5.K6",
+      "score": 0.7647035717964172,
+      "text_preview": "Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hi"
+    },
+    {
+      "clause_id": "L41_2024.A76.K2",
+      "score": 0.7621439695358276,
+      "text_preview": "Mức trợ cấp một lần đối với người đang hưởng lương hưu được tính theo thời gian đã đóng bảo hiểm xã hội trong đó mỗi năm đóng bảo hiểm xã hội trước năm 2014 được tính bằng 1,5 tháng lương hưu đang hưở"
+    },
+    {
+      "clause_id": "L41_2024.A59.K1",
+      "score": 0.7599785327911377,
+      "text_preview": "Trợ cấp thai sản một tháng của người lao động quy định tại các điều 51, 52, 53, 54, 55, 56 và 57 của Luật này bằng 100% mức bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc của 06 tháng g"
+    },
+    {
+      "clause_id": "L41_2024.A36.K1",
+      "score": 0.7583873271942139,
+      "text_preview": "Đối tượng quy định tại khoản 4 Điều 2 của Luật này, hằng tháng đóng bằng 22% mức thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện vào quỹ hưu trí và tử tuất.\nCăn cứ vào điều kiện phát triển kinh tế "
+    },
+    {
+      "clause_id": "L41_2024.A95.K1",
+      "score": 0.7564488649368286,
+      "text_preview": "Mức trợ cấp thai sản là 2.000.000 đồng cho mỗi con được sinh ra và mỗi thai từ 22 tuần tuổi trở lên chết trong tử cung, thai chết trong khi chuyển dạ.\nLao động nữ là người dân tộc thiểu số hoặc lao độ"
+    }
+  ],
+  "n_semantic_edges": 3,
+  "n_refs": 8,
+  "elapsed_s": 1.53,
+  "gold_answer": "Với 4 tháng đóng BHXH, mức hưởng BHXH 1 lần không tính như nhiều năm tròn mà theo trường hợp thời gian đóng chưa đủ 1 năm. Khi đủ điều kiện rút, mức hưởng bằng số tiền đã đóng nhưng tối đa không quá 2 tháng mức bình quân lương đóng BHXH. Với lương 4,9 triệu/tháng, số hưởng thường chỉ ở mức vài triệu đồng, không phải 8-10 triệu.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

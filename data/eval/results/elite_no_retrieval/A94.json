@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 94,
+  "question": "e mơi đóng bhxh hộ kinh doanh được 2 tháng giờ e ở nhóm 1 không phải đóng thì đi huỷ được khômg?",
+  "answer": "Issue: Người dùng hỏi về khả năng hủy đóng bảo hiểm xã hội hộ kinh doanh sau 2 tháng khi thuộc nhóm 1 không phải đóng.\n\nRule: Không có trích dẫn nào được cung cấp.\n\nApplication: Không có slot nào được gán giá trị, do đó không có thông tin nào được Prolog tiêu thụ.\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer, tuy nhiên không có thông tin nào từ các slot để hỗ trợ cho kết luận này.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,yes),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người dùng hỏi về khả năng hủy đóng bảo hiểm xã hội hộ kinh doanh sau 2 tháng khi thuộc nhóm 1 không phải đóng.",
+    "rule": "Không có trích dẫn nào được cung cấp.",
+    "application": "Không có slot nào được gán giá trị, do đó không có thông tin nào được Prolog tiêu thụ.",
+    "conclusion": "Prolog đã trả về giá trị \"yes\" cho biến Answer, tuy nhiên không có thông tin nào từ các slot để hỗ trợ cho kết luận này."
+  },
+  "elapsed_s": 5.326,
+  "prompt_tokens": 1867,
+  "completion_tokens": 202,
+  "error": null,
+  "gold_answer": "Nếu trước đây bạn thuộc diện phải tham gia BHXH bắt buộc với tư cách chủ hộ kinh doanh nhưng nay chuyển sang nhóm không thuộc diện phải đóng nữa, bạn cần liên hệ cơ quan BHXH để làm thủ tục giảm/dừng đúng từ thời điểm không còn thuộc đối tượng. Không phải 'hủy' toàn bộ quá trình 2 tháng đã đóng; thời gian đó nếu đóng đúng đối tượng vẫn được ghi nhận. Cần xác định rõ căn cứ vì sao bạn chuyển sang nhóm 1 không phải đóng để cơ quan BHXH điều chỉnh.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2; Nghị định 158/2025/NĐ-CP Điều 3"
+}

@@ -1,0 +1,54 @@
+{
+  "arm": "graphrag",
+  "stt": 76,
+  "question": "bhxh của e theo cty cũ đến 2/2026,\n3/2026 e đóng bhxh tự nguyện đến 5/2026.\nGiờ e đóng bh theo cty mới từ 4/2026 có được không? Và có được hưởng bhxh theo cty mới không khi t9 em sinh ?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 33 khoản 7]\n- [Điều 50 khoản 4]\n- [Điều 94 khoản 1]",
+  "citations": [
+    "[Điều 33 khoản 7]",
+    "[Điều 50 khoản 4]",
+    "[Điều 94 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A33.K7",
+    "L41_2024.A50.K4",
+    "L41_2024.A94.K1"
+  ],
+  "citation_verified": {
+    "L41_2024.A33.K7": true,
+    "L41_2024.A50.K4": true,
+    "L41_2024.A94.K1": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.8048402070999146,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A101.K3",
+      "score": 0.7988574504852295,
+      "text_preview": "Trường hợp người tham gia bảo hiểm xã hội tự nguyện đóng một lần cho những năm còn thiếu theo quy định tại điểm e khoản 2 Điều 36 của Luật này thì thời điểm hưởng lương hưu là ngày đầu tiên của tháng "
+    },
+    {
+      "clause_id": "L41_2024.A5.K3",
+      "score": 0.7929344177246094,
+      "text_preview": "Người vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện được hưởng chế độ trợ cấp hằng tháng, chế độ hưu trí và chế độ tử tuất trên cơ sở thời gian đã đóng"
+    },
+    {
+      "clause_id": "L41_2024.A101.K2",
+      "score": 0.7920218706130981,
+      "text_preview": "Trường hợp người tham gia bảo hiểm xã hội tiếp tục đóng bảo hiểm xã hội tự nguyện sau khi đã đủ điều kiện hưởng lương hưu thì thời điểm hưởng lương hưu là ngày đầu tiên của tháng liền kề sau tháng dừn"
+    },
+    {
+      "clause_id": "L41_2024.A50.K4",
+      "score": 0.7896050214767456,
+      "text_preview": "Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con hoặc nhận con khi nhờ mang thai "
+    }
+  ],
+  "n_semantic_edges": 2,
+  "n_refs": 6,
+  "elapsed_s": 1.6,
+  "gold_answer": "Bạn không thể cùng lúc đóng BHXH tự nguyện và BHXH bắt buộc trùng thời gian cho cùng một người. Nếu từ 4/2026 bạn đã thuộc diện đóng BHXH bắt buộc ở công ty mới thì thời gian 4-5/2026 phải xử lý theo diện bắt buộc; phần tự nguyện bị trùng cần liên hệ cơ quan BHXH để điều chỉnh. Về thai sản tháng 9, cần tính số tháng đóng đủ điều kiện trong 12 tháng trước sinh; thời gian bắt buộc và tự nguyện có thể được xem xét theo từng chế độ tương ứng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 36, Điều 50, Điều 94"
+}

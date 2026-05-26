@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 105,
+  "question": "Chốt sổ em lãnh Bh thât nghiệp đến tháng 3/2025 nhưng giờ trên hệ thống chỉ đến tháng 2/2025, em không lãnh được tiền bhxh vì bị chênh lệch 1 tháng công ty không xử lý cho em. giờ em phải làm như nào để lãnh bảo hiểm được?",
+  "answer": "Trong trường hợp của bạn, để giải quyết vấn đề chênh lệch thời gian bảo hiểm thất nghiệp, bạn cần thực hiện các bước sau:\n\n1. **Liên hệ với công ty**: Yêu cầu công ty kiểm tra và điều chỉnh thông tin trên hệ thống để đảm bảo thời gian bảo hiểm thất nghiệp của bạn được ghi nhận chính xác.\n\n2. **Gửi đơn khiếu nại**: Nếu công ty không xử lý, bạn có thể gửi đơn khiếu nại đến cơ quan bảo hiểm xã hội nơi bạn tham gia để yêu cầu xem xét và điều chỉnh.\n\n3. **Chuẩn bị hồ sơ**: Cung cấp các tài liệu cần thiết như hợp đồng lao động, bảng lương, và các giấy tờ liên quan để chứng minh quyền lợi của bạn.\n\n4. **Theo dõi tiến trình**: Sau khi nộp đơn, bạn cần theo dõi tiến trình xử lý của cơ quan bảo hiểm xã hội.\n\nNếu cần thêm thông tin chi tiết, bạn có thể tham khảo các quy định liên quan trong Luật Bảo hiểm xã hội số 41/2024/QH15.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 4.298,
+  "prompt_tokens": 228,
+  "completion_tokens": 235,
+  "gold_answer": "Bạn cần yêu cầu công ty và cơ quan BHXH điều chỉnh lại quá trình đóng cho đúng đến tháng 3/2025. Khi dữ liệu trên hệ thống còn thiếu 1 tháng thì hồ sơ hưởng BHXH 1 lần dễ bị treo hoặc từ chối. Nếu công ty không phối hợp, bạn có thể gửi đơn khiếu nại tới cơ quan BHXH quản lý đơn vị hoặc Thanh tra Sở Nội vụ/Lao động để yêu cầu xác minh, truy đóng hoặc điều chỉnh dữ liệu.",
+  "gold_citations_raw": "Điều 27, 33 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Luật Khiếu nại 2011"
+}

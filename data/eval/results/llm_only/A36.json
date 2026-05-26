@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 36,
+  "question": "Bà T.H sinh con vào ngày mùng 1 Tết Nguyên đán.\nBà hỏi, khi tính thời gian nghỉ thai sản bà được tính bắt đầu từ ngày làm việc sau kỳ nghỉ lễ hay tính từ ngày sinh con?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, thời gian nghỉ thai sản của bà T.H sẽ được tính bắt đầu từ ngày sinh con, tức là từ ngày mùng 1 Tết Nguyên đán. Thời gian nghỉ thai sản không bị ảnh hưởng bởi các ngày nghỉ lễ. Cụ thể, bà T.H sẽ được nghỉ thai sản theo quy định mà không cần phải tính thêm thời gian nghỉ lễ. \n\nDo đó, bà T.H có thể bắt đầu nghỉ thai sản từ ngày sinh con là ngày mùng 1 Tết Nguyên đán.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 2.861,
+  "prompt_tokens": 207,
+  "completion_tokens": 119,
+  "gold_answer": "Căn cứ khoản 9 Điều 53 Luật BHXH 2024, thời gian nghỉ việc hưởng chế độ thai sản tính cả ngày nghỉ lễ, tết, ngày nghỉ hằng tuần.\nĐối chiếu quy định nêu trên, trường hợp bà T.H sinh con vào ngày mùng 1 Tết Nguyên đán thì thời gian nghỉ hưởng chế độ thai sản 6 tháng được tính từ ngày sinh con, kể cả thời gian trùng với kỳ nghỉ Tết.",
+  "gold_citations_raw": "khoản 9 Điều 53 Luật BHXH 2024"
+}

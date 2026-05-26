@@ -1,0 +1,26 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 180,
+  "question": "mình làm công ty cũ được 8 năm 9 tháng, giờ sang ct mới mình đóng tiếp thì sau này mình vẫn được hưởng bảo hiểm thất nghiệp và bảo hiểm xã hội đúng không? Cách tính sẽ như thế nào?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'social_insurance_calculation(user']",
+  "citations": [
+    "[Điều 70 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A70.K4"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": false,
+  "prolog_status": "invalid_query",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 16.872,
+  "prompt_tokens": 7194,
+  "completion_tokens": 1263,
+  "error": null,
+  "gold_answer": "Khi sang công ty mới và tiếp tục đóng, thời gian BHXH sẽ được cộng nối để tính hưu, tử tuất và các quyền lợi dài hạn. Với BHTN, thời gian chưa hưởng ở công ty cũ cũng được bảo lưu để cộng vào lần sau nếu bạn chưa lĩnh. Công thức BHTN là 60% bình quân lương 6 tháng cuối và thời gian hưởng theo tổng số tháng đã đóng chưa hưởng; BHXH hưu trí tính theo tổng thời gian đóng và mức bình quân lương.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

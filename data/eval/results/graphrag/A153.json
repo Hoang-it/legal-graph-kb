@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 153,
+  "question": "Minh  đóng bảo hiểm 4nam 5 tháng. Lương cơ bản 25 tr nếu rút 1 lần được tầm bao nhiêu?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 76 khoản 2]\n- [Điều 5 khoản 6]",
+  "citations": [
+    "[Điều 76 khoản 2]",
+    "[Điều 5 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A76.K2",
+    "L41_2024.A5.K6"
+  ],
+  "citation_verified": {
+    "L41_2024.A76.K2": true,
+    "L41_2024.A5.K6": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A99.K3",
+      "score": 0.779170036315918,
+      "text_preview": "Việc tính mức lương hưu hằng tháng của người lao động đủ điều kiện hưởng lương hưu mà có thời gian đóng bảo hiểm xã hội theo quy định của điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là"
+    },
+    {
+      "clause_id": "L41_2024.A9.K2",
+      "score": 0.7754503488540649,
+      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A66.K4",
+      "score": 0.7752043008804321,
+      "text_preview": "Việc tính mức lương hưu hằng tháng của người lao động đủ điều kiện hưởng lương hưu mà có thời gian đóng bảo hiểm xã hội theo quy định của điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là"
+    },
+    {
+      "clause_id": "L41_2024.A76.K2",
+      "score": 0.7726123332977295,
+      "text_preview": "Mức trợ cấp một lần đối với người đang hưởng lương hưu được tính theo thời gian đã đóng bảo hiểm xã hội trong đó mỗi năm đóng bảo hiểm xã hội trước năm 2014 được tính bằng 1,5 tháng lương hưu đang hưở"
+    },
+    {
+      "clause_id": "L41_2024.A5.K6",
+      "score": 0.7725845575332642,
+      "text_preview": "Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hi"
+    }
+  ],
+  "n_semantic_edges": 0,
+  "n_refs": 13,
+  "elapsed_s": 1.75,
+  "gold_answer": "Nếu 4 năm 5 tháng của bạn đều sau 2014 thì BHXH 1 lần ước khoảng khoảng 225,0 triệu; đây là ước tính sơ bộ theo công thức 2 tháng bình quân lương cho mỗi năm đóng và 5 tháng được làm tròn thành nửa năm. Số thực tế có thể khác do hệ số điều chỉnh tiền lương và mức bình quân của toàn bộ quá trình, không chỉ lương hiện tại.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

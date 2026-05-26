@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 197,
+  "question": "công ty em có trường hợp NLĐ nghỉ hưu và được lãnh từ tháng 5 nhưng do làm lần đầu tiên em không rõ hồ sơ chuẩn bị như thế nào thì ngày 17.04 em có nộp bên BHXH bao gồm hồ sơ: Mẫu 12 HSB, sổ BHXH, tờ rời các năm đóng, CCCD NLĐ thì bên BHXH lại báo thiếu nhưng ko nói rõ thiếu hồ sơ gì? Giờ em phải bổ sung thêm gì?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 79: Giải quyết hưởng lương hưu, hưởng bảo hiểm xã hội một lần.\n- Điều 77: Hồ sơ quy định cho việc giải quyết hưởng lương hưu.\n\nBạn có thể tham khảo thêm các điều này để biết rõ hơn về hồ sơ cần chuẩn bị và yêu cầu của cơ quan bảo hiểm xã hội.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A79.K1",
+      "score": 0.8378870487213135,
+      "text_preview": "Trong thời hạn 20 ngày trước thời điểm người lao động đủ điều kiện hưởng lương hưu, người sử dụng lao động nộp hồ sơ quy định tại Điều 77 của Luật này cho cơ quan bảo hiểm xã hội.\nTrong thời hạn 20 ng"
+    },
+    {
+      "clause_id": "L41_2024.A48.K1",
+      "score": 0.8230730295181274,
+      "text_preview": "Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 47 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày trở lại làm việc."
+    },
+    {
+      "clause_id": "L41_2024.A92.K1",
+      "score": 0.8227670192718506,
+      "text_preview": "Trường hợp nộp hồ sơ quá thời hạn quy định tại khoản 1 và khoản 2 Điều 48, khoản 1 Điều 49, khoản 1 Điều 62, khoản 1 Điều 63, khoản 1 Điều 79, khoản 1 và khoản 2 Điều 91 của Luật này thì phải giải trì"
+    },
+    {
+      "clause_id": "L41_2024.A38.K1",
+      "score": 0.8222534656524658,
+      "text_preview": "Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều "
+    },
+    {
+      "clause_id": "L41_2024.A62.K2",
+      "score": 0.8178954124450684,
+      "text_preview": "Người lao động nộp hồ sơ quy định tại Điều 61 của Luật này cho cơ quan bảo hiểm xã hội trong trường hợp thôi việc trước thời điểm sinh con, nhận con khi nhờ mang thai hộ, nhận nuôi con nuôi dưới 06 th"
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 15,
+  "elapsed_s": 2.44,
+  "gold_answer": "Hồ sơ hưởng lương hưu ngoài sổ BHXH/tờ rời và giấy tờ tùy thân còn phải bảo đảm đúng mẫu, đúng thời điểm và có quyết định nghỉ việc hoặc tài liệu tương đương tùy từng nhóm đối tượng. Nếu BHXH báo thiếu mà không nói rõ, bạn nên yêu cầu phiếu hướng dẫn bổ sung bằng văn bản. Nhiều trường hợp còn thiếu quyết định nghỉ việc, biên bản giám định suy giảm khả năng lao động hoặc giấy tờ nghề nặng nhọc nếu nghỉ trước tuổi.",
+  "gold_citations_raw": "Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

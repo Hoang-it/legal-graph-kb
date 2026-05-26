@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 183,
+  "question": "minh nghi viec da 1 nam co dc huong tro cap ko?",
+  "answer": "Issue: Người lao động đã nghỉ việc 1 năm có được hưởng trợ cấp không?\n\nRule: \"1. Hồ sơ đề nghị hưởng trợ cấp ốm đau đối với người lao động hoặc con của người lao động điều trị nội trú là bản chính hoặc bản sao của một trong các giấy tờ sau đây:\\na) Giấy ra viện;\\nb) Bản tóm tắt hồ sơ bệnh án;\\nc) Giấy tờ khác chứng minh quá trình điều trị nội trú.\" (Luật BHXH 2024 (41/2024/QH15), Điều 47, Khoản 1)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Tuy nhiên, Prolog đã xác định rằng người lao động đã đóng bảo hiểm xã hội trong 1 năm, dẫn đến việc xác định số ngày tối đa được hưởng trợ cấp ốm đau là 30 ngày.\n\nConclusion: Prolog đã trả về giá trị 30 cho biến Days, cho thấy người lao động có thể hưởng trợ cấp ốm đau tối đa là 30 ngày.",
+  "citations": [
+    "[Điều 47 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A47.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,sick_leave_max_days(user,30),based_on(source_c005))]",
+  "irac_sections": {
+    "issue": "Người lao động đã nghỉ việc 1 năm có được hưởng trợ cấp không?",
+    "rule": "\"1. Hồ sơ đề nghị hưởng trợ cấp ốm đau đối với người lao động hoặc con của người lao động điều trị nội trú là bản chính hoặc bản sao của một trong các giấy tờ sau đây:\\na) Giấy ra viện;\\nb) Bản tóm tắt hồ sơ bệnh án;\\nc) Giấy tờ khác chứng minh quá trình điều trị nội trú.\" (Luật BHXH 2024 (41/2024/QH15), Điều 47, Khoản 1)",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Tuy nhiên, Prolog đã xác định rằng người lao động đã đóng bảo hiểm xã hội trong 1 năm, dẫn đến việc xác định số ngày tối đa được hưởng trợ cấp ốm đau là 30 ngày.",
+    "conclusion": "Prolog đã trả về giá trị 30 cho biến Days, cho thấy người lao động có thể hưởng trợ cấp ốm đau tối đa là 30 ngày."
+  },
+  "elapsed_s": 8.41,
+  "prompt_tokens": 3367,
+  "completion_tokens": 480,
+  "error": null,
+  "gold_answer": "Nếu bạn hỏi trợ cấp thất nghiệp thì nghỉ việc đã 1 năm thường là quá hạn nộp hồ sơ, vì luật yêu cầu nộp trong 03 tháng kể từ ngày chấm dứt HĐLĐ. Còn nếu hỏi BHXH 1 lần thì nghỉ việc 1 năm mới là một trong các mốc để xem xét điều kiện, nhưng vẫn phải kiểm tra bạn có tiếp tục tham gia BHXH hay không và có thuộc trường hợp luật cho phép hay không.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

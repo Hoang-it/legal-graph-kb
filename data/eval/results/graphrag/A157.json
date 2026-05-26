@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 157,
+  "question": "M tham gia BHXH từ đầu tháng 11/2025 đến cuối tháng 4/2026 vừa đủ 6 tháng thì có được nhận thai sản không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 50 khoản 2]\n- [Điều 50 khoản 4]",
+  "citations": [
+    "[Điều 50 khoản 2]",
+    "[Điều 50 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A50.K2",
+    "L41_2024.A50.K4"
+  ],
+  "citation_verified": {
+    "L41_2024.A50.K2": true,
+    "L41_2024.A50.K4": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A50.K4",
+      "score": 0.8439716100692749,
+      "text_preview": "Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con hoặc nhận con khi nhờ mang thai "
+    },
+    {
+      "clause_id": "L41_2024.A53.K7",
+      "score": 0.8286713361740112,
+      "text_preview": "Trường hợp chỉ có cha tham gia bảo hiểm xã hội bắt buộc mà mẹ chết sau khi sinh con hoặc gặp rủi ro sau khi sinh mà không đủ sức khỏe để chăm sóc con theo xác nhận của cơ sở khám bệnh, chữa bệnh thì c"
+    },
+    {
+      "clause_id": "L41_2024.A56.K1",
+      "score": 0.8242397308349609,
+      "text_preview": "Người lao động nhận nuôi con nuôi dưới 06 tháng tuổi thì được nghỉ việc hưởng chế độ thai sản kể từ ngày giao nhận con nuôi cho đến khi con đủ 06 tháng tuổi.\nTrường hợp cả cha và mẹ cùng tham gia bảo "
+    },
+    {
+      "clause_id": "L41_2024.A94.K1",
+      "score": 0.8226323127746582,
+      "text_preview": "Đối tượng có thời gian đóng bảo hiểm xã hội tự nguyện hoặc vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện từ đủ 06 tháng trở lên trong thời gian 12 thán"
+    },
+    {
+      "clause_id": "L41_2024.A55.K1",
+      "score": 0.8223527669906616,
+      "text_preview": "Được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi. Trường hợp sinh đôi trở lên thì được nghỉ thêm 01 tháng cho mỗi con tính từ con thứ hai trở đi.\nTrường hợp "
+    }
+  ],
+  "n_semantic_edges": 6,
+  "n_refs": 10,
+  "elapsed_s": 1.4,
+  "gold_answer": "Nếu bạn tham gia từ đầu 11/2025 đến cuối 4/2026, tức đủ 6 tháng, thì về điều kiện thời gian đóng thai sản là có khả năng đạt, miễn các tháng đó nằm trong 12 tháng liền kề trước sinh và bạn thuộc diện tham gia BHXH bắt buộc. Nếu sau đó nghỉ việc trước sinh thì vẫn có thể được hưởng thai sản nếu đủ điều kiện và nộp hồ sơ đúng.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

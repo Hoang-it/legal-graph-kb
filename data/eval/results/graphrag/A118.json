@@ -1,0 +1,57 @@
+{
+  "arm": "graphrag",
+  "stt": 118,
+  "question": "Nếu mà tham gia bảo hiểm được 9 năm rồi giờ rút về thì được bao nhiêu?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 5 khoản 6] về thời gian đóng bảo hiểm xã hội.\n- [Điều 33 khoản 7] về việc đóng tiếp bảo hiểm xã hội.\n- [Điều 100 khoản 1] và [Điều 68 khoản 1] về trợ cấp một lần khi nghỉ hưu.",
+  "citations": [
+    "[Điều 5 khoản 6]",
+    "[Điều 33 khoản 7]",
+    "[Điều 100 khoản 1]",
+    "[Điều 68 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K6",
+    "L41_2024.A33.K7",
+    "L41_2024.A100.K1",
+    "L41_2024.A68.K1"
+  ],
+  "citation_verified": {
+    "L41_2024.A5.K6": true,
+    "L41_2024.A33.K7": true,
+    "L41_2024.A100.K1": true,
+    "L41_2024.A68.K1": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A100.K1",
+      "score": 0.7980518341064453,
+      "text_preview": "Lao động nam có thời gian đóng bảo hiểm xã hội cao hơn 35 năm, lao động nữ có thời gian đóng bảo hiểm xã hội cao hơn 30 năm thì khi nghỉ hưu, ngoài lương hưu còn được hưởng trợ cấp một lần."
+    },
+    {
+      "clause_id": "L41_2024.A68.K1",
+      "score": 0.7979445457458496,
+      "text_preview": "Lao động nam có thời gian đóng bảo hiểm xã hội cao hơn 35 năm, lao động nữ có thời gian đóng bảo hiểm xã hội cao hơn 30 năm thì khi nghỉ hưu, ngoài lương hưu còn được hưởng trợ cấp một lần."
+    },
+    {
+      "clause_id": "L41_2024.A141.K9",
+      "score": 0.793791651725769,
+      "text_preview": "Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ,"
+    },
+    {
+      "clause_id": "L41_2024.A100.K2",
+      "score": 0.7900259494781494,
+      "text_preview": "Mức hưởng trợ cấp một lần cho mỗi năm đóng cao hơn quy định tại khoản 1 Điều này bằng 0,5 lần của mức bình quân thu nhập làm căn cứ đóng bảo hiểm xã hội quy định tại Điều 104 của Luật này cho mỗi năm "
+    },
+    {
+      "clause_id": "L41_2024.A68.K2",
+      "score": 0.7865947484970093,
+      "text_preview": "Mức hưởng trợ cấp một lần cho mỗi năm đóng cao hơn quy định tại khoản 1 Điều này bằng 0,5 lần của mức bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội quy định tại Điều 72 của Luật này cho mỗi năm"
+    }
+  ],
+  "n_semantic_edges": 3,
+  "n_refs": 12,
+  "elapsed_s": 3.34,
+  "gold_answer": "Nếu 9 năm đóng của bạn đều sau năm 2014 thì mức BHXH 1 lần thường được tính bằng 2 tháng mức bình quân lương đóng cho mỗi năm. Nghĩa là về công thức sơ bộ sẽ khoảng 18 tháng mức bình quân tiền lương sau điều chỉnh. Muốn ra số gần đúng, bạn cần biết mức bình quân lương đóng của toàn bộ thời gian, không chỉ lương hiện tại.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

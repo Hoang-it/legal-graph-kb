@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 99,
+  "question": "Mình bầu hơn 5 tháng, đã đóng bhxh 8/12 tháng trong thời gian hưởng thai sản thì có dễ bị thanh tra không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 50: Đối tượng và điều kiện hưởng chế độ thai sản\n- Điều 53: Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con\n- Điều 59: Trợ cấp thai sản",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A50.K4",
+      "score": 0.7773536443710327,
+      "text_preview": "Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con hoặc nhận con khi nhờ mang thai "
+    },
+    {
+      "clause_id": "L41_2024.A53.K8",
+      "score": 0.7767348289489746,
+      "text_preview": "Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ "
+    },
+    {
+      "clause_id": "L41_2024.A50.K3",
+      "score": 0.7743780612945557,
+      "text_preview": "Đối tượng quy định tại điểm b và điểm c khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của người hành nghề khám bệ"
+    },
+    {
+      "clause_id": "L41_2024.A58.K2",
+      "score": 0.7698025703430176,
+      "text_preview": "Lao động nữ mang thai hộ có đủ điều kiện theo quy định tại khoản 2 hoặc khoản 3 Điều 50 của Luật này thì được trợ cấp một lần khi sinh con.\nTrường hợp người mang thai hộ không tham gia bảo hiểm xã hội"
+    },
+    {
+      "clause_id": "L41_2024.A51.K1",
+      "score": 0.7680611610412598,
+      "text_preview": "Lao động nữ mang thai được nghỉ việc hưởng chế độ thai sản để đi khám thai tối đa 05 lần, mỗi lần không quá 02 ngày."
+    }
+  ],
+  "n_semantic_edges": 6,
+  "n_refs": 9,
+  "elapsed_s": 1.71,
+  "gold_answer": "Việc bạn đã đóng BHXH 8/12 tháng trước sinh không đồng nghĩa là dễ bị thanh tra. Cơ quan BHXH thường chỉ kiểm tra khi có dấu hiệu bất thường như tăng lương đột biến không có căn cứ, ký hợp đồng khống, đóng nhờ, hoặc hồ sơ thai sản không phù hợp. Nếu bạn có quan hệ lao động thật, đóng BHXH đúng mức, hồ sơ khám thai/sinh con hợp lệ thì không phải cứ mang bầu và đủ điều kiện hưởng là sẽ bị thanh tra.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50, Điều 53; quy định thanh tra chuyên ngành BHXH"
+}

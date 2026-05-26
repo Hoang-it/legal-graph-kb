@@ -1,0 +1,17 @@
+{
+  "arm": "llm_only",
+  "stt": 199,
+  "question": "Em có quyết định thôi việc ngày 13/4. Cho em hỏi công ty có phải đóng bảo hiểm cho em đến tháng 4 không ? Tại sao chị nhân sự phụ trách bảo hiểm công ty bảo em không đủ điều kiện để được đóng BHXH tháng 4, chỉ đến tháng 3.",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động có hợp đồng lao động và làm việc thực tế tại doanh nghiệp thì công ty có trách nhiệm đóng bảo hiểm xã hội cho người lao động đến hết tháng làm việc. \n\nNếu bạn có quyết định thôi việc vào ngày 13/4, công ty vẫn phải đóng bảo hiểm cho bạn đến hết tháng 4, trừ khi bạn không làm việc thực tế trong tháng đó. Nếu bạn không làm việc trong tháng 4, công ty có thể không phải đóng bảo hiểm cho bạn. \n\nBạn nên yêu cầu công ty giải thích rõ lý do không đóng bảo hiểm cho tháng 4 và kiểm tra lại tình trạng làm việc của mình trong tháng đó. \n\nCăn cứ: [Điều 85 khoản 1].",
+  "citations": [
+    "[Điều 85 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A85.K1"
+  ],
+  "elapsed_s": 3.596,
+  "prompt_tokens": 221,
+  "completion_tokens": 171,
+  "gold_answer": "Việc công ty có phải đóng BHXH tháng 4 hay không phụ thuộc bạn có làm việc và hưởng lương từ 14 ngày làm việc trở lên trong tháng đó hay không, cùng với thời điểm chấm dứt HĐLĐ thực tế. Nếu quyết định thôi việc ngày 13/4 và bạn không làm/không hưởng lương đủ 14 ngày trong tháng 4 thì có thể không thuộc diện đóng tháng 4, chỉ đóng đến tháng 3.",
+  "gold_citations_raw": "Luật BHXH 2024; Quyết định 595/QĐ-BHXH"
+}

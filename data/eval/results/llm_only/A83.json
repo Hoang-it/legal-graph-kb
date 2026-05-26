@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 83,
+  "question": "Mình đóng bảo hiểm xh từ 2016 tới  2018 rồi ngưng tới nay. Do nghỉ ngang ở cty và k để ý để rút sổ và check thông tin số bh. Coi như k có thông tin gì về nó. Giờ mình phải làm sao để dc cấp lại ?",
+  "answer": "Để được cấp lại sổ bảo hiểm xã hội (BHXH) sau thời gian ngừng đóng và không có thông tin, bạn cần thực hiện các bước sau:\n\n1. **Liên hệ với cơ quan BHXH**: Bạn nên đến cơ quan BHXH nơi bạn đã tham gia đóng để yêu cầu cấp lại sổ. Cơ quan này sẽ kiểm tra thông tin của bạn trong hệ thống.\n\n2. **Cung cấp thông tin cá nhân**: Bạn cần cung cấp các thông tin cá nhân như họ tên, ngày tháng năm sinh, số CMND/CCCD để cơ quan BHXH xác minh thông tin.\n\n3. **Điền đơn yêu cầu**: Bạn sẽ phải điền vào mẫu đơn yêu cầu cấp lại sổ BHXH.\n\n4. **Chờ xử lý**: Sau khi nộp đơn, cơ quan BHXH sẽ xem xét và cấp lại sổ cho bạn trong thời gian quy định.\n\nNếu bạn không nhớ thông tin cụ thể về quá trình đóng BHXH, cơ quan BHXH sẽ hỗ trợ bạn tra cứu thông tin này. \n\nLưu ý rằng việc cấp lại sổ BHXH là quyền lợi của bạn và được quy định tại Luật Bảo hiểm xã hội.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 5.369,
+  "prompt_tokens": 223,
+  "completion_tokens": 261,
+  "gold_answer": "Bạn có thể bắt đầu bằng việc tra cứu lại mã số BHXH bằng CCCD/họ tên/ngày sinh trên Cổng BHXH hoặc tại cơ quan BHXH nơi cư trú. Sau khi xác định được mã số, bạn làm thủ tục đề nghị cấp lại sổ/xác nhận lại quá trình tham gia nếu sổ cũ thất lạc. Việc nghỉ ngang trước đây không làm mất thời gian đã đóng hợp pháp; dữ liệu quá trình tham gia vẫn được lưu trong hệ thống BHXH để đối chiếu và cấp lại.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn cấp lại sổ BHXH"
+}

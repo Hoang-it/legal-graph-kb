@@ -1,0 +1,20 @@
+{
+  "arm": "elite_ontology",
+  "stt": 23,
+  "question": "Bà Thị Ly (Quảng Trị) nghỉ thai sản từ tháng 12/2024 đến hết tháng 5/2025 và nghỉ dưỡng sức sau sinh 7 ngày. Tiền lương trước khi nghỉ thai sản là 6.615.000 đồng.\nNgày 1/6/2025, bà Ly đi làm lại, hưởng mức lương mới là 13.360.000 đồng. Bà nghỉ ốm từ ngày 30/6 đến ngày 2/7/2025 (đã có giấy của cơ quan y tế).\nBà Ly hỏi, cách tính mức hưởng chế độ ốm đau của bà như thế nào?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=unable_to_conclude, repair_rounds=2, error=Connection error.]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "unable_to_conclude",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 4.377,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "error": null,
+  "gold_answer": "Căn cứ quy định tại khoản 1 Điều 28 Luật BHXH số 58/2014/QH13: \"Người lao động tham gia bảo hiểm xã hội hưởng chế độ ốm đau thì mức hưởng tính theo tháng bằng 75% mức tiền lương đóng bảo hiểm xã hội của tháng liền kề trước khi nghỉ việc\".\nCăn cứ quy định khoản 4 Điều 28 Luật BHXH 2014: \" Mức hưởng trợ cấp ốm đau một ngày được tính bằng mức trợ cấp ốm đau theo tháng chia cho 24 ngày\".\nCăn cứ khoản 1 Điều 6 Thông tư số 59/2015/TT-BLĐTBXH ngày 29/12/2015 của Bộ trưởng Bộ Lao động - Thương binh và Xã hội hướng dẫn chi tiết thi hành một số điều của Luật BHXH về BHXH bắt buộc: \" Tiền lương tháng làm căn cứ để tính mức hưởng chế độ ốm đau là tiền lương tháng đóng bảo hiểm xã hội của tháng liền kề trước khi nghỉ việc hưởng chế độ ốm đau theo quy định\".\nCăn cứ quy định khoản 4 Điều 12 Thông tư số 59/2015/TT-BLĐTBXH: \"Thời gian nghỉ việc hưởng chế độ thai sản được tính là thời gian đóng bảo hiểm xã hội quy định tại khoản 2 Điều này, được ghi theo mức tiền lương đóng bảo hiểm xã hội của tháng trước khi nghỉ việc hưởng chế độ thai sản. Trường hợp trong thời gian nghỉ việc hưởng chế độ thai sản người lao động được nâng lương thì được ghi theo mức tiền lương mới của người lao động từ thời điểm được nâng lương\".\nVề cách tính mức hưởng chế độ ốm đau: Đối với trường hợp bà Võ Thị Ly nghỉ thai sản 6 tháng từ tháng 12/2024 đến hết tháng 5/2025 tiền lương trước khi nghỉ thai sản là 6.615.000 đồng. Sau đó bà nghỉ ốm từ ngày 30/6/2025 đến ngày 02/7/2025.\nCăn cứ các quy định trên, bà Ly có tiền lương đóng BHXH tháng trước khi nghỉ việc hưởng chế độ thai sản là 6.615.000 đồng, nếu trong thời gian nghỉ thai sản không được nâng lương thì thời gian từ tháng 12/2024 đến hết tháng 5/2025 được ghi nhận đóng BHXH với mức lương 6.615.000 đồng.\nDo vậy tháng 5/2025 được xác định là tháng liền kề trước khi nghỉ việc để làm căn cứ tính mức hưởng chế độ ốm đau với mức tiền lương là 6.615.000 đồng.\nMức hưởng chế độ ốm đau của bà Ly được tính như sau: 6.615.000/24 ngày x 75% x Số ngày nghỉ việc được hưởng chế độ ốm đau.",
+  "gold_citations_raw": "quy định tại khoản 1 Điều 28 Luật BHXH số 58/2014/QH13"
+}

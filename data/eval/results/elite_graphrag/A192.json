@@ -1,0 +1,29 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 192,
+  "question": "năm 2011 em có mượn hồ sơ đi làm và đóng bh đc 3th thì cty phát hiện hồ sơ giả nên em nghỉ việc, nhưng đến hôm nay cái chị cho em mượn hồ sơ đi lấy bhxh thì bên bh kiểm tra và bảo còn vướng 3th bảo hiểm của em , giờ phải ra toà để huỷ. Vậy giờ em phải làm như thế nào?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmp1xlxv6_x.pl:1:236: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 9 khoản 4]",
+    "[Điều 15 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A9.K4",
+    "L41_2024.A15.K6"
+  ],
+  "citation_indices": [
+    0,
+    1
+  ],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 12.581,
+  "prompt_tokens": 5787,
+  "completion_tokens": 792,
+  "error": null,
+  "gold_answer": "Dùng hồ sơ giả để đi làm và đóng BHXH là việc phải xử lý rất thận trọng. Cơ quan BHXH yêu cầu hủy quá trình sai là có cơ sở; trường hợp hồ sơ giả, người đứng tên thật và người sử dụng hồ sơ nên làm việc trực tiếp với BHXH để xác định hướng xử lý, thậm chí có thể phải qua tòa án/cơ quan công an nếu phát sinh tranh chấp, giả mạo giấy tờ. Bạn không nên tự ý làm thủ tục rút hay gộp sổ trong tình trạng này.",
+  "gold_citations_raw": "Luật BHXH 2024; Bộ luật Dân sự 2015; quy định về giả mạo hồ sơ"
+}

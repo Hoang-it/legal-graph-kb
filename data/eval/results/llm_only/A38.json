@@ -1,0 +1,17 @@
+{
+  "arm": "llm_only",
+  "stt": 38,
+  "question": "Em mới học xong, lúc mới vào cty, khi đang đào tạo người ta hỏi em có BHXH thì em bảo không có, người ta bảo là có thế là thế màp? Bây giờ em muốn xem mình đóng bảo hiểm được bao nhiêu mà không biết số bảo hiểm thì phải làm sao ?",
+  "answer": "Nếu bạn không có số bảo hiểm xã hội (BHXH) và muốn kiểm tra thông tin về việc đóng BHXH của mình, bạn có thể thực hiện các bước sau:\n\n1. **Liên hệ với phòng nhân sự** của công ty bạn đang làm việc để yêu cầu thông tin về số BHXH của bạn. Họ có trách nhiệm cung cấp thông tin này cho bạn.\n\n2. **Truy cập vào cổng thông tin điện tử của Bảo hiểm xã hội Việt Nam**. Tại đây, bạn có thể tra cứu thông tin BHXH nếu bạn có số BHXH. Nếu không có, bạn cần có sự hỗ trợ từ cơ quan BHXH hoặc công ty.\n\n3. **Đến trực tiếp cơ quan Bảo hiểm xã hội** nơi bạn cư trú để yêu cầu tra cứu thông tin. Bạn cần mang theo giấy tờ tùy thân và có thể cần có sự xác nhận từ công ty.\n\nTheo quy định, người lao động có quyền được biết thông tin về việc đóng BHXH của mình để đảm bảo quyền lợi [Điều 4 khoản 1].",
+  "citations": [
+    "[Điều 4 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A4.K1"
+  ],
+  "elapsed_s": 5.013,
+  "prompt_tokens": 223,
+  "completion_tokens": 231,
+  "gold_answer": "Bạn có thể tra cứu mã số BHXH bằng CCCD/họ tên/ngày sinh trên Cổng BHXH Việt Nam hoặc ứng dụng VssID. Nếu không tự tra được, mang CCCD đến cơ quan BHXH gần nhất để được hỗ trợ tra cứu, đồng bộ dữ liệu và cấp lại thông tin tài khoản. Khi đã có mã số BHXH, bạn sẽ xem được toàn bộ quá trình tham gia BHXH, BHTN, BHYT trên VssID hoặc cổng tra cứu điện tử.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn tra cứu VssID/BHXH Việt Nam"
+}

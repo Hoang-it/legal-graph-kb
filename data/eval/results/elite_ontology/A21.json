@@ -1,0 +1,20 @@
+{
+  "arm": "elite_ontology",
+  "stt": 21,
+  "question": "Ông Quang Lành (Tây Ninh) hỏi, các đối tượng hưởng trợ cấp BHXH hằng tháng gồm những đối tượng nào để xác định không được hưởng trợ cấp hưu trí xã hội?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=unable_to_conclude, repair_rounds=2, error=Connection error.]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "unable_to_conclude",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 4.264,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "error": null,
+  "gold_answer": "Các đối tượng hưởng trợ cấp BHXH hằng tháng bao gồm:\n- Trợ cấp mất sức lao động;\n- Trợ cấp tai nạn lao động, bệnh nghề nghiệp;\n- Trợ cấp tuất;…\nĐây là những đối tượng không được hưởng trợ cấp hưu trí xã hội.",
+  "gold_citations_raw": null
+}

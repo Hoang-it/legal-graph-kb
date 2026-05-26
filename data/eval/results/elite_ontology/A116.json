@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 116,
+  "question": "Đi làm công ty mức lương: 5tr5 mà cty bắt đóng bảo hiểm 1tr700 là sao?",
+  "answer": "Issue: Người lao động có mức lương 5 triệu 500 nghìn đồng nhưng công ty yêu cầu đóng bảo hiểm 1 triệu 700 nghìn đồng, điều này có hợp lý không?\n\nRule: \"7. Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất.\" (Luật BHXH 2024 (41/2024/QH15), Điều 33, Khoản 7)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã sử dụng các giá trị trung bình lương và số tiền đóng bảo hiểm để tính toán tỷ lệ đóng bảo hiểm. Cụ thể, lương trung bình của người lao động là 5 triệu 500 nghìn đồng và số tiền đóng bảo hiểm là 1 triệu 700 nghìn đồng.\n\nConclusion: Prolog đã trả về giá trị 30.909090909090907 cho biến Explanation, cho thấy tỷ lệ đóng bảo hiểm so với lương. Tuy nhiên, không có giá trị nào được gán cho các slot, do đó không thể đưa ra kết luận cuối cùng về tính hợp lý của mức đóng bảo hiểm này.",
+  "citations": [
+    "[Điều 33 khoản 7]"
+  ],
+  "citation_ids": [
+    "L41_2024.A33.K7"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,insurance_contribution_explanation(user,30.909090909090907),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Người lao động có mức lương 5 triệu 500 nghìn đồng nhưng công ty yêu cầu đóng bảo hiểm 1 triệu 700 nghìn đồng, điều này có hợp lý không?",
+    "rule": "\"7. Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất.\" (Luật BHXH 2024 (41/2024/QH15), Điều 33, Khoản 7)",
+    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã sử dụng các giá trị trung bình lương và số tiền đóng bảo hiểm để tính toán tỷ lệ đóng bảo hiểm. Cụ thể, lương trung bình của người lao động là 5 triệu 500 nghìn đồng và số tiền đóng bảo hiểm là 1 triệu 700 nghìn đồng.",
+    "conclusion": "Prolog đã trả về giá trị 30.909090909090907 cho biến Explanation, cho thấy tỷ lệ đóng bảo hiểm so với lương. Tuy nhiên, không có giá trị nào được gán cho các slot, do đó không thể đưa ra kết luận cuối cùng về tính hợp lý của mức đóng bảo hiểm này."
+  },
+  "elapsed_s": 14.574,
+  "prompt_tokens": 3606,
+  "completion_tokens": 606,
+  "error": null,
+  "gold_answer": "Nếu lương đóng BHXH là 5,5 triệu thì phần người lao động phải đóng BHXH, BHYT, BHTN thông thường khoảng 10,5%, tức khoảng 577.500 đồng/tháng; doanh nghiệp đóng thêm phần của họ. Nếu công ty đang trừ bạn 1,7 triệu thì cần yêu cầu bảng tính cụ thể vì có thể đang trừ cả phần doanh nghiệp, truy thu tháng cũ hoặc trừ sai. Công ty không được bắt NLĐ gánh phần nghĩa vụ của NSDLĐ.",
+  "gold_citations_raw": "Điều 13, 14 Luật BHXH 2024; Luật BHYT; Luật Việc làm 2013/2025"
+}

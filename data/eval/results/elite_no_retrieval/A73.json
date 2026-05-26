@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 73,
+  "question": "Mình nghỉ việc mà công ty không in tờ rời bhxh cho mình , giờ mình liên hệ với ai để nhận tờ rời?",
+  "answer": "Issue: Mình nghỉ việc mà công ty không in tờ rời bhxh cho mình, giờ mình liên hệ với ai để nhận tờ rời?  \nRule: Không có quy định cụ thể nào được trích dẫn trong trường hợp này.  \nApplication: Không có slot nào được gán giá trị trong truy vấn Prolog. Do đó, không có thông tin nào được sử dụng để đưa ra kết luận.  \nConclusion: Hệ thống đã trả về câu trả lời là \"Bạn nên liên hệ với bộ phận nhân sự của công ty hoặc cơ quan bảo hiểm xã hội nơi bạn đã tham gia để nhận tờ rời BHXH.\" nhưng không có giá trị nào từ các slot hoặc biến Prolog.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,Bạn nên liên hệ với bộ phận nhân sự của công ty hoặc cơ quan bảo hiểm xã hội nơi bạn đã tham gia để nhận tờ rời BHXH.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Mình nghỉ việc mà công ty không in tờ rời bhxh cho mình, giờ mình liên hệ với ai để nhận tờ rời?",
+    "rule": "Không có quy định cụ thể nào được trích dẫn trong trường hợp này.",
+    "application": "Không có slot nào được gán giá trị trong truy vấn Prolog. Do đó, không có thông tin nào được sử dụng để đưa ra kết luận.",
+    "conclusion": "Hệ thống đã trả về câu trả lời là \"Bạn nên liên hệ với bộ phận nhân sự của công ty hoặc cơ quan bảo hiểm xã hội nơi bạn đã tham gia để nhận tờ rời BHXH.\" nhưng không có giá trị nào từ các slot hoặc biến Prolog."
+  },
+  "elapsed_s": 6.261,
+  "prompt_tokens": 2000,
+  "completion_tokens": 283,
+  "error": null,
+  "gold_answer": "Bạn nên liên hệ trước hết với công ty cũ bằng văn bản yêu cầu trả tờ rời/sổ BHXH. Nếu công ty không thực hiện, liên hệ cơ quan BHXH nơi công ty đóng BHXH hoặc cơ quan BHXH nơi bạn cư trú để được hướng dẫn cấp lại/xác nhận quá trình tham gia. Doanh nghiệp có trách nhiệm phối hợp xác nhận thời gian đóng và trả giấy tờ cho người lao động khi chấm dứt HĐLĐ, nên việc giữ hoặc không in trả là không đúng quy định.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48"
+}

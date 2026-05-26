@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 176,
+  "question": "18nam dong bhxh lấy 1 lần được bao nhiêu?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 70 khoản 3] — Hưởng bảo hiểm xã hội một lần.\n- [Điều 70 khoản 4] — Hưởng bảo hiểm xã hội một lần.",
+  "citations": [
+    "[Điều 70 khoản 3]",
+    "[Điều 70 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A70.K3",
+    "L41_2024.A70.K4"
+  ],
+  "citation_verified": {
+    "L41_2024.A70.K3": true,
+    "L41_2024.A70.K4": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A110.K3",
+      "score": 0.7335792779922485,
+      "text_preview": "Trường hợp người có cả thời gian đóng bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện thì mức hưởng trợ cấp tuất một lần tối thiểu bằng 03 lần của mức bình quân tiền lương và thu nhập làm căn cứ"
+    },
+    {
+      "clause_id": "L41_2024.A100.K2",
+      "score": 0.7267475128173828,
+      "text_preview": "Mức hưởng trợ cấp một lần cho mỗi năm đóng cao hơn quy định tại khoản 1 Điều này bằng 0,5 lần của mức bình quân thu nhập làm căn cứ đóng bảo hiểm xã hội quy định tại Điều 104 của Luật này cho mỗi năm "
+    },
+    {
+      "clause_id": "L41_2024.A76.K3",
+      "score": 0.7259290218353271,
+      "text_preview": "Mức trợ cấp một lần đối với người đang hưởng trợ cấp bảo hiểm xã hội hằng tháng bằng 03 tháng trợ cấp đang hưởng."
+    },
+    {
+      "clause_id": "L41_2024.A68.K2",
+      "score": 0.7256472110748291,
+      "text_preview": "Mức hưởng trợ cấp một lần cho mỗi năm đóng cao hơn quy định tại khoản 1 Điều này bằng 0,5 lần của mức bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội quy định tại Điều 72 của Luật này cho mỗi năm"
+    },
+    {
+      "clause_id": "L41_2024.A70.K3",
+      "score": 0.7243186235427856,
+      "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn cứ đóng bảo hiểm xã hội nhưng không bao gồm số tiền ngân sách nhà nước hỗ trợ đóng bảo hiểm xã hội tự nguyện, cứ mỗi nă"
+    }
+  ],
+  "n_semantic_edges": 1,
+  "n_refs": 13,
+  "elapsed_s": 1.52,
+  "gold_answer": "Nếu 18 năm đóng của bạn đều từ năm 2014 trở đi thì công thức sơ bộ là 18 năm x 2 tháng mức bình quân lương đóng BHXH, tức khoảng 36 tháng bình quân lương. Muốn biết gần đúng bao nhiêu tiền, cần biết mức bình quân tiền lương tháng đóng của toàn bộ quá trình sau điều chỉnh. Từ 01/7/2025, 18 năm đóng cũng là mức nên cân nhắc giữ để hướng tới lương hưu.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

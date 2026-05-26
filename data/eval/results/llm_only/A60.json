@@ -1,0 +1,19 @@
+{
+  "arm": "llm_only",
+  "stt": 60,
+  "question": "Sếp em có Công ty A và B, Giờ sếp em muốn giải thể cty A (đã có qđ giải thể rồi), và chuyển hết công nhân từ cty A sang B\nỞ cty A có 1 bạn nữ đang nghỉ thai sản đến hết Tháng 04/2026, và sẽ báo On từ Tháng 05 tại cty B (trước đó em sẽ báo giảm cho bạn nữ tại cty A )\nVậy Trong Tháng 05/2026, bạn nữ đang làm tại cty B thì có được nghỉ hưởng chế độ dưỡng sức không?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, người lao động sau khi sinh con có quyền nghỉ dưỡng sức, phục hồi sức khỏe. Cụ thể, người lao động nữ sau khi nghỉ thai sản có thể được nghỉ dưỡng sức tối đa 30 ngày, tùy thuộc vào tình trạng sức khỏe và theo chỉ định của cơ sở y tế.\n\nTuy nhiên, để được hưởng chế độ dưỡng sức, người lao động phải tham gia bảo hiểm xã hội và có thời gian đóng bảo hiểm xã hội tối thiểu theo quy định. Nếu bạn nữ này đã chuyển sang công ty B và tiếp tục tham gia bảo hiểm xã hội, thì cô ấy có quyền được nghỉ dưỡng sức theo quy định.\n\nDo đó, nếu bạn nữ này đã hoàn thành thời gian nghỉ thai sản và đủ điều kiện theo quy định, thì cô ấy có thể được nghỉ dưỡng sức tại công ty B trong tháng 05/2026. \n\nCụ thể, bạn cần tham khảo thêm các quy định tại [Điều 41 khoản 1] và [Điều 41 khoản 2] của Luật Bảo hiểm xã hội số 41/2024/QH15 để biết rõ hơn về quyền lợi này.",
+  "citations": [
+    "[Điều 41 khoản 1]",
+    "[Điều 41 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A41.K1",
+    "L41_2024.A41.K2"
+  ],
+  "elapsed_s": 7.674,
+  "prompt_tokens": 282,
+  "completion_tokens": 247,
+  "gold_answer": "Dưỡng sức, phục hồi sức khỏe sau thai sản chỉ đặt ra khi trong 30 ngày đầu trở lại làm việc mà sức khỏe chưa phục hồi. Nếu bạn lao động nữ kết thúc thai sản tháng 4/2026, sang tháng 5/2026 làm việc tại công ty B thì vẫn có thể được xem xét nghỉ dưỡng sức nếu đủ điều kiện và có xác nhận theo quy định. Việc chuyển từ công ty A sang B không tự làm mất quyền này, nhưng hồ sơ phải thể hiện rõ thời điểm trở lại làm việc và tình trạng sức khỏe.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 61"
+}

@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 46,
+  "question": "Lúc còn huyện cũ thì mình nộp bhxh ở huyện.Còn bây giờ không còn huyện nữa thì mình nộp ở đâu? ở xã hay là hành chính công?",
+  "answer": "Issue: Người lao động hiện nay không biết nộp bảo hiểm xã hội ở đâu khi huyện cũ không còn tồn tại.\n\nRule: Không có quy định cụ thể nào được trích dẫn trong trường hợp này.\n\nApplication: Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được Prolog tiêu thụ.\n\nConclusion: Prolog đã trả về kết quả là \"Người lao động hiện nay có thể nộp BHXH tại cơ quan bảo hiểm xã hội cấp huyện hoặc tại các điểm tiếp nhận hồ sơ của hành chính công, tùy thuộc vào quy định của địa phương.\" Tuy nhiên, không có giá trị nào từ các slot được cung cấp, vì vậy không thể kết luận dựa trên các slot.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,answer_predicate(Người lao động hiện nay có thể nộp BHXH tại cơ quan bảo hiểm xã hội cấp huyện hoặc tại các điểm tiếp nhận hồ sơ của hành chính công, tùy thuộc vào quy định của địa phương.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người lao động hiện nay không biết nộp bảo hiểm xã hội ở đâu khi huyện cũ không còn tồn tại.",
+    "rule": "Không có quy định cụ thể nào được trích dẫn trong trường hợp này.",
+    "application": "Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được Prolog tiêu thụ.",
+    "conclusion": "Prolog đã trả về kết quả là \"Người lao động hiện nay có thể nộp BHXH tại cơ quan bảo hiểm xã hội cấp huyện hoặc tại các điểm tiếp nhận hồ sơ của hành chính công, tùy thuộc vào quy định của địa phương.\" Tuy nhiên, không có giá trị nào từ các slot được cung cấp, vì vậy không thể kết luận dựa trên các slot."
+  },
+  "elapsed_s": 10.841,
+  "prompt_tokens": 3233,
+  "completion_tokens": 362,
+  "error": null,
+  "gold_answer": "Sau khi thay đổi mô hình tổ chức hành chính, hồ sơ BHXH thường nộp tại cơ quan BHXH khu vực/cơ quan được phân công tiếp nhận hoặc Trung tâm phục vụ hành chính công, không phải xã nào cũng trực tiếp thu hồ sơ. Bạn nên tra cứu nơi tiếp nhận mới tại địa phương hoặc gọi cơ quan BHXH gần nhất để tránh đi sai nơi. Nguyên tắc là cơ quan BHXH nơi cư trú vẫn có trách nhiệm hướng dẫn, tiếp nhận hoặc chỉ dẫn nơi nộp đúng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; quy định tổ chức thực hiện của BHXH Việt Nam"
+}

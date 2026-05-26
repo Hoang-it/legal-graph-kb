@@ -1,0 +1,54 @@
+{
+  "arm": "graphrag",
+  "stt": 82,
+  "question": "bhxh e đc 6 tháng có được rút không? E nghĩ cty cũng 2 năm hơn rồi",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 5 khoản 6]\n- [Điều 50 khoản 2]\n- [Điều 50 khoản 3]",
+  "citations": [
+    "[Điều 5 khoản 6]",
+    "[Điều 50 khoản 2]",
+    "[Điều 50 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K6",
+    "L41_2024.A50.K2",
+    "L41_2024.A50.K3"
+  ],
+  "citation_verified": {
+    "L41_2024.A5.K6": true,
+    "L41_2024.A50.K2": true,
+    "L41_2024.A50.K3": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.7847540378570557,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A53.K7",
+      "score": 0.7796062231063843,
+      "text_preview": "Trường hợp chỉ có cha tham gia bảo hiểm xã hội bắt buộc mà mẹ chết sau khi sinh con hoặc gặp rủi ro sau khi sinh mà không đủ sức khỏe để chăm sóc con theo xác nhận của cơ sở khám bệnh, chữa bệnh thì c"
+    },
+    {
+      "clause_id": "L41_2024.A55.K1",
+      "score": 0.7775158882141113,
+      "text_preview": "Được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi. Trường hợp sinh đôi trở lên thì được nghỉ thêm 01 tháng cho mỗi con tính từ con thứ hai trở đi.\nTrường hợp "
+    },
+    {
+      "clause_id": "L41_2024.A50.K3",
+      "score": 0.7726105451583862,
+      "text_preview": "Đối tượng quy định tại điểm b và điểm c khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của người hành nghề khám bệ"
+    },
+    {
+      "clause_id": "L41_2024.A5.K6",
+      "score": 0.7692036628723145,
+      "text_preview": "Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hi"
+    }
+  ],
+  "n_semantic_edges": 2,
+  "n_refs": 5,
+  "elapsed_s": 1.72,
+  "gold_answer": "Thông thường đóng BHXH mới 6 tháng thì chưa thể rút ngay nếu bạn chưa thuộc trường hợp luật cho phép. Trường hợp phổ biến nhất là phải sau 12 tháng không tiếp tục tham gia BHXH mà vẫn chưa đủ điều kiện hưởng lương hưu thì mới đề nghị hưởng BHXH một lần. Vì vậy nếu bạn mới đóng 6 tháng và nghỉ đã hơn 2 năm thì cần kiểm tra hiện tại có còn tham gia nơi nào khác không; nếu không, thường có thể nộp hồ sơ theo diện BHXH một lần.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 110"
+}

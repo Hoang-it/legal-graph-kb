@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 3,
+  "question": "Bà H.T. T đã chấm dứt hợp đồng lao động với doanh nghiệp từ năm 2018. Hiện tại, bà phát hiện là tháng 9/2018 bà chưa được chốt sổ BHXH.\nBà T. hỏi, bà có thể tự chốt sổ BHXH với cơ quan bảo hiểm quận qua hình thức nộp hồ sơ online được không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 28 khoản 4] — quy định về việc cấp sổ bảo hiểm xã hội.\n- [Điều 27 khoản 2] — quy định về hồ sơ đăng ký tham gia bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 28 khoản 4]",
+    "[Điều 27 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A28.K4",
+    "L41_2024.A27.K2"
+  ],
+  "citation_verified": {
+    "L41_2024.A28.K4": true,
+    "L41_2024.A27.K2": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A13.K3",
+      "score": 0.8137528300285339,
+      "text_preview": "Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật."
+    },
+    {
+      "clause_id": "L41_2024.A107.K2",
+      "score": 0.8076465725898743,
+      "text_preview": "Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.\nThời điểm kết thúc ngày cuối cùng của tháng dừng đ"
+    },
+    {
+      "clause_id": "L41_2024.A28.K4",
+      "score": 0.802343487739563,
+      "text_preview": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn"
+    },
+    {
+      "clause_id": "L41_2024.A35.K2",
+      "score": 0.8022363185882568,
+      "text_preview": "Cơ quan bảo hiểm xã hội công khai trên Cổng thông tin điện tử của cơ quan bảo hiểm xã hội về việc người sử dụng lao động chậm đóng, trốn đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A38.K1",
+      "score": 0.8003880977630615,
+      "text_preview": "Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều "
+    }
+  ],
+  "n_semantic_edges": 3,
+  "n_refs": 9,
+  "elapsed_s": 1.8,
+  "gold_answer": "Khoản 5 Điều 21 Luật BHXH 2014 quy định: \"Người sử dụng lao động có trách nhiệm phối hợp với cơ quan BHXH trả sổ BHXH cho người lao động, xác nhận thời gian đóng BHXH khi người lao động chấm dứt HĐLĐ, HĐLV hoặc thôi việc theo quy định của pháp luật\".\nTheo Khoản 3, Điều 48 Bộ luật lao động năm 2019 quy định trách nhiệm của người sử dụng lao động khi hợp đồng lao động chấm dứt như sau:\n\"Người sử dụng lao động có trách nhiệm hoàn thành thủ tục xác nhận thời gian đóng BHXH, BH thất nghiệp và trả lại cùng với bản chính giấy tờ khác nếu người sử dụng lao động đã giữ của người lao động.\"\nTừ những căn cứ trên, thì trách nhiệm chốt sổ BHXH do người sử dụng lao động thực hiện, đồng thời có sự phối hợp của cơ quan BHXH.\nQua kiểm tra theo thông tin bà T. cung cấp trên hệ thống phần mềm của Bảo hiểm xã hội Việt Nam thì bà có quá trình tham gia BHXH như sau:\nThời gian từ tháng 1/2017 đến tháng 9/2018 làm việc và đóng BHXH tại Chi nhánh doanh nghiệp.\nThời gian làm việc và đóng BHXH tại Chi nhánh doanh nghiệp đã được đơn vị đề nghị BHXH chốt sổ và in tờ rời cho bà.\nĐề nghị bà T. liên hệ với các đơn vị cũ của bà để nhận lại sổ và tờ rời quá trình tham gia BHXH.",
+  "gold_citations_raw": "Khoản 5 Điều 21 Luật BHXH 2014\nKhoản 3, Điều 48 Bộ luật lao động năm 2019"
+}

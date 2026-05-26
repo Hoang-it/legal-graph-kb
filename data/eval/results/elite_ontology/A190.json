@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 190,
+  "question": "Lam cty luong cơ bản 3tr9 tháng mình đóng 415k bhxh và cty đóng cho 800k thì sau rút ra có rút dc cả phần 800k công ty đóng cho ko?",
+  "answer": "Issue: Người lao động hỏi về khả năng rút cả phần tiền bảo hiểm xã hội mà công ty đã đóng cho họ.\n\nRule: \"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), article 18, clause 2)\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Prolog không tiêu thụ bất kỳ giá trị nào từ các slot.\n\nConclusion: Hệ thống đã trả về kết quả là \"yes\" cho câu hỏi về khả năng rút tiền bảo hiểm xã hội, nhưng không có giá trị nào từ các slot để tính toán.",
+  "citations": [
+    "[Điều 18 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K5"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,withdrawal_conditions(yes),based_on(source_c0041))]",
+  "irac_sections": {
+    "issue": "Người lao động hỏi về khả năng rút cả phần tiền bảo hiểm xã hội mà công ty đã đóng cho họ.",
+    "rule": "\"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), article 18, clause 2)",
+    "application": "Không có slot nào được gán giá trị trong trường hợp này. Prolog không tiêu thụ bất kỳ giá trị nào từ các slot.",
+    "conclusion": "Hệ thống đã trả về kết quả là \"yes\" cho câu hỏi về khả năng rút tiền bảo hiểm xã hội, nhưng không có giá trị nào từ các slot để tính toán."
+  },
+  "elapsed_s": 8.226,
+  "prompt_tokens": 4593,
+  "completion_tokens": 406,
+  "error": null,
+  "gold_answer": "Khi hưởng BHXH 1 lần, mức hưởng được tính trên toàn bộ quá trình đóng vào quỹ hưu trí, tử tuất theo mức bình quân lương tháng đóng BHXH, không chỉ phần bạn tự đóng. Nói dễ hiểu, số tiền hưởng không tách riêng 'phần công ty đóng' hay 'phần mình đóng' để hoàn lại từng khoản, mà tính theo công thức luật định trên toàn bộ thời gian và mức đóng hợp lệ.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

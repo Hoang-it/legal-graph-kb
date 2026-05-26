@@ -1,0 +1,17 @@
+{
+  "arm": "llm_only",
+  "stt": 142,
+  "question": "Mình nghĩ công ty được khoảng hơn 2 năm rồi, mà chưa vào lấy được số bảo hiểm, nhưng có tờ rời, giờ vào có lấy được số bảo hiểm, hay ở nhà vẫn lấy được?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, người lao động có quyền yêu cầu cấp sổ bảo hiểm xã hội khi đã tham gia bảo hiểm. Nếu bạn đã tham gia bảo hiểm xã hội tại công ty trong hơn 2 năm, bạn có thể yêu cầu công ty cấp sổ bảo hiểm xã hội cho bạn. \n\nNếu bạn không thể đến công ty, bạn có thể liên hệ với cơ quan bảo hiểm xã hội nơi bạn cư trú để được hướng dẫn về việc cấp sổ bảo hiểm xã hội. Tuy nhiên, việc lấy số bảo hiểm xã hội thường cần có sự xác nhận từ công ty nơi bạn làm việc.\n\nCụ thể, bạn nên tham khảo thêm quy định tại [Điều 46 khoản 1] về quyền và nghĩa vụ của người lao động trong việc tham gia bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 46 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A46.K1"
+  ],
+  "elapsed_s": 4.095,
+  "prompt_tokens": 202,
+  "completion_tokens": 170,
+  "gold_answer": "Số BHXH là mã số cá nhân quản lý trên hệ thống, không phụ thuộc việc bạn có cầm sổ giấy hay không. Bạn có thể tra cứu trên ứng dụng VssID, VNeID, cổng BHXH Việt Nam hoặc tới cơ quan BHXH để xin xác nhận. Nếu đã có tờ rời thì thường vẫn đối chiếu được số sổ. Không nhất thiết phải về công ty mới biết số BHXH.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

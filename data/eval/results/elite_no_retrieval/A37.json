@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 37,
+  "question": "Mình nghỉ cty cũ từ tháng 1/2026. (nghỉ ngang) nhưng cty vẫn chốt sổ cho Mình. Nhưng nay mình muốn ra lấy tờ rời BHXH, giờ mình phải làm sao?",
+  "answer": "Issue: Người dùng muốn biết cách lấy tờ rời BHXH sau khi nghỉ việc tại công ty cũ từ tháng 1/2026.\n\nRule: Không có quy định cụ thể nào được trích dẫn trong trường hợp này.\n\nApplication: Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được Prolog tiêu thụ.\n\nConclusion: Hệ thống không thể tính toán số liệu cuối cùng vì không có giá trị nào được gán cho các slot.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,answer_predicate(Bạn cần liên hệ với cơ quan bảo hiểm xã hội nơi bạn đã làm việc để yêu cầu cấp tờ rời BHXH, cung cấp các thông tin cần thiết và làm theo hướng dẫn của họ.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người dùng muốn biết cách lấy tờ rời BHXH sau khi nghỉ việc tại công ty cũ từ tháng 1/2026.",
+    "rule": "Không có quy định cụ thể nào được trích dẫn trong trường hợp này.",
+    "application": "Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được Prolog tiêu thụ.",
+    "conclusion": "Hệ thống không thể tính toán số liệu cuối cùng vì không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 8.473,
+  "prompt_tokens": 3258,
+  "completion_tokens": 291,
+  "error": null,
+  "gold_answer": "Nếu công ty đã chốt sổ nhưng chưa trả tờ rời cho bạn thì trước hết yêu cầu công ty bàn giao lại sổ/tờ rời bằng văn bản hoặc email. Khi chấm dứt HĐLĐ, người sử dụng lao động phải phối hợp xác nhận thời gian đóng BHXH và trả lại giấy tờ liên quan cho người lao động. Nếu công ty chây ì, bạn có thể khiếu nại đến Thanh tra Sở Nội vụ/LĐTBXH hoặc cơ quan BHXH nơi đơn vị đang tham gia để được hỗ trợ cấp lại, xác nhận quá trình đóng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48"
+}

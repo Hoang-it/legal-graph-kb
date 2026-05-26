@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 189,
+  "question": "Cty em từ tháng 11/2025 từ Cty cổ phần chuyển đổi thành Cty TNHH 1tv, giám đốc là chủ sở hữu mà bên em đóng bảo hiểm xã hội 32% được không?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, mức đóng bảo hiểm xã hội cho người lao động là 32% không phải là quy định chung. Mức đóng cụ thể sẽ phụ thuộc vào từng đối tượng tham gia bảo hiểm xã hội.\n\nCông ty TNHH một thành viên (Cty TNHH 1TV) có thể áp dụng mức đóng bảo hiểm xã hội theo quy định hiện hành, nhưng không phải là 32% cho tất cả các trường hợp. Mức đóng cụ thể cho từng loại bảo hiểm (bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp) sẽ được quy định rõ trong các điều khoản của Luật.\n\nDo đó, bạn cần xem xét lại các quy định cụ thể về mức đóng bảo hiểm xã hội cho từng đối tượng lao động trong công ty của bạn. Tôi không có đủ thông tin chính xác để trả lời câu hỏi này.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 4.999,
+  "prompt_tokens": 205,
+  "completion_tokens": 195,
+  "gold_answer": "Tỷ lệ 32% chỉ có thể là cách cộng gộp nhiều khoản phải đóng của cả doanh nghiệp và người lao động, không phải lúc nào cũng áp dụng đúng cho mọi trường hợp. Với công ty TNHH MTV, giám đốc/chủ sở hữu có thuộc diện đóng BHXH hay không còn phụ thuộc việc hưởng lương, chức danh và hướng dẫn áp dụng cho người quản lý doanh nghiệp. Bạn nên rà lại đối tượng tham gia theo Luật BHXH 2024 và nghị định hướng dẫn.",
+  "gold_citations_raw": "Điều 2, 13, 14 Luật BHXH 2024; Nghị định 158/2025/NĐ-CP"
+}

@@ -1,0 +1,29 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 26,
+  "question": "Bà Thị Thuận (Lào Cai) đóng BHXH được 6 năm 3 tháng, do điều kiện gia đình nên bà xin nghỉ việc và được cơ quan BHXH xác nhận tổng thời gian tham gia BHXH, bảo hiểm thất nghiệp trên sổ BHXH.\nBà đề nghị cơ quan có thẩm quyền hướng dẫn quy trình hưởng trợ cấp thất nghiệp.",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpx3oibmdl.pl:3:390: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 107 khoản 2]",
+    "[Điều 106 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A107.K2",
+    "L41_2024.A106.K1"
+  ],
+  "citation_indices": [
+    0,
+    1
+  ],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 17.577,
+  "prompt_tokens": 6640,
+  "completion_tokens": 1068,
+  "error": null,
+  "gold_answer": "Khoản 3 Điều 34 Chương VIII Nghị định số 374/2025/NĐ-CP ngày 31/12/2025 của Chính phủ quy định chi tiết một số điều của Luật Việc làm về bảo hiểm thất nghiệp có quy định về trách nhiệm của tổ chức dịch vụ việc làm công, trong đó nêu rõ:\n\"Tổ chức tiếp nhận, xem xét và thực hiện các thủ tục giải quyết hồ sơ đề nghị hưởng trợ cấp thất nghiệp, hỗ trợ đào tạo, bồi dưỡng, nâng cao trình độ kỹ năng nghề. Trường hợp trong quá trình thực hiện dịch vụ công trực tuyến, dữ liệu điện tử về dân cư, bảo hiểm xã hội, bảo hiểm thất nghiệp của người lao động không thống nhất với thông tin trên các giấy tờ có giá trị pháp lý như Căn cước công dân, sổ bảo hiểm xã hội hoặc giấy tờ hợp pháp khác, tổ chức dịch vụ việc làm công có trách nhiệm hướng dẫn người lao động đề nghị cơ quan có thẩm quyền rà soát, đối chiếu, điều chỉnh dữ liệu điện tử và thực hiện nộp hồ sơ trực tiếp theo quy định\".\nTheo đó, để được giải quyết hưởng trợ cấp thất nghiệp, đề nghị bà Thuận liên hệ Trung tâm Dịch vụ việc làm trực thuộc Sở Nội vụ tại địa phương nơi bà có nhu cầu nhận trợ cấp thất nghiệp (không phụ thuộc vào nơi đã làm việc trước đó) để được hướng dẫn, tiếp nhận và giải quyết hồ sơ theo quy định.\nCơ quan BHXH thực hiện chi trả trợ cấp thất nghiệp cho người lao động sau khi nhận được Quyết định hưởng trợ cấp thất nghiệp do Sở Nội vụ ban hành và chuyển đến cơ quan BHXH.",
+  "gold_citations_raw": "Khoản 3 Điều 34 Chương VIII Nghị định số 374/2025/NĐ-CP"
+}

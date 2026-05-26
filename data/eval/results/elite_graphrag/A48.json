@@ -1,0 +1,31 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 48,
+  "question": "Mình đóng BHXH 21nam,  sinh ngày 02/08/1976, nam, công việc bảo vệ vượn cây cao su, thì khi nào được nghi hưu?",
+  "answer": "Issue: Người tham gia bảo hiểm xã hội tự nguyện 21 năm, sinh ngày 02/08/1976, thì khi nào được nghỉ hưu?\n\nRule: \"Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), article 141, clause 9)\n\nApplication: Không có slot_bindings nào được cung cấp trong truy vấn. Tuy nhiên, Prolog đã xác định rằng người dùng đã đóng bảo hiểm xã hội 21 năm, và theo quy tắc, người dùng đủ điều kiện để nghỉ hưu khi đủ 60 tuổi.\n\nConclusion: Prolog đã trả về giá trị 60 cho biến RetirementAge. Do không có slot nào bị thiếu, hệ thống đã có thể tính toán và đưa ra kết luận.",
+  "citations": [
+    "[Điều 98]"
+  ],
+  "citation_ids": [
+    "L41_2024.A98"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,retirement_age(user,60),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Người tham gia bảo hiểm xã hội tự nguyện 21 năm, sinh ngày 02/08/1976, thì khi nào được nghỉ hưu?",
+    "rule": "\"Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), article 141, clause 9)",
+    "application": "Không có slot_bindings nào được cung cấp trong truy vấn. Tuy nhiên, Prolog đã xác định rằng người dùng đã đóng bảo hiểm xã hội 21 năm, và theo quy tắc, người dùng đủ điều kiện để nghỉ hưu khi đủ 60 tuổi.",
+    "conclusion": "Prolog đã trả về giá trị 60 cho biến RetirementAge. Do không có slot nào bị thiếu, hệ thống đã có thể tính toán và đưa ra kết luận."
+  },
+  "elapsed_s": 17.969,
+  "prompt_tokens": 3159,
+  "completion_tokens": 531,
+  "error": null,
+  "gold_answer": "Nếu tính theo tuổi nghỉ hưu thông thường của lao động nam, bạn sinh ngày 02/08/1976 thì đủ 62 tuổi vào ngày 02/08/2038. Hiện thông tin bạn nêu 'bảo vệ vườn cây cao su' chưa đủ căn cứ khẳng định thuộc nghề, công việc nặng nhọc/đặc biệt nặng nhọc để được nghỉ hưu sớm hơn. 21 năm đóng BHXH mới chỉ đáp ứng về thời gian tối thiểu nếu đến tuổi, còn thời điểm nghỉ hưu vẫn phải căn cứ thêm điều kiện tuổi và tính chất công việc.",
+  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 169; Nghị định 135/2020/NĐ-CP"
+}

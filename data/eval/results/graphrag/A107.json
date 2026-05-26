@@ -1,0 +1,54 @@
+{
+  "arm": "graphrag",
+  "stt": 107,
+  "question": "Bảo hiểm của e đóng từ 2015, đóng gián đoạn. Đến năm 2021 thì nghỉ đóng, vậy e có được rút không? và rút được bao nhiêu?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 100 khoản 1]\n- [Điều 100 khoản 2]\n- [Điều 33 khoản 7]",
+  "citations": [
+    "[Điều 100 khoản 1]",
+    "[Điều 100 khoản 2]",
+    "[Điều 33 khoản 7]"
+  ],
+  "citation_ids": [
+    "L41_2024.A100.K1",
+    "L41_2024.A100.K2",
+    "L41_2024.A33.K7"
+  ],
+  "citation_verified": {
+    "L41_2024.A100.K1": true,
+    "L41_2024.A100.K2": true,
+    "L41_2024.A33.K7": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A141.K9",
+      "score": 0.8038525581359863,
+      "text_preview": "Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ,"
+    },
+    {
+      "clause_id": "L41_2024.A100.K1",
+      "score": 0.8006230592727661,
+      "text_preview": "Lao động nam có thời gian đóng bảo hiểm xã hội cao hơn 35 năm, lao động nữ có thời gian đóng bảo hiểm xã hội cao hơn 30 năm thì khi nghỉ hưu, ngoài lương hưu còn được hưởng trợ cấp một lần."
+    },
+    {
+      "clause_id": "L41_2024.A68.K1",
+      "score": 0.8004699945449829,
+      "text_preview": "Lao động nam có thời gian đóng bảo hiểm xã hội cao hơn 35 năm, lao động nữ có thời gian đóng bảo hiểm xã hội cao hơn 30 năm thì khi nghỉ hưu, ngoài lương hưu còn được hưởng trợ cấp một lần."
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.7996948957443237,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A9.K2",
+      "score": 0.7984141111373901,
+      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    }
+  ],
+  "n_semantic_edges": 3,
+  "n_refs": 6,
+  "elapsed_s": 1.62,
+  "gold_answer": "Nếu bạn đã ngừng đóng từ năm 2021 đến nay và không thuộc diện tiếp tục tham gia, về nguyên tắc bạn có thể đề nghị hưởng BHXH 1 lần nếu thuộc trường hợp luật cho phép. Mức hưởng tính theo số năm đã đóng và mức bình quân tiền lương tháng đóng BHXH sau điều chỉnh; mỗi năm từ 2014 trở đi tính 2 tháng bình quân lương, trước 2014 tính 1,5 tháng/năm.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

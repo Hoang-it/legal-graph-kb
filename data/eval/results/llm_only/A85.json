@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 85,
+  "question": "Em đóng BH từ tháng 8/2023 đến 2/2025, dừng t3,t4/2025. Sau đó đóng tiếp từ 5/2025 đến 5/2026. E dks cuối t10/2026. Nếu e nghỉ hẳn CTY e có đc hưởng bảo hiểm thất nghiệp không?",
+  "answer": "Để được hưởng bảo hiểm thất nghiệp, bạn cần đáp ứng một số điều kiện theo quy định của Luật Bảo hiểm xã hội. Cụ thể, bạn phải có thời gian đóng bảo hiểm thất nghiệp tối thiểu là 12 tháng trong vòng 24 tháng trước khi nghỉ việc. \n\nTrong trường hợp của bạn, bạn đã đóng bảo hiểm từ tháng 8/2023 đến tháng 2/2025 (7 tháng), sau đó dừng và tiếp tục đóng từ tháng 5/2025 đến tháng 5/2026 (12 tháng). Tổng thời gian bạn đã đóng bảo hiểm thất nghiệp là 19 tháng. \n\nNếu bạn nghỉ việc và không có việc làm trong thời gian 24 tháng trước khi đăng ký hưởng bảo hiểm thất nghiệp, bạn sẽ đủ điều kiện hưởng trợ cấp thất nghiệp. Tuy nhiên, bạn cần lưu ý rằng thời gian bạn dừng đóng bảo hiểm (tháng 3 và tháng 4/2025) có thể ảnh hưởng đến quyền lợi của bạn.\n\nDo đó, bạn cần kiểm tra kỹ lưỡng thời gian đóng bảo hiểm và các điều kiện khác để xác định quyền lợi của mình. Nếu bạn nghỉ việc hẳn và đáp ứng đủ điều kiện, bạn có thể được hưởng bảo hiểm thất nghiệp. \n\nTuy nhiên, tôi không có đủ thông tin chính xác để trả lời câu hỏi này.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 5.095,
+  "prompt_tokens": 230,
+  "completion_tokens": 280,
+  "gold_answer": "Bạn đóng BHTN từ 8/2023 đến 2/2025, nghỉ 2 tháng rồi đóng tiếp 5/2025 đến 5/2026 thì thời gian BHTN đủ dài để xét trợ cấp thất nghiệp nếu bạn nghỉ việc và đáp ứng điều kiện khác. Việc dự sinh cuối 10/2026 không ảnh hưởng trực tiếp đến quyền hưởng BHTN, miễn khi nộp hồ sơ bạn đã chấm dứt HĐLĐ hợp pháp, nộp trong 3 tháng và sau 15 ngày chưa có việc làm. Số tháng hưởng và mức hưởng sẽ tính riêng theo Luật Việc làm.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 49, Điều 50"
+}

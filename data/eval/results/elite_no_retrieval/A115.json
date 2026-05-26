@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 115,
+  "question": "Mình đóng được bảo hiểm 8 tháng thì có rút được tiền trong bảo hiểu đc không?",
+  "answer": "Issue: Mình đóng được bảo hiểm 8 tháng thì có rút được tiền trong bảo hiểm được không?\n\nRule: Không có trích dẫn nào được cung cấp.\n\nApplication: Không có giá trị nào được gán cho các slot. Tuy nhiên, Prolog đã xác định rằng người dùng đã đóng bảo hiểm 8 tháng, và theo quy tắc, nếu số tháng đóng góp lớn hơn hoặc bằng 6, thì có thể rút tiền.\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,yes),based_on(none))]",
+  "irac_sections": {
+    "issue": "Mình đóng được bảo hiểm 8 tháng thì có rút được tiền trong bảo hiểm được không?",
+    "rule": "Không có trích dẫn nào được cung cấp.",
+    "application": "Không có giá trị nào được gán cho các slot. Tuy nhiên, Prolog đã xác định rằng người dùng đã đóng bảo hiểm 8 tháng, và theo quy tắc, nếu số tháng đóng góp lớn hơn hoặc bằng 6, thì có thể rút tiền.",
+    "conclusion": "Prolog đã trả về giá trị \"yes\" cho biến Answer."
+  },
+  "elapsed_s": 6.732,
+  "prompt_tokens": 1865,
+  "completion_tokens": 251,
+  "error": null,
+  "gold_answer": "Đóng BHXH 8 tháng chưa đương nhiên được rút ngay. Bạn chỉ được hưởng BHXH 1 lần khi thuộc trường hợp luật cho phép, phổ biến là đã nghỉ việc và sau 12 tháng không còn thuộc diện tham gia BHXH bắt buộc, cũng không tham gia BHXH tự nguyện. Nếu chưa đủ điều kiện thì thời gian 8 tháng đó được bảo lưu để cộng nối về sau.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,17 @@
+{
+  "arm": "llm_only",
+  "stt": 44,
+  "question": "Mình đóng bhxh từ năm 2024 là 10 tháng \nSau đó vào cty khác đóng tiếp tục 6 tháng cùng luật bảo hiểm 1/7/2025 không cho rút 1 lần \nTổng thời gian mình đóng là 1 năm 4 tháng, giờ mình nghỉ cty luôn thì mình có được rút 1 lần bhxh không?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động có quyền rút một lần bảo hiểm xã hội khi có đủ điều kiện về thời gian đóng bảo hiểm. Cụ thể, người lao động có thể rút một lần khi đã đóng bảo hiểm xã hội từ đủ 1 năm trở lên và không tiếp tục tham gia bảo hiểm xã hội.\n\nTrong trường hợp của bạn, bạn đã đóng bảo hiểm xã hội tổng cộng 1 năm 4 tháng. Nếu bạn nghỉ việc và không tiếp tục tham gia bảo hiểm xã hội, bạn có quyền rút một lần bảo hiểm xã hội theo quy định tại [Điều 60 khoản 1]. \n\nTuy nhiên, bạn cần lưu ý rằng việc rút bảo hiểm xã hội một lần cũng phải tuân thủ các quy định khác liên quan đến hồ sơ và thủ tục.",
+  "citations": [
+    "[Điều 60 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1"
+  ],
+  "elapsed_s": 4.285,
+  "prompt_tokens": 236,
+  "completion_tokens": 182,
+  "gold_answer": "Bạn đã có 10 tháng đóng trước 1/7/2025 và thêm 6 tháng sau đó, tổng 1 năm 4 tháng. Nếu hiện đã nghỉ việc, ngừng tham gia đủ 12 tháng và thuộc diện được giải quyết BHXH một lần theo quy định chuyển tiếp của Luật BHXH 2024 thì vẫn có thể được rút đối với thời gian đã đóng. Cần kiểm tra thêm thời điểm đề nghị và việc bạn có tiếp tục tham gia BHXH ở nơi khác hay không.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110; quy định chuyển tiếp của Luật BHXH 2024"
+}

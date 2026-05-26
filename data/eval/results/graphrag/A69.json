@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 69,
+  "question": "Anh chị cho em hỏi cty đưa nhầm sổ bhxh của em cho ng khác giờ k liên lạc được để lấy, em muốn xin cấp lại thì có cấp lại sổ và tờ rời được không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 25 khoản 2] — về việc cấp sổ bảo hiểm xã hội.\n- [Điều 28 khoản 4] — về trách nhiệm cấp sổ bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 25 khoản 2]",
+    "[Điều 28 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A25.K2",
+    "L41_2024.A28.K4"
+  ],
+  "citation_verified": {
+    "L41_2024.A25.K2": true,
+    "L41_2024.A28.K4": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A28.K4",
+      "score": 0.7950035333633423,
+      "text_preview": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn"
+    },
+    {
+      "clause_id": "L41_2024.A25.K2",
+      "score": 0.7835859060287476,
+      "text_preview": "Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau.\nChậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằn"
+    },
+    {
+      "clause_id": "L41_2024.A113.K1",
+      "score": 0.7819676399230957,
+      "text_preview": "Trường hợp nộp hồ sơ quá thời hạn quy định tại khoản 1 Điều 97, khoản 1 Điều 107, điểm a khoản 2 Điều 112 của Luật này thì phải giải trình bằng văn bản và gửi cho cơ quan bảo hiểm xã hội khi nộp hồ sơ"
+    },
+    {
+      "clause_id": "L41_2024.A13.K2",
+      "score": 0.7814571857452393,
+      "text_preview": "Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A17.K2",
+      "score": 0.7802149057388306,
+      "text_preview": "Được cơ quan đăng ký kinh doanh, cơ quan cấp giấy chứng nhận hoạt động hoặc giấy phép hoạt động kết nối, chia sẻ thông tin hoặc cung cấp bản sao giấy phép hoạt động, giấy chứng nhận hoạt động hoặc giấ"
+    }
+  ],
+  "n_semantic_edges": 2,
+  "n_refs": 12,
+  "elapsed_s": 1.74,
+  "gold_answer": "Nếu sổ BHXH/tờ rời của bạn bị giao nhầm cho người khác và không thu hồi được thì bạn có thể đề nghị cơ quan BHXH cấp lại sổ hoặc xác nhận lại quá trình tham gia theo quy định. Bạn nên nộp hồ sơ đề nghị cấp lại kèm CCCD và trình bày rõ việc thất lạc do công ty giao nhầm. Do dữ liệu BHXH hiện được quản lý điện tử nên quá trình đóng hợp pháp của bạn vẫn có thể được đối chiếu để cấp lại, không phải chỉ doanh nghiệp mới làm được.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn cấp lại sổ/mất sổ của BHXH Việt Nam"
+}

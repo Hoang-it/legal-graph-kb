@@ -1,0 +1,48 @@
+{
+  "arm": "graphrag",
+  "stt": 183,
+  "question": "minh nghi viec da 1 nam co dc huong tro cap ko?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 93 khoản 3] về hình thức chi trả lương hưu và chế độ bảo hiểm xã hội.\n- [Điều 117 khoản 1 và 2] về các nguồn hình thành quỹ bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 93 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A93.K3"
+  ],
+  "citation_verified": {
+    "L41_2024.A93.K3": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A117.K2",
+      "score": 0.7087984085083008,
+      "text_preview": "Người lao động đóng theo quy định."
+    },
+    {
+      "clause_id": "L41_2024.A117.K1",
+      "score": 0.7000484466552734,
+      "text_preview": "Người sử dụng lao động đóng theo quy định."
+    },
+    {
+      "clause_id": "L41_2024.A93.K3",
+      "score": 0.6913115382194519,
+      "text_preview": "Thông qua người sử dụng lao động."
+    },
+    {
+      "clause_id": "L41_2024.A15.K6",
+      "score": 0.6889748573303223,
+      "text_preview": "Kiến nghị cơ quan nhà nước có thẩm quyền xử lý hành vi vi phạm pháp luật về bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A9.K10",
+      "score": 0.6885819435119629,
+      "text_preview": "Hành vi khác theo quy định của luật."
+    }
+  ],
+  "n_semantic_edges": 3,
+  "n_refs": 0,
+  "elapsed_s": 1.82,
+  "gold_answer": "Nếu bạn hỏi trợ cấp thất nghiệp thì nghỉ việc đã 1 năm thường là quá hạn nộp hồ sơ, vì luật yêu cầu nộp trong 03 tháng kể từ ngày chấm dứt HĐLĐ. Còn nếu hỏi BHXH 1 lần thì nghỉ việc 1 năm mới là một trong các mốc để xem xét điều kiện, nhưng vẫn phải kiểm tra bạn có tiếp tục tham gia BHXH hay không và có thuộc trường hợp luật cho phép hay không.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

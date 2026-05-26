@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 8,
+  "question": "Năm 2022, ông Bình Châu (Tây Ninh) có 11 tháng thất nghiệp nhưng chưa hưởng trợ cấp. Tháng 1-7/2024 ông thất nghiệp.\nÔng Châu hỏi, trường hợp của ông có được đăng ký hưởng trợ cấp thất nghiệp không?",
+  "answer": "Issue: Ông Bình Châu hỏi về khả năng đăng ký hưởng trợ cấp thất nghiệp sau 11 tháng thất nghiệp trong năm 2022 và 7 tháng thất nghiệp trong tháng 1-7/2024.\n\nRule: Không có tài liệu hoặc điều khoản nào được trích dẫn.\n\nApplication: Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được Prolog sử dụng để đưa ra kết luận.\n\nConclusion: Hệ thống không thể tính toán số liệu cuối cùng vì không có giá trị nào được gán cho các slot.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,no),based_on(none))]",
+  "irac_sections": {
+    "issue": "Ông Bình Châu hỏi về khả năng đăng ký hưởng trợ cấp thất nghiệp sau 11 tháng thất nghiệp trong năm 2022 và 7 tháng thất nghiệp trong tháng 1-7/2024.",
+    "rule": "Không có tài liệu hoặc điều khoản nào được trích dẫn.",
+    "application": "Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được Prolog sử dụng để đưa ra kết luận.",
+    "conclusion": "Hệ thống không thể tính toán số liệu cuối cùng vì không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 8.407,
+  "prompt_tokens": 2065,
+  "completion_tokens": 367,
+  "error": null,
+  "gold_answer": "Tại Điều 49 Luật Việc làm quy định, người lao động đang đóng bảo hiểm thất nghiệp được hưởng trợ cấp thất nghiệp khi có đủ các điều kiện sau đây:\n- Chấm dứt hợp đồng lao động hoặc hợp đồng làm việc, trừ các trường hợp sau đây:\n+ Người lao động đơn phương chấm dứt hợp đồng lao động, hợp đồng làm việc trái pháp luật;\n+ Hưởng lương hưu, trợ cấp mất sức lao động hằng tháng.\n- Đã đóng bảo hiểm thất nghiệp từ đủ:\n+ 12 tháng trở lên trong thời gian 24 tháng trước khi chấm dứt hợp đồng lao động đối với các trường hợp: hợp đồng lao động có xác định và không xác định thời hạn;\n+ 12 tháng trở lên trong thời gian 36 tháng trước khi chấm dứt hợp đồng lao động đối với các trường hợp: ký hợp đồng lao động theo mùa vụ hoặc theo một công việc nhất định có thời hạn từ đủ 3 tháng đến dưới 12 tháng.\n- Đã nộp hồ sơ hưởng trợ cấp thất nghiệp tại Trung tâm dịch vụ việc làm trong thời hạn 3 tháng kể từ ngày chấm dứt hợp đồng lao động hoặc hợp đồng làm việc.\n- Chưa tìm được việc làm sau 15 ngày, kể từ ngày nộp hồ sơ hưởng bảo hiểm thất nghiệp, trừ các trường hợp sau đây:\n+ Thực hiện nghĩa vụ quân sự, nghĩa vụ công an;\n+ Đi học tập có thời hạn từ đủ 12 tháng trở lên;\n+ Chấp hành quyết định áp dụng biện pháp đưa vào trường giáo dưỡng, cơ sở giáo dục bắt buộc, cơ sở cai nghiện bắt buộc;\n+ Bị tạm giam; chấp hành hình phạt tù;\n+ Ra nước ngoài định cư; đi lao động ở nước ngoài theo hợp đồng;\n+ Chết.\nTại Khoản 1 Điều 45 Luật Việc làm quy định, thời gian đóng bảo hiểm thất nghiệp để xét hưởng bảo hiểm thất nghiệp là tổng các khoảng thời gian đã đóng bảo hiểm thất nghiệp liên tục hoặc không liên tục được cộng dồn từ khi bắt đầu đóng bảo hiểm thất nghiệp cho đến khi người lao động chấm dứt hợp đồng lao động hoặc hợp đồng làm việc theo quy định của pháp luật mà chưa hưởng trợ cấp thất nghiệp.\nBHXH Việt Nam thông tin quy định của chính sách đến ông Châu để ông nắm được và đối chiếu với trường hợp cụ thể của bản thân để xác định quyền lợi về hưởng trợ cấp thất nghiệp của mình.",
+  "gold_citations_raw": "Điều 49 Luật Việc\nKhoản 1 Điều 45 Luật Việc"
+}

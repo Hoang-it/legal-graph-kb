@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 71,
+  "question": "Mình đóng bảo hiểm được 20 năm mà chưa tới tuổi lãnh hưu, mình nghỉ làm thì mình có được nhận tiền bảo hiểm thất nghiệp không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 9 khoản 2] — Các hành vi bị nghiêm cấm.\n- [Điều 141 khoản 10] — Quy định chuyển tiếp.",
+  "citations": [
+    "[Điều 9 khoản 2]",
+    "[Điều 141 khoản 10]"
+  ],
+  "citation_ids": [
+    "L41_2024.A9.K2",
+    "L41_2024.A141.K10"
+  ],
+  "citation_verified": {
+    "L41_2024.A9.K2": true,
+    "L41_2024.A141.K10": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A64.K1",
+      "score": 0.8434579372406006,
+      "text_preview": "Đối tượng quy định tại các điểm a, b, c, g, h, i, k, l, m và n khoản 1 và khoản 2 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 15 năm trở lên thì được hưởng lương"
+    },
+    {
+      "clause_id": "L41_2024.A65.K1",
+      "score": 0.8378998041152954,
+      "text_preview": "Đối tượng quy định tại các điểm a, b, c, g, h, i, k, l, m và n khoản 1 và khoản 2 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 20 năm trở lên thì được hưởng lương"
+    },
+    {
+      "clause_id": "L41_2024.A64.K2",
+      "score": 0.8378874063491821,
+      "text_preview": "Đối tượng quy định tại các điểm d, đ và e khoản 1 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 15 năm trở lên thì được hưởng lương hưu nếu thuộc một trong các trư"
+    },
+    {
+      "clause_id": "L41_2024.A141.K9",
+      "score": 0.834541916847229,
+      "text_preview": "Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ,"
+    },
+    {
+      "clause_id": "L41_2024.A65.K2",
+      "score": 0.8342450857162476,
+      "text_preview": "Đối tượng quy định tại các điểm d, đ và e khoản 1 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 20 năm trở lên, bị suy giảm khả năng lao động từ 61% trở lên thì đư"
+    }
+  ],
+  "n_semantic_edges": 6,
+  "n_refs": 20,
+  "elapsed_s": 2.13,
+  "gold_answer": "Có. Bảo hiểm thất nghiệp là chế độ riêng, không phụ thuộc việc bạn đã đủ 20 năm BHXH hay chưa. Nếu bạn nghỉ việc đúng quy định, đã đóng BHTN đủ thời gian luật định, nộp hồ sơ trong 3 tháng và sau 15 ngày chưa có việc làm thì vẫn được hưởng trợ cấp thất nghiệp. Bạn chỉ không được hưởng BHXH một lần nếu không thuộc trường hợp luật cho phép, còn BHTN vẫn xem xét riêng theo Luật Việc làm.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 49, Điều 50; Luật BHXH 2024 Điều 70"
+}

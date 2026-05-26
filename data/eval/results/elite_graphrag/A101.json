@@ -1,0 +1,29 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 101,
+  "question": "e làm cty này từ năm 2012 đến 2025 thì e nghỉ và hiện e đang làm cty khác .cty đã trả sổ bh ,cùng các tờ rồi từ năm 2012 đến hết 2018 ,khi e xin nghỉ thì cty cũng đã chốt và trả các tờ rời từ năm 2019 đến đến 2025 ,nhưng e lại làm mất sổ cùng các tờ rời từ năm 2012 đến năm 2019 .vậy e hỏi là e muốn làm lại sổ bh cùng các tờ rời đó thì đến đâu làm?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpwjtp0zky.pl:1:260: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 25 khoản 2]",
+    "[Điều 28 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A25.K2",
+    "L41_2024.A28.K4"
+  ],
+  "citation_indices": [
+    1,
+    2
+  ],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 13.812,
+  "prompt_tokens": 6912,
+  "completion_tokens": 900,
+  "error": null,
+  "gold_answer": "Bạn có thể làm thủ tục cấp lại sổ BHXH/tờ rời tại cơ quan BHXH nơi cư trú hoặc nơi đang tham gia BHXH hiện nay; không bắt buộc quay lại công ty cũ. Hồ sơ thường gồm tờ khai thay đổi thông tin, CCCD và nêu rõ phần sổ, tờ rời bị mất. Quá trình đã đóng vẫn được quản lý trên dữ liệu BHXH nên việc mất sổ giấy không làm mất thời gian tham gia.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

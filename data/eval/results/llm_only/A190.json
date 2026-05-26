@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 190,
+  "question": "Lam cty luong cơ bản 3tr9 tháng mình đóng 415k bhxh và cty đóng cho 800k thì sau rút ra có rút dc cả phần 800k công ty đóng cho ko?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, khi bạn rút bảo hiểm xã hội một lần, bạn chỉ được nhận phần tiền mà bạn đã đóng vào quỹ bảo hiểm xã hội, không bao gồm phần tiền mà công ty đã đóng. Cụ thể, phần tiền mà bạn rút ra sẽ dựa trên số tiền bạn đã đóng vào quỹ bảo hiểm xã hội trong suốt thời gian tham gia.\n\nDo đó, bạn sẽ không rút được phần 800k mà công ty đã đóng cho bạn. Bạn chỉ có thể rút phần 415k mà bạn đã đóng. \n\nNếu bạn cần thêm thông tin chi tiết, hãy tham khảo các điều khoản liên quan trong Luật Bảo hiểm xã hội số 41/2024/QH15.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 3.871,
+  "prompt_tokens": 204,
+  "completion_tokens": 159,
+  "gold_answer": "Khi hưởng BHXH 1 lần, mức hưởng được tính trên toàn bộ quá trình đóng vào quỹ hưu trí, tử tuất theo mức bình quân lương tháng đóng BHXH, không chỉ phần bạn tự đóng. Nói dễ hiểu, số tiền hưởng không tách riêng 'phần công ty đóng' hay 'phần mình đóng' để hoàn lại từng khoản, mà tính theo công thức luật định trên toàn bộ thời gian và mức đóng hợp lệ.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

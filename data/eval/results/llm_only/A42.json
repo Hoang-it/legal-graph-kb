@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 42,
+  "question": "Trường hợp chủ hộ kinh doanh, đăng ký kinh doanh từ t12/2025 nhưng bắt đầu kinh doanh và kê khai thuế là t1/2026. \nHiện đang đóng bhyt phường. Tình hình kinh doanh kém nên e đi làm thêm.\nT6/2026 bắt đầu đóng bhxh ở cty mới. \nVậy từ t1-t5/2026 có phải mua bhxh bắt buộc cho chủ hộ kinh doanh ko?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, chủ hộ kinh doanh không thuộc đối tượng phải tham gia bảo hiểm xã hội bắt buộc nếu không có hợp đồng lao động hoặc không làm việc tại doanh nghiệp khác. \n\nCụ thể, chủ hộ kinh doanh chỉ phải tham gia bảo hiểm xã hội bắt buộc khi có thu nhập từ hoạt động kinh doanh và có yêu cầu tham gia. Tuy nhiên, nếu bạn đã bắt đầu đóng bảo hiểm xã hội tại công ty mới từ tháng 6/2026, thì từ tháng 1 đến tháng 5/2026, bạn không bắt buộc phải mua bảo hiểm xã hội cho chủ hộ kinh doanh, trừ khi bạn có quyết định tham gia.\n\nDo đó, trong trường hợp của bạn, từ tháng 1 đến tháng 5/2026, bạn không cần phải mua bảo hiểm xã hội bắt buộc cho chủ hộ kinh doanh.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 4.604,
+  "prompt_tokens": 256,
+  "completion_tokens": 195,
+  "gold_answer": "Nếu từ 1/2026 hộ kinh doanh của bạn đã hoạt động và nộp thuế theo phương pháp kê khai, thì chủ hộ thuộc diện tham gia BHXH bắt buộc. Khi từ 6/2026 bạn đồng thời đi làm ở công ty mới, việc đóng BHXH sẽ xác định theo diện ưu tiên luật quy định; không phải lúc nào cũng đóng song song 2 nơi. Bạn nên đối chiếu phương pháp nộp thuế của hộ kinh doanh để xác định chính xác nghĩa vụ từ 1-5/2026.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2 khoản 1 điểm m; Nghị định 158/2025/NĐ-CP Điều 3"
+}

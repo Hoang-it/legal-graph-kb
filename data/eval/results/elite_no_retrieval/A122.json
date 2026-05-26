@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 122,
+  "question": "E nghỉ từ tháng 6 năm ngoái thì bây giờ có đi làm bảo hiểm thất nghiệp đc không?",
+  "answer": "Issue: E nghỉ từ tháng 6 năm ngoái thì bây giờ có đi làm bảo hiểm thất nghiệp được không?  \nRule: Không có trích dẫn nào được cung cấp.  \nApplication: Không có slot nào được gán giá trị. Prolog đã trả về kết quả mà không cần thông tin đầu vào.  \nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,yes),based_on(none))]",
+  "irac_sections": {
+    "issue": "E nghỉ từ tháng 6 năm ngoái thì bây giờ có đi làm bảo hiểm thất nghiệp được không?",
+    "rule": "Không có trích dẫn nào được cung cấp.",
+    "application": "Không có slot nào được gán giá trị. Prolog đã trả về kết quả mà không cần thông tin đầu vào.",
+    "conclusion": "Prolog đã trả về giá trị \"yes\" cho biến Answer."
+  },
+  "elapsed_s": 5.725,
+  "prompt_tokens": 1846,
+  "completion_tokens": 182,
+  "error": null,
+  "gold_answer": "Nếu bạn nghỉ từ tháng 6 năm ngoái mà đến nay mới đi làm BHTN thì thường đã quá thời hạn nộp hồ sơ 03 tháng kể từ ngày chấm dứt HĐLĐ, nên không còn được giải quyết cho đợt nghỉ việc đó. Thời gian đã đóng BHTN nhưng chưa hưởng sẽ được bảo lưu để tính cho lần thất nghiệp sau, nếu sau này bạn đi làm lại và tiếp tục tham gia BHTN.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

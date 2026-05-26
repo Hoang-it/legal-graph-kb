@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 65,
+  "question": "Mình có hai mã sổ BHXH phải làm sao?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, mỗi người lao động chỉ được cấp một mã số sổ bảo hiểm xã hội duy nhất. Nếu bạn có hai mã số sổ BHXH, bạn cần liên hệ với cơ quan bảo hiểm xã hội nơi bạn đang tham gia để được hướng dẫn và giải quyết. Cơ quan này sẽ kiểm tra thông tin và giúp bạn hợp nhất hoặc điều chỉnh lại mã số sổ BHXH cho phù hợp. \n\nBạn nên chuẩn bị các giấy tờ liên quan như CMND/CCCD, sổ BHXH và các tài liệu chứng minh thời gian tham gia bảo hiểm để thuận lợi trong quá trình giải quyết.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 3.378,
+  "prompt_tokens": 171,
+  "completion_tokens": 140,
+  "gold_answer": "Một người chỉ có một mã số BHXH. Nếu bạn đang có 2 mã, cần làm thủ tục gộp sổ/mã số để cơ quan BHXH hợp nhất toàn bộ quá trình tham gia về một mã duy nhất. Bạn nên nộp tờ khai điều chỉnh thông tin kèm CCCD và các giấy tờ liên quan đến cả hai mã tại cơ quan BHXH nơi cư trú hoặc nơi đang tham gia. Sau khi gộp, quyền lợi và thời gian đóng hợp pháp của bạn được cộng nối, không bị mất.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn quản lý sổ BHXH, gộp sổ của BHXH Việt Nam"
+}

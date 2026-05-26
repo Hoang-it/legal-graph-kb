@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 132,
+  "question": "Em bị mất giấy quyết định thôi việc thì có rút được thất nghiệp với bhxh hông???",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 4: Loại hình, các chế độ bảo hiểm xã hội\n- Điều 9: Các hành vi bị nghiêm cấm\n- Điều 38: Chậm đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp\n- Điều 61: Hồ sơ đề nghị hưởng chế độ thai sản\n- Điều 75: Tạm dừng, chấm dứt, tiếp tục hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng\n- Điều 141: Quy định chuyển tiếp",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A61.K5",
+      "score": 0.7894113063812256,
+      "text_preview": "Hồ sơ đề nghị nghỉ việc hưởng chế độ thai sản hoặc hưởng trợ cấp một lần đối với lao động nam khi vợ sinh con là bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con; t"
+    },
+    {
+      "clause_id": "L41_2024.A9.K2",
+      "score": 0.7885975241661072,
+      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A9.K1",
+      "score": 0.7819809317588806,
+      "text_preview": "Chậm đóng, trốn đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A38.K1",
+      "score": 0.7790110111236572,
+      "text_preview": "Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều "
+    },
+    {
+      "clause_id": "L41_2024.A75.K6",
+      "score": 0.7778602838516235,
+      "text_preview": "Người bị tạm dừng hưởng lương hưu hoặc trợ cấp bảo hiểm xã hội hằng tháng khi có quyết định của Tòa án tuyên bố mất tích, sau đó có quyết định của Tòa án tuyên bố là đã chết thì thân nhân của người đó"
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 5,
+  "elapsed_s": 2.55,
+  "gold_answer": "Mất quyết định thôi việc không làm mất quyền hưởng BHXH 1 lần, vì hồ sơ BHXH 1 lần thường không bắt buộc tài liệu này. Nhưng với BHTN thì giấy tờ chứng minh chấm dứt HĐLĐ là thành phần hồ sơ rất quan trọng. Bạn nên xin công ty cấp lại hoặc xin bản sao/giấy xác nhận chấm dứt hợp đồng để nộp trong thời hạn luật định.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

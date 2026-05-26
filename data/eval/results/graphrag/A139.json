@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 139,
+  "question": "E đóng BH từ tháng 8 năm 2023 thì bây giờ có thể rút BHXH đc không?\nVà BH thất nghiệp có rút đc không? Quy trình rút BHTN như thế nào cần giấy tờ gì?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 33 khoản 7] về việc đóng tiếp bảo hiểm xã hội.\n- [Điều 38 khoản 1] về chậm đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp.",
+  "citations": [
+    "[Điều 33 khoản 7]",
+    "[Điều 38 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A33.K7",
+    "L41_2024.A38.K1"
+  ],
+  "citation_verified": {
+    "L41_2024.A33.K7": true,
+    "L41_2024.A38.K1": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A141.K12",
+      "score": 0.8078093528747559,
+      "text_preview": "Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30"
+    },
+    {
+      "clause_id": "L41_2024.A38.K1",
+      "score": 0.8046038150787354,
+      "text_preview": "Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều "
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.7907541990280151,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A17.K1",
+      "score": 0.7893490791320801,
+      "text_preview": "Yêu cầu người sử dụng lao động xuất trình sổ quản lý lao động, thang lương, bảng lương và thông tin, tài liệu khác liên quan đến việc đóng, hưởng chế độ bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp,"
+    },
+    {
+      "clause_id": "L41_2024.A18.K2",
+      "score": 0.7838995456695557,
+      "text_preview": "Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội."
+    }
+  ],
+  "n_semantic_edges": 1,
+  "n_refs": 5,
+  "elapsed_s": 2.22,
+  "gold_answer": "BHXH đóng từ 8/2023 đến nay không phải cứ nghỉ là rút được ngay; với BHXH 1 lần, thông thường phải sau 12 tháng không tiếp tục tham gia và thuộc trường hợp luật cho phép. Còn BHTN chỉ được nộp trong 03 tháng từ ngày chấm dứt HĐLĐ. Hồ sơ BHTN gồm đơn đề nghị, CCCD, giấy tờ chấm dứt HĐLĐ; mức hưởng bằng 60% bình quân lương 6 tháng cuối.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

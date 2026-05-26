@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 104,
+  "question": "Giờ rút bhxh 1 lần ở đâu cũng được phải không?\nVà có cần giấy quyết định thôi việc không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [L41_2024.A107.K2] Điều 107. Giải quyết hưởng lương hưu, bảo hiểm xã hội một lần đối với người đang bảo lưu thời gian đóng bảo hiểm xã hội, người tham gia bảo hiểm xã hội tự nguyện.\n- [L41_2024.A106.K2] Điều 106. Hồ sơ đề nghị hưởng bảo hiểm xã hội một lần.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A61.K5",
+      "score": 0.7770529985427856,
+      "text_preview": "Hồ sơ đề nghị nghỉ việc hưởng chế độ thai sản hoặc hưởng trợ cấp một lần đối với lao động nam khi vợ sinh con là bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con; t"
+    },
+    {
+      "clause_id": "L41_2024.A13.K3",
+      "score": 0.7632916569709778,
+      "text_preview": "Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật."
+    },
+    {
+      "clause_id": "L41_2024.A107.K2",
+      "score": 0.7584037184715271,
+      "text_preview": "Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.\nThời điểm kết thúc ngày cuối cùng của tháng dừng đ"
+    },
+    {
+      "clause_id": "L41_2024.A130.K5",
+      "score": 0.7553834915161133,
+      "text_preview": "Việc giải quyết khiếu nại đối với quyết định, hành vi có liên quan đến việc thụ hưởng các chế độ bảo hiểm xã hội hoặc tính thời gian công tác trong khu vực nhà nước để hưởng bảo hiểm xã hội trước ngày"
+    },
+    {
+      "clause_id": "L41_2024.A17.K1",
+      "score": 0.7553789615631104,
+      "text_preview": "Yêu cầu người sử dụng lao động xuất trình sổ quản lý lao động, thang lương, bảng lương và thông tin, tài liệu khác liên quan đến việc đóng, hưởng chế độ bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp,"
+    }
+  ],
+  "n_semantic_edges": 1,
+  "n_refs": 4,
+  "elapsed_s": 2.8,
+  "gold_answer": "Hồ sơ BHXH 1 lần nộp tại cơ quan BHXH nơi cư trú (thường trú hoặc tạm trú), không phải nộp ở đâu cũng được. Thông thường không bắt buộc có quyết định thôi việc; giấy tờ chính là đơn đề nghị, CCCD và thông tin tài khoản. Tuy nhiên bạn phải thuộc trường hợp đủ điều kiện hưởng BHXH 1 lần, phổ biến là sau 12 tháng không tiếp tục tham gia mà chưa đủ điều kiện hưởng lương hưu.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

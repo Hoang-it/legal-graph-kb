@@ -1,0 +1,54 @@
+{
+  "arm": "graphrag",
+  "stt": 177,
+  "question": "Em làm samsung Bắc Ninh từ năm 2017, e nghỉ ngang chưa chốt bảo hiểm và chưa có sổ. Giờ e làm công ty mới vẫn đóng bảo hiểm nhưng nếu nghỉ thì chưa chốt đc. Giờ e phải làm sao?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 28 khoản 4] — Quy định về việc cấp sổ bảo hiểm xã hội.\n- [Điều 33 khoản 7] — Quy định về việc đóng tiếp bảo hiểm xã hội cho thời gian còn thiếu.\n- [Điều 37 khoản 2] — Quy định về tạm dừng đóng bảo hiểm xã hội bắt buộc.",
+  "citations": [
+    "[Điều 28 khoản 4]",
+    "[Điều 33 khoản 7]",
+    "[Điều 37 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A28.K4",
+    "L41_2024.A33.K7",
+    "L41_2024.A37.K2"
+  ],
+  "citation_verified": {
+    "L41_2024.A28.K4": true,
+    "L41_2024.A33.K7": true,
+    "L41_2024.A37.K2": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A141.K12",
+      "score": 0.806786298751831,
+      "text_preview": "Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30"
+    },
+    {
+      "clause_id": "L41_2024.A28.K4",
+      "score": 0.804457426071167,
+      "text_preview": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn"
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.7971388101577759,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A38.K1",
+      "score": 0.7966742515563965,
+      "text_preview": "Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều "
+    },
+    {
+      "clause_id": "L41_2024.A33.K6",
+      "score": 0.7934468984603882,
+      "text_preview": "Trường hợp trong tháng đầu làm việc hoặc trong tháng đầu trở lại làm việc mà người lao động nghỉ việc hưởng chế độ ốm đau từ 14 ngày làm việc trở lên thì vẫn phải đóng bảo hiểm xã hội của tháng đó."
+    }
+  ],
+  "n_semantic_edges": 3,
+  "n_refs": 5,
+  "elapsed_s": 2.95,
+  "gold_answer": "Công ty mới vẫn có thể đóng BHXH cho bạn, nhưng hồ sơ cũ chưa chốt sẽ gây vướng khi gộp quá trình và giải quyết chế độ sau này. Bạn cần yêu cầu Samsung Bắc Ninh chốt sổ bằng văn bản; nếu họ không làm thì khiếu nại tới cơ quan BHXH quản lý đơn vị hoặc thanh tra lao động. Không nên để kéo dài vì càng lâu càng khó đối chiếu hồ sơ cũ.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

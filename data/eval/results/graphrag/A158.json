@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 158,
+  "question": "mình đóng bhxh dk 6 năm mức lương CB 5300 thì giờ mk muốn rút một lần là dk khoảng bao nhiêu?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 66: Mức lương hưu hằng tháng\n- Điều 33: Mức đóng, phương thức và thời hạn đóng bảo hiểm xã hội bắt buộc của người lao động",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A9.K2",
+      "score": 0.7393644452095032,
+      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.7382018566131592,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A117.K2",
+      "score": 0.7364574670791626,
+      "text_preview": "Người lao động đóng theo quy định."
+    },
+    {
+      "clause_id": "L41_2024.A66.K3",
+      "score": 0.7356853485107422,
+      "text_preview": "Mức lương hưu hằng tháng của đối tượng đủ điều kiện quy định tại Điều 65 của Luật này được tính như quy định tại khoản 1 Điều này, sau đó cứ mỗi năm nghỉ hưu trước tuổi quy định thì giảm 2%.\nTrường hợ"
+    },
+    {
+      "clause_id": "L41_2024.A41.K1",
+      "score": 0.734868049621582,
+      "text_preview": "Bắt buộc đóng đủ số tiền trốn đóng; nộp số tiền bằng 0,03%/ngày tính trên số tiền bảo hiểm xã hội, bảo hiểm thất nghiệp trốn đóng và số ngày trốn đóng vào quỹ bảo hiểm xã hội, quỹ bảo hiểm thất nghiệp"
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 2,
+  "elapsed_s": 7.77,
+  "gold_answer": "Nếu 6 năm đóng đều từ 2014 trở đi và mức bình quân lương đóng khoảng 5,3 triệu thì BHXH 1 lần ước khoảng khoảng 63,6 triệu. Đây là số ước tính sơ bộ; cơ quan BHXH còn tính theo mức bình quân tiền lương sau điều chỉnh từng năm. Bạn cũng cần đủ điều kiện hưởng BHXH 1 lần thì mới rút được.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

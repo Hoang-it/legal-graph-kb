@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 39,
+  "question": "Mình ngưng đóng bảo hiểm xã hội từ 2017 đến bây giờ là năm 2026 rồi. Liệu mình có đi thanh toán bhxh đc k ạ?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, nếu bạn đã ngừng đóng bảo hiểm xã hội từ năm 2017 và đến năm 2026 vẫn chưa tiếp tục đóng, bạn có thể thực hiện thủ tục để nhận bảo hiểm xã hội một lần nếu đủ điều kiện. Cụ thể, bạn cần đáp ứng các điều kiện về thời gian đóng bảo hiểm và lý do rút bảo hiểm.\n\nTuy nhiên, để có thông tin chính xác và đầy đủ hơn về quyền lợi của mình, bạn nên liên hệ với cơ quan bảo hiểm xã hội địa phương để được tư vấn cụ thể.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 3.129,
+  "prompt_tokens": 196,
+  "completion_tokens": 133,
+  "gold_answer": "Nếu bạn đã ngừng đóng từ năm 2017 đến nay và không tiếp tục tham gia BHXH, thì thường có thể làm thủ tục hưởng BHXH một lần nếu thuộc trường hợp luật cho phép, nhất là đã ngừng tham gia từ đủ 12 tháng trở lên mà chưa đủ thời gian hưởng lương hưu. Nếu không rút một lần, bạn cũng có thể bảo lưu thời gian đã đóng để sau này tham gia tiếp hoặc chuyển sang BHXH tự nguyện.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110"
+}

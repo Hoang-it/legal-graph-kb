@@ -1,0 +1,35 @@
+{
+  "arm": "elite_ontology",
+  "stt": 164,
+  "question": "Mình vào 1 công ty global (đóng full bhxh và có bảo hiểm pvi care thời gian chờ thai sản 270 ngày) và chính thức từ 8/12/2025 thì phát hiện có bầu, dự sinh 20/8/2026 thì ko biết mình nghỉ sinh trước bao lâu là tốt nhất để ko bị thanh tra hồ sơ và nhận đủ quyền lợi? Trước công ty này mình làm ngắt quãng nên trong 12 tháng trước sinh thì chỉ tính làm ở công ty này thôi",
+  "answer": "Issue: Người dùng muốn biết thời gian nghỉ sinh tối ưu để không bị thanh tra hồ sơ và nhận đủ quyền lợi khi có thai sau khi làm việc tại công ty mới.\n\nRule: \"3. Hồ sơ đề nghị hưởng chế độ thai sản đối với lao động nữ khi khám thai theo quy định tại Điều 51 của Luật này; lao động nữ sảy thai, phá thai hoặc có thai chết trong tử cung, thai chết trong khi chuyển dạ, thai ngoài tử cung theo quy định tại Điều 52 của Luật này là một trong các giấy tờ sau đây:\\na) Bản chính h\" (Luật BHXH 2024 (41/2024/QH15), Điều 61, Khoản 3)\n\nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã sử dụng quy tắc để xác định thời gian nghỉ sinh tối ưu là 2.\n\nConclusion: Prolog đã trả về giá trị 2 cho biến LeaveStart, cho biết thời gian nghỉ sinh tối ưu là 2.",
+  "citations": [
+    "[Điều 51]",
+    "[Điều 52]",
+    "[Điều 61 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A51",
+    "L41_2024.A52",
+    "L41_2024.A61.K3"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,optimal_maternity_leave_start(2),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Người dùng muốn biết thời gian nghỉ sinh tối ưu để không bị thanh tra hồ sơ và nhận đủ quyền lợi khi có thai sau khi làm việc tại công ty mới.",
+    "rule": "\"3. Hồ sơ đề nghị hưởng chế độ thai sản đối với lao động nữ khi khám thai theo quy định tại Điều 51 của Luật này; lao động nữ sảy thai, phá thai hoặc có thai chết trong tử cung, thai chết trong khi chuyển dạ, thai ngoài tử cung theo quy định tại Điều 52 của Luật này là một trong các giấy tờ sau đây:\\na) Bản chính h\" (Luật BHXH 2024 (41/2024/QH15), Điều 61, Khoản 3)",
+    "application": "Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã sử dụng quy tắc để xác định thời gian nghỉ sinh tối ưu là 2.",
+    "conclusion": "Prolog đã trả về giá trị 2 cho biến LeaveStart, cho biết thời gian nghỉ sinh tối ưu là 2."
+  },
+  "elapsed_s": 11.049,
+  "prompt_tokens": 6339,
+  "completion_tokens": 694,
+  "error": null,
+  "gold_answer": "Để an toàn quyền lợi thai sản, mấu chốt là đủ điều kiện đóng từ 06 tháng trong 12 tháng trước sinh chứ không có quy định 'nghỉ trước bao lâu để không bị thanh tra'. Nếu hồ sơ lao động, bảng lương, quyết định tăng lương là thật và đóng BHXH đúng thực tế thì không phải sợ. Bạn có thể nghỉ trước sinh theo chỉ định bác sĩ hoặc thỏa thuận nghỉ thai sản theo luật, nhưng không nên làm hồ sơ không đúng thực tế.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

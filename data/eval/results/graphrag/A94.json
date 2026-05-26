@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 94,
+  "question": "e mơi đóng bhxh hộ kinh doanh được 2 tháng giờ e ở nhóm 1 không phải đóng thì đi huỷ được khômg?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 33 khoản 5]\n- [Điều 33 khoản 7]",
+  "citations": [
+    "[Điều 33 khoản 5]",
+    "[Điều 33 khoản 7]"
+  ],
+  "citation_ids": [
+    "L41_2024.A33.K5",
+    "L41_2024.A33.K7"
+  ],
+  "citation_verified": {
+    "L41_2024.A33.K5": true,
+    "L41_2024.A33.K7": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A33.K5",
+      "score": 0.7712907791137695,
+      "text_preview": "Đối tượng quy định tại các điểm a, b, c, d và i khoản 1 và khoản 2 Điều 2 của Luật này mà không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì người lao động không phải đóng bảo hiểm xã "
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.7641671895980835,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A70.K1",
+      "score": 0.7612498998641968,
+      "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm xã hội mà có đề nghị thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây:"
+    },
+    {
+      "clause_id": "L41_2024.A39.K2",
+      "score": 0.7605559825897217,
+      "text_preview": "Chính phủ quy định chi tiết Điều này; quy định các trường hợp thuộc khoản 1 Điều này nhưng có lý do chính đáng thì không bị coi là trốn đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A36.K1",
+      "score": 0.7605499029159546,
+      "text_preview": "Đối tượng quy định tại khoản 4 Điều 2 của Luật này, hằng tháng đóng bằng 22% mức thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện vào quỹ hưu trí và tử tuất.\nCăn cứ vào điều kiện phát triển kinh tế "
+    }
+  ],
+  "n_semantic_edges": 3,
+  "n_refs": 12,
+  "elapsed_s": 1.48,
+  "gold_answer": "Nếu trước đây bạn thuộc diện phải tham gia BHXH bắt buộc với tư cách chủ hộ kinh doanh nhưng nay chuyển sang nhóm không thuộc diện phải đóng nữa, bạn cần liên hệ cơ quan BHXH để làm thủ tục giảm/dừng đúng từ thời điểm không còn thuộc đối tượng. Không phải 'hủy' toàn bộ quá trình 2 tháng đã đóng; thời gian đó nếu đóng đúng đối tượng vẫn được ghi nhận. Cần xác định rõ căn cứ vì sao bạn chuyển sang nhóm 1 không phải đóng để cơ quan BHXH điều chỉnh.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2; Nghị định 158/2025/NĐ-CP Điều 3"
+}

@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 188,
+  "question": "cho mình hỏi đóng bhxh th 4 2026 về sao có đc rút 1 lần không?",
+  "answer": "Issue: Người hỏi muốn biết về khả năng rút bảo hiểm xã hội một lần cho thời gian đóng bảo hiểm xã hội tháng 4 năm 2026.\n\nRule: \"7. Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất.\" (Luật BHXH 2024 (41/2024/QH15), Điều 33, Khoản 7)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để xác định điều kiện rút bảo hiểm xã hội một lần.\n\nConclusion: Hệ thống không thể tính toán giá trị cuối cùng vì không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 33 khoản 7]"
+  ],
+  "citation_ids": [
+    "L41_2024.A33.K7"
+  ],
+  "citation_indices": [
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,withdraw_one_time_conditions([conditions_for_withdrawal]),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết về khả năng rút bảo hiểm xã hội một lần cho thời gian đóng bảo hiểm xã hội tháng 4 năm 2026.",
+    "rule": "\"7. Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất.\" (Luật BHXH 2024 (41/2024/QH15), Điều 33, Khoản 7)",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để xác định điều kiện rút bảo hiểm xã hội một lần.",
+    "conclusion": "Hệ thống không thể tính toán giá trị cuối cùng vì không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 8.437,
+  "prompt_tokens": 3341,
+  "completion_tokens": 433,
+  "error": null,
+  "gold_answer": "Chỉ đóng BHXH từ tháng 4/2026 thì không thể rút 1 lần ngay. Với trường hợp thông thường, bạn phải thuộc trường hợp luật cho phép và thường phải chờ sau 12 tháng không tiếp tục tham gia BHXH bắt buộc, không tham gia BHXH tự nguyện. Nếu sau đó bạn tiếp tục đi làm ở nơi khác thì thời gian tháng 4/2026 sẽ được cộng nối.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

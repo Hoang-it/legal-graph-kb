@@ -1,0 +1,29 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 108,
+  "question": "E đg làm cty nhưng hết hợp đồng ngày 23/4/2026 \nE đg bầu, e có giấy quyết định nv và chấm dứt hđ .E làm bh thât nghiệp bao nhiêu lâu thì sẽ đc hưởng tiền bhtn?",
+  "answer": "Issue: E đang làm công ty nhưng hết hợp đồng vào ngày 23/4/2026. E có giấy quyết định nghỉ việc và chấm dứt hợp đồng. E làm bảo hiểm thất nghiệp bao lâu thì sẽ được hưởng tiền bảo hiểm thất nghiệp?\n\nRule: \"Người lao động được hưởng trợ cấp thất nghiệp khi có thời gian đóng bảo hiểm thất nghiệp từ 12 tháng trở lên.\" (law_bhxh_2024, article_50, clause_1)\n\nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng người dùng đã đóng bảo hiểm thất nghiệp trong 12 tháng và do đó đủ điều kiện để nhận trợ cấp thất nghiệp trong thời gian 6 tháng.\n\nConclusion: Prolog đã trả về giá trị 6 cho biến Duration.",
+  "citations": [
+    "[Điều 50 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A50.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 2,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_eligibility(user,6),based_on(source_a50_k1))]",
+  "irac_sections": {
+    "issue": "E đang làm công ty nhưng hết hợp đồng vào ngày 23/4/2026. E có giấy quyết định nghỉ việc và chấm dứt hợp đồng. E làm bảo hiểm thất nghiệp bao lâu thì sẽ được hưởng tiền bảo hiểm thất nghiệp?",
+    "rule": "\"Người lao động được hưởng trợ cấp thất nghiệp khi có thời gian đóng bảo hiểm thất nghiệp từ 12 tháng trở lên.\" (law_bhxh_2024, article_50, clause_1)",
+    "application": "Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng người dùng đã đóng bảo hiểm thất nghiệp trong 12 tháng và do đó đủ điều kiện để nhận trợ cấp thất nghiệp trong thời gian 6 tháng.",
+    "conclusion": "Prolog đã trả về giá trị 6 cho biến Duration."
+  },
+  "elapsed_s": 18.925,
+  "prompt_tokens": 5047,
+  "completion_tokens": 907,
+  "error": null,
+  "gold_answer": "Nếu chấm dứt hợp đồng ngày 23/4/2026 và đủ điều kiện hưởng BHTN, bạn phải nộp hồ sơ trong 03 tháng kể từ ngày chấm dứt hợp đồng. Sau khi nộp đủ hồ sơ, nếu sau 15 ngày làm việc vẫn chưa có việc làm thì sẽ được giải quyết hưởng. Việc đang mang thai không làm mất quyền hưởng BHTN; chỉ cần đáp ứng điều kiện về thời gian đóng và chấm dứt hợp đồng hợp pháp.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

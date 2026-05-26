@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 37,
+  "question": "Mình nghỉ cty cũ từ tháng 1/2026. (nghỉ ngang) nhưng cty vẫn chốt sổ cho Mình. Nhưng nay mình muốn ra lấy tờ rời BHXH, giờ mình phải làm sao?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, khi bạn nghỉ việc và công ty đã chốt sổ bảo hiểm xã hội cho bạn, bạn có quyền yêu cầu cấp lại sổ bảo hiểm xã hội hoặc tờ rời bảo hiểm xã hội.\n\nĐể lấy tờ rời bảo hiểm xã hội, bạn cần thực hiện các bước sau:\n\n1. **Liên hệ với công ty cũ**: Yêu cầu công ty cung cấp tờ rời bảo hiểm xã hội. Công ty có trách nhiệm cấp tờ rời cho bạn theo quy định.\n\n2. **Chuẩn bị hồ sơ**: Nếu công ty không hợp tác, bạn có thể chuẩn bị hồ sơ yêu cầu cấp lại tờ rời bảo hiểm xã hội, bao gồm:\n   - Đơn đề nghị cấp lại tờ rời bảo hiểm xã hội.\n   - Bản sao sổ bảo hiểm xã hội (nếu có).\n\n3. **Nộp hồ sơ**: Nộp hồ sơ tại cơ quan bảo hiểm xã hội nơi bạn đã tham gia bảo hiểm.\n\nNếu bạn gặp khó khăn trong việc lấy tờ rời, bạn có thể liên hệ với cơ quan bảo hiểm xã hội để được hướng dẫn cụ thể hơn.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 5.419,
+  "prompt_tokens": 210,
+  "completion_tokens": 255,
+  "gold_answer": "Nếu công ty đã chốt sổ nhưng chưa trả tờ rời cho bạn thì trước hết yêu cầu công ty bàn giao lại sổ/tờ rời bằng văn bản hoặc email. Khi chấm dứt HĐLĐ, người sử dụng lao động phải phối hợp xác nhận thời gian đóng BHXH và trả lại giấy tờ liên quan cho người lao động. Nếu công ty chây ì, bạn có thể khiếu nại đến Thanh tra Sở Nội vụ/LĐTBXH hoặc cơ quan BHXH nơi đơn vị đang tham gia để được hỗ trợ cấp lại, xác nhận quá trình đóng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48"
+}

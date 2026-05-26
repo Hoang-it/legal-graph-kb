@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 129,
+  "question": "mọi người cho em hỏi em sinh 25/02, cả 2 vợ chồng đều tham gia bhxh\nem muốn làm chế độ ck nghỉ chăn con vài ngày thì làm như thế nào? và mình chọn ngày nào thì hợp lý?\ndo kê toán bên e nghỉ nên hiện tại k ai làm giúo e nên e muốn tự đi nộp",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmp2n78f_hg.pl:1:820: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 53 khoản 3]",
+    "[Điều 53 khoản 8]",
+    "[Điều 55 khoản 1]",
+    "[Điều 56 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A53.K3",
+    "L41_2024.A53.K8",
+    "L41_2024.A55.K1",
+    "L41_2024.A56.K1"
+  ],
+  "citation_indices": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 24.785,
+  "prompt_tokens": 8442,
+  "completion_tokens": 1692,
+  "error": null,
+  "gold_answer": "Lao động nam đang đóng BHXH khi vợ sinh con được nghỉ hưởng chế độ thai sản theo số ngày luật định. Hồ sơ thường là bản sao giấy khai sinh/trích lục khai sinh hoặc giấy chứng sinh của con; nếu sinh mổ hoặc con dưới 32 tuần thì bổ sung giấy tờ y tế thể hiện tình trạng đó. Bạn nên chọn nghỉ gần thời điểm sinh để thuận tiện chăm con và chứng minh thực tế phát sinh.",
+  "gold_citations_raw": "Điều 50, 53, 61 Luật BHXH 2024"
+}

@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 202,
+  "question": "Cho mình hỏi trước mình có làm ở fpt telecom khoảng 2 năm sau đó nghỉ có nhận sổ (bị mất) rồi sau mình có xin làm lại được thêm 1 năm . Giờ mình muốn tra thời gian tham gia bhxh thì làm sao ạ . Mình có tra đc mã số rồi . Còn tk Vssid thì mình chưa có",
+  "answer": "Để tra cứu thời gian tham gia bảo hiểm xã hội (BHXH) của bạn, bạn có thể thực hiện các bước sau:\n\n1. **Liên hệ với cơ quan BHXH**: Bạn có thể đến trực tiếp cơ quan BHXH nơi bạn cư trú hoặc nơi bạn làm việc trước đây để yêu cầu tra cứu thông tin. Bạn cần cung cấp mã số BHXH của mình.\n\n2. **Sử dụng dịch vụ trực tuyến**: Nếu bạn có mã số BHXH, bạn có thể tra cứu thông tin trên cổng thông tin điện tử của BHXH Việt Nam. Tuy nhiên, để sử dụng dịch vụ này, bạn cần có tài khoản VSSID.\n\n3. **Yêu cầu cấp lại sổ BHXH**: Nếu bạn đã mất sổ BHXH, bạn có thể yêu cầu cấp lại sổ tại cơ quan BHXH. Việc này sẽ giúp bạn có thông tin đầy đủ về thời gian tham gia BHXH.\n\nNếu bạn cần thêm thông tin chi tiết, hãy liên hệ với cơ quan BHXH để được hướng dẫn cụ thể hơn.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 5.818,
+  "prompt_tokens": 233,
+  "completion_tokens": 232,
+  "gold_answer": null,
+  "gold_citations_raw": null
+}

@@ -1,0 +1,48 @@
+{
+  "arm": "graphrag",
+  "stt": 72,
+  "question": "Em đóng bảo hiểm trên 12 tháng, nhưng hiện tại đã nghỉ việc. Giờ em dự định có em bé thì có được hưởng thai sản không?",
+  "answer": "Bạn vẫn có thể hưởng chế độ thai sản nếu bạn đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên và chấm dứt hợp đồng lao động trước thời điểm sinh con. Tuy nhiên, thời gian hưởng chế độ thai sản sẽ không được tính là thời gian đóng bảo hiểm xã hội.\n\nCụ thể, nếu bạn chấm dứt hợp đồng lao động trước khi sinh con, bạn vẫn đủ điều kiện hưởng chế độ thai sản theo quy định tại Điều 50 khoản 4 của Luật Bảo hiểm xã hội.\n\nCitation: [Điều 50 khoản 4]",
+  "citations": [
+    "[Điều 50 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A50.K4"
+  ],
+  "citation_verified": {
+    "L41_2024.A50.K4": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A50.K4",
+      "score": 0.8658287525177002,
+      "text_preview": "Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con hoặc nhận con khi nhờ mang thai "
+    },
+    {
+      "clause_id": "L41_2024.A55.K1",
+      "score": 0.8637548685073853,
+      "text_preview": "Được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi. Trường hợp sinh đôi trở lên thì được nghỉ thêm 01 tháng cho mỗi con tính từ con thứ hai trở đi.\nTrường hợp "
+    },
+    {
+      "clause_id": "L41_2024.A53.K7",
+      "score": 0.8622132539749146,
+      "text_preview": "Trường hợp chỉ có cha tham gia bảo hiểm xã hội bắt buộc mà mẹ chết sau khi sinh con hoặc gặp rủi ro sau khi sinh mà không đủ sức khỏe để chăm sóc con theo xác nhận của cơ sở khám bệnh, chữa bệnh thì c"
+    },
+    {
+      "clause_id": "L41_2024.A53.K8",
+      "score": 0.8599323034286499,
+      "text_preview": "Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ "
+    },
+    {
+      "clause_id": "L41_2024.A56.K1",
+      "score": 0.8525879383087158,
+      "text_preview": "Người lao động nhận nuôi con nuôi dưới 06 tháng tuổi thì được nghỉ việc hưởng chế độ thai sản kể từ ngày giao nhận con nuôi cho đến khi con đủ 06 tháng tuổi.\nTrường hợp cả cha và mẹ cùng tham gia bảo "
+    }
+  ],
+  "n_semantic_edges": 2,
+  "n_refs": 7,
+  "elapsed_s": 2.53,
+  "gold_answer": "Nếu hiện tại bạn đã nghỉ việc và sau đó mới mang thai thì thông thường vẫn được hưởng thai sản khi sinh con nếu trong 12 tháng trước sinh bạn đã đóng BHXH bắt buộc đủ số tháng luật yêu cầu. Luật không bắt buộc phải còn làm việc tại thời điểm sinh mới được hưởng, miễn là đã đủ điều kiện trước đó. Vì vậy cần xác định chính xác tháng dự sinh để tính 12 tháng liền kề trước sinh và số tháng đã đóng trong khoảng đó.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50, Điều 53"
+}

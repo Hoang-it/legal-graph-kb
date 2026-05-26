@@ -1,0 +1,31 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 156,
+  "question": "E nghỉ ngang cty cũ k chốt tờ rời cho giờ có cách nào chốt được không?",
+  "answer": "Issue: E nghỉ ngang cty cũ k chốt tờ rời cho giờ có cách nào chốt được không?\n\nRule: \"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), article 13, clause 2)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để thực hiện truy vấn Prolog.\n\nConclusion: Hệ thống không thể tính toán được số liệu cuối cùng do không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 13 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A13.K3"
+  ],
+  "citation_indices": [
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,chot_bao_hiem,based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "E nghỉ ngang cty cũ k chốt tờ rời cho giờ có cách nào chốt được không?",
+    "rule": "\"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), article 13, clause 2)",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để thực hiện truy vấn Prolog.",
+    "conclusion": "Hệ thống không thể tính toán được số liệu cuối cùng do không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 5.544,
+  "prompt_tokens": 2406,
+  "completion_tokens": 317,
+  "error": null,
+  "gold_answer": "Nếu công ty cũ chưa chốt tờ rời thì bạn không tự chốt thay hoàn toàn được, vì doanh nghiệp phải báo giảm và hoàn tất nghĩa vụ đóng. Việc bạn cần làm là yêu cầu công ty chốt sổ bằng văn bản; nếu công ty chây ì thì gửi đơn tới cơ quan BHXH quản lý đơn vị, thanh tra lao động hoặc khởi kiện yêu cầu chốt sổ và bồi thường thiệt hại nếu có.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

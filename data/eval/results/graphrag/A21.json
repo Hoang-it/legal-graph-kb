@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 21,
+  "question": "Ông Quang Lành (Tây Ninh) hỏi, các đối tượng hưởng trợ cấp BHXH hằng tháng gồm những đối tượng nào để xác định không được hưởng trợ cấp hưu trí xã hội?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 23 khoản 1]\n- [Điều 86 khoản 3]",
+  "citations": [
+    "[Điều 23 khoản 1]",
+    "[Điều 86 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A23.K1",
+    "L41_2024.A86.K3"
+  ],
+  "citation_verified": {
+    "L41_2024.A23.K1": true,
+    "L41_2024.A86.K3": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A23.K1",
+      "score": 0.8467104434967041,
+      "text_preview": "Công dân Việt Nam đủ tuổi nghỉ hưu có thời gian đóng bảo hiểm xã hội nhưng không đủ điều kiện hưởng lương hưu theo quy định của pháp luật và chưa đủ điều kiện hưởng trợ cấp hưu trí xã hội theo quy địn"
+    },
+    {
+      "clause_id": "L41_2024.A86.K3",
+      "score": 0.8388330936431885,
+      "text_preview": "Không áp dụng trợ cấp tuất hằng tháng đối với thân nhân quy định tại các điểm b, c, d và đ khoản 2 Điều này là người đang hưởng tiền lương và tham gia bảo hiểm xã hội bắt buộc hoặc đang hưởng lương hư"
+    },
+    {
+      "clause_id": "L41_2024.A23.K3",
+      "score": 0.8212014436721802,
+      "text_preview": "Mức trợ cấp hằng tháng thấp nhất bằng mức trợ cấp hưu trí xã hội hằng tháng quy định tại khoản 1 Điều 22 của Luật này.\nTrường hợp tổng số tiền tính theo thời gian đóng, căn cứ đóng bảo hiểm xã hội của"
+    },
+    {
+      "clause_id": "L41_2024.A75.K3",
+      "score": 0.8170764446258545,
+      "text_preview": "Lương hưu, trợ cấp bảo hiểm xã hội hằng tháng của đối tượng quy định tại khoản 1 và điểm a khoản 2 Điều này được tiếp tục chi trả bao gồm cả tiền lương hưu, trợ cấp bảo hiểm xã hội hằng tháng của thời"
+    },
+    {
+      "clause_id": "L41_2024.A23.K6",
+      "score": 0.8158655166625977,
+      "text_preview": "Người đang trong thời gian hưởng trợ cấp hằng tháng thì được ngân sách nhà nước đóng bảo hiểm y tế."
+    }
+  ],
+  "n_semantic_edges": 2,
+  "n_refs": 8,
+  "elapsed_s": 2.04,
+  "gold_answer": "Các đối tượng hưởng trợ cấp BHXH hằng tháng bao gồm:\n- Trợ cấp mất sức lao động;\n- Trợ cấp tai nạn lao động, bệnh nghề nghiệp;\n- Trợ cấp tuất;…\nĐây là những đối tượng không được hưởng trợ cấp hưu trí xã hội.",
+  "gold_citations_raw": null
+}

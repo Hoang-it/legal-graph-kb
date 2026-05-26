@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 146,
+  "question": "MÌNH ĐÓNG BHXH ở công ty cũ nhưng chưa rút về, hiện tại mình vào công ty mới, côngty mới đóng cho mình nhưng mình xem trên app BHXH thì những tháng công ty cũ mất không hiển thị nữa. cho mình hỏi những tháng đấy như thế nào?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 13 khoản 3] — Trách nhiệm của người sử dụng lao động trong việc xác nhận thời gian đóng bảo hiểm xã hội.\n- [Điều 38 khoản 1] — Quy định về việc chậm đóng bảo hiểm xã hội bắt buộc.",
+  "citations": [
+    "[Điều 13 khoản 3]",
+    "[Điều 38 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A13.K3",
+    "L41_2024.A38.K1"
+  ],
+  "citation_verified": {
+    "L41_2024.A13.K3": true,
+    "L41_2024.A38.K1": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A33.K6",
+      "score": 0.7981996536254883,
+      "text_preview": "Trường hợp trong tháng đầu làm việc hoặc trong tháng đầu trở lại làm việc mà người lao động nghỉ việc hưởng chế độ ốm đau từ 14 ngày làm việc trở lên thì vẫn phải đóng bảo hiểm xã hội của tháng đó."
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.7888669967651367,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A130.K5",
+      "score": 0.7885539531707764,
+      "text_preview": "Việc giải quyết khiếu nại đối với quyết định, hành vi có liên quan đến việc thụ hưởng các chế độ bảo hiểm xã hội hoặc tính thời gian công tác trong khu vực nhà nước để hưởng bảo hiểm xã hội trước ngày"
+    },
+    {
+      "clause_id": "L41_2024.A13.K3",
+      "score": 0.7847583889961243,
+      "text_preview": "Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật."
+    },
+    {
+      "clause_id": "L41_2024.A38.K1",
+      "score": 0.7836636304855347,
+      "text_preview": "Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều "
+    }
+  ],
+  "n_semantic_edges": 3,
+  "n_refs": 3,
+  "elapsed_s": 2.45,
+  "gold_answer": "Nếu tháng đóng ở công ty cũ không còn hiển thị trên app, trước hết bạn cần kiểm tra xem có bị gộp mã số, điều chỉnh quá trình hay lỗi đồng bộ dữ liệu hay không. Thời gian đã đóng hợp pháp sẽ không tự mất; BHXH có trách nhiệm cập nhật lại nếu dữ liệu sai. Bạn nên đề nghị BHXH in quá trình đóng chi tiết và đối chiếu với quyết định thôi việc, bảng lương, sổ/tờ rời cũ.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

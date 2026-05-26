@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 73,
+  "question": "Mình nghỉ việc mà công ty không in tờ rời bhxh cho mình , giờ mình liên hệ với ai để nhận tờ rời?",
+  "answer": "Issue: Mình nghỉ việc mà công ty không in tờ rời bhxh cho mình, giờ mình liên hệ với ai để nhận tờ rời?  \nRule: \"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), article 18, clause 2)  \nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Prolog không thể thực hiện truy vấn do thiếu thông tin cần thiết.  \nConclusion: Hệ thống không thể tính toán số liệu cuối cùng do không có giá trị nào trong slot_bindings.",
+  "citations": [
+    "[Điều 18 khoản 15]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K15"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,contact_authority_for_bhxh(cơ quan bảo hiểm xã hội địa phương),based_on(source_c007))]",
+  "irac_sections": {
+    "issue": "Mình nghỉ việc mà công ty không in tờ rời bhxh cho mình, giờ mình liên hệ với ai để nhận tờ rời?",
+    "rule": "\"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), article 18, clause 2)",
+    "application": "Không có giá trị nào được gán cho các slot trong slot_bindings. Prolog không thể thực hiện truy vấn do thiếu thông tin cần thiết.",
+    "conclusion": "Hệ thống không thể tính toán số liệu cuối cùng do không có giá trị nào trong slot_bindings."
+  },
+  "elapsed_s": 6.172,
+  "prompt_tokens": 2774,
+  "completion_tokens": 368,
+  "error": null,
+  "gold_answer": "Bạn nên liên hệ trước hết với công ty cũ bằng văn bản yêu cầu trả tờ rời/sổ BHXH. Nếu công ty không thực hiện, liên hệ cơ quan BHXH nơi công ty đóng BHXH hoặc cơ quan BHXH nơi bạn cư trú để được hướng dẫn cấp lại/xác nhận quá trình tham gia. Doanh nghiệp có trách nhiệm phối hợp xác nhận thời gian đóng và trả giấy tờ cho người lao động khi chấm dứt HĐLĐ, nên việc giữ hoặc không in trả là không đúng quy định.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48"
+}

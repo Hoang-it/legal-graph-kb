@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 155,
+  "question": "Minh mat so bhxh , còn nhớ số sổ , làm sao tra được quá trình đóng bhxh?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 25 khoản 3] - Dữ liệu về sổ bảo hiểm xã hội được cập nhật chính xác, kịp thời.\n- [Điều 12 khoản 3] - Người sử dụng lao động được cơ quan bảo hiểm xã hội hướng dẫn trình tự, thủ tục thực hiện bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 25 khoản 3]",
+    "[Điều 12 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A25.K3",
+    "L41_2024.A12.K3"
+  ],
+  "citation_verified": {
+    "L41_2024.A25.K3": true,
+    "L41_2024.A12.K3": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A25.K3",
+      "score": 0.7912908792495728,
+      "text_preview": "Dữ liệu về sổ bảo hiểm xã hội được cập nhật chính xác, kịp thời, đối chiếu thông tin và quản lý theo quy định."
+    },
+    {
+      "clause_id": "L41_2024.A12.K3",
+      "score": 0.7804450392723083,
+      "text_preview": "Được cơ quan bảo hiểm xã hội hướng dẫn trình tự, thủ tục thực hiện bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A133.K3",
+      "score": 0.7761976718902588,
+      "text_preview": "Thực hiện công tác thống kê nhà nước về bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A117.K2",
+      "score": 0.7747431993484497,
+      "text_preview": "Người lao động đóng theo quy định."
+    },
+    {
+      "clause_id": "L41_2024.A116.K2",
+      "score": 0.7667180895805359,
+      "text_preview": "Định kỳ 03 năm, Kiểm toán nhà nước thực hiện kiểm toán quỹ bảo hiểm xã hội, hoạt động đầu tư quỹ và báo cáo kết quả với Quốc hội. Theo yêu cầu của Quốc hội, Ủy ban Thường vụ Quốc hội và Chính phủ, quỹ"
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 0,
+  "elapsed_s": 2.23,
+  "gold_answer": "Nếu nhớ số sổ/mã số BHXH, bạn có thể tra quá trình đóng trên VssID, VNeID, cổng thông tin BHXH Việt Nam hoặc đến cơ quan BHXH để xin xác nhận quá trình đóng. Trường hợp mất sổ giấy, bạn vẫn làm thủ tục cấp lại được. Nên mang CCCD để cơ quan BHXH đối chiếu nhanh hơn.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

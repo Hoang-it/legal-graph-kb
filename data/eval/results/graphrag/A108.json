@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 108,
+  "question": "E đg làm cty nhưng hết hợp đồng ngày 23/4/2026 \nE đg bầu, e có giấy quyết định nv và chấm dứt hđ .E làm bh thât nghiệp bao nhiêu lâu thì sẽ đc hưởng tiền bhtn?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 50: Đối tượng và điều kiện hưởng chế độ thai sản\n- Điều 55: Chế độ thai sản của lao động nữ nhờ mang thai hộ\n- Điều 56: Chế độ thai sản khi nhận nuôi con nuôi dưới 06 tháng tuổi\n- Điều 53: Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con\n- Điều 62: Giải quyết hưởng chế độ thai sản đối với người tham gia bảo hiểm xã hội bắt buộc\n\nTuy nhiên, không có thông tin cụ thể về bảo hiểm thất nghiệp trong các điều luật này.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A50.K4",
+      "score": 0.8135517835617065,
+      "text_preview": "Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con hoặc nhận con khi nhờ mang thai "
+    },
+    {
+      "clause_id": "L41_2024.A55.K1",
+      "score": 0.8030277490615845,
+      "text_preview": "Được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi. Trường hợp sinh đôi trở lên thì được nghỉ thêm 01 tháng cho mỗi con tính từ con thứ hai trở đi.\nTrường hợp "
+    },
+    {
+      "clause_id": "L41_2024.A56.K1",
+      "score": 0.7995826005935669,
+      "text_preview": "Người lao động nhận nuôi con nuôi dưới 06 tháng tuổi thì được nghỉ việc hưởng chế độ thai sản kể từ ngày giao nhận con nuôi cho đến khi con đủ 06 tháng tuổi.\nTrường hợp cả cha và mẹ cùng tham gia bảo "
+    },
+    {
+      "clause_id": "L41_2024.A53.K1",
+      "score": 0.79792320728302,
+      "text_preview": "Thời gian nghỉ việc hưởng chế độ thai sản của lao động nữ khi sinh con được thực hiện theo quy định tại khoản 1 Điều 139 của Bộ luật Lao động.\nTrường hợp lao động nữ trở lại làm việc trước khi hết thờ"
+    },
+    {
+      "clause_id": "L41_2024.A53.K3",
+      "score": 0.7937393188476562,
+      "text_preview": "Ngày bắt đầu nghỉ việc hưởng chế độ thai sản quy định tại khoản 2 Điều này phải trong khoảng thời gian 60 ngày kể từ ngày vợ sinh con, trường hợp người lao động nghỉ nhiều lần thì ngày bắt đầu nghỉ vi"
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 12,
+  "elapsed_s": 3.25,
+  "gold_answer": "Nếu chấm dứt hợp đồng ngày 23/4/2026 và đủ điều kiện hưởng BHTN, bạn phải nộp hồ sơ trong 03 tháng kể từ ngày chấm dứt hợp đồng. Sau khi nộp đủ hồ sơ, nếu sau 15 ngày làm việc vẫn chưa có việc làm thì sẽ được giải quyết hưởng. Việc đang mang thai không làm mất quyền hưởng BHTN; chỉ cần đáp ứng điều kiện về thời gian đóng và chấm dứt hợp đồng hợp pháp.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

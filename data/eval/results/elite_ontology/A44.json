@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 44,
+  "question": "Mình đóng bhxh từ năm 2024 là 10 tháng \nSau đó vào cty khác đóng tiếp tục 6 tháng cùng luật bảo hiểm 1/7/2025 không cho rút 1 lần \nTổng thời gian mình đóng là 1 năm 4 tháng, giờ mình nghỉ cty luôn thì mình có được rút 1 lần bhxh không?",
+  "answer": "Issue: Người dùng hỏi về khả năng rút bảo hiểm xã hội sau khi đã đóng tổng cộng 1 năm 4 tháng.\n\nRule: \"6. Xác nhận thời gian đóng bảo hiểm xã hội, bảo hiểm thất nghiệp cho từng người lao động; cung cấp đầy đủ và kịp thời thông tin về việc đóng, quyền được hưởng chế độ, thủ tục thực hiện bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện khi người lao động, người sử dụng lao động hoặc tổ chức công đoàn yêu cầu.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 6)\n\nApplication: Không có giá trị nào được gán trong slot_bindings. Tuy nhiên, Prolog đã xác nhận rằng người dùng đã đóng 1 năm và 4 tháng bảo hiểm xã hội, dẫn đến việc rút bảo hiểm xã hội là khả thi.\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người dùng có thể rút bảo hiểm xã hội một lần.",
+  "citations": [
+    "[Điều 18 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K6"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,withdrawal_conditions(yes),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Người dùng hỏi về khả năng rút bảo hiểm xã hội sau khi đã đóng tổng cộng 1 năm 4 tháng.",
+    "rule": "\"6. Xác nhận thời gian đóng bảo hiểm xã hội, bảo hiểm thất nghiệp cho từng người lao động; cung cấp đầy đủ và kịp thời thông tin về việc đóng, quyền được hưởng chế độ, thủ tục thực hiện bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện khi người lao động, người sử dụng lao động hoặc tổ chức công đoàn yêu cầu.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 6)",
+    "application": "Không có giá trị nào được gán trong slot_bindings. Tuy nhiên, Prolog đã xác nhận rằng người dùng đã đóng 1 năm và 4 tháng bảo hiểm xã hội, dẫn đến việc rút bảo hiểm xã hội là khả thi.",
+    "conclusion": "Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người dùng có thể rút bảo hiểm xã hội một lần."
+  },
+  "elapsed_s": 107.221,
+  "prompt_tokens": 5257,
+  "completion_tokens": 849,
+  "error": null,
+  "gold_answer": "Bạn đã có 10 tháng đóng trước 1/7/2025 và thêm 6 tháng sau đó, tổng 1 năm 4 tháng. Nếu hiện đã nghỉ việc, ngừng tham gia đủ 12 tháng và thuộc diện được giải quyết BHXH một lần theo quy định chuyển tiếp của Luật BHXH 2024 thì vẫn có thể được rút đối với thời gian đã đóng. Cần kiểm tra thêm thời điểm đề nghị và việc bạn có tiếp tục tham gia BHXH ở nơi khác hay không.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110; quy định chuyển tiếp của Luật BHXH 2024"
+}

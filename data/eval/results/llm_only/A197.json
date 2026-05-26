@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 197,
+  "question": "công ty em có trường hợp NLĐ nghỉ hưu và được lãnh từ tháng 5 nhưng do làm lần đầu tiên em không rõ hồ sơ chuẩn bị như thế nào thì ngày 17.04 em có nộp bên BHXH bao gồm hồ sơ: Mẫu 12 HSB, sổ BHXH, tờ rời các năm đóng, CCCD NLĐ thì bên BHXH lại báo thiếu nhưng ko nói rõ thiếu hồ sơ gì? Giờ em phải bổ sung thêm gì?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, khi người lao động (NLĐ) nghỉ hưu, hồ sơ cần chuẩn bị bao gồm:\n\n1. Đơn đề nghị hưởng chế độ hưu trí (theo mẫu);\n2. Sổ bảo hiểm xã hội;\n3. Giấy tờ chứng minh thời gian đóng bảo hiểm xã hội (nếu có);\n4. Chứng minh nhân dân hoặc căn cước công dân của NLĐ;\n5. Mẫu 12-HSB (đối với trường hợp nghỉ hưu).\n\nNếu bên BHXH đã thông báo thiếu hồ sơ nhưng không chỉ rõ, bạn nên liên hệ trực tiếp với cơ quan BHXH để hỏi rõ về hồ sơ còn thiếu. Thông thường, có thể thiếu một trong các giấy tờ như đơn đề nghị hưởng chế độ hưu trí hoặc giấy tờ chứng minh thời gian đóng bảo hiểm xã hội. \n\nBạn cần bổ sung đầy đủ các giấy tờ theo yêu cầu của cơ quan BHXH để đảm bảo quyền lợi cho NLĐ.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 5.448,
+  "prompt_tokens": 264,
+  "completion_tokens": 216,
+  "gold_answer": "Hồ sơ hưởng lương hưu ngoài sổ BHXH/tờ rời và giấy tờ tùy thân còn phải bảo đảm đúng mẫu, đúng thời điểm và có quyết định nghỉ việc hoặc tài liệu tương đương tùy từng nhóm đối tượng. Nếu BHXH báo thiếu mà không nói rõ, bạn nên yêu cầu phiếu hướng dẫn bổ sung bằng văn bản. Nhiều trường hợp còn thiếu quyết định nghỉ việc, biên bản giám định suy giảm khả năng lao động hoặc giấy tờ nghề nặng nhọc nếu nghỉ trước tuổi.",
+  "gold_citations_raw": "Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

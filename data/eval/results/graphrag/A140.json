@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 140,
+  "question": "E mới sanh bé, giờ e chuẩn bi làm Hồ sơ thai sản, thì thường hồ sơ thai sản gồm những gì ? E nghe nói giấy chứng sinh Và giấy ra viện. Vậy giấy ra viện là bản gốc hay photo công chứng?",
+  "answer": "Hồ sơ đề nghị hưởng chế độ thai sản thường bao gồm bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con. Ngoài ra, nếu con chết sau khi sinh mà chưa được cấp giấy chứng sinh, hồ sơ cần có bản chính hoặc bản sao bản tóm tắt hồ sơ bệnh án hoặc giấy ra viện của người mẹ có thể hiện thông tin về con chết.\n\nVề giấy ra viện, theo quy định, nếu cần thiết, bạn có thể nộp bản chính hoặc bản sao. Tuy nhiên, không có thông tin cụ thể trong các điều luật cung cấp về việc giấy ra viện phải là bản gốc hay photo công chứng.\n\nTóm lại, hồ sơ thai sản bao gồm:\n1. Bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh.\n2. Nếu có trường hợp con chết sau khi sinh, cần thêm giấy ra viện hoặc hồ sơ bệnh án.\n\nCác citation liên quan:\n- [Điều 61 khoản 1]\n- [Điều 61 khoản 5]",
+  "citations": [
+    "[Điều 61 khoản 1]",
+    "[Điều 61 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A61.K1",
+    "L41_2024.A61.K5"
+  ],
+  "citation_verified": {
+    "L41_2024.A61.K1": true,
+    "L41_2024.A61.K5": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A61.K5",
+      "score": 0.8549965620040894,
+      "text_preview": "Hồ sơ đề nghị nghỉ việc hưởng chế độ thai sản hoặc hưởng trợ cấp một lần đối với lao động nam khi vợ sinh con là bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con; t"
+    },
+    {
+      "clause_id": "L41_2024.A61.K6",
+      "score": 0.8488667011260986,
+      "text_preview": "Hồ sơ đề nghị hưởng chế độ thai sản đối với người chồng của lao động nữ nhờ mang thai hộ hưởng trợ cấp một lần khi nhận con phải có bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy ch"
+    },
+    {
+      "clause_id": "L41_2024.A61.K1",
+      "score": 0.8481118679046631,
+      "text_preview": "Hồ sơ đề nghị hưởng chế độ thai sản đối với lao động nữ sinh con hoặc lao động nữ mang thai hộ sinh con hoặc lao động nữ nhờ mang thai hộ là bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sa"
+    },
+    {
+      "clause_id": "L41_2024.A96.K2",
+      "score": 0.8475382328033447,
+      "text_preview": "Trường hợp thai chết trong tử cung, thai chết trong khi chuyển dạ hoặc con chết sau khi sinh mà chưa được cấp giấy chứng sinh thì hồ sơ là một trong các giấy tờ sau đây:"
+    },
+    {
+      "clause_id": "L41_2024.A61.K4",
+      "score": 0.8298267126083374,
+      "text_preview": "Hồ sơ đề nghị hưởng chế độ thai sản đối với người lao động nhận nuôi con nuôi dưới 06 tháng tuổi bao gồm bản sao giấy chứng nhận nuôi con nuôi và biên bản giao nhận con."
+    }
+  ],
+  "n_semantic_edges": 1,
+  "n_refs": 6,
+  "elapsed_s": 3.24,
+  "gold_answer": "Hồ sơ thai sản khi sinh con thường gồm giấy khai sinh/trích lục khai sinh hoặc giấy chứng sinh của bé. Giấy ra viện không phải lúc nào cũng bắt buộc; thường chỉ cần trong trường hợp hồ sơ phải chứng minh thêm tình trạng sinh mổ, sinh non, điều trị hoặc trường hợp đặc biệt khác. Nếu có nộp giấy ra viện thì nên dùng bản sao theo yêu cầu của đơn vị/BHXH, giữ bản gốc để đối chiếu.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

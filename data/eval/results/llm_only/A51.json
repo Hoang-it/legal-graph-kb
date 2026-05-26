@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 51,
+  "question": "Mình đóng bảo hiểm được 5 năm, mỗi năm một mức lương cơ bản khác nhau, hiện tại 1 năm nay lương cơ bản đang là 6tr. cho mình hỏi rút BH 1 lần thì được bao nhiêu và tính mức lương cơ bản trung bình như thế nào?",
+  "answer": "Để tính mức lương cơ bản trung bình và số tiền rút bảo hiểm một lần, bạn cần xác định mức lương bình quân của 5 năm đóng bảo hiểm.\n\nTheo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, mức lương bình quân tháng đóng bảo hiểm được tính bằng tổng mức lương của các tháng đóng bảo hiểm chia cho số tháng đã đóng. \n\nCụ thể, bạn cần tổng hợp mức lương của 5 năm, sau đó chia cho 60 tháng (5 năm x 12 tháng) để có mức lương bình quân. \n\nSố tiền rút bảo hiểm một lần sẽ được tính dựa trên mức lương bình quân này và tỷ lệ quy định tại Điều 60 của Luật Bảo hiểm xã hội. Tuy nhiên, tôi không có đủ thông tin chính xác để trả lời câu hỏi này về số tiền cụ thể bạn sẽ nhận được. \n\nBạn nên tham khảo thêm từ cơ quan bảo hiểm xã hội hoặc chuyên gia để có thông tin chi tiết và chính xác hơn.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 4.4,
+  "prompt_tokens": 221,
+  "completion_tokens": 221,
+  "gold_answer": "Không thể tính chính xác số tiền BHXH một lần chỉ dựa vào mức lương 1 năm gần nhất là 6 triệu, vì phải có toàn bộ tiền lương đóng của từng thời kỳ để tính mức bình quân. Nguyên tắc chung: mỗi năm đóng trước 2014 được tính 1,5 tháng mức bình quân; từ 2014 trở đi tính 2 tháng mức bình quân; tháng lẻ được quy đổi theo luật. Mức bình quân là tiền lương đóng BHXH sau điều chỉnh chia cho tổng số tháng đóng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 104, Điều 109"
+}

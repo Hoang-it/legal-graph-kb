@@ -1,0 +1,26 @@
+{
+  "arm": "elite_ontology",
+  "stt": 62,
+  "question": "Bh em đã đóng bhxh được 19 năm nhưng cty chậm đóng hơn 2 năm,giờ em nghỉ thì cần lấy những giấy tờ gì để sau này không bị gây khó dễ?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_program, repair_rounds=2, error=LLM returned verify_facts but no predicate_inputs]",
+  "citations": [
+    "[Điều 18 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K6"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": false,
+  "prolog_status": "invalid_program",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 9.651,
+  "prompt_tokens": 6607,
+  "completion_tokens": 678,
+  "error": null,
+  "gold_answer": "Bạn nên giữ đầy đủ HĐLĐ, phụ lục lương, quyết định nghỉ việc/chấm dứt HĐLĐ, bảng lương, sao kê trả lương, sổ hoặc dữ liệu BHXH trên VssID và mọi giấy tờ thể hiện công ty còn nợ/chậm đóng. Khi nghỉ, yêu cầu công ty xác nhận thời gian đã đóng và trả hồ sơ liên quan. Nếu công ty chậm đóng hơn 2 năm, nên gửi đơn ngay đến cơ quan BHXH và thanh tra để ghi nhận tình trạng nợ, tránh sau này khó chứng minh quyền lợi.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48"
+}

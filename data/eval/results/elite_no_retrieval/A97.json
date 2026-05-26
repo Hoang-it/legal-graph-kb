@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 97,
+  "question": "Mình đã rút Bảo hiểm xã hội lần 1 nhưng chưa trả sổ giờ mình đóng đc gần 4 năm rồi, cho mình hỏi bao lâu mình mới dx trả sổ vậy?",
+  "answer": "Issue: Người dùng đã rút Bảo hiểm xã hội lần 1 nhưng chưa trả sổ và muốn biết thời gian cần thiết để trả sổ sau khi đã đóng gần 4 năm.\n\nRule: Bạn có thể trả sổ BHXH sau khi đã đủ 12 tháng kể từ khi rút BHXH lần 1.\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Prolog đã sử dụng quy tắc để đưa ra câu trả lời mà không cần thông tin bổ sung nào từ các slot.\n\nConclusion: Prolog đã trả về câu trả lời là \"Bạn có thể trả sổ BHXH sau khi đã đủ 12 tháng kể từ khi rút BHXH lần 1.\" mà không cần bất kỳ slot nào.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,Bạn có thể trả sổ BHXH sau khi đã đủ 12 tháng kể từ khi rút BHXH lần 1.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người dùng đã rút Bảo hiểm xã hội lần 1 nhưng chưa trả sổ và muốn biết thời gian cần thiết để trả sổ sau khi đã đóng gần 4 năm.",
+    "rule": "Bạn có thể trả sổ BHXH sau khi đã đủ 12 tháng kể từ khi rút BHXH lần 1.",
+    "application": "Không có slot nào được gán giá trị trong trường hợp này. Prolog đã sử dụng quy tắc để đưa ra câu trả lời mà không cần thông tin bổ sung nào từ các slot.",
+    "conclusion": "Prolog đã trả về câu trả lời là \"Bạn có thể trả sổ BHXH sau khi đã đủ 12 tháng kể từ khi rút BHXH lần 1.\" mà không cần bất kỳ slot nào."
+  },
+  "elapsed_s": 7.225,
+  "prompt_tokens": 2030,
+  "completion_tokens": 329,
+  "error": null,
+  "gold_answer": "Sau khi đã nhận BHXH một lần, nếu bạn đi làm lại và đóng BHXH gần 4 năm thì quá trình tham gia mới vẫn được ghi nhận bình thường trên cùng mã số BHXH. Việc 'trả sổ' hiện nay chủ yếu là cập nhật dữ liệu điện tử; nếu cần bản giấy/tờ rời thì cơ quan BHXH hoặc đơn vị sẽ xác nhận khi có phát sinh chốt sổ, nghỉ việc hoặc cấp lại. Không có quy định phải chờ đủ bao lâu mới được 'trả sổ'; quan trọng là quá trình đóng mới đã được cập nhật đúng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25, Điều 102"
+}

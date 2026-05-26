@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 105,
+  "question": "Chốt sổ em lãnh Bh thât nghiệp đến tháng 3/2025 nhưng giờ trên hệ thống chỉ đến tháng 2/2025, em không lãnh được tiền bhxh vì bị chênh lệch 1 tháng công ty không xử lý cho em. giờ em phải làm như nào để lãnh bảo hiểm được?",
+  "answer": "Issue: Người hỏi gặp vấn đề về việc chốt sổ bảo hiểm thất nghiệp, với thông tin trên hệ thống không khớp, dẫn đến việc không nhận được tiền bảo hiểm xã hội.\n\nRule: Không có quy định cụ thể nào được trích dẫn trong trường hợp này.\n\nApplication: Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được sử dụng trong truy vấn Prolog. \n\nConclusion: Hệ thống đã trả về hành động là \"Liên hệ với công ty để yêu cầu điều chỉnh thông tin trên hệ thống và đảm bảo quyền lợi bảo hiểm xã hội.\" Tuy nhiên, không có giá trị nào từ các slot được cung cấp, vì vậy không thể tính toán một số liệu cụ thể.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,process_insurance_claim(Liên hệ với công ty để yêu cầu điều chỉnh thông tin trên hệ thống và đảm bảo quyền lợi bảo hiểm xã hội.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người hỏi gặp vấn đề về việc chốt sổ bảo hiểm thất nghiệp, với thông tin trên hệ thống không khớp, dẫn đến việc không nhận được tiền bảo hiểm xã hội.",
+    "rule": "Không có quy định cụ thể nào được trích dẫn trong trường hợp này.",
+    "application": "Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được sử dụng trong truy vấn Prolog.",
+    "conclusion": "Hệ thống đã trả về hành động là \"Liên hệ với công ty để yêu cầu điều chỉnh thông tin trên hệ thống và đảm bảo quyền lợi bảo hiểm xã hội.\" Tuy nhiên, không có giá trị nào từ các slot được cung cấp, vì vậy không thể tính toán một số liệu cụ thể."
+  },
+  "elapsed_s": 8.714,
+  "prompt_tokens": 3280,
+  "completion_tokens": 345,
+  "error": null,
+  "gold_answer": "Bạn cần yêu cầu công ty và cơ quan BHXH điều chỉnh lại quá trình đóng cho đúng đến tháng 3/2025. Khi dữ liệu trên hệ thống còn thiếu 1 tháng thì hồ sơ hưởng BHXH 1 lần dễ bị treo hoặc từ chối. Nếu công ty không phối hợp, bạn có thể gửi đơn khiếu nại tới cơ quan BHXH quản lý đơn vị hoặc Thanh tra Sở Nội vụ/Lao động để yêu cầu xác minh, truy đóng hoặc điều chỉnh dữ liệu.",
+  "gold_citations_raw": "Điều 27, 33 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Luật Khiếu nại 2011"
+}

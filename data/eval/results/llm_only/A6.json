@@ -1,0 +1,17 @@
+{
+  "arm": "llm_only",
+  "stt": 6,
+  "question": "Bà Thảo hỏi, trên giấy ra viện có ghi chú người lao động được nghỉ lao động 10 ngày, vậy, có cần xin thêm Giấy chứng nhận nghỉ việc hưởng BHXH để hưởng 10 ngày đó không?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, để được hưởng chế độ ốm đau, người lao động cần có Giấy chứng nhận nghỉ việc hưởng BHXH. Giấy ra viện chỉ là một tài liệu tham khảo, không đủ để làm căn cứ hưởng chế độ. Do đó, bà Thảo cần xin Giấy chứng nhận nghỉ việc hưởng BHXH từ cơ sở y tế để được hưởng chế độ cho 10 ngày nghỉ này. \n\nCụ thể, theo quy định tại [Điều 25 khoản 1] của Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động phải có Giấy chứng nhận nghỉ việc để được hưởng chế độ ốm đau.",
+  "citations": [
+    "[Điều 25 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A25.K1"
+  ],
+  "elapsed_s": 3.168,
+  "prompt_tokens": 205,
+  "completion_tokens": 152,
+  "gold_answer": "Tại Khoản 14 Điều 1 Thông tư số 18/2022/TT-BYT ngày 31/12/2022 của Bộ trưởng Bộ Y tế sửa đổi, bổ sung một số điều của Thông tư số 56/2017/TT-BYT ngày 29/12/2017 của Bộ trưởng Bộ Y tế quy định chi tiết thi hành Luật BHXH và Luật An toàn, vệ sinh lao động thuộc lĩnh y tế quy định như sau:\nTrường hợp người bệnh cần nghỉ để điều trị ngoại trú sau khi ra viện thì cơ quan BHXH căn cứ số ngày nghỉ ghi tại phần ghi chú của giấy ra viện để làm căn cứ thanh toán chế độ BHXH theo quy định.\nĐối chiếu quy định nêu trên, việc cơ sở khám bệnh, chữa bệnh ghi thêm số ngày nghỉ để điều trị ngoại trú tại phần ghi chú trên giấy ra viện là đúng quy định và số ngày nghỉ điều trị ngoại trú đó sẽ được cơ quan BHXH căn cứ để giải quyết chế độ BHXH đối với bà theo quy định.\nDo đó, bà không phải xin cấp thêm Giấy chứng nhận nghỉ việc hưởng BHXH đối với 10 ngày nghỉ việc điều trị ngoại trú nêu trên",
+  "gold_citations_raw": "Khoản 14 Điều 1 Thông tư số 18/2022/TT-BYT\nThông tư số 56/2017/TT-BYT"
+}

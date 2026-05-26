@@ -1,0 +1,29 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 109,
+  "question": "Đóng bảo hiểm xã hội bao nhiêu năm là được về hưu vậy?",
+  "answer": "Issue: Đóng bảo hiểm xã hội bao nhiêu năm là được về hưu vậy?\n\nRule: Người lao động được hưởng lương hưu khi có đủ điều kiện về tuổi và thời gian đóng BHXH. (document: law_bhxh_2024, article: 64, clause: 1)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Prolog đã trả về kết quả với điều kiện rằng người lao động phải có đủ 15 năm đóng BHXH để đủ điều kiện hưởng lương hưu.\n\nConclusion: Prolog đã trả về giá trị \"Người lao động phải có đủ 15 năm đóng BHXH để đủ điều kiện hưởng lương hưu.\" cho biến Conditions. Không có slot nào bị thiếu, vì vậy hệ thống đã có thể tính toán kết quả.",
+  "citations": [
+    "[Điều 64 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A64.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,conditions_for_retirement(Người lao động phải có đủ 15 năm đóng BHXH để đủ điều kiện hưởng lương hưu.),based_on(source_a64))]",
+  "irac_sections": {
+    "issue": "Đóng bảo hiểm xã hội bao nhiêu năm là được về hưu vậy?",
+    "rule": "Người lao động được hưởng lương hưu khi có đủ điều kiện về tuổi và thời gian đóng BHXH. (document: law_bhxh_2024, article: 64, clause: 1)",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Prolog đã trả về kết quả với điều kiện rằng người lao động phải có đủ 15 năm đóng BHXH để đủ điều kiện hưởng lương hưu.",
+    "conclusion": "Prolog đã trả về giá trị \"Người lao động phải có đủ 15 năm đóng BHXH để đủ điều kiện hưởng lương hưu.\" cho biến Conditions. Không có slot nào bị thiếu, vì vậy hệ thống đã có thể tính toán kết quả."
+  },
+  "elapsed_s": 7.476,
+  "prompt_tokens": 1973,
+  "completion_tokens": 348,
+  "error": null,
+  "gold_answer": "Từ 01/7/2025, điều kiện về thời gian đóng để hưởng lương hưu với nhiều nhóm lao động là từ đủ 15 năm BHXH, nhưng vẫn phải đủ tuổi nghỉ hưu theo luật. Năm 2026, tuổi nghỉ hưu trong điều kiện bình thường là 61 tuổi 6 tháng đối với nam và 57 tuổi đối với nữ, trừ trường hợp làm nghề nặng nhọc, suy giảm khả năng lao động hoặc có điều kiện đặc thù.",
+  "gold_citations_raw": "Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

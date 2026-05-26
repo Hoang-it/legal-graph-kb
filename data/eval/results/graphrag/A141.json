@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 141,
+  "question": "em vừa nghỉ việc tại công ty, mà HR nói là giờ chốt sổ xong ko có tờ rời nữa, h chuyển sang quản lý bằng sổ bhxh điện tử. HR còn cap cho e đoạn trao đổi với bhxh Tây Hồ, cho e hỏi thế h e đi làm bảo hiểm thất nghiệp có đc ko?",
+  "answer": "Bạn vẫn có thể làm thủ tục để nhận bảo hiểm thất nghiệp mặc dù công ty đã chuyển sang quản lý bằng sổ bảo hiểm xã hội điện tử. Theo quy định, bảo hiểm thất nghiệp áp dụng cho người lao động, và cơ quan bảo hiểm xã hội có trách nhiệm tiếp nhận hồ sơ tham gia bảo hiểm xã hội, bao gồm cả bảo hiểm thất nghiệp.\n\nĐể nhận bảo hiểm thất nghiệp, bạn cần chuẩn bị hồ sơ theo quy định và nộp cho cơ quan bảo hiểm xã hội. Việc chuyển sang sổ bảo hiểm xã hội điện tử không ảnh hưởng đến quyền lợi của bạn trong việc nhận bảo hiểm thất nghiệp.\n\nCác điều luật liên quan:\n- Bảo hiểm thất nghiệp theo quy định của Luật Việc làm áp dụng cho người lao động [Điều 4 khoản 4].\n- Cơ quan bảo hiểm xã hội có trách nhiệm tiếp nhận hồ sơ bảo hiểm thất nghiệp [Điều 18 khoản 4].",
+  "citations": [
+    "[Điều 4 khoản 4]",
+    "[Điều 18 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A4.K4",
+    "L41_2024.A18.K4"
+  ],
+  "citation_verified": {
+    "L41_2024.A4.K4": true,
+    "L41_2024.A18.K4": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A4.K4",
+      "score": 0.8068347573280334,
+      "text_preview": "Bảo hiểm thất nghiệp theo quy định của Luật Việc làm."
+    },
+    {
+      "clause_id": "L41_2024.A9.K2",
+      "score": 0.8055608868598938,
+      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A18.K2",
+      "score": 0.7969163060188293,
+      "text_preview": "Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A139.K2",
+      "score": 0.7965234518051147,
+      "text_preview": "Sửa đổi, bổ sung điểm e khoản 3 Điều 57 của Luật Việc làm số 38/2013/QH13 như sau:\n“e) Chi tổ chức và hoạt động bảo hiểm thất nghiệp thực hiện theo quy định của Luật Bảo hiểm xã hội;”."
+    },
+    {
+      "clause_id": "L41_2024.A17.K1",
+      "score": 0.7915171384811401,
+      "text_preview": "Yêu cầu người sử dụng lao động xuất trình sổ quản lý lao động, thang lương, bảng lương và thông tin, tài liệu khác liên quan đến việc đóng, hưởng chế độ bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp,"
+    }
+  ],
+  "n_semantic_edges": 2,
+  "n_refs": 1,
+  "elapsed_s": 3.87,
+  "gold_answer": "Việc HR nói không có tờ rời giấy nữa không đồng nghĩa bạn không làm được BHTN. Nếu dữ liệu BHXH đã chốt trên hệ thống, bạn vẫn có thể làm hồ sơ bằng giấy tờ chấm dứt HĐLĐ và tài liệu/tra cứu thể hiện quá trình đóng theo hướng dẫn của trung tâm dịch vụ việc làm. Tuy nhiên bạn nên xin công ty cung cấp xác nhận chốt sổ hoặc bản in quá trình đóng để tránh bị yêu cầu bổ sung.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

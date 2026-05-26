@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 79,
+  "question": "Anh chị cho em hỏi, mấy năm trước e có đi làm ở công ty cũ và đóng bảo hiểm đầy đủ, công ty cũng không nợ tiền BH. Do dịch covid công ty không trụ được nên đã giải thể, cũng đã báo giảm cho em nhưng năm ấy các nhân viên lại chẳng ai lấy tờ rời về . Sau đó e cũng có đi làm cty khác và đóng BH nối tiếp cho tới hiện tại . \nVậy mấy năm đóng ở cty cũ kia em chưa lấy tờ rời thì sau này em có thể tự lên cơ quan bảo hiểm xin lấy tờ rời được không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 130 khoản 5] — Quy định về việc giải quyết khiếu nại đối với quyết định, hành vi có liên quan đến bảo hiểm xã hội.\n- [Điều 28 khoản 4] — Quy định về việc cấp sổ bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 130 khoản 5]",
+    "[Điều 28 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A130.K5",
+    "L41_2024.A28.K4"
+  ],
+  "citation_verified": {
+    "L41_2024.A130.K5": true,
+    "L41_2024.A28.K4": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A92.K1",
+      "score": 0.7859987020492554,
+      "text_preview": "Trường hợp nộp hồ sơ quá thời hạn quy định tại khoản 1 và khoản 2 Điều 48, khoản 1 Điều 49, khoản 1 Điều 62, khoản 1 Điều 63, khoản 1 Điều 79, khoản 1 và khoản 2 Điều 91 của Luật này thì phải giải trì"
+    },
+    {
+      "clause_id": "L41_2024.A107.K2",
+      "score": 0.7858706116676331,
+      "text_preview": "Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.\nThời điểm kết thúc ngày cuối cùng của tháng dừng đ"
+    },
+    {
+      "clause_id": "L41_2024.A113.K1",
+      "score": 0.7839404940605164,
+      "text_preview": "Trường hợp nộp hồ sơ quá thời hạn quy định tại khoản 1 Điều 97, khoản 1 Điều 107, điểm a khoản 2 Điều 112 của Luật này thì phải giải trình bằng văn bản và gửi cho cơ quan bảo hiểm xã hội khi nộp hồ sơ"
+    },
+    {
+      "clause_id": "L41_2024.A130.K5",
+      "score": 0.7829983830451965,
+      "text_preview": "Việc giải quyết khiếu nại đối với quyết định, hành vi có liên quan đến việc thụ hưởng các chế độ bảo hiểm xã hội hoặc tính thời gian công tác trong khu vực nhà nước để hưởng bảo hiểm xã hội trước ngày"
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.7797814607620239,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    }
+  ],
+  "n_semantic_edges": 3,
+  "n_refs": 13,
+  "elapsed_s": 1.84,
+  "gold_answer": "Có. Nếu công ty cũ đã giải thể, đã báo giảm và không nợ BHXH, bạn vẫn có thể liên hệ cơ quan BHXH để đề nghị xác nhận/cấp lại tờ rời hoặc cập nhật dữ liệu quá trình đóng. Việc chưa lấy tờ rời trước đây không làm mất thời gian đã đóng hợp pháp, nhất là khi sau đó bạn tiếp tục đóng nối tiếp ở công ty khác trên cùng mã số BHXH. Nên mang CCCD và thông tin đơn vị cũ để cơ quan BHXH tra cứu nhanh hơn.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn cấp lại/xác nhận sổ BHXH của BHXH Việt Nam"
+}

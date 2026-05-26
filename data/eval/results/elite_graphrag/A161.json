@@ -1,0 +1,33 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 161,
+  "question": "e muốn rut tiền sổ bh thì cần những gì? điều kiện gì?",
+  "answer": "Issue: Người dùng muốn biết điều kiện và hồ sơ cần thiết để rút tiền từ sổ bảo hiểm xã hội.\n\nRule: \"Hồ sơ đề nghị hưởng trợ cấp một lần bao gồm văn bản đề nghị hưởng trợ cấp một lần kèm theo bản sao giấy xác nhận của cơ quan có thẩm quyền về việc thôi quốc tịch Việt Nam hoặc bản dịch tiếng Việt được chứng thực hoặc công chứng một trong các giấy tờ quy định tại các điểm a, b, c và d khoản 2 Điều 78 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 76, Khoản 4)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã tiêu thụ các điều kiện cần thiết cho việc rút tiền từ sổ bảo hiểm xã hội, bao gồm tài liệu đề nghị và tài liệu xác nhận.\n\nConclusion: Hệ thống không thể tính toán giá trị cuối cùng vì không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 78]",
+    "[Điều 76 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A78",
+    "L41_2024.A76.K4"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_social_insurance_conditions([application_document,confirmation_document]),based_on(source_c007))]",
+  "irac_sections": {
+    "issue": "Người dùng muốn biết điều kiện và hồ sơ cần thiết để rút tiền từ sổ bảo hiểm xã hội.",
+    "rule": "\"Hồ sơ đề nghị hưởng trợ cấp một lần bao gồm văn bản đề nghị hưởng trợ cấp một lần kèm theo bản sao giấy xác nhận của cơ quan có thẩm quyền về việc thôi quốc tịch Việt Nam hoặc bản dịch tiếng Việt được chứng thực hoặc công chứng một trong các giấy tờ quy định tại các điểm a, b, c và d khoản 2 Điều 78 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 76, Khoản 4)",
+    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã tiêu thụ các điều kiện cần thiết cho việc rút tiền từ sổ bảo hiểm xã hội, bao gồm tài liệu đề nghị và tài liệu xác nhận.",
+    "conclusion": "Hệ thống không thể tính toán giá trị cuối cùng vì không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 7.495,
+  "prompt_tokens": 2737,
+  "completion_tokens": 454,
+  "error": null,
+  "gold_answer": "Muốn rút BHXH 1 lần, bạn phải thuộc một trong các trường hợp luật cho phép, phổ biến nhất là sau 12 tháng không còn thuộc diện tham gia BHXH bắt buộc và không tham gia BHXH tự nguyện. Hồ sơ thường gồm đơn đề nghị, CCCD, thông tin tài khoản; một số trường hợp đặc biệt cần thêm giấy tờ định cư nước ngoài hoặc hồ sơ bệnh nặng. Nộp tại BHXH nơi cư trú.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,31 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 82,
+  "question": "bhxh e đc 6 tháng có được rút không? E nghĩ cty cũng 2 năm hơn rồi",
+  "answer": "Issue: Người dùng hỏi liệu có thể rút bảo hiểm xã hội sau 6 tháng đóng hay không.\n\nRule: \"Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất.\" (Luật BHXH 2024 (41/2024/QH15), article 33, clause 7)\n\nApplication: Không có slot_bindings nào được cung cấp trong truy vấn. Tuy nhiên, Prolog đã sử dụng thông tin về số tháng đóng bảo hiểm xã hội của người dùng là 6 tháng để xác định khả năng rút bảo hiểm.\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người dùng có thể rút bảo hiểm xã hội sau 6 tháng đóng.",
+  "citations": [
+    "[Điều 5 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K6"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,withdrawal_eligibility(user,yes),based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Người dùng hỏi liệu có thể rút bảo hiểm xã hội sau 6 tháng đóng hay không.",
+    "rule": "\"Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất.\" (Luật BHXH 2024 (41/2024/QH15), article 33, clause 7)",
+    "application": "Không có slot_bindings nào được cung cấp trong truy vấn. Tuy nhiên, Prolog đã sử dụng thông tin về số tháng đóng bảo hiểm xã hội của người dùng là 6 tháng để xác định khả năng rút bảo hiểm.",
+    "conclusion": "Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người dùng có thể rút bảo hiểm xã hội sau 6 tháng đóng."
+  },
+  "elapsed_s": 16.709,
+  "prompt_tokens": 5799,
+  "completion_tokens": 920,
+  "error": null,
+  "gold_answer": "Thông thường đóng BHXH mới 6 tháng thì chưa thể rút ngay nếu bạn chưa thuộc trường hợp luật cho phép. Trường hợp phổ biến nhất là phải sau 12 tháng không tiếp tục tham gia BHXH mà vẫn chưa đủ điều kiện hưởng lương hưu thì mới đề nghị hưởng BHXH một lần. Vì vậy nếu bạn mới đóng 6 tháng và nghỉ đã hơn 2 năm thì cần kiểm tra hiện tại có còn tham gia nơi nào khác không; nếu không, thường có thể nộp hồ sơ theo diện BHXH một lần.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 110"
+}

@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 196,
+  "question": "sổ BHXH (sổ xanh) + tờ rời kẹp sổ e bị mất. chỉ còn lại thông tin trên app. \nEm muốn xin cấp lại full sổ cứng thì e cần tới đâu?\nEm có đến BHXH nơi chốt sổ lần cuối cùng ở Nam Từ Liêm,Hà Nội.\nnhưng họ lại bảo em về cơ quan BHXH nơi e sinh sống (e đang trọ ở Thụy Khuê,HN) để làm. 2 bên cứ đẩy qua đẩy lại miết luôn",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, khi bạn bị mất sổ bảo hiểm xã hội, bạn có quyền yêu cầu cấp lại sổ. Để thực hiện việc này, bạn cần đến cơ quan bảo hiểm xã hội nơi bạn đang cư trú hoặc nơi bạn làm việc để làm thủ tục cấp lại sổ bảo hiểm xã hội.\n\nTrong trường hợp của bạn, vì bạn đang trọ ở Thụy Khuê, Hà Nội, bạn nên đến cơ quan bảo hiểm xã hội nơi bạn đang sinh sống để làm thủ tục cấp lại sổ. Nếu cơ quan bảo hiểm xã hội nơi bạn sinh sống yêu cầu bạn cung cấp thông tin từ cơ quan nơi chốt sổ lần cuối, bạn có thể yêu cầu họ hướng dẫn cụ thể về cách giải quyết tình huống này.\n\nNếu bạn gặp khó khăn trong việc giải quyết, bạn có thể liên hệ với tổng đài hoặc bộ phận hỗ trợ của cơ quan bảo hiểm xã hội để được hướng dẫn cụ thể hơn.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 5.6,
+  "prompt_tokens": 276,
+  "completion_tokens": 205,
+  "gold_answer": "Bạn có thể nộp thủ tục cấp lại sổ BHXH tại cơ quan BHXH nơi cư trú hợp pháp (thường trú hoặc tạm trú), không nhất thiết đúng nơi chốt cuối cùng. Nếu đang ở Thụy Khuê, Hà Nội và có đăng ký tạm trú/cư trú hợp lệ thì có thể làm tại BHXH nơi cư trú. Trường hợp cơ quan tiếp nhận đùn đẩy, bạn nên yêu cầu họ trả lời bằng văn bản hoặc tiếp nhận hồ sơ theo đúng nơi cư trú.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

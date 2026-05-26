@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 47,
+  "question": "Mình vừa được thăng chức, tăng lương xong mấy ngày thì biết tin có bầu. Mình đã đóng bảo hiểm được 5 năm. Thời gian tăng lương đến khi nghỉ thai sản đúng 6 tháng trước sinh ( tăng hơn 1 triệu ) . Giờ mình xin nghỉ thai sản trước 2 tháng và nghỉ việc luôn thì có bị thanh tra không? Mình có đầy đủ quyết định điều chỉnh lương , bảng lương, quyết định bổ nhiệm nhưng nhận quyết định qua mail k có bản dấu đỏ thì khi thanh tra có được chấp nhận không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 50: Đối tượng và điều kiện hưởng chế độ thai sản.\n- Điều 55: Chế độ thai sản của lao động nữ nhờ mang thai hộ.\n- Điều 59: Trợ cấp thai sản.\n- Điều 53: Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A50.K4",
+      "score": 0.8294748067855835,
+      "text_preview": "Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con hoặc nhận con khi nhờ mang thai "
+    },
+    {
+      "clause_id": "L41_2024.A55.K1",
+      "score": 0.8283644914627075,
+      "text_preview": "Được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi. Trường hợp sinh đôi trở lên thì được nghỉ thêm 01 tháng cho mỗi con tính từ con thứ hai trở đi.\nTrường hợp "
+    },
+    {
+      "clause_id": "L41_2024.A59.K1",
+      "score": 0.8124594688415527,
+      "text_preview": "Trợ cấp thai sản một tháng của người lao động quy định tại các điều 51, 52, 53, 54, 55, 56 và 57 của Luật này bằng 100% mức bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc của 06 tháng g"
+    },
+    {
+      "clause_id": "L41_2024.A53.K8",
+      "score": 0.8090932369232178,
+      "text_preview": "Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ "
+    },
+    {
+      "clause_id": "L41_2024.A59.K4",
+      "score": 0.8083169460296631,
+      "text_preview": "Trợ cấp thai sản của lao động nữ mang thai hộ, lao động nữ nhờ mang thai hộ được thực hiện theo quy định tại các khoản 1, 2 và 3 Điều này và được tính trên cơ sở mức bình quân tiền lương làm căn cứ đó"
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 15,
+  "elapsed_s": 2.53,
+  "gold_answer": "Việc tăng lương rồi sau đó nghỉ thai sản không mặc nhiên bị thanh tra hay bị từ chối chế độ. Cơ quan BHXH chỉ kiểm tra khi nghi ngờ việc tăng lương không có căn cứ thực tế, không đúng quy chế hoặc đóng BHXH không đúng bản chất quan hệ lao động. Nếu bạn có quyết định điều chỉnh lương, bổ nhiệm, bảng lương, chứng từ trả lương và việc tăng lương là thật, đúng quy trình thì thường vẫn được chấp nhận. Văn bản điện tử hợp lệ không bắt buộc phải có bản dấu đỏ giấy.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 53; Bộ luật Lao động 2019 Điều 90, Điều 94; Luật Giao dịch điện tử 2023"
+}

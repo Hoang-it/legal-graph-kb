@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 195,
+  "question": "mik đang đi làm đóng bảo hiển xh mà mik xin nghỉ đội 1-2 tháng đi thụ tinh nhân tạo thì có được hưởng ít bảo hiểm nào không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 50. Đối tượng và điều kiện hưởng chế độ thai sản\n- Điều 53. Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A53.K7",
+      "score": 0.7852498292922974,
+      "text_preview": "Trường hợp chỉ có cha tham gia bảo hiểm xã hội bắt buộc mà mẹ chết sau khi sinh con hoặc gặp rủi ro sau khi sinh mà không đủ sức khỏe để chăm sóc con theo xác nhận của cơ sở khám bệnh, chữa bệnh thì c"
+    },
+    {
+      "clause_id": "L41_2024.A53.K5",
+      "score": 0.7811784744262695,
+      "text_preview": "Trường hợp chỉ có mẹ hoặc cả cha và mẹ đều tham gia bảo hiểm xã hội bắt buộc mà mẹ chết sau khi sinh con thì cha hoặc người trực tiếp nuôi dưỡng được nghỉ việc hưởng chế độ thai sản để chăm sóc con đố"
+    },
+    {
+      "clause_id": "L41_2024.A50.K3",
+      "score": 0.7790716886520386,
+      "text_preview": "Đối tượng quy định tại điểm b và điểm c khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của người hành nghề khám bệ"
+    },
+    {
+      "clause_id": "L41_2024.A53.K8",
+      "score": 0.7787774801254272,
+      "text_preview": "Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ "
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.7758550643920898,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    }
+  ],
+  "n_semantic_edges": 1,
+  "n_refs": 7,
+  "elapsed_s": 1.93,
+  "gold_answer": "Nếu bạn đang đóng BHXH mà xin nghỉ 1-2 tháng để đi thụ tinh nhân tạo thì quyền lợi phụ thuộc loại nghỉ và giấy tờ y tế. Nếu nghỉ ốm/điều trị theo chỉ định của cơ sở khám chữa bệnh có thẩm quyền thì có thể được xem xét chế độ ốm đau. Nếu chỉ tự nghỉ không lương mà không có hồ sơ y tế phù hợp thì thường không có chế độ BHXH riêng cho việc đó.",
+  "gold_citations_raw": "Điều 42, 43, 47 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 106,
+  "question": "Em đóng bảo hiểm được 11 năm 8 tháng mức đóng 6025 giờ rút được tầm bao nhiêu?",
+  "answer": "Issue: Em đóng bảo hiểm được 11 năm 8 tháng mức đóng 6025 giờ rút được tầm bao nhiêu?\n\nRule: \"6. Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\" (Luật BHXH 2024 (41/2024/QH15), article 5, clause 6)\n\nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã sử dụng các giá trị từ các quy tắc đã được xác định, cụ thể là số năm và số tháng đã đóng bảo hiểm để tính toán mức hưởng.\n\nConclusion: Prolog đã trả về giá trị 6025 cho biến Amount.",
+  "citations": [
+    "[Điều 5 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K6"
+  ],
+  "citation_indices": [
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,pension_amount(user,6025),based_on(source_c005))]",
+  "irac_sections": {
+    "issue": "Em đóng bảo hiểm được 11 năm 8 tháng mức đóng 6025 giờ rút được tầm bao nhiêu?",
+    "rule": "\"6. Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\" (Luật BHXH 2024 (41/2024/QH15), article 5, clause 6)",
+    "application": "Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã sử dụng các giá trị từ các quy tắc đã được xác định, cụ thể là số năm và số tháng đã đóng bảo hiểm để tính toán mức hưởng.",
+    "conclusion": "Prolog đã trả về giá trị 6025 cho biến Amount."
+  },
+  "elapsed_s": 11.049,
+  "prompt_tokens": 3474,
+  "completion_tokens": 558,
+  "error": null,
+  "gold_answer": "Nếu toàn bộ thời gian đóng đều từ năm 2014 trở đi thì BHXH 1 lần của bạn ước khoảng khoảng 144,6 triệu; đây chỉ là con số gần đúng, chưa tính hệ số điều chỉnh tiền lương và cách làm tròn của cơ quan BHXH. Điều kiện nhận vẫn phải thỏa quy định về BHXH 1 lần, ví dụ sau 12 tháng không còn thuộc diện tham gia và không tham gia BHXH tự nguyện.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

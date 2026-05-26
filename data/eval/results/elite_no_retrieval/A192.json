@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 192,
+  "question": "năm 2011 em có mượn hồ sơ đi làm và đóng bh đc 3th thì cty phát hiện hồ sơ giả nên em nghỉ việc, nhưng đến hôm nay cái chị cho em mượn hồ sơ đi lấy bhxh thì bên bh kiểm tra và bảo còn vướng 3th bảo hiểm của em , giờ phải ra toà để huỷ. Vậy giờ em phải làm như thế nào?",
+  "answer": "Issue: Người hỏi muốn biết cách giải quyết vấn đề liên quan đến hồ sơ giả và bảo hiểm xã hội sau khi nghỉ việc.\n\nRule: Không có trích dẫn nào được cung cấp trong dữ liệu.\n\nApplication: Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được Prolog sử dụng để đưa ra kết luận.\n\nConclusion: Prolog đã trả về một kết luận rằng \"Bạn cần liên hệ với cơ quan bảo hiểm xã hội để làm rõ tình trạng hồ sơ và thực hiện các thủ tục cần thiết để hủy bỏ hồ sơ giả, đồng thời có thể cần sự hỗ trợ pháp lý để giải quyết vấn đề tại tòa án.\" Tuy nhiên, không có giá trị nào được gán cho các slot, vì vậy không thể tính toán một số liệu cụ thể.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,answer_predicate(Bạn cần liên hệ với cơ quan bảo hiểm xã hội để làm rõ tình trạng hồ sơ và thực hiện các thủ tục cần thiết để hủy bỏ hồ sơ giả, đồng thời có thể cần sự hỗ trợ pháp lý để giải quyết vấn đề tại tòa án.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết cách giải quyết vấn đề liên quan đến hồ sơ giả và bảo hiểm xã hội sau khi nghỉ việc.",
+    "rule": "Không có trích dẫn nào được cung cấp trong dữ liệu.",
+    "application": "Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được Prolog sử dụng để đưa ra kết luận.",
+    "conclusion": "Prolog đã trả về một kết luận rằng \"Bạn cần liên hệ với cơ quan bảo hiểm xã hội để làm rõ tình trạng hồ sơ và thực hiện các thủ tục cần thiết để hủy bỏ hồ sơ giả, đồng thời có thể cần sự hỗ trợ pháp lý để giải quyết vấn đề tại tòa án.\" Tuy nhiên, không có giá trị nào được gán cho các slot, vì vậy không thể tính toán một số liệu cụ thể."
+  },
+  "elapsed_s": 10.32,
+  "prompt_tokens": 3444,
+  "completion_tokens": 369,
+  "error": null,
+  "gold_answer": "Dùng hồ sơ giả để đi làm và đóng BHXH là việc phải xử lý rất thận trọng. Cơ quan BHXH yêu cầu hủy quá trình sai là có cơ sở; trường hợp hồ sơ giả, người đứng tên thật và người sử dụng hồ sơ nên làm việc trực tiếp với BHXH để xác định hướng xử lý, thậm chí có thể phải qua tòa án/cơ quan công an nếu phát sinh tranh chấp, giả mạo giấy tờ. Bạn không nên tự ý làm thủ tục rút hay gộp sổ trong tình trạng này.",
+  "gold_citations_raw": "Luật BHXH 2024; Bộ luật Dân sự 2015; quy định về giả mạo hồ sơ"
+}

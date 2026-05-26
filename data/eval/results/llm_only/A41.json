@@ -1,0 +1,17 @@
+{
+  "arm": "llm_only",
+  "stt": 41,
+  "question": "Em nghỉ việc tại Công ty cũ từ 28/3. Em xin Công ty quyết định nghỉ việc để làm BHTN, nhưng họ báo: \"Chờ tờ rời BHXH từ 45-50 ngày\". Em có hỏi: \"chờ lâu vậy thì sao mà e làm đc BHTN tháng 4,5\" thì họ bảo: \"Thời hạn hưởng BHTN là 3 tháng kể từ ngày nộp đơn\". Em chưa hiểu chỗ này. Vậy là phải sau 3 tháng nghỉ việc e mới đc nộp chứng từ để hưởng BHTN phải ko? Hay là sau nhận và nộp chứng từ em sẽ đc hưởng BHTN từ tháng 4?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, bạn có quyền hưởng trợ cấp thất nghiệp (BHTN) nếu đáp ứng đủ điều kiện và nộp hồ sơ đúng thời hạn. \n\nCụ thể, bạn có thể nộp hồ sơ hưởng BHTN ngay sau khi nghỉ việc, không cần phải chờ 3 tháng. Thời hạn hưởng BHTN là 3 tháng kể từ ngày nộp đơn, nhưng bạn có thể nộp đơn ngay sau khi có quyết định nghỉ việc và nhận được các giấy tờ cần thiết từ công ty.\n\nDo đó, nếu bạn nhận được tờ rời BHXH và nộp hồ sơ BHTN trong tháng 4, bạn sẽ được hưởng BHTN từ tháng 4, không phải chờ 3 tháng. Bạn nên yêu cầu công ty cung cấp các giấy tờ cần thiết sớm để thực hiện quyền lợi của mình. \n\nBạn có thể tham khảo thêm tại [Điều 49 khoản 1] về điều kiện hưởng trợ cấp thất nghiệp.",
+  "citations": [
+    "[Điều 49 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A49.K1"
+  ],
+  "elapsed_s": 5.511,
+  "prompt_tokens": 312,
+  "completion_tokens": 228,
+  "gold_answer": "Không phải chờ đủ 3 tháng rồi mới nộp hồ sơ BHTN. Đúng luật là bạn phải nộp hồ sơ trong vòng 3 tháng kể từ ngày chấm dứt HĐLĐ. Sau khi nộp đủ hồ sơ, nếu sau 15 ngày chưa có việc làm thì sẽ được giải quyết hưởng trợ cấp thất nghiệp. Vì vậy, bạn nên lấy quyết định nghỉ việc và giấy tờ chốt BHXH sớm để nộp trong hạn, không phải đợi qua 3 tháng.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 49, Điều 50"
+}

@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 125,
+  "question": "Em nghỉ công ty từ ngày 25/2 công ty cũ đã gửi sổ để  e đi chốt nhưng đã 2 tháng mà bảo hiểm vẫn chưa chốt và chưa trả lại e sổ và tờ rời. vậy giờ e làm như thế nào để hưởng bảo hiểm thất nghiệp? còn 1 tháng nữa là hết hạn rồi ạ mà e vẫn chưa lấy lại được sổ",
+  "answer": "Issue: Người hỏi muốn biết cách hưởng bảo hiểm thất nghiệp khi chưa nhận lại sổ bảo hiểm sau 2 tháng nghỉ việc.\n\nRule: \"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để xác định quy trình hưởng bảo hiểm thất nghiệp.\n\nConclusion: Hệ thống không thể tính toán được giá trị cuối cùng do không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 18 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_process,based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết cách hưởng bảo hiểm thất nghiệp khi chưa nhận lại sổ bảo hiểm sau 2 tháng nghỉ việc.",
+    "rule": "\"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để xác định quy trình hưởng bảo hiểm thất nghiệp.",
+    "conclusion": "Hệ thống không thể tính toán được giá trị cuối cùng do không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 7.539,
+  "prompt_tokens": 2987,
+  "completion_tokens": 348,
+  "error": null,
+  "gold_answer": "Bạn cần nộp hồ sơ BHTN trong 03 tháng từ ngày nghỉ việc, nên không nên đợi quá sát hạn. Hãy yêu cầu công ty hoặc cơ quan BHXH cấp xác nhận quá trình đóng/chốt dữ liệu để kịp nộp hồ sơ. Nếu việc chậm chốt do phía công ty/BHXH, bạn nên nộp trước các giấy tờ đang có tại trung tâm dịch vụ việc làm và xin hướng dẫn bổ sung, đồng thời làm đơn khiếu nại về việc chậm chốt.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

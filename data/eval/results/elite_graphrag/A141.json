@@ -1,0 +1,31 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 141,
+  "question": "em vừa nghỉ việc tại công ty, mà HR nói là giờ chốt sổ xong ko có tờ rời nữa, h chuyển sang quản lý bằng sổ bhxh điện tử. HR còn cap cho e đoạn trao đổi với bhxh Tây Hồ, cho e hỏi thế h e đi làm bảo hiểm thất nghiệp có đc ko?",
+  "answer": "Issue: Bạn vừa nghỉ việc tại công ty và muốn biết liệu bạn có đủ điều kiện để nhận bảo hiểm thất nghiệp hay không.\n\nRule: \"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\" (Luật BHXH 2024 (41/2024/QH15), Điều 4, Khoản 4)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để xác định điều kiện nhận bảo hiểm thất nghiệp.\n\nConclusion: Hệ thống không thể tính toán được số liệu cuối cùng do không có giá trị nào trong các slot.",
+  "citations": [
+    "[Điều 4 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A4.K4"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_eligibility(yes),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Bạn vừa nghỉ việc tại công ty và muốn biết liệu bạn có đủ điều kiện để nhận bảo hiểm thất nghiệp hay không.",
+    "rule": "\"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\" (Luật BHXH 2024 (41/2024/QH15), Điều 4, Khoản 4)",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để xác định điều kiện nhận bảo hiểm thất nghiệp.",
+    "conclusion": "Hệ thống không thể tính toán được số liệu cuối cùng do không có giá trị nào trong các slot."
+  },
+  "elapsed_s": 6.085,
+  "prompt_tokens": 2630,
+  "completion_tokens": 293,
+  "error": null,
+  "gold_answer": "Việc HR nói không có tờ rời giấy nữa không đồng nghĩa bạn không làm được BHTN. Nếu dữ liệu BHXH đã chốt trên hệ thống, bạn vẫn có thể làm hồ sơ bằng giấy tờ chấm dứt HĐLĐ và tài liệu/tra cứu thể hiện quá trình đóng theo hướng dẫn của trung tâm dịch vụ việc làm. Tuy nhiên bạn nên xin công ty cung cấp xác nhận chốt sổ hoặc bản in quá trình đóng để tránh bị yêu cầu bổ sung.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

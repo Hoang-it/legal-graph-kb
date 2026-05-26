@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 67,
+  "question": "Công ty em có 1 nhân sự nghỉ thai sản nhưng báo giảm sai tháng (giảm đúng T12 nhưng báo giảm T11 và đã được duyệt). Em có báo On thai sản vào T11 để giảm lại T12 cho đúng nhưng BH không duyệt với lý do \"Nlđ nghỉ ts từ T11-T4 nên không phát sinh tăng vào T11 được\"\nGiờ mình phải làm sao?",
+  "answer": "Issue: Công ty bạn gặp khó khăn trong việc điều chỉnh báo giảm nhân sự nghỉ thai sản do báo sai tháng và không được bảo hiểm xã hội duyệt.\n\nRule: Không có quy định cụ thể nào được trích dẫn trong trường hợp này.\n\nApplication: Không có giá trị nào được gán cho các slot, do đó Prolog không thể thực hiện truy vấn với các thông tin cần thiết.\n\nConclusion: Hệ thống không thể tính toán số liệu cuối cùng do không có giá trị nào được gán cho các slot.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,answer_predicate(Bạn cần liên hệ với cơ quan bảo hiểm xã hội để làm rõ quy trình và yêu cầu điều chỉnh báo giảm, đồng thời cung cấp đầy đủ thông tin về thời gian nghỉ thai sản của nhân viên.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Công ty bạn gặp khó khăn trong việc điều chỉnh báo giảm nhân sự nghỉ thai sản do báo sai tháng và không được bảo hiểm xã hội duyệt.",
+    "rule": "Không có quy định cụ thể nào được trích dẫn trong trường hợp này.",
+    "application": "Không có giá trị nào được gán cho các slot, do đó Prolog không thể thực hiện truy vấn với các thông tin cần thiết.",
+    "conclusion": "Hệ thống không thể tính toán số liệu cuối cùng do không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 8.489,
+  "prompt_tokens": 3382,
+  "completion_tokens": 298,
+  "error": null,
+  "gold_answer": "Trường hợp đã báo giảm sai tháng và hồ sơ đã duyệt, bạn nên làm văn bản giải trình kèm hồ sơ điều chỉnh gửi cơ quan BHXH, nêu rõ NLĐ thực tế nghỉ thai sản từ tháng nào và đề nghị điều chỉnh dữ liệu thay vì báo tăng giả tạo rồi giảm lại. Cơ quan BHXH từ chối 'báo On' tháng 11 là hợp lý nếu NLĐ thực tế đang nghỉ thai sản trong toàn giai đoạn đó. Cách xử lý đúng là điều chỉnh hồ sơ đã sai, không tạo phát sinh không có thật.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 53; quy trình hồ sơ điện tử của BHXH Việt Nam"
+}

@@ -1,0 +1,48 @@
+{
+  "arm": "graphrag",
+  "stt": 35,
+  "question": "Ông T.Công (TPHCM) hỏi, con của người lao động tham gia BHXH bị ốm thì người lao động có được hưởng chế độ ốm đau không?\nNếu cả bố và mẹ đều tham gia BHXH thì ai được hưởng chế độ này?",
+  "answer": "Người lao động có thể được hưởng chế độ ốm đau khi chăm sóc con ốm nếu họ tham gia bảo hiểm xã hội. Nếu cả bố và mẹ đều tham gia bảo hiểm xã hội bắt buộc, thì thời gian hưởng chế độ khi chăm sóc con ốm đau của mỗi người sẽ theo quy định của pháp luật.\n\nCụ thể, theo quy định tại Điều 44, khoản 2, nếu cả cha và mẹ cùng tham gia bảo hiểm xã hội bắt buộc thì thời gian hưởng chế độ khi chăm sóc con ốm đau của mỗi người sẽ được áp dụng theo quy định tại khoản 1 của Điều này.\n\nCitation:\n- [Điều 44 khoản 2]",
+  "citations": [
+    "[Điều 44 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A44.K2"
+  ],
+  "citation_verified": {
+    "L41_2024.A44.K2": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A44.K2",
+      "score": 0.8785662651062012,
+      "text_preview": "Trường hợp cả cha và mẹ cùng tham gia bảo hiểm xã hội bắt buộc thì thời gian hưởng chế độ khi chăm sóc con ốm đau của mỗi người theo quy định tại khoản 1 Điều này."
+    },
+    {
+      "clause_id": "L41_2024.A33.K6",
+      "score": 0.8446487188339233,
+      "text_preview": "Trường hợp trong tháng đầu làm việc hoặc trong tháng đầu trở lại làm việc mà người lao động nghỉ việc hưởng chế độ ốm đau từ 14 ngày làm việc trở lên thì vẫn phải đóng bảo hiểm xã hội của tháng đó."
+    },
+    {
+      "clause_id": "L41_2024.A43.K2",
+      "score": 0.8440843820571899,
+      "text_preview": "Hết thời hạn hưởng chế độ ốm đau quy định tại khoản 1 Điều này mà vẫn tiếp tục điều trị thì người lao động nghỉ việc do mắc bệnh thuộc danh mục bệnh cần chữa trị dài ngày do Bộ trưởng Bộ Y tế ban hành"
+    },
+    {
+      "clause_id": "L41_2024.A45.K2",
+      "score": 0.8414332866668701,
+      "text_preview": "Mức hưởng trợ cấp ốm đau của người lao động quy định tại khoản 1 Điều 43 và Điều 44 của Luật này bằng 75% tiền lương làm căn cứ đóng bảo hiểm xã hội quy định tại khoản 1 Điều này."
+    },
+    {
+      "clause_id": "L41_2024.A42.K1",
+      "score": 0.8311110734939575,
+      "text_preview": "Đối tượng quy định tại các điểm a, b, c, d, i, k, l, m và n khoản 1 và khoản 2 Điều 2 của Luật này được hưởng chế độ ốm đau khi nghỉ việc thuộc một trong các trường hợp sau đây, trừ trường hợp quy địn"
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 14,
+  "elapsed_s": 3.27,
+  "gold_answer": "Căn cứ điểm e khoản 1 Điều 42 Luật BHXH 2024, đối tượng chăm sóc con dưới 07 tuổi bị ốm đau được hưởng chế độ ốm đau khi nghỉ việc.\nTheo khoản 2 Điều 44 Luật BHXH 2024 quy định thời gian hưởng chế độ khi chăm sóc con bị ốm đau: \"Trường hợp cả cha và mẹ cùng tham gia bảo hiểm xã hội bắt buộc thì thời gian hưởng chế độ khi chăm sóc con ốm đau của mỗi người theo quy định tại khoản 1 Điều này\".\nĐối chiếu các quy định trên, trường hợp cả cha và mẹ đang tham gia BHXH cùng phải nghỉ việc chăm sóc con ốm đau thì đều được hưởng chế độ con ốm theo quy định.",
+  "gold_citations_raw": "điểm e khoản 1 Điều 42 Luật BHXH 2024"
+}

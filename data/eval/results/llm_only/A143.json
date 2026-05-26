@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 143,
+  "question": "Mình xin nghỉ việc\nCông ty nợ bảo hiểm xã hội có làm hưởng bảo hiểm thất nghiệp được không?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động có quyền hưởng bảo hiểm thất nghiệp nếu đã tham gia bảo hiểm thất nghiệp và đủ điều kiện theo quy định, bao gồm cả việc công ty nợ bảo hiểm xã hội. Tuy nhiên, việc nợ bảo hiểm xã hội có thể ảnh hưởng đến quyền lợi của người lao động trong việc nhận trợ cấp thất nghiệp.\n\nCụ thể, nếu công ty không đóng bảo hiểm xã hội đầy đủ, người lao động vẫn có thể làm thủ tục hưởng bảo hiểm thất nghiệp, nhưng cần lưu ý rằng việc này có thể gặp khó khăn trong việc xác nhận thời gian tham gia bảo hiểm. \n\nDo đó, bạn nên liên hệ với cơ quan bảo hiểm xã hội để được hướng dẫn cụ thể hơn về trường hợp của mình.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 3.781,
+  "prompt_tokens": 182,
+  "completion_tokens": 171,
+  "gold_answer": "Công ty nợ BHXH không đương nhiên làm bạn mất quyền hưởng BHTN, nhưng trên thực tế sẽ ảnh hưởng hồ sơ nếu dữ liệu đóng BHTN chưa được xác nhận. Bạn cần yêu cầu công ty hoàn tất nghĩa vụ đóng, chốt sổ; nếu không thực hiện thì khiếu nại với cơ quan BHXH và thanh tra lao động. Phần thời gian thực tế đã đóng vào quỹ BHTN vẫn phải được ghi nhận để xét quyền lợi cho bạn.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

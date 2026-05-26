@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 172,
+  "question": "đăng kí bhtn xong tầm bnh ngày là sẽ nhận tiền?",
+  "answer": "Issue: Người dùng hỏi về thời gian nhận tiền bảo hiểm thất nghiệp sau khi đăng ký xong.\n\nRule: \"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)\n\nApplication: Không có giá trị nào được gán trong slot_bindings. Prolog không thể sử dụng thông tin từ các slot để đưa ra kết luận.\n\nConclusion: Hệ thống không thể tính toán được số liệu cuối cùng do không có giá trị nào trong slot_bindings.",
+  "citations": [
+    "[Điều 18 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_timing(sẽ nhận tiền sau khi hồ sơ được duyệt và theo quy định của pháp luật),based_on(source_c007))]",
+  "irac_sections": {
+    "issue": "Người dùng hỏi về thời gian nhận tiền bảo hiểm thất nghiệp sau khi đăng ký xong.",
+    "rule": "\"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)",
+    "application": "Không có giá trị nào được gán trong slot_bindings. Prolog không thể sử dụng thông tin từ các slot để đưa ra kết luận.",
+    "conclusion": "Hệ thống không thể tính toán được số liệu cuối cùng do không có giá trị nào trong slot_bindings."
+  },
+  "elapsed_s": 7.367,
+  "prompt_tokens": 2868,
+  "completion_tokens": 349,
+  "error": null,
+  "gold_answer": "Sau khi bạn nộp đủ hồ sơ BHTN, nếu sau 15 ngày làm việc vẫn chưa có việc làm thì sẽ được giải quyết hưởng. Tiền trợ cấp thường được chi trả sau khi có quyết định hưởng, thực tế nhiều nơi nhận trong vài ngày đến khoảng 1-2 tuần sau quyết định đầu tiên. Bạn nhớ theo dõi lịch thông báo việc làm hằng tháng để không bị tạm dừng hoặc chấm dứt hưởng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

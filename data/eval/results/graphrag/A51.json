@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 51,
+  "question": "Mình đóng bảo hiểm được 5 năm, mỗi năm một mức lương cơ bản khác nhau, hiện tại 1 năm nay lương cơ bản đang là 6tr. cho mình hỏi rút BH 1 lần thì được bao nhiêu và tính mức lương cơ bản trung bình như thế nào?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- Điều 102: Hưởng bảo hiểm xã hội một lần\n- Điều 70: Hưởng bảo hiểm xã hội một lần\n- Điều 72: Mức bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội để tính lương hưu, trợ cấp một lần",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A102.K2",
+      "score": 0.8450307846069336,
+      "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn cứ đóng bảo hiểm xã hội, cứ mỗi năm được tính như sau:"
+    },
+    {
+      "clause_id": "L41_2024.A76.K2",
+      "score": 0.842448353767395,
+      "text_preview": "Mức trợ cấp một lần đối với người đang hưởng lương hưu được tính theo thời gian đã đóng bảo hiểm xã hội trong đó mỗi năm đóng bảo hiểm xã hội trước năm 2014 được tính bằng 1,5 tháng lương hưu đang hưở"
+    },
+    {
+      "clause_id": "L41_2024.A99.K3",
+      "score": 0.8350734710693359,
+      "text_preview": "Việc tính mức lương hưu hằng tháng của người lao động đủ điều kiện hưởng lương hưu mà có thời gian đóng bảo hiểm xã hội theo quy định của điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là"
+    },
+    {
+      "clause_id": "L41_2024.A70.K3",
+      "score": 0.8349101543426514,
+      "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn cứ đóng bảo hiểm xã hội nhưng không bao gồm số tiền ngân sách nhà nước hỗ trợ đóng bảo hiểm xã hội tự nguyện, cứ mỗi nă"
+    },
+    {
+      "clause_id": "L41_2024.A66.K4",
+      "score": 0.8347117900848389,
+      "text_preview": "Việc tính mức lương hưu hằng tháng của người lao động đủ điều kiện hưởng lương hưu mà có thời gian đóng bảo hiểm xã hội theo quy định của điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là"
+    }
+  ],
+  "n_semantic_edges": 1,
+  "n_refs": 13,
+  "elapsed_s": 2.22,
+  "gold_answer": "Không thể tính chính xác số tiền BHXH một lần chỉ dựa vào mức lương 1 năm gần nhất là 6 triệu, vì phải có toàn bộ tiền lương đóng của từng thời kỳ để tính mức bình quân. Nguyên tắc chung: mỗi năm đóng trước 2014 được tính 1,5 tháng mức bình quân; từ 2014 trở đi tính 2 tháng mức bình quân; tháng lẻ được quy đổi theo luật. Mức bình quân là tiền lương đóng BHXH sau điều chỉnh chia cho tổng số tháng đóng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 104, Điều 109"
+}

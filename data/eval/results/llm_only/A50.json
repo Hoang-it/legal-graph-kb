@@ -1,0 +1,17 @@
+{
+  "arm": "llm_only",
+  "stt": 50,
+  "question": "Mình sinh năm 1979. Thì đến năm bao nhiêu mình đủ tuổi về hưu?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, tuổi nghỉ hưu đối với nam là 62 tuổi và đối với nữ là 60 tuổi. Do bạn sinh năm 1979, nếu bạn là nam, bạn sẽ đủ tuổi về hưu vào năm 2041 (62 tuổi). Nếu bạn là nữ, bạn sẽ đủ tuổi về hưu vào năm 2039 (60 tuổi) `[Điều 169 khoản 1]`.",
+  "citations": [
+    "[Điều 169 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A169.K1"
+  ],
+  "elapsed_s": 2.761,
+  "prompt_tokens": 179,
+  "completion_tokens": 101,
+  "gold_answer": "Bạn sinh năm 1979 thì thời điểm đủ tuổi nghỉ hưu còn phụ thuộc giới tính và trường hợp nghỉ hưu bình thường hay sớm. Nếu là nữ, mốc chuẩn hiện hành là đủ 60 tuổi, tương ứng khoảng năm 2039. Nếu là nam, mốc chuẩn là đủ 62 tuổi, tương ứng khoảng năm 2041. Nếu làm nghề, công việc nặng nhọc hoặc thuộc trường hợp đặc biệt thì có thể nghỉ sớm hơn theo luật.",
+  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 169; Nghị định 135/2020/NĐ-CP"
+}

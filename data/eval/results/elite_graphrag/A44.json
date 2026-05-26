@@ -1,0 +1,29 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 44,
+  "question": "Mình đóng bhxh từ năm 2024 là 10 tháng \nSau đó vào cty khác đóng tiếp tục 6 tháng cùng luật bảo hiểm 1/7/2025 không cho rút 1 lần \nTổng thời gian mình đóng là 1 năm 4 tháng, giờ mình nghỉ cty luôn thì mình có được rút 1 lần bhxh không?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpswrpi__1.pl:3:709: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 5 khoản 6]",
+    "[Điều 3 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K6",
+    "L41_2024.A3.K1"
+  ],
+  "citation_indices": [
+    0,
+    3
+  ],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 24.54,
+  "prompt_tokens": 7521,
+  "completion_tokens": 1365,
+  "error": null,
+  "gold_answer": "Bạn đã có 10 tháng đóng trước 1/7/2025 và thêm 6 tháng sau đó, tổng 1 năm 4 tháng. Nếu hiện đã nghỉ việc, ngừng tham gia đủ 12 tháng và thuộc diện được giải quyết BHXH một lần theo quy định chuyển tiếp của Luật BHXH 2024 thì vẫn có thể được rút đối với thời gian đã đóng. Cần kiểm tra thêm thời điểm đề nghị và việc bạn có tiếp tục tham gia BHXH ở nơi khác hay không.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110; quy định chuyển tiếp của Luật BHXH 2024"
+}

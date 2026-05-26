@@ -1,0 +1,17 @@
+{
+  "arm": "llm_only",
+  "stt": 115,
+  "question": "Mình đóng được bảo hiểm 8 tháng thì có rút được tiền trong bảo hiểu đc không?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động có thể rút tiền bảo hiểm xã hội khi đã đủ điều kiện về thời gian tham gia bảo hiểm và lý do rút. Cụ thể, để rút tiền bảo hiểm xã hội một lần, người lao động phải có thời gian đóng bảo hiểm xã hội tối thiểu là 1 năm (12 tháng) [Điều 60 khoản 1]. \n\nVì bạn chỉ đóng bảo hiểm 8 tháng, nên bạn không đủ điều kiện để rút tiền bảo hiểm xã hội một lần.",
+  "citations": [
+    "[Điều 60 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1"
+  ],
+  "elapsed_s": 3.011,
+  "prompt_tokens": 179,
+  "completion_tokens": 127,
+  "gold_answer": "Đóng BHXH 8 tháng chưa đương nhiên được rút ngay. Bạn chỉ được hưởng BHXH 1 lần khi thuộc trường hợp luật cho phép, phổ biến là đã nghỉ việc và sau 12 tháng không còn thuộc diện tham gia BHXH bắt buộc, cũng không tham gia BHXH tự nguyện. Nếu chưa đủ điều kiện thì thời gian 8 tháng đó được bảo lưu để cộng nối về sau.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

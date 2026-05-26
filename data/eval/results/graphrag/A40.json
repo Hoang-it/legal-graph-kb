@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 40,
+  "question": "Em đóng bhxh t8/2025 đến t4/2026, ngày dự sinh của em là19/8. Vậy em có đủ đk để nhận trợ cấp không? Làm hểt tháng 4 là em nghỉ cty luôn. Em có đủ đk để nhận bhts k?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 94 khoản 1] — Đối tượng và điều kiện hưởng trợ cấp thai sản. \n- [Điều 59 khoản 1] — Trợ cấp thai sản.",
+  "citations": [
+    "[Điều 94 khoản 1]",
+    "[Điều 59 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A94.K1",
+    "L41_2024.A59.K1"
+  ],
+  "citation_verified": {
+    "L41_2024.A94.K1": true,
+    "L41_2024.A59.K1": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A5.K6",
+      "score": 0.8063815832138062,
+      "text_preview": "Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hi"
+    },
+    {
+      "clause_id": "L41_2024.A55.K1",
+      "score": 0.805766224861145,
+      "text_preview": "Được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi. Trường hợp sinh đôi trở lên thì được nghỉ thêm 01 tháng cho mỗi con tính từ con thứ hai trở đi.\nTrường hợp "
+    },
+    {
+      "clause_id": "L41_2024.A59.K1",
+      "score": 0.8041033744812012,
+      "text_preview": "Trợ cấp thai sản một tháng của người lao động quy định tại các điều 51, 52, 53, 54, 55, 56 và 57 của Luật này bằng 100% mức bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc của 06 tháng g"
+    },
+    {
+      "clause_id": "L41_2024.A87.K3",
+      "score": 0.8035764694213867,
+      "text_preview": "Thời điểm hưởng trợ cấp tuất hằng tháng được tính kể từ ngày đầu tiên của tháng liền kề sau tháng mà đối tượng quy định tại khoản 1 Điều 86 của Luật này chết hoặc bị Tòa án tuyên bố là đã chết. Trường"
+    },
+    {
+      "clause_id": "L41_2024.A59.K3",
+      "score": 0.8002469539642334,
+      "text_preview": "Trợ cấp thai sản khi sinh con, nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 06 tháng tuổi được tính theo mức trợ cấp thai sản quy định tại khoản 1 Điều này, trường hợp có ngày lẻ hoặc tr"
+    }
+  ],
+  "n_semantic_edges": 2,
+  "n_refs": 10,
+  "elapsed_s": 2.86,
+  "gold_answer": "Nếu bạn đóng BHXH bắt buộc từ 8/2025 đến hết 4/2026 thì có 9 tháng đóng trong 12 tháng trước khi sinh 8/2026, nên về nguyên tắc đủ điều kiện hưởng thai sản khi sinh con. Việc nghỉ việc sau tháng 4/2026 không làm mất quyền hưởng nếu bạn đã đủ điều kiện trước khi sinh. Bạn vẫn được nộp hồ sơ hưởng thai sản qua cơ quan BHXH theo nơi cư trú hoặc qua đơn vị nếu còn quan hệ lao động.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50, Điều 53"
+}

@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 189,
+  "question": "Cty em từ tháng 11/2025 từ Cty cổ phần chuyển đổi thành Cty TNHH 1tv, giám đốc là chủ sở hữu mà bên em đóng bảo hiểm xã hội 32% được không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 32. Tỷ lệ đóng bảo hiểm xã hội - Khoản 2\n- Điều 34. Mức đóng, phương thức và thời hạn đóng bảo hiểm xã hội bắt buộc của người sử dụng lao động - Khoản 2\n- Điều 36. Mức đóng, phương thức và thời hạn đóng bảo hiểm xã hội của người tham gia bảo hiểm xã hội tự nguyện - Khoản 1",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A9.K2",
+      "score": 0.768156111240387,
+      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A32.K2",
+      "score": 0.7641993761062622,
+      "text_preview": "Tỷ lệ đóng bảo hiểm xã hội tự nguyện bằng 22% thu nhập làm căn cứ đóng bảo hiểm xã hội vào quỹ hưu trí và tử tuất."
+    },
+    {
+      "clause_id": "L41_2024.A36.K1",
+      "score": 0.7626492977142334,
+      "text_preview": "Đối tượng quy định tại khoản 4 Điều 2 của Luật này, hằng tháng đóng bằng 22% mức thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện vào quỹ hưu trí và tử tuất.\nCăn cứ vào điều kiện phát triển kinh tế "
+    },
+    {
+      "clause_id": "L41_2024.A26.K3",
+      "score": 0.758836030960083,
+      "text_preview": "Chậm nhất là ngày 01 tháng 01 năm 2027, cơ quan bảo hiểm xã hội phải bảo đảm điều kiện để thực hiện giao dịch điện tử thuộc lĩnh vực bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A34.K2",
+      "score": 0.7584682703018188,
+      "text_preview": "Người sử dụng lao động hằng tháng đóng 22% tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc vào quỹ hưu trí và tử tuất cho đối tượng quy định tại điểm đ và điểm e khoản 1 Điều 2 của Luật này."
+    }
+  ],
+  "n_semantic_edges": 2,
+  "n_refs": 4,
+  "elapsed_s": 2.54,
+  "gold_answer": "Tỷ lệ 32% chỉ có thể là cách cộng gộp nhiều khoản phải đóng của cả doanh nghiệp và người lao động, không phải lúc nào cũng áp dụng đúng cho mọi trường hợp. Với công ty TNHH MTV, giám đốc/chủ sở hữu có thuộc diện đóng BHXH hay không còn phụ thuộc việc hưởng lương, chức danh và hướng dẫn áp dụng cho người quản lý doanh nghiệp. Bạn nên rà lại đối tượng tham gia theo Luật BHXH 2024 và nghị định hướng dẫn.",
+  "gold_citations_raw": "Điều 2, 13, 14 Luật BHXH 2024; Nghị định 158/2025/NĐ-CP"
+}

@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 145,
+  "question": "đóng bảo hiểm xã hội tự nguyện thì có dc rút 1 lần k?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 3 khoản 4\n- Điều 115 khoản 1\n- Điều 5 khoản 3\n- Điều 110 khoản 1",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A3.K4",
+      "score": 0.8293980956077576,
+      "text_preview": "Bảo hiểm xã hội tự nguyện là loại hình bảo hiểm xã hội do Nhà nước tổ chức mà công dân Việt Nam tự nguyện tham gia và được lựa chọn mức đóng, phương thức đóng phù hợp với thu nhập của mình."
+    },
+    {
+      "clause_id": "L41_2024.A115.K1",
+      "score": 0.8283160328865051,
+      "text_preview": "Người tham gia bảo hiểm xã hội tự nguyện đang hưởng lương hưu ra nước ngoài để định cư nếu có nguyện vọng thì được giải quyết hưởng trợ cấp một lần và việc giải quyết hưởng trợ cấp một lần thực hiện n"
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.8259263038635254,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A6.K5",
+      "score": 0.8253667950630188,
+      "text_preview": "Hỗ trợ người tham gia bảo hiểm xã hội tự nguyện."
+    },
+    {
+      "clause_id": "L41_2024.A110.K3",
+      "score": 0.8236821293830872,
+      "text_preview": "Trường hợp người có cả thời gian đóng bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện thì mức hưởng trợ cấp tuất một lần tối thiểu bằng 03 lần của mức bình quân tiền lương và thu nhập làm căn cứ"
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 2,
+  "elapsed_s": 1.91,
+  "gold_answer": "BHXH tự nguyện vẫn có thể được hưởng BHXH 1 lần, nhưng chỉ khi thuộc trường hợp luật cho phép. Mức hưởng tính theo số năm đã đóng và căn cứ đóng BHXH tự nguyện, bao gồm cả phần Nhà nước hỗ trợ nếu có. Tuy nhiên cần cân nhắc kỹ vì BHXH tự nguyện nhằm tích lũy cho hưu trí, tử tuất; rút 1 lần sẽ mất lợi ích lâu dài.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 40,
+  "question": "Em đóng bhxh t8/2025 đến t4/2026, ngày dự sinh của em là19/8. Vậy em có đủ đk để nhận trợ cấp không? Làm hểt tháng 4 là em nghỉ cty luôn. Em có đủ đk để nhận bhts k?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, để đủ điều kiện nhận trợ cấp thai sản, người lao động phải tham gia bảo hiểm xã hội tối thiểu 6 tháng trong 12 tháng trước khi sinh con. \n\nTrong trường hợp của bạn, bạn tham gia bảo hiểm xã hội từ tháng 8/2025 đến tháng 4/2026, tổng thời gian tham gia là 9 tháng. Tuy nhiên, bạn cần xem xét thời gian tham gia trong 12 tháng trước khi sinh (từ tháng 8/2025 đến tháng 8/2026). Nếu bạn không tham gia bảo hiểm xã hội trong 6 tháng trước khi sinh (từ tháng 2/2026 đến tháng 8/2026), bạn sẽ không đủ điều kiện nhận trợ cấp thai sản.\n\nVề việc nhận bảo hiểm thất nghiệp, bạn cần có thời gian đóng bảo hiểm thất nghiệp tối thiểu 12 tháng trong 24 tháng trước khi nghỉ việc. Nếu bạn nghỉ việc ngay sau tháng 4/2026 mà không có thời gian đóng bảo hiểm thất nghiệp đủ điều kiện, bạn sẽ không đủ điều kiện nhận bảo hiểm thất nghiệp.\n\nTóm lại, bạn cần kiểm tra kỹ thời gian tham gia bảo hiểm xã hội và bảo hiểm thất nghiệp để xác định quyền lợi của mình.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 6.785,
+  "prompt_tokens": 223,
+  "completion_tokens": 277,
+  "gold_answer": "Nếu bạn đóng BHXH bắt buộc từ 8/2025 đến hết 4/2026 thì có 9 tháng đóng trong 12 tháng trước khi sinh 8/2026, nên về nguyên tắc đủ điều kiện hưởng thai sản khi sinh con. Việc nghỉ việc sau tháng 4/2026 không làm mất quyền hưởng nếu bạn đã đủ điều kiện trước khi sinh. Bạn vẫn được nộp hồ sơ hưởng thai sản qua cơ quan BHXH theo nơi cư trú hoặc qua đơn vị nếu còn quan hệ lao động.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50, Điều 53"
+}

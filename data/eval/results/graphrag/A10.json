@@ -1,0 +1,48 @@
+{
+  "arm": "graphrag",
+  "stt": 10,
+  "question": "Bà Thị Hạnh năm nay 53 tuổi, đóng BHXH tự nguyện được 5 năm.\nBà Hạnh hỏi, bà tiếp tục đóng BHXH tự nguyện đến năm 60 tuổi thì có được nhận lương hưu không?",
+  "answer": "Bà Thị Hạnh có thể nhận lương hưu nếu tiếp tục đóng BHXH tự nguyện đến năm 60 tuổi. \n\nTheo quy định, người tham gia bảo hiểm xã hội tự nguyện đủ 20 năm đóng bảo hiểm sẽ được hưởng lương hưu khi đủ 60 tuổi đối với nam và đủ 55 tuổi đối với nữ. Bà Hạnh hiện 53 tuổi và đã đóng BHXH tự nguyện được 5 năm, nếu bà tiếp tục đóng thêm 15 năm nữa (tổng cộng 20 năm), bà sẽ đủ điều kiện để hưởng lương hưu khi đủ 60 tuổi.\n\nCitation: [Điều 141 khoản 9]",
+  "citations": [
+    "[Điều 141 khoản 9]"
+  ],
+  "citation_ids": [
+    "L41_2024.A141.K9"
+  ],
+  "citation_verified": {
+    "L41_2024.A141.K9": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A141.K9",
+      "score": 0.8841365575790405,
+      "text_preview": "Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ,"
+    },
+    {
+      "clause_id": "L41_2024.A141.K10",
+      "score": 0.8487374782562256,
+      "text_preview": "Người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên và có văn bản của cơ quan bảo hiểm xã hội xác nhận về việc chờ đủ điều kiện về tuổi đời để hưởng lương hưu được quy định tại Nghị định số 12"
+    },
+    {
+      "clause_id": "L41_2024.A101.K2",
+      "score": 0.8457101583480835,
+      "text_preview": "Trường hợp người tham gia bảo hiểm xã hội tiếp tục đóng bảo hiểm xã hội tự nguyện sau khi đã đủ điều kiện hưởng lương hưu thì thời điểm hưởng lương hưu là ngày đầu tiên của tháng liền kề sau tháng dừn"
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.8434252738952637,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A101.K3",
+      "score": 0.8395568132400513,
+      "text_preview": "Trường hợp người tham gia bảo hiểm xã hội tự nguyện đóng một lần cho những năm còn thiếu theo quy định tại điểm e khoản 2 Điều 36 của Luật này thì thời điểm hưởng lương hưu là ngày đầu tiên của tháng "
+    }
+  ],
+  "n_semantic_edges": 5,
+  "n_refs": 5,
+  "elapsed_s": 2.64,
+  "gold_answer": "Theo quy định của Luật BHXH mới có hiệu lực thi hành từ ngày 1/7/2025, người tham gia BHXH tự nguyện được hưởng lương hưu khi đủ tuổi nghỉ hưu theo quy định tại Khoản 2 Điều 169 của Bộ luật Lao động và có thời gian đóng BHXH từ đủ 15 năm trở lên.\nTheo quy định tại Khoản 2 Điều 169 Bộ luật Lao động năm 2019 và Nghị định số 135/2020/NĐ-CP ngày 18/11/2020 của Chính phủ thì kể từ ngày 1/1/2021 tuổi nghỉ hưu của lao động nữ là 55 tuổi 4 tháng; sau đó, cứ mỗi năm tăng thêm 4 tháng cho đến khi đủ 60 tuổi vào năm 2035.\nTrường hợp của bà, năm nay 53 tuổi có thời gian đóng BHXH là 5 năm, nếu bà đóng BHXH tự nguyện liên tục đến khi 60 tuổi (năm 2031) thì khi đó bà có thời gian đóng BHXH là 12 năm chưa đủ điều kiện về thời gian đóng BHXH để hưởng chế độ hưu trí.\nDo vậy, bà nên tiếp tục tham gia BHXH tự nguyện cho đến khi đủ 15 năm đóng BHXH để được hưởng lương hưu hằng tháng đến trọn đời, khi đó bà còn được cấp thẻ BHYT miễn phí và được hưởng các chế độ liên quan của người hưởng lương hưu.",
+  "gold_citations_raw": "Khoản 2 Điều 169 của Bộ luật Lao động\nKhoản 2 Điều 169 Bộ luật Lao động năm 2019 \nNghị định số 135/2020/NĐ-CP"
+}

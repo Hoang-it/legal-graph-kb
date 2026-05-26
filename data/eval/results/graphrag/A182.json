@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 182,
+  "question": "Rút Bhxh là tính từ ngày có giấy quyết định nghỉ việc tròn một năm hay là thời điểm mình đi nộp sổ?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 107 khoản 2] — quy định về thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần.\n- [Điều 79 khoản 3] — quy định về thời hạn giải quyết hồ sơ hưởng lương hưu hoặc bảo hiểm xã hội một lần.",
+  "citations": [
+    "[Điều 107 khoản 2]",
+    "[Điều 79 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A107.K2",
+    "L41_2024.A79.K3"
+  ],
+  "citation_verified": {
+    "L41_2024.A107.K2": true,
+    "L41_2024.A79.K3": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A101.K3",
+      "score": 0.7687962055206299,
+      "text_preview": "Trường hợp người tham gia bảo hiểm xã hội tự nguyện đóng một lần cho những năm còn thiếu theo quy định tại điểm e khoản 2 Điều 36 của Luật này thì thời điểm hưởng lương hưu là ngày đầu tiên của tháng "
+    },
+    {
+      "clause_id": "L41_2024.A79.K3",
+      "score": 0.7660117149353027,
+      "text_preview": "Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo"
+    },
+    {
+      "clause_id": "L41_2024.A107.K3",
+      "score": 0.765708327293396,
+      "text_preview": "Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo"
+    },
+    {
+      "clause_id": "L41_2024.A107.K2",
+      "score": 0.7637335658073425,
+      "text_preview": "Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.\nThời điểm kết thúc ngày cuối cùng của tháng dừng đ"
+    },
+    {
+      "clause_id": "L41_2024.A63.K1",
+      "score": 0.762892484664917,
+      "text_preview": "Trong thời hạn 07 ngày làm việc kể từ ngày người lao động nghỉ việc hưởng trợ cấp dưỡng sức, phục hồi sức khỏe sau thai sản, người sử dụng lao động lập danh sách người lao động nghỉ việc hưởng trợ cấp"
+    }
+  ],
+  "n_semantic_edges": 5,
+  "n_refs": 5,
+  "elapsed_s": 4.69,
+  "gold_answer": "Mốc 1 năm để xét BHXH 1 lần thường được hiểu là sau 12 tháng bạn không còn thuộc diện tham gia BHXH bắt buộc và cũng không tham gia BHXH tự nguyện. Vì vậy không chỉ nhìn vào ngày ký quyết định nghỉ việc, mà phải xét thực tế quá trình tham gia sau đó. Khi đủ 12 tháng ngừng tham gia thì bạn mới nộp hồ sơ nếu thuộc trường hợp được hưởng.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

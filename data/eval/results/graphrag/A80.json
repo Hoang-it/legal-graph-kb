@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 80,
+  "question": "E đóng bảo hiểm sớm hơn 1 tháng trước khi đủ 18 tuổi thì sau có chốt sổ được không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 25 khoản 2] — về sổ bảo hiểm xã hội.\n- [Điều 5 khoản 6] — về thời gian đóng bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 25 khoản 2]",
+    "[Điều 5 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A25.K2",
+    "L41_2024.A5.K6"
+  ],
+  "citation_verified": {
+    "L41_2024.A25.K2": true,
+    "L41_2024.A5.K6": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A50.K2",
+      "score": 0.8028513193130493,
+      "text_preview": "Đối tượng quy định tại các điểm b, c, d và đ khoản 1 Điều này phải đóng bảo hiểm xã hội bắt buộc từ đủ 06 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con hoặc nhận con khi nhờ mang t"
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.7940689325332642,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A40.K1",
+      "score": 0.7928822040557861,
+      "text_preview": "Bắt buộc đóng đủ số tiền chậm đóng; nộp số tiền bằng 0,03%/ngày tính trên số tiền bảo hiểm xã hội, bảo hiểm thất nghiệp chậm đóng và số ngày chậm đóng vào quỹ bảo hiểm xã hội, quỹ bảo hiểm thất nghiệp"
+    },
+    {
+      "clause_id": "L41_2024.A38.K1",
+      "score": 0.7912156581878662,
+      "text_preview": "Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều "
+    },
+    {
+      "clause_id": "L41_2024.A25.K2",
+      "score": 0.7896033525466919,
+      "text_preview": "Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau.\nChậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằn"
+    }
+  ],
+  "n_semantic_edges": 2,
+  "n_refs": 6,
+  "elapsed_s": 4.13,
+  "gold_answer": "Việc đóng BHXH sớm hơn 1 tháng trước khi đủ 18 tuổi không phải lúc nào cũng làm mất toàn bộ quá trình, nhưng cơ quan BHXH sẽ rà soát lại tính hợp pháp của đối tượng tham gia tại thời điểm đó. Nếu thời gian đó được ghi nhận sai đối tượng thì có thể phải điều chỉnh dữ liệu, không nhất thiết làm mất hết sổ. Bạn nên liên hệ cơ quan BHXH để kiểm tra hồ sơ gốc và được hướng dẫn điều chỉnh nếu có sai sót.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2; quy định về đối tượng tham gia BHXH"
+}

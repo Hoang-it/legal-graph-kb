@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 161,
+  "question": "e muốn rut tiền sổ bh thì cần những gì? điều kiện gì?",
+  "answer": "Để rút tiền từ sổ bảo hiểm xã hội, bạn cần đáp ứng một số điều kiện và chuẩn bị các giấy tờ cần thiết. Cụ thể:\n\n1. **Điều kiện rút tiền**: Bạn có thể rút tiền khi đã đủ điều kiện hưởng bảo hiểm xã hội một lần, bao gồm:\n   - Đủ tuổi nghỉ hưu nhưng không tiếp tục tham gia bảo hiểm xã hội.\n   - Đã đóng bảo hiểm xã hội đủ thời gian quy định nhưng không còn tiếp tục tham gia.\n   - Bị mất khả năng lao động.\n\n2. **Giấy tờ cần chuẩn bị**:\n   - Sổ bảo hiểm xã hội.\n   - Đơn đề nghị rút bảo hiểm xã hội một lần.\n   - Giấy tờ tùy thân (chứng minh nhân dân hoặc thẻ căn cước công dân).\n   - Các giấy tờ khác theo yêu cầu của cơ quan bảo hiểm xã hội.\n\nBạn nên liên hệ với cơ quan bảo hiểm xã hội nơi bạn cư trú để được hướng dẫn cụ thể hơn về thủ tục và giấy tờ cần thiết. \n\nThông tin này được quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, cụ thể tại các điều liên quan đến bảo hiểm xã hội một lần.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 6.994,
+  "prompt_tokens": 173,
+  "completion_tokens": 269,
+  "gold_answer": "Muốn rút BHXH 1 lần, bạn phải thuộc một trong các trường hợp luật cho phép, phổ biến nhất là sau 12 tháng không còn thuộc diện tham gia BHXH bắt buộc và không tham gia BHXH tự nguyện. Hồ sơ thường gồm đơn đề nghị, CCCD, thông tin tài khoản; một số trường hợp đặc biệt cần thêm giấy tờ định cư nước ngoài hoặc hồ sơ bệnh nặng. Nộp tại BHXH nơi cư trú.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

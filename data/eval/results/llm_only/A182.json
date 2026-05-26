@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 182,
+  "question": "Rút Bhxh là tính từ ngày có giấy quyết định nghỉ việc tròn một năm hay là thời điểm mình đi nộp sổ?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, thời điểm rút bảo hiểm xã hội (BHXH) được tính từ thời điểm người lao động nộp hồ sơ đề nghị hưởng BHXH, không phải từ ngày có giấy quyết định nghỉ việc. Cụ thể, người lao động có quyền nộp hồ sơ khi đã đủ điều kiện hưởng BHXH theo quy định. \n\nDo đó, bạn có thể rút BHXH ngay khi đủ điều kiện và nộp hồ sơ, không cần phải chờ đến một năm kể từ ngày có quyết định nghỉ việc. \n\nTuy nhiên, để có thông tin chính xác hơn, bạn nên tham khảo thêm các quy định cụ thể trong Luật Bảo hiểm xã hội số 41/2024/QH15.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 3.26,
+  "prompt_tokens": 187,
+  "completion_tokens": 165,
+  "gold_answer": "Mốc 1 năm để xét BHXH 1 lần thường được hiểu là sau 12 tháng bạn không còn thuộc diện tham gia BHXH bắt buộc và cũng không tham gia BHXH tự nguyện. Vì vậy không chỉ nhìn vào ngày ký quyết định nghỉ việc, mà phải xét thực tế quá trình tham gia sau đó. Khi đủ 12 tháng ngừng tham gia thì bạn mới nộp hồ sơ nếu thuộc trường hợp được hưởng.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

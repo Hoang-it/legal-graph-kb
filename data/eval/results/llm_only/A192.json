@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 192,
+  "question": "năm 2011 em có mượn hồ sơ đi làm và đóng bh đc 3th thì cty phát hiện hồ sơ giả nên em nghỉ việc, nhưng đến hôm nay cái chị cho em mượn hồ sơ đi lấy bhxh thì bên bh kiểm tra và bảo còn vướng 3th bảo hiểm của em , giờ phải ra toà để huỷ. Vậy giờ em phải làm như thế nào?",
+  "answer": "Trong trường hợp của bạn, việc sử dụng hồ sơ giả để tham gia bảo hiểm xã hội là hành vi vi phạm pháp luật. Để giải quyết vấn đề này, bạn cần thực hiện các bước sau:\n\n1. **Liên hệ với cơ quan bảo hiểm xã hội**: Bạn nên đến cơ quan bảo hiểm xã hội nơi bạn đã tham gia để thông báo về tình hình và yêu cầu hướng dẫn cụ thể về việc giải quyết vướng mắc.\n\n2. **Chuẩn bị hồ sơ**: Bạn cần chuẩn bị các tài liệu liên quan đến việc tham gia bảo hiểm xã hội, bao gồm hợp đồng lao động, quyết định nghỉ việc, và các giấy tờ khác có liên quan.\n\n3. **Tham gia phiên tòa**: Nếu đã có thông báo từ tòa án về việc phải ra tòa để hủy bỏ các quyết định liên quan đến bảo hiểm xã hội, bạn cần tham gia đầy đủ và cung cấp các chứng cứ, tài liệu cần thiết để bảo vệ quyền lợi của mình.\n\n4. **Tư vấn pháp lý**: Bạn nên tìm kiếm sự tư vấn từ luật sư hoặc chuyên gia pháp lý để được hỗ trợ trong quá trình giải quyết vụ việc.\n\nLưu ý rằng việc sử dụng hồ sơ giả có thể dẫn đến các hậu quả pháp lý nghiêm trọng, vì vậy bạn cần xử lý tình huống này một cách cẩn thận.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 5.725,
+  "prompt_tokens": 246,
+  "completion_tokens": 287,
+  "gold_answer": "Dùng hồ sơ giả để đi làm và đóng BHXH là việc phải xử lý rất thận trọng. Cơ quan BHXH yêu cầu hủy quá trình sai là có cơ sở; trường hợp hồ sơ giả, người đứng tên thật và người sử dụng hồ sơ nên làm việc trực tiếp với BHXH để xác định hướng xử lý, thậm chí có thể phải qua tòa án/cơ quan công an nếu phát sinh tranh chấp, giả mạo giấy tờ. Bạn không nên tự ý làm thủ tục rút hay gộp sổ trong tình trạng này.",
+  "gold_citations_raw": "Luật BHXH 2024; Bộ luật Dân sự 2015; quy định về giả mạo hồ sơ"
+}

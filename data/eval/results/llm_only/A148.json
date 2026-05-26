@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 148,
+  "question": "Chủ hộ kinh doanh có bắt buộc phải đóng bảo hiểm xã hội ko? Và mức phí đóg là bao nhiêu?",
+  "answer": "Chủ hộ kinh doanh không bắt buộc phải tham gia bảo hiểm xã hội, nhưng nếu tham gia thì phải đóng bảo hiểm xã hội theo quy định. Cụ thể, chủ hộ kinh doanh có thể tham gia bảo hiểm xã hội tự nguyện.\n\nMức phí đóng bảo hiểm xã hội tự nguyện được tính dựa trên mức thu nhập tháng mà người tham gia lựa chọn, với mức tối thiểu và tối đa theo quy định của pháp luật. Tuy nhiên, tôi không có đủ thông tin chính xác để trả lời câu hỏi này về mức phí cụ thể. Bạn nên tham khảo thêm thông tin từ cơ quan bảo hiểm xã hội địa phương để biết chi tiết.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 3.351,
+  "prompt_tokens": 184,
+  "completion_tokens": 138,
+  "gold_answer": "Từ 01/7/2025, chủ hộ kinh doanh có đăng ký kinh doanh thuộc diện tham gia BHXH bắt buộc theo quy định của pháp luật mới. Mức đóng cụ thể căn cứ vào tiền lương làm căn cứ đóng hoặc hướng dẫn chi tiết của Chính phủ đối với nhóm này; không phải ai cũng được tự chọn mức rất thấp như BHXH tự nguyện. Bạn cần đăng ký với cơ quan BHXH theo mã đơn vị của hộ kinh doanh.",
+  "gold_citations_raw": "Khoản 1 Điều 2 Luật BHXH 2024; Nghị định 158/2025/NĐ-CP"
+}

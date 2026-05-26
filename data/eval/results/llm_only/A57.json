@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 57,
+  "question": "Em muốn làm Bảo hiểm thất nghiệp thì cần giấy tờ gì?\nEm đã có CCCD, giấy chấm dứt HĐLĐ, còn tờ rời thì cty họ bảo là nay quản lý bằng app nên không phát tờ rời nữa\nThì bây giờ lên chỗ Trung Kính có làm được BHTN không?",
+  "answer": "Để làm thủ tục hưởng Bảo hiểm thất nghiệp (BHTN), bạn cần chuẩn bị các giấy tờ sau:\n\n1. Đơn đề nghị hưởng BHTN (theo mẫu).\n2. Giấy chứng nhận nghỉ việc (nếu có).\n3. Giấy tờ chứng minh đã chấm dứt hợp đồng lao động (giấy chấm dứt HĐLĐ).\n4. Chứng minh nhân dân hoặc căn cước công dân (CCCD).\n\nVề việc tờ rời, nếu công ty bạn quản lý bằng app và không phát tờ rời, bạn có thể yêu cầu công ty cung cấp thông tin xác nhận về việc tham gia bảo hiểm xã hội của bạn để nộp cùng hồ sơ.\n\nBạn có thể đến Trung tâm Dịch vụ việc làm tại địa phương (như Trung Kính) để làm thủ tục BHTN. Tuy nhiên, bạn nên gọi điện trước để xác nhận về việc tiếp nhận hồ sơ và các yêu cầu cụ thể. \n\nNếu bạn có đủ giấy tờ cần thiết, bạn có thể làm được BHTN tại đó.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 5.834,
+  "prompt_tokens": 233,
+  "completion_tokens": 232,
+  "gold_answer": "Hồ sơ hưởng BHTN cơ bản gồm: đơn đề nghị hưởng trợ cấp thất nghiệp, CCCD và giấy tờ chứng minh chấm dứt HĐLĐ hợp pháp. Dữ liệu BHXH hiện đã quản lý điện tử, nhưng nếu hồ sơ của bạn trên hệ thống chưa đủ thì trung tâm việc làm có thể yêu cầu bổ sung giấy xác nhận quá trình đóng. Vì vậy bạn vẫn nên đi nộp trong hạn 3 tháng, đồng thời yêu cầu công ty/cơ quan BHXH hỗ trợ xác nhận quá trình đóng. Có thể nộp tại trung tâm dịch vụ việc làm nơi bạn muốn đăng ký nếu đúng thẩm quyền địa phương.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 49; Nghị định 28/2015/NĐ-CP"
+}

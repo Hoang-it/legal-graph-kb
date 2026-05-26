@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 176,
+  "question": "18nam dong bhxh lấy 1 lần được bao nhiêu?",
+  "answer": "Issue: Câu hỏi là về số tiền được nhận khi đóng bảo hiểm xã hội một lần sau 18 năm.\n\nRule: \"6. Xác nhận thời gian đóng bảo hiểm xã hội, bảo hiểm thất nghiệp cho từng người lao động; cung cấp đầy đủ và kịp thời thông tin về việc đóng, quyền được hưởng chế độ, thủ tục thực hiện bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện khi người lao động, người sử dụng lao động hoặc tổ chức công đoàn yêu cầu.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 6)\n\nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác nhận rằng người dùng đã đóng bảo hiểm xã hội trong 18 năm, và từ đó, nó đã tính toán được số tiền nhận được.\n\nConclusion: Prolog đã trả về giá trị 22 cho biến Amount.",
+  "citations": [
+    "[Điều 18 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K6"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_social_insurance_amount(22),based_on(source_c005))]",
+  "irac_sections": {
+    "issue": "Câu hỏi là về số tiền được nhận khi đóng bảo hiểm xã hội một lần sau 18 năm.",
+    "rule": "\"6. Xác nhận thời gian đóng bảo hiểm xã hội, bảo hiểm thất nghiệp cho từng người lao động; cung cấp đầy đủ và kịp thời thông tin về việc đóng, quyền được hưởng chế độ, thủ tục thực hiện bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện khi người lao động, người sử dụng lao động hoặc tổ chức công đoàn yêu cầu.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 6)",
+    "application": "Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác nhận rằng người dùng đã đóng bảo hiểm xã hội trong 18 năm, và từ đó, nó đã tính toán được số tiền nhận được.",
+    "conclusion": "Prolog đã trả về giá trị 22 cho biến Amount."
+  },
+  "elapsed_s": 7.205,
+  "prompt_tokens": 3288,
+  "completion_tokens": 418,
+  "error": null,
+  "gold_answer": "Nếu 18 năm đóng của bạn đều từ năm 2014 trở đi thì công thức sơ bộ là 18 năm x 2 tháng mức bình quân lương đóng BHXH, tức khoảng 36 tháng bình quân lương. Muốn biết gần đúng bao nhiêu tiền, cần biết mức bình quân tiền lương tháng đóng của toàn bộ quá trình sau điều chỉnh. Từ 01/7/2025, 18 năm đóng cũng là mức nên cân nhắc giữ để hướng tới lương hưu.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

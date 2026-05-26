@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 194,
+  "question": "Mình lãnh bảo hiểm thất nghiệp xong r thì khi nào mình vô cty làm đóng lại dc hả",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, sau khi bạn nhận trợ cấp thất nghiệp, bạn có thể tham gia lại bảo hiểm xã hội khi trở lại làm việc tại công ty. Cụ thể, bạn cần phải ký hợp đồng lao động và công ty sẽ thực hiện việc đóng bảo hiểm xã hội cho bạn theo quy định. \n\nThời gian bạn có thể tham gia lại bảo hiểm xã hội không bị giới hạn, miễn là bạn có việc làm và ký hợp đồng lao động. Tuy nhiên, bạn cần lưu ý rằng việc đóng bảo hiểm xã hội sẽ được thực hiện theo quy định của pháp luật và thỏa thuận giữa bạn và công ty. \n\nNếu bạn cần thêm thông tin chi tiết, hãy tham khảo thêm các quy định cụ thể trong Luật Bảo hiểm xã hội.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 4.204,
+  "prompt_tokens": 181,
+  "completion_tokens": 164,
+  "gold_answer": "Sau khi hưởng xong BHTN, bạn có thể vào công ty mới và tham gia đóng lại ngay khi đủ điều kiện theo HĐLĐ; không phải chờ thêm thời gian nào. Việc đã hưởng BHTN trước đó không cấm bạn tham gia lại. Thời gian đóng mới sẽ được tính cho quyền lợi BHTN ở lần thất nghiệp sau, còn thời gian đã dùng để hưởng rồi thì không tính lại.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

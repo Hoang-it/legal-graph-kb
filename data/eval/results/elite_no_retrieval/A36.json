@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 36,
+  "question": "Bà T.H sinh con vào ngày mùng 1 Tết Nguyên đán.\nBà hỏi, khi tính thời gian nghỉ thai sản bà được tính bắt đầu từ ngày làm việc sau kỳ nghỉ lễ hay tính từ ngày sinh con?",
+  "answer": "Issue: Bà T.H sinh con vào ngày mùng 1 Tết Nguyên đán và hỏi về thời gian nghỉ thai sản, cụ thể là thời điểm bắt đầu tính thời gian nghỉ thai sản.\n\nRule: \n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog đã xác định rằng thời gian nghỉ thai sản bắt đầu từ \"ngày sinh con\".\n\nConclusion: Prolog đã trả về giá trị \"ngày sinh con\" cho biến StartDate.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,maternity_leave_start_date(ngày sinh con),based_on(none))]",
+  "irac_sections": {
+    "issue": "Bà T.H sinh con vào ngày mùng 1 Tết Nguyên đán và hỏi về thời gian nghỉ thai sản, cụ thể là thời điểm bắt đầu tính thời gian nghỉ thai sản.",
+    "rule": "",
+    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog đã xác định rằng thời gian nghỉ thai sản bắt đầu từ \"ngày sinh con\".",
+    "conclusion": "Prolog đã trả về giá trị \"ngày sinh con\" cho biến StartDate."
+  },
+  "elapsed_s": 8.964,
+  "prompt_tokens": 1943,
+  "completion_tokens": 210,
+  "error": null,
+  "gold_answer": "Căn cứ khoản 9 Điều 53 Luật BHXH 2024, thời gian nghỉ việc hưởng chế độ thai sản tính cả ngày nghỉ lễ, tết, ngày nghỉ hằng tuần.\nĐối chiếu quy định nêu trên, trường hợp bà T.H sinh con vào ngày mùng 1 Tết Nguyên đán thì thời gian nghỉ hưởng chế độ thai sản 6 tháng được tính từ ngày sinh con, kể cả thời gian trùng với kỳ nghỉ Tết.",
+  "gold_citations_raw": "khoản 9 Điều 53 Luật BHXH 2024"
+}

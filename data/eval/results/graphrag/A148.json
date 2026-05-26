@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 148,
+  "question": "Chủ hộ kinh doanh có bắt buộc phải đóng bảo hiểm xã hội ko? Và mức phí đóg là bao nhiêu?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 2 khoản 3] — Đối tượng tham gia bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện.\n- [Điều 31 khoản 2] — Căn cứ đóng bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 2 khoản 3]",
+    "[Điều 31 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2.K3",
+    "L41_2024.A31.K2"
+  ],
+  "citation_verified": {
+    "L41_2024.A2.K3": true,
+    "L41_2024.A31.K2": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A18.K3",
+      "score": 0.7916716933250427,
+      "text_preview": "Tổ chức thực hiện thu, chi bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế theo quy định của pháp luật."
+    },
+    {
+      "clause_id": "L41_2024.A53.K8",
+      "score": 0.7868574857711792,
+      "text_preview": "Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ "
+    },
+    {
+      "clause_id": "L41_2024.A120.K2",
+      "score": 0.786625862121582,
+      "text_preview": "Mức chi tổ chức và hoạt động bảo hiểm xã hội được tính trên cơ sở số phần trăm của dự toán thu, chi bảo hiểm xã hội, không bao gồm số chi đóng bảo hiểm y tế cho người hưởng các chế độ bảo hiểm xã hội "
+    },
+    {
+      "clause_id": "L41_2024.A3.K3",
+      "score": 0.7815237641334534,
+      "text_preview": "Bảo hiểm xã hội bắt buộc là loại hình bảo hiểm xã hội do Nhà nước tổ chức mà người lao động, người sử dụng lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc phải tham gia."
+    },
+    {
+      "clause_id": "L41_2024.A17.K1",
+      "score": 0.7805820107460022,
+      "text_preview": "Yêu cầu người sử dụng lao động xuất trình sổ quản lý lao động, thang lương, bảng lương và thông tin, tài liệu khác liên quan đến việc đóng, hưởng chế độ bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp,"
+    }
+  ],
+  "n_semantic_edges": 3,
+  "n_refs": 2,
+  "elapsed_s": 2.23,
+  "gold_answer": "Từ 01/7/2025, chủ hộ kinh doanh có đăng ký kinh doanh thuộc diện tham gia BHXH bắt buộc theo quy định của pháp luật mới. Mức đóng cụ thể căn cứ vào tiền lương làm căn cứ đóng hoặc hướng dẫn chi tiết của Chính phủ đối với nhóm này; không phải ai cũng được tự chọn mức rất thấp như BHXH tự nguyện. Bạn cần đăng ký với cơ quan BHXH theo mã đơn vị của hộ kinh doanh.",
+  "gold_citations_raw": "Khoản 1 Điều 2 Luật BHXH 2024; Nghị định 158/2025/NĐ-CP"
+}

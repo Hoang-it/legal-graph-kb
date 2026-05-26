@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 161,
+  "question": "e muốn rut tiền sổ bh thì cần những gì? điều kiện gì?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 13. Trách nhiệm của người sử dụng lao động\n- Điều 82. Thay đổi hình thức nhận, nơi nhận lương hưu, trợ cấp bảo hiểm xã hội hằng tháng\n- Điều 76. Trợ cấp một lần đối với người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng ra nước ngoài để định cư.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A17.K1",
+      "score": 0.7908411026000977,
+      "text_preview": "Yêu cầu người sử dụng lao động xuất trình sổ quản lý lao động, thang lương, bảng lương và thông tin, tài liệu khác liên quan đến việc đóng, hưởng chế độ bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp,"
+    },
+    {
+      "clause_id": "L41_2024.A13.K2",
+      "score": 0.7810850143432617,
+      "text_preview": "Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A9.K2",
+      "score": 0.7779197096824646,
+      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A41.K1",
+      "score": 0.7663393020629883,
+      "text_preview": "Bắt buộc đóng đủ số tiền trốn đóng; nộp số tiền bằng 0,03%/ngày tính trên số tiền bảo hiểm xã hội, bảo hiểm thất nghiệp trốn đóng và số ngày trốn đóng vào quỹ bảo hiểm xã hội, quỹ bảo hiểm thất nghiệp"
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.7653319835662842,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    }
+  ],
+  "n_semantic_edges": 1,
+  "n_refs": 1,
+  "elapsed_s": 2.48,
+  "gold_answer": "Muốn rút BHXH 1 lần, bạn phải thuộc một trong các trường hợp luật cho phép, phổ biến nhất là sau 12 tháng không còn thuộc diện tham gia BHXH bắt buộc và không tham gia BHXH tự nguyện. Hồ sơ thường gồm đơn đề nghị, CCCD, thông tin tài khoản; một số trường hợp đặc biệt cần thêm giấy tờ định cư nước ngoài hoặc hồ sơ bệnh nặng. Nộp tại BHXH nơi cư trú.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

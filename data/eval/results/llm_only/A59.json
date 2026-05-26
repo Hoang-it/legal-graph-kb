@@ -1,0 +1,17 @@
+{
+  "arm": "llm_only",
+  "stt": 59,
+  "question": "Em làm nhân viên parttime được 1,5 năm nhưng đến tháng 1/2026 bắt đầu kí hợp đồng lao động 6 tháng và đóng bhxh. Tháng 3 e có bầu, dự sinh ngày 22/11, nếu chỉ đóng đủ 6 tháng theo hợp đồng thì có được hưởng bảo hiểm thai sản không?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, để được hưởng chế độ thai sản, người lao động phải tham gia bảo hiểm xã hội từ đủ 6 tháng trở lên trong thời gian 12 tháng trước khi sinh con. \n\nTrong trường hợp của bạn, nếu bạn đã làm nhân viên parttime và đóng bảo hiểm xã hội đủ 6 tháng theo hợp đồng lao động 6 tháng trước khi sinh, bạn sẽ đủ điều kiện hưởng chế độ thai sản. Tuy nhiên, thời gian bạn đã tham gia bảo hiểm xã hội trước đó cũng sẽ được tính vào tổng thời gian tham gia.\n\nCụ thể, bạn cần có ít nhất 6 tháng tham gia bảo hiểm xã hội trong 12 tháng trước khi sinh, vì vậy nếu bạn đã có thời gian tham gia bảo hiểm trước đó, bạn có thể đủ điều kiện. \n\nVì vậy, bạn cần kiểm tra tổng thời gian tham gia bảo hiểm xã hội của mình để xác định rõ hơn. Nếu tổng thời gian tham gia bảo hiểm xã hội của bạn (bao gồm cả thời gian parttime) đạt yêu cầu, bạn sẽ được hưởng chế độ thai sản theo quy định tại [Điều 31 khoản 1].",
+  "citations": [
+    "[Điều 31 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A31.K1"
+  ],
+  "elapsed_s": 5.216,
+  "prompt_tokens": 229,
+  "completion_tokens": 251,
+  "gold_answer": "Nếu bạn ký HĐLĐ từ 1/2026 và đóng BHXH bắt buộc đủ 6 tháng trong 12 tháng trước khi sinh vào 22/11/2026 thì về nguyên tắc đủ điều kiện hưởng thai sản. Thời gian làm part-time trước đó chỉ được tính nếu thuộc diện có đóng BHXH bắt buộc hợp pháp. Vì vậy, mốc quan trọng là số tháng đóng vào quỹ ốm đau - thai sản trong 12 tháng liền kề trước sinh, không phải số năm làm việc part-time.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50"
+}

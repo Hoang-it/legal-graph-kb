@@ -1,0 +1,54 @@
+{
+  "arm": "graphrag",
+  "stt": 22,
+  "question": "Mẹ của bà Thị Thu Trang đã 57 tuổi, đóng BHXH được 5 năm 7 tháng, mức lương bình quân đóng BHXH là 3.641.233 đồng.\nMẹ của bà muốn đóng BHXH tự nguyện thêm 9 năm 5 tháng với mức đóng 4.000.000 đồng/tháng để tròn 15 năm được hưởng lương hưu từ ngày 1/7/2025.",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 5 khoản 6]\n- [Điều 33 khoản 7]\n- [Điều 101 khoản 3]",
+  "citations": [
+    "[Điều 5 khoản 6]",
+    "[Điều 33 khoản 7]",
+    "[Điều 101 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K6",
+    "L41_2024.A33.K7",
+    "L41_2024.A101.K3"
+  ],
+  "citation_verified": {
+    "L41_2024.A5.K6": true,
+    "L41_2024.A33.K7": true,
+    "L41_2024.A101.K3": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A141.K9",
+      "score": 0.8760560750961304,
+      "text_preview": "Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ,"
+    },
+    {
+      "clause_id": "L41_2024.A99.K3",
+      "score": 0.8523938655853271,
+      "text_preview": "Việc tính mức lương hưu hằng tháng của người lao động đủ điều kiện hưởng lương hưu mà có thời gian đóng bảo hiểm xã hội theo quy định của điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là"
+    },
+    {
+      "clause_id": "L41_2024.A66.K4",
+      "score": 0.8484311103820801,
+      "text_preview": "Việc tính mức lương hưu hằng tháng của người lao động đủ điều kiện hưởng lương hưu mà có thời gian đóng bảo hiểm xã hội theo quy định của điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là"
+    },
+    {
+      "clause_id": "L41_2024.A5.K6",
+      "score": 0.843923032283783,
+      "text_preview": "Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hi"
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.8430728912353516,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 4,
+  "elapsed_s": 1.91,
+  "gold_answer": "Luật BHXH số 41/2024/QH15 của Quốc hội có hiệu lực thi hành từ ngày 1/7/2025, trong đó:\nTại Điều 98 quy định: \"Người tham gia bảo hiểm xã hội tự nguyện được hưởng lương hưu khi đủ tuổi nghỉ hưu theo quy định tại khoản 2 Điều 169 của Bộ luật Lao động và có thời gian đóng bảo hiểm xã hội từ đủ 15 năm trở lên\".\nTại khoản 11 Điều 141 quy định: \"Đối tượng quy định tại điểm a, b, c, d, đ, g, i khoản 1 Điều 2 của Luật này đã tham gia bảo hiểm xã hội trước ngày Luật này có hiệu lực thi hành mà có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 20 năm trở lên thì mức lương hưu hằng tháng thấp nhất bằng mức tham chiếu\".\nTheo thông tin bà cung cấp, mẹ của bà đã đóng BHXH bắt buộc được 5 năm 7 tháng, muốn đóng BHXH tự nguyện thêm 9 năm 5 tháng cho tròn 15 năm để nghỉ hưu từ ngày 1/7/2025 và khi tính lương hưu có mức lương hưu hằng tháng là 1.739.906 đồng, thấp hơn mức tham chiếu (nay là mức lương cơ sở); đối chiếu với quy định nêu trên thì mẹ của bà không được hưởng mức lương hưu hằng tháng thấp nhất bằng mức tham chiếu, do mẹ của bà chưa có đủ 20 năm đóng BHXH bắt buộc theo quy định tại khoản 11 Điều 141 Luật BHXH số 41/2024/QH15.",
+  "gold_citations_raw": "Luật BHXH số 41/2024/QH15"
+}

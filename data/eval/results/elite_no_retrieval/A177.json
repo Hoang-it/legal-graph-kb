@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 177,
+  "question": "Em làm samsung Bắc Ninh từ năm 2017, e nghỉ ngang chưa chốt bảo hiểm và chưa có sổ. Giờ e làm công ty mới vẫn đóng bảo hiểm nhưng nếu nghỉ thì chưa chốt đc. Giờ e phải làm sao?",
+  "answer": "Issue: Bạn đã làm việc tại Samsung Bắc Ninh từ năm 2017, nhưng đã nghỉ ngang mà chưa chốt bảo hiểm và chưa có sổ. Bạn đang thắc mắc về cách xử lý tình huống này khi làm việc tại công ty mới.\n\nRule: Không có trích dẫn pháp lý nào được cung cấp.\n\nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng bạn đã đóng bảo hiểm xã hội trong 6 năm.\n\nConclusion: Prolog đã trả về câu trả lời rằng \"Bạn cần liên hệ với công ty cũ để chốt bảo hiểm và lấy sổ bảo hiểm xã hội trước khi nghỉ việc tại công ty mới.\" Tuy nhiên, không có giá trị nào được tính toán từ các slot, vì vậy không thể đưa ra một số liệu cụ thể.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,Bạn cần liên hệ với công ty cũ để chốt bảo hiểm và lấy sổ bảo hiểm xã hội trước khi nghỉ việc tại công ty mới.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Bạn đã làm việc tại Samsung Bắc Ninh từ năm 2017, nhưng đã nghỉ ngang mà chưa chốt bảo hiểm và chưa có sổ. Bạn đang thắc mắc về cách xử lý tình huống này khi làm việc tại công ty mới.",
+    "rule": "Không có trích dẫn pháp lý nào được cung cấp.",
+    "application": "Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng bạn đã đóng bảo hiểm xã hội trong 6 năm.",
+    "conclusion": "Prolog đã trả về câu trả lời rằng \"Bạn cần liên hệ với công ty cũ để chốt bảo hiểm và lấy sổ bảo hiểm xã hội trước khi nghỉ việc tại công ty mới.\" Tuy nhiên, không có giá trị nào được tính toán từ các slot, vì vậy không thể đưa ra một số liệu cụ thể."
+  },
+  "elapsed_s": 9.441,
+  "prompt_tokens": 2078,
+  "completion_tokens": 349,
+  "error": null,
+  "gold_answer": "Công ty mới vẫn có thể đóng BHXH cho bạn, nhưng hồ sơ cũ chưa chốt sẽ gây vướng khi gộp quá trình và giải quyết chế độ sau này. Bạn cần yêu cầu Samsung Bắc Ninh chốt sổ bằng văn bản; nếu họ không làm thì khiếu nại tới cơ quan BHXH quản lý đơn vị hoặc thanh tra lao động. Không nên để kéo dài vì càng lâu càng khó đối chiếu hồ sơ cũ.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

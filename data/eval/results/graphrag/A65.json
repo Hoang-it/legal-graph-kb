@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 65,
+  "question": "Mình có hai mã sổ BHXH phải làm sao?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 25 khoản 1] - Sổ bảo hiểm xã hội được cấp cho từng người lao động.\n- [Điều 25 khoản 2] - Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau.",
+  "citations": [
+    "[Điều 25 khoản 1]",
+    "[Điều 25 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A25.K1",
+    "L41_2024.A25.K2"
+  ],
+  "citation_verified": {
+    "L41_2024.A25.K1": true,
+    "L41_2024.A25.K2": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A25.K2",
+      "score": 0.7954401969909668,
+      "text_preview": "Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau.\nChậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằn"
+    },
+    {
+      "clause_id": "L41_2024.A13.K2",
+      "score": 0.7884815335273743,
+      "text_preview": "Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A9.K2",
+      "score": 0.7834033966064453,
+      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A25.K1",
+      "score": 0.7828739881515503,
+      "text_preview": "Sổ bảo hiểm xã hội được cấp cho từng người lao động, trong đó chứa đựng thông tin cơ bản về nhân thân, ghi nhận việc đóng, hưởng, giải quyết các chế độ bảo hiểm xã hội và các thông tin cần thiết khác "
+    },
+    {
+      "clause_id": "L41_2024.A133.K5",
+      "score": 0.781489372253418,
+      "text_preview": "Tổ chức bộ máy thực hiện bảo hiểm xã hội."
+    }
+  ],
+  "n_semantic_edges": 1,
+  "n_refs": 0,
+  "elapsed_s": 2.04,
+  "gold_answer": "Một người chỉ có một mã số BHXH. Nếu bạn đang có 2 mã, cần làm thủ tục gộp sổ/mã số để cơ quan BHXH hợp nhất toàn bộ quá trình tham gia về một mã duy nhất. Bạn nên nộp tờ khai điều chỉnh thông tin kèm CCCD và các giấy tờ liên quan đến cả hai mã tại cơ quan BHXH nơi cư trú hoặc nơi đang tham gia. Sau khi gộp, quyền lợi và thời gian đóng hợp pháp của bạn được cộng nối, không bị mất.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn quản lý sổ BHXH, gộp sổ của BHXH Việt Nam"
+}

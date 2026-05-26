@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 98,
+  "question": "Em nghỉ việc từ tháng 8 năm 2025 , giờ tháng 4 e mới đi rút bảo hiểm thất nghiệp được k?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 141 khoản 12]\n- [Điều 38 khoản 1]",
+  "citations": [
+    "[Điều 141 khoản 12]",
+    "[Điều 38 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A141.K12",
+    "L41_2024.A38.K1"
+  ],
+  "citation_verified": {
+    "L41_2024.A141.K12": true,
+    "L41_2024.A38.K1": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A141.K12",
+      "score": 0.8181250095367432,
+      "text_preview": "Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30"
+    },
+    {
+      "clause_id": "L41_2024.A9.K2",
+      "score": 0.8022714257240295,
+      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A38.K1",
+      "score": 0.8018486499786377,
+      "text_preview": "Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều "
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.8016890287399292,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A53.K7",
+      "score": 0.7904949188232422,
+      "text_preview": "Trường hợp chỉ có cha tham gia bảo hiểm xã hội bắt buộc mà mẹ chết sau khi sinh con hoặc gặp rủi ro sau khi sinh mà không đủ sức khỏe để chăm sóc con theo xác nhận của cơ sở khám bệnh, chữa bệnh thì c"
+    }
+  ],
+  "n_semantic_edges": 3,
+  "n_refs": 8,
+  "elapsed_s": 1.53,
+  "gold_answer": "Nếu bạn nghỉ việc từ tháng 8/2025 mà đến tháng 4/2026 mới đi nộp hồ sơ BHTN thì đã quá hạn 3 tháng kể từ ngày chấm dứt HĐLĐ, nên đợt này thường không được giải quyết hưởng trợ cấp thất nghiệp. Tuy vậy, thời gian đóng BHTN chưa hưởng sẽ được bảo lưu để cộng dồn cho lần thất nghiệp sau nếu bạn tiếp tục đi làm và đóng BHTN trở lại.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 45"
+}

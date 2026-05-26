@@ -1,0 +1,20 @@
+{
+  "arm": "elite_ontology",
+  "stt": 19,
+  "question": "Ông N.Đinh là lao động Việt Nam tại Hàn Quốc theo diện visa E7 (thị thực lao động dành cho người nước ngoài có trình độ chuyên môn và tay nghề cao), đóng BHXH đầy đủ.\nÔng Đinh nhận được thông tin, những lao động có visa E7, F2 (thị thực định cư dài hạn) đóng BHXH khi trở về Việt Nam không nhận được BHXH một lần.\nÔng Đinh hỏi, thông tin này có đúng không?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=unable_to_conclude, repair_rounds=2, error=Connection error.]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "unable_to_conclude",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 4.142,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "error": null,
+  "gold_answer": "Theo quy định tại khoản 1 Điều 6 (bản tiếng Việt) Hiệp định giữa Chính phủ nước Cộng hòa xã hội chủ nghĩa Việt Nam và Chính phủ nước Đại hàn dân quốc (Hàn Quốc) về BHXH (Hiệp định) thì:\n\"Nếu một người lao động làm việc cho một người sử dụng lao động có trụ sở đăng ký trên lãnh thổ của một Bên ký kết Hiệp định và được người sử dụng lao động đó cử đi làm việc, thay mặt cho người sử dụng lao động đó trên lãnh thổ của Bên ký kết Hiệp định còn lại thì chỉ có pháp luật của Bên ký kết Hiệp định đầu tiên sẽ có hiệu lực đối với công việc này trong vòng sáu mươi (60) tháng đầu tiên coi như là người này đang làm việc trên lãnh thổ của Bên ký kết đầu tiên. Khoản này cũng áp dụng cho người lao động làm việc theo hợp đồng lao động được phái cử bởi người sử dụng lao động trên lãnh thổ của một Bên ký kết Hiệp định sang làm việc tại một chi nhánh hoặc một công ty con của người sử dụng lao động trên lãnh thổ của Bên ký kết Hiệp định còn lại\".\nTại khoản 1 Điều 7 Hiệp định quy định: \"Khi một công dân của một Bên ký kết Hiệp định đang tạm trú trên lãnh thổ của Bên ký kết Hiệp định kia được tuyển dụng bởi người sử dụng lao động có cơ sở làm việc tại Bên ký kết Hiệp định kia và làm việc cho người sử dụng lao động đó trên lãnh thổ Bên ký kết Hiệp định kia, thì chỉ pháp luật của Bên ký kết Hiệp định kia sẽ có hiệu lực trong quá trình làm công việc đó\".\nQuy định nêu trên được thực hiện từ ngày 1/1/2024 (thời điểm BHXH Việt Nam và Cơ quan hưu trí Quốc gia Hàn Quốc ký kết Thỏa thuận thực hiện liên quan đến đối tượng BHXH).\nTheo các quy định nêu trên, nếu ông Đinh đi làm việc tại Hàn Quốc theo sự phân công của người sử dụng lao động tại Việt Nam thì vẫn thuộc đối tượng tham gia BHXH tại Việt Nam và được hưởng BHXH một lần theo quy định của pháp luật Việt Nam, không được hưởng BHXH một lần theo quy định của pháp luật Hàn Quốc.\nTrường hợp ông Đinh làm việc cho người sử dụng lao động có trụ sở đăng ký tại Hàn Quốc và tham gia BHXH theo quy định của pháp luật Hàn Quốc thì được hưởng BHXH một lần theo quy định của Hàn Quốc.\nBHXH Việt Nam xin cung cấp thông tin về việc tham gia BHXH và hưởng chế độ BHXH theo quy định của Hiệp định để ông được biết.",
+  "gold_citations_raw": "khoản 1 Điều 6 Hiệp định giữa Chính phủ nước Cộng hòa xã hội chủ nghĩa Việt Nam và Chính phủ nước Đại hàn dân quốc (Hàn Quốc) về BHXH (Hiệp định)"
+}

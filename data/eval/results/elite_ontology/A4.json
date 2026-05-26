@@ -1,0 +1,37 @@
+{
+  "arm": "elite_ontology",
+  "stt": 4,
+  "question": "Ông Long (Hà Nội) đóng BHXH được 15 năm, vợ ông mới sinh con, theo quy định, ông được nghỉ 5 ngày.\nÔng Long hỏi, ông cần nộp giấy tờ gì để hưởng quyền lợi này?",
+  "answer": "Issue: Ông Long (Hà Nội) hỏi về giấy tờ cần nộp để hưởng quyền lợi nghỉ chế độ thai sản khi vợ ông sinh con.\n\nRule: \"3. Hồ sơ đề nghị hưởng chế độ thai sản đối với lao động nữ khi khám thai theo quy định tại Điều 51 của Luật này; lao động nữ sảy thai, phá thai hoặc có thai chết trong tử cung, thai chết trong khi chuyển dạ, thai ngoài tử cung theo quy định tại Điều 52 của Luật này; người lao động thực hiện biện pháp tránh thai theo quy định tại Điều 57 của Luật này là một trong các giấy tờ sau đây:\\na) Bản chính h\" (Luật BHXH 2024 (41/2024/QH15), Điều 61, Khoản 3)\n\nApplication: Không có giá trị nào được gán cho các slot. Prolog đã thực hiện truy vấn và xác định rằng giấy tờ cần thiết để hưởng chế độ thai sản là bản sao giấy khai sinh.\n\nConclusion: Prolog đã trả về giá trị là [birth_certificate_copy] cho biến Documents. Không có lỗi hoặc slot nào bị thiếu trong quá trình thực hiện.",
+  "citations": [
+    "[Điều 51]",
+    "[Điều 52]",
+    "[Điều 57]",
+    "[Điều 61 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A51",
+    "L41_2024.A52",
+    "L41_2024.A57",
+    "L41_2024.A61.K3"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,required_documents_for_maternity_leave([birth_certificate_copy]),based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Ông Long (Hà Nội) hỏi về giấy tờ cần nộp để hưởng quyền lợi nghỉ chế độ thai sản khi vợ ông sinh con.",
+    "rule": "\"3. Hồ sơ đề nghị hưởng chế độ thai sản đối với lao động nữ khi khám thai theo quy định tại Điều 51 của Luật này; lao động nữ sảy thai, phá thai hoặc có thai chết trong tử cung, thai chết trong khi chuyển dạ, thai ngoài tử cung theo quy định tại Điều 52 của Luật này; người lao động thực hiện biện pháp tránh thai theo quy định tại Điều 57 của Luật này là một trong các giấy tờ sau đây:\\na) Bản chính h\" (Luật BHXH 2024 (41/2024/QH15), Điều 61, Khoản 3)",
+    "application": "Không có giá trị nào được gán cho các slot. Prolog đã thực hiện truy vấn và xác định rằng giấy tờ cần thiết để hưởng chế độ thai sản là bản sao giấy khai sinh.",
+    "conclusion": "Prolog đã trả về giá trị là [birth_certificate_copy] cho biến Documents. Không có lỗi hoặc slot nào bị thiếu trong quá trình thực hiện."
+  },
+  "elapsed_s": 10.648,
+  "prompt_tokens": 3351,
+  "completion_tokens": 511,
+  "error": null,
+  "gold_answer": "Theo thư ông trình bày, chưa có thông tin về việc tại thời điểm vợ của ông sinh con thì ông có đang đóng BHXH hay không? Do đó, BHXH Việt Nam chưa có căn cứ trả lời ông có thuộc trường hợp được hưởng chế độ thai sản khi vợ sinh con hay không. BHXH Việt Nam cung cấp các quy định chung để ông tham khảo, đối chiếu với trường hợp của mình:\nTại Khoản 1 Điều 31 Luật BHXH năm 2014 quy định, người lao động được hưởng chế độ thai sản khi thuộc một trong các trường hợp sau đây:\n\"e) Lao động nam đang đóng BHXH có vợ sinh con\".\nTại Khoản 2 Điều 34 Luật BHXH năm 2014 quy định, lao động nam đang đóng BHXH khi vợ sinh con được nghỉ việc hưởng chế độ thai sản như sau:\n\"a) 05 ngày làm việc;\nb) 07 ngày làm việc khi vợ sinh con phải phẫu thuật, sinh con dưới 32 tuần tuổi;\nc) Trường hợp vợ sinh đôi thì được nghỉ 10 ngày làm việc, từ sinh ba trở lên thì cứ thêm mỗi con được nghỉ thêm 3 ngày làm việc;\nd) Trường hợp vợ sinh đôi trở lên mà phải phẫu thuật thì được nghỉ 14 ngày làm việc.\nThời gian nghỉ việc hưởng chế độ thai sản quy định tại Khoản này được tính trong khoảng thời gian 30 ngày đầu kể từ ngày vợ sinh con\".\nHồ sơ hưởng chế độ thai sản tại Khoản 4, Khoản 5 Điều 101 Luật BHXH năm 2014 quy định:\n\"4. Trường hợp lao động nam nghỉ việc khi vợ sinh con phải có bản sao giấy chứng sinh hoặc bản sao giấy khai sinh của con và giấy xác nhận của cơ sở y tế đối với trường hợp sinh con phải phẫu thuật, sinh con dưới 32 tuần tuổi.\n5. Danh sách người lao động nghỉ việc hưởng chế độ thai sản do người sử dụng lao động lập\".",
+  "gold_citations_raw": "Khoản 1 Điều 31 Luật BHXH \n2 Điều 34 Luật BHXH năm 2014"
+}

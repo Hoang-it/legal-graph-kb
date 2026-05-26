@@ -1,0 +1,17 @@
+{
+  "arm": "llm_only",
+  "stt": 144,
+  "question": "Nếu đang làm công ty thì có thể tự nộp hs hưởng thai sản không hay bắt buộc phải qua cty?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, người lao động đang làm việc tại công ty phải thông qua công ty để nộp hồ sơ hưởng chế độ thai sản. Cụ thể, người lao động cần phải nộp hồ sơ cho người sử dụng lao động, và người sử dụng lao động sẽ có trách nhiệm nộp hồ sơ cho cơ quan bảo hiểm xã hội. Do đó, bạn không thể tự nộp hồ sơ hưởng thai sản mà không qua công ty. \n\nCăn cứ theo quy định tại [Điều 102 khoản 1] của Luật Bảo hiểm xã hội số 41/2024/QH15.",
+  "citations": [
+    "[Điều 102 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A102.K1"
+  ],
+  "elapsed_s": 3.07,
+  "prompt_tokens": 183,
+  "completion_tokens": 138,
+  "gold_answer": "Nếu bạn đang làm việc và thuộc diện đang tham gia BHXH bắt buộc, hồ sơ thai sản thông thường do công ty lập và nộp cho cơ quan BHXH. Người lao động chỉ tự nộp trực tiếp trong một số trường hợp như đã nghỉ việc trước khi sinh hoặc đơn vị không còn hoạt động/không nộp hồ sơ. Vì vậy đang làm công ty thì nên nộp qua công ty trước.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

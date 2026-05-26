@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 147,
+  "question": "Em ngưng đóng bhxh tháng cuối chốt là 4/2025 tới nay là được 1 năm thì em làm giấy rút bhxh 1 lần được chưa? Và cần chuẩn bị những gì? Có cần phải đăng kí trên dịch vụ công trước không? Em ở buôn ma thuột daklak.",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 107 khoản 2] — Giải quyết hưởng lương hưu, bảo hiểm xã hội một lần đối với người đang bảo lưu thời gian đóng bảo hiểm xã hội, người tham gia bảo hiểm xã hội tự nguyện.\n- [Điều 106] — Hồ sơ quy định để nộp cho cơ quan bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 107 khoản 2]",
+    "[Điều 106]"
+  ],
+  "citation_ids": [
+    "L41_2024.A107.K2",
+    "L41_2024.A106"
+  ],
+  "citation_verified": {
+    "L41_2024.A107.K2": true,
+    "L41_2024.A106": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A107.K2",
+      "score": 0.7912928462028503,
+      "text_preview": "Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.\nThời điểm kết thúc ngày cuối cùng của tháng dừng đ"
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.7828713655471802,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A113.K1",
+      "score": 0.7789198160171509,
+      "text_preview": "Trường hợp nộp hồ sơ quá thời hạn quy định tại khoản 1 Điều 97, khoản 1 Điều 107, điểm a khoản 2 Điều 112 của Luật này thì phải giải trình bằng văn bản và gửi cho cơ quan bảo hiểm xã hội khi nộp hồ sơ"
+    },
+    {
+      "clause_id": "L41_2024.A92.K1",
+      "score": 0.7747899293899536,
+      "text_preview": "Trường hợp nộp hồ sơ quá thời hạn quy định tại khoản 1 và khoản 2 Điều 48, khoản 1 Điều 49, khoản 1 Điều 62, khoản 1 Điều 63, khoản 1 Điều 79, khoản 1 và khoản 2 Điều 91 của Luật này thì phải giải trì"
+    },
+    {
+      "clause_id": "L41_2024.A17.K1",
+      "score": 0.7741617560386658,
+      "text_preview": "Yêu cầu người sử dụng lao động xuất trình sổ quản lý lao động, thang lương, bảng lương và thông tin, tài liệu khác liên quan đến việc đóng, hưởng chế độ bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp,"
+    }
+  ],
+  "n_semantic_edges": 2,
+  "n_refs": 14,
+  "elapsed_s": 2.22,
+  "gold_answer": "Nếu tháng cuối chốt là 4/2025 thì đến khoảng sau 4/2026, khi bạn đã đủ 12 tháng không tham gia BHXH và thuộc trường hợp luật cho phép, có thể nộp hồ sơ BHXH 1 lần. Hồ sơ cơ bản gồm đơn đề nghị, CCCD, thông tin tài khoản; không bắt buộc phải đăng ký trên dịch vụ công trước, nhưng có thể nộp trực tuyến nếu địa phương hỗ trợ. Nộp tại BHXH nơi cư trú ở Buôn Ma Thuột.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

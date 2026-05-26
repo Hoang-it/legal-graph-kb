@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 41,
+  "question": "Em nghỉ việc tại Công ty cũ từ 28/3. Em xin Công ty quyết định nghỉ việc để làm BHTN, nhưng họ báo: \"Chờ tờ rời BHXH từ 45-50 ngày\". Em có hỏi: \"chờ lâu vậy thì sao mà e làm đc BHTN tháng 4,5\" thì họ bảo: \"Thời hạn hưởng BHTN là 3 tháng kể từ ngày nộp đơn\". Em chưa hiểu chỗ này. Vậy là phải sau 3 tháng nghỉ việc e mới đc nộp chứng từ để hưởng BHTN phải ko? Hay là sau nhận và nộp chứng từ em sẽ đc hưởng BHTN từ tháng 4?",
+  "answer": "Issue: Bạn đang thắc mắc về thời gian nộp đơn và hưởng bảo hiểm thất nghiệp (BHTN) sau khi nghỉ việc tại công ty cũ.\n\nRule: \"Tiếp nhận hồ sơ đề nghị hưởng và giải quyết hưởng chế độ bảo hiểm xã hội; tổ chức trả lương hưu, trợ cấp bảo hiểm xã hội, bảo hiểm thất nghiệp đầy đủ, thuận tiện và đúng thời hạn.\" (Luật BHXH 2024 (41/2024/QH15), article 18, clause 2)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để xác định điều kiện hưởng BHTN.\n\nConclusion: Hệ thống không thể tính toán giá trị cuối cùng vì không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 18 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K5"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_conditions([benefit_application_after_resignation,benefit_period_start_after_application]),based_on(source_c007))]",
+  "irac_sections": {
+    "issue": "Bạn đang thắc mắc về thời gian nộp đơn và hưởng bảo hiểm thất nghiệp (BHTN) sau khi nghỉ việc tại công ty cũ.",
+    "rule": "\"Tiếp nhận hồ sơ đề nghị hưởng và giải quyết hưởng chế độ bảo hiểm xã hội; tổ chức trả lương hưu, trợ cấp bảo hiểm xã hội, bảo hiểm thất nghiệp đầy đủ, thuận tiện và đúng thời hạn.\" (Luật BHXH 2024 (41/2024/QH15), article 18, clause 2)",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để xác định điều kiện hưởng BHTN.",
+    "conclusion": "Hệ thống không thể tính toán giá trị cuối cùng vì không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 7.933,
+  "prompt_tokens": 3278,
+  "completion_tokens": 370,
+  "error": null,
+  "gold_answer": "Không phải chờ đủ 3 tháng rồi mới nộp hồ sơ BHTN. Đúng luật là bạn phải nộp hồ sơ trong vòng 3 tháng kể từ ngày chấm dứt HĐLĐ. Sau khi nộp đủ hồ sơ, nếu sau 15 ngày chưa có việc làm thì sẽ được giải quyết hưởng trợ cấp thất nghiệp. Vì vậy, bạn nên lấy quyết định nghỉ việc và giấy tờ chốt BHXH sớm để nộp trong hạn, không phải đợi qua 3 tháng.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 49, Điều 50"
+}

@@ -1,0 +1,31 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 20,
+  "question": "Vợ chồng bà Hải Bắc làm chung một cơ quan, đã đóng BHXH trên 3 năm.\nBà Bắc hỏi, khi bà nghỉ sinh con thì chồng của bà có được hưởng tiền trợ cấp thai sản không?",
+  "answer": "Issue: Bà Bắc hỏi liệu chồng của bà có được hưởng tiền trợ cấp thai sản khi bà nghỉ sinh con hay không, trong bối cảnh cả hai đã đóng BHXH trên 3 năm.\n\nRule: \"Được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi. Trường hợp sinh đôi trở lên thì được nghỉ thêm 01 tháng cho mỗi con tính từ con thứ hai trở đi. Trường hợp lao động nữ nhờ mang thai hộ không nghỉ việc thì ngoài tiền lương còn được hưởng trợ cấp thai sản theo quy định;\" (Luật BHXH 2024 (41/2024/QH15), Điều 55, Khoản 1).\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng chồng của bà Bắc có quyền hưởng trợ cấp thai sản dựa trên quy định pháp luật và thời gian đóng BHXH của bà.\n\nConclusion: Prolog đã xác định rằng chồng của bà Bắc có quyền hưởng trợ cấp thai sản (husband_entitled_to_maternity_benefit(user)).",
+  "citations": [
+    "[Điều 55 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A55.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,husband_entitled_to_maternity_benefit(user),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Bà Bắc hỏi liệu chồng của bà có được hưởng tiền trợ cấp thai sản khi bà nghỉ sinh con hay không, trong bối cảnh cả hai đã đóng BHXH trên 3 năm.",
+    "rule": "\"Được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi. Trường hợp sinh đôi trở lên thì được nghỉ thêm 01 tháng cho mỗi con tính từ con thứ hai trở đi. Trường hợp lao động nữ nhờ mang thai hộ không nghỉ việc thì ngoài tiền lương còn được hưởng trợ cấp thai sản theo quy định;\" (Luật BHXH 2024 (41/2024/QH15), Điều 55, Khoản 1).",
+    "application": "Không có slot nào được gán giá trị trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng chồng của bà Bắc có quyền hưởng trợ cấp thai sản dựa trên quy định pháp luật và thời gian đóng BHXH của bà.",
+    "conclusion": "Prolog đã xác định rằng chồng của bà Bắc có quyền hưởng trợ cấp thai sản (husband_entitled_to_maternity_benefit(user))."
+  },
+  "elapsed_s": 9.033,
+  "prompt_tokens": 3354,
+  "completion_tokens": 490,
+  "error": null,
+  "gold_answer": "Tại Điểm e Khoản 1 Điều 31 và Khoản 2 Điều 34 Luật BHXH năm 2014 quy định lao động nam đang đóng BHXH có vợ sinh con được nghỉ việc hưởng chế độ thai sản 5 ngày làm việc.\nTrường hợp vợ sinh con phải phẫu thuật, sinh con dưới 32 tuần tuổi được nghỉ 7 ngày làm việc. Trường hợp vợ sinh đôi thì được nghỉ 10 ngày làm việc, từ sinh ba trở lên thì cứ thêm mỗi con được nghỉ thêm 3 ngày làm việc.\nTrường hợp vợ sinh đôi trở lên mà phải phẫu thuật thì được nghỉ 14 ngày làm việc. Thời gian nghỉ việc hưởng chế độ thai sản quy định nêu trên được tính trong khoảng thời gian 30 ngày đầu kể từ ngày vợ sinh con.\nBHXH Việt Nam thông tin để bà Bắc nắm được các quyền lợi về chế độ thai sản.",
+  "gold_citations_raw": "Điểm e Khoản 1 Điều 31 và Khoản 2 Điều 34 Luật BHXH năm 2014"
+}

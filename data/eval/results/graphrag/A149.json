@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 149,
+  "question": "Rút BHXH 1 lần thì bao lâu nhận được? e bắt đầu tham gia từ 2020 đến giờ thì có được rút không? e ở TP.HCM thì ra đâu rút được?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 79 khoản 3]\n- [Điều 107 khoản 3]",
+  "citations": [
+    "[Điều 79 khoản 3]",
+    "[Điều 107 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A79.K3",
+    "L41_2024.A107.K3"
+  ],
+  "citation_verified": {
+    "L41_2024.A79.K3": true,
+    "L41_2024.A107.K3": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A141.K9",
+      "score": 0.806674599647522,
+      "text_preview": "Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ,"
+    },
+    {
+      "clause_id": "L41_2024.A79.K3",
+      "score": 0.8051853179931641,
+      "text_preview": "Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo"
+    },
+    {
+      "clause_id": "L41_2024.A107.K3",
+      "score": 0.8051271438598633,
+      "text_preview": "Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo"
+    },
+    {
+      "clause_id": "L41_2024.A5.K6",
+      "score": 0.8036070466041565,
+      "text_preview": "Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hi"
+    },
+    {
+      "clause_id": "L41_2024.A100.K1",
+      "score": 0.8005445003509521,
+      "text_preview": "Lao động nam có thời gian đóng bảo hiểm xã hội cao hơn 35 năm, lao động nữ có thời gian đóng bảo hiểm xã hội cao hơn 30 năm thì khi nghỉ hưu, ngoài lương hưu còn được hưởng trợ cấp một lần."
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 1,
+  "elapsed_s": 1.45,
+  "gold_answer": "Thời gian giải quyết BHXH 1 lần thường khoảng 05 ngày làm việc kể từ khi cơ quan BHXH nhận đủ hồ sơ hợp lệ. Bạn tham gia từ 2020 đến nay chỉ được rút nếu thuộc trường hợp luật cho phép, phổ biến là đã nghỉ và sau 12 tháng không tiếp tục tham gia BHXH. Ở TP.HCM, bạn nộp tại cơ quan BHXH nơi thường trú hoặc tạm trú.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

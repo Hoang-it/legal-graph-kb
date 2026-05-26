@@ -1,0 +1,31 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 88,
+  "question": "Em nghỉ việc ở công ty cũ đc gần 6 tháng , thì bây h em có thể rút BHXH hay BHTN đc không?",
+  "answer": "Issue: Em nghỉ việc ở công ty cũ đc gần 6 tháng, thì bây h em có thể rút BHXH hay BHTN đc không?\n\nRule: \"Người lao động nộp hồ sơ quy định tại Điều 61 của Luật này cho cơ quan bảo hiểm xã hội trong trường hợp thôi việc trước thời điểm sinh con, nhận con khi nhờ mang thai hộ, nhận nuôi con nuôi dưới 06 tháng tuổi hoặc không còn người sử dụng lao động.\" (Luật BHXH 2024 (41/2024/QH15), article 62, clause 2)\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng người lao động có đủ điều kiện để rút BHXH dựa trên thông tin về thời gian đã đóng góp.\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người lao động có thể rút BHXH.",
+  "citations": [
+    "[Điều 61]"
+  ],
+  "citation_ids": [
+    "L41_2024.A61"
+  ],
+  "citation_indices": [
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,withdraw_social_insurance_eligibility(user,yes),based_on(source_c006))]",
+  "irac_sections": {
+    "issue": "Em nghỉ việc ở công ty cũ đc gần 6 tháng, thì bây h em có thể rút BHXH hay BHTN đc không?",
+    "rule": "\"Người lao động nộp hồ sơ quy định tại Điều 61 của Luật này cho cơ quan bảo hiểm xã hội trong trường hợp thôi việc trước thời điểm sinh con, nhận con khi nhờ mang thai hộ, nhận nuôi con nuôi dưới 06 tháng tuổi hoặc không còn người sử dụng lao động.\" (Luật BHXH 2024 (41/2024/QH15), article 62, clause 2)",
+    "application": "Không có slot nào được gán giá trị trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng người lao động có đủ điều kiện để rút BHXH dựa trên thông tin về thời gian đã đóng góp.",
+    "conclusion": "Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người lao động có thể rút BHXH."
+  },
+  "elapsed_s": 9.193,
+  "prompt_tokens": 2953,
+  "completion_tokens": 460,
+  "error": null,
+  "gold_answer": "Với BHTN, nếu bạn nghỉ gần 6 tháng rồi thì vẫn phải kiểm tra còn trong hạn 3 tháng nộp hồ sơ hay đã quá hạn. Nếu đã quá 3 tháng kể từ ngày chấm dứt HĐLĐ thì đợt này bạn không nộp hưởng BHTN được, nhưng thời gian đóng chưa hưởng vẫn được bảo lưu. Với BHXH một lần, thường phải chờ đủ điều kiện luật định, phổ biến là đã ngừng tham gia từ 12 tháng trở lên và thuộc trường hợp được hưởng.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 45; Luật BHXH 2024 Điều 70"
+}

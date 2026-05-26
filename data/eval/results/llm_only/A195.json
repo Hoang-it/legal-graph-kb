@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 195,
+  "question": "mik đang đi làm đóng bảo hiển xh mà mik xin nghỉ đội 1-2 tháng đi thụ tinh nhân tạo thì có được hưởng ít bảo hiểm nào không?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, nếu bạn nghỉ việc để thực hiện thụ tinh nhân tạo, bạn có thể được hưởng chế độ ốm đau nếu có đủ điều kiện. Cụ thể, bạn cần có thời gian đóng bảo hiểm xã hội tối thiểu và phải có giấy chứng nhận nghỉ việc hưởng bảo hiểm xã hội từ cơ sở y tế.\n\nCăn cứ theo Điều 25 Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động có quyền hưởng chế độ ốm đau khi có đủ điều kiện. Tuy nhiên, bạn cần cung cấp giấy tờ hợp lệ để chứng minh việc nghỉ việc vì lý do sức khỏe.\n\nVì vậy, bạn nên liên hệ với cơ quan bảo hiểm xã hội hoặc nơi làm việc để được hướng dẫn cụ thể hơn về quyền lợi của mình trong trường hợp này.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 3.779,
+  "prompt_tokens": 193,
+  "completion_tokens": 180,
+  "gold_answer": "Nếu bạn đang đóng BHXH mà xin nghỉ 1-2 tháng để đi thụ tinh nhân tạo thì quyền lợi phụ thuộc loại nghỉ và giấy tờ y tế. Nếu nghỉ ốm/điều trị theo chỉ định của cơ sở khám chữa bệnh có thẩm quyền thì có thể được xem xét chế độ ốm đau. Nếu chỉ tự nghỉ không lương mà không có hồ sơ y tế phù hợp thì thường không có chế độ BHXH riêng cho việc đó.",
+  "gold_citations_raw": "Điều 42, 43, 47 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

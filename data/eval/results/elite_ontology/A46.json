@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 46,
+  "question": "Lúc còn huyện cũ thì mình nộp bhxh ở huyện.Còn bây giờ không còn huyện nữa thì mình nộp ở đâu? ở xã hay là hành chính công?",
+  "answer": "Issue: Người dùng hỏi về địa điểm nộp bảo hiểm xã hội khi huyện cũ không còn tồn tại.\n\nRule: \"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Tuy nhiên, Prolog đã trả về kết quả cho biết rằng địa điểm nộp bảo hiểm xã hội là \"nộp tại cơ quan bảo hiểm xã hội cấp huyện hoặc xã\".\n\nConclusion: Prolog đã trả về giá trị \"nộp tại cơ quan bảo hiểm xã hội cấp huyện hoặc xã\" cho biến Answer. Không có slot nào bị thiếu hoặc lỗi trong quá trình thực hiện.",
+  "citations": [
+    "[Điều 18 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,where_to_submit_insurance(nộp tại cơ quan bảo hiểm xã hội cấp huyện hoặc xã),based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Người dùng hỏi về địa điểm nộp bảo hiểm xã hội khi huyện cũ không còn tồn tại.",
+    "rule": "\"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)",
+    "application": "Không có slot nào được gán giá trị trong trường hợp này. Tuy nhiên, Prolog đã trả về kết quả cho biết rằng địa điểm nộp bảo hiểm xã hội là \"nộp tại cơ quan bảo hiểm xã hội cấp huyện hoặc xã\".",
+    "conclusion": "Prolog đã trả về giá trị \"nộp tại cơ quan bảo hiểm xã hội cấp huyện hoặc xã\" cho biến Answer. Không có slot nào bị thiếu hoặc lỗi trong quá trình thực hiện."
+  },
+  "elapsed_s": 12.085,
+  "prompt_tokens": 4624,
+  "completion_tokens": 451,
+  "error": null,
+  "gold_answer": "Sau khi thay đổi mô hình tổ chức hành chính, hồ sơ BHXH thường nộp tại cơ quan BHXH khu vực/cơ quan được phân công tiếp nhận hoặc Trung tâm phục vụ hành chính công, không phải xã nào cũng trực tiếp thu hồ sơ. Bạn nên tra cứu nơi tiếp nhận mới tại địa phương hoặc gọi cơ quan BHXH gần nhất để tránh đi sai nơi. Nguyên tắc là cơ quan BHXH nơi cư trú vẫn có trách nhiệm hướng dẫn, tiếp nhận hoặc chỉ dẫn nơi nộp đúng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; quy định tổ chức thực hiện của BHXH Việt Nam"
+}

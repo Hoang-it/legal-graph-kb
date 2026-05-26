@@ -1,0 +1,31 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 158,
+  "question": "mình đóng bhxh dk 6 năm mức lương CB 5300 thì giờ mk muốn rút một lần là dk khoảng bao nhiêu?",
+  "answer": "Issue: Người dùng đã đóng bảo hiểm xã hội 6 năm với mức lương cơ bản 5300 và muốn biết số tiền có thể rút một lần là bao nhiêu.\n\nRule: \"Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp.\" (Luật BHXH 2024 (41/2024/QH15), Điều 9, Khoản 2)\n\nApplication: Không có giá trị nào được gán cho các slot trong phần slot_bindings. Tuy nhiên, Prolog đã sử dụng các thông tin từ việc đóng góp 6 năm và mức lương cơ bản 5300 để tính toán.\n\nConclusion: Số tiền có thể rút một lần là 190800 (Amount). Hệ thống đã tính toán thành công và không gặp phải lỗi hay thiếu sót nào trong quá trình thực hiện.",
+  "citations": [
+    "[Điều 9 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A9.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,withdrawal_amount(user,190800),based_on(source_c066))]",
+  "irac_sections": {
+    "issue": "Người dùng đã đóng bảo hiểm xã hội 6 năm với mức lương cơ bản 5300 và muốn biết số tiền có thể rút một lần là bao nhiêu.",
+    "rule": "\"Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp.\" (Luật BHXH 2024 (41/2024/QH15), Điều 9, Khoản 2)",
+    "application": "Không có giá trị nào được gán cho các slot trong phần slot_bindings. Tuy nhiên, Prolog đã sử dụng các thông tin từ việc đóng góp 6 năm và mức lương cơ bản 5300 để tính toán.",
+    "conclusion": "Số tiền có thể rút một lần là 190800 (Amount). Hệ thống đã tính toán thành công và không gặp phải lỗi hay thiếu sót nào trong quá trình thực hiện."
+  },
+  "elapsed_s": 6.569,
+  "prompt_tokens": 2688,
+  "completion_tokens": 443,
+  "error": null,
+  "gold_answer": "Nếu 6 năm đóng đều từ 2014 trở đi và mức bình quân lương đóng khoảng 5,3 triệu thì BHXH 1 lần ước khoảng khoảng 63,6 triệu. Đây là số ước tính sơ bộ; cơ quan BHXH còn tính theo mức bình quân tiền lương sau điều chỉnh từng năm. Bạn cũng cần đủ điều kiện hưởng BHXH 1 lần thì mới rút được.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 132,
+  "question": "Em bị mất giấy quyết định thôi việc thì có rút được thất nghiệp với bhxh hông???",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, để được hưởng trợ cấp thất nghiệp, người lao động cần có giấy quyết định thôi việc hoặc hợp đồng lao động đã chấm dứt. Nếu bạn bị mất giấy quyết định thôi việc, bạn có thể yêu cầu đơn vị sử dụng lao động cấp lại bản sao. \n\nNếu không có giấy quyết định thôi việc, bạn có thể gặp khó khăn trong việc làm thủ tục rút bảo hiểm thất nghiệp. Tuy nhiên, bạn vẫn có thể trình bày tình huống của mình với cơ quan bảo hiểm xã hội để được hướng dẫn cụ thể hơn. \n\nTóm lại, bạn cần có giấy tờ chứng minh việc chấm dứt hợp đồng lao động để đủ điều kiện rút bảo hiểm thất nghiệp.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 4.172,
+  "prompt_tokens": 178,
+  "completion_tokens": 160,
+  "gold_answer": "Mất quyết định thôi việc không làm mất quyền hưởng BHXH 1 lần, vì hồ sơ BHXH 1 lần thường không bắt buộc tài liệu này. Nhưng với BHTN thì giấy tờ chứng minh chấm dứt HĐLĐ là thành phần hồ sơ rất quan trọng. Bạn nên xin công ty cấp lại hoặc xin bản sao/giấy xác nhận chấm dứt hợp đồng để nộp trong thời hạn luật định.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

@@ -1,0 +1,54 @@
+{
+  "arm": "graphrag",
+  "stt": 179,
+  "question": "mình nghỉ ngang vậy có đc lãnh bảo hiểm thất nghiệp không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 4 khoản 4] quy định về bảo hiểm thất nghiệp.\n- [Điều 64 khoản 1] và [Điều 64 khoản 2] quy định về đối tượng và điều kiện hưởng lương hưu.",
+  "citations": [
+    "[Điều 4 khoản 4]",
+    "[Điều 64 khoản 1]",
+    "[Điều 64 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A4.K4",
+    "L41_2024.A64.K1",
+    "L41_2024.A64.K2"
+  ],
+  "citation_verified": {
+    "L41_2024.A4.K4": true,
+    "L41_2024.A64.K1": true,
+    "L41_2024.A64.K2": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A9.K2",
+      "score": 0.823930561542511,
+      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A64.K1",
+      "score": 0.8173261880874634,
+      "text_preview": "Đối tượng quy định tại các điểm a, b, c, g, h, i, k, l, m và n khoản 1 và khoản 2 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 15 năm trở lên thì được hưởng lương"
+    },
+    {
+      "clause_id": "L41_2024.A64.K2",
+      "score": 0.8116786479949951,
+      "text_preview": "Đối tượng quy định tại các điểm d, đ và e khoản 1 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 15 năm trở lên thì được hưởng lương hưu nếu thuộc một trong các trư"
+    },
+    {
+      "clause_id": "L41_2024.A65.K2",
+      "score": 0.8112349510192871,
+      "text_preview": "Đối tượng quy định tại các điểm d, đ và e khoản 1 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 20 năm trở lên, bị suy giảm khả năng lao động từ 61% trở lên thì đư"
+    },
+    {
+      "clause_id": "L41_2024.A53.K8",
+      "score": 0.8111932277679443,
+      "text_preview": "Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ "
+    }
+  ],
+  "n_semantic_edges": 7,
+  "n_refs": 12,
+  "elapsed_s": 1.83,
+  "gold_answer": "Nghỉ ngang chỉ được hưởng BHTN nếu việc đơn phương chấm dứt hợp đồng của bạn là đúng pháp luật. Nếu nghỉ ngang trái luật thì không đủ điều kiện hưởng BHTN. Vì vậy cần xem hợp đồng, thời hạn báo trước, lý do nghỉ và việc công ty xác nhận chấm dứt ra sao. Nếu bạn nghỉ đúng luật hoặc hai bên thỏa thuận chấm dứt thì vẫn có thể hưởng BHTN khi đủ điều kiện khác.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

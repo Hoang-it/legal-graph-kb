@@ -1,0 +1,17 @@
+{
+  "arm": "llm_only",
+  "stt": 135,
+  "question": "Người được hưởng trợ cấp hàng tháng mất sức lao động khi nghĩ việc được hưởng quyền loi gì?",
+  "answer": "Người được hưởng trợ cấp hàng tháng do mất sức lao động khi nghỉ việc sẽ được hưởng quyền lợi về trợ cấp hàng tháng theo quy định của Luật Bảo hiểm xã hội. Cụ thể, họ sẽ tiếp tục nhận trợ cấp hàng tháng cho đến khi đủ điều kiện hưởng lương hưu hoặc đến khi có thay đổi về tình trạng sức khỏe. \n\nCăn cứ theo quy định tại [Điều 54 khoản 1] của Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động có thể được hưởng trợ cấp hàng tháng nếu có đủ điều kiện về thời gian tham gia bảo hiểm xã hội và mức suy giảm khả năng lao động.",
+  "citations": [
+    "[Điều 54 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A54.K1"
+  ],
+  "elapsed_s": 3.207,
+  "prompt_tokens": 178,
+  "completion_tokens": 143,
+  "gold_answer": "Người đang hưởng trợ cấp mất sức lao động hằng tháng vẫn có các quyền lợi theo chế độ đang hưởng và có thể được điều chỉnh mức trợ cấp khi Nhà nước điều chỉnh chính sách. Khi qua đời thì thân nhân có thể được xem xét chế độ tử tuất theo điều kiện luật định. Cần xem rõ bạn thuộc diện trợ cấp mất sức lao động theo văn bản nào để xác định chính xác quyền lợi hiện còn.",
+  "gold_citations_raw": "Điều 141 Luật BHXH 2024; quy định chuyển tiếp về trợ cấp hằng tháng"
+}

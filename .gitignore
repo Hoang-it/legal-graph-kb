@@ -188,7 +188,7 @@ cython_debug/
 # whitelist below). Use `dir/*` form so we CAN re-include specific files.
 data/interim/*
 data/processed/*
-data/eval/results/
+data/eval/results/*
 data/eval/metrics.json
 data/eval/metrics.csv
 data/eval/judge_cache.jsonl
@@ -212,6 +212,15 @@ data/eval/questions_*.json
 !data/interim/structured_law.json
 !data/processed/merged_graph.json
 !data/processed/embeddings.parquet
+
+# ─── R1 experiment snapshot (committed cho reproducibility, ~10MB total) ───
+# Re-include results/ dir + downstream artifacts. User có thể skip Phase 2
+# inference trên Colab và nhảy thẳng vào metric compute / report rendering.
+!data/eval/results/
+!data/eval/results/**
+!data/eval/metrics.json
+!data/eval/metrics.csv
+!data/eval/judge_cache.jsonl
 
 # Allow placeholder files so empty dirs are kept
 !data/**/.gitkeep

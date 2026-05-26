@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 94,
+  "question": "e mơi đóng bhxh hộ kinh doanh được 2 tháng giờ e ở nhóm 1 không phải đóng thì đi huỷ được khômg?",
+  "answer": "Issue: Người hỏi muốn biết liệu có thể hủy bảo hiểm xã hội sau khi đã đóng 2 tháng trong trường hợp không còn thuộc nhóm phải đóng nữa hay không.\n\nRule: \"6. Xác nhận thời gian đóng bảo hiểm xã hội, bảo hiểm thất nghiệp cho từng người lao động; cung cấp đầy đủ và kịp thời thông tin về việc đóng, quyền được hưởng chế độ, thủ tục thực hiện bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện khi người lao động, người sử dụng lao động hoặc tổ chức công đoàn yêu cầu.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 6)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để xác định khả năng hủy bảo hiểm xã hội.\n\nConclusion: Hệ thống không thể tính toán được kết quả cuối cùng do không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 18 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K6"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,cancel_social_insurance_conditions([can_cancel_if_not_required]),based_on(source_c006))]",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết liệu có thể hủy bảo hiểm xã hội sau khi đã đóng 2 tháng trong trường hợp không còn thuộc nhóm phải đóng nữa hay không.",
+    "rule": "\"6. Xác nhận thời gian đóng bảo hiểm xã hội, bảo hiểm thất nghiệp cho từng người lao động; cung cấp đầy đủ và kịp thời thông tin về việc đóng, quyền được hưởng chế độ, thủ tục thực hiện bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện khi người lao động, người sử dụng lao động hoặc tổ chức công đoàn yêu cầu.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 6)",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để xác định khả năng hủy bảo hiểm xã hội.",
+    "conclusion": "Hệ thống không thể tính toán được kết quả cuối cùng do không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 10.977,
+  "prompt_tokens": 5711,
+  "completion_tokens": 464,
+  "error": null,
+  "gold_answer": "Nếu trước đây bạn thuộc diện phải tham gia BHXH bắt buộc với tư cách chủ hộ kinh doanh nhưng nay chuyển sang nhóm không thuộc diện phải đóng nữa, bạn cần liên hệ cơ quan BHXH để làm thủ tục giảm/dừng đúng từ thời điểm không còn thuộc đối tượng. Không phải 'hủy' toàn bộ quá trình 2 tháng đã đóng; thời gian đó nếu đóng đúng đối tượng vẫn được ghi nhận. Cần xác định rõ căn cứ vì sao bạn chuyển sang nhóm 1 không phải đóng để cơ quan BHXH điều chỉnh.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2; Nghị định 158/2025/NĐ-CP Điều 3"
+}

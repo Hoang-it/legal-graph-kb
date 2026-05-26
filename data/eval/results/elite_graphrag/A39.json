@@ -1,0 +1,29 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 39,
+  "question": "Mình ngưng đóng bảo hiểm xã hội từ 2017 đến bây giờ là năm 2026 rồi. Liệu mình có đi thanh toán bhxh đc k ạ?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpyjpygo9w.pl:2:910: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 33 khoản 7]",
+    "[Điều 106 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A33.K7",
+    "L41_2024.A106.K2"
+  ],
+  "citation_indices": [
+    0,
+    2
+  ],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 21.43,
+  "prompt_tokens": 7349,
+  "completion_tokens": 1266,
+  "error": null,
+  "gold_answer": "Nếu bạn đã ngừng đóng từ năm 2017 đến nay và không tiếp tục tham gia BHXH, thì thường có thể làm thủ tục hưởng BHXH một lần nếu thuộc trường hợp luật cho phép, nhất là đã ngừng tham gia từ đủ 12 tháng trở lên mà chưa đủ thời gian hưởng lương hưu. Nếu không rút một lần, bạn cũng có thể bảo lưu thời gian đã đóng để sau này tham gia tiếp hoặc chuyển sang BHXH tự nguyện.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110"
+}

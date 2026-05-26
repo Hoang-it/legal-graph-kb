@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 75,
+  "question": "Tổng thời gian e đóng bh là 17 tháng trong đó bao gồm tổng 3 công ty . vậy tính thất nghiệp thế nào? chỉ lấy đúng 6th cuối gần nhất là cty e làm của năm 2025 vừa rồi để tính hay sao?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 5 khoản 6]\n- [Điều 33 khoản 7]",
+  "citations": [
+    "[Điều 5 khoản 6]",
+    "[Điều 33 khoản 7]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K6",
+    "L41_2024.A33.K7"
+  ],
+  "citation_verified": {
+    "L41_2024.A5.K6": true,
+    "L41_2024.A33.K7": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A141.K12",
+      "score": 0.8381692171096802,
+      "text_preview": "Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30"
+    },
+    {
+      "clause_id": "L41_2024.A38.K1",
+      "score": 0.8280346393585205,
+      "text_preview": "Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều "
+    },
+    {
+      "clause_id": "L41_2024.A5.K6",
+      "score": 0.8235222101211548,
+      "text_preview": "Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hi"
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.8170081377029419,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A53.K8",
+      "score": 0.8077305555343628,
+      "text_preview": "Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ "
+    }
+  ],
+  "n_semantic_edges": 3,
+  "n_refs": 5,
+  "elapsed_s": 2.13,
+  "gold_answer": "Thời gian đóng BHTN của 3 công ty được cộng dồn để xác định bạn được hưởng mấy tháng trợ cấp. Còn mức tiền trợ cấp thất nghiệp hằng tháng lại được tính theo 60% mức bình quân tiền lương tháng đóng BHTN của 6 tháng liền kề trước khi thất nghiệp, tức là chủ yếu nhìn 6 tháng cuối cùng trước khi nghỉ. Vì vậy số tháng hưởng và mức hưởng là hai cách tính khác nhau.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 50"
+}

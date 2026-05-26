@@ -1,0 +1,31 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 93,
+  "question": "Chồng mình bộ đội 19 năm ra quân 31/3/2025 thì khi nào đc lãnh BHXH 1 lần của Bộ quốc phòng?",
+  "answer": "Issue: Chồng bạn là bộ đội đã phục vụ 19 năm và ra quân vào ngày 31/3/2025, vậy khi nào anh ấy được lãnh BHXH 1 lần của Bộ Quốc phòng?\n\nRule: \"Người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên và có văn bản của cơ quan bảo hiểm xã hội xác nhận về việc chờ đủ điều kiện về tuổi đời để hưởng lương hưu được quy định tại Nghị định số 12/CP ngày 26 tháng 01 năm 1995 được sửa đổi, bổ sung một số điều theo Nghị định số 01/2003/NĐ-CP ngày 09 tháng 01 năm 2003 của Chính phủ thì được hưởng lương hưu khi nam đủ 60 tuổi, nữ đủ 55 tuổi.\" (Luật BHXH 2024 (41/2024/QH15), article 141, clause 10)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Prolog đã xác định rằng chồng bạn không đủ điều kiện để nhận BHXH 1 lần dựa trên quy tắc rằng những người có thời gian đóng bảo hiểm xã hội dưới 20 năm sẽ không đủ điều kiện.\n\nConclusion: Prolog đã trả về giá trị \"not_eligible\" cho biến Eligibility, cho thấy chồng bạn không đủ điều kiện để nhận BHXH 1 lần.",
+  "citations": [
+    "[Điều 68 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A68.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_social_insurance_eligibility(not_eligible),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Chồng bạn là bộ đội đã phục vụ 19 năm và ra quân vào ngày 31/3/2025, vậy khi nào anh ấy được lãnh BHXH 1 lần của Bộ Quốc phòng?",
+    "rule": "\"Người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên và có văn bản của cơ quan bảo hiểm xã hội xác nhận về việc chờ đủ điều kiện về tuổi đời để hưởng lương hưu được quy định tại Nghị định số 12/CP ngày 26 tháng 01 năm 1995 được sửa đổi, bổ sung một số điều theo Nghị định số 01/2003/NĐ-CP ngày 09 tháng 01 năm 2003 của Chính phủ thì được hưởng lương hưu khi nam đủ 60 tuổi, nữ đủ 55 tuổi.\" (Luật BHXH 2024 (41/2024/QH15), article 141, clause 10)",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Prolog đã xác định rằng chồng bạn không đủ điều kiện để nhận BHXH 1 lần dựa trên quy tắc rằng những người có thời gian đóng bảo hiểm xã hội dưới 20 năm sẽ không đủ điều kiện.",
+    "conclusion": "Prolog đã trả về giá trị \"not_eligible\" cho biến Eligibility, cho thấy chồng bạn không đủ điều kiện để nhận BHXH 1 lần."
+  },
+  "elapsed_s": 10.666,
+  "prompt_tokens": 3169,
+  "completion_tokens": 557,
+  "error": null,
+  "gold_answer": "Nếu chồng bạn ra quân ngày 31/3/2025 thì thời điểm hưởng BHXH một lần còn phải xem hồ sơ xuất ngũ, quyết định phục viên/xuất ngũ, tình trạng có tiếp tục tham gia BHXH ở đơn vị khác hay không và thủ tục giải quyết của BHXH Bộ Quốc phòng. Trường hợp thông thường, sau khi đủ điều kiện luật định và hoàn tất hồ sơ, cơ quan có thẩm quyền sẽ giải quyết theo thời hạn luật định; không phải cứ ra quân là nhận ngay trong ngày.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 110; quy định BHXH trong quân đội"
+}

@@ -1,0 +1,60 @@
+{
+  "arm": "graphrag",
+  "stt": 113,
+  "question": "E đã nghỉ cty ngày 31/3. Tính đến nay chưa đi làm chính thức ở cty nào cũng chưa xin được việc làm ( tức ko có HĐLĐ VÀ đóng BHXH) . Nhưng e có làm 1 job online ( làm remote)  để kiếm thêm, làm job này có ký HĐ DỊCH VỤ -k đóng BHXH, K trừ gia cảnh. \nLiệu nếu hết tháng 4 hoặc tháng 5 mà vẫn chưa tìm đc việc chính thức thì e có được làm đơn lãnh BHTN ko? Và có được hưởng ko?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 38 khoản 1] về chậm đóng bảo hiểm xã hội.\n- [Điều 39 khoản 1] về trốn đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp.\n- [Điều 62 khoản 2] về giải quyết hưởng chế độ thai sản.\n- [Điều 64 khoản 1] về đối tượng và điều kiện hưởng lương hưu.\n- [Điều 107 khoản 2] về giải quyết hưởng lương hưu, bảo hiểm xã hội một lần.",
+  "citations": [
+    "[Điều 38 khoản 1]",
+    "[Điều 39 khoản 1]",
+    "[Điều 62 khoản 2]",
+    "[Điều 64 khoản 1]",
+    "[Điều 107 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A38.K1",
+    "L41_2024.A39.K1",
+    "L41_2024.A62.K2",
+    "L41_2024.A64.K1",
+    "L41_2024.A107.K2"
+  ],
+  "citation_verified": {
+    "L41_2024.A38.K1": true,
+    "L41_2024.A39.K1": true,
+    "L41_2024.A62.K2": true,
+    "L41_2024.A64.K1": true,
+    "L41_2024.A107.K2": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A33.K5",
+      "score": 0.8179311752319336,
+      "text_preview": "Đối tượng quy định tại các điểm a, b, c, d và i khoản 1 và khoản 2 Điều 2 của Luật này mà không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì người lao động không phải đóng bảo hiểm xã "
+    },
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.8088308572769165,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A38.K1",
+      "score": 0.8054232597351074,
+      "text_preview": "Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều "
+    },
+    {
+      "clause_id": "L41_2024.A141.K12",
+      "score": 0.8012789487838745,
+      "text_preview": "Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30"
+    },
+    {
+      "clause_id": "L41_2024.A39.K1",
+      "score": 0.797704815864563,
+      "text_preview": "Trốn đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp là hành vi của người sử dụng lao động thuộc một trong các trường hợp sau đây để không đóng hoặc đóng không đầy đủ bảo hiểm xã hội, bảo hiểm thấ"
+    }
+  ],
+  "n_semantic_edges": 3,
+  "n_refs": 20,
+  "elapsed_s": 2.96,
+  "gold_answer": "Nếu bạn chỉ làm job online theo hợp đồng dịch vụ, không phải HĐLĐ thuộc diện tham gia BHTN, thì về nguyên tắc vẫn có thể nộp hồ sơ hưởng BHTN nếu đáp ứng điều kiện luật định. Bạn phải nộp trong 03 tháng kể từ ngày chấm dứt HĐLĐ cũ và sau khi nộp, nếu sau 15 ngày vẫn chưa có việc làm thuộc diện phải tham gia BHTN thì được hưởng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

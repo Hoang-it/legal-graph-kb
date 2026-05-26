@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 158,
+  "question": "mình đóng bhxh dk 6 năm mức lương CB 5300 thì giờ mk muốn rút một lần là dk khoảng bao nhiêu?",
+  "answer": "Issue: Người dùng đã đóng bảo hiểm xã hội 6 năm với mức lương cơ bản 5300 và muốn biết số tiền có thể rút một lần là bao nhiêu.\n\nRule: \n\nApplication: \n- years_contributed: 6\n- base_salary: 5300\n\nProlog đã sử dụng các giá trị này để tính toán số tiền có thể rút, cụ thể là số tiền rút được là 15900.0.\n\nConclusion: Số tiền có thể rút một lần là 15900.0.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(calculation,withdrawal_amount(user,15900.0),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người dùng đã đóng bảo hiểm xã hội 6 năm với mức lương cơ bản 5300 và muốn biết số tiền có thể rút một lần là bao nhiêu.",
+    "rule": "",
+    "application": "- years_contributed: 6\n- base_salary: 5300\n\nProlog đã sử dụng các giá trị này để tính toán số tiền có thể rút, cụ thể là số tiền rút được là 15900.0.",
+    "conclusion": "Số tiền có thể rút một lần là 15900.0."
+  },
+  "elapsed_s": 7.68,
+  "prompt_tokens": 1917,
+  "completion_tokens": 295,
+  "error": null,
+  "gold_answer": "Nếu 6 năm đóng đều từ 2014 trở đi và mức bình quân lương đóng khoảng 5,3 triệu thì BHXH 1 lần ước khoảng khoảng 63,6 triệu. Đây là số ước tính sơ bộ; cơ quan BHXH còn tính theo mức bình quân tiền lương sau điều chỉnh từng năm. Bạn cũng cần đủ điều kiện hưởng BHXH 1 lần thì mới rút được.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 174,
+  "question": "Nữ sinh 13/6/1974, e làm công nhân may, đã đóng bảo hiểm được 30 năm, theo quy định thì 6/2026 là e đủ điều kiện được về hưu, tháng 8/2025 e đã làm để hưởng bảo hiểm thất nghiệp và vẫn hưởng đến nay. E muốn hỏi , sau khi hưởng nốt thất nghiệp của tháng 5/2026 thì e đi làm thủ tục cắt hỗ trợ thất nghiệp sau đó e nộp hồ sơ để hưởng lương hưu luôn để được hưởng lương hưu từ tháng 6/2026 thì có được không?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội, bạn có thể thực hiện thủ tục để hưởng lương hưu sau khi kết thúc thời gian hưởng bảo hiểm thất nghiệp. Cụ thể, bạn cần làm thủ tục cắt hỗ trợ thất nghiệp và nộp hồ sơ để hưởng lương hưu.\n\nTheo Điều 54 khoản 1 Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động đủ điều kiện hưởng lương hưu có thể nộp hồ sơ để hưởng lương hưu ngay sau khi không còn hưởng bảo hiểm thất nghiệp. Nếu bạn hoàn tất thủ tục cắt hỗ trợ thất nghiệp và nộp hồ sơ đúng thời hạn, bạn sẽ được hưởng lương hưu từ tháng 6/2026 như dự kiến.\n\nTuy nhiên, bạn cần lưu ý rằng việc nộp hồ sơ và các thủ tục liên quan cần được thực hiện theo quy định của cơ quan bảo hiểm xã hội.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 5.217,
+  "prompt_tokens": 287,
+  "completion_tokens": 201,
+  "gold_answer": "Bạn cần phân biệt thời điểm đủ điều kiện hưu và thời điểm bắt đầu hưởng hưu. Khi đang hưởng BHTN, nếu đủ điều kiện và làm thủ tục để hưởng lương hưu thì TCTN sẽ bị chấm dứt từ thời điểm hưởng lương hưu. Vì vậy về nguyên tắc có thể làm thủ tục để nối sang chế độ hưu, nhưng cần tính đúng mốc tháng bắt đầu hưởng hưu để không chồng chéo hoặc bị thu hồi.",
+  "gold_citations_raw": "Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

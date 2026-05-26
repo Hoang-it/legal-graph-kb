@@ -1,0 +1,48 @@
+{
+  "arm": "graphrag",
+  "stt": 56,
+  "question": "Bên em có 1 nhóm cộng tác viên đến làm công việc đóng hàng mà thời gian không cố định. Em có tìm hiểu thì sẽ phải đóng BHXH cho nhóm này với mức đóng là 2.340.000. Nhưng các bạn ấy đi làm có tháng đủ 15 ngày nhưng có tháng chỉ đến 4-5 ngày. Em có 2 câu hỏi \n1. Nên để hợp đồng gì cho nhóm cộng tác viên này? Hiện em đang để là hợp đồng cộng tác viên nhưng do khi tính lương lại tính theo giờ. \n2. Có phải đóng BHXH cho nhóm này ko ạ? Có bạn tháng này đến làm tháng sau lại ko đến thì tăng giảm như thế lại ko hợp lý đúng ko ạ?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\n1. Về hợp đồng cho nhóm cộng tác viên, không có điều luật nào trong CONTEXT đề cập đến loại hợp đồng cụ thể cho nhóm này.\n2. Về việc đóng BHXH, Điều 33 khoản 5 quy định rằng nếu người lao động không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì không phải đóng bảo hiểm xã hội tháng đó, trừ khi có thỏa thuận khác. Điều này có thể áp dụng cho nhóm cộng tác viên của bạn.\n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 33 khoản 5]",
+  "citations": [
+    "[Điều 33 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A33.K5"
+  ],
+  "citation_verified": {
+    "L41_2024.A33.K5": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A33.K7",
+      "score": 0.8182260990142822,
+      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+    },
+    {
+      "clause_id": "L41_2024.A33.K5",
+      "score": 0.8173121213912964,
+      "text_preview": "Đối tượng quy định tại các điểm a, b, c, d và i khoản 1 và khoản 2 Điều 2 của Luật này mà không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì người lao động không phải đóng bảo hiểm xã "
+    },
+    {
+      "clause_id": "L41_2024.A5.K6",
+      "score": 0.8096502423286438,
+      "text_preview": "Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hi"
+    },
+    {
+      "clause_id": "L41_2024.A53.K8",
+      "score": 0.8077110052108765,
+      "text_preview": "Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ "
+    },
+    {
+      "clause_id": "L41_2024.A99.K3",
+      "score": 0.8076460361480713,
+      "text_preview": "Việc tính mức lương hưu hằng tháng của người lao động đủ điều kiện hưởng lương hưu mà có thời gian đóng bảo hiểm xã hội theo quy định của điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là"
+    }
+  ],
+  "n_semantic_edges": 1,
+  "n_refs": 6,
+  "elapsed_s": 3.24,
+  "gold_answer": "Tên hợp đồng không quyết định, mà bản chất công việc mới quyết định có phải tham gia BHXH bắt buộc hay không. Nếu nhóm cộng tác viên làm việc thường xuyên, có trả công, chịu sự quản lý, điều hành và hợp đồng từ đủ 1 tháng trở lên thì vẫn có thể thuộc diện BHXH bắt buộc dù gọi là 'CTV' hay tính lương theo giờ. Nếu làm thời vụ, không ổn định, không đủ dấu hiệu quan hệ lao động thì không thuộc diện bắt buộc. Cần rà lại thực tế sử dụng lao động để chọn loại hợp đồng phù hợp.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2 khoản 1 điểm a; Bộ luật Lao động 2019 Điều 13"
+}

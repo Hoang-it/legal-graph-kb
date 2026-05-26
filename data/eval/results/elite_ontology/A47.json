@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 47,
+  "question": "Mình vừa được thăng chức, tăng lương xong mấy ngày thì biết tin có bầu. Mình đã đóng bảo hiểm được 5 năm. Thời gian tăng lương đến khi nghỉ thai sản đúng 6 tháng trước sinh ( tăng hơn 1 triệu ) . Giờ mình xin nghỉ thai sản trước 2 tháng và nghỉ việc luôn thì có bị thanh tra không? Mình có đầy đủ quyết định điều chỉnh lương , bảng lương, quyết định bổ nhiệm nhưng nhận quyết định qua mail k có bản dấu đỏ thì khi thanh tra có được chấp nhận không?",
+  "answer": "Issue: Người dùng hỏi về khả năng bị thanh tra khi xin nghỉ thai sản trước 2 tháng và nghỉ việc, mặc dù đã có quyết định điều chỉnh lương nhưng không có bản dấu đỏ.\n\nRule: \"1. Thời gian nghỉ việc hưởng chế độ thai sản của lao động nữ khi sinh con được thực hiện theo quy định tại khoản 1 Điều 139 của Bộ luật Lao động.\"\n\nApplication: Không có giá trị nào được gán cho các slot trong quá trình thực hiện truy vấn. Tuy nhiên, Prolog đã kiểm tra điều kiện về thời gian đóng bảo hiểm của người dùng, xác nhận rằng người dùng đã đóng bảo hiểm được 5 năm.\n\nConclusion: Hệ thống không thể tính toán số liệu cuối cùng do không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 139]"
+  ],
+  "citation_ids": [
+    "L41_2024.A139"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,check_inspection(user),based_on(source_c053))]",
+  "irac_sections": {
+    "issue": "Người dùng hỏi về khả năng bị thanh tra khi xin nghỉ thai sản trước 2 tháng và nghỉ việc, mặc dù đã có quyết định điều chỉnh lương nhưng không có bản dấu đỏ.",
+    "rule": "\"1. Thời gian nghỉ việc hưởng chế độ thai sản của lao động nữ khi sinh con được thực hiện theo quy định tại khoản 1 Điều 139 của Bộ luật Lao động.\"",
+    "application": "Không có giá trị nào được gán cho các slot trong quá trình thực hiện truy vấn. Tuy nhiên, Prolog đã kiểm tra điều kiện về thời gian đóng bảo hiểm của người dùng, xác nhận rằng người dùng đã đóng bảo hiểm được 5 năm.",
+    "conclusion": "Hệ thống không thể tính toán số liệu cuối cùng do không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 8.443,
+  "prompt_tokens": 3470,
+  "completion_tokens": 381,
+  "error": null,
+  "gold_answer": "Việc tăng lương rồi sau đó nghỉ thai sản không mặc nhiên bị thanh tra hay bị từ chối chế độ. Cơ quan BHXH chỉ kiểm tra khi nghi ngờ việc tăng lương không có căn cứ thực tế, không đúng quy chế hoặc đóng BHXH không đúng bản chất quan hệ lao động. Nếu bạn có quyết định điều chỉnh lương, bổ nhiệm, bảng lương, chứng từ trả lương và việc tăng lương là thật, đúng quy trình thì thường vẫn được chấp nhận. Văn bản điện tử hợp lệ không bắt buộc phải có bản dấu đỏ giấy.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 53; Bộ luật Lao động 2019 Điều 90, Điều 94; Luật Giao dịch điện tử 2023"
+}

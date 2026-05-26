@@ -1,0 +1,17 @@
+{
+  "arm": "llm_only",
+  "stt": 137,
+  "question": "Hiện tại bên Bảo hiểm có cấp lại sổ và tờ rời bị mất không?\nEm bị mất sổ và tờ rời đóng từ năm 2018 tới 2020. Do bị trộm vào nhà .\nHiện tại e vẫn còn tờ rời từ 2021 cho đến nay.",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động có quyền yêu cầu cấp lại sổ bảo hiểm xã hội và tờ rời khi bị mất. Bạn cần làm đơn đề nghị cấp lại sổ bảo hiểm xã hội và nộp cho cơ quan bảo hiểm xã hội nơi bạn tham gia. Cơ quan bảo hiểm sẽ xem xét và cấp lại cho bạn theo quy định.\n\nCụ thể, bạn có thể tham khảo thêm tại [Điều 46 khoản 1] về việc cấp lại sổ bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 46 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A46.K1"
+  ],
+  "elapsed_s": 2.952,
+  "prompt_tokens": 225,
+  "completion_tokens": 123,
+  "gold_answer": "Có thể làm thủ tục cấp lại sổ/tờ rời bị mất. Việc bị trộm, thất lạc không làm mất quá trình đóng nếu dữ liệu đã có trên hệ thống BHXH. Bạn mang CCCD và làm hồ sơ cấp lại tại cơ quan BHXH nơi cư trú hoặc nơi đang quản lý hồ sơ; trường hợp cần, BHXH sẽ in lại quá trình đóng tương ứng. Nên giữ lại tờ rời 2021 đến nay để đối chiếu thông tin.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

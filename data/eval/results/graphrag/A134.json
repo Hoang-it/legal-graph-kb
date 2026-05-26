@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 134,
+  "question": "quyết định nghỉ thất nghiệp của tôi hết ngày 21/4. Nhưng tháng 3 tôi đi làm giám định sức khoẻ để nghỉ hưu thì có được không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 119 khoản 3\n- Điều 83 khoản 1\n- Điều 83 khoản 2\n- Điều 13 khoản 5\n- Điều 86 khoản 4",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A119.K3",
+      "score": 0.7903243899345398,
+      "text_preview": "Chi trả phí khám giám định mức suy giảm khả năng lao động đối với trường hợp không do người sử dụng lao động giới thiệu đi khám giám định mức suy giảm khả năng lao động mà kết quả giám định đủ điều ki"
+    },
+    {
+      "clause_id": "L41_2024.A83.K1",
+      "score": 0.7868298292160034,
+      "text_preview": "Hồ sơ, trình tự khám giám định mức suy giảm khả năng lao động để giải quyết chế độ bảo hiểm xã hội do Bộ trưởng Bộ Y tế quy định."
+    },
+    {
+      "clause_id": "L41_2024.A83.K2",
+      "score": 0.7852219343185425,
+      "text_preview": "Việc khám giám định mức suy giảm khả năng lao động phải bảo đảm chính xác, công khai, minh bạch. Hội đồng giám định y khoa chịu trách nhiệm về tính chính xác của kết quả giám định."
+    },
+    {
+      "clause_id": "L41_2024.A13.K5",
+      "score": 0.7782571315765381,
+      "text_preview": "Xem xét giới thiệu người lao động thuộc đối tượng theo quy định tại Điều 65 của Luật này đi khám giám định y khoa để xác định mức suy giảm khả năng lao động tại Hội đồng giám định y khoa."
+    },
+    {
+      "clause_id": "L41_2024.A86.K4",
+      "score": 0.7713953256607056,
+      "text_preview": "Kết quả khám giám định mức suy giảm khả năng lao động để hưởng trợ cấp tuất hằng tháng phải được xác định chậm nhất 06 tháng kể từ ngày người tham gia bảo hiểm xã hội chết hoặc kể từ ngày thân nhân qu"
+    }
+  ],
+  "n_semantic_edges": 0,
+  "n_refs": 5,
+  "elapsed_s": 1.8,
+  "gold_answer": "Nếu quyết định hưởng trợ cấp thất nghiệp của bạn hết ngày 21/4 thì việc đi giám định sức khỏe để làm hồ sơ hưu vào tháng 3 không tự động làm mất quyền hưởng phần TCTN đang chi trả. Tuy nhiên khi bạn đủ điều kiện và bắt đầu hưởng lương hưu thì TCTN sẽ chấm dứt từ thời điểm đó. Vì vậy cần tính mốc nộp hồ sơ hưu và thời điểm hưởng hưu cho hợp lý.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

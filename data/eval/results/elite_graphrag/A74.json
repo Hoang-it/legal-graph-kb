@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 74,
+  "question": "Em đóng bhxh được 1năm 5 tháng và lúc 30/3 e có nằm viện dưỡng thai tới 3/4 e được xuất viện. Rồi em vào nộp cho nhân sự đồng thời trong tháng 4 e xin nghi không lương vậy em có được hưởng trợ cấp ốm đau không?",
+  "answer": "Issue: Người dùng hỏi về khả năng hưởng trợ cấp ốm đau sau khi đã đóng bảo hiểm xã hội được 1 năm 5 tháng và có thời gian nằm viện.\n\nRule: \"Mức hưởng trợ cấp ốm đau một ngày được tính bằng mức hưởng trợ cấp ốm đau theo tháng chia cho 24 ngày. Mức hưởng trợ cấp ốm đau nửa ngày được tính bằng một nửa mức hưởng trợ cấp ốm đau một ngày.\" (Luật BHXH 2024 (41/2024/QH15), Điều 45, Khoản 5)\n\nApplication: Không có giá trị nào được gán trong slot_bindings. Tuy nhiên, Prolog đã sử dụng các quy tắc để xác định khả năng hưởng trợ cấp ốm đau dựa trên số tháng và năm đã đóng bảo hiểm xã hội. Cụ thể, người dùng đã đóng 5 tháng và 1 năm, đủ điều kiện để được hưởng trợ cấp.\n\nConclusion: Prolog đã xác định rằng người dùng đủ điều kiện hưởng trợ cấp ốm đau với giá trị \"yes\".",
+  "citations": [
+    "[Điều 45 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A45.K5"
+  ],
+  "citation_indices": [
+    0,
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,sick_leave_eligibility(user,yes),based_on(source_c045))]",
+  "irac_sections": {
+    "issue": "Người dùng hỏi về khả năng hưởng trợ cấp ốm đau sau khi đã đóng bảo hiểm xã hội được 1 năm 5 tháng và có thời gian nằm viện.",
+    "rule": "\"Mức hưởng trợ cấp ốm đau một ngày được tính bằng mức hưởng trợ cấp ốm đau theo tháng chia cho 24 ngày. Mức hưởng trợ cấp ốm đau nửa ngày được tính bằng một nửa mức hưởng trợ cấp ốm đau một ngày.\" (Luật BHXH 2024 (41/2024/QH15), Điều 45, Khoản 5)",
+    "application": "Không có giá trị nào được gán trong slot_bindings. Tuy nhiên, Prolog đã sử dụng các quy tắc để xác định khả năng hưởng trợ cấp ốm đau dựa trên số tháng và năm đã đóng bảo hiểm xã hội. Cụ thể, người dùng đã đóng 5 tháng và 1 năm, đủ điều kiện để được hưởng trợ cấp.",
+    "conclusion": "Prolog đã xác định rằng người dùng đủ điều kiện hưởng trợ cấp ốm đau với giá trị \"yes\"."
+  },
+  "elapsed_s": 13.162,
+  "prompt_tokens": 3575,
+  "completion_tokens": 616,
+  "error": null,
+  "gold_answer": "Nếu bạn phải nghỉ dưỡng thai theo chỉ định và có giấy ra viện/giấy chứng nhận nghỉ việc hưởng BHXH hợp lệ thì thời gian 30/3 đến 3/4 vẫn có thể được giải quyết chế độ ốm đau. Việc trong tháng 4 bạn xin nghỉ không lương không tự làm mất quyền hưởng cho khoảng thời gian điều trị thực tế trước đó, miễn là thời gian nghỉ hưởng ốm đau có đủ hồ sơ y tế hợp lệ và không thuộc trường hợp luật loại trừ.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 42, Điều 46"
+}

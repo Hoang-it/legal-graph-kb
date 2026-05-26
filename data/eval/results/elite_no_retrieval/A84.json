@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 84,
+  "question": "Mình muốn đóng bảo hiểm tự nguyện mà bây giờ họ không làm số, vậy có cách nào biết là mình đóng được bao nhiêu thời gian ko?",
+  "answer": "Issue: Người lao động muốn biết cách kiểm tra thời gian đóng bảo hiểm xã hội tự nguyện khi không có số liệu cụ thể.\n\nRule: \"Người lao động có thể kiểm tra thời gian đóng bảo hiểm xã hội tự nguyện thông qua cơ quan bảo hiểm xã hội địa phương hoặc các kênh thông tin chính thức.\"\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Prolog đã thực hiện truy vấn để lấy thông tin về điều kiện kiểm tra thời gian đóng bảo hiểm xã hội tự nguyện, nhưng không có dữ liệu cụ thể nào được cung cấp.\n\nConclusion: Prolog đã trả về thông tin với giá trị là \"Người lao động có thể kiểm tra thời gian đóng bảo hiểm xã hội tự nguyện thông qua cơ quan bảo hiểm xã hội địa phương hoặc các kênh thông tin chính thức.\" Tuy nhiên, không có giá trị nào được gán từ các slot, vì vậy không thể đưa ra một số liệu cụ thể.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(information,conditions_for_voluntary_insurance(Người lao động có thể kiểm tra thời gian đóng bảo hiểm xã hội tự nguyện thông qua cơ quan bảo hiểm xã hội địa phương hoặc các kênh thông tin chính thức.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người lao động muốn biết cách kiểm tra thời gian đóng bảo hiểm xã hội tự nguyện khi không có số liệu cụ thể.",
+    "rule": "\"Người lao động có thể kiểm tra thời gian đóng bảo hiểm xã hội tự nguyện thông qua cơ quan bảo hiểm xã hội địa phương hoặc các kênh thông tin chính thức.\"",
+    "application": "Không có slot nào được gán giá trị trong trường hợp này. Prolog đã thực hiện truy vấn để lấy thông tin về điều kiện kiểm tra thời gian đóng bảo hiểm xã hội tự nguyện, nhưng không có dữ liệu cụ thể nào được cung cấp.",
+    "conclusion": "Prolog đã trả về thông tin với giá trị là \"Người lao động có thể kiểm tra thời gian đóng bảo hiểm xã hội tự nguyện thông qua cơ quan bảo hiểm xã hội địa phương hoặc các kênh thông tin chính thức.\" Tuy nhiên, không có giá trị nào được gán từ các slot, vì vậy không thể đưa ra một số liệu cụ thể."
+  },
+  "elapsed_s": 8.07,
+  "prompt_tokens": 2031,
+  "completion_tokens": 345,
+  "error": null,
+  "gold_answer": "Hiện việc quản lý BHXH chủ yếu theo mã số và dữ liệu điện tử, nên dù không 'làm số' bằng cách hiểu cũ thì bạn vẫn có thể tra cứu thời gian đã đóng qua VssID, Cổng BHXH Việt Nam hoặc trực tiếp tại cơ quan BHXH. Nếu chưa biết mã số, dùng CCCD/họ tên/ngày sinh để tra cứu. Khi có mã số BHXH, hệ thống sẽ thể hiện thời gian tham gia BHXH tự nguyện đã được ghi nhận.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn tra cứu BHXH điện tử"
+}

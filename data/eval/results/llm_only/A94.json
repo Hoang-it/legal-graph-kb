@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 94,
+  "question": "e mơi đóng bhxh hộ kinh doanh được 2 tháng giờ e ở nhóm 1 không phải đóng thì đi huỷ được khômg?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, nếu bạn đã tham gia bảo hiểm xã hội (BHXH) theo hình thức hộ kinh doanh và muốn huỷ tham gia, bạn có thể làm thủ tục huỷ tham gia BHXH. Tuy nhiên, bạn cần lưu ý rằng việc huỷ tham gia BHXH sẽ ảnh hưởng đến quyền lợi của bạn trong tương lai.\n\nCụ thể, bạn cần liên hệ với cơ quan BHXH để được hướng dẫn chi tiết về thủ tục huỷ tham gia và các vấn đề liên quan. Nếu bạn thuộc nhóm không phải đóng BHXH, bạn có thể không cần tiếp tục tham gia. \n\nTuy nhiên, tôi không có đủ thông tin chính xác để trả lời câu hỏi này.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 3.874,
+  "prompt_tokens": 188,
+  "completion_tokens": 165,
+  "gold_answer": "Nếu trước đây bạn thuộc diện phải tham gia BHXH bắt buộc với tư cách chủ hộ kinh doanh nhưng nay chuyển sang nhóm không thuộc diện phải đóng nữa, bạn cần liên hệ cơ quan BHXH để làm thủ tục giảm/dừng đúng từ thời điểm không còn thuộc đối tượng. Không phải 'hủy' toàn bộ quá trình 2 tháng đã đóng; thời gian đó nếu đóng đúng đối tượng vẫn được ghi nhận. Cần xác định rõ căn cứ vì sao bạn chuyển sang nhóm 1 không phải đóng để cơ quan BHXH điều chỉnh.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2; Nghị định 158/2025/NĐ-CP Điều 3"
+}

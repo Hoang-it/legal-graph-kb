@@ -1,0 +1,17 @@
+{
+  "arm": "llm_only",
+  "stt": 109,
+  "question": "Đóng bảo hiểm xã hội bao nhiêu năm là được về hưu vậy?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động được hưởng lương hưu khi có đủ 20 năm đóng bảo hiểm xã hội. Tuy nhiên, độ tuổi nghỉ hưu và số năm đóng bảo hiểm xã hội có thể thay đổi tùy theo từng đối tượng và điều kiện cụ thể. Cụ thể, người lao động có thể nghỉ hưu ở độ tuổi 60 đối với nam và 55 đối với nữ, nhưng có thể được nghỉ hưu sớm hơn nếu có đủ số năm đóng bảo hiểm xã hội theo quy định. \n\nBạn có thể tham khảo thêm tại [Điều 54 khoản 1].",
+  "citations": [
+    "[Điều 54 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A54.K1"
+  ],
+  "elapsed_s": 3.054,
+  "prompt_tokens": 174,
+  "completion_tokens": 142,
+  "gold_answer": "Từ 01/7/2025, điều kiện về thời gian đóng để hưởng lương hưu với nhiều nhóm lao động là từ đủ 15 năm BHXH, nhưng vẫn phải đủ tuổi nghỉ hưu theo luật. Năm 2026, tuổi nghỉ hưu trong điều kiện bình thường là 61 tuổi 6 tháng đối với nam và 57 tuổi đối với nữ, trừ trường hợp làm nghề nặng nhọc, suy giảm khả năng lao động hoặc có điều kiện đặc thù.",
+  "gold_citations_raw": "Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

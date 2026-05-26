@@ -1,0 +1,25 @@
+{
+  "arm": "elite_no_retrieval",
+  "stt": 4,
+  "question": "Ông Long (Hà Nội) đóng BHXH được 15 năm, vợ ông mới sinh con, theo quy định, ông được nghỉ 5 ngày.\nÔng Long hỏi, ông cần nộp giấy tờ gì để hưởng quyền lợi này?",
+  "answer": "Issue: Ông Long (Hà Nội) đã đóng BHXH được 15 năm và vợ ông mới sinh con. Ông hỏi cần nộp giấy tờ gì để hưởng quyền lợi nghỉ phép.\n\nRule: Không có trích dẫn nào được cung cấp trong tài liệu.\n\nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng ông Long cần nộp \"Giấy khai sinh của con và đơn xin nghỉ phép\" dựa trên quy định về thời gian đóng BHXH.\n\nConclusion: Prolog đã trả về giá trị \"Giấy khai sinh của con và đơn xin nghỉ phép\" cho biến Answer. Không có slot nào bị thiếu hoặc lỗi trong quá trình thực hiện.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,Giấy khai sinh của con và đơn xin nghỉ phép),based_on(none))]",
+  "irac_sections": {
+    "issue": "Ông Long (Hà Nội) đã đóng BHXH được 15 năm và vợ ông mới sinh con. Ông hỏi cần nộp giấy tờ gì để hưởng quyền lợi nghỉ phép.",
+    "rule": "Không có trích dẫn nào được cung cấp trong tài liệu.",
+    "application": "Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng ông Long cần nộp \"Giấy khai sinh của con và đơn xin nghỉ phép\" dựa trên quy định về thời gian đóng BHXH.",
+    "conclusion": "Prolog đã trả về giá trị \"Giấy khai sinh của con và đơn xin nghỉ phép\" cho biến Answer. Không có slot nào bị thiếu hoặc lỗi trong quá trình thực hiện."
+  },
+  "elapsed_s": 9.052,
+  "prompt_tokens": 2007,
+  "completion_tokens": 312,
+  "error": null,
+  "gold_answer": "Theo thư ông trình bày, chưa có thông tin về việc tại thời điểm vợ của ông sinh con thì ông có đang đóng BHXH hay không? Do đó, BHXH Việt Nam chưa có căn cứ trả lời ông có thuộc trường hợp được hưởng chế độ thai sản khi vợ sinh con hay không. BHXH Việt Nam cung cấp các quy định chung để ông tham khảo, đối chiếu với trường hợp của mình:\nTại Khoản 1 Điều 31 Luật BHXH năm 2014 quy định, người lao động được hưởng chế độ thai sản khi thuộc một trong các trường hợp sau đây:\n\"e) Lao động nam đang đóng BHXH có vợ sinh con\".\nTại Khoản 2 Điều 34 Luật BHXH năm 2014 quy định, lao động nam đang đóng BHXH khi vợ sinh con được nghỉ việc hưởng chế độ thai sản như sau:\n\"a) 05 ngày làm việc;\nb) 07 ngày làm việc khi vợ sinh con phải phẫu thuật, sinh con dưới 32 tuần tuổi;\nc) Trường hợp vợ sinh đôi thì được nghỉ 10 ngày làm việc, từ sinh ba trở lên thì cứ thêm mỗi con được nghỉ thêm 3 ngày làm việc;\nd) Trường hợp vợ sinh đôi trở lên mà phải phẫu thuật thì được nghỉ 14 ngày làm việc.\nThời gian nghỉ việc hưởng chế độ thai sản quy định tại Khoản này được tính trong khoảng thời gian 30 ngày đầu kể từ ngày vợ sinh con\".\nHồ sơ hưởng chế độ thai sản tại Khoản 4, Khoản 5 Điều 101 Luật BHXH năm 2014 quy định:\n\"4. Trường hợp lao động nam nghỉ việc khi vợ sinh con phải có bản sao giấy chứng sinh hoặc bản sao giấy khai sinh của con và giấy xác nhận của cơ sở y tế đối với trường hợp sinh con phải phẫu thuật, sinh con dưới 32 tuần tuổi.\n5. Danh sách người lao động nghỉ việc hưởng chế độ thai sản do người sử dụng lao động lập\".",
+  "gold_citations_raw": "Khoản 1 Điều 31 Luật BHXH \n2 Điều 34 Luật BHXH năm 2014"
+}

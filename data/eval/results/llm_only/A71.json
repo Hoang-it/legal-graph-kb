@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 71,
+  "question": "Mình đóng bảo hiểm được 20 năm mà chưa tới tuổi lãnh hưu, mình nghỉ làm thì mình có được nhận tiền bảo hiểm thất nghiệp không?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, để được nhận tiền bảo hiểm thất nghiệp, người lao động phải đáp ứng các điều kiện sau:\n\n1. Đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên.\n2. Đã chấm dứt hợp đồng lao động hoặc hợp đồng làm việc.\n3. Không thuộc các trường hợp không được hưởng trợ cấp thất nghiệp theo quy định.\n\nNếu bạn đã đóng bảo hiểm thất nghiệp đủ 12 tháng và chấm dứt hợp đồng lao động, bạn có thể đủ điều kiện nhận tiền bảo hiểm thất nghiệp, bất kể bạn đã đóng bảo hiểm xã hội được 20 năm hay chưa đến tuổi nghỉ hưu. \n\nBạn nên kiểm tra thêm các điều kiện cụ thể khác để đảm bảo quyền lợi của mình.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 5.327,
+  "prompt_tokens": 190,
+  "completion_tokens": 172,
+  "gold_answer": "Có. Bảo hiểm thất nghiệp là chế độ riêng, không phụ thuộc việc bạn đã đủ 20 năm BHXH hay chưa. Nếu bạn nghỉ việc đúng quy định, đã đóng BHTN đủ thời gian luật định, nộp hồ sơ trong 3 tháng và sau 15 ngày chưa có việc làm thì vẫn được hưởng trợ cấp thất nghiệp. Bạn chỉ không được hưởng BHXH một lần nếu không thuộc trường hợp luật cho phép, còn BHTN vẫn xem xét riêng theo Luật Việc làm.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 49, Điều 50; Luật BHXH 2024 Điều 70"
+}

@@ -1,0 +1,54 @@
+{
+  "arm": "graphrag",
+  "stt": 192,
+  "question": "năm 2011 em có mượn hồ sơ đi làm và đóng bh đc 3th thì cty phát hiện hồ sơ giả nên em nghỉ việc, nhưng đến hôm nay cái chị cho em mượn hồ sơ đi lấy bhxh thì bên bh kiểm tra và bảo còn vướng 3th bảo hiểm của em , giờ phải ra toà để huỷ. Vậy giờ em phải làm như thế nào?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 9 khoản 4] về hành vi gian lận, giả mạo hồ sơ trong việc thực hiện bảo hiểm xã hội.\n- [Điều 9 khoản 7] về việc đăng ký, báo cáo sai sự thật; cung cấp thông tin không chính xác về bảo hiểm xã hội, bảo hiểm thất nghiệp.\n- [Điều 15 khoản 6] về quyền và trách nhiệm của tổ chức đại diện người sử dụng lao động trong việc kiến nghị xử lý vi phạm pháp luật về bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 9 khoản 4]",
+    "[Điều 9 khoản 7]",
+    "[Điều 15 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A9.K4",
+    "L41_2024.A9.K7",
+    "L41_2024.A15.K6"
+  ],
+  "citation_verified": {
+    "L41_2024.A9.K4": true,
+    "L41_2024.A9.K7": true,
+    "L41_2024.A15.K6": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A9.K4",
+      "score": 0.803676962852478,
+      "text_preview": "Gian lận, giả mạo hồ sơ trong việc thực hiện bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A15.K6",
+      "score": 0.7970893979072571,
+      "text_preview": "Kiến nghị cơ quan nhà nước có thẩm quyền xử lý hành vi vi phạm pháp luật về bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A113.K1",
+      "score": 0.7959753274917603,
+      "text_preview": "Trường hợp nộp hồ sơ quá thời hạn quy định tại khoản 1 Điều 97, khoản 1 Điều 107, điểm a khoản 2 Điều 112 của Luật này thì phải giải trình bằng văn bản và gửi cho cơ quan bảo hiểm xã hội khi nộp hồ sơ"
+    },
+    {
+      "clause_id": "L41_2024.A9.K7",
+      "score": 0.7954050302505493,
+      "text_preview": "Đăng ký, báo cáo sai sự thật; cung cấp thông tin không chính xác về bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A92.K1",
+      "score": 0.7951298952102661,
+      "text_preview": "Trường hợp nộp hồ sơ quá thời hạn quy định tại khoản 1 và khoản 2 Điều 48, khoản 1 Điều 49, khoản 1 Điều 62, khoản 1 Điều 63, khoản 1 Điều 79, khoản 1 và khoản 2 Điều 91 của Luật này thì phải giải trì"
+    }
+  ],
+  "n_semantic_edges": 1,
+  "n_refs": 12,
+  "elapsed_s": 2.94,
+  "gold_answer": "Dùng hồ sơ giả để đi làm và đóng BHXH là việc phải xử lý rất thận trọng. Cơ quan BHXH yêu cầu hủy quá trình sai là có cơ sở; trường hợp hồ sơ giả, người đứng tên thật và người sử dụng hồ sơ nên làm việc trực tiếp với BHXH để xác định hướng xử lý, thậm chí có thể phải qua tòa án/cơ quan công an nếu phát sinh tranh chấp, giả mạo giấy tờ. Bạn không nên tự ý làm thủ tục rút hay gộp sổ trong tình trạng này.",
+  "gold_citations_raw": "Luật BHXH 2024; Bộ luật Dân sự 2015; quy định về giả mạo hồ sơ"
+}

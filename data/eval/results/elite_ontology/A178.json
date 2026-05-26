@@ -1,0 +1,31 @@
+{
+  "arm": "elite_ontology",
+  "stt": 178,
+  "question": "em làm mất bìa và sổ BHXH . trên app thì cái sdt và gmail đăng ký thì e mất lâu rồi . bây giờ em phải làm sao?",
+  "answer": "Issue: Người dùng đã làm mất bìa và sổ bảo hiểm xã hội và không còn thông tin đăng ký trên ứng dụng. Họ muốn biết phải làm gì trong trường hợp này.\n\nRule: \"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Prolog đã sử dụng quy tắc để đưa ra hướng dẫn cho người dùng về việc làm thủ tục cấp lại bìa và sổ BHXH.\n\nConclusion: Prolog đã trả về kết quả là \"Bạn cần đến cơ quan bảo hiểm xã hội nơi bạn đăng ký để làm thủ tục cấp lại bìa và sổ BHXH.\" với biến Answer.",
+  "citations": [
+    "[Điều 18 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,how_to_report_lost_documents(Bạn cần đến cơ quan bảo hiểm xã hội nơi bạn đăng ký để làm thủ tục cấp lại bìa và sổ BHXH.),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Người dùng đã làm mất bìa và sổ bảo hiểm xã hội và không còn thông tin đăng ký trên ứng dụng. Họ muốn biết phải làm gì trong trường hợp này.",
+    "rule": "\"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)",
+    "application": "Không có slot nào được gán giá trị trong trường hợp này. Prolog đã sử dụng quy tắc để đưa ra hướng dẫn cho người dùng về việc làm thủ tục cấp lại bìa và sổ BHXH.",
+    "conclusion": "Prolog đã trả về kết quả là \"Bạn cần đến cơ quan bảo hiểm xã hội nơi bạn đăng ký để làm thủ tục cấp lại bìa và sổ BHXH.\" với biến Answer."
+  },
+  "elapsed_s": 8.594,
+  "prompt_tokens": 4641,
+  "completion_tokens": 433,
+  "error": null,
+  "gold_answer": "Bạn bị mất bìa sổ BHXH và mất cả số điện thoại/gmail đăng ký thì vẫn xử lý được. Trước hết mang CCCD tới cơ quan BHXH để cập nhật lại thông tin liên hệ, cấp lại tài khoản/đổi thông tin trên VssID nếu cần, đồng thời làm thủ tục cấp lại sổ BHXH. Dữ liệu tham gia BHXH vẫn nằm trên hệ thống nên không mất quá trình đóng.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

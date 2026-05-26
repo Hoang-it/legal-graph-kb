@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 179,
+  "question": "mình nghỉ ngang vậy có đc lãnh bảo hiểm thất nghiệp không?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, để được hưởng bảo hiểm thất nghiệp, người lao động phải chấm dứt hợp đồng lao động theo quy định của pháp luật và không phải do lỗi của người lao động. Nếu bạn nghỉ ngang, tức là tự ý chấm dứt hợp đồng lao động mà không có lý do chính đáng, bạn sẽ không đủ điều kiện để nhận bảo hiểm thất nghiệp. Cụ thể, Điều 49 quy định về điều kiện hưởng bảo hiểm thất nghiệp. \n\nDo đó, bạn cần xem xét lý do nghỉ việc của mình để xác định có đủ điều kiện hay không.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 3.478,
+  "prompt_tokens": 173,
+  "completion_tokens": 139,
+  "gold_answer": "Nghỉ ngang chỉ được hưởng BHTN nếu việc đơn phương chấm dứt hợp đồng của bạn là đúng pháp luật. Nếu nghỉ ngang trái luật thì không đủ điều kiện hưởng BHTN. Vì vậy cần xem hợp đồng, thời hạn báo trước, lý do nghỉ và việc công ty xác nhận chấm dứt ra sao. Nếu bạn nghỉ đúng luật hoặc hai bên thỏa thuận chấm dứt thì vẫn có thể hưởng BHTN khi đủ điều kiện khác.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

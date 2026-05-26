@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 61,
+  "question": "Nếu mình cứ vẫn đóng bhxh đến 20 năm thì sau mình hưởng bao hiểm thất nghiệp theo bao nhiêu năm? Các tính như thế nào?",
+  "answer": "Issue: Người dùng hỏi về số năm hưởng bảo hiểm thất nghiệp nếu đóng bảo hiểm xã hội đủ 20 năm.\n\nRule: \"Đối tượng quy định tại các điểm a, b, c, g, h, i, k, l, m và n khoản 1 và khoản 2 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 20 năm trở lên thì được hưởng lương hưu với mức thấp hơn so với người đủ điều kiện hưởng lương hưu quy định tại các điểm a, b và c khoản 1 Điều 64 của Luật này nếu thuộc một trong các trường hợp sau đây:\" (Luật BHXH 2024 (41/2024/QH15), Điều 65, Khoản 1).\n\nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng người dùng đã đóng bảo hiểm xã hội đủ 20 năm, dẫn đến việc tính toán số năm hưởng bảo hiểm thất nghiệp là 20.\n\nConclusion: Prolog đã trả về giá trị 20 cho biến Years.",
+  "citations": [
+    "[Điều 2]",
+    "[Điều 64]",
+    "[Điều 65 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2",
+    "L41_2024.A64",
+    "L41_2024.A65.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_years(20),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Người dùng hỏi về số năm hưởng bảo hiểm thất nghiệp nếu đóng bảo hiểm xã hội đủ 20 năm.",
+    "rule": "\"Đối tượng quy định tại các điểm a, b, c, g, h, i, k, l, m và n khoản 1 và khoản 2 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 20 năm trở lên thì được hưởng lương hưu với mức thấp hơn so với người đủ điều kiện hưởng lương hưu quy định tại các điểm a, b và c khoản 1 Điều 64 của Luật này nếu thuộc một trong các trường hợp sau đây:\" (Luật BHXH 2024 (41/2024/QH15), Điều 65, Khoản 1).",
+    "application": "Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng người dùng đã đóng bảo hiểm xã hội đủ 20 năm, dẫn đến việc tính toán số năm hưởng bảo hiểm thất nghiệp là 20.",
+    "conclusion": "Prolog đã trả về giá trị 20 cho biến Years."
+  },
+  "elapsed_s": 16.665,
+  "prompt_tokens": 3125,
+  "completion_tokens": 549,
+  "error": null,
+  "gold_answer": "Bảo hiểm thất nghiệp không tính theo 'đóng BHXH 20 năm' mà tính theo thời gian đóng BHTN. Cứ đủ 12 tháng đến đủ 36 tháng đóng BHTN thì được 3 tháng trợ cấp; sau đó mỗi thêm đủ 12 tháng được thêm 1 tháng, tối đa 12 tháng trợ cấp. Mức hưởng hằng tháng bằng 60% mức bình quân tiền lương tháng đóng BHTN của 6 tháng liền kề trước khi thất nghiệp. Vì vậy phải tách thời gian BHTN riêng, không lấy tổng BHXH để tính.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 50"
+}

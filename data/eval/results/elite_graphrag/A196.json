@@ -1,0 +1,37 @@
+{
+  "arm": "elite_graphrag",
+  "stt": 196,
+  "question": "sổ BHXH (sổ xanh) + tờ rời kẹp sổ e bị mất. chỉ còn lại thông tin trên app. \nEm muốn xin cấp lại full sổ cứng thì e cần tới đâu?\nEm có đến BHXH nơi chốt sổ lần cuối cùng ở Nam Từ Liêm,Hà Nội.\nnhưng họ lại bảo em về cơ quan BHXH nơi e sinh sống (e đang trọ ở Thụy Khuê,HN) để làm. 2 bên cứ đẩy qua đẩy lại miết luôn",
+  "answer": "Issue: Người dùng muốn biết cần đến đâu để xin cấp lại sổ bảo hiểm xã hội sau khi bị mất sổ và tờ rời kẹp sổ.\n\nRule: \"Sổ bảo hiểm xã hội được cấp cho từng người lao động, trong đó chứa đựng thông tin cơ bản về nhân thân, ghi nhận việc đóng, hưởng, giải quyết các chế độ bảo hiểm xã hội và các thông tin cần thiết khác có liên quan.\" (Luật BHXH 2024 (41/2024/QH15), Điều 25, Khoản 1)  \n\"Chậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằng bản giấy được cấp khi người tham gia bảo hiểm xã hội yêu cầu.\" (Luật BHXH 2024 (41/2024/QH15), Điều 25, Khoản 2)  \n\"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), Điều 28, Khoản 4)\n\nApplication: Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được sử dụng trong truy vấn Prolog.\n\nConclusion: Hệ thống không thể tính toán được số liệu cuối cùng do không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 25 khoản 1]",
+    "[Điều 25 khoản 2]",
+    "[Điều 28 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A25.K1",
+    "L41_2024.A25.K2",
+    "L41_2024.A28.K4"
+  ],
+  "citation_indices": [
+    0,
+    1,
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,request_social_insurance_book,based_on(source_c000)),step(conclusion,request_social_insurance_book,based_on(source_c001)),step(conclusion,request_social_insurance_book,based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Người dùng muốn biết cần đến đâu để xin cấp lại sổ bảo hiểm xã hội sau khi bị mất sổ và tờ rời kẹp sổ.",
+    "rule": "\"Sổ bảo hiểm xã hội được cấp cho từng người lao động, trong đó chứa đựng thông tin cơ bản về nhân thân, ghi nhận việc đóng, hưởng, giải quyết các chế độ bảo hiểm xã hội và các thông tin cần thiết khác có liên quan.\" (Luật BHXH 2024 (41/2024/QH15), Điều 25, Khoản 1)  \n\"Chậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằng bản giấy được cấp khi người tham gia bảo hiểm xã hội yêu cầu.\" (Luật BHXH 2024 (41/2024/QH15), Điều 25, Khoản 2)  \n\"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), Điều 28, Khoản 4)",
+    "application": "Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được sử dụng trong truy vấn Prolog.",
+    "conclusion": "Hệ thống không thể tính toán được số liệu cuối cùng do không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 13.609,
+  "prompt_tokens": 3631,
+  "completion_tokens": 739,
+  "error": null,
+  "gold_answer": "Bạn có thể nộp thủ tục cấp lại sổ BHXH tại cơ quan BHXH nơi cư trú hợp pháp (thường trú hoặc tạm trú), không nhất thiết đúng nơi chốt cuối cùng. Nếu đang ở Thụy Khuê, Hà Nội và có đăng ký tạm trú/cư trú hợp lệ thì có thể làm tại BHXH nơi cư trú. Trường hợp cơ quan tiếp nhận đùn đẩy, bạn nên yêu cầu họ trả lời bằng văn bản hoặc tiếp nhận hồ sơ theo đúng nơi cư trú.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,42 @@
+{
+  "arm": "graphrag",
+  "stt": 6,
+  "question": "Bà Thảo hỏi, trên giấy ra viện có ghi chú người lao động được nghỉ lao động 10 ngày, vậy, có cần xin thêm Giấy chứng nhận nghỉ việc hưởng BHXH để hưởng 10 ngày đó không?",
+  "answer": "Bà Thảo cần xin thêm Giấy chứng nhận nghỉ việc hưởng BHXH để hưởng 10 ngày nghỉ đó. Theo quy định, người lao động cần có Giấy chứng nhận nghỉ việc để được hưởng chế độ ốm đau.\n\nGiải thích: Giấy ra viện chỉ là một tài liệu chứng minh tình trạng sức khỏe, nhưng để được hưởng chế độ ốm đau, người lao động phải có Giấy chứng nhận nghỉ việc do cơ sở khám bệnh, chữa bệnh cấp.\n\nCitation: Theo Điều 48 khoản 2, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ ốm đau kèm theo hồ sơ nộp cho cơ quan bảo hiểm xã hội, trong đó bao gồm Giấy chứng nhận nghỉ việc.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A61.K5",
+      "score": 0.8317446708679199,
+      "text_preview": "Hồ sơ đề nghị nghỉ việc hưởng chế độ thai sản hoặc hưởng trợ cấp một lần đối với lao động nam khi vợ sinh con là bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con; t"
+    },
+    {
+      "clause_id": "L41_2024.A33.K6",
+      "score": 0.8203377723693848,
+      "text_preview": "Trường hợp trong tháng đầu làm việc hoặc trong tháng đầu trở lại làm việc mà người lao động nghỉ việc hưởng chế độ ốm đau từ 14 ngày làm việc trở lên thì vẫn phải đóng bảo hiểm xã hội của tháng đó."
+    },
+    {
+      "clause_id": "L41_2024.A48.K2",
+      "score": 0.8098822832107544,
+      "text_preview": "Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ ốm đau kèm theo hồ sơ nộp cho cơ q"
+    },
+    {
+      "clause_id": "L41_2024.A49.K1",
+      "score": 0.8092206716537476,
+      "text_preview": "Trong thời hạn 07 ngày làm việc kể từ ngày người lao động nghỉ việc hưởng trợ cấp dưỡng sức, phục hồi sức khỏe sau khi ốm đau, người sử dụng lao động lập danh sách người lao động nghỉ việc hưởng trợ c"
+    },
+    {
+      "clause_id": "L41_2024.A53.K8",
+      "score": 0.8076066970825195,
+      "text_preview": "Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ "
+    }
+  ],
+  "n_semantic_edges": 4,
+  "n_refs": 3,
+  "elapsed_s": 2.92,
+  "gold_answer": "Tại Khoản 14 Điều 1 Thông tư số 18/2022/TT-BYT ngày 31/12/2022 của Bộ trưởng Bộ Y tế sửa đổi, bổ sung một số điều của Thông tư số 56/2017/TT-BYT ngày 29/12/2017 của Bộ trưởng Bộ Y tế quy định chi tiết thi hành Luật BHXH và Luật An toàn, vệ sinh lao động thuộc lĩnh y tế quy định như sau:\nTrường hợp người bệnh cần nghỉ để điều trị ngoại trú sau khi ra viện thì cơ quan BHXH căn cứ số ngày nghỉ ghi tại phần ghi chú của giấy ra viện để làm căn cứ thanh toán chế độ BHXH theo quy định.\nĐối chiếu quy định nêu trên, việc cơ sở khám bệnh, chữa bệnh ghi thêm số ngày nghỉ để điều trị ngoại trú tại phần ghi chú trên giấy ra viện là đúng quy định và số ngày nghỉ điều trị ngoại trú đó sẽ được cơ quan BHXH căn cứ để giải quyết chế độ BHXH đối với bà theo quy định.\nDo đó, bà không phải xin cấp thêm Giấy chứng nhận nghỉ việc hưởng BHXH đối với 10 ngày nghỉ việc điều trị ngoại trú nêu trên",
+  "gold_citations_raw": "Khoản 14 Điều 1 Thông tư số 18/2022/TT-BYT\nThông tư số 56/2017/TT-BYT"
+}

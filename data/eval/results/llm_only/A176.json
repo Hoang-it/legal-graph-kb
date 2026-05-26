@@ -1,0 +1,13 @@
+{
+  "arm": "llm_only",
+  "stt": 176,
+  "question": "18nam dong bhxh lấy 1 lần được bao nhiêu?",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động có quyền nhận một lần tiền bảo hiểm xã hội khi đủ điều kiện về thời gian đóng bảo hiểm. Cụ thể, nếu bạn đã đóng bảo hiểm xã hội đủ 18 năm và không còn tiếp tục tham gia, bạn có thể nhận một lần số tiền tương ứng với số năm đã đóng.\n\nMức hưởng cụ thể sẽ được tính dựa trên số tiền đã đóng và các quy định liên quan đến mức lương bình quân. Tuy nhiên, tôi không có đủ thông tin chính xác để trả lời câu hỏi này về số tiền cụ thể bạn sẽ nhận được. Bạn nên tham khảo thêm từ cơ quan bảo hiểm xã hội hoặc các nguồn thông tin chính thức để biết rõ hơn.",
+  "citations": [],
+  "citation_ids": [],
+  "elapsed_s": 3.781,
+  "prompt_tokens": 171,
+  "completion_tokens": 164,
+  "gold_answer": "Nếu 18 năm đóng của bạn đều từ năm 2014 trở đi thì công thức sơ bộ là 18 năm x 2 tháng mức bình quân lương đóng BHXH, tức khoảng 36 tháng bình quân lương. Muốn biết gần đúng bao nhiêu tiền, cần biết mức bình quân tiền lương tháng đóng của toàn bộ quá trình sau điều chỉnh. Từ 01/7/2025, 18 năm đóng cũng là mức nên cân nhắc giữ để hướng tới lương hưu.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

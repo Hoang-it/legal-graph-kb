@@ -1,0 +1,51 @@
+{
+  "arm": "graphrag",
+  "stt": 53,
+  "question": "Cty nợ gần 1 năm BH ( mất 6 năm ko chốt) giờ mình đã đi làm cty khác đc 2 năm rồi.\nBây giờ làm thế nào để mình chốt được tờ rời ở công ty cũ?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 9 khoản 1] — Các hành vi bị nghiêm cấm liên quan đến chậm đóng, trốn đóng bảo hiểm xã hội.\n- [Điều 141 khoản 12] — Quy định về xử lý chậm đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp.",
+  "citations": [
+    "[Điều 9 khoản 1]",
+    "[Điều 141 khoản 12]"
+  ],
+  "citation_ids": [
+    "L41_2024.A9.K1",
+    "L41_2024.A141.K12"
+  ],
+  "citation_verified": {
+    "L41_2024.A9.K1": true,
+    "L41_2024.A141.K12": true
+  },
+  "n_vector_hits": 8,
+  "vector_hits": [
+    {
+      "clause_id": "L41_2024.A9.K1",
+      "score": 0.7919123768806458,
+      "text_preview": "Chậm đóng, trốn đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L41_2024.A141.K12",
+      "score": 0.7850790023803711,
+      "text_preview": "Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30"
+    },
+    {
+      "clause_id": "L41_2024.A81.K2",
+      "score": 0.7795733213424683,
+      "text_preview": "Trong thời hạn 10 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do."
+    },
+    {
+      "clause_id": "L41_2024.A91.K3",
+      "score": 0.7795733213424683,
+      "text_preview": "Trong thời hạn 10 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do."
+    },
+    {
+      "clause_id": "L41_2024.A76.K5",
+      "score": 0.77800452709198,
+      "text_preview": "Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do."
+    }
+  ],
+  "n_semantic_edges": 2,
+  "n_refs": 13,
+  "elapsed_s": 1.94,
+  "gold_answer": "Nếu công ty cũ nợ BHXH gần 1 năm và kéo dài không chốt sổ, bạn cần yêu cầu công ty xác nhận bằng văn bản toàn bộ thời gian đã làm việc, bảng lương, HĐLĐ, quyết định nghỉ việc và chứng cứ bị nợ đóng. Sau đó gửi đơn đến cơ quan BHXH quản lý công ty cũ và Thanh tra có thẩm quyền để yêu cầu truy đóng/chốt sổ đến thời điểm đã đóng thực tế. Thời gian công ty còn nợ sẽ không bị mất nhưng cần xử lý theo thủ tục cưỡng chế hoặc thanh tra.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48; quy định xử lý chậm đóng BHXH"
+}
