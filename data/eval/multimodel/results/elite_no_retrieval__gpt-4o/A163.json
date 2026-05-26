@@ -1,0 +1,27 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 163,
+  "question": "cty em trả tờ rời chứ k thấy trả sổ. Nếu em rút 1 lần có cần đi làm lại sổ không?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpec6c__yb.pl:1:263: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 60 khoản 1]",
+    "[Điều 96 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1",
+    "L41_2024.A96.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 7.251,
+  "prompt_tokens": 3736,
+  "completion_tokens": 597,
+  "error": null,
+  "gold_answer": "Nếu công ty chỉ trả tờ rời mà không trả bìa sổ, bạn vẫn nên làm rõ tình trạng sổ BHXH. Khi giải quyết BHXH 1 lần hiện nay cơ quan BHXH đối chiếu dữ liệu điện tử là chính, nhưng nếu hồ sơ giấy thiếu, bạn có thể làm thủ tục cấp lại sổ. Vì vậy không nhất thiết phải có bìa cũ mới rút được, nhưng nên chuẩn hóa hồ sơ trước để tránh bị yêu cầu bổ sung.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

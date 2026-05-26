@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 197,
+  "question": "công ty em có trường hợp NLĐ nghỉ hưu và được lãnh từ tháng 5 nhưng do làm lần đầu tiên em không rõ hồ sơ chuẩn bị như thế nào thì ngày 17.04 em có nộp bên BHXH bao gồm hồ sơ: Mẫu 12 HSB, sổ BHXH, tờ rời các năm đóng, CCCD NLĐ thì bên BHXH lại báo thiếu nhưng ko nói rõ thiếu hồ sơ gì? Giờ em phải bổ sung thêm gì?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Hồ sơ cần chuẩn bị để hưởng lương hưu lần đầu gồm những giấy tờ gì, khi đã nộp Mẫu 12 HSB, sổ BHXH, tờ rời các năm đóng, CCCD NLĐ nhưng vẫn bị cơ quan BHXH báo thiếu hồ sơ mà không nói rõ thiếu gì.\n\nRule:\nHồ sơ hưởng lương hưu gồm: Đơn đề nghị hưởng lương hưu, sổ BHXH, giấy tờ tùy thân, các giấy tờ liên quan đến quá trình đóng BHXH nếu có. (law_bhxh_2024, article_109, clause_1)\n\nApplication:\nCác trường thông tin đầu vào chưa có giá trị cụ thể, nhưng Prolog đã truy xuất danh mục hồ sơ cần thiết gồm: Đơn đề nghị hưởng lương hưu (Mẫu 14-HSB), Sổ BHXH, Giấy tờ tùy thân (CCCD/CMND), Các tờ rời xác nhận thời gian đóng BHXH (nếu có), Quyết định nghỉ việc (nếu là người lao động đang làm việc theo hợp đồng). Truy vấn Prolog sử dụng nguồn từ law_bhxh_2024, article_109, clause_1 để xác định danh mục này.\n\nConclusion:\nTheo kết quả Prolog, hồ sơ cần bổ sung có thể là Đơn đề nghị hưởng lương hưu (Mẫu 14-HSB) và Quyết định nghỉ việc (nếu NLĐ đang làm việc theo hợp đồng). Bạn nên kiểm tra lại xem đã có đủ các giấy tờ này chưa, đặc biệt là Đơn đề nghị hưởng lương hưu (Mẫu 14-HSB) và Quyết định nghỉ việc.",
+  "citations": [
+    "[Điều 109 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A109.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,ho_so_luong_huu([Đơn đề nghị hưởng lương hưu (Mẫu 14-HSB),Sổ BHXH,Giấy tờ tùy thân (CCCD/CMND),Các tờ rời xác nhận thời gian đóng BHXH (nếu có),Quyết định nghỉ việc (nếu là người lao động đang làm việc theo hợp đồng)]),based_on(source_a109_k1))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Hồ sơ cần chuẩn bị để hưởng lương hưu lần đầu gồm những giấy tờ gì, khi đã nộp Mẫu 12 HSB, sổ BHXH, tờ rời các năm đóng, CCCD NLĐ nhưng vẫn bị cơ quan BHXH báo thiếu hồ sơ mà không nói rõ thiếu gì.",
+    "rule": "Hồ sơ hưởng lương hưu gồm: Đơn đề nghị hưởng lương hưu, sổ BHXH, giấy tờ tùy thân, các giấy tờ liên quan đến quá trình đóng BHXH nếu có. (law_bhxh_2024, article_109, clause_1)",
+    "application": "Các trường thông tin đầu vào chưa có giá trị cụ thể, nhưng Prolog đã truy xuất danh mục hồ sơ cần thiết gồm: Đơn đề nghị hưởng lương hưu (Mẫu 14-HSB), Sổ BHXH, Giấy tờ tùy thân (CCCD/CMND), Các tờ rời xác nhận thời gian đóng BHXH (nếu có), Quyết định nghỉ việc (nếu là người lao động đang làm việc theo hợp đồng). Truy vấn Prolog sử dụng nguồn từ law_bhxh_2024, article_109, clause_1 để xác định danh mục này.",
+    "conclusion": "Theo kết quả Prolog, hồ sơ cần bổ sung có thể là Đơn đề nghị hưởng lương hưu (Mẫu 14-HSB) và Quyết định nghỉ việc (nếu NLĐ đang làm việc theo hợp đồng). Bạn nên kiểm tra lại xem đã có đủ các giấy tờ này chưa, đặc biệt là Đơn đề nghị hưởng lương hưu (Mẫu 14-HSB) và Quyết định nghỉ việc."
+  },
+  "elapsed_s": 5.907,
+  "prompt_tokens": 2496,
+  "completion_tokens": 647,
+  "error": null,
+  "gold_answer": "Hồ sơ hưởng lương hưu ngoài sổ BHXH/tờ rời và giấy tờ tùy thân còn phải bảo đảm đúng mẫu, đúng thời điểm và có quyết định nghỉ việc hoặc tài liệu tương đương tùy từng nhóm đối tượng. Nếu BHXH báo thiếu mà không nói rõ, bạn nên yêu cầu phiếu hướng dẫn bổ sung bằng văn bản. Nhiều trường hợp còn thiếu quyết định nghỉ việc, biên bản giám định suy giảm khả năng lao động hoặc giấy tờ nghề nặng nhọc nếu nghỉ trước tuổi.",
+  "gold_citations_raw": "Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

@@ -1,0 +1,39 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 55,
+  "question": "Thời điểm năm 5/2016-5/2017 em có làm việc tại công ty cổ phần nam an. Khi em nghỉ chưa lấy tờ rời quá trình tại công ty này. Nay tôi quay lại công ty họ nói tôi nghỉ ngang và phạt 7-8tr. Giờ em phải làm sao?",
+  "answer": "Issue: Bạn đã làm việc tại công ty cổ phần Nam An từ tháng 5/2016 đến tháng 5/2017 và khi nghỉ việc, bạn chưa lấy tờ rời quá trình. Hiện tại, công ty yêu cầu bạn phải chịu phạt từ 7-8 triệu đồng vì nghỉ ngang. Bạn muốn biết phải làm gì trong tình huống này.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 41, Khoản 2: \"Xử phạt vi phạm hành chính hoặc truy cứu trách nhiệm hình sự theo quy định của pháp luật.\" Và Điều 132, Khoản 2: \"Cá nhân có hành vi vi phạm quy định của Luật này, tùy theo tính chất, mức độ vi phạm mà bị xử phạt vi phạm hành chính, xử lý kỷ luật hoặc bị truy cứu trách nhiệm hình sự; nếu gây thiệt hại thì phải bồi thường theo quy định của pháp luật.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings để áp dụng vào tình huống của bạn. Tuy nhiên, Prolog đã sử dụng các điều luật từ Luật BHXH 2024 để xác định các hậu quả có thể xảy ra khi nghỉ việc ngang.\n\nConclusion: Hệ thống đã xác định rằng hậu quả của việc nghỉ việc ngang có thể bao gồm \"xử phạt vi phạm hành chính\" và \"trách nhiệm hình sự tiềm năng\". Điều này dựa trên các quy định tại Điều 41 và Điều 132 của Luật BHXH 2024. Bạn nên xem xét các quy định này và có thể cần tham khảo ý kiến pháp lý để giải quyết vấn đề với công ty.",
+  "citations": [
+    "[Điều 41 khoản 2]",
+    "[Điều 132 khoản 2]",
+    "[Điều 41]",
+    "[Điều 132]"
+  ],
+  "citation_ids": [
+    "L41_2024.A41.K2",
+    "L41_2024.A132.K2",
+    "L41_2024.A41",
+    "L41_2024.A132"
+  ],
+  "citation_indices": [
+    2,
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,handle_unilateral_termination_consequences([administrative_fine,potential_criminal_liability]),based_on(source_c002)),step(conclusion,handle_unilateral_termination_consequences([administrative_fine,potential_criminal_liability]),based_on(source_c006))]",
+  "irac_sections": {
+    "issue": "Bạn đã làm việc tại công ty cổ phần Nam An từ tháng 5/2016 đến tháng 5/2017 và khi nghỉ việc, bạn chưa lấy tờ rời quá trình. Hiện tại, công ty yêu cầu bạn phải chịu phạt từ 7-8 triệu đồng vì nghỉ ngang. Bạn muốn biết phải làm gì trong tình huống này.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 41, Khoản 2: \"Xử phạt vi phạm hành chính hoặc truy cứu trách nhiệm hình sự theo quy định của pháp luật.\" Và Điều 132, Khoản 2: \"Cá nhân có hành vi vi phạm quy định của Luật này, tùy theo tính chất, mức độ vi phạm mà bị xử phạt vi phạm hành chính, xử lý kỷ luật hoặc bị truy cứu trách nhiệm hình sự; nếu gây thiệt hại thì phải bồi thường theo quy định của pháp luật.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings để áp dụng vào tình huống của bạn. Tuy nhiên, Prolog đã sử dụng các điều luật từ Luật BHXH 2024 để xác định các hậu quả có thể xảy ra khi nghỉ việc ngang.",
+    "conclusion": "Hệ thống đã xác định rằng hậu quả của việc nghỉ việc ngang có thể bao gồm \"xử phạt vi phạm hành chính\" và \"trách nhiệm hình sự tiềm năng\". Điều này dựa trên các quy định tại Điều 41 và Điều 132 của Luật BHXH 2024. Bạn nên xem xét các quy định này và có thể cần tham khảo ý kiến pháp lý để giải quyết vấn đề với công ty."
+  },
+  "elapsed_s": 5.579,
+  "prompt_tokens": 3009,
+  "completion_tokens": 671,
+  "error": null,
+  "gold_answer": "Công ty không được tự ý phạt bạn 7-8 triệu chỉ vì 'nghỉ ngang' nếu không có căn cứ pháp luật rõ ràng. Trường hợp đơn phương chấm dứt HĐLĐ trái luật thì nghĩa vụ bồi thường cũng phải theo Bộ luật Lao động, không phải doanh nghiệp muốn ấn định bao nhiêu cũng được. Việc chưa lấy tờ rời BHXH không làm mất quyền được nhận quá trình đóng. Bạn nên yêu cầu công ty trả sổ/tờ rời; nếu bị giữ trái luật thì khiếu nại đến cơ quan lao động hoặc BHXH.",
+  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 35, Điều 40, Điều 48; Luật BHXH 2024 Điều 13"
+}

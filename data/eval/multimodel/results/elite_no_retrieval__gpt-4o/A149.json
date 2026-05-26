@@ -1,0 +1,27 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 149,
+  "question": "Rút BHXH 1 lần thì bao lâu nhận được? e bắt đầu tham gia từ 2020 đến giờ thì có được rút không? e ở TP.HCM thì ra đâu rút được?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'lump_sum_processing_time(Days']",
+  "citations": [
+    "[Điều 60 khoản 1]",
+    "[Điều 110 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1",
+    "L41_2024.A110.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "invalid_query",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 10.939,
+  "prompt_tokens": 4394,
+  "completion_tokens": 1079,
+  "error": null,
+  "gold_answer": "Thời gian giải quyết BHXH 1 lần thường khoảng 05 ngày làm việc kể từ khi cơ quan BHXH nhận đủ hồ sơ hợp lệ. Bạn tham gia từ 2020 đến nay chỉ được rút nếu thuộc trường hợp luật cho phép, phổ biến là đã nghỉ và sau 12 tháng không tiếp tục tham gia BHXH. Ở TP.HCM, bạn nộp tại cơ quan BHXH nơi thường trú hoặc tạm trú.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,38 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 128,
+  "question": "mình đi làm hồ sơ lãnh lương hưu thì bên bhxh tra trên hệ thống và báo rằng tên mình có 2 số sổ, và số sổ kia đã chốt và nhận tiền rồi, mà mình chưa từng làm ở công ty đó, bây giờ mình phải làm sao?",
+  "answer": "Issue:\nBạn hỏi về việc khi làm hồ sơ lãnh lương hưu thì cơ quan BHXH tra cứu phát hiện tên bạn có 2 số sổ, trong đó một số đã chốt và nhận tiền tại công ty bạn chưa từng làm việc, và bạn muốn biết phải xử lý thế nào.\n\nRule:\n\"Dữ liệu về sổ bảo hiểm xã hội được cập nhật chính xác, kịp thời, đối chiếu thông tin và quản lý theo quy định.\" (Luật BHXH 2024 (41/2024/QH15), Điều 25, Khoản 3)\n\"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 2)\n\"Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu... cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), Điều 79, Khoản 3)\n\nApplication:\nKhông có slot dữ liệu cụ thể nào được cung cấp từ phía bạn. Prolog đã sử dụng các quy định trên để đưa ra hướng dẫn xử lý tình huống khi phát hiện trùng hoặc sai số sổ bảo hiểm xã hội, dựa trên các điều khoản đã trích dẫn.\n\nConclusion:\nTheo kết quả Prolog, bạn cần liên hệ trực tiếp cơ quan bảo hiểm xã hội để đối chiếu, xác minh thông tin về số sổ bị trùng hoặc sử dụng sai; yêu cầu cơ quan BHXH kiểm tra, cập nhật dữ liệu chính xác theo Điều 25 khoản 3 Luật BHXH 2024. Nếu có dấu hiệu sử dụng sai thông tin, đề nghị BHXH lập hồ sơ xác minh và trả lời bằng văn bản theo Điều 79 khoản 3 Luật BHXH 2024.",
+  "citations": [
+    "[Điều 25 khoản 3]",
+    "[Điều 13 khoản 2]",
+    "[Điều 79 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A25.K3",
+    "L41_2024.A13.K2",
+    "L41_2024.A79.K3"
+  ],
+  "citation_indices": [
+    2,
+    3,
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,retirement_application_issue_guidance([Liên hệ trực tiếp cơ quan bảo hiểm xã hội để đối chiếu, xác minh thông tin về số sổ bảo hiểm xã hội bị trùng hoặc sử dụng sai. Yêu cầu cơ quan BHXH kiểm tra, cập nhật dữ liệu chính xác theo quy định tại Điều 25 khoản 3 Luật BHXH 2024. Nếu có dấu hiệu chiếm dụng, sử dụng sai thông tin, đề nghị cơ quan BHXH lập hồ sơ xác minh và trả lời bằng văn bản theo Điều 79 khoản 3 Luật BHXH 2024.]),based_on(source_c002)),step(conclusion,retirement_application_issue_guidance([Liên hệ trực tiếp cơ quan bảo hiểm xã hội để đối chiếu, xác minh thông tin về số sổ bảo hiểm xã hội bị trùng hoặc sử dụng sai. Yêu cầu cơ quan BHXH kiểm tra, cập nhật dữ liệu chính xác theo quy định tại Điều 25 khoản 3 Luật BHXH 2024. Nếu có dấu hiệu chiếm dụng, sử dụng sai thông tin, đề nghị cơ quan BHXH lập hồ sơ xác minh và trả lời bằng văn bản theo Điều 79 khoản 3 Luật BHXH 2024.]),based_on(source_c003)),step(conclusion,retirement_application_issue_guidance([Liên hệ trực tiếp cơ quan bảo hiểm xã hội để đối chiếu, xác minh thông tin về số sổ bảo hiểm xã hội bị trùng hoặc sử dụng sai. Yêu cầu cơ quan BHXH kiểm tra, cập nhật dữ liệu chính xác theo quy định tại Điều 25 khoản 3 Luật BHXH 2024. Nếu có dấu hiệu chiếm dụng, sử dụng sai thông tin, đề nghị cơ quan BHXH lập hồ sơ xác minh và trả lời bằng văn bản theo Điều 79 khoản 3 Luật BHXH 2024.]),based_on(source_c006))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về việc khi làm hồ sơ lãnh lương hưu thì cơ quan BHXH tra cứu phát hiện tên bạn có 2 số sổ, trong đó một số đã chốt và nhận tiền tại công ty bạn chưa từng làm việc, và bạn muốn biết phải xử lý thế nào.",
+    "rule": "\"Dữ liệu về sổ bảo hiểm xã hội được cập nhật chính xác, kịp thời, đối chiếu thông tin và quản lý theo quy định.\" (Luật BHXH 2024 (41/2024/QH15), Điều 25, Khoản 3)\n\"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 2)\n\"Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu... cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), Điều 79, Khoản 3)",
+    "application": "Không có slot dữ liệu cụ thể nào được cung cấp từ phía bạn. Prolog đã sử dụng các quy định trên để đưa ra hướng dẫn xử lý tình huống khi phát hiện trùng hoặc sai số sổ bảo hiểm xã hội, dựa trên các điều khoản đã trích dẫn.",
+    "conclusion": "Theo kết quả Prolog, bạn cần liên hệ trực tiếp cơ quan bảo hiểm xã hội để đối chiếu, xác minh thông tin về số sổ bị trùng hoặc sử dụng sai; yêu cầu cơ quan BHXH kiểm tra, cập nhật dữ liệu chính xác theo Điều 25 khoản 3 Luật BHXH 2024. Nếu có dấu hiệu sử dụng sai thông tin, đề nghị BHXH lập hồ sơ xác minh và trả lời bằng văn bản theo Điều 79 khoản 3 Luật BHXH 2024."
+  },
+  "elapsed_s": 8.998,
+  "prompt_tokens": 4238,
+  "completion_tokens": 957,
+  "error": null,
+  "gold_answer": "Đây là dấu hiệu có thể bị trùng/nhầm mã số BHXH hoặc có người dùng thông tin của bạn. Bạn cần đề nghị BHXH kiểm tra, đối chiếu CCCD, quá trình đóng, hồ sơ gốc của 2 số sổ và yêu cầu tạm dừng giải quyết cho số bất thường nếu có dấu hiệu giả mạo. Nếu đúng có việc sử dụng thông tin trái phép, bạn có quyền khiếu nại và đề nghị chuyển cơ quan công an xử lý.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

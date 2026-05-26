@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 7,
+  "question": "Bà Thị Hải đóng BHXH tại công ty A từ tháng 7/2022, đến tháng 1/2023 nghỉ việc.\nBà tiếp tục đóng BHXH tại công ty B từ tháng 8/2023, đến tháng 12/2023 nghỉ việc.\nBà Hải hỏi, bà đã sinh con ngày 10/3/2024 thì có đủ điều kiện để hưởng chế độ thai sản không?",
+  "answer": "Issue:\nBà Thị Hải đóng BHXH tại công ty A (7/2022–1/2023) và công ty B (8/2023–12/2023); sinh con ngày 10/3/2024. Bà hỏi có đủ điều kiện hưởng chế độ thai sản không?\n\nRule:\n\"Theo quy định của Luật Bảo hiểm xã hội 2024: lao động nữ sinh con được hưởng chế độ thai sản khi đã đóng BHXH ít nhất 6 tháng trong vòng 12 tháng trước khi sinh.\" (law_bhxh_2024, article_none, clause_none)\n\nApplication:\nemployed(user, company_a, 2022, 7, 2023, 1).\nemployed(user, company_b, 2023, 8, 2023, 12).\nbirth_date(user, 2024, 3, 10).\nChương trình Prolog dùng các facts trên để xác định cửa sổ 12 tháng trước sinh và tính tổng đóng góp trong cửa sổ đó; trace Prolog: step(calculation, total_contribution_in_12_months(5), based_on(source_maternity_6m)) và step(conclusion, eligible(no,5), based_on(source_maternity_6m)).\n\nConclusion:\nProlog trả lời Answer = eligible(no,5). Kết luận: theo truy vấn Prolog, bà không đủ điều kiện (eligible(no,5)) vì tổng tháng đóng BHXH trong 12 tháng trước sinh được tính là 5.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(calculation,total_contribution_in_12_months(5),based_on(source_maternity_6m)),step(conclusion,eligible(no,5),based_on(source_maternity_6m))]",
+  "irac_sections": {
+    "issue": "Bà Thị Hải đóng BHXH tại công ty A (7/2022–1/2023) và công ty B (8/2023–12/2023); sinh con ngày 10/3/2024. Bà hỏi có đủ điều kiện hưởng chế độ thai sản không?",
+    "rule": "\"Theo quy định của Luật Bảo hiểm xã hội 2024: lao động nữ sinh con được hưởng chế độ thai sản khi đã đóng BHXH ít nhất 6 tháng trong vòng 12 tháng trước khi sinh.\" (law_bhxh_2024, article_none, clause_none)",
+    "application": "employed(user, company_a, 2022, 7, 2023, 1).\nemployed(user, company_b, 2023, 8, 2023, 12).\nbirth_date(user, 2024, 3, 10).\nChương trình Prolog dùng các facts trên để xác định cửa sổ 12 tháng trước sinh và tính tổng đóng góp trong cửa sổ đó; trace Prolog: step(calculation, total_contribution_in_12_months(5), based_on(source_maternity_6m)) và step(conclusion, eligible(no,5), based_on(source_maternity_6m)).",
+    "conclusion": "Prolog trả lời Answer = eligible(no,5). Kết luận: theo truy vấn Prolog, bà không đủ điều kiện (eligible(no,5)) vì tổng tháng đóng BHXH trong 12 tháng trước sinh được tính là 5."
+  },
+  "elapsed_s": 100.18,
+  "prompt_tokens": 2630,
+  "completion_tokens": 7141,
+  "error": null,
+  "gold_answer": "Tại Khoản 2, Khoản 3 Điều 31 Luật BHXH năm 2014 quy định về điều kiện hưởng chế độ thai sản đối với lao động nữ sinh con là: Phải đóng BHXH từ đủ 6 tháng trở lên trong thời gian 12 tháng trước khi sinh con hoặc lao động nữ đã đóng BHXH từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của cơ sở khám bệnh, chữa bệnh có thẩm quyền thì phải đóng BHXH từ đủ 3 tháng trở lên trong thời gian 12 tháng trước khi sinh con.\nTại Khoản 4 Điều 31 Luật BHXH năm 2014 quy định: Người lao động đủ điều kiện quy định tại Khoản 2 và Khoản 3 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con vẫn được hưởng chế độ thai sản theo quy định.\nĐối chiếu với các quy định nêu trên, trường hợp của bà nếu sinh con vào tháng 3/2024 thì trong thời gian 12 tháng trước khi sinh con (được xác định từ tháng 3/2023 đến tháng 2/2024), bà có 5 tháng đóng BHXH (từ tháng 8/2023 đến tháng 12/2023). Nếu trong thời gian mang thai bà không phải nghỉ việc để dưỡng thai theo chỉ định của cơ sở khám bệnh có thẩm quyền thì bà không đủ điều kiện để hưởng chế độ thai sản khi sinh con.",
+  "gold_citations_raw": "Khoản 2, Khoản 3 Điều 31 Luật BHXH năm 2014\nKhoản 4 Điều 31 Luật BHXH năm 2014"
+}

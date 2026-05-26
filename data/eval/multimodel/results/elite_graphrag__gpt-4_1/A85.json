@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 85,
+  "question": "Em đóng BH từ tháng 8/2023 đến 2/2025, dừng t3,t4/2025. Sau đó đóng tiếp từ 5/2025 đến 5/2026. E dks cuối t10/2026. Nếu e nghỉ hẳn CTY e có đc hưởng bảo hiểm thất nghiệp không?",
+  "answer": "Issue:\nBạn hỏi rằng với quá trình đóng bảo hiểm xã hội từ tháng 8/2023 đến 2/2025, tạm dừng tháng 3, 4/2025, sau đó tiếp tục đóng từ 5/2025 đến 5/2026 và dự kiến nghỉ hẳn công ty vào cuối tháng 10/2026, bạn có đủ điều kiện hưởng bảo hiểm thất nghiệp không.\n\nRule:\n\"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\" (Luật BHXH 2024 (41/2024/QH15), Điều 4, Khoản 4)\n\nApplication:\nCác điều kiện được Prolog xác định gồm: phai_tham_gia_bao_hiem_that_nghiep, da_nghi_viec, da_dong_bao_hiem_that_nghiep_day_du_theo_luat_viec_lam. Truy vấn Prolog đã kiểm tra các điều kiện này dựa trên nguồn luật được trích dẫn và trả về danh sách các điều kiện cần đáp ứng để được hưởng bảo hiểm thất nghiệp.\n\nConclusion:\nTheo kết quả truy vấn, để được hưởng bảo hiểm thất nghiệp, bạn cần đáp ứng các điều kiện: phai_tham_gia_bao_hiem_that_nghiep, da_nghi_viec, da_dong_bao_hiem_that_nghiep_day_du_theo_luat_viec_lam. Hệ thống đã liệt kê các điều kiện này nhưng không kết luận cụ thể bạn đã đủ điều kiện hay chưa, do thiếu thông tin chi tiết về tổng thời gian đóng và các yếu tố khác theo Luật Việc làm.",
+  "citations": [
+    "[Điều 4 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A4.K4"
+  ],
+  "citation_indices": [
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_eligibility_law([phai_tham_gia_bao_hiem_that_nghiep,da_nghi_viec,da_dong_bao_hiem_that_nghiep_day_du_theo_luat_viec_lam]),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi rằng với quá trình đóng bảo hiểm xã hội từ tháng 8/2023 đến 2/2025, tạm dừng tháng 3, 4/2025, sau đó tiếp tục đóng từ 5/2025 đến 5/2026 và dự kiến nghỉ hẳn công ty vào cuối tháng 10/2026, bạn có đủ điều kiện hưởng bảo hiểm thất nghiệp không.",
+    "rule": "\"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\" (Luật BHXH 2024 (41/2024/QH15), Điều 4, Khoản 4)",
+    "application": "Các điều kiện được Prolog xác định gồm: phai_tham_gia_bao_hiem_that_nghiep, da_nghi_viec, da_dong_bao_hiem_that_nghiep_day_du_theo_luat_viec_lam. Truy vấn Prolog đã kiểm tra các điều kiện này dựa trên nguồn luật được trích dẫn và trả về danh sách các điều kiện cần đáp ứng để được hưởng bảo hiểm thất nghiệp.",
+    "conclusion": "Theo kết quả truy vấn, để được hưởng bảo hiểm thất nghiệp, bạn cần đáp ứng các điều kiện: phai_tham_gia_bao_hiem_that_nghiep, da_nghi_viec, da_dong_bao_hiem_that_nghiep_day_du_theo_luat_viec_lam. Hệ thống đã liệt kê các điều kiện này nhưng không kết luận cụ thể bạn đã đủ điều kiện hay chưa, do thiếu thông tin chi tiết về tổng thời gian đóng và các yếu tố khác theo Luật Việc làm."
+  },
+  "elapsed_s": 6.701,
+  "prompt_tokens": 3132,
+  "completion_tokens": 550,
+  "error": null,
+  "gold_answer": "Bạn đóng BHTN từ 8/2023 đến 2/2025, nghỉ 2 tháng rồi đóng tiếp 5/2025 đến 5/2026 thì thời gian BHTN đủ dài để xét trợ cấp thất nghiệp nếu bạn nghỉ việc và đáp ứng điều kiện khác. Việc dự sinh cuối 10/2026 không ảnh hưởng trực tiếp đến quyền hưởng BHTN, miễn khi nộp hồ sơ bạn đã chấm dứt HĐLĐ hợp pháp, nộp trong 3 tháng và sau 15 ngày chưa có việc làm. Số tháng hưởng và mức hưởng sẽ tính riêng theo Luật Việc làm.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 49, Điều 50"
+}

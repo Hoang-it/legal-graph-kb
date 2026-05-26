@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 89,
+  "question": "E đóng BHXH tự nguyện mấy tháng giờ muốn chốt sổ để đóng sang BHXH bắt buộc thì như nào?",
+  "answer": "Issue:\nBạn hỏi về thủ tục chốt sổ bảo hiểm xã hội (BHXH) tự nguyện để chuyển sang đóng BHXH bắt buộc.\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), Điều 3, Khoản 6 quy định: \"Thời gian đóng bảo hiểm xã hội là tổng thời gian đã đóng bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện theo quy định của Luật này, trừ trường hợp điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên có quy định khác.\"\nLuật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 3 quy định: \"Người vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện được hưởng chế độ trợ cấp hằng tháng, chế độ hưu trí và chế độ tử tuất trên cơ sở thời gian đã đóng bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện. Thời gian đóng bảo hiểm xã hội đã được tính hưởng bảo hiểm xã hội một lần thì không được tính vào thời gian làm cơ sở tính hưởng chế độ bảo hiểm.\"\n\nApplication:\nKhông có slot_id cụ thể nào được cung cấp trong trường hợp này. Prolog đã truy vấn và trả về quy trình: Người tham gia BHXH tự nguyện khi muốn chuyển sang BHXH bắt buộc cần làm thủ tục chốt sổ BHXH tự nguyện tại cơ quan BHXH. Thời gian đã đóng BHXH tự nguyện sẽ được cộng dồn với thời gian đóng BHXH bắt buộc để làm căn cứ hưởng các chế độ BHXH, trừ trường hợp đã nhận BHXH một lần cho thời gian đó.\n\nConclusion:\nTheo kết quả Prolog, thủ tục là: Bạn cần làm thủ tục chốt sổ BHXH tự nguyện tại cơ quan BHXH. Thời gian đã đóng BHXH tự nguyện sẽ được cộng dồn với thời gian đóng BHXH bắt buộc để tính hưởng các chế độ BHXH, trừ trường hợp đã nhận BHXH một lần cho thời gian đó.",
+  "citations": [
+    "[Điều 3 khoản 6]",
+    "[Điều 5 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A3.K6",
+    "L41_2024.A5.K3"
+  ],
+  "citation_indices": [
+    5,
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,procedure_chot_so_bhxh_tn_sang_bb([Người tham gia bảo hiểm xã hội tự nguyện khi muốn chuyển sang bảo hiểm xã hội bắt buộc cần làm thủ tục chốt sổ bảo hiểm xã hội tự nguyện tại cơ quan bảo hiểm xã hội. Thời gian đã đóng bảo hiểm xã hội tự nguyện sẽ được cộng dồn với thời gian đóng bảo hiểm xã hội bắt buộc để làm căn cứ hưởng các chế độ bảo hiểm xã hội, trừ trường hợp đã nhận bảo hiểm xã hội một lần cho thời gian đó.]),based_on(source_c005)),step(conclusion,procedure_chot_so_bhxh_tn_sang_bb([Người tham gia bảo hiểm xã hội tự nguyện khi muốn chuyển sang bảo hiểm xã hội bắt buộc cần làm thủ tục chốt sổ bảo hiểm xã hội tự nguyện tại cơ quan bảo hiểm xã hội. Thời gian đã đóng bảo hiểm xã hội tự nguyện sẽ được cộng dồn với thời gian đóng bảo hiểm xã hội bắt buộc để làm căn cứ hưởng các chế độ bảo hiểm xã hội, trừ trường hợp đã nhận bảo hiểm xã hội một lần cho thời gian đó.]),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về thủ tục chốt sổ bảo hiểm xã hội (BHXH) tự nguyện để chuyển sang đóng BHXH bắt buộc.",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), Điều 3, Khoản 6 quy định: \"Thời gian đóng bảo hiểm xã hội là tổng thời gian đã đóng bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện theo quy định của Luật này, trừ trường hợp điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên có quy định khác.\"\nLuật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 3 quy định: \"Người vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện được hưởng chế độ trợ cấp hằng tháng, chế độ hưu trí và chế độ tử tuất trên cơ sở thời gian đã đóng bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện. Thời gian đóng bảo hiểm xã hội đã được tính hưởng bảo hiểm xã hội một lần thì không được tính vào thời gian làm cơ sở tính hưởng chế độ bảo hiểm.\"",
+    "application": "Không có slot_id cụ thể nào được cung cấp trong trường hợp này. Prolog đã truy vấn và trả về quy trình: Người tham gia BHXH tự nguyện khi muốn chuyển sang BHXH bắt buộc cần làm thủ tục chốt sổ BHXH tự nguyện tại cơ quan BHXH. Thời gian đã đóng BHXH tự nguyện sẽ được cộng dồn với thời gian đóng BHXH bắt buộc để làm căn cứ hưởng các chế độ BHXH, trừ trường hợp đã nhận BHXH một lần cho thời gian đó.",
+    "conclusion": "Theo kết quả Prolog, thủ tục là: Bạn cần làm thủ tục chốt sổ BHXH tự nguyện tại cơ quan BHXH. Thời gian đã đóng BHXH tự nguyện sẽ được cộng dồn với thời gian đóng BHXH bắt buộc để tính hưởng các chế độ BHXH, trừ trường hợp đã nhận BHXH một lần cho thời gian đó."
+  },
+  "elapsed_s": 8.841,
+  "prompt_tokens": 3938,
+  "completion_tokens": 967,
+  "error": null,
+  "gold_answer": "Bạn không phải 'chốt sổ' BHXH tự nguyện theo cách của doanh nghiệp. Khi chuyển sang BHXH bắt buộc, bạn chỉ cần dùng đúng mã số BHXH hiện có để đơn vị mới đăng ký tham gia bắt buộc; toàn bộ thời gian tự nguyện trước đó sẽ được bảo lưu trên cùng mã số. Nếu có đóng trùng hoặc thông tin cá nhân chưa khớp thì liên hệ cơ quan BHXH để điều chỉnh trước khi đơn vị báo tăng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25, Điều 36"
+}

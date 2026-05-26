@@ -1,0 +1,34 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 100,
+  "question": "Em đóng bh đc 3th tầm hơn 1tr. Bây h nghỉ việc, k có ý định làm lại thì có lấy lại đc khoản mình đã đóng không?",
+  "answer": "Issue: Bạn đã đóng bảo hiểm xã hội được 3 tháng với số tiền khoảng hơn 1 triệu đồng. Hiện tại, bạn nghỉ việc và không có ý định làm lại, bạn muốn biết liệu có thể lấy lại khoản tiền đã đóng hay không.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 60, Khoản 4: \"Không áp dụng quy định tại các khoản 1, 2 và 3 Điều này trong trường hợp lao động nữ trở lại làm việc trước khi hết thời gian nghỉ việc hưởng chế độ thai sản khi sinh con quy định tại khoản 1 Điều 53 của Luật này.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, chương trình Prolog đã xác định các điều kiện để nhận bảo hiểm xã hội một lần bao gồm: nghỉ hưu và đóng góp dưới 20 năm, di cư, hoặc mắc bệnh đe dọa tính mạng.\n\nConclusion: Hệ thống đã xác định các điều kiện để nhận bảo hiểm xã hội một lần là: nghỉ hưu và đóng góp dưới 20 năm, di cư, hoặc mắc bệnh đe dọa tính mạng. Tuy nhiên, không có thông tin cụ thể nào về trường hợp của bạn để kết luận liệu bạn có thể lấy lại khoản tiền đã đóng hay không.",
+  "citations": [
+    "[Điều 60 khoản 4]",
+    "[Điều 53]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K4",
+    "L41_2024.A53"
+  ],
+  "citation_indices": [
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,one_time_social_insurance_conditions([retirement_age_and_under_20_years_contributed,emigration,life_threatening_disease]),based_on(source_c019))]",
+  "irac_sections": {
+    "issue": "Bạn đã đóng bảo hiểm xã hội được 3 tháng với số tiền khoảng hơn 1 triệu đồng. Hiện tại, bạn nghỉ việc và không có ý định làm lại, bạn muốn biết liệu có thể lấy lại khoản tiền đã đóng hay không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 60, Khoản 4: \"Không áp dụng quy định tại các khoản 1, 2 và 3 Điều này trong trường hợp lao động nữ trở lại làm việc trước khi hết thời gian nghỉ việc hưởng chế độ thai sản khi sinh con quy định tại khoản 1 Điều 53 của Luật này.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, chương trình Prolog đã xác định các điều kiện để nhận bảo hiểm xã hội một lần bao gồm: nghỉ hưu và đóng góp dưới 20 năm, di cư, hoặc mắc bệnh đe dọa tính mạng.",
+    "conclusion": "Hệ thống đã xác định các điều kiện để nhận bảo hiểm xã hội một lần là: nghỉ hưu và đóng góp dưới 20 năm, di cư, hoặc mắc bệnh đe dọa tính mạng. Tuy nhiên, không có thông tin cụ thể nào về trường hợp của bạn để kết luận liệu bạn có thể lấy lại khoản tiền đã đóng hay không."
+  },
+  "elapsed_s": 5.764,
+  "prompt_tokens": 5204,
+  "completion_tokens": 554,
+  "error": null,
+  "gold_answer": "Đóng BHXH mới 3 tháng thì chưa thể lấy lại ngay chỉ vì nghỉ việc và không muốn đi làm nữa. Muốn hưởng BHXH một lần, bạn vẫn phải thuộc trường hợp luật cho phép, thường là sau khi ngừng tham gia đủ 12 tháng và chưa đủ điều kiện hưởng lương hưu. Nếu sau này không rút, 3 tháng đó vẫn được bảo lưu. Còn phần người sử dụng lao động đã đóng vào các quỹ thì không hoàn trả riêng cho bạn như một khoản tiết kiệm.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110"
+}

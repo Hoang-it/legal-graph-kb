@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 159,
+  "question": "tiền dưỡng sức sau sinh bao lâu thì mình nhận được?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Sau sinh, trong bao lâu thì người lao động sẽ nhận được tiền dưỡng sức?\n\nRule:\nTiền dưỡng sức, phục hồi sức khỏe sau thai sản được chi trả trong thời hạn 3 ngày làm việc kể từ ngày người sử dụng lao động nhận đủ hồ sơ hợp lệ. (law_bhxh_2024, article_41, clause_2)\n\nApplication:\nKhông có slot nào cần điền từ phía người dùng. Hệ thống Prolog đã xác định thời hạn nhận tiền dưỡng sức sau sinh dựa trên quy định tại law_bhxh_2024, article_41, clause_2.\n\nConclusion:\nThời hạn nhận tiền dưỡng sức sau sinh là 3 ngày làm việc kể từ ngày người sử dụng lao động nhận đủ hồ sơ hợp lệ (ThoiHan = 3).",
+  "citations": [
+    "[Điều 41 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A41.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,thoi_han_nhan_duong_suc_sau_sinh(3),based_on(source_a41_k2))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Sau sinh, trong bao lâu thì người lao động sẽ nhận được tiền dưỡng sức?",
+    "rule": "Tiền dưỡng sức, phục hồi sức khỏe sau thai sản được chi trả trong thời hạn 3 ngày làm việc kể từ ngày người sử dụng lao động nhận đủ hồ sơ hợp lệ. (law_bhxh_2024, article_41, clause_2)",
+    "application": "Không có slot nào cần điền từ phía người dùng. Hệ thống Prolog đã xác định thời hạn nhận tiền dưỡng sức sau sinh dựa trên quy định tại law_bhxh_2024, article_41, clause_2.",
+    "conclusion": "Thời hạn nhận tiền dưỡng sức sau sinh là 3 ngày làm việc kể từ ngày người sử dụng lao động nhận đủ hồ sơ hợp lệ (ThoiHan = 3)."
+  },
+  "elapsed_s": 5.667,
+  "prompt_tokens": 1955,
+  "completion_tokens": 391,
+  "error": null,
+  "gold_answer": "Tiền dưỡng sức sau sinh thường được chi trả sau khi hồ sơ được đơn vị và cơ quan BHXH giải quyết xong; thực tế nhiều nơi nhận trong vài tuần đến khoảng 10 ngày làm việc sau khi có quyết định. Điều kiện là trong 30 ngày đầu đi làm lại sau thai sản mà sức khỏe chưa phục hồi và được đơn vị lập danh sách đề nghị. Nếu công ty chậm nộp hồ sơ thì tiền sẽ chậm theo.",
+  "gold_citations_raw": "Điều 59, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

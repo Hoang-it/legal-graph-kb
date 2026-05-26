@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 153,
+  "question": "Minh  đóng bảo hiểm 4nam 5 tháng. Lương cơ bản 25 tr nếu rút 1 lần được tầm bao nhiêu?",
+  "answer": "Issue: Minh muốn biết số tiền trợ cấp một lần mà anh ấy có thể nhận được sau khi đã đóng bảo hiểm xã hội trong 4 năm 5 tháng với mức lương cơ bản là 25 triệu đồng.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 76, Khoản 2: \"Mức trợ cấp một lần đối với người đang hưởng lương hưu được tính theo thời gian đã đóng bảo hiểm xã hội trong đó mỗi năm đóng bảo hiểm xã hội trước năm 2014 được tính bằng 1,5 tháng lương hưu đang hưởng, mỗi năm đóng bảo hiểm xã hội từ năm 2014 trở đi được tính bằng 02 tháng lương hưu đang hưởng; sau đó mỗi tháng đã hưởng lương hưu thì mức trợ cấp một lần trừ 0,5 tháng lương hưu. Mức thấp nhất bằng 03 tháng lương hưu đang hưởng.\" Ngoài ra, Điều 5, Khoản 6 quy định: \"Thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\"\n\nApplication: Các thông tin đầu vào bao gồm: số năm đóng bảo hiểm là 4 năm, số tháng đóng bảo hiểm là 5 tháng, và mức lương cơ bản là 25000000 đồng. Theo quy định, 5 tháng lẻ được tính là nửa năm, do đó tổng thời gian đóng bảo hiểm được tính là 4.5 năm. Số tiền trợ cấp một lần được tính bằng cách nhân tổng số năm đóng bảo hiểm với 2 lần mức lương cơ bản.\n\nConclusion: Số tiền trợ cấp một lần mà Minh có thể nhận được là 225000000 đồng.",
+  "citations": [
+    "[Điều 76 khoản 2]",
+    "[Điều 5 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A76.K2",
+    "L41_2024.A5.K6"
+  ],
+  "citation_indices": [
+    3,
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,one_time_withdrawal_amount(user,225000000.0),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Minh muốn biết số tiền trợ cấp một lần mà anh ấy có thể nhận được sau khi đã đóng bảo hiểm xã hội trong 4 năm 5 tháng với mức lương cơ bản là 25 triệu đồng.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 76, Khoản 2: \"Mức trợ cấp một lần đối với người đang hưởng lương hưu được tính theo thời gian đã đóng bảo hiểm xã hội trong đó mỗi năm đóng bảo hiểm xã hội trước năm 2014 được tính bằng 1,5 tháng lương hưu đang hưởng, mỗi năm đóng bảo hiểm xã hội từ năm 2014 trở đi được tính bằng 02 tháng lương hưu đang hưởng; sau đó mỗi tháng đã hưởng lương hưu thì mức trợ cấp một lần trừ 0,5 tháng lương hưu. Mức thấp nhất bằng 03 tháng lương hưu đang hưởng.\" Ngoài ra, Điều 5, Khoản 6 quy định: \"Thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\"",
+    "application": "Các thông tin đầu vào bao gồm: số năm đóng bảo hiểm là 4 năm, số tháng đóng bảo hiểm là 5 tháng, và mức lương cơ bản là 25000000 đồng. Theo quy định, 5 tháng lẻ được tính là nửa năm, do đó tổng thời gian đóng bảo hiểm được tính là 4.5 năm. Số tiền trợ cấp một lần được tính bằng cách nhân tổng số năm đóng bảo hiểm với 2 lần mức lương cơ bản.",
+    "conclusion": "Số tiền trợ cấp một lần mà Minh có thể nhận được là 225000000 đồng."
+  },
+  "elapsed_s": 11.765,
+  "prompt_tokens": 6669,
+  "completion_tokens": 1534,
+  "error": null,
+  "gold_answer": "Nếu 4 năm 5 tháng của bạn đều sau 2014 thì BHXH 1 lần ước khoảng khoảng 225,0 triệu; đây là ước tính sơ bộ theo công thức 2 tháng bình quân lương cho mỗi năm đóng và 5 tháng được làm tròn thành nửa năm. Số thực tế có thể khác do hệ số điều chỉnh tiền lương và mức bình quân của toàn bộ quá trình, không chỉ lương hiện tại.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

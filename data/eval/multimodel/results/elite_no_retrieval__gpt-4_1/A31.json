@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 31,
+  "question": "Ông Tất Thắng (TPHCM) hỏi, người lao động ký hợp đồng dưới 1 tháng, làm đủ từ 14 công trở lên có mức lương cao hơn mức lương tối thiểu vùng thì có thuộc đối tượng đóng BHXH không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là người lao động ký hợp đồng lao động dưới 1 tháng, làm đủ từ 14 công trở lên và có mức lương cao hơn mức lương tối thiểu vùng thì có thuộc đối tượng đóng bảo hiểm xã hội bắt buộc không.\n\nRule:\n\"Người lao động làm việc theo hợp đồng lao động từ đủ 1 tháng trở lên thuộc đối tượng tham gia BHXH bắt buộc.\" (law_bhxh_2024, article_2, clause_1)\n\nApplication:\nCác điều kiện được xác định là: hợp đồng lao động dưới 1 tháng (contract_duration_less_than_1_month), số ngày làm việc trong tháng từ 14 ngày trở lên (days_worked_in_month(user, Days), Days >= 14), và mức lương cao hơn mức lương tối thiểu vùng (salary_higher_than_minimum(user)). Truy vấn Prolog đã sử dụng điều kiện hợp đồng dưới 1 tháng để xác định đối tượng không thuộc diện tham gia BHXH bắt buộc, dựa trên quy định tại law_bhxh_2024, article_2, clause_1.\n\nConclusion:\nKết quả Prolog trả về Answer = false, tức là người lao động ký hợp đồng dưới 1 tháng, dù làm đủ từ 14 công trở lên và có mức lương cao hơn mức lương tối thiểu vùng, không thuộc đối tượng đóng BHXH bắt buộc.",
+  "citations": [
+    "[Điều 2 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,subject_to_mandatory_bhxh(user,false),based_on(source_a2_k1))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là người lao động ký hợp đồng lao động dưới 1 tháng, làm đủ từ 14 công trở lên và có mức lương cao hơn mức lương tối thiểu vùng thì có thuộc đối tượng đóng bảo hiểm xã hội bắt buộc không.",
+    "rule": "\"Người lao động làm việc theo hợp đồng lao động từ đủ 1 tháng trở lên thuộc đối tượng tham gia BHXH bắt buộc.\" (law_bhxh_2024, article_2, clause_1)",
+    "application": "Các điều kiện được xác định là: hợp đồng lao động dưới 1 tháng (contract_duration_less_than_1_month), số ngày làm việc trong tháng từ 14 ngày trở lên (days_worked_in_month(user, Days), Days >= 14), và mức lương cao hơn mức lương tối thiểu vùng (salary_higher_than_minimum(user)). Truy vấn Prolog đã sử dụng điều kiện hợp đồng dưới 1 tháng để xác định đối tượng không thuộc diện tham gia BHXH bắt buộc, dựa trên quy định tại law_bhxh_2024, article_2, clause_1.",
+    "conclusion": "Kết quả Prolog trả về Answer = false, tức là người lao động ký hợp đồng dưới 1 tháng, dù làm đủ từ 14 công trở lên và có mức lương cao hơn mức lương tối thiểu vùng, không thuộc đối tượng đóng BHXH bắt buộc."
+  },
+  "elapsed_s": 6.642,
+  "prompt_tokens": 2153,
+  "completion_tokens": 686,
+  "error": null,
+  "gold_answer": "Căn cứ điểm a khoản 1 Điều 2 Luật BHXH 2024; Nghị định số 158/2025/NĐ-CP ngày 25/6/2025 của Chính phủ, người lao động làm việc theo hợp đồng lao động từ đủ 1 tháng trở lên thuộc đối tượng tham gia BHXH bắt buộc.\nDo đó, trường hợp người lao động ký hợp đồng lao động dưới 1 tháng không thuộc đối tượng tham gia BHXH bắt buộc, quy định làm đủ 14 ngày công trở lên chỉ áp dụng đối với người lao động có hợp đồng lao động từ đủ 1 tháng trở lên.",
+  "gold_citations_raw": "điểm a khoản 1 Điều 2 Luật BHXH 2024; Nghị định số 158/2025/NĐ-CP"
+}

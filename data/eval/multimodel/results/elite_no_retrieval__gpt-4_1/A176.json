@@ -1,0 +1,32 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 176,
+  "question": "18nam dong bhxh lấy 1 lần được bao nhiêu?",
+  "answer": "Issue:\nNgười lao động đã đóng bảo hiểm xã hội 18 năm thì khi rút bảo hiểm xã hội một lần sẽ được nhận bao nhiêu tiền?\n\nRule:\n\"Mức hưởng BHXH một lần được tính bằng 1,5 tháng mức bình quân tiền lương đóng BHXH cho mỗi năm đóng trước năm 2014 và 2 tháng cho mỗi năm đóng từ năm 2014 trở đi.\" (law_bhxh_2024, article_60, clause_2)\n\nApplication:\nKhông có slot_id cụ thể nào được cung cấp, nhưng hệ thống xác nhận rằng người dùng đã đóng bảo hiểm xã hội 18 năm (years_contributed(user, 18)). Theo truy vết Prolog, toàn bộ 18 năm này được tính theo mức 2 tháng cho mỗi năm đóng từ năm 2014 trở đi, dựa trên quy định tại law_bhxh_2024, article_60, clause_2. Hệ thống đã sử dụng thông tin này để xác định giá trị Amount.\n\nConclusion:\nSố tháng mức bình quân tiền lương đóng BHXH mà người lao động được nhận khi rút bảo hiểm xã hội một lần với 18 năm đóng là: Amount = 36.",
+  "citations": [
+    "[Điều 60 khoản 1]",
+    "[Điều 60 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1",
+    "L41_2024.A60.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(calculation,bhxh_lump_sum(user,36),based_on(source_a60_k2))]",
+  "irac_sections": {
+    "issue": "Người lao động đã đóng bảo hiểm xã hội 18 năm thì khi rút bảo hiểm xã hội một lần sẽ được nhận bao nhiêu tiền?",
+    "rule": "\"Mức hưởng BHXH một lần được tính bằng 1,5 tháng mức bình quân tiền lương đóng BHXH cho mỗi năm đóng trước năm 2014 và 2 tháng cho mỗi năm đóng từ năm 2014 trở đi.\" (law_bhxh_2024, article_60, clause_2)",
+    "application": "Không có slot_id cụ thể nào được cung cấp, nhưng hệ thống xác nhận rằng người dùng đã đóng bảo hiểm xã hội 18 năm (years_contributed(user, 18)). Theo truy vết Prolog, toàn bộ 18 năm này được tính theo mức 2 tháng cho mỗi năm đóng từ năm 2014 trở đi, dựa trên quy định tại law_bhxh_2024, article_60, clause_2. Hệ thống đã sử dụng thông tin này để xác định giá trị Amount.",
+    "conclusion": "Số tháng mức bình quân tiền lương đóng BHXH mà người lao động được nhận khi rút bảo hiểm xã hội một lần với 18 năm đóng là: Amount = 36."
+  },
+  "elapsed_s": 5.623,
+  "prompt_tokens": 2027,
+  "completion_tokens": 587,
+  "error": null,
+  "gold_answer": "Nếu 18 năm đóng của bạn đều từ năm 2014 trở đi thì công thức sơ bộ là 18 năm x 2 tháng mức bình quân lương đóng BHXH, tức khoảng 36 tháng bình quân lương. Muốn biết gần đúng bao nhiêu tiền, cần biết mức bình quân tiền lương tháng đóng của toàn bộ quá trình sau điều chỉnh. Từ 01/7/2025, 18 năm đóng cũng là mức nên cân nhắc giữ để hướng tới lương hưu.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

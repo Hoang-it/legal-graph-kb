@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 115,
+  "question": "Mình đóng được bảo hiểm 8 tháng thì có rút được tiền trong bảo hiểu đc không?",
+  "answer": "Issue: Bạn muốn biết liệu có thể rút tiền bảo hiểm xã hội sau khi đã đóng bảo hiểm được 8 tháng hay không.\n\nRule: Theo Luật Bảo hiểm xã hội 2024, Điều 60, Khoản 1: \"Người lao động có thể rút bảo hiểm xã hội một lần nếu không đủ điều kiện hưởng lương hưu.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo dữ liệu đã xác minh, bạn đã đóng bảo hiểm được 8 tháng. Quy tắc Prolog đã sử dụng thông tin này để xác định rằng bạn có thể rút bảo hiểm xã hội một lần vì số tháng đóng bảo hiểm ít hơn 12.\n\nConclusion: Theo kết quả từ Prolog, bạn có thể rút bảo hiểm xã hội một lần.",
+  "citations": [
+    "[Điều 60 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,can_withdraw_insurance(user,yes),based_on(source_a60_k1))]",
+  "irac_sections": {
+    "issue": "Bạn muốn biết liệu có thể rút tiền bảo hiểm xã hội sau khi đã đóng bảo hiểm được 8 tháng hay không.",
+    "rule": "Theo Luật Bảo hiểm xã hội 2024, Điều 60, Khoản 1: \"Người lao động có thể rút bảo hiểm xã hội một lần nếu không đủ điều kiện hưởng lương hưu.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo dữ liệu đã xác minh, bạn đã đóng bảo hiểm được 8 tháng. Quy tắc Prolog đã sử dụng thông tin này để xác định rằng bạn có thể rút bảo hiểm xã hội một lần vì số tháng đóng bảo hiểm ít hơn 12.",
+    "conclusion": "Theo kết quả từ Prolog, bạn có thể rút bảo hiểm xã hội một lần."
+  },
+  "elapsed_s": 6.816,
+  "prompt_tokens": 3122,
+  "completion_tokens": 478,
+  "error": null,
+  "gold_answer": "Đóng BHXH 8 tháng chưa đương nhiên được rút ngay. Bạn chỉ được hưởng BHXH 1 lần khi thuộc trường hợp luật cho phép, phổ biến là đã nghỉ việc và sau 12 tháng không còn thuộc diện tham gia BHXH bắt buộc, cũng không tham gia BHXH tự nguyện. Nếu chưa đủ điều kiện thì thời gian 8 tháng đó được bảo lưu để cộng nối về sau.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,37 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 21,
+  "question": "Ông Quang Lành (Tây Ninh) hỏi, các đối tượng hưởng trợ cấp BHXH hằng tháng gồm những đối tượng nào để xác định không được hưởng trợ cấp hưu trí xã hội?",
+  "answer": "Issue: Ông Quang Lành (Tây Ninh) hỏi về các đối tượng hưởng trợ cấp bảo hiểm xã hội (BHXH) hằng tháng để xác định những ai không được hưởng trợ cấp hưu trí xã hội.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 23, Khoản 1: \"Công dân Việt Nam đủ tuổi nghỉ hưu có thời gian đóng bảo hiểm xã hội nhưng không đủ điều kiện hưởng lương hưu theo quy định của pháp luật và chưa đủ điều kiện hưởng trợ cấp hưu trí xã hội theo quy định tại Điều 21 của Luật này, nếu không hưởng bảo hiểm xã hội một lần và không bảo lưu mà có yêu cầu thì được hưởng trợ cấp hằng tháng từ chính khoản đóng của mình theo quy định tại khoản 2 Điều này.\" Và Khoản 3: \"Mức trợ cấp hằng tháng thấp nhất bằng mức trợ cấp hưu trí xã hội hằng tháng quy định tại khoản 1 Điều 22 của Luật này.\"\n\nApplication: Trong truy vấn Prolog, các điều kiện được xác định là: công dân đủ tuổi nghỉ hưu nhưng không đủ điều kiện hưởng lương hưu, không nhận bảo hiểm xã hội một lần, và không bảo lưu bảo hiểm xã hội. Các điều kiện này được sử dụng để xác định các đối tượng hưởng trợ cấp BHXH hằng tháng.\n\nConclusion: Các đối tượng hưởng trợ cấp BHXH hằng tháng bao gồm: công dân đủ tuổi nghỉ hưu nhưng không đủ điều kiện hưởng lương hưu, không nhận bảo hiểm xã hội một lần, và không bảo lưu bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 23 khoản 1]",
+    "[Điều 21]",
+    "[Điều 22]"
+  ],
+  "citation_ids": [
+    "L41_2024.A23.K1",
+    "L41_2024.A21",
+    "L41_2024.A22"
+  ],
+  "citation_indices": [
+    0,
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,monthly_social_insurance_beneficiaries([citizens_of_retirement_age_with_insufficient_pension_conditions,not_receiving_one_time_social_insurance,not_preserving_social_insurance]),based_on(source_c000)),step(conclusion,monthly_social_insurance_beneficiaries([citizens_of_retirement_age_with_insufficient_pension_conditions,not_receiving_one_time_social_insurance,not_preserving_social_insurance]),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Ông Quang Lành (Tây Ninh) hỏi về các đối tượng hưởng trợ cấp bảo hiểm xã hội (BHXH) hằng tháng để xác định những ai không được hưởng trợ cấp hưu trí xã hội.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 23, Khoản 1: \"Công dân Việt Nam đủ tuổi nghỉ hưu có thời gian đóng bảo hiểm xã hội nhưng không đủ điều kiện hưởng lương hưu theo quy định của pháp luật và chưa đủ điều kiện hưởng trợ cấp hưu trí xã hội theo quy định tại Điều 21 của Luật này, nếu không hưởng bảo hiểm xã hội một lần và không bảo lưu mà có yêu cầu thì được hưởng trợ cấp hằng tháng từ chính khoản đóng của mình theo quy định tại khoản 2 Điều này.\" Và Khoản 3: \"Mức trợ cấp hằng tháng thấp nhất bằng mức trợ cấp hưu trí xã hội hằng tháng quy định tại khoản 1 Điều 22 của Luật này.\"",
+    "application": "Trong truy vấn Prolog, các điều kiện được xác định là: công dân đủ tuổi nghỉ hưu nhưng không đủ điều kiện hưởng lương hưu, không nhận bảo hiểm xã hội một lần, và không bảo lưu bảo hiểm xã hội. Các điều kiện này được sử dụng để xác định các đối tượng hưởng trợ cấp BHXH hằng tháng.",
+    "conclusion": "Các đối tượng hưởng trợ cấp BHXH hằng tháng bao gồm: công dân đủ tuổi nghỉ hưu nhưng không đủ điều kiện hưởng lương hưu, không nhận bảo hiểm xã hội một lần, và không bảo lưu bảo hiểm xã hội."
+  },
+  "elapsed_s": 8.983,
+  "prompt_tokens": 3648,
+  "completion_tokens": 806,
+  "error": null,
+  "gold_answer": "Các đối tượng hưởng trợ cấp BHXH hằng tháng bao gồm:\n- Trợ cấp mất sức lao động;\n- Trợ cấp tai nạn lao động, bệnh nghề nghiệp;\n- Trợ cấp tuất;…\nĐây là những đối tượng không được hưởng trợ cấp hưu trí xã hội.",
+  "gold_citations_raw": null
+}

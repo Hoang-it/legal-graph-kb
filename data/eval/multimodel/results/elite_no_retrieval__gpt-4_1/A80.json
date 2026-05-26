@@ -1,0 +1,32 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 80,
+  "question": "E đóng bảo hiểm sớm hơn 1 tháng trước khi đủ 18 tuổi thì sau có chốt sổ được không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu người lao động bắt đầu đóng bảo hiểm xã hội sớm hơn 1 tháng trước khi đủ 18 tuổi thì sau này có được chốt sổ bảo hiểm xã hội hay không?\n\nRule:\n\"Người lao động từ đủ 15 tuổi trở lên, có hợp đồng lao động, thuộc đối tượng tham gia BHXH bắt buộc.\" (law_bhxh_2024, article_2, clause_1)\n\"Việc chốt sổ BHXH thực hiện khi người lao động chấm dứt hợp đồng lao động và có quá trình tham gia BHXH hợp lệ.\" (law_bhxh_2024, article_21, clause_1)\n\nApplication:\nSlot age_at_start được gán giá trị 17. Theo truy vết Prolog, hệ thống kiểm tra điều kiện đủ tuổi tham gia BHXH (từ đủ 15 tuổi trở lên) và xác định người lao động đủ điều kiện tham gia BHXH bắt buộc. Sau đó, hệ thống tiếp tục kiểm tra điều kiện chốt sổ BHXH dựa trên quá trình tham gia hợp lệ.\n\nConclusion:\nTheo truy vết Prolog, người lao động bắt đầu đóng BHXH từ 17 tuổi (sớm hơn 1 tháng trước khi đủ 18 tuổi) vẫn đủ điều kiện để chốt sổ BHXH nếu đáp ứng các điều kiện khác về hợp đồng lao động và quá trình tham gia hợp lệ.",
+  "citations": [
+    "[Điều 2 khoản 1]",
+    "[Điều 21 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2.K1",
+    "L41_2024.A21.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(finalize_bhxh,can_finalize_bhxh_book(user),based_on(source_a21_k1)),step(eligible_age,eligible_for_bhxh_participation(user),based_on(source_a2_k1))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu người lao động bắt đầu đóng bảo hiểm xã hội sớm hơn 1 tháng trước khi đủ 18 tuổi thì sau này có được chốt sổ bảo hiểm xã hội hay không?",
+    "rule": "\"Người lao động từ đủ 15 tuổi trở lên, có hợp đồng lao động, thuộc đối tượng tham gia BHXH bắt buộc.\" (law_bhxh_2024, article_2, clause_1)\n\"Việc chốt sổ BHXH thực hiện khi người lao động chấm dứt hợp đồng lao động và có quá trình tham gia BHXH hợp lệ.\" (law_bhxh_2024, article_21, clause_1)",
+    "application": "Slot age_at_start được gán giá trị 17. Theo truy vết Prolog, hệ thống kiểm tra điều kiện đủ tuổi tham gia BHXH (từ đủ 15 tuổi trở lên) và xác định người lao động đủ điều kiện tham gia BHXH bắt buộc. Sau đó, hệ thống tiếp tục kiểm tra điều kiện chốt sổ BHXH dựa trên quá trình tham gia hợp lệ.",
+    "conclusion": "Theo truy vết Prolog, người lao động bắt đầu đóng BHXH từ 17 tuổi (sớm hơn 1 tháng trước khi đủ 18 tuổi) vẫn đủ điều kiện để chốt sổ BHXH nếu đáp ứng các điều kiện khác về hợp đồng lao động và quá trình tham gia hợp lệ."
+  },
+  "elapsed_s": 10.888,
+  "prompt_tokens": 2124,
+  "completion_tokens": 662,
+  "error": null,
+  "gold_answer": "Việc đóng BHXH sớm hơn 1 tháng trước khi đủ 18 tuổi không phải lúc nào cũng làm mất toàn bộ quá trình, nhưng cơ quan BHXH sẽ rà soát lại tính hợp pháp của đối tượng tham gia tại thời điểm đó. Nếu thời gian đó được ghi nhận sai đối tượng thì có thể phải điều chỉnh dữ liệu, không nhất thiết làm mất hết sổ. Bạn nên liên hệ cơ quan BHXH để kiểm tra hồ sơ gốc và được hướng dẫn điều chỉnh nếu có sai sót.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2; quy định về đối tượng tham gia BHXH"
+}

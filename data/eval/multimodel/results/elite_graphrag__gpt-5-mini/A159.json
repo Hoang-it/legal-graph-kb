@@ -1,0 +1,21 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 159,
+  "question": "tiền dưỡng sức sau sinh bao lâu thì mình nhận được?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=unable_to_conclude, repair_rounds=2, error=Connection error.]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "unable_to_conclude",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 4.487,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "error": null,
+  "gold_answer": "Tiền dưỡng sức sau sinh thường được chi trả sau khi hồ sơ được đơn vị và cơ quan BHXH giải quyết xong; thực tế nhiều nơi nhận trong vài tuần đến khoảng 10 ngày làm việc sau khi có quyết định. Điều kiện là trong 30 ngày đầu đi làm lại sau thai sản mà sức khỏe chưa phục hồi và được đơn vị lập danh sách đề nghị. Nếu công ty chậm nộp hồ sơ thì tiền sẽ chậm theo.",
+  "gold_citations_raw": "Điều 59, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

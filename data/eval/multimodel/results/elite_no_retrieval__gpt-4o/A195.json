@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 195,
+  "question": "mik đang đi làm đóng bảo hiển xh mà mik xin nghỉ đội 1-2 tháng đi thụ tinh nhân tạo thì có được hưởng ít bảo hiểm nào không?",
+  "answer": "Issue: Bạn đang đi làm và đóng bảo hiểm xã hội, muốn biết nếu xin nghỉ 1-2 tháng để thực hiện thụ tinh nhân tạo thì có được hưởng chế độ bảo hiểm nào không.\n\nRule: \"Người lao động nữ được nghỉ việc hưởng chế độ thai sản khi thực hiện các biện pháp tránh thai.\" (Luật BHXH 2024, Điều 31, Khoản 1)\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên quy tắc đã được xác định trong chương trình Prolog, người lao động nữ có thể được nghỉ việc hưởng chế độ thai sản khi thực hiện các biện pháp tránh thai, bao gồm thụ tinh nhân tạo.\n\nConclusion: Theo kết quả từ chương trình Prolog, câu trả lời là \"yes\", nghĩa là bạn có thể được hưởng chế độ bảo hiểm khi nghỉ để thực hiện thụ tinh nhân tạo.",
+  "citations": [
+    "[Điều 31 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A31.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,artificial_insemination_leave(yes),based_on(source_a31_k1))]",
+  "irac_sections": {
+    "issue": "Bạn đang đi làm và đóng bảo hiểm xã hội, muốn biết nếu xin nghỉ 1-2 tháng để thực hiện thụ tinh nhân tạo thì có được hưởng chế độ bảo hiểm nào không.",
+    "rule": "\"Người lao động nữ được nghỉ việc hưởng chế độ thai sản khi thực hiện các biện pháp tránh thai.\" (Luật BHXH 2024, Điều 31, Khoản 1)",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên quy tắc đã được xác định trong chương trình Prolog, người lao động nữ có thể được nghỉ việc hưởng chế độ thai sản khi thực hiện các biện pháp tránh thai, bao gồm thụ tinh nhân tạo.",
+    "conclusion": "Theo kết quả từ chương trình Prolog, câu trả lời là \"yes\", nghĩa là bạn có thể được hưởng chế độ bảo hiểm khi nghỉ để thực hiện thụ tinh nhân tạo."
+  },
+  "elapsed_s": 4.241,
+  "prompt_tokens": 1955,
+  "completion_tokens": 360,
+  "error": null,
+  "gold_answer": "Nếu bạn đang đóng BHXH mà xin nghỉ 1-2 tháng để đi thụ tinh nhân tạo thì quyền lợi phụ thuộc loại nghỉ và giấy tờ y tế. Nếu nghỉ ốm/điều trị theo chỉ định của cơ sở khám chữa bệnh có thẩm quyền thì có thể được xem xét chế độ ốm đau. Nếu chỉ tự nghỉ không lương mà không có hồ sơ y tế phù hợp thì thường không có chế độ BHXH riêng cho việc đó.",
+  "gold_citations_raw": "Điều 42, 43, 47 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 193,
+  "question": "Em nghỉ cty cách đây 8/9 năm r nhưng m chưa chốt lấy bảo hiểm\nGiờ m muốn lấy bảo hiểm thì đến cty m đã lm để lấy hay lấy ở đâu?",
+  "answer": "Issue: Bạn đã nghỉ việc tại công ty cách đây 8/9 năm nhưng chưa chốt sổ bảo hiểm xã hội. Bạn muốn biết liệu có cần quay lại công ty cũ để lấy bảo hiểm hay không, hoặc phải lấy ở đâu.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 114, Khoản 2: \"Trực tiếp từ cơ quan bảo hiểm xã hội hoặc tổ chức dịch vụ được cơ quan bảo hiểm xã hội ủy quyền.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên quy định pháp luật, việc yêu cầu bảo hiểm xã hội có thể được thực hiện trực tiếp từ cơ quan bảo hiểm xã hội hoặc thông qua tổ chức dịch vụ được cơ quan bảo hiểm xã hội ủy quyền.\n\nConclusion: Theo kết quả từ hệ thống, bạn có thể lấy bảo hiểm xã hội trực tiếp từ cơ quan bảo hiểm xã hội hoặc tổ chức dịch vụ được cơ quan bảo hiểm xã hội ủy quyền.",
+  "citations": [
+    "[Điều 114 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A114.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,insurance_claim_location([directly_from_social_insurance_agency_or_authorized_service_organization]),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Bạn đã nghỉ việc tại công ty cách đây 8/9 năm nhưng chưa chốt sổ bảo hiểm xã hội. Bạn muốn biết liệu có cần quay lại công ty cũ để lấy bảo hiểm hay không, hoặc phải lấy ở đâu.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 114, Khoản 2: \"Trực tiếp từ cơ quan bảo hiểm xã hội hoặc tổ chức dịch vụ được cơ quan bảo hiểm xã hội ủy quyền.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên quy định pháp luật, việc yêu cầu bảo hiểm xã hội có thể được thực hiện trực tiếp từ cơ quan bảo hiểm xã hội hoặc thông qua tổ chức dịch vụ được cơ quan bảo hiểm xã hội ủy quyền.",
+    "conclusion": "Theo kết quả từ hệ thống, bạn có thể lấy bảo hiểm xã hội trực tiếp từ cơ quan bảo hiểm xã hội hoặc tổ chức dịch vụ được cơ quan bảo hiểm xã hội ủy quyền."
+  },
+  "elapsed_s": 5.334,
+  "prompt_tokens": 2599,
+  "completion_tokens": 392,
+  "error": null,
+  "gold_answer": "Nếu bạn nghỉ công ty 8-9 năm mà chưa chốt/lấy BHXH, trước hết cần xác định công ty khi đó đã báo giảm, chốt sổ hay chưa. Nếu đã chốt, bạn có thể liên hệ trực tiếp cơ quan BHXH nơi quản lý hoặc nơi cư trú để xin xác nhận/cấp lại. Nếu chưa chốt thì vẫn phải yêu cầu công ty cũ hoàn tất thủ tục; BHXH không thể tự chốt toàn bộ nếu đơn vị chưa báo giảm và chưa hoàn thành nghĩa vụ.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

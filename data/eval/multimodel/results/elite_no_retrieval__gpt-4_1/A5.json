@@ -1,0 +1,34 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 5,
+  "question": "Công ty của ông Tuấn Tú (Lào Cai) có phát sinh ký hợp đồng lao động với người lao động từ tháng 3/2024.\nÔng Tú hỏi, ông có thể kê khai thông tin qua mạng để đóng BHXH cho người lao động không? Hồ sơ kê khai gồm những gì?\nNếu kê khai qua mạng thì cần làm gì để được cấp mã đăng nhập?",
+  "answer": "Issue:\nCông ty của ông Tuấn Tú hỏi về việc có thể kê khai thông tin qua mạng để đóng BHXH cho người lao động không, hồ sơ kê khai gồm những gì và cần làm gì để được cấp mã đăng nhập khi kê khai qua mạng.\n\nRule:\n\"Người sử dụng lao động có trách nhiệm đăng ký tham gia, kê khai và đóng BHXH cho người lao động theo quy định, có thể thực hiện qua phương thức điện tử.\" (law_bhxh_2024, article_23, clause_1)\n\"Hồ sơ đăng ký tham gia BHXH lần đầu gồm: tờ khai tham gia BHXH của người lao động, danh sách lao động tham gia BHXH, hợp đồng lao động, và các giấy tờ liên quan.\" (law_bhxh_2024, article_24, clause_2)\n\"Để kê khai qua mạng, người sử dụng lao động cần đăng ký tài khoản giao dịch điện tử với cơ quan BHXH để được cấp mã đăng nhập.\" (law_bhxh_2024, article_25, clause_3)\n\nApplication:\nCác giá trị được Prolog truy vấn và trả về gồm:\n- possible: yes (có thể kê khai qua mạng)\n- documents: [to_khai_tham_gia_bhxh, danh_sach_lao_dong, hop_dong_lao_dong, giay_to_lien_quan] (hồ sơ cần chuẩn bị)\n- registration_steps: [dang_ky_tai_khoan_giao_dich_dien_tu, nhan_ma_dang_nhap_tu_bhxh] (các bước để được cấp mã đăng nhập)\nCác thông tin này được truy xuất dựa trên các điều khoản pháp luật đã nêu ở trên.\n\nConclusion:\nTheo kết quả Prolog, công ty ông Tuấn Tú có thể kê khai BHXH qua mạng. Hồ sơ gồm: tờ khai tham gia BHXH, danh sách lao động, hợp đồng lao động, giấy tờ liên quan. Để được cấp mã đăng nhập, cần đăng ký tài khoản giao dịch điện tử với cơ quan BHXH và nhận mã đăng nhập từ BHXH.",
+  "citations": [
+    "[Điều 23 khoản 1]",
+    "[Điều 24 khoản 2]",
+    "[Điều 25 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A23.K1",
+    "L41_2024.A24.K2",
+    "L41_2024.A25.K3"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,bhxh_online_declaration_possible,based_on(source_a23_k1)),step(conclusion,bhxh_online_declaration_documents([to_khai_tham_gia_bhxh,danh_sach_lao_dong,hop_dong_lao_dong,giay_to_lien_quan]),based_on(source_a24_k2)),step(conclusion,bhxh_online_registration_steps([dang_ky_tai_khoan_giao_dich_dien_tu,nhan_ma_dang_nhap_tu_bhxh]),based_on(source_a25_k3))]",
+  "irac_sections": {
+    "issue": "Công ty của ông Tuấn Tú hỏi về việc có thể kê khai thông tin qua mạng để đóng BHXH cho người lao động không, hồ sơ kê khai gồm những gì và cần làm gì để được cấp mã đăng nhập khi kê khai qua mạng.",
+    "rule": "\"Người sử dụng lao động có trách nhiệm đăng ký tham gia, kê khai và đóng BHXH cho người lao động theo quy định, có thể thực hiện qua phương thức điện tử.\" (law_bhxh_2024, article_23, clause_1)\n\"Hồ sơ đăng ký tham gia BHXH lần đầu gồm: tờ khai tham gia BHXH của người lao động, danh sách lao động tham gia BHXH, hợp đồng lao động, và các giấy tờ liên quan.\" (law_bhxh_2024, article_24, clause_2)\n\"Để kê khai qua mạng, người sử dụng lao động cần đăng ký tài khoản giao dịch điện tử với cơ quan BHXH để được cấp mã đăng nhập.\" (law_bhxh_2024, article_25, clause_3)",
+    "application": "Các giá trị được Prolog truy vấn và trả về gồm:\n- possible: yes (có thể kê khai qua mạng)\n- documents: [to_khai_tham_gia_bhxh, danh_sach_lao_dong, hop_dong_lao_dong, giay_to_lien_quan] (hồ sơ cần chuẩn bị)\n- registration_steps: [dang_ky_tai_khoan_giao_dich_dien_tu, nhan_ma_dang_nhap_tu_bhxh] (các bước để được cấp mã đăng nhập)\nCác thông tin này được truy xuất dựa trên các điều khoản pháp luật đã nêu ở trên.",
+    "conclusion": "Theo kết quả Prolog, công ty ông Tuấn Tú có thể kê khai BHXH qua mạng. Hồ sơ gồm: tờ khai tham gia BHXH, danh sách lao động, hợp đồng lao động, giấy tờ liên quan. Để được cấp mã đăng nhập, cần đăng ký tài khoản giao dịch điện tử với cơ quan BHXH và nhận mã đăng nhập từ BHXH."
+  },
+  "elapsed_s": 13.707,
+  "prompt_tokens": 4744,
+  "completion_tokens": 1465,
+  "error": null,
+  "gold_answer": "Đơn vị có thể thực hiện giao dịch BHXH điện tử qua Cổng thông tin điện tử của BHXH Việt Nam hoặc qua Tổ chức cung cấp dịch vụ I-VAN để kê khai đóng BHXH cho người lao động.\nHồ sơ kê khai bao gồm: Tờ khai đơn vị tham gia, điều chỉnh thông tin BHXH, BHYT (Mẫu TK3-TS); báo cáo tình hình sử dụng lao động và danh sách tham gia BHXH, BHYT, BHTN, BHTNLĐ, BNN (Mẫu D02-LT); tờ khai tham gia, điều chỉnh thông tin BHXH, BHYT (Mẫu TK1-TS) đối với người tham gia lần đầu hoặc có mã số BHXH nhưng chưa đủ thông tin; trường hợp người lao động được hưởng quyền lợi BHYT cao hơn: Bổ sung Giấy tờ chứng minh (nếu có).\nKhi kê khai giao dịch BHXH điện tử thì cần điều kiện sau để được cấp mã đăng nhập: Đơn vị cần có chứng thư số (chữ ký số) còn hiệu lực được cấp bởi tổ chức cung cấp dịch vụ chứng thực chữ ký số cấp theo quy định; có khả năng truy cập và sử dụng mạng internet; có địa chỉ hòm thư điện tử (email) thường xuyên sử dụng.\nKhi đơn vị đã có chữ ký số thì có thể kê khai giao dịch BHXH điện tử qua các phương thức sau:\nPhương thức 1: Đăng ký qua Cổng thông tin điện tử của BHXH Việt Nam:\nĐơn vị sử dụng chữ ký số trên máy tính, mở trình duyệt bất kỳ, truy cập theo đường dẫn https://dichvucong.baohiemxahoi.gov.vn, chọn mục đăng ký, thực hiện các bước theo hướng dẫn trên hệ thống để hoàn tất đăng ký và kê khai hồ sơ theo quy định.\nPhương thức 2: Đăng ký sử dụng dịch vụ I-VAN:\nĐơn vị sử dụng phần mềm kê khai BHXH điện tử do Tổ chức I-VAN cung cấp: Đề nghị liên hệ với cơ quan BHXH để được cấp mã đơn vị lần đầu (do phần mềm kê khai BHXH điện tử của một số Tổ chức I-VAN chưa hỗ trợ đăng ký cấp mã đơn vị lần đầu cho doanh nghiệp), sau đó thực hiện đăng ký giao dịch điện tử và kê khai hồ sơ theo quy định.",
+  "gold_citations_raw": null
+}

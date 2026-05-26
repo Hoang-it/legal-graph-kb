@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 195,
+  "question": "mik đang đi làm đóng bảo hiển xh mà mik xin nghỉ đội 1-2 tháng đi thụ tinh nhân tạo thì có được hưởng ít bảo hiểm nào không?",
+  "answer": "Issue:\nNgười hỏi đang đóng bảo hiểm xã hội và xin nghỉ tạm thời để thực hiện thụ tinh nhân tạo; câu hỏi là có được hưởng chế độ bảo hiểm nào hay không.\n\nRule:\nKhông có trích dẫn pháp luật đính kèm trong truy vấn.\n\nApplication:\nKhông có slot_bindings được cung cấp. Prolog đã chạy quy tắc ivf_leave_entitlement mà không phụ thuộc vào dữ liệu bên ngoài (based_on(none)) và trả về một term Answer mô tả kết quả đánh giá pháp lý.\n\nConclusion:\nAnswer = answer(possible_sickness_benefit,[must_have_medical_certificate,must_meet_contribution_requirement,benefit_amount_and_duration_subject_to_law],recommendation(Nên nộp giấy xác nhận của cơ sở y tế và liên hệ với phòng nhân sự hoặc cơ quan BHXH để được hướng dẫn hồ sơ cụ thể và xác minh thời gian đóng BHXH.))",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(legal_assessment,answer(possible_sickness_benefit,[must_have_medical_certificate,must_meet_contribution_requirement,benefit_amount_and_duration_subject_to_law],recommendation(Nên nộp giấy xác nhận của cơ sở y tế và liên hệ với phòng nhân sự hoặc cơ quan BHXH để được hướng dẫn hồ sơ cụ thể và xác minh thời gian đóng BHXH.)),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người hỏi đang đóng bảo hiểm xã hội và xin nghỉ tạm thời để thực hiện thụ tinh nhân tạo; câu hỏi là có được hưởng chế độ bảo hiểm nào hay không.",
+    "rule": "Không có trích dẫn pháp luật đính kèm trong truy vấn.",
+    "application": "Không có slot_bindings được cung cấp. Prolog đã chạy quy tắc ivf_leave_entitlement mà không phụ thuộc vào dữ liệu bên ngoài (based_on(none)) và trả về một term Answer mô tả kết quả đánh giá pháp lý.",
+    "conclusion": "Answer = answer(possible_sickness_benefit,[must_have_medical_certificate,must_meet_contribution_requirement,benefit_amount_and_duration_subject_to_law],recommendation(Nên nộp giấy xác nhận của cơ sở y tế và liên hệ với phòng nhân sự hoặc cơ quan BHXH để được hướng dẫn hồ sơ cụ thể và xác minh thời gian đóng BHXH.))"
+  },
+  "elapsed_s": 27.326,
+  "prompt_tokens": 2183,
+  "completion_tokens": 3016,
+  "error": null,
+  "gold_answer": "Nếu bạn đang đóng BHXH mà xin nghỉ 1-2 tháng để đi thụ tinh nhân tạo thì quyền lợi phụ thuộc loại nghỉ và giấy tờ y tế. Nếu nghỉ ốm/điều trị theo chỉ định của cơ sở khám chữa bệnh có thẩm quyền thì có thể được xem xét chế độ ốm đau. Nếu chỉ tự nghỉ không lương mà không có hồ sơ y tế phù hợp thì thường không có chế độ BHXH riêng cho việc đó.",
+  "gold_citations_raw": "Điều 42, 43, 47 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

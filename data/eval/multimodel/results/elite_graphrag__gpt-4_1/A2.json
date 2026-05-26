@@ -1,0 +1,39 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 2,
+  "question": "Bà Minh Châu (Long An) ký hợp đồng lao động theo diện làm việc bán thời gian.\nBà Châu hỏi, bà có được mua BHXH bắt buộc theo đối tượng cá nhân không? Nếu được thì mức đóng được tính như thế nào?",
+  "answer": "Issue:\nBà Minh Châu hỏi rằng khi ký hợp đồng lao động bán thời gian, bà có thể tự mình tham gia bảo hiểm xã hội (BHXH) bắt buộc theo diện cá nhân hay không, và nếu được thì mức đóng được tính như thế nào.\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 4 quy định: \"Đóng bảo hiểm xã hội bắt buộc cho người lao động theo quy định tại Điều 34 của Luật này và hằng tháng trích khoản tiền phải đóng bảo hiểm xã hội bắt buộc theo quy định tại Điều 33 của Luật này từ tiền lương của người lao động để đóng cùng một lúc vào quỹ bảo hiểm xã hội.\"\nLuật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 2 quy định: \"Mức đóng bảo hiểm xã hội bắt buộc được tính trên cơ sở tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc. Mức đóng bảo hiểm xã hội tự nguyện được tính trên cơ sở thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện do người tham gia lựa chọn.\"\n\nApplication:\nKhông có slot nào được cung cấp vì câu hỏi chỉ yêu cầu xác định quyền tham gia BHXH bắt buộc theo diện cá nhân đối với người lao động bán thời gian. Prolog đã sử dụng quy định tại Điều 13, Khoản 4 của Luật BHXH 2024 để xác định đáp án.\n\nConclusion:\nTheo kết quả truy vấn Prolog, Answer = no. Như vậy, bà Minh Châu không thể tự mình mua BHXH bắt buộc theo diện cá nhân khi làm việc bán thời gian.",
+  "citations": [
+    "[Điều 13 khoản 4]",
+    "[Điều 34]",
+    "[Điều 33]",
+    "[Điều 5 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A13.K4",
+    "L41_2024.A34",
+    "L41_2024.A33",
+    "L41_2024.A5.K2"
+  ],
+  "citation_indices": [
+    2,
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,can_individual_buy_mandatory_bhxh_as_part_time_worker(no),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Bà Minh Châu hỏi rằng khi ký hợp đồng lao động bán thời gian, bà có thể tự mình tham gia bảo hiểm xã hội (BHXH) bắt buộc theo diện cá nhân hay không, và nếu được thì mức đóng được tính như thế nào.",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 4 quy định: \"Đóng bảo hiểm xã hội bắt buộc cho người lao động theo quy định tại Điều 34 của Luật này và hằng tháng trích khoản tiền phải đóng bảo hiểm xã hội bắt buộc theo quy định tại Điều 33 của Luật này từ tiền lương của người lao động để đóng cùng một lúc vào quỹ bảo hiểm xã hội.\"\nLuật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 2 quy định: \"Mức đóng bảo hiểm xã hội bắt buộc được tính trên cơ sở tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc. Mức đóng bảo hiểm xã hội tự nguyện được tính trên cơ sở thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện do người tham gia lựa chọn.\"",
+    "application": "Không có slot nào được cung cấp vì câu hỏi chỉ yêu cầu xác định quyền tham gia BHXH bắt buộc theo diện cá nhân đối với người lao động bán thời gian. Prolog đã sử dụng quy định tại Điều 13, Khoản 4 của Luật BHXH 2024 để xác định đáp án.",
+    "conclusion": "Theo kết quả truy vấn Prolog, Answer = no. Như vậy, bà Minh Châu không thể tự mình mua BHXH bắt buộc theo diện cá nhân khi làm việc bán thời gian."
+  },
+  "elapsed_s": 9.131,
+  "prompt_tokens": 3613,
+  "completion_tokens": 924,
+  "error": null,
+  "gold_answer": "Pháp luật về BHXH hiện hành không có quy định đối với trường hợp người lao động tự tham gia BHXH bắt buộc.\nDo vậy, trường hợp của bà ký hợp đồng lao động làm việc không trọn thời gian, không thuộc đối tượng tham gia BHXH bắt buộc thì có thể liên hệ tới cơ quan BHXH tại nơi cư trú để tham gia BHXH tự nguyện.",
+  "gold_citations_raw": "Luật BHXH 2014"
+}

@@ -1,0 +1,32 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 141,
+  "question": "em vừa nghỉ việc tại công ty, mà HR nói là giờ chốt sổ xong ko có tờ rời nữa, h chuyển sang quản lý bằng sổ bhxh điện tử. HR còn cap cho e đoạn trao đổi với bhxh Tây Hồ, cho e hỏi thế h e đi làm bảo hiểm thất nghiệp có đc ko?",
+  "answer": "Issue: Bạn vừa nghỉ việc tại công ty và được thông báo rằng sổ bảo hiểm xã hội (BHXH) sẽ được quản lý bằng hình thức điện tử thay vì tờ rời. Bạn muốn biết liệu bạn có đủ điều kiện để hưởng bảo hiểm thất nghiệp hay không.\n\nRule: Điều kiện hưởng bảo hiểm thất nghiệp bao gồm việc đã đóng bảo hiểm thất nghiệp đủ thời gian theo quy định và chưa tìm được việc làm mới. (Nguồn: Luật BHXH 2024, Điều 49, Khoản 1)\n\nApplication: Không có thông tin cụ thể về các giá trị đầu vào như thời gian đóng bảo hiểm thất nghiệp hoặc tình trạng việc làm mới của bạn. Tuy nhiên, hệ thống đã xác định rằng bạn đủ điều kiện dựa trên nguồn thông tin từ Điều 49 của Luật BHXH 2024.\n\nConclusion: Theo kết quả từ hệ thống, bạn đủ điều kiện để hưởng bảo hiểm thất nghiệp. Kết luận này dựa trên nguồn thông tin từ Điều 49 của Luật BHXH 2024.",
+  "citations": [
+    "[Điều 49 khoản 1]",
+    "[Điều 49]"
+  ],
+  "citation_ids": [
+    "L41_2024.A49.K1",
+    "L41_2024.A49"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,eligible_for_unemployment_insurance(yes),based_on(source_a49))]",
+  "irac_sections": {
+    "issue": "Bạn vừa nghỉ việc tại công ty và được thông báo rằng sổ bảo hiểm xã hội (BHXH) sẽ được quản lý bằng hình thức điện tử thay vì tờ rời. Bạn muốn biết liệu bạn có đủ điều kiện để hưởng bảo hiểm thất nghiệp hay không.",
+    "rule": "Điều kiện hưởng bảo hiểm thất nghiệp bao gồm việc đã đóng bảo hiểm thất nghiệp đủ thời gian theo quy định và chưa tìm được việc làm mới. (Nguồn: Luật BHXH 2024, Điều 49, Khoản 1)",
+    "application": "Không có thông tin cụ thể về các giá trị đầu vào như thời gian đóng bảo hiểm thất nghiệp hoặc tình trạng việc làm mới của bạn. Tuy nhiên, hệ thống đã xác định rằng bạn đủ điều kiện dựa trên nguồn thông tin từ Điều 49 của Luật BHXH 2024.",
+    "conclusion": "Theo kết quả từ hệ thống, bạn đủ điều kiện để hưởng bảo hiểm thất nghiệp. Kết luận này dựa trên nguồn thông tin từ Điều 49 của Luật BHXH 2024."
+  },
+  "elapsed_s": 8.636,
+  "prompt_tokens": 3515,
+  "completion_tokens": 595,
+  "error": null,
+  "gold_answer": "Việc HR nói không có tờ rời giấy nữa không đồng nghĩa bạn không làm được BHTN. Nếu dữ liệu BHXH đã chốt trên hệ thống, bạn vẫn có thể làm hồ sơ bằng giấy tờ chấm dứt HĐLĐ và tài liệu/tra cứu thể hiện quá trình đóng theo hướng dẫn của trung tâm dịch vụ việc làm. Tuy nhiên bạn nên xin công ty cung cấp xác nhận chốt sổ hoặc bản in quá trình đóng để tránh bị yêu cầu bổ sung.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

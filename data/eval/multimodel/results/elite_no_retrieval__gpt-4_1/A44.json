@@ -1,0 +1,32 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 44,
+  "question": "Mình đóng bhxh từ năm 2024 là 10 tháng \nSau đó vào cty khác đóng tiếp tục 6 tháng cùng luật bảo hiểm 1/7/2025 không cho rút 1 lần \nTổng thời gian mình đóng là 1 năm 4 tháng, giờ mình nghỉ cty luôn thì mình có được rút 1 lần bhxh không?",
+  "answer": "Issue:\nBạn hỏi rằng sau khi đã đóng bảo hiểm xã hội tổng cộng 16 tháng (10 tháng ở công ty cũ, 6 tháng ở công ty mới), và nghỉ việc sau ngày 1/7/2025, bạn có được rút bảo hiểm xã hội một lần hay không.\n\nRule:\nTừ ngày 1/7/2025, quy định mới hạn chế việc rút BHXH một lần, chỉ cho phép trong một số trường hợp đặc biệt. (law_bhxh_2024, article_60, clause_3)\n\nApplication:\nCác thông tin được xác nhận gồm: months_contributed = 16; nghi_viec = yes; nghi_viec_thoi_diem = sau_1_7_2025. Truy vấn Prolog đã sử dụng các giá trị này để kiểm tra điều kiện theo quy định mới tại source_a60_k3.\n\nConclusion:\nTheo kết quả truy vấn Prolog, với trường hợp của bạn (nghỉ việc sau ngày 1/7/2025 và tổng thời gian đóng 16 tháng), bạn không được rút bảo hiểm xã hội một lần (Answer = khong_duoc).",
+  "citations": [
+    "[Điều 60 khoản 1]",
+    "[Điều 60 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1",
+    "L41_2024.A60.K3"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(kiem_tra_quy_dinh_moi,duoc_rut_bhxh_1_lan(user,khong_duoc),based_on(source_a60_k3))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi rằng sau khi đã đóng bảo hiểm xã hội tổng cộng 16 tháng (10 tháng ở công ty cũ, 6 tháng ở công ty mới), và nghỉ việc sau ngày 1/7/2025, bạn có được rút bảo hiểm xã hội một lần hay không.",
+    "rule": "Từ ngày 1/7/2025, quy định mới hạn chế việc rút BHXH một lần, chỉ cho phép trong một số trường hợp đặc biệt. (law_bhxh_2024, article_60, clause_3)",
+    "application": "Các thông tin được xác nhận gồm: months_contributed = 16; nghi_viec = yes; nghi_viec_thoi_diem = sau_1_7_2025. Truy vấn Prolog đã sử dụng các giá trị này để kiểm tra điều kiện theo quy định mới tại source_a60_k3.",
+    "conclusion": "Theo kết quả truy vấn Prolog, với trường hợp của bạn (nghỉ việc sau ngày 1/7/2025 và tổng thời gian đóng 16 tháng), bạn không được rút bảo hiểm xã hội một lần (Answer = khong_duoc)."
+  },
+  "elapsed_s": 5.652,
+  "prompt_tokens": 2320,
+  "completion_tokens": 688,
+  "error": null,
+  "gold_answer": "Bạn đã có 10 tháng đóng trước 1/7/2025 và thêm 6 tháng sau đó, tổng 1 năm 4 tháng. Nếu hiện đã nghỉ việc, ngừng tham gia đủ 12 tháng và thuộc diện được giải quyết BHXH một lần theo quy định chuyển tiếp của Luật BHXH 2024 thì vẫn có thể được rút đối với thời gian đã đóng. Cần kiểm tra thêm thời điểm đề nghị và việc bạn có tiếp tục tham gia BHXH ở nơi khác hay không.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110; quy định chuyển tiếp của Luật BHXH 2024"
+}

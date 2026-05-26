@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 163,
+  "question": "cty em trả tờ rời chứ k thấy trả sổ. Nếu em rút 1 lần có cần đi làm lại sổ không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu công ty chỉ trả tờ rời mà không trả sổ bảo hiểm xã hội (BHXH) bản gốc, khi người lao động muốn rút BHXH một lần thì có cần phải đi làm lại sổ hay không?\n\nRule:\n\"Người lao động được nhận trợ cấp BHXH một lần khi có yêu cầu và đáp ứng điều kiện theo quy định, không bắt buộc phải có sổ BHXH bản gốc nếu đã có xác nhận quá trình đóng.\" (Luật BHXH 2024, Điều 61, Khoản 1)\n\nApplication:\nKhông có slot_id nào được cung cấp vì câu hỏi không yêu cầu tính toán số liệu. Truy vấn Prolog đã sử dụng thông tin từ Điều 61, Khoản 1 Luật BHXH 2024 để xác định rằng người lao động không bắt buộc phải có sổ BHXH bản gốc nếu đã có xác nhận quá trình đóng.\n\nConclusion:\nTheo truy vấn Prolog, kết luận là: người lao động có thể nhận trợ cấp BHXH một lần mà không cần sổ BHXH bản gốc nếu đã có xác nhận quá trình đóng (Trace = [step(conclusion,can_claim_lump_sum_without_original_book,based_on(source_a61_k1))]).",
+  "citations": [
+    "[Điều 61 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A61.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,can_claim_lump_sum_without_original_book,based_on(source_a61_k1))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu công ty chỉ trả tờ rời mà không trả sổ bảo hiểm xã hội (BHXH) bản gốc, khi người lao động muốn rút BHXH một lần thì có cần phải đi làm lại sổ hay không?",
+    "rule": "\"Người lao động được nhận trợ cấp BHXH một lần khi có yêu cầu và đáp ứng điều kiện theo quy định, không bắt buộc phải có sổ BHXH bản gốc nếu đã có xác nhận quá trình đóng.\" (Luật BHXH 2024, Điều 61, Khoản 1)",
+    "application": "Không có slot_id nào được cung cấp vì câu hỏi không yêu cầu tính toán số liệu. Truy vấn Prolog đã sử dụng thông tin từ Điều 61, Khoản 1 Luật BHXH 2024 để xác định rằng người lao động không bắt buộc phải có sổ BHXH bản gốc nếu đã có xác nhận quá trình đóng.",
+    "conclusion": "Theo truy vấn Prolog, kết luận là: người lao động có thể nhận trợ cấp BHXH một lần mà không cần sổ BHXH bản gốc nếu đã có xác nhận quá trình đóng (Trace = [step(conclusion,can_claim_lump_sum_without_original_book,based_on(source_a61_k1))])."
+  },
+  "elapsed_s": 6.034,
+  "prompt_tokens": 1960,
+  "completion_tokens": 469,
+  "error": null,
+  "gold_answer": "Nếu công ty chỉ trả tờ rời mà không trả bìa sổ, bạn vẫn nên làm rõ tình trạng sổ BHXH. Khi giải quyết BHXH 1 lần hiện nay cơ quan BHXH đối chiếu dữ liệu điện tử là chính, nhưng nếu hồ sơ giấy thiếu, bạn có thể làm thủ tục cấp lại sổ. Vì vậy không nhất thiết phải có bìa cũ mới rút được, nhưng nên chuẩn hóa hồ sơ trước để tránh bị yêu cầu bổ sung.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

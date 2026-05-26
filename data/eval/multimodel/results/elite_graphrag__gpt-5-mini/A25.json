@@ -1,0 +1,51 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 25,
+  "question": "Bà Nguyễn Anh (Vĩnh Long) đóng BHXH được 10 năm, nghỉ việc tháng 9/2025.\nTháng 11/2025, bà sinh con, vậy bà có được hưởng chế độ thai sản hay không? Tại địa bàn tỉnh Vĩnh Long, sinh con trước 35 tuổi có được hưởng chế độ gì không?",
+  "answer": "Issue:\nBà Nguyễn Anh đóng BHXH 10 năm, nghỉ việc tháng 9/2025 và sinh con tháng 11/2025; câu hỏi: bà có được hưởng chế độ thai sản không? Tại Vĩnh Long, sinh con trước 35 tuổi có chế độ gì không?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15) - Điều 50 khoản 4: \"Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con hoặc nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 06 tháng tuổi thì vẫn được hưởng chế độ thai sản theo quy định tại các điều 53, 54, 55 và 56 và các khoản 1, 2 và 3 Điều 58 của Luật này. Thời gian hưởng chế độ thai sả\"\nLuật BHXH 2024 (41/2024/QH15) - Điều 55 khoản 1: \"Được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi. Trường hợp sinh đôi trở lên thì được nghỉ thêm 01 tháng cho mỗi con tính từ con thứ hai trở đi. Trường hợp lao động nữ nhờ mang thai hộ không nghỉ việc thì ngoài tiền lương còn được hưởng trợ cấp thai sản theo quy định;\"\nLuật BHXH 2024 (41/2024/QH15) - Điều 53 khoản 1: \"Thời gian nghỉ việc hưởng chế độ thai sản của lao động nữ khi sinh con được thực hiện theo quy định tại khoản 1 Điều 139 của Bộ luật Lao động. Trường hợp lao động nữ trở lại làm việc trước khi hết thời gian nghỉ việc hưởng chế độ thai sản khi sinh con theo quy định tại khoản 4 Điều 139 của Bộ luật Lao động thì được hưởng tiền lương của những ngày làm việc do người sử dụng lao động trả và tiếp tục \"\nLuật BHXH 2024 (41/2024/QH15) - Điều 53 khoản 8: \"Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ thai sản được tính là thời gian đóng bảo hiểm xã hội bắt buộc, người lao động và người sử dụng lao động không phải đóng bảo hiểm xã hội. Đối với các trường hợp khác mà có thời gian nghỉ việc hưởng chế\"\n\nApplication:\nKhông có slot_bindings. Các fact đầu vào được Prolog dùng:\ngender(user, female).\nyears_contributed(user, 10).\nlast_work_month(user, 9, 2025).\nbirth_month(user, 11, 2025).\nresidence(user, vinh_long).\nChương trình Prolog so sánh last_work_month và birth_month để xác định sinh sau khi thôi việc và đối chiếu với Điều 50 khoản 4; đồng thời tham chiếu Điều 55 và Điều 53 (khoản 1, khoản 8) theo trace.\n\nConclusion:\nBiến Answer do Prolog trả: answer(entitled_if_meets_article50,no_specific_provincial_age_based_benefit_found). (tức: được hưởng chế độ nếu thỏa Điều 50; không tìm được quy định địa phương về chế độ cho sinh con trước 35 tuổi.)",
+  "citations": [
+    "[Điều 50 khoản 4]",
+    "[Điều 58]",
+    "[Điều 55 khoản 1]",
+    "[Điều 53 khoản 1]",
+    "[Điều 139]",
+    "[Điều 53 khoản 8]",
+    "[Điều 55]",
+    "[Điều 53]",
+    "[Điều 50]"
+  ],
+  "citation_ids": [
+    "L41_2024.A50.K4",
+    "L41_2024.A58",
+    "L41_2024.A55.K1",
+    "L41_2024.A53.K1",
+    "L41_2024.A139",
+    "L41_2024.A53.K8",
+    "L41_2024.A55",
+    "L41_2024.A53",
+    "L41_2024.A50"
+  ],
+  "citation_indices": [
+    0,
+    1,
+    3,
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,full_answer(user,answer(entitled_if_meets_article50,no_specific_provincial_age_based_benefit_found)),based_on(source_c000)),step(info,maternity_leave_duration_reference,based_on(source_c001)),step(info,maternity_time_counted_as_contribution,based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Bà Nguyễn Anh đóng BHXH 10 năm, nghỉ việc tháng 9/2025 và sinh con tháng 11/2025; câu hỏi: bà có được hưởng chế độ thai sản không? Tại Vĩnh Long, sinh con trước 35 tuổi có chế độ gì không?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15) - Điều 50 khoản 4: \"Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con hoặc nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 06 tháng tuổi thì vẫn được hưởng chế độ thai sản theo quy định tại các điều 53, 54, 55 và 56 và các khoản 1, 2 và 3 Điều 58 của Luật này. Thời gian hưởng chế độ thai sả\"\nLuật BHXH 2024 (41/2024/QH15) - Điều 55 khoản 1: \"Được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi. Trường hợp sinh đôi trở lên thì được nghỉ thêm 01 tháng cho mỗi con tính từ con thứ hai trở đi. Trường hợp lao động nữ nhờ mang thai hộ không nghỉ việc thì ngoài tiền lương còn được hưởng trợ cấp thai sản theo quy định;\"\nLuật BHXH 2024 (41/2024/QH15) - Điều 53 khoản 1: \"Thời gian nghỉ việc hưởng chế độ thai sản của lao động nữ khi sinh con được thực hiện theo quy định tại khoản 1 Điều 139 của Bộ luật Lao động. Trường hợp lao động nữ trở lại làm việc trước khi hết thời gian nghỉ việc hưởng chế độ thai sản khi sinh con theo quy định tại khoản 4 Điều 139 của Bộ luật Lao động thì được hưởng tiền lương của những ngày làm việc do người sử dụng lao động trả và tiếp tục \"\nLuật BHXH 2024 (41/2024/QH15) - Điều 53 khoản 8: \"Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ thai sản được tính là thời gian đóng bảo hiểm xã hội bắt buộc, người lao động và người sử dụng lao động không phải đóng bảo hiểm xã hội. Đối với các trường hợp khác mà có thời gian nghỉ việc hưởng chế\"",
+    "application": "Không có slot_bindings. Các fact đầu vào được Prolog dùng:\ngender(user, female).\nyears_contributed(user, 10).\nlast_work_month(user, 9, 2025).\nbirth_month(user, 11, 2025).\nresidence(user, vinh_long).\nChương trình Prolog so sánh last_work_month và birth_month để xác định sinh sau khi thôi việc và đối chiếu với Điều 50 khoản 4; đồng thời tham chiếu Điều 55 và Điều 53 (khoản 1, khoản 8) theo trace.",
+    "conclusion": "Biến Answer do Prolog trả: answer(entitled_if_meets_article50,no_specific_provincial_age_based_benefit_found). (tức: được hưởng chế độ nếu thỏa Điều 50; không tìm được quy định địa phương về chế độ cho sinh con trước 35 tuổi.)"
+  },
+  "elapsed_s": 58.144,
+  "prompt_tokens": 4696,
+  "completion_tokens": 7424,
+  "error": null,
+  "gold_answer": "Căn cứ khoản 2, 3, 5 Điều 50 Luật BHXH năm 2024:\n\"Điều 50. Đối tượng và điều kiện hưởng chế độ thai sản\n… 2. Đối tượng quy định tại các điểm b, c, d và đ khoản 1 Điều này phải đóng bảo hiểm xã hội bắt buộc từ đủ 06 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con hoặc nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 06 tháng tuổi.\n3. Đối tượng quy định tại điểm b và điểm c khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của người hành nghề khám bệnh, chữa bệnh thuộc cơ sở khám bệnh, chữa bệnh thì phải đóng bảo hiểm xã hội bắt buộc từ đủ 03 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con.\n… 5. Đối tượng quy định tại điểm b khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 06 tháng trở lên trong thời gian 24 tháng liền kề trước khi sinh con đối với trường hợp phải nghỉ việc để điều trị vô sinh\".\nNhư vậy, căn cứ quy định trên trong trường hợp bình thường thì bà Nguyễn Anh nếu đã đóng BHXH từ đủ 6 tháng trở lên trong thời hạn 12 tháng liền kề trước khi sinh là đủ điều kiện hưởng thai sản.\nTrường hợp phải nghỉ việc dưỡng thai theo chỉ định của người hành nghề khám bệnh, chữa bệnh thì đóng BHXH từ đủ 3 tháng trong thời hạn 12 tháng liền kề trước khi sinh là đủ điều kiện.\nTrường hợp phải nghỉ việc điều trị vô sinh thì đóng BHXH từ đủ 6 tháng trở lên trong thời hạn 24 tháng liền kề trước khi sinh là đủ điều kiện.\nVề chế độ sinh con trước 35 tuổi trên địa bàn tỉnh Vĩnh Long, đề nghị bà liên hệ với UBND xã, phường nơi cư trú để được hướng dẫn cụ thể.",
+  "gold_citations_raw": "khoản 2, 3, 5 Điều 50 Luật BHXH năm 2024"
+}

@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 119,
+  "question": "Có phải cơ quan BHXH giờ không cấp lại bìa và tờ rời nữa không? Mình nộp đủ sổ cho công ty cũ chốt bhxh mà công ty báo lại là giờ cơ quan bhxh ko cấp lại sổ giấy nữa.",
+  "answer": "Issue:\nCâu hỏi đặt ra là hiện nay cơ quan Bảo hiểm xã hội (BHXH) có còn cấp lại bìa và tờ rời sổ BHXH giấy hay không, khi người lao động nộp đủ sổ cho công ty cũ để chốt sổ nhưng được thông báo là không còn cấp lại sổ giấy nữa.\n\nRule:\n\"Sổ BHXH được quản lý bằng phương thức điện tử; trường hợp người lao động có nhu cầu thì được cấp thông tin về quá trình đóng BHXH.\" (law_bhxh_2024, article_46, clause_2)\n\nApplication:\nKhông có slot_id nào được ràng buộc trong trường hợp này. Prolog đã sử dụng quy định tại Điều 46 Khoản 2 Luật BHXH 2024 để trả lời câu hỏi về việc quản lý và cấp lại sổ BHXH.\n\nConclusion:\nTheo Luật BHXH 2024, sổ BHXH được quản lý bằng phương thức điện tử, cơ quan BHXH không còn cấp lại sổ giấy hoặc tờ rời như trước đây. Người lao động có thể được cấp thông tin về quá trình đóng BHXH khi có nhu cầu. (Answer)",
+  "citations": [
+    "[Điều 46 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A46.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,tra_loi_chinh_sach(Theo Luật BHXH 2024, sổ BHXH được quản lý bằng phương thức điện tử, cơ quan BHXH không còn cấp lại sổ giấy hoặc tờ rời như trước đây. Người lao động có thể được cấp thông tin về quá trình đóng BHXH khi có nhu cầu.),based_on(source_a46_k2))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là hiện nay cơ quan Bảo hiểm xã hội (BHXH) có còn cấp lại bìa và tờ rời sổ BHXH giấy hay không, khi người lao động nộp đủ sổ cho công ty cũ để chốt sổ nhưng được thông báo là không còn cấp lại sổ giấy nữa.",
+    "rule": "\"Sổ BHXH được quản lý bằng phương thức điện tử; trường hợp người lao động có nhu cầu thì được cấp thông tin về quá trình đóng BHXH.\" (law_bhxh_2024, article_46, clause_2)",
+    "application": "Không có slot_id nào được ràng buộc trong trường hợp này. Prolog đã sử dụng quy định tại Điều 46 Khoản 2 Luật BHXH 2024 để trả lời câu hỏi về việc quản lý và cấp lại sổ BHXH.",
+    "conclusion": "Theo Luật BHXH 2024, sổ BHXH được quản lý bằng phương thức điện tử, cơ quan BHXH không còn cấp lại sổ giấy hoặc tờ rời như trước đây. Người lao động có thể được cấp thông tin về quá trình đóng BHXH khi có nhu cầu. (Answer)"
+  },
+  "elapsed_s": 5.234,
+  "prompt_tokens": 2297,
+  "completion_tokens": 508,
+  "error": null,
+  "gold_answer": "Không phải là cơ quan BHXH 'không cấp lại nữa'. Hiện quản lý điện tử là chính, nhưng khi cần vẫn có thể thực hiện thủ tục cấp lại/cấp quá trình đóng theo quy định. Nếu công ty nói không có sổ giấy nên không trả được thì bạn nên yêu cầu họ cung cấp xác nhận đã chốt và dữ liệu quá trình đóng; trường hợp mất sổ, bạn có thể trực tiếp làm thủ tục cấp lại tại BHXH.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

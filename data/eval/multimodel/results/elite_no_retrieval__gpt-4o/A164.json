@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 164,
+  "question": "Mình vào 1 công ty global (đóng full bhxh và có bảo hiểm pvi care thời gian chờ thai sản 270 ngày) và chính thức từ 8/12/2025 thì phát hiện có bầu, dự sinh 20/8/2026 thì ko biết mình nghỉ sinh trước bao lâu là tốt nhất để ko bị thanh tra hồ sơ và nhận đủ quyền lợi? Trước công ty này mình làm ngắt quãng nên trong 12 tháng trước sinh thì chỉ tính làm ở công ty này thôi",
+  "answer": "Issue: Bạn muốn biết thời điểm nghỉ sinh tốt nhất để không bị thanh tra hồ sơ và nhận đủ quyền lợi bảo hiểm thai sản, khi bạn đã làm việc chính thức từ ngày 8/12/2025 và dự sinh vào ngày 20/8/2026.\n\nRule: Điều kiện hưởng chế độ thai sản là đã đóng BHXH từ đủ 6 tháng trở lên trong thời gian 12 tháng trước khi sinh con. (Luật BHXH 2024, Điều 31, Khoản 1)\n\nApplication: \n- Ngày bắt đầu làm việc: 8/12/2025.\n- Ngày dự sinh: 20/8/2026.\n- Theo quy tắc, cần tính số tháng giữa ngày bắt đầu làm việc và ngày dự sinh. Nếu số tháng này từ 6 tháng trở lên, bạn đủ điều kiện hưởng chế độ thai sản.\n\nConclusion: Theo kết quả từ hệ thống, bạn đủ điều kiện hưởng chế độ thai sản (Eligible = \"yes\"). Điều này dựa trên việc bạn đã đóng BHXH đủ 6 tháng trong thời gian 12 tháng trước khi sinh.",
+  "citations": [
+    "[Điều 31 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A31.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,maternity_leave_eligibility(user,yes),based_on(source_a31_k1))]",
+  "irac_sections": {
+    "issue": "Bạn muốn biết thời điểm nghỉ sinh tốt nhất để không bị thanh tra hồ sơ và nhận đủ quyền lợi bảo hiểm thai sản, khi bạn đã làm việc chính thức từ ngày 8/12/2025 và dự sinh vào ngày 20/8/2026.",
+    "rule": "Điều kiện hưởng chế độ thai sản là đã đóng BHXH từ đủ 6 tháng trở lên trong thời gian 12 tháng trước khi sinh con. (Luật BHXH 2024, Điều 31, Khoản 1)",
+    "application": "- Ngày bắt đầu làm việc: 8/12/2025.\n- Ngày dự sinh: 20/8/2026.\n- Theo quy tắc, cần tính số tháng giữa ngày bắt đầu làm việc và ngày dự sinh. Nếu số tháng này từ 6 tháng trở lên, bạn đủ điều kiện hưởng chế độ thai sản.",
+    "conclusion": "Theo kết quả từ hệ thống, bạn đủ điều kiện hưởng chế độ thai sản (Eligible = \"yes\"). Điều này dựa trên việc bạn đã đóng BHXH đủ 6 tháng trong thời gian 12 tháng trước khi sinh."
+  },
+  "elapsed_s": 5.417,
+  "prompt_tokens": 2307,
+  "completion_tokens": 582,
+  "error": null,
+  "gold_answer": "Để an toàn quyền lợi thai sản, mấu chốt là đủ điều kiện đóng từ 06 tháng trong 12 tháng trước sinh chứ không có quy định 'nghỉ trước bao lâu để không bị thanh tra'. Nếu hồ sơ lao động, bảng lương, quyết định tăng lương là thật và đóng BHXH đúng thực tế thì không phải sợ. Bạn có thể nghỉ trước sinh theo chỉ định bác sĩ hoặc thỏa thuận nghỉ thai sản theo luật, nhưng không nên làm hồ sơ không đúng thực tế.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

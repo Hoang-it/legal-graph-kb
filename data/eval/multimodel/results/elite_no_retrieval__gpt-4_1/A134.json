@@ -1,0 +1,32 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 134,
+  "question": "quyết định nghỉ thất nghiệp của tôi hết ngày 21/4. Nhưng tháng 3 tôi đi làm giám định sức khoẻ để nghỉ hưu thì có được không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu quyết định nghỉ thất nghiệp của bạn hết ngày 21/4, nhưng trong tháng 3 bạn đi làm giám định sức khỏe để nghỉ hưu thì có được không?\n\nRule:\n\"Người lao động được hưởng lương hưu khi có đủ điều kiện về tuổi và thời gian đóng BHXH.\" (law_bhxh_2024, article_64, clause_1)\n\"Việc nghỉ hưu được thực hiện khi người lao động có quyết định nghỉ việc và đủ điều kiện hưởng lương hưu.\" (law_bhxh_2024, article_65, clause_1)\n\nApplication:\nKhông có slot_id cụ thể nào được ràng buộc trong trường hợp này. Prolog đã sử dụng các quy định tại Điều 64 và Điều 65 của Luật Bảo hiểm xã hội 2024 để xác định rằng người lao động có thể đi giám định sức khỏe để nghỉ hưu trong thời gian đang hưởng trợ cấp thất nghiệp, miễn là đáp ứng đủ điều kiện về tuổi và thời gian đóng BHXH.\n\nConclusion:\nNgười lao động có thể đi giám định sức khỏe để nghỉ hưu trong thời gian đang hưởng trợ cấp thất nghiệp, miễn là đáp ứng đủ điều kiện về tuổi và thời gian đóng BHXH theo quy định. (Answer)",
+  "citations": [
+    "[Điều 64]",
+    "[Điều 65]"
+  ],
+  "citation_ids": [
+    "L41_2024.A64",
+    "L41_2024.A65"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,co_duoc_giam_dinh_nghi_huu_truoc_khi_het_that_nghiep(Người lao động có thể đi giám định sức khỏe để nghỉ hưu trong thời gian đang hưởng trợ cấp thất nghiệp, miễn là đáp ứng đủ điều kiện về tuổi và thời gian đóng BHXH theo quy định.),based_on(source_a64_k1)),step(conclusion,co_duoc_giam_dinh_nghi_huu_truoc_khi_het_that_nghiep(Người lao động có thể đi giám định sức khỏe để nghỉ hưu trong thời gian đang hưởng trợ cấp thất nghiệp, miễn là đáp ứng đủ điều kiện về tuổi và thời gian đóng BHXH theo quy định.),based_on(source_a65_k1))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu quyết định nghỉ thất nghiệp của bạn hết ngày 21/4, nhưng trong tháng 3 bạn đi làm giám định sức khỏe để nghỉ hưu thì có được không?",
+    "rule": "\"Người lao động được hưởng lương hưu khi có đủ điều kiện về tuổi và thời gian đóng BHXH.\" (law_bhxh_2024, article_64, clause_1)\n\"Việc nghỉ hưu được thực hiện khi người lao động có quyết định nghỉ việc và đủ điều kiện hưởng lương hưu.\" (law_bhxh_2024, article_65, clause_1)",
+    "application": "Không có slot_id cụ thể nào được ràng buộc trong trường hợp này. Prolog đã sử dụng các quy định tại Điều 64 và Điều 65 của Luật Bảo hiểm xã hội 2024 để xác định rằng người lao động có thể đi giám định sức khỏe để nghỉ hưu trong thời gian đang hưởng trợ cấp thất nghiệp, miễn là đáp ứng đủ điều kiện về tuổi và thời gian đóng BHXH.",
+    "conclusion": "Người lao động có thể đi giám định sức khỏe để nghỉ hưu trong thời gian đang hưởng trợ cấp thất nghiệp, miễn là đáp ứng đủ điều kiện về tuổi và thời gian đóng BHXH theo quy định. (Answer)"
+  },
+  "elapsed_s": 7.184,
+  "prompt_tokens": 2477,
+  "completion_tokens": 637,
+  "error": null,
+  "gold_answer": "Nếu quyết định hưởng trợ cấp thất nghiệp của bạn hết ngày 21/4 thì việc đi giám định sức khỏe để làm hồ sơ hưu vào tháng 3 không tự động làm mất quyền hưởng phần TCTN đang chi trả. Tuy nhiên khi bạn đủ điều kiện và bắt đầu hưởng lương hưu thì TCTN sẽ chấm dứt từ thời điểm đó. Vì vậy cần tính mốc nộp hồ sơ hưu và thời điểm hưởng hưu cho hợp lý.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

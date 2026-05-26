@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 124,
+  "question": "gộp sổ thì bên bảo hiểm để tầm mấy ngày?",
+  "answer": "Issue:\nGộp sổ sổ bảo hiểm xã hội thì cơ quan bảo hiểm giải quyết trong bao lâu?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), article 62, clause 3: \"Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động, 05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15), article 28, clause 4: \"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\"\n\nApplication:\nCác slot đã điền: không có slot_bindings.\nTruy vấn thực thi: ?- merge_insurance_book_deadline(DeadlineInfo, Trace).\nCách Prolog tiêu thụ dữ liệu: luật merge_insurance_book_deadline kết luận dựa trên source_c007 và tham chiếu source_c000 theo trace trả về.\n\nConclusion:\nDeadlineInfo = [from_employee(05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động),from_employer(07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động)] (đây là giá trị biến DeadlineInfo do Prolog trả về).",
+  "citations": [
+    "[Điều 28 khoản 4]",
+    "[Điều 62 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A28.K4",
+    "L41_2024.A62.K3"
+  ],
+  "citation_indices": [
+    7,
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,merge_insurance_book_deadline([from_employee(05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động),from_employer(07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động)]),based_on(source_c007)),step(reference,legal_text(source_c000),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Gộp sổ sổ bảo hiểm xã hội thì cơ quan bảo hiểm giải quyết trong bao lâu?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), article 62, clause 3: \"Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động, 05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15), article 28, clause 4: \"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\"",
+    "application": "Các slot đã điền: không có slot_bindings.\nTruy vấn thực thi: ?- merge_insurance_book_deadline(DeadlineInfo, Trace).\nCách Prolog tiêu thụ dữ liệu: luật merge_insurance_book_deadline kết luận dựa trên source_c007 và tham chiếu source_c000 theo trace trả về.",
+    "conclusion": "DeadlineInfo = [from_employee(05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động),from_employer(07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động)] (đây là giá trị biến DeadlineInfo do Prolog trả về)."
+  },
+  "elapsed_s": 75.712,
+  "prompt_tokens": 3120,
+  "completion_tokens": 3995,
+  "error": null,
+  "gold_answer": "Thời gian gộp sổ BHXH thường không quá 10 ngày làm việc kể từ khi nhận đủ hồ sơ; trường hợp cần xác minh quá trình ở nhiều nơi thì có thể kéo dài nhưng không quá 45 ngày. Bạn nên xin giấy hẹn hoặc tra cứu mã hồ sơ để theo dõi. Nếu quá hạn mà chưa có kết quả, có thể phản ánh trực tiếp với cơ quan BHXH nơi nộp.",
+  "gold_citations_raw": "Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 79,
+  "question": "Anh chị cho em hỏi, mấy năm trước e có đi làm ở công ty cũ và đóng bảo hiểm đầy đủ, công ty cũng không nợ tiền BH. Do dịch covid công ty không trụ được nên đã giải thể, cũng đã báo giảm cho em nhưng năm ấy các nhân viên lại chẳng ai lấy tờ rời về . Sau đó e cũng có đi làm cty khác và đóng BH nối tiếp cho tới hiện tại . \nVậy mấy năm đóng ở cty cũ kia em chưa lấy tờ rời thì sau này em có thể tự lên cơ quan bảo hiểm xin lấy tờ rời được không?",
+  "answer": "Issue:\nBạn hỏi rằng sau khi công ty cũ giải thể và bạn chưa nhận tờ rời bảo hiểm xã hội (BHXH) cho các năm đã đóng, thì sau này bạn có thể tự lên cơ quan BHXH để xin cấp tờ rời đó hay không.\n\nRule:\n\"Người lao động có quyền yêu cầu cơ quan BHXH cấp lại hoặc xác nhận quá trình đóng BHXH khi bị mất hoặc chưa nhận sổ, tờ rời.\" (law_bhxh_2024, article_23, clause_5)\n\nApplication:\nKhông có slot nào cần điền cụ thể trong trường hợp này. Prolog đã sử dụng quy định tại law_bhxh_2024, article_23, clause_5 để xác định quyền của người lao động khi chưa nhận tờ rời hoặc bị mất.\n\nConclusion:\nTheo quy định, bạn có thể tự lên cơ quan BHXH để xin cấp lại hoặc xác nhận tờ rời cho các năm đã đóng BHXH mà chưa nhận. (Answer = co)",
+  "citations": [
+    "[Điều 23 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A23.K5"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(ket_luan,co_the_xin_to_roi_sau(user,co),based_on(source_a23_k5))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi rằng sau khi công ty cũ giải thể và bạn chưa nhận tờ rời bảo hiểm xã hội (BHXH) cho các năm đã đóng, thì sau này bạn có thể tự lên cơ quan BHXH để xin cấp tờ rời đó hay không.",
+    "rule": "\"Người lao động có quyền yêu cầu cơ quan BHXH cấp lại hoặc xác nhận quá trình đóng BHXH khi bị mất hoặc chưa nhận sổ, tờ rời.\" (law_bhxh_2024, article_23, clause_5)",
+    "application": "Không có slot nào cần điền cụ thể trong trường hợp này. Prolog đã sử dụng quy định tại law_bhxh_2024, article_23, clause_5 để xác định quyền của người lao động khi chưa nhận tờ rời hoặc bị mất.",
+    "conclusion": "Theo quy định, bạn có thể tự lên cơ quan BHXH để xin cấp lại hoặc xác nhận tờ rời cho các năm đã đóng BHXH mà chưa nhận. (Answer = co)"
+  },
+  "elapsed_s": 5.472,
+  "prompt_tokens": 2286,
+  "completion_tokens": 417,
+  "error": null,
+  "gold_answer": "Có. Nếu công ty cũ đã giải thể, đã báo giảm và không nợ BHXH, bạn vẫn có thể liên hệ cơ quan BHXH để đề nghị xác nhận/cấp lại tờ rời hoặc cập nhật dữ liệu quá trình đóng. Việc chưa lấy tờ rời trước đây không làm mất thời gian đã đóng hợp pháp, nhất là khi sau đó bạn tiếp tục đóng nối tiếp ở công ty khác trên cùng mã số BHXH. Nên mang CCCD và thông tin đơn vị cũ để cơ quan BHXH tra cứu nhanh hơn.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn cấp lại/xác nhận sổ BHXH của BHXH Việt Nam"
+}

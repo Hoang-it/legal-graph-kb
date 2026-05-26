@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 85,
+  "question": "Em đóng BH từ tháng 8/2023 đến 2/2025, dừng t3,t4/2025. Sau đó đóng tiếp từ 5/2025 đến 5/2026. E dks cuối t10/2026. Nếu e nghỉ hẳn CTY e có đc hưởng bảo hiểm thất nghiệp không?",
+  "answer": "Issue: Bạn đã đóng bảo hiểm xã hội từ tháng 8/2023 đến 2/2025, tạm dừng vào tháng 3 và 4/2025, sau đó tiếp tục đóng từ tháng 5/2025 đến 5/2026. Bạn đăng ký cuối tháng 10/2026 và muốn biết liệu có được hưởng bảo hiểm thất nghiệp nếu nghỉ hẳn công ty hay không.\n\nRule: \"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\" (Luật BHXH 2024 (41/2024/QH15), Điều 4, Khoản 4)\n\nApplication: Dữ liệu cho thấy bạn đã đóng bảo hiểm xã hội trong 18 tháng. Theo quy tắc được áp dụng, điều kiện để đủ điều kiện hưởng bảo hiểm thất nghiệp là đã đóng bảo hiểm xã hội từ 12 tháng trở lên. Dữ liệu của bạn đáp ứng điều kiện này.\n\nConclusion: Bạn đủ điều kiện để hưởng bảo hiểm thất nghiệp. Kết quả này được xác định dựa trên nguồn luật đã trích dẫn.",
+  "citations": [
+    "[Điều 4 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A4.K4"
+  ],
+  "citation_indices": [
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_eligibility(user,yes),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Bạn đã đóng bảo hiểm xã hội từ tháng 8/2023 đến 2/2025, tạm dừng vào tháng 3 và 4/2025, sau đó tiếp tục đóng từ tháng 5/2025 đến 5/2026. Bạn đăng ký cuối tháng 10/2026 và muốn biết liệu có được hưởng bảo hiểm thất nghiệp nếu nghỉ hẳn công ty hay không.",
+    "rule": "\"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\" (Luật BHXH 2024 (41/2024/QH15), Điều 4, Khoản 4)",
+    "application": "Dữ liệu cho thấy bạn đã đóng bảo hiểm xã hội trong 18 tháng. Theo quy tắc được áp dụng, điều kiện để đủ điều kiện hưởng bảo hiểm thất nghiệp là đã đóng bảo hiểm xã hội từ 12 tháng trở lên. Dữ liệu của bạn đáp ứng điều kiện này.",
+    "conclusion": "Bạn đủ điều kiện để hưởng bảo hiểm thất nghiệp. Kết quả này được xác định dựa trên nguồn luật đã trích dẫn."
+  },
+  "elapsed_s": 5.314,
+  "prompt_tokens": 2986,
+  "completion_tokens": 443,
+  "error": null,
+  "gold_answer": "Bạn đóng BHTN từ 8/2023 đến 2/2025, nghỉ 2 tháng rồi đóng tiếp 5/2025 đến 5/2026 thì thời gian BHTN đủ dài để xét trợ cấp thất nghiệp nếu bạn nghỉ việc và đáp ứng điều kiện khác. Việc dự sinh cuối 10/2026 không ảnh hưởng trực tiếp đến quyền hưởng BHTN, miễn khi nộp hồ sơ bạn đã chấm dứt HĐLĐ hợp pháp, nộp trong 3 tháng và sau 15 ngày chưa có việc làm. Số tháng hưởng và mức hưởng sẽ tính riêng theo Luật Việc làm.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 49, Điều 50"
+}

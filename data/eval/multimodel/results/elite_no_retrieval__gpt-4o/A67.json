@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 67,
+  "question": "Công ty em có 1 nhân sự nghỉ thai sản nhưng báo giảm sai tháng (giảm đúng T12 nhưng báo giảm T11 và đã được duyệt). Em có báo On thai sản vào T11 để giảm lại T12 cho đúng nhưng BH không duyệt với lý do \"Nlđ nghỉ ts từ T11-T4 nên không phát sinh tăng vào T11 được\"\nGiờ mình phải làm sao?",
+  "answer": "Issue: Công ty bạn đã báo giảm tháng nghỉ thai sản sai cho một nhân sự, báo giảm đúng phải là tháng 12 nhưng đã báo giảm tháng 11 và đã được duyệt. Khi bạn cố gắng điều chỉnh bằng cách báo nghỉ thai sản vào tháng 11 để giảm lại tháng 12 cho đúng, bảo hiểm không duyệt với lý do nhân sự nghỉ từ tháng 11 đến tháng 4 nên không thể phát sinh tăng vào tháng 11.\n\nRule: \"Thời gian nghỉ thai sản được tính từ tháng bắt đầu nghỉ đến hết tháng trước khi quay lại làm việc.\" (Luật BHXH 2024, Điều 34, Khoản 2)\n\nApplication: Không có thông tin cụ thể về các giá trị đầu vào (slot_bindings) trong truy vấn này. Tuy nhiên, theo quy tắc đã áp dụng, việc điều chỉnh thời gian nghỉ thai sản phải tuân theo quy định về thời gian nghỉ từ tháng bắt đầu nghỉ đến hết tháng trước khi quay lại làm việc.\n\nConclusion: Hệ thống đã kết luận rằng cần điều chỉnh thời gian nghỉ thai sản dựa trên nguồn luật được trích dẫn (source_a34_k2). Tuy nhiên, không có thông tin chi tiết về cách thức điều chỉnh cụ thể trong trường hợp này. Bạn có thể cần liên hệ với cơ quan bảo hiểm xã hội để được hướng dẫn chi tiết hơn về cách xử lý tình huống này.",
+  "citations": [
+    "[Điều 34 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A34.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,maternity_leave_adjustment,based_on(source_a34_k2))]",
+  "irac_sections": {
+    "issue": "Công ty bạn đã báo giảm tháng nghỉ thai sản sai cho một nhân sự, báo giảm đúng phải là tháng 12 nhưng đã báo giảm tháng 11 và đã được duyệt. Khi bạn cố gắng điều chỉnh bằng cách báo nghỉ thai sản vào tháng 11 để giảm lại tháng 12 cho đúng, bảo hiểm không duyệt với lý do nhân sự nghỉ từ tháng 11 đến tháng 4 nên không thể phát sinh tăng vào tháng 11.",
+    "rule": "\"Thời gian nghỉ thai sản được tính từ tháng bắt đầu nghỉ đến hết tháng trước khi quay lại làm việc.\" (Luật BHXH 2024, Điều 34, Khoản 2)",
+    "application": "Không có thông tin cụ thể về các giá trị đầu vào (slot_bindings) trong truy vấn này. Tuy nhiên, theo quy tắc đã áp dụng, việc điều chỉnh thời gian nghỉ thai sản phải tuân theo quy định về thời gian nghỉ từ tháng bắt đầu nghỉ đến hết tháng trước khi quay lại làm việc.",
+    "conclusion": "Hệ thống đã kết luận rằng cần điều chỉnh thời gian nghỉ thai sản dựa trên nguồn luật được trích dẫn (source_a34_k2). Tuy nhiên, không có thông tin chi tiết về cách thức điều chỉnh cụ thể trong trường hợp này. Bạn có thể cần liên hệ với cơ quan bảo hiểm xã hội để được hướng dẫn chi tiết hơn về cách xử lý tình huống này."
+  },
+  "elapsed_s": 6.159,
+  "prompt_tokens": 2075,
+  "completion_tokens": 444,
+  "error": null,
+  "gold_answer": "Trường hợp đã báo giảm sai tháng và hồ sơ đã duyệt, bạn nên làm văn bản giải trình kèm hồ sơ điều chỉnh gửi cơ quan BHXH, nêu rõ NLĐ thực tế nghỉ thai sản từ tháng nào và đề nghị điều chỉnh dữ liệu thay vì báo tăng giả tạo rồi giảm lại. Cơ quan BHXH từ chối 'báo On' tháng 11 là hợp lý nếu NLĐ thực tế đang nghỉ thai sản trong toàn giai đoạn đó. Cách xử lý đúng là điều chỉnh hồ sơ đã sai, không tạo phát sinh không có thật.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 53; quy trình hồ sơ điện tử của BHXH Việt Nam"
+}

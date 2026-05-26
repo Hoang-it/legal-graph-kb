@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 112,
+  "question": "Trước mình nghỉ ngang công ty cũ chưa chốt và lấy bìa xanh bây giờ ra bhxh huyện làm lại được không?",
+  "answer": "Issue:\nBạn hỏi rằng trước đây nghỉ ngang công ty cũ, chưa chốt và lấy bìa xanh (sổ BHXH), hiện nay ra cơ quan BHXH huyện để làm lại có được không.\n\nRule:\n\"Người lao động có quyền yêu cầu cơ quan BHXH cấp lại, đổi, xác nhận sổ BHXH khi bị mất, hỏng hoặc có thay đổi thông tin.\" (law_bhxh_2024, article_21, clause_2)\n\nApplication:\nKhông có slot nào cần điền cụ thể trong trường hợp này. Hệ thống đã áp dụng quy định tại Điều 21 Khoản 2 Luật BHXH 2024 để xác định quyền của người lao động trong việc đề nghị cấp lại sổ BHXH khi bị mất hoặc chưa nhận.\n\nConclusion:\nKết quả truy vấn Prolog trả về Answer = co, tức là bạn có thể ra cơ quan BHXH huyện để làm lại sổ BHXH.",
+  "citations": [
+    "[Điều 21 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A21.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,co_the_lam_lai_so_bhxh,based_on(source_a21_k2))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi rằng trước đây nghỉ ngang công ty cũ, chưa chốt và lấy bìa xanh (sổ BHXH), hiện nay ra cơ quan BHXH huyện để làm lại có được không.",
+    "rule": "\"Người lao động có quyền yêu cầu cơ quan BHXH cấp lại, đổi, xác nhận sổ BHXH khi bị mất, hỏng hoặc có thay đổi thông tin.\" (law_bhxh_2024, article_21, clause_2)",
+    "application": "Không có slot nào cần điền cụ thể trong trường hợp này. Hệ thống đã áp dụng quy định tại Điều 21 Khoản 2 Luật BHXH 2024 để xác định quyền của người lao động trong việc đề nghị cấp lại sổ BHXH khi bị mất hoặc chưa nhận.",
+    "conclusion": "Kết quả truy vấn Prolog trả về Answer = co, tức là bạn có thể ra cơ quan BHXH huyện để làm lại sổ BHXH."
+  },
+  "elapsed_s": 6.066,
+  "prompt_tokens": 1968,
+  "completion_tokens": 399,
+  "error": null,
+  "gold_answer": "Bạn có thể đến cơ quan BHXH nơi quản lý quá trình tham gia để kiểm tra tình trạng sổ. Nếu công ty cũ chưa chốt thì BHXH huyện không thể tự chốt thay công ty, trừ khi có hồ sơ truy đóng/xác nhận quá trình. Việc cần làm là yêu cầu công ty làm thủ tục báo giảm, chốt sổ; nếu công ty không thực hiện thì khiếu nại tới cơ quan BHXH quản lý đơn vị.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

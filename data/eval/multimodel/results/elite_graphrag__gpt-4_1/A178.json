@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 178,
+  "question": "em làm mất bìa và sổ BHXH . trên app thì cái sdt và gmail đăng ký thì e mất lâu rồi . bây giờ em phải làm sao?",
+  "answer": "Issue:\nBạn hỏi về việc làm mất bìa và sổ bảo hiểm xã hội (BHXH), đồng thời không còn sử dụng số điện thoại và email đã đăng ký trên ứng dụng, và muốn biết cần phải làm gì trong trường hợp này.\n\nRule:\n\"Được cơ quan bảo hiểm xã hội hướng dẫn trình tự, thủ tục thực hiện bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 12, Khoản 3)\n\"Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau. Chậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằng bản giấy được cấp khi người tham gia bảo hiểm xã hội yêu cầu.\" (Luật BHXH 2024 (41/2024/QH15), Điều 25, Khoản 2)\n\nApplication:\nKhông có slot nào cần điền vì đây là tình huống hướng dẫn thủ tục. Prolog đã sử dụng các quy định trên để xác định rằng bạn cần liên hệ cơ quan BHXH để được hướng dẫn thủ tục và có thể yêu cầu cấp lại sổ BHXH dưới dạng điện tử hoặc giấy theo nhu cầu.\n\nConclusion:\nTheo kết quả Prolog, bạn nên: liên hệ cơ quan bảo hiểm xã hội để được hướng dẫn thủ tục và yêu cầu cấp lại sổ BHXH dưới dạng điện tử hoặc giấy (Solution = [contact_social_insurance_agency_for_guidance, request_reissue_of_bhxh_book_in_electronic_or_paper_form]).",
+  "citations": [
+    "[Điều 12 khoản 3]",
+    "[Điều 25 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A12.K3",
+    "L41_2024.A25.K2"
+  ],
+  "citation_indices": [
+    4,
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,lost_bhxh_solution([contact_social_insurance_agency_for_guidance,request_reissue_of_bhxh_book_in_electronic_or_paper_form]),based_on(source_c025)),step(conclusion,lost_bhxh_solution([contact_social_insurance_agency_for_guidance,request_reissue_of_bhxh_book_in_electronic_or_paper_form]),based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về việc làm mất bìa và sổ bảo hiểm xã hội (BHXH), đồng thời không còn sử dụng số điện thoại và email đã đăng ký trên ứng dụng, và muốn biết cần phải làm gì trong trường hợp này.",
+    "rule": "\"Được cơ quan bảo hiểm xã hội hướng dẫn trình tự, thủ tục thực hiện bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 12, Khoản 3)\n\"Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau. Chậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằng bản giấy được cấp khi người tham gia bảo hiểm xã hội yêu cầu.\" (Luật BHXH 2024 (41/2024/QH15), Điều 25, Khoản 2)",
+    "application": "Không có slot nào cần điền vì đây là tình huống hướng dẫn thủ tục. Prolog đã sử dụng các quy định trên để xác định rằng bạn cần liên hệ cơ quan BHXH để được hướng dẫn thủ tục và có thể yêu cầu cấp lại sổ BHXH dưới dạng điện tử hoặc giấy theo nhu cầu.",
+    "conclusion": "Theo kết quả Prolog, bạn nên: liên hệ cơ quan bảo hiểm xã hội để được hướng dẫn thủ tục và yêu cầu cấp lại sổ BHXH dưới dạng điện tử hoặc giấy (Solution = [contact_social_insurance_agency_for_guidance, request_reissue_of_bhxh_book_in_electronic_or_paper_form])."
+  },
+  "elapsed_s": 7.901,
+  "prompt_tokens": 3049,
+  "completion_tokens": 663,
+  "error": null,
+  "gold_answer": "Bạn bị mất bìa sổ BHXH và mất cả số điện thoại/gmail đăng ký thì vẫn xử lý được. Trước hết mang CCCD tới cơ quan BHXH để cập nhật lại thông tin liên hệ, cấp lại tài khoản/đổi thông tin trên VssID nếu cần, đồng thời làm thủ tục cấp lại sổ BHXH. Dữ liệu tham gia BHXH vẫn nằm trên hệ thống nên không mất quá trình đóng.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 191,
+  "question": "Anh chị cho em hỏi trong trường hợp em sinh trước so với ngày ký quyết định nghỉ việc 3 ngày thì hồ sơ thai sản em tự làm hay phải qua công ty?",
+  "answer": "Issue:\nBạn hỏi trong trường hợp sinh trước ngày ký quyết định nghỉ việc 3 ngày thì hồ sơ thai sản bạn tự làm hay phải nộp qua công ty.\n\nRule:\n\"Người lao động đã chấm dứt hợp đồng lao động trước khi sinh con thì tự nộp hồ sơ hưởng chế độ thai sản cho cơ quan BHXH.\" (Luật Bảo hiểm xã hội 2024, Điều 112, Khoản 1)\n\nApplication:\nKhông có slot nào cần điền vì câu hỏi chỉ xác định chủ thể nộp hồ sơ. Theo quy định tại Điều 112 Khoản 1 Luật Bảo hiểm xã hội 2024, nếu người lao động đã chấm dứt hợp đồng lao động trước khi sinh con thì sẽ tự nộp hồ sơ thai sản cho cơ quan bảo hiểm xã hội.\n\nConclusion:\nTheo kết quả truy vấn, trường hợp này bạn sẽ tự nộp hồ sơ thai sản (nguoi_lao_dong_tu_nop) cho cơ quan bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 112 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A112.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,ho_so_thai_san_nop_qua_dau(nguoi_lao_dong_tu_nop),based_on(source_a112_k1))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi trong trường hợp sinh trước ngày ký quyết định nghỉ việc 3 ngày thì hồ sơ thai sản bạn tự làm hay phải nộp qua công ty.",
+    "rule": "\"Người lao động đã chấm dứt hợp đồng lao động trước khi sinh con thì tự nộp hồ sơ hưởng chế độ thai sản cho cơ quan BHXH.\" (Luật Bảo hiểm xã hội 2024, Điều 112, Khoản 1)",
+    "application": "Không có slot nào cần điền vì câu hỏi chỉ xác định chủ thể nộp hồ sơ. Theo quy định tại Điều 112 Khoản 1 Luật Bảo hiểm xã hội 2024, nếu người lao động đã chấm dứt hợp đồng lao động trước khi sinh con thì sẽ tự nộp hồ sơ thai sản cho cơ quan bảo hiểm xã hội.",
+    "conclusion": "Theo kết quả truy vấn, trường hợp này bạn sẽ tự nộp hồ sơ thai sản (nguoi_lao_dong_tu_nop) cho cơ quan bảo hiểm xã hội."
+  },
+  "elapsed_s": 9.132,
+  "prompt_tokens": 3904,
+  "completion_tokens": 862,
+  "error": null,
+  "gold_answer": "Nếu bạn sinh trước ngày ký quyết định nghỉ việc 3 ngày, tức thời điểm sinh con vẫn đang trong quan hệ lao động, thì về nguyên tắc hồ sơ thai sản nên do công ty lập và nộp cho cơ quan BHXH. Chỉ khi bạn đã nghỉ việc trước sinh hoặc công ty không còn hoạt động/không nộp hồ sơ thì mới chuyển sang hướng tự nộp trực tiếp.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

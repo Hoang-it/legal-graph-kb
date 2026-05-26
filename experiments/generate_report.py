@@ -1,4 +1,10 @@
-"""Sinh report markdown + CSV từ metrics.json."""
+"""Sinh report markdown + CSV từ metrics.json (N arms support).
+
+Output:
+    reports/experiment_report.md  — 5-arm comparison table + Prolog reliability
+                                    section + breakdown by law version + discussion
+    data/eval/metrics.csv         — wide CSV (1 row / câu / arm)
+"""
 
 from __future__ import annotations
 
@@ -13,6 +19,50 @@ QUESTIONS_PATH = Path("data/eval/questions_200.json")
 REPORT_OUT = Path("reports/experiment_report.md")
 CSV_OUT = Path("data/eval/metrics.csv")
 
+PAIRWISE_BASELINE = "graphrag"
+ELITE_ARMS = {"elite_no_retrieval", "elite_ontology", "elite_graphrag"}
+
+# Existing 6 base metrics
+METRIC_SPECS = [
+    ("citation_validity",  ["citation_validity", "validity_rate"]),
+    ("citation_recall",    ["citation_recall", "recall"]),
+    ("citation_precision", ["citation_precision", "precision"]),
+    ("faithfulness",       ["faithfulness", "faithfulness"]),
+    ("answer_relevance",   ["answer_relevance", "answer_relevance"]),
+    ("hallucination_rate", ["hallucination", "hallucination_rate"]),
+    ("bertscore_f1",       ["bertscore", "bertscore_f1"]),
+    ("cost_usd",           ["cost", "cost_usd"]),
+    ("latency_s",          ["latency", "latency_s"]),
+]
+DIRECTION_BETTER = {
+    "citation_validity":     "higher",
+    "citation_recall":       "higher",
+    "citation_precision":    "higher",
+    "faithfulness":          "higher",
+    "answer_relevance":      "higher",
+    "hallucination_rate":    "lower",
+    "bertscore_f1":          "higher",
+    "cost_usd":              "lower",
+    "latency_s":             "lower",
+    # Prolog rollback (Logic-LM)
+    "prolog_success_rate":   "higher",
+    "first_try_success_rate": "higher",
+    "repair_invoked_rate":   "lower",
+    "avg_repair_rounds":     "lower",
+}
+
+# 4 Prolog rollback metrics — chỉ tính cho elite_* arms
+PROLOG_SPECS = [
+    ("prolog_success_rate",     ["prolog_rollback", "prolog_success"],   "bool"),
+    ("first_try_success_rate",  ["prolog_rollback", "first_try_success"], "bool"),
+    ("repair_invoked_rate",     ["prolog_rollback", "repair_invoked"],   "bool"),
+    ("avg_repair_rounds",       ["prolog_rollback", "n_repair_rounds"],  "num"),
+]
+
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
 
 def _safe_mean(values):
     vs = [v for v in values if v is not None]
@@ -42,6 +92,23 @@ def _extract(metrics, key_chain):
     return vals
 
 
+def _extract_bool_as_float(metrics, key_chain):
+    """Convert True/False/None → 1.0/0.0/None để tính rate."""
+    vals = []
+    for r in metrics:
+        v = r
+        for k in key_chain:
+            if not isinstance(v, dict):
+                v = None
+                break
+            v = v.get(k)
+        if v is None:
+            vals.append(None)
+        else:
+            vals.append(1.0 if v else 0.0)
+    return vals
+
+
 def _tag_law_version(gold_citations_raw: str | None) -> str:
     if not gold_citations_raw:
         return "unknown"
@@ -53,6 +120,14 @@ def _tag_law_version(gold_citations_raw: str | None) -> str:
     return "unknown"
 
 
+def _fmt(v, fmt="{:.4f}"):
+    return fmt.format(v) if v is not None else "N/A"
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
 def main() -> int:
     if not METRICS_PATH.exists():
         print(f"FAIL: thiếu {METRICS_PATH}. Chạy compute_metrics trước.")
@@ -60,6 +135,14 @@ def main() -> int:
 
     with METRICS_PATH.open(encoding="utf-8") as f:
         all_metrics = json.load(f)
+
+    arms = list(all_metrics.keys())
+    if not arms:
+        print("FAIL: metrics.json không có arm nào", file=sys.stderr)
+        return 1
+
+    n_per_arm = {arm: len(recs) for arm, recs in all_metrics.items()}
+    n_first = next(iter(n_per_arm.values()))
 
     # Map stt → law_version
     law_tag = {}
@@ -69,24 +152,10 @@ def main() -> int:
         for q in qs:
             law_tag[q["stt"]] = _tag_law_version(q.get("gold_citations_raw"))
 
-    arms = ["graphrag", "llm_only"]
-    n = len(all_metrics["graphrag"])
-
     # ---- Build aggregate ----
     agg = {arm: {} for arm in arms}
-    metric_specs = [
-        ("citation_validity", ["citation_validity", "validity_rate"]),
-        ("citation_recall", ["citation_recall", "recall"]),
-        ("citation_precision", ["citation_precision", "precision"]),
-        ("faithfulness", ["faithfulness", "faithfulness"]),
-        ("answer_relevance", ["answer_relevance", "answer_relevance"]),
-        ("hallucination_rate", ["hallucination", "hallucination_rate"]),
-        ("bertscore_f1", ["bertscore", "bertscore_f1"]),
-        ("cost_usd", ["cost", "cost_usd"]),
-        ("latency_s", ["latency", "latency_s"]),
-    ]
     for arm in arms:
-        for label, kc in metric_specs:
+        for label, kc in METRIC_SPECS:
             vals = _extract(all_metrics[arm], kc)
             agg[arm][label] = {
                 "mean": _safe_mean(vals),
@@ -94,266 +163,250 @@ def main() -> int:
                 "std": _safe_std(vals),
                 "n_valid": sum(1 for v in vals if v is not None),
             }
+        # Prolog metrics (chỉ elite_*)
+        if arm in ELITE_ARMS:
+            for label, kc, kind in PROLOG_SPECS:
+                vals = (
+                    _extract_bool_as_float(all_metrics[arm], kc)
+                    if kind == "bool"
+                    else _extract(all_metrics[arm], kc)
+                )
+                agg[arm][label] = {
+                    "mean": _safe_mean(vals),
+                    "std": _safe_std(vals),
+                    "n_valid": sum(1 for v in vals if v is not None),
+                }
 
-    # Pairwise
-    pw_consensus = Counter()
-    pw_ab = Counter()
-    pw_ba = Counter()
-    for r in all_metrics["graphrag"]:
-        if "pairwise" in r:
-            pw_consensus[r["pairwise"]["consensus"]] += 1
-            pw_ab[r["pairwise"]["vote_ab"]] += 1
-            pw_ba[r["pairwise"]["vote_ba"]] += 1
+    # Pairwise: tally consensus per non-baseline arm
+    pairwise_by_arm = {}
+    for arm in arms:
+        if arm == PAIRWISE_BASELINE:
+            continue
+        consensus = Counter()
+        vote_ab = Counter()
+        vote_ba = Counter()
+        for r in all_metrics[arm]:
+            pw = r.get("pairwise_vs_baseline")
+            if pw:
+                consensus[pw["consensus"]] += 1
+                vote_ab[pw["vote_ab"]] += 1
+                vote_ba[pw["vote_ba"]] += 1
+        pairwise_by_arm[arm] = {
+            "consensus": consensus,
+            "vote_ab": vote_ab,
+            "vote_ba": vote_ba,
+            "total": sum(consensus.values()),
+        }
 
     # Breakdown theo law version
-    by_law = {arm: {tag: [] for tag in ("new_2024", "old_2014", "unknown")} for arm in arms}
+    by_law = {
+        arm: {tag: [] for tag in ("new_2024", "old_2014", "unknown")}
+        for arm in arms
+    }
     for arm in arms:
         for r in all_metrics[arm]:
             tag = law_tag.get(r["stt"], "unknown")
             by_law[arm][tag].append(r)
 
-    # ---- Write markdown report ----
-    lines = []
-    lines.append("# Experiment Report — GraphRAG vs LLM-only\n")
-    lines.append(f"**Dataset**: 200 câu BHXH (FB group). Cặp đầy đủ (cả 2 arm): {n}\n")
-    lines.append(
-        "**Models**: GraphRAG = `gpt-4o-mini` + BGE-M3 + Neo4j. "
-        "LLM-only = `gpt-4o-mini` (no retrieval).\n"
-    )
-    lines.append(
-        "**Judge**: `gpt-4o-mini` (cùng model với generator — self-bias risk, "
-        "nhưng vì cả 2 arm cùng generator nên *relative* comparison vẫn fair).\n\n"
-    )
+    # ===================================================================
+    # Write markdown report
+    # ===================================================================
+    lines: list[str] = []
 
-    lines.append("## Metrics (peer-reviewed refs, không arXiv)\n")
+    arm_labels = ", ".join(arms)
+    lines.append("# Experiment Report — 5-arm comparison (GraphRAG vs LLM-only vs Elite × 3)\n")
+    lines.append(f"**Dataset**: 200 câu BHXH (FB group). Arms compared: `{arm_labels}`. "
+                 f"Số sample / arm: " + ", ".join(f"{a}={n}" for a, n in n_per_arm.items()) + "\n")
+    lines.append("**Models**: generator + judge đều `gpt-4o-mini` (self-bias risk — chỉ affect *absolute* scores, *relative* fair).\n")
+    lines.append("**Arms**:\n")
+    lines.append("- `graphrag`: vector search Neo4j + LLM generate answer text\n")
+    lines.append("- `llm_only`: chỉ LLM, no retrieval\n")
+    lines.append("- `elite_no_retrieval`: LLM → Prolog (no context, prompt relaxed) → SWI-Prolog → IRAC\n")
+    lines.append("- `elite_ontology`: LLM → Prolog (ontology retrieval) → SWI-Prolog → IRAC\n")
+    lines.append("- `elite_graphrag`: LLM → Prolog (GraphRAG retrieval) → SWI-Prolog → IRAC\n\n")
+
+    # Paper refs
+    lines.append("## Metrics & paper refs (peer-reviewed, không arXiv)\n")
     lines.append("| Metric | Paper | Venue |")
     lines.append("|---|---|---|")
-    lines.append(
-        "| Faithfulness, Answer Relevance | Es et al. *RAGAs: Automated Evaluation of Retrieval Augmented Generation* | [EACL 2024 Demo](https://aclanthology.org/2024.eacl-demo.16/) |"
-    )
-    lines.append(
-        "| Citation Precision/Recall | Liu, Zhang & Liang. *Evaluating Verifiability in Generative Search Engines* | [EMNLP Findings 2023](https://aclanthology.org/2023.findings-emnlp.467/) |"
-    )
-    lines.append(
-        "| Hallucination Rate (legal) | Magesh et al. *Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools* | [J. Empirical Legal Studies 2025, Wiley](https://onlinelibrary.wiley.com/doi/abs/10.1111/jels.12413) (Stanford RegLab/HAI) |"
-    )
-    lines.append(
-        "| LLM-as-Judge (pairwise) | Zheng et al. *Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena* | [NeurIPS 2023 D&B](https://papers.nips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html) |"
-    )
-    lines.append(
-        "| BERTScore | Zhang et al. *BERTScore: Evaluating Text Generation with BERT* | [ICLR 2020 (OpenReview)](https://openreview.net/forum?id=SkeHuCVFDr) |"
-    )
+    lines.append("| Faithfulness, Answer Relevance | Es et al. *RAGAs: Automated Evaluation of Retrieval Augmented Generation* | [EACL 2024 Demo](https://aclanthology.org/2024.eacl-demo.16/) |")
+    lines.append("| Citation Precision/Recall | Liu, Zhang & Liang. *Evaluating Verifiability in Generative Search Engines* | [EMNLP Findings 2023](https://aclanthology.org/2023.findings-emnlp.467/) |")
+    lines.append("| Hallucination Rate (legal) | Magesh et al. *Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools* | [JELS 2025, Wiley](https://onlinelibrary.wiley.com/doi/abs/10.1111/jels.12413) (Stanford RegLab/HAI) |")
+    lines.append("| LLM-as-Judge (pairwise) | Zheng et al. *Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena* | [NeurIPS 2023 D&B](https://papers.nips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html) |")
+    lines.append("| BERTScore | Zhang et al. *BERTScore: Evaluating Text Generation with BERT* | [ICLR 2020 (OpenReview)](https://openreview.net/forum?id=SkeHuCVFDr) |")
+    lines.append("| **Prolog rollback rate** (Logic-LM family) | Pan et al. *Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning* | [EMNLP Findings 2023](https://aclanthology.org/2023.findings-emnlp.248/) |")
     lines.append("\n")
 
-    lines.append("## Aggregate results\n")
-    lines.append(
-        "| Metric | GraphRAG (mean ± std) | LLM-only (mean ± std) | Δ (GraphRAG − LLM-only) | Direction |"
-    )
-    lines.append("|---|---|---|---|---|")
-    direction_better = {
-        "citation_validity": "higher",
-        "citation_recall": "higher",
-        "citation_precision": "higher",
-        "faithfulness": "higher",
-        "answer_relevance": "higher",
-        "hallucination_rate": "lower",
-        "bertscore_f1": "higher",
-        "cost_usd": "lower",
-        "latency_s": "lower",
-    }
-    for label, _ in metric_specs:
-        g = agg["graphrag"][label]
-        l = agg["llm_only"][label]
-        g_str = (
-            f"{g['mean']:.4f} ± {g['std']:.4f}"
-            if g["mean"] is not None and g["std"] is not None
-            else (f"{g['mean']:.4f}" if g["mean"] is not None else "N/A")
-        )
-        l_str = (
-            f"{l['mean']:.4f} ± {l['std']:.4f}"
-            if l["mean"] is not None and l["std"] is not None
-            else (f"{l['mean']:.4f}" if l["mean"] is not None else "N/A")
-        )
-        if g["mean"] is not None and l["mean"] is not None:
-            delta = g["mean"] - l["mean"]
-            d_str = f"{delta:+.4f}"
-        else:
-            d_str = "—"
-        lines.append(
-            f"| **{label}** | {g_str} | {l_str} | {d_str} | {direction_better[label]} is better |"
-        )
+    # ---- 5-arm aggregate table ----
+    lines.append("## Aggregate results (mean ± std)\n")
+    header = "| Metric | " + " | ".join(arms) + " | Direction |"
+    sep = "|---|" + "|".join("---" for _ in arms) + "|---|"
+    lines.append(header)
+    lines.append(sep)
+    for label, _ in METRIC_SPECS:
+        cells = []
+        for arm in arms:
+            a = agg[arm].get(label, {})
+            m, s = a.get("mean"), a.get("std")
+            if m is not None and s is not None:
+                cells.append(f"{m:.4f} ± {s:.4f}")
+            elif m is not None:
+                cells.append(f"{m:.4f}")
+            else:
+                cells.append("N/A")
+        lines.append(f"| **{label}** | " + " | ".join(cells) + f" | {DIRECTION_BETTER[label]} better |")
     lines.append("")
 
-    lines.append("## Pairwise judge (LLM-as-Judge, position swap)\n")
-    if pw_consensus:
+    # ---- Prolog reliability section ----
+    elite_present = [a for a in arms if a in ELITE_ARMS]
+    if elite_present:
+        lines.append("## Prolog reliability (Logic-LM metrics — chỉ áp dụng cho elite arms)\n")
+        lines.append("> Đo độ tin cậy của symbolic solver loop. Pan et al. EMNLP'23 báo cáo các metric tương tự để compare LLM-as-reasoner vs LLM+symbolic.\n")
+        header = "| Metric | " + " | ".join(elite_present) + " | Direction |"
+        sep = "|---|" + "|".join("---" for _ in elite_present) + "|---|"
+        lines.append(header)
+        lines.append(sep)
+        for label, _, _ in PROLOG_SPECS:
+            cells = []
+            for arm in elite_present:
+                a = agg[arm].get(label, {})
+                m = a.get("mean")
+                if m is not None:
+                    cells.append(f"{m:.4f}")
+                else:
+                    cells.append("N/A")
+            lines.append(f"| **{label}** | " + " | ".join(cells) + f" | {DIRECTION_BETTER[label]} better |")
+        lines.append("")
+        # Breakdown của prolog_status
+        lines.append("### Prolog status distribution\n")
+        lines.append("| Status | " + " | ".join(elite_present) + " |")
+        lines.append("|---|" + "|".join("---:" for _ in elite_present) + "|")
+        all_statuses = set()
+        status_counts = {arm: Counter() for arm in elite_present}
+        for arm in elite_present:
+            for r in all_metrics[arm]:
+                s = r.get("prolog_rollback", {}).get("prolog_status") or "—"
+                status_counts[arm][s] += 1
+                all_statuses.add(s)
+        for status in sorted(all_statuses):
+            cells = [str(status_counts[arm].get(status, 0)) for arm in elite_present]
+            lines.append(f"| `{status}` | " + " | ".join(cells) + " |")
+        lines.append("")
+
+    # ---- Pairwise judge (vs baseline) ----
+    lines.append(f"## Pairwise judge vs `{PAIRWISE_BASELINE}` (LLM-as-Judge, position swap)\n")
+    for arm, data in pairwise_by_arm.items():
+        if not data["total"]:
+            continue
+        total = data["total"]
+        lines.append(f"### `{arm}` vs `{PAIRWISE_BASELINE}` (n={total})\n")
         lines.append("| Consensus | Count | % |")
         lines.append("|---|---:|---:|")
-        total = sum(pw_consensus.values())
-        for k, v in pw_consensus.most_common():
+        for k, v in data["consensus"].most_common():
             lines.append(f"| {k} | {v} | {v/total*100:.1f}% |")
         lines.append("")
-        lines.append("**Position-swap detail (A-first vs B-first):**\n")
-        lines.append("| Vote | A=graphrag B=llm_only | A=llm_only B=graphrag |")
+        lines.append(f"**Position swap detail:**\n")
+        lines.append(f"| Vote | A={PAIRWISE_BASELINE} B={arm} | A={arm} B={PAIRWISE_BASELINE} |")
         lines.append("|---|---:|---:|")
-        all_voters = set(pw_ab.keys()) | set(pw_ba.keys())
-        for v in sorted(all_voters):
-            lines.append(f"| {v} | {pw_ab.get(v, 0)} | {pw_ba.get(v, 0)} |")
+        voters = set(data["vote_ab"].keys()) | set(data["vote_ba"].keys())
+        for v in sorted(voters):
+            lines.append(f"| {v} | {data['vote_ab'].get(v, 0)} | {data['vote_ba'].get(v, 0)} |")
         lines.append("")
-    else:
-        lines.append("(pairwise judge không có data)\n")
 
-    lines.append("## Breakdown theo luật version (gold_citations)\n")
+    # ---- Breakdown theo luật version ----
+    lines.append("## Breakdown theo luật version (từ gold_citations_raw)\n")
     for tag in ("new_2024", "old_2014", "unknown"):
-        n_questions = len(by_law["graphrag"][tag])
+        n_questions = len(by_law[arms[0]][tag])
         if n_questions == 0:
             continue
         lines.append(f"### `{tag}` ({n_questions} câu)\n")
-        lines.append("| Metric | GraphRAG | LLM-only |")
-        lines.append("|---|---|---|")
-        for label, kc in metric_specs:
-            g_vals = _extract(by_law["graphrag"][tag], kc)
-            l_vals = _extract(by_law["llm_only"][tag], kc)
-            g_m = _safe_mean(g_vals)
-            l_m = _safe_mean(l_vals)
-            g_str = f"{g_m:.4f}" if g_m is not None else "N/A"
-            l_str = f"{l_m:.4f}" if l_m is not None else "N/A"
-            lines.append(f"| {label} | {g_str} | {l_str} |")
+        header = "| Metric | " + " | ".join(arms) + " |"
+        sep = "|---|" + "|".join("---" for _ in arms) + "|"
+        lines.append(header)
+        lines.append(sep)
+        for label, kc in METRIC_SPECS:
+            cells = []
+            for arm in arms:
+                vals = _extract(by_law[arm][tag], kc)
+                m = _safe_mean(vals)
+                cells.append(_fmt(m))
+            lines.append(f"| {label} | " + " | ".join(cells) + " |")
         lines.append("")
 
-    # ---- KEY FINDINGS (auto-generated from deltas) ----
-    lines.append("## Key findings\n")
-    findings_pos = []  # GraphRAG wins
-    findings_neg = []  # LLM-only wins
-    for label, _ in metric_specs:
-        g = agg["graphrag"][label]["mean"]
-        l = agg["llm_only"][label]["mean"]
-        if g is None or l is None:
-            continue
-        delta = g - l
-        rel = delta / (abs(l) + 1e-9) * 100 if l != 0 else 0
-        better = direction_better[label]
-        if better == "higher":
-            if g > l:
-                findings_pos.append((label, delta, rel, g, l))
-            else:
-                findings_neg.append((label, delta, rel, g, l))
-        else:  # lower is better
-            if g < l:
-                findings_pos.append((label, delta, rel, g, l))
-            else:
-                findings_neg.append((label, delta, rel, g, l))
+    # ---- Discussion (auto-generated insights) ----
+    lines.append("## Discussion (auto-generated)\n")
 
-    lines.append("### GraphRAG vượt trội ở:\n")
-    for label, delta, rel, g, l in sorted(findings_pos, key=lambda x: -abs(x[2])):
-        sign = "+" if delta > 0 else ""
-        lines.append(f"- **{label}**: {g:.4f} vs {l:.4f} ({sign}{delta:.4f}, {sign}{rel:.0f}% rel)")
-    if not findings_pos:
-        lines.append("- (không có metric nào GraphRAG vượt trội)")
-    lines.append("\n### LLM-only vượt trội ở:\n")
-    for label, delta, rel, g, l in sorted(findings_neg, key=lambda x: -abs(x[2])):
-        sign = "+" if delta > 0 else ""
-        lines.append(
-            f"- **{label}**: GraphRAG {g:.4f} vs LLM-only {l:.4f} ({sign}{delta:.4f}, {sign}{rel:.0f}% rel)"
+    # Best arm per metric
+    lines.append("### Winner per metric\n")
+    lines.append("| Metric | Winner | Value |")
+    lines.append("|---|---|---|")
+    for label, _ in METRIC_SPECS:
+        better = DIRECTION_BETTER[label]
+        scores = [(arm, agg[arm].get(label, {}).get("mean")) for arm in arms]
+        scores = [(a, m) for a, m in scores if m is not None]
+        if not scores:
+            continue
+        winner_arm, winner_val = (
+            max(scores, key=lambda x: x[1]) if better == "higher"
+            else min(scores, key=lambda x: x[1])
         )
-    if not findings_neg:
-        lines.append("- (không có metric nào LLM-only vượt trội)")
+        lines.append(f"| {label} | **{winner_arm}** | {winner_val:.4f} |")
+    if elite_present:
+        for label, _, _ in PROLOG_SPECS:
+            better = DIRECTION_BETTER[label]
+            scores = [(arm, agg[arm].get(label, {}).get("mean")) for arm in elite_present]
+            scores = [(a, m) for a, m in scores if m is not None]
+            if not scores:
+                continue
+            winner_arm, winner_val = (
+                max(scores, key=lambda x: x[1]) if better == "higher"
+                else min(scores, key=lambda x: x[1])
+            )
+            lines.append(f"| {label} | **{winner_arm}** | {winner_val:.4f} |")
     lines.append("")
 
-    # ---- Discussion (auto-generated dựa vào pattern) ----
-    lines.append("## Discussion\n")
-    g_cite_recall = agg["graphrag"]["citation_recall"]["mean"]
-    l_cite_recall = agg["llm_only"]["citation_recall"]["mean"]
-    if g_cite_recall and l_cite_recall and (g_cite_recall - l_cite_recall) > 0.3:
-        lines.append(
-            f"**Citation behavior**: GraphRAG cite gấp ~{g_cite_recall/max(l_cite_recall, 0.01):.1f}× nhiều hơn "
-            f"LLM-only ({g_cite_recall:.0%} vs {l_cite_recall:.0%} câu có citation). "
-            f"Đây là tác động trực tiếp của việc inject context có ID — model có "
-            f"vật liệu cụ thể để citation. LLM-only không biết article nào tồn tại "
-            f"trong KG → tránh cite cho an toàn.\n"
-        )
-    g_halu = agg["graphrag"]["hallucination_rate"]["mean"]
-    l_halu = agg["llm_only"]["hallucination_rate"]["mean"]
-    if g_halu and l_halu and g_halu > l_halu:
-        lines.append(
-            f"**Hallucination rate (paradox)**: GraphRAG có hallucination rate cao hơn "
-            f"({g_halu:.0%} vs {l_halu:.0%}). Lý do PHƯƠNG PHÁP, không phải GraphRAG kém: "
-            f"hallucination rate = (n_misstate + n_unsupported + n_invented_citations) / "
-            f"(n_claims + n_invented). LLM-only ít cite → ít citation để judge soi → "
-            f"`n_claims` được judge nhỏ → denominator nhỏ → rate không reflect được "
-            f"unverified claims (vì không citation thì judge không có context để check). "
-            f"GraphRAG với citation phong phú bị judge soi kỹ hơn, dễ bị flag misstate "
-            f"khi paraphrase nội dung Điều. **Đề xuất**: metric này cần được normalize "
-            f"theo verifiable claims để fair.\n"
-        )
-    g_rel = agg["graphrag"]["answer_relevance"]["mean"]
-    l_rel = agg["llm_only"]["answer_relevance"]["mean"]
-    if g_rel and l_rel and l_rel > g_rel:
-        lines.append(
-            f"**Answer Relevance**: LLM-only cao hơn ({l_rel:.3f} vs {g_rel:.3f}). "
-            f"Hợp lý — answer LLM-only ngắn gọn, conversational, dễ map ngược về "
-            f"câu hỏi gốc. GraphRAG answer dài hơn (kèm citation + context) → khi judge "
-            f"sinh ngược câu hỏi, có thể tạo Q rộng hơn (về cited topic).\n"
-        )
-    # BERTScore
-    g_bs = agg["graphrag"]["bertscore_f1"]["mean"]
-    l_bs = agg["llm_only"]["bertscore_f1"]["mean"]
-    if g_bs and l_bs and l_bs > g_bs:
-        lines.append(
-            f"**BERTScore**: LLM-only ({l_bs:.3f}) > GraphRAG ({g_bs:.3f}). "
-            f"Gold answer (FB group) thường viết prose tự nhiên, không format citation. "
-            f"LLM-only output tương tự style này → match cao hơn. GraphRAG output dày "
-            f"citation [Điều X khoản Y] → khác style. BERTScore phạt khác biệt phong cách "
-            f"chứ không chỉ ngữ nghĩa.\n"
-        )
-    # Pairwise
-    if pw_consensus and pw_consensus.get("split", 0) / max(1, sum(pw_consensus.values())) > 0.5:
-        lines.append(
-            f"**Pairwise judge — bias VỊ TRÍ rất mạnh**: {pw_consensus['split']}/{sum(pw_consensus.values())} câu split "
-            f"(judge dao động theo position swap). Bảng position-swap detail cho thấy judge "
-            f"có xu hướng pick câu trả lời ở vị trí THỨ HAI (recency bias). Zheng et al. "
-            f"2023 cảnh báo điều này; kết quả strong consensus (cùng winner ở cả 2 swap) chỉ "
-            f"có {pw_consensus.get('graphrag', 0) + pw_consensus.get('llm_only', 0)}/{sum(pw_consensus.values())} câu. "
-            f"**Pairwise judge không đáng tin** trong setting hiện tại; cần judge mạnh hơn "
-            f"(GPT-4o, Claude) để giảm noise.\n"
-        )
-    g_lat = agg["graphrag"]["latency_s"]["mean"]
-    l_lat = agg["llm_only"]["latency_s"]["mean"]
-    if g_lat and l_lat and g_lat < l_lat:
-        lines.append(
-            f"**Latency (surprise win)**: GraphRAG NHANH HƠN ({g_lat:.1f}s vs {l_lat:.1f}s) "
-            f"dù có thêm vector search + graph expansion. Lý do: với context đầy đủ, "
-            f"LLM generate ngắn gọn + tự tin → token output ít hơn. LLM-only phải "
-            f"'think' nhiều hơn để compose answer → generate dài hơn, chậm hơn.\n"
-        )
+    # Elite no-retrieval observation
+    if "elite_no_retrieval" in arms:
+        a = agg["elite_no_retrieval"].get("prolog_success_rate", {}).get("mean")
+        if a is not None:
+            lines.append(
+                f"**Elite no-retrieval ablation**: prolog_success_rate = {a:.0%}. "
+                f"Càng thấp càng chứng minh elite CẦN retrieval. "
+                f"Câu nào success nhờ LLM tự sinh được valid Prolog từ training data.\n"
+            )
 
+    # Elite ontology vs elite graphrag
+    if "elite_ontology" in arms and "elite_graphrag" in arms:
+        o_succ = agg["elite_ontology"].get("prolog_success_rate", {}).get("mean")
+        g_succ = agg["elite_graphrag"].get("prolog_success_rate", {}).get("mean")
+        if o_succ is not None and g_succ is not None:
+            better = "elite_graphrag" if g_succ > o_succ else "elite_ontology"
+            lines.append(
+                f"**Ontology vs GraphRAG retrieval for symbolic reasoning**: "
+                f"elite_ontology success={o_succ:.0%}, elite_graphrag success={g_succ:.0%}. "
+                f"`{better}` retrieval cho ra Prolog program hợp lệ thường xuyên hơn.\n"
+            )
+
+    # ---- Caveats ----
     lines.append("\n## Caveats / Limitations\n")
-    lines.append(
-        "1. **Self-enhancement bias**: judge = `gpt-4o-mini`, generator = `gpt-4o-mini`. "
-        "Zheng et al. (2023) cảnh báo bias. Tuy nhiên cả 2 arm cùng generator → bias đều → "
-        "**relative** ranking vẫn dùng được; *absolute* score có thể bị inflate."
-    )
-    lines.append(
-        "2. **Citation format**: LLM-only được prompted để cite Luật 41/2024 nhưng có thể "
-        "cite Luật cũ (training data có cả 2 luật) → citation_validity của LLM-only thấp "
-        "không hẳn vì kém mà do format mismatch."
-    )
-    lines.append(
-        "3. **Gold answer quality**: FB group answers, không phải nguồn pháp luật chính thức "
-        "→ BERTScore vs gold dùng làm reference loose."
-    )
-    lines.append(
-        "4. **Hallucination definition (Magesh 2025)** trong paper là expert hand-scored. "
-        "Ở đây dùng LLM judge auto → có noise."
-    )
-    lines.append("5. **Single judge**: chưa swap multiple judges → variance không đo.\n")
+    lines.append("1. **Self-enhancement bias** (Zheng 2023): judge = generator = `gpt-4o-mini` → bias đều cả 5 arm. Relative compare OK, absolute có thể inflated.")
+    lines.append("2. **Elite no-retrieval prompt được relax** cho phép LLM tự cite — citation_validity của arm này dùng để cảnh báo (không equivalent với D/E).")
+    lines.append("3. **Citation extraction** từ IRAC text (elite arms) dùng cả bracketed `[Điều X khoản Y]` và inline `Điều X, khoản Y` patterns; có thể miss vài citation natural language.")
+    lines.append("4. **Pairwise judge** vs `graphrag` baseline có position bias mạnh (đã thấy trong eval 2-arm trước). Chỉ tin strong-consensus rows.")
+    lines.append("5. **Prolog rollback** đo trên max=2 repair rounds (default elite). Cap thấp → chưa thấy điểm hội tụ thật của LLM-with-feedback.")
+    lines.append("6. **SWI-Prolog timeout=15s** — câu phức tạp có thể bị giết silently → count vào prolog_success=False (status có thể là 'unable_to_conclude').\n")
 
     REPORT_OUT.parent.mkdir(parents=True, exist_ok=True)
     REPORT_OUT.write_text("\n".join(lines), encoding="utf-8")
     print(f"Saved report: {REPORT_OUT}")
 
-    # ---- CSV (per-question wide format) ----
+    # ===================================================================
+    # CSV (per-question wide format)
+    # ===================================================================
     fieldnames = ["stt", "arm", "law_version"]
-    for label, _ in metric_specs:
+    for label, _ in METRIC_SPECS:
+        fieldnames.append(label)
+    for label, _, _ in PROLOG_SPECS:
         fieldnames.append(label)
     fieldnames.append("pairwise_consensus")
     with CSV_OUT.open("w", encoding="utf-8", newline="") as f:
@@ -361,11 +414,27 @@ def main() -> int:
         w.writeheader()
         for arm in arms:
             for r in all_metrics[arm]:
-                row = {"stt": r["stt"], "arm": arm, "law_version": law_tag.get(r["stt"], "unknown")}
-                for label, kc in metric_specs:
+                row = {
+                    "stt": r["stt"],
+                    "arm": arm,
+                    "law_version": law_tag.get(r["stt"], "unknown"),
+                }
+                for label, kc in METRIC_SPECS:
                     vals = _extract([r], kc)
                     row[label] = vals[0] if vals[0] is not None else ""
-                row["pairwise_consensus"] = r.get("pairwise", {}).get("consensus", "")
+                if arm in ELITE_ARMS:
+                    for label, kc, kind in PROLOG_SPECS:
+                        v = _extract([r], kc)[0]
+                        if v is None:
+                            row[label] = ""
+                        else:
+                            row[label] = (1 if v else 0) if kind == "bool" else v
+                else:
+                    for label, _, _ in PROLOG_SPECS:
+                        row[label] = ""
+                row["pairwise_consensus"] = (
+                    r.get("pairwise_vs_baseline", {}).get("consensus", "")
+                )
                 w.writerow(row)
     print(f"Saved CSV   : {CSV_OUT}")
     return 0
@@ -373,5 +442,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     import sys
-
     sys.exit(main())

@@ -1,0 +1,37 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 109,
+  "question": "Đóng bảo hiểm xã hội bao nhiêu năm là được về hưu vậy?",
+  "answer": "Issue: Để được hưởng lương hưu, người lao động cần đóng bảo hiểm xã hội bao nhiêu năm?\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 9: \"Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\" Ngoài ra, Điều 141, Khoản 10 quy định: \"Người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên và có văn bản của cơ quan bảo hiểm xã hội xác nhận về việc chờ đủ điều kiện về tuổi đời để hưởng lương hưu... thì được hưởng lương hưu khi nam đủ 60 tuổi, nữ đủ 55 tuổi.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, chương trình Prolog đã sử dụng các quy định từ Điều 141, Khoản 9 của Luật BHXH 2024 để xác định số năm cần thiết để đủ điều kiện hưởng lương hưu.\n\nConclusion: Theo kết quả từ chương trình Prolog, số năm đóng bảo hiểm xã hội cần thiết để đủ điều kiện hưởng lương hưu là 20 năm.",
+  "citations": [
+    "[Điều 141 khoản 9]",
+    "[Điều 98]",
+    "[Điều 141 khoản 10]"
+  ],
+  "citation_ids": [
+    "L41_2024.A141.K9",
+    "L41_2024.A98",
+    "L41_2024.A141.K10"
+  ],
+  "citation_indices": [
+    0,
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,retirement_eligibility_years(20),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Để được hưởng lương hưu, người lao động cần đóng bảo hiểm xã hội bao nhiêu năm?",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 9: \"Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\" Ngoài ra, Điều 141, Khoản 10 quy định: \"Người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên và có văn bản của cơ quan bảo hiểm xã hội xác nhận về việc chờ đủ điều kiện về tuổi đời để hưởng lương hưu... thì được hưởng lương hưu khi nam đủ 60 tuổi, nữ đủ 55 tuổi.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, chương trình Prolog đã sử dụng các quy định từ Điều 141, Khoản 9 của Luật BHXH 2024 để xác định số năm cần thiết để đủ điều kiện hưởng lương hưu.",
+    "conclusion": "Theo kết quả từ chương trình Prolog, số năm đóng bảo hiểm xã hội cần thiết để đủ điều kiện hưởng lương hưu là 20 năm."
+  },
+  "elapsed_s": 7.111,
+  "prompt_tokens": 3512,
+  "completion_tokens": 760,
+  "error": null,
+  "gold_answer": "Từ 01/7/2025, điều kiện về thời gian đóng để hưởng lương hưu với nhiều nhóm lao động là từ đủ 15 năm BHXH, nhưng vẫn phải đủ tuổi nghỉ hưu theo luật. Năm 2026, tuổi nghỉ hưu trong điều kiện bình thường là 61 tuổi 6 tháng đối với nam và 57 tuổi đối với nữ, trừ trường hợp làm nghề nặng nhọc, suy giảm khả năng lao động hoặc có điều kiện đặc thù.",
+  "gold_citations_raw": "Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

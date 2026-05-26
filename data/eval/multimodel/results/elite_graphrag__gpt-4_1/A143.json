@@ -1,0 +1,42 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 143,
+  "question": "Mình xin nghỉ việc\nCông ty nợ bảo hiểm xã hội có làm hưởng bảo hiểm thất nghiệp được không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu người lao động xin nghỉ việc mà công ty đang nợ bảo hiểm xã hội, thì người lao động có được hưởng bảo hiểm thất nghiệp không?\n\nRule:\n\"Chậm đóng, trốn đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp.\" (Luật BHXH 2024 (41/2024/QH15), Điều 9, Khoản 1)\n\"Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều 34 của Luật này hoặc kể từ sau ngày đóng bảo hiểm thất nghiệp chậm nhất theo quy định của pháp luật về bảo hiểm thất nghiệp, trừ trường hợp quy định tại điểm đ và điểm e khoản 1 Điều 39 của Luật này;\" (Luật BHXH 2024 (41/2024/QH15), Điều 38, Khoản 1)\n\"Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30 tháng 6 năm 2025 mà không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 12)\n\nApplication:\nKhông có slot_id cụ thể nào được ràng buộc trong trường hợp này. Prolog đã sử dụng các quy định pháp luật liên quan đến việc chậm đóng, trốn đóng bảo hiểm xã hội, bảo hiểm thất nghiệp để xác định rằng người lao động vẫn có thể được hưởng bảo hiểm thất nghiệp nếu đáp ứng đủ điều kiện theo Luật Việc làm. Tuy nhiên, việc công ty nợ bảo hiểm có thể gây khó khăn khi làm thủ tục và cơ quan bảo hiểm sẽ xác nhận dựa trên số tiền thực tế đã đóng.\n\nConclusion:\nNgười lao động vẫn có thể được hưởng bảo hiểm thất nghiệp nếu đáp ứng đủ điều kiện theo Luật Việc làm, tuy nhiên việc công ty nợ bảo hiểm xã hội, bảo hiểm thất nghiệp sẽ bị xử lý theo quy định về chậm đóng, trốn đóng và người lao động có thể gặp khó khăn khi làm thủ tục. Cơ quan bảo hiểm sẽ xác nhận quá trình đóng trên cơ sở số tiền đã được đóng thực tế (Answer).",
+  "citations": [
+    "[Điều 9 khoản 1]",
+    "[Điều 34]",
+    "[Điều 39]",
+    "[Điều 38 khoản 1]",
+    "[Điều 141 khoản 12]"
+  ],
+  "citation_ids": [
+    "L41_2024.A9.K1",
+    "L41_2024.A34",
+    "L41_2024.A39",
+    "L41_2024.A38.K1",
+    "L41_2024.A141.K12"
+  ],
+  "citation_indices": [
+    6,
+    7,
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,can_receive_unemployment_insurance_if_company_owes(user,Người lao động vẫn có thể được hưởng bảo hiểm thất nghiệp nếu đáp ứng đủ điều kiện theo Luật Việc làm, tuy nhiên việc công ty nợ bảo hiểm xã hội, bảo hiểm thất nghiệp sẽ bị xử lý theo quy định về chậm đóng, trốn đóng và người lao động có thể gặp khó khăn khi làm thủ tục. Cơ quan bảo hiểm sẽ xác nhận quá trình đóng trên cơ sở số tiền đã được đóng thực tế.),based_on(source_c006)),step(reference,can_receive_unemployment_insurance_if_company_owes(user,Người lao động vẫn có thể được hưởng bảo hiểm thất nghiệp nếu đáp ứng đủ điều kiện theo Luật Việc làm, tuy nhiên việc công ty nợ bảo hiểm xã hội, bảo hiểm thất nghiệp sẽ bị xử lý theo quy định về chậm đóng, trốn đóng và người lao động có thể gặp khó khăn khi làm thủ tục. Cơ quan bảo hiểm sẽ xác nhận quá trình đóng trên cơ sở số tiền đã được đóng thực tế.),based_on(source_c007)),step(reference,can_receive_unemployment_insurance_if_company_owes(user,Người lao động vẫn có thể được hưởng bảo hiểm thất nghiệp nếu đáp ứng đủ điều kiện theo Luật Việc làm, tuy nhiên việc công ty nợ bảo hiểm xã hội, bảo hiểm thất nghiệp sẽ bị xử lý theo quy định về chậm đóng, trốn đóng và người lao động có thể gặp khó khăn khi làm thủ tục. Cơ quan bảo hiểm sẽ xác nhận quá trình đóng trên cơ sở số tiền đã được đóng thực tế.),based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu người lao động xin nghỉ việc mà công ty đang nợ bảo hiểm xã hội, thì người lao động có được hưởng bảo hiểm thất nghiệp không?",
+    "rule": "\"Chậm đóng, trốn đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp.\" (Luật BHXH 2024 (41/2024/QH15), Điều 9, Khoản 1)\n\"Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều 34 của Luật này hoặc kể từ sau ngày đóng bảo hiểm thất nghiệp chậm nhất theo quy định của pháp luật về bảo hiểm thất nghiệp, trừ trường hợp quy định tại điểm đ và điểm e khoản 1 Điều 39 của Luật này;\" (Luật BHXH 2024 (41/2024/QH15), Điều 38, Khoản 1)\n\"Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30 tháng 6 năm 2025 mà không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 12)",
+    "application": "Không có slot_id cụ thể nào được ràng buộc trong trường hợp này. Prolog đã sử dụng các quy định pháp luật liên quan đến việc chậm đóng, trốn đóng bảo hiểm xã hội, bảo hiểm thất nghiệp để xác định rằng người lao động vẫn có thể được hưởng bảo hiểm thất nghiệp nếu đáp ứng đủ điều kiện theo Luật Việc làm. Tuy nhiên, việc công ty nợ bảo hiểm có thể gây khó khăn khi làm thủ tục và cơ quan bảo hiểm sẽ xác nhận dựa trên số tiền thực tế đã đóng.",
+    "conclusion": "Người lao động vẫn có thể được hưởng bảo hiểm thất nghiệp nếu đáp ứng đủ điều kiện theo Luật Việc làm, tuy nhiên việc công ty nợ bảo hiểm xã hội, bảo hiểm thất nghiệp sẽ bị xử lý theo quy định về chậm đóng, trốn đóng và người lao động có thể gặp khó khăn khi làm thủ tục. Cơ quan bảo hiểm sẽ xác nhận quá trình đóng trên cơ sở số tiền đã được đóng thực tế (Answer)."
+  },
+  "elapsed_s": 12.799,
+  "prompt_tokens": 4244,
+  "completion_tokens": 1150,
+  "error": null,
+  "gold_answer": "Công ty nợ BHXH không đương nhiên làm bạn mất quyền hưởng BHTN, nhưng trên thực tế sẽ ảnh hưởng hồ sơ nếu dữ liệu đóng BHTN chưa được xác nhận. Bạn cần yêu cầu công ty hoàn tất nghĩa vụ đóng, chốt sổ; nếu không thực hiện thì khiếu nại với cơ quan BHXH và thanh tra lao động. Phần thời gian thực tế đã đóng vào quỹ BHTN vẫn phải được ghi nhận để xét quyền lợi cho bạn.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

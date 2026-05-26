@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 102,
+  "question": "Mình bị đóng trùng bảo hiểm 2cty cùng 1 tháng giờ phải làm sao?",
+  "answer": "Issue:\nNgười lao động bị đóng trùng bảo hiểm xã hội tại hai công ty trong cùng một tháng thì phải xử lý như thế nào?\n\nRule:\n\"Người lao động không được đóng BHXH bắt buộc tại hai nơi trong cùng một thời gian. Nếu đóng trùng, cơ quan BHXH sẽ hoàn trả phần đóng trùng cho người lao động hoặc đơn vị sử dụng lao động.\" (law_bhxh_2024, article_46, clause_1)\n\nApplication:\nKhông có slot_id nào được ràng buộc cụ thể trong trường hợp này. Prolog đã sử dụng quy tắc từ nguồn luật để xác định hướng xử lý: người lao động cần liên hệ cơ quan BHXH để được hoàn trả phần đóng trùng. Cơ quan BHXH sẽ xác minh và hướng dẫn thủ tục hoàn trả.\n\nConclusion:\nNgười lao động cần liên hệ cơ quan BHXH để được hoàn trả phần đóng trùng. Cơ quan BHXH sẽ xác minh và hướng dẫn thủ tục hoàn trả (Answer).",
+  "citations": [
+    "[Điều 46 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A46.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,xu_ly_dong_trung_bhxh(Người lao động cần liên hệ cơ quan BHXH để được hoàn trả phần đóng trùng. Cơ quan BHXH sẽ xác minh và hướng dẫn thủ tục hoàn trả.),based_on(source_a46_k1))]",
+  "irac_sections": {
+    "issue": "Người lao động bị đóng trùng bảo hiểm xã hội tại hai công ty trong cùng một tháng thì phải xử lý như thế nào?",
+    "rule": "\"Người lao động không được đóng BHXH bắt buộc tại hai nơi trong cùng một thời gian. Nếu đóng trùng, cơ quan BHXH sẽ hoàn trả phần đóng trùng cho người lao động hoặc đơn vị sử dụng lao động.\" (law_bhxh_2024, article_46, clause_1)",
+    "application": "Không có slot_id nào được ràng buộc cụ thể trong trường hợp này. Prolog đã sử dụng quy tắc từ nguồn luật để xác định hướng xử lý: người lao động cần liên hệ cơ quan BHXH để được hoàn trả phần đóng trùng. Cơ quan BHXH sẽ xác minh và hướng dẫn thủ tục hoàn trả.",
+    "conclusion": "Người lao động cần liên hệ cơ quan BHXH để được hoàn trả phần đóng trùng. Cơ quan BHXH sẽ xác minh và hướng dẫn thủ tục hoàn trả (Answer)."
+  },
+  "elapsed_s": 4.515,
+  "prompt_tokens": 2105,
+  "completion_tokens": 462,
+  "error": null,
+  "gold_answer": "Trường hợp đóng trùng 2 công ty cùng 1 tháng, bạn cần đề nghị cơ quan BHXH điều chỉnh, hoàn trả phần đóng trùng và thống nhất 1 nơi tham gia đúng quy định. Thường doanh nghiệp đóng trùng sẽ lập hồ sơ giảm trùng/thoái thu. Bạn nên giữ HĐLĐ, bảng lương, thông báo đóng BH để đối chiếu. Không nên để kéo dài vì sẽ ảnh hưởng chốt sổ và giải quyết chế độ.",
+  "gold_citations_raw": "Điều 33, 34 Luật BHXH 2024; Quyết định 595/QĐ-BHXH"
+}

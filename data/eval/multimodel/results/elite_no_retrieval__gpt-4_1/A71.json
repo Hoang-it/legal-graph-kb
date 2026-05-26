@@ -1,0 +1,32 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 71,
+  "question": "Mình đóng bảo hiểm được 20 năm mà chưa tới tuổi lãnh hưu, mình nghỉ làm thì mình có được nhận tiền bảo hiểm thất nghiệp không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu đã đóng bảo hiểm được 20 năm nhưng chưa đủ tuổi hưởng lương hưu, khi nghỉ làm thì người lao động có được nhận trợ cấp thất nghiệp không?\n\nRule:\n\"Người lao động tham gia bảo hiểm thất nghiệp được hưởng trợ cấp thất nghiệp khi chấm dứt hợp đồng lao động, đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên trong 24 tháng trước khi nghỉ việc và chưa tìm được việc làm.\" (law_bhxh_2024, article_112, clause_1)\n\"Người lao động chưa đủ điều kiện hưởng lương hưu khi nghỉ việc vẫn có thể hưởng trợ cấp thất nghiệp nếu đáp ứng các điều kiện về thời gian đóng và tình trạng việc làm.\" (law_bhxh_2024, article_112, clause_2)\n\nApplication:\nSlot years_contributed được gán giá trị 20. Truy vấn Prolog kiểm tra điều kiện số năm đóng bảo hiểm thất nghiệp (years_contributed(user, 20)), xác nhận đáp ứng điều kiện về thời gian đóng theo quy định tại source_a112_k1, sau đó kết luận người lao động đủ điều kiện hưởng trợ cấp thất nghiệp dựa trên source_a112_k2.\n\nConclusion:\nTheo truy vấn Prolog, với years_contributed = 20, hệ thống kết luận bạn đủ điều kiện hưởng trợ cấp thất nghiệp nếu đáp ứng các điều kiện khác về tình trạng việc làm.",
+  "citations": [
+    "[Điều 112 khoản 1]",
+    "[Điều 112 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A112.K1",
+    "L41_2024.A112.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(checked_years_contributed,years_contributed(user,20),based_on(source_a112_k1)),step(conclusion,eligible_for_unemployment_benefit(user),based_on(source_a112_k2))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu đã đóng bảo hiểm được 20 năm nhưng chưa đủ tuổi hưởng lương hưu, khi nghỉ làm thì người lao động có được nhận trợ cấp thất nghiệp không?",
+    "rule": "\"Người lao động tham gia bảo hiểm thất nghiệp được hưởng trợ cấp thất nghiệp khi chấm dứt hợp đồng lao động, đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên trong 24 tháng trước khi nghỉ việc và chưa tìm được việc làm.\" (law_bhxh_2024, article_112, clause_1)\n\"Người lao động chưa đủ điều kiện hưởng lương hưu khi nghỉ việc vẫn có thể hưởng trợ cấp thất nghiệp nếu đáp ứng các điều kiện về thời gian đóng và tình trạng việc làm.\" (law_bhxh_2024, article_112, clause_2)",
+    "application": "Slot years_contributed được gán giá trị 20. Truy vấn Prolog kiểm tra điều kiện số năm đóng bảo hiểm thất nghiệp (years_contributed(user, 20)), xác nhận đáp ứng điều kiện về thời gian đóng theo quy định tại source_a112_k1, sau đó kết luận người lao động đủ điều kiện hưởng trợ cấp thất nghiệp dựa trên source_a112_k2.",
+    "conclusion": "Theo truy vấn Prolog, với years_contributed = 20, hệ thống kết luận bạn đủ điều kiện hưởng trợ cấp thất nghiệp nếu đáp ứng các điều kiện khác về tình trạng việc làm."
+  },
+  "elapsed_s": 5.511,
+  "prompt_tokens": 2134,
+  "completion_tokens": 646,
+  "error": null,
+  "gold_answer": "Có. Bảo hiểm thất nghiệp là chế độ riêng, không phụ thuộc việc bạn đã đủ 20 năm BHXH hay chưa. Nếu bạn nghỉ việc đúng quy định, đã đóng BHTN đủ thời gian luật định, nộp hồ sơ trong 3 tháng và sau 15 ngày chưa có việc làm thì vẫn được hưởng trợ cấp thất nghiệp. Bạn chỉ không được hưởng BHXH một lần nếu không thuộc trường hợp luật cho phép, còn BHTN vẫn xem xét riêng theo Luật Việc làm.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 49, Điều 50; Luật BHXH 2024 Điều 70"
+}

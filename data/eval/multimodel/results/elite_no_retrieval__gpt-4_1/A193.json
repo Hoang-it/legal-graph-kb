@@ -1,0 +1,27 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 193,
+  "question": "Em nghỉ cty cách đây 8/9 năm r nhưng m chưa chốt lấy bảo hiểm\nGiờ m muốn lấy bảo hiểm thì đến cty m đã lm để lấy hay lấy ở đâu?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpdr2kcczz.pl:1:319: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 21 khoản 1]",
+    "[Điều 21 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A21.K1",
+    "L41_2024.A21.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 7.71,
+  "prompt_tokens": 4503,
+  "completion_tokens": 1050,
+  "error": null,
+  "gold_answer": "Nếu bạn nghỉ công ty 8-9 năm mà chưa chốt/lấy BHXH, trước hết cần xác định công ty khi đó đã báo giảm, chốt sổ hay chưa. Nếu đã chốt, bạn có thể liên hệ trực tiếp cơ quan BHXH nơi quản lý hoặc nơi cư trú để xin xác nhận/cấp lại. Nếu chưa chốt thì vẫn phải yêu cầu công ty cũ hoàn tất thủ tục; BHXH không thể tự chốt toàn bộ nếu đơn vị chưa báo giảm và chưa hoàn thành nghĩa vụ.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

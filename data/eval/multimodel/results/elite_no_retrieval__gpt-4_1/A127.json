@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 127,
+  "question": "nếu đóng BHXH tự nguyện thì có được BHYT hay bảo hiểm thai sản không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là nếu chỉ tham gia bảo hiểm xã hội (BHXH) tự nguyện thì có được hưởng bảo hiểm y tế (BHYT) hoặc bảo hiểm thai sản hay không.\n\nRule:\n\"Người tham gia BHXH tự nguyện không thuộc đối tượng tham gia bảo hiểm y tế bắt buộc và không được hưởng chế độ bảo hiểm thai sản.\" (law_bhxh_2024, article_87, clause_4)\n\nApplication:\nKhông có slot_id nào được cung cấp vì câu hỏi chỉ yêu cầu xác định quyền lợi khi tham gia BHXH tự nguyện. Prolog đã sử dụng quy định tại Điều 87, Khoản 4 của Luật BHXH 2024 để kết luận rằng người tham gia BHXH tự nguyện không được hưởng BHYT và bảo hiểm thai sản.\n\nConclusion:\nKết quả truy vấn Prolog trả về: \"Không được hưởng BHYT và bảo hiểm thai sản khi chỉ tham gia BHXH tự nguyện.\"",
+  "citations": [
+    "[Điều 87 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A87.K4"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,bhxh_tn_bao_hiem_y_te_thai_san(Không được hưởng BHYT và bảo hiểm thai sản khi chỉ tham gia BHXH tự nguyện.),based_on(source_a87_k4))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là nếu chỉ tham gia bảo hiểm xã hội (BHXH) tự nguyện thì có được hưởng bảo hiểm y tế (BHYT) hoặc bảo hiểm thai sản hay không.",
+    "rule": "\"Người tham gia BHXH tự nguyện không thuộc đối tượng tham gia bảo hiểm y tế bắt buộc và không được hưởng chế độ bảo hiểm thai sản.\" (law_bhxh_2024, article_87, clause_4)",
+    "application": "Không có slot_id nào được cung cấp vì câu hỏi chỉ yêu cầu xác định quyền lợi khi tham gia BHXH tự nguyện. Prolog đã sử dụng quy định tại Điều 87, Khoản 4 của Luật BHXH 2024 để kết luận rằng người tham gia BHXH tự nguyện không được hưởng BHYT và bảo hiểm thai sản.",
+    "conclusion": "Kết quả truy vấn Prolog trả về: \"Không được hưởng BHYT và bảo hiểm thai sản khi chỉ tham gia BHXH tự nguyện.\""
+  },
+  "elapsed_s": 6.435,
+  "prompt_tokens": 2041,
+  "completion_tokens": 435,
+  "error": null,
+  "gold_answer": "BHXH tự nguyện không bao gồm BHYT đi kèm và không có chế độ thai sản. Hiện BHXH tự nguyện chủ yếu có chế độ hưu trí và tử tuất. Nếu muốn có BHYT, bạn phải tham gia BHYT theo nhóm phù hợp riêng. Nếu muốn hưởng thai sản, phải tham gia BHXH bắt buộc và đáp ứng điều kiện về thời gian đóng theo luật.",
+  "gold_citations_raw": "Điều 4, 5, 36 Luật BHXH 2024; Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

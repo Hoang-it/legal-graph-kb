@@ -1,0 +1,36 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 147,
+  "question": "Em ngưng đóng bhxh tháng cuối chốt là 4/2025 tới nay là được 1 năm thì em làm giấy rút bhxh 1 lần được chưa? Và cần chuẩn bị những gì? Có cần phải đăng kí trên dịch vụ công trước không? Em ở buôn ma thuột daklak.",
+  "answer": "Issue: Bạn hỏi về việc có thể làm giấy rút bảo hiểm xã hội (BHXH) một lần sau khi đã ngừng đóng BHXH từ tháng 4/2025 và hiện tại đã được 1 năm. Bạn cũng muốn biết cần chuẩn bị những gì và có cần đăng ký trên dịch vụ công trước không.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 107, Khoản 2: \"Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội. Thời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần đối với trường hợp người hưởng bảo hiểm xã hội theo quy định tại điểm đ khoản 1 Điều 102 của Luật này.\"\n\nApplication: Không có thông tin cụ thể về các giá trị được gán cho các biến trong truy vấn Prolog. Tuy nhiên, truy vấn đã xác định rằng cần nộp hồ sơ cho cơ quan bảo hiểm xã hội và xác định điều kiện dựa trên tháng cuối cùng đóng BHXH.\n\nConclusion: Hệ thống đã xác định rằng để hưởng BHXH một lần, bạn cần nộp hồ sơ cho cơ quan bảo hiểm xã hội và điều kiện được xác định dựa trên tháng cuối cùng bạn đóng BHXH. Tuy nhiên, không có thông tin cụ thể về việc cần chuẩn bị những gì hoặc có cần đăng ký trên dịch vụ công trước không.",
+  "citations": [
+    "[Điều 107 khoản 2]",
+    "[Điều 106]",
+    "[Điều 102]"
+  ],
+  "citation_ids": [
+    "L41_2024.A107.K2",
+    "L41_2024.A106",
+    "L41_2024.A102"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_social_insurance_conditions([submit_application_to_social_insurance_agency,determine_eligibility_based_on_last_contribution_month]),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về việc có thể làm giấy rút bảo hiểm xã hội (BHXH) một lần sau khi đã ngừng đóng BHXH từ tháng 4/2025 và hiện tại đã được 1 năm. Bạn cũng muốn biết cần chuẩn bị những gì và có cần đăng ký trên dịch vụ công trước không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 107, Khoản 2: \"Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội. Thời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần đối với trường hợp người hưởng bảo hiểm xã hội theo quy định tại điểm đ khoản 1 Điều 102 của Luật này.\"",
+    "application": "Không có thông tin cụ thể về các giá trị được gán cho các biến trong truy vấn Prolog. Tuy nhiên, truy vấn đã xác định rằng cần nộp hồ sơ cho cơ quan bảo hiểm xã hội và xác định điều kiện dựa trên tháng cuối cùng đóng BHXH.",
+    "conclusion": "Hệ thống đã xác định rằng để hưởng BHXH một lần, bạn cần nộp hồ sơ cho cơ quan bảo hiểm xã hội và điều kiện được xác định dựa trên tháng cuối cùng bạn đóng BHXH. Tuy nhiên, không có thông tin cụ thể về việc cần chuẩn bị những gì hoặc có cần đăng ký trên dịch vụ công trước không."
+  },
+  "elapsed_s": 6.91,
+  "prompt_tokens": 3280,
+  "completion_tokens": 635,
+  "error": null,
+  "gold_answer": "Nếu tháng cuối chốt là 4/2025 thì đến khoảng sau 4/2026, khi bạn đã đủ 12 tháng không tham gia BHXH và thuộc trường hợp luật cho phép, có thể nộp hồ sơ BHXH 1 lần. Hồ sơ cơ bản gồm đơn đề nghị, CCCD, thông tin tài khoản; không bắt buộc phải đăng ký trên dịch vụ công trước, nhưng có thể nộp trực tuyến nếu địa phương hỗ trợ. Nộp tại BHXH nơi cư trú ở Buôn Ma Thuột.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

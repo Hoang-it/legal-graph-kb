@@ -1,0 +1,32 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 90,
+  "question": "BHXH tự nguyện thì chuyển sang BHXH bắt buộc như thế nào cho hộ kinh doanh mới thành lập?",
+  "answer": "Issue: Làm thế nào để chuyển từ bảo hiểm xã hội (BHXH) tự nguyện sang BHXH bắt buộc cho hộ kinh doanh mới thành lập?\n\nRule: Theo quy định tại Luật BHXH 2024, Điều 2, Khoản 1: \"Quy định về đối tượng tham gia BHXH bắt buộc bao gồm người lao động làm việc theo hợp đồng lao động, chủ hộ kinh doanh cá thể, và các đối tượng khác theo quy định của pháp luật.\" Ngoài ra, Điều 4, Khoản 2 quy định: \"Người tham gia BHXH tự nguyện có thể chuyển sang BHXH bắt buộc khi trở thành đối tượng thuộc diện tham gia BHXH bắt buộc.\"\n\nApplication: Không có giá trị cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, chương trình Prolog đã xác định rằng các điều kiện để chuyển từ BHXH tự nguyện sang BHXH bắt buộc bao gồm: (1) Chủ hộ kinh doanh mới thành lập phải tham gia BHXH bắt buộc nếu có thuê mướn lao động; (2) Người tham gia BHXH tự nguyện có thể chuyển sang BHXH bắt buộc khi trở thành đối tượng thuộc diện tham gia BHXH bắt buộc.\n\nConclusion: Các điều kiện để chuyển từ BHXH tự nguyện sang BHXH bắt buộc là: \"Chủ hộ kinh doanh mới thành lập phải tham gia BHXH bắt buộc nếu có thuê mướn lao động.\" và \"Người tham gia BHXH tự nguyện có thể chuyển sang BHXH bắt buộc khi trở thành đối tượng thuộc diện tham gia BHXH bắt buộc.\"",
+  "citations": [
+    "[Điều 2 khoản 1]",
+    "[Điều 4 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2.K1",
+    "L41_2024.A4.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,conditions_for_mandatory_si_transfer([Chủ hộ kinh doanh mới thành lập phải tham gia BHXH bắt buộc nếu có thuê mướn lao động.,Người tham gia BHXH tự nguyện có thể chuyển sang BHXH bắt buộc khi trở thành đối tượng thuộc diện tham gia BHXH bắt buộc.]),based_on(source_a2_k1)),step(conclusion,conditions_for_mandatory_si_transfer([Chủ hộ kinh doanh mới thành lập phải tham gia BHXH bắt buộc nếu có thuê mướn lao động.,Người tham gia BHXH tự nguyện có thể chuyển sang BHXH bắt buộc khi trở thành đối tượng thuộc diện tham gia BHXH bắt buộc.]),based_on(source_a4_k2))]",
+  "irac_sections": {
+    "issue": "Làm thế nào để chuyển từ bảo hiểm xã hội (BHXH) tự nguyện sang BHXH bắt buộc cho hộ kinh doanh mới thành lập?",
+    "rule": "Theo quy định tại Luật BHXH 2024, Điều 2, Khoản 1: \"Quy định về đối tượng tham gia BHXH bắt buộc bao gồm người lao động làm việc theo hợp đồng lao động, chủ hộ kinh doanh cá thể, và các đối tượng khác theo quy định của pháp luật.\" Ngoài ra, Điều 4, Khoản 2 quy định: \"Người tham gia BHXH tự nguyện có thể chuyển sang BHXH bắt buộc khi trở thành đối tượng thuộc diện tham gia BHXH bắt buộc.\"",
+    "application": "Không có giá trị cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, chương trình Prolog đã xác định rằng các điều kiện để chuyển từ BHXH tự nguyện sang BHXH bắt buộc bao gồm: (1) Chủ hộ kinh doanh mới thành lập phải tham gia BHXH bắt buộc nếu có thuê mướn lao động; (2) Người tham gia BHXH tự nguyện có thể chuyển sang BHXH bắt buộc khi trở thành đối tượng thuộc diện tham gia BHXH bắt buộc.",
+    "conclusion": "Các điều kiện để chuyển từ BHXH tự nguyện sang BHXH bắt buộc là: \"Chủ hộ kinh doanh mới thành lập phải tham gia BHXH bắt buộc nếu có thuê mướn lao động.\" và \"Người tham gia BHXH tự nguyện có thể chuyển sang BHXH bắt buộc khi trở thành đối tượng thuộc diện tham gia BHXH bắt buộc.\""
+  },
+  "elapsed_s": 7.706,
+  "prompt_tokens": 2456,
+  "completion_tokens": 709,
+  "error": null,
+  "gold_answer": "Khi hộ kinh doanh mới thành lập và chủ hộ thuộc diện tham gia BHXH bắt buộc, bạn cần đăng ký tham gia bắt buộc theo mã số BHXH đang có; không phải tạo mã mới. Nếu trước đó bạn đang đóng tự nguyện, thời gian đã đóng sẽ được bảo lưu và nối tiếp trên cùng mã số. Bạn chỉ cần liên hệ cơ quan BHXH để chuyển phương thức tham gia và tránh đóng trùng cùng thời gian ở cả 2 diện.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 25, Điều 36; Nghị định 158/2025/NĐ-CP"
+}

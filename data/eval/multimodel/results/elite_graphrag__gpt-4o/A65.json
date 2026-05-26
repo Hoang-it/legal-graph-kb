@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 65,
+  "question": "Mình có hai mã sổ BHXH phải làm sao?",
+  "answer": "Issue: Bạn có hai mã sổ bảo hiểm xã hội (BHXH) và cần biết phải làm gì trong trường hợp này.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 25, Khoản 1: \"Sổ bảo hiểm xã hội được cấp cho từng người lao động, trong đó chứa đựng thông tin cơ bản về nhân thân, ghi nhận việc đóng, hưởng, giải quyết các chế độ bảo hiểm xã hội và các thông tin cần thiết khác có liên quan.\"\n\nApplication: Trong trường hợp này, không có thông tin cụ thể nào được cung cấp trong các slot_bindings. Tuy nhiên, dựa trên quy định pháp luật, hệ thống Prolog đã xác định rằng khi có nhiều sổ BHXH, cần thực hiện việc gộp các sổ này lại thành một.\n\nConclusion: Hệ thống đã kết luận rằng điều kiện cần thực hiện là \"merge_books_into_one\", tức là gộp các sổ BHXH lại thành một sổ duy nhất.",
+  "citations": [
+    "[Điều 25 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A25.K1"
+  ],
+  "citation_indices": [
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,resolve_multiple_social_insurance_books([merge_books_into_one]),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Bạn có hai mã sổ bảo hiểm xã hội (BHXH) và cần biết phải làm gì trong trường hợp này.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 25, Khoản 1: \"Sổ bảo hiểm xã hội được cấp cho từng người lao động, trong đó chứa đựng thông tin cơ bản về nhân thân, ghi nhận việc đóng, hưởng, giải quyết các chế độ bảo hiểm xã hội và các thông tin cần thiết khác có liên quan.\"",
+    "application": "Trong trường hợp này, không có thông tin cụ thể nào được cung cấp trong các slot_bindings. Tuy nhiên, dựa trên quy định pháp luật, hệ thống Prolog đã xác định rằng khi có nhiều sổ BHXH, cần thực hiện việc gộp các sổ này lại thành một.",
+    "conclusion": "Hệ thống đã kết luận rằng điều kiện cần thực hiện là \"merge_books_into_one\", tức là gộp các sổ BHXH lại thành một sổ duy nhất."
+  },
+  "elapsed_s": 4.417,
+  "prompt_tokens": 2511,
+  "completion_tokens": 422,
+  "error": null,
+  "gold_answer": "Một người chỉ có một mã số BHXH. Nếu bạn đang có 2 mã, cần làm thủ tục gộp sổ/mã số để cơ quan BHXH hợp nhất toàn bộ quá trình tham gia về một mã duy nhất. Bạn nên nộp tờ khai điều chỉnh thông tin kèm CCCD và các giấy tờ liên quan đến cả hai mã tại cơ quan BHXH nơi cư trú hoặc nơi đang tham gia. Sau khi gộp, quyền lợi và thời gian đóng hợp pháp của bạn được cộng nối, không bị mất.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn quản lý sổ BHXH, gộp sổ của BHXH Việt Nam"
+}

@@ -1,0 +1,34 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 94,
+  "question": "e mơi đóng bhxh hộ kinh doanh được 2 tháng giờ e ở nhóm 1 không phải đóng thì đi huỷ được khômg?",
+  "answer": "Issue:\nBạn hỏi về việc đã đóng bảo hiểm xã hội (BHXH) hộ kinh doanh được 2 tháng, hiện thuộc nhóm 1 không phải đóng nữa thì có thể đi hủy BHXH hay không.\n\nRule:\n\"Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm xã hội mà có đề nghị thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây:\" (Luật BHXH 2024 (41/2024/QH15), Điều 70, Khoản 1)\n\nApplication:\nKhông có slot_id nào được cung cấp trong truy vấn này. Prolog đã sử dụng quy định tại Điều 70 Khoản 1 Luật BHXH 2024 để xác định rằng người đã chấm dứt tham gia BHXH có thể đề nghị hưởng BHXH một lần nếu thuộc các trường hợp luật định.\n\nConclusion:\nNgười đã chấm dứt tham gia BHXH có thể đề nghị hưởng BHXH một lần nếu thuộc các trường hợp luật định (Answer = \"Người đã chấm dứt tham gia BHXH có thể đề nghị hưởng BHXH một lần nếu thuộc các trường hợp luật định.\").",
+  "citations": [
+    "[Điều 2]",
+    "[Điều 70 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2",
+    "L41_2024.A70.K1"
+  ],
+  "citation_indices": [
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,co_the_huy_bhxh(Người đã chấm dứt tham gia BHXH có thể đề nghị hưởng BHXH một lần nếu thuộc các trường hợp luật định.),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về việc đã đóng bảo hiểm xã hội (BHXH) hộ kinh doanh được 2 tháng, hiện thuộc nhóm 1 không phải đóng nữa thì có thể đi hủy BHXH hay không.",
+    "rule": "\"Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm xã hội mà có đề nghị thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây:\" (Luật BHXH 2024 (41/2024/QH15), Điều 70, Khoản 1)",
+    "application": "Không có slot_id nào được cung cấp trong truy vấn này. Prolog đã sử dụng quy định tại Điều 70 Khoản 1 Luật BHXH 2024 để xác định rằng người đã chấm dứt tham gia BHXH có thể đề nghị hưởng BHXH một lần nếu thuộc các trường hợp luật định.",
+    "conclusion": "Người đã chấm dứt tham gia BHXH có thể đề nghị hưởng BHXH một lần nếu thuộc các trường hợp luật định (Answer = \"Người đã chấm dứt tham gia BHXH có thể đề nghị hưởng BHXH một lần nếu thuộc các trường hợp luật định.\")."
+  },
+  "elapsed_s": 5.62,
+  "prompt_tokens": 3102,
+  "completion_tokens": 495,
+  "error": null,
+  "gold_answer": "Nếu trước đây bạn thuộc diện phải tham gia BHXH bắt buộc với tư cách chủ hộ kinh doanh nhưng nay chuyển sang nhóm không thuộc diện phải đóng nữa, bạn cần liên hệ cơ quan BHXH để làm thủ tục giảm/dừng đúng từ thời điểm không còn thuộc đối tượng. Không phải 'hủy' toàn bộ quá trình 2 tháng đã đóng; thời gian đó nếu đóng đúng đối tượng vẫn được ghi nhận. Cần xác định rõ căn cứ vì sao bạn chuyển sang nhóm 1 không phải đóng để cơ quan BHXH điều chỉnh.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2; Nghị định 158/2025/NĐ-CP Điều 3"
+}

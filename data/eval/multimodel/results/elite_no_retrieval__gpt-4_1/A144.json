@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 144,
+  "question": "Nếu đang làm công ty thì có thể tự nộp hs hưởng thai sản không hay bắt buộc phải qua cty?",
+  "answer": "Issue:\nNgười lao động đang làm việc tại công ty có thể tự nộp hồ sơ hưởng chế độ thai sản hay bắt buộc phải nộp thông qua công ty?\n\nRule:\n\"Người lao động đang đóng BHXH bắt buộc nộp hồ sơ hưởng chế độ thai sản thông qua người sử dụng lao động (công ty).\" (law_bhxh_2024, article_102, clause_1)\n\nApplication:\nKhông có slot_id nào cần điền vì câu hỏi chỉ yêu cầu tra cứu quy định về cách nộp hồ sơ. Prolog đã sử dụng quy định tại law_bhxh_2024, article_102, clause_1 để xác định phương thức nộp hồ sơ.\n\nConclusion:\nNgười lao động đang làm tại công ty phải nộp hồ sơ hưởng thai sản thông qua công ty, không được tự nộp trực tiếp cho cơ quan BHXH.",
+  "citations": [
+    "[Điều 102 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A102.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,tra_cuu_cach_nop_hoso_thaisan(Người lao động đang làm tại công ty phải nộp hồ sơ hưởng thai sản thông qua công ty, không được tự nộp trực tiếp cho cơ quan BHXH.),based_on(source_a102_k1))]",
+  "irac_sections": {
+    "issue": "Người lao động đang làm việc tại công ty có thể tự nộp hồ sơ hưởng chế độ thai sản hay bắt buộc phải nộp thông qua công ty?",
+    "rule": "\"Người lao động đang đóng BHXH bắt buộc nộp hồ sơ hưởng chế độ thai sản thông qua người sử dụng lao động (công ty).\" (law_bhxh_2024, article_102, clause_1)",
+    "application": "Không có slot_id nào cần điền vì câu hỏi chỉ yêu cầu tra cứu quy định về cách nộp hồ sơ. Prolog đã sử dụng quy định tại law_bhxh_2024, article_102, clause_1 để xác định phương thức nộp hồ sơ.",
+    "conclusion": "Người lao động đang làm tại công ty phải nộp hồ sơ hưởng thai sản thông qua công ty, không được tự nộp trực tiếp cho cơ quan BHXH."
+  },
+  "elapsed_s": 4.62,
+  "prompt_tokens": 2113,
+  "completion_tokens": 428,
+  "error": null,
+  "gold_answer": "Nếu bạn đang làm việc và thuộc diện đang tham gia BHXH bắt buộc, hồ sơ thai sản thông thường do công ty lập và nộp cho cơ quan BHXH. Người lao động chỉ tự nộp trực tiếp trong một số trường hợp như đã nghỉ việc trước khi sinh hoặc đơn vị không còn hoạt động/không nộp hồ sơ. Vì vậy đang làm công ty thì nên nộp qua công ty trước.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

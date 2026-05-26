@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 151,
+  "question": "11 năm lương 9trieu 8 trăm rút xã hội đc bao nhiêu ạ",
+  "answer": "Issue: Người lao động muốn biết số tiền bảo hiểm xã hội một lần có thể nhận được sau khi đã đóng bảo hiểm xã hội trong 11 năm với mức lương trung bình là 9 triệu đồng.\n\nRule: Theo quy định tại Điều 60, Luật Bảo hiểm xã hội 2024:\n- Khoản 1: \"Người lao động có thể nhận bảo hiểm xã hội một lần nếu không đủ điều kiện hưởng lương hưu.\"\n- Khoản 2: \"Mức hưởng bảo hiểm xã hội một lần được tính dựa trên số năm đã đóng BHXH và mức bình quân tiền lương tháng đóng BHXH.\"\n\nApplication: \n- Số năm đã đóng bảo hiểm xã hội (years_contributed): 11 năm.\n- Mức lương trung bình hàng tháng (average_salary): 9,000,000 đồng.\n- Dựa trên các thông tin này, chương trình Prolog đã tính toán số tiền bảo hiểm xã hội một lần bằng cách nhân số năm đóng bảo hiểm với mức lương trung bình và hệ số 0.5.\n\nConclusion: Số tiền bảo hiểm xã hội một lần mà người lao động có thể nhận được là 49,500,000 đồng.",
+  "citations": [
+    "[Điều 60]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,lump_sum_amount(user,49500000.0),based_on(source_a60_k2))]",
+  "irac_sections": {
+    "issue": "Người lao động muốn biết số tiền bảo hiểm xã hội một lần có thể nhận được sau khi đã đóng bảo hiểm xã hội trong 11 năm với mức lương trung bình là 9 triệu đồng.",
+    "rule": "Theo quy định tại Điều 60, Luật Bảo hiểm xã hội 2024:\n- Khoản 1: \"Người lao động có thể nhận bảo hiểm xã hội một lần nếu không đủ điều kiện hưởng lương hưu.\"\n- Khoản 2: \"Mức hưởng bảo hiểm xã hội một lần được tính dựa trên số năm đã đóng BHXH và mức bình quân tiền lương tháng đóng BHXH.\"",
+    "application": "- Số năm đã đóng bảo hiểm xã hội (years_contributed): 11 năm.\n- Mức lương trung bình hàng tháng (average_salary): 9,000,000 đồng.\n- Dựa trên các thông tin này, chương trình Prolog đã tính toán số tiền bảo hiểm xã hội một lần bằng cách nhân số năm đóng bảo hiểm với mức lương trung bình và hệ số 0.5.",
+    "conclusion": "Số tiền bảo hiểm xã hội một lần mà người lao động có thể nhận được là 49,500,000 đồng."
+  },
+  "elapsed_s": 4.563,
+  "prompt_tokens": 2043,
+  "completion_tokens": 590,
+  "error": null,
+  "gold_answer": "Nếu 11 năm đóng của bạn đều từ năm 2014 trở đi thì BHXH 1 lần ước khoảng khoảng 215,6 triệu, chưa tính hệ số điều chỉnh tiền lương. Số thực nhận do cơ quan BHXH tính sẽ căn cứ mức bình quân tiền lương tháng đóng sau điều chỉnh và làm tròn thời gian đóng theo luật. Nếu có thời gian trước 2014 thì phần đó tính theo hệ số 1,5 tháng/năm.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

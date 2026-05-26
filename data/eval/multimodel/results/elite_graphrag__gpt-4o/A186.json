@@ -1,0 +1,37 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 186,
+  "question": "Mình nghỉ thai sản\nTính ra 25 tháng 3 vừa rồi là mình quay lại làm việc sau 6 tháng nghỉ thai sản\nNgày 23 tháng 3 mình viết đơn nghỉ việc\nbao lâu thì cty gọi mình lên cty để chi trả sổ bảo hiểm?",
+  "answer": "Issue: Bạn đã nghỉ thai sản và quay lại làm việc vào ngày 25 tháng 3. Bạn đã viết đơn nghỉ việc vào ngày 23 tháng 3 và muốn biết công ty sẽ gọi bạn lên để chi trả sổ bảo hiểm trong bao lâu.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 62, Khoản 1: \"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản. Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ thai sản kèm theo hồ sơ quy định t\". Điều 62, Khoản 3: \"Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động, 05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\n\nApplication: Không có thông tin cụ thể về các giá trị đã được cung cấp cho các điều kiện trong truy vấn Prolog. Tuy nhiên, các điều kiện được áp dụng bao gồm: nộp hồ sơ trong vòng 45 ngày, người sử dụng lao động nộp hồ sơ cho cơ quan bảo hiểm xã hội trong vòng 7 ngày, và cơ quan bảo hiểm xã hội giải quyết trong vòng 7 ngày.\n\nConclusion: Hệ thống đã xác định rằng các điều kiện để chi trả sổ bảo hiểm bao gồm: nộp hồ sơ trong vòng 45 ngày, người sử dụng lao động nộp hồ sơ cho cơ quan bảo hiểm xã hội trong vòng 7 ngày, và cơ quan bảo hiểm xã hội giải quyết trong vòng 7 ngày. Tuy nhiên, không có thông tin cụ thể về thời gian chính xác mà công ty sẽ gọi bạn lên để chi trả sổ bảo hiểm.",
+  "citations": [
+    "[Điều 62 khoản 1]",
+    "[Điều 61]",
+    "[Điều 62 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A62.K1",
+    "L41_2024.A61",
+    "L41_2024.A62.K3"
+  ],
+  "citation_indices": [
+    2,
+    7
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,insurance_book_payment_time([submit_documents_within_45_days,employer_submits_to_social_insurance_within_7_days,social_insurance_resolves_within_7_days]),based_on(source_c062))]",
+  "irac_sections": {
+    "issue": "Bạn đã nghỉ thai sản và quay lại làm việc vào ngày 25 tháng 3. Bạn đã viết đơn nghỉ việc vào ngày 23 tháng 3 và muốn biết công ty sẽ gọi bạn lên để chi trả sổ bảo hiểm trong bao lâu.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 62, Khoản 1: \"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản. Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ thai sản kèm theo hồ sơ quy định t\". Điều 62, Khoản 3: \"Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động, 05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"",
+    "application": "Không có thông tin cụ thể về các giá trị đã được cung cấp cho các điều kiện trong truy vấn Prolog. Tuy nhiên, các điều kiện được áp dụng bao gồm: nộp hồ sơ trong vòng 45 ngày, người sử dụng lao động nộp hồ sơ cho cơ quan bảo hiểm xã hội trong vòng 7 ngày, và cơ quan bảo hiểm xã hội giải quyết trong vòng 7 ngày.",
+    "conclusion": "Hệ thống đã xác định rằng các điều kiện để chi trả sổ bảo hiểm bao gồm: nộp hồ sơ trong vòng 45 ngày, người sử dụng lao động nộp hồ sơ cho cơ quan bảo hiểm xã hội trong vòng 7 ngày, và cơ quan bảo hiểm xã hội giải quyết trong vòng 7 ngày. Tuy nhiên, không có thông tin cụ thể về thời gian chính xác mà công ty sẽ gọi bạn lên để chi trả sổ bảo hiểm."
+  },
+  "elapsed_s": 7.122,
+  "prompt_tokens": 3701,
+  "completion_tokens": 854,
+  "error": null,
+  "gold_answer": "Sau khi bạn nộp đơn nghỉ việc ngày 23/3, công ty phải thực hiện thủ tục xác nhận thời gian đóng và trả lại giấy tờ BHXH cho bạn trong thời hạn luật lao động quy định, thông thường không quá 14 ngày, trường hợp đặc biệt có thể kéo dài nhưng không quá 30 ngày. Việc thực tế nhận sổ còn phụ thuộc công ty báo giảm và cơ quan BHXH chốt dữ liệu.",
+  "gold_citations_raw": "Điều 48 Bộ luật Lao động 2019; Điều 27 Luật BHXH 2024"
+}

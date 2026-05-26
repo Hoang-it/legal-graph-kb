@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 89,
+  "question": "E đóng BHXH tự nguyện mấy tháng giờ muốn chốt sổ để đóng sang BHXH bắt buộc thì như nào?",
+  "answer": "Issue: Bạn muốn biết cách chuyển từ bảo hiểm xã hội (BHXH) tự nguyện sang BHXH bắt buộc sau khi đã đóng BHXH tự nguyện một thời gian.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 3, Khoản 4: \"Bảo hiểm xã hội tự nguyện là loại hình bảo hiểm xã hội do Nhà nước tổ chức mà công dân Việt Nam tự nguyện tham gia và được lựa chọn mức đóng, phương thức đóng phù hợp với thu nhập của mình.\" Và Điều 3, Khoản 3: \"Bảo hiểm xã hội bắt buộc là loại hình bảo hiểm xã hội do Nhà nước tổ chức mà người lao động, người sử dụng lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc phải tham gia.\"\n\nApplication: Không có thông tin cụ thể về số tháng đã đóng BHXH tự nguyện hoặc các điều kiện cụ thể khác trong slot_bindings. Tuy nhiên, chương trình Prolog đã xác định rằng việc chuyển đổi từ BHXH tự nguyện sang BHXH bắt buộc là có thể, dựa trên nguồn luật đã được trích dẫn.\n\nConclusion: Hệ thống đã xác định rằng điều kiện để chuyển từ BHXH tự nguyện sang BHXH bắt buộc là khả thi, với điều kiện được liệt kê là [voluntary_to_mandatory_possible]. Không có thông tin chi tiết về các bước cụ thể cần thực hiện, nhưng việc chuyển đổi là có thể theo luật hiện hành.",
+  "citations": [
+    "[Điều 3 khoản 4]",
+    "[Điều 3 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A3.K4",
+    "L41_2024.A3.K3"
+  ],
+  "citation_indices": [
+    6,
+    7
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,switch_to_mandatory_insurance_conditions([voluntary_to_mandatory_possible]),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Bạn muốn biết cách chuyển từ bảo hiểm xã hội (BHXH) tự nguyện sang BHXH bắt buộc sau khi đã đóng BHXH tự nguyện một thời gian.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 3, Khoản 4: \"Bảo hiểm xã hội tự nguyện là loại hình bảo hiểm xã hội do Nhà nước tổ chức mà công dân Việt Nam tự nguyện tham gia và được lựa chọn mức đóng, phương thức đóng phù hợp với thu nhập của mình.\" Và Điều 3, Khoản 3: \"Bảo hiểm xã hội bắt buộc là loại hình bảo hiểm xã hội do Nhà nước tổ chức mà người lao động, người sử dụng lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc phải tham gia.\"",
+    "application": "Không có thông tin cụ thể về số tháng đã đóng BHXH tự nguyện hoặc các điều kiện cụ thể khác trong slot_bindings. Tuy nhiên, chương trình Prolog đã xác định rằng việc chuyển đổi từ BHXH tự nguyện sang BHXH bắt buộc là có thể, dựa trên nguồn luật đã được trích dẫn.",
+    "conclusion": "Hệ thống đã xác định rằng điều kiện để chuyển từ BHXH tự nguyện sang BHXH bắt buộc là khả thi, với điều kiện được liệt kê là [voluntary_to_mandatory_possible]. Không có thông tin chi tiết về các bước cụ thể cần thực hiện, nhưng việc chuyển đổi là có thể theo luật hiện hành."
+  },
+  "elapsed_s": 6.567,
+  "prompt_tokens": 3099,
+  "completion_tokens": 608,
+  "error": null,
+  "gold_answer": "Bạn không phải 'chốt sổ' BHXH tự nguyện theo cách của doanh nghiệp. Khi chuyển sang BHXH bắt buộc, bạn chỉ cần dùng đúng mã số BHXH hiện có để đơn vị mới đăng ký tham gia bắt buộc; toàn bộ thời gian tự nguyện trước đó sẽ được bảo lưu trên cùng mã số. Nếu có đóng trùng hoặc thông tin cá nhân chưa khớp thì liên hệ cơ quan BHXH để điều chỉnh trước khi đơn vị báo tăng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25, Điều 36"
+}

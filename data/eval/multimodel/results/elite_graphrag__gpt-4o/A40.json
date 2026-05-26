@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 40,
+  "question": "Em đóng bhxh t8/2025 đến t4/2026, ngày dự sinh của em là19/8. Vậy em có đủ đk để nhận trợ cấp không? Làm hểt tháng 4 là em nghỉ cty luôn. Em có đủ đk để nhận bhts k?",
+  "answer": "Issue: Bạn đã đóng bảo hiểm xã hội từ tháng 8/2025 đến tháng 4/2026 và dự sinh vào ngày 19/8. Bạn muốn biết liệu mình có đủ điều kiện để nhận trợ cấp thai sản không, đặc biệt khi bạn đã nghỉ việc từ cuối tháng 4.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 94, Khoản 1: \"Đối tượng có thời gian đóng bảo hiểm xã hội tự nguyện hoặc vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện từ đủ 06 tháng trở lên trong thời gian 12 tháng trước khi sinh con được hưởng trợ cấp thai sản khi thuộc một trong các trường hợp sau đây:\"\n\nApplication: Dữ liệu cho thấy bạn đã đóng bảo hiểm xã hội trong 9 tháng. Theo quy tắc được áp dụng, nếu thời gian đóng bảo hiểm xã hội từ đủ 6 tháng trở lên trong vòng 12 tháng trước khi sinh, bạn sẽ đủ điều kiện nhận trợ cấp thai sản.\n\nConclusion: Kết quả từ hệ thống cho thấy bạn đủ điều kiện nhận trợ cấp thai sản, với giá trị \"Eligible\" là \"yes\".",
+  "citations": [
+    "[Điều 94 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A94.K1"
+  ],
+  "citation_indices": [
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,maternity_benefit_eligibility(user,yes),based_on(source_c006))]",
+  "irac_sections": {
+    "issue": "Bạn đã đóng bảo hiểm xã hội từ tháng 8/2025 đến tháng 4/2026 và dự sinh vào ngày 19/8. Bạn muốn biết liệu mình có đủ điều kiện để nhận trợ cấp thai sản không, đặc biệt khi bạn đã nghỉ việc từ cuối tháng 4.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 94, Khoản 1: \"Đối tượng có thời gian đóng bảo hiểm xã hội tự nguyện hoặc vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện từ đủ 06 tháng trở lên trong thời gian 12 tháng trước khi sinh con được hưởng trợ cấp thai sản khi thuộc một trong các trường hợp sau đây:\"",
+    "application": "Dữ liệu cho thấy bạn đã đóng bảo hiểm xã hội trong 9 tháng. Theo quy tắc được áp dụng, nếu thời gian đóng bảo hiểm xã hội từ đủ 6 tháng trở lên trong vòng 12 tháng trước khi sinh, bạn sẽ đủ điều kiện nhận trợ cấp thai sản.",
+    "conclusion": "Kết quả từ hệ thống cho thấy bạn đủ điều kiện nhận trợ cấp thai sản, với giá trị \"Eligible\" là \"yes\"."
+  },
+  "elapsed_s": 8.167,
+  "prompt_tokens": 3312,
+  "completion_tokens": 594,
+  "error": null,
+  "gold_answer": "Nếu bạn đóng BHXH bắt buộc từ 8/2025 đến hết 4/2026 thì có 9 tháng đóng trong 12 tháng trước khi sinh 8/2026, nên về nguyên tắc đủ điều kiện hưởng thai sản khi sinh con. Việc nghỉ việc sau tháng 4/2026 không làm mất quyền hưởng nếu bạn đã đủ điều kiện trước khi sinh. Bạn vẫn được nộp hồ sơ hưởng thai sản qua cơ quan BHXH theo nơi cư trú hoặc qua đơn vị nếu còn quan hệ lao động.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50, Điều 53"
+}

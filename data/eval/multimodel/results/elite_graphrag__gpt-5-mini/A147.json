@@ -1,0 +1,21 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 147,
+  "question": "Em ngưng đóng bhxh tháng cuối chốt là 4/2025 tới nay là được 1 năm thì em làm giấy rút bhxh 1 lần được chưa? Và cần chuẩn bị những gì? Có cần phải đăng kí trên dịch vụ công trước không? Em ở buôn ma thuột daklak.",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=unable_to_conclude, repair_rounds=2, error=Connection error.]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "unable_to_conclude",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 5.231,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "error": null,
+  "gold_answer": "Nếu tháng cuối chốt là 4/2025 thì đến khoảng sau 4/2026, khi bạn đã đủ 12 tháng không tham gia BHXH và thuộc trường hợp luật cho phép, có thể nộp hồ sơ BHXH 1 lần. Hồ sơ cơ bản gồm đơn đề nghị, CCCD, thông tin tài khoản; không bắt buộc phải đăng ký trên dịch vụ công trước, nhưng có thể nộp trực tuyến nếu địa phương hỗ trợ. Nộp tại BHXH nơi cư trú ở Buôn Ma Thuột.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 202,
+  "question": "Cho mình hỏi trước mình có làm ở fpt telecom khoảng 2 năm sau đó nghỉ có nhận sổ (bị mất) rồi sau mình có xin làm lại được thêm 1 năm . Giờ mình muốn tra thời gian tham gia bhxh thì làm sao ạ . Mình có tra đc mã số rồi . Còn tk Vssid thì mình chưa có",
+  "answer": "Issue: Bạn muốn biết tổng thời gian tham gia bảo hiểm xã hội của mình sau khi đã làm việc tại FPT Telecom khoảng 2 năm, nghỉ việc và sau đó làm lại thêm 1 năm.\n\nRule: \"Thời gian đóng bảo hiểm xã hội là tổng thời gian đã đóng bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện theo quy định của Luật này, trừ trường hợp điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên có quy định khác.\" (Luật BHXH 2024 (41/2024/QH15), Điều 3, Khoản 6)\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên thông tin đã xác minh, bạn đã đóng góp tổng cộng 3 năm vào bảo hiểm xã hội. Chương trình Prolog đã sử dụng thông tin này để tính toán tổng thời gian tham gia bảo hiểm xã hội của bạn.\n\nConclusion: Tổng thời gian tham gia bảo hiểm xã hội của bạn là 3 năm.",
+  "citations": [
+    "[Điều 3 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A3.K6"
+  ],
+  "citation_indices": [
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,total_contribution_time(user,3),based_on(source_c006))]",
+  "irac_sections": {
+    "issue": "Bạn muốn biết tổng thời gian tham gia bảo hiểm xã hội của mình sau khi đã làm việc tại FPT Telecom khoảng 2 năm, nghỉ việc và sau đó làm lại thêm 1 năm.",
+    "rule": "\"Thời gian đóng bảo hiểm xã hội là tổng thời gian đã đóng bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện theo quy định của Luật này, trừ trường hợp điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên có quy định khác.\" (Luật BHXH 2024 (41/2024/QH15), Điều 3, Khoản 6)",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên thông tin đã xác minh, bạn đã đóng góp tổng cộng 3 năm vào bảo hiểm xã hội. Chương trình Prolog đã sử dụng thông tin này để tính toán tổng thời gian tham gia bảo hiểm xã hội của bạn.",
+    "conclusion": "Tổng thời gian tham gia bảo hiểm xã hội của bạn là 3 năm."
+  },
+  "elapsed_s": 5.62,
+  "prompt_tokens": 3055,
+  "completion_tokens": 485,
+  "error": null,
+  "gold_answer": null,
+  "gold_citations_raw": null
+}

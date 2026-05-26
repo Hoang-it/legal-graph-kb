@@ -1,0 +1,237 @@
+{
+  "question": "Tôi đóng bảo hiểm xã hội được 1 nhưng đã nghỉ 1 ngày thì một năm được nghỉ ốm hưởng BHXH tối đa bao nhiêu ngày?",
+  "retrieved_chunks": [
+    {
+      "chunk_id": "c056",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "28",
+      "clause": "2",
+      "point": null,
+      "text": "Điều 28 khoản 2 – Mức hưởng ốm đau dài ngày: Người lao động nghỉ việc do mắc bệnh thuộc danh mục cần chữa trị dài ngày được hưởng chế độ ốm đau như sau: đóng BHXH dưới 15 năm thì được hưởng tối đa bằng 65% mức tiền lương tháng đóng BHXH; đóng đủ 15 năm trở lên được hưởng tối đa bằng 75%."
+    },
+    {
+      "chunk_id": "c021",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "61",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 61. Mức hưởng bảo hiểm xã hội một lần: Tính theo số năm đã đóng BHXH, cứ mỗi năm đóng trước năm 2014 được tính bằng 1,5 tháng mức bình quân tiền lương tháng đóng BHXH; cứ mỗi năm đóng từ năm 2014 trở đi được tính bằng 2 tháng mức bình quân tiền lương tháng đóng BHXH."
+    },
+    {
+      "chunk_id": "c060",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "26",
+      "clause": "4",
+      "point": null,
+      "text": "Điều 26 khoản 4 – Trường hợp nghỉ ốm đau ngắn ngày: Thời gian ốm đau được tính theo ngày làm việc không kể ngày nghỉ lễ, Tết, ngày nghỉ hàng tuần. Nếu bị ốm đau nhiều lần trong năm thì thời gian hưởng được cộng dồn và không vượt quá thời gian tối đa theo quy định."
+    },
+    {
+      "chunk_id": "c016",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "62",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 62. Bảo lưu thời gian đóng bảo hiểm xã hội. Người lao động khi nghỉ việc mà chưa đủ điều kiện để hưởng lương hưu hoặc chưa hưởng bảo hiểm xã hội một lần thì được bảo lưu thời gian đóng bảo hiểm xã hội. Thời gian bảo lưu không bị giới hạn và được cộng dồn khi người lao động tiếp tục tham gia BHXH."
+    },
+    {
+      "chunk_id": "c051",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "26",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 26 khoản 1 – Thời gian hưởng ốm đau theo năm đóng BHXH: Đã đóng BHXH dưới 15 năm: tối đa 30 ngày làm việc/năm; đóng đủ 15 đến dưới 30 năm: tối đa 40 ngày làm việc/năm; đóng đủ 30 năm trở lên: tối đa 60 ngày làm việc/năm."
+    },
+    {
+      "chunk_id": "c020",
+      "document": "Nghị quyết 93/2015/QH13",
+      "article": "1",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 60 khoản 2. Bảo hiểm xã hội một lần theo Nghị quyết 93/2015/QH13: Người lao động tham gia BHXH bắt buộc sau một năm nghỉ việc; người tham gia BHXH tự nguyện sau một năm không tiếp tục đóng BHXH; mà chưa đủ 20 năm đóng BHXH được hưởng BHXH một lần nếu có yêu cầu."
+    },
+    {
+      "chunk_id": "c001",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "54",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 54 khoản 1. Người lao động khi nghỉ việc có đủ 20 năm đóng bảo hiểm xã hội trở lên được hưởng lương hưu nếu đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ. Đây là điều kiện cơ bản về tuổi và năm đóng để hưởng lương hưu theo Luật BHXH 2014."
+    },
+    {
+      "chunk_id": "c017",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "63",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 63 khoản 1. Tiếp tục đóng BHXH sau khi đủ điều kiện hưởng lương hưu. Người lao động đã đủ điều kiện hưởng lương hưu mà vẫn tiếp tục làm việc và đóng BHXH thì sau khi thực sự nghỉ việc, mỗi năm đóng thêm được tính thêm 2% mức lương hưu, không bị giới hạn bởi mức tối đa 75%."
+    },
+    {
+      "chunk_id": "c055",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "28",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 28 khoản 1 – Mức hưởng chế độ ốm đau thông thường: Người lao động hưởng chế độ ốm đau thì mức hưởng bằng 75% mức tiền lương tháng đóng BHXH của tháng liền kề trước khi nghỉ việc. Đây là mức hưởng trong thời gian tối đa theo số năm đóng BHXH."
+    },
+    {
+      "chunk_id": "c058",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "29",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 29 khoản 1 – Dưỡng sức, phục hồi sức khoẻ sau ốm đau: Người lao động sau khi hết thời hạn hưởng chế độ ốm đau theo quy định mà sức khỏe còn yếu thì được nghỉ dưỡng sức, phục hồi sức khoẻ từ 5 đến 10 ngày trong một năm. Số ngày nghỉ do người sử dụng lao động và Ban Chấp hành công đoàn cơ sở quyết định."
+    },
+    {
+      "chunk_id": "c054",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "27",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 27 – Thời gian hưởng chế độ khi con ốm: Người lao động nghỉ việc chăm sóc con ốm được hưởng chế độ ốm đau như sau: con dưới 3 tuổi: tối đa 20 ngày làm việc/năm; con từ đủ 3 tuổi đến dưới 7 tuổi: tối đa 15 ngày làm việc/năm. Thời gian này được tính cho từng cha hoặc mẹ."
+    },
+    {
+      "chunk_id": "c003",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "54",
+      "clause": "3",
+      "point": null,
+      "text": "Điều 54 khoản 3. Người lao động đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ nhưng thời gian đóng bảo hiểm xã hội còn thiếu không quá 6 tháng thì được đóng tiếp một lần cho đủ 20 năm và hưởng lương hưu."
+    },
+    {
+      "chunk_id": "c008",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "56",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 56 khoản 1. Mức lương hưu hàng tháng đối với lao động nữ: bằng 45% mức bình quân tiền lương tháng đóng bảo hiểm xã hội tương ứng với 15 năm đóng; sau đó cứ thêm mỗi năm đóng BHXH thì tính thêm 2%. Mức lương hưu hàng tháng tối đa bằng 75% mức bình quân tiền lương tháng đóng BHXH."
+    },
+    {
+      "chunk_id": "c019",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "60",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 60 khoản 1. Bảo hiểm xã hội một lần – Điều kiện hưởng: (a) Đủ tuổi hưởng lương hưu theo quy định mà chưa đủ 20 năm đóng BHXH; (b) Ra nước ngoài để định cư; (c) Người đang mắc một trong những bệnh nguy hiểm đến tính mạng như ung thư, bại liệt, xơ gan cổ chướng, phong, lao nặng, nhiễm HIV đã chuyển sang giai đoạn AIDS và những bệnh khác theo quy định của Bộ Y tế."
+    },
+    {
+      "chunk_id": "c078",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "67",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 67 – Trợ cấp tuất một lần: Người lao động đang đóng BHXH hoặc đang bảo lưu thời gian đóng BHXH khi chết mà thân nhân không đủ điều kiện hưởng trợ cấp tuất hàng tháng thì được hưởng trợ cấp tuất một lần. Mức: 1,5 tháng bình quân tiền lương tháng đóng BHXH cho mỗi năm đóng trước 2014; 2 tháng cho mỗi năm từ 2014 trở đi."
+    }
+  ],
+  "program": {
+    "legal_sources": [
+      "legal_source(source_c054, law_bhxh_2014, article_26, clause_1, none, 'Đã đóng BHXH dưới 15 năm: tối đa 30 ngày làm việc/năm; đóng đủ 15 đến dưới 30 năm: tối đa 40 ngày làm việc/năm; đóng đủ 30 năm trở lên: tối đa 60 ngày làm việc/năm.')."
+    ],
+    "rules": [
+      "sick_leave_max_days(Person, MaxDays, Trace) :- \n    years_contributed(Person, Years), \n    Years < 15, \n    MaxDays = 30, \n    Trace = [step(conclusion, sick_leave_max_days(Person, MaxDays), based_on(source_c054))]."
+    ],
+    "verify_facts": [
+      "years_contributed(user, 1)."
+    ],
+    "query": "?- sick_leave_max_days(user, Days, Trace).",
+    "answer_var": "Days",
+    "answer_type": "scalar",
+    "predicate_inputs": {
+      "years_contributed": {
+        "predicate": "years_contributed",
+        "args": [
+          "user",
+          "$value"
+        ]
+      }
+    },
+    "raw_llm_output": {
+      "legal_sources": [
+        "legal_source(source_c054, law_bhxh_2014, article_26, clause_1, none, 'Đã đóng BHXH dưới 15 năm: tối đa 30 ngày làm việc/năm; đóng đủ 15 đến dưới 30 năm: tối đa 40 ngày làm việc/năm; đóng đủ 30 năm trở lên: tối đa 60 ngày làm việc/năm.')"
+      ],
+      "verify_facts": [
+        "years_contributed(user, 1)."
+      ],
+      "rules": [
+        "sick_leave_max_days(Person, MaxDays, Trace) :- \n    years_contributed(Person, Years), \n    Years < 15, \n    MaxDays = 30, \n    Trace = [step(conclusion, sick_leave_max_days(Person, MaxDays), based_on(source_c054))]."
+      ],
+      "query": "?- sick_leave_max_days(user, Days, Trace).",
+      "answer_var": "Days",
+      "answer_type": "scalar",
+      "predicate_inputs": {
+        "years_contributed": {
+          "predicate": "years_contributed",
+          "args": [
+            "user",
+            "$value"
+          ]
+        }
+      },
+      "citations": [
+        4
+      ]
+    },
+    "prolog_source": "years_contributed(user, 1).\nlegal_source(source_c054, law_bhxh_2014, article_26, clause_1, none, 'Đã đóng BHXH dưới 15 năm: tối đa 30 ngày làm việc/năm; đóng đủ 15 đến dưới 30 năm: tối đa 40 ngày làm việc/năm; đóng đủ 30 năm trở lên: tối đa 60 ngày làm việc/năm.').\nsick_leave_max_days(Person, MaxDays, Trace) :- \n    years_contributed(Person, Years), \n    Years < 15, \n    MaxDays = 30, \n    Trace = [step(conclusion, sick_leave_max_days(Person, MaxDays), based_on(source_c054))]."
+  },
+  "verification": {
+    "success": true,
+    "status": "success",
+    "error": "",
+    "result": 30,
+    "solutions": [
+      {
+        "Days": 30,
+        "Trace": "[step(conclusion,sick_leave_max_days(user,30),based_on(source_c054))]"
+      }
+    ]
+  },
+  "render_payload": {
+    "normalized_question": "Tôi đóng bảo hiểm xã hội được 1 nhưng đã nghỉ 1 ngày thì một năm được nghỉ ốm hưởng BHXH tối đa bao nhiêu ngày?",
+    "legal_issue": "Tôi đóng bảo hiểm xã hội được 1 nhưng đã nghỉ 1 ngày thì một năm được nghỉ ốm hưởng BHXH tối đa bao nhiêu ngày?",
+    "domain_context": "Vietnamese social insurance legal QA",
+    "selected_function": {
+      "name": "one-shot generated Prolog program",
+      "description": "Generated from the user question and retrieved legal sources."
+    },
+    "slot_bindings": {
+      "years_contributed": {
+        "predicate": "years_contributed",
+        "facts": [
+          "years_contributed(user, 1)."
+        ]
+      }
+    },
+    "verify_facts": [
+      "years_contributed(user, 1)."
+    ],
+    "citations": [
+      {
+        "index": 4,
+        "chunk_id": "c051",
+        "document": "Luật BHXH 2014 (58/2014/QH13)",
+        "article": "26",
+        "clause": "1",
+        "point": null,
+        "raw_text": "Điều 26 khoản 1 – Thời gian hưởng ốm đau theo năm đóng BHXH: Đã đóng BHXH dưới 15 năm: tối đa 30 ngày làm việc/năm; đóng đủ 15 đến dưới 30 năm: tối đa 40 ngày làm việc/năm; đóng đủ 30 năm trở lên: tối đa 60 ngày làm việc/năm."
+      }
+    ],
+    "execution_result": [
+      {
+        "Days": 30,
+        "Trace": "[step(conclusion,sick_leave_max_days(user,30),based_on(source_c054))]"
+      }
+    ],
+    "prolog_trace": "[step(conclusion,sick_leave_max_days(user,30),based_on(source_c054))]",
+    "generated_program": {
+      "legal_sources": [
+        "legal_source(source_c054, law_bhxh_2014, article_26, clause_1, none, 'Đã đóng BHXH dưới 15 năm: tối đa 30 ngày làm việc/năm; đóng đủ 15 đến dưới 30 năm: tối đa 40 ngày làm việc/năm; đóng đủ 30 năm trở lên: tối đa 60 ngày làm việc/năm.')."
+      ],
+      "rules": [
+        "sick_leave_max_days(Person, MaxDays, Trace) :- \n    years_contributed(Person, Years), \n    Years < 15, \n    MaxDays = 30, \n    Trace = [step(conclusion, sick_leave_max_days(Person, MaxDays), based_on(source_c054))]."
+      ],
+      "query": "?- sick_leave_max_days(user, Days, Trace).",
+      "answer_var": "Days",
+      "answer_type": "scalar"
+    }
+  },
+  "rendered_answer": "Issue: Tôi đã đóng bảo hiểm xã hội được 1 năm và đã nghỉ 1 ngày. Tôi muốn biết trong một năm, tôi có thể nghỉ ốm hưởng bảo hiểm xã hội tối đa bao nhiêu ngày.\n\nRule: Theo Điều 26 khoản 1 của Luật BHXH 2014 (58/2014/QH13): \"Đã đóng BHXH dưới 15 năm: tối đa 30 ngày làm việc/năm; đóng đủ 15 đến dưới 30 năm: tối đa 40 ngày làm việc/năm; đóng đủ 30 năm trở lên: tối đa 60 ngày làm việc/năm.\"\n\nApplication: Dữ liệu đầu vào cho thấy tôi đã đóng bảo hiểm xã hội được 1 năm. Theo quy tắc được áp dụng, vì số năm đóng bảo hiểm xã hội của tôi là dưới 15 năm, nên số ngày nghỉ ốm tối đa trong một năm được xác định là 30 ngày.\n\nConclusion: Dựa trên các thông tin và quy tắc đã áp dụng, tôi có thể nghỉ ốm hưởng bảo hiểm xã hội tối đa 30 ngày trong một năm."
+}

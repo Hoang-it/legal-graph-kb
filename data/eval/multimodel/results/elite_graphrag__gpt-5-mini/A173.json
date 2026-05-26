@@ -1,0 +1,21 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 173,
+  "question": "Mình giờ thôi việc ở công ty cũ. Nếu lấy BHTN thì mình sẽ được 11 tháng BHTN, nhưng mình nghỉ làm là có công ty hấp dẫn gọi đi làm ngay, lúc đó mình ko làm BHTN nữa mà tiếp tục đóng BHXH luôn.  Nếu mình làm 1 năm thấy không phù hợp với công ty thì lúc đó mình nghỉ thì quyền lợi BHTN mới sẽ như thế nào?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=unable_to_conclude, repair_rounds=2, error=Connection error.]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "unable_to_conclude",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 4.919,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "error": null,
+  "gold_answer": "Nếu bạn không làm hồ sơ BHTN lần nghỉ việc này mà đi làm ngay, thời gian BHTN chưa hưởng sẽ được bảo lưu. Sau này nếu làm thêm 1 năm rồi nghỉ, thời gian đóng mới sẽ được cộng với thời gian bảo lưu cũ để tính điều kiện, thời gian hưởng cho lần thất nghiệp tiếp theo; phần đã hưởng rồi thì không tính lại. Vì vậy quyền lợi không mất, chỉ bảo lưu cho lần sau.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

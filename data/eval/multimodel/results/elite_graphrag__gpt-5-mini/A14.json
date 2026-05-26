@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 14,
+  "question": "Bà Thị Tiếp (Cà Mau) hỏi, xã khu vực III giai đoạn 2016-2020, sang giai đoạn 2021-2025 được xác định là xã khu vực I, đã đạt chuẩn nông thôn mới thì người dân tộc thiểu số tại xã này có thuộc nhóm đối tượng được ngân sách Nhà nước hỗ trợ đóng BHYT không?",
+  "answer": "Issue:\nBà Thị Tiếp (Cà Mau) hỏi: xã từ khu vực III (2016–2020) sang khu vực I (2021–2025), đã đạt chuẩn nông thôn mới — người dân tộc thiểu số tại xã này có thuộc nhóm được ngân sách Nhà nước hỗ trợ đóng BHYT không?\n\nRule:\n\"Người đang trong thời gian hưởng trợ cấp hằng tháng thì được ngân sách nhà nước đóng bảo hiểm y tế.\"\nLuật BHXH 2024 (41/2024/QH15), article 23, clause 6.\n\nApplication:\nKhông có slot nào được ràng buộc trong đầu vào (slot_bindings trống). Chương trình Prolog sử dụng nguồn pháp lý source_c0 (Luật BHXH 2024, article 23, clause 6) và áp dụng quy tắc insufficient_legal_basis; trace cho biết kết luận dựa_on(source_c0).\n\nConclusion:\nProlog trả biến Answer với giá trị: \"Không đủ cơ sở pháp lý trong các đoạn trích đã cung cấp để xác định liệu người dân tộc thiểu số tại xã này có thuộc nhóm đối tượng được ngân sách Nhà nước hỗ trợ đóng BHYT.\" (Biến: Answer; trace chỉ ra based_on(source_c0)).",
+  "citations": [
+    "[Điều 23 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A23.K6"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 2,
+  "prolog_trace": "[step(conclusion,insufficient_legal_basis(Không đủ cơ sở pháp lý trong các đoạn trích đã cung cấp để xác định liệu người dân tộc thiểu số tại xã này có thuộc nhóm đối tượng được ngân sách Nhà nước hỗ trợ đóng BHYT.),based_on(source_c0))]",
+  "irac_sections": {
+    "issue": "Bà Thị Tiếp (Cà Mau) hỏi: xã từ khu vực III (2016–2020) sang khu vực I (2021–2025), đã đạt chuẩn nông thôn mới — người dân tộc thiểu số tại xã này có thuộc nhóm được ngân sách Nhà nước hỗ trợ đóng BHYT không?",
+    "rule": "\"Người đang trong thời gian hưởng trợ cấp hằng tháng thì được ngân sách nhà nước đóng bảo hiểm y tế.\"\nLuật BHXH 2024 (41/2024/QH15), article 23, clause 6.",
+    "application": "Không có slot nào được ràng buộc trong đầu vào (slot_bindings trống). Chương trình Prolog sử dụng nguồn pháp lý source_c0 (Luật BHXH 2024, article 23, clause 6) và áp dụng quy tắc insufficient_legal_basis; trace cho biết kết luận dựa_on(source_c0).",
+    "conclusion": "Prolog trả biến Answer với giá trị: \"Không đủ cơ sở pháp lý trong các đoạn trích đã cung cấp để xác định liệu người dân tộc thiểu số tại xã này có thuộc nhóm đối tượng được ngân sách Nhà nước hỗ trợ đóng BHYT.\" (Biến: Answer; trace chỉ ra based_on(source_c0))."
+  },
+  "elapsed_s": 37.257,
+  "prompt_tokens": 7133,
+  "completion_tokens": 4006,
+  "error": null,
+  "gold_answer": "Ngày 23/4/2024, Bộ Y tế ban hành Công văn số 2068/BYT-BH về việc vướng mắc trong triển khai thi hành Nghị định số 75/2023/NĐ-CP thay thế Công văn số 917/BYT-BH, trong đó quy định: Ngày 19/10/2023, Chính phủ ban hành Nghị định số 75/2023/NĐ-CP sửa đổi, bổ sung một số điều của Nghị định số 146/2018/NĐ-CP ngày 17/10/2018 quy định chi tiết và hướng dẫn biện pháp thi hành một số điều của Luật BHYT, trong đó:\n- Tại Điểm c Khoản 2 Điều 1 quy định: Người dân tộc thiểu số đang sinh sống tại địa bàn các xã khu vực II, khu vực III, thôn đặc biệt khó khăn thuộc vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2016-2020 mà các xã này không còn trong danh sách các xã khu vực II, khu vực III, thôn đặc biệt khó khăn thuộc vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2021-2025 theo quyết định của Thủ tướng Chính phủ.\n- Tại Điểm a Khoản 3 Điều 1 quy định ngân sách nhà nước hỗ trợ tối thiểu 70% mức đóng BHYT đối với đối tượng quy định tại Điểm c Khoản 2 Điều 1 Nghị định số 75/2023/NĐ-CP.\n- Tại Khoản 3 Điều 3 quy định ngân sách Nhà nước hỗ trợ cho đối tượng quy định tại Điểm c Khoản 2 Điều 1 Nghị định này trong thời gian 36 (ba mươi sáu) tháng kể từ ngày 1/11/2023.\nVì vậy, người dân tộc thiểu số thuộc đổi tượng nêu trên sẽ được ngân sách nhà nước hỗ trợ tối thiểu 70% mức đóng BHYT trong thời gian 36 tháng kể từ ngày 1/11/2023.",
+  "gold_citations_raw": "Công văn số 2068/BYT-BH"
+}

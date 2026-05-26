@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 111,
+  "question": "Nghỉ việc thiếu tờ rơi có lãnh được bảo hiểm thất nghiệp không?",
+  "answer": "Issue: Người lao động nghỉ việc thiếu tờ rơi có thể lãnh được bảo hiểm thất nghiệp không?\n\nRule: Theo quy định tại Điều 49, Khoản 1 của Luật Bảo hiểm xã hội 2024: \"Người lao động được hưởng bảo hiểm thất nghiệp khi đáp ứng đủ điều kiện theo quy định.\"\n\nApplication: Không có thông tin cụ thể về các điều kiện khác mà người lao động cần đáp ứng để được hưởng bảo hiểm thất nghiệp. Tuy nhiên, theo quy định, việc thiếu tờ rơi không phải là yếu tố quyết định duy nhất.\n\nConclusion: Có thể được hưởng nếu đáp ứng đủ điều kiện khác. Kết luận này dựa trên nguồn thông tin từ Điều 49, Khoản 1 của Luật Bảo hiểm xã hội 2024.",
+  "citations": [
+    "[Điều 49 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A49.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_eligibility(Có thể được hưởng nếu đáp ứng đủ điều kiện khác),based_on(source_a49_k1))]",
+  "irac_sections": {
+    "issue": "Người lao động nghỉ việc thiếu tờ rơi có thể lãnh được bảo hiểm thất nghiệp không?",
+    "rule": "Theo quy định tại Điều 49, Khoản 1 của Luật Bảo hiểm xã hội 2024: \"Người lao động được hưởng bảo hiểm thất nghiệp khi đáp ứng đủ điều kiện theo quy định.\"",
+    "application": "Không có thông tin cụ thể về các điều kiện khác mà người lao động cần đáp ứng để được hưởng bảo hiểm thất nghiệp. Tuy nhiên, theo quy định, việc thiếu tờ rơi không phải là yếu tố quyết định duy nhất.",
+    "conclusion": "Có thể được hưởng nếu đáp ứng đủ điều kiện khác. Kết luận này dựa trên nguồn thông tin từ Điều 49, Khoản 1 của Luật Bảo hiểm xã hội 2024."
+  },
+  "elapsed_s": 4.712,
+  "prompt_tokens": 1946,
+  "completion_tokens": 342,
+  "error": null,
+  "gold_answer": "Thực tế hồ sơ BHTN cần có tài liệu chứng minh chấm dứt HĐLĐ và dữ liệu quá trình đóng BHTN. Nếu thiếu tờ rời/sổ giấy nhưng dữ liệu trên hệ thống BHXH đã chốt đầy đủ thì trung tâm dịch vụ việc làm vẫn có thể tiếp nhận theo dữ liệu điện tử hoặc yêu cầu bổ sung. Bạn nên xin xác nhận quá trình đóng/chốt sổ trước, tránh nộp sát hạn 03 tháng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

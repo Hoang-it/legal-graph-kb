@@ -1,0 +1,42 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 120,
+  "question": "E mới đóng bảo hiểm tại công ty 8 tháng thì sinh em bé và đang bị thanh tra. Cty từ chối nộp giấy tờ liên quan. Giờ e phải làm sao để được nhận bh thai sản?",
+  "answer": "Issue:\nBạn hỏi về việc công ty đang bị thanh tra và từ chối nộp giấy tờ liên quan đến chế độ thai sản, trong khi bạn mới đóng bảo hiểm xã hội được 8 tháng và đã sinh con. Bạn muốn biết phải làm gì để được nhận bảo hiểm thai sản.\n\nRule:\n\"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 2)\n\"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động... Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ thai sản kèm theo hồ sơ quy định t...\" (Luật BHXH 2024 (41/2024/QH15), Điều 62, Khoản 1)\n\"Người lao động nộp hồ sơ quy định tại Điều 61 của Luật này cho cơ quan bảo hiểm xã hội trong trường hợp... không còn người sử dụng lao động.\" (Luật BHXH 2024 (41/2024/QH15), Điều 62, Khoản 2)\n\nApplication:\nKhông có slot_id nào được gán giá trị cụ thể trong trường hợp này. Prolog đã sử dụng các quy định pháp luật liên quan đến việc lập và nộp hồ sơ hưởng chế độ thai sản, đặc biệt là trường hợp người lao động không còn người sử dụng lao động hoặc công ty không hợp tác, để đưa ra hướng dẫn chi tiết.\n\nConclusion:\nTheo kết quả Prolog, nếu công ty từ chối nộp hồ sơ thai sản, bạn có thể tự mình nộp hồ sơ trực tiếp cho cơ quan bảo hiểm xã hội theo quy định tại khoản 2 Điều 62 Luật BHXH 2024. Bạn cần chuẩn bị đầy đủ giấy tờ theo Điều 61, liên hệ cơ quan bảo hiểm xã hội nơi cư trú hoặc nơi công ty đóng bảo hiểm để được hướng dẫn, và có thể phản ánh hành vi không hợp tác của công ty với cơ quan bảo hiểm xã hội hoặc thanh tra lao động.",
+  "citations": [
+    "[Điều 13 khoản 2]",
+    "[Điều 61]",
+    "[Điều 62 khoản 1]",
+    "[Điều 62 khoản 2]",
+    "[Điều 62]"
+  ],
+  "citation_ids": [
+    "L41_2024.A13.K2",
+    "L41_2024.A61",
+    "L41_2024.A62.K1",
+    "L41_2024.A62.K2",
+    "L41_2024.A62"
+  ],
+  "citation_indices": [
+    7,
+    4,
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,maternity_insurance_guidance([Nếu công ty từ chối nộp hồ sơ thai sản, bạn có thể tự mình nộp hồ sơ trực tiếp cho cơ quan bảo hiểm xã hội theo quy định tại khoản 2 Điều 62 Luật BHXH 2024.,Chuẩn bị đầy đủ giấy tờ theo quy định tại Điều 61 Luật BHXH 2024 (giấy khai sinh hoặc giấy chứng sinh của con, các giấy tờ liên quan khác).,Liên hệ cơ quan bảo hiểm xã hội nơi bạn cư trú hoặc nơi công ty đóng bảo hiểm để được hướng dẫn cụ thể.,Có thể phản ánh hành vi không hợp tác của công ty với cơ quan bảo hiểm xã hội hoặc thanh tra lao động.]),based_on(source_c001)),step(conclusion,maternity_insurance_guidance([Nếu công ty từ chối nộp hồ sơ thai sản, bạn có thể tự mình nộp hồ sơ trực tiếp cho cơ quan bảo hiểm xã hội theo quy định tại khoản 2 Điều 62 Luật BHXH 2024.,Chuẩn bị đầy đủ giấy tờ theo quy định tại Điều 61 Luật BHXH 2024 (giấy khai sinh hoặc giấy chứng sinh của con, các giấy tờ liên quan khác).,Liên hệ cơ quan bảo hiểm xã hội nơi bạn cư trú hoặc nơi công ty đóng bảo hiểm để được hướng dẫn cụ thể.,Có thể phản ánh hành vi không hợp tác của công ty với cơ quan bảo hiểm xã hội hoặc thanh tra lao động.]),based_on(source_c004)),step(conclusion,maternity_insurance_guidance([Nếu công ty từ chối nộp hồ sơ thai sản, bạn có thể tự mình nộp hồ sơ trực tiếp cho cơ quan bảo hiểm xã hội theo quy định tại khoản 2 Điều 62 Luật BHXH 2024.,Chuẩn bị đầy đủ giấy tờ theo quy định tại Điều 61 Luật BHXH 2024 (giấy khai sinh hoặc giấy chứng sinh của con, các giấy tờ liên quan khác).,Liên hệ cơ quan bảo hiểm xã hội nơi bạn cư trú hoặc nơi công ty đóng bảo hiểm để được hướng dẫn cụ thể.,Có thể phản ánh hành vi không hợp tác của công ty với cơ quan bảo hiểm xã hội hoặc thanh tra lao động.]),based_on(source_c007))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về việc công ty đang bị thanh tra và từ chối nộp giấy tờ liên quan đến chế độ thai sản, trong khi bạn mới đóng bảo hiểm xã hội được 8 tháng và đã sinh con. Bạn muốn biết phải làm gì để được nhận bảo hiểm thai sản.",
+    "rule": "\"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 2)\n\"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động... Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ thai sản kèm theo hồ sơ quy định t...\" (Luật BHXH 2024 (41/2024/QH15), Điều 62, Khoản 1)\n\"Người lao động nộp hồ sơ quy định tại Điều 61 của Luật này cho cơ quan bảo hiểm xã hội trong trường hợp... không còn người sử dụng lao động.\" (Luật BHXH 2024 (41/2024/QH15), Điều 62, Khoản 2)",
+    "application": "Không có slot_id nào được gán giá trị cụ thể trong trường hợp này. Prolog đã sử dụng các quy định pháp luật liên quan đến việc lập và nộp hồ sơ hưởng chế độ thai sản, đặc biệt là trường hợp người lao động không còn người sử dụng lao động hoặc công ty không hợp tác, để đưa ra hướng dẫn chi tiết.",
+    "conclusion": "Theo kết quả Prolog, nếu công ty từ chối nộp hồ sơ thai sản, bạn có thể tự mình nộp hồ sơ trực tiếp cho cơ quan bảo hiểm xã hội theo quy định tại khoản 2 Điều 62 Luật BHXH 2024. Bạn cần chuẩn bị đầy đủ giấy tờ theo Điều 61, liên hệ cơ quan bảo hiểm xã hội nơi cư trú hoặc nơi công ty đóng bảo hiểm để được hướng dẫn, và có thể phản ánh hành vi không hợp tác của công ty với cơ quan bảo hiểm xã hội hoặc thanh tra lao động."
+  },
+  "elapsed_s": 11.32,
+  "prompt_tokens": 4884,
+  "completion_tokens": 1115,
+  "error": null,
+  "gold_answer": "Nếu bạn đủ điều kiện thai sản mà công ty không nộp hồ sơ, bạn nên lập văn bản yêu cầu công ty thực hiện ngay; đồng thời phản ánh tới cơ quan BHXH quản lý đơn vị hoặc thanh tra lao động. Luật quy định doanh nghiệp phải lập hồ sơ gửi cơ quan BHXH cho NLĐ đang tham gia. Hãy giữ hợp đồng, bảng lương, phiếu lương, sổ khám thai, giấy khai sinh/chứng sinh để bảo vệ quyền lợi.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

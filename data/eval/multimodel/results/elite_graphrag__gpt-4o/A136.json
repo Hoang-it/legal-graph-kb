@@ -1,0 +1,40 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 136,
+  "question": "các bước nhận bhxh thất nghiệp như thế nào?",
+  "answer": "Issue: Các bước để nhận bảo hiểm xã hội thất nghiệp là gì?\n\nRule: \n- \"Được cơ quan bảo hiểm xã hội hướng dẫn trình tự, thủ tục thực hiện bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 12, Khoản 3)\n- \"Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 107, Khoản 2)\n- \"Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động, 05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), Điều 62, Khoản 3)\n\nApplication: Không có giá trị nào được gán cho các slot cụ thể trong truy vấn này. Tuy nhiên, các bước được xác định dựa trên các quy định pháp luật đã trích dẫn. Truy vấn Prolog đã sử dụng các điều khoản từ Luật BHXH 2024 để xác định các bước cần thiết.\n\nConclusion: Các bước để nhận bảo hiểm xã hội thất nghiệp bao gồm: nộp hồ sơ cho cơ quan bảo hiểm xã hội, được cơ quan bảo hiểm xã hội hướng dẫn về trình tự và thủ tục, và việc giải quyết hồ sơ trong vòng 5 ngày làm việc kể từ khi nhận đủ hồ sơ từ người lao động.",
+  "citations": [
+    "[Điều 12 khoản 3]",
+    "[Điều 106]",
+    "[Điều 107 khoản 2]",
+    "[Điều 62 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A12.K3",
+    "L41_2024.A106",
+    "L41_2024.A107.K2",
+    "L41_2024.A62.K3"
+  ],
+  "citation_indices": [
+    1,
+    2,
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_steps([submit_application_to_social_insurance,social_insurance_guidance_on_procedures,resolution_within_5_days]),based_on(source_c001)),step(conclusion,unemployment_insurance_steps([submit_application_to_social_insurance,social_insurance_guidance_on_procedures,resolution_within_5_days]),based_on(source_c002)),step(conclusion,unemployment_insurance_steps([submit_application_to_social_insurance,social_insurance_guidance_on_procedures,resolution_within_5_days]),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Các bước để nhận bảo hiểm xã hội thất nghiệp là gì?",
+    "rule": "- \"Được cơ quan bảo hiểm xã hội hướng dẫn trình tự, thủ tục thực hiện bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 12, Khoản 3)\n- \"Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 107, Khoản 2)\n- \"Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động, 05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), Điều 62, Khoản 3)",
+    "application": "Không có giá trị nào được gán cho các slot cụ thể trong truy vấn này. Tuy nhiên, các bước được xác định dựa trên các quy định pháp luật đã trích dẫn. Truy vấn Prolog đã sử dụng các điều khoản từ Luật BHXH 2024 để xác định các bước cần thiết.",
+    "conclusion": "Các bước để nhận bảo hiểm xã hội thất nghiệp bao gồm: nộp hồ sơ cho cơ quan bảo hiểm xã hội, được cơ quan bảo hiểm xã hội hướng dẫn về trình tự và thủ tục, và việc giải quyết hồ sơ trong vòng 5 ngày làm việc kể từ khi nhận đủ hồ sơ từ người lao động."
+  },
+  "elapsed_s": 7.127,
+  "prompt_tokens": 3587,
+  "completion_tokens": 776,
+  "error": null,
+  "gold_answer": "Các bước cơ bản nhận BHTN: (1) chuẩn bị hồ sơ gồm đơn đề nghị, CCCD, tài liệu chấm dứt HĐLĐ; (2) nộp tại trung tâm dịch vụ việc làm trong 03 tháng từ ngày nghỉ việc; (3) chờ 15 ngày làm việc nếu chưa có việc làm; (4) nhận quyết định hưởng và tiền trợ cấp; (5) thực hiện thông báo tìm kiếm việc làm hằng tháng đúng lịch hẹn.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

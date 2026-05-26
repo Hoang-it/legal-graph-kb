@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 101,
+  "question": "e làm cty này từ năm 2012 đến 2025 thì e nghỉ và hiện e đang làm cty khác .cty đã trả sổ bh ,cùng các tờ rồi từ năm 2012 đến hết 2018 ,khi e xin nghỉ thì cty cũng đã chốt và trả các tờ rời từ năm 2019 đến đến 2025 ,nhưng e lại làm mất sổ cùng các tờ rời từ năm 2012 đến năm 2019 .vậy e hỏi là e muốn làm lại sổ bh cùng các tờ rời đó thì đến đâu làm?",
+  "answer": "Issue: Bạn đã làm việc tại một công ty từ năm 2012 đến 2025 và đã nghỉ việc. Công ty đã trả sổ bảo hiểm xã hội (BHXH) và các tờ rời từ năm 2012 đến 2018, và từ năm 2019 đến 2025. Tuy nhiên, bạn đã làm mất sổ và các tờ rời từ năm 2012 đến 2019. Bạn muốn biết cần đến đâu để làm lại sổ BHXH và các tờ rời đó.\n\nRule: Theo Điều 27, Khoản 2 của Luật Bảo hiểm xã hội 2024: \"Người lao động có quyền yêu cầu cấp lại sổ BHXH trong trường hợp bị mất.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên quy định pháp luật, người lao động có quyền yêu cầu cấp lại sổ BHXH khi bị mất.\n\nConclusion: Bạn cần liên hệ với cơ quan bảo hiểm xã hội nơi bạn đã tham gia để yêu cầu cấp lại sổ BHXH và các tờ rời.",
+  "citations": [
+    "[Điều 27 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A27.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,where_to_request_reissue(Liên hệ cơ quan bảo hiểm xã hội nơi bạn đã tham gia để yêu cầu cấp lại sổ BHXH và các tờ rời.),based_on(source_a27_k2))]",
+  "irac_sections": {
+    "issue": "Bạn đã làm việc tại một công ty từ năm 2012 đến 2025 và đã nghỉ việc. Công ty đã trả sổ bảo hiểm xã hội (BHXH) và các tờ rời từ năm 2012 đến 2018, và từ năm 2019 đến 2025. Tuy nhiên, bạn đã làm mất sổ và các tờ rời từ năm 2012 đến 2019. Bạn muốn biết cần đến đâu để làm lại sổ BHXH và các tờ rời đó.",
+    "rule": "Theo Điều 27, Khoản 2 của Luật Bảo hiểm xã hội 2024: \"Người lao động có quyền yêu cầu cấp lại sổ BHXH trong trường hợp bị mất.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên quy định pháp luật, người lao động có quyền yêu cầu cấp lại sổ BHXH khi bị mất.",
+    "conclusion": "Bạn cần liên hệ với cơ quan bảo hiểm xã hội nơi bạn đã tham gia để yêu cầu cấp lại sổ BHXH và các tờ rời."
+  },
+  "elapsed_s": 5.109,
+  "prompt_tokens": 2349,
+  "completion_tokens": 431,
+  "error": null,
+  "gold_answer": "Bạn có thể làm thủ tục cấp lại sổ BHXH/tờ rời tại cơ quan BHXH nơi cư trú hoặc nơi đang tham gia BHXH hiện nay; không bắt buộc quay lại công ty cũ. Hồ sơ thường gồm tờ khai thay đổi thông tin, CCCD và nêu rõ phần sổ, tờ rời bị mất. Quá trình đã đóng vẫn được quản lý trên dữ liệu BHXH nên việc mất sổ giấy không làm mất thời gian tham gia.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

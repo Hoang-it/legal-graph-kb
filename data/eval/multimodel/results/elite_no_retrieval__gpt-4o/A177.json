@@ -1,0 +1,32 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 177,
+  "question": "Em làm samsung Bắc Ninh từ năm 2017, e nghỉ ngang chưa chốt bảo hiểm và chưa có sổ. Giờ e làm công ty mới vẫn đóng bảo hiểm nhưng nếu nghỉ thì chưa chốt đc. Giờ e phải làm sao?",
+  "answer": "Issue: Bạn đã làm việc tại Samsung Bắc Ninh từ năm 2017 và nghỉ việc mà chưa chốt sổ bảo hiểm xã hội. Hiện tại, bạn đang làm việc tại công ty mới và vẫn đóng bảo hiểm xã hội, nhưng nếu nghỉ việc thì chưa thể chốt được sổ bảo hiểm. Bạn cần biết phải làm gì trong tình huống này.\n\nRule: Theo quy định tại Luật Bảo hiểm xã hội 2024:\n- Điều 47, Khoản 1: \"Người lao động có quyền yêu cầu chốt sổ bảo hiểm xã hội khi chấm dứt hợp đồng lao động.\"\n- Điều 47, Khoản 2: \"Người sử dụng lao động có trách nhiệm hoàn thành thủ tục chốt sổ bảo hiểm xã hội cho người lao động trong thời hạn 30 ngày kể từ ngày chấm dứt hợp đồng lao động.\"\n\nApplication: Trong trường hợp này, không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo truy vấn Prolog, có hai bước được xác định:\n1. Yêu cầu chốt sổ bảo hiểm xã hội dựa trên quyền của người lao động theo Điều 47, Khoản 1.\n2. Trách nhiệm của người sử dụng lao động trong việc hoàn thành thủ tục chốt sổ bảo hiểm xã hội trong vòng 30 ngày theo Điều 47, Khoản 2.\n\nConclusion: Hệ thống đã xác định rằng bạn có quyền yêu cầu chốt sổ bảo hiểm xã hội và người sử dụng lao động có trách nhiệm hoàn thành thủ tục này trong vòng 30 ngày kể từ khi bạn chấm dứt hợp đồng lao động. Tuy nhiên, không có thông tin cụ thể nào về việc bạn đã thực hiện yêu cầu này hay chưa, hoặc về phản hồi từ phía người sử dụng lao động.",
+  "citations": [
+    "[Điều 47 khoản 1]",
+    "[Điều 47 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A47.K1",
+    "L41_2024.A47.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(requirement,request_closure,based_on(source_a47_k1)),step(obligation,employer_responsibility,based_on(source_a47_k2))]",
+  "irac_sections": {
+    "issue": "Bạn đã làm việc tại Samsung Bắc Ninh từ năm 2017 và nghỉ việc mà chưa chốt sổ bảo hiểm xã hội. Hiện tại, bạn đang làm việc tại công ty mới và vẫn đóng bảo hiểm xã hội, nhưng nếu nghỉ việc thì chưa thể chốt được sổ bảo hiểm. Bạn cần biết phải làm gì trong tình huống này.",
+    "rule": "Theo quy định tại Luật Bảo hiểm xã hội 2024:\n- Điều 47, Khoản 1: \"Người lao động có quyền yêu cầu chốt sổ bảo hiểm xã hội khi chấm dứt hợp đồng lao động.\"\n- Điều 47, Khoản 2: \"Người sử dụng lao động có trách nhiệm hoàn thành thủ tục chốt sổ bảo hiểm xã hội cho người lao động trong thời hạn 30 ngày kể từ ngày chấm dứt hợp đồng lao động.\"",
+    "application": "Trong trường hợp này, không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo truy vấn Prolog, có hai bước được xác định:\n1. Yêu cầu chốt sổ bảo hiểm xã hội dựa trên quyền của người lao động theo Điều 47, Khoản 1.\n2. Trách nhiệm của người sử dụng lao động trong việc hoàn thành thủ tục chốt sổ bảo hiểm xã hội trong vòng 30 ngày theo Điều 47, Khoản 2.",
+    "conclusion": "Hệ thống đã xác định rằng bạn có quyền yêu cầu chốt sổ bảo hiểm xã hội và người sử dụng lao động có trách nhiệm hoàn thành thủ tục này trong vòng 30 ngày kể từ khi bạn chấm dứt hợp đồng lao động. Tuy nhiên, không có thông tin cụ thể nào về việc bạn đã thực hiện yêu cầu này hay chưa, hoặc về phản hồi từ phía người sử dụng lao động."
+  },
+  "elapsed_s": 6.876,
+  "prompt_tokens": 2109,
+  "completion_tokens": 632,
+  "error": null,
+  "gold_answer": "Công ty mới vẫn có thể đóng BHXH cho bạn, nhưng hồ sơ cũ chưa chốt sẽ gây vướng khi gộp quá trình và giải quyết chế độ sau này. Bạn cần yêu cầu Samsung Bắc Ninh chốt sổ bằng văn bản; nếu họ không làm thì khiếu nại tới cơ quan BHXH quản lý đơn vị hoặc thanh tra lao động. Không nên để kéo dài vì càng lâu càng khó đối chiếu hồ sơ cũ.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

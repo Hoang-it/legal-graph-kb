@@ -1,0 +1,37 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 2,
+  "question": "Bà Minh Châu (Long An) ký hợp đồng lao động theo diện làm việc bán thời gian.\nBà Châu hỏi, bà có được mua BHXH bắt buộc theo đối tượng cá nhân không? Nếu được thì mức đóng được tính như thế nào?",
+  "answer": "Issue: Bà Minh Châu, làm việc bán thời gian, muốn biết liệu bà có thể tham gia bảo hiểm xã hội (BHXH) bắt buộc theo diện cá nhân hay không và mức đóng sẽ được tính như thế nào.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 2: \"Mức đóng bảo hiểm xã hội bắt buộc được tính trên cơ sở tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc.\" Và Điều 34, Khoản 1: \"Người sử dụng lao động hằng tháng đóng bảo hiểm xã hội bắt buộc tính trên tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc của đối tượng quy định tại các điểm a, b, c, d, i, k và l khoản 1 và khoản 2 Điều 2 của Luật này.\"\n\nApplication: Không có thông tin cụ thể về các giá trị đầu vào như tiền lương hay các điều kiện cụ thể khác trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng điều kiện để tham gia BHXH bắt buộc là người sử dụng lao động phải đóng BHXH dựa trên tiền lương.\n\nConclusion: Hệ thống kết luận rằng điều kiện để tham gia BHXH bắt buộc là \"employer_must_contribute_based_on_salary\". Điều này có nghĩa là bà Minh Châu có thể tham gia BHXH bắt buộc nếu người sử dụng lao động của bà đóng BHXH dựa trên tiền lương của bà. Không có thông tin cụ thể về mức đóng vì thiếu dữ liệu đầu vào cụ thể.",
+  "citations": [
+    "[Điều 5 khoản 2]",
+    "[Điều 34 khoản 1]",
+    "[Điều 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K2",
+    "L41_2024.A34.K1",
+    "L41_2024.A2"
+  ],
+  "citation_indices": [
+    0,
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,mandatory_social_insurance_eligibility([employer_must_contribute_based_on_salary]),based_on(source_c002)),step(conclusion,mandatory_social_insurance_eligibility([employer_must_contribute_based_on_salary]),based_on(source_c005))]",
+  "irac_sections": {
+    "issue": "Bà Minh Châu, làm việc bán thời gian, muốn biết liệu bà có thể tham gia bảo hiểm xã hội (BHXH) bắt buộc theo diện cá nhân hay không và mức đóng sẽ được tính như thế nào.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 2: \"Mức đóng bảo hiểm xã hội bắt buộc được tính trên cơ sở tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc.\" Và Điều 34, Khoản 1: \"Người sử dụng lao động hằng tháng đóng bảo hiểm xã hội bắt buộc tính trên tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc của đối tượng quy định tại các điểm a, b, c, d, i, k và l khoản 1 và khoản 2 Điều 2 của Luật này.\"",
+    "application": "Không có thông tin cụ thể về các giá trị đầu vào như tiền lương hay các điều kiện cụ thể khác trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng điều kiện để tham gia BHXH bắt buộc là người sử dụng lao động phải đóng BHXH dựa trên tiền lương.",
+    "conclusion": "Hệ thống kết luận rằng điều kiện để tham gia BHXH bắt buộc là \"employer_must_contribute_based_on_salary\". Điều này có nghĩa là bà Minh Châu có thể tham gia BHXH bắt buộc nếu người sử dụng lao động của bà đóng BHXH dựa trên tiền lương của bà. Không có thông tin cụ thể về mức đóng vì thiếu dữ liệu đầu vào cụ thể."
+  },
+  "elapsed_s": 5.835,
+  "prompt_tokens": 3431,
+  "completion_tokens": 654,
+  "error": null,
+  "gold_answer": "Pháp luật về BHXH hiện hành không có quy định đối với trường hợp người lao động tự tham gia BHXH bắt buộc.\nDo vậy, trường hợp của bà ký hợp đồng lao động làm việc không trọn thời gian, không thuộc đối tượng tham gia BHXH bắt buộc thì có thể liên hệ tới cơ quan BHXH tại nơi cư trú để tham gia BHXH tự nguyện.",
+  "gold_citations_raw": "Luật BHXH 2014"
+}

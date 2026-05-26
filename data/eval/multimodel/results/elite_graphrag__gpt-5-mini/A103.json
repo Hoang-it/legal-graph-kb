@@ -1,0 +1,38 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 103,
+  "question": "Bhxh của em tầm 9 năm 2 tháng mức đóng tầm 4tr3, cho em hỏi bh thất nghiệp nhận được bao nhiêu và bhxh nhận được bao nhiêu?",
+  "answer": "Issue:\nNgười hỏi muốn biết mức nhận bảo hiểm thất nghiệp và số tiền BHXH một lần dựa trên thời gian đóng và mức đóng của mình.\n\nRule:\nLuật BHXH 2024 (41/2024/QH15) - Article 4, clause 4: \"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 5, clause 6: \"Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 76, clause 2: \"Mức trợ cấp một lần đối với người đang hưởng lương hưu được tính theo thời gian đã đóng bảo hiểm xã hội trong đó mỗi năm đóng bảo hiểm xã hội trước năm 2014 được tính bằng 1,5 tháng lương hưu đang hưởng, mỗi năm đóng bảo hiểm xã hội từ năm 2014 trở đi được tính bằng 02 tháng lương hưu đang hưởng; sau đó mỗi tháng đã hưởng lương hưu thì mức trợ cấp một lần trừ 0,5 tháng lương hưu. Mức thấp nhất bằng 03 tháng lương hưu đang hưởng.\"\n\nApplication:\nKhông có slot_bindings được cung cấp trong trace. Chương trình Prolog đã sử dụng các sự kiện nội bộ: years_contributed(user,...), months_contributed(user,...), base_salary(user,...) làm đầu vào cho quy tắc benefits_amounts/3; quy tắc này trả về kết luận dựa trên các nguồn pháp luật (source_c004, source_c006) mà không tính ra số cuối cùng.\n\nConclusion:\nAnswer = amounts(unemployment_amount_unknown_due_to_missing_legislation,social_insurance_amount_cannot_be_computed_from_provided_snippets). Prolog trace: step(conclusion,unemployment_amount(user,unknown),based_on(source_c004)), step(conclusion,social_insurance_amount(user,unknown),based_on(source_c006)). Hệ thống không xuất được giá trị số cuối cùng do thông tin pháp luật/qui tắc tính chưa đầy đủ trong nguồn được sử dụng.",
+  "citations": [
+    "[Điều 4 khoản 4]",
+    "[Điều 5 khoản 6]",
+    "[Điều 76 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A4.K4",
+    "L41_2024.A5.K6",
+    "L41_2024.A76.K2"
+  ],
+  "citation_indices": [
+    3,
+    4,
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_amount(user,unknown),based_on(source_c004)),step(conclusion,social_insurance_amount(user,unknown),based_on(source_c006))]",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết mức nhận bảo hiểm thất nghiệp và số tiền BHXH một lần dựa trên thời gian đóng và mức đóng của mình.",
+    "rule": "Luật BHXH 2024 (41/2024/QH15) - Article 4, clause 4: \"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 5, clause 6: \"Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 76, clause 2: \"Mức trợ cấp một lần đối với người đang hưởng lương hưu được tính theo thời gian đã đóng bảo hiểm xã hội trong đó mỗi năm đóng bảo hiểm xã hội trước năm 2014 được tính bằng 1,5 tháng lương hưu đang hưởng, mỗi năm đóng bảo hiểm xã hội từ năm 2014 trở đi được tính bằng 02 tháng lương hưu đang hưởng; sau đó mỗi tháng đã hưởng lương hưu thì mức trợ cấp một lần trừ 0,5 tháng lương hưu. Mức thấp nhất bằng 03 tháng lương hưu đang hưởng.\"",
+    "application": "Không có slot_bindings được cung cấp trong trace. Chương trình Prolog đã sử dụng các sự kiện nội bộ: years_contributed(user,...), months_contributed(user,...), base_salary(user,...) làm đầu vào cho quy tắc benefits_amounts/3; quy tắc này trả về kết luận dựa trên các nguồn pháp luật (source_c004, source_c006) mà không tính ra số cuối cùng.",
+    "conclusion": "Answer = amounts(unemployment_amount_unknown_due_to_missing_legislation,social_insurance_amount_cannot_be_computed_from_provided_snippets). Prolog trace: step(conclusion,unemployment_amount(user,unknown),based_on(source_c004)), step(conclusion,social_insurance_amount(user,unknown),based_on(source_c006)). Hệ thống không xuất được giá trị số cuối cùng do thông tin pháp luật/qui tắc tính chưa đầy đủ trong nguồn được sử dụng."
+  },
+  "elapsed_s": 49.739,
+  "prompt_tokens": 3533,
+  "completion_tokens": 5153,
+  "error": null,
+  "gold_answer": "Nếu toàn bộ thời gian đóng của bạn là từ 2014 trở đi, BHXH 1 lần ước khoảng khoảng 81,7 triệu; đây chỉ là ước tính thô, chưa tính hệ số điều chỉnh tiền lương. Với BHTN, nếu đủ điều kiện hưởng thì mức trợ cấp hằng tháng bằng 60% bình quân lương đóng BHTN của 6 tháng cuối, tức khoảng 2,58 triệu/tháng; thời gian hưởng khoảng 9 tháng nếu thời gian đóng BHTN là 9 năm 2 tháng.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

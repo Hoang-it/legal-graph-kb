@@ -1,0 +1,38 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 3,
+  "question": "Bà H.T. T đã chấm dứt hợp đồng lao động với doanh nghiệp từ năm 2018. Hiện tại, bà phát hiện là tháng 9/2018 bà chưa được chốt sổ BHXH.\nBà T. hỏi, bà có thể tự chốt sổ BHXH với cơ quan bảo hiểm quận qua hình thức nộp hồ sơ online được không?",
+  "answer": "Issue: Bà H.T. T muốn biết liệu bà có thể tự chốt sổ bảo hiểm xã hội (BHXH) với cơ quan bảo hiểm quận qua hình thức nộp hồ sơ online hay không, sau khi đã chấm dứt hợp đồng lao động từ năm 2018 và phát hiện chưa được chốt sổ BHXH vào tháng 9/2018.\n\nRule: \n- Theo Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 3: \"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\"\n- Điều 28, Khoản 4: \"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\"\n- Điều 25, Khoản 2: \"Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau. Chậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằng bản giấy được cấp khi người tham gia bảo hiểm xã hội yêu cầu.\"\n\nApplication: Không có thông tin cụ thể về các giá trị đầu vào cần thiết cho việc chốt sổ BHXH online trong trường hợp của bà T. Tuy nhiên, dựa trên các quy định pháp luật được trích dẫn, việc chốt sổ BHXH có thể được thực hiện qua hình thức điện tử và có giá trị pháp lý tương đương với bản giấy.\n\nConclusion: Theo kết quả từ chương trình Prolog, bà H.T. T có thể tự chốt sổ BHXH qua hình thức nộp hồ sơ online. Kết luận này dựa trên các điều khoản từ Luật BHXH 2024, cụ thể là Điều 13, Khoản 3; Điều 28, Khoản 4; và Điều 25, Khoản 2.",
+  "citations": [
+    "[Điều 13 khoản 3]",
+    "[Điều 28 khoản 4]",
+    "[Điều 25 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A13.K3",
+    "L41_2024.A28.K4",
+    "L41_2024.A25.K2"
+  ],
+  "citation_indices": [
+    0,
+    2,
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,can_self_finalize_social_insurance_online(yes),based_on(source_c000)),step(conclusion,can_self_finalize_social_insurance_online(yes),based_on(source_c002)),step(conclusion,can_self_finalize_social_insurance_online(yes),based_on(source_c005))]",
+  "irac_sections": {
+    "issue": "Bà H.T. T muốn biết liệu bà có thể tự chốt sổ bảo hiểm xã hội (BHXH) với cơ quan bảo hiểm quận qua hình thức nộp hồ sơ online hay không, sau khi đã chấm dứt hợp đồng lao động từ năm 2018 và phát hiện chưa được chốt sổ BHXH vào tháng 9/2018.",
+    "rule": "- Theo Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 3: \"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\"\n- Điều 28, Khoản 4: \"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\"\n- Điều 25, Khoản 2: \"Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau. Chậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằng bản giấy được cấp khi người tham gia bảo hiểm xã hội yêu cầu.\"",
+    "application": "Không có thông tin cụ thể về các giá trị đầu vào cần thiết cho việc chốt sổ BHXH online trong trường hợp của bà T. Tuy nhiên, dựa trên các quy định pháp luật được trích dẫn, việc chốt sổ BHXH có thể được thực hiện qua hình thức điện tử và có giá trị pháp lý tương đương với bản giấy.",
+    "conclusion": "Theo kết quả từ chương trình Prolog, bà H.T. T có thể tự chốt sổ BHXH qua hình thức nộp hồ sơ online. Kết luận này dựa trên các điều khoản từ Luật BHXH 2024, cụ thể là Điều 13, Khoản 3; Điều 28, Khoản 4; và Điều 25, Khoản 2."
+  },
+  "elapsed_s": 7.22,
+  "prompt_tokens": 3612,
+  "completion_tokens": 929,
+  "error": null,
+  "gold_answer": "Khoản 5 Điều 21 Luật BHXH 2014 quy định: \"Người sử dụng lao động có trách nhiệm phối hợp với cơ quan BHXH trả sổ BHXH cho người lao động, xác nhận thời gian đóng BHXH khi người lao động chấm dứt HĐLĐ, HĐLV hoặc thôi việc theo quy định của pháp luật\".\nTheo Khoản 3, Điều 48 Bộ luật lao động năm 2019 quy định trách nhiệm của người sử dụng lao động khi hợp đồng lao động chấm dứt như sau:\n\"Người sử dụng lao động có trách nhiệm hoàn thành thủ tục xác nhận thời gian đóng BHXH, BH thất nghiệp và trả lại cùng với bản chính giấy tờ khác nếu người sử dụng lao động đã giữ của người lao động.\"\nTừ những căn cứ trên, thì trách nhiệm chốt sổ BHXH do người sử dụng lao động thực hiện, đồng thời có sự phối hợp của cơ quan BHXH.\nQua kiểm tra theo thông tin bà T. cung cấp trên hệ thống phần mềm của Bảo hiểm xã hội Việt Nam thì bà có quá trình tham gia BHXH như sau:\nThời gian từ tháng 1/2017 đến tháng 9/2018 làm việc và đóng BHXH tại Chi nhánh doanh nghiệp.\nThời gian làm việc và đóng BHXH tại Chi nhánh doanh nghiệp đã được đơn vị đề nghị BHXH chốt sổ và in tờ rời cho bà.\nĐề nghị bà T. liên hệ với các đơn vị cũ của bà để nhận lại sổ và tờ rời quá trình tham gia BHXH.",
+  "gold_citations_raw": "Khoản 5 Điều 21 Luật BHXH 2014\nKhoản 3, Điều 48 Bộ luật lao động năm 2019"
+}

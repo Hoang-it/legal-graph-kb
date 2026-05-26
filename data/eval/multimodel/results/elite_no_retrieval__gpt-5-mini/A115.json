@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 115,
+  "question": "Mình đóng được bảo hiểm 8 tháng thì có rút được tiền trong bảo hiểu đc không?",
+  "answer": "Issue:\nMình đóng được bảo hiểm 8 tháng thì có rút được tiền trong bảo hiểm được không?\n\nRule:\nKhông có trích dẫn pháp lý nào được cung cấp trong dữ liệu (mảng citations trống).\n\nApplication:\n- slot_bindings: không có slot nào được gán.\n- verify_fact sử dụng: months_contributed(user, 8).\nProlog đã khớp fact months_contributed(user,8) với quy tắc tương ứng và thực hiện bước kiểm tra; trace ghi nhận: [step(months_contributed_check,months_contributed(user,8),based_on(none))].\n\nConclusion:\nAnswer = maybe_eligible_if_stopped_and_meets_specific_cases.\nTrace = \"[step(months_contributed_check,months_contributed(user,8),based_on(none))]\".\nKết quả này là một giá trị biểu tượng (symbolic) trả về từ Prolog; hệ thống không cung cấp trích dẫn pháp lý chi tiết trong trace để đưa ra quyết định pháp lý cuối cùng.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(months_contributed_check,months_contributed(user,8),based_on(none))]",
+  "irac_sections": {
+    "issue": "Mình đóng được bảo hiểm 8 tháng thì có rút được tiền trong bảo hiểm được không?",
+    "rule": "Không có trích dẫn pháp lý nào được cung cấp trong dữ liệu (mảng citations trống).",
+    "application": "- slot_bindings: không có slot nào được gán.\n- verify_fact sử dụng: months_contributed(user, 8).\nProlog đã khớp fact months_contributed(user,8) với quy tắc tương ứng và thực hiện bước kiểm tra; trace ghi nhận: [step(months_contributed_check,months_contributed(user,8),based_on(none))].",
+    "conclusion": "Answer = maybe_eligible_if_stopped_and_meets_specific_cases.\nTrace = \"[step(months_contributed_check,months_contributed(user,8),based_on(none))]\".\nKết quả này là một giá trị biểu tượng (symbolic) trả về từ Prolog; hệ thống không cung cấp trích dẫn pháp lý chi tiết trong trace để đưa ra quyết định pháp lý cuối cùng."
+  },
+  "elapsed_s": 42.481,
+  "prompt_tokens": 1956,
+  "completion_tokens": 5333,
+  "error": null,
+  "gold_answer": "Đóng BHXH 8 tháng chưa đương nhiên được rút ngay. Bạn chỉ được hưởng BHXH 1 lần khi thuộc trường hợp luật cho phép, phổ biến là đã nghỉ việc và sau 12 tháng không còn thuộc diện tham gia BHXH bắt buộc, cũng không tham gia BHXH tự nguyện. Nếu chưa đủ điều kiện thì thời gian 8 tháng đó được bảo lưu để cộng nối về sau.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

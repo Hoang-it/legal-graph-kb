@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 95,
+  "question": "Mình dong bao hiểm dc 10 tháng có rút đc 1 lần không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu đã đóng bảo hiểm xã hội được 10 tháng thì có được rút bảo hiểm xã hội một lần hay không?\n\nRule:\n\"Người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng ra nước ngoài để định cư nếu có nguyện vọng thì được giải quyết hưởng trợ cấp một lần.\" (Luật BHXH 2024 (41/2024/QH15), Điều 76, Khoản 1)\n\nApplication:\nKhông có giá trị nào được gán cho các slot cụ thể ngoài xác nhận months_contributed(user, 10). Truy vấn Prolog sử dụng thông tin này để xác định điều kiện hưởng trợ cấp một lần dựa trên nguồn luật đã trích dẫn.\n\nConclusion:\nHệ thống không thể xác định rõ bạn có đủ điều kiện rút bảo hiểm xã hội một lần với 10 tháng đóng hay không (Eligible = unknown), do thiếu thông tin hoặc điều kiện pháp lý cụ thể liên quan đến trường hợp này.",
+  "citations": [
+    "[Điều 76 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A76.K1"
+  ],
+  "citation_indices": [
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_social_insurance_eligibility(user,unknown),based_on(source_c019))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu đã đóng bảo hiểm xã hội được 10 tháng thì có được rút bảo hiểm xã hội một lần hay không?",
+    "rule": "\"Người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng ra nước ngoài để định cư nếu có nguyện vọng thì được giải quyết hưởng trợ cấp một lần.\" (Luật BHXH 2024 (41/2024/QH15), Điều 76, Khoản 1)",
+    "application": "Không có giá trị nào được gán cho các slot cụ thể ngoài xác nhận months_contributed(user, 10). Truy vấn Prolog sử dụng thông tin này để xác định điều kiện hưởng trợ cấp một lần dựa trên nguồn luật đã trích dẫn.",
+    "conclusion": "Hệ thống không thể xác định rõ bạn có đủ điều kiện rút bảo hiểm xã hội một lần với 10 tháng đóng hay không (Eligible = unknown), do thiếu thông tin hoặc điều kiện pháp lý cụ thể liên quan đến trường hợp này."
+  },
+  "elapsed_s": 5.233,
+  "prompt_tokens": 2713,
+  "completion_tokens": 458,
+  "error": null,
+  "gold_answer": "Đóng BHXH 10 tháng chưa có nghĩa là rút được ngay. Trường hợp phổ biến muốn nhận BHXH một lần là bạn phải ngừng tham gia BHXH từ đủ 12 tháng trở lên và thuộc trường hợp luật cho phép. Nếu mới nghỉ hoặc vẫn còn đóng nối tiếp nơi khác thì chưa giải quyết được. Nếu không rút, 10 tháng đó vẫn được bảo lưu để sau này cộng nối.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110"
+}

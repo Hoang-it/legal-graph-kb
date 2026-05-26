@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 185,
+  "question": "minh tham gia bh từ 2021 đến nay đóng phí đều hàng tháng.nhưng mở  định danh kiểm tra thì 21 23 24 25 đều có phí còn 22 trống không thấy có phí mình cảm thấy chưa hiểu, tại sao mình bị thiếu tháng này?",
+  "answer": "Issue: Bạn đã tham gia bảo hiểm xã hội từ năm 2021 và đóng phí đều hàng tháng. Tuy nhiên, khi kiểm tra định danh, bạn thấy các tháng 21, 23, 24, 25 đều có phí, nhưng tháng 22 lại không có, và bạn không hiểu lý do tại sao thiếu tháng này.\n\nRule: Theo Điều 98, Khoản 2 của Luật Bảo hiểm xã hội 2024: \"Trường hợp không đóng bảo hiểm xã hội đầy đủ, người lao động có thể bị thiếu tháng đóng.\"\n\nApplication: Trong trường hợp này, không có thông tin cụ thể về các tháng đóng bảo hiểm xã hội của bạn trong năm 2022. Tuy nhiên, theo quy định, nếu không đóng bảo hiểm xã hội đầy đủ, có thể dẫn đến việc thiếu tháng đóng.\n\nConclusion: Có thể do bạn không đóng bảo hiểm xã hội đầy đủ trong năm 2022, dẫn đến việc thiếu tháng đóng.",
+  "citations": [
+    "[Điều 98 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A98.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,missing_contribution_months(Có thể do không đóng bảo hiểm xã hội đầy đủ trong năm 2022.),based_on(source_a98_k2))]",
+  "irac_sections": {
+    "issue": "Bạn đã tham gia bảo hiểm xã hội từ năm 2021 và đóng phí đều hàng tháng. Tuy nhiên, khi kiểm tra định danh, bạn thấy các tháng 21, 23, 24, 25 đều có phí, nhưng tháng 22 lại không có, và bạn không hiểu lý do tại sao thiếu tháng này.",
+    "rule": "Theo Điều 98, Khoản 2 của Luật Bảo hiểm xã hội 2024: \"Trường hợp không đóng bảo hiểm xã hội đầy đủ, người lao động có thể bị thiếu tháng đóng.\"",
+    "application": "Trong trường hợp này, không có thông tin cụ thể về các tháng đóng bảo hiểm xã hội của bạn trong năm 2022. Tuy nhiên, theo quy định, nếu không đóng bảo hiểm xã hội đầy đủ, có thể dẫn đến việc thiếu tháng đóng.",
+    "conclusion": "Có thể do bạn không đóng bảo hiểm xã hội đầy đủ trong năm 2022, dẫn đến việc thiếu tháng đóng."
+  },
+  "elapsed_s": 7.257,
+  "prompt_tokens": 3303,
+  "completion_tokens": 476,
+  "error": null,
+  "gold_answer": "Nếu app không hiển thị năm 2022 nhưng các năm khác vẫn có, có thể do lỗi đồng bộ dữ liệu, gộp mã số hoặc đơn vị chưa hoàn tất hạch toán năm đó. Thời gian đóng hợp lệ không tự nhiên bị mất, nhưng bạn nên đề nghị BHXH in chi tiết quá trình đóng để kiểm tra. Nếu thật sự thiếu dữ liệu, có thể yêu cầu đơn vị cũ đối chiếu chứng từ đóng và cơ quan BHXH cập nhật lại.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

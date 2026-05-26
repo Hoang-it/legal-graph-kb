@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 115,
+  "question": "Mình đóng được bảo hiểm 8 tháng thì có rút được tiền trong bảo hiểu đc không?",
+  "answer": "Issue: Bạn muốn biết liệu đã đóng bảo hiểm xã hội được 8 tháng thì có thể rút tiền từ bảo hiểm được không.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 6: \"Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\"\n\nApplication: Trong trường hợp này, bạn đã đóng bảo hiểm xã hội được 8 tháng. Theo quy định, thời gian đóng bảo hiểm xã hội từ 07 tháng đến 11 tháng được tính là một năm. Tuy nhiên, quy tắc Prolog đã xác định rằng với số tháng đóng bảo hiểm dưới 12 tháng, bạn không đủ điều kiện để rút tiền từ bảo hiểm xã hội.\n\nConclusion: Kết quả từ truy vấn Prolog cho thấy bạn không đủ điều kiện để rút tiền từ bảo hiểm xã hội với thời gian đóng bảo hiểm là 8 tháng.",
+  "citations": [
+    "[Điều 5 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K6"
+  ],
+  "citation_indices": [
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,one_time_social_insurance_eligibility(user,no),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Bạn muốn biết liệu đã đóng bảo hiểm xã hội được 8 tháng thì có thể rút tiền từ bảo hiểm được không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 6: \"Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\"",
+    "application": "Trong trường hợp này, bạn đã đóng bảo hiểm xã hội được 8 tháng. Theo quy định, thời gian đóng bảo hiểm xã hội từ 07 tháng đến 11 tháng được tính là một năm. Tuy nhiên, quy tắc Prolog đã xác định rằng với số tháng đóng bảo hiểm dưới 12 tháng, bạn không đủ điều kiện để rút tiền từ bảo hiểm xã hội.",
+    "conclusion": "Kết quả từ truy vấn Prolog cho thấy bạn không đủ điều kiện để rút tiền từ bảo hiểm xã hội với thời gian đóng bảo hiểm là 8 tháng."
+  },
+  "elapsed_s": 5.809,
+  "prompt_tokens": 4826,
+  "completion_tokens": 611,
+  "error": null,
+  "gold_answer": "Đóng BHXH 8 tháng chưa đương nhiên được rút ngay. Bạn chỉ được hưởng BHXH 1 lần khi thuộc trường hợp luật cho phép, phổ biến là đã nghỉ việc và sau 12 tháng không còn thuộc diện tham gia BHXH bắt buộc, cũng không tham gia BHXH tự nguyện. Nếu chưa đủ điều kiện thì thời gian 8 tháng đó được bảo lưu để cộng nối về sau.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

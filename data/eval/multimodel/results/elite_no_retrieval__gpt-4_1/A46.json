@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 46,
+  "question": "Lúc còn huyện cũ thì mình nộp bhxh ở huyện.Còn bây giờ không còn huyện nữa thì mình nộp ở đâu? ở xã hay là hành chính công?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Khi trước đây nộp bảo hiểm xã hội (BHXH) tại huyện cũ, nhưng hiện nay huyện không còn nữa thì phải nộp BHXH ở đâu? Có thể nộp tại xã hay bộ phận hành chính công không?\n\nRule:\nKhông có trích dẫn văn bản pháp luật cụ thể nào được cung cấp trong truy vấn này.\n\nApplication:\nKhông có slot_id hoặc giá trị cụ thể nào được cung cấp trong truy vấn này. Tuy nhiên, theo kết quả truy vấn Prolog, nơi nộp BHXH được xác định là: \"Cơ quan bảo hiểm xã hội cấp huyện hoặc bộ phận một cửa cấp huyện, cấp xã theo phân cấp của cơ quan BHXH\". Điều này có nghĩa là người tham gia BHXH có thể nộp hồ sơ tại các địa điểm này tùy theo sự phân cấp của cơ quan BHXH tại địa phương.\n\nConclusion:\nTheo kết quả truy vấn, bạn có thể nộp BHXH tại cơ quan bảo hiểm xã hội cấp huyện hoặc bộ phận một cửa cấp huyện, cấp xã theo phân cấp của cơ quan BHXH.",
+  "citations": [
+    "[Điều 23 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A23.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,noi_nop_bhxh([Cơ quan bảo hiểm xã hội cấp huyện hoặc bộ phận một cửa cấp huyện, cấp xã theo phân cấp của cơ quan BHXH]),based_on(source_a23_k1))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Khi trước đây nộp bảo hiểm xã hội (BHXH) tại huyện cũ, nhưng hiện nay huyện không còn nữa thì phải nộp BHXH ở đâu? Có thể nộp tại xã hay bộ phận hành chính công không?",
+    "rule": "Không có trích dẫn văn bản pháp luật cụ thể nào được cung cấp trong truy vấn này.",
+    "application": "Không có slot_id hoặc giá trị cụ thể nào được cung cấp trong truy vấn này. Tuy nhiên, theo kết quả truy vấn Prolog, nơi nộp BHXH được xác định là: \"Cơ quan bảo hiểm xã hội cấp huyện hoặc bộ phận một cửa cấp huyện, cấp xã theo phân cấp của cơ quan BHXH\". Điều này có nghĩa là người tham gia BHXH có thể nộp hồ sơ tại các địa điểm này tùy theo sự phân cấp của cơ quan BHXH tại địa phương.",
+    "conclusion": "Theo kết quả truy vấn, bạn có thể nộp BHXH tại cơ quan bảo hiểm xã hội cấp huyện hoặc bộ phận một cửa cấp huyện, cấp xã theo phân cấp của cơ quan BHXH."
+  },
+  "elapsed_s": 6.313,
+  "prompt_tokens": 2110,
+  "completion_tokens": 470,
+  "error": null,
+  "gold_answer": "Sau khi thay đổi mô hình tổ chức hành chính, hồ sơ BHXH thường nộp tại cơ quan BHXH khu vực/cơ quan được phân công tiếp nhận hoặc Trung tâm phục vụ hành chính công, không phải xã nào cũng trực tiếp thu hồ sơ. Bạn nên tra cứu nơi tiếp nhận mới tại địa phương hoặc gọi cơ quan BHXH gần nhất để tránh đi sai nơi. Nguyên tắc là cơ quan BHXH nơi cư trú vẫn có trách nhiệm hướng dẫn, tiếp nhận hoặc chỉ dẫn nơi nộp đúng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; quy định tổ chức thực hiện của BHXH Việt Nam"
+}

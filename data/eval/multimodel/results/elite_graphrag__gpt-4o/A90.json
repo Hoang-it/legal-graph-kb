@@ -1,0 +1,34 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 90,
+  "question": "BHXH tự nguyện thì chuyển sang BHXH bắt buộc như thế nào cho hộ kinh doanh mới thành lập?",
+  "answer": "Issue: Làm thế nào để chuyển từ bảo hiểm xã hội (BHXH) tự nguyện sang BHXH bắt buộc cho hộ kinh doanh mới thành lập?\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 27, Khoản 2: \"Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm m và điểm n khoản 1 Điều 2 của Luật này nếu nộp qua người sử dụng lao động thì thực hiện theo quy định tại khoản 1 Điều này, nếu tự nộp thì hồ sơ là tờ khai quy định tại điểm b khoản 1 Điều này.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings để áp dụng vào quy trình này. Tuy nhiên, theo kết quả truy vấn Prolog, quy trình chuyển đổi từ BHXH tự nguyện sang BHXH bắt buộc yêu cầu nộp tờ khai đăng ký.\n\nConclusion: Theo kết quả từ truy vấn Prolog, quy trình cần thực hiện để chuyển từ BHXH tự nguyện sang BHXH bắt buộc là nộp tờ khai đăng ký tham gia BHXH bắt buộc.",
+  "citations": [
+    "[Điều 27 khoản 2]",
+    "[Điều 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A27.K2",
+    "L41_2024.A2"
+  ],
+  "citation_indices": [
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,voluntary_to_mandatory_bhxh_procedure([submit_declaration_form]),based_on(source_c005))]",
+  "irac_sections": {
+    "issue": "Làm thế nào để chuyển từ bảo hiểm xã hội (BHXH) tự nguyện sang BHXH bắt buộc cho hộ kinh doanh mới thành lập?",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 27, Khoản 2: \"Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm m và điểm n khoản 1 Điều 2 của Luật này nếu nộp qua người sử dụng lao động thì thực hiện theo quy định tại khoản 1 Điều này, nếu tự nộp thì hồ sơ là tờ khai quy định tại điểm b khoản 1 Điều này.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings để áp dụng vào quy trình này. Tuy nhiên, theo kết quả truy vấn Prolog, quy trình chuyển đổi từ BHXH tự nguyện sang BHXH bắt buộc yêu cầu nộp tờ khai đăng ký.",
+    "conclusion": "Theo kết quả từ truy vấn Prolog, quy trình cần thực hiện để chuyển từ BHXH tự nguyện sang BHXH bắt buộc là nộp tờ khai đăng ký tham gia BHXH bắt buộc."
+  },
+  "elapsed_s": 5.481,
+  "prompt_tokens": 2910,
+  "completion_tokens": 503,
+  "error": null,
+  "gold_answer": "Khi hộ kinh doanh mới thành lập và chủ hộ thuộc diện tham gia BHXH bắt buộc, bạn cần đăng ký tham gia bắt buộc theo mã số BHXH đang có; không phải tạo mã mới. Nếu trước đó bạn đang đóng tự nguyện, thời gian đã đóng sẽ được bảo lưu và nối tiếp trên cùng mã số. Bạn chỉ cần liên hệ cơ quan BHXH để chuyển phương thức tham gia và tránh đóng trùng cùng thời gian ở cả 2 diện.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 25, Điều 36; Nghị định 158/2025/NĐ-CP"
+}

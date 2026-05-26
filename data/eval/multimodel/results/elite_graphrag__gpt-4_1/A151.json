@@ -1,0 +1,34 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 151,
+  "question": "11 năm lương 9trieu 8 trăm rút xã hội đc bao nhiêu ạ",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu người lao động có 11 năm đóng bảo hiểm xã hội với mức lương bình quân 9 800 000 thì khi rút bảo hiểm xã hội một lần sẽ được bao nhiêu tiền?\n\nRule:\n\"Mức hưởng trợ cấp một lần cho mỗi năm đóng cao hơn quy định tại khoản 1 Điều này bằng 0,5 lần của mức bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội quy định tại Điều 72 của Luật này cho mỗi năm đóng cao hơn đến tuổi nghỉ hưu theo quy định của pháp luật.\" (Luật BHXH 2024 (41/2024/QH15), Điều 68, Khoản 2)\n\nApplication:\nCác thông tin đầu vào gồm: years_contributed = 11 (số năm đóng bảo hiểm xã hội), average_salary = 9 800 000 (mức lương bình quân làm căn cứ đóng). Prolog đã sử dụng các giá trị này để tính mức hưởng trợ cấp một lần theo quy định tại nguồn luật đã dẫn.\n\nConclusion:\nTheo kết quả truy vấn Prolog, số tiền bảo hiểm xã hội một lần mà người lao động được nhận là Amount = 53 900 000.",
+  "citations": [
+    "[Điều 72]",
+    "[Điều 68 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A72",
+    "L41_2024.A68.K2"
+  ],
+  "citation_indices": [
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(calculation,one_time_social_insurance_amount(user,53900000.0),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu người lao động có 11 năm đóng bảo hiểm xã hội với mức lương bình quân 9 800 000 thì khi rút bảo hiểm xã hội một lần sẽ được bao nhiêu tiền?",
+    "rule": "\"Mức hưởng trợ cấp một lần cho mỗi năm đóng cao hơn quy định tại khoản 1 Điều này bằng 0,5 lần của mức bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội quy định tại Điều 72 của Luật này cho mỗi năm đóng cao hơn đến tuổi nghỉ hưu theo quy định của pháp luật.\" (Luật BHXH 2024 (41/2024/QH15), Điều 68, Khoản 2)",
+    "application": "Các thông tin đầu vào gồm: years_contributed = 11 (số năm đóng bảo hiểm xã hội), average_salary = 9 800 000 (mức lương bình quân làm căn cứ đóng). Prolog đã sử dụng các giá trị này để tính mức hưởng trợ cấp một lần theo quy định tại nguồn luật đã dẫn.",
+    "conclusion": "Theo kết quả truy vấn Prolog, số tiền bảo hiểm xã hội một lần mà người lao động được nhận là Amount = 53 900 000."
+  },
+  "elapsed_s": 6.905,
+  "prompt_tokens": 3382,
+  "completion_tokens": 571,
+  "error": null,
+  "gold_answer": "Nếu 11 năm đóng của bạn đều từ năm 2014 trở đi thì BHXH 1 lần ước khoảng khoảng 215,6 triệu, chưa tính hệ số điều chỉnh tiền lương. Số thực nhận do cơ quan BHXH tính sẽ căn cứ mức bình quân tiền lương tháng đóng sau điều chỉnh và làm tròn thời gian đóng theo luật. Nếu có thời gian trước 2014 thì phần đó tính theo hệ số 1,5 tháng/năm.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

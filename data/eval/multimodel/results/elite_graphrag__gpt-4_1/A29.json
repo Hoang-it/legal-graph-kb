@@ -1,0 +1,27 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 29,
+  "question": "Bà Nhật Lệ (TPHCM) sinh con thứ hai vào tháng 01/2026. Bà được biết Nhà nước đang xem xét điều chỉnh thời gian nghỉ thai sản lên 7 tháng, tuy nhiên bà chưa rõ thời điểm hiệu lực của quy định này.\nBà Lệ hỏi, bà có thuộc diện được áp dụng chế độ nghỉ thai sản 7 tháng không?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query contains literal number(s): '?- maternity_leave_duration_2026_info(Answer, Trace).']",
+  "citations": [
+    "[Điều 55 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A55.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": false,
+  "prolog_status": "invalid_query",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 6.511,
+  "prompt_tokens": 7034,
+  "completion_tokens": 685,
+  "error": null,
+  "gold_answer": "Luật Dân số năm 2025 có hiệu lực kể từ ngày 1/7/2026 quy định sửa đổi, bổ sung một số điều của các luật có liên quan đến công tác dân số tại khoản 1 Điều 29 như sau:\n\"Sửa đổi, bổ sung khoản 1 Điều 139 Bộ luật Lao động số 49/2019/QH14 đã được sửa đổi, bố sung theo Luật số 71/2025/QH15 như sau:\n\"1. Lao động nữ được nghỉ thai sản trước và sau khi sinh con là 06 tháng; trường hợp sinh con thứ hai, lao động nữ được nghỉ thai sản trước và sau khi sinh con là 07 tháng; thời gian nghỉ trước khi sinh không quá 02 tháng.\nTrường hợp lao động nữ sinh đôi trở lên thì tính từ con thứ hai trở đi, cứ mỗi con, người mẹ được nghỉ thêm 01 tháng\"\".\nĐối chiếu với quy định nêu trên và theo thông tin bà cung cấp thì bà sinh con thứ hai vào tháng 01/2026 thì bà chưa thuộc trường hợp áp dụng nghỉ chế độ thai sản 7 tháng.",
+  "gold_citations_raw": "Luật Dân số năm 2025"
+}

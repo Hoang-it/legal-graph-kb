@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 128,
+  "question": "mình đi làm hồ sơ lãnh lương hưu thì bên bhxh tra trên hệ thống và báo rằng tên mình có 2 số sổ, và số sổ kia đã chốt và nhận tiền rồi, mà mình chưa từng làm ở công ty đó, bây giờ mình phải làm sao?",
+  "answer": "Issue: Bạn làm hồ sơ hưởng lương hưu, BHXH tra hệ thống báo tên bạn có sổ trùng và sổ kia đã chốt, nhận tiền trong khi bạn chưa từng làm ở công ty đó; bạn cần biết phải làm gì.\n\nRule: Không có trích dẫn pháp luật kèm theo trong dữ liệu trả về.\n\nApplication: slot_bindings: không có slot nào được ràng buộc trong trace. Truy vấn Prolog là ?- advice(user, Answer, Trace). Truy vấn đã sử dụng luật advice trong generated_program; luật này định nghĩa danh sách bước hành động và Trace. Trace trả về (theo Prolog) là:\n\"[step(contact_bhxh,based_on(law_bhxh_2024)),step(provide_documents,based_on(law_bhxh_2024)),step(request_verification,based_on(law_bhxh_2024)),step(report_police,based_on(law_bhxh_2024)),step(follow_up,based_on(law_bhxh_2024))]\"\n\nConclusion: Prolog binding cho biến Answer là:\n\"[Liên hệ ngay cơ quan BHXH nơi đang xử lý hồ sơ; yêu cầu tạm dừng chi trả cho sổ nghi trùng,Yêu cầu đối chiếu, sao hồ sơ; nộp CMND/CCCD hoặc hộ chiếu, sổ BHXH và các giấy tờ liên quan để BHXH đối chiếu,Yêu cầu BHXH rà soát, xác minh nguồn đóng, điều chỉnh, gộp hoặc cấp lại sổ nếu có sai sót do nhập liệu hoặc trùng mã,Nếu phát hiện dấu hiệu mạo danh hoặc gian lận (có người nhận tiền thay bạn), gửi đơn tố giác tới cơ quan công an và đề nghị BHXH phối hợp cung cấp hồ sơ làm bằng chứng,Lưu giữ biên nhận, văn bản, số hiệu hồ sơ; theo dõi tiến độ; nếu BHXH không giải quyết, thực hiện khiếu nại hành chính hoặc khởi kiện theo thủ tục luật định]\"",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(contact_bhxh,based_on(law_bhxh_2024)),step(provide_documents,based_on(law_bhxh_2024)),step(request_verification,based_on(law_bhxh_2024)),step(report_police,based_on(law_bhxh_2024)),step(follow_up,based_on(law_bhxh_2024))]",
+  "irac_sections": {
+    "issue": "Bạn làm hồ sơ hưởng lương hưu, BHXH tra hệ thống báo tên bạn có sổ trùng và sổ kia đã chốt, nhận tiền trong khi bạn chưa từng làm ở công ty đó; bạn cần biết phải làm gì.",
+    "rule": "Không có trích dẫn pháp luật kèm theo trong dữ liệu trả về.",
+    "application": "slot_bindings: không có slot nào được ràng buộc trong trace. Truy vấn Prolog là ?- advice(user, Answer, Trace). Truy vấn đã sử dụng luật advice trong generated_program; luật này định nghĩa danh sách bước hành động và Trace. Trace trả về (theo Prolog) là:\n\"[step(contact_bhxh,based_on(law_bhxh_2024)),step(provide_documents,based_on(law_bhxh_2024)),step(request_verification,based_on(law_bhxh_2024)),step(report_police,based_on(law_bhxh_2024)),step(follow_up,based_on(law_bhxh_2024))]\"",
+    "conclusion": "Prolog binding cho biến Answer là:\n\"[Liên hệ ngay cơ quan BHXH nơi đang xử lý hồ sơ; yêu cầu tạm dừng chi trả cho sổ nghi trùng,Yêu cầu đối chiếu, sao hồ sơ; nộp CMND/CCCD hoặc hộ chiếu, sổ BHXH và các giấy tờ liên quan để BHXH đối chiếu,Yêu cầu BHXH rà soát, xác minh nguồn đóng, điều chỉnh, gộp hoặc cấp lại sổ nếu có sai sót do nhập liệu hoặc trùng mã,Nếu phát hiện dấu hiệu mạo danh hoặc gian lận (có người nhận tiền thay bạn), gửi đơn tố giác tới cơ quan công an và đề nghị BHXH phối hợp cung cấp hồ sơ làm bằng chứng,Lưu giữ biên nhận, văn bản, số hiệu hồ sơ; theo dõi tiến độ; nếu BHXH không giải quyết, thực hiện khiếu nại hành chính hoặc khởi kiện theo thủ tục luật định]\""
+  },
+  "elapsed_s": 41.879,
+  "prompt_tokens": 2564,
+  "completion_tokens": 5056,
+  "error": null,
+  "gold_answer": "Đây là dấu hiệu có thể bị trùng/nhầm mã số BHXH hoặc có người dùng thông tin của bạn. Bạn cần đề nghị BHXH kiểm tra, đối chiếu CCCD, quá trình đóng, hồ sơ gốc của 2 số sổ và yêu cầu tạm dừng giải quyết cho số bất thường nếu có dấu hiệu giả mạo. Nếu đúng có việc sử dụng thông tin trái phép, bạn có quyền khiếu nại và đề nghị chuyển cơ quan công an xử lý.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,36 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 39,
+  "question": "Mình ngưng đóng bảo hiểm xã hội từ 2017 đến bây giờ là năm 2026 rồi. Liệu mình có đi thanh toán bhxh đc k ạ?",
+  "answer": "Issue: Bạn đã ngưng đóng bảo hiểm xã hội từ năm 2017 và hiện tại là năm 2026. Bạn muốn biết liệu có thể thanh toán bảo hiểm xã hội một lần hay không.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 107, Khoản 2: \"Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội. Thời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần đối với trường hợp người hưởng bảo hiểm xã hội theo quy định tại điểm đ khoản 1 Điều 102 của Luật này.\"\n\nApplication: Không có thông tin cụ thể về các giá trị đầu vào như thời điểm dừng đóng bảo hiểm xã hội hoặc các điều kiện khác từ phía bạn. Tuy nhiên, dựa trên quy định pháp luật, thời điểm dừng đóng bảo hiểm xã hội là căn cứ để xác định điều kiện hưởng bảo hiểm xã hội một lần.\n\nConclusion: Theo kết quả từ hệ thống, bạn đủ điều kiện để hưởng bảo hiểm xã hội một lần, được xác định là \"eligible_for_one_time_payment\".",
+  "citations": [
+    "[Điều 107 khoản 2]",
+    "[Điều 106]",
+    "[Điều 102]"
+  ],
+  "citation_ids": [
+    "L41_2024.A107.K2",
+    "L41_2024.A106",
+    "L41_2024.A102"
+  ],
+  "citation_indices": [
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_social_insurance_eligibility(eligible_for_one_time_payment),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Bạn đã ngưng đóng bảo hiểm xã hội từ năm 2017 và hiện tại là năm 2026. Bạn muốn biết liệu có thể thanh toán bảo hiểm xã hội một lần hay không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 107, Khoản 2: \"Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội. Thời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần đối với trường hợp người hưởng bảo hiểm xã hội theo quy định tại điểm đ khoản 1 Điều 102 của Luật này.\"",
+    "application": "Không có thông tin cụ thể về các giá trị đầu vào như thời điểm dừng đóng bảo hiểm xã hội hoặc các điều kiện khác từ phía bạn. Tuy nhiên, dựa trên quy định pháp luật, thời điểm dừng đóng bảo hiểm xã hội là căn cứ để xác định điều kiện hưởng bảo hiểm xã hội một lần.",
+    "conclusion": "Theo kết quả từ hệ thống, bạn đủ điều kiện để hưởng bảo hiểm xã hội một lần, được xác định là \"eligible_for_one_time_payment\"."
+  },
+  "elapsed_s": 7.236,
+  "prompt_tokens": 3152,
+  "completion_tokens": 561,
+  "error": null,
+  "gold_answer": "Nếu bạn đã ngừng đóng từ năm 2017 đến nay và không tiếp tục tham gia BHXH, thì thường có thể làm thủ tục hưởng BHXH một lần nếu thuộc trường hợp luật cho phép, nhất là đã ngừng tham gia từ đủ 12 tháng trở lên mà chưa đủ thời gian hưởng lương hưu. Nếu không rút một lần, bạn cũng có thể bảo lưu thời gian đã đóng để sau này tham gia tiếp hoặc chuyển sang BHXH tự nguyện.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110"
+}

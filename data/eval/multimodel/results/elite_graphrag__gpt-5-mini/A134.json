@@ -1,0 +1,21 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 134,
+  "question": "quyết định nghỉ thất nghiệp của tôi hết ngày 21/4. Nhưng tháng 3 tôi đi làm giám định sức khoẻ để nghỉ hưu thì có được không?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=unable_to_conclude, repair_rounds=2, error=Connection error.]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "unable_to_conclude",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 4.73,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "error": null,
+  "gold_answer": "Nếu quyết định hưởng trợ cấp thất nghiệp của bạn hết ngày 21/4 thì việc đi giám định sức khỏe để làm hồ sơ hưu vào tháng 3 không tự động làm mất quyền hưởng phần TCTN đang chi trả. Tuy nhiên khi bạn đủ điều kiện và bắt đầu hưởng lương hưu thì TCTN sẽ chấm dứt từ thời điểm đó. Vì vậy cần tính mốc nộp hồ sơ hưu và thời điểm hưởng hưu cho hợp lý.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

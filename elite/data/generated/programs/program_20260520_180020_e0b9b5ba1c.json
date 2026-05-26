@@ -1,0 +1,216 @@
+{
+  "question": "Tôi nghỉ ốm dài ngày do bệnh thuộc danh mục bệnh cần chữa trị dài ngày thì được hưởng chế độ ốm đau tối đa bao lâu?",
+  "retrieved_chunks": [
+    {
+      "chunk_id": "c056",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "28",
+      "clause": "2",
+      "point": null,
+      "text": "Điều 28 khoản 2 – Mức hưởng ốm đau dài ngày: Người lao động nghỉ việc do mắc bệnh thuộc danh mục cần chữa trị dài ngày được hưởng chế độ ốm đau như sau: đóng BHXH dưới 15 năm thì được hưởng tối đa bằng 65% mức tiền lương tháng đóng BHXH; đóng đủ 15 năm trở lên được hưởng tối đa bằng 75%."
+    },
+    {
+      "chunk_id": "c059",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "29",
+      "clause": "2",
+      "point": null,
+      "text": "Điều 29 khoản 2 – Mức hưởng dưỡng sức sau ốm đau: Mức hưởng một ngày bằng 30% mức lương cơ sở. Số ngày nghỉ dưỡng sức, phục hồi sức khoẻ tối đa 10 ngày (sau phẫu thuật), 7 ngày (mắc bệnh cần điều trị dài ngày), 5 ngày (trường hợp khác)."
+    },
+    {
+      "chunk_id": "c060",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "26",
+      "clause": "4",
+      "point": null,
+      "text": "Điều 26 khoản 4 – Trường hợp nghỉ ốm đau ngắn ngày: Thời gian ốm đau được tính theo ngày làm việc không kể ngày nghỉ lễ, Tết, ngày nghỉ hàng tuần. Nếu bị ốm đau nhiều lần trong năm thì thời gian hưởng được cộng dồn và không vượt quá thời gian tối đa theo quy định."
+    },
+    {
+      "chunk_id": "c053",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "26",
+      "clause": "3",
+      "point": null,
+      "text": "Điều 26 khoản 3 – Thời gian hưởng ốm đau dài ngày: Khi hết thời gian hưởng ốm đau trong một năm mà vẫn tiếp tục điều trị thì người lao động được hưởng tiếp chế độ ốm đau với mức thấp hơn (65% hoặc 55% tùy thời gian đóng) theo quy định tại Điều 28 khoản 2."
+    },
+    {
+      "chunk_id": "c054",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "27",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 27 – Thời gian hưởng chế độ khi con ốm: Người lao động nghỉ việc chăm sóc con ốm được hưởng chế độ ốm đau như sau: con dưới 3 tuổi: tối đa 20 ngày làm việc/năm; con từ đủ 3 tuổi đến dưới 7 tuổi: tối đa 15 ngày làm việc/năm. Thời gian này được tính cho từng cha hoặc mẹ."
+    },
+    {
+      "chunk_id": "c049",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "25",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 25 khoản 1 – Điều kiện hưởng chế độ ốm đau: Người lao động được hưởng chế độ ốm đau khi bị ốm đau, tai nạn mà không phải là tai nạn lao động, phải nghỉ việc và có xác nhận của cơ sở khám chữa bệnh có thẩm quyền theo quy định của Bộ Y tế."
+    },
+    {
+      "chunk_id": "c050",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "25",
+      "clause": "2",
+      "point": null,
+      "text": "Điều 25 khoản 2 – Điều kiện về con ốm: Người lao động phải nghỉ việc để chăm sóc con dưới 7 tuổi bị ốm đau và có xác nhận của cơ sở khám chữa bệnh có thẩm quyền cũng được hưởng chế độ ốm đau."
+    },
+    {
+      "chunk_id": "c058",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "29",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 29 khoản 1 – Dưỡng sức, phục hồi sức khoẻ sau ốm đau: Người lao động sau khi hết thời hạn hưởng chế độ ốm đau theo quy định mà sức khỏe còn yếu thì được nghỉ dưỡng sức, phục hồi sức khoẻ từ 5 đến 10 ngày trong một năm. Số ngày nghỉ do người sử dụng lao động và Ban Chấp hành công đoàn cơ sở quyết định."
+    },
+    {
+      "chunk_id": "c055",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "28",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 28 khoản 1 – Mức hưởng chế độ ốm đau thông thường: Người lao động hưởng chế độ ốm đau thì mức hưởng bằng 75% mức tiền lương tháng đóng BHXH của tháng liền kề trước khi nghỉ việc. Đây là mức hưởng trong thời gian tối đa theo số năm đóng BHXH."
+    },
+    {
+      "chunk_id": "c044",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "39",
+      "clause": "2",
+      "point": null,
+      "text": "Điều 39 khoản 2 – Mức hưởng thai sản tính theo ngày: Trường hợp thời gian nghỉ hưởng chế độ thai sản dưới 01 tháng thì mức hưởng được tính bằng mức hưởng chế độ theo tháng chia cho 24 ngày. Ngày nghỉ được tính theo số ngày nghỉ thực tế."
+    },
+    {
+      "chunk_id": "c035",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "32",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 32 – Thời gian hưởng chế độ khi khám thai: Trong thời gian mang thai, lao động nữ được nghỉ việc để đi khám thai 5 lần, mỗi lần 1 ngày. Trường hợp ở xa cơ sở khám chữa bệnh hoặc người mang thai có bệnh lý hoặc thai không bình thường thì được nghỉ 2 ngày cho mỗi lần khám."
+    },
+    {
+      "chunk_id": "c042",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "36",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 36 – Thời gian hưởng chế độ khi thực hiện biện pháp tránh thai: Người lao động thực hiện biện pháp đặt vòng tránh thai được nghỉ 01 ngày; thực hiện biện pháp triệt sản được nghỉ 07 ngày. Thời gian nghỉ việc hưởng chế độ tính cả ngày nghỉ lễ, Tết, ngày nghỉ hàng tuần."
+    },
+    {
+      "chunk_id": "c036",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "33",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 33 – Thời gian hưởng chế độ khi sảy thai, nạo hút thai, thai chết lưu hoặc phá thai bệnh lý: Thai dưới 5 tuần tuổi nghỉ 10 ngày; từ 5 đến dưới 13 tuần nghỉ 20 ngày; từ 13 đến dưới 25 tuần nghỉ 40 ngày; từ 25 tuần trở lên nghỉ 50 ngày. Thời gian nghỉ tính cả ngày nghỉ lễ, Tết, ngày nghỉ hàng tuần."
+    },
+    {
+      "chunk_id": "c051",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "26",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 26 khoản 1 – Thời gian hưởng ốm đau theo năm đóng BHXH: Đã đóng BHXH dưới 15 năm: tối đa 30 ngày làm việc/năm; đóng đủ 15 đến dưới 30 năm: tối đa 40 ngày làm việc/năm; đóng đủ 30 năm trở lên: tối đa 60 ngày làm việc/năm."
+    },
+    {
+      "chunk_id": "c037",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "34",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 34 khoản 1 – Thời gian nghỉ hưởng chế độ khi sinh con: Lao động nữ sinh con được nghỉ việc hưởng chế độ thai sản trước và sau khi sinh con là 06 tháng (180 ngày). Trường hợp lao động nữ sinh đôi trở lên thì tính từ con thứ hai trở đi, cứ mỗi con được nghỉ thêm 01 tháng."
+    }
+  ],
+  "program": {
+    "legal_sources": [
+      "legal_source(law_bhxh_2014, law_bhxh_2014, article_29, clause_2, none, 'Mức hưởng một ngày bằng 30% mức lương cơ sở. Số ngày nghỉ dưỡng sức, phục hồi sức khoẻ tối đa 10 ngày (sau phẫu thuật), 7 ngày (mắc bệnh cần điều trị dài ngày), 5 ngày (trường hợp khác).')."
+    ],
+    "rules": [
+      "sick_leave_max_days_for_long_term_illness(Days, Trace) :- Days = 7, Trace = [step(conclusion, sick_leave_max_days_for_long_term_illness(Days), based_on(law_bhxh_2014))]."
+    ],
+    "verify_facts": [],
+    "query": "?- sick_leave_max_days_for_long_term_illness(Days, Trace).",
+    "answer_var": "Days",
+    "answer_type": "scalar",
+    "predicate_inputs": {},
+    "expected_answer": 7,
+    "expected_bindings": {
+      "Days": 7
+    },
+    "raw_llm_output": {
+      "legal_sources": [
+        "legal_source(law_bhxh_2014, law_bhxh_2014, article_29, clause_2, none, 'Mức hưởng một ngày bằng 30% mức lương cơ sở. Số ngày nghỉ dưỡng sức, phục hồi sức khoẻ tối đa 10 ngày (sau phẫu thuật), 7 ngày (mắc bệnh cần điều trị dài ngày), 5 ngày (trường hợp khác).')."
+      ],
+      "rules": [
+        "sick_leave_max_days_for_long_term_illness(Days, Trace) :- Days = 7, Trace = [step(conclusion, sick_leave_max_days_for_long_term_illness(Days), based_on(law_bhxh_2014))]."
+      ],
+      "verify_facts": [],
+      "query": "?- sick_leave_max_days_for_long_term_illness(Days, Trace).",
+      "answer_var": "Days",
+      "expected_answer": 7,
+      "expected_bindings": {
+        "Days": 7
+      },
+      "citations": [
+        1
+      ],
+      "answer_type": "scalar",
+      "predicate_inputs": {}
+    },
+    "prolog_source": "legal_source(law_bhxh_2014, law_bhxh_2014, article_29, clause_2, none, 'Mức hưởng một ngày bằng 30% mức lương cơ sở. Số ngày nghỉ dưỡng sức, phục hồi sức khoẻ tối đa 10 ngày (sau phẫu thuật), 7 ngày (mắc bệnh cần điều trị dài ngày), 5 ngày (trường hợp khác).').\nsick_leave_max_days_for_long_term_illness(Days, Trace) :- Days = 7, Trace = [step(conclusion, sick_leave_max_days_for_long_term_illness(Days), based_on(law_bhxh_2014))]."
+  },
+  "verification": {
+    "success": true,
+    "status": "success",
+    "error": "",
+    "result": 7,
+    "solutions": [
+      {
+        "Days": 7,
+        "Trace": "[step(conclusion,sick_leave_max_days_for_long_term_illness(7),based_on(law_bhxh_2014))]"
+      }
+    ]
+  },
+  "render_payload": {
+    "normalized_question": "Tôi nghỉ ốm dài ngày do bệnh thuộc danh mục bệnh cần chữa trị dài ngày thì được hưởng chế độ ốm đau tối đa bao lâu?",
+    "legal_issue": "Tôi nghỉ ốm dài ngày do bệnh thuộc danh mục bệnh cần chữa trị dài ngày thì được hưởng chế độ ốm đau tối đa bao lâu?",
+    "domain_context": "Vietnamese social insurance legal QA",
+    "selected_function": {
+      "name": "one-shot generated Prolog program",
+      "description": "Generated from the user question and retrieved legal sources."
+    },
+    "slot_bindings": {},
+    "verify_facts": [],
+    "citations": [
+      {
+        "index": 1,
+        "chunk_id": "c059",
+        "document": "Luật BHXH 2014 (58/2014/QH13)",
+        "article": "29",
+        "clause": "2",
+        "point": null,
+        "raw_text": "Điều 29 khoản 2 – Mức hưởng dưỡng sức sau ốm đau: Mức hưởng một ngày bằng 30% mức lương cơ sở. Số ngày nghỉ dưỡng sức, phục hồi sức khoẻ tối đa 10 ngày (sau phẫu thuật), 7 ngày (mắc bệnh cần điều trị dài ngày), 5 ngày (trường hợp khác)."
+      }
+    ],
+    "execution_result": [
+      {
+        "Days": 7,
+        "Trace": "[step(conclusion,sick_leave_max_days_for_long_term_illness(7),based_on(law_bhxh_2014))]"
+      }
+    ],
+    "prolog_trace": "[step(conclusion,sick_leave_max_days_for_long_term_illness(7),based_on(law_bhxh_2014))]",
+    "generated_program": {
+      "legal_sources": [
+        "legal_source(law_bhxh_2014, law_bhxh_2014, article_29, clause_2, none, 'Mức hưởng một ngày bằng 30% mức lương cơ sở. Số ngày nghỉ dưỡng sức, phục hồi sức khoẻ tối đa 10 ngày (sau phẫu thuật), 7 ngày (mắc bệnh cần điều trị dài ngày), 5 ngày (trường hợp khác).')."
+      ],
+      "rules": [
+        "sick_leave_max_days_for_long_term_illness(Days, Trace) :- Days = 7, Trace = [step(conclusion, sick_leave_max_days_for_long_term_illness(Days), based_on(law_bhxh_2014))]."
+      ],
+      "query": "?- sick_leave_max_days_for_long_term_illness(Days, Trace).",
+      "answer_var": "Days",
+      "answer_type": "scalar"
+    }
+  },
+  "rendered_answer": "Issue: Tôi muốn biết thời gian tối đa được hưởng chế độ ốm đau khi nghỉ ốm dài ngày do bệnh thuộc danh mục bệnh cần chữa trị dài ngày.\n\nRule: Theo Luật BHXH 2014 (58/2014/QH13), Điều 29, Khoản 2: \"Mức hưởng một ngày bằng 30% mức lương cơ sở. Số ngày nghỉ dưỡng sức, phục hồi sức khoẻ tối đa 10 ngày (sau phẫu thuật), 7 ngày (mắc bệnh cần điều trị dài ngày), 5 ngày (trường hợp khác).\"\n\nApplication: Không có giá trị nào được cung cấp trong slot_bindings. Tuy nhiên, chương trình Prolog đã sử dụng quy tắc từ Điều 29, Khoản 2 của Luật BHXH 2014 để xác định số ngày nghỉ dưỡng sức tối đa cho bệnh cần điều trị dài ngày.\n\nConclusion: Theo kết quả từ chương trình Prolog, số ngày nghỉ dưỡng sức tối đa cho bệnh cần điều trị dài ngày là 7 ngày."
+}

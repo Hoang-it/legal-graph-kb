@@ -1,0 +1,27 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 50,
+  "question": "Mình sinh năm 1979. Thì đến năm bao nhiêu mình đủ tuổi về hưu?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=derived_false, repair_rounds=2, error=Prolog produced no solutions]",
+  "citations": [
+    "[Điều 141 khoản 9]"
+  ],
+  "citation_ids": [
+    "L41_2024.A141.K9"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": false,
+  "prolog_status": "derived_false",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 14.805,
+  "prompt_tokens": 6629,
+  "completion_tokens": 1137,
+  "error": null,
+  "gold_answer": "Bạn sinh năm 1979 thì thời điểm đủ tuổi nghỉ hưu còn phụ thuộc giới tính và trường hợp nghỉ hưu bình thường hay sớm. Nếu là nữ, mốc chuẩn hiện hành là đủ 60 tuổi, tương ứng khoảng năm 2039. Nếu là nam, mốc chuẩn là đủ 62 tuổi, tương ứng khoảng năm 2041. Nếu làm nghề, công việc nặng nhọc hoặc thuộc trường hợp đặc biệt thì có thể nghỉ sớm hơn theo luật.",
+  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 169; Nghị định 135/2020/NĐ-CP"
+}

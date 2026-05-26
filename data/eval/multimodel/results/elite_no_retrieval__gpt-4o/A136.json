@@ -1,0 +1,34 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 136,
+  "question": "các bước nhận bhxh thất nghiệp như thế nào?",
+  "answer": "Issue: Các bước nhận bảo hiểm xã hội thất nghiệp như thế nào?\n\nRule: Quy định về thủ tục hưởng trợ cấp thất nghiệp. (law_bhxh_2024, article_51, clause_1)\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, chương trình Prolog đã xác định các bước cần thiết để nhận bảo hiểm thất nghiệp dựa trên nguồn thông tin từ điều luật.\n\nConclusion: Các bước để nhận bảo hiểm xã hội thất nghiệp là: Đăng ký thất nghiệp tại trung tâm dịch vụ việc làm, Nộp hồ sơ hưởng trợ cấp thất nghiệp, Nhận quyết định hưởng trợ cấp thất nghiệp, và Nhận trợ cấp hàng tháng. Thông tin này được suy ra từ nguồn điều luật (source_a51).",
+  "citations": [
+    "[Điều 49 khoản 1]",
+    "[Điều 50 khoản 1]",
+    "[Điều 51 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A49.K1",
+    "L41_2024.A50.K1",
+    "L41_2024.A51.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_steps([Đăng ký thất nghiệp tại trung tâm dịch vụ việc làm.,Nộp hồ sơ hưởng trợ cấp thất nghiệp.,Nhận quyết định hưởng trợ cấp thất nghiệp.,Nhận trợ cấp hàng tháng.]),based_on(source_a51))]",
+  "irac_sections": {
+    "issue": "Các bước nhận bảo hiểm xã hội thất nghiệp như thế nào?",
+    "rule": "Quy định về thủ tục hưởng trợ cấp thất nghiệp. (law_bhxh_2024, article_51, clause_1)",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, chương trình Prolog đã xác định các bước cần thiết để nhận bảo hiểm thất nghiệp dựa trên nguồn thông tin từ điều luật.",
+    "conclusion": "Các bước để nhận bảo hiểm xã hội thất nghiệp là: Đăng ký thất nghiệp tại trung tâm dịch vụ việc làm, Nộp hồ sơ hưởng trợ cấp thất nghiệp, Nhận quyết định hưởng trợ cấp thất nghiệp, và Nhận trợ cấp hàng tháng. Thông tin này được suy ra từ nguồn điều luật (source_a51)."
+  },
+  "elapsed_s": 4.551,
+  "prompt_tokens": 2103,
+  "completion_tokens": 437,
+  "error": null,
+  "gold_answer": "Các bước cơ bản nhận BHTN: (1) chuẩn bị hồ sơ gồm đơn đề nghị, CCCD, tài liệu chấm dứt HĐLĐ; (2) nộp tại trung tâm dịch vụ việc làm trong 03 tháng từ ngày nghỉ việc; (3) chờ 15 ngày làm việc nếu chưa có việc làm; (4) nhận quyết định hưởng và tiền trợ cấp; (5) thực hiện thông báo tìm kiếm việc làm hằng tháng đúng lịch hẹn.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

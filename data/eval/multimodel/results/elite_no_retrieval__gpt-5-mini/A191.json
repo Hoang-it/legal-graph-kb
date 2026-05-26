@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 191,
+  "question": "Anh chị cho em hỏi trong trường hợp em sinh trước so với ngày ký quyết định nghỉ việc 3 ngày thì hồ sơ thai sản em tự làm hay phải qua công ty?",
+  "answer": "Issue:\nBạn hỏi nếu bạn sinh trước 3 ngày so với ngày ký quyết định nghỉ việc thì hồ sơ hưởng chế độ thai sản do bạn tự làm hay phải qua công ty?\n\nRule:\nlaw_bhxh_2024, none, none, none: 'Người lao động nữ sinh con được hưởng chế độ thai sản; hồ sơ hưởng chế độ cần có xác nhận của đơn vị về thời gian đóng BHXH và mức tiền lương để làm căn cứ chi trả.'\n\nApplication:\nslot_bindings: (không có slot được điền).\nInput khác được Prolog dùng: birth_before_decision_days(user, 3).\nCách Prolog tiêu thụ dữ kiện: quy tắc who_submits_maternity_dossier(Person, Answer, Trace) khớp với birth_before_decision_days(Person, Days) và điều kiện Days >= 0, sau đó trả Answer và Trace như trong prolog_trace.\n\nConclusion:\nAnswer = \"Hồ sơ hưởng chế độ thai sản cần có xác nhận của đơn vị về thời gian đóng BHXH và mức tiền lương; do đó trong thực tế công ty thường lập hoặc ít nhất là xác nhận hồ sơ. Nếu bạn sinh trước 3 ngày so với ngày ký quyết định nghỉ thì vẫn được hưởng chế độ; bạn nên cung cấp giấy tờ y tế/bản sao giấy khai sinh cho công ty để công ty xác nhận và nộp hồ sơ cho cơ quan BHXH.\" Prolog trả biến Answer đầy đủ như trên.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(condition,birth_before_decision_days(user,3),based_on(source_maternity)),step(conclusion,Hồ sơ hưởng chế độ thai sản cần có xác nhận của đơn vị về thời gian đóng BHXH và mức tiền lương; do đó trong thực tế công ty thường lập hoặc ít nhất là xác nhận hồ sơ. Nếu bạn sinh trước 3 ngày so với ngày ký quyết định nghỉ thì vẫn được hưởng chế độ; bạn nên cung cấp giấy tờ y tế/bản sao giấy khai sinh cho công ty để công ty xác nhận và nộp hồ sơ cho cơ quan BHXH.,based_on(source_maternity))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi nếu bạn sinh trước 3 ngày so với ngày ký quyết định nghỉ việc thì hồ sơ hưởng chế độ thai sản do bạn tự làm hay phải qua công ty?",
+    "rule": "law_bhxh_2024, none, none, none: 'Người lao động nữ sinh con được hưởng chế độ thai sản; hồ sơ hưởng chế độ cần có xác nhận của đơn vị về thời gian đóng BHXH và mức tiền lương để làm căn cứ chi trả.'",
+    "application": "slot_bindings: (không có slot được điền).\nInput khác được Prolog dùng: birth_before_decision_days(user, 3).\nCách Prolog tiêu thụ dữ kiện: quy tắc who_submits_maternity_dossier(Person, Answer, Trace) khớp với birth_before_decision_days(Person, Days) và điều kiện Days >= 0, sau đó trả Answer và Trace như trong prolog_trace.",
+    "conclusion": "Answer = \"Hồ sơ hưởng chế độ thai sản cần có xác nhận của đơn vị về thời gian đóng BHXH và mức tiền lương; do đó trong thực tế công ty thường lập hoặc ít nhất là xác nhận hồ sơ. Nếu bạn sinh trước 3 ngày so với ngày ký quyết định nghỉ thì vẫn được hưởng chế độ; bạn nên cung cấp giấy tờ y tế/bản sao giấy khai sinh cho công ty để công ty xác nhận và nộp hồ sơ cho cơ quan BHXH.\" Prolog trả biến Answer đầy đủ như trên."
+  },
+  "elapsed_s": 42.113,
+  "prompt_tokens": 2434,
+  "completion_tokens": 4597,
+  "error": null,
+  "gold_answer": "Nếu bạn sinh trước ngày ký quyết định nghỉ việc 3 ngày, tức thời điểm sinh con vẫn đang trong quan hệ lao động, thì về nguyên tắc hồ sơ thai sản nên do công ty lập và nộp cho cơ quan BHXH. Chỉ khi bạn đã nghỉ việc trước sinh hoặc công ty không còn hoạt động/không nộp hồ sơ thì mới chuyển sang hướng tự nộp trực tiếp.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

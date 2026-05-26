@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 174,
+  "question": "Nữ sinh 13/6/1974, e làm công nhân may, đã đóng bảo hiểm được 30 năm, theo quy định thì 6/2026 là e đủ điều kiện được về hưu, tháng 8/2025 e đã làm để hưởng bảo hiểm thất nghiệp và vẫn hưởng đến nay. E muốn hỏi , sau khi hưởng nốt thất nghiệp của tháng 5/2026 thì e đi làm thủ tục cắt hỗ trợ thất nghiệp sau đó e nộp hồ sơ để hưởng lương hưu luôn để được hưởng lương hưu từ tháng 6/2026 thì có được không?",
+  "answer": "Issue:\nNữ sinh 13/6/1974 đã đóng BHXH 30 năm, đang hưởng trợ cấp thất nghiệp đến tháng 5/2026; câu hỏi là sau khi chấm dứt trợ cấp thất nghiệp tháng 5/2026, có thể nộp hồ sơ để được hưởng lương hưu từ tháng 6/2026 hay không?\n\nRule:\n\"Người lao động được hưởng lương hưu khi đủ điều kiện về tuổi và thời gian đóng bảo hiểm xã hội.\" (law_bhxh_2024, article_64, clause_1)\n\nApplication:\nKhông có slot được cung cấp trong slot_bindings.\nProlog đã dùng các sự kiện xác minh: retirement_eligible_month(user, date(2026,6,1)) và unemployment_end_month(user, date(2026,5,1)). Luật nội bộ của chương trình yêu cầu next_month(EndMonth, StartMonth); Prolog đã khớp next_month(date(2026,5,1), date(2026,6,1)) và áp dụng quy tắc can_receive_pension_from_after_unemployment(user, StartMonth, yes).\n\nConclusion:\nProlog trả Answer = \"yes\" với StartMonth = date(2026,6,1). Trace: [step(conclusion,can_receive_pension_from_after_unemployment(user,date(2026,6,1),yes),based_on(source_a64))].",
+  "citations": [
+    "[Điều 64 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A64.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,can_receive_pension_from_after_unemployment(user,date(2026,6,1),yes),based_on(source_a64))]",
+  "irac_sections": {
+    "issue": "Nữ sinh 13/6/1974 đã đóng BHXH 30 năm, đang hưởng trợ cấp thất nghiệp đến tháng 5/2026; câu hỏi là sau khi chấm dứt trợ cấp thất nghiệp tháng 5/2026, có thể nộp hồ sơ để được hưởng lương hưu từ tháng 6/2026 hay không?",
+    "rule": "\"Người lao động được hưởng lương hưu khi đủ điều kiện về tuổi và thời gian đóng bảo hiểm xã hội.\" (law_bhxh_2024, article_64, clause_1)",
+    "application": "Không có slot được cung cấp trong slot_bindings.\nProlog đã dùng các sự kiện xác minh: retirement_eligible_month(user, date(2026,6,1)) và unemployment_end_month(user, date(2026,5,1)). Luật nội bộ của chương trình yêu cầu next_month(EndMonth, StartMonth); Prolog đã khớp next_month(date(2026,5,1), date(2026,6,1)) và áp dụng quy tắc can_receive_pension_from_after_unemployment(user, StartMonth, yes).",
+    "conclusion": "Prolog trả Answer = \"yes\" với StartMonth = date(2026,6,1). Trace: [step(conclusion,can_receive_pension_from_after_unemployment(user,date(2026,6,1),yes),based_on(source_a64))]."
+  },
+  "elapsed_s": 97.904,
+  "prompt_tokens": 3789,
+  "completion_tokens": 7998,
+  "error": null,
+  "gold_answer": "Bạn cần phân biệt thời điểm đủ điều kiện hưu và thời điểm bắt đầu hưởng hưu. Khi đang hưởng BHTN, nếu đủ điều kiện và làm thủ tục để hưởng lương hưu thì TCTN sẽ bị chấm dứt từ thời điểm hưởng lương hưu. Vì vậy về nguyên tắc có thể làm thủ tục để nối sang chế độ hưu, nhưng cần tính đúng mốc tháng bắt đầu hưởng hưu để không chồng chéo hoặc bị thu hồi.",
+  "gold_citations_raw": "Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

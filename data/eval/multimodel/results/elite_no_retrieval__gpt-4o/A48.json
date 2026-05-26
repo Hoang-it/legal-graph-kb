@@ -1,0 +1,27 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 48,
+  "question": "Mình đóng BHXH 21nam,  sinh ngày 02/08/1976, nam, công việc bảo vệ vượn cây cao su, thì khi nào được nghi hưu?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpaxg8u2r7.pl:4:262: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 54 khoản 1]",
+    "[Điều 54 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A54.K1",
+    "L41_2024.A54.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 9.438,
+  "prompt_tokens": 4646,
+  "completion_tokens": 1350,
+  "error": null,
+  "gold_answer": "Nếu tính theo tuổi nghỉ hưu thông thường của lao động nam, bạn sinh ngày 02/08/1976 thì đủ 62 tuổi vào ngày 02/08/2038. Hiện thông tin bạn nêu 'bảo vệ vườn cây cao su' chưa đủ căn cứ khẳng định thuộc nghề, công việc nặng nhọc/đặc biệt nặng nhọc để được nghỉ hưu sớm hơn. 21 năm đóng BHXH mới chỉ đáp ứng về thời gian tối thiểu nếu đến tuổi, còn thời điểm nghỉ hưu vẫn phải căn cứ thêm điều kiện tuổi và tính chất công việc.",
+  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 169; Nghị định 135/2020/NĐ-CP"
+}

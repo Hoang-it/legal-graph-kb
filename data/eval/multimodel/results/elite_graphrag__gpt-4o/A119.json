@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 119,
+  "question": "Có phải cơ quan BHXH giờ không cấp lại bìa và tờ rời nữa không? Mình nộp đủ sổ cho công ty cũ chốt bhxh mà công ty báo lại là giờ cơ quan bhxh ko cấp lại sổ giấy nữa.",
+  "answer": "Issue: Có phải cơ quan Bảo hiểm Xã hội (BHXH) không còn cấp lại sổ bảo hiểm xã hội bằng giấy nữa?\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 25, Khoản 2: \"Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau. Chậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằng bản giấy được cấp khi người tham gia bảo hiểm xã hội yêu cầu.\"\n\nApplication: Không có giá trị nào được cung cấp trong slot_bindings. Tuy nhiên, từ kết quả truy vấn Prolog, các điều kiện được xác định là: từ năm 2026, sổ bảo hiểm xã hội sẽ được cấp bằng bản điện tử, và sổ giấy chỉ được cấp khi có yêu cầu từ người tham gia bảo hiểm xã hội.\n\nConclusion: Theo kết quả từ truy vấn Prolog, điều kiện để cấp sổ bảo hiểm xã hội là từ năm 2026 sẽ bắt buộc cấp bằng bản điện tử, và sổ giấy chỉ được cấp khi có yêu cầu. Điều này có nghĩa là cơ quan BHXH vẫn cấp sổ giấy nếu người tham gia yêu cầu, không phải là không cấp lại sổ giấy nữa.",
+  "citations": [
+    "[Điều 25 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A25.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,social_insurance_book_issuance([electronic_book_mandatory_from_2026,paper_book_on_request]),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Có phải cơ quan Bảo hiểm Xã hội (BHXH) không còn cấp lại sổ bảo hiểm xã hội bằng giấy nữa?",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 25, Khoản 2: \"Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau. Chậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằng bản giấy được cấp khi người tham gia bảo hiểm xã hội yêu cầu.\"",
+    "application": "Không có giá trị nào được cung cấp trong slot_bindings. Tuy nhiên, từ kết quả truy vấn Prolog, các điều kiện được xác định là: từ năm 2026, sổ bảo hiểm xã hội sẽ được cấp bằng bản điện tử, và sổ giấy chỉ được cấp khi có yêu cầu từ người tham gia bảo hiểm xã hội.",
+    "conclusion": "Theo kết quả từ truy vấn Prolog, điều kiện để cấp sổ bảo hiểm xã hội là từ năm 2026 sẽ bắt buộc cấp bằng bản điện tử, và sổ giấy chỉ được cấp khi có yêu cầu. Điều này có nghĩa là cơ quan BHXH vẫn cấp sổ giấy nếu người tham gia yêu cầu, không phải là không cấp lại sổ giấy nữa."
+  },
+  "elapsed_s": 6.436,
+  "prompt_tokens": 2991,
+  "completion_tokens": 529,
+  "error": null,
+  "gold_answer": "Không phải là cơ quan BHXH 'không cấp lại nữa'. Hiện quản lý điện tử là chính, nhưng khi cần vẫn có thể thực hiện thủ tục cấp lại/cấp quá trình đóng theo quy định. Nếu công ty nói không có sổ giấy nên không trả được thì bạn nên yêu cầu họ cung cấp xác nhận đã chốt và dữ liệu quá trình đóng; trường hợp mất sổ, bạn có thể trực tiếp làm thủ tục cấp lại tại BHXH.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

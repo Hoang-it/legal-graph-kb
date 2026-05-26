@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 92,
+  "question": "E đóng bảo hiểm hiểm được 14 năm 5 tháng \nT9 2011 e đóng 1•500•000k\nĐến nay e đóng 6,837.000k\nVậy e sẽ lãnh được bao nhiêu tiền bảo hiểm xã hội?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Với thời gian đóng bảo hiểm xã hội là 14 năm 5 tháng, trong đó trước năm 2014 đóng mức bình quân 1,500,000 và sau năm 2014 đóng mức bình quân 6,837,000, người lao động sẽ được nhận bao nhiêu tiền bảo hiểm xã hội một lần khi nghỉ việc?\n\nRule:\n\"Người lao động có thời gian đóng BHXH dưới 20 năm, khi nghỉ việc mà không đủ điều kiện hưởng lương hưu, được nhận BHXH một lần cho mỗi năm đóng bằng 1,5 tháng mức bình quân tiền lương tháng đóng BHXH trước năm 2014 và 2 tháng cho mỗi năm sau năm 2014.\" (law_bhxh_2024, article_60, clause_1)\n\nApplication:\nCác giá trị được xác định như sau:\n- years_before_2014: 2.33\n- years_after_2014: 12.08\n- average_salary_before_2014: 1500000\n- average_salary_after_2014: 6837000\nCác giá trị này được hệ thống sử dụng để tính toán số tiền bảo hiểm xã hội một lần theo quy định tại điều 60, khoản 1 của Luật Bảo hiểm xã hội 2024.\n\nConclusion:\nSố tiền bảo hiểm xã hội một lần mà bạn sẽ nhận được là Amount = 170424420. Đây là kết quả cuối cùng do hệ thống Prolog trả về dựa trên các thông tin đã cung cấp.",
+  "citations": [
+    "[Điều 60 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(calculation,bhxh_one_time_amount(user,170424420),based_on(source_a60_k1))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Với thời gian đóng bảo hiểm xã hội là 14 năm 5 tháng, trong đó trước năm 2014 đóng mức bình quân 1,500,000 và sau năm 2014 đóng mức bình quân 6,837,000, người lao động sẽ được nhận bao nhiêu tiền bảo hiểm xã hội một lần khi nghỉ việc?",
+    "rule": "\"Người lao động có thời gian đóng BHXH dưới 20 năm, khi nghỉ việc mà không đủ điều kiện hưởng lương hưu, được nhận BHXH một lần cho mỗi năm đóng bằng 1,5 tháng mức bình quân tiền lương tháng đóng BHXH trước năm 2014 và 2 tháng cho mỗi năm sau năm 2014.\" (law_bhxh_2024, article_60, clause_1)",
+    "application": "Các giá trị được xác định như sau:\n- years_before_2014: 2.33\n- years_after_2014: 12.08\n- average_salary_before_2014: 1500000\n- average_salary_after_2014: 6837000\nCác giá trị này được hệ thống sử dụng để tính toán số tiền bảo hiểm xã hội một lần theo quy định tại điều 60, khoản 1 của Luật Bảo hiểm xã hội 2024.",
+    "conclusion": "Số tiền bảo hiểm xã hội một lần mà bạn sẽ nhận được là Amount = 170424420. Đây là kết quả cuối cùng do hệ thống Prolog trả về dựa trên các thông tin đã cung cấp."
+  },
+  "elapsed_s": 6.257,
+  "prompt_tokens": 2213,
+  "completion_tokens": 796,
+  "error": null,
+  "gold_answer": "Với 14 năm 5 tháng đóng BHXH, không thể tính chính xác số tiền BHXH một lần chỉ từ mức lương đầu kỳ 1,5 triệu và hiện tại 6.837.000 đồng. Luật tính theo mức bình quân tiền lương tháng đóng BHXH sau điều chỉnh của toàn bộ quá trình, rồi nhân với số năm tương ứng: trước 2014 tính 1,5 tháng bình quân/năm, từ 2014 trở đi tính 2 tháng bình quân/năm, tháng lẻ quy đổi theo luật. Bạn cần bảng quá trình đóng chi tiết mới tính ra số cụ thể.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 104, Điều 109"
+}

@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 37,
+  "question": "Mình nghỉ cty cũ từ tháng 1/2026. (nghỉ ngang) nhưng cty vẫn chốt sổ cho Mình. Nhưng nay mình muốn ra lấy tờ rời BHXH, giờ mình phải làm sao?",
+  "answer": "Issue:\nMình nghỉ công ty cũ từ tháng 1/2026 (nghỉ ngang); công ty đã chốt sổ nhưng giờ muốn lấy tờ rời BHXH, phải làm sao?\n\nRule:\nKhông có trích dẫn pháp luật cụ thể được cung cấp trong bản ghi (mảng citations rỗng).\n\nApplication:\nslot_bindings: (không có giá trị được cung cấp).\nCác fact được cung cấp và sử dụng: left_company_date(user, date(2026,1)); left_without_notice(user, yes); company_chot_so(user, yes).\nCách Prolog tiêu thụ chúng: quy tắc advice_get_to_roi yêu cầu company_chot_so(Person, yes); bằng việc khớp company_chot_so(user, yes) hệ thống sinh ra danh sách hành động và trace bước [step(request_employer,...), step(request_bhxh,...)].\n\nConclusion:\nProlog trả Answer như sau (biến Answer): [action(Yêu cầu công ty bàn giao sổ BHXH gốc và tờ rời; nhận biên lai hoặc chứng từ chốt sổ.),action(Nếu công ty không bàn giao: tới cơ quan BHXH nơi cư trú hoặc nơi công ty tham gia BHXH cùng CMND/CCCD, quyết định nghỉ việc hoặc giấy tờ liên quan để yêu cầu cấp tờ rời hoặc giấy xác nhận quá trình đóng BHXH.),action(Nếu cơ quan BHXH cần xác minh hoặc công ty không phối hợp: làm đơn khiếu nại tới BHXH hoặc trình báo tới Thanh tra lao động; nếu cần, khởi kiện dân sự để yêu cầu bàn giao tài liệu.)]\nTrace Prolog: [step(request_employer,based_on(source_employer_oblig)),step(request_bhxh,based_on(source_bhxh_issue))].",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(request_employer,based_on(source_employer_oblig)),step(request_bhxh,based_on(source_bhxh_issue))]",
+  "irac_sections": {
+    "issue": "Mình nghỉ công ty cũ từ tháng 1/2026 (nghỉ ngang); công ty đã chốt sổ nhưng giờ muốn lấy tờ rời BHXH, phải làm sao?",
+    "rule": "Không có trích dẫn pháp luật cụ thể được cung cấp trong bản ghi (mảng citations rỗng).",
+    "application": "slot_bindings: (không có giá trị được cung cấp).\nCác fact được cung cấp và sử dụng: left_company_date(user, date(2026,1)); left_without_notice(user, yes); company_chot_so(user, yes).\nCách Prolog tiêu thụ chúng: quy tắc advice_get_to_roi yêu cầu company_chot_so(Person, yes); bằng việc khớp company_chot_so(user, yes) hệ thống sinh ra danh sách hành động và trace bước [step(request_employer,...), step(request_bhxh,...)].",
+    "conclusion": "Prolog trả Answer như sau (biến Answer): [action(Yêu cầu công ty bàn giao sổ BHXH gốc và tờ rời; nhận biên lai hoặc chứng từ chốt sổ.),action(Nếu công ty không bàn giao: tới cơ quan BHXH nơi cư trú hoặc nơi công ty tham gia BHXH cùng CMND/CCCD, quyết định nghỉ việc hoặc giấy tờ liên quan để yêu cầu cấp tờ rời hoặc giấy xác nhận quá trình đóng BHXH.),action(Nếu cơ quan BHXH cần xác minh hoặc công ty không phối hợp: làm đơn khiếu nại tới BHXH hoặc trình báo tới Thanh tra lao động; nếu cần, khởi kiện dân sự để yêu cầu bàn giao tài liệu.)]\nTrace Prolog: [step(request_employer,based_on(source_employer_oblig)),step(request_bhxh,based_on(source_bhxh_issue))]."
+  },
+  "elapsed_s": 36.951,
+  "prompt_tokens": 2453,
+  "completion_tokens": 5443,
+  "error": null,
+  "gold_answer": "Nếu công ty đã chốt sổ nhưng chưa trả tờ rời cho bạn thì trước hết yêu cầu công ty bàn giao lại sổ/tờ rời bằng văn bản hoặc email. Khi chấm dứt HĐLĐ, người sử dụng lao động phải phối hợp xác nhận thời gian đóng BHXH và trả lại giấy tờ liên quan cho người lao động. Nếu công ty chây ì, bạn có thể khiếu nại đến Thanh tra Sở Nội vụ/LĐTBXH hoặc cơ quan BHXH nơi đơn vị đang tham gia để được hỗ trợ cấp lại, xác nhận quá trình đóng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48"
+}

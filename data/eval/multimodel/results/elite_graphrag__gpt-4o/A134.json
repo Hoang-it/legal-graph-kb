@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 134,
+  "question": "quyết định nghỉ thất nghiệp của tôi hết ngày 21/4. Nhưng tháng 3 tôi đi làm giám định sức khoẻ để nghỉ hưu thì có được không?",
+  "answer": "Issue: Bạn muốn biết liệu có thể đi làm giám định sức khoẻ để nghỉ hưu vào tháng 3 trong khi quyết định nghỉ thất nghiệp của bạn hết hạn vào ngày 21/4 hay không.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 119, Khoản 3: \"Chi trả phí khám giám định mức suy giảm khả năng lao động đối với trường hợp không do người sử dụng lao động giới thiệu đi khám giám định mức suy giảm khả năng lao động mà kết quả giám định đủ điều kiện hưởng chế độ bảo hiểm xã hội.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings để áp dụng vào tình huống này. Tuy nhiên, theo quy định được trích dẫn, nếu bạn tự đi khám giám định và kết quả đủ điều kiện hưởng chế độ bảo hiểm xã hội, bạn có thể được chi trả phí khám giám định.\n\nConclusion: Dựa trên truy vấn Prolog, có thể thực hiện giám định sức khoẻ để nghỉ hưu dựa trên nguồn luật đã được trích dẫn.",
+  "citations": [
+    "[Điều 119 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A119.K3"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,health_assessment_for_retirement_possible,based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Bạn muốn biết liệu có thể đi làm giám định sức khoẻ để nghỉ hưu vào tháng 3 trong khi quyết định nghỉ thất nghiệp của bạn hết hạn vào ngày 21/4 hay không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 119, Khoản 3: \"Chi trả phí khám giám định mức suy giảm khả năng lao động đối với trường hợp không do người sử dụng lao động giới thiệu đi khám giám định mức suy giảm khả năng lao động mà kết quả giám định đủ điều kiện hưởng chế độ bảo hiểm xã hội.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings để áp dụng vào tình huống này. Tuy nhiên, theo quy định được trích dẫn, nếu bạn tự đi khám giám định và kết quả đủ điều kiện hưởng chế độ bảo hiểm xã hội, bạn có thể được chi trả phí khám giám định.",
+    "conclusion": "Dựa trên truy vấn Prolog, có thể thực hiện giám định sức khoẻ để nghỉ hưu dựa trên nguồn luật đã được trích dẫn."
+  },
+  "elapsed_s": 4.971,
+  "prompt_tokens": 2837,
+  "completion_tokens": 428,
+  "error": null,
+  "gold_answer": "Nếu quyết định hưởng trợ cấp thất nghiệp của bạn hết ngày 21/4 thì việc đi giám định sức khỏe để làm hồ sơ hưu vào tháng 3 không tự động làm mất quyền hưởng phần TCTN đang chi trả. Tuy nhiên khi bạn đủ điều kiện và bắt đầu hưởng lương hưu thì TCTN sẽ chấm dứt từ thời điểm đó. Vì vậy cần tính mốc nộp hồ sơ hưu và thời điểm hưởng hưu cho hợp lý.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

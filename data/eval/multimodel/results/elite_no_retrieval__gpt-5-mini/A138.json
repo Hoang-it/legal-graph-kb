@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 138,
+  "question": "Em đang nghỉ thai sản thì bhxh đc hưởng các khoản nào và cần giấy tờ gì nộp vào thời điểm nào? em mới nộp cty giấy khai sinh",
+  "answer": "Issue:\nEm đang nghỉ thai sản thì BHXH được hưởng các khoản nào và cần giấy tờ gì nộp vào thời điểm nào?\n\nRule:\nKhông có trích dẫn pháp luật (trường \"citations\") đính kèm trong trace nên hệ thống không cung cấp đoạn trích pháp lý chính thức.\n\nApplication:\n- Slot bindings: không có slot nào được cung cấp trong input trace.\n- Cách Prolog sử dụng dữ liệu: truy vấn ?- maternity_benefits_and_docs(Answer, Trace). không cần giá trị slot ngoài; chương trình nội sinh trả về một cấu trúc Answer gồm các mục lợi ích, giấy tờ và thời điểm nộp hồ sơ dựa trên nguồn nội bộ (source_maternity_bhxh_2024).\n\nConclusion:\nAnswer = answer{benefits:[Trợ cấp trong thời gian nghỉ thai sản (tiền trợ cấp theo chế độ BHXH),Trợ cấp một lần khi sinh con/nuôi con nuôi (trường hợp quy định),Các quyền lợi liên quan khác (ví dụ: bảo lưu thời gian đóng BHXH, thủ tục hưởng chế độ bảo hiểm)],documents:[Giấy chứng sinh hoặc giấy ra viện xác nhận việc sinh,Giấy khai sinh của con,Đơn đề nghị hưởng chế độ thai sản (mẫu của cơ quan BHXH),Sổ BHXH hoặc thông tin tài khoản nhận tiền,CMND/CCCD hoặc giấy tờ tùy thân khác nếu cần],timing:[Người lao động nộp các giấy tờ chứng minh (ví dụ: giấy chứng sinh/giấy ra viện và giấy khai sinh) cho công ty ngay sau khi có đầy đủ giấy tờ,Công ty làm hồ sơ tổng hợp và nộp hồ sơ tới cơ quan BHXH theo quy định để được thanh toán chế độ]}",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(explained_maternity_benefits_and_docs,answer{benefits:[Trợ cấp trong thời gian nghỉ thai sản (tiền trợ cấp theo chế độ BHXH),Trợ cấp một lần khi sinh con/nuôi con nuôi (trường hợp quy định),Các quyền lợi liên quan khác (ví dụ: bảo lưu thời gian đóng BHXH, thủ tục hưởng chế độ bảo hiểm)],documents:[Giấy chứng sinh hoặc giấy ra viện xác nhận việc sinh,Giấy khai sinh của con,Đơn đề nghị hưởng chế độ thai sản (mẫu của cơ quan BHXH),Sổ BHXH hoặc thông tin tài khoản nhận tiền,CMND/CCCD hoặc giấy tờ tùy thân khác nếu cần],timing:[Người lao động nộp các giấy tờ chứng minh (ví dụ: giấy chứng sinh/giấy ra viện và giấy khai sinh) cho công ty ngay sau khi có đầy đủ giấy tờ,Công ty làm hồ sơ tổng hợp và nộp hồ sơ tới cơ quan BHXH theo quy định để được thanh toán chế độ]},based_on(source_maternity_bhxh_2024))]",
+  "irac_sections": {
+    "issue": "Em đang nghỉ thai sản thì BHXH được hưởng các khoản nào và cần giấy tờ gì nộp vào thời điểm nào?",
+    "rule": "Không có trích dẫn pháp luật (trường \"citations\") đính kèm trong trace nên hệ thống không cung cấp đoạn trích pháp lý chính thức.",
+    "application": "- Slot bindings: không có slot nào được cung cấp trong input trace.\n- Cách Prolog sử dụng dữ liệu: truy vấn ?- maternity_benefits_and_docs(Answer, Trace). không cần giá trị slot ngoài; chương trình nội sinh trả về một cấu trúc Answer gồm các mục lợi ích, giấy tờ và thời điểm nộp hồ sơ dựa trên nguồn nội bộ (source_maternity_bhxh_2024).",
+    "conclusion": "Answer = answer{benefits:[Trợ cấp trong thời gian nghỉ thai sản (tiền trợ cấp theo chế độ BHXH),Trợ cấp một lần khi sinh con/nuôi con nuôi (trường hợp quy định),Các quyền lợi liên quan khác (ví dụ: bảo lưu thời gian đóng BHXH, thủ tục hưởng chế độ bảo hiểm)],documents:[Giấy chứng sinh hoặc giấy ra viện xác nhận việc sinh,Giấy khai sinh của con,Đơn đề nghị hưởng chế độ thai sản (mẫu của cơ quan BHXH),Sổ BHXH hoặc thông tin tài khoản nhận tiền,CMND/CCCD hoặc giấy tờ tùy thân khác nếu cần],timing:[Người lao động nộp các giấy tờ chứng minh (ví dụ: giấy chứng sinh/giấy ra viện và giấy khai sinh) cho công ty ngay sau khi có đầy đủ giấy tờ,Công ty làm hồ sơ tổng hợp và nộp hồ sơ tới cơ quan BHXH theo quy định để được thanh toán chế độ]}"
+  },
+  "elapsed_s": 41.614,
+  "prompt_tokens": 2912,
+  "completion_tokens": 5143,
+  "error": null,
+  "gold_answer": "Khi nghỉ thai sản, bạn thường được hưởng tiền chế độ thai sản hằng tháng, trợ cấp một lần khi sinh con và có thể có dưỡng sức sau sinh nếu đủ điều kiện. Hồ sơ cơ bản là giấy khai sinh/trích lục khai sinh hoặc giấy chứng sinh; một số trường hợp đặc biệt cần bổ sung giấy ra viện hoặc hồ sơ y tế khác. Nếu đang làm việc, hồ sơ thường nộp qua công ty; thời điểm nộp nên thực hiện sớm sau khi sinh.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

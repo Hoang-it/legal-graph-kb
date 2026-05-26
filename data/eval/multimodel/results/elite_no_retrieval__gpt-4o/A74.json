@@ -1,0 +1,27 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 74,
+  "question": "Em đóng bhxh được 1năm 5 tháng và lúc 30/3 e có nằm viện dưỡng thai tới 3/4 e được xuất viện. Rồi em vào nộp cho nhân sự đồng thời trong tháng 4 e xin nghi không lương vậy em có được hưởng trợ cấp ốm đau không?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmp3u70j_yr.pl:5:293: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 26 khoản 1]",
+    "[Điều 26 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A26.K1",
+    "L41_2024.A26.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 11.32,
+  "prompt_tokens": 4667,
+  "completion_tokens": 1359,
+  "error": null,
+  "gold_answer": "Nếu bạn phải nghỉ dưỡng thai theo chỉ định và có giấy ra viện/giấy chứng nhận nghỉ việc hưởng BHXH hợp lệ thì thời gian 30/3 đến 3/4 vẫn có thể được giải quyết chế độ ốm đau. Việc trong tháng 4 bạn xin nghỉ không lương không tự làm mất quyền hưởng cho khoảng thời gian điều trị thực tế trước đó, miễn là thời gian nghỉ hưởng ốm đau có đủ hồ sơ y tế hợp lệ và không thuộc trường hợp luật loại trừ.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 42, Điều 46"
+}

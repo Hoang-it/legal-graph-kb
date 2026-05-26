@@ -1,0 +1,57 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 13,
+  "question": "Ông Nguyễn Thành Luân (Đồng Tháp) là chủ hộ kinh doanh. Ông hỏi, thủ tục tham gia BHXH bắt buộc như thế nào, nộp hồ sơ ở đâu?",
+  "answer": "Issue:\nÔng Nguyễn Thành Luân (Đồng Tháp) hỏi thủ tục tham gia bảo hiểm xã hội bắt buộc như thế nào và nộp hồ sơ ở đâu.\n\nRule:\nLuật BHXH 2024 (41/2024/QH15) Điều 27 khoản 2: \"Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm m và điểm n khoản 1 Điều 2 của Luật này nếu nộp qua người sử dụng lao động thì thực hiện theo quy định tại khoản 1 Điều này, nếu tự nộp thì hồ sơ là tờ khai quy định tại điểm b khoản 1 Điều này.\"\nLuật BHXH 2024 (41/2024/QH15) Điều 13 khoản 1: \"Đăng ký tham gia bảo hiểm xã hội bắt buộc cho người lao động theo quy định của Luật này; phối hợp với cơ quan bảo hiểm xã hội trong việc trả sổ bảo hiểm xã hội bản giấy cho người lao động.\"\nLuật BHXH 2024 (41/2024/QH15) Điều 28 khoản 1: \"Người sử dụng lao động có trách nhiệm kê khai và nộp hồ sơ tham gia bảo hiểm xã hội bắt buộc của người lao động theo quy định tại khoản 1 và khoản 2 Điều 27 của Luật này cho cơ quan bảo hiểm xã hội trong thời hạn 30 ngày kể từ ngày người lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc, trừ trường hợp quy định tại khoản 2 Điều này.\"\nLuật BHXH 2024 (41/2024/QH15) Điều 30 khoản 1: \"Cơ quan bảo hiểm xã hội chủ trì, phối hợp với cơ quan, tổ chức, cá nhân có liên quan trong việc xác định và theo dõi đối tượng tham gia bảo hiểm xã hội bắt buộc quy định tại Điều 2 của Luật này; đôn đốc và hướng dẫn việc lập hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc. Bộ, cơ quan ngang Bộ, Ủy ban nhân dân các cấp phối hợp với cơ quan bảo hiểm xã hội để tổ chức việc xác định đối tượng tham gia bảo hiểm xã hội bắt buộc.\"\nLuật BHXH 2024 (41/2024/QH15) Điều 12 khoản 3: \"Được cơ quan bảo hiểm xã hội hướng dẫn trình tự, thủ tục thực hiện bảo hiểm xã hội.\"\n\nApplication:\nCác slot đã gán: không có slot nào.\nProlog kết hợp các trích đoạn nêu trên (Điều 13.1; Điều 27.2; Điều 28.1; Điều 12.3; Điều 30.1) để xây dựng trình tự thủ tục. Prolog trả Procedure với giá trị sau: [register_obligation,if_through_employer_employer_submits_documents,if_self_submit_use_declaration_form,employer_must_declare_and_submit_within_30_days,submit_to_social_insurance_agency,social_insurance_agency_guides_and_receives_documents].\n\nConclusion:\nProcedure = [register_obligation,if_through_employer_employer_submits_documents,if_self_submit_use_declaration_form,employer_must_declare_and_submit_within_30_days,submit_to_social_insurance_agency,social_insurance_agency_guides_and_receives_documents].",
+  "citations": [
+    "[Điều 27 khoản 2]",
+    "[Điều 2]",
+    "[Điều 13 khoản 1]",
+    "[Điều 28 khoản 1]",
+    "[Điều 27]",
+    "[Điều 30 khoản 1]",
+    "[Điều 12 khoản 3]",
+    "[Điều 13]",
+    "[Điều 28]",
+    "[Điều 12]",
+    "[Điều 30]"
+  ],
+  "citation_ids": [
+    "L41_2024.A27.K2",
+    "L41_2024.A2",
+    "L41_2024.A13.K1",
+    "L41_2024.A28.K1",
+    "L41_2024.A27",
+    "L41_2024.A30.K1",
+    "L41_2024.A12.K3",
+    "L41_2024.A13",
+    "L41_2024.A28",
+    "L41_2024.A12",
+    "L41_2024.A30"
+  ],
+  "citation_indices": [
+    0,
+    1,
+    3,
+    7,
+    4,
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(article_13_clause_1_registration_obligation,register_obligation,based_on(source_c013_1)),step(article_27_clause_2_submission_routes,if_through_employer_employer_submits_documents,based_on(source_c027_2)),step(article_27_clause_2_submission_routes,if_self_submit_use_declaration_form,based_on(source_c027_2)),step(article_28_clause_1_employer_deadline,employer_must_declare_and_submit_within_30_days,based_on(source_c028_1)),step(article_18_clause_4_place_of_submission,submit_to_social_insurance_agency,based_on(source_c018_4)),step(article_12_clause_3_bhxh_guidance,social_insurance_agency_guides_and_receives_documents,based_on(source_c012_3)),step(article_30_clause_1_bhxh_coordination,social_insurance_agency_guides_and_receives_documents,based_on(source_c030_1))]",
+  "irac_sections": {
+    "issue": "Ông Nguyễn Thành Luân (Đồng Tháp) hỏi thủ tục tham gia bảo hiểm xã hội bắt buộc như thế nào và nộp hồ sơ ở đâu.",
+    "rule": "Luật BHXH 2024 (41/2024/QH15) Điều 27 khoản 2: \"Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm m và điểm n khoản 1 Điều 2 của Luật này nếu nộp qua người sử dụng lao động thì thực hiện theo quy định tại khoản 1 Điều này, nếu tự nộp thì hồ sơ là tờ khai quy định tại điểm b khoản 1 Điều này.\"\nLuật BHXH 2024 (41/2024/QH15) Điều 13 khoản 1: \"Đăng ký tham gia bảo hiểm xã hội bắt buộc cho người lao động theo quy định của Luật này; phối hợp với cơ quan bảo hiểm xã hội trong việc trả sổ bảo hiểm xã hội bản giấy cho người lao động.\"\nLuật BHXH 2024 (41/2024/QH15) Điều 28 khoản 1: \"Người sử dụng lao động có trách nhiệm kê khai và nộp hồ sơ tham gia bảo hiểm xã hội bắt buộc của người lao động theo quy định tại khoản 1 và khoản 2 Điều 27 của Luật này cho cơ quan bảo hiểm xã hội trong thời hạn 30 ngày kể từ ngày người lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc, trừ trường hợp quy định tại khoản 2 Điều này.\"\nLuật BHXH 2024 (41/2024/QH15) Điều 30 khoản 1: \"Cơ quan bảo hiểm xã hội chủ trì, phối hợp với cơ quan, tổ chức, cá nhân có liên quan trong việc xác định và theo dõi đối tượng tham gia bảo hiểm xã hội bắt buộc quy định tại Điều 2 của Luật này; đôn đốc và hướng dẫn việc lập hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc. Bộ, cơ quan ngang Bộ, Ủy ban nhân dân các cấp phối hợp với cơ quan bảo hiểm xã hội để tổ chức việc xác định đối tượng tham gia bảo hiểm xã hội bắt buộc.\"\nLuật BHXH 2024 (41/2024/QH15) Điều 12 khoản 3: \"Được cơ quan bảo hiểm xã hội hướng dẫn trình tự, thủ tục thực hiện bảo hiểm xã hội.\"",
+    "application": "Các slot đã gán: không có slot nào.\nProlog kết hợp các trích đoạn nêu trên (Điều 13.1; Điều 27.2; Điều 28.1; Điều 12.3; Điều 30.1) để xây dựng trình tự thủ tục. Prolog trả Procedure với giá trị sau: [register_obligation,if_through_employer_employer_submits_documents,if_self_submit_use_declaration_form,employer_must_declare_and_submit_within_30_days,submit_to_social_insurance_agency,social_insurance_agency_guides_and_receives_documents].",
+    "conclusion": "Procedure = [register_obligation,if_through_employer_employer_submits_documents,if_self_submit_use_declaration_form,employer_must_declare_and_submit_within_30_days,submit_to_social_insurance_agency,social_insurance_agency_guides_and_receives_documents]."
+  },
+  "elapsed_s": 49.998,
+  "prompt_tokens": 4544,
+  "completion_tokens": 6635,
+  "error": null,
+  "gold_answer": "Căn cứ theo các quy định hiện hành về việc đóng BHXH bắt buộc cho chủ hộ kinh doanh: Luật BHXH 2024; Nghị định số 158/2025/NĐ-CP ngày 25/06/2025 của Chính phủ quy định chi tiết và hướng dẫn một số điều của Luật BHXH về BHXH bắt buộc; chủ hộ kinh doanh của hộ kinh doanh có đăng ký kinh doanh quy định tham gia BHXH bắt buộc bao gồm: Chủ hộ kinh doanh của hộ kinh doanh có đăng ký kinh doanh nộp thuế theo phương pháp kê khai tham gia từ ngày 1/7/2025; chủ hộ kinh doanh của hộ kinh doanh khác thuộc đối tượng tham gia BHXH bắt buộc từ ngày 1/7/2029.\nChủ hộ kinh doanh không thuộc đối tượng tham gia BHXH, BHYT bắt buộc nếu đã đủ tuổi nghỉ hưu theo quy định tại khoản 2 Điều 169 của Bộ luật Lao động (năm 2025: 61 tuổi 3 tháng đối với nam, 56 tuổi 8 tháng đối với nữ), trừ trường hợp thời gian đóng BHXH bắt buộc còn thiếu tối đa 6 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng.\nTrường hợp chủ hộ kinh doanh đồng thời thuộc nhiều đối tượng tham gia khác nhau thì thực hiện thì tham gia BHXH bắt buộc theo đối tượng tương ứng quy định tại điểm b, c, d, đ, e, i, a, 1, k, n, h hoặc g khoản 1 Điều 2 Luật BHXH 2024.\nVề hồ sơ, thủ tục đăng ký tham gia:\nLập hồ sơ đăng ký tham gia BHXH, BHYT, BHTN, BHTNLĐ-BNN lần đầu (đối với đơn vị mới, theo Mẫu TK3-TS kèm bản sao các văn bản pháp lý liên quan đến việc thành lập, điều chỉnh thông tin của đơn vị);\nTờ khai tham gia điều chỉnh thông tin BHXH, BHYT (Mẫu TK1-TS) nếu đăng ký trực tiếp tại cơ quan BHXH.\nBáo tăng lao động (Mẫu D02-LT) nếu đăng ký thông qua đơn vị.\nVề nơi tiếp nhận hồ sơ tham gia:\nSau khi chuẩn bị đầy đủ các hồ sơ trên, hộ kinh doanh nộp hồ sơ tại cơ quan BHXH cơ sở trực thuộc BHXH nơi cư trú bằng một trong các hình thức sau:\n- Trực tiếp tại cơ quan BHXH hoặc Trung tâm phục vụ Hành chính công.\n- Trực tuyến qua Cổng Dịch vụ công Quốc gia hoặc Cổng BHXH điện tử (lưu ý cần có chữ ký số để xác nhận khi nộp hồ sơ theo phương thức này).\n- Gửi qua dịch vụ bưu điện.\nHiện nay, cơ quan BHXH ưu tiên thực hiện các thủ tục liên quan thông qua Cổng dịch vụ công trực tuyến hoặc qua các phần mềm kê khai bảo hiểm trực tuyến.\nNếu hộ kinh doanh có chữ ký số thì có thể đăng ký tài khoản trên Cổng dịch vụ công trực tuyến hoặc phần mềm để sử dụng.",
+  "gold_citations_raw": "Luật BHXH 2024"
+}

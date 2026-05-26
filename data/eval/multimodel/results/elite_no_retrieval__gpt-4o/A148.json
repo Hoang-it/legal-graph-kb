@@ -1,0 +1,27 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 148,
+  "question": "Chủ hộ kinh doanh có bắt buộc phải đóng bảo hiểm xã hội ko? Và mức phí đóg là bao nhiêu?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'mandatory_insurance_rate(Rate']",
+  "citations": [
+    "[Điều 2 khoản 1]",
+    "[Điều 85 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2.K1",
+    "L41_2024.A85.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "invalid_query",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 10.012,
+  "prompt_tokens": 4080,
+  "completion_tokens": 807,
+  "error": null,
+  "gold_answer": "Từ 01/7/2025, chủ hộ kinh doanh có đăng ký kinh doanh thuộc diện tham gia BHXH bắt buộc theo quy định của pháp luật mới. Mức đóng cụ thể căn cứ vào tiền lương làm căn cứ đóng hoặc hướng dẫn chi tiết của Chính phủ đối với nhóm này; không phải ai cũng được tự chọn mức rất thấp như BHXH tự nguyện. Bạn cần đăng ký với cơ quan BHXH theo mã đơn vị của hộ kinh doanh.",
+  "gold_citations_raw": "Khoản 1 Điều 2 Luật BHXH 2024; Nghị định 158/2025/NĐ-CP"
+}

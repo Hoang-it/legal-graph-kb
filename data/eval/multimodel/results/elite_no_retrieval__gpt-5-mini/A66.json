@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 66,
+  "question": "Có phải Bảo hiểm xã hội mình bắt buộc lãnh sau 1 năm không?. Nếu bận mk làm trễ vài tháng có được không?",
+  "answer": "Issue:\nCó phải bảo hiểm xã hội bắt buộc phải nhận sau 1 năm? Nếu nộp hồ sơ trễ vài tháng thì có được không?\n\nRule:\nKhông có trích dẫn pháp lý được cung cấp trong dữ liệu truy vấn.\n\nApplication:\nKhông có slot nào được gán (slot_bindings trống). Truy vấn Prolog gọi quy tắc bhxh_receive_rules mà không dùng dữ liệu đầu vào nào; kết quả truy vấn kèm theo trace cho biết based_on(none).\n\nConclusion:\nAnswer = 'Không bắt buộc phải \"lĩnh\" (nhận) bảo hiểm xã hội sau đúng 1 năm. Việc được nhận chế độ BHXH phụ thuộc vào loại chế độ và điều kiện cụ thể: lương hưu được chi trả khi người lao động đủ điều kiện về tuổi và thời gian đóng BHXH; trợ cấp một lần áp dụng trong các trường hợp không đủ điều kiện hưởng lương hưu hoặc khi chấm dứt tham gia; thời điểm nộp hồ sơ cũng ảnh hưởng (có thể có thời hiệu yêu cầu). Nếu nộp hồ sơ trễ vài tháng, tùy trường hợp có thể vẫn được giải quyết nhưng có nguy cơ bị ảnh hưởng do thời hiệu khiếu nại/đề nghị; nên liên hệ cơ quan BHXH nơi đang tham gia để được hướng dẫn cụ thể.' (kết quả Prolog, based_on(none)).",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,bhxh_receive_rules(Không bắt buộc phải \"lĩnh\" (nhận) bảo hiểm xã hội sau đúng 1 năm. Việc được nhận chế độ BHXH phụ thuộc vào loại chế độ và điều kiện cụ thể: lương hưu được chi trả khi người lao động đủ điều kiện về tuổi và thời gian đóng BHXH; trợ cấp một lần áp dụng trong các trường hợp không đủ điều kiện hưởng lương hưu hoặc khi chấm dứt tham gia; thời điểm nộp hồ sơ cũng ảnh hưởng (có thể có thời hiệu yêu cầu). Nếu nộp hồ sơ trễ vài tháng, tùy trường hợp có thể vẫn được giải quyết nhưng có nguy cơ bị ảnh hưởng do thời hiệu khiếu nại/đề nghị; nên liên hệ cơ quan BHXH nơi đang tham gia để được hướng dẫn cụ thể.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Có phải bảo hiểm xã hội bắt buộc phải nhận sau 1 năm? Nếu nộp hồ sơ trễ vài tháng thì có được không?",
+    "rule": "Không có trích dẫn pháp lý được cung cấp trong dữ liệu truy vấn.",
+    "application": "Không có slot nào được gán (slot_bindings trống). Truy vấn Prolog gọi quy tắc bhxh_receive_rules mà không dùng dữ liệu đầu vào nào; kết quả truy vấn kèm theo trace cho biết based_on(none).",
+    "conclusion": "Answer = 'Không bắt buộc phải \"lĩnh\" (nhận) bảo hiểm xã hội sau đúng 1 năm. Việc được nhận chế độ BHXH phụ thuộc vào loại chế độ và điều kiện cụ thể: lương hưu được chi trả khi người lao động đủ điều kiện về tuổi và thời gian đóng BHXH; trợ cấp một lần áp dụng trong các trường hợp không đủ điều kiện hưởng lương hưu hoặc khi chấm dứt tham gia; thời điểm nộp hồ sơ cũng ảnh hưởng (có thể có thời hiệu yêu cầu). Nếu nộp hồ sơ trễ vài tháng, tùy trường hợp có thể vẫn được giải quyết nhưng có nguy cơ bị ảnh hưởng do thời hiệu khiếu nại/đề nghị; nên liên hệ cơ quan BHXH nơi đang tham gia để được hướng dẫn cụ thể.' (kết quả Prolog, based_on(none))."
+  },
+  "elapsed_s": 38.549,
+  "prompt_tokens": 2567,
+  "completion_tokens": 4753,
+  "error": null,
+  "gold_answer": "Không có quy định bắt buộc phải nhận BHXH một lần ngay đúng sau 1 năm. Mốc 12 tháng chỉ là điều kiện phổ biến để phát sinh quyền yêu cầu trong một số trường hợp. Nếu bạn bận và nộp muộn vài tháng sau khi đã đủ điều kiện thì thông thường vẫn được giải quyết, miễn tại thời điểm nộp hồ sơ bạn vẫn thuộc trường hợp được hưởng theo luật. Nếu không rút, thời gian đóng vẫn được bảo lưu.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102"
+}

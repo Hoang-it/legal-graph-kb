@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 100,
+  "question": "Em đóng bh đc 3th tầm hơn 1tr. Bây h nghỉ việc, k có ý định làm lại thì có lấy lại đc khoản mình đã đóng không?",
+  "answer": "Issue:\nEm hỏi: Em đóng BH 3 tháng, tổng tầm hơn 1tr, nay nghỉ việc và không tiếp tục đóng, có lấy lại được khoản đã đóng không?\n\nRule:\nKhông có trích dẫn pháp luật (document/article/clause) được cung cấp trong dữ liệu đầu vào.\n\nApplication:\nmonths_contributed(user) = 3. (từ verify_facts)\nmonthly_contribution_amount(user) = 1000000. (từ verify_facts)\nwill_not_continue(user) = true. (từ verify_facts)\nProlog đã dùng months_contributed(user) và will_not_continue(user) để khớp với quy tắc can_get_refund(Person, yes(one_time_payment), Trace) trong chương trình đã tạo; quy tắc này được gọi với Person = user và đã sinh Trace tương ứng.\n\nConclusion:\nProlog trả về Answer = \"yes(one_time_payment)\". Trace: [step(conclusion,can_get_refund(user,yes(one_time_payment)),based_on(source_one_time))]. Đây là kết quả do Prolog trả về.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,can_get_refund(user,yes(one_time_payment)),based_on(source_one_time))]",
+  "irac_sections": {
+    "issue": "Em hỏi: Em đóng BH 3 tháng, tổng tầm hơn 1tr, nay nghỉ việc và không tiếp tục đóng, có lấy lại được khoản đã đóng không?",
+    "rule": "Không có trích dẫn pháp luật (document/article/clause) được cung cấp trong dữ liệu đầu vào.",
+    "application": "months_contributed(user) = 3. (từ verify_facts)\nmonthly_contribution_amount(user) = 1000000. (từ verify_facts)\nwill_not_continue(user) = true. (từ verify_facts)\nProlog đã dùng months_contributed(user) và will_not_continue(user) để khớp với quy tắc can_get_refund(Person, yes(one_time_payment), Trace) trong chương trình đã tạo; quy tắc này được gọi với Person = user và đã sinh Trace tương ứng.",
+    "conclusion": "Prolog trả về Answer = \"yes(one_time_payment)\". Trace: [step(conclusion,can_get_refund(user,yes(one_time_payment)),based_on(source_one_time))]. Đây là kết quả do Prolog trả về."
+  },
+  "elapsed_s": 68.832,
+  "prompt_tokens": 2220,
+  "completion_tokens": 4793,
+  "error": null,
+  "gold_answer": "Đóng BHXH mới 3 tháng thì chưa thể lấy lại ngay chỉ vì nghỉ việc và không muốn đi làm nữa. Muốn hưởng BHXH một lần, bạn vẫn phải thuộc trường hợp luật cho phép, thường là sau khi ngừng tham gia đủ 12 tháng và chưa đủ điều kiện hưởng lương hưu. Nếu sau này không rút, 3 tháng đó vẫn được bảo lưu. Còn phần người sử dụng lao động đã đóng vào các quỹ thì không hoàn trả riêng cho bạn như một khoản tiết kiệm.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110"
+}

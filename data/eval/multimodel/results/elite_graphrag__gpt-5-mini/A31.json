@@ -1,0 +1,34 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 31,
+  "question": "Ông Tất Thắng (TPHCM) hỏi, người lao động ký hợp đồng dưới 1 tháng, làm đủ từ 14 công trở lên có mức lương cao hơn mức lương tối thiểu vùng thì có thuộc đối tượng đóng BHXH không?",
+  "answer": "Issue: Ông Tất Thắng hỏi: người lao động ký hợp đồng dưới 1 tháng, làm đủ từ 14 công trở lên và có mức lương cao hơn mức lương tối thiểu vùng thì có thuộc đối tượng phải đóng BHXH không?\n\nRule: Luật BHXH 2024 (41/2024/QH15), Điều 33 khoản 5: \"Đối tượng quy định tại các điểm a, b, c, d và i khoản 1 và khoản 2 Điều 2 của Luật này mà không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì người lao động không phải đóng bảo hiểm xã hội tháng đó, trừ trường hợp người sử dụng lao động và người lao động có thỏa thuận về việc có đóng bảo hiểm xã hội cho người lao động tháng đó với căn cứ đóng bằng căn cứ đóng bảo hiểm xã hội tháng g\"\n\nApplication:\ncontract_under_1_month → contract_under_1_month(user)\nworked_at_least_14_days → worked_at_least_14_days(user)\nsalary_above_minimum → salary_above_minimum(user)\nlocation → location(user, tphcm)\nProlog đã thực hiện truy vấn is_subject_to_bhxh(user, Answer, Trace). Quy tắc được dùng chỉ yêu cầu worked_at_least_14_days(Person); truy vấn đã đối chiếu worked_at_least_14_days(user) và sinh ra Answer và Trace dựa trên nguồn source_c033. Các facts khác có sẵn nhưng quy tắc không cần chúng để kết luận.\n\nConclusion: Answer = explanation(Người lao động làm đủ từ 14 công trở lên trong tháng không thuộc diện được miễn đóng theo Điều 33 khoản 5; nếu người đó thuộc đối tượng phải tham gia theo quy định tại Điều 2 thì phải đóng BHXH bắt buộc.) Trace = [step(conclusion,is_subject_to_bhxh(user,Answer),based_on(source_c033))].",
+  "citations": [
+    "[Điều 33 khoản 5]",
+    "[Điều 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A33.K5",
+    "L41_2024.A2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,is_subject_to_bhxh(user,explanation(Người lao động làm đủ từ 14 công trở lên trong tháng không thuộc diện được miễn đóng theo Điều 33 khoản 5; nếu người đó thuộc đối tượng phải tham gia theo quy định tại Điều 2 thì phải đóng BHXH bắt buộc.)),based_on(source_c033))]",
+  "irac_sections": {
+    "issue": "Ông Tất Thắng hỏi: người lao động ký hợp đồng dưới 1 tháng, làm đủ từ 14 công trở lên và có mức lương cao hơn mức lương tối thiểu vùng thì có thuộc đối tượng phải đóng BHXH không?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), Điều 33 khoản 5: \"Đối tượng quy định tại các điểm a, b, c, d và i khoản 1 và khoản 2 Điều 2 của Luật này mà không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì người lao động không phải đóng bảo hiểm xã hội tháng đó, trừ trường hợp người sử dụng lao động và người lao động có thỏa thuận về việc có đóng bảo hiểm xã hội cho người lao động tháng đó với căn cứ đóng bằng căn cứ đóng bảo hiểm xã hội tháng g\"",
+    "application": "contract_under_1_month → contract_under_1_month(user)\nworked_at_least_14_days → worked_at_least_14_days(user)\nsalary_above_minimum → salary_above_minimum(user)\nlocation → location(user, tphcm)\nProlog đã thực hiện truy vấn is_subject_to_bhxh(user, Answer, Trace). Quy tắc được dùng chỉ yêu cầu worked_at_least_14_days(Person); truy vấn đã đối chiếu worked_at_least_14_days(user) và sinh ra Answer và Trace dựa trên nguồn source_c033. Các facts khác có sẵn nhưng quy tắc không cần chúng để kết luận.",
+    "conclusion": "Answer = explanation(Người lao động làm đủ từ 14 công trở lên trong tháng không thuộc diện được miễn đóng theo Điều 33 khoản 5; nếu người đó thuộc đối tượng phải tham gia theo quy định tại Điều 2 thì phải đóng BHXH bắt buộc.) Trace = [step(conclusion,is_subject_to_bhxh(user,Answer),based_on(source_c033))]."
+  },
+  "elapsed_s": 44.497,
+  "prompt_tokens": 3632,
+  "completion_tokens": 5132,
+  "error": null,
+  "gold_answer": "Căn cứ điểm a khoản 1 Điều 2 Luật BHXH 2024; Nghị định số 158/2025/NĐ-CP ngày 25/6/2025 của Chính phủ, người lao động làm việc theo hợp đồng lao động từ đủ 1 tháng trở lên thuộc đối tượng tham gia BHXH bắt buộc.\nDo đó, trường hợp người lao động ký hợp đồng lao động dưới 1 tháng không thuộc đối tượng tham gia BHXH bắt buộc, quy định làm đủ 14 ngày công trở lên chỉ áp dụng đối với người lao động có hợp đồng lao động từ đủ 1 tháng trở lên.",
+  "gold_citations_raw": "điểm a khoản 1 Điều 2 Luật BHXH 2024; Nghị định số 158/2025/NĐ-CP"
+}

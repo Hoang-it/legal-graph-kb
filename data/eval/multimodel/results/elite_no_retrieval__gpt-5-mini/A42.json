@@ -1,0 +1,32 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 42,
+  "question": "Trường hợp chủ hộ kinh doanh, đăng ký kinh doanh từ t12/2025 nhưng bắt đầu kinh doanh và kê khai thuế là t1/2026. \nHiện đang đóng bhyt phường. Tình hình kinh doanh kém nên e đi làm thêm.\nT6/2026 bắt đầu đóng bhxh ở cty mới. \nVậy từ t1-t5/2026 có phải mua bhxh bắt buộc cho chủ hộ kinh doanh ko?",
+  "answer": "Issue:\nNgười hỏi là chủ hộ kinh doanh, bắt đầu kinh doanh và kê khai thuế từ t1/2026, đóng BHYT phường, sau đó từ t6/2026 đóng BHXH tại công ty; câu hỏi: từ t1–t5/2026 có phải mua BHXH bắt buộc cho chủ hộ kinh doanh không?\n\nRule:\nKhông có trích dẫn pháp lý (citations) được cung cấp trong trace để trích dẫn nguyên văn điều/khoản.\n\nApplication:\nslot_bindings: không có slot nào được gán (slot_bindings trống).\nVerify facts (được ghi trong trace, không phải slot): business_registered(user, dec_2025); business_started_and_declared_tax(user, jan_2026); has_bhyt_phuong(user); started_bhxh_company(user, jun_2026).\nProlog query đã sử dụng quy tắc is_bhxh_mandatory_for_household_owner và trả về kết luận theo trace nội bộ: \"[step(conclusion,is_bhxh_mandatory_for_household_owner(tu_nguyen),based_on(source_voluntary_selfemployed))]\". Prolog báo căn cứ là source_voluntary_selfemployed (như trong prolog_trace).\n\nConclusion:\nProlog binding: Answer = \"tu_nguyen\". Prolog kết luận đây là \"tu_nguyen\" (nghĩa là tự nguyện). Không có trích dẫn pháp lý đính kèm trong trace để dẫn chứng chi tiết.",
+  "citations": [
+    "[Điều 5 khoản 1]",
+    "[Điều 6 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K1",
+    "L41_2024.A6.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,is_bhxh_mandatory_for_household_owner(tu_nguyen),based_on(source_voluntary_selfemployed))]",
+  "irac_sections": {
+    "issue": "Người hỏi là chủ hộ kinh doanh, bắt đầu kinh doanh và kê khai thuế từ t1/2026, đóng BHYT phường, sau đó từ t6/2026 đóng BHXH tại công ty; câu hỏi: từ t1–t5/2026 có phải mua BHXH bắt buộc cho chủ hộ kinh doanh không?",
+    "rule": "Không có trích dẫn pháp lý (citations) được cung cấp trong trace để trích dẫn nguyên văn điều/khoản.",
+    "application": "slot_bindings: không có slot nào được gán (slot_bindings trống).\nVerify facts (được ghi trong trace, không phải slot): business_registered(user, dec_2025); business_started_and_declared_tax(user, jan_2026); has_bhyt_phuong(user); started_bhxh_company(user, jun_2026).\nProlog query đã sử dụng quy tắc is_bhxh_mandatory_for_household_owner và trả về kết luận theo trace nội bộ: \"[step(conclusion,is_bhxh_mandatory_for_household_owner(tu_nguyen),based_on(source_voluntary_selfemployed))]\". Prolog báo căn cứ là source_voluntary_selfemployed (như trong prolog_trace).",
+    "conclusion": "Prolog binding: Answer = \"tu_nguyen\". Prolog kết luận đây là \"tu_nguyen\" (nghĩa là tự nguyện). Không có trích dẫn pháp lý đính kèm trong trace để dẫn chứng chi tiết."
+  },
+  "elapsed_s": 32.6,
+  "prompt_tokens": 2302,
+  "completion_tokens": 4493,
+  "error": null,
+  "gold_answer": "Nếu từ 1/2026 hộ kinh doanh của bạn đã hoạt động và nộp thuế theo phương pháp kê khai, thì chủ hộ thuộc diện tham gia BHXH bắt buộc. Khi từ 6/2026 bạn đồng thời đi làm ở công ty mới, việc đóng BHXH sẽ xác định theo diện ưu tiên luật quy định; không phải lúc nào cũng đóng song song 2 nơi. Bạn nên đối chiếu phương pháp nộp thuế của hộ kinh doanh để xác định chính xác nghĩa vụ từ 1-5/2026.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2 khoản 1 điểm m; Nghị định 158/2025/NĐ-CP Điều 3"
+}

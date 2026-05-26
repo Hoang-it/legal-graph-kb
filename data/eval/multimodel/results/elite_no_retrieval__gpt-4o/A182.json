@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 182,
+  "question": "Rút Bhxh là tính từ ngày có giấy quyết định nghỉ việc tròn một năm hay là thời điểm mình đi nộp sổ?",
+  "answer": "Issue: Rút bảo hiểm xã hội (BHXH) một lần được tính từ ngày có giấy quyết định nghỉ việc tròn một năm hay từ thời điểm nộp sổ?\n\nRule: Người lao động có thể rút BHXH một lần sau một năm kể từ ngày có quyết định nghỉ việc. (Luật BHXH 2024, Điều 60, Khoản 1)\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo truy vấn Prolog, điều kiện để rút BHXH một lần là sau một năm kể từ ngày có quyết định nghỉ việc.\n\nConclusion: Theo kết quả từ truy vấn Prolog, điều kiện để rút BHXH một lần là \"Người lao động có thể rút BHXH một lần sau một năm kể từ ngày có quyết định nghỉ việc.\" Điều này có nghĩa là thời điểm tính là từ ngày có quyết định nghỉ việc tròn một năm.",
+  "citations": [
+    "[Điều 60 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,withdrawal_condition(Người lao động có thể rút BHXH một lần sau một năm kể từ ngày có quyết định nghỉ việc.),based_on(source_a60_k1))]",
+  "irac_sections": {
+    "issue": "Rút bảo hiểm xã hội (BHXH) một lần được tính từ ngày có giấy quyết định nghỉ việc tròn một năm hay từ thời điểm nộp sổ?",
+    "rule": "Người lao động có thể rút BHXH một lần sau một năm kể từ ngày có quyết định nghỉ việc. (Luật BHXH 2024, Điều 60, Khoản 1)",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo truy vấn Prolog, điều kiện để rút BHXH một lần là sau một năm kể từ ngày có quyết định nghỉ việc.",
+    "conclusion": "Theo kết quả từ truy vấn Prolog, điều kiện để rút BHXH một lần là \"Người lao động có thể rút BHXH một lần sau một năm kể từ ngày có quyết định nghỉ việc.\" Điều này có nghĩa là thời điểm tính là từ ngày có quyết định nghỉ việc tròn một năm."
+  },
+  "elapsed_s": 4.154,
+  "prompt_tokens": 2017,
+  "completion_tokens": 385,
+  "error": null,
+  "gold_answer": "Mốc 1 năm để xét BHXH 1 lần thường được hiểu là sau 12 tháng bạn không còn thuộc diện tham gia BHXH bắt buộc và cũng không tham gia BHXH tự nguyện. Vì vậy không chỉ nhìn vào ngày ký quyết định nghỉ việc, mà phải xét thực tế quá trình tham gia sau đó. Khi đủ 12 tháng ngừng tham gia thì bạn mới nộp hồ sơ nếu thuộc trường hợp được hưởng.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

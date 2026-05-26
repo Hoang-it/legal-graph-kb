@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 26,
+  "question": "Bà Thị Thuận (Lào Cai) đóng BHXH được 6 năm 3 tháng, do điều kiện gia đình nên bà xin nghỉ việc và được cơ quan BHXH xác nhận tổng thời gian tham gia BHXH, bảo hiểm thất nghiệp trên sổ BHXH.\nBà đề nghị cơ quan có thẩm quyền hướng dẫn quy trình hưởng trợ cấp thất nghiệp.",
+  "answer": "Issue:\nBà Thị Thuận hỏi về quy trình hưởng trợ cấp thất nghiệp sau khi đã nghỉ việc và được cơ quan BHXH xác nhận tổng thời gian tham gia BHXH, bảo hiểm thất nghiệp trên sổ BHXH.\n\nRule:\n\"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 3)\n\nApplication:\nKhông có slot_id cụ thể nào được ràng buộc trong trường hợp này. Truy vấn Prolog đã sử dụng quy định tại Điều 13, Khoản 3 Luật BHXH 2024 để xác định quy trình gồm: người lao động liên hệ trung tâm dịch vụ việc làm để nộp hồ sơ đề nghị hưởng trợ cấp thất nghiệp; cơ quan BHXH xác nhận thời gian đóng BHXH, bảo hiểm thất nghiệp trên sổ BHXH; sau khi tiếp nhận hồ sơ, cơ quan có thẩm quyền xem xét, giải quyết theo quy định.\n\nConclusion:\nTheo truy vấn Prolog, quy trình hưởng trợ cấp thất nghiệp gồm các bước: (1) Người lao động liên hệ trung tâm dịch vụ việc làm để nộp hồ sơ đề nghị hưởng trợ cấp thất nghiệp; (2) Cơ quan BHXH xác nhận thời gian đóng BHXH, bảo hiểm thất nghiệp trên sổ BHXH; (3) Sau khi tiếp nhận hồ sơ, cơ quan có thẩm quyền xem xét, giải quyết theo quy định.",
+  "citations": [
+    "[Điều 13 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A13.K3"
+  ],
+  "citation_indices": [
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_procedure([Người lao động liên hệ trung tâm dịch vụ việc làm để nộp hồ sơ đề nghị hưởng trợ cấp thất nghiệp.,Cơ quan bảo hiểm xã hội xác nhận thời gian đóng bảo hiểm xã hội, bảo hiểm thất nghiệp trên sổ BHXH.,Sau khi tiếp nhận hồ sơ, cơ quan có thẩm quyền xem xét, giải quyết theo quy định.]),based_on(source_c005))]",
+  "irac_sections": {
+    "issue": "Bà Thị Thuận hỏi về quy trình hưởng trợ cấp thất nghiệp sau khi đã nghỉ việc và được cơ quan BHXH xác nhận tổng thời gian tham gia BHXH, bảo hiểm thất nghiệp trên sổ BHXH.",
+    "rule": "\"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 3)",
+    "application": "Không có slot_id cụ thể nào được ràng buộc trong trường hợp này. Truy vấn Prolog đã sử dụng quy định tại Điều 13, Khoản 3 Luật BHXH 2024 để xác định quy trình gồm: người lao động liên hệ trung tâm dịch vụ việc làm để nộp hồ sơ đề nghị hưởng trợ cấp thất nghiệp; cơ quan BHXH xác nhận thời gian đóng BHXH, bảo hiểm thất nghiệp trên sổ BHXH; sau khi tiếp nhận hồ sơ, cơ quan có thẩm quyền xem xét, giải quyết theo quy định.",
+    "conclusion": "Theo truy vấn Prolog, quy trình hưởng trợ cấp thất nghiệp gồm các bước: (1) Người lao động liên hệ trung tâm dịch vụ việc làm để nộp hồ sơ đề nghị hưởng trợ cấp thất nghiệp; (2) Cơ quan BHXH xác nhận thời gian đóng BHXH, bảo hiểm thất nghiệp trên sổ BHXH; (3) Sau khi tiếp nhận hồ sơ, cơ quan có thẩm quyền xem xét, giải quyết theo quy định."
+  },
+  "elapsed_s": 7.548,
+  "prompt_tokens": 3272,
+  "completion_tokens": 629,
+  "error": null,
+  "gold_answer": "Khoản 3 Điều 34 Chương VIII Nghị định số 374/2025/NĐ-CP ngày 31/12/2025 của Chính phủ quy định chi tiết một số điều của Luật Việc làm về bảo hiểm thất nghiệp có quy định về trách nhiệm của tổ chức dịch vụ việc làm công, trong đó nêu rõ:\n\"Tổ chức tiếp nhận, xem xét và thực hiện các thủ tục giải quyết hồ sơ đề nghị hưởng trợ cấp thất nghiệp, hỗ trợ đào tạo, bồi dưỡng, nâng cao trình độ kỹ năng nghề. Trường hợp trong quá trình thực hiện dịch vụ công trực tuyến, dữ liệu điện tử về dân cư, bảo hiểm xã hội, bảo hiểm thất nghiệp của người lao động không thống nhất với thông tin trên các giấy tờ có giá trị pháp lý như Căn cước công dân, sổ bảo hiểm xã hội hoặc giấy tờ hợp pháp khác, tổ chức dịch vụ việc làm công có trách nhiệm hướng dẫn người lao động đề nghị cơ quan có thẩm quyền rà soát, đối chiếu, điều chỉnh dữ liệu điện tử và thực hiện nộp hồ sơ trực tiếp theo quy định\".\nTheo đó, để được giải quyết hưởng trợ cấp thất nghiệp, đề nghị bà Thuận liên hệ Trung tâm Dịch vụ việc làm trực thuộc Sở Nội vụ tại địa phương nơi bà có nhu cầu nhận trợ cấp thất nghiệp (không phụ thuộc vào nơi đã làm việc trước đó) để được hướng dẫn, tiếp nhận và giải quyết hồ sơ theo quy định.\nCơ quan BHXH thực hiện chi trả trợ cấp thất nghiệp cho người lao động sau khi nhận được Quyết định hưởng trợ cấp thất nghiệp do Sở Nội vụ ban hành và chuyển đến cơ quan BHXH.",
+  "gold_citations_raw": "Khoản 3 Điều 34 Chương VIII Nghị định số 374/2025/NĐ-CP"
+}

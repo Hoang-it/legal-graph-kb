@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 130,
+  "question": "Đóng bhxh đc 4 tháng lcb 4tr900 thì lãnh đc bao nhiêu?",
+  "answer": "Issue:\nNgười lao động đã đóng bảo hiểm xã hội được 4 tháng với mức lương cơ bản 4.900.000 thì sẽ được nhận bao nhiêu tiền bảo hiểm xã hội một lần?\n\nRule:\n\"Người lao động có thời gian đóng BHXH dưới 1 năm khi nghỉ việc được hưởng BHXH một lần bằng 22% mức tiền lương tháng đã đóng cho mỗi tháng đóng BHXH.\" (law_bhxh_2024, article_60, clause_1)\n\nApplication:\nCác giá trị đầu vào gồm: months_contributed = 4 và average_salary = 4900000. Prolog đã sử dụng các giá trị này để xác định số tiền bảo hiểm xã hội một lần theo quy định tại law_bhxh_2024, article_60, clause_1.\n\nConclusion:\nSố tiền bảo hiểm xã hội một lần mà người lao động được nhận là Amount = 4312000.0.",
+  "citations": [
+    "[Điều 60 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(calculation,bhxh_one_time_amount(user,4312000.0),based_on(source_a60_k1))]",
+  "irac_sections": {
+    "issue": "Người lao động đã đóng bảo hiểm xã hội được 4 tháng với mức lương cơ bản 4.900.000 thì sẽ được nhận bao nhiêu tiền bảo hiểm xã hội một lần?",
+    "rule": "\"Người lao động có thời gian đóng BHXH dưới 1 năm khi nghỉ việc được hưởng BHXH một lần bằng 22% mức tiền lương tháng đã đóng cho mỗi tháng đóng BHXH.\" (law_bhxh_2024, article_60, clause_1)",
+    "application": "Các giá trị đầu vào gồm: months_contributed = 4 và average_salary = 4900000. Prolog đã sử dụng các giá trị này để xác định số tiền bảo hiểm xã hội một lần theo quy định tại law_bhxh_2024, article_60, clause_1.",
+    "conclusion": "Số tiền bảo hiểm xã hội một lần mà người lao động được nhận là Amount = 4312000.0."
+  },
+  "elapsed_s": 6.178,
+  "prompt_tokens": 2004,
+  "completion_tokens": 484,
+  "error": null,
+  "gold_answer": "Với 4 tháng đóng BHXH, mức hưởng BHXH 1 lần không tính như nhiều năm tròn mà theo trường hợp thời gian đóng chưa đủ 1 năm. Khi đủ điều kiện rút, mức hưởng bằng số tiền đã đóng nhưng tối đa không quá 2 tháng mức bình quân lương đóng BHXH. Với lương 4,9 triệu/tháng, số hưởng thường chỉ ở mức vài triệu đồng, không phải 8-10 triệu.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

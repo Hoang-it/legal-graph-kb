@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 146,
+  "question": "MÌNH ĐÓNG BHXH ở công ty cũ nhưng chưa rút về, hiện tại mình vào công ty mới, côngty mới đóng cho mình nhưng mình xem trên app BHXH thì những tháng công ty cũ mất không hiển thị nữa. cho mình hỏi những tháng đấy như thế nào?",
+  "answer": "Issue:\nBạn hỏi về việc thời gian đóng bảo hiểm xã hội (BHXH) ở công ty cũ không hiển thị trên ứng dụng BHXH khi đã chuyển sang công ty mới và chưa rút BHXH một lần, vậy những tháng đã đóng ở công ty cũ sẽ được xử lý như thế nào.\n\nRule:\n\"Người lao động được bảo lưu thời gian đóng BHXH khi chuyển việc hoặc chưa nhận BHXH một lần.\" (law_bhxh_2024, article_23, clause_4)\n\nApplication:\nKhông có slot cụ thể nào cần điền trong trường hợp này. Truy vấn Prolog đã sử dụng quy định tại Điều 23, Khoản 4 của Luật BHXH 2024 để xác định rằng thời gian đóng BHXH ở công ty cũ sẽ được bảo lưu nếu bạn chưa nhận BHXH một lần.\n\nConclusion:\nTheo truy vấn Prolog, thời gian đóng BHXH ở công ty cũ của bạn sẽ được bảo lưu (bao_luu_thoi_gian_bhxh) dựa trên quy định tại law_bhxh_2024, article_23, clause_4. Nếu chưa nhận BHXH một lần, các tháng đã đóng ở công ty cũ vẫn được ghi nhận và cộng dồn khi bạn tiếp tục tham gia BHXH ở công ty mới.",
+  "citations": [
+    "[Điều 23 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A23.K4"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,bao_luu_thoi_gian_bhxh,based_on(source_a23_k4))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về việc thời gian đóng bảo hiểm xã hội (BHXH) ở công ty cũ không hiển thị trên ứng dụng BHXH khi đã chuyển sang công ty mới và chưa rút BHXH một lần, vậy những tháng đã đóng ở công ty cũ sẽ được xử lý như thế nào.",
+    "rule": "\"Người lao động được bảo lưu thời gian đóng BHXH khi chuyển việc hoặc chưa nhận BHXH một lần.\" (law_bhxh_2024, article_23, clause_4)",
+    "application": "Không có slot cụ thể nào cần điền trong trường hợp này. Truy vấn Prolog đã sử dụng quy định tại Điều 23, Khoản 4 của Luật BHXH 2024 để xác định rằng thời gian đóng BHXH ở công ty cũ sẽ được bảo lưu nếu bạn chưa nhận BHXH một lần.",
+    "conclusion": "Theo truy vấn Prolog, thời gian đóng BHXH ở công ty cũ của bạn sẽ được bảo lưu (bao_luu_thoi_gian_bhxh) dựa trên quy định tại law_bhxh_2024, article_23, clause_4. Nếu chưa nhận BHXH một lần, các tháng đã đóng ở công ty cũ vẫn được ghi nhận và cộng dồn khi bạn tiếp tục tham gia BHXH ở công ty mới."
+  },
+  "elapsed_s": 5.499,
+  "prompt_tokens": 2051,
+  "completion_tokens": 457,
+  "error": null,
+  "gold_answer": "Nếu tháng đóng ở công ty cũ không còn hiển thị trên app, trước hết bạn cần kiểm tra xem có bị gộp mã số, điều chỉnh quá trình hay lỗi đồng bộ dữ liệu hay không. Thời gian đã đóng hợp pháp sẽ không tự mất; BHXH có trách nhiệm cập nhật lại nếu dữ liệu sai. Bạn nên đề nghị BHXH in quá trình đóng chi tiết và đối chiếu với quyết định thôi việc, bảng lương, sổ/tờ rời cũ.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

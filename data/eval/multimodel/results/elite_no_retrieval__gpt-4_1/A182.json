@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 182,
+  "question": "Rút Bhxh là tính từ ngày có giấy quyết định nghỉ việc tròn một năm hay là thời điểm mình đi nộp sổ?",
+  "answer": "Issue:\nVấn đề đặt ra là thời điểm tính để rút bảo hiểm xã hội một lần là sau một năm kể từ ngày có quyết định nghỉ việc hay là thời điểm người lao động đi nộp sổ bảo hiểm.\n\nRule:\nĐiều kiện hưởng bảo hiểm xã hội một lần: sau một năm kể từ ngày người lao động nghỉ việc mà chưa đủ điều kiện hưởng lương hưu và không tiếp tục đóng BHXH. (law_bhxh_2024, article_109, clause_1)\n\nApplication:\nKhông có slot_id cụ thể nào được ràng buộc trong trường hợp này. Truy vấn Prolog đã sử dụng quy tắc từ nguồn luật để xác định thời điểm tính bảo hiểm xã hội một lần là \"sau một năm kể từ ngày nghỉ việc theo quyết định\".\n\nConclusion:\nTheo kết quả truy vấn Prolog, thời điểm tính để rút bảo hiểm xã hội một lần là \"sau một năm kể từ ngày nghỉ việc theo quyết định\".",
+  "citations": [
+    "[Điều 109 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A109.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,thoi_diem_tinh_1lan(sau một năm kể từ ngày nghỉ việc theo quyết định),based_on(source_a109_k1))]",
+  "irac_sections": {
+    "issue": "Vấn đề đặt ra là thời điểm tính để rút bảo hiểm xã hội một lần là sau một năm kể từ ngày có quyết định nghỉ việc hay là thời điểm người lao động đi nộp sổ bảo hiểm.",
+    "rule": "Điều kiện hưởng bảo hiểm xã hội một lần: sau một năm kể từ ngày người lao động nghỉ việc mà chưa đủ điều kiện hưởng lương hưu và không tiếp tục đóng BHXH. (law_bhxh_2024, article_109, clause_1)",
+    "application": "Không có slot_id cụ thể nào được ràng buộc trong trường hợp này. Truy vấn Prolog đã sử dụng quy tắc từ nguồn luật để xác định thời điểm tính bảo hiểm xã hội một lần là \"sau một năm kể từ ngày nghỉ việc theo quyết định\".",
+    "conclusion": "Theo kết quả truy vấn Prolog, thời điểm tính để rút bảo hiểm xã hội một lần là \"sau một năm kể từ ngày nghỉ việc theo quyết định\"."
+  },
+  "elapsed_s": 4.706,
+  "prompt_tokens": 2024,
+  "completion_tokens": 421,
+  "error": null,
+  "gold_answer": "Mốc 1 năm để xét BHXH 1 lần thường được hiểu là sau 12 tháng bạn không còn thuộc diện tham gia BHXH bắt buộc và cũng không tham gia BHXH tự nguyện. Vì vậy không chỉ nhìn vào ngày ký quyết định nghỉ việc, mà phải xét thực tế quá trình tham gia sau đó. Khi đủ 12 tháng ngừng tham gia thì bạn mới nộp hồ sơ nếu thuộc trường hợp được hưởng.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

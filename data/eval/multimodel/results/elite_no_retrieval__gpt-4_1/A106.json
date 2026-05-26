@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 106,
+  "question": "Em đóng bảo hiểm được 11 năm 8 tháng mức đóng 6025 giờ rút được tầm bao nhiêu?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu người lao động đã đóng bảo hiểm xã hội được 11 năm 8 tháng với mức đóng bình quân là 6025 thì khi rút bảo hiểm xã hội một lần sẽ nhận được khoảng bao nhiêu?\n\nRule:\n\"Người lao động có dưới 20 năm đóng BHXH khi nghỉ việc có thể nhận bảo hiểm xã hội một lần.\" (law_bhxh_2024, article_60, clause_1)\n\"Mức hưởng BHXH một lần được tính: mỗi năm đóng được 1,5 tháng mức bình quân tiền lương đóng BHXH cho những năm trước 2014, 2 tháng cho những năm sau 2014.\" (law_bhxh_2024, article_60, clause_2)\n\nApplication:\nCác thông tin đầu vào gồm: years_contributed = 11, months_contributed = 8, average_salary = 6025. Hệ thống đã sử dụng các giá trị này để tính toán theo quy định tại Điều 60, Khoản 2 Luật BHXH 2024, áp dụng công thức tính mức hưởng BHXH một lần dựa trên tổng số năm, tháng đóng và mức lương bình quân.\n\nConclusion:\nTheo kết quả truy vấn Prolog, số tiền bảo hiểm xã hội một lần mà bạn có thể nhận được là Amount = 140583.33333333334.",
+  "citations": [
+    "[Điều 60 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(calculation,bhxh_onetime_amount(user,140583.33333333334),based_on(source_a60_k2))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu người lao động đã đóng bảo hiểm xã hội được 11 năm 8 tháng với mức đóng bình quân là 6025 thì khi rút bảo hiểm xã hội một lần sẽ nhận được khoảng bao nhiêu?",
+    "rule": "\"Người lao động có dưới 20 năm đóng BHXH khi nghỉ việc có thể nhận bảo hiểm xã hội một lần.\" (law_bhxh_2024, article_60, clause_1)\n\"Mức hưởng BHXH một lần được tính: mỗi năm đóng được 1,5 tháng mức bình quân tiền lương đóng BHXH cho những năm trước 2014, 2 tháng cho những năm sau 2014.\" (law_bhxh_2024, article_60, clause_2)",
+    "application": "Các thông tin đầu vào gồm: years_contributed = 11, months_contributed = 8, average_salary = 6025. Hệ thống đã sử dụng các giá trị này để tính toán theo quy định tại Điều 60, Khoản 2 Luật BHXH 2024, áp dụng công thức tính mức hưởng BHXH một lần dựa trên tổng số năm, tháng đóng và mức lương bình quân.",
+    "conclusion": "Theo kết quả truy vấn Prolog, số tiền bảo hiểm xã hội một lần mà bạn có thể nhận được là Amount = 140583.33333333334."
+  },
+  "elapsed_s": 6.453,
+  "prompt_tokens": 2149,
+  "completion_tokens": 736,
+  "error": null,
+  "gold_answer": "Nếu toàn bộ thời gian đóng đều từ năm 2014 trở đi thì BHXH 1 lần của bạn ước khoảng khoảng 144,6 triệu; đây chỉ là con số gần đúng, chưa tính hệ số điều chỉnh tiền lương và cách làm tròn của cơ quan BHXH. Điều kiện nhận vẫn phải thỏa quy định về BHXH 1 lần, ví dụ sau 12 tháng không còn thuộc diện tham gia và không tham gia BHXH tự nguyện.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,21 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 100,
+  "question": "Em đóng bh đc 3th tầm hơn 1tr. Bây h nghỉ việc, k có ý định làm lại thì có lấy lại đc khoản mình đã đóng không?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=unable_to_conclude, repair_rounds=2, error=LLM returned no rules or no query]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "unable_to_conclude",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 25.86,
+  "prompt_tokens": 6086,
+  "completion_tokens": 2158,
+  "error": null,
+  "gold_answer": "Đóng BHXH mới 3 tháng thì chưa thể lấy lại ngay chỉ vì nghỉ việc và không muốn đi làm nữa. Muốn hưởng BHXH một lần, bạn vẫn phải thuộc trường hợp luật cho phép, thường là sau khi ngừng tham gia đủ 12 tháng và chưa đủ điều kiện hưởng lương hưu. Nếu sau này không rút, 3 tháng đó vẫn được bảo lưu. Còn phần người sử dụng lao động đã đóng vào các quỹ thì không hoàn trả riêng cho bạn như một khoản tiết kiệm.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110"
+}

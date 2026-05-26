@@ -1,0 +1,42 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 94,
+  "question": "e mơi đóng bhxh hộ kinh doanh được 2 tháng giờ e ở nhóm 1 không phải đóng thì đi huỷ được khômg?",
+  "answer": "Issue:\ne mới đóng BHXH hộ kinh doanh được 2 tháng, hiện ở nhóm 1 không phải đóng — có thể hủy tham gia (chấm dứt) được không?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15) - Điều 33 khoản 5: \"Đối tượng quy định tại các điểm a, b, c, d và i khoản 1 và khoản 2 Điều 2 của Luật này mà không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì người lao động không phải đóng bảo hiểm xã hội tháng đó, trừ trường hợp người sử dụng lao động và người lao động có thỏa thuận về việc có đóng bảo hiểm xã hội cho người lao động tháng đó với căn cứ đóng bằng căn cứ đóng bảo hiểm xã hội tháng g\"\nLuật BHXH 2024 (41/2024/QH15) - Điều 70 khoản 1: \"Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm xã hội mà có đề nghị thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây:\"\nLuật BHXH 2024 (41/2024/QH15) - Điều 36 khoản 1: \"Đối tượng quy định tại khoản 4 Điều 2 của Luật này, hằng tháng đóng bằng 22% mức thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện vào quỹ hưu trí và tử tuất. Căn cứ vào điều kiện phát triển kinh tế - xã hội, khả năng ngân sách nhà nước từng thời kỳ, Chính phủ quy định mức hỗ trợ, đối tượng hỗ trợ và thời gian thực hiện chính sách hỗ trợ tiền đóng bảo hiểm xã hội cho người tham gia bảo hiểm xã hội\"\n\nApplication:\nmonths_contributed -> 2 (từ facts): chương trình dùng giá trị này để kiểm tra điều kiện tham gia (>0) trong quy tắc.\ncontribution_type -> ho_kinh_doanh: được đối chiếu với điều kiện về loại tham gia.\ngroup -> group1: được đối chiếu với điều kiện nhóm người tham gia.\nCác giá trị trên được khớp với quy tắc can_cancel_and_receive_one_time để tạo Result giải thích quyền chấm dứt và khả năng đề nghị hưởng BHXH một lần theo Điều 70.\n\nConclusion:\nAnswer = result(can_cancel_yes,2,Có thể chấm dứt tham gia; nếu chấm dứt, có thể đề nghị hưởng BHXH một lần theo Điều 70 tùy thuộc vào điều kiện quy định.)",
+  "citations": [
+    "[Điều 33 khoản 5]",
+    "[Điều 2]",
+    "[Điều 70 khoản 1]",
+    "[Điều 36 khoản 1]",
+    "[Điều 70]"
+  ],
+  "citation_ids": [
+    "L41_2024.A33.K5",
+    "L41_2024.A2",
+    "L41_2024.A70.K1",
+    "L41_2024.A36.K1",
+    "L41_2024.A70"
+  ],
+  "citation_indices": [
+    0,
+    2,
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,can_cancel_and_receive_one_time(user,result(can_cancel_yes,2,Có thể chấm dứt tham gia; nếu chấm dứt, có thể đề nghị hưởng BHXH một lần theo Điều 70 tùy thuộc vào điều kiện quy định.)),based_on(source_c0)),step(conclusion,can_cancel_and_receive_one_time(user,result(can_cancel_yes,2,Có thể chấm dứt tham gia; nếu chấm dứt, có thể đề nghị hưởng BHXH một lần theo Điều 70 tùy thuộc vào điều kiện quy định.)),based_on(source_c2)),step(conclusion,can_cancel_and_receive_one_time(user,result(can_cancel_yes,2,Có thể chấm dứt tham gia; nếu chấm dứt, có thể đề nghị hưởng BHXH một lần theo Điều 70 tùy thuộc vào điều kiện quy định.)),based_on(source_c4))]",
+  "irac_sections": {
+    "issue": "e mới đóng BHXH hộ kinh doanh được 2 tháng, hiện ở nhóm 1 không phải đóng — có thể hủy tham gia (chấm dứt) được không?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15) - Điều 33 khoản 5: \"Đối tượng quy định tại các điểm a, b, c, d và i khoản 1 và khoản 2 Điều 2 của Luật này mà không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì người lao động không phải đóng bảo hiểm xã hội tháng đó, trừ trường hợp người sử dụng lao động và người lao động có thỏa thuận về việc có đóng bảo hiểm xã hội cho người lao động tháng đó với căn cứ đóng bằng căn cứ đóng bảo hiểm xã hội tháng g\"\nLuật BHXH 2024 (41/2024/QH15) - Điều 70 khoản 1: \"Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm xã hội mà có đề nghị thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây:\"\nLuật BHXH 2024 (41/2024/QH15) - Điều 36 khoản 1: \"Đối tượng quy định tại khoản 4 Điều 2 của Luật này, hằng tháng đóng bằng 22% mức thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện vào quỹ hưu trí và tử tuất. Căn cứ vào điều kiện phát triển kinh tế - xã hội, khả năng ngân sách nhà nước từng thời kỳ, Chính phủ quy định mức hỗ trợ, đối tượng hỗ trợ và thời gian thực hiện chính sách hỗ trợ tiền đóng bảo hiểm xã hội cho người tham gia bảo hiểm xã hội\"",
+    "application": "months_contributed -> 2 (từ facts): chương trình dùng giá trị này để kiểm tra điều kiện tham gia (>0) trong quy tắc.\ncontribution_type -> ho_kinh_doanh: được đối chiếu với điều kiện về loại tham gia.\ngroup -> group1: được đối chiếu với điều kiện nhóm người tham gia.\nCác giá trị trên được khớp với quy tắc can_cancel_and_receive_one_time để tạo Result giải thích quyền chấm dứt và khả năng đề nghị hưởng BHXH một lần theo Điều 70.",
+    "conclusion": "Answer = result(can_cancel_yes,2,Có thể chấm dứt tham gia; nếu chấm dứt, có thể đề nghị hưởng BHXH một lần theo Điều 70 tùy thuộc vào điều kiện quy định.)"
+  },
+  "elapsed_s": 50.944,
+  "prompt_tokens": 4228,
+  "completion_tokens": 5331,
+  "error": null,
+  "gold_answer": "Nếu trước đây bạn thuộc diện phải tham gia BHXH bắt buộc với tư cách chủ hộ kinh doanh nhưng nay chuyển sang nhóm không thuộc diện phải đóng nữa, bạn cần liên hệ cơ quan BHXH để làm thủ tục giảm/dừng đúng từ thời điểm không còn thuộc đối tượng. Không phải 'hủy' toàn bộ quá trình 2 tháng đã đóng; thời gian đó nếu đóng đúng đối tượng vẫn được ghi nhận. Cần xác định rõ căn cứ vì sao bạn chuyển sang nhóm 1 không phải đóng để cơ quan BHXH điều chỉnh.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2; Nghị định 158/2025/NĐ-CP Điều 3"
+}

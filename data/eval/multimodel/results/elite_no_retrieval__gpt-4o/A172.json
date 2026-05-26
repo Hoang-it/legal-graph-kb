@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 172,
+  "question": "đăng kí bhtn xong tầm bnh ngày là sẽ nhận tiền?",
+  "answer": "Issue: Người dùng muốn biết sau khi đăng ký bảo hiểm thất nghiệp thì mất bao nhiêu ngày để nhận được tiền.\n\nRule: \"Thời gian giải quyết và chi trả trợ cấp thất nghiệp là trong vòng 20 ngày làm việc kể từ ngày nhận đủ hồ sơ hợp lệ.\" (Luật Bảo hiểm xã hội 2024, Điều 50, Khoản 2)\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo quy định từ nguồn luật, thời gian xử lý và chi trả trợ cấp thất nghiệp là 20 ngày làm việc.\n\nConclusion: Theo kết quả từ chương trình Prolog, thời gian để nhận tiền trợ cấp thất nghiệp là 20 ngày làm việc (biến Answer).",
+  "citations": [
+    "[Điều 50 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A50.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_processing_time(20),based_on(source_a50_k2))]",
+  "irac_sections": {
+    "issue": "Người dùng muốn biết sau khi đăng ký bảo hiểm thất nghiệp thì mất bao nhiêu ngày để nhận được tiền.",
+    "rule": "\"Thời gian giải quyết và chi trả trợ cấp thất nghiệp là trong vòng 20 ngày làm việc kể từ ngày nhận đủ hồ sơ hợp lệ.\" (Luật Bảo hiểm xã hội 2024, Điều 50, Khoản 2)",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo quy định từ nguồn luật, thời gian xử lý và chi trả trợ cấp thất nghiệp là 20 ngày làm việc.",
+    "conclusion": "Theo kết quả từ chương trình Prolog, thời gian để nhận tiền trợ cấp thất nghiệp là 20 ngày làm việc (biến Answer)."
+  },
+  "elapsed_s": 6.397,
+  "prompt_tokens": 3042,
+  "completion_tokens": 381,
+  "error": null,
+  "gold_answer": "Sau khi bạn nộp đủ hồ sơ BHTN, nếu sau 15 ngày làm việc vẫn chưa có việc làm thì sẽ được giải quyết hưởng. Tiền trợ cấp thường được chi trả sau khi có quyết định hưởng, thực tế nhiều nơi nhận trong vài ngày đến khoảng 1-2 tuần sau quyết định đầu tiên. Bạn nhớ theo dõi lịch thông báo việc làm hằng tháng để không bị tạm dừng hoặc chấm dứt hưởng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

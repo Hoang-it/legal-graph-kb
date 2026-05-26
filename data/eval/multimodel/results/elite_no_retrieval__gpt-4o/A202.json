@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 202,
+  "question": "Cho mình hỏi trước mình có làm ở fpt telecom khoảng 2 năm sau đó nghỉ có nhận sổ (bị mất) rồi sau mình có xin làm lại được thêm 1 năm . Giờ mình muốn tra thời gian tham gia bhxh thì làm sao ạ . Mình có tra đc mã số rồi . Còn tk Vssid thì mình chưa có",
+  "answer": "Issue: Bạn muốn biết cách tra cứu thời gian tham gia bảo hiểm xã hội (BHXH) sau khi đã làm việc tại FPT Telecom khoảng 2 năm, nghỉ việc, và sau đó làm lại thêm 1 năm. Bạn đã có mã số BHXH nhưng chưa có tài khoản VssID.\n\nRule: Theo Điều 23, Khoản 1 của Luật BHXH 2024: \"Người lao động có quyền tra cứu thông tin về thời gian tham gia BHXH thông qua mã số BHXH hoặc tài khoản VssID.\"\n\nApplication: Hiện tại, bạn đã có mã số BHXH nhưng chưa có tài khoản VssID. Theo quy định, bạn có thể sử dụng mã số BHXH để tra cứu thông tin về thời gian tham gia BHXH. Ngoài ra, bạn cũng có thể đăng ký tài khoản VssID để tra cứu trực tuyến.\n\nConclusion: Bạn có thể tra cứu thời gian tham gia BHXH bằng cách sử dụng mã số BHXH của bạn hoặc đăng ký tài khoản VssID để tra cứu trực tuyến.",
+  "citations": [
+    "[Điều 23 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A23.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,how_to_check_bhxh_participation(Bạn có thể tra cứu thời gian tham gia BHXH bằng cách sử dụng mã số BHXH của bạn hoặc đăng ký tài khoản VssID để tra cứu trực tuyến.),based_on(source_a23_k1))]",
+  "irac_sections": {
+    "issue": "Bạn muốn biết cách tra cứu thời gian tham gia bảo hiểm xã hội (BHXH) sau khi đã làm việc tại FPT Telecom khoảng 2 năm, nghỉ việc, và sau đó làm lại thêm 1 năm. Bạn đã có mã số BHXH nhưng chưa có tài khoản VssID.",
+    "rule": "Theo Điều 23, Khoản 1 của Luật BHXH 2024: \"Người lao động có quyền tra cứu thông tin về thời gian tham gia BHXH thông qua mã số BHXH hoặc tài khoản VssID.\"",
+    "application": "Hiện tại, bạn đã có mã số BHXH nhưng chưa có tài khoản VssID. Theo quy định, bạn có thể sử dụng mã số BHXH để tra cứu thông tin về thời gian tham gia BHXH. Ngoài ra, bạn cũng có thể đăng ký tài khoản VssID để tra cứu trực tuyến.",
+    "conclusion": "Bạn có thể tra cứu thời gian tham gia BHXH bằng cách sử dụng mã số BHXH của bạn hoặc đăng ký tài khoản VssID để tra cứu trực tuyến."
+  },
+  "elapsed_s": 8.391,
+  "prompt_tokens": 3434,
+  "completion_tokens": 500,
+  "error": null,
+  "gold_answer": null,
+  "gold_citations_raw": null
+}

@@ -1,0 +1,38 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 60,
+  "question": "Sếp em có Công ty A và B, Giờ sếp em muốn giải thể cty A (đã có qđ giải thể rồi), và chuyển hết công nhân từ cty A sang B\nỞ cty A có 1 bạn nữ đang nghỉ thai sản đến hết Tháng 04/2026, và sẽ báo On từ Tháng 05 tại cty B (trước đó em sẽ báo giảm cho bạn nữ tại cty A )\nVậy Trong Tháng 05/2026, bạn nữ đang làm tại cty B thì có được nghỉ hưởng chế độ dưỡng sức không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Sau khi công ty A giải thể và chuyển lao động sang công ty B, một lao động nữ vừa hết thời gian nghỉ thai sản tại công ty A (tháng 04/2026) và bắt đầu làm việc tại công ty B từ tháng 05/2026, thì trong tháng 05/2026, lao động nữ này có được nghỉ hưởng chế độ dưỡng sức, phục hồi sức khỏe không?\n\nRule:\n\"Trong thời gian 30 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản quy định tại Điều 52, khoản 1 hoặc khoản 4 Điều 53, điểm a khoản 3 Điều 54 của Luật này, lao động nữ chưa phục hồi sức khỏe thì được nghỉ dưỡng sức, phục hồi sức khoẻ. Thời gian nghỉ dưỡng sức, phục hồi sức khỏe liên tục bao gồm cả ngày nghỉ lễ, tết, ngày nghỉ hằng tuần.\" (Luật BHXH 2024 (41/2024/QH15), Điều 60, Khoản 1)\n\nApplication:\nKhông có slot_id cụ thể nào được hệ thống ghi nhận trong truy vấn này. Prolog đã sử dụng điều kiện: \"Trong thời gian 30 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản, nếu lao động nữ chưa phục hồi sức khỏe thì được nghỉ dưỡng sức, phục hồi sức khỏe, không phụ thuộc vào việc chuyển công tác sang công ty khác.\" để xác định quyền lợi.\n\nConclusion:\nTheo kết quả Prolog, lao động nữ trong trường hợp này vẫn được nghỉ dưỡng sức, phục hồi sức khỏe nếu đáp ứng điều kiện chưa phục hồi sức khỏe trong vòng 30 ngày kể từ khi hết thời gian nghỉ thai sản, không phụ thuộc vào việc chuyển công tác sang công ty khác.",
+  "citations": [
+    "[Điều 52 khoản 1]",
+    "[Điều 53 điểm a]",
+    "[Điều 54]",
+    "[Điều 60 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A52.K1",
+    "L41_2024.A53",
+    "L41_2024.A54",
+    "L41_2024.A60.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,co_duoc_nghi_duong_suc_sau_thai_san([Trong thời gian 30 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản, nếu lao động nữ chưa phục hồi sức khỏe thì được nghỉ dưỡng sức, phục hồi sức khỏe, không phụ thuộc vào việc chuyển công tác sang công ty khác.]),based_on(source_c060))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Sau khi công ty A giải thể và chuyển lao động sang công ty B, một lao động nữ vừa hết thời gian nghỉ thai sản tại công ty A (tháng 04/2026) và bắt đầu làm việc tại công ty B từ tháng 05/2026, thì trong tháng 05/2026, lao động nữ này có được nghỉ hưởng chế độ dưỡng sức, phục hồi sức khỏe không?",
+    "rule": "\"Trong thời gian 30 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản quy định tại Điều 52, khoản 1 hoặc khoản 4 Điều 53, điểm a khoản 3 Điều 54 của Luật này, lao động nữ chưa phục hồi sức khỏe thì được nghỉ dưỡng sức, phục hồi sức khoẻ. Thời gian nghỉ dưỡng sức, phục hồi sức khỏe liên tục bao gồm cả ngày nghỉ lễ, tết, ngày nghỉ hằng tuần.\" (Luật BHXH 2024 (41/2024/QH15), Điều 60, Khoản 1)",
+    "application": "Không có slot_id cụ thể nào được hệ thống ghi nhận trong truy vấn này. Prolog đã sử dụng điều kiện: \"Trong thời gian 30 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản, nếu lao động nữ chưa phục hồi sức khỏe thì được nghỉ dưỡng sức, phục hồi sức khỏe, không phụ thuộc vào việc chuyển công tác sang công ty khác.\" để xác định quyền lợi.",
+    "conclusion": "Theo kết quả Prolog, lao động nữ trong trường hợp này vẫn được nghỉ dưỡng sức, phục hồi sức khỏe nếu đáp ứng điều kiện chưa phục hồi sức khỏe trong vòng 30 ngày kể từ khi hết thời gian nghỉ thai sản, không phụ thuộc vào việc chuyển công tác sang công ty khác."
+  },
+  "elapsed_s": 7.634,
+  "prompt_tokens": 3597,
+  "completion_tokens": 668,
+  "error": null,
+  "gold_answer": "Dưỡng sức, phục hồi sức khỏe sau thai sản chỉ đặt ra khi trong 30 ngày đầu trở lại làm việc mà sức khỏe chưa phục hồi. Nếu bạn lao động nữ kết thúc thai sản tháng 4/2026, sang tháng 5/2026 làm việc tại công ty B thì vẫn có thể được xem xét nghỉ dưỡng sức nếu đủ điều kiện và có xác nhận theo quy định. Việc chuyển từ công ty A sang B không tự làm mất quyền này, nhưng hồ sơ phải thể hiện rõ thời điểm trở lại làm việc và tình trạng sức khỏe.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 61"
+}

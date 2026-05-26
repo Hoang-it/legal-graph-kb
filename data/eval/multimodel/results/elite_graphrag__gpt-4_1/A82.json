@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 82,
+  "question": "bhxh e đc 6 tháng có được rút không? E nghĩ cty cũng 2 năm hơn rồi",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Người lao động đã tham gia bảo hiểm xã hội (BHXH) được 6 tháng, làm việc tại công ty hơn 2 năm, có đủ điều kiện để rút BHXH một lần hay không?\n\nRule:\nTheo Luật BHXH 2024 (41/2024/QH15), Điều 33, Khoản 7: \"Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất.\"\n\nApplication:\nCác điều kiện để được hưởng BHXH một lần theo Prolog truy vấn gồm: du_tuoi_huong_luong_huu_ma_chua_du_20_nam_dong_bhxh, ra_nuoc_ngoai_dinh_cu, mac_benh_nguy_hiem_den_tinh_mang, sau_1_nam_nghi_viec_chua_du_20_nam_dong_bhxh_khong_tiep_tuc_tham_gia. Truy vấn đã liệt kê các điều kiện này dựa trên nguồn luật liên quan.\n\nConclusion:\nProlog trả về danh sách các điều kiện để được rút BHXH một lần: du_tuoi_huong_luong_huu_ma_chua_du_20_nam_dong_bhxh, ra_nuoc_ngoai_dinh_cu, mac_benh_nguy_hiem_den_tinh_mang, sau_1_nam_nghi_viec_chua_du_20_nam_dong_bhxh_khong_tiep_tuc_tham_gia (Conditions). Để xác định bạn có đủ điều kiện rút BHXH một lần hay không, cần đối chiếu trường hợp thực tế của bạn với các điều kiện này.",
+  "citations": [
+    "[Điều 33 khoản 7]"
+  ],
+  "citation_ids": [
+    "L41_2024.A33.K7"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 2,
+  "prolog_trace": "[step(conclusion,one_time_social_insurance_conditions([du_tuoi_huong_luong_huu_ma_chua_du_20_nam_dong_bhxh,ra_nuoc_ngoai_dinh_cu,mac_benh_nguy_hiem_den_tinh_mang,sau_1_nam_nghi_viec_chua_du_20_nam_dong_bhxh_khong_tiep_tuc_tham_gia]),based_on(source_c019))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Người lao động đã tham gia bảo hiểm xã hội (BHXH) được 6 tháng, làm việc tại công ty hơn 2 năm, có đủ điều kiện để rút BHXH một lần hay không?",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 33, Khoản 7: \"Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất.\"",
+    "application": "Các điều kiện để được hưởng BHXH một lần theo Prolog truy vấn gồm: du_tuoi_huong_luong_huu_ma_chua_du_20_nam_dong_bhxh, ra_nuoc_ngoai_dinh_cu, mac_benh_nguy_hiem_den_tinh_mang, sau_1_nam_nghi_viec_chua_du_20_nam_dong_bhxh_khong_tiep_tuc_tham_gia. Truy vấn đã liệt kê các điều kiện này dựa trên nguồn luật liên quan.",
+    "conclusion": "Prolog trả về danh sách các điều kiện để được rút BHXH một lần: du_tuoi_huong_luong_huu_ma_chua_du_20_nam_dong_bhxh, ra_nuoc_ngoai_dinh_cu, mac_benh_nguy_hiem_den_tinh_mang, sau_1_nam_nghi_viec_chua_du_20_nam_dong_bhxh_khong_tiep_tuc_tham_gia (Conditions). Để xác định bạn có đủ điều kiện rút BHXH một lần hay không, cần đối chiếu trường hợp thực tế của bạn với các điều kiện này."
+  },
+  "elapsed_s": 13.787,
+  "prompt_tokens": 8211,
+  "completion_tokens": 1170,
+  "error": null,
+  "gold_answer": "Thông thường đóng BHXH mới 6 tháng thì chưa thể rút ngay nếu bạn chưa thuộc trường hợp luật cho phép. Trường hợp phổ biến nhất là phải sau 12 tháng không tiếp tục tham gia BHXH mà vẫn chưa đủ điều kiện hưởng lương hưu thì mới đề nghị hưởng BHXH một lần. Vì vậy nếu bạn mới đóng 6 tháng và nghỉ đã hơn 2 năm thì cần kiểm tra hiện tại có còn tham gia nơi nào khác không; nếu không, thường có thể nộp hồ sơ theo diện BHXH một lần.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 110"
+}

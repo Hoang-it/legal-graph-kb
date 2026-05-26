@@ -1,0 +1,32 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 40,
+  "question": "Em đóng bhxh t8/2025 đến t4/2026, ngày dự sinh của em là19/8. Vậy em có đủ đk để nhận trợ cấp không? Làm hểt tháng 4 là em nghỉ cty luôn. Em có đủ đk để nhận bhts k?",
+  "answer": "Issue:\nEm đóng BHXH từ tháng 8/2025 đến 4/2026, dự sinh 19/8/2026 và sẽ nghỉ việc cuối tháng 4; hỏi có đủ điều kiện nhận trợ cấp thai sản và bảo hiểm thất nghiệp không.\n\nRule:\nlaw_bhxh_2024 article_54 clause_1: 'Người lao động nữ được hưởng chế độ thai sản nếu đã đóng BHXH bắt buộc đủ 6 tháng trở lên trong vòng 12 tháng trước khi sinh.'\nlaw_bhxh_2024 article_55 clause_2: 'Người lao động nghỉ việc, chấm dứt hợp đồng lao động vẫn được hưởng chế độ thai sản nếu đã đáp ứng điều kiện đóng BHXH theo quy định.'\n\nApplication:\nKhông có slot_bindings được cung cấp. Prolog nhận các fact kiểm chứng sau:\ncontrib_period(user, date(2025,8,1), date(2026,4,30)).\ndue_date(user, date(2026,8,19)).\nwill_quit_end_of_apr(user).\nProlog chạy truy vấn và trả về trace: [step(count_months(8),based_on(source_maternity_6in12)),step(decision(yes),based_on(source_maternity_6in12)),step(note_person_quit,based_on(source_maternity_after_quit))]. Trace này cho thấy chương trình đã đếm (count_months(8)), đưa ra quyết định (decision(yes)) và ghi chú người lao động nghỉ việc (note_person_quit).\n\nConclusion:\nProlog binding: Answer = \"yes\". Trace trả về như nêu trên. Hệ thống không thiếu slot; đây là kết luận của chương trình Prolog.",
+  "citations": [
+    "[Điều 54 khoản 1]",
+    "[Điều 55 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A54.K1",
+    "L41_2024.A55.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(count_months(8),based_on(source_maternity_6in12)),step(decision(yes),based_on(source_maternity_6in12)),step(note_person_quit,based_on(source_maternity_after_quit))]",
+  "irac_sections": {
+    "issue": "Em đóng BHXH từ tháng 8/2025 đến 4/2026, dự sinh 19/8/2026 và sẽ nghỉ việc cuối tháng 4; hỏi có đủ điều kiện nhận trợ cấp thai sản và bảo hiểm thất nghiệp không.",
+    "rule": "law_bhxh_2024 article_54 clause_1: 'Người lao động nữ được hưởng chế độ thai sản nếu đã đóng BHXH bắt buộc đủ 6 tháng trở lên trong vòng 12 tháng trước khi sinh.'\nlaw_bhxh_2024 article_55 clause_2: 'Người lao động nghỉ việc, chấm dứt hợp đồng lao động vẫn được hưởng chế độ thai sản nếu đã đáp ứng điều kiện đóng BHXH theo quy định.'",
+    "application": "Không có slot_bindings được cung cấp. Prolog nhận các fact kiểm chứng sau:\ncontrib_period(user, date(2025,8,1), date(2026,4,30)).\ndue_date(user, date(2026,8,19)).\nwill_quit_end_of_apr(user).\nProlog chạy truy vấn và trả về trace: [step(count_months(8),based_on(source_maternity_6in12)),step(decision(yes),based_on(source_maternity_6in12)),step(note_person_quit,based_on(source_maternity_after_quit))]. Trace này cho thấy chương trình đã đếm (count_months(8)), đưa ra quyết định (decision(yes)) và ghi chú người lao động nghỉ việc (note_person_quit).",
+    "conclusion": "Prolog binding: Answer = \"yes\". Trace trả về như nêu trên. Hệ thống không thiếu slot; đây là kết luận của chương trình Prolog."
+  },
+  "elapsed_s": 53.502,
+  "prompt_tokens": 2504,
+  "completion_tokens": 6756,
+  "error": null,
+  "gold_answer": "Nếu bạn đóng BHXH bắt buộc từ 8/2025 đến hết 4/2026 thì có 9 tháng đóng trong 12 tháng trước khi sinh 8/2026, nên về nguyên tắc đủ điều kiện hưởng thai sản khi sinh con. Việc nghỉ việc sau tháng 4/2026 không làm mất quyền hưởng nếu bạn đã đủ điều kiện trước khi sinh. Bạn vẫn được nộp hồ sơ hưởng thai sản qua cơ quan BHXH theo nơi cư trú hoặc qua đơn vị nếu còn quan hệ lao động.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50, Điều 53"
+}

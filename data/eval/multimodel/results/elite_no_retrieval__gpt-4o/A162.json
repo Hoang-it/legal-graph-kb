@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 162,
+  "question": "đến thang8/2026.minh đóng bhxh dc hơn 3 năm .hết tháng 3/2026 mình nghỉ cty thì có dc tien bh thai sản không?",
+  "answer": "Issue: Bạn hỏi liệu sau khi nghỉ việc vào tháng 3/2026, bạn có đủ điều kiện nhận tiền bảo hiểm thai sản không, khi đến tháng 8/2026 bạn đã đóng bảo hiểm xã hội được hơn 3 năm.\n\nRule: Theo Điều 31, Khoản 1 của Luật Bảo hiểm xã hội 2024: \"Người lao động được hưởng chế độ thai sản khi đã đóng BHXH từ đủ 6 tháng trở lên trong vòng 12 tháng trước khi sinh con.\"\n\nApplication: \n- months_contributed_last_12: 3. Bạn đã đóng bảo hiểm xã hội được 3 tháng trong vòng 12 tháng trước khi sinh con.\n- Quy tắc áp dụng yêu cầu bạn phải đóng bảo hiểm xã hội từ đủ 6 tháng trở lên trong vòng 12 tháng trước khi sinh con để đủ điều kiện nhận chế độ thai sản.\n\nConclusion: Theo kết quả từ hệ thống, bạn không đủ điều kiện nhận tiền bảo hiểm thai sản vì bạn chỉ đóng bảo hiểm xã hội được 3 tháng trong vòng 12 tháng trước khi sinh con, không đạt yêu cầu tối thiểu là 6 tháng.",
+  "citations": [
+    "[Điều 31 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A31.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,maternity_benefit_eligibility(user,no),based_on(source_a31_k1))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi liệu sau khi nghỉ việc vào tháng 3/2026, bạn có đủ điều kiện nhận tiền bảo hiểm thai sản không, khi đến tháng 8/2026 bạn đã đóng bảo hiểm xã hội được hơn 3 năm.",
+    "rule": "Theo Điều 31, Khoản 1 của Luật Bảo hiểm xã hội 2024: \"Người lao động được hưởng chế độ thai sản khi đã đóng BHXH từ đủ 6 tháng trở lên trong vòng 12 tháng trước khi sinh con.\"",
+    "application": "- months_contributed_last_12: 3. Bạn đã đóng bảo hiểm xã hội được 3 tháng trong vòng 12 tháng trước khi sinh con.\n- Quy tắc áp dụng yêu cầu bạn phải đóng bảo hiểm xã hội từ đủ 6 tháng trở lên trong vòng 12 tháng trước khi sinh con để đủ điều kiện nhận chế độ thai sản.",
+    "conclusion": "Theo kết quả từ hệ thống, bạn không đủ điều kiện nhận tiền bảo hiểm thai sản vì bạn chỉ đóng bảo hiểm xã hội được 3 tháng trong vòng 12 tháng trước khi sinh con, không đạt yêu cầu tối thiểu là 6 tháng."
+  },
+  "elapsed_s": 6.605,
+  "prompt_tokens": 2093,
+  "completion_tokens": 592,
+  "error": null,
+  "gold_answer": "Nếu đến 8/2026 bạn có hơn 3 năm đóng BHXH và nghỉ công ty từ hết 3/2026, muốn hưởng thai sản thì phải xét trong 12 tháng liền kề trước sinh bạn có đóng đủ từ 06 tháng hay không. Nếu đủ điều kiện này thì dù đã nghỉ việc trước sinh bạn vẫn được hưởng thai sản. Thiếu điều kiện 06 tháng thì sẽ không được giải quyết.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

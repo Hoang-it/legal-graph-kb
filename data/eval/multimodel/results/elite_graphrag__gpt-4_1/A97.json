@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 97,
+  "question": "Mình đã rút Bảo hiểm xã hội lần 1 nhưng chưa trả sổ giờ mình đóng đc gần 4 năm rồi, cho mình hỏi bao lâu mình mới dx trả sổ vậy?",
+  "answer": "Issue:\nBạn hỏi về thời hạn mà cơ quan bảo hiểm xã hội phải trả sổ bảo hiểm xã hội cho bạn sau khi đã rút bảo hiểm xã hội lần 1 nhưng chưa nhận lại sổ, trong bối cảnh bạn đã đóng bảo hiểm gần 4 năm.\n\nRule:\n\"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), Điều 28, Khoản 4)\n\nApplication:\nKhông có slot_id cụ thể nào được ràng buộc trong trường hợp này. Theo kết quả truy vấn Prolog, hệ thống xác định thời hạn trả sổ bảo hiểm xã hội dựa trên quy định tại nguồn luật đã trích dẫn, với giá trị SoNgay là 5.\n\nConclusion:\nThời hạn để cơ quan bảo hiểm xã hội trả sổ bảo hiểm xã hội cho bạn là 5 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định (SoNgay = 5).",
+  "citations": [
+    "[Điều 28 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A28.K4"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,thoi_han_tra_so_bhxh(5),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về thời hạn mà cơ quan bảo hiểm xã hội phải trả sổ bảo hiểm xã hội cho bạn sau khi đã rút bảo hiểm xã hội lần 1 nhưng chưa nhận lại sổ, trong bối cảnh bạn đã đóng bảo hiểm gần 4 năm.",
+    "rule": "\"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), Điều 28, Khoản 4)",
+    "application": "Không có slot_id cụ thể nào được ràng buộc trong trường hợp này. Theo kết quả truy vấn Prolog, hệ thống xác định thời hạn trả sổ bảo hiểm xã hội dựa trên quy định tại nguồn luật đã trích dẫn, với giá trị SoNgay là 5.",
+    "conclusion": "Thời hạn để cơ quan bảo hiểm xã hội trả sổ bảo hiểm xã hội cho bạn là 5 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định (SoNgay = 5)."
+  },
+  "elapsed_s": 5.29,
+  "prompt_tokens": 2882,
+  "completion_tokens": 474,
+  "error": null,
+  "gold_answer": "Sau khi đã nhận BHXH một lần, nếu bạn đi làm lại và đóng BHXH gần 4 năm thì quá trình tham gia mới vẫn được ghi nhận bình thường trên cùng mã số BHXH. Việc 'trả sổ' hiện nay chủ yếu là cập nhật dữ liệu điện tử; nếu cần bản giấy/tờ rời thì cơ quan BHXH hoặc đơn vị sẽ xác nhận khi có phát sinh chốt sổ, nghỉ việc hoặc cấp lại. Không có quy định phải chờ đủ bao lâu mới được 'trả sổ'; quan trọng là quá trình đóng mới đã được cập nhật đúng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25, Điều 102"
+}

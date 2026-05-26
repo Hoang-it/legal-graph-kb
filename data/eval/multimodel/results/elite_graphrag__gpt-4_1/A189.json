@@ -1,0 +1,37 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 189,
+  "question": "Cty em từ tháng 11/2025 từ Cty cổ phần chuyển đổi thành Cty TNHH 1tv, giám đốc là chủ sở hữu mà bên em đóng bảo hiểm xã hội 32% được không?",
+  "answer": "Issue:\nCông ty hỏi về việc sau khi chuyển đổi từ công ty cổ phần sang công ty TNHH một thành viên từ tháng 11/2025, giám đốc là chủ sở hữu thì có thể đóng bảo hiểm xã hội với tỷ lệ 32% hay không.\n\nRule:\n\"Người sử dụng lao động hằng tháng đóng 22% tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc vào quỹ hưu trí và tử tuất cho đối tượng quy định tại điểm đ và điểm e khoản 1 Điều 2 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 34, Khoản 2)\n\"Tỷ lệ đóng bảo hiểm xã hội tự nguyện bằng 22% thu nhập làm căn cứ đóng bảo hiểm xã hội vào quỹ hưu trí và tử tuất.\" (Luật BHXH 2024 (41/2024/QH15), Điều 32, Khoản 2)\n\nApplication:\nTruy vấn Prolog xác định tỷ lệ đóng bảo hiểm xã hội bắt buộc (bhxh_bat_buoc_tyle_dong) và trả về giá trị TyLe = 22 dựa trên quy định tại Điều 34, Khoản 2 Luật BHXH 2024. Không có slot nào khác được cung cấp hoặc sử dụng trong truy vấn này.\n\nConclusion:\nTheo quy định hiện hành, tỷ lệ đóng bảo hiểm xã hội bắt buộc là 22 (TyLe = 22). Hệ thống không ghi nhận tỷ lệ 32% như câu hỏi nêu.",
+  "citations": [
+    "[Điều 2]",
+    "[Điều 34 khoản 2]",
+    "[Điều 32 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2",
+    "L41_2024.A34.K2",
+    "L41_2024.A32.K2"
+  ],
+  "citation_indices": [
+    4,
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,bhxh_bat_buoc_tyle_dong(22),based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Công ty hỏi về việc sau khi chuyển đổi từ công ty cổ phần sang công ty TNHH một thành viên từ tháng 11/2025, giám đốc là chủ sở hữu thì có thể đóng bảo hiểm xã hội với tỷ lệ 32% hay không.",
+    "rule": "\"Người sử dụng lao động hằng tháng đóng 22% tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc vào quỹ hưu trí và tử tuất cho đối tượng quy định tại điểm đ và điểm e khoản 1 Điều 2 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 34, Khoản 2)\n\"Tỷ lệ đóng bảo hiểm xã hội tự nguyện bằng 22% thu nhập làm căn cứ đóng bảo hiểm xã hội vào quỹ hưu trí và tử tuất.\" (Luật BHXH 2024 (41/2024/QH15), Điều 32, Khoản 2)",
+    "application": "Truy vấn Prolog xác định tỷ lệ đóng bảo hiểm xã hội bắt buộc (bhxh_bat_buoc_tyle_dong) và trả về giá trị TyLe = 22 dựa trên quy định tại Điều 34, Khoản 2 Luật BHXH 2024. Không có slot nào khác được cung cấp hoặc sử dụng trong truy vấn này.",
+    "conclusion": "Theo quy định hiện hành, tỷ lệ đóng bảo hiểm xã hội bắt buộc là 22 (TyLe = 22). Hệ thống không ghi nhận tỷ lệ 32% như câu hỏi nêu."
+  },
+  "elapsed_s": 11.324,
+  "prompt_tokens": 3045,
+  "completion_tokens": 681,
+  "error": null,
+  "gold_answer": "Tỷ lệ 32% chỉ có thể là cách cộng gộp nhiều khoản phải đóng của cả doanh nghiệp và người lao động, không phải lúc nào cũng áp dụng đúng cho mọi trường hợp. Với công ty TNHH MTV, giám đốc/chủ sở hữu có thuộc diện đóng BHXH hay không còn phụ thuộc việc hưởng lương, chức danh và hướng dẫn áp dụng cho người quản lý doanh nghiệp. Bạn nên rà lại đối tượng tham gia theo Luật BHXH 2024 và nghị định hướng dẫn.",
+  "gold_citations_raw": "Điều 2, 13, 14 Luật BHXH 2024; Nghị định 158/2025/NĐ-CP"
+}

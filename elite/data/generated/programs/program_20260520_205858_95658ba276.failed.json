@@ -1,0 +1,203 @@
+{
+  "question": "Người lao động cần đáp ứng điều kiện gì để được hưởng chế độ bảo hiểm xã hội một lần tại Việt Nam?",
+  "retrieved_chunks": [
+    {
+      "chunk_id": "c016",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "62",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 62. Bảo lưu thời gian đóng bảo hiểm xã hội. Người lao động khi nghỉ việc mà chưa đủ điều kiện để hưởng lương hưu hoặc chưa hưởng bảo hiểm xã hội một lần thì được bảo lưu thời gian đóng bảo hiểm xã hội. Thời gian bảo lưu không bị giới hạn và được cộng dồn khi người lao động tiếp tục tham gia BHXH."
+    },
+    {
+      "chunk_id": "c003",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "54",
+      "clause": "3",
+      "point": null,
+      "text": "Điều 54 khoản 3. Người lao động đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ nhưng thời gian đóng bảo hiểm xã hội còn thiếu không quá 6 tháng thì được đóng tiếp một lần cho đủ 20 năm và hưởng lương hưu."
+    },
+    {
+      "chunk_id": "c001",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "54",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 54 khoản 1. Người lao động khi nghỉ việc có đủ 20 năm đóng bảo hiểm xã hội trở lên được hưởng lương hưu nếu đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ. Đây là điều kiện cơ bản về tuổi và năm đóng để hưởng lương hưu theo Luật BHXH 2014."
+    },
+    {
+      "chunk_id": "c020",
+      "document": "Nghị quyết 93/2015/QH13",
+      "article": "1",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 60 khoản 2. Bảo hiểm xã hội một lần theo Nghị quyết 93/2015/QH13: Người lao động tham gia BHXH bắt buộc sau một năm nghỉ việc; người tham gia BHXH tự nguyện sau một năm không tiếp tục đóng BHXH; mà chưa đủ 20 năm đóng BHXH được hưởng BHXH một lần nếu có yêu cầu."
+    },
+    {
+      "chunk_id": "c019",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "60",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 60 khoản 1. Bảo hiểm xã hội một lần – Điều kiện hưởng: (a) Đủ tuổi hưởng lương hưu theo quy định mà chưa đủ 20 năm đóng BHXH; (b) Ra nước ngoài để định cư; (c) Người đang mắc một trong những bệnh nguy hiểm đến tính mạng như ung thư, bại liệt, xơ gan cổ chướng, phong, lao nặng, nhiễm HIV đã chuyển sang giai đoạn AIDS và những bệnh khác theo quy định của Bộ Y tế."
+    },
+    {
+      "chunk_id": "c081",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "4",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 4 – Các chế độ bảo hiểm xã hội bắt buộc bao gồm: ốm đau; thai sản; tai nạn lao động, bệnh nghề nghiệp; hưu trí; tử tuất. Bảo hiểm xã hội tự nguyện gồm: hưu trí; tử tuất. Bảo hiểm thất nghiệp là chế độ riêng áp dụng cho lao động theo hợp đồng."
+    },
+    {
+      "chunk_id": "c099",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "47",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 47 – Sổ bảo hiểm xã hội: Sổ BHXH là bằng chứng xác nhận quan hệ giữa người lao động và tổ chức BHXH. Mỗi người lao động chỉ có một sổ BHXH, được cấp khi tham gia lần đầu và sử dụng suốt quá trình tham gia BHXH. Sổ BHXH ghi nhận toàn bộ quá trình đóng và hưởng BHXH."
+    },
+    {
+      "chunk_id": "c002",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "54",
+      "clause": "2",
+      "point": null,
+      "text": "Điều 54 khoản 2. Người lao động làm công việc nặng nhọc, độc hại, nguy hiểm hoặc đặc biệt nặng nhọc, độc hại, nguy hiểm thuộc danh mục do Bộ Lao động - Thương binh và Xã hội ban hành; làm việc ở vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn khi nghỉ việc có đủ 20 năm đóng BHXH trở lên được hưởng lương hưu nếu đủ 55 tuổi đối với nam, đủ 50 tuổi đối với nữ."
+    },
+    {
+      "chunk_id": "c080",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "3",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 3 khoản 1 – Khái niệm BHXH: Bảo hiểm xã hội là sự bảo đảm thay thế hoặc bù đắp một phần thu nhập của người lao động khi họ bị giảm hoặc mất thu nhập do ốm đau, thai sản, tai nạn lao động, bệnh nghề nghiệp, hết tuổi lao động hoặc chết, trên cơ sở đóng vào quỹ bảo hiểm xã hội."
+    },
+    {
+      "chunk_id": "c033",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "31",
+      "clause": "2",
+      "point": null,
+      "text": "Điều 31 khoản 2 – Điều kiện đặc biệt về thai sản: Người lao động sinh con mà có thai từ tuần thứ 28 trở lên dù chỉ đóng BHXH từ đủ 3 tháng trở lên trong thời gian 12 tháng trước khi sinh vẫn được hưởng chế độ thai sản. Quy định này bảo vệ người lao động sinh non."
+    },
+    {
+      "chunk_id": "c050",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "25",
+      "clause": "2",
+      "point": null,
+      "text": "Điều 25 khoản 2 – Điều kiện về con ốm: Người lao động phải nghỉ việc để chăm sóc con dưới 7 tuổi bị ốm đau và có xác nhận của cơ sở khám chữa bệnh có thẩm quyền cũng được hưởng chế độ ốm đau."
+    },
+    {
+      "chunk_id": "c053",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "26",
+      "clause": "3",
+      "point": null,
+      "text": "Điều 26 khoản 3 – Thời gian hưởng ốm đau dài ngày: Khi hết thời gian hưởng ốm đau trong một năm mà vẫn tiếp tục điều trị thì người lao động được hưởng tiếp chế độ ốm đau với mức thấp hơn (65% hoặc 55% tùy thời gian đóng) theo quy định tại Điều 28 khoản 2."
+    },
+    {
+      "chunk_id": "c091",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "60",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 60 khoản 1 điểm d – BHXH một lần do bệnh hiểm nghèo: Người đang mắc bệnh ung thư, bại liệt, xơ gan cổ chướng, phong, lao nặng, nhiễm HIV đã chuyển sang giai đoạn AIDS và các bệnh khác theo quy định của Bộ Y tế mà không đủ sức lao động được hưởng BHXH một lần mà không cần đủ tuổi hay năm đóng."
+    },
+    {
+      "chunk_id": "c032",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "31",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 31 khoản 1 – Điều kiện hưởng chế độ thai sản: người lao động được hưởng chế độ thai sản khi sinh con nếu đã đóng BHXH từ đủ 6 tháng trở lên trong thời gian 12 tháng trước khi sinh con. Điều kiện này áp dụng cho cả mang thai hộ và nhận con nuôi."
+    },
+    {
+      "chunk_id": "c049",
+      "document": "Luật BHXH 2014 (58/2014/QH13)",
+      "article": "25",
+      "clause": "1",
+      "point": null,
+      "text": "Điều 25 khoản 1 – Điều kiện hưởng chế độ ốm đau: Người lao động được hưởng chế độ ốm đau khi bị ốm đau, tai nạn mà không phải là tai nạn lao động, phải nghỉ việc và có xác nhận của cơ sở khám chữa bệnh có thẩm quyền theo quy định của Bộ Y tế."
+    }
+  ],
+  "program": {
+    "legal_sources": [
+      "legal_source(source_c003, nghi_quyet_93_2015_qh13, article_1, clause_1, none, 'Người lao động tham gia BHXH bắt buộc sau một năm nghỉ việc; người tham gia BHXH tự nguyện sau một năm không tiếp tục đóng BHXH; mà chưa đủ 20 năm đóng BHXH được hưởng BHXH một lần nếu có yêu cầu.').",
+      "legal_source(source_c004, law_bhxh_2014, article_60, clause_1, point_a, 'Đủ tuổi hưởng lương hưu theo quy định mà chưa đủ 20 năm đóng BHXH.').",
+      "legal_source(source_c004, law_bhxh_2014, article_60, clause_1, point_b, 'Ra nước ngoài để định cư.').",
+      "legal_source(source_c004, law_bhxh_2014, article_60, clause_1, point_c, 'Người đang mắc một trong những bệnh nguy hiểm đến tính mạng như ung thư, bại liệt, xơ gan cổ chướng, phong, lao nặng, nhiễm HIV đã chuyển sang giai đoạn AIDS và những bệnh khác theo quy định của Bộ Y tế.')."
+    ],
+    "rules": [
+      "one_time_social_insurance(Person, Trace) :-.",
+      "(   years_contributed(Person, Years), Years < 20,.",
+      "(   (   mandatory_insurance(Person), one_year_after_leaving_job(Person) ).",
+      ";   (   voluntary_insurance(Person), one_year_no_contribution(Person) ).",
+      "),.",
+      "Trace = [step(conclusion, one_time_social_insurance(Person), based_on(source_c003))].",
+      ");.",
+      "(   retirement_age(Person),.",
+      "years_contributed(Person, Years), Years < 20,.",
+      "Trace = [step(conclusion, one_time_social_insurance(Person), based_on(source_c004))].",
+      ");.",
+      "(   emigrating_abroad(Person),.",
+      "Trace = [step(conclusion, one_time_social_insurance(Person), based_on(source_c004))].",
+      ");.",
+      "(   life_threatening_disease(Person),.",
+      "Trace = [step(conclusion, one_time_social_insurance(Person), based_on(source_c004))].",
+      ")."
+    ],
+    "verify_facts": [],
+    "query": "?- one_time_social_insurance(user, Trace).",
+    "answer_var": "Trace",
+    "answer_type": "trace",
+    "predicate_inputs": {},
+    "raw_llm_output": {
+      "legal_sources": [
+        "legal_source(source_c003, nghi_quyet_93_2015_qh13, article_1, clause_1, none, 'Người lao động tham gia BHXH bắt buộc sau một năm nghỉ việc; người tham gia BHXH tự nguyện sau một năm không tiếp tục đóng BHXH; mà chưa đủ 20 năm đóng BHXH được hưởng BHXH một lần nếu có yêu cầu.').",
+        "legal_source(source_c004, law_bhxh_2014, article_60, clause_1, point_a, 'Đủ tuổi hưởng lương hưu theo quy định mà chưa đủ 20 năm đóng BHXH.').",
+        "legal_source(source_c004, law_bhxh_2014, article_60, clause_1, point_b, 'Ra nước ngoài để định cư.').",
+        "legal_source(source_c004, law_bhxh_2014, article_60, clause_1, point_c, 'Người đang mắc một trong những bệnh nguy hiểm đến tính mạng như ung thư, bại liệt, xơ gan cổ chướng, phong, lao nặng, nhiễm HIV đã chuyển sang giai đoạn AIDS và những bệnh khác theo quy định của Bộ Y tế.')."
+      ],
+      "verify_facts": [],
+      "rules": [
+        "one_time_social_insurance(Person, Trace) :-",
+        "    (   years_contributed(Person, Years), Years < 20,",
+        "        (   (   mandatory_insurance(Person), one_year_after_leaving_job(Person) )",
+        "        ;   (   voluntary_insurance(Person), one_year_no_contribution(Person) )",
+        "        ),",
+        "        Trace = [step(conclusion, one_time_social_insurance(Person), based_on(source_c003))]",
+        "    );",
+        "    (   retirement_age(Person),",
+        "        years_contributed(Person, Years), Years < 20,",
+        "        Trace = [step(conclusion, one_time_social_insurance(Person), based_on(source_c004))]",
+        "    );",
+        "    (   emigrating_abroad(Person),",
+        "        Trace = [step(conclusion, one_time_social_insurance(Person), based_on(source_c004))]",
+        "    );",
+        "    (   life_threatening_disease(Person),",
+        "        Trace = [step(conclusion, one_time_social_insurance(Person), based_on(source_c004))]",
+        "    )."
+      ],
+      "query": "?- one_time_social_insurance(user, Trace).",
+      "answer_var": "Trace",
+      "answer_type": "trace",
+      "predicate_inputs": {},
+      "citations": [
+        3,
+        4
+      ]
+    },
+    "prolog_source": "legal_source(source_c003, nghi_quyet_93_2015_qh13, article_1, clause_1, none, 'Người lao động tham gia BHXH bắt buộc sau một năm nghỉ việc; người tham gia BHXH tự nguyện sau một năm không tiếp tục đóng BHXH; mà chưa đủ 20 năm đóng BHXH được hưởng BHXH một lần nếu có yêu cầu.').\nlegal_source(source_c004, law_bhxh_2014, article_60, clause_1, point_a, 'Đủ tuổi hưởng lương hưu theo quy định mà chưa đủ 20 năm đóng BHXH.').\nlegal_source(source_c004, law_bhxh_2014, article_60, clause_1, point_b, 'Ra nước ngoài để định cư.').\nlegal_source(source_c004, law_bhxh_2014, article_60, clause_1, point_c, 'Người đang mắc một trong những bệnh nguy hiểm đến tính mạng như ung thư, bại liệt, xơ gan cổ chướng, phong, lao nặng, nhiễm HIV đã chuyển sang giai đoạn AIDS và những bệnh khác theo quy định của Bộ Y tế.').\none_time_social_insurance(Person, Trace) :-.\n(   years_contributed(Person, Years), Years < 20,.\n(   (   mandatory_insurance(Person), one_year_after_leaving_job(Person) ).\n;   (   voluntary_insurance(Person), one_year_no_contribution(Person) ).\n),.\nTrace = [step(conclusion, one_time_social_insurance(Person), based_on(source_c003))].\n);.\n(   retirement_age(Person),.\nyears_contributed(Person, Years), Years < 20,.\nTrace = [step(conclusion, one_time_social_insurance(Person), based_on(source_c004))].\n);.\n(   emigrating_abroad(Person),.\nTrace = [step(conclusion, one_time_social_insurance(Person), based_on(source_c004))].\n);.\n(   life_threatening_disease(Person),.\nTrace = [step(conclusion, one_time_social_insurance(Person), based_on(source_c004))].\n)."
+  },
+  "verification": {
+    "success": false,
+    "status": "syntax_error",
+    "error": "ERROR: c:/users/admin/appdata/local/temp/tmpqynvxb_t.pl:5:41: Syntax error: Operator expected\nERROR: c:/users/admin/appdata/local/temp/tmpqynvxb_t.pl:7:73: Syntax error: Operator expected\nERROR: c:/users/admin/appdata/local/temp/tmpqynvxb_t.pl:8:4: Syntax error: Operator expected\nERROR: c:/users/admin/appdata/local/temp/tmpqynvxb_t.pl:9:0: Syntax error: Illegal start of term\nWarning: c:/users/admin/appdata/local/temp/tmpqynvxb_t.pl:10:\nWarning:    Singleton variables: [Trace,Person]\nERROR: c:/users/admin/appdata/local/temp/tmpqynvxb_t.pl:10:\nERROR:    No permission to modify static procedure `(=)/2'\nERROR: c:/users/admin/appdata/local/temp/tmpqynvxb_t.pl:11:0: Syntax error: Illegal start of term\nERROR: c:/users/admin/appdata/local/temp/tmpqynvxb_t.pl:12:27: Syntax error: Unexpected end of clause\nERROR: c:/users/admin/appdata/local/temp/tmpqynvxb_t.pl:13:45: Syntax error: Unexpected `,' before `.'\nWarning: c:/users/admin/appdata/local/temp/tmpqynvxb_t.pl:14:\nWarning:    Singleton variables: [Trace,Person]\nERROR: c:/users/admin/appdata/local/temp/tmpqynvxb_t.pl:14:\nERROR:    No permission to modify static procedure `(=)/2'\nERROR: c:/users/admin/appdata/local/temp/tmpqynvxb_t.pl:15:0: Syntax error: Illegal start of term\nERROR: c:/users/admin/appdata/local/temp/tmpqynvxb_t.pl:16:30: Syntax error: Unexpected end of clause\nWarning: c:/users/admin/appdata/local/temp/tmpqynvxb_t.pl:17:\nWarning:    Singleton variables: [Trace,Person]\nERROR: c:/users/admin/appdata/local/temp/tmpqynvxb_t.pl:17:\nERROR:    No permission to modify static procedure `(=)/2'\nERROR: c:/users/admin/appdata/local/temp/tmpqynvxb_t.pl:18:0: Syntax error: Illegal start of term\nERROR: c:/users/admin/appdata/local/temp/tmpqynvxb_t.pl:19:37: Syntax error: Unexpected end of clause\nWarning: c:/users/admin/appdata/local/temp/tmpqynvxb_t.pl:20:\nWarning:    Singleton variables: [Trace,Person]\nERROR: c:/users/admin/appdata/local/temp/tmpqynvxb_t.pl:20:\nERROR:    No permission to modify static procedure `(=)/2'\nERROR: c:/users/admin/appdata/local/temp/tmpqynvxb_t.pl:21:0: Syntax error: Illegal start of term",
+    "result": null,
+    "solutions": []
+  },
+  "render_payload": {},
+  "rendered_answer": ""
+}

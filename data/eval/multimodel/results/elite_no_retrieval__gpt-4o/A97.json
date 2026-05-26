@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 97,
+  "question": "Mình đã rút Bảo hiểm xã hội lần 1 nhưng chưa trả sổ giờ mình đóng đc gần 4 năm rồi, cho mình hỏi bao lâu mình mới dx trả sổ vậy?",
+  "answer": "Issue: Bạn đã rút Bảo hiểm xã hội lần 1 nhưng chưa trả sổ và hiện đã đóng bảo hiểm được gần 4 năm. Bạn muốn biết bao lâu nữa mới được trả sổ bảo hiểm xã hội.\n\nRule: \"Người lao động được trả sổ bảo hiểm xã hội khi chấm dứt hợp đồng lao động và đã hoàn thành các thủ tục cần thiết.\" (Luật Bảo hiểm xã hội 2024, Điều 47, Khoản 1)\n\nApplication: Không có thông tin cụ thể về các điều kiện cá nhân của bạn trong truy vấn này. Tuy nhiên, theo quy định, việc trả sổ bảo hiểm xã hội phụ thuộc vào việc chấm dứt hợp đồng lao động và hoàn thành các thủ tục cần thiết.\n\nConclusion: Điều kiện để nhận lại sổ bảo hiểm xã hội là \"Người lao động được trả sổ bảo hiểm xã hội khi chấm dứt hợp đồng lao động và đã hoàn thành các thủ tục cần thiết.\" Không có thông tin cụ thể về thời gian bạn sẽ nhận lại sổ, vì điều này phụ thuộc vào việc bạn đã hoàn thành các thủ tục cần thiết hay chưa.",
+  "citations": [
+    "[Điều 47 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A47.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,conditions_for_receiving_insurance_book(Người lao động được trả sổ bảo hiểm xã hội khi chấm dứt hợp đồng lao động và đã hoàn thành các thủ tục cần thiết.),based_on(source_a47_k1))]",
+  "irac_sections": {
+    "issue": "Bạn đã rút Bảo hiểm xã hội lần 1 nhưng chưa trả sổ và hiện đã đóng bảo hiểm được gần 4 năm. Bạn muốn biết bao lâu nữa mới được trả sổ bảo hiểm xã hội.",
+    "rule": "\"Người lao động được trả sổ bảo hiểm xã hội khi chấm dứt hợp đồng lao động và đã hoàn thành các thủ tục cần thiết.\" (Luật Bảo hiểm xã hội 2024, Điều 47, Khoản 1)",
+    "application": "Không có thông tin cụ thể về các điều kiện cá nhân của bạn trong truy vấn này. Tuy nhiên, theo quy định, việc trả sổ bảo hiểm xã hội phụ thuộc vào việc chấm dứt hợp đồng lao động và hoàn thành các thủ tục cần thiết.",
+    "conclusion": "Điều kiện để nhận lại sổ bảo hiểm xã hội là \"Người lao động được trả sổ bảo hiểm xã hội khi chấm dứt hợp đồng lao động và đã hoàn thành các thủ tục cần thiết.\" Không có thông tin cụ thể về thời gian bạn sẽ nhận lại sổ, vì điều này phụ thuộc vào việc bạn đã hoàn thành các thủ tục cần thiết hay chưa."
+  },
+  "elapsed_s": 10.555,
+  "prompt_tokens": 3264,
+  "completion_tokens": 502,
+  "error": null,
+  "gold_answer": "Sau khi đã nhận BHXH một lần, nếu bạn đi làm lại và đóng BHXH gần 4 năm thì quá trình tham gia mới vẫn được ghi nhận bình thường trên cùng mã số BHXH. Việc 'trả sổ' hiện nay chủ yếu là cập nhật dữ liệu điện tử; nếu cần bản giấy/tờ rời thì cơ quan BHXH hoặc đơn vị sẽ xác nhận khi có phát sinh chốt sổ, nghỉ việc hoặc cấp lại. Không có quy định phải chờ đủ bao lâu mới được 'trả sổ'; quan trọng là quá trình đóng mới đã được cập nhật đúng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25, Điều 102"
+}

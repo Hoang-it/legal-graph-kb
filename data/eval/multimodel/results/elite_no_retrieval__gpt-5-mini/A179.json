@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 179,
+  "question": "mình nghỉ ngang vậy có đc lãnh bảo hiểm thất nghiệp không?",
+  "answer": "Issue:\nMình nghỉ ngang vậy có được lãnh bảo hiểm thất nghiệp không? (Bạn hỏi nếu tự nghỉ việc có được hưởng trợ cấp thất nghiệp.)\n\nRule:\nKhông có trích dẫn pháp luật cụ thể trong bản dữ liệu (citations trống). Prolog trace trả về: [step(eligibility_requirements,based_on(law_bhxh_2024)),step(voluntary_resignation_note,based_on(law_bhxh_2024))]\n\nApplication:\nCác slot được gán: không có slot nào (slot_bindings rỗng). Chương trình Prolog được sinh ra là unemployment_insurance_conditions(Answer, Trace) và truy vấn này không cần giá trị slot bên ngoài; nó trực tiếp sinh ra danh sách các điều kiện/ghi chú về tư cách hưởng.\n\nConclusion:\nAnswer = [requirement(involuntary_job_loss),requirement(min_contributions(months(12),within_months(24))),requirement(register_with_employment_service(within_days(90))),requirement(not_receiving_old_age_pension_or_other_benefit),note(voluntary_resignation_normally_not_entitled_unless_exception)]\nTrace = [step(eligibility_requirements,based_on(law_bhxh_2024)),step(voluntary_resignation_note,based_on(law_bhxh_2024))]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(eligibility_requirements,based_on(law_bhxh_2024)),step(voluntary_resignation_note,based_on(law_bhxh_2024))]",
+  "irac_sections": {
+    "issue": "Mình nghỉ ngang vậy có được lãnh bảo hiểm thất nghiệp không? (Bạn hỏi nếu tự nghỉ việc có được hưởng trợ cấp thất nghiệp.)",
+    "rule": "Không có trích dẫn pháp luật cụ thể trong bản dữ liệu (citations trống). Prolog trace trả về: [step(eligibility_requirements,based_on(law_bhxh_2024)),step(voluntary_resignation_note,based_on(law_bhxh_2024))]",
+    "application": "Các slot được gán: không có slot nào (slot_bindings rỗng). Chương trình Prolog được sinh ra là unemployment_insurance_conditions(Answer, Trace) và truy vấn này không cần giá trị slot bên ngoài; nó trực tiếp sinh ra danh sách các điều kiện/ghi chú về tư cách hưởng.",
+    "conclusion": "Answer = [requirement(involuntary_job_loss),requirement(min_contributions(months(12),within_months(24))),requirement(register_with_employment_service(within_days(90))),requirement(not_receiving_old_age_pension_or_other_benefit),note(voluntary_resignation_normally_not_entitled_unless_exception)]\nTrace = [step(eligibility_requirements,based_on(law_bhxh_2024)),step(voluntary_resignation_note,based_on(law_bhxh_2024))]"
+  },
+  "elapsed_s": 38.13,
+  "prompt_tokens": 2007,
+  "completion_tokens": 4320,
+  "error": null,
+  "gold_answer": "Nghỉ ngang chỉ được hưởng BHTN nếu việc đơn phương chấm dứt hợp đồng của bạn là đúng pháp luật. Nếu nghỉ ngang trái luật thì không đủ điều kiện hưởng BHTN. Vì vậy cần xem hợp đồng, thời hạn báo trước, lý do nghỉ và việc công ty xác nhận chấm dứt ra sao. Nếu bạn nghỉ đúng luật hoặc hai bên thỏa thuận chấm dứt thì vẫn có thể hưởng BHTN khi đủ điều kiện khác.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

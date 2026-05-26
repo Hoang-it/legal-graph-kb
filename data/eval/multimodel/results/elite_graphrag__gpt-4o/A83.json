@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 83,
+  "question": "Mình đóng bảo hiểm xh từ 2016 tới  2018 rồi ngưng tới nay. Do nghỉ ngang ở cty và k để ý để rút sổ và check thông tin số bh. Coi như k có thông tin gì về nó. Giờ mình phải làm sao để dc cấp lại ?",
+  "answer": "Issue: Bạn đã đóng bảo hiểm xã hội từ năm 2016 đến 2018 và hiện tại không có thông tin về sổ bảo hiểm xã hội. Bạn muốn biết cách để được cấp lại sổ bảo hiểm xã hội.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 28, Khoản 4: \"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo kết quả từ chương trình Prolog, điều kiện để được cấp lại sổ bảo hiểm xã hội là phải nộp hồ sơ đầy đủ.\n\nConclusion: Để được cấp lại sổ bảo hiểm xã hội, bạn cần nộp hồ sơ đầy đủ theo quy định. Điều kiện này được xác định là [submit_complete_application]. Nếu bạn đã nộp hồ sơ đầy đủ, cơ quan bảo hiểm xã hội sẽ có trách nhiệm cấp lại sổ trong vòng 5 ngày làm việc.",
+  "citations": [
+    "[Điều 28 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A28.K4"
+  ],
+  "citation_indices": [
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,reissue_social_insurance_book_conditions([submit_complete_application]),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Bạn đã đóng bảo hiểm xã hội từ năm 2016 đến 2018 và hiện tại không có thông tin về sổ bảo hiểm xã hội. Bạn muốn biết cách để được cấp lại sổ bảo hiểm xã hội.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 28, Khoản 4: \"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo kết quả từ chương trình Prolog, điều kiện để được cấp lại sổ bảo hiểm xã hội là phải nộp hồ sơ đầy đủ.",
+    "conclusion": "Để được cấp lại sổ bảo hiểm xã hội, bạn cần nộp hồ sơ đầy đủ theo quy định. Điều kiện này được xác định là [submit_complete_application]. Nếu bạn đã nộp hồ sơ đầy đủ, cơ quan bảo hiểm xã hội sẽ có trách nhiệm cấp lại sổ trong vòng 5 ngày làm việc."
+  },
+  "elapsed_s": 5.621,
+  "prompt_tokens": 3064,
+  "completion_tokens": 471,
+  "error": null,
+  "gold_answer": "Bạn có thể bắt đầu bằng việc tra cứu lại mã số BHXH bằng CCCD/họ tên/ngày sinh trên Cổng BHXH hoặc tại cơ quan BHXH nơi cư trú. Sau khi xác định được mã số, bạn làm thủ tục đề nghị cấp lại sổ/xác nhận lại quá trình tham gia nếu sổ cũ thất lạc. Việc nghỉ ngang trước đây không làm mất thời gian đã đóng hợp pháp; dữ liệu quá trình tham gia vẫn được lưu trong hệ thống BHXH để đối chiếu và cấp lại.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn cấp lại sổ BHXH"
+}

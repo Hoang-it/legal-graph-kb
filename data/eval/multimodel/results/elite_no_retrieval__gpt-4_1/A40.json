@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 40,
+  "question": "Em đóng bhxh t8/2025 đến t4/2026, ngày dự sinh của em là19/8. Vậy em có đủ đk để nhận trợ cấp không? Làm hểt tháng 4 là em nghỉ cty luôn. Em có đủ đk để nhận bhts k?",
+  "answer": "Issue:\nBạn hỏi rằng với thời gian đóng bảo hiểm xã hội từ tháng 8/2025 đến tháng 4/2026, ngày dự sinh là 19/8, và nghỉ việc sau tháng 4, bạn có đủ điều kiện để nhận trợ cấp thai sản hay không.\n\nRule:\n\"Người lao động nữ sinh con được hưởng chế độ thai sản nếu đã đóng BHXH từ đủ 6 tháng trở lên trong thời gian 12 tháng trước khi sinh con.\" (law_bhxh_2024, article_81, clause_1)\n\nApplication:\nKhông có giá trị cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, hệ thống xác nhận rằng months_contributed_in_12_before_birth(user, 9) — tức là bạn đã đóng bảo hiểm xã hội 9 tháng trong 12 tháng trước khi sinh. Prolog đã sử dụng thông tin này để kiểm tra điều kiện đủ 6 tháng theo quy định tại nguồn luật đã dẫn.\n\nConclusion:\nTheo truy vết Prolog [step(conclusion,eligible_maternity_benefit(user),based_on(source_a81_k1))], bạn đủ điều kiện hưởng chế độ thai sản theo quy định tại Điều 81 Khoản 1 Luật BHXH 2024.",
+  "citations": [
+    "[Điều 81 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A81.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,eligible_maternity_benefit(user),based_on(source_a81_k1))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi rằng với thời gian đóng bảo hiểm xã hội từ tháng 8/2025 đến tháng 4/2026, ngày dự sinh là 19/8, và nghỉ việc sau tháng 4, bạn có đủ điều kiện để nhận trợ cấp thai sản hay không.",
+    "rule": "\"Người lao động nữ sinh con được hưởng chế độ thai sản nếu đã đóng BHXH từ đủ 6 tháng trở lên trong thời gian 12 tháng trước khi sinh con.\" (law_bhxh_2024, article_81, clause_1)",
+    "application": "Không có giá trị cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, hệ thống xác nhận rằng months_contributed_in_12_before_birth(user, 9) — tức là bạn đã đóng bảo hiểm xã hội 9 tháng trong 12 tháng trước khi sinh. Prolog đã sử dụng thông tin này để kiểm tra điều kiện đủ 6 tháng theo quy định tại nguồn luật đã dẫn.",
+    "conclusion": "Theo truy vết Prolog [step(conclusion,eligible_maternity_benefit(user),based_on(source_a81_k1))], bạn đủ điều kiện hưởng chế độ thai sản theo quy định tại Điều 81 Khoản 1 Luật BHXH 2024."
+  },
+  "elapsed_s": 5.732,
+  "prompt_tokens": 2080,
+  "completion_tokens": 510,
+  "error": null,
+  "gold_answer": "Nếu bạn đóng BHXH bắt buộc từ 8/2025 đến hết 4/2026 thì có 9 tháng đóng trong 12 tháng trước khi sinh 8/2026, nên về nguyên tắc đủ điều kiện hưởng thai sản khi sinh con. Việc nghỉ việc sau tháng 4/2026 không làm mất quyền hưởng nếu bạn đã đủ điều kiện trước khi sinh. Bạn vẫn được nộp hồ sơ hưởng thai sản qua cơ quan BHXH theo nơi cư trú hoặc qua đơn vị nếu còn quan hệ lao động.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50, Điều 53"
+}

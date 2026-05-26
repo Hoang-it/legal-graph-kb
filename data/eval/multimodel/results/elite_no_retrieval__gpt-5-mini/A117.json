@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 117,
+  "question": "Bhxh em chốt ngày 7/5/2025. Đến ngày nào thì em đc lãnh 1 lần?",
+  "answer": "Issue:\nBhxh em chốt ngày 7/5/2025. Đến ngày nào thì em được nhận trợ cấp một lần?\n\nRule:\nKhông có trích dẫn pháp lý (document/article/clause) được cung cấp trong input.\n\nApplication:\n- slot_bindings: (không có slot được gán).\n- Prolog đã sử dụng fact từ verify_facts: final_contribution_date(user, date(2025,5,7)).\n- Prolog tiêu thụ giá trị date(2025,5,7) và sinh ra cấu trúc trả lời theo quy tắc: conditions(date_closed(date(2025,5,7)),Người lao động được hưởng trợ cấp một lần sau khi chấm dứt tham gia BHXH và nộp hồ sơ đề nghị; cơ quan BHXH chi trả trong thời hạn quy định kể từ ngày nhận đủ hồ sơ.)\n\nConclusion:\nAnswer = conditions(date_closed(date(2025,5,7)),Người lao động được hưởng trợ cấp một lần sau khi chấm dứt tham gia BHXH và nộp hồ sơ đề nghị; cơ quan BHXH chi trả trong thời hạn quy định kể từ ngày nhận đủ hồ sơ.) (kết quả do Prolog trả về).",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(explanation,conditions(date_closed(date(2025,5,7)),Người lao động được hưởng trợ cấp một lần sau khi chấm dứt tham gia BHXH và nộp hồ sơ đề nghị; cơ quan BHXH chi trả trong thời hạn quy định kể từ ngày nhận đủ hồ sơ.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Bhxh em chốt ngày 7/5/2025. Đến ngày nào thì em được nhận trợ cấp một lần?",
+    "rule": "Không có trích dẫn pháp lý (document/article/clause) được cung cấp trong input.",
+    "application": "- slot_bindings: (không có slot được gán).\n- Prolog đã sử dụng fact từ verify_facts: final_contribution_date(user, date(2025,5,7)).\n- Prolog tiêu thụ giá trị date(2025,5,7) và sinh ra cấu trúc trả lời theo quy tắc: conditions(date_closed(date(2025,5,7)),Người lao động được hưởng trợ cấp một lần sau khi chấm dứt tham gia BHXH và nộp hồ sơ đề nghị; cơ quan BHXH chi trả trong thời hạn quy định kể từ ngày nhận đủ hồ sơ.)",
+    "conclusion": "Answer = conditions(date_closed(date(2025,5,7)),Người lao động được hưởng trợ cấp một lần sau khi chấm dứt tham gia BHXH và nộp hồ sơ đề nghị; cơ quan BHXH chi trả trong thời hạn quy định kể từ ngày nhận đủ hồ sơ.) (kết quả do Prolog trả về)."
+  },
+  "elapsed_s": 45.309,
+  "prompt_tokens": 2111,
+  "completion_tokens": 4982,
+  "error": null,
+  "gold_answer": "Nếu tháng chốt cuối là 7/5/2025 thì bạn không tính từ ngày 7/5/2025 để rút ngay. Với trường hợp thông thường, bạn phải chờ đủ 12 tháng không thuộc diện tham gia BHXH bắt buộc và không tham gia BHXH tự nguyện, sau đó mới nộp hồ sơ hưởng BHXH 1 lần nếu thuộc trường hợp luật cho phép. Tính an toàn là từ khoảng 5/2026 trở đi.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

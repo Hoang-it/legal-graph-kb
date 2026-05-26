@@ -1,0 +1,38 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 117,
+  "question": "Bhxh em chốt ngày 7/5/2025. Đến ngày nào thì em đc lãnh 1 lần?",
+  "answer": "Issue:\nBHXH em chốt ngày 7/5/2025. Đến ngày nào thì em được lãnh 1 lần?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), article 79, clause 3: \"Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng bảo hiểm xã hội một lần, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15), article 102, clause 4: \"Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm ghi trong quyết định của cơ quan bảo hiểm xã hội.\"\nLuật BHXH 2024 (41/2024/QH15), article 70, clause 5: \"Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hội ban hành quyết định hưởng bảo hiểm xã hội một lần.\"\n\nApplication:\nprocessing_deadline = seven_working_days_from_receipt_of_full_dossier — được rút ra từ điều 79 khoản 3 (source_c1) theo prolog step processing_deadline.\nentitlement_time = time_recorded_in_bhxh_decision — được rút ra từ điều 102 khoản 4 (source_c3) theo prolog step entitlement_time.\nProlog đã kết hợp hai binding trên và trả về Answer theo trace: [step(processing_deadline,...,based_on(source_c1)), step(entitlement_time,...,based_on(source_c3))].\n\nConclusion:\nProlog trả về: answer(processing_deadline(seven_working_days_from_receipt_of_full_dossier),entitlement_time(time_recorded_in_bhxh_decision)). Đây là binding đầy đủ do Prolog cung cấp; hệ thống không tự tính ngày lịch cụ thể.",
+  "citations": [
+    "[Điều 79 khoản 3]",
+    "[Điều 102 khoản 4]",
+    "[Điều 70 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A79.K3",
+    "L41_2024.A102.K4",
+    "L41_2024.A70.K5"
+  ],
+  "citation_indices": [
+    1,
+    3,
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(processing_deadline,seven_working_days_from_receipt_of_full_dossier,based_on(source_c1)),step(entitlement_time,time_recorded_in_bhxh_decision,based_on(source_c3))]",
+  "irac_sections": {
+    "issue": "BHXH em chốt ngày 7/5/2025. Đến ngày nào thì em được lãnh 1 lần?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), article 79, clause 3: \"Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng bảo hiểm xã hội một lần, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15), article 102, clause 4: \"Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm ghi trong quyết định của cơ quan bảo hiểm xã hội.\"\nLuật BHXH 2024 (41/2024/QH15), article 70, clause 5: \"Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hội ban hành quyết định hưởng bảo hiểm xã hội một lần.\"",
+    "application": "processing_deadline = seven_working_days_from_receipt_of_full_dossier — được rút ra từ điều 79 khoản 3 (source_c1) theo prolog step processing_deadline.\nentitlement_time = time_recorded_in_bhxh_decision — được rút ra từ điều 102 khoản 4 (source_c3) theo prolog step entitlement_time.\nProlog đã kết hợp hai binding trên và trả về Answer theo trace: [step(processing_deadline,...,based_on(source_c1)), step(entitlement_time,...,based_on(source_c3))].",
+    "conclusion": "Prolog trả về: answer(processing_deadline(seven_working_days_from_receipt_of_full_dossier),entitlement_time(time_recorded_in_bhxh_decision)). Đây là binding đầy đủ do Prolog cung cấp; hệ thống không tự tính ngày lịch cụ thể."
+  },
+  "elapsed_s": 67.145,
+  "prompt_tokens": 5631,
+  "completion_tokens": 6623,
+  "error": null,
+  "gold_answer": "Nếu tháng chốt cuối là 7/5/2025 thì bạn không tính từ ngày 7/5/2025 để rút ngay. Với trường hợp thông thường, bạn phải chờ đủ 12 tháng không thuộc diện tham gia BHXH bắt buộc và không tham gia BHXH tự nguyện, sau đó mới nộp hồ sơ hưởng BHXH 1 lần nếu thuộc trường hợp luật cho phép. Tính an toàn là từ khoảng 5/2026 trở đi.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

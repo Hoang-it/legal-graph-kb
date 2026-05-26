@@ -1,0 +1,32 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 75,
+  "question": "Tổng thời gian e đóng bh là 17 tháng trong đó bao gồm tổng 3 công ty . vậy tính thất nghiệp thế nào? chỉ lấy đúng 6th cuối gần nhất là cty e làm của năm 2025 vừa rồi để tính hay sao?",
+  "answer": "Issue:\nCâu hỏi đặt ra là với tổng thời gian đóng bảo hiểm thất nghiệp là 17 tháng tại 3 công ty khác nhau, khi tính trợ cấp thất nghiệp thì có chỉ lấy đúng 6 tháng cuối cùng gần nhất tại công ty cuối cùng trong năm 2025 để làm căn cứ tính hay không.\n\nRule:\nKhông có trích dẫn văn bản pháp luật cụ thể nào được cung cấp trong truy vấn này.\n\nApplication:\nKhông có giá trị slot nào được cung cấp cụ thể ngoài xác nhận months_contributed(user, 17). Truy vấn Prolog đã sử dụng thông tin này để xác định căn cứ tính mức trợ cấp thất nghiệp là \"Bình quân tiền lương tháng đóng BHTN của 6 tháng liền kề trước khi thất nghiệp\".\n\nConclusion:\nCăn cứ tính mức trợ cấp thất nghiệp là \"Bình quân tiền lương tháng đóng BHTN của 6 tháng liền kề trước khi thất nghiệp\" (Basis). Hệ thống không trả về số tiền cụ thể mà chỉ xác định nguyên tắc tính dựa trên 6 tháng đóng bảo hiểm thất nghiệp gần nhất trước khi nghỉ việc.",
+  "citations": [
+    "[Điều 46 khoản 1]",
+    "[Điều 50 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A46.K1",
+    "L41_2024.A50.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_calculation_basis(user,Bình quân tiền lương tháng đóng BHTN của 6 tháng liền kề trước khi thất nghiệp),based_on(source_a50_k2))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là với tổng thời gian đóng bảo hiểm thất nghiệp là 17 tháng tại 3 công ty khác nhau, khi tính trợ cấp thất nghiệp thì có chỉ lấy đúng 6 tháng cuối cùng gần nhất tại công ty cuối cùng trong năm 2025 để làm căn cứ tính hay không.",
+    "rule": "Không có trích dẫn văn bản pháp luật cụ thể nào được cung cấp trong truy vấn này.",
+    "application": "Không có giá trị slot nào được cung cấp cụ thể ngoài xác nhận months_contributed(user, 17). Truy vấn Prolog đã sử dụng thông tin này để xác định căn cứ tính mức trợ cấp thất nghiệp là \"Bình quân tiền lương tháng đóng BHTN của 6 tháng liền kề trước khi thất nghiệp\".",
+    "conclusion": "Căn cứ tính mức trợ cấp thất nghiệp là \"Bình quân tiền lương tháng đóng BHTN của 6 tháng liền kề trước khi thất nghiệp\" (Basis). Hệ thống không trả về số tiền cụ thể mà chỉ xác định nguyên tắc tính dựa trên 6 tháng đóng bảo hiểm thất nghiệp gần nhất trước khi nghỉ việc."
+  },
+  "elapsed_s": 9.249,
+  "prompt_tokens": 2270,
+  "completion_tokens": 623,
+  "error": null,
+  "gold_answer": "Thời gian đóng BHTN của 3 công ty được cộng dồn để xác định bạn được hưởng mấy tháng trợ cấp. Còn mức tiền trợ cấp thất nghiệp hằng tháng lại được tính theo 60% mức bình quân tiền lương tháng đóng BHTN của 6 tháng liền kề trước khi thất nghiệp, tức là chủ yếu nhìn 6 tháng cuối cùng trước khi nghỉ. Vì vậy số tháng hưởng và mức hưởng là hai cách tính khác nhau.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 50"
+}

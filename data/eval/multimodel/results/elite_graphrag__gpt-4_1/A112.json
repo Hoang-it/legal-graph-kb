@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 112,
+  "question": "Trước mình nghỉ ngang công ty cũ chưa chốt và lấy bìa xanh bây giờ ra bhxh huyện làm lại được không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu trước đây bạn nghỉ ngang công ty cũ, chưa chốt và lấy bìa xanh (sổ bảo hiểm xã hội), thì hiện nay bạn có thể ra cơ quan bảo hiểm xã hội huyện để làm lại được không?\n\nRule:\n\"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 2)\n\nApplication:\nKhông có slot nào cần điền thông tin cụ thể từ phía người hỏi. Theo quy định tại Điều 13 Khoản 2 Luật BHXH 2024, người lao động có quyền lập hồ sơ để được hưởng các chế độ bảo hiểm xã hội. Truy vấn Prolog đã sử dụng quy định này để xác định quyền làm lại sổ bảo hiểm xã hội trong trường hợp nghỉ ngang, chưa chốt và chưa lấy sổ.\n\nConclusion:\nKết quả truy vấn Prolog trả về: Answer = yes. Như vậy, bạn có thể ra cơ quan bảo hiểm xã hội huyện để làm lại sổ bảo hiểm xã hội (bìa xanh) của mình.",
+  "citations": [
+    "[Điều 13 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A13.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,can_reapply_for_social_insurance_book(yes),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu trước đây bạn nghỉ ngang công ty cũ, chưa chốt và lấy bìa xanh (sổ bảo hiểm xã hội), thì hiện nay bạn có thể ra cơ quan bảo hiểm xã hội huyện để làm lại được không?",
+    "rule": "\"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 2)",
+    "application": "Không có slot nào cần điền thông tin cụ thể từ phía người hỏi. Theo quy định tại Điều 13 Khoản 2 Luật BHXH 2024, người lao động có quyền lập hồ sơ để được hưởng các chế độ bảo hiểm xã hội. Truy vấn Prolog đã sử dụng quy định này để xác định quyền làm lại sổ bảo hiểm xã hội trong trường hợp nghỉ ngang, chưa chốt và chưa lấy sổ.",
+    "conclusion": "Kết quả truy vấn Prolog trả về: Answer = yes. Như vậy, bạn có thể ra cơ quan bảo hiểm xã hội huyện để làm lại sổ bảo hiểm xã hội (bìa xanh) của mình."
+  },
+  "elapsed_s": 5.367,
+  "prompt_tokens": 2712,
+  "completion_tokens": 413,
+  "error": null,
+  "gold_answer": "Bạn có thể đến cơ quan BHXH nơi quản lý quá trình tham gia để kiểm tra tình trạng sổ. Nếu công ty cũ chưa chốt thì BHXH huyện không thể tự chốt thay công ty, trừ khi có hồ sơ truy đóng/xác nhận quá trình. Việc cần làm là yêu cầu công ty làm thủ tục báo giảm, chốt sổ; nếu công ty không thực hiện thì khiếu nại tới cơ quan BHXH quản lý đơn vị.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

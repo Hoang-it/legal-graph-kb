@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 41,
+  "question": "Em nghỉ việc tại Công ty cũ từ 28/3. Em xin Công ty quyết định nghỉ việc để làm BHTN, nhưng họ báo: \"Chờ tờ rời BHXH từ 45-50 ngày\". Em có hỏi: \"chờ lâu vậy thì sao mà e làm đc BHTN tháng 4,5\" thì họ bảo: \"Thời hạn hưởng BHTN là 3 tháng kể từ ngày nộp đơn\". Em chưa hiểu chỗ này. Vậy là phải sau 3 tháng nghỉ việc e mới đc nộp chứng từ để hưởng BHTN phải ko? Hay là sau nhận và nộp chứng từ em sẽ đc hưởng BHTN từ tháng 4?",
+  "answer": "Issue:\nEm hỏi: sau khi nghỉ việc ngày 28/3, có phải chờ đủ 3 tháng mới được nộp hồ sơ hưởng BHTN hay có thể nộp ngay khi nhận tờ rời BHXH và trợ cấp sẽ tính từ ngày đăng ký?\n\nRule:\nconditions(deadline_months(3),benefit_start(from_date_of_registration),note(Đăng ký hưởng BHTN trong vòng 3 tháng kể từ ngày mất việc; nếu đăng ký trong hạn thì hưởng trợ cấp kể từ ngày đăng ký tại trung tâm dịch vụ việc làm))\n\nApplication:\n- slot_bindings: (không có slot nào được gán).\n- Các fact được cung cấp cho Prolog: quit_date(user, date(2024,3,28)). employer_wait_min_days(user, 45). employer_wait_max_days(user, 50).\n- Cách Prolog sử dụng chúng: truy vấn chính (unemployment_registration_deadline) trả kết luận độc lập (based_on(none)). Có quy tắc khác (application_timing_explanation) trong chương trình sử dụng quit_date và employer_wait_min_days/ employer_wait_max_days để tạo phần giải thích, nhưng truy vấn thực thi trả kết luận trên mà không dựa vào các fact này.\n\nConclusion:\nAnswer = conditions(deadline_months(3),benefit_start(from_date_of_registration),note(Đăng ký hưởng BHTN trong vòng 3 tháng kể từ ngày mất việc; nếu đăng ký trong hạn thì hưởng trợ cấp kể từ ngày đăng ký tại trung tâm dịch vụ việc làm)).",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_registration_deadline(conditions(deadline_months(3),benefit_start(from_date_of_registration),note(Đăng ký hưởng BHTN trong vòng 3 tháng kể từ ngày mất việc; nếu đăng ký trong hạn thì hưởng trợ cấp kể từ ngày đăng ký tại trung tâm dịch vụ việc làm))),based_on(none))]",
+  "irac_sections": {
+    "issue": "Em hỏi: sau khi nghỉ việc ngày 28/3, có phải chờ đủ 3 tháng mới được nộp hồ sơ hưởng BHTN hay có thể nộp ngay khi nhận tờ rời BHXH và trợ cấp sẽ tính từ ngày đăng ký?",
+    "rule": "conditions(deadline_months(3),benefit_start(from_date_of_registration),note(Đăng ký hưởng BHTN trong vòng 3 tháng kể từ ngày mất việc; nếu đăng ký trong hạn thì hưởng trợ cấp kể từ ngày đăng ký tại trung tâm dịch vụ việc làm))",
+    "application": "- slot_bindings: (không có slot nào được gán).\n- Các fact được cung cấp cho Prolog: quit_date(user, date(2024,3,28)). employer_wait_min_days(user, 45). employer_wait_max_days(user, 50).\n- Cách Prolog sử dụng chúng: truy vấn chính (unemployment_registration_deadline) trả kết luận độc lập (based_on(none)). Có quy tắc khác (application_timing_explanation) trong chương trình sử dụng quit_date và employer_wait_min_days/ employer_wait_max_days để tạo phần giải thích, nhưng truy vấn thực thi trả kết luận trên mà không dựa vào các fact này.",
+    "conclusion": "Answer = conditions(deadline_months(3),benefit_start(from_date_of_registration),note(Đăng ký hưởng BHTN trong vòng 3 tháng kể từ ngày mất việc; nếu đăng ký trong hạn thì hưởng trợ cấp kể từ ngày đăng ký tại trung tâm dịch vụ việc làm))."
+  },
+  "elapsed_s": 35.618,
+  "prompt_tokens": 2691,
+  "completion_tokens": 5182,
+  "error": null,
+  "gold_answer": "Không phải chờ đủ 3 tháng rồi mới nộp hồ sơ BHTN. Đúng luật là bạn phải nộp hồ sơ trong vòng 3 tháng kể từ ngày chấm dứt HĐLĐ. Sau khi nộp đủ hồ sơ, nếu sau 15 ngày chưa có việc làm thì sẽ được giải quyết hưởng trợ cấp thất nghiệp. Vì vậy, bạn nên lấy quyết định nghỉ việc và giấy tờ chốt BHXH sớm để nộp trong hạn, không phải đợi qua 3 tháng.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 49, Điều 50"
+}

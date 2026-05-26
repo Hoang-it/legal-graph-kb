@@ -1,0 +1,32 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 58,
+  "question": "e là hộ kinh doanh mới , tham gia bhxh cho hkd thì phải làm như thế nào?",
+  "answer": "Issue: Bạn là hộ kinh doanh mới và muốn biết cách tham gia bảo hiểm xã hội (BHXH) cho hộ kinh doanh cá thể.\n\nRule: \n- Theo Luật BHXH 2024, Điều 2, Khoản 1: \"Hộ kinh doanh cá thể có thể tham gia BHXH tự nguyện.\"\n- Theo Luật BHXH 2024, Điều 9, Khoản 1: \"Thủ tục tham gia BHXH tự nguyện bao gồm việc đăng ký tại cơ quan BHXH địa phương.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên các quy định pháp luật, hộ kinh doanh cá thể có thể tham gia BHXH tự nguyện bằng cách đăng ký tại cơ quan BHXH địa phương.\n\nConclusion: Hộ kinh doanh cá thể có thể tham gia BHXH tự nguyện bằng cách đăng ký tại cơ quan BHXH địa phương.",
+  "citations": [
+    "[Điều 2 khoản 1]",
+    "[Điều 9 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2.K1",
+    "L41_2024.A9.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,participation_procedure(Hộ kinh doanh cá thể có thể tham gia BHXH tự nguyện bằng cách đăng ký tại cơ quan BHXH địa phương.),based_on(source_a2_k1)),step(conclusion,participation_procedure(Hộ kinh doanh cá thể có thể tham gia BHXH tự nguyện bằng cách đăng ký tại cơ quan BHXH địa phương.),based_on(source_a9_k1))]",
+  "irac_sections": {
+    "issue": "Bạn là hộ kinh doanh mới và muốn biết cách tham gia bảo hiểm xã hội (BHXH) cho hộ kinh doanh cá thể.",
+    "rule": "- Theo Luật BHXH 2024, Điều 2, Khoản 1: \"Hộ kinh doanh cá thể có thể tham gia BHXH tự nguyện.\"\n- Theo Luật BHXH 2024, Điều 9, Khoản 1: \"Thủ tục tham gia BHXH tự nguyện bao gồm việc đăng ký tại cơ quan BHXH địa phương.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên các quy định pháp luật, hộ kinh doanh cá thể có thể tham gia BHXH tự nguyện bằng cách đăng ký tại cơ quan BHXH địa phương.",
+    "conclusion": "Hộ kinh doanh cá thể có thể tham gia BHXH tự nguyện bằng cách đăng ký tại cơ quan BHXH địa phương."
+  },
+  "elapsed_s": 4.354,
+  "prompt_tokens": 2165,
+  "completion_tokens": 461,
+  "error": null,
+  "gold_answer": "Nếu bạn là chủ hộ kinh doanh thuộc diện phải tham gia BHXH bắt buộc thì cần liên hệ cơ quan BHXH hoặc tổ chức dịch vụ thu để đăng ký hồ sơ tham gia theo mã số BHXH, kê khai mức tiền lương làm căn cứ đóng và phương thức đóng. Nếu chưa thuộc diện bắt buộc thì có thể tham gia BHXH tự nguyện. Khi đi đăng ký nên mang CCCD, thông tin đăng ký hộ kinh doanh và giấy tờ liên quan đến mã số BHXH nếu đã có.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 25, Điều 31; Nghị định 158/2025/NĐ-CP"
+}

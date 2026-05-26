@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 202,
+  "question": "Cho mình hỏi trước mình có làm ở fpt telecom khoảng 2 năm sau đó nghỉ có nhận sổ (bị mất) rồi sau mình có xin làm lại được thêm 1 năm . Giờ mình muốn tra thời gian tham gia bhxh thì làm sao ạ . Mình có tra đc mã số rồi . Còn tk Vssid thì mình chưa có",
+  "answer": "Issue:\nBạn hỏi về cách tra cứu thời gian tham gia bảo hiểm xã hội (BHXH) khi đã từng làm việc tại FPT Telecom, đã nhận sổ BHXH nhưng bị mất, hiện có mã số BHXH nhưng chưa có tài khoản VssID.\n\nRule:\n\"Thời gian đóng bảo hiểm xã hội là tổng thời gian đã đóng bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện theo quy định của Luật này, trừ trường hợp điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên có quy định khác.\" (Luật BHXH 2024 (41/2024/QH15), Điều 3, Khoản 6)\n\"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 3)\n\nApplication:\nKhông có slot_id nào được ràng buộc vì câu hỏi của bạn liên quan đến hướng dẫn thủ tục tra cứu, không phải tính toán số liệu. Prolog đã sử dụng các quy định trên để đưa ra hướng dẫn cụ thể về các cách tra cứu thời gian tham gia BHXH, bao gồm: đăng ký VssID, tra cứu trên Cổng thông tin BHXH Việt Nam bằng mã số BHXH, liên hệ cơ quan BHXH nơi cư trú để xác nhận, hoặc đề nghị cấp lại sổ nếu bị mất.\n\nConclusion:\nHệ thống trả về hướng dẫn: [Bạn có thể tra cứu thời gian tham gia BHXH bằng các cách: (1) Đăng ký và đăng nhập ứng dụng VssID; (2) Tra cứu trên Cổng thông tin điện tử của BHXH Việt Nam bằng mã số BHXH; (3) Liên hệ cơ quan BHXH nơi cư trú để được xác nhận thời gian đóng BHXH theo quy định tại Điều 13 khoản 3 Luật BHXH 2024; (4) Nếu mất sổ BHXH, có thể đề nghị cấp lại sổ tại cơ quan BHXH.]",
+  "citations": [
+    "[Điều 3 khoản 6]",
+    "[Điều 13 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A3.K6",
+    "L41_2024.A13.K3"
+  ],
+  "citation_indices": [
+    6,
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,tra_cuu_thoi_gian_bhxh_huong_dan([Bạn có thể tra cứu thời gian tham gia BHXH bằng các cách: (1) Đăng ký và đăng nhập ứng dụng VssID; (2) Tra cứu trên Cổng thông tin điện tử của BHXH Việt Nam bằng mã số BHXH; (3) Liên hệ cơ quan BHXH nơi cư trú để được xác nhận thời gian đóng BHXH theo quy định tại Điều 13 khoản 3 Luật BHXH 2024; (4) Nếu mất sổ BHXH, có thể đề nghị cấp lại sổ tại cơ quan BHXH.]),based_on(source_c006)),step(conclusion,tra_cuu_thoi_gian_bhxh_huong_dan([Bạn có thể tra cứu thời gian tham gia BHXH bằng các cách: (1) Đăng ký và đăng nhập ứng dụng VssID; (2) Tra cứu trên Cổng thông tin điện tử của BHXH Việt Nam bằng mã số BHXH; (3) Liên hệ cơ quan BHXH nơi cư trú để được xác nhận thời gian đóng BHXH theo quy định tại Điều 13 khoản 3 Luật BHXH 2024; (4) Nếu mất sổ BHXH, có thể đề nghị cấp lại sổ tại cơ quan BHXH.]),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về cách tra cứu thời gian tham gia bảo hiểm xã hội (BHXH) khi đã từng làm việc tại FPT Telecom, đã nhận sổ BHXH nhưng bị mất, hiện có mã số BHXH nhưng chưa có tài khoản VssID.",
+    "rule": "\"Thời gian đóng bảo hiểm xã hội là tổng thời gian đã đóng bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện theo quy định của Luật này, trừ trường hợp điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên có quy định khác.\" (Luật BHXH 2024 (41/2024/QH15), Điều 3, Khoản 6)\n\"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 3)",
+    "application": "Không có slot_id nào được ràng buộc vì câu hỏi của bạn liên quan đến hướng dẫn thủ tục tra cứu, không phải tính toán số liệu. Prolog đã sử dụng các quy định trên để đưa ra hướng dẫn cụ thể về các cách tra cứu thời gian tham gia BHXH, bao gồm: đăng ký VssID, tra cứu trên Cổng thông tin BHXH Việt Nam bằng mã số BHXH, liên hệ cơ quan BHXH nơi cư trú để xác nhận, hoặc đề nghị cấp lại sổ nếu bị mất.",
+    "conclusion": "Hệ thống trả về hướng dẫn: [Bạn có thể tra cứu thời gian tham gia BHXH bằng các cách: (1) Đăng ký và đăng nhập ứng dụng VssID; (2) Tra cứu trên Cổng thông tin điện tử của BHXH Việt Nam bằng mã số BHXH; (3) Liên hệ cơ quan BHXH nơi cư trú để được xác nhận thời gian đóng BHXH theo quy định tại Điều 13 khoản 3 Luật BHXH 2024; (4) Nếu mất sổ BHXH, có thể đề nghị cấp lại sổ tại cơ quan BHXH.]"
+  },
+  "elapsed_s": 9.797,
+  "prompt_tokens": 4116,
+  "completion_tokens": 956,
+  "error": null,
+  "gold_answer": null,
+  "gold_citations_raw": null
+}

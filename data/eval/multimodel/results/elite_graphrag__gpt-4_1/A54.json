@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 54,
+  "question": "Em đóng bảo hiểm từ 2008 đến nay (hiện tại em làm cqnn) (gan 18 năm) hiện tại em mới có thai, mà e muốn xin nghỉ việc ở nhà để dưỡng thai do tuổi cao rồi. (45 tuổi),  e muốn hỏi là trường hợp em muốn nghỉ, e muốn đóng bảo hiểm tự nguyện  những tháng tiếp theo như thế nào để khi em sinh con thì em được chế độ thai sản?",
+  "answer": "Issue:\nBạn hỏi về điều kiện đóng bảo hiểm xã hội tự nguyện sau khi nghỉ việc để được hưởng chế độ thai sản khi sinh con, trong trường hợp đã đóng bảo hiểm xã hội từ năm 2008 đến nay và hiện đang làm việc tại cơ quan nhà nước.\n\nRule:\n\"Đối tượng có thời gian đóng bảo hiểm xã hội tự nguyện hoặc vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện từ đủ 06 tháng trở lên trong thời gian 12 tháng trước khi sinh con được hưởng trợ cấp thai sản khi thuộc một trong các trường hợp sau đây:\" (Luật BHXH 2024 (41/2024/QH15), Điều 94, Khoản 1)\n\"Đối tượng quy định tại điểm b và điểm c khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của người hành nghề khám bệnh, chữa bệnh thuộc cơ sở khám bệnh, chữa bệnh thì phải đóng bảo hiểm xã hội bắt buộc từ đủ 03 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con.\" (Luật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 3)\n\nApplication:\nKhông có slot_id cụ thể nào được ràng buộc trong truy vấn này. Prolog đã sử dụng các điều kiện pháp lý từ Điều 94 khoản 1 và Điều 50 khoản 3 Luật BHXH 2024 để xác định hai trường hợp: (1) Nếu chuyển sang đóng bảo hiểm xã hội tự nguyện, phải đóng đủ 6 tháng trong 12 tháng trước sinh; (2) Nếu nghỉ việc để dưỡng thai theo chỉ định y tế, đã đóng BHXH bắt buộc từ đủ 12 tháng thì phải đóng BHXH bắt buộc từ đủ 3 tháng trong 12 tháng trước sinh.\n\nConclusion:\nProlog trả về hai điều kiện: Nếu nghỉ việc và chuyển sang đóng bảo hiểm xã hội tự nguyện, bạn phải đóng đủ 6 tháng trong 12 tháng trước khi sinh con để được hưởng chế độ thai sản; nếu nghỉ việc để dưỡng thai theo chỉ định của cơ sở y tế, đã đóng BHXH bắt buộc từ đủ 12 tháng trở lên thì phải đóng BHXH bắt buộc từ đủ 3 tháng trong 12 tháng trước khi sinh con.",
+  "citations": [
+    "[Điều 94 khoản 1]",
+    "[Điều 50 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A94.K1",
+    "L41_2024.A50.K3"
+  ],
+  "citation_indices": [
+    4,
+    7
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,che_do_thai_san_tu_nguyen([Nếu nghỉ việc và chuyển sang đóng bảo hiểm xã hội tự nguyện, phải đóng đủ 6 tháng trong 12 tháng trước khi sinh con để được hưởng chế độ thai sản (theo Điều 94 khoản 1 Luật BHXH 2024).,Nếu nghỉ việc để dưỡng thai theo chỉ định của cơ sở y tế, đã đóng BHXH bắt buộc từ đủ 12 tháng trở lên thì phải đóng BHXH bắt buộc từ đủ 3 tháng trong 12 tháng trước khi sinh con (theo Điều 50 khoản 3 Luật BHXH 2024).]),based_on(source_c004)),step(conclusion,che_do_thai_san_tu_nguyen([Nếu nghỉ việc và chuyển sang đóng bảo hiểm xã hội tự nguyện, phải đóng đủ 6 tháng trong 12 tháng trước khi sinh con để được hưởng chế độ thai sản (theo Điều 94 khoản 1 Luật BHXH 2024).,Nếu nghỉ việc để dưỡng thai theo chỉ định của cơ sở y tế, đã đóng BHXH bắt buộc từ đủ 12 tháng trở lên thì phải đóng BHXH bắt buộc từ đủ 3 tháng trong 12 tháng trước khi sinh con (theo Điều 50 khoản 3 Luật BHXH 2024).]),based_on(source_c007))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về điều kiện đóng bảo hiểm xã hội tự nguyện sau khi nghỉ việc để được hưởng chế độ thai sản khi sinh con, trong trường hợp đã đóng bảo hiểm xã hội từ năm 2008 đến nay và hiện đang làm việc tại cơ quan nhà nước.",
+    "rule": "\"Đối tượng có thời gian đóng bảo hiểm xã hội tự nguyện hoặc vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện từ đủ 06 tháng trở lên trong thời gian 12 tháng trước khi sinh con được hưởng trợ cấp thai sản khi thuộc một trong các trường hợp sau đây:\" (Luật BHXH 2024 (41/2024/QH15), Điều 94, Khoản 1)\n\"Đối tượng quy định tại điểm b và điểm c khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của người hành nghề khám bệnh, chữa bệnh thuộc cơ sở khám bệnh, chữa bệnh thì phải đóng bảo hiểm xã hội bắt buộc từ đủ 03 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con.\" (Luật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 3)",
+    "application": "Không có slot_id cụ thể nào được ràng buộc trong truy vấn này. Prolog đã sử dụng các điều kiện pháp lý từ Điều 94 khoản 1 và Điều 50 khoản 3 Luật BHXH 2024 để xác định hai trường hợp: (1) Nếu chuyển sang đóng bảo hiểm xã hội tự nguyện, phải đóng đủ 6 tháng trong 12 tháng trước sinh; (2) Nếu nghỉ việc để dưỡng thai theo chỉ định y tế, đã đóng BHXH bắt buộc từ đủ 12 tháng thì phải đóng BHXH bắt buộc từ đủ 3 tháng trong 12 tháng trước sinh.",
+    "conclusion": "Prolog trả về hai điều kiện: Nếu nghỉ việc và chuyển sang đóng bảo hiểm xã hội tự nguyện, bạn phải đóng đủ 6 tháng trong 12 tháng trước khi sinh con để được hưởng chế độ thai sản; nếu nghỉ việc để dưỡng thai theo chỉ định của cơ sở y tế, đã đóng BHXH bắt buộc từ đủ 12 tháng trở lên thì phải đóng BHXH bắt buộc từ đủ 3 tháng trong 12 tháng trước khi sinh con."
+  },
+  "elapsed_s": 9.046,
+  "prompt_tokens": 4461,
+  "completion_tokens": 1045,
+  "error": null,
+  "gold_answer": "Từ 1/7/2025, người tham gia BHXH tự nguyện đủ điều kiện có thể hưởng trợ cấp thai sản, nhưng đây không giống đầy đủ chế độ thai sản của BHXH bắt buộc. Nếu bạn nghỉ việc và chuyển sang BHXH tự nguyện, bạn cần xem mình có đủ từ 6 tháng đóng BHXH tự nguyện hoặc kết hợp bắt buộc + tự nguyện trong 12 tháng trước sinh hay không. Mức trợ cấp thai sản của BHXH tự nguyện hiện là 2 triệu đồng cho mỗi con, không phải tiền nghỉ thai sản 6 tháng như BHXH bắt buộc.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 94; Nghị định 159/2025/NĐ-CP"
+}

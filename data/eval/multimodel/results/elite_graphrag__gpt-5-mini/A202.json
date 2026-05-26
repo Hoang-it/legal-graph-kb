@@ -1,0 +1,21 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 202,
+  "question": "Cho mình hỏi trước mình có làm ở fpt telecom khoảng 2 năm sau đó nghỉ có nhận sổ (bị mất) rồi sau mình có xin làm lại được thêm 1 năm . Giờ mình muốn tra thời gian tham gia bhxh thì làm sao ạ . Mình có tra đc mã số rồi . Còn tk Vssid thì mình chưa có",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=unable_to_conclude, repair_rounds=2, error=Connection error.]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "unable_to_conclude",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 4.882,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "error": null,
+  "gold_answer": null,
+  "gold_citations_raw": null
+}

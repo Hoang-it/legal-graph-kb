@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 112,
+  "question": "Trước mình nghỉ ngang công ty cũ chưa chốt và lấy bìa xanh bây giờ ra bhxh huyện làm lại được không?",
+  "answer": "Issue: Bạn muốn biết liệu có thể yêu cầu cơ quan bảo hiểm xã hội cấp lại sổ bảo hiểm xã hội khi đã nghỉ ngang công ty cũ mà chưa chốt và lấy bìa xanh hay không.\n\nRule: Theo Điều 27, Khoản 2 của Luật Bảo hiểm xã hội 2024: \"Người lao động có quyền yêu cầu cơ quan BHXH cấp lại sổ BHXH trong trường hợp bị mất hoặc hư hỏng.\"\n\nApplication: Trong trường hợp này, không có thông tin cụ thể nào được cung cấp về các điều kiện hoặc tình huống cụ thể của bạn. Tuy nhiên, theo quy tắc đã được áp dụng, người lao động có quyền yêu cầu cấp lại sổ bảo hiểm xã hội nếu sổ bị mất hoặc hư hỏng.\n\nConclusion: Dựa trên quy tắc từ Điều 27, Khoản 2 của Luật Bảo hiểm xã hội 2024, bạn có thể yêu cầu cơ quan bảo hiểm xã hội cấp lại sổ bảo hiểm xã hội. Kết quả từ truy vấn Prolog cho thấy câu trả lời là \"yes\".",
+  "citations": [
+    "[Điều 27 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A27.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,can_request_new_social_insurance_book(yes),based_on(source_a27_k2))]",
+  "irac_sections": {
+    "issue": "Bạn muốn biết liệu có thể yêu cầu cơ quan bảo hiểm xã hội cấp lại sổ bảo hiểm xã hội khi đã nghỉ ngang công ty cũ mà chưa chốt và lấy bìa xanh hay không.",
+    "rule": "Theo Điều 27, Khoản 2 của Luật Bảo hiểm xã hội 2024: \"Người lao động có quyền yêu cầu cơ quan BHXH cấp lại sổ BHXH trong trường hợp bị mất hoặc hư hỏng.\"",
+    "application": "Trong trường hợp này, không có thông tin cụ thể nào được cung cấp về các điều kiện hoặc tình huống cụ thể của bạn. Tuy nhiên, theo quy tắc đã được áp dụng, người lao động có quyền yêu cầu cấp lại sổ bảo hiểm xã hội nếu sổ bị mất hoặc hư hỏng.",
+    "conclusion": "Dựa trên quy tắc từ Điều 27, Khoản 2 của Luật Bảo hiểm xã hội 2024, bạn có thể yêu cầu cơ quan bảo hiểm xã hội cấp lại sổ bảo hiểm xã hội. Kết quả từ truy vấn Prolog cho thấy câu trả lời là \"yes\"."
+  },
+  "elapsed_s": 5.377,
+  "prompt_tokens": 3094,
+  "completion_tokens": 462,
+  "error": null,
+  "gold_answer": "Bạn có thể đến cơ quan BHXH nơi quản lý quá trình tham gia để kiểm tra tình trạng sổ. Nếu công ty cũ chưa chốt thì BHXH huyện không thể tự chốt thay công ty, trừ khi có hồ sơ truy đóng/xác nhận quá trình. Việc cần làm là yêu cầu công ty làm thủ tục báo giảm, chốt sổ; nếu công ty không thực hiện thì khiếu nại tới cơ quan BHXH quản lý đơn vị.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

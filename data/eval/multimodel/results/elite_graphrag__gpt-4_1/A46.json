@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 46,
+  "question": "Lúc còn huyện cũ thì mình nộp bhxh ở huyện.Còn bây giờ không còn huyện nữa thì mình nộp ở đâu? ở xã hay là hành chính công?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Khi trước đây còn huyện cũ thì nộp bảo hiểm xã hội (BHXH) tại huyện, vậy hiện nay khi không còn huyện nữa thì phải nộp BHXH ở đâu? Ở xã hay tại trung tâm hành chính công?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 4 quy định: \"Tiếp nhận hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế và cấp sổ bảo hiểm xã hội, thẻ bảo hiểm y tế cho người lao động.\"\n\nApplication:\nKhông có slot_id cụ thể nào được cung cấp trong truy vấn này. Hệ thống Prolog đã sử dụng quy định tại Điều 18, Khoản 4 của Luật BHXH 2024 để xác định nơi tiếp nhận hồ sơ BHXH. Theo truy vết Prolog, nơi nộp hồ sơ BHXH là \"cơ quan bảo hiểm xã hội cấp huyện hoặc trung tâm hành chính công\".\n\nConclusion:\nTheo kết quả truy vấn Prolog, bạn có thể nộp hồ sơ BHXH tại cơ quan bảo hiểm xã hội cấp huyện hoặc trung tâm hành chính công (NoiNop = [co_quan_bao_hiem_xa_hoi_cap_huyen_hoac_trung_tam_hanh_chinh_cong]).",
+  "citations": [
+    "[Điều 18 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K4"
+  ],
+  "citation_indices": [
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,noi_nop_ho_so_bhxh([co_quan_bao_hiem_xa_hoi_cap_huyen_hoac_trung_tam_hanh_chinh_cong]),based_on(source_c006))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Khi trước đây còn huyện cũ thì nộp bảo hiểm xã hội (BHXH) tại huyện, vậy hiện nay khi không còn huyện nữa thì phải nộp BHXH ở đâu? Ở xã hay tại trung tâm hành chính công?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 4 quy định: \"Tiếp nhận hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế và cấp sổ bảo hiểm xã hội, thẻ bảo hiểm y tế cho người lao động.\"",
+    "application": "Không có slot_id cụ thể nào được cung cấp trong truy vấn này. Hệ thống Prolog đã sử dụng quy định tại Điều 18, Khoản 4 của Luật BHXH 2024 để xác định nơi tiếp nhận hồ sơ BHXH. Theo truy vết Prolog, nơi nộp hồ sơ BHXH là \"cơ quan bảo hiểm xã hội cấp huyện hoặc trung tâm hành chính công\".",
+    "conclusion": "Theo kết quả truy vấn Prolog, bạn có thể nộp hồ sơ BHXH tại cơ quan bảo hiểm xã hội cấp huyện hoặc trung tâm hành chính công (NoiNop = [co_quan_bao_hiem_xa_hoi_cap_huyen_hoac_trung_tam_hanh_chinh_cong])."
+  },
+  "elapsed_s": 6.387,
+  "prompt_tokens": 3068,
+  "completion_tokens": 550,
+  "error": null,
+  "gold_answer": "Sau khi thay đổi mô hình tổ chức hành chính, hồ sơ BHXH thường nộp tại cơ quan BHXH khu vực/cơ quan được phân công tiếp nhận hoặc Trung tâm phục vụ hành chính công, không phải xã nào cũng trực tiếp thu hồ sơ. Bạn nên tra cứu nơi tiếp nhận mới tại địa phương hoặc gọi cơ quan BHXH gần nhất để tránh đi sai nơi. Nguyên tắc là cơ quan BHXH nơi cư trú vẫn có trách nhiệm hướng dẫn, tiếp nhận hoặc chỉ dẫn nơi nộp đúng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; quy định tổ chức thực hiện của BHXH Việt Nam"
+}

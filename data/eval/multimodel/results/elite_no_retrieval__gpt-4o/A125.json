@@ -1,0 +1,32 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 125,
+  "question": "Em nghỉ công ty từ ngày 25/2 công ty cũ đã gửi sổ để  e đi chốt nhưng đã 2 tháng mà bảo hiểm vẫn chưa chốt và chưa trả lại e sổ và tờ rời. vậy giờ e làm như thế nào để hưởng bảo hiểm thất nghiệp? còn 1 tháng nữa là hết hạn rồi ạ mà e vẫn chưa lấy lại được sổ",
+  "answer": "Issue: Bạn đã nghỉ việc từ ngày 25/2 và công ty cũ đã gửi sổ bảo hiểm để bạn đi chốt. Tuy nhiên, sau 2 tháng, bảo hiểm vẫn chưa được chốt và bạn chưa nhận lại được sổ và tờ rời. Bạn muốn biết cách để hưởng bảo hiểm thất nghiệp khi chỉ còn 1 tháng nữa là hết hạn.\n\nRule: Điều kiện hưởng bảo hiểm thất nghiệp bao gồm việc đã chốt sổ bảo hiểm xã hội. (Luật BHXH 2024, Điều 49, Khoản 1). Người lao động phải nộp hồ sơ hưởng bảo hiểm thất nghiệp trong vòng 3 tháng kể từ ngày chấm dứt hợp đồng lao động. (Luật BHXH 2024, Điều 49, Khoản 2).\n\nApplication: Không có giá trị nào được cung cấp trong slot_bindings. Tuy nhiên, theo kết quả truy vấn Prolog, điều kiện để hưởng bảo hiểm thất nghiệp bao gồm: \"Chốt sổ bảo hiểm xã hội\" và \"Nộp hồ sơ trong vòng 3 tháng kể từ ngày chấm dứt hợp đồng lao động\".\n\nConclusion: Hệ thống đã xác định rằng để hưởng bảo hiểm thất nghiệp, bạn cần phải chốt sổ bảo hiểm xã hội và nộp hồ sơ trong vòng 3 tháng kể từ ngày chấm dứt hợp đồng lao động. Tuy nhiên, do thiếu thông tin cụ thể về việc chốt sổ và thời gian nộp hồ sơ, hệ thống không thể đưa ra kết luận cuối cùng về khả năng hưởng bảo hiểm thất nghiệp của bạn.",
+  "citations": [
+    "[Điều 49 khoản 1]",
+    "[Điều 49 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A49.K1",
+    "L41_2024.A49.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_conditions([Chốt sổ bảo hiểm xã hội,Nộp hồ sơ trong vòng 3 tháng kể từ ngày chấm dứt hợp đồng lao động]),based_on(source_a49_k1)),step(conclusion,unemployment_insurance_conditions([Chốt sổ bảo hiểm xã hội,Nộp hồ sơ trong vòng 3 tháng kể từ ngày chấm dứt hợp đồng lao động]),based_on(source_a49_k2))]",
+  "irac_sections": {
+    "issue": "Bạn đã nghỉ việc từ ngày 25/2 và công ty cũ đã gửi sổ bảo hiểm để bạn đi chốt. Tuy nhiên, sau 2 tháng, bảo hiểm vẫn chưa được chốt và bạn chưa nhận lại được sổ và tờ rời. Bạn muốn biết cách để hưởng bảo hiểm thất nghiệp khi chỉ còn 1 tháng nữa là hết hạn.",
+    "rule": "Điều kiện hưởng bảo hiểm thất nghiệp bao gồm việc đã chốt sổ bảo hiểm xã hội. (Luật BHXH 2024, Điều 49, Khoản 1). Người lao động phải nộp hồ sơ hưởng bảo hiểm thất nghiệp trong vòng 3 tháng kể từ ngày chấm dứt hợp đồng lao động. (Luật BHXH 2024, Điều 49, Khoản 2).",
+    "application": "Không có giá trị nào được cung cấp trong slot_bindings. Tuy nhiên, theo kết quả truy vấn Prolog, điều kiện để hưởng bảo hiểm thất nghiệp bao gồm: \"Chốt sổ bảo hiểm xã hội\" và \"Nộp hồ sơ trong vòng 3 tháng kể từ ngày chấm dứt hợp đồng lao động\".",
+    "conclusion": "Hệ thống đã xác định rằng để hưởng bảo hiểm thất nghiệp, bạn cần phải chốt sổ bảo hiểm xã hội và nộp hồ sơ trong vòng 3 tháng kể từ ngày chấm dứt hợp đồng lao động. Tuy nhiên, do thiếu thông tin cụ thể về việc chốt sổ và thời gian nộp hồ sơ, hệ thống không thể đưa ra kết luận cuối cùng về khả năng hưởng bảo hiểm thất nghiệp của bạn."
+  },
+  "elapsed_s": 6.872,
+  "prompt_tokens": 2392,
+  "completion_tokens": 615,
+  "error": null,
+  "gold_answer": "Bạn cần nộp hồ sơ BHTN trong 03 tháng từ ngày nghỉ việc, nên không nên đợi quá sát hạn. Hãy yêu cầu công ty hoặc cơ quan BHXH cấp xác nhận quá trình đóng/chốt dữ liệu để kịp nộp hồ sơ. Nếu việc chậm chốt do phía công ty/BHXH, bạn nên nộp trước các giấy tờ đang có tại trung tâm dịch vụ việc làm và xin hướng dẫn bổ sung, đồng thời làm đơn khiếu nại về việc chậm chốt.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

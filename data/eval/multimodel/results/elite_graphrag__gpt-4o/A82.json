@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 82,
+  "question": "bhxh e đc 6 tháng có được rút không? E nghĩ cty cũng 2 năm hơn rồi",
+  "answer": "Issue: Bạn hỏi liệu có thể rút bảo hiểm xã hội sau khi đã đóng được 6 tháng hay không, trong khi bạn đã làm việc tại công ty hơn 2 năm.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 6: \"Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\"\n\nApplication: Không có thông tin cụ thể về số tháng bạn đã làm việc tại công ty, nhưng bạn đã đóng bảo hiểm xã hội được 6 tháng. Theo quy định, thời gian đóng bảo hiểm xã hội dưới 12 tháng không đủ điều kiện để rút bảo hiểm xã hội.\n\nConclusion: Dựa trên thông tin từ hệ thống, bạn không thể rút bảo hiểm xã hội sau khi đã đóng được 6 tháng. Kết quả này được xác định dựa trên nguồn luật c004.",
+  "citations": [
+    "[Điều 5 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K6"
+  ],
+  "citation_indices": [
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,can_withdraw_social_insurance(user,no),based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi liệu có thể rút bảo hiểm xã hội sau khi đã đóng được 6 tháng hay không, trong khi bạn đã làm việc tại công ty hơn 2 năm.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 6: \"Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\"",
+    "application": "Không có thông tin cụ thể về số tháng bạn đã làm việc tại công ty, nhưng bạn đã đóng bảo hiểm xã hội được 6 tháng. Theo quy định, thời gian đóng bảo hiểm xã hội dưới 12 tháng không đủ điều kiện để rút bảo hiểm xã hội.",
+    "conclusion": "Dựa trên thông tin từ hệ thống, bạn không thể rút bảo hiểm xã hội sau khi đã đóng được 6 tháng. Kết quả này được xác định dựa trên nguồn luật c004."
+  },
+  "elapsed_s": 6.328,
+  "prompt_tokens": 5230,
+  "completion_tokens": 604,
+  "error": null,
+  "gold_answer": "Thông thường đóng BHXH mới 6 tháng thì chưa thể rút ngay nếu bạn chưa thuộc trường hợp luật cho phép. Trường hợp phổ biến nhất là phải sau 12 tháng không tiếp tục tham gia BHXH mà vẫn chưa đủ điều kiện hưởng lương hưu thì mới đề nghị hưởng BHXH một lần. Vì vậy nếu bạn mới đóng 6 tháng và nghỉ đã hơn 2 năm thì cần kiểm tra hiện tại có còn tham gia nơi nào khác không; nếu không, thường có thể nộp hồ sơ theo diện BHXH một lần.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 110"
+}

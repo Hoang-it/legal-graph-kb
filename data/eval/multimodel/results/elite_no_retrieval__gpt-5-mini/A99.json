@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 99,
+  "question": "Mình bầu hơn 5 tháng, đã đóng bhxh 8/12 tháng trong thời gian hưởng thai sản thì có dễ bị thanh tra không?",
+  "answer": "Issue: Mình bầu hơn 5 tháng, đã đóng BHXH 8/12 tháng trong thời gian hưởng thai sản thì có dễ bị thanh tra không?\n\nRule: Không có trích dẫn pháp luật được cung cấp trong dữ liệu đầu vào.\n\nApplication: slot_bindings trống (không có slot_id được gán). Prolog query đã chạy và, theo execution_result.Trace, nó đã sử dụng eligibility_maternity(user,8) và sau đó kết luận inspection_risk(user,low). Execution_result.Trace: \"[step(eligibility_maternity(user,8),based_on(source_maternity_condition)),step(conclusion_inspection(user,low),based_on(source_inspection))]\".\n\nConclusion: Biến Risk do Prolog trả về có giá trị \"low\" (Risk = \"low\"), theo execution_result.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(eligibility_maternity(user,8),based_on(source_maternity_condition)),step(conclusion_inspection(user,low),based_on(source_inspection))]",
+  "irac_sections": {
+    "issue": "Mình bầu hơn 5 tháng, đã đóng BHXH 8/12 tháng trong thời gian hưởng thai sản thì có dễ bị thanh tra không?",
+    "rule": "Không có trích dẫn pháp luật được cung cấp trong dữ liệu đầu vào.",
+    "application": "slot_bindings trống (không có slot_id được gán). Prolog query đã chạy và, theo execution_result.Trace, nó đã sử dụng eligibility_maternity(user,8) và sau đó kết luận inspection_risk(user,low). Execution_result.Trace: \"[step(eligibility_maternity(user,8),based_on(source_maternity_condition)),step(conclusion_inspection(user,low),based_on(source_inspection))]\".",
+    "conclusion": "Biến Risk do Prolog trả về có giá trị \"low\" (Risk = \"low\"), theo execution_result."
+  },
+  "elapsed_s": 60.49,
+  "prompt_tokens": 2237,
+  "completion_tokens": 5124,
+  "error": null,
+  "gold_answer": "Việc bạn đã đóng BHXH 8/12 tháng trước sinh không đồng nghĩa là dễ bị thanh tra. Cơ quan BHXH thường chỉ kiểm tra khi có dấu hiệu bất thường như tăng lương đột biến không có căn cứ, ký hợp đồng khống, đóng nhờ, hoặc hồ sơ thai sản không phù hợp. Nếu bạn có quan hệ lao động thật, đóng BHXH đúng mức, hồ sơ khám thai/sinh con hợp lệ thì không phải cứ mang bầu và đủ điều kiện hưởng là sẽ bị thanh tra.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50, Điều 53; quy định thanh tra chuyên ngành BHXH"
+}

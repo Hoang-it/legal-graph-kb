@@ -1,0 +1,34 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 28,
+  "question": "Bà Hoàng Tuyết Mây nhận nuôi con nuôi ngày 13/10/2025 (có biên bản làm việc viết tay của chính quyền, có dấu).\nNgày 12/11/2025, bà được cấp giấy chứng nhận nuôi con nuôi. Ngày 17/11/2025 con của bà có Giấy khai sinh, tên bố mẹ bổ sung ở mặt sau giấy khai sinh của con.\nBà Mây hỏi, bà được hưởng trợ cấp thai sản như thế nào? Bắt đầu được nghỉ thai sản từ thời điểm nào?",
+  "answer": "Issue:\nBà Hoàng Tuyết Mây hỏi về việc hưởng trợ cấp thai sản khi nhận nuôi con nuôi, cụ thể là được hưởng chế độ như thế nào và thời điểm bắt đầu nghỉ thai sản tính từ khi nào.\n\nRule:\n\"Người lao động nhận nuôi con nuôi dưới 6 tháng tuổi được nghỉ việc hưởng chế độ thai sản cho đến khi con đủ 6 tháng tuổi, kể từ ngày nhận nuôi con nuôi.\" (law_bhxh_2024, article_39, clause_1)\n\"Thời điểm bắt đầu nghỉ thai sản là ngày nhận nuôi con nuôi theo quyết định của cơ quan có thẩm quyền.\" (law_bhxh_2024, article_39, clause_3)\n\nApplication:\nKhông có slot_id cụ thể nào được ràng buộc trong truy vấn này. Hệ thống đã áp dụng các điều kiện pháp luật liên quan đến chế độ thai sản cho người nhận nuôi con nuôi dưới 6 tháng tuổi, xác định thời điểm bắt đầu nghỉ thai sản dựa trên ngày nhận nuôi con nuôi theo quyết định của cơ quan có thẩm quyền.\n\nConclusion:\nTheo kết quả truy vấn Prolog, bà Hoàng Tuyết Mây sẽ được nghỉ việc hưởng chế độ thai sản cho đến khi con đủ 6 tháng tuổi, kể từ ngày nhận nuôi con nuôi. Thời điểm bắt đầu nghỉ thai sản là ngày nhận nuôi con nuôi theo quyết định của cơ quan có thẩm quyền (Conditions).",
+  "citations": [
+    "[Điều 39 khoản 1]",
+    "[Điều 39 khoản 2]",
+    "[Điều 39 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A39.K1",
+    "L41_2024.A39.K2",
+    "L41_2024.A39.K3"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conditions,maternity_leave_for_adoptive_parent,based_on(source_a39_k1)),step(conditions,maternity_leave_for_adoptive_parent,based_on(source_a39_k3))]",
+  "irac_sections": {
+    "issue": "Bà Hoàng Tuyết Mây hỏi về việc hưởng trợ cấp thai sản khi nhận nuôi con nuôi, cụ thể là được hưởng chế độ như thế nào và thời điểm bắt đầu nghỉ thai sản tính từ khi nào.",
+    "rule": "\"Người lao động nhận nuôi con nuôi dưới 6 tháng tuổi được nghỉ việc hưởng chế độ thai sản cho đến khi con đủ 6 tháng tuổi, kể từ ngày nhận nuôi con nuôi.\" (law_bhxh_2024, article_39, clause_1)\n\"Thời điểm bắt đầu nghỉ thai sản là ngày nhận nuôi con nuôi theo quyết định của cơ quan có thẩm quyền.\" (law_bhxh_2024, article_39, clause_3)",
+    "application": "Không có slot_id cụ thể nào được ràng buộc trong truy vấn này. Hệ thống đã áp dụng các điều kiện pháp luật liên quan đến chế độ thai sản cho người nhận nuôi con nuôi dưới 6 tháng tuổi, xác định thời điểm bắt đầu nghỉ thai sản dựa trên ngày nhận nuôi con nuôi theo quyết định của cơ quan có thẩm quyền.",
+    "conclusion": "Theo kết quả truy vấn Prolog, bà Hoàng Tuyết Mây sẽ được nghỉ việc hưởng chế độ thai sản cho đến khi con đủ 6 tháng tuổi, kể từ ngày nhận nuôi con nuôi. Thời điểm bắt đầu nghỉ thai sản là ngày nhận nuôi con nuôi theo quyết định của cơ quan có thẩm quyền (Conditions)."
+  },
+  "elapsed_s": 7.227,
+  "prompt_tokens": 2576,
+  "completion_tokens": 734,
+  "error": null,
+  "gold_answer": "Về đối tượng và điều kiện hưởng chế độ thai sản, điểm đ khoản 1 Điều 50 Luật BHXH năm 2024 quy định:\n\"1. Đối tượng quy định tại các điểm a, b, c, d, i, k, l, m và n khoản 1 và khoản 2 Điều 2 của Luật này được hưởng chế độ thai sản khi thuộc một trong các trường hợp sau đây:\nđ) Người lao động nhận nuôi con nuôi dưới 06 tháng tuổi;\"\nTại Khoản 2 Điều 50 Luật BHXH năm 2024 quy định, đối tượng quy định tại các điểm b, c, d và đ khoản 1 Điều này (người lao động nhận nuôi con nuôi dưới 06 tháng tuổi) phải đóng BHXH bắt buộc từ đủ 06 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con hoặc nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 6 tháng tuổi.\nVề chế độ thai sản khi nhận nuôi con nuôi dưới 6 tháng tuổi, tại Điều 56 Luật BHXH năm 2024 quy định, người lao động nhận nuôi con nuôi dưới 6 tháng tuổi được nghỉ việc hưởng chế độ thai sản kể từ ngày giao nhận con nuôi cho đến khi con đủ 6 tháng tuổi.\nTrường hợp cả cha và mẹ cùng tham gia BHXH bắt buộc đủ điều kiện hưởng chế độ thai sản quy định tại khoản 2 Điều 50 của Luật này thì chỉ cha hoặc mẹ được nghỉ việc hưởng chế độ thai sản.\nNgười lao động nhận nuôi con nuôi dưới 6 tháng tuổi được hưởng trợ cấp một lần theo quy định tại Điều 58 của Luật này.\nVề trợ cấp một lần khi nhận nuôi con nuôi dưới 6 tháng tuổi, tại khoản 3, khoản 4 Điều 58 Luật BHXH năm 2024 quy định, người lao động nhận nuôi con nuôi dưới 6 tháng tuổi đủ điều kiện theo quy định tại khoản 2 Điều 50 của Luật này thì được trợ cấp một lần. Mức trợ cấp một lần cho mỗi con quy định tại khoản 3 Điều này bằng 2 lần mức tham chiếu tại tháng người lao động nhận nuôi con nuôi.\nVề hồ sơ đề nghị hưởng chế độ thai sản, tại khoản 4 Điều 61 Luật BHXH năm 2024 quy định hồ sơ đề nghị hưởng chế độ thai sản đối với người lao động nhận nuôi con nuôi dưới 6 tháng tuổi bao gồmbản sao giấy chứng nhận nuôi con nuôi và biên bản giao nhận con.\nDo bà chưa cung cấp đầy đủ thông tin về quá trình tham gia BHXH bắt buộc của bà nên BHXH Việt Nam chưa có đủ căn cứ trả lời. Vì vậy, đề nghị bà đến cơ quan BHXH nơi gần nhất và cung cấp đầy đủ thông tin để được trả lời và tư vấn cụ thể.",
+  "gold_citations_raw": "khoản 1 Điều 50 Luật BHXH năm 2024"
+}

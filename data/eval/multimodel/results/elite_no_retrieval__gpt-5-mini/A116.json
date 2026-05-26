@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 116,
+  "question": "Đi làm công ty mức lương: 5tr5 mà cty bắt đóng bảo hiểm 1tr700 là sao?",
+  "answer": "Issue:\nNgười hỏi: mức lương khai báo và công ty khấu trừ đóng BHXH 1tr700; muốn biết vì sao và có đúng không.\n\nRule:\nKhông có trích dẫn pháp luật được cung cấp trong trường \"citations\" của truy vết.\n\nApplication:\nCác slot: Không có slot_bindings được cung cấp.\nCác dữ kiện được cung cấp và Prolog đã dùng: base_salary(user, 5500000).; contribution_deducted(user, 1700000).\nCách Prolog tiêu thụ chúng: hàm compute_expected_employee_deduction dùng base_salary(user, 5500000) và sinh Expected = 577500.0; hàm analyze_deduction so sánh Given = 1700000 với Expected = 577500.0 và đưa ra kết luận too_high.\n\nConclusion:\nProlog trả về binding Conclusion = conclusion(too_high,577500.0,1700000), tức là Prolog xác định khoản khấu trừ 1700000 cao hơn Expected = 577500.0 theo truy vết.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(calculation,expected_employee_deduction(user,577500.0),based_on(source_base_salary)),step(comparison,compare(1700000,577500.0,too_high),based_on(source_contribution_principle))]",
+  "irac_sections": {
+    "issue": "Người hỏi: mức lương khai báo và công ty khấu trừ đóng BHXH 1tr700; muốn biết vì sao và có đúng không.",
+    "rule": "Không có trích dẫn pháp luật được cung cấp trong trường \"citations\" của truy vết.",
+    "application": "Các slot: Không có slot_bindings được cung cấp.\nCác dữ kiện được cung cấp và Prolog đã dùng: base_salary(user, 5500000).; contribution_deducted(user, 1700000).\nCách Prolog tiêu thụ chúng: hàm compute_expected_employee_deduction dùng base_salary(user, 5500000) và sinh Expected = 577500.0; hàm analyze_deduction so sánh Given = 1700000 với Expected = 577500.0 và đưa ra kết luận too_high.",
+    "conclusion": "Prolog trả về binding Conclusion = conclusion(too_high,577500.0,1700000), tức là Prolog xác định khoản khấu trừ 1700000 cao hơn Expected = 577500.0 theo truy vết."
+  },
+  "elapsed_s": 47.743,
+  "prompt_tokens": 2206,
+  "completion_tokens": 4983,
+  "error": null,
+  "gold_answer": "Nếu lương đóng BHXH là 5,5 triệu thì phần người lao động phải đóng BHXH, BHYT, BHTN thông thường khoảng 10,5%, tức khoảng 577.500 đồng/tháng; doanh nghiệp đóng thêm phần của họ. Nếu công ty đang trừ bạn 1,7 triệu thì cần yêu cầu bảng tính cụ thể vì có thể đang trừ cả phần doanh nghiệp, truy thu tháng cũ hoặc trừ sai. Công ty không được bắt NLĐ gánh phần nghĩa vụ của NSDLĐ.",
+  "gold_citations_raw": "Điều 13, 14 Luật BHXH 2024; Luật BHYT; Luật Việc làm 2013/2025"
+}

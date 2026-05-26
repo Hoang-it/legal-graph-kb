@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 87,
+  "question": "Lúc trước mình có lm CTY cũ đc 4 tháng. Có đóng BH từ 7 đến 10 . Năm 2025 lúc đó mình bầu đc 1 tháng qua rồi qua CTY mới làm từ 11 năm 2025 đến giờ gần 6 tháng. Cũng đóng BH . Như vậy thì nếu mình đóng đủ 6 tháng có nhận đc tiền thai sản ko?",
+  "answer": "Issue:\nBạn hỏi rằng nếu đã đóng bảo hiểm xã hội đủ 6 tháng trong 12 tháng trước khi sinh con thì có được hưởng chế độ thai sản không.\n\nRule:\n\"Người lao động nữ sinh con được hưởng chế độ thai sản nếu đã đóng BHXH từ đủ 6 tháng trở lên trong thời gian 12 tháng trước khi sinh con.\" (Luật BHXH 2024, Điều 81, Khoản 1)\n\nApplication:\nKhông có giá trị cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, hệ thống xác nhận rằng bạn đã đóng bảo hiểm xã hội 6 tháng trong 12 tháng trước khi sinh (months_contributed_last_12_months(user, 6)). Truy vấn Prolog đã sử dụng thông tin này để xác định điều kiện hưởng chế độ thai sản theo quy định tại nguồn luật đã dẫn.\n\nConclusion:\nTheo truy vết Prolog, bạn đủ điều kiện hưởng chế độ thai sản (eligible_maternity_benefit(user)), dựa trên Luật BHXH 2024, Điều 81, Khoản 1.",
+  "citations": [
+    "[Điều 81 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A81.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,eligible_maternity_benefit(user),based_on(source_a81_k1))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi rằng nếu đã đóng bảo hiểm xã hội đủ 6 tháng trong 12 tháng trước khi sinh con thì có được hưởng chế độ thai sản không.",
+    "rule": "\"Người lao động nữ sinh con được hưởng chế độ thai sản nếu đã đóng BHXH từ đủ 6 tháng trở lên trong thời gian 12 tháng trước khi sinh con.\" (Luật BHXH 2024, Điều 81, Khoản 1)",
+    "application": "Không có giá trị cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, hệ thống xác nhận rằng bạn đã đóng bảo hiểm xã hội 6 tháng trong 12 tháng trước khi sinh (months_contributed_last_12_months(user, 6)). Truy vấn Prolog đã sử dụng thông tin này để xác định điều kiện hưởng chế độ thai sản theo quy định tại nguồn luật đã dẫn.",
+    "conclusion": "Theo truy vết Prolog, bạn đủ điều kiện hưởng chế độ thai sản (eligible_maternity_benefit(user)), dựa trên Luật BHXH 2024, Điều 81, Khoản 1."
+  },
+  "elapsed_s": 5.023,
+  "prompt_tokens": 2143,
+  "completion_tokens": 477,
+  "error": null,
+  "gold_answer": "Nếu trong 12 tháng trước khi sinh bạn đã đóng BHXH bắt buộc đủ từ 6 tháng trở lên thì được hưởng thai sản. Thời gian 4 tháng ở công ty cũ và gần 6 tháng ở công ty mới có thể cộng lại nếu đều là thời gian đóng BHXH bắt buộc hợp pháp trong khoảng 12 tháng trước sinh. Vì vậy, nếu tổng đủ 6 tháng trong khoảng tính luật định thì bạn có thể được hưởng thai sản, kể cả đã chuyển công ty.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50"
+}

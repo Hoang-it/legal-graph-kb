@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 165,
+  "question": "Dự sinh của em 18/9. Em đóng bhxh 2 năm rồi. Tháng 1 dương vừa rồi không đủ công nên cty ko đóng tháng 1. Hết tháng 4 này em nghỉ luôn thì em có được hưởng thai sản ko?",
+  "answer": "Issue: Bạn hỏi liệu bạn có được hưởng chế độ thai sản không khi dự sinh vào ngày 18/9, đã đóng bảo hiểm xã hội 2 năm, nhưng tháng 1 không đóng bảo hiểm và nghỉ việc vào cuối tháng 4.\n\nRule: \"Người lao động nữ sinh con được hưởng chế độ thai sản khi đã đóng BHXH từ đủ 6 tháng trở lên trong thời gian 12 tháng trước khi sinh con.\" (Luật BHXH 2024, Điều 31, Khoản 1)\n\nApplication: \n- Bạn đã đóng bảo hiểm xã hội trong 24 tháng.\n- Ngày dự sinh của bạn là 18/9/2024.\n- Tháng cuối cùng bạn đóng bảo hiểm là tháng 4/2024.\n- Theo quy tắc, bạn cần đóng bảo hiểm xã hội ít nhất 6 tháng trong vòng 12 tháng trước khi sinh. Bạn đã đáp ứng điều kiện này.\n\nConclusion: Theo kết quả từ hệ thống, bạn đủ điều kiện hưởng chế độ thai sản.",
+  "citations": [
+    "[Điều 31 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A31.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,eligible_for_maternity(user,true),based_on(source_a31_k1))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi liệu bạn có được hưởng chế độ thai sản không khi dự sinh vào ngày 18/9, đã đóng bảo hiểm xã hội 2 năm, nhưng tháng 1 không đóng bảo hiểm và nghỉ việc vào cuối tháng 4.",
+    "rule": "\"Người lao động nữ sinh con được hưởng chế độ thai sản khi đã đóng BHXH từ đủ 6 tháng trở lên trong thời gian 12 tháng trước khi sinh con.\" (Luật BHXH 2024, Điều 31, Khoản 1)",
+    "application": "- Bạn đã đóng bảo hiểm xã hội trong 24 tháng.\n- Ngày dự sinh của bạn là 18/9/2024.\n- Tháng cuối cùng bạn đóng bảo hiểm là tháng 4/2024.\n- Theo quy tắc, bạn cần đóng bảo hiểm xã hội ít nhất 6 tháng trong vòng 12 tháng trước khi sinh. Bạn đã đáp ứng điều kiện này.",
+    "conclusion": "Theo kết quả từ hệ thống, bạn đủ điều kiện hưởng chế độ thai sản."
+  },
+  "elapsed_s": 5.54,
+  "prompt_tokens": 2108,
+  "completion_tokens": 560,
+  "error": null,
+  "gold_answer": "Bạn dự sinh 18/9 và đã đóng BHXH 2 năm, nhưng tháng 1 vừa rồi công ty không đóng thì phải tính lại 12 tháng trước sinh. Nếu từ 9/2025 đến 8/2026 bạn vẫn có đủ ít nhất 06 tháng đóng BHXH thì bạn đủ điều kiện hưởng thai sản dù nghỉ cuối tháng 4. Tháng 1 bị hở không làm mất quyền nếu tổng số tháng đủ 06.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

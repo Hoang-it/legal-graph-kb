@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 121,
+  "question": "Nộp sổ lm bh 1 lần xong có hẹn ngày lấy quyết định. Trong tờ quyết định đó nó có ghi số tiền mình được hưởng là bao nhiêu ko?",
+  "answer": "Issue:\nSau khi nộp sổ đóng bảo hiểm xã hội và được hẹn ngày lấy quyết định, tờ quyết định có ghi rõ số tiền được hưởng hay không?\n\nRule:\n\"Quyết định chi trả chế độ BHXH thường nêu rõ số tiền được hưởng và căn cứ tính toán.\" (law_bhxh_2024, article_none, clause_none)\n\nApplication:\n- slot_bindings: không có slot_id được gán giá trị trong truy vấn.\n- Prolog truy vấn: decision_includes_amount(Answer, Trace). Chương trình sử dụng nguồn legal_source(source_payment_decision_general) và luật decision_includes_amount để đưa ra kết luận. Kết quả truy vấn theo trace: [step(conclusion,decision_includes_amount(yes_amount),based_on(source_payment_decision_general))].\n\nConclusion:\nProlog trả về Answer = yes_amount (kết quả cuối).",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,decision_includes_amount(yes_amount),based_on(source_payment_decision_general))]",
+  "irac_sections": {
+    "issue": "Sau khi nộp sổ đóng bảo hiểm xã hội và được hẹn ngày lấy quyết định, tờ quyết định có ghi rõ số tiền được hưởng hay không?",
+    "rule": "\"Quyết định chi trả chế độ BHXH thường nêu rõ số tiền được hưởng và căn cứ tính toán.\" (law_bhxh_2024, article_none, clause_none)",
+    "application": "- slot_bindings: không có slot_id được gán giá trị trong truy vấn.\n- Prolog truy vấn: decision_includes_amount(Answer, Trace). Chương trình sử dụng nguồn legal_source(source_payment_decision_general) và luật decision_includes_amount để đưa ra kết luận. Kết quả truy vấn theo trace: [step(conclusion,decision_includes_amount(yes_amount),based_on(source_payment_decision_general))].",
+    "conclusion": "Prolog trả về Answer = yes_amount (kết quả cuối)."
+  },
+  "elapsed_s": 60.833,
+  "prompt_tokens": 3112,
+  "completion_tokens": 6250,
+  "error": null,
+  "gold_answer": "Có. Quyết định hưởng BHXH 1 lần thường thể hiện rõ căn cứ giải quyết, thời gian đóng được tính hưởng và số tiền được chi trả. Bạn nên kiểm tra kỹ họ tên, số sổ, số tài khoản, thời gian đóng và số tiền trong quyết định. Nếu sai thì khiếu nại ngay trước khi nhận tiền để tránh phải điều chỉnh lại sau.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

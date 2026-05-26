@@ -1,0 +1,32 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 133,
+  "question": "Làm sao để đăng ký Bhxh không hướng lượng cho chủ doanh nghiệp?",
+  "answer": "Issue:\nLàm sao để đăng ký bảo hiểm xã hội (BHXH) không hưởng lương cho chủ doanh nghiệp?\n\nRule:\n\"Chủ doanh nghiệp là đối tượng tham gia bảo hiểm xã hội bắt buộc nếu có hợp đồng lao động với chính doanh nghiệp của mình. Nếu không hưởng lương, có thể tham gia bảo hiểm xã hội tự nguyện.\" (law_bhxh_2024, article_2, clause_4)\n\"Người tham gia bảo hiểm xã hội tự nguyện nộp hồ sơ đăng ký tại cơ quan BHXH hoặc qua dịch vụ công trực tuyến.\" (law_bhxh_2024, article_9, clause_1)\n\nApplication:\nKhông có slot_id nào được ràng buộc trong truy vấn này. Prolog đã sử dụng các quy định tại Điều 2 khoản 4 và Điều 9 khoản 1 của luật BHXH 2024 để xác định điều kiện và thủ tục đăng ký BHXH tự nguyện cho chủ doanh nghiệp không hưởng lương.\n\nConclusion:\nTheo kết quả Prolog, chủ doanh nghiệp không hưởng lương có thể đăng ký tham gia BHXH tự nguyện bằng cách nộp hồ sơ tại cơ quan BHXH hoặc qua cổng dịch vụ công trực tuyến (Conditions = ['Chủ doanh nghiệp không hưởng lương có thể đăng ký tham gia BHXH tự nguyện bằng cách nộp hồ sơ tại cơ quan BHXH hoặc qua cổng dịch vụ công trực tuyến.']).",
+  "citations": [
+    "[Điều 2 khoản 4]",
+    "[Điều 9 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2.K4",
+    "L41_2024.A9.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,bhxh_tn_registration_conditions([Chủ doanh nghiệp không hưởng lương có thể đăng ký tham gia BHXH tự nguyện bằng cách nộp hồ sơ tại cơ quan BHXH hoặc qua cổng dịch vụ công trực tuyến.]),based_on(source_a2_k4)),step(procedure,bhxh_tn_registration_conditions([Chủ doanh nghiệp không hưởng lương có thể đăng ký tham gia BHXH tự nguyện bằng cách nộp hồ sơ tại cơ quan BHXH hoặc qua cổng dịch vụ công trực tuyến.]),based_on(source_a9))]",
+  "irac_sections": {
+    "issue": "Làm sao để đăng ký bảo hiểm xã hội (BHXH) không hưởng lương cho chủ doanh nghiệp?",
+    "rule": "\"Chủ doanh nghiệp là đối tượng tham gia bảo hiểm xã hội bắt buộc nếu có hợp đồng lao động với chính doanh nghiệp của mình. Nếu không hưởng lương, có thể tham gia bảo hiểm xã hội tự nguyện.\" (law_bhxh_2024, article_2, clause_4)\n\"Người tham gia bảo hiểm xã hội tự nguyện nộp hồ sơ đăng ký tại cơ quan BHXH hoặc qua dịch vụ công trực tuyến.\" (law_bhxh_2024, article_9, clause_1)",
+    "application": "Không có slot_id nào được ràng buộc trong truy vấn này. Prolog đã sử dụng các quy định tại Điều 2 khoản 4 và Điều 9 khoản 1 của luật BHXH 2024 để xác định điều kiện và thủ tục đăng ký BHXH tự nguyện cho chủ doanh nghiệp không hưởng lương.",
+    "conclusion": "Theo kết quả Prolog, chủ doanh nghiệp không hưởng lương có thể đăng ký tham gia BHXH tự nguyện bằng cách nộp hồ sơ tại cơ quan BHXH hoặc qua cổng dịch vụ công trực tuyến (Conditions = ['Chủ doanh nghiệp không hưởng lương có thể đăng ký tham gia BHXH tự nguyện bằng cách nộp hồ sơ tại cơ quan BHXH hoặc qua cổng dịch vụ công trực tuyến.'])."
+  },
+  "elapsed_s": 6.263,
+  "prompt_tokens": 2292,
+  "completion_tokens": 627,
+  "error": null,
+  "gold_answer": "Nếu bạn là chủ doanh nghiệp/chủ hộ thuộc diện tham gia BHXH bắt buộc theo quy định mới thì phải đăng ký tham gia tại cơ quan BHXH qua đơn vị hoặc mã đơn vị của doanh nghiệp/hộ kinh doanh. Khái niệm 'không hưởng lương' chỉ ảnh hưởng căn cứ đóng ở từng nhóm đối tượng, không phải ai cũng được tự chọn không tham gia. Bạn nên đối chiếu đúng loại hình doanh nghiệp và chức danh quản lý của mình.",
+  "gold_citations_raw": "Điều 2 Luật BHXH 2024; Nghị định 158/2025/NĐ-CP"
+}

@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 99,
+  "question": "Mình bầu hơn 5 tháng, đã đóng bhxh 8/12 tháng trong thời gian hưởng thai sản thì có dễ bị thanh tra không?",
+  "answer": "Issue: Bạn đang mang thai hơn 5 tháng và đã đóng bảo hiểm xã hội (BHXH) 8/12 tháng trong thời gian hưởng thai sản. Bạn muốn biết liệu có dễ bị thanh tra không.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 3: \"Đối tượng quy định tại điểm b và điểm c khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của người hành nghề khám bệnh, chữa bệnh thuộc cơ sở khám bệnh, chữa bệnh thì phải đóng bảo hiểm xã hội bắt buộc từ đủ 03 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con.\"\n\nApplication: \n- months_contributed(user, 8): Bạn đã đóng BHXH 8 tháng.\n- pregnancy_months(user, 5): Bạn đang mang thai hơn 5 tháng.\nDựa trên các thông tin này, chương trình Prolog đã xác định rằng bạn không đáp ứng điều kiện đóng BHXH từ đủ 12 tháng trở lên, và thời gian mang thai của bạn là hơn 5 tháng.\n\nConclusion: Kết quả từ chương trình Prolog cho thấy mức độ rủi ro bị thanh tra là \"high\". Điều này có nghĩa là bạn có khả năng cao bị thanh tra do không đáp ứng đủ điều kiện đóng BHXH theo quy định.",
+  "citations": [
+    "[Điều 50 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A50.K3"
+  ],
+  "citation_indices": [
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,inspection_risk(user,high),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Bạn đang mang thai hơn 5 tháng và đã đóng bảo hiểm xã hội (BHXH) 8/12 tháng trong thời gian hưởng thai sản. Bạn muốn biết liệu có dễ bị thanh tra không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 3: \"Đối tượng quy định tại điểm b và điểm c khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của người hành nghề khám bệnh, chữa bệnh thuộc cơ sở khám bệnh, chữa bệnh thì phải đóng bảo hiểm xã hội bắt buộc từ đủ 03 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con.\"",
+    "application": "- months_contributed(user, 8): Bạn đã đóng BHXH 8 tháng.\n- pregnancy_months(user, 5): Bạn đang mang thai hơn 5 tháng.\nDựa trên các thông tin này, chương trình Prolog đã xác định rằng bạn không đáp ứng điều kiện đóng BHXH từ đủ 12 tháng trở lên, và thời gian mang thai của bạn là hơn 5 tháng.",
+    "conclusion": "Kết quả từ chương trình Prolog cho thấy mức độ rủi ro bị thanh tra là \"high\". Điều này có nghĩa là bạn có khả năng cao bị thanh tra do không đáp ứng đủ điều kiện đóng BHXH theo quy định."
+  },
+  "elapsed_s": 6.811,
+  "prompt_tokens": 3312,
+  "completion_tokens": 717,
+  "error": null,
+  "gold_answer": "Việc bạn đã đóng BHXH 8/12 tháng trước sinh không đồng nghĩa là dễ bị thanh tra. Cơ quan BHXH thường chỉ kiểm tra khi có dấu hiệu bất thường như tăng lương đột biến không có căn cứ, ký hợp đồng khống, đóng nhờ, hoặc hồ sơ thai sản không phù hợp. Nếu bạn có quan hệ lao động thật, đóng BHXH đúng mức, hồ sơ khám thai/sinh con hợp lệ thì không phải cứ mang bầu và đủ điều kiện hưởng là sẽ bị thanh tra.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50, Điều 53; quy định thanh tra chuyên ngành BHXH"
+}

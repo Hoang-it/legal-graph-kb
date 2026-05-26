@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 179,
+  "question": "mình nghỉ ngang vậy có đc lãnh bảo hiểm thất nghiệp không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: nếu người lao động nghỉ ngang (tức là đơn phương chấm dứt hợp đồng lao động trái pháp luật) thì có được hưởng bảo hiểm thất nghiệp không?\n\nRule:\nĐiều kiện hưởng trợ cấp thất nghiệp: chấm dứt hợp đồng lao động, trừ trường hợp người lao động đơn phương chấm dứt hợp đồng lao động trái pháp luật. (law_bhxh_2024, article_46, clause_1)\n\nApplication:\nKhông có slot cụ thể nào được cung cấp vì đây là điều kiện pháp lý tổng quát. Prolog đã truy vấn điều kiện hưởng bảo hiểm thất nghiệp và trả về rằng người lao động chỉ được hưởng khi chấm dứt hợp đồng lao động hợp pháp, không thuộc trường hợp đơn phương chấm dứt hợp đồng lao động trái pháp luật.\n\nConclusion:\nTheo kết quả Prolog, điều kiện để được hưởng bảo hiểm thất nghiệp là: \"Người lao động được hưởng bảo hiểm thất nghiệp khi chấm dứt hợp đồng lao động hợp pháp, không thuộc trường hợp đơn phương chấm dứt hợp đồng lao động trái pháp luật\". Như vậy, nếu bạn nghỉ ngang (đơn phương chấm dứt hợp đồng trái pháp luật), bạn sẽ không đủ điều kiện để nhận bảo hiểm thất nghiệp.",
+  "citations": [
+    "[Điều 46 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A46.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_eligibility([Người lao động được hưởng bảo hiểm thất nghiệp khi chấm dứt hợp đồng lao động hợp pháp, không thuộc trường hợp đơn phương chấm dứt hợp đồng lao động trái pháp luật]),based_on(source_a46_k1))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: nếu người lao động nghỉ ngang (tức là đơn phương chấm dứt hợp đồng lao động trái pháp luật) thì có được hưởng bảo hiểm thất nghiệp không?",
+    "rule": "Điều kiện hưởng trợ cấp thất nghiệp: chấm dứt hợp đồng lao động, trừ trường hợp người lao động đơn phương chấm dứt hợp đồng lao động trái pháp luật. (law_bhxh_2024, article_46, clause_1)",
+    "application": "Không có slot cụ thể nào được cung cấp vì đây là điều kiện pháp lý tổng quát. Prolog đã truy vấn điều kiện hưởng bảo hiểm thất nghiệp và trả về rằng người lao động chỉ được hưởng khi chấm dứt hợp đồng lao động hợp pháp, không thuộc trường hợp đơn phương chấm dứt hợp đồng lao động trái pháp luật.",
+    "conclusion": "Theo kết quả Prolog, điều kiện để được hưởng bảo hiểm thất nghiệp là: \"Người lao động được hưởng bảo hiểm thất nghiệp khi chấm dứt hợp đồng lao động hợp pháp, không thuộc trường hợp đơn phương chấm dứt hợp đồng lao động trái pháp luật\". Như vậy, nếu bạn nghỉ ngang (đơn phương chấm dứt hợp đồng trái pháp luật), bạn sẽ không đủ điều kiện để nhận bảo hiểm thất nghiệp."
+  },
+  "elapsed_s": 5.018,
+  "prompt_tokens": 2083,
+  "completion_tokens": 509,
+  "error": null,
+  "gold_answer": "Nghỉ ngang chỉ được hưởng BHTN nếu việc đơn phương chấm dứt hợp đồng của bạn là đúng pháp luật. Nếu nghỉ ngang trái luật thì không đủ điều kiện hưởng BHTN. Vì vậy cần xem hợp đồng, thời hạn báo trước, lý do nghỉ và việc công ty xác nhận chấm dứt ra sao. Nếu bạn nghỉ đúng luật hoặc hai bên thỏa thuận chấm dứt thì vẫn có thể hưởng BHTN khi đủ điều kiện khác.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

@@ -1,0 +1,53 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 79,
+  "question": "Anh chị cho em hỏi, mấy năm trước e có đi làm ở công ty cũ và đóng bảo hiểm đầy đủ, công ty cũng không nợ tiền BH. Do dịch covid công ty không trụ được nên đã giải thể, cũng đã báo giảm cho em nhưng năm ấy các nhân viên lại chẳng ai lấy tờ rời về . Sau đó e cũng có đi làm cty khác và đóng BH nối tiếp cho tới hiện tại . \nVậy mấy năm đóng ở cty cũ kia em chưa lấy tờ rời thì sau này em có thể tự lên cơ quan bảo hiểm xin lấy tờ rời được không?",
+  "answer": "Issue:\nEm hỏi có thể tự lên cơ quan bảo hiểm xin lấy tờ rời cho những năm đã đóng ở công ty cũ (công ty giải thể, đã báo giảm, người lao động không nhận tờ rời, sau đó tiếp tục đóng ở công ty mới) hay không?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), article 81, clause 2: \"Trong thời hạn 10 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15), article 107, clause 2: \"Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội. Thời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần đối với trường hợp người hưởng bảo hiểm xã hội theo quy \"\nLuật BHXH 2024 (41/2024/QH15), article 92, clause 1: \"Trường hợp nộp hồ sơ quá thời hạn quy định tại khoản 1 và khoản 2 Điều 48, khoản 1 Điều 49, khoản 1 Điều 62, khoản 1 Điều 63, khoản 1 Điều 79, khoản 1 và khoản 2 Điều 91 của Luật này thì phải giải trình bằng văn bản và gửi cho cơ quan bảo hiểm xã hội khi nộp hồ sơ.\"\nLuật BHXH 2024 (41/2024/QH15), article 113, clause 1: \"Trường hợp nộp hồ sơ quá thời hạn quy định tại khoản 1 Điều 97, khoản 1 Điều 107, điểm a khoản 2 Điều 112 của Luật này thì phải giải trình bằng văn bản và gửi cho cơ quan bảo hiểm xã hội khi nộp hồ sơ.\"\n\nApplication:\ncontributed_at_old_company(user).\nold_company_dissolved(user).\ndid_not_receive_toroi(user).\nreduction_reported(user).\nemployer_not_debt(user).\ncontinued_contributions(user).\nProlog đã đối chiếu các fact trên với quy tắc can_request_toroi(User, Answer, Trace). Tất cả các điều kiện của quy tắc được khớp, và quy tắc tham chiếu việc cơ quan BHXH giải quyết/hạn xử lý hồ sơ và yêu cầu giải trình khi nộp muộn theo các trích dẫn luật nêu trên.\n\nConclusion:\nProlog trả về Answer = \"yes\". (Biến trả lời: Answer = \"yes\"; trace cho thấy các bước dựa trên các nguồn luật đã dẫn.)",
+  "citations": [
+    "[Điều 106]",
+    "[Điều 48 khoản 1]",
+    "[Điều 49 khoản 1]",
+    "[Điều 62 khoản 1]",
+    "[Điều 63 khoản 1]",
+    "[Điều 79 khoản 1]",
+    "[Điều 91]",
+    "[Điều 97 khoản 1]",
+    "[Điều 107 điểm a]",
+    "[Điều 112]"
+  ],
+  "citation_ids": [
+    "L41_2024.A106",
+    "L41_2024.A48.K1",
+    "L41_2024.A49.K1",
+    "L41_2024.A62.K1",
+    "L41_2024.A63.K1",
+    "L41_2024.A79.K1",
+    "L41_2024.A91",
+    "L41_2024.A97.K1",
+    "L41_2024.A107",
+    "L41_2024.A112"
+  ],
+  "citation_indices": [
+    0,
+    1,
+    2,
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(possible_to_request_toroi,can_request_toroi(user,yes),based_on(source_c006)),step(required_to_submit_dossier,must_submit_required_dossier_when_requesting_documents,based_on(source_c001)),step(if_late_must_explain,late_submission_requires_written_explanation,based_on(source_c000)),step(if_related_procedure_late,late_procedure_requires_written_explanation,based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Em hỏi có thể tự lên cơ quan bảo hiểm xin lấy tờ rời cho những năm đã đóng ở công ty cũ (công ty giải thể, đã báo giảm, người lao động không nhận tờ rời, sau đó tiếp tục đóng ở công ty mới) hay không?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), article 81, clause 2: \"Trong thời hạn 10 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15), article 107, clause 2: \"Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội. Thời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần đối với trường hợp người hưởng bảo hiểm xã hội theo quy \"\nLuật BHXH 2024 (41/2024/QH15), article 92, clause 1: \"Trường hợp nộp hồ sơ quá thời hạn quy định tại khoản 1 và khoản 2 Điều 48, khoản 1 Điều 49, khoản 1 Điều 62, khoản 1 Điều 63, khoản 1 Điều 79, khoản 1 và khoản 2 Điều 91 của Luật này thì phải giải trình bằng văn bản và gửi cho cơ quan bảo hiểm xã hội khi nộp hồ sơ.\"\nLuật BHXH 2024 (41/2024/QH15), article 113, clause 1: \"Trường hợp nộp hồ sơ quá thời hạn quy định tại khoản 1 Điều 97, khoản 1 Điều 107, điểm a khoản 2 Điều 112 của Luật này thì phải giải trình bằng văn bản và gửi cho cơ quan bảo hiểm xã hội khi nộp hồ sơ.\"",
+    "application": "contributed_at_old_company(user).\nold_company_dissolved(user).\ndid_not_receive_toroi(user).\nreduction_reported(user).\nemployer_not_debt(user).\ncontinued_contributions(user).\nProlog đã đối chiếu các fact trên với quy tắc can_request_toroi(User, Answer, Trace). Tất cả các điều kiện của quy tắc được khớp, và quy tắc tham chiếu việc cơ quan BHXH giải quyết/hạn xử lý hồ sơ và yêu cầu giải trình khi nộp muộn theo các trích dẫn luật nêu trên.",
+    "conclusion": "Prolog trả về Answer = \"yes\". (Biến trả lời: Answer = \"yes\"; trace cho thấy các bước dựa trên các nguồn luật đã dẫn.)"
+  },
+  "elapsed_s": 54.979,
+  "prompt_tokens": 4402,
+  "completion_tokens": 5556,
+  "error": null,
+  "gold_answer": "Có. Nếu công ty cũ đã giải thể, đã báo giảm và không nợ BHXH, bạn vẫn có thể liên hệ cơ quan BHXH để đề nghị xác nhận/cấp lại tờ rời hoặc cập nhật dữ liệu quá trình đóng. Việc chưa lấy tờ rời trước đây không làm mất thời gian đã đóng hợp pháp, nhất là khi sau đó bạn tiếp tục đóng nối tiếp ở công ty khác trên cùng mã số BHXH. Nên mang CCCD và thông tin đơn vị cũ để cơ quan BHXH tra cứu nhanh hơn.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn cấp lại/xác nhận sổ BHXH của BHXH Việt Nam"
+}

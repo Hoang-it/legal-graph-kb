@@ -1,0 +1,43 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 58,
+  "question": "e là hộ kinh doanh mới , tham gia bhxh cho hkd thì phải làm như thế nào?",
+  "answer": "Issue:\nCâu hỏi đặt ra là hộ kinh doanh mới muốn tham gia bảo hiểm xã hội (BHXH) thì cần thực hiện các bước, thủ tục như thế nào theo quy định pháp luật hiện hành.\n\nRule:\n\"Đăng ký tham gia bảo hiểm xã hội là việc người sử dụng lao động, người lao động nộp hồ sơ kê khai thông tin về người lao động, người sử dụng lao động, tiền lương, thu nhập làm căn cứ đóng bảo hiểm xã hội, phương thức đóng và các nội dung khác có liên quan theo quy định của pháp luật để tham gia bảo hiểm xã hội cho cơ quan bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 3, Khoản 9)\n\"Đăng ký tham gia bảo hiểm xã hội bắt buộc cho người lao động theo quy định của Luật này; phối hợp với cơ quan bảo hiểm xã hội trong việc trả sổ bảo hiểm xã hội bản giấy cho người lao động.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 1)\n\"Người sử dụng lao động có trách nhiệm kê khai và nộp hồ sơ tham gia bảo hiểm xã hội bắt buộc của người lao động theo quy định tại khoản 1 và khoản 2 Điều 27 của Luật này cho cơ quan bảo hiểm xã hội trong thời hạn 30 ngày kể từ ngày người lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc, trừ trường hợp quy định tại khoản 2 Điều này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 28, Khoản 1)\n\"Được cơ quan bảo hiểm xã hội hướng dẫn trình tự, thủ tục thực hiện bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 12, Khoản 3)\n\nApplication:\nCác điều kiện và bước thực hiện được Prolog truy vấn và trả về như sau:\n- Hộ kinh doanh phải kê khai thông tin về người lao động, người sử dụng lao động, tiền lương, thu nhập, phương thức đóng và các nội dung liên quan để nộp hồ sơ đăng ký tham gia BHXH cho cơ quan BHXH.\n- Đăng ký tham gia BHXH bắt buộc cho người lao động.\n- Nộp hồ sơ tham gia BHXH trong thời hạn 30 ngày kể từ ngày người lao động thuộc đối tượng tham gia BHXH bắt buộc.\n- Có thể liên hệ cơ quan BHXH để được hướng dẫn trình tự, thủ tục thực hiện.\n\nConclusion:\nTheo kết quả Prolog, các điều kiện để hộ kinh doanh mới tham gia BHXH gồm: kê khai thông tin, đăng ký BHXH bắt buộc cho người lao động, nộp hồ sơ trong 30 ngày và có thể liên hệ cơ quan BHXH để được hướng dẫn thủ tục.",
+  "citations": [
+    "[Điều 3 khoản 9]",
+    "[Điều 13 khoản 1]",
+    "[Điều 27]",
+    "[Điều 28 khoản 1]",
+    "[Điều 12 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A3.K9",
+    "L41_2024.A13.K1",
+    "L41_2024.A27",
+    "L41_2024.A28.K1",
+    "L41_2024.A12.K3"
+  ],
+  "citation_indices": [
+    4,
+    2,
+    6,
+    7
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,register_bhxh_for_hkd([Hộ kinh doanh phải kê khai thông tin về người lao động, người sử dụng lao động, tiền lương, thu nhập, phương thức đóng và các nội dung liên quan để nộp hồ sơ đăng ký tham gia BHXH cho cơ quan BHXH,Đăng ký tham gia BHXH bắt buộc cho người lao động,Nộp hồ sơ tham gia BHXH trong thời hạn 30 ngày kể từ ngày người lao động thuộc đối tượng tham gia BHXH bắt buộc,Có thể liên hệ cơ quan BHXH để được hướng dẫn trình tự, thủ tục thực hiện]),based_on(source_c004)),step(conclusion,register_bhxh_for_hkd([Hộ kinh doanh phải kê khai thông tin về người lao động, người sử dụng lao động, tiền lương, thu nhập, phương thức đóng và các nội dung liên quan để nộp hồ sơ đăng ký tham gia BHXH cho cơ quan BHXH,Đăng ký tham gia BHXH bắt buộc cho người lao động,Nộp hồ sơ tham gia BHXH trong thời hạn 30 ngày kể từ ngày người lao động thuộc đối tượng tham gia BHXH bắt buộc,Có thể liên hệ cơ quan BHXH để được hướng dẫn trình tự, thủ tục thực hiện]),based_on(source_c002)),step(conclusion,register_bhxh_for_hkd([Hộ kinh doanh phải kê khai thông tin về người lao động, người sử dụng lao động, tiền lương, thu nhập, phương thức đóng và các nội dung liên quan để nộp hồ sơ đăng ký tham gia BHXH cho cơ quan BHXH,Đăng ký tham gia BHXH bắt buộc cho người lao động,Nộp hồ sơ tham gia BHXH trong thời hạn 30 ngày kể từ ngày người lao động thuộc đối tượng tham gia BHXH bắt buộc,Có thể liên hệ cơ quan BHXH để được hướng dẫn trình tự, thủ tục thực hiện]),based_on(source_c006)),step(conclusion,register_bhxh_for_hkd([Hộ kinh doanh phải kê khai thông tin về người lao động, người sử dụng lao động, tiền lương, thu nhập, phương thức đóng và các nội dung liên quan để nộp hồ sơ đăng ký tham gia BHXH cho cơ quan BHXH,Đăng ký tham gia BHXH bắt buộc cho người lao động,Nộp hồ sơ tham gia BHXH trong thời hạn 30 ngày kể từ ngày người lao động thuộc đối tượng tham gia BHXH bắt buộc,Có thể liên hệ cơ quan BHXH để được hướng dẫn trình tự, thủ tục thực hiện]),based_on(source_c007))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là hộ kinh doanh mới muốn tham gia bảo hiểm xã hội (BHXH) thì cần thực hiện các bước, thủ tục như thế nào theo quy định pháp luật hiện hành.",
+    "rule": "\"Đăng ký tham gia bảo hiểm xã hội là việc người sử dụng lao động, người lao động nộp hồ sơ kê khai thông tin về người lao động, người sử dụng lao động, tiền lương, thu nhập làm căn cứ đóng bảo hiểm xã hội, phương thức đóng và các nội dung khác có liên quan theo quy định của pháp luật để tham gia bảo hiểm xã hội cho cơ quan bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 3, Khoản 9)\n\"Đăng ký tham gia bảo hiểm xã hội bắt buộc cho người lao động theo quy định của Luật này; phối hợp với cơ quan bảo hiểm xã hội trong việc trả sổ bảo hiểm xã hội bản giấy cho người lao động.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 1)\n\"Người sử dụng lao động có trách nhiệm kê khai và nộp hồ sơ tham gia bảo hiểm xã hội bắt buộc của người lao động theo quy định tại khoản 1 và khoản 2 Điều 27 của Luật này cho cơ quan bảo hiểm xã hội trong thời hạn 30 ngày kể từ ngày người lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc, trừ trường hợp quy định tại khoản 2 Điều này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 28, Khoản 1)\n\"Được cơ quan bảo hiểm xã hội hướng dẫn trình tự, thủ tục thực hiện bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 12, Khoản 3)",
+    "application": "Các điều kiện và bước thực hiện được Prolog truy vấn và trả về như sau:\n- Hộ kinh doanh phải kê khai thông tin về người lao động, người sử dụng lao động, tiền lương, thu nhập, phương thức đóng và các nội dung liên quan để nộp hồ sơ đăng ký tham gia BHXH cho cơ quan BHXH.\n- Đăng ký tham gia BHXH bắt buộc cho người lao động.\n- Nộp hồ sơ tham gia BHXH trong thời hạn 30 ngày kể từ ngày người lao động thuộc đối tượng tham gia BHXH bắt buộc.\n- Có thể liên hệ cơ quan BHXH để được hướng dẫn trình tự, thủ tục thực hiện.",
+    "conclusion": "Theo kết quả Prolog, các điều kiện để hộ kinh doanh mới tham gia BHXH gồm: kê khai thông tin, đăng ký BHXH bắt buộc cho người lao động, nộp hồ sơ trong 30 ngày và có thể liên hệ cơ quan BHXH để được hướng dẫn thủ tục."
+  },
+  "elapsed_s": 13.767,
+  "prompt_tokens": 4828,
+  "completion_tokens": 1312,
+  "error": null,
+  "gold_answer": "Nếu bạn là chủ hộ kinh doanh thuộc diện phải tham gia BHXH bắt buộc thì cần liên hệ cơ quan BHXH hoặc tổ chức dịch vụ thu để đăng ký hồ sơ tham gia theo mã số BHXH, kê khai mức tiền lương làm căn cứ đóng và phương thức đóng. Nếu chưa thuộc diện bắt buộc thì có thể tham gia BHXH tự nguyện. Khi đi đăng ký nên mang CCCD, thông tin đăng ký hộ kinh doanh và giấy tờ liên quan đến mã số BHXH nếu đã có.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 25, Điều 31; Nghị định 158/2025/NĐ-CP"
+}

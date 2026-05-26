@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 51,
+  "question": "Mình đóng bảo hiểm được 5 năm, mỗi năm một mức lương cơ bản khác nhau, hiện tại 1 năm nay lương cơ bản đang là 6tr. cho mình hỏi rút BH 1 lần thì được bao nhiêu và tính mức lương cơ bản trung bình như thế nào?",
+  "answer": "Issue:\nMình đóng bảo hiểm 5 năm, hiện lương cơ bản 1 năm nay là 6000000; hỏi rút BH một lần được bao nhiêu và cách tính mức lương cơ bản trung bình?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15) 102 2: Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn cứ đóng bảo hiểm xã hội, cứ mỗi năm được tính như sau:\nLuật BHXH 2024 (41/2024/QH15) 72 1: Người lao động thuộc đối tượng thực hiện chế độ tiền lương do Nhà nước quy định có toàn bộ thời gian đóng bảo hiểm xã hội theo chế độ tiền lương này thì tính bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội của số năm đóng bảo hiểm xã hội trước khi nghỉ hưu như sau:\n\nApplication:\nyears_contributed(user) = 5 (theo verify_facts).\nbase_salary_current(user) = 6000000 (theo verify_facts).\nProlog đã dùng các giá trị này trong qui tắc one_time_withdrawal_amount để tạo một biểu thức kết quả: amount_formula(5,6000000,article_72,rate_not_specified_in_retrieved_chunks). Trace cho thấy kết luận dựa trên source_c102 và tham chiếu phương pháp bình quân theo source_c072.\n\nConclusion:\nAnswer = amount_formula(5,6000000,article_72,rate_not_specified_in_retrieved_chunks). Prolog trả một công thức (biểu diễn năm đóng và lương cơ bản hiện tại) nhưng \"rate_not_specified_in_retrieved_chunks\" chỉ ra rằng tỷ lệ/chi tiết tính cuối cùng không có trong các đoạn trích được truy xuất, nên hệ thống chưa cho số tiền cuối cùng.",
+  "citations": [
+    "[Điều 102 khoản 2]",
+    "[Điều 72 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A102.K2",
+    "L41_2024.A72.K1"
+  ],
+  "citation_indices": [
+    0,
+    7
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_withdrawal_amount(user,amount_formula(5,6000000,article_72,rate_not_specified_in_retrieved_chunks)),based_on(source_c102)),step(reference,average_base_salary_method(article_72),based_on(source_c072))]",
+  "irac_sections": {
+    "issue": "Mình đóng bảo hiểm 5 năm, hiện lương cơ bản 1 năm nay là 6000000; hỏi rút BH một lần được bao nhiêu và cách tính mức lương cơ bản trung bình?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15) 102 2: Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn cứ đóng bảo hiểm xã hội, cứ mỗi năm được tính như sau:\nLuật BHXH 2024 (41/2024/QH15) 72 1: Người lao động thuộc đối tượng thực hiện chế độ tiền lương do Nhà nước quy định có toàn bộ thời gian đóng bảo hiểm xã hội theo chế độ tiền lương này thì tính bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội của số năm đóng bảo hiểm xã hội trước khi nghỉ hưu như sau:",
+    "application": "years_contributed(user) = 5 (theo verify_facts).\nbase_salary_current(user) = 6000000 (theo verify_facts).\nProlog đã dùng các giá trị này trong qui tắc one_time_withdrawal_amount để tạo một biểu thức kết quả: amount_formula(5,6000000,article_72,rate_not_specified_in_retrieved_chunks). Trace cho thấy kết luận dựa trên source_c102 và tham chiếu phương pháp bình quân theo source_c072.",
+    "conclusion": "Answer = amount_formula(5,6000000,article_72,rate_not_specified_in_retrieved_chunks). Prolog trả một công thức (biểu diễn năm đóng và lương cơ bản hiện tại) nhưng \"rate_not_specified_in_retrieved_chunks\" chỉ ra rằng tỷ lệ/chi tiết tính cuối cùng không có trong các đoạn trích được truy xuất, nên hệ thống chưa cho số tiền cuối cùng."
+  },
+  "elapsed_s": 45.543,
+  "prompt_tokens": 3793,
+  "completion_tokens": 5880,
+  "error": null,
+  "gold_answer": "Không thể tính chính xác số tiền BHXH một lần chỉ dựa vào mức lương 1 năm gần nhất là 6 triệu, vì phải có toàn bộ tiền lương đóng của từng thời kỳ để tính mức bình quân. Nguyên tắc chung: mỗi năm đóng trước 2014 được tính 1,5 tháng mức bình quân; từ 2014 trở đi tính 2 tháng mức bình quân; tháng lẻ được quy đổi theo luật. Mức bình quân là tiền lương đóng BHXH sau điều chỉnh chia cho tổng số tháng đóng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 104, Điều 109"
+}

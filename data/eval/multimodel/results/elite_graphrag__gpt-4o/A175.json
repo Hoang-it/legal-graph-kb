@@ -1,0 +1,34 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 175,
+  "question": "Mình đóng bảo hiểm đc 6 năm, lương trung bình 20tr/ tháng ,giờ cần tiền muốn rút thì được tầm bao nhiêu?",
+  "answer": "Issue: Bạn đã đóng bảo hiểm xã hội được 6 năm với mức lương trung bình là 20 triệu đồng mỗi tháng và muốn biết số tiền có thể rút được là bao nhiêu.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 68, Khoản 2: \"Mức hưởng trợ cấp một lần cho mỗi năm đóng cao hơn quy định tại khoản 1 Điều này bằng 0,5 lần của mức bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội quy định tại Điều 72 của Luật này cho mỗi năm đóng cao hơn đến tuổi nghỉ hưu theo quy định của pháp luật.\"\n\nApplication: \n- Số năm đóng bảo hiểm: 6 năm.\n- Mức lương trung bình: 20,000,000 đồng/tháng.\n- Dựa trên quy tắc Prolog, mức trợ cấp một lần được tính bằng cách nhân số năm đóng bảo hiểm với 0,5 lần mức lương trung bình.\n\nConclusion: Số tiền trợ cấp một lần mà bạn có thể nhận được là 60,000,000 đồng.",
+  "citations": [
+    "[Điều 68 khoản 2]",
+    "[Điều 72]"
+  ],
+  "citation_ids": [
+    "L41_2024.A68.K2",
+    "L41_2024.A72"
+  ],
+  "citation_indices": [
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_allowance(user,60000000.0),based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Bạn đã đóng bảo hiểm xã hội được 6 năm với mức lương trung bình là 20 triệu đồng mỗi tháng và muốn biết số tiền có thể rút được là bao nhiêu.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 68, Khoản 2: \"Mức hưởng trợ cấp một lần cho mỗi năm đóng cao hơn quy định tại khoản 1 Điều này bằng 0,5 lần của mức bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội quy định tại Điều 72 của Luật này cho mỗi năm đóng cao hơn đến tuổi nghỉ hưu theo quy định của pháp luật.\"",
+    "application": "- Số năm đóng bảo hiểm: 6 năm.\n- Mức lương trung bình: 20,000,000 đồng/tháng.\n- Dựa trên quy tắc Prolog, mức trợ cấp một lần được tính bằng cách nhân số năm đóng bảo hiểm với 0,5 lần mức lương trung bình.",
+    "conclusion": "Số tiền trợ cấp một lần mà bạn có thể nhận được là 60,000,000 đồng."
+  },
+  "elapsed_s": 4.803,
+  "prompt_tokens": 3206,
+  "completion_tokens": 552,
+  "error": null,
+  "gold_answer": "Nếu 6 năm đóng BHXH của bạn đều từ 2014 trở đi, lương bình quân khoảng 20 triệu/tháng thì BHXH 1 lần ước khoảng khoảng 240,0 triệu. Số thực nhận có thể chênh do hệ số điều chỉnh tiền lương từng năm. Trước khi rút, bạn nên cân nhắc vì thời gian 6 năm đó có thể tiếp tục bảo lưu để hưởng hưu sau này.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

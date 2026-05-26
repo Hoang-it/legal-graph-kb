@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 135,
+  "question": "Người được hưởng trợ cấp hàng tháng mất sức lao động khi nghĩ việc được hưởng quyền loi gì?",
+  "answer": "Issue:\nNgười được hưởng trợ cấp hàng tháng mất sức lao động khi nghĩ việc được hưởng quyền loi gì?\n\nRule:\n\"Quy định về trợ cấp hàng tháng cho người mất khả năng lao động: người đủ điều kiện được hưởng trợ cấp hàng tháng và được chi trả liên tục cho đến khi hồi phục, chết hoặc được chuyển sang lương hưu.\" (law_bhxh_2024, none, none)\n\"Quy định về chuyển đổi từ trợ cấp hàng tháng sang lương hưu khi người đang hưởng trợ cấp đạt tuổi nghỉ hưu và đủ điều kiện về thời gian đóng BHXH.\" (law_bhxh_2024, none, none)\n\"Quy định về quyền lợi của thân nhân khi người đang hưởng trợ cấp hàng tháng mất (chế độ mai táng, trợ cấp tuất, quyền hưởng của thân nhân).\" (law_bhxh_2024, none, none)\n\nApplication:\nslot_bindings: Không có slot bindings.\nProlog trace dùng các nguồn pháp lý như sau: [step(monthly_allowance,Người mất khả năng lao động được hưởng trợ cấp hàng tháng theo luật,based_on(source_monthly_allowance)),step(conversion_to_pension,Có thể chuyển trợ cấp sang lương hưu khi đủ tuổi và thời gian đóng BHXH,based_on(source_conversion_pension)),step(survivor_benefits,Quyền lợi cho thân nhân khi người hưởng chết (mai táng, trợ cấp tuất),based_on(source_survivor_benefit))]. Prolog thực thi quy tắc rights_disability_monthly và nối các nguồn trên để sinh ra câu trả lời.\n\nConclusion:\nAnswer = [Người mất sức lao động được hưởng trợ cấp hàng tháng khi đủ điều kiện theo luật,Trợ cấp được chi trả liên tục cho đến khi phục hồi sức khỏe, người hưởng chết hoặc trợ cấp được chuyển sang lương hưu nếu đáp ứng điều kiện,Khi đạt tuổi và thời gian đóng BHXH theo quy định, người đang hưởng trợ cấp có thể được chuyển sang lương hưu,Trong trường hợp người hưởng chết, thân nhân có thể được hưởng chế độ mai táng và trợ cấp tuất]. Prolog trả về biến Answer đầy đủ.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(monthly_allowance,Người mất khả năng lao động được hưởng trợ cấp hàng tháng theo luật,based_on(source_monthly_allowance)),step(conversion_to_pension,Có thể chuyển trợ cấp sang lương hưu khi đủ tuổi và thời gian đóng BHXH,based_on(source_conversion_pension)),step(survivor_benefits,Quyền lợi cho thân nhân khi người hưởng chết (mai táng, trợ cấp tuất),based_on(source_survivor_benefit))]",
+  "irac_sections": {
+    "issue": "Người được hưởng trợ cấp hàng tháng mất sức lao động khi nghĩ việc được hưởng quyền loi gì?",
+    "rule": "\"Quy định về trợ cấp hàng tháng cho người mất khả năng lao động: người đủ điều kiện được hưởng trợ cấp hàng tháng và được chi trả liên tục cho đến khi hồi phục, chết hoặc được chuyển sang lương hưu.\" (law_bhxh_2024, none, none)\n\"Quy định về chuyển đổi từ trợ cấp hàng tháng sang lương hưu khi người đang hưởng trợ cấp đạt tuổi nghỉ hưu và đủ điều kiện về thời gian đóng BHXH.\" (law_bhxh_2024, none, none)\n\"Quy định về quyền lợi của thân nhân khi người đang hưởng trợ cấp hàng tháng mất (chế độ mai táng, trợ cấp tuất, quyền hưởng của thân nhân).\" (law_bhxh_2024, none, none)",
+    "application": "slot_bindings: Không có slot bindings.\nProlog trace dùng các nguồn pháp lý như sau: [step(monthly_allowance,Người mất khả năng lao động được hưởng trợ cấp hàng tháng theo luật,based_on(source_monthly_allowance)),step(conversion_to_pension,Có thể chuyển trợ cấp sang lương hưu khi đủ tuổi và thời gian đóng BHXH,based_on(source_conversion_pension)),step(survivor_benefits,Quyền lợi cho thân nhân khi người hưởng chết (mai táng, trợ cấp tuất),based_on(source_survivor_benefit))]. Prolog thực thi quy tắc rights_disability_monthly và nối các nguồn trên để sinh ra câu trả lời.",
+    "conclusion": "Answer = [Người mất sức lao động được hưởng trợ cấp hàng tháng khi đủ điều kiện theo luật,Trợ cấp được chi trả liên tục cho đến khi phục hồi sức khỏe, người hưởng chết hoặc trợ cấp được chuyển sang lương hưu nếu đáp ứng điều kiện,Khi đạt tuổi và thời gian đóng BHXH theo quy định, người đang hưởng trợ cấp có thể được chuyển sang lương hưu,Trong trường hợp người hưởng chết, thân nhân có thể được hưởng chế độ mai táng và trợ cấp tuất]. Prolog trả về biến Answer đầy đủ."
+  },
+  "elapsed_s": 40.375,
+  "prompt_tokens": 2529,
+  "completion_tokens": 4518,
+  "error": null,
+  "gold_answer": "Người đang hưởng trợ cấp mất sức lao động hằng tháng vẫn có các quyền lợi theo chế độ đang hưởng và có thể được điều chỉnh mức trợ cấp khi Nhà nước điều chỉnh chính sách. Khi qua đời thì thân nhân có thể được xem xét chế độ tử tuất theo điều kiện luật định. Cần xem rõ bạn thuộc diện trợ cấp mất sức lao động theo văn bản nào để xác định chính xác quyền lợi hiện còn.",
+  "gold_citations_raw": "Điều 141 Luật BHXH 2024; quy định chuyển tiếp về trợ cấp hằng tháng"
+}

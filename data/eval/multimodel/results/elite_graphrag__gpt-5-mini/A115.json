@@ -1,0 +1,37 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 115,
+  "question": "Mình đóng được bảo hiểm 8 tháng thì có rút được tiền trong bảo hiểu đc không?",
+  "answer": "Issue:\nMình đóng bảo hiểm 8 tháng thì có rút được tiền trong bảo hiểm được không?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15) Điều 5 khoản 6: \"Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\"\nLuật BHXH 2024 (41/2024/QH15) Điều 23 khoản 1: \"Công dân Việt Nam đủ tuổi nghỉ hưu có thời gian đóng bảo hiểm xã hội nhưng không đủ điều kiện hưởng lương hưu theo quy định của pháp luật và chưa đủ điều kiện hưởng trợ cấp hưu trí xã hội theo quy định tại Điều 21 của Luật này, nếu không hưởng bảo hiểm xã hội một lần và không bảo lưu mà có yêu cầu thì được hưởng trợ cấp hằng tháng từ chính khoản đóng của mình theo quy định tại khoản 2 Điều này.\"\n\nApplication:\nslot_bindings: không có slot nào được gán giá trị.\nProlog tiêu thụ các nguồn pháp luật source_c002 (Điều 5 khoản 6) và source_c006 (Điều 23 khoản 1), rồi sinh ra kết quả Answer và Trace. execution_result.Answer và Trace là đầu ra của truy vấn.\n\nConclusion:\nAnswer = \"[Theo Điều 5 khoản 6: tháng lẻ 01-06 tháng được tính là nửa năm, 07-11 tháng được tính là một năm (liên quan đến cách tính thời gian đóng bảo hiểm để xác định mức, điều kiện hưởng lương hưu).,Trong các đoạn trích được cung cấp không có quy định trực tiếp cho phép rút tiền bảo hiểm xã hội một lần sau khi đóng 8 tháng; vì vậy không thể khẳng định \\\"rút được\\\" chỉ từ các đoạn trích này và cần tra cứu quy định về hưởng BHXH một lần hoặc điều khoản cụ thể về rút BHXH một lần.]\"\nTrace = \"[step(finding,time_counting_article_5_clause_6,based_on(source_c002)),step(conclusion,no_direct_provision_for_one_time_withdrawal_found,based_on(source_c006))]\"",
+  "citations": [
+    "[Điều 5 khoản 6]",
+    "[Điều 23 khoản 1]",
+    "[Điều 21]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K6",
+    "L41_2024.A23.K1",
+    "L41_2024.A21"
+  ],
+  "citation_indices": [
+    2,
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(finding,time_counting_article_5_clause_6,based_on(source_c002)),step(conclusion,no_direct_provision_for_one_time_withdrawal_found,based_on(source_c006))]",
+  "irac_sections": {
+    "issue": "Mình đóng bảo hiểm 8 tháng thì có rút được tiền trong bảo hiểm được không?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15) Điều 5 khoản 6: \"Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\"\nLuật BHXH 2024 (41/2024/QH15) Điều 23 khoản 1: \"Công dân Việt Nam đủ tuổi nghỉ hưu có thời gian đóng bảo hiểm xã hội nhưng không đủ điều kiện hưởng lương hưu theo quy định của pháp luật và chưa đủ điều kiện hưởng trợ cấp hưu trí xã hội theo quy định tại Điều 21 của Luật này, nếu không hưởng bảo hiểm xã hội một lần và không bảo lưu mà có yêu cầu thì được hưởng trợ cấp hằng tháng từ chính khoản đóng của mình theo quy định tại khoản 2 Điều này.\"",
+    "application": "slot_bindings: không có slot nào được gán giá trị.\nProlog tiêu thụ các nguồn pháp luật source_c002 (Điều 5 khoản 6) và source_c006 (Điều 23 khoản 1), rồi sinh ra kết quả Answer và Trace. execution_result.Answer và Trace là đầu ra của truy vấn.",
+    "conclusion": "Answer = \"[Theo Điều 5 khoản 6: tháng lẻ 01-06 tháng được tính là nửa năm, 07-11 tháng được tính là một năm (liên quan đến cách tính thời gian đóng bảo hiểm để xác định mức, điều kiện hưởng lương hưu).,Trong các đoạn trích được cung cấp không có quy định trực tiếp cho phép rút tiền bảo hiểm xã hội một lần sau khi đóng 8 tháng; vì vậy không thể khẳng định \\\"rút được\\\" chỉ từ các đoạn trích này và cần tra cứu quy định về hưởng BHXH một lần hoặc điều khoản cụ thể về rút BHXH một lần.]\"\nTrace = \"[step(finding,time_counting_article_5_clause_6,based_on(source_c002)),step(conclusion,no_direct_provision_for_one_time_withdrawal_found,based_on(source_c006))]\""
+  },
+  "elapsed_s": 49.371,
+  "prompt_tokens": 3540,
+  "completion_tokens": 4463,
+  "error": null,
+  "gold_answer": "Đóng BHXH 8 tháng chưa đương nhiên được rút ngay. Bạn chỉ được hưởng BHXH 1 lần khi thuộc trường hợp luật cho phép, phổ biến là đã nghỉ việc và sau 12 tháng không còn thuộc diện tham gia BHXH bắt buộc, cũng không tham gia BHXH tự nguyện. Nếu chưa đủ điều kiện thì thời gian 8 tháng đó được bảo lưu để cộng nối về sau.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

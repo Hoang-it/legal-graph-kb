@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 181,
+  "question": "Không có sổ bảo hiểm chỉ có tờ rời thì có đi rút bảo hiểm được không?",
+  "answer": "Issue: Người dùng hỏi liệu có thể rút bảo hiểm xã hội khi không có sổ bảo hiểm mà chỉ có tờ rời hay không.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 28, Khoản 4: \"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\" Và Điều 25, Khoản 2: \"Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau. Chậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằng bản giấy được cấp khi người tham gia bảo hiểm xã hội yêu cầu.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên các điều luật được trích dẫn, Prolog đã xác định rằng việc rút bảo hiểm xã hội mà không có sổ bảo hiểm vẫn được phép.\n\nConclusion: Theo kết quả từ Prolog, việc rút bảo hiểm xã hội mà không có sổ bảo hiểm là \"yes\", nghĩa là có thể thực hiện được.",
+  "citations": [
+    "[Điều 28 khoản 4]",
+    "[Điều 25 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A28.K4",
+    "L41_2024.A25.K2"
+  ],
+  "citation_indices": [
+    2,
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,withdraw_insurance_without_booklet(yes),based_on(source_c002)),step(conclusion,withdraw_insurance_without_booklet(yes),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Người dùng hỏi liệu có thể rút bảo hiểm xã hội khi không có sổ bảo hiểm mà chỉ có tờ rời hay không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 28, Khoản 4: \"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\" Và Điều 25, Khoản 2: \"Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau. Chậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằng bản giấy được cấp khi người tham gia bảo hiểm xã hội yêu cầu.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên các điều luật được trích dẫn, Prolog đã xác định rằng việc rút bảo hiểm xã hội mà không có sổ bảo hiểm vẫn được phép.",
+    "conclusion": "Theo kết quả từ Prolog, việc rút bảo hiểm xã hội mà không có sổ bảo hiểm là \"yes\", nghĩa là có thể thực hiện được."
+  },
+  "elapsed_s": 5.493,
+  "prompt_tokens": 2859,
+  "completion_tokens": 626,
+  "error": null,
+  "gold_answer": "Không có sổ giấy mà chỉ có tờ rời thì vẫn không phải là trở ngại tuyệt đối. Cơ quan BHXH hiện dựa chủ yếu vào dữ liệu điện tử; nếu hồ sơ giấy thiếu bạn có thể làm thủ tục cấp lại sổ hoặc xác nhận quá trình đóng rồi nộp hồ sơ BHXH 1 lần. Quan trọng là bạn đủ điều kiện hưởng và thông tin định danh thống nhất.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

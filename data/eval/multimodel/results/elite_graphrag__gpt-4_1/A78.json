@@ -1,0 +1,37 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 78,
+  "question": "Giờ luật bảo hiểm nữ bao nhiêu tuổi thì về hưu?",
+  "answer": "Issue:\nCâu hỏi đặt ra là theo quy định hiện hành của Luật Bảo hiểm xã hội, nữ giới bao nhiêu tuổi thì đủ điều kiện về hưu.\n\nRule:\n\"Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 9)\n\"Người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên... thì được hưởng lương hưu khi nam đủ 60 tuổi, nữ đủ 55 tuổi.\" (Luật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 10)\n\nApplication:\nKhông có slot_id cụ thể nào được cung cấp vì câu hỏi chỉ yêu cầu xác định độ tuổi nghỉ hưu của nữ. Prolog đã sử dụng các quy định tại Điều 141, Khoản 9 và Khoản 10 của Luật BHXH 2024 để xác định tuổi nghỉ hưu cho nữ là 55 tuổi.\n\nConclusion:\nTheo kết quả truy vấn Prolog, tuổi nghỉ hưu của nữ là 55 (Age = 55).",
+  "citations": [
+    "[Điều 98]",
+    "[Điều 141 khoản 9]",
+    "[Điều 141 khoản 10]"
+  ],
+  "citation_ids": [
+    "L41_2024.A98",
+    "L41_2024.A141.K9",
+    "L41_2024.A141.K10"
+  ],
+  "citation_indices": [
+    0,
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,retirement_age_female(55),based_on(source_c051)),step(conclusion,retirement_age_female(55),based_on(source_c054))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là theo quy định hiện hành của Luật Bảo hiểm xã hội, nữ giới bao nhiêu tuổi thì đủ điều kiện về hưu.",
+    "rule": "\"Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 9)\n\"Người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên... thì được hưởng lương hưu khi nam đủ 60 tuổi, nữ đủ 55 tuổi.\" (Luật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 10)",
+    "application": "Không có slot_id cụ thể nào được cung cấp vì câu hỏi chỉ yêu cầu xác định độ tuổi nghỉ hưu của nữ. Prolog đã sử dụng các quy định tại Điều 141, Khoản 9 và Khoản 10 của Luật BHXH 2024 để xác định tuổi nghỉ hưu cho nữ là 55 tuổi.",
+    "conclusion": "Theo kết quả truy vấn Prolog, tuổi nghỉ hưu của nữ là 55 (Age = 55)."
+  },
+  "elapsed_s": 10.9,
+  "prompt_tokens": 3510,
+  "completion_tokens": 720,
+  "error": null,
+  "gold_answer": "Theo lộ trình tuổi nghỉ hưu hiện hành, lao động nữ nghỉ hưu ở tuổi 60 trong điều kiện bình thường. Từ năm 2021 đến năm 2035 tuổi nghỉ hưu của nữ tăng dần mỗi năm 4 tháng cho đến khi đủ 60 tuổi. Vì vậy hiện nay không phải cứ tất cả lao động nữ đều nghỉ đúng 60 ngay, mà phải đối chiếu năm sinh, năm nghỉ hưu và trường hợp làm việc bình thường hay nặng nhọc, đặc biệt nặng nhọc.",
+  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 169; Nghị định 135/2020/NĐ-CP"
+}

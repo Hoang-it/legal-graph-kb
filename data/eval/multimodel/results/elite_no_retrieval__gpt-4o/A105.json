@@ -1,0 +1,27 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 105,
+  "question": "Chốt sổ em lãnh Bh thât nghiệp đến tháng 3/2025 nhưng giờ trên hệ thống chỉ đến tháng 2/2025, em không lãnh được tiền bhxh vì bị chênh lệch 1 tháng công ty không xử lý cho em. giờ em phải làm như nào để lãnh bảo hiểm được?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpmfx4zc9_.pl:1:304: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 46 khoản 1]",
+    "[Điều 47 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A46.K1",
+    "L41_2024.A47.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 16.174,
+  "prompt_tokens": 4165,
+  "completion_tokens": 742,
+  "error": null,
+  "gold_answer": "Bạn cần yêu cầu công ty và cơ quan BHXH điều chỉnh lại quá trình đóng cho đúng đến tháng 3/2025. Khi dữ liệu trên hệ thống còn thiếu 1 tháng thì hồ sơ hưởng BHXH 1 lần dễ bị treo hoặc từ chối. Nếu công ty không phối hợp, bạn có thể gửi đơn khiếu nại tới cơ quan BHXH quản lý đơn vị hoặc Thanh tra Sở Nội vụ/Lao động để yêu cầu xác minh, truy đóng hoặc điều chỉnh dữ liệu.",
+  "gold_citations_raw": "Điều 27, 33 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Luật Khiếu nại 2011"
+}

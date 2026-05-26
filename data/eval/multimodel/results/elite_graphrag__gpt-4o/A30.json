@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 30,
+  "question": "Người lao động sinh con tháng 01/2026, đã nghỉ việc hưởng chế độ thai sản từ thời điểm sinh con.\nKhi thực hiện thủ tục báo giảm lao động, cơ quan BHXH yêu cầu đơn vị phải điều chỉnh nơi đăng ký khám bệnh, chữa bệnh ban đầu của người lao động.\nTuy nhiên, thời điểm hiện tại đã quá hạn đầu quý I/2026 nên đơn vị chưa thể thực hiện thủ tục điều chỉnh khám bệnh, chữa bệnh, dự kiến đến đầu quý II/2026 mới thực hiện được.\nBà Thị Oanh (TPHCM) hỏi, vậy trong thời gian chờ để điều chỉnh nơi khám bệnh, chữa bệnh và báo giảm người lao động hưởng thai sản từ tháng 01/2026, đơn vị có phải tiếp tục đóng BHXH cho người lao động này không?\nViệc báo giảm và nộp hồ sơ thai sản muộn so với thời điểm phát sinh có ảnh hưởng đến quyền lợi của người lao động và trách nhiệm của đơn vị không?",
+  "answer": "Issue: Bà Thị Oanh hỏi về việc đơn vị có phải tiếp tục đóng bảo hiểm xã hội (BHXH) cho người lao động đã nghỉ việc hưởng chế độ thai sản từ tháng 01/2026 hay không, và việc báo giảm và nộp hồ sơ thai sản muộn có ảnh hưởng đến quyền lợi của người lao động và trách nhiệm của đơn vị không.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 53, Khoản 8: \"Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ thai sản được tính là thời gian đóng bảo hiểm xã hội bắt buộc, người lao động và người sử dụng lao động không phải đóng bảo hiểm xã hội.\"\n\nApplication: Không có thông tin cụ thể về các giá trị đầu vào cần thiết cho việc tính toán, nhưng dựa trên quy định tại Điều 53, Khoản 8 của Luật BHXH 2024, thời gian nghỉ việc hưởng chế độ thai sản được tính là thời gian đóng BHXH bắt buộc mà không cần người lao động và người sử dụng lao động phải đóng BHXH.\n\nConclusion: Theo kết quả từ chương trình Prolog, nghĩa vụ đóng BHXH trong thời gian nghỉ thai sản là \"no_obligation\", tức là không có nghĩa vụ đóng BHXH cho người lao động trong thời gian này.",
+  "citations": [
+    "[Điều 53 khoản 8]"
+  ],
+  "citation_ids": [
+    "L41_2024.A53.K8"
+  ],
+  "citation_indices": [
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,maternity_leave_insurance_obligation(no_obligation),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Bà Thị Oanh hỏi về việc đơn vị có phải tiếp tục đóng bảo hiểm xã hội (BHXH) cho người lao động đã nghỉ việc hưởng chế độ thai sản từ tháng 01/2026 hay không, và việc báo giảm và nộp hồ sơ thai sản muộn có ảnh hưởng đến quyền lợi của người lao động và trách nhiệm của đơn vị không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 53, Khoản 8: \"Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ thai sản được tính là thời gian đóng bảo hiểm xã hội bắt buộc, người lao động và người sử dụng lao động không phải đóng bảo hiểm xã hội.\"",
+    "application": "Không có thông tin cụ thể về các giá trị đầu vào cần thiết cho việc tính toán, nhưng dựa trên quy định tại Điều 53, Khoản 8 của Luật BHXH 2024, thời gian nghỉ việc hưởng chế độ thai sản được tính là thời gian đóng BHXH bắt buộc mà không cần người lao động và người sử dụng lao động phải đóng BHXH.",
+    "conclusion": "Theo kết quả từ chương trình Prolog, nghĩa vụ đóng BHXH trong thời gian nghỉ thai sản là \"no_obligation\", tức là không có nghĩa vụ đóng BHXH cho người lao động trong thời gian này."
+  },
+  "elapsed_s": 8.328,
+  "prompt_tokens": 3746,
+  "completion_tokens": 565,
+  "error": null,
+  "gold_answer": "Khoản 1 Điều 13 Luật BHXH 2024 quy định trách nhiệm của người sử dụng lao động: \"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội\".\nĐối chiếu với quy định trên, đơn vị có trách nhiệm nộp hồ sơ báo giảm lao động nghỉ thai sản ngay khi người lao động nghỉ việc hưởng chế độ, việc thay đổi nơi đăng ký khám bệnh, chữa bệnh ban đầu không ảnh hưởng đến việc báo giảm.\nTuy nhiên, trường hợp người lao động đăng ký khám bệnh, chữa bệnh ban đầu tại cơ sở khám bệnh, chữa bệnh ban đầu đã ngừng ký hợp đồng khám, chữa bệnh BHYT thì được nộp ngay hồ sơ 613 để chuyển đổi nơi khám bệnh, chữa bệnh khác (không chờ đến 15 ngày của tháng đầu quý).\nTrường hợp khi nộp hồ sơ đề nghị giải quyết hưởng chế độ thai sản cho người lao động chậm so với thời hạn quy định, đề nghị đơn vị giải trình bằng văn bản lý do chậm nộp khi kê khai hồ sơ đề nghị giải quyết chế độ cho cơ quan BHXH, người lao động vẫn được giải quyết chế độ thai sản theo quy định.",
+  "gold_citations_raw": "Khoản 1 Điều 13 Luật BHXH 2024"
+}

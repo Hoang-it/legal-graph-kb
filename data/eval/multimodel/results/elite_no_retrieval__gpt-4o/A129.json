@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 129,
+  "question": "mọi người cho em hỏi em sinh 25/02, cả 2 vợ chồng đều tham gia bhxh\nem muốn làm chế độ ck nghỉ chăn con vài ngày thì làm như thế nào? và mình chọn ngày nào thì hợp lý?\ndo kê toán bên e nghỉ nên hiện tại k ai làm giúo e nên e muốn tự đi nộp",
+  "answer": "Issue: Bạn muốn biết về chế độ nghỉ chăm sóc con cho chồng khi cả hai vợ chồng đều tham gia bảo hiểm xã hội, và cách chọn ngày nghỉ hợp lý.\n\nRule: \"Chế độ nghỉ chăm sóc con ốm đau cho phép người lao động nghỉ tối đa 20 ngày trong một năm nếu con dưới 3 tuổi.\" (Luật BHXH 2024, Điều 34, Khoản 1)\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo luật, người lao động có thể nghỉ tối đa 20 ngày trong một năm để chăm sóc con dưới 3 tuổi.\n\nConclusion: Theo kết quả từ hệ thống, số ngày nghỉ chăm sóc con tối đa là 20 ngày.",
+  "citations": [
+    "[Điều 34 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A34.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,sick_leave_for_child_care(20),based_on(source_a34_k1))]",
+  "irac_sections": {
+    "issue": "Bạn muốn biết về chế độ nghỉ chăm sóc con cho chồng khi cả hai vợ chồng đều tham gia bảo hiểm xã hội, và cách chọn ngày nghỉ hợp lý.",
+    "rule": "\"Chế độ nghỉ chăm sóc con ốm đau cho phép người lao động nghỉ tối đa 20 ngày trong một năm nếu con dưới 3 tuổi.\" (Luật BHXH 2024, Điều 34, Khoản 1)",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo luật, người lao động có thể nghỉ tối đa 20 ngày trong một năm để chăm sóc con dưới 3 tuổi.",
+    "conclusion": "Theo kết quả từ hệ thống, số ngày nghỉ chăm sóc con tối đa là 20 ngày."
+  },
+  "elapsed_s": 4.003,
+  "prompt_tokens": 2093,
+  "completion_tokens": 338,
+  "error": null,
+  "gold_answer": "Lao động nam đang đóng BHXH khi vợ sinh con được nghỉ hưởng chế độ thai sản theo số ngày luật định. Hồ sơ thường là bản sao giấy khai sinh/trích lục khai sinh hoặc giấy chứng sinh của con; nếu sinh mổ hoặc con dưới 32 tuần thì bổ sung giấy tờ y tế thể hiện tình trạng đó. Bạn nên chọn nghỉ gần thời điểm sinh để thuận tiện chăm con và chứng minh thực tế phát sinh.",
+  "gold_citations_raw": "Điều 50, 53, 61 Luật BHXH 2024"
+}

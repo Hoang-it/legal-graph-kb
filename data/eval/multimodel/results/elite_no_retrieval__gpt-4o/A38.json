@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 38,
+  "question": "Em mới học xong, lúc mới vào cty, khi đang đào tạo người ta hỏi em có BHXH thì em bảo không có, người ta bảo là có thế là thế màp? Bây giờ em muốn xem mình đóng bảo hiểm được bao nhiêu mà không biết số bảo hiểm thì phải làm sao ?",
+  "answer": "Issue: Bạn muốn biết cách kiểm tra thông tin về quá trình đóng bảo hiểm xã hội của mình khi không biết số bảo hiểm.\n\nRule: \"Người lao động có quyền yêu cầu cơ quan bảo hiểm xã hội cung cấp thông tin về quá trình đóng bảo hiểm xã hội của mình.\" (Luật BHXH 2024, Điều 23, Khoản 1)\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong các slot_bindings. Tuy nhiên, theo quy định, bạn có quyền yêu cầu cơ quan bảo hiểm xã hội cung cấp thông tin về quá trình đóng bảo hiểm xã hội của mình.\n\nConclusion: Bạn có thể yêu cầu cơ quan bảo hiểm xã hội cung cấp thông tin về quá trình đóng bảo hiểm xã hội của mình.",
+  "citations": [
+    "[Điều 23 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A23.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,how_to_check_contributions(Bạn có thể yêu cầu cơ quan bảo hiểm xã hội cung cấp thông tin về quá trình đóng bảo hiểm xã hội của mình.),based_on(source_a23_k1))]",
+  "irac_sections": {
+    "issue": "Bạn muốn biết cách kiểm tra thông tin về quá trình đóng bảo hiểm xã hội của mình khi không biết số bảo hiểm.",
+    "rule": "\"Người lao động có quyền yêu cầu cơ quan bảo hiểm xã hội cung cấp thông tin về quá trình đóng bảo hiểm xã hội của mình.\" (Luật BHXH 2024, Điều 23, Khoản 1)",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong các slot_bindings. Tuy nhiên, theo quy định, bạn có quyền yêu cầu cơ quan bảo hiểm xã hội cung cấp thông tin về quá trình đóng bảo hiểm xã hội của mình.",
+    "conclusion": "Bạn có thể yêu cầu cơ quan bảo hiểm xã hội cung cấp thông tin về quá trình đóng bảo hiểm xã hội của mình."
+  },
+  "elapsed_s": 6.251,
+  "prompt_tokens": 3325,
+  "completion_tokens": 402,
+  "error": null,
+  "gold_answer": "Bạn có thể tra cứu mã số BHXH bằng CCCD/họ tên/ngày sinh trên Cổng BHXH Việt Nam hoặc ứng dụng VssID. Nếu không tự tra được, mang CCCD đến cơ quan BHXH gần nhất để được hỗ trợ tra cứu, đồng bộ dữ liệu và cấp lại thông tin tài khoản. Khi đã có mã số BHXH, bạn sẽ xem được toàn bộ quá trình tham gia BHXH, BHTN, BHYT trên VssID hoặc cổng tra cứu điện tử.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn tra cứu VssID/BHXH Việt Nam"
+}

@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 161,
+  "question": "e muốn rut tiền sổ bh thì cần những gì? điều kiện gì?",
+  "answer": "Issue: Bạn muốn biết điều kiện cần thiết để rút tiền từ sổ bảo hiểm xã hội.\n\nRule: Điều kiện để rút tiền bảo hiểm xã hội một lần bao gồm: đủ tuổi nghỉ hưu nhưng chưa đủ thời gian đóng BHXH, hoặc sau một năm nghỉ việc không tiếp tục đóng BHXH. (Luật BHXH 2024, Điều 60, Khoản 1)\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong câu hỏi của bạn để áp dụng vào quy tắc này. Tuy nhiên, hệ thống đã xác định các điều kiện chung để rút tiền bảo hiểm xã hội một lần.\n\nConclusion: Các điều kiện để rút tiền bảo hiểm xã hội một lần là: \"Đủ tuổi nghỉ hưu nhưng chưa đủ thời gian đóng BHXH\" và \"Sau một năm nghỉ việc không tiếp tục đóng BHXH\".",
+  "citations": [
+    "[Điều 60 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,withdrawal_conditions([Đủ tuổi nghỉ hưu nhưng chưa đủ thời gian đóng BHXH,Sau một năm nghỉ việc không tiếp tục đóng BHXH]),based_on(source_a60))]",
+  "irac_sections": {
+    "issue": "Bạn muốn biết điều kiện cần thiết để rút tiền từ sổ bảo hiểm xã hội.",
+    "rule": "Điều kiện để rút tiền bảo hiểm xã hội một lần bao gồm: đủ tuổi nghỉ hưu nhưng chưa đủ thời gian đóng BHXH, hoặc sau một năm nghỉ việc không tiếp tục đóng BHXH. (Luật BHXH 2024, Điều 60, Khoản 1)",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong câu hỏi của bạn để áp dụng vào quy tắc này. Tuy nhiên, hệ thống đã xác định các điều kiện chung để rút tiền bảo hiểm xã hội một lần.",
+    "conclusion": "Các điều kiện để rút tiền bảo hiểm xã hội một lần là: \"Đủ tuổi nghỉ hưu nhưng chưa đủ thời gian đóng BHXH\" và \"Sau một năm nghỉ việc không tiếp tục đóng BHXH\"."
+  },
+  "elapsed_s": 5.566,
+  "prompt_tokens": 2004,
+  "completion_tokens": 388,
+  "error": null,
+  "gold_answer": "Muốn rút BHXH 1 lần, bạn phải thuộc một trong các trường hợp luật cho phép, phổ biến nhất là sau 12 tháng không còn thuộc diện tham gia BHXH bắt buộc và không tham gia BHXH tự nguyện. Hồ sơ thường gồm đơn đề nghị, CCCD, thông tin tài khoản; một số trường hợp đặc biệt cần thêm giấy tờ định cư nước ngoài hoặc hồ sơ bệnh nặng. Nộp tại BHXH nơi cư trú.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

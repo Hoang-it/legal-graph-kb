@@ -1,0 +1,34 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 131,
+  "question": "Em bị mất sổ BHXH, chỉ còn thông tin, thời gian đóng tích hợp trên VNEID thì có rút BH 1 lần được không?",
+  "answer": "Issue: Bạn hỏi liệu có thể rút bảo hiểm xã hội (BHXH) một lần khi bị mất sổ BHXH nhưng vẫn còn thông tin và thời gian đóng tích hợp trên VNEID hay không.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 70, Khoản 1: \"Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm xã hội mà có đề nghị thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây:\"\n\nApplication: Trong trường hợp này, các điều kiện cần thiết để được hưởng BHXH một lần là đã chấm dứt tham gia bảo hiểm xã hội và có đề nghị hưởng. Các điều kiện này được xác định trong truy vấn Prolog là `[terminated_social_insurance_participation, request_made]`.\n\nConclusion: Hệ thống xác định rằng bạn có thể rút BHXH một lần nếu bạn đã chấm dứt tham gia bảo hiểm xã hội và đã có đề nghị hưởng. Các điều kiện này được liệt kê là `[terminated_social_insurance_participation, request_made]`.",
+  "citations": [
+    "[Điều 70 khoản 1]",
+    "[Điều 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A70.K1",
+    "L41_2024.A2"
+  ],
+  "citation_indices": [
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_social_insurance_conditions([terminated_social_insurance_participation,request_made]),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi liệu có thể rút bảo hiểm xã hội (BHXH) một lần khi bị mất sổ BHXH nhưng vẫn còn thông tin và thời gian đóng tích hợp trên VNEID hay không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 70, Khoản 1: \"Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm xã hội mà có đề nghị thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây:\"",
+    "application": "Trong trường hợp này, các điều kiện cần thiết để được hưởng BHXH một lần là đã chấm dứt tham gia bảo hiểm xã hội và có đề nghị hưởng. Các điều kiện này được xác định trong truy vấn Prolog là `[terminated_social_insurance_participation, request_made]`.",
+    "conclusion": "Hệ thống xác định rằng bạn có thể rút BHXH một lần nếu bạn đã chấm dứt tham gia bảo hiểm xã hội và đã có đề nghị hưởng. Các điều kiện này được liệt kê là `[terminated_social_insurance_participation, request_made]`."
+  },
+  "elapsed_s": 5.009,
+  "prompt_tokens": 2976,
+  "completion_tokens": 462,
+  "error": null,
+  "gold_answer": "Nếu bạn bị mất sổ BHXH nhưng dữ liệu quá trình đóng đã tích hợp trên VNeID thì vẫn có thể làm hồ sơ hưởng BHXH 1 lần. Cơ quan BHXH hiện đối chiếu dữ liệu điện tử là chính; khi cần, bạn làm thêm thủ tục cấp lại sổ hoặc xác nhận quá trình đóng. Quan trọng là bạn phải đủ điều kiện hưởng BHXH 1 lần theo luật và hồ sơ định danh phải trùng khớp.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

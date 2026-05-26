@@ -1,0 +1,38 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 75,
+  "question": "Tổng thời gian e đóng bh là 17 tháng trong đó bao gồm tổng 3 công ty . vậy tính thất nghiệp thế nào? chỉ lấy đúng 6th cuối gần nhất là cty e làm của năm 2025 vừa rồi để tính hay sao?",
+  "answer": "Issue:\nTổng thời gian đóng BHXH là 17 tháng gồm 3 công ty; hỏi cách tính trợ cấp thất nghiệp, có chỉ lấy 6 tháng cuối gần nhất (công ty 2025) để tính hay không.\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), article 5, clause 6: \"Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\"\nLuật BHXH 2024 (41/2024/QH15), article 33, clause 7: \"Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất. Th\"\nLuật BHXH 2024 (41/2024/QH15), article 53, clause 8: \"Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ thai sản được tính là thời gian đóng bảo hiểm xã hội bắt buộc, người lao động và người sử dụng lao động không phải đóng bảo hiểm xã hội.\nĐối với các trường hợp khác mà có thời gian nghỉ việc hưởng chế\"\n\nApplication:\nKhông có slot_bindings được gán. Chương trình nhận các fact xác minh: months_contributed(user, 17). và number_companies(user, 3). Prolog dùng các trích dẫn Luật BHXH nêu trên để kiểm tra, nhưng các đoạn trích này liên quan lương hưu, trợ cấp tử tuất và thai sản, không nêu quy định chi tiết về điều kiện/khung thời gian tính trợ cấp thất nghiệp; nên quy luật Prolog trả về kết luận rằng không đủ cơ sở pháp lý để tính trợ cấp thất nghiệp.\n\nConclusion:\nAnswer = insufficient_legal_basis(Không đủ cơ sở pháp lý trong các đoạn trích cung cấp để xác định chi tiết cách tính trợ cấp thất nghiệp (ví dụ: điều kiện thời gian đóng tối thiểu, khoảng thời gian xét để tính hưởng, hay cách tính mức hưởng). Cần trích dẫn quy định cụ thể về bảo hiểm thất nghiệp để trả lời chính xác (thường quy định trong Luật Việc làm hoặc Luật Bảo hiểm xã hội về BH thất nghiệp).)\nKết luận: Prolog trả về thông báo thiếu cơ sở pháp lý; chương trình không tính được mức trợ cấp thất nghiệp vì thiếu quy định về bảo hiểm thất nghiệp trong các trích dẫn.",
+  "citations": [
+    "[Điều 5 khoản 6]",
+    "[Điều 33 khoản 7]",
+    "[Điều 53 khoản 8]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K6",
+    "L41_2024.A33.K7",
+    "L41_2024.A53.K8"
+  ],
+  "citation_indices": [
+    2,
+    3,
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,unemployment_calc_explanation(insufficient_legal_basis(Không đủ cơ sở pháp lý trong các đoạn trích cung cấp để xác định chi tiết cách tính trợ cấp thất nghiệp (ví dụ: điều kiện thời gian đóng tối thiểu, khoảng thời gian xét để tính hưởng, hay cách tính mức hưởng). Cần trích dẫn quy định cụ thể về bảo hiểm thất nghiệp để trả lời chính xác (thường quy định trong Luật Việc làm hoặc Luật Bảo hiểm xã hội về BH thất nghiệp).)),based_on(source_c002)),step(note,months_rounding_relevant_for_other_benefits,based_on(source_c002)),step(note,topup_6_months_rule_for_pension_context,based_on(source_c003)),step(note,maternity_counted_as_contribution,based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Tổng thời gian đóng BHXH là 17 tháng gồm 3 công ty; hỏi cách tính trợ cấp thất nghiệp, có chỉ lấy 6 tháng cuối gần nhất (công ty 2025) để tính hay không.",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), article 5, clause 6: \"Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\"\nLuật BHXH 2024 (41/2024/QH15), article 33, clause 7: \"Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất. Th\"\nLuật BHXH 2024 (41/2024/QH15), article 53, clause 8: \"Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ thai sản được tính là thời gian đóng bảo hiểm xã hội bắt buộc, người lao động và người sử dụng lao động không phải đóng bảo hiểm xã hội.\nĐối với các trường hợp khác mà có thời gian nghỉ việc hưởng chế\"",
+    "application": "Không có slot_bindings được gán. Chương trình nhận các fact xác minh: months_contributed(user, 17). và number_companies(user, 3). Prolog dùng các trích dẫn Luật BHXH nêu trên để kiểm tra, nhưng các đoạn trích này liên quan lương hưu, trợ cấp tử tuất và thai sản, không nêu quy định chi tiết về điều kiện/khung thời gian tính trợ cấp thất nghiệp; nên quy luật Prolog trả về kết luận rằng không đủ cơ sở pháp lý để tính trợ cấp thất nghiệp.",
+    "conclusion": "Answer = insufficient_legal_basis(Không đủ cơ sở pháp lý trong các đoạn trích cung cấp để xác định chi tiết cách tính trợ cấp thất nghiệp (ví dụ: điều kiện thời gian đóng tối thiểu, khoảng thời gian xét để tính hưởng, hay cách tính mức hưởng). Cần trích dẫn quy định cụ thể về bảo hiểm thất nghiệp để trả lời chính xác (thường quy định trong Luật Việc làm hoặc Luật Bảo hiểm xã hội về BH thất nghiệp).)\nKết luận: Prolog trả về thông báo thiếu cơ sở pháp lý; chương trình không tính được mức trợ cấp thất nghiệp vì thiếu quy định về bảo hiểm thất nghiệp trong các trích dẫn."
+  },
+  "elapsed_s": 62.556,
+  "prompt_tokens": 6590,
+  "completion_tokens": 5583,
+  "error": null,
+  "gold_answer": "Thời gian đóng BHTN của 3 công ty được cộng dồn để xác định bạn được hưởng mấy tháng trợ cấp. Còn mức tiền trợ cấp thất nghiệp hằng tháng lại được tính theo 60% mức bình quân tiền lương tháng đóng BHTN của 6 tháng liền kề trước khi thất nghiệp, tức là chủ yếu nhìn 6 tháng cuối cùng trước khi nghỉ. Vì vậy số tháng hưởng và mức hưởng là hai cách tính khác nhau.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 50"
+}

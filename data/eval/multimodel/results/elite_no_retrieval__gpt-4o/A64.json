@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 64,
+  "question": "Mình ở phường xuân hòa tỉnh phú thọ. Mình đang đóng bảo hiểm tự nguyện, giờ mình  muốn chốt sổ thì làm thế nào?",
+  "answer": "Issue: Bạn đang đóng bảo hiểm xã hội tự nguyện và muốn biết cách chốt sổ bảo hiểm khi ngừng đóng bảo hiểm.\n\nRule: \"Người tham gia bảo hiểm xã hội tự nguyện có quyền yêu cầu chốt sổ bảo hiểm khi ngừng đóng bảo hiểm.\" (Luật Bảo hiểm xã hội 2024, Điều 96, Khoản 1)\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo quy định, người tham gia bảo hiểm xã hội tự nguyện có quyền yêu cầu chốt sổ bảo hiểm khi họ ngừng đóng bảo hiểm.\n\nConclusion: Theo kết quả từ Prolog, điều kiện để chốt sổ bảo hiểm là \"Người tham gia bảo hiểm xã hội tự nguyện có quyền yêu cầu chốt sổ bảo hiểm khi ngừng đóng bảo hiểm.\" Điều này có nghĩa là bạn có thể yêu cầu chốt sổ bảo hiểm khi bạn ngừng đóng bảo hiểm xã hội tự nguyện.",
+  "citations": [
+    "[Điều 96 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A96.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,chot_so_bao_hiem_conditions(Người tham gia bảo hiểm xã hội tự nguyện có quyền yêu cầu chốt sổ bảo hiểm khi ngừng đóng bảo hiểm.),based_on(source_a96_k1))]",
+  "irac_sections": {
+    "issue": "Bạn đang đóng bảo hiểm xã hội tự nguyện và muốn biết cách chốt sổ bảo hiểm khi ngừng đóng bảo hiểm.",
+    "rule": "\"Người tham gia bảo hiểm xã hội tự nguyện có quyền yêu cầu chốt sổ bảo hiểm khi ngừng đóng bảo hiểm.\" (Luật Bảo hiểm xã hội 2024, Điều 96, Khoản 1)",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo quy định, người tham gia bảo hiểm xã hội tự nguyện có quyền yêu cầu chốt sổ bảo hiểm khi họ ngừng đóng bảo hiểm.",
+    "conclusion": "Theo kết quả từ Prolog, điều kiện để chốt sổ bảo hiểm là \"Người tham gia bảo hiểm xã hội tự nguyện có quyền yêu cầu chốt sổ bảo hiểm khi ngừng đóng bảo hiểm.\" Điều này có nghĩa là bạn có thể yêu cầu chốt sổ bảo hiểm khi bạn ngừng đóng bảo hiểm xã hội tự nguyện."
+  },
+  "elapsed_s": 6.618,
+  "prompt_tokens": 3227,
+  "completion_tokens": 464,
+  "error": null,
+  "gold_answer": "BHXH tự nguyện không phải 'chốt sổ' theo nghĩa như BHXH bắt buộc. Nếu bạn muốn dừng đóng, bạn chỉ cần ngừng tham gia; thời gian đã đóng sẽ được bảo lưu để sau này đóng tiếp hoặc giải quyết chế độ khi đủ điều kiện. Nếu muốn xác nhận lại quá trình tham gia, cập nhật thông tin hoặc chuyển sang diện khác thì liên hệ cơ quan BHXH nơi cư trú/cơ quan BHXH khu vực để được hướng dẫn trên cùng một mã số BHXH.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 36, Điều 102"
+}

@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 122,
+  "question": "E nghỉ từ tháng 6 năm ngoái thì bây giờ có đi làm bảo hiểm thất nghiệp đc không?",
+  "answer": "Issue: Người lao động hỏi liệu có thể làm bảo hiểm thất nghiệp nếu đã nghỉ việc từ tháng 6 năm ngoái hay không.\n\nRule: Điều kiện hưởng bảo hiểm thất nghiệp bao gồm việc người lao động đã nghỉ việc và chưa tìm được việc làm mới trong vòng 3 tháng kể từ ngày nghỉ việc. (Luật Bảo hiểm xã hội 2024, Điều 49, Khoản 1)\n\nApplication: Không có thông tin cụ thể về các giá trị đầu vào như ngày nghỉ việc chính xác hoặc thời điểm hiện tại. Tuy nhiên, dựa trên quy định, nếu đã nghỉ việc từ tháng 6 năm ngoái, thì đã quá thời hạn 3 tháng để đăng ký bảo hiểm thất nghiệp.\n\nConclusion: Không đủ điều kiện hưởng bảo hiểm thất nghiệp nếu đã nghỉ việc từ tháng 6 năm ngoái.",
+  "citations": [
+    "[Điều 49 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A49.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_eligibility(Không đủ điều kiện hưởng bảo hiểm thất nghiệp nếu đã nghỉ việc từ tháng 6 năm ngoái.),based_on(source_a49_k1))]",
+  "irac_sections": {
+    "issue": "Người lao động hỏi liệu có thể làm bảo hiểm thất nghiệp nếu đã nghỉ việc từ tháng 6 năm ngoái hay không.",
+    "rule": "Điều kiện hưởng bảo hiểm thất nghiệp bao gồm việc người lao động đã nghỉ việc và chưa tìm được việc làm mới trong vòng 3 tháng kể từ ngày nghỉ việc. (Luật Bảo hiểm xã hội 2024, Điều 49, Khoản 1)",
+    "application": "Không có thông tin cụ thể về các giá trị đầu vào như ngày nghỉ việc chính xác hoặc thời điểm hiện tại. Tuy nhiên, dựa trên quy định, nếu đã nghỉ việc từ tháng 6 năm ngoái, thì đã quá thời hạn 3 tháng để đăng ký bảo hiểm thất nghiệp.",
+    "conclusion": "Không đủ điều kiện hưởng bảo hiểm thất nghiệp nếu đã nghỉ việc từ tháng 6 năm ngoái."
+  },
+  "elapsed_s": 6.242,
+  "prompt_tokens": 2021,
+  "completion_tokens": 377,
+  "error": null,
+  "gold_answer": "Nếu bạn nghỉ từ tháng 6 năm ngoái mà đến nay mới đi làm BHTN thì thường đã quá thời hạn nộp hồ sơ 03 tháng kể từ ngày chấm dứt HĐLĐ, nên không còn được giải quyết cho đợt nghỉ việc đó. Thời gian đã đóng BHTN nhưng chưa hưởng sẽ được bảo lưu để tính cho lần thất nghiệp sau, nếu sau này bạn đi làm lại và tiếp tục tham gia BHTN.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

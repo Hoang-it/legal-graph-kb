@@ -1,0 +1,21 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 133,
+  "question": "Làm sao để đăng ký Bhxh không hướng lượng cho chủ doanh nghiệp?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=unable_to_conclude, repair_rounds=2, error=Connection error.]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "unable_to_conclude",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 4.928,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "error": null,
+  "gold_answer": "Nếu bạn là chủ doanh nghiệp/chủ hộ thuộc diện tham gia BHXH bắt buộc theo quy định mới thì phải đăng ký tham gia tại cơ quan BHXH qua đơn vị hoặc mã đơn vị của doanh nghiệp/hộ kinh doanh. Khái niệm 'không hưởng lương' chỉ ảnh hưởng căn cứ đóng ở từng nhóm đối tượng, không phải ai cũng được tự chọn không tham gia. Bạn nên đối chiếu đúng loại hình doanh nghiệp và chức danh quản lý của mình.",
+  "gold_citations_raw": "Điều 2 Luật BHXH 2024; Nghị định 158/2025/NĐ-CP"
+}

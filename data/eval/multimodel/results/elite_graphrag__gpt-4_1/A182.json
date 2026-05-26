@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 182,
+  "question": "Rút Bhxh là tính từ ngày có giấy quyết định nghỉ việc tròn một năm hay là thời điểm mình đi nộp sổ?",
+  "answer": "Issue:\nVấn đề đặt ra là thời điểm đủ điều kiện để rút bảo hiểm xã hội (BHXH) một lần được xác định dựa trên ngày có quyết định nghỉ việc tròn một năm hay là thời điểm người lao động đi nộp sổ BHXH.\n\nRule:\nTheo Luật BHXH 2024 (41/2024/QH15), Điều 107, Khoản 2: \"Thời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần đối với trường hợp người hưởng bảo hiểm xã hội theo quy...\"\n\nApplication:\nKhông có slot_id cụ thể nào được ràng buộc trong truy vấn này. Hệ thống Prolog đã sử dụng quy định tại Điều 107, Khoản 2 của Luật BHXH 2024 để xác định thời điểm đủ điều kiện giải quyết BHXH một lần, dựa trên ngày cuối cùng của tháng dừng đóng BHXH hoặc tháng chấm dứt hợp đồng lao động, không phải ngày nộp hồ sơ.\n\nConclusion:\nThoiDiem = \"Thời điểm đủ điều kiện giải quyết BHXH một lần là ngày cuối cùng của tháng dừng đóng BHXH hoặc tháng chấm dứt hợp đồng lao động, không phải ngày nộp hồ sơ.\"",
+  "citations": [
+    "[Điều 107 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A107.K2"
+  ],
+  "citation_indices": [
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,thoi_diem_xet_bhxh_mot_lan(Thời điểm đủ điều kiện giải quyết BHXH một lần là ngày cuối cùng của tháng dừng đóng BHXH hoặc tháng chấm dứt hợp đồng lao động, không phải ngày nộp hồ sơ.),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Vấn đề đặt ra là thời điểm đủ điều kiện để rút bảo hiểm xã hội (BHXH) một lần được xác định dựa trên ngày có quyết định nghỉ việc tròn một năm hay là thời điểm người lao động đi nộp sổ BHXH.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 107, Khoản 2: \"Thời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần đối với trường hợp người hưởng bảo hiểm xã hội theo quy...\"",
+    "application": "Không có slot_id cụ thể nào được ràng buộc trong truy vấn này. Hệ thống Prolog đã sử dụng quy định tại Điều 107, Khoản 2 của Luật BHXH 2024 để xác định thời điểm đủ điều kiện giải quyết BHXH một lần, dựa trên ngày cuối cùng của tháng dừng đóng BHXH hoặc tháng chấm dứt hợp đồng lao động, không phải ngày nộp hồ sơ.",
+    "conclusion": "ThoiDiem = \"Thời điểm đủ điều kiện giải quyết BHXH một lần là ngày cuối cùng của tháng dừng đóng BHXH hoặc tháng chấm dứt hợp đồng lao động, không phải ngày nộp hồ sơ.\""
+  },
+  "elapsed_s": 7.5,
+  "prompt_tokens": 3428,
+  "completion_tokens": 645,
+  "error": null,
+  "gold_answer": "Mốc 1 năm để xét BHXH 1 lần thường được hiểu là sau 12 tháng bạn không còn thuộc diện tham gia BHXH bắt buộc và cũng không tham gia BHXH tự nguyện. Vì vậy không chỉ nhìn vào ngày ký quyết định nghỉ việc, mà phải xét thực tế quá trình tham gia sau đó. Khi đủ 12 tháng ngừng tham gia thì bạn mới nộp hồ sơ nếu thuộc trường hợp được hưởng.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

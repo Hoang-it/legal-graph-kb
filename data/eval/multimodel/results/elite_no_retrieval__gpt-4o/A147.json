@@ -1,0 +1,32 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 147,
+  "question": "Em ngưng đóng bhxh tháng cuối chốt là 4/2025 tới nay là được 1 năm thì em làm giấy rút bhxh 1 lần được chưa? Và cần chuẩn bị những gì? Có cần phải đăng kí trên dịch vụ công trước không? Em ở buôn ma thuột daklak.",
+  "answer": "Issue: Bạn muốn biết liệu có thể rút bảo hiểm xã hội (BHXH) một lần sau khi ngừng đóng từ tháng 4/2025 và đã qua 1 năm hay không. Bạn cũng hỏi về các giấy tờ cần chuẩn bị và việc có cần đăng ký trên dịch vụ công trước không.\n\nRule: Theo Điều 60, Khoản 1 của Luật BHXH 2024: \"Người lao động có thể rút BHXH một lần sau 12 tháng không tiếp tục đóng BHXH.\" Ngoài ra, Điều 60, Khoản 2 quy định: \"Hồ sơ rút BHXH một lần bao gồm sổ BHXH, đơn đề nghị hưởng BHXH một lần, và giấy tờ tùy thân.\"\n\nApplication: Không có thông tin cụ thể về các giá trị được gán cho các biến trong truy vấn Prolog ngoài việc đã xác nhận rằng bạn đã ngừng đóng BHXH được 12 tháng. Dựa trên điều kiện này, hệ thống xác định rằng bạn có thể rút BHXH một lần.\n\nConclusion: Bạn có thể rút BHXH một lần, với kết quả truy vấn Prolog là \"yes\" cho biến CanWithdraw. Tuy nhiên, không có thông tin về việc cần đăng ký trên dịch vụ công trước. Bạn cần chuẩn bị sổ BHXH, đơn đề nghị hưởng BHXH một lần, và giấy tờ tùy thân.",
+  "citations": [
+    "[Điều 60 khoản 1]",
+    "[Điều 60 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1",
+    "L41_2024.A60.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,can_withdraw_bhxh_one_time(user,yes),based_on(source_a60_k1))]",
+  "irac_sections": {
+    "issue": "Bạn muốn biết liệu có thể rút bảo hiểm xã hội (BHXH) một lần sau khi ngừng đóng từ tháng 4/2025 và đã qua 1 năm hay không. Bạn cũng hỏi về các giấy tờ cần chuẩn bị và việc có cần đăng ký trên dịch vụ công trước không.",
+    "rule": "Theo Điều 60, Khoản 1 của Luật BHXH 2024: \"Người lao động có thể rút BHXH một lần sau 12 tháng không tiếp tục đóng BHXH.\" Ngoài ra, Điều 60, Khoản 2 quy định: \"Hồ sơ rút BHXH một lần bao gồm sổ BHXH, đơn đề nghị hưởng BHXH một lần, và giấy tờ tùy thân.\"",
+    "application": "Không có thông tin cụ thể về các giá trị được gán cho các biến trong truy vấn Prolog ngoài việc đã xác nhận rằng bạn đã ngừng đóng BHXH được 12 tháng. Dựa trên điều kiện này, hệ thống xác định rằng bạn có thể rút BHXH một lần.",
+    "conclusion": "Bạn có thể rút BHXH một lần, với kết quả truy vấn Prolog là \"yes\" cho biến CanWithdraw. Tuy nhiên, không có thông tin về việc cần đăng ký trên dịch vụ công trước. Bạn cần chuẩn bị sổ BHXH, đơn đề nghị hưởng BHXH một lần, và giấy tờ tùy thân."
+  },
+  "elapsed_s": 5.265,
+  "prompt_tokens": 2237,
+  "completion_tokens": 690,
+  "error": null,
+  "gold_answer": "Nếu tháng cuối chốt là 4/2025 thì đến khoảng sau 4/2026, khi bạn đã đủ 12 tháng không tham gia BHXH và thuộc trường hợp luật cho phép, có thể nộp hồ sơ BHXH 1 lần. Hồ sơ cơ bản gồm đơn đề nghị, CCCD, thông tin tài khoản; không bắt buộc phải đăng ký trên dịch vụ công trước, nhưng có thể nộp trực tuyến nếu địa phương hỗ trợ. Nộp tại BHXH nơi cư trú ở Buôn Ma Thuột.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

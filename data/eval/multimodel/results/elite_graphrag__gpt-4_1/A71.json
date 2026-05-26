@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 71,
+  "question": "Mình đóng bảo hiểm được 20 năm mà chưa tới tuổi lãnh hưu, mình nghỉ làm thì mình có được nhận tiền bảo hiểm thất nghiệp không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu đã đóng bảo hiểm xã hội được 20 năm nhưng chưa đủ tuổi hưởng lương hưu, khi nghỉ việc thì có được nhận tiền bảo hiểm thất nghiệp không?\n\nRule:\nChiếu theo Luật BHXH 2024 (41/2024/QH15), Điều 9, Khoản 2: \"Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp.\"\n\nApplication:\nCác điều kiện để được hưởng bảo hiểm thất nghiệp theo truy vấn Prolog gồm: phai_tham_gia_bao_hiem_that_nghiep, da_nghi_viec, da_dong_bao_hiem_that_nghiep_tu_12_thang_tro_len_trong_24_thang_truoc_khi_nghi_viec, chua_tim_duoc_viec_lam_moi, khong_thuoc_dien_bi_cam_huong. Truy vấn đã liệt kê các điều kiện này dựa trên nguồn luật được trích dẫn.\n\nConclusion:\nHệ thống xác định các điều kiện cần thiết để được hưởng bảo hiểm thất nghiệp là: phai_tham_gia_bao_hiem_that_nghiep, da_nghi_viec, da_dong_bao_hiem_that_nghiep_tu_12_thang_tro_len_trong_24_thang_truoc_khi_nghi_viec, chua_tim_duoc_viec_lam_moi, khong_thuoc_dien_bi_cam_huong (Conditions). Nếu đáp ứng đủ các điều kiện này, bạn sẽ được nhận bảo hiểm thất nghiệp.",
+  "citations": [
+    "[Điều 9 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A9.K2"
+  ],
+  "citation_indices": [
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_conditions([phai_tham_gia_bao_hiem_that_nghiep,da_nghi_viec,da_dong_bao_hiem_that_nghiep_tu_12_thang_tro_len_trong_24_thang_truoc_khi_nghi_viec,chua_tim_duoc_viec_lam_moi,khong_thuoc_dien_bi_cam_huong]),based_on(source_c005))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu đã đóng bảo hiểm xã hội được 20 năm nhưng chưa đủ tuổi hưởng lương hưu, khi nghỉ việc thì có được nhận tiền bảo hiểm thất nghiệp không?",
+    "rule": "Chiếu theo Luật BHXH 2024 (41/2024/QH15), Điều 9, Khoản 2: \"Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp.\"",
+    "application": "Các điều kiện để được hưởng bảo hiểm thất nghiệp theo truy vấn Prolog gồm: phai_tham_gia_bao_hiem_that_nghiep, da_nghi_viec, da_dong_bao_hiem_that_nghiep_tu_12_thang_tro_len_trong_24_thang_truoc_khi_nghi_viec, chua_tim_duoc_viec_lam_moi, khong_thuoc_dien_bi_cam_huong. Truy vấn đã liệt kê các điều kiện này dựa trên nguồn luật được trích dẫn.",
+    "conclusion": "Hệ thống xác định các điều kiện cần thiết để được hưởng bảo hiểm thất nghiệp là: phai_tham_gia_bao_hiem_that_nghiep, da_nghi_viec, da_dong_bao_hiem_that_nghiep_tu_12_thang_tro_len_trong_24_thang_truoc_khi_nghi_viec, chua_tim_duoc_viec_lam_moi, khong_thuoc_dien_bi_cam_huong (Conditions). Nếu đáp ứng đủ các điều kiện này, bạn sẽ được nhận bảo hiểm thất nghiệp."
+  },
+  "elapsed_s": 9.77,
+  "prompt_tokens": 5220,
+  "completion_tokens": 620,
+  "error": null,
+  "gold_answer": "Có. Bảo hiểm thất nghiệp là chế độ riêng, không phụ thuộc việc bạn đã đủ 20 năm BHXH hay chưa. Nếu bạn nghỉ việc đúng quy định, đã đóng BHTN đủ thời gian luật định, nộp hồ sơ trong 3 tháng và sau 15 ngày chưa có việc làm thì vẫn được hưởng trợ cấp thất nghiệp. Bạn chỉ không được hưởng BHXH một lần nếu không thuộc trường hợp luật cho phép, còn BHTN vẫn xem xét riêng theo Luật Việc làm.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 49, Điều 50; Luật BHXH 2024 Điều 70"
+}

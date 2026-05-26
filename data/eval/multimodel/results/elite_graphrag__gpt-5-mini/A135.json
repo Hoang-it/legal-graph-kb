@@ -1,0 +1,21 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 135,
+  "question": "Người được hưởng trợ cấp hàng tháng mất sức lao động khi nghĩ việc được hưởng quyền loi gì?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=unable_to_conclude, repair_rounds=2, error=Connection error.]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "unable_to_conclude",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 4.512,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "error": null,
+  "gold_answer": "Người đang hưởng trợ cấp mất sức lao động hằng tháng vẫn có các quyền lợi theo chế độ đang hưởng và có thể được điều chỉnh mức trợ cấp khi Nhà nước điều chỉnh chính sách. Khi qua đời thì thân nhân có thể được xem xét chế độ tử tuất theo điều kiện luật định. Cần xem rõ bạn thuộc diện trợ cấp mất sức lao động theo văn bản nào để xác định chính xác quyền lợi hiện còn.",
+  "gold_citations_raw": "Điều 141 Luật BHXH 2024; quy định chuyển tiếp về trợ cấp hằng tháng"
+}

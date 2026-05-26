@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 44,
+  "question": "Mình đóng bhxh từ năm 2024 là 10 tháng \nSau đó vào cty khác đóng tiếp tục 6 tháng cùng luật bảo hiểm 1/7/2025 không cho rút 1 lần \nTổng thời gian mình đóng là 1 năm 4 tháng, giờ mình nghỉ cty luôn thì mình có được rút 1 lần bhxh không?",
+  "answer": "Issue:\nBạn đã tham gia BHXH ở hai giai đoạn, tổng thời gian đóng ngắn, nay nghỉ việc; hỏi có được rút một lần BHXH hay không?\n\nRule:\nKhông có văn bản pháp luật được cung cấp trong dữ liệu truy vấn.\n\nApplication:\nmonths_first_period(user, 10).\nmonths_second_period(user, 6).\nmonths_contributed(user, 16).\ncontributed_after_1jul2025(user, true).\nProlog truy vấn đã sử dụng các fact trên; theo trace, engine kiểm tra contributed_after_1jul2025(user, true) và áp dụng quy tắc dựa_on(new_law_rule) thay vì nhánh theo tổng tháng đóng.\n\nConclusion:\nAnswer = \"not_allowed_by_new_law\". Prolog trả giá trị cuối cùng cho biến Answer là \"not_allowed_by_new_law\" (không được rút một lần theo quy tắc mới).",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(check_policy_change,contributed_after_1jul2025(user,true),based_on(new_law_rule)),step(conclusion,one_time_withdrawal_possibility(user,not_allowed_by_new_law),based_on(new_law_rule))]",
+  "irac_sections": {
+    "issue": "Bạn đã tham gia BHXH ở hai giai đoạn, tổng thời gian đóng ngắn, nay nghỉ việc; hỏi có được rút một lần BHXH hay không?",
+    "rule": "Không có văn bản pháp luật được cung cấp trong dữ liệu truy vấn.",
+    "application": "months_first_period(user, 10).\nmonths_second_period(user, 6).\nmonths_contributed(user, 16).\ncontributed_after_1jul2025(user, true).\nProlog truy vấn đã sử dụng các fact trên; theo trace, engine kiểm tra contributed_after_1jul2025(user, true) và áp dụng quy tắc dựa_on(new_law_rule) thay vì nhánh theo tổng tháng đóng.",
+    "conclusion": "Answer = \"not_allowed_by_new_law\". Prolog trả giá trị cuối cùng cho biến Answer là \"not_allowed_by_new_law\" (không được rút một lần theo quy tắc mới)."
+  },
+  "elapsed_s": 33.285,
+  "prompt_tokens": 2379,
+  "completion_tokens": 5162,
+  "error": null,
+  "gold_answer": "Bạn đã có 10 tháng đóng trước 1/7/2025 và thêm 6 tháng sau đó, tổng 1 năm 4 tháng. Nếu hiện đã nghỉ việc, ngừng tham gia đủ 12 tháng và thuộc diện được giải quyết BHXH một lần theo quy định chuyển tiếp của Luật BHXH 2024 thì vẫn có thể được rút đối với thời gian đã đóng. Cần kiểm tra thêm thời điểm đề nghị và việc bạn có tiếp tục tham gia BHXH ở nơi khác hay không.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110; quy định chuyển tiếp của Luật BHXH 2024"
+}

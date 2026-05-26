@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 137,
+  "question": "Hiện tại bên Bảo hiểm có cấp lại sổ và tờ rời bị mất không?\nEm bị mất sổ và tờ rời đóng từ năm 2018 tới 2020. Do bị trộm vào nhà .\nHiện tại e vẫn còn tờ rời từ 2021 cho đến nay.",
+  "answer": "Issue:\nNgười hỏi: liệu cơ quan BHXH có cấp lại sổ BHXH và tờ rời khi bị mất trong các năm trước, trong khi vẫn còn tờ rời của các giai đoạn sau hay không?\n\nRule:\nKhông có trích dẫn pháp luật được cung cấp trong hồ sơ.\n\nApplication:\n- slot_bindings: Không có slot_bindings được cung cấp.\n- Các fact/prolog được dùng: lost_so_and_toroi(user,2018,2020) và has_toroi_from(user,2021).\nProlog đã khớp rule can_reissue_documents với lost_so_and_toroi(Person, StartY, EndY) và has_toroi_from(Person, FromY) (với Person = user, StartY = 2018, EndY = 2020, FromY = 2021) và sinh ra biến Answer cùng Trace như trong prolog_trace.\n\nConclusion:\nAnswer = reissue_possible([Người lao động có thể đề nghị cấp lại sổ BHXH và tờ rời khi bị mất và nộp hồ sơ theo quy định của cơ quan BHXH,Cơ quan BHXH sẽ đối chiếu hồ sơ lưu, hồ sơ điện tử và có thể yêu cầu đơn vị sử dụng lao động xác minh để phục hồi dữ liệu giai đoạn bị mất,Hồ sơ thường gồm: đơn xin cấp lại, bản sao CMND/CCCD, tờ rời còn giữ (nếu có) và bằng chứng về việc mất (nếu cần)])",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(recorded_loss,lost_so_and_toroi(user,2018,2020),based_on(none)),step(evidence_available,has_toroi_from(user,2021),based_on(none)),step(conclusion,reissue_possible([Người lao động có thể đề nghị cấp lại sổ BHXH và tờ rời khi bị mất và nộp hồ sơ theo quy định của cơ quan BHXH,Cơ quan BHXH sẽ đối chiếu hồ sơ lưu, hồ sơ điện tử và có thể yêu cầu đơn vị sử dụng lao động xác minh để phục hồi dữ liệu giai đoạn bị mất,Hồ sơ thường gồm: đơn xin cấp lại, bản sao CMND/CCCD, tờ rời còn giữ (nếu có) và bằng chứng về việc mất (nếu cần)]),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người hỏi: liệu cơ quan BHXH có cấp lại sổ BHXH và tờ rời khi bị mất trong các năm trước, trong khi vẫn còn tờ rời của các giai đoạn sau hay không?",
+    "rule": "Không có trích dẫn pháp luật được cung cấp trong hồ sơ.",
+    "application": "- slot_bindings: Không có slot_bindings được cung cấp.\n- Các fact/prolog được dùng: lost_so_and_toroi(user,2018,2020) và has_toroi_from(user,2021).\nProlog đã khớp rule can_reissue_documents với lost_so_and_toroi(Person, StartY, EndY) và has_toroi_from(Person, FromY) (với Person = user, StartY = 2018, EndY = 2020, FromY = 2021) và sinh ra biến Answer cùng Trace như trong prolog_trace.",
+    "conclusion": "Answer = reissue_possible([Người lao động có thể đề nghị cấp lại sổ BHXH và tờ rời khi bị mất và nộp hồ sơ theo quy định của cơ quan BHXH,Cơ quan BHXH sẽ đối chiếu hồ sơ lưu, hồ sơ điện tử và có thể yêu cầu đơn vị sử dụng lao động xác minh để phục hồi dữ liệu giai đoạn bị mất,Hồ sơ thường gồm: đơn xin cấp lại, bản sao CMND/CCCD, tờ rời còn giữ (nếu có) và bằng chứng về việc mất (nếu cần)])"
+  },
+  "elapsed_s": 61.218,
+  "prompt_tokens": 4452,
+  "completion_tokens": 6751,
+  "error": null,
+  "gold_answer": "Có thể làm thủ tục cấp lại sổ/tờ rời bị mất. Việc bị trộm, thất lạc không làm mất quá trình đóng nếu dữ liệu đã có trên hệ thống BHXH. Bạn mang CCCD và làm hồ sơ cấp lại tại cơ quan BHXH nơi cư trú hoặc nơi đang quản lý hồ sơ; trường hợp cần, BHXH sẽ in lại quá trình đóng tương ứng. Nên giữ lại tờ rời 2021 đến nay để đối chiếu thông tin.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

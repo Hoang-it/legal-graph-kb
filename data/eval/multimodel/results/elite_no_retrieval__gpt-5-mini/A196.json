@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 196,
+  "question": "sổ BHXH (sổ xanh) + tờ rời kẹp sổ e bị mất. chỉ còn lại thông tin trên app. \nEm muốn xin cấp lại full sổ cứng thì e cần tới đâu?\nEm có đến BHXH nơi chốt sổ lần cuối cùng ở Nam Từ Liêm,Hà Nội.\nnhưng họ lại bảo em về cơ quan BHXH nơi e sinh sống (e đang trọ ở Thụy Khuê,HN) để làm. 2 bên cứ đẩy qua đẩy lại miết luôn",
+  "answer": "Issue:\nEm bị mất sổ BHXH (chỉ còn thông tin trên app). Em hỏi cần nộp hồ sơ xin cấp lại ở đâu khi BHXH nơi chốt sổ và BHXH nơi cư trú đẩy trách nhiệm qua lại.\n\nRule:\n'Quy định chung: BHXH có trách nhiệm cấp lại sổ BHXH khi người được cấp mất sổ; thủ tục, nơi nộp hồ sơ và hồ sơ cần thiết do cơ quan BHXH hướng dẫn chi tiết.' (law_bhxh_2024, none, none, none)\n\nApplication:\nslot_bindings: không có slot_id nào được gán giá trị trong đầu vào.\nCác khoản thông tin đầu vào được xác minh trong trace: lost_social_book(user); only_app_info(user); last_registered_office(user, bhxh_nam_tu_liem); residence_area(user, thuy_khue_hanoi).\nChương trình Prolog gọi quy tắc reissue_procedure(Answer, Trace) và sinh ra một thủ tục (procedure) chứa danh sách hồ sơ, khuyến nghị và nơi nộp mà không cần slot bổ sung.\n\nConclusion:\nAnswer = procedure{documents:[đơn xin cấp lại sổ,bản sao CMND/CCCD,giấy tờ xác nhận mất sổ,ảnh chụp thông tin trên ứng dụng BHXH số],recommendation:nếu cơ quan BHXH nơi chốt sổ và nơi cư trú đẩy qua lại, nên liên hệ BHXH cấp tỉnh hoặc gửi khiếu nại chính thức tới BHXH để yêu cầu hướng dẫn bằng văn bản hoặc can thiệp,where:nộp tại cơ quan BHXH quản lý sổ hoặc nơi cư trú (BHXH quận/huyện)}",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(explain,reissue_procedure(procedure{documents:[đơn xin cấp lại sổ,bản sao CMND/CCCD,giấy tờ xác nhận mất sổ,ảnh chụp thông tin trên ứng dụng BHXH số],recommendation:nếu cơ quan BHXH nơi chốt sổ và nơi cư trú đẩy qua lại, nên liên hệ BHXH cấp tỉnh hoặc gửi khiếu nại chính thức tới BHXH để yêu cầu hướng dẫn bằng văn bản hoặc can thiệp,where:nộp tại cơ quan BHXH quản lý sổ hoặc nơi cư trú (BHXH quận/huyện)}),based_on(source_reissue))]",
+  "irac_sections": {
+    "issue": "Em bị mất sổ BHXH (chỉ còn thông tin trên app). Em hỏi cần nộp hồ sơ xin cấp lại ở đâu khi BHXH nơi chốt sổ và BHXH nơi cư trú đẩy trách nhiệm qua lại.",
+    "rule": "'Quy định chung: BHXH có trách nhiệm cấp lại sổ BHXH khi người được cấp mất sổ; thủ tục, nơi nộp hồ sơ và hồ sơ cần thiết do cơ quan BHXH hướng dẫn chi tiết.' (law_bhxh_2024, none, none, none)",
+    "application": "slot_bindings: không có slot_id nào được gán giá trị trong đầu vào.\nCác khoản thông tin đầu vào được xác minh trong trace: lost_social_book(user); only_app_info(user); last_registered_office(user, bhxh_nam_tu_liem); residence_area(user, thuy_khue_hanoi).\nChương trình Prolog gọi quy tắc reissue_procedure(Answer, Trace) và sinh ra một thủ tục (procedure) chứa danh sách hồ sơ, khuyến nghị và nơi nộp mà không cần slot bổ sung.",
+    "conclusion": "Answer = procedure{documents:[đơn xin cấp lại sổ,bản sao CMND/CCCD,giấy tờ xác nhận mất sổ,ảnh chụp thông tin trên ứng dụng BHXH số],recommendation:nếu cơ quan BHXH nơi chốt sổ và nơi cư trú đẩy qua lại, nên liên hệ BHXH cấp tỉnh hoặc gửi khiếu nại chính thức tới BHXH để yêu cầu hướng dẫn bằng văn bản hoặc can thiệp,where:nộp tại cơ quan BHXH quản lý sổ hoặc nơi cư trú (BHXH quận/huyện)}"
+  },
+  "elapsed_s": 42.289,
+  "prompt_tokens": 2774,
+  "completion_tokens": 4911,
+  "error": null,
+  "gold_answer": "Bạn có thể nộp thủ tục cấp lại sổ BHXH tại cơ quan BHXH nơi cư trú hợp pháp (thường trú hoặc tạm trú), không nhất thiết đúng nơi chốt cuối cùng. Nếu đang ở Thụy Khuê, Hà Nội và có đăng ký tạm trú/cư trú hợp lệ thì có thể làm tại BHXH nơi cư trú. Trường hợp cơ quan tiếp nhận đùn đẩy, bạn nên yêu cầu họ trả lời bằng văn bản hoặc tiếp nhận hồ sơ theo đúng nơi cư trú.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

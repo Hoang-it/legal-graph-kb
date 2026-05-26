@@ -1,0 +1,43 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 39,
+  "question": "Mình ngưng đóng bảo hiểm xã hội từ 2017 đến bây giờ là năm 2026 rồi. Liệu mình có đi thanh toán bhxh đc k ạ?",
+  "answer": "Issue:\nMình ngưng đóng bảo hiểm xã hội từ 2017 đến 2026; hỏi có thể đi đóng bù / thanh toán BHXH được không.\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), Điều 33 khoản 7: Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất. Th\nLuật BHXH 2024 (41/2024/QH15), Điều 107 khoản 2: Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.\nThời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần đối với trường hợp người hưởng bảo hiểm xã hội theo quy \nLuật BHXH 2024 (41/2024/QH15), Điều 3 khoản 6: Thời gian đóng bảo hiểm xã hội là tổng thời gian đã đóng bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện theo quy định của Luật này, trừ trường hợp điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên có quy định khác.\nLuật BHXH 2024 (41/2024/QH15), Điều 33 khoản 6: Trường hợp trong tháng đầu làm việc hoặc trong tháng đầu trở lại làm việc mà người lao động nghỉ việc hưởng chế độ ốm đau từ 14 ngày làm việc trở lên thì vẫn phải đóng bảo hiểm xã hội của tháng đó.\n\nApplication:\nslot_bindings: (không có slot nào được cung cấp).\nChương trình Prolog truy vấn one_time_makeup_conditions và đã kết hợp các văn bản nêu trên để sinh ra giá trị trả về: [missing_up_to_06_months_to_be_eligible_for_pension_or_survivor,one_time_payment_amount_equals_employee_plus_employer_before_stopping,paid_time_not_counted_as_heavy_duty,eligibility_for_lump_sum_determined_by_end_month_of_stopping_contribution,total_contribution_includes_compulsory_and_voluntary_periods]\n\nConclusion:\nBiến Answer được gán giá trị [missing_up_to_06_months_to_be_eligible_for_pension_or_survivor,one_time_payment_amount_equals_employee_plus_employer_before_stopping,paid_time_not_counted_as_heavy_duty,eligibility_for_lump_sum_determined_by_end_month_of_stopping_contribution,total_contribution_includes_compulsory_and_voluntary_periods]. Đây là tập các điều kiện do Prolog trả về, không phải một kết luận số tiền cụ thể.",
+  "citations": [
+    "[Điều 33 khoản 7]",
+    "[Điều 107 khoản 2]",
+    "[Điều 106]",
+    "[Điều 3 khoản 6]",
+    "[Điều 33 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A33.K7",
+    "L41_2024.A107.K2",
+    "L41_2024.A106",
+    "L41_2024.A3.K6",
+    "L41_2024.A33.K6"
+  ],
+  "citation_indices": [
+    0,
+    2,
+    5,
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_makeup_conditions([missing_up_to_06_months_to_be_eligible_for_pension_or_survivor,one_time_payment_amount_equals_employee_plus_employer_before_stopping,paid_time_not_counted_as_heavy_duty,eligibility_for_lump_sum_determined_by_end_month_of_stopping_contribution,total_contribution_includes_compulsory_and_voluntary_periods]),based_on(source_c0)),step(conclusion,one_time_makeup_conditions([missing_up_to_06_months_to_be_eligible_for_pension_or_survivor,one_time_payment_amount_equals_employee_plus_employer_before_stopping,paid_time_not_counted_as_heavy_duty,eligibility_for_lump_sum_determined_by_end_month_of_stopping_contribution,total_contribution_includes_compulsory_and_voluntary_periods]),based_on(source_c2)),step(conclusion,one_time_makeup_conditions([missing_up_to_06_months_to_be_eligible_for_pension_or_survivor,one_time_payment_amount_equals_employee_plus_employer_before_stopping,paid_time_not_counted_as_heavy_duty,eligibility_for_lump_sum_determined_by_end_month_of_stopping_contribution,total_contribution_includes_compulsory_and_voluntary_periods]),based_on(source_c5)),step(conclusion,one_time_makeup_conditions([missing_up_to_06_months_to_be_eligible_for_pension_or_survivor,one_time_payment_amount_equals_employee_plus_employer_before_stopping,paid_time_not_counted_as_heavy_duty,eligibility_for_lump_sum_determined_by_end_month_of_stopping_contribution,total_contribution_includes_compulsory_and_voluntary_periods]),based_on(source_c6))]",
+  "irac_sections": {
+    "issue": "Mình ngưng đóng bảo hiểm xã hội từ 2017 đến 2026; hỏi có thể đi đóng bù / thanh toán BHXH được không.",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), Điều 33 khoản 7: Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất. Th\nLuật BHXH 2024 (41/2024/QH15), Điều 107 khoản 2: Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.\nThời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần đối với trường hợp người hưởng bảo hiểm xã hội theo quy \nLuật BHXH 2024 (41/2024/QH15), Điều 3 khoản 6: Thời gian đóng bảo hiểm xã hội là tổng thời gian đã đóng bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện theo quy định của Luật này, trừ trường hợp điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên có quy định khác.\nLuật BHXH 2024 (41/2024/QH15), Điều 33 khoản 6: Trường hợp trong tháng đầu làm việc hoặc trong tháng đầu trở lại làm việc mà người lao động nghỉ việc hưởng chế độ ốm đau từ 14 ngày làm việc trở lên thì vẫn phải đóng bảo hiểm xã hội của tháng đó.",
+    "application": "slot_bindings: (không có slot nào được cung cấp).\nChương trình Prolog truy vấn one_time_makeup_conditions và đã kết hợp các văn bản nêu trên để sinh ra giá trị trả về: [missing_up_to_06_months_to_be_eligible_for_pension_or_survivor,one_time_payment_amount_equals_employee_plus_employer_before_stopping,paid_time_not_counted_as_heavy_duty,eligibility_for_lump_sum_determined_by_end_month_of_stopping_contribution,total_contribution_includes_compulsory_and_voluntary_periods]",
+    "conclusion": "Biến Answer được gán giá trị [missing_up_to_06_months_to_be_eligible_for_pension_or_survivor,one_time_payment_amount_equals_employee_plus_employer_before_stopping,paid_time_not_counted_as_heavy_duty,eligibility_for_lump_sum_determined_by_end_month_of_stopping_contribution,total_contribution_includes_compulsory_and_voluntary_periods]. Đây là tập các điều kiện do Prolog trả về, không phải một kết luận số tiền cụ thể."
+  },
+  "elapsed_s": 61.384,
+  "prompt_tokens": 4834,
+  "completion_tokens": 6421,
+  "error": null,
+  "gold_answer": "Nếu bạn đã ngừng đóng từ năm 2017 đến nay và không tiếp tục tham gia BHXH, thì thường có thể làm thủ tục hưởng BHXH một lần nếu thuộc trường hợp luật cho phép, nhất là đã ngừng tham gia từ đủ 12 tháng trở lên mà chưa đủ thời gian hưởng lương hưu. Nếu không rút một lần, bạn cũng có thể bảo lưu thời gian đã đóng để sau này tham gia tiếp hoặc chuyển sang BHXH tự nguyện.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110"
+}

@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 91,
+  "question": "trường hợp nghỉ bệnh hưởng BHXH thì nộp hồ sơ trong vòng bao lâu sẽ được chi trả vậy?",
+  "answer": "Issue:\nTrường hợp nghỉ bệnh hưởng BHXH thì nộp hồ sơ trong vòng bao lâu sẽ được chi trả?\n\nRule:\n'Luật BHXH 2024 quy định thời hiệu yêu cầu giải quyết chế độ BHXH (bao gồm chế độ ốm đau) là 12 tháng kể từ ngày phát sinh quyền lợi hoặc ngày kết thúc điều trị; trường hợp quá hạn vì lý do khách quan thì được xem xét.'\n\nApplication:\nslot_bindings: trống (không có slot_id được ràng buộc trong truy vấn). \nProlog query đã chạy quy tắc sick_leave_document_deadline(Answer, Trace) mà không cần giá trị slot đầu vào; truy vấn trả về biến Answer và Trace dựa trên nguồn được ghi là source_sick_deadline.\n\nConclusion:\nAnswer = \"Nộp hồ sơ trong vòng 12 tháng kể từ ngày kết thúc điều trị hoặc ngày phát sinh quyền lợi; nếu quá hạn vì lý do khách quan thì được xem xét.\"\nTrace = [step(conclusion,sick_leave_document_deadline(Nộp hồ sơ trong vòng 12 tháng kể từ ngày kết thúc điều trị hoặc ngày phát sinh quyền lợi; nếu quá hạn vì lý do khách quan thì được xem xét.),based_on(source_sick_deadline))]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,sick_leave_document_deadline(Nộp hồ sơ trong vòng 12 tháng kể từ ngày kết thúc điều trị hoặc ngày phát sinh quyền lợi; nếu quá hạn vì lý do khách quan thì được xem xét.),based_on(source_sick_deadline))]",
+  "irac_sections": {
+    "issue": "Trường hợp nghỉ bệnh hưởng BHXH thì nộp hồ sơ trong vòng bao lâu sẽ được chi trả?",
+    "rule": "'Luật BHXH 2024 quy định thời hiệu yêu cầu giải quyết chế độ BHXH (bao gồm chế độ ốm đau) là 12 tháng kể từ ngày phát sinh quyền lợi hoặc ngày kết thúc điều trị; trường hợp quá hạn vì lý do khách quan thì được xem xét.'",
+    "application": "slot_bindings: trống (không có slot_id được ràng buộc trong truy vấn). \nProlog query đã chạy quy tắc sick_leave_document_deadline(Answer, Trace) mà không cần giá trị slot đầu vào; truy vấn trả về biến Answer và Trace dựa trên nguồn được ghi là source_sick_deadline.",
+    "conclusion": "Answer = \"Nộp hồ sơ trong vòng 12 tháng kể từ ngày kết thúc điều trị hoặc ngày phát sinh quyền lợi; nếu quá hạn vì lý do khách quan thì được xem xét.\"\nTrace = [step(conclusion,sick_leave_document_deadline(Nộp hồ sơ trong vòng 12 tháng kể từ ngày kết thúc điều trị hoặc ngày phát sinh quyền lợi; nếu quá hạn vì lý do khách quan thì được xem xét.),based_on(source_sick_deadline))]"
+  },
+  "elapsed_s": 51.497,
+  "prompt_tokens": 2092,
+  "completion_tokens": 3912,
+  "error": null,
+  "gold_answer": "Người lao động phải nộp hồ sơ hưởng ốm đau cho doanh nghiệp hoặc cơ quan BHXH theo thời hạn luật định sau khi trở lại làm việc; doanh nghiệp sau đó phải lập hồ sơ gửi cơ quan BHXH trong thời hạn quy định. Khi nhận đủ hồ sơ hợp lệ, cơ quan BHXH phải giải quyết và chi trả trong thời hạn luật quy định. Nếu hồ sơ kéo dài bất thường, bạn nên kiểm tra xem doanh nghiệp đã nộp hay chưa và hồ sơ y tế có hợp lệ không.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 46, Điều 116"
+}

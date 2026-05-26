@@ -1,0 +1,44 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 130,
+  "question": "Đóng bhxh đc 4 tháng lcb 4tr900 thì lãnh đc bao nhiêu?",
+  "answer": "Issue:\nNgười lao động đã đóng bảo hiểm xã hội được 4 tháng với mức lương cơ bản 4.900.000 thì sẽ được hưởng trợ cấp thai sản bao nhiêu?\n\nRule:\n\"Trợ cấp thai sản một tháng của người lao động quy định tại các điều 51, 52, 53, 54, 55, 56 và 57 của Luật này bằng 100% mức bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc của 06 tháng gần nhất trước khi nghỉ việc hưởng chế độ thai sản. Đối với người lao động đóng bảo hiểm xã hội bắt buộc chưa đủ 06 tháng thì trợ cấp thai sản của người lao động quy định tại Điều 51, Điều 52, các khoản 2, 5, 6 và 7 Điều 53, các khoản 1, 2 và 4 Điều 54, khoản 2 Điều 55 và Điều 57 của Luật này là mức bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc của các tháng đã đóng.\" (Luật BHXH 2024 (41/2024/QH15), Điều 59, Khoản 1)\n\nApplication:\nmonths_contributed: 4\naverage_salary: 4900000\nProlog đã sử dụng số tháng đóng bảo hiểm xã hội là 4 (dưới 6 tháng) và mức lương bình quân làm căn cứ đóng là 4900000 để xác định mức trợ cấp thai sản theo quy định tại Điều 59, Khoản 1 Luật BHXH 2024.\n\nConclusion:\nSố tiền trợ cấp thai sản mà người lao động được hưởng là 4900000 (Amount).",
+  "citations": [
+    "[Điều 51]",
+    "[Điều 52]",
+    "[Điều 53]",
+    "[Điều 54 khoản 2]",
+    "[Điều 55]",
+    "[Điều 57]",
+    "[Điều 59 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A51",
+    "L41_2024.A52",
+    "L41_2024.A53",
+    "L41_2024.A54.K2",
+    "L41_2024.A55",
+    "L41_2024.A57",
+    "L41_2024.A59.K1"
+  ],
+  "citation_indices": [
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,maternity_allowance(user,4900000),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Người lao động đã đóng bảo hiểm xã hội được 4 tháng với mức lương cơ bản 4.900.000 thì sẽ được hưởng trợ cấp thai sản bao nhiêu?",
+    "rule": "\"Trợ cấp thai sản một tháng của người lao động quy định tại các điều 51, 52, 53, 54, 55, 56 và 57 của Luật này bằng 100% mức bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc của 06 tháng gần nhất trước khi nghỉ việc hưởng chế độ thai sản. Đối với người lao động đóng bảo hiểm xã hội bắt buộc chưa đủ 06 tháng thì trợ cấp thai sản của người lao động quy định tại Điều 51, Điều 52, các khoản 2, 5, 6 và 7 Điều 53, các khoản 1, 2 và 4 Điều 54, khoản 2 Điều 55 và Điều 57 của Luật này là mức bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc của các tháng đã đóng.\" (Luật BHXH 2024 (41/2024/QH15), Điều 59, Khoản 1)",
+    "application": "months_contributed: 4\naverage_salary: 4900000\nProlog đã sử dụng số tháng đóng bảo hiểm xã hội là 4 (dưới 6 tháng) và mức lương bình quân làm căn cứ đóng là 4900000 để xác định mức trợ cấp thai sản theo quy định tại Điều 59, Khoản 1 Luật BHXH 2024.",
+    "conclusion": "Số tiền trợ cấp thai sản mà người lao động được hưởng là 4900000 (Amount)."
+  },
+  "elapsed_s": 7.509,
+  "prompt_tokens": 3390,
+  "completion_tokens": 775,
+  "error": null,
+  "gold_answer": "Với 4 tháng đóng BHXH, mức hưởng BHXH 1 lần không tính như nhiều năm tròn mà theo trường hợp thời gian đóng chưa đủ 1 năm. Khi đủ điều kiện rút, mức hưởng bằng số tiền đã đóng nhưng tối đa không quá 2 tháng mức bình quân lương đóng BHXH. Với lương 4,9 triệu/tháng, số hưởng thường chỉ ở mức vài triệu đồng, không phải 8-10 triệu.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

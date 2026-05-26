@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 197,
+  "question": "công ty em có trường hợp NLĐ nghỉ hưu và được lãnh từ tháng 5 nhưng do làm lần đầu tiên em không rõ hồ sơ chuẩn bị như thế nào thì ngày 17.04 em có nộp bên BHXH bao gồm hồ sơ: Mẫu 12 HSB, sổ BHXH, tờ rời các năm đóng, CCCD NLĐ thì bên BHXH lại báo thiếu nhưng ko nói rõ thiếu hồ sơ gì? Giờ em phải bổ sung thêm gì?",
+  "answer": "Issue:\nCông ty có người lao động nghỉ hưu, đã nộp hồ sơ ngày 17.04 gồm Mẫu 12 HSB, sổ BHXH, tờ rời các năm đóng, CCCD nhưng BHXH báo “thiếu” mà không nêu rõ; hỏi phải bổ sung gì.\n\nRule:\n\"Luật Bảo hiểm xã hội 2024 quy định cơ quan BHXH hướng dẫn, kiểm tra và yêu cầu người lao động bổ sung hồ sơ khi hồ sơ hưởng chế độ chưa đầy đủ; hồ sơ hưởng lương hưu thông thường bao gồm đơn đề nghị, sổ BHXH, giấy tờ tuỳ thân và văn bản xác nhận thời gian đóng BHXH.\" Document: law_bhxh_2024; article: none; clause: none\n\nApplication:\nslot_bindings: không có slot được gán giá trị. Prolog đã gọi quy tắc retirement_documents dựa_on(source_hs) (xem Trace) mà không cần tham số đầu vào từ người dùng; quy tắc này trả về danh sách các giấy tờ cần nộp cho chế độ lương hưu như được xác định trong source_hs.\n\nConclusion:\nAnswer = [Đơn đề nghị hưởng lương hưu (mẫu do BHXH ban hành),Sổ BHXH chính,Mẫu 12-HSB (nếu đã nộp hoặc mẫu liên quan mà BHXH yêu cầu),Bản sao CCCD/CMND/Hộ chiếu (có bản chính để đối chiếu),Tờ rời/các bảng kê các năm đã đóng BHXH hoặc văn bản xác nhận thời gian đóng của đơn vị có chữ ký và đóng dấu,Giấy ủy quyền nếu người khác nộp thay (kèm CMND/CCCD của người được ủy quyền)]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(provide_documents,retirement_documents([Đơn đề nghị hưởng lương hưu (mẫu do BHXH ban hành),Sổ BHXH chính,Mẫu 12-HSB (nếu đã nộp hoặc mẫu liên quan mà BHXH yêu cầu),Bản sao CCCD/CMND/Hộ chiếu (có bản chính để đối chiếu),Tờ rời/các bảng kê các năm đã đóng BHXH hoặc văn bản xác nhận thời gian đóng của đơn vị có chữ ký và đóng dấu,Giấy ủy quyền nếu người khác nộp thay (kèm CMND/CCCD của người được ủy quyền)]),based_on(source_hs))]",
+  "irac_sections": {
+    "issue": "Công ty có người lao động nghỉ hưu, đã nộp hồ sơ ngày 17.04 gồm Mẫu 12 HSB, sổ BHXH, tờ rời các năm đóng, CCCD nhưng BHXH báo “thiếu” mà không nêu rõ; hỏi phải bổ sung gì.",
+    "rule": "\"Luật Bảo hiểm xã hội 2024 quy định cơ quan BHXH hướng dẫn, kiểm tra và yêu cầu người lao động bổ sung hồ sơ khi hồ sơ hưởng chế độ chưa đầy đủ; hồ sơ hưởng lương hưu thông thường bao gồm đơn đề nghị, sổ BHXH, giấy tờ tuỳ thân và văn bản xác nhận thời gian đóng BHXH.\" Document: law_bhxh_2024; article: none; clause: none",
+    "application": "slot_bindings: không có slot được gán giá trị. Prolog đã gọi quy tắc retirement_documents dựa_on(source_hs) (xem Trace) mà không cần tham số đầu vào từ người dùng; quy tắc này trả về danh sách các giấy tờ cần nộp cho chế độ lương hưu như được xác định trong source_hs.",
+    "conclusion": "Answer = [Đơn đề nghị hưởng lương hưu (mẫu do BHXH ban hành),Sổ BHXH chính,Mẫu 12-HSB (nếu đã nộp hoặc mẫu liên quan mà BHXH yêu cầu),Bản sao CCCD/CMND/Hộ chiếu (có bản chính để đối chiếu),Tờ rời/các bảng kê các năm đã đóng BHXH hoặc văn bản xác nhận thời gian đóng của đơn vị có chữ ký và đóng dấu,Giấy ủy quyền nếu người khác nộp thay (kèm CMND/CCCD của người được ủy quyền)]"
+  },
+  "elapsed_s": 65.983,
+  "prompt_tokens": 2951,
+  "completion_tokens": 5582,
+  "error": null,
+  "gold_answer": "Hồ sơ hưởng lương hưu ngoài sổ BHXH/tờ rời và giấy tờ tùy thân còn phải bảo đảm đúng mẫu, đúng thời điểm và có quyết định nghỉ việc hoặc tài liệu tương đương tùy từng nhóm đối tượng. Nếu BHXH báo thiếu mà không nói rõ, bạn nên yêu cầu phiếu hướng dẫn bổ sung bằng văn bản. Nhiều trường hợp còn thiếu quyết định nghỉ việc, biên bản giám định suy giảm khả năng lao động hoặc giấy tờ nghề nặng nhọc nếu nghỉ trước tuổi.",
+  "gold_citations_raw": "Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

@@ -1,0 +1,32 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 108,
+  "question": "E đg làm cty nhưng hết hợp đồng ngày 23/4/2026 \nE đg bầu, e có giấy quyết định nv và chấm dứt hđ .E làm bh thât nghiệp bao nhiêu lâu thì sẽ đc hưởng tiền bhtn?",
+  "answer": "Issue:\nBạn hết hợp đồng lao động và đang mang thai; hỏi điều kiện để được hưởng trợ cấp bảo hiểm thất nghiệp.\n\nRule:\nlaw_bhxh_2024, article_86, clause_1: 'Người lao động đã đóng bảo hiểm thất nghiệp đủ 12 tháng trở lên trong 24 tháng trước khi thất nghiệp thì được hưởng trợ cấp thất nghiệp.'\nlaw_bhxh_2024, article_86, clause_2: 'Người lao động phải đăng ký thất nghiệp tại trung tâm dịch vụ việc làm trong vòng 3 tháng kể từ ngày chấm dứt hợp đồng để được hưởng trợ cấp thất nghiệp.'\n\nApplication:\nCác slot được gán: không có slot nào trong slot_bindings.\nProlog đã dùng nguồn pháp luật (source_bhtn_12thang, source_bhtn_dangky_3thang) và trả về binding:\nAnswer = conditions([Đóng BHTN ít nhất 12 tháng trong 24 tháng trước khi thất nghiệp,Đăng ký thất nghiệp tại trung tâm dịch vụ việc làm trong vòng 3 tháng kể từ ngày chấm dứt hợp đồng,Phải thực sự bị mất việc (không tự ý nghỉ việc) và có năng lực, sẵn sàng làm việc],_3492=[step(required_contribution,Đóng đủ 12 tháng trong 24 tháng trước khi thất nghiệp,based_on(source_bhtn_12thang)),step(registration_deadline,Đăng ký thất nghiệp trong 3 tháng kể từ ngày chấm dứt hợp đồng,based_on(source_bhtn_dangky_3thang))])\nTrace = _3492\n\nConclusion:\nProlog binding: Answer = conditions([...],_3492=[step(required_contribution,Đóng đủ 12 tháng trong 24 tháng trước khi thất nghiệp,based_on(source_bhtn_12thang)),step(registration_deadline,Đăng ký thất nghiệp trong 3 tháng kể từ ngày chấm dứt hợp đồng,based_on(source_bhtn_dangky_3thang))]) and Trace = _3492.",
+  "citations": [
+    "[Điều 86 khoản 1]",
+    "[Điều 86 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A86.K1",
+    "L41_2024.A86.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "_3492",
+  "irac_sections": {
+    "issue": "Bạn hết hợp đồng lao động và đang mang thai; hỏi điều kiện để được hưởng trợ cấp bảo hiểm thất nghiệp.",
+    "rule": "law_bhxh_2024, article_86, clause_1: 'Người lao động đã đóng bảo hiểm thất nghiệp đủ 12 tháng trở lên trong 24 tháng trước khi thất nghiệp thì được hưởng trợ cấp thất nghiệp.'\nlaw_bhxh_2024, article_86, clause_2: 'Người lao động phải đăng ký thất nghiệp tại trung tâm dịch vụ việc làm trong vòng 3 tháng kể từ ngày chấm dứt hợp đồng để được hưởng trợ cấp thất nghiệp.'",
+    "application": "Các slot được gán: không có slot nào trong slot_bindings.\nProlog đã dùng nguồn pháp luật (source_bhtn_12thang, source_bhtn_dangky_3thang) và trả về binding:\nAnswer = conditions([Đóng BHTN ít nhất 12 tháng trong 24 tháng trước khi thất nghiệp,Đăng ký thất nghiệp tại trung tâm dịch vụ việc làm trong vòng 3 tháng kể từ ngày chấm dứt hợp đồng,Phải thực sự bị mất việc (không tự ý nghỉ việc) và có năng lực, sẵn sàng làm việc],_3492=[step(required_contribution,Đóng đủ 12 tháng trong 24 tháng trước khi thất nghiệp,based_on(source_bhtn_12thang)),step(registration_deadline,Đăng ký thất nghiệp trong 3 tháng kể từ ngày chấm dứt hợp đồng,based_on(source_bhtn_dangky_3thang))])\nTrace = _3492",
+    "conclusion": "Prolog binding: Answer = conditions([...],_3492=[step(required_contribution,Đóng đủ 12 tháng trong 24 tháng trước khi thất nghiệp,based_on(source_bhtn_12thang)),step(registration_deadline,Đăng ký thất nghiệp trong 3 tháng kể từ ngày chấm dứt hợp đồng,based_on(source_bhtn_dangky_3thang))]) and Trace = _3492."
+  },
+  "elapsed_s": 47.523,
+  "prompt_tokens": 2359,
+  "completion_tokens": 5385,
+  "error": null,
+  "gold_answer": "Nếu chấm dứt hợp đồng ngày 23/4/2026 và đủ điều kiện hưởng BHTN, bạn phải nộp hồ sơ trong 03 tháng kể từ ngày chấm dứt hợp đồng. Sau khi nộp đủ hồ sơ, nếu sau 15 ngày làm việc vẫn chưa có việc làm thì sẽ được giải quyết hưởng. Việc đang mang thai không làm mất quyền hưởng BHTN; chỉ cần đáp ứng điều kiện về thời gian đóng và chấm dứt hợp đồng hợp pháp.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

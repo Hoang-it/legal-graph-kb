@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 192,
+  "question": "năm 2011 em có mượn hồ sơ đi làm và đóng bh đc 3th thì cty phát hiện hồ sơ giả nên em nghỉ việc, nhưng đến hôm nay cái chị cho em mượn hồ sơ đi lấy bhxh thì bên bh kiểm tra và bảo còn vướng 3th bảo hiểm của em , giờ phải ra toà để huỷ. Vậy giờ em phải làm như thế nào?",
+  "answer": "Issue: Bạn đã mượn hồ sơ để đi làm và đóng bảo hiểm xã hội (BHXH) trong 3 tháng, nhưng sau đó công ty phát hiện hồ sơ giả và bạn nghỉ việc. Hiện tại, khi người cho bạn mượn hồ sơ đi lấy BHXH, bên bảo hiểm kiểm tra và phát hiện còn vướng 3 tháng bảo hiểm của bạn. Bạn muốn biết phải làm gì để giải quyết vấn đề này.\n\nRule: \"Hủy bỏ thời gian đóng BHXH không hợp lệ cần có quyết định của tòa án.\" (Luật BHXH 2024, Điều 39, Khoản 1)\n\nApplication: Không có thông tin cụ thể về các giá trị đầu vào (slot_bindings) trong trường hợp này. Tuy nhiên, theo quy định pháp luật, việc hủy bỏ thời gian đóng BHXH không hợp lệ cần phải có quyết định của tòa án.\n\nConclusion: Theo kết quả từ hệ thống, bạn cần ra tòa để hủy bỏ thời gian đóng BHXH không hợp lệ.",
+  "citations": [
+    "[Điều 39 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A39.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,process_invalid_contributions(Bạn cần ra tòa để hủy bỏ thời gian đóng BHXH không hợp lệ.),based_on(source_a39_k1))]",
+  "irac_sections": {
+    "issue": "Bạn đã mượn hồ sơ để đi làm và đóng bảo hiểm xã hội (BHXH) trong 3 tháng, nhưng sau đó công ty phát hiện hồ sơ giả và bạn nghỉ việc. Hiện tại, khi người cho bạn mượn hồ sơ đi lấy BHXH, bên bảo hiểm kiểm tra và phát hiện còn vướng 3 tháng bảo hiểm của bạn. Bạn muốn biết phải làm gì để giải quyết vấn đề này.",
+    "rule": "\"Hủy bỏ thời gian đóng BHXH không hợp lệ cần có quyết định của tòa án.\" (Luật BHXH 2024, Điều 39, Khoản 1)",
+    "application": "Không có thông tin cụ thể về các giá trị đầu vào (slot_bindings) trong trường hợp này. Tuy nhiên, theo quy định pháp luật, việc hủy bỏ thời gian đóng BHXH không hợp lệ cần phải có quyết định của tòa án.",
+    "conclusion": "Theo kết quả từ hệ thống, bạn cần ra tòa để hủy bỏ thời gian đóng BHXH không hợp lệ."
+  },
+  "elapsed_s": 10.655,
+  "prompt_tokens": 3372,
+  "completion_tokens": 447,
+  "error": null,
+  "gold_answer": "Dùng hồ sơ giả để đi làm và đóng BHXH là việc phải xử lý rất thận trọng. Cơ quan BHXH yêu cầu hủy quá trình sai là có cơ sở; trường hợp hồ sơ giả, người đứng tên thật và người sử dụng hồ sơ nên làm việc trực tiếp với BHXH để xác định hướng xử lý, thậm chí có thể phải qua tòa án/cơ quan công an nếu phát sinh tranh chấp, giả mạo giấy tờ. Bạn không nên tự ý làm thủ tục rút hay gộp sổ trong tình trạng này.",
+  "gold_citations_raw": "Luật BHXH 2024; Bộ luật Dân sự 2015; quy định về giả mạo hồ sơ"
+}

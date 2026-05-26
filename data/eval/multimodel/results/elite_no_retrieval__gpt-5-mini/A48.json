@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 48,
+  "question": "Mình đóng BHXH 21nam,  sinh ngày 02/08/1976, nam, công việc bảo vệ vượn cây cao su, thì khi nào được nghi hưu?",
+  "answer": "Issue: Mình đóng BHXH 21 năm, sinh ngày 02/08/1976, nam, công việc bảo vệ vườn cây cao su — khi nào được nghỉ hưu?\n\nRule: Không có văn bản pháp luật được cung cấp trong trace.\n\nApplication:\nKhông có slot_bindings cung cấp. Chương trình dùng các facts/biến xác minh sau (theo trace và verify_facts):\nyears_contributed(user) = 21 (trace: step(contribution_check,21,...))\nbirth_date(user) = date(1976,8,2) (trace/Info)\ngender(user) = male (verify_facts)\njob(user) = guard_rubber_plantation (verify_facts)\nCách Prolog tiêu thụ chúng: quy tắc khớp gender = male, đọc số năm đóng góp (21) và ngày sinh (date(1976,8,2)); Trace của Prolog ghi các bước [step(contribution_check,21,...), step(birth_date_recorded,date(1976,8,2),...), step(conclusion,meets_minimum_contribution,...)], rồi kết luận phù hợp với quy tắc.\n\nConclusion: Info = retirement_ready(retire_when_reach_statutory_age(male,date(1976,8,2))). Trace cho thấy kết luận trung gian là meets_minimum_contribution.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(contribution_check,21,based_on(none)),step(birth_date_recorded,date(1976,8,2),based_on(none)),step(conclusion,meets_minimum_contribution,based_on(none))]",
+  "irac_sections": {
+    "issue": "Mình đóng BHXH 21 năm, sinh ngày 02/08/1976, nam, công việc bảo vệ vườn cây cao su — khi nào được nghỉ hưu?",
+    "rule": "Không có văn bản pháp luật được cung cấp trong trace.",
+    "application": "Không có slot_bindings cung cấp. Chương trình dùng các facts/biến xác minh sau (theo trace và verify_facts):\nyears_contributed(user) = 21 (trace: step(contribution_check,21,...))\nbirth_date(user) = date(1976,8,2) (trace/Info)\ngender(user) = male (verify_facts)\njob(user) = guard_rubber_plantation (verify_facts)\nCách Prolog tiêu thụ chúng: quy tắc khớp gender = male, đọc số năm đóng góp (21) và ngày sinh (date(1976,8,2)); Trace của Prolog ghi các bước [step(contribution_check,21,...), step(birth_date_recorded,date(1976,8,2),...), step(conclusion,meets_minimum_contribution,...)], rồi kết luận phù hợp với quy tắc.",
+    "conclusion": "Info = retirement_ready(retire_when_reach_statutory_age(male,date(1976,8,2))). Trace cho thấy kết luận trung gian là meets_minimum_contribution."
+  },
+  "elapsed_s": 56.305,
+  "prompt_tokens": 2165,
+  "completion_tokens": 5767,
+  "error": null,
+  "gold_answer": "Nếu tính theo tuổi nghỉ hưu thông thường của lao động nam, bạn sinh ngày 02/08/1976 thì đủ 62 tuổi vào ngày 02/08/2038. Hiện thông tin bạn nêu 'bảo vệ vườn cây cao su' chưa đủ căn cứ khẳng định thuộc nghề, công việc nặng nhọc/đặc biệt nặng nhọc để được nghỉ hưu sớm hơn. 21 năm đóng BHXH mới chỉ đáp ứng về thời gian tối thiểu nếu đến tuổi, còn thời điểm nghỉ hưu vẫn phải căn cứ thêm điều kiện tuổi và tính chất công việc.",
+  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 169; Nghị định 135/2020/NĐ-CP"
+}

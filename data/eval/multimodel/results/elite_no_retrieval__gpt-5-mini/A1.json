@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 1,
+  "question": "Vợ của ông Trinh (Hậu Giang) đóng BHXH được 9 năm 6 tháng. Vợ ông sinh con từ ngày 23/12/2014 nhưng chưa nộp hồ sơ hưởng chế độ thai sản.\nVậy nay vợ của ông nộp hồ sơ để hưởng chế độ thai sản thì có được không?",
+  "answer": "Issue:\nVợ ông Trinh đã sinh con và chưa nộp hồ sơ hưởng chế độ thai sản; câu hỏi là nay có thể nộp hồ sơ để hưởng chế độ hay không.\n\nRule:\n\"Theo quy định chung: người lao động nữ được hưởng chế độ thai sản nếu đã đóng bảo hiểm xã hội ít nhất 6 tháng trong vòng 12 tháng trước khi sinh con. Việc xác định đủ điều kiện được căn cứ vào thời điểm sinh con và thời gian đóng BHXH trong 12 tháng liền kề trước sinh.\"\n\nApplication:\nKhông có slot nào được ràng buộc (slot_bindings rỗng). Prolog đã chạy quy tắc maternity_conditions và trả về biến Answer chứa đoạn quy định tổng quát nêu trên; Trace cho biết step(legal_basis, maternity_conditions(...), based_on(no_source)). Do không có dữ liệu trường hợp cụ thể (ví dụ: thời điểm sinh được đối chiếu với thời gian đóng BHXH trong 12 tháng liền kề trước sinh), truy vấn chỉ trả quy định chứ không kiểm tra điều kiện hiện tại.\n\nConclusion:\nProlog trả biến Answer bằng đoạn văn quy định nêu trên (một kết quả quy phạm chung) và KHÔNG đưa ra kết luận cụ thể về quyền hưởng cho trường hợp vợ ông Trinh vì thiếu thông tin về thời điểm sinh và thời gian đóng BHXH trong 12 tháng liền kề trước sinh.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(legal_basis,maternity_conditions(Theo quy định chung: người lao động nữ được hưởng chế độ thai sản nếu đã đóng bảo hiểm xã hội ít nhất 6 tháng trong vòng 12 tháng trước khi sinh con. Việc xác định đủ điều kiện được căn cứ vào thời điểm sinh con và thời gian đóng BHXH trong 12 tháng liền kề trước sinh.),based_on(no_source))]",
+  "irac_sections": {
+    "issue": "Vợ ông Trinh đã sinh con và chưa nộp hồ sơ hưởng chế độ thai sản; câu hỏi là nay có thể nộp hồ sơ để hưởng chế độ hay không.",
+    "rule": "\"Theo quy định chung: người lao động nữ được hưởng chế độ thai sản nếu đã đóng bảo hiểm xã hội ít nhất 6 tháng trong vòng 12 tháng trước khi sinh con. Việc xác định đủ điều kiện được căn cứ vào thời điểm sinh con và thời gian đóng BHXH trong 12 tháng liền kề trước sinh.\"",
+    "application": "Không có slot nào được ràng buộc (slot_bindings rỗng). Prolog đã chạy quy tắc maternity_conditions và trả về biến Answer chứa đoạn quy định tổng quát nêu trên; Trace cho biết step(legal_basis, maternity_conditions(...), based_on(no_source)). Do không có dữ liệu trường hợp cụ thể (ví dụ: thời điểm sinh được đối chiếu với thời gian đóng BHXH trong 12 tháng liền kề trước sinh), truy vấn chỉ trả quy định chứ không kiểm tra điều kiện hiện tại.",
+    "conclusion": "Prolog trả biến Answer bằng đoạn văn quy định nêu trên (một kết quả quy phạm chung) và KHÔNG đưa ra kết luận cụ thể về quyền hưởng cho trường hợp vợ ông Trinh vì thiếu thông tin về thời điểm sinh và thời gian đóng BHXH trong 12 tháng liền kề trước sinh."
+  },
+  "elapsed_s": 105.384,
+  "prompt_tokens": 4315,
+  "completion_tokens": 7920,
+  "error": null,
+  "gold_answer": "Tại Khoản 4 Điều 28 Nghị định số 115/2015/NĐ-CP ngày 11/11/2015 của Chính phủ quy định: Người lao động đủ điều kiện và hưởng các chế độ BHXH trước ngày 1/1/2016 thì vẫn thực hiện theo quy định của pháp luật trước ngày 1/1/2016.\nTại Khoản 2 Điều 53 Nghị định số 152/2006/NĐ-CP ngày 22/12/2006 của Chính phủ quy định về hồ sơ hưởng chế độ thai sản như sau:\n\"2. Hồ sơ hưởng chế độ thai sản khi sinh con hoặc nhận con nuôi của người lao động không còn quan hệ lao động gồm có:\na) Sổ bảo hiểm xã hội;\nb) Bản sao Giấy chứng sinh hoặc bản sao Giấy khai sinh của con hoặc Giấy chứng tử trong trường hợp sau khi sinh mà con chết; nhận nuôi con nuôi dưới 4 tháng tuổi phải có chứng nhận theo quy định của pháp luật\".\nĐối chiếu quy định nêu trên, qua tra cứu dữ liệu tham gia BHXH đối với mã số BHXH và thông tin ông Trinh cung cấp, vợ của ông sinh con vào ngày 23/12/2014 trong khoảng thời gian 12 tháng trước khi sinh con của vợ của ông được tính từ tháng 12/2013 đến tháng 11/2014, vợ của ông có 9 tháng đóng BHXH (từ tháng 12/2013 đến tháng 8/2014) do đó vợ của ông đủ điều kiện hưởng chế độ thai sản khi sinh con và có thể nộp hồ sơ theo quy định nêu trên đến cơ quan BHXH để được xem xét, giải quyết.",
+  "gold_citations_raw": "Khoản 4 Điều 28 Nghị định số 115/2015/NĐ-CP\nTại Khoản 2 Điều 53 Nghị định số 152/2006/NĐ-CP"
+}

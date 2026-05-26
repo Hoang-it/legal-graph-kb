@@ -1,6 +1,6 @@
-"""Tính 6 metrics cho 2 arm + lưu metrics.json + metrics.csv.
+"""Tính metrics cho N arm + lưu metrics.json + metrics.csv.
 
-Metrics (mỗi metric có ref tới paper peer-reviewed):
+**Existing 6 metrics** (mỗi metric có ref tới paper peer-reviewed):
 - citation_validity         : % citation_id tồn tại trong Neo4j (deterministic)
 - citation_recall (Liu 2023): % câu có ≥1 citation nearby
 - citation_precision (Liu 2023): citation thực sự support claim gần đó (judge)
@@ -10,6 +10,12 @@ Metrics (mỗi metric có ref tới paper peer-reviewed):
 - pairwise_winner (Zheng 2023) : judge so sánh A vs B (position swap)
 - bertscore_f1 (Zhang 2020)    : semantic sim với gold_answer
 - cost_usd / latency_s         : objective
+
+**4 Prolog rollback metrics** (Pan et al. "Logic-LM" EMNLP 2023, chỉ tính cho elite_* arms):
+- prolog_success_rate       : % câu mà Prolog cuối cùng execute thành công
+- repair_invoked_rate       : % câu cần ≥1 repair round
+- avg_repair_rounds         : trung bình số repair rounds (cap=2)
+- first_try_success_rate    : % câu success NGAY first try (n_repair_rounds=0)
 """
 
 from __future__ import annotations
@@ -38,11 +44,22 @@ NEO4J_PWD = os.getenv("NEO4J_PASSWORD")
 NEO4J_DB = os.getenv("NEO4J_DATABASE", "neo4j")
 JUDGE_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")  # cùng model với generator
 
-GRAPHRAG_DIR = Path("data/eval/results/graphrag")
-LLM_ONLY_DIR = Path("data/eval/results/llm_only")
+RESULTS_ROOT = Path("data/eval/results")
 METRICS_OUT = Path("data/eval/metrics.json")
 METRICS_CSV = Path("data/eval/metrics.csv")
 JUDGE_CACHE = Path("data/eval/judge_cache.jsonl")  # cache raw judge responses
+
+# Arms được hỗ trợ — phải khớp với tên subdir trong RESULTS_ROOT
+ALL_ARMS = (
+    "graphrag",
+    "llm_only",
+    "elite_no_retrieval",
+    "elite_ontology",
+    "elite_graphrag",
+)
+ELITE_ARMS = {"elite_no_retrieval", "elite_ontology", "elite_graphrag"}
+# Pairwise: so sánh mỗi arm khác vs graphrag (baseline). Có thể mở rộng sau.
+PAIRWISE_BASELINE = "graphrag"
 
 # GPT-4o-mini pricing (USD per 1M tokens, late-2024)
 COST_INPUT_PER_M = 0.15
@@ -50,12 +67,34 @@ COST_CACHED_INPUT_PER_M = 0.075
 COST_OUTPUT_PER_M = 0.60
 
 
+# Bracketed format (main src/ + llm_only output)
 _CIT_PAT = re.compile(r"\[Điều\s+(\d+)(?:\s+khoản\s+(\d+))?(?:\s+điểm\s+([a-zđ]))?\]")
+# Inline format (elite IRAC output): "Điều X, Khoản Y" hoặc "Điều X khoản Y"
+_CIT_PAT_INLINE = re.compile(
+    r"Điều\s+(\d+)(?:[,\s]+[Kk]ho[ảa]n\s+(\d+))?(?:[,\s]+[ĐđDd]i[ểe]m\s+([a-zđ]))?"
+)
 
 
 def parse_citations(answer: str) -> list[dict]:
+    """Parse citation từ cả 2 format (bracketed + inline). Dedupe theo position."""
     out = []
+    consumed_spans: list[tuple[int, int]] = []
+
+    # Pass 1: bracketed (chính xác hơn, ưu tiên trước)
     for m in _CIT_PAT.finditer(answer):
+        art, cl, pt = m.group(1), m.group(2), m.group(3)
+        cid = f"L41_2024.A{art}"
+        if cl:
+            cid += f".K{cl}"
+            if pt:
+                cid += f".{pt}"
+        out.append({"str": m.group(0), "id": cid, "pos": m.start()})
+        consumed_spans.append((m.start(), m.end()))
+
+    # Pass 2: inline (skip nếu overlap với bracketed)
+    for m in _CIT_PAT_INLINE.finditer(answer):
+        if any(not (m.end() <= s or m.start() >= e) for s, e in consumed_spans):
+            continue
         art, cl, pt = m.group(1), m.group(2), m.group(3)
         cid = f"L41_2024.A{art}"
         if cl:
@@ -466,7 +505,7 @@ def m_pairwise(record_a: dict, record_b: dict, client, jc: JudgeCache) -> dict:
             f"TRẢ LỜI {b_label}:\n{second}\n\n"
             f'Trả về JSON: {{"winner": "A" / "B" / "tie", "reason": "..."}}'
         )
-        key = f"pair_{record_a['stt']}_{swap_id}"
+        key = f"pair_{record_a['stt']}_{record_a['arm']}_vs_{record_b['arm']}_{swap_id}"
         return _judge_call(client, sys_p, user_p, jc, key)
 
     r1 = _ask(a_first=True, swap_id="ab")
@@ -499,6 +538,38 @@ def m_pairwise(record_a: dict, record_b: dict, client, jc: JudgeCache) -> dict:
             "completion_tokens": r1["usage"]["completion_tokens"]
             + r2["usage"]["completion_tokens"],
         },
+    }
+
+
+# ---------------------------------------------------------------------------
+# Prolog rollback metrics (Logic-LM, Pan et al. EMNLP 2023) — elite arms only
+# ---------------------------------------------------------------------------
+
+
+def m_prolog_rollback(record: dict) -> dict:
+    """Tính 4 metric Prolog-specific từ record của elite arm.
+
+    Đọc trực tiếp từ field `prolog_success`, `n_repair_rounds`, `prolog_status`
+    đã được elite_pipelines lưu vào record JSON.
+
+    Cho arms KHÔNG phải elite_* → trả về dict với tất cả None.
+    """
+    if record.get("arm") not in ELITE_ARMS:
+        return {
+            "prolog_success": None,
+            "n_repair_rounds": None,
+            "first_try_success": None,
+            "repair_invoked": None,
+            "prolog_status": None,
+        }
+    prolog_success = bool(record.get("prolog_success", False))
+    n_repair = int(record.get("n_repair_rounds", 0) or 0)
+    return {
+        "prolog_success": prolog_success,
+        "n_repair_rounds": n_repair,
+        "first_try_success": prolog_success and (n_repair == 0),
+        "repair_invoked": n_repair >= 1,
+        "prolog_status": record.get("prolog_status") or "",
     }
 
 
@@ -563,23 +634,38 @@ def main() -> int:
     args = p.parse_args()
 
     print("Loading records...")
-    recs_graph = load_records(GRAPHRAG_DIR, "graphrag")
-    recs_llm = load_records(LLM_ONLY_DIR, "llm_only")
-    print(f"  graphrag: {len(recs_graph)} records")
-    print(f"  llm_only: {len(recs_llm)} records")
+
+    # Discover arms từ filesystem — chỉ arms có data
+    available_arms = []
+    for arm in ALL_ARMS:
+        d = RESULTS_ROOT / arm
+        if d.exists() and any(d.glob("A*.json")):
+            available_arms.append(arm)
+    if not available_arms:
+        print(f"FAIL: không có results dir nào trong {RESULTS_ROOT}", file=sys.stderr)
+        return 1
+    print(f"Available arms: {available_arms}")
+
+    # Load tất cả arms
+    recs_by_arm: dict[str, list[dict]] = {}
+    for arm in available_arms:
+        recs_by_arm[arm] = load_records(RESULTS_ROOT / arm, arm)
+        print(f"  {arm:<24} {len(recs_by_arm[arm])} records")
+
     if args.limit:
-        recs_graph = recs_graph[: args.limit]
-        recs_llm = recs_llm[: args.limit]
+        for arm in available_arms:
+            recs_by_arm[arm] = recs_by_arm[arm][: args.limit]
         print(f"  (limit {args.limit})")
 
-    # Pair theo stt
+    # Pair theo stt (giữ stt nào có TẤT CẢ arms để fair compare)
     by_stt: dict[int, dict[str, dict]] = defaultdict(dict)
-    for r in recs_graph:
-        by_stt[r["stt"]]["graphrag"] = r
-    for r in recs_llm:
-        by_stt[r["stt"]]["llm_only"] = r
-    paired_stts = sorted(s for s, v in by_stt.items() if "graphrag" in v and "llm_only" in v)
-    print(f"  Cặp (graphrag+llm_only) đầy đủ: {len(paired_stts)}")
+    for arm, recs in recs_by_arm.items():
+        for r in recs:
+            by_stt[r["stt"]][arm] = r
+    paired_stts = sorted(
+        s for s, v in by_stt.items() if all(a in v for a in available_arms)
+    )
+    print(f"  Cặp đầy đủ (mọi arm có): {len(paired_stts)}")
 
     neo = _Neo()
     jc = JudgeCache(JUDGE_CACHE)
@@ -602,13 +688,12 @@ def main() -> int:
         )
 
     # ---- Compute per-record metrics ----
-    all_metrics: dict[str, list[dict]] = {"graphrag": [], "llm_only": []}
+    all_metrics: dict[str, list[dict]] = {arm: [] for arm in available_arms}
     t_start = time.time()
 
     for i, stt in enumerate(paired_stts, 1):
         pair = by_stt[stt]
-        per = {}
-        for arm in ("graphrag", "llm_only"):
+        for arm in available_arms:
             rec = pair[arm]
             m: dict[str, Any] = {
                 "stt": stt,
@@ -617,6 +702,7 @@ def main() -> int:
                 "citation_recall": m_citation_recall(rec),
                 "cost": m_cost(rec, arm),
                 "latency": m_latency(rec),
+                "prolog_rollback": m_prolog_rollback(rec),
             }
             if not args.skip_judge:
                 m["faithfulness"] = m_faithfulness(rec, neo, client, jc)
@@ -624,13 +710,15 @@ def main() -> int:
                 m["answer_relevance"] = m_answer_relevance(rec, client, jc, embed_model)
                 m["hallucination"] = m_hallucination(rec, neo, client, jc)
             all_metrics[arm].append(m)
-            per[arm] = m
 
-        # Pairwise judge
-        if not args.skip_judge:
-            pw = m_pairwise(pair["graphrag"], pair["llm_only"], client, jc)
-            all_metrics["graphrag"][-1]["pairwise"] = pw
-            all_metrics["llm_only"][-1]["pairwise"] = pw
+        # Pairwise judge: so sánh mỗi non-baseline arm vs baseline (graphrag)
+        if not args.skip_judge and PAIRWISE_BASELINE in pair:
+            for arm in available_arms:
+                if arm == PAIRWISE_BASELINE:
+                    continue
+                pw = m_pairwise(pair[PAIRWISE_BASELINE], pair[arm], client, jc)
+                # Lưu pairwise vào record của non-baseline arm
+                all_metrics[arm][-1]["pairwise_vs_baseline"] = pw
 
         if i % 5 == 0 or i == len(paired_stts):
             elapsed = time.time() - t_start
@@ -640,9 +728,9 @@ def main() -> int:
     if not args.skip_bertscore:
         try:
             bs_recs = []
-            for arm, recs in [("graphrag", recs_graph), ("llm_only", recs_llm)]:
-                for r in recs:
-                    if r["stt"] in paired_stts and r.get("gold_answer"):
+            for arm in available_arms:
+                for r in recs_by_arm[arm]:
+                    if r["stt"] in paired_stts and r.get("gold_answer") and r.get("answer"):
                         bs_recs.append(
                             {
                                 "arm": arm,
@@ -651,13 +739,14 @@ def main() -> int:
                                 "gold_answer": r["gold_answer"],
                             }
                         )
-            bs_results = compute_bertscore_all(bs_recs)
-            # Merge into per-record
-            for arm in ("graphrag", "llm_only"):
-                for m in all_metrics[arm]:
-                    bs = bs_results.get((arm, m["stt"]))
-                    if bs:
-                        m["bertscore"] = bs
+            if bs_recs:
+                bs_results = compute_bertscore_all(bs_recs)
+                # Merge into per-record
+                for arm in available_arms:
+                    for m in all_metrics[arm]:
+                        bs = bs_results.get((arm, m["stt"]))
+                        if bs:
+                            m["bertscore"] = bs
         except ImportError as e:
             print(f"  ✗ BERTScore skip — `pip install bert-score` ({e})", file=sys.stderr)
         except Exception as e:
@@ -679,14 +768,13 @@ def main() -> int:
 
 def _print_summary(all_metrics):
     print("\n=== SUMMARY (mean values) ===")
-    for arm in ("graphrag", "llm_only"):
-        recs = all_metrics[arm]
+    for arm, recs in all_metrics.items():
         if not recs:
             continue
 
-        def _avg(key_chain):
+        def _avg(key_chain, _recs=recs):
             vals = []
-            for r in recs:
+            for r in _recs:
                 v = r
                 for k in key_chain:
                     if v is None:
@@ -694,6 +782,18 @@ def _print_summary(all_metrics):
                     v = v.get(k) if isinstance(v, dict) else None
                 if v is not None:
                     vals.append(v)
+            return sum(vals) / len(vals) if vals else None
+
+        def _bool_rate(key_chain, _recs=recs):
+            vals = []
+            for r in _recs:
+                v = r
+                for k in key_chain:
+                    if v is None:
+                        break
+                    v = v.get(k) if isinstance(v, dict) else None
+                if v is not None:
+                    vals.append(1.0 if v else 0.0)
             return sum(vals) / len(vals) if vals else None
 
         print(f"\n[{arm}] n={len(recs)}")
@@ -706,16 +806,27 @@ def _print_summary(all_metrics):
         print(f"  bertscore_f1           : {_avg(['bertscore', 'bertscore_f1'])}")
         print(f"  cost_usd (mean)        : {_avg(['cost', 'cost_usd'])}")
         print(f"  latency_s (mean)       : {_avg(['latency', 'latency_s'])}")
+        # Prolog-specific (chỉ in nếu arm là elite_*)
+        if arm in ELITE_ARMS:
+            print(f"  prolog_success_rate    : {_bool_rate(['prolog_rollback', 'prolog_success'])}")
+            print(f"  repair_invoked_rate    : {_bool_rate(['prolog_rollback', 'repair_invoked'])}")
+            print(f"  avg_repair_rounds      : {_avg(['prolog_rollback', 'n_repair_rounds'])}")
+            print(f"  first_try_success_rate : {_bool_rate(['prolog_rollback', 'first_try_success'])}")
 
-    # Pairwise winner tally
-    pw_consensus = [r["pairwise"]["consensus"] for r in all_metrics["graphrag"] if "pairwise" in r]
-    if pw_consensus:
-        from collections import Counter
-
-        c = Counter(pw_consensus)
-        print(f"\nPairwise consensus (n={len(pw_consensus)}):")
+    # Pairwise: tally consensus for each non-baseline arm
+    from collections import Counter
+    print(f"\n=== PAIRWISE vs {PAIRWISE_BASELINE} (LLM-as-Judge, position swap) ===")
+    for arm, recs in all_metrics.items():
+        if arm == PAIRWISE_BASELINE:
+            continue
+        consensus = [r["pairwise_vs_baseline"]["consensus"]
+                     for r in recs if "pairwise_vs_baseline" in r]
+        if not consensus:
+            continue
+        c = Counter(consensus)
+        print(f"\n  {arm} vs {PAIRWISE_BASELINE} (n={len(consensus)}):")
         for k, v in c.most_common():
-            print(f"  {k:<12} {v}")
+            print(f"    {k:<22} {v} ({v/len(consensus)*100:.1f}%)")
 
 
 if __name__ == "__main__":

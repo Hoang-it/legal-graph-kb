@@ -1,0 +1,41 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 57,
+  "question": "Em muốn làm Bảo hiểm thất nghiệp thì cần giấy tờ gì?\nEm đã có CCCD, giấy chấm dứt HĐLĐ, còn tờ rời thì cty họ bảo là nay quản lý bằng app nên không phát tờ rời nữa\nThì bây giờ lên chỗ Trung Kính có làm được BHTN không?",
+  "answer": "Issue: Em hỏi hồ sơ cần chuẩn bị để hưởng bảo hiểm thất nghiệp, công ty quản lý bằng app không phát tờ rời thì có thể nộp ở cơ quan BHXH (Trung Kính) được không.\n\nRule:\nLuật BHXH 2024 (41/2024/QH15) - Điều 17, Khoản 1: \"Yêu cầu người sử dụng lao động xuất trình sổ quản lý lao động, thang lương, bảng lương và thông tin, tài liệu khác liên quan đến việc đóng, hưởng chế độ bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp, bảo hiểm y tế.\"\nLuật BHXH 2024 (41/2024/QH15) - Điều 18, Khoản 2: \"Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\"\nLuật BHXH 2024 (41/2024/QH15) - Điều 18, Khoản 4: \"Tiếp nhận hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế và cấp sổ bảo hiểm xã hội, thẻ bảo hiểm y tế cho người lao động.\"\nLuật BHXH 2024 (41/2024/QH15) - Điều 18, Khoản 14: \"Cung cấp tài liệu, thông tin liên quan đến việc thực hiện chính sách, pháp luật về bảo hiểm xã hội, bảo hiểm thất nghiệp, bảo hiểm y tế theo yêu cầu của cơ quan nhà nước có thẩm quyền.\"\n\nApplication:\nslot mau_ho_so_theo_quy_dinh = mau_ho_so_theo_quy_dinh\nslot tai_lieu_do_nguoi_su_dung_lao_dong_cung_cap = tai_lieu_do_nguoi_su_dung_lao_dong_cung_cap(so_quan_ly_lao_dong,thang_luong,bang_luong,thong_tin_khac)\nslot co_quan_bhxh_tiep_nhan_ho_so_va_cap_so_bhxh = co_quan_bhxh_tiep_nhan_ho_so_va_cap_so_bhxh\nProlog thực thi truy vấn unemployment_insurance_required_documents(Docs, Trace) và khớp Docs thành danh sách trên; Trace cho biết kết luận dựa trên source_c7, source_c0, source_c6, source_c2.\n\nConclusion:\nDocs = [mau_ho_so_theo_quy_dinh,tai_lieu_do_nguoi_su_dung_lao_dong_cung_cap(so_quan_ly_lao_dong,thang_luong,bang_luong,thong_tin_khac),co_quan_bhxh_tiep_nhan_ho_so_va_cap_so_bhxh].",
+  "citations": [
+    "[Điều 17 khoản 1]",
+    "[Điều 18 khoản 2]",
+    "[Điều 18 khoản 4]",
+    "[Điều 18 khoản 14]"
+  ],
+  "citation_ids": [
+    "L41_2024.A17.K1",
+    "L41_2024.A18.K2",
+    "L41_2024.A18.K4",
+    "L41_2024.A18.K14"
+  ],
+  "citation_indices": [
+    0,
+    2,
+    6,
+    7
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_required_documents([mau_ho_so_theo_quy_dinh,tai_lieu_do_nguoi_su_dung_lao_dong_cung_cap(so_quan_ly_lao_dong,thang_luong,bang_luong,thong_tin_khac),co_quan_bhxh_tiep_nhan_ho_so_va_cap_so_bhxh]),based_on(source_c7)),step(conclusion,unemployment_insurance_required_documents([mau_ho_so_theo_quy_dinh,tai_lieu_do_nguoi_su_dung_lao_dong_cung_cap(so_quan_ly_lao_dong,thang_luong,bang_luong,thong_tin_khac),co_quan_bhxh_tiep_nhan_ho_so_va_cap_so_bhxh]),based_on(source_c0)),step(conclusion,unemployment_insurance_required_documents([mau_ho_so_theo_quy_dinh,tai_lieu_do_nguoi_su_dung_lao_dong_cung_cap(so_quan_ly_lao_dong,thang_luong,bang_luong,thong_tin_khac),co_quan_bhxh_tiep_nhan_ho_so_va_cap_so_bhxh]),based_on(source_c6)),step(conclusion,unemployment_insurance_required_documents([mau_ho_so_theo_quy_dinh,tai_lieu_do_nguoi_su_dung_lao_dong_cung_cap(so_quan_ly_lao_dong,thang_luong,bang_luong,thong_tin_khac),co_quan_bhxh_tiep_nhan_ho_so_va_cap_so_bhxh]),based_on(source_c2))]",
+  "irac_sections": {
+    "issue": "Em hỏi hồ sơ cần chuẩn bị để hưởng bảo hiểm thất nghiệp, công ty quản lý bằng app không phát tờ rời thì có thể nộp ở cơ quan BHXH (Trung Kính) được không.",
+    "rule": "Luật BHXH 2024 (41/2024/QH15) - Điều 17, Khoản 1: \"Yêu cầu người sử dụng lao động xuất trình sổ quản lý lao động, thang lương, bảng lương và thông tin, tài liệu khác liên quan đến việc đóng, hưởng chế độ bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp, bảo hiểm y tế.\"\nLuật BHXH 2024 (41/2024/QH15) - Điều 18, Khoản 2: \"Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\"\nLuật BHXH 2024 (41/2024/QH15) - Điều 18, Khoản 4: \"Tiếp nhận hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế và cấp sổ bảo hiểm xã hội, thẻ bảo hiểm y tế cho người lao động.\"\nLuật BHXH 2024 (41/2024/QH15) - Điều 18, Khoản 14: \"Cung cấp tài liệu, thông tin liên quan đến việc thực hiện chính sách, pháp luật về bảo hiểm xã hội, bảo hiểm thất nghiệp, bảo hiểm y tế theo yêu cầu của cơ quan nhà nước có thẩm quyền.\"",
+    "application": "slot mau_ho_so_theo_quy_dinh = mau_ho_so_theo_quy_dinh\nslot tai_lieu_do_nguoi_su_dung_lao_dong_cung_cap = tai_lieu_do_nguoi_su_dung_lao_dong_cung_cap(so_quan_ly_lao_dong,thang_luong,bang_luong,thong_tin_khac)\nslot co_quan_bhxh_tiep_nhan_ho_so_va_cap_so_bhxh = co_quan_bhxh_tiep_nhan_ho_so_va_cap_so_bhxh\nProlog thực thi truy vấn unemployment_insurance_required_documents(Docs, Trace) và khớp Docs thành danh sách trên; Trace cho biết kết luận dựa trên source_c7, source_c0, source_c6, source_c2.",
+    "conclusion": "Docs = [mau_ho_so_theo_quy_dinh,tai_lieu_do_nguoi_su_dung_lao_dong_cung_cap(so_quan_ly_lao_dong,thang_luong,bang_luong,thong_tin_khac),co_quan_bhxh_tiep_nhan_ho_so_va_cap_so_bhxh]."
+  },
+  "elapsed_s": 42.385,
+  "prompt_tokens": 4223,
+  "completion_tokens": 4883,
+  "error": null,
+  "gold_answer": "Hồ sơ hưởng BHTN cơ bản gồm: đơn đề nghị hưởng trợ cấp thất nghiệp, CCCD và giấy tờ chứng minh chấm dứt HĐLĐ hợp pháp. Dữ liệu BHXH hiện đã quản lý điện tử, nhưng nếu hồ sơ của bạn trên hệ thống chưa đủ thì trung tâm việc làm có thể yêu cầu bổ sung giấy xác nhận quá trình đóng. Vì vậy bạn vẫn nên đi nộp trong hạn 3 tháng, đồng thời yêu cầu công ty/cơ quan BHXH hỗ trợ xác nhận quá trình đóng. Có thể nộp tại trung tâm dịch vụ việc làm nơi bạn muốn đăng ký nếu đúng thẩm quyền địa phương.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 49; Nghị định 28/2015/NĐ-CP"
+}

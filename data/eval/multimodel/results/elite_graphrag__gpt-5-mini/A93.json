@@ -1,0 +1,34 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 93,
+  "question": "Chồng mình bộ đội 19 năm ra quân 31/3/2025 thì khi nào đc lãnh BHXH 1 lần của Bộ quốc phòng?",
+  "answer": "Issue:\nChồng bạn là quân nhân phục vụ 19 năm, xuất ngũ ngày 31/3/2025 — khi nào được hưởng BHXH một lần của Bộ Quốc phòng?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15) - Điều 107 khoản 2: \"Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.\nThời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần đối với trường hợp người hưởng bảo hiểm xã hội theo quy \"\n\nApplication:\n- slot_bindings: (không có giá trị được gán).\n- Các fact xác minh được cung cấp và sử dụng bởi chương trình Prolog:\n  years_served(user, 19).\n  discharge_date(user, date(2025,3,31)).\n  work_condition(user, military).\n- Cách tiêu chí được tiêu thụ: luật (source_c006 / Điều 107 khoản 2) yêu cầu lấy ngày kết thúc ngày cuối cùng của tháng chấm dứt; chương trình Prolog dùng discharge_date(user, date(2025,3,31)) để xác định EligibilityDate là ngày cuối tháng tương ứng, theo quy tắc nội bộ và trace.\n\nConclusion:\nBiến EligibilityDate được gán giá trị date(2025,3,31). Trace: [step(conclusion,one_time_bhxh_eligibility_date(user,date(2025,3,31)),based_on(source_c006))].",
+  "citations": [
+    "[Điều 107 khoản 2]",
+    "[Điều 106]"
+  ],
+  "citation_ids": [
+    "L41_2024.A107.K2",
+    "L41_2024.A106"
+  ],
+  "citation_indices": [
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_bhxh_eligibility_date(user,date(2025,3,31)),based_on(source_c006))]",
+  "irac_sections": {
+    "issue": "Chồng bạn là quân nhân phục vụ 19 năm, xuất ngũ ngày 31/3/2025 — khi nào được hưởng BHXH một lần của Bộ Quốc phòng?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15) - Điều 107 khoản 2: \"Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.\nThời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần đối với trường hợp người hưởng bảo hiểm xã hội theo quy \"",
+    "application": "- slot_bindings: (không có giá trị được gán).\n- Các fact xác minh được cung cấp và sử dụng bởi chương trình Prolog:\n  years_served(user, 19).\n  discharge_date(user, date(2025,3,31)).\n  work_condition(user, military).\n- Cách tiêu chí được tiêu thụ: luật (source_c006 / Điều 107 khoản 2) yêu cầu lấy ngày kết thúc ngày cuối cùng của tháng chấm dứt; chương trình Prolog dùng discharge_date(user, date(2025,3,31)) để xác định EligibilityDate là ngày cuối tháng tương ứng, theo quy tắc nội bộ và trace.",
+    "conclusion": "Biến EligibilityDate được gán giá trị date(2025,3,31). Trace: [step(conclusion,one_time_bhxh_eligibility_date(user,date(2025,3,31)),based_on(source_c006))]."
+  },
+  "elapsed_s": 49.877,
+  "prompt_tokens": 3490,
+  "completion_tokens": 4948,
+  "error": null,
+  "gold_answer": "Nếu chồng bạn ra quân ngày 31/3/2025 thì thời điểm hưởng BHXH một lần còn phải xem hồ sơ xuất ngũ, quyết định phục viên/xuất ngũ, tình trạng có tiếp tục tham gia BHXH ở đơn vị khác hay không và thủ tục giải quyết của BHXH Bộ Quốc phòng. Trường hợp thông thường, sau khi đủ điều kiện luật định và hoàn tất hồ sơ, cơ quan có thẩm quyền sẽ giải quyết theo thời hạn luật định; không phải cứ ra quân là nhận ngay trong ngày.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 110; quy định BHXH trong quân đội"
+}

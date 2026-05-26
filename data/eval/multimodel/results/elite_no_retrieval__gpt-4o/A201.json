@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 201,
+  "question": "Giờ muốn lãnh bảo hiểm thất nghiệp phải làm qua dịch vụ công hả mọi người.",
+  "answer": "Issue: Người lao động muốn biết liệu có cần phải nộp hồ sơ hưởng bảo hiểm thất nghiệp qua dịch vụ công hay không.\n\nRule: Theo Luật Bảo hiểm xã hội 2024, Điều 49, Khoản 1: \"Người lao động phải nộp hồ sơ hưởng bảo hiểm thất nghiệp qua dịch vụ công.\"\n\nApplication: Không có thông tin cụ thể nào cần áp dụng từ người dùng, vì câu hỏi chỉ yêu cầu xác nhận quy định pháp luật hiện hành.\n\nConclusion: Theo quy định hiện hành, người lao động phải nộp hồ sơ hưởng bảo hiểm thất nghiệp qua dịch vụ công.",
+  "citations": [
+    "[Điều 49 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A49.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_requirement(Phải nộp hồ sơ qua dịch vụ công),based_on(source_a49_k1))]",
+  "irac_sections": {
+    "issue": "Người lao động muốn biết liệu có cần phải nộp hồ sơ hưởng bảo hiểm thất nghiệp qua dịch vụ công hay không.",
+    "rule": "Theo Luật Bảo hiểm xã hội 2024, Điều 49, Khoản 1: \"Người lao động phải nộp hồ sơ hưởng bảo hiểm thất nghiệp qua dịch vụ công.\"",
+    "application": "Không có thông tin cụ thể nào cần áp dụng từ người dùng, vì câu hỏi chỉ yêu cầu xác nhận quy định pháp luật hiện hành.",
+    "conclusion": "Theo quy định hiện hành, người lao động phải nộp hồ sơ hưởng bảo hiểm thất nghiệp qua dịch vụ công."
+  },
+  "elapsed_s": 3.331,
+  "prompt_tokens": 1940,
+  "completion_tokens": 300,
+  "error": null,
+  "gold_answer": null,
+  "gold_citations_raw": null
+}

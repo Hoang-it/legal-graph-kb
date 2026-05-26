@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 158,
+  "question": "mình đóng bhxh dk 6 năm mức lương CB 5300 thì giờ mk muốn rút một lần là dk khoảng bao nhiêu?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu đã đóng bảo hiểm xã hội được 6 năm với mức lương cơ bản 5.300.000 thì khi rút bảo hiểm xã hội một lần sẽ nhận được khoảng bao nhiêu?\n\nRule:\nTheo Luật BHXH 2024 (41/2024/QH15), Điều 33, Khoản 7: \"Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất.\"\n\nApplication:\nCác thông tin đầu vào đã được xác định như sau:\n- years_contributed: 6\n- average_salary: 5300000\nHệ thống Prolog đã sử dụng các giá trị này để tính toán mức hưởng bảo hiểm xã hội một lần dựa trên quy định pháp luật hiện hành.\n\nConclusion:\nTheo kết quả truy vấn Prolog, số tiền bảo hiểm xã hội một lần mà bạn có thể nhận được là Amount = 63600000.",
+  "citations": [
+    "[Điều 33 khoản 7]"
+  ],
+  "citation_ids": [
+    "L41_2024.A33.K7"
+  ],
+  "citation_indices": [
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(calculation,one_time_social_insurance_amount(user,63600000),based_on(source_c020))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu đã đóng bảo hiểm xã hội được 6 năm với mức lương cơ bản 5.300.000 thì khi rút bảo hiểm xã hội một lần sẽ nhận được khoảng bao nhiêu?",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 33, Khoản 7: \"Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất.\"",
+    "application": "Các thông tin đầu vào đã được xác định như sau:\n- years_contributed: 6\n- average_salary: 5300000\nHệ thống Prolog đã sử dụng các giá trị này để tính toán mức hưởng bảo hiểm xã hội một lần dựa trên quy định pháp luật hiện hành.",
+    "conclusion": "Theo kết quả truy vấn Prolog, số tiền bảo hiểm xã hội một lần mà bạn có thể nhận được là Amount = 63600000."
+  },
+  "elapsed_s": 9.184,
+  "prompt_tokens": 2953,
+  "completion_tokens": 726,
+  "error": null,
+  "gold_answer": "Nếu 6 năm đóng đều từ 2014 trở đi và mức bình quân lương đóng khoảng 5,3 triệu thì BHXH 1 lần ước khoảng khoảng 63,6 triệu. Đây là số ước tính sơ bộ; cơ quan BHXH còn tính theo mức bình quân tiền lương sau điều chỉnh từng năm. Bạn cũng cần đủ điều kiện hưởng BHXH 1 lần thì mới rút được.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

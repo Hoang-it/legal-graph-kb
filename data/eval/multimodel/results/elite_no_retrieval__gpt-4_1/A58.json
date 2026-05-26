@@ -1,0 +1,32 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 58,
+  "question": "e là hộ kinh doanh mới , tham gia bhxh cho hkd thì phải làm như thế nào?",
+  "answer": "Issue:\nCâu hỏi đặt ra là hộ kinh doanh mới muốn tham gia bảo hiểm xã hội (BHXH) thì cần thực hiện như thế nào theo quy định pháp luật hiện hành.\n\nRule:\n\"Chủ hộ kinh doanh cá thể thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc.\" (law_bhxh_2024, article_2, clause_4)\n\"Thủ tục tham gia bảo hiểm xã hội được thực hiện tại cơ quan bảo hiểm xã hội nơi đặt trụ sở hộ kinh doanh.\" (law_bhxh_2024, article_23, clause_1)\n\nApplication:\nKhông có slot_id cụ thể nào được cung cấp trong truy vấn này. Theo kết quả Prolog, các điều kiện và thủ tục được xác định như sau: Chủ hộ kinh doanh cá thể phải đăng ký tham gia BHXH bắt buộc tại cơ quan BHXH nơi đặt trụ sở. Hồ sơ cần chuẩn bị gồm: tờ khai tham gia BHXH, giấy đăng ký kinh doanh, giấy tờ tùy thân. Các điều kiện và thủ tục này được truy xuất dựa trên các nguồn luật đã nêu.\n\nConclusion:\nTheo kết quả truy vấn Prolog, để hộ kinh doanh mới tham gia BHXH, chủ hộ cần đăng ký tại cơ quan BHXH nơi đặt trụ sở và chuẩn bị hồ sơ gồm: tờ khai tham gia BHXH, giấy đăng ký kinh doanh, giấy tờ tùy thân.",
+  "citations": [
+    "[Điều 2 khoản 4]",
+    "[Điều 23 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2.K4",
+    "L41_2024.A23.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conditions,bhxh_hkd_tham_gia_how([Chủ hộ kinh doanh cá thể phải đăng ký tham gia BHXH bắt buộc tại cơ quan BHXH nơi đặt trụ sở.,Chuẩn bị hồ sơ gồm: tờ khai tham gia BHXH, giấy đăng ký kinh doanh, giấy tờ tùy thân.]),based_on(source_a2_k4)),step(procedure,bhxh_hkd_tham_gia_how([Chủ hộ kinh doanh cá thể phải đăng ký tham gia BHXH bắt buộc tại cơ quan BHXH nơi đặt trụ sở.,Chuẩn bị hồ sơ gồm: tờ khai tham gia BHXH, giấy đăng ký kinh doanh, giấy tờ tùy thân.]),based_on(source_a23))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là hộ kinh doanh mới muốn tham gia bảo hiểm xã hội (BHXH) thì cần thực hiện như thế nào theo quy định pháp luật hiện hành.",
+    "rule": "\"Chủ hộ kinh doanh cá thể thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc.\" (law_bhxh_2024, article_2, clause_4)\n\"Thủ tục tham gia bảo hiểm xã hội được thực hiện tại cơ quan bảo hiểm xã hội nơi đặt trụ sở hộ kinh doanh.\" (law_bhxh_2024, article_23, clause_1)",
+    "application": "Không có slot_id cụ thể nào được cung cấp trong truy vấn này. Theo kết quả Prolog, các điều kiện và thủ tục được xác định như sau: Chủ hộ kinh doanh cá thể phải đăng ký tham gia BHXH bắt buộc tại cơ quan BHXH nơi đặt trụ sở. Hồ sơ cần chuẩn bị gồm: tờ khai tham gia BHXH, giấy đăng ký kinh doanh, giấy tờ tùy thân. Các điều kiện và thủ tục này được truy xuất dựa trên các nguồn luật đã nêu.",
+    "conclusion": "Theo kết quả truy vấn Prolog, để hộ kinh doanh mới tham gia BHXH, chủ hộ cần đăng ký tại cơ quan BHXH nơi đặt trụ sở và chuẩn bị hồ sơ gồm: tờ khai tham gia BHXH, giấy đăng ký kinh doanh, giấy tờ tùy thân."
+  },
+  "elapsed_s": 5.62,
+  "prompt_tokens": 2405,
+  "completion_tokens": 621,
+  "error": null,
+  "gold_answer": "Nếu bạn là chủ hộ kinh doanh thuộc diện phải tham gia BHXH bắt buộc thì cần liên hệ cơ quan BHXH hoặc tổ chức dịch vụ thu để đăng ký hồ sơ tham gia theo mã số BHXH, kê khai mức tiền lương làm căn cứ đóng và phương thức đóng. Nếu chưa thuộc diện bắt buộc thì có thể tham gia BHXH tự nguyện. Khi đi đăng ký nên mang CCCD, thông tin đăng ký hộ kinh doanh và giấy tờ liên quan đến mã số BHXH nếu đã có.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 25, Điều 31; Nghị định 158/2025/NĐ-CP"
+}

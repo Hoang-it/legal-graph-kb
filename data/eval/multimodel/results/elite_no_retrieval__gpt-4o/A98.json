@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 98,
+  "question": "Em nghỉ việc từ tháng 8 năm 2025 , giờ tháng 4 e mới đi rút bảo hiểm thất nghiệp được k?",
+  "answer": "Issue: Bạn hỏi liệu có thể rút bảo hiểm thất nghiệp vào tháng 4 năm 2026 sau khi đã nghỉ việc từ tháng 8 năm 2025 hay không.\n\nRule: Theo Luật Bảo hiểm xã hội 2024, Điều 49, Khoản 1: \"Người lao động có thể nộp hồ sơ hưởng bảo hiểm thất nghiệp trong vòng 3 tháng kể từ ngày chấm dứt hợp đồng lao động.\"\n\nApplication: Không có giá trị cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo các thông tin đã xác minh, ngày kết thúc hợp đồng lao động của bạn là ngày 1 tháng 8 năm 2025 và ngày nộp hồ sơ là ngày 1 tháng 4 năm 2026. Quy tắc Prolog đã tính toán số tháng giữa hai ngày này và xác định rằng số tháng vượt quá 3 tháng.\n\nConclusion: Theo kết quả từ chương trình Prolog, bạn không đủ điều kiện để hưởng bảo hiểm thất nghiệp vì đã nộp hồ sơ sau thời hạn 3 tháng kể từ ngày chấm dứt hợp đồng lao động.",
+  "citations": [
+    "[Điều 49 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A49.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_eligibility(user,no),based_on(source_a49_k1))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi liệu có thể rút bảo hiểm thất nghiệp vào tháng 4 năm 2026 sau khi đã nghỉ việc từ tháng 8 năm 2025 hay không.",
+    "rule": "Theo Luật Bảo hiểm xã hội 2024, Điều 49, Khoản 1: \"Người lao động có thể nộp hồ sơ hưởng bảo hiểm thất nghiệp trong vòng 3 tháng kể từ ngày chấm dứt hợp đồng lao động.\"",
+    "application": "Không có giá trị cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo các thông tin đã xác minh, ngày kết thúc hợp đồng lao động của bạn là ngày 1 tháng 8 năm 2025 và ngày nộp hồ sơ là ngày 1 tháng 4 năm 2026. Quy tắc Prolog đã tính toán số tháng giữa hai ngày này và xác định rằng số tháng vượt quá 3 tháng.",
+    "conclusion": "Theo kết quả từ chương trình Prolog, bạn không đủ điều kiện để hưởng bảo hiểm thất nghiệp vì đã nộp hồ sơ sau thời hạn 3 tháng kể từ ngày chấm dứt hợp đồng lao động."
+  },
+  "elapsed_s": 5.979,
+  "prompt_tokens": 2145,
+  "completion_tokens": 669,
+  "error": null,
+  "gold_answer": "Nếu bạn nghỉ việc từ tháng 8/2025 mà đến tháng 4/2026 mới đi nộp hồ sơ BHTN thì đã quá hạn 3 tháng kể từ ngày chấm dứt HĐLĐ, nên đợt này thường không được giải quyết hưởng trợ cấp thất nghiệp. Tuy vậy, thời gian đóng BHTN chưa hưởng sẽ được bảo lưu để cộng dồn cho lần thất nghiệp sau nếu bạn tiếp tục đi làm và đóng BHTN trở lại.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 45"
+}

@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 136,
+  "question": "các bước nhận bhxh thất nghiệp như thế nào?",
+  "answer": "Issue:\nVấn đề đặt ra là các bước nhận bảo hiểm xã hội (BHXH) thất nghiệp được quy định như thế nào theo pháp luật hiện hành.\n\nRule:\nTheo Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 2: \"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\"\nTheo Luật BHXH 2024 (41/2024/QH15), Điều 12, Khoản 3: \"Được cơ quan bảo hiểm xã hội hướng dẫn trình tự, thủ tục thực hiện bảo hiểm xã hội.\"\n\nApplication:\nCác giá trị được Prolog truy vấn và trả về gồm: Steps = [lap_ho_so, nop_ho_so_cho_co_quan_bhxh, duoc_huong_dan_trinh_tu_thu_tuc]. Các bước này được xác định dựa trên quy định tại Điều 13 Khoản 2 và Điều 12 Khoản 3 của Luật BHXH 2024. Truy vấn Prolog đã sử dụng các nguồn luật này để xác định trình tự các bước nhận BHXH thất nghiệp.\n\nConclusion:\nCác bước nhận BHXH thất nghiệp theo quy định là: lập hồ sơ, nộp hồ sơ cho cơ quan bảo hiểm xã hội, và được hướng dẫn trình tự, thủ tục thực hiện. (Steps = [lap_ho_so, nop_ho_so_cho_co_quan_bhxh, duoc_huong_dan_trinh_tu_thu_tuc])",
+  "citations": [
+    "[Điều 13 khoản 2]",
+    "[Điều 12 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A13.K2",
+    "L41_2024.A12.K3"
+  ],
+  "citation_indices": [
+    0,
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,steps_nhan_bhxh_that_nghiep([lap_ho_so,nop_ho_so_cho_co_quan_bhxh,duoc_huong_dan_trinh_tu_thu_tuc]),based_on(source_c001)),step(conclusion,steps_nhan_bhxh_that_nghiep([lap_ho_so,nop_ho_so_cho_co_quan_bhxh,duoc_huong_dan_trinh_tu_thu_tuc]),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Vấn đề đặt ra là các bước nhận bảo hiểm xã hội (BHXH) thất nghiệp được quy định như thế nào theo pháp luật hiện hành.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 2: \"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\"\nTheo Luật BHXH 2024 (41/2024/QH15), Điều 12, Khoản 3: \"Được cơ quan bảo hiểm xã hội hướng dẫn trình tự, thủ tục thực hiện bảo hiểm xã hội.\"",
+    "application": "Các giá trị được Prolog truy vấn và trả về gồm: Steps = [lap_ho_so, nop_ho_so_cho_co_quan_bhxh, duoc_huong_dan_trinh_tu_thu_tuc]. Các bước này được xác định dựa trên quy định tại Điều 13 Khoản 2 và Điều 12 Khoản 3 của Luật BHXH 2024. Truy vấn Prolog đã sử dụng các nguồn luật này để xác định trình tự các bước nhận BHXH thất nghiệp.",
+    "conclusion": "Các bước nhận BHXH thất nghiệp theo quy định là: lập hồ sơ, nộp hồ sơ cho cơ quan bảo hiểm xã hội, và được hướng dẫn trình tự, thủ tục thực hiện. (Steps = [lap_ho_so, nop_ho_so_cho_co_quan_bhxh, duoc_huong_dan_trinh_tu_thu_tuc])"
+  },
+  "elapsed_s": 6.308,
+  "prompt_tokens": 3229,
+  "completion_tokens": 612,
+  "error": null,
+  "gold_answer": "Các bước cơ bản nhận BHTN: (1) chuẩn bị hồ sơ gồm đơn đề nghị, CCCD, tài liệu chấm dứt HĐLĐ; (2) nộp tại trung tâm dịch vụ việc làm trong 03 tháng từ ngày nghỉ việc; (3) chờ 15 ngày làm việc nếu chưa có việc làm; (4) nhận quyết định hưởng và tiền trợ cấp; (5) thực hiện thông báo tìm kiếm việc làm hằng tháng đúng lịch hẹn.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

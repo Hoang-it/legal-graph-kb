@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 113,
+  "question": "E đã nghỉ cty ngày 31/3. Tính đến nay chưa đi làm chính thức ở cty nào cũng chưa xin được việc làm ( tức ko có HĐLĐ VÀ đóng BHXH) . Nhưng e có làm 1 job online ( làm remote)  để kiếm thêm, làm job này có ký HĐ DỊCH VỤ -k đóng BHXH, K trừ gia cảnh. \nLiệu nếu hết tháng 4 hoặc tháng 5 mà vẫn chưa tìm đc việc chính thức thì e có được làm đơn lãnh BHTN ko? Và có được hưởng ko?",
+  "answer": "Issue:\nNgười hỏi đã nghỉ việc và hiện chỉ làm hợp đồng dịch vụ không đóng BHXH, chưa có HĐLĐ và đóng BHXH; nếu sau vài tháng vẫn chưa có việc chính thức, có thể nộp đơn và được hưởng bảo hiểm thất nghiệp hay không?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15) - Article 33, Clause 5:\n\"Đối tượng quy định tại các điểm a, b, c, d và i khoản 1 và khoản 2 Điều 2 của Luật này mà không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì người lao động không phải đóng bảo hiểm xã hội tháng đó, trừ trường hợp người sử dụng lao động và người lao động có thỏa thuận về việc có đóng bảo hiểm xã hội cho người lao động tháng đó với căn cứ đóng bằng căn cứ đóng bảo hiểm xã hội tháng g\"\nLuật BHXH 2024 (41/2024/QH15) - Article 107, Clause 2:\n\"Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.\nThời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần đối với trường hợp người hưởng bảo hiểm xã hội theo quy \"\n\nApplication:\nslot_bindings: không có slot (empty).\nProlog đã dùng các nguồn pháp luật được nạp (source_c000 tương ứng với Article 33 Clause 5 và source_c007 tương ứng với Article 107 Clause 2) theo trace: [step(conclusion,unemployment_benefit_conditions(insufficient_legal_basis_for_unemployment),based_on(source_c000)),step(note_missing_unemployment_provisions_in_corpus,unemployment_benefit_conditions(insufficient_legal_basis_for_unemployment),based_on(source_c007))]. Hệ thống đối chiếu các nguồn này để kiểm tra điều kiện hưởng.\n\nConclusion:\nAnswer = insufficient_legal_basis_for_unemployment. Prolog trả về nhãn này (không tìm đủ cơ sở pháp lý trong kho văn bản đã nạp để khẳng định việc được hưởng BHTN).",
+  "citations": [
+    "[Điều 2]",
+    "[Điều 106]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2",
+    "L41_2024.A106"
+  ],
+  "citation_indices": [
+    0,
+    7
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_conditions(insufficient_legal_basis_for_unemployment),based_on(source_c000)),step(note_missing_unemployment_provisions_in_corpus,unemployment_benefit_conditions(insufficient_legal_basis_for_unemployment),based_on(source_c007))]",
+  "irac_sections": {
+    "issue": "Người hỏi đã nghỉ việc và hiện chỉ làm hợp đồng dịch vụ không đóng BHXH, chưa có HĐLĐ và đóng BHXH; nếu sau vài tháng vẫn chưa có việc chính thức, có thể nộp đơn và được hưởng bảo hiểm thất nghiệp hay không?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15) - Article 33, Clause 5:\n\"Đối tượng quy định tại các điểm a, b, c, d và i khoản 1 và khoản 2 Điều 2 của Luật này mà không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì người lao động không phải đóng bảo hiểm xã hội tháng đó, trừ trường hợp người sử dụng lao động và người lao động có thỏa thuận về việc có đóng bảo hiểm xã hội cho người lao động tháng đó với căn cứ đóng bằng căn cứ đóng bảo hiểm xã hội tháng g\"\nLuật BHXH 2024 (41/2024/QH15) - Article 107, Clause 2:\n\"Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.\nThời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần đối với trường hợp người hưởng bảo hiểm xã hội theo quy \"",
+    "application": "slot_bindings: không có slot (empty).\nProlog đã dùng các nguồn pháp luật được nạp (source_c000 tương ứng với Article 33 Clause 5 và source_c007 tương ứng với Article 107 Clause 2) theo trace: [step(conclusion,unemployment_benefit_conditions(insufficient_legal_basis_for_unemployment),based_on(source_c000)),step(note_missing_unemployment_provisions_in_corpus,unemployment_benefit_conditions(insufficient_legal_basis_for_unemployment),based_on(source_c007))]. Hệ thống đối chiếu các nguồn này để kiểm tra điều kiện hưởng.",
+    "conclusion": "Answer = insufficient_legal_basis_for_unemployment. Prolog trả về nhãn này (không tìm đủ cơ sở pháp lý trong kho văn bản đã nạp để khẳng định việc được hưởng BHTN)."
+  },
+  "elapsed_s": 64.224,
+  "prompt_tokens": 6261,
+  "completion_tokens": 5262,
+  "error": null,
+  "gold_answer": "Nếu bạn chỉ làm job online theo hợp đồng dịch vụ, không phải HĐLĐ thuộc diện tham gia BHTN, thì về nguyên tắc vẫn có thể nộp hồ sơ hưởng BHTN nếu đáp ứng điều kiện luật định. Bạn phải nộp trong 03 tháng kể từ ngày chấm dứt HĐLĐ cũ và sau khi nộp, nếu sau 15 ngày vẫn chưa có việc làm thuộc diện phải tham gia BHTN thì được hưởng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

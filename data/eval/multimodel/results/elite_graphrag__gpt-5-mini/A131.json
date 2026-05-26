@@ -1,0 +1,21 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 131,
+  "question": "Em bị mất sổ BHXH, chỉ còn thông tin, thời gian đóng tích hợp trên VNEID thì có rút BH 1 lần được không?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=unable_to_conclude, repair_rounds=2, error=Connection error.]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "unable_to_conclude",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 4.37,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "error": null,
+  "gold_answer": "Nếu bạn bị mất sổ BHXH nhưng dữ liệu quá trình đóng đã tích hợp trên VNeID thì vẫn có thể làm hồ sơ hưởng BHXH 1 lần. Cơ quan BHXH hiện đối chiếu dữ liệu điện tử là chính; khi cần, bạn làm thêm thủ tục cấp lại sổ hoặc xác nhận quá trình đóng. Quan trọng là bạn phải đủ điều kiện hưởng BHXH 1 lần theo luật và hồ sơ định danh phải trùng khớp.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

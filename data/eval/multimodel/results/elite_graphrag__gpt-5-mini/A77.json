@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 77,
+  "question": "Các bạn ơi, mình đóng BHXH tự nguyện được 3 năm. Mình thường đóng theo năm.\nNHưng hiện tại mình ở nước ngoài, số đt cũ đã bỏ, vậy có cách nào tìm được thông tin số tiền cần đóng qua web hay gì ko?\nTrước mình đóng ở BHXH ở huyện",
+  "answer": "Issue:\nMình đóng BHXH tự nguyện nhiều năm, đóng theo năm; hiện ở nước ngoài, mất số điện thoại cũ và trước đây đóng tại BHXH huyện — hỏi có cách tra cứu thông tin số tiền cần đóng qua web hoặc hình thức từ xa không?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), article 3, clause 4: \"Bảo hiểm xã hội tự nguyện là loại hình bảo hiểm xã hội do Nhà nước tổ chức mà công dân Việt Nam tự nguyện tham gia và được lựa chọn mức đóng, phương thức đóng phù hợp với thu nhập của mình.\"\nLuật BHXH 2024 (41/2024/QH15), article 82, clause 1: \"Người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng có nguyện vọng thay đổi hình thức nhận hoặc thay đổi nơi nhận do chuyển nơi cư trú trong nước thì có văn bản gửi cơ quan bảo hiểm xã hội nơi đang chi trả.\"\n\nApplication:\nKhông có slot_bindings. Prolog đã dùng các fact xác thực sau:\nyears_contributed(user, 3).\npayment_frequency(user, yearly).\nlocation_abroad(user).\nold_phone_missing(user).\npaid_at_bhxh_level(user, district).\nProlog tiêu thụ các fact này trong quy tắc how_to_find_payment_info để suy ra các bước khả thi tra cứu (portal trực tuyến, gọi tổng đài, email/liên hệ cơ quan BHXH địa phương, ủy quyền người đại diện).\n\nConclusion:\nAnswer = [use_online_portal_to_check_account,call_bhxh_hotline,email_or_contact_local_bhxh_office,authorize_representative_to_inquire_at_local_bhxh]. Trace = [step(conclusion,how_to_find_payment_info(user,[use_online_portal_to_check_account,call_bhxh_hotline,email_or_contact_local_bhxh_office,authorize_representative_to_inquire_at_local_bhxh]),based_on(source_c003)),step(conclusion,how_to_find_payment_info(user,[use_online_portal_to_check_account,call_bhxh_hotline,email_or_contact_local_bhxh_office,authorize_representative_to_inquire_at_local_bhxh]),based_on(source_c005))].",
+  "citations": [
+    "[Điều 3 khoản 4]",
+    "[Điều 82 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A3.K4",
+    "L41_2024.A82.K1"
+  ],
+  "citation_indices": [
+    3,
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,how_to_find_payment_info(user,[use_online_portal_to_check_account,call_bhxh_hotline,email_or_contact_local_bhxh_office,authorize_representative_to_inquire_at_local_bhxh]),based_on(source_c003)),step(conclusion,how_to_find_payment_info(user,[use_online_portal_to_check_account,call_bhxh_hotline,email_or_contact_local_bhxh_office,authorize_representative_to_inquire_at_local_bhxh]),based_on(source_c005))]",
+  "irac_sections": {
+    "issue": "Mình đóng BHXH tự nguyện nhiều năm, đóng theo năm; hiện ở nước ngoài, mất số điện thoại cũ và trước đây đóng tại BHXH huyện — hỏi có cách tra cứu thông tin số tiền cần đóng qua web hoặc hình thức từ xa không?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), article 3, clause 4: \"Bảo hiểm xã hội tự nguyện là loại hình bảo hiểm xã hội do Nhà nước tổ chức mà công dân Việt Nam tự nguyện tham gia và được lựa chọn mức đóng, phương thức đóng phù hợp với thu nhập của mình.\"\nLuật BHXH 2024 (41/2024/QH15), article 82, clause 1: \"Người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng có nguyện vọng thay đổi hình thức nhận hoặc thay đổi nơi nhận do chuyển nơi cư trú trong nước thì có văn bản gửi cơ quan bảo hiểm xã hội nơi đang chi trả.\"",
+    "application": "Không có slot_bindings. Prolog đã dùng các fact xác thực sau:\nyears_contributed(user, 3).\npayment_frequency(user, yearly).\nlocation_abroad(user).\nold_phone_missing(user).\npaid_at_bhxh_level(user, district).\nProlog tiêu thụ các fact này trong quy tắc how_to_find_payment_info để suy ra các bước khả thi tra cứu (portal trực tuyến, gọi tổng đài, email/liên hệ cơ quan BHXH địa phương, ủy quyền người đại diện).",
+    "conclusion": "Answer = [use_online_portal_to_check_account,call_bhxh_hotline,email_or_contact_local_bhxh_office,authorize_representative_to_inquire_at_local_bhxh]. Trace = [step(conclusion,how_to_find_payment_info(user,[use_online_portal_to_check_account,call_bhxh_hotline,email_or_contact_local_bhxh_office,authorize_representative_to_inquire_at_local_bhxh]),based_on(source_c003)),step(conclusion,how_to_find_payment_info(user,[use_online_portal_to_check_account,call_bhxh_hotline,email_or_contact_local_bhxh_office,authorize_representative_to_inquire_at_local_bhxh]),based_on(source_c005))]."
+  },
+  "elapsed_s": 64.046,
+  "prompt_tokens": 5445,
+  "completion_tokens": 6303,
+  "error": null,
+  "gold_answer": "Bạn có thể tra cứu quá trình tham gia và mức đóng BHXH tự nguyện qua ứng dụng VssID hoặc Cổng BHXH Việt Nam nếu còn nhớ mã số BHXH/tài khoản. Nếu mất số điện thoại cũ, bạn có thể liên hệ cơ quan BHXH nơi cư trú hoặc tổng đài hỗ trợ để cập nhật lại thông tin tài khoản, email, số điện thoại. Khi đã đăng nhập được, bạn sẽ xem được quá trình đóng và số tiền cần đóng kỳ tiếp theo theo phương thức đã chọn.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25, Điều 36; hướng dẫn VssID/BHXH Việt Nam"
+}

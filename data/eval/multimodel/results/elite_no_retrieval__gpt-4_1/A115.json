@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 115,
+  "question": "Mình đóng được bảo hiểm 8 tháng thì có rút được tiền trong bảo hiểu đc không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu đã đóng bảo hiểm xã hội được 8 tháng thì có thể rút tiền bảo hiểm xã hội một lần hay không?\n\nRule:\n\"Người lao động được hưởng bảo hiểm xã hội một lần nếu sau một năm nghỉ việc mà chưa đủ điều kiện hưởng lương hưu và không tiếp tục đóng bảo hiểm xã hội.\" (law_bhxh_2024, article_60, clause_1)\n\nApplication:\nKhông có giá trị cụ thể nào được cung cấp cho các trường thông tin (slot_id) ngoài xác nhận đã đóng bảo hiểm xã hội 8 tháng (months_contributed(user, 8)). Truy vấn Prolog đã sử dụng thông tin này để xác định điều kiện đủ về thời gian đóng bảo hiểm xã hội.\n\nConclusion:\nTheo truy vết Prolog, người lao động đã đóng bảo hiểm xã hội 8 tháng có thể đủ điều kiện để rút bảo hiểm xã hội một lần, dựa trên nguồn (source_a60_k1). Tuy nhiên, cần lưu ý rằng còn điều kiện về thời gian nghỉ việc và không tiếp tục đóng bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 60 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,eligible_for_lump_sum_withdrawal(user),based_on(source_a60_k1))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu đã đóng bảo hiểm xã hội được 8 tháng thì có thể rút tiền bảo hiểm xã hội một lần hay không?",
+    "rule": "\"Người lao động được hưởng bảo hiểm xã hội một lần nếu sau một năm nghỉ việc mà chưa đủ điều kiện hưởng lương hưu và không tiếp tục đóng bảo hiểm xã hội.\" (law_bhxh_2024, article_60, clause_1)",
+    "application": "Không có giá trị cụ thể nào được cung cấp cho các trường thông tin (slot_id) ngoài xác nhận đã đóng bảo hiểm xã hội 8 tháng (months_contributed(user, 8)). Truy vấn Prolog đã sử dụng thông tin này để xác định điều kiện đủ về thời gian đóng bảo hiểm xã hội.",
+    "conclusion": "Theo truy vết Prolog, người lao động đã đóng bảo hiểm xã hội 8 tháng có thể đủ điều kiện để rút bảo hiểm xã hội một lần, dựa trên nguồn (source_a60_k1). Tuy nhiên, cần lưu ý rằng còn điều kiện về thời gian nghỉ việc và không tiếp tục đóng bảo hiểm xã hội."
+  },
+  "elapsed_s": 5.162,
+  "prompt_tokens": 1949,
+  "completion_tokens": 470,
+  "error": null,
+  "gold_answer": "Đóng BHXH 8 tháng chưa đương nhiên được rút ngay. Bạn chỉ được hưởng BHXH 1 lần khi thuộc trường hợp luật cho phép, phổ biến là đã nghỉ việc và sau 12 tháng không còn thuộc diện tham gia BHXH bắt buộc, cũng không tham gia BHXH tự nguyện. Nếu chưa đủ điều kiện thì thời gian 8 tháng đó được bảo lưu để cộng nối về sau.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

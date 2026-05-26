@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 75,
+  "question": "Tổng thời gian e đóng bh là 17 tháng trong đó bao gồm tổng 3 công ty . vậy tính thất nghiệp thế nào? chỉ lấy đúng 6th cuối gần nhất là cty e làm của năm 2025 vừa rồi để tính hay sao?",
+  "answer": "Issue: Bạn đã đóng bảo hiểm xã hội tổng cộng 17 tháng qua 3 công ty và muốn biết cách tính trợ cấp thất nghiệp. Bạn hỏi liệu có cần chỉ lấy 6 tháng cuối cùng của công ty gần nhất trong năm 2025 để tính hay không.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 6: \"Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\"\n\nApplication: Không có giá trị cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo thông tin đã xác minh, bạn đã đóng bảo hiểm xã hội trong 17 tháng. Dựa trên quy tắc Prolog, vì bạn đã đóng bảo hiểm xã hội trên 12 tháng, phương pháp tính toán được áp dụng là \"6 tháng của công việc gần nhất\".\n\nConclusion: Phương pháp tính toán trợ cấp thất nghiệp cho bạn là \"6 tháng của công việc gần nhất\". Điều này có nghĩa là để tính trợ cấp thất nghiệp, chỉ cần xem xét 6 tháng cuối cùng của công việc gần nhất mà bạn đã làm.",
+  "citations": [
+    "[Điều 5 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K6"
+  ],
+  "citation_indices": [
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_calculation(user,6 months of the most recent employment),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Bạn đã đóng bảo hiểm xã hội tổng cộng 17 tháng qua 3 công ty và muốn biết cách tính trợ cấp thất nghiệp. Bạn hỏi liệu có cần chỉ lấy 6 tháng cuối cùng của công ty gần nhất trong năm 2025 để tính hay không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 6: \"Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\"",
+    "application": "Không có giá trị cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo thông tin đã xác minh, bạn đã đóng bảo hiểm xã hội trong 17 tháng. Dựa trên quy tắc Prolog, vì bạn đã đóng bảo hiểm xã hội trên 12 tháng, phương pháp tính toán được áp dụng là \"6 tháng của công việc gần nhất\".",
+    "conclusion": "Phương pháp tính toán trợ cấp thất nghiệp cho bạn là \"6 tháng của công việc gần nhất\". Điều này có nghĩa là để tính trợ cấp thất nghiệp, chỉ cần xem xét 6 tháng cuối cùng của công việc gần nhất mà bạn đã làm."
+  },
+  "elapsed_s": 5.911,
+  "prompt_tokens": 3309,
+  "completion_tokens": 675,
+  "error": null,
+  "gold_answer": "Thời gian đóng BHTN của 3 công ty được cộng dồn để xác định bạn được hưởng mấy tháng trợ cấp. Còn mức tiền trợ cấp thất nghiệp hằng tháng lại được tính theo 60% mức bình quân tiền lương tháng đóng BHTN của 6 tháng liền kề trước khi thất nghiệp, tức là chủ yếu nhìn 6 tháng cuối cùng trước khi nghỉ. Vì vậy số tháng hưởng và mức hưởng là hai cách tính khác nhau.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 50"
+}

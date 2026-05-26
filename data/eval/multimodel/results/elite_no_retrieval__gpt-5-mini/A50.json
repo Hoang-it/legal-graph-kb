@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 50,
+  "question": "Mình sinh năm 1979. Thì đến năm bao nhiêu mình đủ tuổi về hưu?",
+  "answer": "Issue:\nMình sinh năm 1979. Đến năm bao nhiêu mình đủ tuổi về hưu?\n\nRule:\nKhông có trích dẫn pháp luật được cung cấp trong trace.\n\nApplication:\nslot_bindings: (trống — không có slot nào được gán).\nHệ thống đã xác minh và sử dụng fact: birth_year(user, 1979).\nChương trình Prolog chứa hai luật: một luật cộng 62 vào năm sinh (male_retirement) và một luật cộng 60 vào năm sinh (female_retirement). Prolog đã áp dụng luật male_retirement theo trace.\n\nTrace Prolog trả về: [step(male_retirement,retirement_year(user,2041),based_on(none))]\n\nConclusion:\nProlog binding cho biến Year là 2041 (Year = 2041). Trace chi tiết: [step(male_retirement,retirement_year(user,2041),based_on(none))]. Không có missing_slots hay lỗi thực thi trong trace.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(male_retirement,retirement_year(user,2041),based_on(none))]",
+  "irac_sections": {
+    "issue": "Mình sinh năm 1979. Đến năm bao nhiêu mình đủ tuổi về hưu?",
+    "rule": "Không có trích dẫn pháp luật được cung cấp trong trace.",
+    "application": "slot_bindings: (trống — không có slot nào được gán).\nHệ thống đã xác minh và sử dụng fact: birth_year(user, 1979).\nChương trình Prolog chứa hai luật: một luật cộng 62 vào năm sinh (male_retirement) và một luật cộng 60 vào năm sinh (female_retirement). Prolog đã áp dụng luật male_retirement theo trace.\n\nTrace Prolog trả về: [step(male_retirement,retirement_year(user,2041),based_on(none))]",
+    "conclusion": "Prolog binding cho biến Year là 2041 (Year = 2041). Trace chi tiết: [step(male_retirement,retirement_year(user,2041),based_on(none))]. Không có missing_slots hay lỗi thực thi trong trace."
+  },
+  "elapsed_s": 29.549,
+  "prompt_tokens": 1918,
+  "completion_tokens": 3952,
+  "error": null,
+  "gold_answer": "Bạn sinh năm 1979 thì thời điểm đủ tuổi nghỉ hưu còn phụ thuộc giới tính và trường hợp nghỉ hưu bình thường hay sớm. Nếu là nữ, mốc chuẩn hiện hành là đủ 60 tuổi, tương ứng khoảng năm 2039. Nếu là nam, mốc chuẩn là đủ 62 tuổi, tương ứng khoảng năm 2041. Nếu làm nghề, công việc nặng nhọc hoặc thuộc trường hợp đặc biệt thì có thể nghỉ sớm hơn theo luật.",
+  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 169; Nghị định 135/2020/NĐ-CP"
+}

@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 107,
+  "question": "Bảo hiểm của e đóng từ 2015, đóng gián đoạn. Đến năm 2021 thì nghỉ đóng, vậy e có được rút không? và rút được bao nhiêu?",
+  "answer": "Issue: Bạn đã đóng bảo hiểm xã hội từ năm 2015 và nghỉ đóng vào năm 2021. Bạn muốn biết liệu có thể rút bảo hiểm xã hội một lần hay không và số tiền có thể rút là bao nhiêu.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 76, Khoản 2: \"Mức trợ cấp một lần đối với người đang hưởng lương hưu được tính theo thời gian đã đóng bảo hiểm xã hội trong đó mỗi năm đóng bảo hiểm xã hội trước năm 2014 được tính bằng 1,5 tháng lương hưu đang hưởng, mỗi năm đóng bảo hiểm xã hội từ năm 2014 trở đi được tính bằng 02 tháng lương hưu đang hưởng; sau đó mỗi tháng đã hưởng lương hưu thì mức trợ cấp một lần trừ 0,5 tháng lương hưu. Mức thấp nhất bằng 03 tháng lương hưu đang hưởng.\"\n\nApplication: Không có thông tin cụ thể về các giá trị đầu vào từ người dùng, nhưng hệ thống đã xác định rằng bạn đã đóng bảo hiểm xã hội trong 6 năm. Theo quy tắc được áp dụng, số năm đóng bảo hiểm xã hội từ năm 2014 trở đi được tính bằng 2 tháng lương hưu cho mỗi năm.\n\nConclusion: Số tiền bạn có thể rút một lần là 12 tháng lương hưu. Điều này được tính toán dựa trên số năm bạn đã đóng bảo hiểm xã hội và quy định pháp luật hiện hành.",
+  "citations": [
+    "[Điều 76 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A76.K2"
+  ],
+  "citation_indices": [
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_social_insurance_amount(user,12),based_on(source_c019))]",
+  "irac_sections": {
+    "issue": "Bạn đã đóng bảo hiểm xã hội từ năm 2015 và nghỉ đóng vào năm 2021. Bạn muốn biết liệu có thể rút bảo hiểm xã hội một lần hay không và số tiền có thể rút là bao nhiêu.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 76, Khoản 2: \"Mức trợ cấp một lần đối với người đang hưởng lương hưu được tính theo thời gian đã đóng bảo hiểm xã hội trong đó mỗi năm đóng bảo hiểm xã hội trước năm 2014 được tính bằng 1,5 tháng lương hưu đang hưởng, mỗi năm đóng bảo hiểm xã hội từ năm 2014 trở đi được tính bằng 02 tháng lương hưu đang hưởng; sau đó mỗi tháng đã hưởng lương hưu thì mức trợ cấp một lần trừ 0,5 tháng lương hưu. Mức thấp nhất bằng 03 tháng lương hưu đang hưởng.\"",
+    "application": "Không có thông tin cụ thể về các giá trị đầu vào từ người dùng, nhưng hệ thống đã xác định rằng bạn đã đóng bảo hiểm xã hội trong 6 năm. Theo quy tắc được áp dụng, số năm đóng bảo hiểm xã hội từ năm 2014 trở đi được tính bằng 2 tháng lương hưu cho mỗi năm.",
+    "conclusion": "Số tiền bạn có thể rút một lần là 12 tháng lương hưu. Điều này được tính toán dựa trên số năm bạn đã đóng bảo hiểm xã hội và quy định pháp luật hiện hành."
+  },
+  "elapsed_s": 6.148,
+  "prompt_tokens": 3155,
+  "completion_tokens": 654,
+  "error": null,
+  "gold_answer": "Nếu bạn đã ngừng đóng từ năm 2021 đến nay và không thuộc diện tiếp tục tham gia, về nguyên tắc bạn có thể đề nghị hưởng BHXH 1 lần nếu thuộc trường hợp luật cho phép. Mức hưởng tính theo số năm đã đóng và mức bình quân tiền lương tháng đóng BHXH sau điều chỉnh; mỗi năm từ 2014 trở đi tính 2 tháng bình quân lương, trước 2014 tính 1,5 tháng/năm.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

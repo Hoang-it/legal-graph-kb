@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 133,
+  "question": "Làm sao để đăng ký Bhxh không hướng lượng cho chủ doanh nghiệp?",
+  "answer": "Issue:\nLàm sao để đăng ký BHXH không hưởng lương cho chủ doanh nghiệp?\n\nRule:\nKhông có trích dẫn pháp lý được cung cấp trong dữ liệu trả về (không có mục citations trong trace), nên hệ thống không thể dẫn nguyên văn văn bản pháp luật.\n\nApplication:\nslot_bindings: không có slot nào được gán.\nProlog query đã trả về một danh sách hướng dẫn và trace thực thi như sau.\nAnswer = \"[Bước 1: Xác định đối tượng: nếu bạn là chủ doanh nghiệp và không nhận lương, bạn không thuộc đối tượng BHXH bắt buộc và có thể tham gia BHXH tự nguyện.,Bước 2: Lựa chọn tham gia BHXH tự nguyện và quyết định mức đóng, phương thức đóng (hàng tháng, hàng quý, hàng năm tùy quy định).,Bước 3: Chuẩn bị hồ sơ: giấy tờ tùy thân (CMND/CCCD/hộ chiếu), giấy tờ chứng minh tư cách (Giấy chứng nhận đăng ký doanh nghiệp hoặc tài liệu tương đương).,Bước 4: Nộp hồ sơ tại cơ quan BHXH nơi cư trú hoặc nơi doanh nghiệp đăng ký; khai mẫu đăng ký theo hướng dẫn của cơ quan BHXH.,Bước 5: Thanh toán tiền đóng theo thỏa thuận; nhận xác nhận, lưu giữ biên lai và theo dõi sổ BHXH/tài khoản để đảm bảo quyền lợi.]\"\nTrace = \"[step(check_status,Xác định chủ doanh nghiệp không thuộc đối tượng BHXH bắt buộc và có thể tham gia tự nguyện,based_on(source_compulsory)),step(choose_scheme,Quyết định tham gia BHXH tự nguyện và chọn mức, phương thức đóng,based_on(source_compulsory)),step(prepare_documents,Chuẩn bị giấy tờ tùy thân và giấy tờ chứng minh tư cách chủ doanh nghiệp,based_on(source_procedure)),step(submit,Nộp hồ sơ tại cơ quan BHXH nơi đăng ký,based_on(source_procedure)),step(pay,Thanh toán tiền đóng và nhận xác nhận từ cơ quan BHXH,based_on(source_procedure))]\"\n\nConclusion:\nProlog trả về biến Answer với giá trị nguyên vẹn như mục Application phía trên (Answer = ...). Vì không có trích dẫn pháp luật trong trace, hệ thống không thể dẫn văn bản pháp luật gốc để tham chiếu.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(check_status,Xác định chủ doanh nghiệp không thuộc đối tượng BHXH bắt buộc và có thể tham gia tự nguyện,based_on(source_compulsory)),step(choose_scheme,Quyết định tham gia BHXH tự nguyện và chọn mức, phương thức đóng,based_on(source_compulsory)),step(prepare_documents,Chuẩn bị giấy tờ tùy thân và giấy tờ chứng minh tư cách chủ doanh nghiệp,based_on(source_procedure)),step(submit,Nộp hồ sơ tại cơ quan BHXH nơi đăng ký,based_on(source_procedure)),step(pay,Thanh toán tiền đóng và nhận xác nhận từ cơ quan BHXH,based_on(source_procedure))]",
+  "irac_sections": {
+    "issue": "Làm sao để đăng ký BHXH không hưởng lương cho chủ doanh nghiệp?",
+    "rule": "Không có trích dẫn pháp lý được cung cấp trong dữ liệu trả về (không có mục citations trong trace), nên hệ thống không thể dẫn nguyên văn văn bản pháp luật.",
+    "application": "slot_bindings: không có slot nào được gán.\nProlog query đã trả về một danh sách hướng dẫn và trace thực thi như sau.\nAnswer = \"[Bước 1: Xác định đối tượng: nếu bạn là chủ doanh nghiệp và không nhận lương, bạn không thuộc đối tượng BHXH bắt buộc và có thể tham gia BHXH tự nguyện.,Bước 2: Lựa chọn tham gia BHXH tự nguyện và quyết định mức đóng, phương thức đóng (hàng tháng, hàng quý, hàng năm tùy quy định).,Bước 3: Chuẩn bị hồ sơ: giấy tờ tùy thân (CMND/CCCD/hộ chiếu), giấy tờ chứng minh tư cách (Giấy chứng nhận đăng ký doanh nghiệp hoặc tài liệu tương đương).,Bước 4: Nộp hồ sơ tại cơ quan BHXH nơi cư trú hoặc nơi doanh nghiệp đăng ký; khai mẫu đăng ký theo hướng dẫn của cơ quan BHXH.,Bước 5: Thanh toán tiền đóng theo thỏa thuận; nhận xác nhận, lưu giữ biên lai và theo dõi sổ BHXH/tài khoản để đảm bảo quyền lợi.]\"\nTrace = \"[step(check_status,Xác định chủ doanh nghiệp không thuộc đối tượng BHXH bắt buộc và có thể tham gia tự nguyện,based_on(source_compulsory)),step(choose_scheme,Quyết định tham gia BHXH tự nguyện và chọn mức, phương thức đóng,based_on(source_compulsory)),step(prepare_documents,Chuẩn bị giấy tờ tùy thân và giấy tờ chứng minh tư cách chủ doanh nghiệp,based_on(source_procedure)),step(submit,Nộp hồ sơ tại cơ quan BHXH nơi đăng ký,based_on(source_procedure)),step(pay,Thanh toán tiền đóng và nhận xác nhận từ cơ quan BHXH,based_on(source_procedure))]\"",
+    "conclusion": "Prolog trả về biến Answer với giá trị nguyên vẹn như mục Application phía trên (Answer = ...). Vì không có trích dẫn pháp luật trong trace, hệ thống không thể dẫn văn bản pháp luật gốc để tham chiếu."
+  },
+  "elapsed_s": 49.64,
+  "prompt_tokens": 2859,
+  "completion_tokens": 5165,
+  "error": null,
+  "gold_answer": "Nếu bạn là chủ doanh nghiệp/chủ hộ thuộc diện tham gia BHXH bắt buộc theo quy định mới thì phải đăng ký tham gia tại cơ quan BHXH qua đơn vị hoặc mã đơn vị của doanh nghiệp/hộ kinh doanh. Khái niệm 'không hưởng lương' chỉ ảnh hưởng căn cứ đóng ở từng nhóm đối tượng, không phải ai cũng được tự chọn không tham gia. Bạn nên đối chiếu đúng loại hình doanh nghiệp và chức danh quản lý của mình.",
+  "gold_citations_raw": "Điều 2 Luật BHXH 2024; Nghị định 158/2025/NĐ-CP"
+}

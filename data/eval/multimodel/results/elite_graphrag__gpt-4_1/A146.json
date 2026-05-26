@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 146,
+  "question": "MÌNH ĐÓNG BHXH ở công ty cũ nhưng chưa rút về, hiện tại mình vào công ty mới, côngty mới đóng cho mình nhưng mình xem trên app BHXH thì những tháng công ty cũ mất không hiển thị nữa. cho mình hỏi những tháng đấy như thế nào?",
+  "answer": "Issue:\nBạn hỏi về việc các tháng đã đóng bảo hiểm xã hội (BHXH) ở công ty cũ không còn hiển thị trên ứng dụng BHXH khi bạn chuyển sang công ty mới, và muốn biết các tháng đó sẽ được xử lý như thế nào.\n\nRule:\n\"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 3)\n\nApplication:\nKhông có slot_id cụ thể nào được ràng buộc trong trường hợp này. Prolog đã sử dụng quy định tại Điều 13, Khoản 3 Luật BHXH 2024 để xác định rằng khi người lao động chuyển công ty, nếu phát hiện thiếu tháng đóng BHXH trên hệ thống, cần liên hệ với công ty cũ và cơ quan BHXH để xác nhận lại thời gian đã đóng. Công ty cũ có trách nhiệm phối hợp xác nhận thời gian đóng BHXH khi người lao động chấm dứt hợp đồng.\n\nConclusion:\nTheo Prolog, câu trả lời là: \"Người lao động khi chuyển công ty, nếu thấy thiếu tháng đóng BHXH trên hệ thống, cần liên hệ với công ty cũ và cơ quan BHXH để xác nhận lại thời gian đã đóng. Theo luật, công ty cũ phải phối hợp xác nhận thời gian đóng BHXH khi người lao động chấm dứt hợp đồng.\"",
+  "citations": [
+    "[Điều 13 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A13.K3"
+  ],
+  "citation_indices": [
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,missing_bhxh_months_handling(Người lao động khi chuyển công ty, nếu thấy thiếu tháng đóng BHXH trên hệ thống, cần liên hệ với công ty cũ và cơ quan BHXH để xác nhận lại thời gian đã đóng. Theo luật, công ty cũ phải phối hợp xác nhận thời gian đóng BHXH khi người lao động chấm dứt hợp đồng.),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về việc các tháng đã đóng bảo hiểm xã hội (BHXH) ở công ty cũ không còn hiển thị trên ứng dụng BHXH khi bạn chuyển sang công ty mới, và muốn biết các tháng đó sẽ được xử lý như thế nào.",
+    "rule": "\"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 3)",
+    "application": "Không có slot_id cụ thể nào được ràng buộc trong trường hợp này. Prolog đã sử dụng quy định tại Điều 13, Khoản 3 Luật BHXH 2024 để xác định rằng khi người lao động chuyển công ty, nếu phát hiện thiếu tháng đóng BHXH trên hệ thống, cần liên hệ với công ty cũ và cơ quan BHXH để xác nhận lại thời gian đã đóng. Công ty cũ có trách nhiệm phối hợp xác nhận thời gian đóng BHXH khi người lao động chấm dứt hợp đồng.",
+    "conclusion": "Theo Prolog, câu trả lời là: \"Người lao động khi chuyển công ty, nếu thấy thiếu tháng đóng BHXH trên hệ thống, cần liên hệ với công ty cũ và cơ quan BHXH để xác nhận lại thời gian đã đóng. Theo luật, công ty cũ phải phối hợp xác nhận thời gian đóng BHXH khi người lao động chấm dứt hợp đồng.\""
+  },
+  "elapsed_s": 6.676,
+  "prompt_tokens": 3338,
+  "completion_tokens": 614,
+  "error": null,
+  "gold_answer": "Nếu tháng đóng ở công ty cũ không còn hiển thị trên app, trước hết bạn cần kiểm tra xem có bị gộp mã số, điều chỉnh quá trình hay lỗi đồng bộ dữ liệu hay không. Thời gian đã đóng hợp pháp sẽ không tự mất; BHXH có trách nhiệm cập nhật lại nếu dữ liệu sai. Bạn nên đề nghị BHXH in quá trình đóng chi tiết và đối chiếu với quyết định thôi việc, bảng lương, sổ/tờ rời cũ.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

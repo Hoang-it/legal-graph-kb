@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 171,
+  "question": "Mọi người ơi cho e hỏi nhận tiền trợ cấp thất nghiệp cần những giấy tờ gì vậy?",
+  "answer": "Issue:\nMọi người ơi cho e hỏi nhận tiền trợ cấp thất nghiệp cần những giấy tờ gì vậy?\n\nRule:\nKhông có trích dẫn văn bản pháp luật chính thức (document/article/clause) được cung cấp trong dữ liệu đầu vào.\n\nApplication:\nslot_bindings: không có slot nào được cung cấp.\nProlog đã chạy truy vấn unemployment_documents(Answer, Trace) mà không cần dữ liệu nhập ngoài, và trả về:\nAnswer = \"[Đơn xin hưởng trợ cấp thất nghiệp,Quyết định chấm dứt hợp đồng lao động hoặc giấy xác nhận nghỉ việc của người sử dụng lao động,Sổ bảo hiểm xã hội hoặc xác nhận đã đóng bảo hiểm thất nghiệp,Chứng minh nhân dân / Căn cước công dân / Hộ chiếu,Giấy xác nhận đăng ký thất nghiệp tại Trung tâm Dịch vụ việc làm]\"\nTrace = \"[step(list_documents,[Đơn xin hưởng trợ cấp thất nghiệp,Quyết định chấm dứt hợp đồng lao động hoặc giấy xác nhận nghỉ việc của người sử dụng lao động,Sổ bảo hiểm xã hội hoặc xác nhận đã đóng bảo hiểm thất nghiệp,Chứng minh nhân dân / Căn cước công dân / Hộ chiếu,Giấy xác nhận đăng ký thất nghiệp tại Trung tâm Dịch vụ việc làm],based_on(source_ui))]\"\n\nConclusion:\nProlog binding: Answer = \"[Đơn xin hưởng trợ cấp thất nghiệp,Quyết định chấm dứt hợp đồng lao động hoặc giấy xác nhận nghỉ việc của người sử dụng lao động,Sổ bảo hiểm xã hội hoặc xác nhận đã đóng bảo hiểm thất nghiệp,Chứng minh nhân dân / Căn cước công dân / Hộ chiếu,Giấy xác nhận đăng ký thất nghiệp tại Trung tâm Dịch vụ việc làm]\".",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(list_documents,[Đơn xin hưởng trợ cấp thất nghiệp,Quyết định chấm dứt hợp đồng lao động hoặc giấy xác nhận nghỉ việc của người sử dụng lao động,Sổ bảo hiểm xã hội hoặc xác nhận đã đóng bảo hiểm thất nghiệp,Chứng minh nhân dân / Căn cước công dân / Hộ chiếu,Giấy xác nhận đăng ký thất nghiệp tại Trung tâm Dịch vụ việc làm],based_on(source_ui))]",
+  "irac_sections": {
+    "issue": "Mọi người ơi cho e hỏi nhận tiền trợ cấp thất nghiệp cần những giấy tờ gì vậy?",
+    "rule": "Không có trích dẫn văn bản pháp luật chính thức (document/article/clause) được cung cấp trong dữ liệu đầu vào.",
+    "application": "slot_bindings: không có slot nào được cung cấp.\nProlog đã chạy truy vấn unemployment_documents(Answer, Trace) mà không cần dữ liệu nhập ngoài, và trả về:\nAnswer = \"[Đơn xin hưởng trợ cấp thất nghiệp,Quyết định chấm dứt hợp đồng lao động hoặc giấy xác nhận nghỉ việc của người sử dụng lao động,Sổ bảo hiểm xã hội hoặc xác nhận đã đóng bảo hiểm thất nghiệp,Chứng minh nhân dân / Căn cước công dân / Hộ chiếu,Giấy xác nhận đăng ký thất nghiệp tại Trung tâm Dịch vụ việc làm]\"\nTrace = \"[step(list_documents,[Đơn xin hưởng trợ cấp thất nghiệp,Quyết định chấm dứt hợp đồng lao động hoặc giấy xác nhận nghỉ việc của người sử dụng lao động,Sổ bảo hiểm xã hội hoặc xác nhận đã đóng bảo hiểm thất nghiệp,Chứng minh nhân dân / Căn cước công dân / Hộ chiếu,Giấy xác nhận đăng ký thất nghiệp tại Trung tâm Dịch vụ việc làm],based_on(source_ui))]\"",
+    "conclusion": "Prolog binding: Answer = \"[Đơn xin hưởng trợ cấp thất nghiệp,Quyết định chấm dứt hợp đồng lao động hoặc giấy xác nhận nghỉ việc của người sử dụng lao động,Sổ bảo hiểm xã hội hoặc xác nhận đã đóng bảo hiểm thất nghiệp,Chứng minh nhân dân / Căn cước công dân / Hộ chiếu,Giấy xác nhận đăng ký thất nghiệp tại Trung tâm Dịch vụ việc làm]\"."
+  },
+  "elapsed_s": 53.649,
+  "prompt_tokens": 2276,
+  "completion_tokens": 4021,
+  "error": null,
+  "gold_answer": "Hồ sơ nhận trợ cấp thất nghiệp thường gồm: đơn đề nghị hưởng trợ cấp thất nghiệp, CCCD và giấy tờ chứng minh chấm dứt HĐLĐ/hợp đồng làm việc. Bạn nộp tại trung tâm dịch vụ việc làm trong 03 tháng kể từ ngày nghỉ việc. Sau đó phải theo lịch hẹn để nhận quyết định và thông báo tìm kiếm việc làm hằng tháng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 85,
+  "question": "Em đóng BH từ tháng 8/2023 đến 2/2025, dừng t3,t4/2025. Sau đó đóng tiếp từ 5/2025 đến 5/2026. E dks cuối t10/2026. Nếu e nghỉ hẳn CTY e có đc hưởng bảo hiểm thất nghiệp không?",
+  "answer": "Issue:\nEm đóng BH từ tháng 8/2023 đến 2/2025, dừng t3,t4/2025; tiếp đóng từ 5/2025 đến 5/2026; dks cuối t10/2026. Hỏi có được hưởng bảo hiểm thất nghiệp nếu nghỉ hẳn công ty không?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15) - Điều 4 khoản 4: \"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\"\nLuật BHXH 2024 (41/2024/QH15) - Điều 141 khoản 12: \"Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30 tháng 6 năm 2025 mà không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.\"\n\nApplication:\nKhông có slot đầu vào được gán (slot_bindings trống).\nProlog trả về biến Conditions với giá trị:\n\"[Điều kiện hưởng bảo hiểm thất nghiệp được quy định trong Luật Việc làm; cần kiểm tra các điều kiện cụ thể tại Luật Việc làm (ví dụ: thời gian đã đóng BHTN trong khoảng thời gian do Luật Việc làm quy định, lý do chấm dứt hợp đồng, ...),Cần xác minh thực tế các tháng người lao động đã đóng có được đóng đầy đủ và có được ghi nhận (bao gồm việc người sử dụng lao động có đóng đầy đủ hay không); lưu ý quy định về xử lý chậm đóng, trốn đóng áp dụng đối với khoản đóng đến 30/6/2025 theo Luật BHXH 2024 Điều 141 khoản 12]\"\nvà Trace:\n\"[step(requirement,unemployment_insurance_eligibility_needed_info(...),based_on(source_c003)),step(requirement,unemployment_insurance_eligibility_needed_info(...),based_on(source_c000))]\"\n\nConclusion:\nProlog trả về binding biến Conditions (giá trị nêu trên) và Trace; đây là kết quả giải thích (explain), không phải kết luận cuối cùng về việc bạn có được hưởng trợ cấp thất nghiệp. Cần xác minh thực tế các tháng đã đóng và lý do chấm dứt hợp đồng để có kết luận.",
+  "citations": [
+    "[Điều 4 khoản 4]",
+    "[Điều 141 khoản 12]"
+  ],
+  "citation_ids": [
+    "L41_2024.A4.K4",
+    "L41_2024.A141.K12"
+  ],
+  "citation_indices": [
+    3,
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(requirement,unemployment_insurance_eligibility_needed_info([Điều kiện hưởng bảo hiểm thất nghiệp được quy định trong Luật Việc làm; cần kiểm tra các điều kiện cụ thể tại Luật Việc làm (ví dụ: thời gian đã đóng BHTN trong khoảng thời gian do Luật Việc làm quy định, lý do chấm dứt hợp đồng, ...),Cần xác minh thực tế các tháng người lao động đã đóng có được đóng đầy đủ và có được ghi nhận (bao gồm việc người sử dụng lao động có đóng đầy đủ hay không); lưu ý quy định về xử lý chậm đóng, trốn đóng áp dụng đối với khoản đóng đến 30/6/2025 theo Luật BHXH 2024 Điều 141 khoản 12]),based_on(source_c003)),step(requirement,unemployment_insurance_eligibility_needed_info([Điều kiện hưởng bảo hiểm thất nghiệp được quy định trong Luật Việc làm; cần kiểm tra các điều kiện cụ thể tại Luật Việc làm (ví dụ: thời gian đã đóng BHTN trong khoảng thời gian do Luật Việc làm quy định, lý do chấm dứt hợp đồng, ...),Cần xác minh thực tế các tháng người lao động đã đóng có được đóng đầy đủ và có được ghi nhận (bao gồm việc người sử dụng lao động có đóng đầy đủ hay không); lưu ý quy định về xử lý chậm đóng, trốn đóng áp dụng đối với khoản đóng đến 30/6/2025 theo Luật BHXH 2024 Điều 141 khoản 12]),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Em đóng BH từ tháng 8/2023 đến 2/2025, dừng t3,t4/2025; tiếp đóng từ 5/2025 đến 5/2026; dks cuối t10/2026. Hỏi có được hưởng bảo hiểm thất nghiệp nếu nghỉ hẳn công ty không?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15) - Điều 4 khoản 4: \"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\"\nLuật BHXH 2024 (41/2024/QH15) - Điều 141 khoản 12: \"Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30 tháng 6 năm 2025 mà không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.\"",
+    "application": "Không có slot đầu vào được gán (slot_bindings trống).\nProlog trả về biến Conditions với giá trị:\n\"[Điều kiện hưởng bảo hiểm thất nghiệp được quy định trong Luật Việc làm; cần kiểm tra các điều kiện cụ thể tại Luật Việc làm (ví dụ: thời gian đã đóng BHTN trong khoảng thời gian do Luật Việc làm quy định, lý do chấm dứt hợp đồng, ...),Cần xác minh thực tế các tháng người lao động đã đóng có được đóng đầy đủ và có được ghi nhận (bao gồm việc người sử dụng lao động có đóng đầy đủ hay không); lưu ý quy định về xử lý chậm đóng, trốn đóng áp dụng đối với khoản đóng đến 30/6/2025 theo Luật BHXH 2024 Điều 141 khoản 12]\"\nvà Trace:\n\"[step(requirement,unemployment_insurance_eligibility_needed_info(...),based_on(source_c003)),step(requirement,unemployment_insurance_eligibility_needed_info(...),based_on(source_c000))]\"",
+    "conclusion": "Prolog trả về binding biến Conditions (giá trị nêu trên) và Trace; đây là kết quả giải thích (explain), không phải kết luận cuối cùng về việc bạn có được hưởng trợ cấp thất nghiệp. Cần xác minh thực tế các tháng đã đóng và lý do chấm dứt hợp đồng để có kết luận."
+  },
+  "elapsed_s": 51.052,
+  "prompt_tokens": 6218,
+  "completion_tokens": 5310,
+  "error": null,
+  "gold_answer": "Bạn đóng BHTN từ 8/2023 đến 2/2025, nghỉ 2 tháng rồi đóng tiếp 5/2025 đến 5/2026 thì thời gian BHTN đủ dài để xét trợ cấp thất nghiệp nếu bạn nghỉ việc và đáp ứng điều kiện khác. Việc dự sinh cuối 10/2026 không ảnh hưởng trực tiếp đến quyền hưởng BHTN, miễn khi nộp hồ sơ bạn đã chấm dứt HĐLĐ hợp pháp, nộp trong 3 tháng và sau 15 ngày chưa có việc làm. Số tháng hưởng và mức hưởng sẽ tính riêng theo Luật Việc làm.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 49, Điều 50"
+}

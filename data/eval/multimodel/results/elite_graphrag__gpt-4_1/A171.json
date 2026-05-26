@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 171,
+  "question": "Mọi người ơi cho e hỏi nhận tiền trợ cấp thất nghiệp cần những giấy tờ gì vậy?",
+  "answer": "Issue:\nCâu hỏi đặt ra là để nhận tiền trợ cấp thất nghiệp thì người lao động cần chuẩn bị những giấy tờ gì theo quy định pháp luật hiện hành.\n\nRule:\n\"Yêu cầu người sử dụng lao động xuất trình sổ quản lý lao động, thang lương, bảng lương và thông tin, tài liệu khác liên quan đến việc đóng, hưởng chế độ bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp, bảo hiểm y tế.\" (Luật BHXH 2024 (41/2024/QH15), Điều 17, Khoản 1)\n\nApplication:\nCác giấy tờ cần thiết được Prolog truy vấn và trả về gồm: Đơn đề nghị hưởng trợ cấp thất nghiệp, Sổ bảo hiểm xã hội, Giấy tờ xác nhận chấm dứt hợp đồng lao động hoặc hợp đồng làm việc, Chứng minh nhân dân hoặc căn cước công dân, Các giấy tờ liên quan đến việc đóng bảo hiểm thất nghiệp. Các giấy tờ này được xác định dựa trên quy định tại Điều 17, Khoản 1 Luật BHXH 2024.\n\nConclusion:\nTheo kết quả truy vấn, để nhận trợ cấp thất nghiệp, người lao động cần chuẩn bị các giấy tờ sau: Đơn đề nghị hưởng trợ cấp thất nghiệp, Sổ bảo hiểm xã hội, Giấy tờ xác nhận chấm dứt hợp đồng lao động hoặc hợp đồng làm việc, Chứng minh nhân dân hoặc căn cước công dân, Các giấy tờ liên quan đến việc đóng bảo hiểm thất nghiệp (Documents).",
+  "citations": [
+    "[Điều 17 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A17.K1"
+  ],
+  "citation_indices": [
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_application_documents([Đơn đề nghị hưởng trợ cấp thất nghiệp,Sổ bảo hiểm xã hội,Giấy tờ xác nhận chấm dứt hợp đồng lao động hoặc hợp đồng làm việc,Chứng minh nhân dân hoặc căn cước công dân,Các giấy tờ liên quan đến việc đóng bảo hiểm thất nghiệp]),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là để nhận tiền trợ cấp thất nghiệp thì người lao động cần chuẩn bị những giấy tờ gì theo quy định pháp luật hiện hành.",
+    "rule": "\"Yêu cầu người sử dụng lao động xuất trình sổ quản lý lao động, thang lương, bảng lương và thông tin, tài liệu khác liên quan đến việc đóng, hưởng chế độ bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp, bảo hiểm y tế.\" (Luật BHXH 2024 (41/2024/QH15), Điều 17, Khoản 1)",
+    "application": "Các giấy tờ cần thiết được Prolog truy vấn và trả về gồm: Đơn đề nghị hưởng trợ cấp thất nghiệp, Sổ bảo hiểm xã hội, Giấy tờ xác nhận chấm dứt hợp đồng lao động hoặc hợp đồng làm việc, Chứng minh nhân dân hoặc căn cước công dân, Các giấy tờ liên quan đến việc đóng bảo hiểm thất nghiệp. Các giấy tờ này được xác định dựa trên quy định tại Điều 17, Khoản 1 Luật BHXH 2024.",
+    "conclusion": "Theo kết quả truy vấn, để nhận trợ cấp thất nghiệp, người lao động cần chuẩn bị các giấy tờ sau: Đơn đề nghị hưởng trợ cấp thất nghiệp, Sổ bảo hiểm xã hội, Giấy tờ xác nhận chấm dứt hợp đồng lao động hoặc hợp đồng làm việc, Chứng minh nhân dân hoặc căn cước công dân, Các giấy tờ liên quan đến việc đóng bảo hiểm thất nghiệp (Documents)."
+  },
+  "elapsed_s": 7.958,
+  "prompt_tokens": 4985,
+  "completion_tokens": 655,
+  "error": null,
+  "gold_answer": "Hồ sơ nhận trợ cấp thất nghiệp thường gồm: đơn đề nghị hưởng trợ cấp thất nghiệp, CCCD và giấy tờ chứng minh chấm dứt HĐLĐ/hợp đồng làm việc. Bạn nộp tại trung tâm dịch vụ việc làm trong 03 tháng kể từ ngày nghỉ việc. Sau đó phải theo lịch hẹn để nhận quyết định và thông báo tìm kiếm việc làm hằng tháng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

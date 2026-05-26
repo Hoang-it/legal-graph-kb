@@ -1,0 +1,32 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 30,
+  "question": "Người lao động sinh con tháng 01/2026, đã nghỉ việc hưởng chế độ thai sản từ thời điểm sinh con.\nKhi thực hiện thủ tục báo giảm lao động, cơ quan BHXH yêu cầu đơn vị phải điều chỉnh nơi đăng ký khám bệnh, chữa bệnh ban đầu của người lao động.\nTuy nhiên, thời điểm hiện tại đã quá hạn đầu quý I/2026 nên đơn vị chưa thể thực hiện thủ tục điều chỉnh khám bệnh, chữa bệnh, dự kiến đến đầu quý II/2026 mới thực hiện được.\nBà Thị Oanh (TPHCM) hỏi, vậy trong thời gian chờ để điều chỉnh nơi khám bệnh, chữa bệnh và báo giảm người lao động hưởng thai sản từ tháng 01/2026, đơn vị có phải tiếp tục đóng BHXH cho người lao động này không?\nViệc báo giảm và nộp hồ sơ thai sản muộn so với thời điểm phát sinh có ảnh hưởng đến quyền lợi của người lao động và trách nhiệm của đơn vị không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Trong thời gian chờ điều chỉnh nơi khám bệnh, chữa bệnh và báo giảm người lao động nghỉ hưởng chế độ thai sản từ tháng 01/2026, đơn vị có phải tiếp tục đóng BHXH cho người lao động này không? Việc báo giảm và nộp hồ sơ thai sản muộn có ảnh hưởng đến quyền lợi của người lao động và trách nhiệm của đơn vị không?\n\nRule:\n\"Người lao động nghỉ việc hưởng chế độ thai sản thì không thuộc đối tượng tham gia BHXH bắt buộc trong thời gian nghỉ việc hưởng chế độ thai sản.\" (law_bhxh_2024, article_42, clause_1)\n\"Việc báo giảm lao động nghỉ hưởng chế độ thai sản phải thực hiện theo quy định, nộp hồ sơ muộn không làm mất quyền lợi của người lao động nếu đủ điều kiện.\" (law_bhxh_2024, article_42, clause_3)\n\nApplication:\nKhông có slot_id nào được cung cấp vì câu hỏi mang tính nguyên tắc. Prolog đã sử dụng quy định tại Điều 42 khoản 1 để xác định nghĩa vụ đóng BHXH và Điều 42 khoản 3 để xác định ảnh hưởng của việc báo giảm, nộp hồ sơ muộn đến quyền lợi người lao động và trách nhiệm của đơn vị.\n\nConclusion:\nTheo kết quả Prolog, đơn vị không phải tiếp tục đóng BHXH cho người lao động nghỉ hưởng chế độ thai sản (PhaiDong = khong). Việc báo giảm và nộp hồ sơ thai sản muộn không ảnh hưởng đến quyền lợi của người lao động và trách nhiệm của đơn vị (ApDung = khong).",
+  "citations": [
+    "[Điều 42 khoản 1]",
+    "[Điều 42 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A42.K1",
+    "L41_2024.A42.K3"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 2,
+  "prolog_trace": "[[step(conclusion,phai_dong_bhxh_khi_nghi_thai_san(khong),based_on(source_a42_k1))],[step(conclusion,anh_huong_quyen_loi_va_trach_nhiem(khong),based_on(source_a42_k3))]]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Trong thời gian chờ điều chỉnh nơi khám bệnh, chữa bệnh và báo giảm người lao động nghỉ hưởng chế độ thai sản từ tháng 01/2026, đơn vị có phải tiếp tục đóng BHXH cho người lao động này không? Việc báo giảm và nộp hồ sơ thai sản muộn có ảnh hưởng đến quyền lợi của người lao động và trách nhiệm của đơn vị không?",
+    "rule": "\"Người lao động nghỉ việc hưởng chế độ thai sản thì không thuộc đối tượng tham gia BHXH bắt buộc trong thời gian nghỉ việc hưởng chế độ thai sản.\" (law_bhxh_2024, article_42, clause_1)\n\"Việc báo giảm lao động nghỉ hưởng chế độ thai sản phải thực hiện theo quy định, nộp hồ sơ muộn không làm mất quyền lợi của người lao động nếu đủ điều kiện.\" (law_bhxh_2024, article_42, clause_3)",
+    "application": "Không có slot_id nào được cung cấp vì câu hỏi mang tính nguyên tắc. Prolog đã sử dụng quy định tại Điều 42 khoản 1 để xác định nghĩa vụ đóng BHXH và Điều 42 khoản 3 để xác định ảnh hưởng của việc báo giảm, nộp hồ sơ muộn đến quyền lợi người lao động và trách nhiệm của đơn vị.",
+    "conclusion": "Theo kết quả Prolog, đơn vị không phải tiếp tục đóng BHXH cho người lao động nghỉ hưởng chế độ thai sản (PhaiDong = khong). Việc báo giảm và nộp hồ sơ thai sản muộn không ảnh hưởng đến quyền lợi của người lao động và trách nhiệm của đơn vị (ApDung = khong)."
+  },
+  "elapsed_s": 12.937,
+  "prompt_tokens": 6647,
+  "completion_tokens": 1502,
+  "error": null,
+  "gold_answer": "Khoản 1 Điều 13 Luật BHXH 2024 quy định trách nhiệm của người sử dụng lao động: \"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội\".\nĐối chiếu với quy định trên, đơn vị có trách nhiệm nộp hồ sơ báo giảm lao động nghỉ thai sản ngay khi người lao động nghỉ việc hưởng chế độ, việc thay đổi nơi đăng ký khám bệnh, chữa bệnh ban đầu không ảnh hưởng đến việc báo giảm.\nTuy nhiên, trường hợp người lao động đăng ký khám bệnh, chữa bệnh ban đầu tại cơ sở khám bệnh, chữa bệnh ban đầu đã ngừng ký hợp đồng khám, chữa bệnh BHYT thì được nộp ngay hồ sơ 613 để chuyển đổi nơi khám bệnh, chữa bệnh khác (không chờ đến 15 ngày của tháng đầu quý).\nTrường hợp khi nộp hồ sơ đề nghị giải quyết hưởng chế độ thai sản cho người lao động chậm so với thời hạn quy định, đề nghị đơn vị giải trình bằng văn bản lý do chậm nộp khi kê khai hồ sơ đề nghị giải quyết chế độ cho cơ quan BHXH, người lao động vẫn được giải quyết chế độ thai sản theo quy định.",
+  "gold_citations_raw": "Khoản 1 Điều 13 Luật BHXH 2024"
+}

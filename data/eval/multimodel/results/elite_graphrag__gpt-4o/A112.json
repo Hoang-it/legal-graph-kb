@@ -1,0 +1,34 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 112,
+  "question": "Trước mình nghỉ ngang công ty cũ chưa chốt và lấy bìa xanh bây giờ ra bhxh huyện làm lại được không?",
+  "answer": "Issue: Bạn muốn biết liệu có thể làm lại bìa xanh bảo hiểm xã hội tại huyện sau khi đã nghỉ ngang công ty cũ mà chưa chốt và lấy bìa xanh hay không.\n\nRule: \"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 47 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày trở lại làm việc.\" (Luật BHXH 2024 (41/2024/QH15), Điều 48, Khoản 1)\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings để áp dụng vào quy tắc này. Tuy nhiên, dựa trên quy tắc đã được mã hóa trong chương trình Prolog, hệ thống đã xác định rằng bạn có thể làm lại bìa xanh bảo hiểm xã hội.\n\nConclusion: Theo kết quả từ chương trình Prolog, câu trả lời là \"yes\", nghĩa là bạn có thể làm lại bìa xanh bảo hiểm xã hội tại huyện.",
+  "citations": [
+    "[Điều 47]",
+    "[Điều 48 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A47",
+    "L41_2024.A48.K1"
+  ],
+  "citation_indices": [
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,can_reapply_for_social_insurance(yes),based_on(source_c048))]",
+  "irac_sections": {
+    "issue": "Bạn muốn biết liệu có thể làm lại bìa xanh bảo hiểm xã hội tại huyện sau khi đã nghỉ ngang công ty cũ mà chưa chốt và lấy bìa xanh hay không.",
+    "rule": "\"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 47 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày trở lại làm việc.\" (Luật BHXH 2024 (41/2024/QH15), Điều 48, Khoản 1)",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings để áp dụng vào quy tắc này. Tuy nhiên, dựa trên quy tắc đã được mã hóa trong chương trình Prolog, hệ thống đã xác định rằng bạn có thể làm lại bìa xanh bảo hiểm xã hội.",
+    "conclusion": "Theo kết quả từ chương trình Prolog, câu trả lời là \"yes\", nghĩa là bạn có thể làm lại bìa xanh bảo hiểm xã hội tại huyện."
+  },
+  "elapsed_s": 5.524,
+  "prompt_tokens": 4601,
+  "completion_tokens": 471,
+  "error": null,
+  "gold_answer": "Bạn có thể đến cơ quan BHXH nơi quản lý quá trình tham gia để kiểm tra tình trạng sổ. Nếu công ty cũ chưa chốt thì BHXH huyện không thể tự chốt thay công ty, trừ khi có hồ sơ truy đóng/xác nhận quá trình. Việc cần làm là yêu cầu công ty làm thủ tục báo giảm, chốt sổ; nếu công ty không thực hiện thì khiếu nại tới cơ quan BHXH quản lý đơn vị.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

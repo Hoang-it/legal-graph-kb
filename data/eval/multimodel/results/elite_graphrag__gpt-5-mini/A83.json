@@ -1,0 +1,41 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 83,
+  "question": "Mình đóng bảo hiểm xh từ 2016 tới  2018 rồi ngưng tới nay. Do nghỉ ngang ở cty và k để ý để rút sổ và check thông tin số bh. Coi như k có thông tin gì về nó. Giờ mình phải làm sao để dc cấp lại ?",
+  "answer": "Issue:\nMình đã đóng BHXH 2016–2018 rồi ngưng, không còn sổ hay thông tin; hỏi cách xin cấp lại sổ/điều chỉnh thông tin.\n\nRule:\nLuật BHXH 2024 (41/2024/QH15) - Article 29, clause 2: \"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ tờ khai và giấy tờ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm điều chỉnh thông tin tham gia bảo hiểm xã hội của người tham gia; trường hợp không thực hiện điều chỉnh thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 28, clause 4: \"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 13, clause 3: \"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 13, clause 2: \"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\"\n\nApplication:\nKhông có slot_bindings. Các fact được xác nhận: contributions_period(user, 2016, 2018).; stopped_until_present(user).; no_bh_book(user).; no_bh_info(user).\nProlog đã chạy truy vấn reissue_steps(user, Steps, Trace) và dùng các nguồn pháp luật (source_c004, source_c006, source_c003, source_c002) để tạo chuỗi bước: ask_former_employer_confirmation, ask_employer_prepare_documents, submit_documents_to_bhxh, bhxh_issue_s_bhxh_within_5_days, bhxh_adjust_participation_info_within_5_days; mỗi bước gắn với based_on(source_cXXX) như trong Trace.\n\nConclusion:\nProlog trả Steps = [ask_former_employer_confirmation,ask_employer_prepare_documents,submit_documents_to_bhxh,bhxh_issue_s_bhxh_within_5_days,bhxh_adjust_participation_info_within_5_days]. Trace tương ứng chứa step(..., based_on(source_c004/ c006/ c003/ c003/ c002)).",
+  "citations": [
+    "[Điều 29 khoản 2]",
+    "[Điều 28 khoản 4]",
+    "[Điều 13 khoản 3]",
+    "[Điều 13 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A29.K2",
+    "L41_2024.A28.K4",
+    "L41_2024.A13.K3",
+    "L41_2024.A13.K2"
+  ],
+  "citation_indices": [
+    2,
+    3,
+    4,
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(ask_former_employer_confirmation,reissue_steps(user,[ask_former_employer_confirmation,ask_employer_prepare_documents,submit_documents_to_bhxh,bhxh_issue_s_bhxh_within_5_days,bhxh_adjust_participation_info_within_5_days]),based_on(source_c004)),step(ask_employer_prepare_documents,reissue_steps(user,[ask_former_employer_confirmation,ask_employer_prepare_documents,submit_documents_to_bhxh,bhxh_issue_s_bhxh_within_5_days,bhxh_adjust_participation_info_within_5_days]),based_on(source_c006)),step(submit_documents_to_bhxh,reissue_steps(user,[ask_former_employer_confirmation,ask_employer_prepare_documents,submit_documents_to_bhxh,bhxh_issue_s_bhxh_within_5_days,bhxh_adjust_participation_info_within_5_days]),based_on(source_c003)),step(bhxh_issue_s_bhxh_within_5_days,reissue_steps(user,[ask_former_employer_confirmation,ask_employer_prepare_documents,submit_documents_to_bhxh,bhxh_issue_s_bhxh_within_5_days,bhxh_adjust_participation_info_within_5_days]),based_on(source_c003)),step(bhxh_adjust_participation_info_within_5_days,reissue_steps(user,[ask_former_employer_confirmation,ask_employer_prepare_documents,submit_documents_to_bhxh,bhxh_issue_s_bhxh_within_5_days,bhxh_adjust_participation_info_within_5_days]),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Mình đã đóng BHXH 2016–2018 rồi ngưng, không còn sổ hay thông tin; hỏi cách xin cấp lại sổ/điều chỉnh thông tin.",
+    "rule": "Luật BHXH 2024 (41/2024/QH15) - Article 29, clause 2: \"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ tờ khai và giấy tờ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm điều chỉnh thông tin tham gia bảo hiểm xã hội của người tham gia; trường hợp không thực hiện điều chỉnh thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 28, clause 4: \"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 13, clause 3: \"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 13, clause 2: \"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\"",
+    "application": "Không có slot_bindings. Các fact được xác nhận: contributions_period(user, 2016, 2018).; stopped_until_present(user).; no_bh_book(user).; no_bh_info(user).\nProlog đã chạy truy vấn reissue_steps(user, Steps, Trace) và dùng các nguồn pháp luật (source_c004, source_c006, source_c003, source_c002) để tạo chuỗi bước: ask_former_employer_confirmation, ask_employer_prepare_documents, submit_documents_to_bhxh, bhxh_issue_s_bhxh_within_5_days, bhxh_adjust_participation_info_within_5_days; mỗi bước gắn với based_on(source_cXXX) như trong Trace.",
+    "conclusion": "Prolog trả Steps = [ask_former_employer_confirmation,ask_employer_prepare_documents,submit_documents_to_bhxh,bhxh_issue_s_bhxh_within_5_days,bhxh_adjust_participation_info_within_5_days]. Trace tương ứng chứa step(..., based_on(source_c004/ c006/ c003/ c003/ c002))."
+  },
+  "elapsed_s": 40.639,
+  "prompt_tokens": 4501,
+  "completion_tokens": 4815,
+  "error": null,
+  "gold_answer": "Bạn có thể bắt đầu bằng việc tra cứu lại mã số BHXH bằng CCCD/họ tên/ngày sinh trên Cổng BHXH hoặc tại cơ quan BHXH nơi cư trú. Sau khi xác định được mã số, bạn làm thủ tục đề nghị cấp lại sổ/xác nhận lại quá trình tham gia nếu sổ cũ thất lạc. Việc nghỉ ngang trước đây không làm mất thời gian đã đóng hợp pháp; dữ liệu quá trình tham gia vẫn được lưu trong hệ thống BHXH để đối chiếu và cấp lại.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn cấp lại sổ BHXH"
+}

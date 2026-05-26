@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 145,
+  "question": "đóng bảo hiểm xã hội tự nguyện thì có dc rút 1 lần k?",
+  "answer": "Issue:\nNgười tham gia bảo hiểm xã hội tự nguyện có được rút bảo hiểm xã hội một lần hay không?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 3: \"Người vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện được hưởng chế độ trợ cấp hằng tháng, chế độ hưu trí và chế độ tử tuất trên cơ sở thời gian đã đóng bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện. Thời gian đóng bảo hiểm xã hội đã được tính hưởng bảo hiểm xã hội một lần thì không được tính vào thời gian làm cơ sở tính hưởng chế độ bảo hiểm\".\nLuật BHXH 2024 (41/2024/QH15), Điều 115, Khoản 1: \"Người tham gia bảo hiểm xã hội tự nguyện đang hưởng lương hưu ra nước ngoài để định cư nếu có nguyện vọng thì được giải quyết hưởng trợ cấp một lần và việc giải quyết hưởng trợ cấp một lần thực hiện như sau:\".\n\nApplication:\nKhông có slot_id cụ thể nào được cung cấp trong truy vấn này. Prolog đã sử dụng các quy định tại Điều 5 Khoản 3 và Điều 115 Khoản 1 của Luật BHXH 2024 để xác định điều kiện rút bảo hiểm xã hội tự nguyện một lần. Kết quả cho thấy việc rút một lần là có thể, nhưng phải đáp ứng các điều kiện luật định.\n\nConclusion:\nKết quả Prolog trả về: Answer = [co_the_rut_1_lan_nhung_phai_dap_ung_dieu_kien_luat_dinh]. Như vậy, người tham gia bảo hiểm xã hội tự nguyện có thể rút một lần nhưng phải đáp ứng các điều kiện theo quy định của pháp luật.",
+  "citations": [
+    "[Điều 5 khoản 3]",
+    "[Điều 115 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K3",
+    "L41_2024.A115.K1"
+  ],
+  "citation_indices": [
+    5,
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,rut_bhxh_tn_1_lan_duoc([co_the_rut_1_lan_nhung_phai_dap_ung_dieu_kien_luat_dinh]),based_on(source_c005)),step(conclusion,rut_bhxh_tn_1_lan_duoc([co_the_rut_1_lan_nhung_phai_dap_ung_dieu_kien_luat_dinh]),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Người tham gia bảo hiểm xã hội tự nguyện có được rút bảo hiểm xã hội một lần hay không?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 3: \"Người vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện được hưởng chế độ trợ cấp hằng tháng, chế độ hưu trí và chế độ tử tuất trên cơ sở thời gian đã đóng bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện. Thời gian đóng bảo hiểm xã hội đã được tính hưởng bảo hiểm xã hội một lần thì không được tính vào thời gian làm cơ sở tính hưởng chế độ bảo hiểm\".\nLuật BHXH 2024 (41/2024/QH15), Điều 115, Khoản 1: \"Người tham gia bảo hiểm xã hội tự nguyện đang hưởng lương hưu ra nước ngoài để định cư nếu có nguyện vọng thì được giải quyết hưởng trợ cấp một lần và việc giải quyết hưởng trợ cấp một lần thực hiện như sau:\".",
+    "application": "Không có slot_id cụ thể nào được cung cấp trong truy vấn này. Prolog đã sử dụng các quy định tại Điều 5 Khoản 3 và Điều 115 Khoản 1 của Luật BHXH 2024 để xác định điều kiện rút bảo hiểm xã hội tự nguyện một lần. Kết quả cho thấy việc rút một lần là có thể, nhưng phải đáp ứng các điều kiện luật định.",
+    "conclusion": "Kết quả Prolog trả về: Answer = [co_the_rut_1_lan_nhung_phai_dap_ung_dieu_kien_luat_dinh]. Như vậy, người tham gia bảo hiểm xã hội tự nguyện có thể rút một lần nhưng phải đáp ứng các điều kiện theo quy định của pháp luật."
+  },
+  "elapsed_s": 8.622,
+  "prompt_tokens": 3342,
+  "completion_tokens": 803,
+  "error": null,
+  "gold_answer": "BHXH tự nguyện vẫn có thể được hưởng BHXH 1 lần, nhưng chỉ khi thuộc trường hợp luật cho phép. Mức hưởng tính theo số năm đã đóng và căn cứ đóng BHXH tự nguyện, bao gồm cả phần Nhà nước hỗ trợ nếu có. Tuy nhiên cần cân nhắc kỹ vì BHXH tự nguyện nhằm tích lũy cho hưu trí, tử tuất; rút 1 lần sẽ mất lợi ích lâu dài.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

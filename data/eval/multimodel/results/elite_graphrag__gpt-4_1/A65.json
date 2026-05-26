@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 65,
+  "question": "Mình có hai mã sổ BHXH phải làm sao?",
+  "answer": "Issue:\nVấn đề đặt ra là khi một người lao động có hai mã sổ bảo hiểm xã hội (BHXH) thì phải xử lý như thế nào theo quy định pháp luật hiện hành.\n\nRule:\n\"Sổ bảo hiểm xã hội được cấp cho từng người lao động, trong đó chứa đựng thông tin cơ bản về nhân thân, ghi nhận việc đóng, hưởng, giải quyết các chế độ bảo hiểm xã hội và các thông tin cần thiết khác có liên quan.\" (Luật BHXH 2024 (41/2024/QH15), Điều 25, Khoản 1)\n\"Dữ liệu về sổ bảo hiểm xã hội được cập nhật chính xác, kịp thời, đối chiếu thông tin và quản lý theo quy định.\" (Luật BHXH 2024 (41/2024/QH15), Điều 25, Khoản 3)\n\nApplication:\nKhông có slot_id cụ thể nào được ràng buộc trong trường hợp này. Prolog đã sử dụng các quy định tại Điều 25, Khoản 1 và Khoản 3 của Luật BHXH 2024 để xác định rằng mỗi người lao động chỉ được cấp một sổ BHXH và dữ liệu phải được cập nhật, đối chiếu, quản lý đúng quy định. Truy vấn Prolog trả về hướng dẫn xử lý khi có hai mã sổ.\n\nConclusion:\nTheo kết quả truy vấn Prolog, người lao động chỉ được cấp một sổ bảo hiểm xã hội. Nếu có hai mã sổ, cần liên hệ cơ quan bảo hiểm xã hội để đối chiếu, cập nhật và gộp thông tin về một mã duy nhất theo quy định.",
+  "citations": [
+    "[Điều 25 khoản 1]",
+    "[Điều 25 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A25.K1",
+    "L41_2024.A25.K3"
+  ],
+  "citation_indices": [
+    3,
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,xu_ly_hai_so_bhxh([Người lao động chỉ được cấp một sổ bảo hiểm xã hội. Nếu có hai mã sổ, cần liên hệ cơ quan bảo hiểm xã hội để đối chiếu, cập nhật và gộp thông tin về một mã duy nhất theo quy định.]),based_on(source_c003)),step(conclusion,xu_ly_hai_so_bhxh([Người lao động chỉ được cấp một sổ bảo hiểm xã hội. Nếu có hai mã sổ, cần liên hệ cơ quan bảo hiểm xã hội để đối chiếu, cập nhật và gộp thông tin về một mã duy nhất theo quy định.]),based_on(source_c006))]",
+  "irac_sections": {
+    "issue": "Vấn đề đặt ra là khi một người lao động có hai mã sổ bảo hiểm xã hội (BHXH) thì phải xử lý như thế nào theo quy định pháp luật hiện hành.",
+    "rule": "\"Sổ bảo hiểm xã hội được cấp cho từng người lao động, trong đó chứa đựng thông tin cơ bản về nhân thân, ghi nhận việc đóng, hưởng, giải quyết các chế độ bảo hiểm xã hội và các thông tin cần thiết khác có liên quan.\" (Luật BHXH 2024 (41/2024/QH15), Điều 25, Khoản 1)\n\"Dữ liệu về sổ bảo hiểm xã hội được cập nhật chính xác, kịp thời, đối chiếu thông tin và quản lý theo quy định.\" (Luật BHXH 2024 (41/2024/QH15), Điều 25, Khoản 3)",
+    "application": "Không có slot_id cụ thể nào được ràng buộc trong trường hợp này. Prolog đã sử dụng các quy định tại Điều 25, Khoản 1 và Khoản 3 của Luật BHXH 2024 để xác định rằng mỗi người lao động chỉ được cấp một sổ BHXH và dữ liệu phải được cập nhật, đối chiếu, quản lý đúng quy định. Truy vấn Prolog trả về hướng dẫn xử lý khi có hai mã sổ.",
+    "conclusion": "Theo kết quả truy vấn Prolog, người lao động chỉ được cấp một sổ bảo hiểm xã hội. Nếu có hai mã sổ, cần liên hệ cơ quan bảo hiểm xã hội để đối chiếu, cập nhật và gộp thông tin về một mã duy nhất theo quy định."
+  },
+  "elapsed_s": 7.074,
+  "prompt_tokens": 3063,
+  "completion_tokens": 699,
+  "error": null,
+  "gold_answer": "Một người chỉ có một mã số BHXH. Nếu bạn đang có 2 mã, cần làm thủ tục gộp sổ/mã số để cơ quan BHXH hợp nhất toàn bộ quá trình tham gia về một mã duy nhất. Bạn nên nộp tờ khai điều chỉnh thông tin kèm CCCD và các giấy tờ liên quan đến cả hai mã tại cơ quan BHXH nơi cư trú hoặc nơi đang tham gia. Sau khi gộp, quyền lợi và thời gian đóng hợp pháp của bạn được cộng nối, không bị mất.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn quản lý sổ BHXH, gộp sổ của BHXH Việt Nam"
+}

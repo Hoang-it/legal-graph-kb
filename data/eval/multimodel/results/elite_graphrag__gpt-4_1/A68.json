@@ -1,0 +1,37 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 68,
+  "question": "Nld làm việc bên em từ 2025 đến giờ vẫn làm, vẫn đóng bhxh bình thường. Tự nhiên nay nld báo là trên app hiện 1 bên cty khác từ t2/2026-t4/2026. Em gọi lên bhxh thì họ bảo nld này đóng ở cty em từ 2025 đến t1/2026. Còn từ t2/2026 đóng ở cty khác. E có hỏi là nld có nghỉ bên em đâu, từ tháng 2 đến tháng 4 này bên em vẫn đang đóng bhxh cho c ấy bình thường. Bên em chưa báo giảm thì sao bên kia báo tăng dc. Bảo hiểm báo hỏi lại nld.\nEm hỏi nld thì họ báo là có làm thêm bên kia nhưng kb sao họ lại báo tăng bhxh.\nTrường hợp này bên em xử lý ntn?",
+  "answer": "Issue:\nNgười lao động làm việc liên tục tại công ty từ năm 2025 đến nay, vẫn đóng BHXH bình thường, nhưng trên hệ thống lại xuất hiện việc đóng BHXH tại một công ty khác từ tháng 2/2026 đến tháng 4/2026, dù công ty chưa báo giảm lao động. Công ty cần xử lý thế nào khi phát sinh trường hợp báo tăng BHXH ở nơi khác mà chưa báo giảm tại nơi hiện tại?\n\nRule:\n\"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 3)\n\"Đối với trường hợp quy định tại khoản 1 Điều 38 của Luật này, cơ quan bảo hiểm xã hội có trách nhiệm phát hiện và đôn đốc bằng văn bản. Khi phát hiện người sử dụng lao động chậm đóng thuộc các trường hợp quy định tại khoản 2 và khoản 3 Điều 38 của Luật này hoặc trốn đóng, cơ quan bảo hiểm xã hội có trách nhiệm kịp thời đôn đốc bằng văn bản.\" (Luật BHXH 2024 (41/2024/QH15), Điều 35, Khoản 1)\n\nApplication:\nKhông có slot_id nào được gán giá trị cụ thể trong trường hợp này. Prolog đã sử dụng các quy định pháp luật về phối hợp xác nhận thời gian đóng BHXH và trách nhiệm của cơ quan BHXH khi phát hiện bất thường để đưa ra phương án xử lý.\n\nConclusion:\nPhương án xử lý là: [Phối hợp với cơ quan BHXH để xác nhận thời gian đóng BHXH thực tế của NLĐ, làm rõ việc báo tăng BHXH tại công ty khác khi chưa báo giảm tại công ty hiện tại, và đề nghị cơ quan BHXH kiểm tra, xử lý theo quy định].",
+  "citations": [
+    "[Điều 13 khoản 3]",
+    "[Điều 38]",
+    "[Điều 35 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A13.K3",
+    "L41_2024.A38",
+    "L41_2024.A35.K1"
+  ],
+  "citation_indices": [
+    2,
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,xu_ly_truong_hop_bao_tang_bhxh_khi_chua_bao_giam([Phối hợp với cơ quan BHXH để xác nhận thời gian đóng BHXH thực tế của NLĐ, làm rõ việc báo tăng BHXH tại công ty khác khi chưa báo giảm tại công ty hiện tại, và đề nghị cơ quan BHXH kiểm tra, xử lý theo quy định]),based_on(source_c002)),step(conclusion,xu_ly_truong_hop_bao_tang_bhxh_khi_chua_bao_giam([Phối hợp với cơ quan BHXH để xác nhận thời gian đóng BHXH thực tế của NLĐ, làm rõ việc báo tăng BHXH tại công ty khác khi chưa báo giảm tại công ty hiện tại, và đề nghị cơ quan BHXH kiểm tra, xử lý theo quy định]),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Người lao động làm việc liên tục tại công ty từ năm 2025 đến nay, vẫn đóng BHXH bình thường, nhưng trên hệ thống lại xuất hiện việc đóng BHXH tại một công ty khác từ tháng 2/2026 đến tháng 4/2026, dù công ty chưa báo giảm lao động. Công ty cần xử lý thế nào khi phát sinh trường hợp báo tăng BHXH ở nơi khác mà chưa báo giảm tại nơi hiện tại?",
+    "rule": "\"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 3)\n\"Đối với trường hợp quy định tại khoản 1 Điều 38 của Luật này, cơ quan bảo hiểm xã hội có trách nhiệm phát hiện và đôn đốc bằng văn bản. Khi phát hiện người sử dụng lao động chậm đóng thuộc các trường hợp quy định tại khoản 2 và khoản 3 Điều 38 của Luật này hoặc trốn đóng, cơ quan bảo hiểm xã hội có trách nhiệm kịp thời đôn đốc bằng văn bản.\" (Luật BHXH 2024 (41/2024/QH15), Điều 35, Khoản 1)",
+    "application": "Không có slot_id nào được gán giá trị cụ thể trong trường hợp này. Prolog đã sử dụng các quy định pháp luật về phối hợp xác nhận thời gian đóng BHXH và trách nhiệm của cơ quan BHXH khi phát hiện bất thường để đưa ra phương án xử lý.",
+    "conclusion": "Phương án xử lý là: [Phối hợp với cơ quan BHXH để xác nhận thời gian đóng BHXH thực tế của NLĐ, làm rõ việc báo tăng BHXH tại công ty khác khi chưa báo giảm tại công ty hiện tại, và đề nghị cơ quan BHXH kiểm tra, xử lý theo quy định]."
+  },
+  "elapsed_s": 12.781,
+  "prompt_tokens": 4227,
+  "completion_tokens": 919,
+  "error": null,
+  "gold_answer": "Một người có nhiều nơi làm việc nhưng BHXH bắt buộc chỉ đóng theo một quan hệ lao động thuộc diện luật định, không được để 2 đơn vị cùng đóng trùng cùng thời gian. Bạn cần yêu cầu NLĐ giải trình, cung cấp HĐLĐ bên kia; đồng thời làm việc với cơ quan BHXH để xác định đơn vị nào đóng đúng, đơn vị nào đóng trùng. Phần đóng trùng sẽ phải điều chỉnh/hoàn trả theo thủ tục, tránh để dữ liệu sai kéo dài ảnh hưởng chế độ của NLĐ.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 33; Bộ luật Lao động 2019 Điều 13"
+}

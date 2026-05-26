@@ -1,0 +1,26 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 52,
+  "question": "Mình làm cty gia đìn, khi nghỉ việc giám đốc cho mình nghỉ việc bằng miệng không có giấy nghỉ việc.\nĐến nay mình đã nghỉ 4 tháng mà cty vẫn chưa đưa tờ rời cho mình \nMình có xuống xã hoằng hóa thanh hóa hỏi về bảo hiểm và tự mình đi chốt nhưng bên bảo hiểm bảo về cty sẽ báo chốt \nNhưng mình có liên hệ kế toán thì đã nghĩ việc Liên hệ giám đốc thì bảo cứ từ từ để xem \nGiờ mình phải làm như thế nào để lấy tờ rời?",
+  "answer": "Issue:\nBạn nghỉ việc bằng lời nói tại công ty gia đình, đã nghỉ \"4\" tháng nhưng công ty chưa trả tờ rời / chốt sổ BHXH; hỏi cách để lấy tờ rời.\n\nRule:\n(law_bhxh_2024, none, none): \"Người sử dụng lao động có trách nhiệm báo giảm, chốt sổ BHXH khi người lao động nghỉ việc; cơ quan BHXH xử lý trên cơ sở báo giảm của đơn vị.\"\n(law_bhxh_2024, none, none): \"Người lao động có quyền yêu cầu cơ quan BHXH giải quyết, khiếu nại đến Thanh tra Lao động hoặc khởi kiện khi người sử dụng lao động không thực hiện nghĩa vụ.\"\n\nApplication:\nslot_bindings: (không có slot_bindings).\nProlog tiêu thụ các facts đã xác minh: left_by_oral_notice(user), months_since_quit(user, 4), visited_commune_bhxh(user), accountant_says_resigned(user), director_says_wait(user), wants_toroi(user). Trong truy vấn next_steps(user, Actions, Trace), Prolog dùng left_by_oral_notice(user) và months_since_quit(user, 4) (với điều kiện Months >= 1 trong quy tắc) để sinh danh sách hành động và trace.\n\nConclusion:\nActions = [Gửi yêu cầu bằng văn bản tới công ty (yêu cầu cấp tờ rời / trả sổ BHXH); nên gửi qua thư đảm bảo hoặc email có xác nhận để có bằng chứng,Liên hệ cơ quan BHXH huyện/quận: trình bày tình huống và yêu cầu BHXH xác minh, chốt sổ nếu công ty không báo giảm,Lưu giữ mọi bằng chứng đã liên hệ (tin nhắn, email, thư bảo đảm, xác nhận của kế toán, biên bản làm việc với BHXH) để làm cơ sở khi khiếu nại,Nếu công ty tiếp tục trì hoãn, nộp đơn khiếu nại đến Thanh tra Lao động cấp huyện/tỉnh hoặc yêu cầu BHXH giải quyết; cân nhắc khởi kiện dân sự/hành chính nếu cần].",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(send_written_request,based_on(source_report)),step(request_bhxh,based_on(source_report)),step(collect_evidence,based_on(source_report)),step(file_complaint,based_on(source_dispute))]",
+  "irac_sections": {
+    "issue": "Bạn nghỉ việc bằng lời nói tại công ty gia đình, đã nghỉ \"4\" tháng nhưng công ty chưa trả tờ rời / chốt sổ BHXH; hỏi cách để lấy tờ rời.",
+    "rule": "(law_bhxh_2024, none, none): \"Người sử dụng lao động có trách nhiệm báo giảm, chốt sổ BHXH khi người lao động nghỉ việc; cơ quan BHXH xử lý trên cơ sở báo giảm của đơn vị.\"\n(law_bhxh_2024, none, none): \"Người lao động có quyền yêu cầu cơ quan BHXH giải quyết, khiếu nại đến Thanh tra Lao động hoặc khởi kiện khi người sử dụng lao động không thực hiện nghĩa vụ.\"",
+    "application": "slot_bindings: (không có slot_bindings).\nProlog tiêu thụ các facts đã xác minh: left_by_oral_notice(user), months_since_quit(user, 4), visited_commune_bhxh(user), accountant_says_resigned(user), director_says_wait(user), wants_toroi(user). Trong truy vấn next_steps(user, Actions, Trace), Prolog dùng left_by_oral_notice(user) và months_since_quit(user, 4) (với điều kiện Months >= 1 trong quy tắc) để sinh danh sách hành động và trace.",
+    "conclusion": "Actions = [Gửi yêu cầu bằng văn bản tới công ty (yêu cầu cấp tờ rời / trả sổ BHXH); nên gửi qua thư đảm bảo hoặc email có xác nhận để có bằng chứng,Liên hệ cơ quan BHXH huyện/quận: trình bày tình huống và yêu cầu BHXH xác minh, chốt sổ nếu công ty không báo giảm,Lưu giữ mọi bằng chứng đã liên hệ (tin nhắn, email, thư bảo đảm, xác nhận của kế toán, biên bản làm việc với BHXH) để làm cơ sở khi khiếu nại,Nếu công ty tiếp tục trì hoãn, nộp đơn khiếu nại đến Thanh tra Lao động cấp huyện/tỉnh hoặc yêu cầu BHXH giải quyết; cân nhắc khởi kiện dân sự/hành chính nếu cần]."
+  },
+  "elapsed_s": 60.899,
+  "prompt_tokens": 2819,
+  "completion_tokens": 7543,
+  "error": null,
+  "gold_answer": "Dù công ty cho nghỉ bằng miệng, khi chấm dứt việc làm người sử dụng lao động vẫn phải phối hợp xác nhận thời gian đóng BHXH và trả giấy tờ liên quan cho người lao động. Bạn nên gửi yêu cầu bằng văn bản/email/zalo có lưu vết đến công ty yêu cầu trả tờ rời/sổ. Nếu công ty không thực hiện, bạn khiếu nại đến Thanh tra lao động hoặc cơ quan BHXH nơi đơn vị tham gia để đề nghị hỗ trợ chốt, cấp lại hoặc xác nhận quá trình đã đóng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48"
+}

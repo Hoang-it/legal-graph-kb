@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4o",
+  "stt": 87,
+  "question": "Lúc trước mình có lm CTY cũ đc 4 tháng. Có đóng BH từ 7 đến 10 . Năm 2025 lúc đó mình bầu đc 1 tháng qua rồi qua CTY mới làm từ 11 năm 2025 đến giờ gần 6 tháng. Cũng đóng BH . Như vậy thì nếu mình đóng đủ 6 tháng có nhận đc tiền thai sản ko?",
+  "answer": "Issue: Bạn đã làm việc tại công ty cũ và mới, đóng bảo hiểm xã hội trong tổng cộng 6 tháng. Bạn muốn biết liệu mình có đủ điều kiện nhận trợ cấp thai sản hay không.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 94, Khoản 1: \"Đối tượng có thời gian đóng bảo hiểm xã hội tự nguyện hoặc vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện từ đủ 06 tháng trở lên trong thời gian 12 tháng trước khi sinh con được hưởng trợ cấp thai sản khi thuộc một trong các trường hợp sau đây:\"\n\nApplication: Không có thông tin cụ thể về các tháng đóng bảo hiểm xã hội trong slot_bindings, nhưng theo verify_facts, bạn đã đóng bảo hiểm xã hội trong 6 tháng. Dựa trên điều kiện này, chương trình Prolog đã xác định rằng bạn đủ điều kiện nhận trợ cấp thai sản.\n\nConclusion: Theo kết quả từ chương trình Prolog, bạn đủ điều kiện nhận trợ cấp thai sản với giá trị \"yes\".",
+  "citations": [
+    "[Điều 94 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A94.K1"
+  ],
+  "citation_indices": [
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,maternity_benefit_eligibility(user,yes),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Bạn đã làm việc tại công ty cũ và mới, đóng bảo hiểm xã hội trong tổng cộng 6 tháng. Bạn muốn biết liệu mình có đủ điều kiện nhận trợ cấp thai sản hay không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 94, Khoản 1: \"Đối tượng có thời gian đóng bảo hiểm xã hội tự nguyện hoặc vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện từ đủ 06 tháng trở lên trong thời gian 12 tháng trước khi sinh con được hưởng trợ cấp thai sản khi thuộc một trong các trường hợp sau đây:\"",
+    "application": "Không có thông tin cụ thể về các tháng đóng bảo hiểm xã hội trong slot_bindings, nhưng theo verify_facts, bạn đã đóng bảo hiểm xã hội trong 6 tháng. Dựa trên điều kiện này, chương trình Prolog đã xác định rằng bạn đủ điều kiện nhận trợ cấp thai sản.",
+    "conclusion": "Theo kết quả từ chương trình Prolog, bạn đủ điều kiện nhận trợ cấp thai sản với giá trị \"yes\"."
+  },
+  "elapsed_s": 5.046,
+  "prompt_tokens": 3430,
+  "completion_tokens": 513,
+  "error": null,
+  "gold_answer": "Nếu trong 12 tháng trước khi sinh bạn đã đóng BHXH bắt buộc đủ từ 6 tháng trở lên thì được hưởng thai sản. Thời gian 4 tháng ở công ty cũ và gần 6 tháng ở công ty mới có thể cộng lại nếu đều là thời gian đóng BHXH bắt buộc hợp pháp trong khoảng 12 tháng trước sinh. Vì vậy, nếu tổng đủ 6 tháng trong khoảng tính luật định thì bạn có thể được hưởng thai sản, kể cả đã chuyển công ty.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50"
+}

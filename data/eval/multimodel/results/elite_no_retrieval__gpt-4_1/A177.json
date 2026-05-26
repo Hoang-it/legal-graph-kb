@@ -1,0 +1,32 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 177,
+  "question": "Em làm samsung Bắc Ninh từ năm 2017, e nghỉ ngang chưa chốt bảo hiểm và chưa có sổ. Giờ e làm công ty mới vẫn đóng bảo hiểm nhưng nếu nghỉ thì chưa chốt đc. Giờ e phải làm sao?",
+  "answer": "Issue:\nBạn hỏi về việc nghỉ việc tại Samsung Bắc Ninh từ năm 2017 nhưng chưa chốt sổ bảo hiểm xã hội (BHXH) và chưa nhận sổ, hiện đang làm công ty mới vẫn đóng BHXH nhưng nếu nghỉ thì cũng chưa chốt được sổ. Bạn muốn biết cần phải làm gì trong trường hợp này.\n\nRule:\n\"Người sử dụng lao động có trách nhiệm phối hợp với cơ quan BHXH trả sổ BHXH cho người lao động khi chấm dứt hợp đồng lao động.\" (law_bhxh_2024, article_21, clause_1)\n\"Người lao động có quyền yêu cầu người sử dụng lao động xác nhận quá trình đóng BHXH và trả sổ BHXH khi nghỉ việc.\" (law_bhxh_2024, article_23, clause_2)\n\nApplication:\nKhông có slot_id nào được gán giá trị cụ thể trong trường hợp này. Prolog đã sử dụng các quy định trên để đưa ra lời khuyên về thủ tục chốt và nhận sổ BHXH khi nghỉ việc ở cả công ty cũ và công ty mới.\n\nConclusion:\nTheo kết quả Prolog, bạn cần liên hệ với công ty cũ (Samsung Bắc Ninh) để yêu cầu chốt sổ và trả sổ BHXH cho bạn. Nếu công ty không thực hiện, bạn có thể liên hệ cơ quan BHXH nơi công ty đóng để được hỗ trợ giải quyết. Khi nghỉ ở công ty mới, cũng cần yêu cầu chốt sổ và nhận lại sổ BHXH.",
+  "citations": [
+    "[Điều 21 khoản 1]",
+    "[Điều 23 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A21.K1",
+    "L41_2024.A23.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,what_to_do_when_no_bhxh_book(user,Bạn cần liên hệ với công ty cũ (Samsung Bắc Ninh) để yêu cầu chốt sổ và trả sổ BHXH cho bạn. Nếu công ty không thực hiện, bạn có thể liên hệ cơ quan BHXH nơi công ty đóng để được hỗ trợ giải quyết. Khi nghỉ ở công ty mới, cũng cần yêu cầu chốt sổ và nhận lại sổ BHXH.),based_on(source_a21_k1)),step(conclusion,what_to_do_when_no_bhxh_book(user,Bạn cần liên hệ với công ty cũ (Samsung Bắc Ninh) để yêu cầu chốt sổ và trả sổ BHXH cho bạn. Nếu công ty không thực hiện, bạn có thể liên hệ cơ quan BHXH nơi công ty đóng để được hỗ trợ giải quyết. Khi nghỉ ở công ty mới, cũng cần yêu cầu chốt sổ và nhận lại sổ BHXH.),based_on(source_a23_k2))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về việc nghỉ việc tại Samsung Bắc Ninh từ năm 2017 nhưng chưa chốt sổ bảo hiểm xã hội (BHXH) và chưa nhận sổ, hiện đang làm công ty mới vẫn đóng BHXH nhưng nếu nghỉ thì cũng chưa chốt được sổ. Bạn muốn biết cần phải làm gì trong trường hợp này.",
+    "rule": "\"Người sử dụng lao động có trách nhiệm phối hợp với cơ quan BHXH trả sổ BHXH cho người lao động khi chấm dứt hợp đồng lao động.\" (law_bhxh_2024, article_21, clause_1)\n\"Người lao động có quyền yêu cầu người sử dụng lao động xác nhận quá trình đóng BHXH và trả sổ BHXH khi nghỉ việc.\" (law_bhxh_2024, article_23, clause_2)",
+    "application": "Không có slot_id nào được gán giá trị cụ thể trong trường hợp này. Prolog đã sử dụng các quy định trên để đưa ra lời khuyên về thủ tục chốt và nhận sổ BHXH khi nghỉ việc ở cả công ty cũ và công ty mới.",
+    "conclusion": "Theo kết quả Prolog, bạn cần liên hệ với công ty cũ (Samsung Bắc Ninh) để yêu cầu chốt sổ và trả sổ BHXH cho bạn. Nếu công ty không thực hiện, bạn có thể liên hệ cơ quan BHXH nơi công ty đóng để được hỗ trợ giải quyết. Khi nghỉ ở công ty mới, cũng cần yêu cầu chốt sổ và nhận lại sổ BHXH."
+  },
+  "elapsed_s": 6.057,
+  "prompt_tokens": 2677,
+  "completion_tokens": 700,
+  "error": null,
+  "gold_answer": "Công ty mới vẫn có thể đóng BHXH cho bạn, nhưng hồ sơ cũ chưa chốt sẽ gây vướng khi gộp quá trình và giải quyết chế độ sau này. Bạn cần yêu cầu Samsung Bắc Ninh chốt sổ bằng văn bản; nếu họ không làm thì khiếu nại tới cơ quan BHXH quản lý đơn vị hoặc thanh tra lao động. Không nên để kéo dài vì càng lâu càng khó đối chiếu hồ sơ cũ.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

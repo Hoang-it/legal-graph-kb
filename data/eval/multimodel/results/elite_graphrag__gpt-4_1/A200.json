@@ -1,0 +1,39 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-4.1",
+  "stt": 200,
+  "question": "E tham gia BHXH được 21 năm và có qđ nghỉ việc cuối tháng 6, tuy nhiên từ lúc nghỉ đến nay e không có làm việc j để tham gia bh tiếp tục (gần 10 tháng) như vậy cho e hỏi e muốn rút BHXH 1 lần có được không, mong được phản hồi ạ",
+  "answer": "Issue:\nBạn hỏi rằng sau khi tham gia bảo hiểm xã hội được 21 năm và đã nghỉ việc gần 10 tháng mà không tiếp tục đóng bảo hiểm, bạn có đủ điều kiện để rút bảo hiểm xã hội một lần hay không.\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), Điều 70, Khoản 1: \"Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm xã hội mà có đề nghị thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây:\"\nLuật BHXH 2024 (41/2024/QH15), Điều 107, Khoản 2: \"Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội. Thời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần...\"\n\nApplication:\nCác thông tin được xác nhận gồm: years_contributed = 21 (bạn đã tham gia BHXH 21 năm), stopped_working_month = 6 (bạn nghỉ việc vào cuối tháng 6), months_since_stopped = 10 (đã nghỉ việc được 10 tháng). Prolog đã sử dụng các giá trị này để kiểm tra điều kiện đủ thời gian tham gia và thời gian ngừng đóng bảo hiểm xã hội theo quy định pháp luật.\n\nConclusion:\nTheo kết quả truy vấn Prolog, bạn đủ điều kiện để hưởng bảo hiểm xã hội một lần (eligible_one_time_bhxh(user)).",
+  "citations": [
+    "[Điều 70 khoản 1]",
+    "[Điều 2]",
+    "[Điều 107 khoản 2]",
+    "[Điều 106]"
+  ],
+  "citation_ids": [
+    "L41_2024.A70.K1",
+    "L41_2024.A2",
+    "L41_2024.A107.K2",
+    "L41_2024.A106"
+  ],
+  "citation_indices": [
+    5,
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,eligible_one_time_bhxh(user),based_on(source_c005)),step(time_condition,months_since_stopped(user,10),based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi rằng sau khi tham gia bảo hiểm xã hội được 21 năm và đã nghỉ việc gần 10 tháng mà không tiếp tục đóng bảo hiểm, bạn có đủ điều kiện để rút bảo hiểm xã hội một lần hay không.",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), Điều 70, Khoản 1: \"Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm xã hội mà có đề nghị thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây:\"\nLuật BHXH 2024 (41/2024/QH15), Điều 107, Khoản 2: \"Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội. Thời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần...\"",
+    "application": "Các thông tin được xác nhận gồm: years_contributed = 21 (bạn đã tham gia BHXH 21 năm), stopped_working_month = 6 (bạn nghỉ việc vào cuối tháng 6), months_since_stopped = 10 (đã nghỉ việc được 10 tháng). Prolog đã sử dụng các giá trị này để kiểm tra điều kiện đủ thời gian tham gia và thời gian ngừng đóng bảo hiểm xã hội theo quy định pháp luật.",
+    "conclusion": "Theo kết quả truy vấn Prolog, bạn đủ điều kiện để hưởng bảo hiểm xã hội một lần (eligible_one_time_bhxh(user))."
+  },
+  "elapsed_s": 10.249,
+  "prompt_tokens": 3509,
+  "completion_tokens": 875,
+  "error": null,
+  "gold_answer": "Bạn đã tham gia BHXH 21 năm và mới nghỉ gần 10 tháng thì chưa đủ điều kiện thông thường để xem xét BHXH 1 lần theo mốc 12 tháng không tham gia. Hơn nữa, từ 01/7/2025 nhiều trường hợp có từ đủ 15 năm đóng trở lên sẽ hướng tới chế độ lương hưu khi đủ tuổi, nên càng cần cân nhắc. Sau khi đủ 12 tháng ngừng tham gia, bạn mới nên đối chiếu lại điều kiện cụ thể với cơ quan BHXH.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

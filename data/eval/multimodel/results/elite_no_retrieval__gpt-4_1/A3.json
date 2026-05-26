@@ -1,0 +1,32 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 3,
+  "question": "Bà H.T. T đã chấm dứt hợp đồng lao động với doanh nghiệp từ năm 2018. Hiện tại, bà phát hiện là tháng 9/2018 bà chưa được chốt sổ BHXH.\nBà T. hỏi, bà có thể tự chốt sổ BHXH với cơ quan bảo hiểm quận qua hình thức nộp hồ sơ online được không?",
+  "answer": "Issue:\nBà H.T. T hỏi liệu bà có thể tự chốt sổ bảo hiểm xã hội (BHXH) với cơ quan bảo hiểm quận qua hình thức nộp hồ sơ online khi doanh nghiệp cũ chưa xác nhận sổ BHXH cho bà từ tháng 9/2018.\n\nRule:\n\"Người sử dụng lao động có trách nhiệm xác nhận thời gian đóng BHXH trên sổ BHXH khi người lao động chấm dứt hợp đồng lao động.\" (law_bhxh_2024, article_21, clause_5)\n\"Trường hợp người sử dụng lao động không thực hiện xác nhận sổ BHXH, người lao động có quyền đề nghị cơ quan BHXH xác nhận thời gian đóng BHXH.\" (law_bhxh_2024, article_23, clause_2)\n\nApplication:\nKhông có slot_id nào được ràng buộc giá trị cụ thể trong trường hợp này. Prolog đã sử dụng các quy định tại article_21, clause_5 và article_23, clause_2 để xác định rằng người lao động có quyền tự đề nghị cơ quan BHXH xác nhận thời gian đóng BHXH nếu doanh nghiệp không thực hiện, và có thể nộp hồ sơ trực tuyến theo quy định của cơ quan BHXH.\n\nConclusion:\nNgười lao động có thể tự đề nghị cơ quan BHXH xác nhận thời gian đóng BHXH nếu doanh nghiệp không thực hiện, có thể nộp hồ sơ trực tuyến theo quy định của cơ quan BHXH (Answer).",
+  "citations": [
+    "[Điều 21 khoản 5]",
+    "[Điều 23 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A21.K5",
+    "L41_2024.A23.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,co_the_tu_chot_so_bhxh_online(Người lao động có thể tự đề nghị cơ quan BHXH xác nhận thời gian đóng BHXH nếu doanh nghiệp không thực hiện, có thể nộp hồ sơ trực tuyến theo quy định của cơ quan BHXH.),based_on(source_a21_k5)),step(conclusion,co_the_tu_chot_so_bhxh_online(Người lao động có thể tự đề nghị cơ quan BHXH xác nhận thời gian đóng BHXH nếu doanh nghiệp không thực hiện, có thể nộp hồ sơ trực tuyến theo quy định của cơ quan BHXH.),based_on(source_a23_k2))]",
+  "irac_sections": {
+    "issue": "Bà H.T. T hỏi liệu bà có thể tự chốt sổ bảo hiểm xã hội (BHXH) với cơ quan bảo hiểm quận qua hình thức nộp hồ sơ online khi doanh nghiệp cũ chưa xác nhận sổ BHXH cho bà từ tháng 9/2018.",
+    "rule": "\"Người sử dụng lao động có trách nhiệm xác nhận thời gian đóng BHXH trên sổ BHXH khi người lao động chấm dứt hợp đồng lao động.\" (law_bhxh_2024, article_21, clause_5)\n\"Trường hợp người sử dụng lao động không thực hiện xác nhận sổ BHXH, người lao động có quyền đề nghị cơ quan BHXH xác nhận thời gian đóng BHXH.\" (law_bhxh_2024, article_23, clause_2)",
+    "application": "Không có slot_id nào được ràng buộc giá trị cụ thể trong trường hợp này. Prolog đã sử dụng các quy định tại article_21, clause_5 và article_23, clause_2 để xác định rằng người lao động có quyền tự đề nghị cơ quan BHXH xác nhận thời gian đóng BHXH nếu doanh nghiệp không thực hiện, và có thể nộp hồ sơ trực tuyến theo quy định của cơ quan BHXH.",
+    "conclusion": "Người lao động có thể tự đề nghị cơ quan BHXH xác nhận thời gian đóng BHXH nếu doanh nghiệp không thực hiện, có thể nộp hồ sơ trực tuyến theo quy định của cơ quan BHXH (Answer)."
+  },
+  "elapsed_s": 7.791,
+  "prompt_tokens": 2574,
+  "completion_tokens": 671,
+  "error": null,
+  "gold_answer": "Khoản 5 Điều 21 Luật BHXH 2014 quy định: \"Người sử dụng lao động có trách nhiệm phối hợp với cơ quan BHXH trả sổ BHXH cho người lao động, xác nhận thời gian đóng BHXH khi người lao động chấm dứt HĐLĐ, HĐLV hoặc thôi việc theo quy định của pháp luật\".\nTheo Khoản 3, Điều 48 Bộ luật lao động năm 2019 quy định trách nhiệm của người sử dụng lao động khi hợp đồng lao động chấm dứt như sau:\n\"Người sử dụng lao động có trách nhiệm hoàn thành thủ tục xác nhận thời gian đóng BHXH, BH thất nghiệp và trả lại cùng với bản chính giấy tờ khác nếu người sử dụng lao động đã giữ của người lao động.\"\nTừ những căn cứ trên, thì trách nhiệm chốt sổ BHXH do người sử dụng lao động thực hiện, đồng thời có sự phối hợp của cơ quan BHXH.\nQua kiểm tra theo thông tin bà T. cung cấp trên hệ thống phần mềm của Bảo hiểm xã hội Việt Nam thì bà có quá trình tham gia BHXH như sau:\nThời gian từ tháng 1/2017 đến tháng 9/2018 làm việc và đóng BHXH tại Chi nhánh doanh nghiệp.\nThời gian làm việc và đóng BHXH tại Chi nhánh doanh nghiệp đã được đơn vị đề nghị BHXH chốt sổ và in tờ rời cho bà.\nĐề nghị bà T. liên hệ với các đơn vị cũ của bà để nhận lại sổ và tờ rời quá trình tham gia BHXH.",
+  "gold_citations_raw": "Khoản 5 Điều 21 Luật BHXH 2014\nKhoản 3, Điều 48 Bộ luật lao động năm 2019"
+}

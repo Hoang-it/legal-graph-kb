@@ -1,0 +1,30 @@
+{
+  "arm": "elite_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 119,
+  "question": "Có phải cơ quan BHXH giờ không cấp lại bìa và tờ rời nữa không? Mình nộp đủ sổ cho công ty cũ chốt bhxh mà công ty báo lại là giờ cơ quan bhxh ko cấp lại sổ giấy nữa.",
+  "answer": "Issue: Có phải cơ quan Bảo hiểm Xã hội (BHXH) hiện nay không còn cấp lại sổ BHXH giấy và tờ rời nữa không?\n\nRule: Theo quy định tại Luật BHXH 2024, Điều 46, Khoản 2: \"Cơ quan BHXH không cấp lại sổ BHXH giấy, thay vào đó sử dụng sổ BHXH điện tử.\"\n\nApplication: Trong trường hợp này, không có các giá trị cụ thể nào cần áp dụng vì câu hỏi liên quan đến quy định chung về việc cấp lại sổ BHXH giấy. Quy định đã được áp dụng trực tiếp từ nguồn luật.\n\nConclusion: Cơ quan BHXH không cấp lại sổ BHXH giấy, thay vào đó sử dụng sổ BHXH điện tử.",
+  "citations": [
+    "[Điều 46 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A46.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,answer_predicate(Cơ quan BHXH không cấp lại sổ BHXH giấy, thay vào đó sử dụng sổ BHXH điện tử.),based_on(source_a46_k2))]",
+  "irac_sections": {
+    "issue": "Có phải cơ quan Bảo hiểm Xã hội (BHXH) hiện nay không còn cấp lại sổ BHXH giấy và tờ rời nữa không?",
+    "rule": "Theo quy định tại Luật BHXH 2024, Điều 46, Khoản 2: \"Cơ quan BHXH không cấp lại sổ BHXH giấy, thay vào đó sử dụng sổ BHXH điện tử.\"",
+    "application": "Trong trường hợp này, không có các giá trị cụ thể nào cần áp dụng vì câu hỏi liên quan đến quy định chung về việc cấp lại sổ BHXH giấy. Quy định đã được áp dụng trực tiếp từ nguồn luật.",
+    "conclusion": "Cơ quan BHXH không cấp lại sổ BHXH giấy, thay vào đó sử dụng sổ BHXH điện tử."
+  },
+  "elapsed_s": 7.097,
+  "prompt_tokens": 3291,
+  "completion_tokens": 414,
+  "error": null,
+  "gold_answer": "Không phải là cơ quan BHXH 'không cấp lại nữa'. Hiện quản lý điện tử là chính, nhưng khi cần vẫn có thể thực hiện thủ tục cấp lại/cấp quá trình đóng theo quy định. Nếu công ty nói không có sổ giấy nên không trả được thì bạn nên yêu cầu họ cung cấp xác nhận đã chốt và dữ liệu quá trình đóng; trường hợp mất sổ, bạn có thể trực tiếp làm thủ tục cấp lại tại BHXH.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

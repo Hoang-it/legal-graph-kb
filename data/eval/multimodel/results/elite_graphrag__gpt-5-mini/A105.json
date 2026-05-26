@@ -1,0 +1,41 @@
+{
+  "arm": "elite_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 105,
+  "question": "Chốt sổ em lãnh Bh thât nghiệp đến tháng 3/2025 nhưng giờ trên hệ thống chỉ đến tháng 2/2025, em không lãnh được tiền bhxh vì bị chênh lệch 1 tháng công ty không xử lý cho em. giờ em phải làm như nào để lãnh bảo hiểm được?",
+  "answer": "Issue:\nChốt sổ hưởng bảo hiểm thất nghiệp dự kiến kết thúc mar_2025 nhưng hệ thống chỉ ghi feb_2025; công ty chưa xử lý nên tiền bảo hiểm bị chặn. Em phải làm sao để nhận bảo hiểm?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), article 28, clause 4: \"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15), article 141, clause 12: \"Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30 tháng 6 năm 2025 mà không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.\"\nLuật BHXH 2024 (41/2024/QH15), article 97, clause 2: \"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15), article 62, clause 3: \"Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động, 05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\n\nApplication:\nexpected_unemployment_end(user) = mar_2025.\nsystem_recorded_end(user) = feb_2025.\ncompany_processed(user) = no.\nunemployment_payment_blocked(user) = yes.\nChương trình Prolog khớp các facts trên với quy tắc unemployment_claim_steps và sử dụng nguồn pháp lý tương ứng (source_c141, source_c062, source_c028, source_c097) để suy ra các bước khuyến nghị.\n\nConclusion:\nAnswer = [step(request_employer_to_correct_contribution_and_update_system,based_on(source_c141)),step(submit_complete_documents_and_request_correction_at_bhxh,based_on(source_c062)),step(bhxh_must_issue_or_update_sobxh_within_5_working_days_after_receiving_full_documents,based_on(source_c028)),step(bhxh_must_reply_in_writing_if_not_resolved_within_the_deadline,based_on(source_c097))].",
+  "citations": [
+    "[Điều 28 khoản 4]",
+    "[Điều 141 khoản 12]",
+    "[Điều 97 khoản 2]",
+    "[Điều 62 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A28.K4",
+    "L41_2024.A141.K12",
+    "L41_2024.A97.K2",
+    "L41_2024.A62.K3"
+  ],
+  "citation_indices": [
+    0,
+    1,
+    2,
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(request_employer_to_correct_contribution_and_update_system,based_on(source_c141)),step(submit_complete_documents_and_request_correction_at_bhxh,based_on(source_c062)),step(bhxh_must_issue_or_update_sobxh_within_5_working_days_after_receiving_full_documents,based_on(source_c028)),step(bhxh_must_reply_in_writing_if_not_resolved_within_the_deadline,based_on(source_c097))]",
+  "irac_sections": {
+    "issue": "Chốt sổ hưởng bảo hiểm thất nghiệp dự kiến kết thúc mar_2025 nhưng hệ thống chỉ ghi feb_2025; công ty chưa xử lý nên tiền bảo hiểm bị chặn. Em phải làm sao để nhận bảo hiểm?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), article 28, clause 4: \"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15), article 141, clause 12: \"Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30 tháng 6 năm 2025 mà không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.\"\nLuật BHXH 2024 (41/2024/QH15), article 97, clause 2: \"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15), article 62, clause 3: \"Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động, 05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"",
+    "application": "expected_unemployment_end(user) = mar_2025.\nsystem_recorded_end(user) = feb_2025.\ncompany_processed(user) = no.\nunemployment_payment_blocked(user) = yes.\nChương trình Prolog khớp các facts trên với quy tắc unemployment_claim_steps và sử dụng nguồn pháp lý tương ứng (source_c141, source_c062, source_c028, source_c097) để suy ra các bước khuyến nghị.",
+    "conclusion": "Answer = [step(request_employer_to_correct_contribution_and_update_system,based_on(source_c141)),step(submit_complete_documents_and_request_correction_at_bhxh,based_on(source_c062)),step(bhxh_must_issue_or_update_sobxh_within_5_working_days_after_receiving_full_documents,based_on(source_c028)),step(bhxh_must_reply_in_writing_if_not_resolved_within_the_deadline,based_on(source_c097))]."
+  },
+  "elapsed_s": 62.362,
+  "prompt_tokens": 3997,
+  "completion_tokens": 6273,
+  "error": null,
+  "gold_answer": "Bạn cần yêu cầu công ty và cơ quan BHXH điều chỉnh lại quá trình đóng cho đúng đến tháng 3/2025. Khi dữ liệu trên hệ thống còn thiếu 1 tháng thì hồ sơ hưởng BHXH 1 lần dễ bị treo hoặc từ chối. Nếu công ty không phối hợp, bạn có thể gửi đơn khiếu nại tới cơ quan BHXH quản lý đơn vị hoặc Thanh tra Sở Nội vụ/Lao động để yêu cầu xác minh, truy đóng hoặc điều chỉnh dữ liệu.",
+  "gold_citations_raw": "Điều 27, 33 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Luật Khiếu nại 2011"
+}
