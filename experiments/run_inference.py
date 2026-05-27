@@ -1,14 +1,13 @@
-"""Chạy inference 5 arms trên N câu hỏi.
+"""Chạy inference nhiều arms trên N câu hỏi.
 
 Output mỗi arm 1 file JSON / câu hỏi:
     data/eval/results/{arm}/A{stt}.json
-với arm ∈ {graphrag, llm_only, elite_no_retrieval, elite_ontology, elite_graphrag}
 
 Idempotent — skip nếu file đã tồn tại (dùng --force để chạy lại).
 
 CLI:
     python -m experiments.run_inference --arms graphrag,llm_only --n 200
-    python -m experiments.run_inference --arms all --n 10
+    python -m experiments.run_inference --arms main --n 10
     python -m experiments.run_inference --arms elite_ontology,elite_graphrag --n 200
 """
 
@@ -19,9 +18,12 @@ import json
 import os
 import sys
 import time
+from contextlib import suppress
 from pathlib import Path
 
 from dotenv import load_dotenv
+
+from experiments.arms import ALL_ARMS, parse_run_arms
 
 load_dotenv()
 os.environ.setdefault("HF_HUB_DISABLE_SYMLINKS_WARNING", "1")
@@ -30,15 +32,6 @@ if not (os.environ.get("OPENAI_BASE_URL") or "").strip():
 
 QUESTIONS_PATH = Path("data/eval/questions_200.json")
 OUT_ROOT = Path("data/eval/results")
-
-ALL_ARMS = (
-    "graphrag",
-    "llm_only",
-    "elite_no_retrieval",
-    "elite_ontology",
-    "elite_graphrag",
-    "elite_graphrag_logic",
-)
 
 
 def load_questions(n: int | None = None) -> list[dict]:
@@ -55,15 +48,10 @@ def _save(path: Path, data: dict) -> None:
 
 
 def _parse_arms(s: str) -> list[str]:
-    if s == "all":
-        return list(ALL_ARMS)
-    arms = [a.strip() for a in s.split(",") if a.strip()]
-    invalid = [a for a in arms if a not in ALL_ARMS]
-    if invalid:
-        raise SystemExit(
-            f"Unknown arm(s): {invalid}. Valid: {list(ALL_ARMS)} or 'all'"
-        )
-    return arms
+    try:
+        return parse_run_arms(s)
+    except ValueError as exc:
+        raise SystemExit(str(exc)) from exc
 
 
 # ---------------------------------------------------------------------------
@@ -240,10 +228,8 @@ def _run_elite(
                 _save(out_path.with_suffix(".error.json"),
                       {"arm": arm, "stt": stt, "error": f"{type(e).__name__}: {e}"})
     finally:
-        try:
+        with suppress(Exception):
             pipeline.close()
-        except Exception:
-            pass
     print(f"\n{arm} done: {n_done} new, {n_skipped} skipped, {n_failed} failed "
           f"({time.time() - t_total:.1f}s)")
 
@@ -288,8 +274,12 @@ def main() -> int:
     )
     p.add_argument("--n", type=int, default=200,
                    help="Số câu đầu tiên (default 200).")
-    p.add_argument("--arms", type=str, default="all",
-                   help=f"Comma-separated arms hoặc 'all'. Available: {', '.join(ALL_ARMS)}")
+    p.add_argument("--arms", type=str, default="main",
+                   help=(
+                       "Comma-separated arms, 'main' "
+                       "(approved academic experiment set), or 'all'. "
+                       f"Available: {', '.join(ALL_ARMS)}"
+                   ))
     p.add_argument("--force", action="store_true",
                    help="Chạy lại dù file đã có.")
     p.add_argument("--verbose", action="store_true")

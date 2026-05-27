@@ -5,7 +5,7 @@
   "answer": "[Pipeline không trả về kết luận. prolog_status=derived_false, repair_rounds=2, error=Prolog produced no solutions]",
   "plain_answer": "",
   "citations": [
-    "[Điều 33 khoản 5]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 33 khoản 5]"
   ],
   "citation_ids": [
     "L41_2024.A33.K5"
@@ -20,10 +20,10 @@
   "prolog_program": "so_ngay(user, 14).\nlegal_source(source_a33_k5, law_bhxh_2024, article_33, clause_5, none, 'Người lao động không phải đóng bảo hiểm xã hội tháng đó nếu không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng.').\nmandatory_social_insurance(Person, mandatory, Trace) :- so_ngay(Person, Days), Days >= 14, mandatory = false, Trace = [step(condition, days_worked_at_least_14, based_on(source_a33_k5)), step(conclusion, mandatory_social_insurance(Person, mandatory), based_on(source_a33_k5))].\nmandatory_social_insurance(Person, mandatory, Trace) :- so_ngay(Person, Days), Days < 14, mandatory = true, Trace = [step(condition, days_worked_less_than_14, based_on(source_a33_k5)), step(conclusion, mandatory_social_insurance(Person, mandatory), based_on(source_a33_k5))].",
   "prolog_error": "Prolog produced no solutions",
   "irac_sections": {},
-  "elapsed_s": 31.318,
+  "elapsed_s": 11.176,
   "prompt_tokens": 11633,
-  "completion_tokens": 812,
+  "completion_tokens": 814,
   "error": null,
   "gold_answer": "Căn cứ điểm a khoản 1 Điều 2 Luật BHXH 2024; Nghị định số 158/2025/NĐ-CP ngày 25/6/2025 của Chính phủ, người lao động làm việc theo hợp đồng lao động từ đủ 1 tháng trở lên thuộc đối tượng tham gia BHXH bắt buộc.\nDo đó, trường hợp người lao động ký hợp đồng lao động dưới 1 tháng không thuộc đối tượng tham gia BHXH bắt buộc, quy định làm đủ 14 ngày công trở lên chỉ áp dụng đối với người lao động có hợp đồng lao động từ đủ 1 tháng trở lên.",
-  "gold_citations_raw": "điểm a khoản 1 Điều 2 Luật BHXH 2024; Nghị định số 158/2025/NĐ-CP"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]"
 }

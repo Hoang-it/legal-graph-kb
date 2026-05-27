@@ -2,31 +2,36 @@
   "arm": "elite_graphrag_logic",
   "stt": 37,
   "question": "Mình nghỉ cty cũ từ tháng 1/2026. (nghỉ ngang) nhưng cty vẫn chốt sổ cho Mình. Nhưng nay mình muốn ra lấy tờ rời BHXH, giờ mình phải làm sao?",
-  "answer": "[Pipeline không trả về kết luận. prolog_status=derived_false, repair_rounds=2, error=Prolog produced no solutions]",
-  "plain_answer": "",
+  "answer": "Issue: Người hỏi đã nghỉ việc từ tháng 1/2026 và muốn biết cách lấy tờ rời BHXH. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 13 khoản 2], người lao động cần lập hồ sơ để hưởng chế độ bảo hiểm xã hội. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 25 khoản 2], sổ bảo hiểm xã hội có thể được cấp theo yêu cầu. \nApplication: Không có slot nào được gán giá trị. Prolog query submit_social_insurance_claim(user, Trace) đã được thực hiện nhưng không có thông tin cụ thể để trả về. \nConclusion: Hệ thống không thể tính được kết quả cuối cùng do thiếu thông tin cần thiết.",
+  "plain_answer": "Hệ thống chưa đủ thông tin để tính chính xác cách lấy tờ rời BHXH của bạn. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 13 khoản 2], bạn cần lập hồ sơ để hưởng chế độ bảo hiểm xã hội. Bạn có thể cần cung cấp thêm thông tin về hồ sơ hoặc yêu cầu cụ thể để mình hỗ trợ tốt hơn.",
   "citations": [
-    "[Điều 107 khoản 2]",
-    "[Điều 25 khoản 2]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 13 khoản 2]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 25 khoản 2]"
   ],
   "citation_ids": [
-    "L41_2024.A107.K2",
+    "L41_2024.A13.K2",
     "L41_2024.A25.K2"
   ],
   "citation_indices": [
     0,
     3
   ],
-  "prolog_success": false,
-  "prolog_status": "derived_false",
-  "n_repair_rounds": 2,
-  "prolog_trace": "",
-  "prolog_program": "legal_source(source_a107_k2, law_bhxh_2024, article_107, clause_2, none, 'Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.').\nlegal_source(source_a25_k2, law_bhxh_2024, article_25, clause_2, none, 'Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau.').\nsubmit_application_for_one_time_benefit(Person, Trace) :- Trace = [step(condition, submit_application_for_one_time_benefit, based_on(source_a107_k2))].\nrequest_social_insurance_book(Person, Trace) :- Trace = [step(condition, request_social_insurance_book, based_on(source_a25_k2))].",
-  "prolog_error": "Prolog produced no solutions",
-  "irac_sections": {},
-  "elapsed_s": 23.047,
-  "prompt_tokens": 10038,
-  "completion_tokens": 813,
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(condition,submit_claim,based_on(source_a107_k2))]",
+  "prolog_program": "legal_source(source_a107_k2, law_bhxh_2024, article_107, clause_2, none, 'Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.').\nlegal_source(source_a25_k2, law_bhxh_2024, article_25, clause_2, none, 'Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau.').\nsubmit_social_insurance_claim(Person, Trace) :- Person = user, Trace = [step(condition, submit_claim, based_on(source_a107_k2))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi đã nghỉ việc từ tháng 1/2026 và muốn biết cách lấy tờ rời BHXH.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 13 khoản 2], người lao động cần lập hồ sơ để hưởng chế độ bảo hiểm xã hội. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 25 khoản 2], sổ bảo hiểm xã hội có thể được cấp theo yêu cầu.",
+    "application": "Không có slot nào được gán giá trị. Prolog query submit_social_insurance_claim(user, Trace) đã được thực hiện nhưng không có thông tin cụ thể để trả về.",
+    "conclusion": "Hệ thống không thể tính được kết quả cuối cùng do thiếu thông tin cần thiết."
+  },
+  "elapsed_s": 10.046,
+  "prompt_tokens": 5086,
+  "completion_tokens": 511,
   "error": null,
   "gold_answer": "Nếu công ty đã chốt sổ nhưng chưa trả tờ rời cho bạn thì trước hết yêu cầu công ty bàn giao lại sổ/tờ rời bằng văn bản hoặc email. Khi chấm dứt HĐLĐ, người sử dụng lao động phải phối hợp xác nhận thời gian đóng BHXH và trả lại giấy tờ liên quan cho người lao động. Nếu công ty chây ì, bạn có thể khiếu nại đến Thanh tra Sở Nội vụ/LĐTBXH hoặc cơ quan BHXH nơi đơn vị đang tham gia để được hỗ trợ cấp lại, xác nhận quá trình đóng.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 13]\n[Bộ luật Lao động 2019, Điều 48]"
 }

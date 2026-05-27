@@ -5,8 +5,8 @@
   "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'legal_dossier']",
   "plain_answer": "",
   "citations": [
-    "[Điều 97 khoản 1]",
-    "[Điều 61 khoản 5]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 97 khoản 1]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 61 khoản 5]"
   ],
   "citation_ids": [
     "L41_2024.A97.K1",
@@ -20,13 +20,13 @@
   "prolog_status": "invalid_query",
   "n_repair_rounds": 2,
   "prolog_trace": "",
-  "prolog_program": "years_contributed(user, 15).\nlegal_source(source_a97_k1, law_bhxh_2024, article_97, clause_1, none, 'Trong thời hạn 60 ngày kể từ ngày sinh con, người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 96 của Luật này cho cơ quan bảo hiểm xã hội.').\nlegal_source(source_a61_k5, law_bhxh_2024, article_61, clause_5, none, 'Hồ sơ đề nghị nghỉ việc hưởng chế độ thai sản hoặc hưởng trợ cấp một lần đối với lao động nam khi vợ sinh con là bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con; trường hợp giấy chứng sinh không thể hiện thông tin về việc sinh con phải phẫu thuật hoặc sinh con dưới 32 tuần tuổi thì cần thêm bản chính hoặc bản sao văn bản của cơ sở khám bệnh, chữa bệnh thể hiện thông tin về việc sinh con phải phẫu thuật hoặc sinh con dưới 32 tuần tuổi.').\nlegal_dossier_required(Person, legal_dossier, Trace) :- years_contributed(Person, Y), Y >= 15, legal_dossier = true, Trace = [step(condition, years_contributed_at_least_15, based_on(source_a97_k1)), step(conclusion, legal_dossier_required(Person, legal_dossier), based_on(source_a97_k1))].\nrequired_documents(legal_dossier, Documents, Trace) :- legal_dossier = true, Documents = ['bản sao giấy khai sinh', 'trích lục khai sinh', 'bản sao giấy chứng sinh'], Trace = [step(condition, legal_dossier_required(user, legal_dossier), based_on(source_a61_k5)), step(conclusion, required_documents(legal_dossier, Documents), based_on(source_a61_k5))].",
+  "prolog_program": "years_contributed(user, 15).\nlegal_source(source_a97_k1, law_bhxh_2024, article_97, clause_1, none, 'Trong thời hạn 60 ngày kể từ ngày sinh con, người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 96 của Luật này cho cơ quan bảo hiểm xã hội.').\nlegal_source(source_a61_k5, law_bhxh_2024, article_61, clause_5, none, 'Hồ sơ đề nghị nghỉ việc hưởng chế độ thai sản hoặc hưởng trợ cấp một lần đối với lao động nam khi vợ sinh con là bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con; trường hợp giấy chứng sinh không thể hiện thông tin về việc sinh con phải phẫu thuật hoặc sinh con dưới 32 tuần tuổi thì cần thêm bản chính hoặc bản sao văn bản của cơ sở khám bệnh, chữa bệnh thể hiện thông tin về việc sinh con phải phẫu thuật hoặc sinh con dưới 32 tuần tuổi.').\nlegal_dossier_required(Person, legal_dossier, Trace) :- years_contributed(Person, Y), Y >= 15, legal_dossier = true, Trace = [step(condition, years_contributed_at_least_15, based_on(source_a97_k1)), step(conclusion, legal_dossier_required(Person, legal_dossier), based_on(source_a97_k1))].\nrequired_documents(legal_dossier, Documents, Trace) :- Documents = ['bản sao giấy khai sinh', 'trích lục khai sinh', 'bản sao giấy chứng sinh'], Trace = [step(condition, documents_required, based_on(source_a61_k5)), step(conclusion, required_documents(legal_dossier, Documents), based_on(source_a61_k5))].",
   "prolog_error": "query argument must be variable or user, got 'legal_dossier'",
   "irac_sections": {},
-  "elapsed_s": 33.733,
-  "prompt_tokens": 11955,
-  "completion_tokens": 1431,
+  "elapsed_s": 18.282,
+  "prompt_tokens": 11929,
+  "completion_tokens": 1406,
   "error": null,
   "gold_answer": "Theo thư ông trình bày, chưa có thông tin về việc tại thời điểm vợ của ông sinh con thì ông có đang đóng BHXH hay không? Do đó, BHXH Việt Nam chưa có căn cứ trả lời ông có thuộc trường hợp được hưởng chế độ thai sản khi vợ sinh con hay không. BHXH Việt Nam cung cấp các quy định chung để ông tham khảo, đối chiếu với trường hợp của mình:\nTại Khoản 1 Điều 31 Luật BHXH năm 2014 quy định, người lao động được hưởng chế độ thai sản khi thuộc một trong các trường hợp sau đây:\n\"e) Lao động nam đang đóng BHXH có vợ sinh con\".\nTại Khoản 2 Điều 34 Luật BHXH năm 2014 quy định, lao động nam đang đóng BHXH khi vợ sinh con được nghỉ việc hưởng chế độ thai sản như sau:\n\"a) 05 ngày làm việc;\nb) 07 ngày làm việc khi vợ sinh con phải phẫu thuật, sinh con dưới 32 tuần tuổi;\nc) Trường hợp vợ sinh đôi thì được nghỉ 10 ngày làm việc, từ sinh ba trở lên thì cứ thêm mỗi con được nghỉ thêm 3 ngày làm việc;\nd) Trường hợp vợ sinh đôi trở lên mà phải phẫu thuật thì được nghỉ 14 ngày làm việc.\nThời gian nghỉ việc hưởng chế độ thai sản quy định tại Khoản này được tính trong khoảng thời gian 30 ngày đầu kể từ ngày vợ sinh con\".\nHồ sơ hưởng chế độ thai sản tại Khoản 4, Khoản 5 Điều 101 Luật BHXH năm 2014 quy định:\n\"4. Trường hợp lao động nam nghỉ việc khi vợ sinh con phải có bản sao giấy chứng sinh hoặc bản sao giấy khai sinh của con và giấy xác nhận của cơ sở y tế đối với trường hợp sinh con phải phẫu thuật, sinh con dưới 32 tuần tuổi.\n5. Danh sách người lao động nghỉ việc hưởng chế độ thai sản do người sử dụng lao động lập\".",
-  "gold_citations_raw": "Khoản 1 Điều 31 Luật BHXH \n2 Điều 34 Luật BHXH năm 2014"
+  "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 34]\n[Luật BHXH 2014 (58/2014/QH13), Điều 31]"
 }

@@ -15,7 +15,7 @@ Usage:
     python -m experiments.rerender_plain_answer --combos all --pilot 10
     python -m experiments.rerender_plain_answer --combos all  # full
 
-Cost (gpt-4o-mini judge model for backfill, không phải original model):
+Cost (gpt-4o-mini backfill model, không phải original inference model):
     ~$0.002 per record × ~1700 elite records ≈ $3.4
 """
 

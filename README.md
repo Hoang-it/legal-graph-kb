@@ -13,7 +13,8 @@
 - **Pipeline end-to-end**: parse `.docx` → trích quan hệ ngữ nghĩa (rule + LLM) → load Neo4j với vector index → RAG Q&A có citation
 - **Provenance bất biến**: mọi node/edge ngữ nghĩa truy ngược được về Điều/Khoản gốc, verify byte-for-byte cả khi build và query (xem [CONTRIBUTING § Provenance principle](CONTRIBUTING.md))
 - **3 lớp chống bịa**: Pydantic schema → DB constraints → post-extraction substring check (loại 158/745 edges LLM bịa)
-- **Eval framework** đầy đủ với 6 metrics peer-reviewed (RAGAS, Liu 2023, Magesh 2025, Zheng 2023, BERTScore) — so sánh GraphRAG vs LLM-only trên 200 câu hỏi BHXH thực tế
+- **Eval framework** theo academic metrics mới: gold citation recall/precision/F1,
+  citation display rate, latency, BERTScore và Prolog reliability trên 200 câu hỏi BHXH thực tế
 - **Multilingual native**: BGE-M3 1024-d embeddings, GPT-4o-mini generator, system prompt + UI tiếng Việt
 - **CLI + REPL**: 8 entry-points + interactive chat với pretty output (rich)
 
@@ -116,12 +117,13 @@ bạn> Người sử dụng lao động có những trách nhiệm gì về bả
 
 ╭──── Trả lời (3.2s) ────────────────────────────────────────────╮
 │ Người sử dụng lao động có các trách nhiệm sau:                  │
-│ 1. Kê khai và nộp hồ sơ tham gia BHXH bắt buộc... [Điều 28...]  │
-│ 2. Đóng BHXH cho người lao động... [Điều 117 khoản 1]           │
-│ 3. Cung cấp thông tin, tài liệu... [Điều 13 khoản 7]            │
+│ 1. Kê khai và nộp hồ sơ tham gia BHXH bắt buộc...               │
+│    [Luật BHXH 2024 (41/2024/QH15), Điều 28 khoản 1]             │
+│ 2. Đóng BHXH cho người lao động...                              │
+│    [Luật BHXH 2024 (41/2024/QH15), Điều 117 khoản 1]            │
 │ ...                                                              │
 ╰──────────────────────────────────────────────────────────────────╯
-Citations: [Điều 28 khoản 1]  [Điều 117 khoản 1]  [Điều 13 khoản 7]  ✓ ✓ ✓
+Citations: [Luật BHXH 2024 (41/2024/QH15), Điều 28 khoản 1]  ✓
 ```
 
 Lệnh trong REPL: `/help`, `/sources`, `/verify`, `/save chat.md`, `/quit`.
@@ -129,23 +131,19 @@ Lệnh trong REPL: `/help`, `/sources`, `/verify`, `/save chat.md`, `/quit`.
 ## 📊 Evaluation (200 câu BHXH real)
 
 ```bash
-python -m experiments.run_inference --n 200   # ~25 phút, ~$0.10
-python -m experiments.compute_metrics         # ~60 phút, ~$3.20
-python -m experiments.generate_report
+python -m experiments.run_inference --arms main --n 200
+python -m experiments.compute_academic_metrics
 ```
 
-Output: [`reports/experiment_report.md`](reports/experiment_report.md). Tóm tắt:
+Output: `data/eval/academic_metrics.json`, `data/eval/academic_metrics.csv`,
+và [`reports/academic_report.md`](reports/academic_report.md). Script sẽ dừng
+nếu `gold_citations_raw` thiếu hoặc không parse được.
 
-| Metric | GraphRAG | LLM-only | Δ |
-|---|---:|---:|---:|
-| Citation Recall (Liu 2023) | **0.66** | 0.15 | **+341%** |
-| Citation Precision (Liu 2023) | **0.80** | 0.40 | **+100%** |
-| Faithfulness (RAGAS) | **0.82** | 0.65 | **+27%** |
-| Latency (s) | **2.7** | 4.5 | **−40%** |
-| Answer Relevance (RAGAS) | 0.55 | **0.68** | −20% |
-| BERTScore F1 | 0.66 | **0.71** | −8% |
-
-Xem `experiments/README.md` cho paper refs đầy đủ (đều peer-reviewed, không arXiv).
+Headline metrics là deterministic/dataset-based: citation recall,
+citation precision, citation F1, citation display rate, latency, BERTScore
+và 3 prolog rates. Judge-model metrics được tách khỏi headline và không chạy
+trong main experiment. Entrypoint `experiments.compute_judge_metrics` hiện fail-closed
+cho đến khi judge metrics được thiết kế và duyệt riêng.
 
 ## 📁 Project structure
 
@@ -212,7 +210,7 @@ Xem [CONTRIBUTING.md](CONTRIBUTING.md) cho hướng dẫn chi tiết và provena
 
 - [ ] Hybrid search: vector + fulltext keyword (Neo4j fulltext index đã có sẵn)
 - [ ] Multi-document KG (gộp với Luật BHXH cũ 58/2014 để truy vết kế thừa)
-- [ ] Stronger judge (GPT-4o / Claude) để giảm pairwise position bias
+- [ ] Optional judge metrics module sau khi chốt rubric riêng
 - [ ] Web UI thay vì REPL
 - [ ] Stratified eval theo loại câu hỏi (định nghĩa / quyền / thủ tục / chế độ)
 
@@ -235,5 +233,5 @@ PR / issue welcome. Đọc [CONTRIBUTING.md](CONTRIBUTING.md) trước. Tuân th
 - [Neo4j](https://neo4j.com/) — graph database + vector search
 - [BAAI/bge-m3](https://huggingface.co/BAAI/bge-m3) — multilingual embeddings
 - [OpenAI](https://openai.com/) — GPT-4o-mini for extraction + generation
-- [RAGAS](https://github.com/explodinggradients/ragas) — evaluation framework reference
+- [BERTScore](https://github.com/Tiiiger/bert_score) — semantic reference metric
 - ĐH Công nghệ Thông tin (UIT, ĐHQG TP.HCM) — research support

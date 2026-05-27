@@ -5,29 +5,25 @@
   "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'half_year_calculation(HalfYear']",
   "plain_answer": "",
   "citations": [
-    "[Điều 41 khoản 5]",
-    "[Điều 41 khoản 34]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 41 khoản 5]"
   ],
   "citation_ids": [
-    "L41_2024.A41.K5",
-    "L41_2024.A41.K34"
+    "L41_2024.A41.K5"
   ],
   "citation_indices": [
-    0,
-    1,
-    4
+    0
   ],
   "prolog_success": false,
   "prolog_status": "invalid_query",
   "n_repair_rounds": 2,
   "prolog_trace": "",
-  "prolog_program": "legal_source(source_a41_k5, law_bhxh_2024, article_41, clause_5, none, 'Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng.').\nlegal_source(source_a41_k5, law_bhxh_2024, article_41, clause_5, none, 'Thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.').\nlegal_source(source_a41_k34, law_bhxh_2024, article_41, clause_34, none, 'Người sử dụng lao động hằng tháng đóng 22% tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc vào quỹ hưu trí và tử tuất.').\nminimum_months_for_pension(MinMonths, Trace) :- MinMonths = 12, Trace = [step(threshold, minimum_months_for_pension, based_on(source_a41_k5))].\nhalf_year_calculation(HalfYear, Trace) :- HalfYear = 6, Trace = [step(threshold, half_year_calculation, based_on(source_a41_k5))].\nemployer_contribution_rate(ContributionRate, Trace) :- ContributionRate = 0.22, Trace = [step(threshold, employer_contribution_rate, based_on(source_a41_k34))].",
+  "prolog_program": "legal_source(source_a41_k5, law_bhxh_2024, article_41, clause_5, none, 'Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng.').\nlegal_source(source_a41_k5, law_bhxh_2024, article_41, clause_5, none, 'Thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.').\nminimum_months_for_pension(MinMonths, Trace) :- MinMonths = 12, Trace = [step(threshold, minimum_months_for_pension, based_on(source_a41_k5))].\nhalf_year_calculation(HalfYear, Trace) :- HalfYear = 6, Trace = [step(threshold, half_year_calculation, based_on(source_a41_k5))].",
   "prolog_error": "query argument must be variable or user, got 'half_year_calculation(HalfYear'",
   "irac_sections": {},
-  "elapsed_s": 49.515,
-  "prompt_tokens": 12867,
-  "completion_tokens": 1351,
+  "elapsed_s": 14.148,
+  "prompt_tokens": 12389,
+  "completion_tokens": 951,
   "error": null,
   "gold_answer": "Mức đóng tối thiểu phụ thuộc địa bàn lương tối thiểu vùng và mức lương ghi trong HĐLĐ, vì tiền lương làm căn cứ đóng BHXH không được thấp hơn lương tối thiểu vùng. Tổng mức đóng thông thường hiện vào khoảng 32% tiền lương tháng làm căn cứ đóng (doanh nghiệp và người lao động cùng đóng các quỹ BHXH, BHYT, BHTN). Về rút BHXH một lần, không phải cứ nghỉ là rút ngay; thường phải thuộc trường hợp luật cho phép, phổ biến là sau 12 tháng ngừng tham gia mà đủ điều kiện.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 31, Điều 33, Điều 70; Luật Việc làm 2013 Điều 57; Nghị định 293/2025/NĐ-CP"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 31]\n[Luật BHXH 2024 (41/2024/QH15), Điều 33]\n[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật Việc làm 2013, Điều 57]"
 }

@@ -2,10 +2,10 @@
   "arm": "elite_graphrag_logic",
   "stt": 45,
   "question": "Em có quyết định nghỉ việc từ tháng 3/2025, giờ em muốn rút bảo hiểm xã hội đã làm thủ tục đuợc chưa ạ? em ở Phú xuyên Hà Nội thì làm thủ tục giải quyết ở đâu và hồ sơ cần những giấy tờ gì? em đóng bảo hiểm tổng 73 tháng thì  đuợc huởng tổng  bao nhiêu tiền bảo hiểm?",
-  "answer": "Issue: Người hỏi muốn biết có thể rút bảo hiểm xã hội một lần sau khi nghỉ việc từ tháng 3/2025 không và cần làm thủ tục ở đâu. \nRule: Theo Điều 107 khoản 2 Luật BHXH 2024, người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ cho cơ quan bảo hiểm xã hội. \nApplication: Không có slot nào được gán giá trị, nhưng Prolog đã xác định rằng người dùng đủ điều kiện hưởng bảo hiểm xã hội một lần dựa trên việc đã đóng bảo hiểm 73 tháng. \nConclusion: Theo Prolog, người dùng CÓ đủ điều kiện để rút bảo hiểm xã hội một lần.",
-  "plain_answer": "Bạn có thể rút bảo hiểm xã hội một lần vì đã đủ điều kiện theo [Điều 107 khoản 2] Luật BHXH 2024. Để làm thủ tục, bạn cần nộp hồ sơ tại cơ quan bảo hiểm xã hội nơi bạn cư trú ở Phú Xuyên, Hà Nội. Bạn nên chuẩn bị các giấy tờ theo quy định để được giải quyết nhanh chóng.",
+  "answer": "Issue: Người hỏi muốn biết có thể rút bảo hiểm xã hội một lần sau khi nghỉ việc từ tháng 3/2025 không và cần làm thủ tục ở đâu. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 107 khoản 2], người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ cho cơ quan bảo hiểm xã hội. \nApplication: Không có slot nào được gán giá trị, nhưng Prolog đã xác định rằng người dùng đủ điều kiện hưởng bảo hiểm xã hội một lần dựa trên việc đã đóng 73 tháng. \nConclusion: Theo Prolog, người dùng CÓ đủ điều kiện để rút bảo hiểm xã hội một lần.",
+  "plain_answer": "Bạn có thể rút bảo hiểm xã hội một lần vì đã đóng đủ 73 tháng, theo [Luật BHXH 2024 (41/2024/QH15), Điều 107 khoản 2]. Bạn cần nộp hồ sơ tại cơ quan bảo hiểm xã hội nơi bạn cư trú. Hồ sơ cần chuẩn bị bao gồm quyết định nghỉ việc và các giấy tờ liên quan khác, bạn nên kiểm tra thêm để đảm bảo đầy đủ.",
   "citations": [
-    "[Điều 107 khoản 2]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 107 khoản 2]"
   ],
   "citation_ids": [
     "L41_2024.A107.K2"
@@ -22,14 +22,14 @@
   "prolog_error": "",
   "irac_sections": {
     "issue": "Người hỏi muốn biết có thể rút bảo hiểm xã hội một lần sau khi nghỉ việc từ tháng 3/2025 không và cần làm thủ tục ở đâu.",
-    "rule": "Theo Điều 107 khoản 2 Luật BHXH 2024, người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ cho cơ quan bảo hiểm xã hội.",
-    "application": "Không có slot nào được gán giá trị, nhưng Prolog đã xác định rằng người dùng đủ điều kiện hưởng bảo hiểm xã hội một lần dựa trên việc đã đóng bảo hiểm 73 tháng.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 107 khoản 2], người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ cho cơ quan bảo hiểm xã hội.",
+    "application": "Không có slot nào được gán giá trị, nhưng Prolog đã xác định rằng người dùng đủ điều kiện hưởng bảo hiểm xã hội một lần dựa trên việc đã đóng 73 tháng.",
     "conclusion": "Theo Prolog, người dùng CÓ đủ điều kiện để rút bảo hiểm xã hội một lần."
   },
-  "elapsed_s": 28.53,
-  "prompt_tokens": 6013,
-  "completion_tokens": 609,
+  "elapsed_s": 14.059,
+  "prompt_tokens": 6145,
+  "completion_tokens": 626,
   "error": null,
   "gold_answer": "Nếu bạn nghỉ từ 3/2025 thì đến nay thường đã đủ mốc 12 tháng không tham gia để xem xét hưởng BHXH một lần, nếu không thuộc diện tiếp tục bảo lưu. Hồ sơ thường gồm đơn đề nghị, CCCD và sổ/ dữ liệu BHXH theo hướng dẫn của cơ quan BHXH. Bạn nộp tại cơ quan BHXH nơi cư trú hoặc bộ phận một cửa. Với 73 tháng đóng, mức hưởng không thể tính chính xác nếu chưa có toàn bộ tiền lương đóng từng giai đoạn; công thức tính dựa trên mức bình quân tiền lương đóng BHXH.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 104, Điều 110"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 104]\n[Luật BHXH 2024 (41/2024/QH15), Điều 110]"
 }

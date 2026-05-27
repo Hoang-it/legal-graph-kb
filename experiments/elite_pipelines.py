@@ -16,8 +16,8 @@ Provenance/tracking:
 
 IRAC parser:
 - Tách answer text thành 4 section Issue / Rule / Application / Conclusion
-- Extract citations dạng [Điều X khoản Y] hoặc "Điều X, khoản Y" (fallback)
-- Map → ID format `L41_2024.A<X>.K<Y>[.<z>]`
+- Extract strict citations có đủ văn bản + Điều/khoản theo registry chung
+- Fallback từ Prolog `legal_source(...)` giữ đúng LawId thay vì hardcode luật
 
 KHÔNG sửa code trong `elite/` — chỉ import + wrap.
 """
@@ -52,8 +52,8 @@ from knowledge.hybrid_retrieval import (  # type: ignore
 from knowledge.ontology_retrieval import OntologyRetrieval  # type: ignore
 from llm.client import LLMClient, OpenAILLMClient  # type: ignore
 from pipelines.program_pipeline import (  # type: ignore
-    ProgramEnvelope,
     ExecutionResult,
+    ProgramEnvelope,
     _absorb_response,
     _attempt,
     _chunks_for_llm,
@@ -63,6 +63,12 @@ from pipelines.program_pipeline import (  # type: ignore
 )
 from solvers.prolog_solver import PrologSolver  # type: ignore  # noqa: F401
 
+from src.citations import (
+    format_citation,
+    parse_displayed_citations,
+    parse_internal_citation_id,
+    ref_from_prolog_terms,
+)
 
 ELITE_ONTOLOGY_PATH = Path("data/eval/elite_ontology_2024.json")
 NO_RETRIEVAL_PROMPT_PATH = Path("experiments/prompts/elite_no_retrieval.md")
@@ -79,8 +85,8 @@ class EliteAnswer:
     question: str
     answer: str = ""                # IRAC rendered text
     plain_answer: str = ""          # NEW: prose-form answer cho fair compare với prose arms
-    citations: list[str] = field(default_factory=list)       # parsed [Điều X khoản Y]
-    citation_ids: list[str] = field(default_factory=list)     # L41_2024.A<n>.K<m> format
+    citations: list[str] = field(default_factory=list)       # canonical displayed citations
+    citation_ids: list[str] = field(default_factory=list)     # registry-backed citation IDs
     citation_indices: list[int] = field(default_factory=list)  # raw from envelope (chunk indices)
     prolog_status: str = ""
     prolog_success: bool = False
@@ -96,58 +102,20 @@ class EliteAnswer:
 
 
 # ---------------------------------------------------------------------------
-# Citation parser — IRAC text → L41_2024 IDs
+# Citation parser — strict displayed citations / legal_source fallback
 # ---------------------------------------------------------------------------
-
-# Pattern 1: [Điều X khoản Y điểm z]  (bracketed như main src/)
-_CIT_BRACKET = re.compile(
-    r"\[Điều\s+(\d+)(?:\s+khoản\s+(\d+))?(?:\s+điểm\s+([a-zđ]))?\]"
-)
-# Pattern 2: "Điều X khoản Y" without brackets (IRAC text natural Vietnamese)
-_CIT_INLINE = re.compile(
-    r"Điều\s+(\d+)(?:[,\s]+[Kk]ho[ảa]n\s+(\d+))?(?:[,\s]+[ĐđDd]i[ểe]m\s+([a-zđ]))?"
-)
 
 
 def _parse_citations_from_irac(text: str) -> tuple[list[str], list[str]]:
-    """Return (citation_strings, citation_ids).
-
-    Try bracketed first; fall back to inline pattern (deduped against
-    bracketed positions to avoid double-counting).
-    """
+    """Return canonical (citation_strings, citation_ids) from rendered answer."""
     if not text:
         return [], []
 
-    cites: list[tuple[str, str]] = []  # (display, id)
-    consumed_spans: list[tuple[int, int]] = []
-
-    for m in _CIT_BRACKET.finditer(text):
-        art, cl, pt = m.group(1), m.group(2), m.group(3)
-        cid = f"L41_2024.A{art}"
-        if cl:
-            cid += f".K{cl}"
-            if pt:
-                cid += f".{pt}"
-        cites.append((m.group(0), cid))
-        consumed_spans.append((m.start(), m.end()))
-
-    for m in _CIT_INLINE.finditer(text):
-        # Skip if overlaps with a bracketed match
-        if any(not (m.end() <= s or m.start() >= e) for s, e in consumed_spans):
-            continue
-        art, cl, pt = m.group(1), m.group(2), m.group(3)
-        cid = f"L41_2024.A{art}"
-        if cl:
-            cid += f".K{cl}"
-            if pt:
-                cid += f".{pt}"
-        display = f"[Điều {art}" + (f" khoản {cl}" if cl else "") + (f" điểm {pt}" if pt else "") + "]"
-        cites.append((display, cid))
-
-    # Dedup giữ thứ tự
     seen_ids = set()
     cs, ids = [], []
-    for display, cid in cites:
+    for ref in parse_displayed_citations(text):
+        display = format_citation(ref)
+        cid = ref.item_id
         if cid in seen_ids:
             continue
         seen_ids.add(cid)
@@ -157,23 +125,28 @@ def _parse_citations_from_irac(text: str) -> tuple[list[str], list[str]]:
 
 
 def _parse_citations_from_legal_sources(legal_sources: list[str]) -> list[str]:
-    """Fallback: extract article/clause from Prolog legal_source(...) facts.
-
-    Pattern: legal_source(_, _, article_<N>, clause_<M>, ...)
-    """
+    """Fallback: extract IDs from Prolog legal_source(...) facts."""
     pat = re.compile(
-        r"article_(\d+)(?:[\s,]+clause_(\d+))?",
+        r"legal_source\(\s*[^,]+,\s*([a-z0-9_]+)\s*,\s*"
+        r"(article_\d+[a-z]?)\s*,\s*"
+        r"(clause_\d+[a-z]?|none)\s*,\s*"
+        r"(point_[a-z]|[a-z]|none)\s*,",
         re.IGNORECASE,
     )
     ids = []
     seen = set()
     for src in legal_sources:
         for m in pat.finditer(src):
-            art = m.group(1)
-            cl = m.group(2)
-            cid = f"L41_2024.A{art}"
-            if cl:
-                cid += f".K{cl}"
+            try:
+                ref = ref_from_prolog_terms(
+                    m.group(1),
+                    m.group(2),
+                    m.group(3),
+                    m.group(4),
+                )
+            except ValueError:
+                continue
+            cid = ref.item_id
             if cid not in seen:
                 seen.add(cid)
                 ids.append(cid)
@@ -713,12 +686,12 @@ class _EliteBasePipeline:
                 citation_ids = fallback_ids
                 # Generate display strings
                 for cid in fallback_ids:
-                    m = re.match(r"L41_2024\.A(\d+)(?:\.K(\d+))?", cid)
-                    if m:
-                        art, cl = m.group(1), m.group(2)
-                        display = f"[Điều {art}" + (f" khoản {cl}" if cl else "") + "]"
-                        if display not in citations:
-                            citations.append(display)
+                    try:
+                        display = format_citation(cid)
+                    except ValueError:
+                        continue
+                    if display not in citations:
+                        citations.append(display)
 
             elapsed = time.time() - t0
             return EliteAnswer(
@@ -784,6 +757,13 @@ class _EliteBasePipeline:
         for i in (envelope.citation_indices or [])[:5]:
             if 0 <= i < len(chunks):
                 c = chunks[i]
+                canonical_citation = ""
+                try:
+                    canonical_citation = format_citation(
+                        parse_internal_citation_id(getattr(c, "id", ""))
+                    )
+                except ValueError:
+                    canonical_citation = ""
                 citations.append(
                     {
                         "index": i,
@@ -792,6 +772,7 @@ class _EliteBasePipeline:
                         "article": getattr(c, "article", None),
                         "clause": getattr(c, "clause", None),
                         "point": getattr(c, "point", None),
+                        "canonical_citation": canonical_citation,
                         "raw_text": (getattr(c, "text", "") or "")[:400],
                     }
                 )

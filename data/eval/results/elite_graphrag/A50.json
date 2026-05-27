@@ -2,12 +2,13 @@
   "arm": "elite_graphrag",
   "stt": 50,
   "question": "Mình sinh năm 1979. Thì đến năm bao nhiêu mình đủ tuổi về hưu?",
-  "answer": "Issue: Mình sinh năm 1979. Thì đến năm bao nhiêu mình đủ tuổi về hưu?\n\nRule: \"Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), article 141, clause 9)\n\nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng năm đủ tuổi về hưu là 2039 dựa trên quy tắc tính toán tuổi hưu từ năm sinh 1979.\n\nConclusion: Prolog đã trả về giá trị 2039 cho biến Year, cho biết năm mà người sinh năm 1979 đủ tuổi về hưu.",
+  "answer": "Issue: Người hỏi sinh năm 1979, hỏi năm nào đủ tuổi về hưu. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 9], nam đủ 60 tuổi để hưởng lương hưu. \nApplication: Không có slot nào được gán giá trị. Prolog query trả về RetirementYear = 1995, nghĩa là người hỏi sẽ đủ tuổi về hưu vào năm 1995. \nConclusion: Theo Prolog, người dùng đủ tuổi về hưu vào năm 1995.",
+  "plain_answer": "Bạn sinh năm 1979 thì sẽ đủ tuổi về hưu vào năm 1995 theo quy định của [Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 9]. Bạn có thể tham khảo thêm các điều kiện khác nếu cần nhé.",
   "citations": [
-    "[Điều 98]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 9]"
   ],
   "citation_ids": [
-    "L41_2024.A98"
+    "L41_2024.A141.K9"
   ],
   "citation_indices": [
     0
@@ -15,17 +16,19 @@
   "prolog_success": true,
   "prolog_status": "success",
   "n_repair_rounds": 0,
-  "prolog_trace": "[step(conclusion,retirement_age(2039),based_on(source_c041))]",
+  "prolog_trace": "[step(conclusion,retirement_age(user,1995),based_on(source_c041))]",
+  "prolog_program": "age(user, 44).\nlegal_source(source_c041, law_bhxh_2024, article_141, clause_9, none, 'Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.').\nretirement_age(Person, RetirementYear, Trace) :- age(Person, Age), RetirementYear is 1979 + 60 - Age, Trace = [step(conclusion, retirement_age(Person, RetirementYear), based_on(source_c041))].",
+  "prolog_error": "",
   "irac_sections": {
-    "issue": "Mình sinh năm 1979. Thì đến năm bao nhiêu mình đủ tuổi về hưu?",
-    "rule": "\"Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), article 141, clause 9)",
-    "application": "Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng năm đủ tuổi về hưu là 2039 dựa trên quy tắc tính toán tuổi hưu từ năm sinh 1979.",
-    "conclusion": "Prolog đã trả về giá trị 2039 cho biến Year, cho biết năm mà người sinh năm 1979 đủ tuổi về hưu."
+    "issue": "Người hỏi sinh năm 1979, hỏi năm nào đủ tuổi về hưu.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 9], nam đủ 60 tuổi để hưởng lương hưu.",
+    "application": "Không có slot nào được gán giá trị. Prolog query trả về RetirementYear = 1995, nghĩa là người hỏi sẽ đủ tuổi về hưu vào năm 1995.",
+    "conclusion": "Theo Prolog, người dùng đủ tuổi về hưu vào năm 1995."
   },
-  "elapsed_s": 12.096,
-  "prompt_tokens": 2897,
-  "completion_tokens": 491,
+  "elapsed_s": 12.134,
+  "prompt_tokens": 3657,
+  "completion_tokens": 477,
   "error": null,
   "gold_answer": "Bạn sinh năm 1979 thì thời điểm đủ tuổi nghỉ hưu còn phụ thuộc giới tính và trường hợp nghỉ hưu bình thường hay sớm. Nếu là nữ, mốc chuẩn hiện hành là đủ 60 tuổi, tương ứng khoảng năm 2039. Nếu là nam, mốc chuẩn là đủ 62 tuổi, tương ứng khoảng năm 2041. Nếu làm nghề, công việc nặng nhọc hoặc thuộc trường hợp đặc biệt thì có thể nghỉ sớm hơn theo luật.",
-  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 169; Nghị định 135/2020/NĐ-CP"
+  "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 169]"
 }

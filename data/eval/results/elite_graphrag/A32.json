@@ -2,31 +2,36 @@
   "arm": "elite_graphrag",
   "stt": 32,
   "question": "Sinh viên TLinh (Hà Nội) đi làm bán thời gian (6 tiếng/ngày) tại siêu thị, ký hợp đồng lao động với siêu thị và được siêu thị hỗ trợ đóng một phần tiền BHXH.\nTuy nhiên, gần lúc nghỉ việc, siêu thị yêu cầu sinh viên đóng thêm tiền BHYT (mặc dù sinh viên đã đóng BHYT tại trường và trong thời gian làm việc không bị trừ tiền BHYT).\nNếu không đóng thì không được trả lương và thẻ BHYT của sinh viên TLinh tại nhà trường sẽ bị khóa lại.\nSinh viên hỏi, việc làm trên của siêu thị là đúng hay sai? Nếu sai thì giải quyết như thế nào?",
-  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmp15js6d1w.pl:1:910: Syntax error: Operator expected]",
+  "answer": "Issue: Sinh viên TLinh hỏi về tính hợp pháp của yêu cầu đóng thêm tiền BHYT từ siêu thị nơi làm việc. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 117 khoản 2], người lao động đóng theo quy định và [Luật BHXH 2024 (41/2024/QH15), Điều 13 khoản 3] yêu cầu phối hợp với cơ quan bảo hiểm xã hội khi chấm dứt hợp đồng. \nApplication: Không có slot nào được gán giá trị. Prolog query supermarket_action_validity(Validity, Trace) trả về Validity = false, cho thấy yêu cầu của siêu thị là không hợp pháp. \nConclusion: Theo Prolog, yêu cầu đóng thêm tiền BHYT của siêu thị là không hợp pháp (Validity = false).",
+  "plain_answer": "Yêu cầu của siêu thị về việc sinh viên đóng thêm tiền BHYT là không hợp pháp theo [Luật BHXH 2024 (41/2024/QH15), Điều 117 khoản 2]. Bạn không nên chấp nhận yêu cầu này và có thể khiếu nại với cơ quan bảo hiểm xã hội để được hỗ trợ giải quyết vấn đề này.",
   "citations": [
-    "[Điều 33 khoản 7]",
-    "[Điều 117 khoản 2]",
-    "[Điều 13 khoản 3]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 117 khoản 2]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 13 khoản 3]"
   ],
   "citation_ids": [
-    "L41_2024.A33.K7",
     "L41_2024.A117.K2",
     "L41_2024.A13.K3"
   ],
   "citation_indices": [
-    0,
     1,
     2
   ],
-  "prolog_success": false,
-  "prolog_status": "syntax_error",
-  "n_repair_rounds": 2,
-  "prolog_trace": "",
-  "irac_sections": {},
-  "elapsed_s": 17.2,
-  "prompt_tokens": 7302,
-  "completion_tokens": 1170,
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,supermarket_action_validity(false),based_on(source_c002)),step(legal_basis,supermarket_action_validity(false),based_on(source_c003))]",
+  "prolog_program": "legal_source(source_c001, law_bhxh_2024, article_33, clause_7, none, 'Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất.').\nlegal_source(source_c002, law_bhxh_2024, article_117, clause_2, none, 'Người lao động đóng theo quy định.').\nlegal_source(source_c003, law_bhxh_2024, article_13, clause_3, none, 'Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.').\nsupermarket_action_validity(Validity, Trace) :- Validity = false, Trace = [step(conclusion, supermarket_action_validity(Validity), based_on(source_c002)), step(legal_basis, supermarket_action_validity(Validity), based_on(source_c003))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Sinh viên TLinh hỏi về tính hợp pháp của yêu cầu đóng thêm tiền BHYT từ siêu thị nơi làm việc.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 117 khoản 2], người lao động đóng theo quy định và [Luật BHXH 2024 (41/2024/QH15), Điều 13 khoản 3] yêu cầu phối hợp với cơ quan bảo hiểm xã hội khi chấm dứt hợp đồng.",
+    "application": "Không có slot nào được gán giá trị. Prolog query supermarket_action_validity(Validity, Trace) trả về Validity = false, cho thấy yêu cầu của siêu thị là không hợp pháp.",
+    "conclusion": "Theo Prolog, yêu cầu đóng thêm tiền BHYT của siêu thị là không hợp pháp (Validity = false)."
+  },
+  "elapsed_s": 16.472,
+  "prompt_tokens": 4290,
+  "completion_tokens": 649,
   "error": null,
   "gold_answer": "Căn cứ theo khoản 10 Điều 1 Luật BHYT sửa đổi 2024, đối tượng tham gia BHYT gồm: Người lao động làm việc theo hợp đồng lao động không xác định thời hạn, hợp đồng lao động xác định thời hạn có thời hạn từ đủ 1 tháng trở lên, kể cả trường hợp người lao động và người sử dụng lao động thỏa thuận bằng tên gọi khác nhưng có nội dung thể hiện về việc làm có trả công, tiền lương và sự quản lý, điều hành, giám sát của một bên, thỏa thuận với người sử dụng lao động làm việc không trọn thời gian, có tiền lương trong tháng bằng hoặc cao hơn tiền lương làm căn cứ đóng BHXH bắt buộc thấp nhất theo quy định của pháp luật về BHXH;\nNhư vậy, nếu sinh viên làm việc không trọn thời gian theo hợp đồng có thời hạn từ 1 tháng trở lên, nếu trong tháng có mức lương bằng hoặc cao hơn mức tiền lương tối thiểu dùng để làm căn cứ đóng BHXH bắt buộc thì thuộc diện tham gia BHYT theo quy định pháp luật.\nTheo khoản 5 Điều 13 Luật BHYT sửa đổi năm 2024, trường hợp một người đồng thời thuộc nhiều đối tượng tham gia BHYT khác nhau thì đóng BHYT theo đối tượng đầu tiên mà người đó được xác định theo thứ tự.\nCăn cứ khoản 5 Điều 12 Luật BHYT sửa đổi năm 2024, thứ tự đối tượng tham gia BHYT như sau: Nhóm do người lao động và người sử dụng lao động đóng; nhóm do tổ chức BHXH đóng; nhóm do ngân sách Nhà nước đóng; nhóm được ngân sách Nhà nước hỗ trợ mức đóng; nhóm tham gia BHYT theo hộ gia đình.\nDo vậy khi sinh viên ký hợp đồng lao động nếu thuộc đối tượng tham gia BHXH bắt buộc, thì cũng thuộc đối tượng tham gia BHYT bắt buộc.\nTrường hợp siêu thị chưa trừ tiền đóng BHYT vào tiền lương của sinh viên thì sinh viên có trách nhiệm đóng phần của mình cho đơn vị, tỷ lệ 1,5% lương/tháng.\nViệc trả lương không thuộc thẩm quyền của cơ quan BHXH.\nTuy nhiên theo Điều 94 Bộ luật Lao động 2019 về nguyên tắc trả lương quy định người sử dụng lao động không được dùng việc trả lương để cưỡng ép người lao động thực hiện các nghĩa vụ khác không có trong hợp đồng hoặc trái luật.\nLương là quyền lợi cho công sức sinh viên đã bỏ ra và phải được thanh toán đầy đủ khi chấm dứt hợp đồng.",
-  "gold_citations_raw": "khoản 10 Điều 1 Luật BHYT sửa đổi 2024,"
+  "gold_citations_raw": "[Luật BHYT, Điều 1]"
 }

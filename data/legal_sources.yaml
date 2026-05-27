@@ -1,0 +1,280 @@
+sources:
+  L41_2024:
+    canonical_title: "Luật BHXH 2024 (41/2024/QH15)"
+    type: "law"
+    aliases:
+      - "Luật BHXH 2024"
+      - "Luật BHXH năm 2024"
+      - "Luật Bảo hiểm xã hội 2024"
+      - "Luật số 41/2024/QH15"
+      - "Luật BHXH số 41/2024/QH15"
+      - "41/2024/QH15"
+    prolog_law_ids:
+      - "law_bhxh_2024"
+
+  L58_2014:
+    canonical_title: "Luật BHXH 2014 (58/2014/QH13)"
+    type: "law"
+    aliases:
+      - "Luật BHXH 2014"
+      - "Luật BHXH năm 2014"
+      - "Luật Bảo hiểm xã hội 2014"
+      - "Luật số 58/2014/QH13"
+      - "58/2014/QH13"
+    prolog_law_ids:
+      - "law_bhxh_2014"
+
+  BLLD_2019:
+    canonical_title: "Bộ luật Lao động 2019"
+    type: "code"
+    aliases:
+      - "Bộ luật Lao động 2019"
+      - "Bộ luật lao động năm 2019"
+
+  LVL_2013:
+    canonical_title: "Luật Việc làm 2013"
+    type: "law"
+    aliases:
+      - "Luật Việc làm 2013"
+      - "Luật Việc làm năm 2013"
+
+  LVL_2025:
+    canonical_title: "Luật Việc làm 2025"
+    type: "law"
+    aliases:
+      - "Luật Việc làm 2025"
+      - "Luật Việc làm năm 2025"
+
+  LBHYT:
+    canonical_title: "Luật BHYT"
+    type: "law"
+    aliases:
+      - "Luật BHYT"
+      - "Luật Bảo hiểm y tế"
+
+  L51_2024:
+    canonical_title: "Luật sửa đổi Luật BHYT 2024 (51/2024/QH15)"
+    type: "law"
+    aliases:
+      - "Luật sửa đổi, bổ sung một số điều của Luật BHYT năm 2024"
+      - "Luật sửa đổi, bổ sung một số điều của Luật Bảo hiểm y tế năm 2024"
+      - "Luật sửa đổi, bổ sung một số điều của Luật BHYT 2024"
+      - "Luật số 51/2024/QH15"
+      - "51/2024/QH15"
+
+  BLDS_2015:
+    canonical_title: "Bộ luật Dân sự 2015"
+    type: "code"
+    aliases:
+      - "Bộ luật Dân sự 2015"
+      - "Bộ luật dân sự năm 2015"
+
+  LATVSLD_2015:
+    canonical_title: "Luật An toàn, vệ sinh lao động 2015"
+    type: "law"
+    aliases:
+      - "Luật An toàn, vệ sinh lao động 2015"
+      - "Luật An toàn vệ sinh lao động 2015"
+
+  LGDDT_2023:
+    canonical_title: "Luật Giao dịch điện tử 2023"
+    type: "law"
+    aliases:
+      - "Luật Giao dịch điện tử 2023"
+      - "Luật Giao dịch điện tử năm 2023"
+
+  LKHIEUNAI_2011:
+    canonical_title: "Luật Khiếu nại 2011"
+    type: "law"
+    aliases:
+      - "Luật Khiếu nại 2011"
+      - "Luật Khiếu nại năm 2011"
+
+  ND115_2015:
+    canonical_title: "Nghị định 115/2015/NĐ-CP"
+    type: "decree"
+    aliases:
+      - "Nghị định 115/2015/NĐ-CP"
+      - "Nghị định số 115/2015/NĐ-CP"
+      - "115/2015/NĐ-CP"
+
+  ND152_2006:
+    canonical_title: "Nghị định 152/2006/NĐ-CP"
+    type: "decree"
+    aliases:
+      - "Nghị định 152/2006/NĐ-CP"
+      - "Nghị định số 152/2006/NĐ-CP"
+      - "152/2006/NĐ-CP"
+
+  ND135_2020:
+    canonical_title: "Nghị định 135/2020/NĐ-CP"
+    type: "decree"
+    aliases:
+      - "Nghị định 135/2020/NĐ-CP"
+      - "Nghị định số 135/2020/NĐ-CP"
+      - "135/2020/NĐ-CP"
+
+  ND143_2018:
+    canonical_title: "Nghị định 143/2018/NĐ-CP"
+    type: "decree"
+    aliases:
+      - "Nghị định 143/2018/NĐ-CP"
+      - "Nghị định số 143/2018/NĐ-CP"
+      - "143/2018/NĐ-CP"
+
+  ND146_2018:
+    canonical_title: "Nghị định 146/2018/NĐ-CP"
+    type: "decree"
+    aliases:
+      - "Nghị định 146/2018/NĐ-CP"
+      - "Nghị định số 146/2018/NĐ-CP"
+      - "146/2018/NĐ-CP"
+
+  ND158_2025:
+    canonical_title: "Nghị định 158/2025/NĐ-CP"
+    type: "decree"
+    aliases:
+      - "Nghị định 158/2025/NĐ-CP"
+      - "Nghị định số 158/2025/NĐ-CP"
+      - "158/2025/NĐ-CP"
+
+  ND159_2025:
+    canonical_title: "Nghị định 159/2025/NĐ-CP"
+    type: "decree"
+    aliases:
+      - "Nghị định 159/2025/NĐ-CP"
+      - "Nghị định số 159/2025/NĐ-CP"
+      - "159/2025/NĐ-CP"
+
+  ND188_2025:
+    canonical_title: "Nghị định 188/2025/NĐ-CP"
+    type: "decree"
+    aliases:
+      - "Nghị định 188/2025/NĐ-CP"
+      - "Nghị định số 188/2025/NĐ-CP"
+      - "188/2025/NĐ-CP"
+
+  ND28_2015:
+    canonical_title: "Nghị định 28/2015/NĐ-CP"
+    type: "decree"
+    aliases:
+      - "Nghị định 28/2015/NĐ-CP"
+      - "Nghị định số 28/2015/NĐ-CP"
+      - "28/2015/NĐ-CP"
+
+  ND293_2025:
+    canonical_title: "Nghị định 293/2025/NĐ-CP"
+    type: "decree"
+    aliases:
+      - "Nghị định 293/2025/NĐ-CP"
+      - "Nghị định số 293/2025/NĐ-CP"
+      - "293/2025/NĐ-CP"
+
+  ND75_2023:
+    canonical_title: "Nghị định 75/2023/NĐ-CP"
+    type: "decree"
+    aliases:
+      - "Nghị định 75/2023/NĐ-CP"
+      - "Nghị định số 75/2023/NĐ-CP"
+      - "75/2023/NĐ-CP"
+
+  ND88_2020:
+    canonical_title: "Nghị định 88/2020/NĐ-CP"
+    type: "decree"
+    aliases:
+      - "Nghị định 88/2020/NĐ-CP"
+      - "Nghị định số 88/2020/NĐ-CP"
+      - "88/2020/NĐ-CP"
+
+  ND374_2025:
+    canonical_title: "Nghị định 374/2025/NĐ-CP"
+    type: "decree"
+    aliases:
+      - "Nghị định 374/2025/NĐ-CP"
+      - "Nghị định số 374/2025/NĐ-CP"
+      - "374/2025/NĐ-CP"
+
+  TT18_2022_BYT:
+    canonical_title: "Thông tư 18/2022/TT-BYT"
+    type: "circular"
+    aliases:
+      - "Thông tư 18/2022/TT-BYT"
+      - "Thông tư số 18/2022/TT-BYT"
+      - "18/2022/TT-BYT"
+
+  TT56_2017_BYT:
+    canonical_title: "Thông tư 56/2017/TT-BYT"
+    type: "circular"
+    aliases:
+      - "Thông tư 56/2017/TT-BYT"
+      - "Thông tư số 56/2017/TT-BYT"
+      - "56/2017/TT-BYT"
+
+  TT59_2015_BLDTBXH:
+    canonical_title: "Thông tư 59/2015/TT-BLĐTBXH"
+    type: "circular"
+    aliases:
+      - "Thông tư 59/2015/TT-BLĐTBXH"
+      - "Thông tư số 59/2015/TT-BLĐTBXH"
+      - "59/2015/TT-BLĐTBXH"
+
+  TT10_2020_BLDTBXH:
+    canonical_title: "Thông tư 10/2020/TT-BLĐTBXH"
+    type: "circular"
+    aliases:
+      - "Thông tư 10/2020/TT-BLĐTBXH"
+      - "Thông tư số 10/2020/TT-BLĐTBXH"
+      - "10/2020/TT-BLĐTBXH"
+
+  QD166_BHXH:
+    canonical_title: "Quyết định 166/QĐ-BHXH"
+    type: "decision"
+    aliases:
+      - "Quyết định 166/QĐ-BHXH"
+      - "Quyết định số 166/QĐ-BHXH"
+      - "166/QĐ-BHXH"
+
+  QD595_BHXH:
+    canonical_title: "Quyết định 595/QĐ-BHXH"
+    type: "decision"
+    aliases:
+      - "Quyết định 595/QĐ-BHXH"
+      - "Quyết định số 595/QĐ-BHXH"
+      - "595/QĐ-BHXH"
+
+  QD838_BHXH:
+    canonical_title: "Quyết định 838/QĐ-BHXH"
+    type: "decision"
+    aliases:
+      - "Quyết định 838/QĐ-BHXH"
+      - "Quyết định số 838/QĐ-BHXH"
+      - "838/QĐ-BHXH"
+
+  CV2068_BYT_BH:
+    canonical_title: "Công văn 2068/BYT-BH"
+    type: "official_letter"
+    aliases:
+      - "Công văn 2068/BYT-BH"
+      - "Công văn số 2068/BYT-BH"
+      - "2068/BYT-BH"
+
+  HIEPDINH_VN_KR_BHXH:
+    canonical_title: "Hiệp định Việt Nam - Hàn Quốc về BHXH"
+    type: "agreement"
+    aliases:
+      - "Hiệp định giữa Chính phủ nước Cộng hòa xã hội chủ nghĩa Việt Nam và Chính phủ nước Đại hàn dân quốc về BHXH"
+      - "Hiệp định Việt Nam Hàn Quốc về BHXH"
+      - "Hiệp định"
+
+  PHAPLENH_NCC:
+    canonical_title: "Pháp lệnh Ưu đãi người có công với cách mạng"
+    type: "ordinance"
+    aliases:
+      - "Pháp lệnh Ưu đãi người có công với cách mạng"
+
+  LDS_2025:
+    canonical_title: "Luật Dân số 2025"
+    type: "law"
+    aliases:
+      - "Luật Dân số 2025"
+      - "Luật Dân số năm 2025"

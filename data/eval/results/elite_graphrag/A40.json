@@ -2,18 +2,13 @@
   "arm": "elite_graphrag",
   "stt": 40,
   "question": "Em đóng bhxh t8/2025 đến t4/2026, ngày dự sinh của em là19/8. Vậy em có đủ đk để nhận trợ cấp không? Làm hểt tháng 4 là em nghỉ cty luôn. Em có đủ đk để nhận bhts k?",
-  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmp4rxvd3kz.pl:2:267: Syntax error: Operator expected]",
+  "answer": "Issue: Người hỏi đã đóng BHXH từ tháng 8 năm 2025 đến tháng 4 năm 2026 và muốn biết có đủ điều kiện nhận trợ cấp thai sản không. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 94 khoản 1], đối tượng có thời gian đóng bảo hiểm xã hội từ đủ 06 tháng trở lên trong thời gian 12 tháng trước khi sinh con được hưởng trợ cấp thai sản. \nApplication: Không có slot nào được gán giá trị. Prolog xác định rằng người dùng đã đóng BHXH 0 năm. Prolog trả về kết quả là không đủ điều kiện nhận trợ cấp thai sản. \nConclusion: Theo Prolog, người dùng KHÔNG đủ điều kiện nhận trợ cấp thai sản vì thời gian đóng BHXH là 0 năm.",
+  "plain_answer": "Bạn không đủ điều kiện nhận trợ cấp thai sản vì bạn chỉ đóng BHXH từ tháng 8 năm 2025 đến tháng 4 năm 2026, tổng cộng là 0 năm, không đủ 6 tháng theo quy định [Luật BHXH 2024 (41/2024/QH15), Điều 94 khoản 1]. Bạn cần đóng BHXH ít nhất 6 tháng trong 12 tháng trước khi sinh để đủ điều kiện nhận trợ cấp.",
   "citations": [
-    "[Điều 55 khoản 1]",
-    "[Điều 59 khoản 1]",
-    "[Điều 59 khoản 3]",
-    "[Điều 6 khoản 1]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 94 khoản 1]"
   ],
   "citation_ids": [
-    "L41_2024.A55.K1",
-    "L41_2024.A59.K1",
-    "L41_2024.A59.K3",
-    "L41_2024.A6.K1"
+    "L41_2024.A94.K1"
   ],
   "citation_indices": [
     1,
@@ -21,15 +16,22 @@
     3,
     4
   ],
-  "prolog_success": false,
-  "prolog_status": "syntax_error",
-  "n_repair_rounds": 2,
-  "prolog_trace": "",
-  "irac_sections": {},
-  "elapsed_s": 28.986,
-  "prompt_tokens": 8145,
-  "completion_tokens": 1626,
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,eligible_for_maternity_benefit(user,no),based_on(source_c004))]",
+  "prolog_program": "years_contributed(user, 0).\nlegal_source(source_c001, law_bhxh_2024, article_55, clause_1, none, 'Được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi.').\nlegal_source(source_c002, law_bhxh_2024, article_59, clause_1, none, 'Trợ cấp thai sản một tháng của người lao động quy định tại các điều 51, 52, 53, 54, 55, 56 và 57 của Luật này bằng 100% mức bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc của 06 tháng gần nhất trước khi nghỉ việc hưởng chế độ thai sản.').\nlegal_source(source_c003, law_bhxh_2024, article_59, clause_3, none, 'Trợ cấp thai sản khi sinh con, nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 06 tháng tuổi được tính theo mức trợ cấp thai sản quy định tại khoản 1 Điều này.').\nlegal_source(source_c004, law_bhxh_2024, article_94, clause_1, none, 'Đối tượng có thời gian đóng bảo hiểm xã hội tự nguyện hoặc vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện từ đủ 06 tháng trở lên trong thời gian 12 tháng trước khi sinh con được hưởng trợ cấp thai sản.').\neligible_for_maternity_benefit(Person, Answer, Trace) :- years_contributed(Person, Years), Years >= 6, Answer = yes, Trace = [step(conclusion, eligible_for_maternity_benefit(Person, Answer), based_on(source_c004))].\neligible_for_maternity_benefit(Person, Answer, Trace) :- years_contributed(Person, Years), Years < 6, Answer = no, Trace = [step(conclusion, eligible_for_maternity_benefit(Person, Answer), based_on(source_c004))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi đã đóng BHXH từ tháng 8 năm 2025 đến tháng 4 năm 2026 và muốn biết có đủ điều kiện nhận trợ cấp thai sản không.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 94 khoản 1], đối tượng có thời gian đóng bảo hiểm xã hội từ đủ 06 tháng trở lên trong thời gian 12 tháng trước khi sinh con được hưởng trợ cấp thai sản.",
+    "application": "Không có slot nào được gán giá trị. Prolog xác định rằng người dùng đã đóng BHXH 0 năm. Prolog trả về kết quả là không đủ điều kiện nhận trợ cấp thai sản.",
+    "conclusion": "Theo Prolog, người dùng KHÔNG đủ điều kiện nhận trợ cấp thai sản vì thời gian đóng BHXH là 0 năm."
+  },
+  "elapsed_s": 18.442,
+  "prompt_tokens": 4922,
+  "completion_tokens": 861,
   "error": null,
   "gold_answer": "Nếu bạn đóng BHXH bắt buộc từ 8/2025 đến hết 4/2026 thì có 9 tháng đóng trong 12 tháng trước khi sinh 8/2026, nên về nguyên tắc đủ điều kiện hưởng thai sản khi sinh con. Việc nghỉ việc sau tháng 4/2026 không làm mất quyền hưởng nếu bạn đã đủ điều kiện trước khi sinh. Bạn vẫn được nộp hồ sơ hưởng thai sản qua cơ quan BHXH theo nơi cư trú hoặc qua đơn vị nếu còn quan hệ lao động.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 50, Điều 53"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]\n[Luật BHXH 2024 (41/2024/QH15), Điều 53]"
 }

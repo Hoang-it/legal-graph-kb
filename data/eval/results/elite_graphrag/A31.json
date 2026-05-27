@@ -2,13 +2,12 @@
   "arm": "elite_graphrag",
   "stt": 31,
   "question": "Ông Tất Thắng (TPHCM) hỏi, người lao động ký hợp đồng dưới 1 tháng, làm đủ từ 14 công trở lên có mức lương cao hơn mức lương tối thiểu vùng thì có thuộc đối tượng đóng BHXH không?",
-  "answer": "Issue: Ông Tất Thắng (TPHCM) hỏi, người lao động ký hợp đồng dưới 1 tháng, làm đủ từ 14 công trở lên có mức lương cao hơn mức lương tối thiểu vùng thì có thuộc đối tượng đóng BHXH không?\n\nRule: \"Đối tượng quy định tại các điểm a, b, c, d và i khoản 1 và khoản 2 Điều 2 của Luật này mà không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì người lao động không phải đóng bảo hiểm xã hội tháng đó, trừ trường hợp người sử dụng lao động và người lao động có thỏa thuận về việc có đóng bảo hiểm xã hội cho người lao động tháng đó với căn cứ đóng bằng căn cứ đóng bảo hiểm xã hội tháng gần nhất.\" (Luật BHXH 2024 (41/2024/QH15), Điều 33, khoản 5)\n\nApplication: Không có slot_bindings nào được cung cấp trong truy vấn. Prolog đã sử dụng các quy tắc và nguồn luật để đưa ra kết luận.\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer, xác nhận rằng người lao động trong trường hợp này thuộc đối tượng đóng BHXH.",
+  "answer": "Issue: Ông Tất Thắng hỏi về việc người lao động ký hợp đồng dưới 1 tháng, làm đủ từ 14 công trở lên có phải đóng BHXH không. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 33 khoản 5], người lao động không phải đóng bảo hiểm xã hội nếu không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng, trừ khi có thỏa thuận giữa người sử dụng lao động và người lao động. \nApplication: Không có slot nào được gán giá trị. Prolog query social_insurance_obligation(Obligation, Trace) trả về Obligation = yes, nghĩa là người lao động vẫn có nghĩa vụ đóng BHXH. \nConclusion: Theo Prolog, người lao động có nghĩa vụ đóng BHXH.",
+  "plain_answer": "Theo quy định, người lao động ký hợp đồng dưới 1 tháng và làm đủ từ 14 công trở lên vẫn có nghĩa vụ đóng BHXH, ngay cả khi mức lương cao hơn mức lương tối thiểu vùng. Điều này được quy định trong [Luật BHXH 2024 (41/2024/QH15), Điều 33 khoản 5]. Bạn có thể tham khảo thêm để biết rõ hơn về các điều kiện cụ thể.",
   "citations": [
-    "[Điều 2]",
-    "[Điều 33 khoản 5]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 33 khoản 5]"
   ],
   "citation_ids": [
-    "L41_2024.A2",
     "L41_2024.A33.K5"
   ],
   "citation_indices": [
@@ -18,16 +17,18 @@
   "prolog_status": "success",
   "n_repair_rounds": 0,
   "prolog_trace": "[step(conclusion,social_insurance_obligation(yes),based_on(source_c000))]",
+  "prolog_program": "legal_source(source_c000, law_bhxh_2024, article_2, clause_1, none, 'Đối tượng quy định tại các điểm a, b, c, d và i khoản 1 và khoản 2 Điều 2 của Luật này mà không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì người lao động không phải đóng bảo hiểm xã hội tháng đó, trừ trường hợp người sử dụng lao động và người lao động có thỏa thuận về việc có đóng bảo hiểm xã hội cho người lao động tháng đó với căn cứ đóng bằng căn cứ đóng bảo hiểm xã hội tháng gần nhất.').\nsocial_insurance_obligation(Obligation, Trace) :- Obligation = yes, Trace = [step(conclusion, social_insurance_obligation(Obligation), based_on(source_c000))].\nsocial_insurance_obligation(Obligation, Trace) :- Obligation = no, Trace = [step(conclusion, social_insurance_obligation(Obligation), based_on(source_c000))].",
+  "prolog_error": "",
   "irac_sections": {
-    "issue": "Ông Tất Thắng (TPHCM) hỏi, người lao động ký hợp đồng dưới 1 tháng, làm đủ từ 14 công trở lên có mức lương cao hơn mức lương tối thiểu vùng thì có thuộc đối tượng đóng BHXH không?",
-    "rule": "\"Đối tượng quy định tại các điểm a, b, c, d và i khoản 1 và khoản 2 Điều 2 của Luật này mà không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì người lao động không phải đóng bảo hiểm xã hội tháng đó, trừ trường hợp người sử dụng lao động và người lao động có thỏa thuận về việc có đóng bảo hiểm xã hội cho người lao động tháng đó với căn cứ đóng bằng căn cứ đóng bảo hiểm xã hội tháng gần nhất.\" (Luật BHXH 2024 (41/2024/QH15), Điều 33, khoản 5)",
-    "application": "Không có slot_bindings nào được cung cấp trong truy vấn. Prolog đã sử dụng các quy tắc và nguồn luật để đưa ra kết luận.",
-    "conclusion": "Prolog đã trả về giá trị \"yes\" cho biến Answer, xác nhận rằng người lao động trong trường hợp này thuộc đối tượng đóng BHXH."
+    "issue": "Ông Tất Thắng hỏi về việc người lao động ký hợp đồng dưới 1 tháng, làm đủ từ 14 công trở lên có phải đóng BHXH không.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 33 khoản 5], người lao động không phải đóng bảo hiểm xã hội nếu không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng, trừ khi có thỏa thuận giữa người sử dụng lao động và người lao động.",
+    "application": "Không có slot nào được gán giá trị. Prolog query social_insurance_obligation(Obligation, Trace) trả về Obligation = yes, nghĩa là người lao động vẫn có nghĩa vụ đóng BHXH.",
+    "conclusion": "Theo Prolog, người lao động có nghĩa vụ đóng BHXH."
   },
-  "elapsed_s": 9.027,
-  "prompt_tokens": 3303,
-  "completion_tokens": 509,
+  "elapsed_s": 15.011,
+  "prompt_tokens": 4092,
+  "completion_tokens": 586,
   "error": null,
   "gold_answer": "Căn cứ điểm a khoản 1 Điều 2 Luật BHXH 2024; Nghị định số 158/2025/NĐ-CP ngày 25/6/2025 của Chính phủ, người lao động làm việc theo hợp đồng lao động từ đủ 1 tháng trở lên thuộc đối tượng tham gia BHXH bắt buộc.\nDo đó, trường hợp người lao động ký hợp đồng lao động dưới 1 tháng không thuộc đối tượng tham gia BHXH bắt buộc, quy định làm đủ 14 ngày công trở lên chỉ áp dụng đối với người lao động có hợp đồng lao động từ đủ 1 tháng trở lên.",
-  "gold_citations_raw": "điểm a khoản 1 Điều 2 Luật BHXH 2024; Nghị định số 158/2025/NĐ-CP"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]"
 }

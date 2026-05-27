@@ -2,34 +2,33 @@
   "arm": "elite_graphrag_logic",
   "stt": 41,
   "question": "Em nghỉ việc tại Công ty cũ từ 28/3. Em xin Công ty quyết định nghỉ việc để làm BHTN, nhưng họ báo: \"Chờ tờ rời BHXH từ 45-50 ngày\". Em có hỏi: \"chờ lâu vậy thì sao mà e làm đc BHTN tháng 4,5\" thì họ bảo: \"Thời hạn hưởng BHTN là 3 tháng kể từ ngày nộp đơn\". Em chưa hiểu chỗ này. Vậy là phải sau 3 tháng nghỉ việc e mới đc nộp chứng từ để hưởng BHTN phải ko? Hay là sau nhận và nộp chứng từ em sẽ đc hưởng BHTN từ tháng 4?",
-  "answer": "Issue: Người hỏi muốn biết thời điểm có thể nộp hồ sơ và hưởng bảo hiểm thất nghiệp (BHTN) sau khi nghỉ việc. \nRule: Theo Điều 62 khoản 1 Luật BHXH 2024, người lao động có trách nhiệm nộp hồ sơ cho người sử dụng lao động trong thời hạn 45 ngày kể từ ngày hết thời gian nghỉ việc. \nApplication: Hệ thống không có thông tin cụ thể về thời gian nộp hồ sơ của người hỏi. Tuy nhiên, Prolog đã xác định rằng người hỏi đủ điều kiện hưởng BHTN. \nConclusion: Theo Prolog, người dùng ĐỦ điều kiện hưởng BHTN.",
-  "plain_answer": "Bạn có thể nộp hồ sơ để hưởng bảo hiểm thất nghiệp ngay sau khi nhận được quyết định nghỉ việc từ công ty, không cần phải chờ 3 tháng. Theo [Điều 62 khoản 1] Luật BHXH 2024, bạn có thời hạn 45 ngày để nộp hồ sơ. Hệ thống xác nhận bạn đủ điều kiện hưởng BHTN, vì vậy bạn có thể làm thủ tục ngay khi có giấy tờ cần thiết.",
+  "answer": "Issue: Người hỏi muốn biết thời điểm nộp hồ sơ và hưởng bảo hiểm thất nghiệp (BHTN) sau khi nghỉ việc từ 28/3. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 62 khoản 1], người lao động có trách nhiệm nộp hồ sơ cho người sử dụng lao động trong thời hạn 45 ngày kể từ ngày hết thời gian nghỉ việc. \nApplication: Không có slot nào được gán giá trị. Prolog query unemployment_benefit_eligibility(user, Eligible, Trace) trả về Eligible = true, cho thấy người dùng đủ điều kiện hưởng BHTN. \nConclusion: Theo Prolog, người dùng CÓ đủ điều kiện hưởng BHTN ngay sau khi nộp hồ sơ, không cần phải chờ 3 tháng.",
+  "plain_answer": "Bạn có thể nộp hồ sơ để hưởng bảo hiểm thất nghiệp ngay sau khi nghỉ việc, không cần phải chờ 3 tháng. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 62 khoản 1], bạn có trách nhiệm nộp hồ sơ trong thời hạn 45 ngày kể từ ngày nghỉ việc. Nếu nộp đúng thời hạn, bạn sẽ được hưởng BHTN từ tháng 4 mà không phải chờ lâu.",
   "citations": [
-    "[Điều 62 khoản 1]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 62 khoản 1]"
   ],
   "citation_ids": [
     "L41_2024.A62.K1"
   ],
   "citation_indices": [
-    0,
-    1
+    0
   ],
   "prolog_success": true,
   "prolog_status": "success",
   "n_repair_rounds": 0,
-  "prolog_trace": "[step(condition,employer_responsibility,based_on(source_a62_k1)),step(condition,employer_responsibility,based_on(source_a79_k3)),step(conclusion,unemployment_benefit_eligibility(user,true),based_on(source_a62_k1))]",
-  "prolog_program": "legal_source(source_a62_k1, law_bhxh_2024, article_62, clause_1, none, 'Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản.').\nlegal_source(source_a79_k3, law_bhxh_2024, article_79, clause_3, none, 'Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ thai sản kèm theo hồ sơ quy định tại Điều 61 của Luật này nộp cho cơ quan bảo hiểm xã hội.').\nunemployment_benefit_eligibility(User, Eligible, Trace) :- employer_responsibility=True, BHXH_agency_responsibility=True, Eligible = true, Trace = [step(condition, employer_responsibility, based_on(source_a62_k1)), step(condition, BHXH_agency_responsibility, based_on(source_a79_k3)), step(conclusion, unemployment_benefit_eligibility(User, Eligible), based_on(source_a62_k1))].",
+  "prolog_trace": "[step(condition,employer_responsibility,based_on(source_a41_k1)),step(condition,employer_responsibility,based_on(source_a41_k1)),step(conclusion,unemployment_benefit_eligibility(user,true),based_on(source_a41_k1))]",
+  "prolog_program": "legal_source(source_a41_k1, law_bhxh_2024, article_41, clause_1, none, 'Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản.').\nunemployment_benefit_eligibility(User, Eligible, Trace) :- employer_responsibility=True, BHXH_agency_responsibility=True, Eligible = true, Trace = [step(condition, employer_responsibility, based_on(source_a41_k1)), step(condition, BHXH_agency_responsibility, based_on(source_a41_k1)), step(conclusion, unemployment_benefit_eligibility(User, Eligible), based_on(source_a41_k1))].",
   "prolog_error": "",
   "irac_sections": {
-    "issue": "Người hỏi muốn biết thời điểm có thể nộp hồ sơ và hưởng bảo hiểm thất nghiệp (BHTN) sau khi nghỉ việc.",
-    "rule": "Theo Điều 62 khoản 1 Luật BHXH 2024, người lao động có trách nhiệm nộp hồ sơ cho người sử dụng lao động trong thời hạn 45 ngày kể từ ngày hết thời gian nghỉ việc.",
-    "application": "Hệ thống không có thông tin cụ thể về thời gian nộp hồ sơ của người hỏi. Tuy nhiên, Prolog đã xác định rằng người hỏi đủ điều kiện hưởng BHTN.",
-    "conclusion": "Theo Prolog, người dùng ĐỦ điều kiện hưởng BHTN."
+    "issue": "Người hỏi muốn biết thời điểm nộp hồ sơ và hưởng bảo hiểm thất nghiệp (BHTN) sau khi nghỉ việc từ 28/3.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 62 khoản 1], người lao động có trách nhiệm nộp hồ sơ cho người sử dụng lao động trong thời hạn 45 ngày kể từ ngày hết thời gian nghỉ việc.",
+    "application": "Không có slot nào được gán giá trị. Prolog query unemployment_benefit_eligibility(user, Eligible, Trace) trả về Eligible = true, cho thấy người dùng đủ điều kiện hưởng BHTN.",
+    "conclusion": "Theo Prolog, người dùng CÓ đủ điều kiện hưởng BHTN ngay sau khi nộp hồ sơ, không cần phải chờ 3 tháng."
   },
-  "elapsed_s": 28.948,
-  "prompt_tokens": 6309,
-  "completion_tokens": 623,
+  "elapsed_s": 11.018,
+  "prompt_tokens": 6130,
+  "completion_tokens": 560,
   "error": null,
   "gold_answer": "Không phải chờ đủ 3 tháng rồi mới nộp hồ sơ BHTN. Đúng luật là bạn phải nộp hồ sơ trong vòng 3 tháng kể từ ngày chấm dứt HĐLĐ. Sau khi nộp đủ hồ sơ, nếu sau 15 ngày chưa có việc làm thì sẽ được giải quyết hưởng trợ cấp thất nghiệp. Vì vậy, bạn nên lấy quyết định nghỉ việc và giấy tờ chốt BHXH sớm để nộp trong hạn, không phải đợi qua 3 tháng.",
-  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 49, Điều 50"
+  "gold_citations_raw": "[Luật Việc làm 2013, Điều 46]\n[Luật Việc làm 2013, Điều 49]\n[Luật Việc làm 2013, Điều 50]"
 }

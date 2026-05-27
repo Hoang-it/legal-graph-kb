@@ -2,9 +2,10 @@
   "arm": "elite_graphrag",
   "stt": 9,
   "question": "Người lao động sinh con ngày 18/12/2023, trong tháng 12 có 12 ngày nghỉ thai sản sinh con và 2 ngày nghỉ thai sản khám thai. Công ty đã báo giảm thai sản từ tháng 12/2023 đến tháng 5/2024.\nNgày 18/6/2024, người lao động đi làm lại và nghỉ tiếp 5 ngày dưỡng sức sau sinh. Trong tháng 6/2024, có 14 ngày nghỉ thai sản sinh con và 5 ngày nghỉ dưỡng sức sau sinh.\nBà Kim Ngân hỏi, đối với trường hợp trên, tháng 6/2024, công ty báo giảm không lương, giảm thai sản hay đóng BHXH bình thường?",
-  "answer": "Issue: Bà Kim Ngân hỏi về tình trạng đóng bảo hiểm xã hội của công ty đối với người lao động sinh con và nghỉ thai sản trong tháng 6/2024.\n\nRule: \"Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ thai sản được tính là thời gian đóng bảo hiểm xã hội bắt buộc, người lao động và người sử dụng lao động không phải đóng bảo hiểm xã hội. Đối với các trường hợp khác mà có thời gian nghỉ việc hưởng chế độ thai sản từ 14 ngày làm việc trở lên trong tháng thì thời gian này được tính là thời gian đóng bảo hiểm xã hội bắt buộc, người lao động và người sử dụng lao động không phải đóng bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 53, Khoản 8)\n\nApplication: Không có slot_bindings nào được cung cấp. Tuy nhiên, Prolog đã xác định rằng số ngày nghỉ thai sản của người lao động là 14 ngày, từ đó kết luận rằng công ty sẽ đóng bảo hiểm xã hội bình thường.\n\nConclusion: Prolog đã trả về giá trị \"đóng BHXH bình thường\" cho biến Status.",
+  "answer": "Issue: Bà Kim Ngân hỏi về tình trạng đóng bảo hiểm xã hội của công ty trong tháng 6/2024 sau khi sinh con và nghỉ thai sản. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 8], thời gian nghỉ việc hưởng chế độ thai sản từ 14 ngày làm việc trở lên trong tháng được tính là thời gian đóng bảo hiểm xã hội bắt buộc, không phải đóng bảo hiểm xã hội. \nApplication: Không có slot nào được gán giá trị. Prolog query company_payment_status(user, Status, Trace) trả về Status = 'đóng BHXH bình thường' vì có 14 ngày nghỉ thai sản. \nConclusion: Theo Prolog, công ty sẽ 'đóng BHXH bình thường' cho bà Kim Ngân trong tháng 6/2024.",
+  "plain_answer": "Trong tháng 6/2024, công ty sẽ 'đóng BHXH bình thường' cho bạn vì bạn có 14 ngày nghỉ thai sản, theo quy định tại [Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 8]. Bạn không cần lo lắng về việc giảm thai sản hay không lương trong trường hợp này.",
   "citations": [
-    "[Điều 53 khoản 8]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 8]"
   ],
   "citation_ids": [
     "L41_2024.A53.K8"
@@ -16,16 +17,18 @@
   "prolog_status": "success",
   "n_repair_rounds": 0,
   "prolog_trace": "[step(conclusion,company_payment_status(user,đóng BHXH bình thường),based_on(source_c000))]",
+  "prolog_program": "so_ngay(user, 14).\nlegal_source(source_c000, law_bhxh_2024, article_53, clause_8, none, 'Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ thai sản được tính là thời gian đóng bảo hiểm xã hội bắt buộc, người lao động và người sử dụng lao động không phải đóng bảo hiểm xã hội. Đối với các trường hợp khác mà có thời gian nghỉ việc hưởng chế độ thai sản từ 14 ngày làm việc trở lên trong tháng thì thời gian này được tính là thời gian đóng bảo hiểm xã hội bắt buộc, người lao động và người sử dụng lao động không phải đóng bảo hiểm xã hội.').\ncompany_payment_status(user, Status, Trace) :- so_ngay(user, Days), Days >= 14, Status = 'đóng BHXH bình thường', Trace = [step(conclusion, company_payment_status(user, Status), based_on(source_c000))].",
+  "prolog_error": "",
   "irac_sections": {
-    "issue": "Bà Kim Ngân hỏi về tình trạng đóng bảo hiểm xã hội của công ty đối với người lao động sinh con và nghỉ thai sản trong tháng 6/2024.",
-    "rule": "\"Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ thai sản được tính là thời gian đóng bảo hiểm xã hội bắt buộc, người lao động và người sử dụng lao động không phải đóng bảo hiểm xã hội. Đối với các trường hợp khác mà có thời gian nghỉ việc hưởng chế độ thai sản từ 14 ngày làm việc trở lên trong tháng thì thời gian này được tính là thời gian đóng bảo hiểm xã hội bắt buộc, người lao động và người sử dụng lao động không phải đóng bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 53, Khoản 8)",
-    "application": "Không có slot_bindings nào được cung cấp. Tuy nhiên, Prolog đã xác định rằng số ngày nghỉ thai sản của người lao động là 14 ngày, từ đó kết luận rằng công ty sẽ đóng bảo hiểm xã hội bình thường.",
-    "conclusion": "Prolog đã trả về giá trị \"đóng BHXH bình thường\" cho biến Status."
+    "issue": "Bà Kim Ngân hỏi về tình trạng đóng bảo hiểm xã hội của công ty trong tháng 6/2024 sau khi sinh con và nghỉ thai sản.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 8], thời gian nghỉ việc hưởng chế độ thai sản từ 14 ngày làm việc trở lên trong tháng được tính là thời gian đóng bảo hiểm xã hội bắt buộc, không phải đóng bảo hiểm xã hội.",
+    "application": "Không có slot nào được gán giá trị. Prolog query company_payment_status(user, Status, Trace) trả về Status = 'đóng BHXH bình thường' vì có 14 ngày nghỉ thai sản.",
+    "conclusion": "Theo Prolog, công ty sẽ 'đóng BHXH bình thường' cho bà Kim Ngân trong tháng 6/2024."
   },
-  "elapsed_s": 13.824,
-  "prompt_tokens": 3763,
-  "completion_tokens": 635,
+  "elapsed_s": 11.988,
+  "prompt_tokens": 4503,
+  "completion_tokens": 628,
   "error": null,
   "gold_answer": "Căn cứ quy định tại Khoản 1, Khoản 7 Điều 34, Khoản 2 Điều 39, Khoản 3 Điều 85 và Khoản 4 Điều 86 Luật BHXH năm 2014:\nLao động nữ sinh con được nghỉ việc hưởng chế độ thai sản trước và sau khi sinh con là 6 tháng. Trường hợp lao động nữ sinh đôi trở lên thì tính từ con thứ 2 trở đi, cứ mỗi con, người mẹ được nghỉ thêm một tháng. Thời gian hưởng chế độ thai sản tính cả ngày nghỉ lễ, nghỉ Tết, ngày nghỉ hàng tuần.\nThời gian nghỉ việc hưởng chế độ thai sản từ 14 ngày làm việc trở lên trong tháng được tính là thời gian đóng BHXH, người lao động và người sử dụng lao động không phải đóng BHXH.\nNgười lao động không làm việc và không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì cả người lao động và người sử dụng lao động không đóng BHXH tháng đó. Thời gian này không được tính để hưởng BHXH trừ trường hợp nghỉ việc hưởng chế độ thai sản.\nVì vậy, trường hợp người lao động sinh con ngày 18/12/2023, công ty đã báo giảm thai sản từ tháng 12/2023 đến tháng 5/2024. Tháng 6/2024 chỉ được tính 5 ngày dưỡng sức sau sinh là số ngày không làm việc, không hưởng tiền lương. Do đó, tháng 6/2024 người lao động và công ty vẫn phải tham gia, đóng BHXH bắt buộc theo đúng quy định của pháp luật.",
-  "gold_citations_raw": "Khoản 7 Điều 34, Khoản 2 Điều 39, Khoản 3 Điều 85 và Khoản 4 Điều 86 Luật BHXH năm 2014"
+  "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 34]\n[Luật BHXH 2014 (58/2014/QH13), Điều 39]\n[Luật BHXH 2014 (58/2014/QH13), Điều 85]\n[Luật BHXH 2014 (58/2014/QH13), Điều 86]"
 }

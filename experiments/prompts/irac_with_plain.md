@@ -10,7 +10,7 @@ You will be given a structured trace with:
   * legal_issue + domain_context
   * selected_function name + description
   * slot_bindings (slot_id → value, evidence_span)
-  * citations (list of {document, article, clause, raw_text})
+  * citations (list of {document, article, clause, canonical_citation, raw_text})
   * execution_result (Prolog query bindings) OR missing_slots / execution_error
 
 ABSOLUTE PROHIBITIONS — violating any of these is a render failure:
@@ -40,7 +40,7 @@ Output **exactly one JSON object** with two string fields:
 Vietnamese 4-section IRAC analysis:
 
 Issue: <one or two sentences restating the legal question>
-Rule: <quote the citation snippets verbatim; reference document + article + clause exactly as given>
+Rule: <quote the citation snippets verbatim; include canonical_citation inline for each cited rule>
 Application: <list each slot_id and its bound value, then describe how the Prolog query consumed them. NO new numbers.>
 Conclusion: <state the Prolog binding value (with its slot or variable name). If Prolog returned partial output, say so. If unable_to_conclude / missing_slots, state which slot or error blocked the answer.>
 
@@ -58,7 +58,7 @@ against gold answers (free-prose format).
 
 Requirements cho `plain_answer`:
 - 2-4 câu, văn phong tự nhiên không có headers/labels
-- Include inline citations dạng `[Điều X khoản Y]` hoặc `theo Điều X khoản Y` — cho mọi citation được dùng trong IRAC
+- Include inline citations ngay sau claim theo `canonical_citation`, ví dụ `[Luật BHXH 2024 (41/2024/QH15), Điều 64 khoản 1]`; không dùng citation mơ hồ như `[Điều 64]` hoặc `theo Điều 64` nếu thiếu tên văn bản
 - Trực tiếp trả lời câu hỏi, không restate câu hỏi như "Issue"
 - Same factual content as IRAC's Conclusion (đừng thêm thông tin mới ngoài trace)
 - Same numerical values literally from Prolog bindings
@@ -68,8 +68,8 @@ Requirements cho `plain_answer`:
 Example for query "Tôi đã đóng BHXH 12 năm, có được nhận lương hưu không?":
 ```json
 {
-  "irac": "Issue: Người hỏi đã đóng BHXH 12 năm, hỏi có đủ điều kiện hưởng lương hưu không.\nRule: Theo Điều 64 khoản 1 Luật BHXH 2024 (citation source_c019), người lao động cần đủ tuổi nghỉ hưu và tối thiểu 15 năm đóng BHXH.\nApplication: slot years_contributed bound = 12. Prolog query pension_eligible(user, Result, Trace) trả về Result = no vì 12 < 15.\nConclusion: Theo Prolog, người dùng KHÔNG đủ điều kiện hưởng lương hưu hằng tháng do thiếu năm đóng (12 < 15).",
-  "plain_answer": "Bạn đóng BHXH 12 năm thì chưa đủ điều kiện hưởng lương hưu hằng tháng theo [Điều 64 khoản 1] Luật BHXH 2024 — luật yêu cầu tối thiểu 15 năm. Bạn có thể tiếp tục đóng thêm 3 năm nữa để đủ điều kiện, hoặc tham khảo chế độ BHXH một lần nếu phù hợp."
+  "irac": "Issue: Người hỏi đã đóng BHXH 12 năm, hỏi có đủ điều kiện hưởng lương hưu không.\nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 64 khoản 1], người lao động cần đủ tuổi nghỉ hưu và tối thiểu 15 năm đóng BHXH.\nApplication: slot years_contributed bound = 12. Prolog query pension_eligible(user, Result, Trace) trả về Result = no vì 12 < 15.\nConclusion: Theo Prolog, người dùng KHÔNG đủ điều kiện hưởng lương hưu hằng tháng do thiếu năm đóng (12 < 15).",
+  "plain_answer": "Bạn đóng BHXH 12 năm thì chưa đủ điều kiện hưởng lương hưu hằng tháng theo [Luật BHXH 2024 (41/2024/QH15), Điều 64 khoản 1] vì luật yêu cầu tối thiểu 15 năm. Bạn có thể tiếp tục đóng thêm 3 năm nữa để đủ điều kiện, hoặc tham khảo chế độ BHXH một lần nếu phù hợp."
 }
 ```
 
@@ -77,7 +77,7 @@ If trace has `execution_result = null` or `missing_slots`:
 ```json
 {
   "irac": "Issue: ...\nRule: ...\nApplication: ...\nConclusion: Hệ thống không thể tính được kết quả cuối cùng do thiếu slot <slot_id>.",
-  "plain_answer": "Để trả lời chính xác câu hỏi này mình cần biết thêm <slot_id>. Theo [Điều X khoản Y] thì điều kiện là... bạn vui lòng cung cấp thêm thông tin để mình tính giúp."
+  "plain_answer": "Để trả lời chính xác câu hỏi này mình cần biết thêm <slot_id>. Theo [Luật BHXH 2024 (41/2024/QH15), Điều X khoản Y] thì điều kiện là... bạn vui lòng cung cấp thêm thông tin để mình tính giúp."
 }
 ```
 

@@ -2,9 +2,10 @@
   "arm": "elite_graphrag",
   "stt": 38,
   "question": "Em mới học xong, lúc mới vào cty, khi đang đào tạo người ta hỏi em có BHXH thì em bảo không có, người ta bảo là có thế là thế màp? Bây giờ em muốn xem mình đóng bảo hiểm được bao nhiêu mà không biết số bảo hiểm thì phải làm sao ?",
-  "answer": "Issue: Người dùng muốn biết cách kiểm tra thông tin bảo hiểm xã hội khi không biết số bảo hiểm của mình.\n\nRule: \"Mức đóng bảo hiểm xã hội bắt buộc được tính trên cơ sở tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc. Mức đóng bảo hiểm xã hội tự nguyện được tính trên cơ sở thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện do người tham gia lựa chọn.\" (Luật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 2)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Prolog đã trả về kết quả cho biết rằng người dùng cần phải đăng ký bảo hiểm và kiểm tra với nhà tuyển dụng để có thông tin về bảo hiểm xã hội.\n\nConclusion: Hệ thống không thể tính toán số liệu cuối cùng vì không có giá trị nào được gán cho các slot. Kết quả từ Prolog chỉ ra rằng người dùng cần phải đăng ký bảo hiểm và kiểm tra với nhà tuyển dụng.",
+  "answer": "Issue: Người hỏi muốn biết cách kiểm tra thông tin về số bảo hiểm xã hội của mình. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 5 khoản 2], mức đóng bảo hiểm xã hội được tính trên cơ sở tiền lương làm căn cứ đóng bảo hiểm xã hội. \nApplication: Không có slot nào được gán giá trị. Prolog query how_to_check_insurance(Answer, Trace) trả về Answer = 'Bạn có thể liên hệ với cơ quan bảo hiểm xã hội để biết thông tin về số bảo hiểm của mình.'. \nConclusion: Theo Prolog, bạn có thể liên hệ với cơ quan bảo hiểm xã hội để biết thông tin về số bảo hiểm của mình.",
+  "plain_answer": "Bạn có thể liên hệ với cơ quan bảo hiểm xã hội để biết thông tin về số bảo hiểm của mình. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 5 khoản 2], mức đóng bảo hiểm xã hội được tính trên cơ sở tiền lương. Nếu cần thêm thông tin, bạn có thể hỏi trực tiếp tại cơ quan bảo hiểm xã hội nơi bạn cư trú.",
   "citations": [
-    "[Điều 5 khoản 2]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 5 khoản 2]"
   ],
   "citation_ids": [
     "L41_2024.A5.K2"
@@ -15,17 +16,19 @@
   "prolog_success": true,
   "prolog_status": "success",
   "n_repair_rounds": 1,
-  "prolog_trace": "[step(conclusion,insurance_info_conditions([need_to_register_for_insurance,check_with_employer]),based_on(source_c007))]",
+  "prolog_trace": "[step(conclusion,how_to_check_insurance(Bạn có thể liên hệ với cơ quan bảo hiểm xã hội để biết thông tin về số bảo hiểm của mình.),based_on(source_c002))]",
+  "prolog_program": "legal_source(source_c002, law_bhxh_2024, article_5, clause_2, none, 'Mức đóng bảo hiểm xã hội bắt buộc được tính trên cơ sở tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc.').\nhow_to_check_insurance(Answer, Trace) :- Answer = 'Bạn có thể liên hệ với cơ quan bảo hiểm xã hội để biết thông tin về số bảo hiểm của mình.', Trace = [step(conclusion, how_to_check_insurance(Answer), based_on(source_c002))].",
+  "prolog_error": "",
   "irac_sections": {
-    "issue": "Người dùng muốn biết cách kiểm tra thông tin bảo hiểm xã hội khi không biết số bảo hiểm của mình.",
-    "rule": "\"Mức đóng bảo hiểm xã hội bắt buộc được tính trên cơ sở tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc. Mức đóng bảo hiểm xã hội tự nguyện được tính trên cơ sở thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện do người tham gia lựa chọn.\" (Luật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 2)",
-    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Prolog đã trả về kết quả cho biết rằng người dùng cần phải đăng ký bảo hiểm và kiểm tra với nhà tuyển dụng để có thông tin về bảo hiểm xã hội.",
-    "conclusion": "Hệ thống không thể tính toán số liệu cuối cùng vì không có giá trị nào được gán cho các slot. Kết quả từ Prolog chỉ ra rằng người dùng cần phải đăng ký bảo hiểm và kiểm tra với nhà tuyển dụng."
+    "issue": "Người hỏi muốn biết cách kiểm tra thông tin về số bảo hiểm xã hội của mình.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 5 khoản 2], mức đóng bảo hiểm xã hội được tính trên cơ sở tiền lương làm căn cứ đóng bảo hiểm xã hội.",
+    "application": "Không có slot nào được gán giá trị. Prolog query how_to_check_insurance(Answer, Trace) trả về Answer = 'Bạn có thể liên hệ với cơ quan bảo hiểm xã hội để biết thông tin về số bảo hiểm của mình.'.",
+    "conclusion": "Theo Prolog, bạn có thể liên hệ với cơ quan bảo hiểm xã hội để biết thông tin về số bảo hiểm của mình."
   },
-  "elapsed_s": 11.058,
-  "prompt_tokens": 5196,
-  "completion_tokens": 491,
+  "elapsed_s": 11.075,
+  "prompt_tokens": 5938,
+  "completion_tokens": 502,
   "error": null,
   "gold_answer": "Bạn có thể tra cứu mã số BHXH bằng CCCD/họ tên/ngày sinh trên Cổng BHXH Việt Nam hoặc ứng dụng VssID. Nếu không tự tra được, mang CCCD đến cơ quan BHXH gần nhất để được hỗ trợ tra cứu, đồng bộ dữ liệu và cấp lại thông tin tài khoản. Khi đã có mã số BHXH, bạn sẽ xem được toàn bộ quá trình tham gia BHXH, BHTN, BHYT trên VssID hoặc cổng tra cứu điện tử.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn tra cứu VssID/BHXH Việt Nam"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 25]"
 }

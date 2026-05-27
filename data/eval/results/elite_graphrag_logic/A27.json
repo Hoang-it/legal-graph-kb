@@ -2,34 +2,33 @@
   "arm": "elite_graphrag_logic",
   "stt": 27,
   "question": "Bà Uyên Phương (TPHCM) hỏi, căn cứ Luật BHXH 2024, người vợ sinh thường ngày 10/9/2025, chồng được nghỉ 5 ngày trong khoảng 10/9-9/11, chồng nghỉ đợt 1 ngày 10-11/9, đợt 2 ngày 9-11/11 thì ngày 10, 11/11/2025 vẫn được thanh toán chế độ thai sản có đúng không?",
-  "answer": "Issue: Bà Uyên Phương hỏi về việc chồng có được thanh toán chế độ thai sản cho ngày 10, 11/11/2025 hay không. \nRule: Theo Điều 53 khoản 9 Luật BHXH 2024, thời gian nghỉ việc hưởng chế độ thai sản tính cả ngày nghỉ lễ, tết, ngày nghỉ hằng tuần. \nApplication: Không có slot nào được gán giá trị. Prolog query đã xác định rằng người chồng đủ điều kiện hưởng chế độ thai sản. \nConclusion: Theo Prolog, người chồng ĐỦ điều kiện hưởng chế độ thai sản cho ngày 10, 11/11/2025.",
-  "plain_answer": "Chồng của bạn sẽ được thanh toán chế độ thai sản cho ngày 10, 11/11/2025 theo [Điều 53 khoản 9] Luật BHXH 2024, vì thời gian nghỉ việc hưởng chế độ thai sản tính cả ngày nghỉ lễ, tết. Bạn có thể yên tâm về quyền lợi này.",
+  "answer": "Issue: Bà Uyên Phương hỏi về việc chồng có được thanh toán chế độ thai sản cho ngày 10, 11/11/2025 hay không khi đã nghỉ 5 ngày trong khoảng thời gian quy định. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 9], thời gian nghỉ việc hưởng chế độ thai sản tính cả ngày nghỉ lễ, tết, ngày nghỉ hằng tuần. \nApplication: Không có slot nào được gán giá trị. Prolog đã xác định rằng người dùng đủ điều kiện hưởng chế độ thai sản dựa trên điều kiện thời gian nghỉ việc. \nConclusion: Theo Prolog, người dùng ĐỦ điều kiện hưởng chế độ thai sản cho ngày 10, 11/11/2025.",
+  "plain_answer": "Chồng của bạn sẽ được thanh toán chế độ thai sản cho ngày 10, 11/11/2025 vì đã nghỉ đủ thời gian theo quy định. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 9], thời gian nghỉ việc hưởng chế độ thai sản bao gồm cả ngày nghỉ lễ và ngày nghỉ hằng tuần. Bạn có thể yên tâm về quyền lợi này.",
   "citations": [
-    "[Điều 53 khoản 9]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 9]"
   ],
   "citation_ids": [
     "L41_2024.A53.K9"
   ],
   "citation_indices": [
-    0,
-    1
+    0
   ],
   "prolog_success": true,
   "prolog_status": "success",
-  "n_repair_rounds": 0,
-  "prolog_trace": "[step(condition,time_period_weeks_at_least_22,based_on(source_a52_k2)),step(condition,time_period_days_within_60,based_on(source_a53_k3)),step(conclusion,maternity(user,true),based_on(source_a52_k2))]",
-  "prolog_program": "time_period_weeks(22).\ntime_period_days(60).\nlegal_source(source_a53_k3, law_bhxh_2024, article_53, clause_3, none, 'Thời gian nghỉ việc hưởng chế độ thai sản quy định tại khoản 1 Điều này tính cả ngày nghỉ lễ, tết, ngày nghỉ hằng tuần.').\nlegal_source(source_a52_k2, law_bhxh_2024, article_52, clause_2, none, 'Trường hợp lao động nữ mang thai từ đủ 22 tuần tuổi trở lên đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều 50 của Luật này mà bị sảy thai, phá thai, thai chết trong tử cung, thai chết trong khi chuyển dạ thì lao động nữ và người chồng được nghỉ việc hưởng chế độ thai sản như trường hợp lao động nữ sinh con.').\nmaternity(Person, Eligible, Trace) :- time_period_weeks(W), W >= 22, time_period_days(D), D =< 60, Eligible = true, Trace = [step(condition, time_period_weeks_at_least_22, based_on(source_a52_k2)), step(condition, time_period_days_within_60, based_on(source_a53_k3)), step(conclusion, maternity(Person, Eligible), based_on(source_a52_k2))].",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(condition,time_period_weeks_at_least_22,based_on(source_a52_k2)),step(conclusion,maternity(user,true),based_on(source_a53_k3))]",
+  "prolog_program": "time_period_weeks(user, 22).\nlegal_source(source_a53_k3, law_bhxh_2024, article_53, clause_3, none, 'Thời gian nghỉ việc hưởng chế độ thai sản quy định tại khoản 2 Điều này phải trong khoảng thời gian 60 ngày kể từ ngày vợ sinh con, trường hợp người lao động nghỉ nhiều lần thì ngày bắt đầu nghỉ việc của lần cuối cùng phải trong khoảng thời gian 60 ngày đầu kể từ ngày vợ sinh con và tổng thời gian nghỉ việc hưởng chế độ thai sản không quá thời gian quy định tại khoản 2 Điều này.').\nmaternity(Person, Eligible, Trace) :- time_period_weeks(Person, Weeks), Weeks >= 22, Eligible = true, Trace = [step(condition, time_period_weeks_at_least_22, based_on(source_a52_k2)), step(conclusion, maternity(Person, Eligible), based_on(source_a53_k3))].\nmaternity(Person, Eligible, Trace) :- time_period_weeks(Person, Weeks), Weeks < 22, Eligible = false, Trace = [step(condition, time_period_weeks_less_than_22, based_on(source_a52_k2)), step(conclusion, maternity(Person, Eligible), based_on(source_a53_k3))].",
   "prolog_error": "",
   "irac_sections": {
-    "issue": "Bà Uyên Phương hỏi về việc chồng có được thanh toán chế độ thai sản cho ngày 10, 11/11/2025 hay không.",
-    "rule": "Theo Điều 53 khoản 9 Luật BHXH 2024, thời gian nghỉ việc hưởng chế độ thai sản tính cả ngày nghỉ lễ, tết, ngày nghỉ hằng tuần.",
-    "application": "Không có slot nào được gán giá trị. Prolog query đã xác định rằng người chồng đủ điều kiện hưởng chế độ thai sản.",
-    "conclusion": "Theo Prolog, người chồng ĐỦ điều kiện hưởng chế độ thai sản cho ngày 10, 11/11/2025."
+    "issue": "Bà Uyên Phương hỏi về việc chồng có được thanh toán chế độ thai sản cho ngày 10, 11/11/2025 hay không khi đã nghỉ 5 ngày trong khoảng thời gian quy định.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 9], thời gian nghỉ việc hưởng chế độ thai sản tính cả ngày nghỉ lễ, tết, ngày nghỉ hằng tuần.",
+    "application": "Không có slot nào được gán giá trị. Prolog đã xác định rằng người dùng đủ điều kiện hưởng chế độ thai sản dựa trên điều kiện thời gian nghỉ việc.",
+    "conclusion": "Theo Prolog, người dùng ĐỦ điều kiện hưởng chế độ thai sản cho ngày 10, 11/11/2025."
   },
-  "elapsed_s": 27.486,
-  "prompt_tokens": 5487,
-  "completion_tokens": 651,
+  "elapsed_s": 14.093,
+  "prompt_tokens": 9262,
+  "completion_tokens": 1051,
   "error": null,
   "gold_answer": "Căn cứ khoản 3 Điều 53 Luật BHXH 2024, thời gian nghỉ hưởng chế độ của trường hợp nam nghỉ việc khi vợ sinh con:\n\"3. Ngày bắt đầu nghỉ việc hưởng chế độ thai sản quy định tại khoản 2 Điều này phải trong khoảng thời gian 60 ngày kể từ ngày vợ sinh con, trường hợp người lao động nghỉ nhiều lần thì ngày bắt đầu nghỉ việc của lần cuối cùng phải trong khoảng thời gian 60 ngày đầu kể từ ngày vợ sinh con và tổng thời gian nghỉ việc hưởng chế độ thai sản không quá thời gian quy định tại khoản 2 Điều này\".\nĐối chiếu với quy định trên, trường hợp lao động nam tại đơn vị có vợ sinh con từ ngày 10/9/2025 thì thời gian 60 ngày kể từ ngày vợ sinh con được tính từ ngày 10/9/2025 đến ngày 8/11/2025.\nTheo đó, nếu lao động nam nghỉ đợt 1 từ ngày 10/9/2025 đến ngày 11/9/2025, đợt 2 từ ngày 9/11/2025 đến ngày 11/11/2025 như đơn vị đã nêu thì từ ngày 9/11/2025 đến ngày 11/11/2025 không được thanh toán chế độ lao động nam nghỉ việc khi vợ sinh vì đã quá 60 ngày kể từ ngày vợ sinh con.",
-  "gold_citations_raw": "khoản 3 Điều 53 Luật BHXH 2024"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 53]"
 }

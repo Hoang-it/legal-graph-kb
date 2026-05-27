@@ -5,7 +5,7 @@
   "answer": "[Pipeline không trả về kết luận. prolog_status=derived_false, repair_rounds=2, error=Prolog produced no solutions]",
   "plain_answer": "",
   "citations": [
-    "[Điều 41 khoản 9]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 41 khoản 9]"
   ],
   "citation_ids": [
     "L41_2024.A41.K9"
@@ -17,13 +17,13 @@
   "prolog_status": "derived_false",
   "n_repair_rounds": 2,
   "prolog_trace": "",
-  "prolog_program": "age(user, 44).\nlegal_source(source_a141_k9, law_bhxh_2024, article_41, clause_9, none, 'Người tham gia bảo hiểm xã hội tự nguyện đủ 20 năm và đủ tuổi nghỉ hưu thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ.').\nretirement_age(Person, RetirementYear, Trace) :- age(Person, A), A >= 60, RetirementYear is 1979 + 60, Trace = [step(condition, age_at_retirement, based_on(source_a141_k9)), step(conclusion, retirement_age(Person, RetirementYear), based_on(source_a141_k9))].",
+  "prolog_program": "age(user, 44).\nlegal_source(source_a41_k9, law_bhxh_2024, article_41, clause_9, none, 'Người tham gia bảo hiểm xã hội tự nguyện đủ 20 năm đóng bảo hiểm xã hội thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ.').\nretirement_age(Person, RetirementYear, Trace) :- age(Person, A), A >= 60, RetirementYear = 2039, Trace = [step(condition, age_at_retirement, based_on(source_a41_k9)), step(conclusion, retirement_age(Person, RetirementYear), based_on(source_a41_k9))].",
   "prolog_error": "Prolog produced no solutions",
   "irac_sections": {},
-  "elapsed_s": 17.629,
-  "prompt_tokens": 11225,
-  "completion_tokens": 767,
+  "elapsed_s": 11.601,
+  "prompt_tokens": 11209,
+  "completion_tokens": 755,
   "error": null,
   "gold_answer": "Bạn sinh năm 1979 thì thời điểm đủ tuổi nghỉ hưu còn phụ thuộc giới tính và trường hợp nghỉ hưu bình thường hay sớm. Nếu là nữ, mốc chuẩn hiện hành là đủ 60 tuổi, tương ứng khoảng năm 2039. Nếu là nam, mốc chuẩn là đủ 62 tuổi, tương ứng khoảng năm 2041. Nếu làm nghề, công việc nặng nhọc hoặc thuộc trường hợp đặc biệt thì có thể nghỉ sớm hơn theo luật.",
-  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 169; Nghị định 135/2020/NĐ-CP"
+  "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 169]"
 }

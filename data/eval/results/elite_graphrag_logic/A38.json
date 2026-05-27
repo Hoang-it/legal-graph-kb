@@ -5,8 +5,8 @@
   "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_program, repair_rounds=2, error=LLM returned predicate_inputs but no verify_facts]",
   "plain_answer": "",
   "citations": [
-    "[Điều 70 khoản 3]",
-    "[Điều 102 khoản 2]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 70 khoản 3]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 102 khoản 2]"
   ],
   "citation_ids": [
     "L41_2024.A70.K3",
@@ -20,13 +20,13 @@
   "prolog_status": "invalid_program",
   "n_repair_rounds": 2,
   "prolog_trace": "",
-  "prolog_program": "legal_source(source_a70_k3, law_bhxh_2024, article_70, clause_3, none, 'Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn cứ đóng bảo hiểm xã hội nhưng không bao gồm số tiền ngân sách nhà nước hỗ trợ đóng bảo hiểm xã hội tự nguyện, cứ mỗi năm được tính như sau:').\nlegal_source(source_a102_k2, law_bhxh_2024, article_102, clause_2, none, 'Mức hưởng bảo hiểm xã hội một lần trước năm 2014 được tính theo mức lương trung bình.').\nmonthly_amount(Person, Amount, Trace) :- years_contributed(Person, Y), Y >= 1, average_salary(Salary), Amount = 1.5 * Salary, Trace = [step(condition, years_contributed_at_least_1, based_on(source_a102_k2)), step(conclusion, monthly_amount(Person, Amount), based_on(source_a102_k2))].\nmonthly_amount(Person, Amount, Trace) :- years_contributed(Person, Y), Y < 1, Amount = contribution, Trace = [step(condition, years_contributed_less_than_1, based_on(source_a102_k2)), step(conclusion, monthly_amount(Person, Amount), based_on(source_a102_k2))].",
+  "prolog_program": "legal_source(source_a70_k3, law_bhxh_2024, article_70, clause_3, none, 'Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn cứ đóng bảo hiểm xã hội.').\nlegal_source(source_a102_k2, law_bhxh_2024, article_102, clause_2, none, 'Mức hưởng bảo hiểm xã hội một lần trước năm 2014 được tính theo mức lương trung bình.').\nmonthly_amount(Person, Amount, Trace) :- years_contributed(Person, Y), Y >= 1, average_salary(Salary), Amount is 1.5 * Salary, Trace = [step(condition, years_contributed_at_least_1_year, based_on(source_a102_k2)), step(conclusion, monthly_amount(Person, Amount), based_on(source_a102_k2))].\nmonthly_amount(Person, Amount, Trace) :- years_contributed(Person, Y), Y < 1, Amount = contribution, Trace = [step(condition, years_contributed_less_than_1_year, based_on(source_a102_k2)), step(conclusion, monthly_amount(Person, Amount), based_on(source_a102_k2))].",
   "prolog_error": "LLM returned predicate_inputs but no verify_facts",
   "irac_sections": {},
-  "elapsed_s": 44.932,
-  "prompt_tokens": 11590,
-  "completion_tokens": 874,
+  "elapsed_s": 14.474,
+  "prompt_tokens": 12091,
+  "completion_tokens": 1132,
   "error": null,
   "gold_answer": "Bạn có thể tra cứu mã số BHXH bằng CCCD/họ tên/ngày sinh trên Cổng BHXH Việt Nam hoặc ứng dụng VssID. Nếu không tự tra được, mang CCCD đến cơ quan BHXH gần nhất để được hỗ trợ tra cứu, đồng bộ dữ liệu và cấp lại thông tin tài khoản. Khi đã có mã số BHXH, bạn sẽ xem được toàn bộ quá trình tham gia BHXH, BHTN, BHYT trên VssID hoặc cổng tra cứu điện tử.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn tra cứu VssID/BHXH Việt Nam"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 25]"
 }

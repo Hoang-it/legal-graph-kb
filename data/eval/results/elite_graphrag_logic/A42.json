@@ -2,10 +2,10 @@
   "arm": "elite_graphrag_logic",
   "stt": 42,
   "question": "Trường hợp chủ hộ kinh doanh, đăng ký kinh doanh từ t12/2025 nhưng bắt đầu kinh doanh và kê khai thuế là t1/2026. \nHiện đang đóng bhyt phường. Tình hình kinh doanh kém nên e đi làm thêm.\nT6/2026 bắt đầu đóng bhxh ở cty mới. \nVậy từ t1-t5/2026 có phải mua bhxh bắt buộc cho chủ hộ kinh doanh ko?",
-  "answer": "Issue: Người hỏi muốn biết liệu có phải mua bảo hiểm xã hội bắt buộc cho chủ hộ kinh doanh từ tháng 1 đến tháng 5 năm 2026 hay không. \nRule: Theo Điều 28 khoản 1 Luật BHXH 2024, người sử dụng lao động có trách nhiệm kê khai và nộp hồ sơ tham gia bảo hiểm xã hội bắt buộc trong thời hạn 30 ngày kể từ ngày người lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc. \nApplication: Không có slot nào được gán giá trị. Prolog không thể xác định số năm đóng bảo hiểm xã hội của người dùng, dẫn đến việc không thể đưa ra kết luận. \nConclusion: Hệ thống không thể tính được kết quả cuối cùng do thiếu thông tin về số năm đóng bảo hiểm xã hội.",
-  "plain_answer": "Hệ thống chưa đủ thông tin để tính chính xác vì không có dữ liệu về số năm bạn đã đóng bảo hiểm xã hội. Theo [Điều 28 khoản 1] Luật BHXH 2024, bạn cần kê khai và nộp hồ sơ tham gia bảo hiểm xã hội bắt buộc trong thời hạn 30 ngày kể từ khi thuộc đối tượng tham gia. Bạn vui lòng cung cấp thêm thông tin để mình tính giúp.",
+  "answer": "Issue: Người hỏi muốn biết liệu chủ hộ kinh doanh có phải mua bảo hiểm xã hội bắt buộc từ tháng 1 đến tháng 5 năm 2026 hay không. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 28 khoản 1], người sử dụng lao động có trách nhiệm kê khai và nộp hồ sơ tham gia bảo hiểm xã hội bắt buộc trong thời hạn 30 ngày kể từ ngày người lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc. \nApplication: Không có slot nào được gán giá trị. Prolog query employer_responsibility(user, Responsible, Trace) trả về Responsible = true, cho thấy người sử dụng lao động có trách nhiệm. \nConclusion: Theo Prolog, người sử dụng lao động có trách nhiệm mua bảo hiểm xã hội bắt buộc cho chủ hộ kinh doanh.",
+  "plain_answer": "Theo quy định, chủ hộ kinh doanh có trách nhiệm mua bảo hiểm xã hội bắt buộc từ tháng 1 đến tháng 5 năm 2026, vì theo [Luật BHXH 2024 (41/2024/QH15), Điều 28 khoản 1], người sử dụng lao động phải kê khai và nộp hồ sơ tham gia bảo hiểm xã hội bắt buộc trong thời hạn 30 ngày. Bạn nên thực hiện nghĩa vụ này để đảm bảo quyền lợi cho mình.",
   "citations": [
-    "[Điều 28 khoản 1]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 28 khoản 1]"
   ],
   "citation_ids": [
     "L41_2024.A28.K1"
@@ -17,19 +17,19 @@
   "prolog_success": true,
   "prolog_status": "success",
   "n_repair_rounds": 0,
-  "prolog_trace": "[step(condition,contribution_less_than_required,based_on(source_a141_k12)),step(conclusion,prohibited_acts(user,true),based_on(source_a141_k12))]",
-  "prolog_program": "years_contributed(user, 0).\nlegal_source(source_a28_k1, law_bhxh_2024, article_28, clause_1, none, 'Người sử dụng lao động có trách nhiệm kê khai và nộp hồ sơ tham gia bảo hiểm xã hội bắt buộc của người lao động trong thời hạn 30 ngày kể từ ngày người lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc.').\nlegal_source(source_a141_k12, law_bhxh_2024, article_141, clause_12, none, 'Đối với số tiền bảo hiểm xã hội bắt buộc mà người sử dụng lao động có trách nhiệm đóng nhưng không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.').\nprohibited_acts(Person, Prohibited, Trace) :- years_contributed(Person, Y), Y < 6, Prohibited = true, Trace = [step(condition, contribution_less_than_required, based_on(source_a141_k12)), step(conclusion, prohibited_acts(Person, Prohibited), based_on(source_a141_k12))].",
+  "prolog_trace": "[step(condition,employer_responsibility,based_on(source_a28_k1))]",
+  "prolog_program": "legal_source(source_a28_k1, law_bhxh_2024, article_28, clause_1, none, 'Người sử dụng lao động có trách nhiệm kê khai và nộp hồ sơ tham gia bảo hiểm xã hội bắt buộc của người lao động trong thời hạn 30 ngày kể từ ngày người lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc.').\nlegal_source(source_a141_k12, law_bhxh_2024, article_141, clause_12, none, 'Đối với số tiền bảo hiểm xã hội bắt buộc mà người sử dụng lao động có trách nhiệm đóng nhưng không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.').\nemployer_responsibility(Employer, True, Trace) :- True = true, Trace = [step(condition, employer_responsibility, based_on(source_a28_k1))].\nprohibited_acts(Employer, True, Trace) :- True = true, Trace = [step(condition, prohibited_acts, based_on(source_a141_k12))].",
   "prolog_error": "",
   "irac_sections": {
-    "issue": "Người hỏi muốn biết liệu có phải mua bảo hiểm xã hội bắt buộc cho chủ hộ kinh doanh từ tháng 1 đến tháng 5 năm 2026 hay không.",
-    "rule": "Theo Điều 28 khoản 1 Luật BHXH 2024, người sử dụng lao động có trách nhiệm kê khai và nộp hồ sơ tham gia bảo hiểm xã hội bắt buộc trong thời hạn 30 ngày kể từ ngày người lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc.",
-    "application": "Không có slot nào được gán giá trị. Prolog không thể xác định số năm đóng bảo hiểm xã hội của người dùng, dẫn đến việc không thể đưa ra kết luận.",
-    "conclusion": "Hệ thống không thể tính được kết quả cuối cùng do thiếu thông tin về số năm đóng bảo hiểm xã hội."
+    "issue": "Người hỏi muốn biết liệu chủ hộ kinh doanh có phải mua bảo hiểm xã hội bắt buộc từ tháng 1 đến tháng 5 năm 2026 hay không.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 28 khoản 1], người sử dụng lao động có trách nhiệm kê khai và nộp hồ sơ tham gia bảo hiểm xã hội bắt buộc trong thời hạn 30 ngày kể từ ngày người lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc.",
+    "application": "Không có slot nào được gán giá trị. Prolog query employer_responsibility(user, Responsible, Trace) trả về Responsible = true, cho thấy người sử dụng lao động có trách nhiệm.",
+    "conclusion": "Theo Prolog, người sử dụng lao động có trách nhiệm mua bảo hiểm xã hội bắt buộc cho chủ hộ kinh doanh."
   },
-  "elapsed_s": 23.997,
-  "prompt_tokens": 5697,
-  "completion_tokens": 634,
+  "elapsed_s": 12.012,
+  "prompt_tokens": 5782,
+  "completion_tokens": 626,
   "error": null,
   "gold_answer": "Nếu từ 1/2026 hộ kinh doanh của bạn đã hoạt động và nộp thuế theo phương pháp kê khai, thì chủ hộ thuộc diện tham gia BHXH bắt buộc. Khi từ 6/2026 bạn đồng thời đi làm ở công ty mới, việc đóng BHXH sẽ xác định theo diện ưu tiên luật quy định; không phải lúc nào cũng đóng song song 2 nơi. Bạn nên đối chiếu phương pháp nộp thuế của hộ kinh doanh để xác định chính xác nghĩa vụ từ 1-5/2026.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 2 khoản 1 điểm m; Nghị định 158/2025/NĐ-CP Điều 3"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]\n[Nghị định 158/2025/NĐ-CP, Điều 3]"
 }

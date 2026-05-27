@@ -2,13 +2,13 @@
   "arm": "elite_graphrag_logic",
   "stt": 46,
   "question": "Lúc còn huyện cũ thì mình nộp bhxh ở huyện.Còn bây giờ không còn huyện nữa thì mình nộp ở đâu? ở xã hay là hành chính công?",
-  "answer": "Issue: Người hỏi muốn biết nơi nộp hồ sơ bảo hiểm xã hội khi huyện cũ không còn. \nRule: Theo Điều 130 khoản 5 Luật BHXH 2024, việc giải quyết khiếu nại liên quan đến bảo hiểm xã hội được thực hiện theo quy định của pháp luật. \nApplication: Không có slot nào được gán giá trị. Prolog query trả về Location = 'cơ quan bảo hiểm xã hội'. \nConclusion: Theo Prolog, bạn nên nộp hồ sơ tại cơ quan bảo hiểm xã hội.",
-  "plain_answer": "Bạn nên nộp hồ sơ bảo hiểm xã hội tại cơ quan bảo hiểm xã hội. Theo [Điều 130 khoản 5] Luật BHXH 2024, việc giải quyết các vấn đề liên quan đến bảo hiểm xã hội được thực hiện tại cơ quan này. Nếu cần thêm thông tin, bạn có thể liên hệ trực tiếp với cơ quan bảo hiểm xã hội địa phương.",
+  "answer": "Issue: Người hỏi muốn biết nộp hồ sơ bảo hiểm xã hội ở đâu khi huyện cũ không còn nữa.\nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 92 khoản 1], việc nộp hồ sơ bảo hiểm xã hội phải được thực hiện tại cơ quan bảo hiểm xã hội.\nApplication: Không có slot nào được gán giá trị. Prolog query trả về Location = 'cơ quan bảo hiểm xã hội' cho biết nơi nộp hồ sơ.\nConclusion: Theo Prolog, bạn cần nộp hồ sơ tại cơ quan bảo hiểm xã hội.",
+  "plain_answer": "Bạn nên nộp hồ sơ bảo hiểm xã hội tại cơ quan bảo hiểm xã hội. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 92 khoản 1], đây là nơi tiếp nhận hồ sơ của bạn. Nếu cần thêm thông tin, bạn có thể liên hệ trực tiếp với cơ quan bảo hiểm xã hội để được hướng dẫn cụ thể.",
   "citations": [
-    "[Điều 130 khoản 5]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 92 khoản 1]"
   ],
   "citation_ids": [
-    "L41_2024.A130.K5"
+    "L41_2024.A92.K1"
   ],
   "citation_indices": [
     0
@@ -17,18 +17,18 @@
   "prolog_status": "success",
   "n_repair_rounds": 1,
   "prolog_trace": "[step(condition,where_to_submit_location,based_on(source_a130_k5))]",
-  "prolog_program": "legal_source(source_a130_k5, law_bhxh_2024, article_130, clause_5, none, 'Việc giải quyết khiếu nại đối với quyết định, hành vi có liên quan đến việc thụ hưởng các chế độ bảo hiểm xã hội được thực hiện theo quy định của pháp luật.').\nwhere_to_submit(Location, Trace) :- Location = 'cơ quan bảo hiểm xã hội', Trace = [step(condition, where_to_submit_location, based_on(source_a130_k5))].",
+  "prolog_program": "legal_source(source_a130_k5, law_bhxh_2024, article_130, clause_5, none, 'Việc giải quyết khiếu nại đối với quyết định, hành vi có liên quan đến việc thụ hưởng các chế độ bảo hiểm xã hội được thực hiện theo quy định.').\nwhere_to_submit(Location, Trace) :- Location = 'cơ quan bảo hiểm xã hội', Trace = [step(condition, where_to_submit_location, based_on(source_a130_k5))].",
   "prolog_error": "",
   "irac_sections": {
-    "issue": "Người hỏi muốn biết nơi nộp hồ sơ bảo hiểm xã hội khi huyện cũ không còn.",
-    "rule": "Theo Điều 130 khoản 5 Luật BHXH 2024, việc giải quyết khiếu nại liên quan đến bảo hiểm xã hội được thực hiện theo quy định của pháp luật.",
-    "application": "Không có slot nào được gán giá trị. Prolog query trả về Location = 'cơ quan bảo hiểm xã hội'.",
-    "conclusion": "Theo Prolog, bạn nên nộp hồ sơ tại cơ quan bảo hiểm xã hội."
+    "issue": "Người hỏi muốn biết nộp hồ sơ bảo hiểm xã hội ở đâu khi huyện cũ không còn nữa.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 92 khoản 1], việc nộp hồ sơ bảo hiểm xã hội phải được thực hiện tại cơ quan bảo hiểm xã hội.",
+    "application": "Không có slot nào được gán giá trị. Prolog query trả về Location = 'cơ quan bảo hiểm xã hội' cho biết nơi nộp hồ sơ.",
+    "conclusion": "Theo Prolog, bạn cần nộp hồ sơ tại cơ quan bảo hiểm xã hội."
   },
-  "elapsed_s": 15.486,
-  "prompt_tokens": 8194,
-  "completion_tokens": 460,
+  "elapsed_s": 9.961,
+  "prompt_tokens": 8292,
+  "completion_tokens": 473,
   "error": null,
   "gold_answer": "Sau khi thay đổi mô hình tổ chức hành chính, hồ sơ BHXH thường nộp tại cơ quan BHXH khu vực/cơ quan được phân công tiếp nhận hoặc Trung tâm phục vụ hành chính công, không phải xã nào cũng trực tiếp thu hồ sơ. Bạn nên tra cứu nơi tiếp nhận mới tại địa phương hoặc gọi cơ quan BHXH gần nhất để tránh đi sai nơi. Nguyên tắc là cơ quan BHXH nơi cư trú vẫn có trách nhiệm hướng dẫn, tiếp nhận hoặc chỉ dẫn nơi nộp đúng.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 25; quy định tổ chức thực hiện của BHXH Việt Nam"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 25]"
 }

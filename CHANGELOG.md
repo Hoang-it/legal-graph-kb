@@ -8,7 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- _(record forthcoming changes here)_
+- Academic metrics pipeline:
+  `experiments.compute_academic_metrics`, strict `gold_citations_raw` validation,
+  shared citation registry, citation recall/precision/F1, citation display rate,
+  latency, BERTScore, and Prolog reliability.
+
+### Changed
+- Main experiment evaluation now uses only academic metrics. Legacy judge-based
+  metrics and their generated reports/data artifacts were removed from the main
+  workflow.
 
 ## [0.1.0] — 2026-05-25
 
@@ -34,13 +42,11 @@ Initial public release.
 - **CLI**: `src/chat.py` interactive REPL with `/sources`, `/verify`, `/save`,
   rich-formatted output (`scripts/chat.ps1` wrapper for UTF-8 on Windows).
 - **Eval framework** (`experiments/`): GraphRAG vs LLM-only on 200 BHXH
-  questions, 6 metrics (Faithfulness, Answer Relevance, Citation P/R,
-  Hallucination, BERTScore, LLM-as-Judge) with peer-reviewed paper refs.
+  questions with generated per-question results for later metric computation.
 - **Tests**: 95 unit/integration tests covering provenance integrity
   (byte-for-byte source verification, dst-must-exist, reverse-DB lookups).
 - **Docs**: `README.md`, `docs/neo4j-setup.md`, `prompts/extract_v1.md`,
-  `experiments/README.md`, `reports/extraction_summary.md`,
-  `reports/experiment_report.md`.
+  `experiments/README.md`, `reports/extraction_summary.md`.
 
 ### Security
 - `.env` excluded via `.gitignore` since first commit; `.env.example`

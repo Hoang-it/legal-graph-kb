@@ -1,6 +1,6 @@
 """LLM-only baseline pipeline (no RAG, no graph).
 
-Cùng SYSTEM prompt yêu cầu citation [Điều X khoản Y] như GraphRAG, NHƯNG
+Cùng SYSTEM prompt yêu cầu citation inline rõ authority như GraphRAG, NHƯNG
 KHÔNG inject context retrieved. Model phải trả lời dựa trên training data
 của mình.
 
@@ -10,11 +10,12 @@ Format response giống RagAnswer để dễ so sánh.
 from __future__ import annotations
 
 import os
-import re
 import time
 from dataclasses import dataclass, field
 
 from dotenv import load_dotenv
+
+from src.citations import format_citation, parse_displayed_citations
 
 load_dotenv()
 if not (os.environ.get("OPENAI_BASE_URL") or "").strip():
@@ -23,13 +24,13 @@ if not (os.environ.get("OPENAI_BASE_URL") or "").strip():
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 
 
-# Prompt KHÔNG nhắc tới CONTEXT (vì không có). Vẫn yêu cầu citation [Điều X khoản Y].
+# Prompt KHÔNG nhắc tới CONTEXT (vì không có). Vẫn yêu cầu citation canonical.
 # Mục tiêu: fair comparison — cả 2 arm đều output cùng format.
 SYSTEM_PROMPT_LLM_ONLY = """Bạn là trợ lý pháp lý chuyên về Luật Bảo hiểm xã hội Việt Nam.
 
 QUY TẮC:
 1. Trả lời câu hỏi bằng tiếng Việt.
-2. Mọi khẳng định pháp lý PHẢI kèm citation dạng `[Điều X khoản Y]` hoặc `[Điều X khoản Y điểm z]` chỉ tới Luật Bảo hiểm xã hội số 41/2024/QH15.
+2. Mọi khẳng định pháp lý PHẢI kèm citation inline ngay sau claim liên quan, theo format canonical `[Luật BHXH 2024 (41/2024/QH15), Điều X khoản Y]` hoặc `[Luật BHXH 2024 (41/2024/QH15), Điều X khoản Y điểm z]`. KHÔNG dùng citation mơ hồ như `[Điều X]` nếu thiếu tên văn bản.
 3. Nếu không chắc chắn về quy định nào, hãy nói rõ "tôi không có đủ thông tin chính xác để trả lời câu hỏi này".
 4. KHÔNG bịa số liệu, ngày tháng, mức tiền.
 5. Ngắn gọn nhưng đầy đủ.
@@ -47,21 +48,10 @@ class LlmOnlyAnswer:
     completion_tokens: int = 0
 
 
-_CITATION_PAT = re.compile(r"\[Điều\s+(\d+)(?:\s+khoản\s+(\d+))?(?:\s+điểm\s+([a-zđ]))?\]")
-
-
 def _parse_citations(answer: str) -> tuple[list[str], list[str]]:
-    citations: list[str] = []
-    ids: list[str] = []
-    for m in _CITATION_PAT.finditer(answer):
-        citations.append(m.group(0))
-        art, cl, pt = m.group(1), m.group(2), m.group(3)
-        cid = f"L41_2024.A{art}"
-        if cl:
-            cid += f".K{cl}"
-            if pt:
-                cid += f".{pt}"
-        ids.append(cid)
+    refs = parse_displayed_citations(answer)
+    citations = [format_citation(ref) for ref in refs]
+    ids = [ref.item_id for ref in refs]
     return list(dict.fromkeys(citations)), list(dict.fromkeys(ids))
 
 

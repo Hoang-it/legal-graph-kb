@@ -2,32 +2,36 @@
   "arm": "elite_graphrag",
   "stt": 21,
   "question": "Ông Quang Lành (Tây Ninh) hỏi, các đối tượng hưởng trợ cấp BHXH hằng tháng gồm những đối tượng nào để xác định không được hưởng trợ cấp hưu trí xã hội?",
-  "answer": "Issue: Ông Quang Lành (Tây Ninh) hỏi về các đối tượng hưởng trợ cấp BHXH hằng tháng và cách xác định những đối tượng không được hưởng trợ cấp hưu trí xã hội.\n\nRule: \"Công dân Việt Nam đủ tuổi nghỉ hưu có thời gian đóng bảo hiểm xã hội nhưng không đủ điều kiện hưởng lương hưu theo quy định của pháp luật và chưa đủ điều kiện hưởng trợ cấp hưu trí xã hội theo quy định tại Điều 21 của Luật này, nếu không hưởng bảo hiểm xã hội một lần và không bảo lưu mà có yêu cầu thì được hưởng trợ cấp hằng tháng từ chính khoản đóng của mình theo quy định tại khoản 2 Điều này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 23, Khoản 1)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog đã thực hiện truy vấn để xác định các điều kiện cho những người hưởng trợ cấp BHXH hằng tháng, nhưng không có thông tin cụ thể nào được cung cấp.\n\nConclusion: Hệ thống không thể tính toán giá trị cuối cùng vì không có giá trị nào được gán cho các slot.",
+  "answer": "Issue: Ông Quang Lành hỏi về các đối tượng hưởng trợ cấp BHXH hằng tháng để xác định không được hưởng trợ cấp hưu trí xã hội. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 23 khoản 1], công dân Việt Nam đủ tuổi nghỉ hưu có thời gian đóng bảo hiểm xã hội nhưng không đủ điều kiện hưởng lương hưu và chưa đủ điều kiện hưởng trợ cấp hưu trí xã hội thì được hưởng trợ cấp hằng tháng. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 86 khoản 3], không áp dụng trợ cấp tuất hằng tháng đối với những người đang hưởng lương hưu hoặc trợ cấp hằng tháng mà mức hưởng bằng hoặc cao hơn mức tham chiếu. \nApplication: Hệ thống đã xác định các đối tượng không được hưởng trợ cấp hưu trí xã hội là: công dân đủ tuổi nghỉ hưu nhưng không đủ điều kiện hưởng lương hưu, những người đang nhận trợ cấp mất sức lao động hằng tháng, và những người đang nhận lương hưu. Prolog đã sử dụng các thông tin này để đưa ra kết luận. \nConclusion: Theo Prolog, các đối tượng không được hưởng trợ cấp hưu trí xã hội gồm: công dân đủ tuổi nghỉ hưu và không đủ điều kiện hưởng lương hưu, những người nhận trợ cấp mất sức lao động, và những người nhận lương hưu.",
+  "plain_answer": "Các đối tượng không được hưởng trợ cấp hưu trí xã hội bao gồm công dân đủ tuổi nghỉ hưu nhưng không đủ điều kiện hưởng lương hưu, những người đang nhận trợ cấp mất sức lao động hằng tháng, và những người đang nhận lương hưu. Điều này được quy định trong [Luật BHXH 2024 (41/2024/QH15), Điều 23 khoản 1] và [Điều 86 khoản 3]. Nếu bạn cần thêm thông tin chi tiết, hãy cho mình biết nhé!",
   "citations": [
-    "[Điều 21]",
-    "[Điều 23 khoản 1]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 23 khoản 1]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 86 khoản 3]"
   ],
   "citation_ids": [
-    "L41_2024.A21",
-    "L41_2024.A23.K1"
+    "L41_2024.A23.K1",
+    "L41_2024.A86.K3"
   ],
   "citation_indices": [
-    0
+    0,
+    1
   ],
   "prolog_success": true,
   "prolog_status": "success",
   "n_repair_rounds": 0,
-  "prolog_trace": "[step(conclusion,monthly_social_insurance_beneficiaries([citizens_eligible_for_monthly_benefits,citizens_not_eligible_for_retirement_pension]),based_on(source_c000))]",
+  "prolog_trace": "[step(conclusion,social_insurance_recipients([citizens_with_retirement_age_and_insufficient_contributions,those_receiving_disability_benefits,those_receiving_monthly_pension_benefits]),based_on(source_c000)),step(conclusion,social_insurance_recipients([citizens_with_retirement_age_and_insufficient_contributions,those_receiving_disability_benefits,those_receiving_monthly_pension_benefits]),based_on(source_c001))]",
+  "prolog_program": "legal_source(source_c000, law_bhxh_2024, article_21, clause_1, none, 'Công dân Việt Nam đủ tuổi nghỉ hưu có thời gian đóng bảo hiểm xã hội nhưng không đủ điều kiện hưởng lương hưu theo quy định của pháp luật và chưa đủ điều kiện hưởng trợ cấp hưu trí xã hội theo quy định tại Điều 21 của Luật này, nếu không hưởng bảo hiểm xã hội một lần và không bảo lưu mà có yêu cầu thì được hưởng trợ cấp hằng tháng từ chính khoản đóng của mình theo quy định tại khoản 2 Điều này.').\nlegal_source(source_c001, law_bhxh_2024, article_86, clause_3, none, 'Không áp dụng trợ cấp tuất hằng tháng đối với thân nhân quy định tại các điểm b, c, d và đ khoản 2 Điều này là người đang hưởng tiền lương và tham gia bảo hiểm xã hội bắt buộc hoặc đang hưởng lương hưu, trợ cấp mất sức lao động hằng tháng, trợ cấp hằng tháng mà mức hưởng bằng hoặc cao hơn mức tham chiếu, không bao gồm khoản trợ cấp theo quy định của pháp luật về ưu đãi người có công với cách mạng.').\nsocial_insurance_recipients(Conditions, Trace) :- Conditions = [citizens_with_retirement_age_and_insufficient_contributions, those_receiving_disability_benefits, those_receiving_monthly_pension_benefits], Trace = [step(conclusion, social_insurance_recipients(Conditions), based_on(source_c000)), step(conclusion, social_insurance_recipients(Conditions), based_on(source_c001))].",
+  "prolog_error": "",
   "irac_sections": {
-    "issue": "Ông Quang Lành (Tây Ninh) hỏi về các đối tượng hưởng trợ cấp BHXH hằng tháng và cách xác định những đối tượng không được hưởng trợ cấp hưu trí xã hội.",
-    "rule": "\"Công dân Việt Nam đủ tuổi nghỉ hưu có thời gian đóng bảo hiểm xã hội nhưng không đủ điều kiện hưởng lương hưu theo quy định của pháp luật và chưa đủ điều kiện hưởng trợ cấp hưu trí xã hội theo quy định tại Điều 21 của Luật này, nếu không hưởng bảo hiểm xã hội một lần và không bảo lưu mà có yêu cầu thì được hưởng trợ cấp hằng tháng từ chính khoản đóng của mình theo quy định tại khoản 2 Điều này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 23, Khoản 1)",
-    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog đã thực hiện truy vấn để xác định các điều kiện cho những người hưởng trợ cấp BHXH hằng tháng, nhưng không có thông tin cụ thể nào được cung cấp.",
-    "conclusion": "Hệ thống không thể tính toán giá trị cuối cùng vì không có giá trị nào được gán cho các slot."
+    "issue": "Ông Quang Lành hỏi về các đối tượng hưởng trợ cấp BHXH hằng tháng để xác định không được hưởng trợ cấp hưu trí xã hội.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 23 khoản 1], công dân Việt Nam đủ tuổi nghỉ hưu có thời gian đóng bảo hiểm xã hội nhưng không đủ điều kiện hưởng lương hưu và chưa đủ điều kiện hưởng trợ cấp hưu trí xã hội thì được hưởng trợ cấp hằng tháng. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 86 khoản 3], không áp dụng trợ cấp tuất hằng tháng đối với những người đang hưởng lương hưu hoặc trợ cấp hằng tháng mà mức hưởng bằng hoặc cao hơn mức tham chiếu.",
+    "application": "Hệ thống đã xác định các đối tượng không được hưởng trợ cấp hưu trí xã hội là: công dân đủ tuổi nghỉ hưu nhưng không đủ điều kiện hưởng lương hưu, những người đang nhận trợ cấp mất sức lao động hằng tháng, và những người đang nhận lương hưu. Prolog đã sử dụng các thông tin này để đưa ra kết luận.",
+    "conclusion": "Theo Prolog, các đối tượng không được hưởng trợ cấp hưu trí xã hội gồm: công dân đủ tuổi nghỉ hưu và không đủ điều kiện hưởng lương hưu, những người nhận trợ cấp mất sức lao động, và những người nhận lương hưu."
   },
-  "elapsed_s": 9.75,
-  "prompt_tokens": 3166,
-  "completion_tokens": 527,
+  "elapsed_s": 19.759,
+  "prompt_tokens": 4402,
+  "completion_tokens": 878,
   "error": null,
   "gold_answer": "Các đối tượng hưởng trợ cấp BHXH hằng tháng bao gồm:\n- Trợ cấp mất sức lao động;\n- Trợ cấp tai nạn lao động, bệnh nghề nghiệp;\n- Trợ cấp tuất;…\nĐây là những đối tượng không được hưởng trợ cấp hưu trí xã hội.",
-  "gold_citations_raw": null
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 21]"
 }

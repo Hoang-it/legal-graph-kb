@@ -2,28 +2,34 @@
   "arm": "elite_graphrag",
   "stt": 39,
   "question": "Mình ngưng đóng bảo hiểm xã hội từ 2017 đến bây giờ là năm 2026 rồi. Liệu mình có đi thanh toán bhxh đc k ạ?",
-  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpyjpygo9w.pl:2:910: Syntax error: Operator expected]",
+  "answer": "Issue: Người hỏi đã ngưng đóng bảo hiểm xã hội từ năm 2017 và hỏi liệu có thể thanh toán bảo hiểm xã hội không.\nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 33 khoản 7], người lao động có thể đóng tiếp một lần cho số tháng còn thiếu nếu thời gian đóng bảo hiểm xã hội còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng.\nApplication: Không có slot nào được gán giá trị. Prolog query trả về kết quả là có thể thanh toán bảo hiểm xã hội với giá trị Answer = yes.\nConclusion: Theo Prolog, người dùng CÓ thể thanh toán bảo hiểm xã hội.",
+  "plain_answer": "Bạn có thể thanh toán bảo hiểm xã hội theo quy định vì bạn đã ngưng đóng từ năm 2017. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 33 khoản 7], nếu thời gian đóng còn thiếu không quá 06 tháng, bạn có thể đóng tiếp để đủ điều kiện hưởng lương hưu hoặc trợ cấp. Hãy kiểm tra thêm thông tin cụ thể để thực hiện nhé!",
   "citations": [
-    "[Điều 33 khoản 7]",
-    "[Điều 106 khoản 2]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 33 khoản 7]"
   ],
   "citation_ids": [
-    "L41_2024.A33.K7",
-    "L41_2024.A106.K2"
+    "L41_2024.A33.K7"
   ],
   "citation_indices": [
     0,
-    2
+    1
   ],
-  "prolog_success": false,
-  "prolog_status": "syntax_error",
-  "n_repair_rounds": 2,
-  "prolog_trace": "",
-  "irac_sections": {},
-  "elapsed_s": 21.43,
-  "prompt_tokens": 7349,
-  "completion_tokens": 1266,
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,can_pay_social_insurance(user,yes),based_on(source_c002))]",
+  "prolog_program": "years_contributed(user, 9).\nlegal_source(source_c002, law_bhxh_2024, article_33, clause_7, none, 'Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất.').\nlegal_source(source_c002, law_bhxh_2024, article_106, clause_2, none, 'Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.').\ncan_pay_social_insurance(User, Answer, Trace) :- years_contributed(User, Years), Years < 10, Answer = yes, Trace = [step(conclusion, can_pay_social_insurance(User, Answer), based_on(source_c002))].\ncan_pay_social_insurance(User, Answer, Trace) :- years_contributed(User, Years), Years >= 10, Answer = yes, Trace = [step(conclusion, can_pay_social_insurance(User, Answer), based_on(source_c002))].\ncan_pay_social_insurance(User, Answer, Trace) :- years_contributed(User, Years), Years < 0, Answer = no, Trace = [step(conclusion, can_pay_social_insurance(User, Answer), based_on(source_c002))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi đã ngưng đóng bảo hiểm xã hội từ năm 2017 và hỏi liệu có thể thanh toán bảo hiểm xã hội không.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 33 khoản 7], người lao động có thể đóng tiếp một lần cho số tháng còn thiếu nếu thời gian đóng bảo hiểm xã hội còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng.",
+    "application": "Không có slot nào được gán giá trị. Prolog query trả về kết quả là có thể thanh toán bảo hiểm xã hội với giá trị Answer = yes.",
+    "conclusion": "Theo Prolog, người dùng CÓ thể thanh toán bảo hiểm xã hội."
+  },
+  "elapsed_s": 15.941,
+  "prompt_tokens": 4252,
+  "completion_tokens": 745,
   "error": null,
   "gold_answer": "Nếu bạn đã ngừng đóng từ năm 2017 đến nay và không tiếp tục tham gia BHXH, thì thường có thể làm thủ tục hưởng BHXH một lần nếu thuộc trường hợp luật cho phép, nhất là đã ngừng tham gia từ đủ 12 tháng trở lên mà chưa đủ thời gian hưởng lương hưu. Nếu không rút một lần, bạn cũng có thể bảo lưu thời gian đã đóng để sau này tham gia tiếp hoặc chuyển sang BHXH tự nguyện.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 102]\n[Luật BHXH 2024 (41/2024/QH15), Điều 110]"
 }

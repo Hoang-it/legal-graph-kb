@@ -5,20 +5,22 @@
   "answer": "[Pipeline không trả về kết luận. prolog_status=derived_false, repair_rounds=2, error=Prolog produced no solutions]",
   "plain_answer": "",
   "citations": [
-    "[Điều 41 khoản 9]",
-    "[Điều 41 khoản 5]",
-    "[Điều 41 khoản 101]",
-    "[Điều 41 khoản 36]",
-    "[Điều 41 khoản 65]",
-    "[Điều 41 khoản 23]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 9]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 5 khoản 3]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 101 khoản 2]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 101 khoản 3]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 36 khoản 1]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 65 khoản 2]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 23 khoản 1]"
   ],
   "citation_ids": [
-    "L41_2024.A41.K9",
-    "L41_2024.A41.K5",
-    "L41_2024.A41.K101",
-    "L41_2024.A41.K36",
-    "L41_2024.A41.K65",
-    "L41_2024.A41.K23"
+    "L41_2024.A141.K9",
+    "L41_2024.A5.K3",
+    "L41_2024.A101.K2",
+    "L41_2024.A101.K3",
+    "L41_2024.A36.K1",
+    "L41_2024.A65.K2",
+    "L41_2024.A23.K1"
   ],
   "citation_indices": [
     0,
@@ -33,13 +35,13 @@
   "prolog_status": "derived_false",
   "n_repair_rounds": 2,
   "prolog_trace": "",
-  "prolog_program": "years_contributed(user, 17).\nmonths_contributed(user, 10).\ndisability_percentage(user, 71).\nage(user, 55).\nlegal_source(source_a141_k9, law_bhxh_2024, article_41, clause_9, none, 'Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.').\nlegal_source(source_a5_k3, law_bhxh_2024, article_41, clause_5, none, 'Điều kiện hưởng chế độ trợ cấp hằng tháng, hưu trí và tử tuất.').\nlegal_source(source_a101_k2, law_bhxh_2024, article_41, clause_101, none, 'Thời điểm hưởng lương hưu.').\nlegal_source(source_a101_k3, law_bhxh_2024, article_41, clause_101, none, 'Thời điểm hưởng lương hưu.').\nlegal_source(source_a36_k1, law_bhxh_2024, article_41, clause_36, none, 'Đối tượng quy định tại khoản 4 Điều 2 của Luật này, hằng tháng đóng bằng 22% mức thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện vào quỹ hưu trí và tử tuất.').\nlegal_source(source_a65_k2, law_bhxh_2024, article_41, clause_65, none, 'Điều kiện hưởng lương hưu với mức thấp hơn.').\nlegal_source(source_a23_k1, law_bhxh_2024, article_41, clause_23, none, 'Điều kiện hưởng trợ cấp hằng tháng.').\neligible_pension(Person, Eligible, Trace) :- years_contributed(Person, Y), months_contributed(Person, M), Y + M / 12 >= 20, disability_percentage(Person, D), D >= 61, Eligible = true, Trace = [step(condition, years_contributed_at_least_20, based_on(source_a65_k2)), step(condition, disability_percentage_at_least_61, based_on(source_a65_k2)), step(conclusion, eligible_pension(Person, Eligible), based_on(source_a65_k2))].\neligible_monthly_benefit(Person, Eligible, Trace) :- age(Person, A), years_contributed(Person, Y), Y < 20, A >= 55, Eligible = true, Trace = [step(condition, age_at_least_55, based_on(source_a23_k1)), step(condition, years_contributed_less_than_20, based_on(source_a23_k1)), step(conclusion, eligible_monthly_benefit(Person, Eligible), based_on(source_a23_k1))].",
+  "prolog_program": "years_contributed(user, 17).\nmonths_contributed(user, 10).\nage(user, 55).\ndisability_percentage(user, 71).\nlegal_source(source_a141_k9, law_bhxh_2024, article_141, clause_9, none, 'Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ.').\nlegal_source(source_a5_k3, law_bhxh_2024, article_5, clause_3, none, 'Người vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện được hưởng chế độ trợ cấp hằng tháng, chế độ hưu trí và chế độ tử tuất trên cơ sở thời gian đã đóng bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện.').\nlegal_source(source_a101_k2, law_bhxh_2024, article_101, clause_2, none, 'Thời điểm hưởng lương hưu là ngày đầu tiên của tháng liền kề sau tháng dừng đóng và có yêu cầu hưởng lương hưu.').\nlegal_source(source_a101_k3, law_bhxh_2024, article_101, clause_3, none, 'Thời điểm hưởng lương hưu là ngày đầu tiên của tháng liền kề sau tháng đóng đủ số tiền cho những năm còn thiếu.').\nlegal_source(source_a36_k1, law_bhxh_2024, article_36, clause_1, none, 'Hằng tháng đóng bằng 22% mức thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện vào quỹ hưu trí và tử tuất.').\nlegal_source(source_a65_k2, law_bhxh_2024, article_65, clause_2, none, 'Đối tượng khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 20 năm trở lên, bị suy giảm khả năng lao động từ 61% trở lên thì được hưởng lương hưu với mức thấp hơn.').\nlegal_source(source_a23_k1, law_bhxh_2024, article_23, clause_1, none, 'Công dân Việt Nam đủ tuổi nghỉ hưu có thời gian đóng bảo hiểm xã hội nhưng không đủ điều kiện hưởng lương hưu theo quy định của pháp luật và chưa đủ điều kiện hưởng trợ cấp hưu trí xã hội thì được hưởng trợ cấp hằng tháng.').\neligible_pension(Person, Eligible, Trace) :- years_contributed(Person, Y), months_contributed(Person, M), Y + M / 12 >= 15, age(Person, A), A >= 62, Eligible = true, Trace = [step(condition, years_contributed_at_least_15, based_on(source_a141_k9)), step(condition, age_at_retirement, based_on(source_a141_k9)), step(conclusion, eligible_pension(Person, Eligible), based_on(source_a141_k9))].\neligible_pension(Person, Eligible, Trace) :- years_contributed(Person, Y), months_contributed(Person, M), Y + M / 12 >= 20, disability_percentage(Person, D), D >= 61, Eligible = true, Trace = [step(condition, years_contributed_at_least_20, based_on(source_a65_k2)), step(condition, disability_percentage_criteria, based_on(source_a65_k2)), step(conclusion, eligible_pension(Person, Eligible), based_on(source_a65_k2))].\neligible_pension(Person, Eligible, Trace) :- years_contributed(Person, Y), months_contributed(Person, M), Y + M / 12 < 15, Eligible = false, Trace = [step(condition, insufficient_years_contributed, based_on(source_a141_k9)), step(conclusion, eligible_pension(Person, Eligible), based_on(source_a141_k9))].\neligible_one_time(Person, Eligible, Trace) :- eligible_pension(Person, false, _), years_contributed(Person, Y), months_contributed(Person, M), Y + M / 12 < 20, Eligible = true, Trace = [step(condition, eligible_for_one_time_benefit, based_on(source_a23_k1)), step(conclusion, eligible_one_time(Person, Eligible), based_on(source_a23_k1))].",
   "prolog_error": "Prolog produced no solutions",
   "irac_sections": {},
-  "elapsed_s": 164.558,
-  "prompt_tokens": 14190,
-  "completion_tokens": 2592,
+  "elapsed_s": 39.122,
+  "prompt_tokens": 15406,
+  "completion_tokens": 3500,
   "error": null,
   "gold_answer": "Căn cứ điểm b khoản 2 Điều 11 Nghị định số 159/2025/NĐ-CP quy định về điều kiện hưởng lương hưu:\n\"Trường hợp người tham gia bảo hiểm xã hội tự nguyện có từ đủ 20 năm đóng bảo hiểm xã hội bắt buộc trở lên mà bị suy giảm khả năng lao động từ 61% trở lên thì điều kiện về tuổi đời hưởng lương hưu được thực hiện theo quy định tại Điều 65 của Luật Bảo hiểm xã hội\".\nĐối chiếu với quy định trên, ông sinh ngày 25/02/1968, thời gian tham gia BHXH bắt buộc là 17 năm 10 tháng, ông không đủ điều kiện hưởng chế độ hưu trí. Ông có thể tiếp tục tham gia BHXH tự nguyện để hưởng mức lương hưu cao hơn hoặc bảo lưu thời gian tham gia cho đến khi đủ tuổi nghỉ hưu theo quy định tại khoản 1 Điều 64 Luật BHXH 2024.\nTrường hợp ông không còn tham gia BHXH, sau 12 tháng nếu không tiếp tục đóng BHXH bắt buộc hoặc không tham gia BHXH tự nguyện thì ông có thể liên hệ BHXH cơ sở làm thủ tục hưởng BHXH một lần.",
-  "gold_citations_raw": "điểm b khoản 2 Điều 11 Nghị định số 159/2025/NĐ-CP"
+  "gold_citations_raw": "[Nghị định 159/2025/NĐ-CP, Điều 11]"
 }

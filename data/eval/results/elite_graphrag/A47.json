@@ -2,34 +2,33 @@
   "arm": "elite_graphrag",
   "stt": 47,
   "question": "Mình vừa được thăng chức, tăng lương xong mấy ngày thì biết tin có bầu. Mình đã đóng bảo hiểm được 5 năm. Thời gian tăng lương đến khi nghỉ thai sản đúng 6 tháng trước sinh ( tăng hơn 1 triệu ) . Giờ mình xin nghỉ thai sản trước 2 tháng và nghỉ việc luôn thì có bị thanh tra không? Mình có đầy đủ quyết định điều chỉnh lương , bảng lương, quyết định bổ nhiệm nhưng nhận quyết định qua mail k có bản dấu đỏ thì khi thanh tra có được chấp nhận không?",
-  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpmw0ydje2.pl:2:969: Syntax error: Operator expected]",
+  "answer": "Issue: Người hỏi muốn biết việc nghỉ thai sản trước 2 tháng và nghỉ việc có bị thanh tra không, cũng như tính hợp lệ của quyết định điều chỉnh lương nhận qua email. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 50 khoản 4], người lao động chấm dứt hợp đồng trước thời điểm sinh con vẫn được hưởng chế độ thai sản. \nApplication: Không có slot nào được gán giá trị, nhưng Prolog đã xác định rằng người hỏi đủ điều kiện hưởng chế độ thai sản. Prolog trả về Conditions = [eligible_for_maternity_leave]. \nConclusion: Theo Prolog, người dùng đủ điều kiện hưởng chế độ thai sản, nhưng không có thông tin về việc có bị thanh tra hay không.",
+  "plain_answer": "Bạn đủ điều kiện hưởng chế độ thai sản theo [Luật BHXH 2024 (41/2024/QH15), Điều 50 khoản 4] dù có nghỉ việc trước sinh. Tuy nhiên, mình không có thông tin rõ ràng về việc có bị thanh tra hay không. Về quyết định điều chỉnh lương nhận qua email, bạn nên kiểm tra với cơ quan để biết liệu nó có được chấp nhận hay không.",
   "citations": [
-    "[Điều 50 khoản 4]",
-    "[Điều 55 khoản 1]",
-    "[Điều 59 khoản 1]",
-    "[Điều 53 khoản 8]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 50 khoản 4]"
   ],
   "citation_ids": [
-    "L41_2024.A50.K4",
-    "L41_2024.A55.K1",
-    "L41_2024.A59.K1",
-    "L41_2024.A53.K8"
+    "L41_2024.A50.K4"
   ],
   "citation_indices": [
-    0,
-    1,
-    2,
-    3
+    0
   ],
-  "prolog_success": false,
-  "prolog_status": "syntax_error",
-  "n_repair_rounds": 2,
-  "prolog_trace": "",
-  "irac_sections": {},
-  "elapsed_s": 41.673,
-  "prompt_tokens": 9814,
-  "completion_tokens": 2287,
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,maternity_leave_conditions([eligible_for_maternity_leave]),based_on(source_c000))]",
+  "prolog_program": "years_contributed(user, 5).\nlegal_source(source_c000, law_bhxh_2024, article_50, clause_4, none, 'Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con hoặc nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 06 tháng tuổi thì vẫn được hưởng chế độ thai sản theo quy định tại các điều 53, 54, 55 và 56 và các khoản 1, 2 và 3 Điều 58 của Luật này. Thời gian hưởng chế độ thai sản không được tính là thời gian đóng bảo hiểm xã hội.').\nmaternity_leave_conditions(Conditions, Trace) :- Conditions = [eligible_for_maternity_leave], Trace = [step(conclusion, maternity_leave_conditions(Conditions), based_on(source_c000))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết việc nghỉ thai sản trước 2 tháng và nghỉ việc có bị thanh tra không, cũng như tính hợp lệ của quyết định điều chỉnh lương nhận qua email.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 50 khoản 4], người lao động chấm dứt hợp đồng trước thời điểm sinh con vẫn được hưởng chế độ thai sản.",
+    "application": "Không có slot nào được gán giá trị, nhưng Prolog đã xác định rằng người hỏi đủ điều kiện hưởng chế độ thai sản. Prolog trả về Conditions = [eligible_for_maternity_leave].",
+    "conclusion": "Theo Prolog, người dùng đủ điều kiện hưởng chế độ thai sản, nhưng không có thông tin về việc có bị thanh tra hay không."
+  },
+  "elapsed_s": 15.537,
+  "prompt_tokens": 4459,
+  "completion_tokens": 590,
   "error": null,
   "gold_answer": "Việc tăng lương rồi sau đó nghỉ thai sản không mặc nhiên bị thanh tra hay bị từ chối chế độ. Cơ quan BHXH chỉ kiểm tra khi nghi ngờ việc tăng lương không có căn cứ thực tế, không đúng quy chế hoặc đóng BHXH không đúng bản chất quan hệ lao động. Nếu bạn có quyết định điều chỉnh lương, bổ nhiệm, bảng lương, chứng từ trả lương và việc tăng lương là thật, đúng quy trình thì thường vẫn được chấp nhận. Văn bản điện tử hợp lệ không bắt buộc phải có bản dấu đỏ giấy.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 53; Bộ luật Lao động 2019 Điều 90, Điều 94; Luật Giao dịch điện tử 2023"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 53]\n[Bộ luật Lao động 2019, Điều 90]\n[Bộ luật Lao động 2019, Điều 94]"
 }

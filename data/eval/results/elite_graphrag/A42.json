@@ -2,15 +2,12 @@
   "arm": "elite_graphrag",
   "stt": 42,
   "question": "Trường hợp chủ hộ kinh doanh, đăng ký kinh doanh từ t12/2025 nhưng bắt đầu kinh doanh và kê khai thuế là t1/2026. \nHiện đang đóng bhyt phường. Tình hình kinh doanh kém nên e đi làm thêm.\nT6/2026 bắt đầu đóng bhxh ở cty mới. \nVậy từ t1-t5/2026 có phải mua bhxh bắt buộc cho chủ hộ kinh doanh ko?",
-  "answer": "Issue: Người chủ hộ kinh doanh đã đăng ký từ tháng 12 năm 2025 nhưng bắt đầu kinh doanh và kê khai thuế từ tháng 1 năm 2026. Vậy từ tháng 1 đến tháng 5 năm 2026, có cần mua bảo hiểm xã hội bắt buộc không?\n\nRule: \"Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều 34 của Luật này hoặc kể từ sau ngày đóng bảo hiểm thất nghiệp chậm nhất theo quy định của pháp luật về bảo hiểm thất nghiệp, trừ trường hợp quy định tại điểm đ và điểm e khoản 1 Điều 39 của Luật này;\" (Luật BHXH 2024 (41/2024/QH15), Điều 38, Khoản 1).\n\nApplication: Không có giá trị nào được gán cho các slot. Prolog đã tiêu thụ các điều kiện liên quan đến việc đăng ký hộ kinh doanh, bắt đầu kinh doanh và kê khai thuế để xác định xem có cần mua bảo hiểm xã hội bắt buộc hay không.\n\nConclusion: Hệ thống không thể tính toán được số liệu cuối cùng do không có giá trị nào được gán cho các slot.",
+  "answer": "Issue: Người hỏi muốn biết liệu chủ hộ kinh doanh có phải mua bảo hiểm xã hội bắt buộc từ tháng 1 đến tháng 5 năm 2026 hay không. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 38 khoản 1], người lao động cần phải có đăng ký kinh doanh và kê khai thuế để đủ điều kiện tham gia bảo hiểm xã hội bắt buộc. \nApplication: Không có slot nào được gán giá trị. Prolog query kiểm tra điều kiện tham gia bảo hiểm xã hội bắt buộc và trả về Conditions = [business_registration_required, tax_declaration_required]. \nConclusion: Hệ thống không thể tính được kết quả cuối cùng do thiếu thông tin về việc có đăng ký kinh doanh và kê khai thuế hay không.",
+  "plain_answer": "Hệ thống chưa đủ thông tin để tính chính xác vì không có thông tin về việc bạn đã đăng ký kinh doanh và kê khai thuế hay chưa. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 38 khoản 1], bạn cần có cả hai điều kiện này để phải mua bảo hiểm xã hội bắt buộc. Bạn vui lòng cung cấp thêm thông tin để mình tính giúp.",
   "citations": [
-    "[Điều 34]",
-    "[Điều 39]",
-    "[Điều 38 khoản 1]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 38 khoản 1]"
   ],
   "citation_ids": [
-    "L41_2024.A34",
-    "L41_2024.A39",
     "L41_2024.A38.K1"
   ],
   "citation_indices": [
@@ -19,17 +16,19 @@
   "prolog_success": true,
   "prolog_status": "success",
   "n_repair_rounds": 1,
-  "prolog_trace": "[step(conclusion,mandatory_social_insurance_conditions([business_owner_registration,business_starting,tax_declaration]),based_on(source_c004))]",
+  "prolog_trace": "[step(conclusion,mandatory_social_insurance_conditions([business_registration_required,tax_declaration_required]),based_on(source_c004))]",
+  "prolog_program": "legal_source(source_c004, law_bhxh_2024, article_26, clause_3, none, 'Chậm nhất là ngày 01 tháng 01 năm 2027, cơ quan bảo hiểm xã hội phải bảo đảm điều kiện để thực hiện giao dịch điện tử thuộc lĩnh vực bảo hiểm xã hội.').\nmandatory_social_insurance_conditions(Conditions, Trace) :- Conditions = [business_registration_required, tax_declaration_required], Trace = [step(conclusion, mandatory_social_insurance_conditions(Conditions), based_on(source_c004))].",
+  "prolog_error": "",
   "irac_sections": {
-    "issue": "Người chủ hộ kinh doanh đã đăng ký từ tháng 12 năm 2025 nhưng bắt đầu kinh doanh và kê khai thuế từ tháng 1 năm 2026. Vậy từ tháng 1 đến tháng 5 năm 2026, có cần mua bảo hiểm xã hội bắt buộc không?",
-    "rule": "\"Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều 34 của Luật này hoặc kể từ sau ngày đóng bảo hiểm thất nghiệp chậm nhất theo quy định của pháp luật về bảo hiểm thất nghiệp, trừ trường hợp quy định tại điểm đ và điểm e khoản 1 Điều 39 của Luật này;\" (Luật BHXH 2024 (41/2024/QH15), Điều 38, Khoản 1).",
-    "application": "Không có giá trị nào được gán cho các slot. Prolog đã tiêu thụ các điều kiện liên quan đến việc đăng ký hộ kinh doanh, bắt đầu kinh doanh và kê khai thuế để xác định xem có cần mua bảo hiểm xã hội bắt buộc hay không.",
-    "conclusion": "Hệ thống không thể tính toán được số liệu cuối cùng do không có giá trị nào được gán cho các slot."
+    "issue": "Người hỏi muốn biết liệu chủ hộ kinh doanh có phải mua bảo hiểm xã hội bắt buộc từ tháng 1 đến tháng 5 năm 2026 hay không.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 38 khoản 1], người lao động cần phải có đăng ký kinh doanh và kê khai thuế để đủ điều kiện tham gia bảo hiểm xã hội bắt buộc.",
+    "application": "Không có slot nào được gán giá trị. Prolog query kiểm tra điều kiện tham gia bảo hiểm xã hội bắt buộc và trả về Conditions = [business_registration_required, tax_declaration_required].",
+    "conclusion": "Hệ thống không thể tính được kết quả cuối cùng do thiếu thông tin về việc có đăng ký kinh doanh và kê khai thuế hay không."
   },
-  "elapsed_s": 14.186,
-  "prompt_tokens": 5546,
-  "completion_tokens": 569,
+  "elapsed_s": 11.964,
+  "prompt_tokens": 6223,
+  "completion_tokens": 509,
   "error": null,
   "gold_answer": "Nếu từ 1/2026 hộ kinh doanh của bạn đã hoạt động và nộp thuế theo phương pháp kê khai, thì chủ hộ thuộc diện tham gia BHXH bắt buộc. Khi từ 6/2026 bạn đồng thời đi làm ở công ty mới, việc đóng BHXH sẽ xác định theo diện ưu tiên luật quy định; không phải lúc nào cũng đóng song song 2 nơi. Bạn nên đối chiếu phương pháp nộp thuế của hộ kinh doanh để xác định chính xác nghĩa vụ từ 1-5/2026.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 2 khoản 1 điểm m; Nghị định 158/2025/NĐ-CP Điều 3"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]\n[Nghị định 158/2025/NĐ-CP, Điều 3]"
 }

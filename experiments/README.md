@@ -22,54 +22,58 @@ inference (run_inference.py)
 
 → data/eval/results/{graphrag,llm_only}/A{stt}.json
 
-compute_metrics (compute_metrics.py)
-   ├── Deterministic: citation_precision, citation_recall, latency, cost
-   ├── Judge (GPT-4o-mini): faithfulness, answer_relevance, hallucination_rate, pairwise_winner
-   └── Semantic: BERTScore vs gold_answer
+validate_gold_citations (validate_gold_citations.py)
+   └── Parse gold_citations_raw strict theo registry; fail nếu thiếu/sai
 
-→ data/eval/metrics.json + metrics.csv
+compute_academic_metrics (compute_academic_metrics.py)
+   ├── Dataset-based: citation_recall, citation_precision, citation_f1
+   ├── Answer display: citation_display_rate từ citation_ids vs answer
+   ├── Objective: latency_s, prolog_first_try_solution_rate,
+   │   repair_invoked_rate, repair_success_rate
+   └── Semantic: BERTScore vs gold_answer (fail-soft nếu thiếu dependency/model)
 
-generate_report (generate_report.py)
-   → reports/experiment_report.md (so sánh, breakdown, citation paper)
+→ data/eval/academic_metrics.json + academic_metrics.csv
+→ reports/academic_report.md
 ```
 
-## Metrics + Paper refs (peer-reviewed, không arXiv)
+## Metrics hiện tại
 
-| Metric | Paper | Venue |
-|---|---|---|
-| **Faithfulness** | Es et al. "RAGAs: Automated Evaluation of Retrieval Augmented Generation" | [EACL 2024 Demo](https://aclanthology.org/2024.eacl-demo.16/) |
-| **Answer Relevance** | Es et al. RAGAS (cùng paper) | [EACL 2024 Demo](https://aclanthology.org/2024.eacl-demo.16/) |
-| **Citation Precision/Recall** | Liu, Zhang & Liang. "Evaluating Verifiability in Generative Search Engines" | [EMNLP Findings 2023](https://aclanthology.org/2023.findings-emnlp.467/) |
-| **Hallucination Rate (legal)** | Magesh et al. "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools" | [Journal of Empirical Legal Studies 2025, Wiley](https://onlinelibrary.wiley.com/doi/abs/10.1111/jels.12413) (Stanford RegLab/HAI) |
-| **LLM-as-Judge (pairwise)** | Zheng et al. "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena" | [NeurIPS 2023 Datasets & Benchmarks](https://papers.nips.cc/paper_files/paper/2023/hash/91f18a1287b398d378ef22505bf41832-Abstract-Datasets_and_Benchmarks.html) |
-| **BERTScore** | Zhang et al. "BERTScore: Evaluating Text Generation with BERT" | [ICLR 2020 (OpenReview)](https://openreview.net/forum?id=SkeHuCVFDr) |
-| Cost / Latency | (objective, không cần paper) | — |
+Headline metrics không dùng judge model. Citation recall/precision/F1 so sánh
+`record["citation_ids"]` với `gold_citations_raw` sau khi parse strict theo
+article-level authority. `citation_display_rate` đo citation ID nào trong
+pipeline thật sự được thể hiện trong answer với đủ văn bản + điều/khoản.
+BERTScore giữ chuẩn Zhang et al. ICLR 2020 và chạy fail-soft.
+
+Judge-model metrics không chạy trong main experiment. Entrypoint
+`experiments.compute_judge_metrics` hiện fail-closed để tránh vô tình dùng lại
+công thức cũ; khi cần judge metrics sẽ thiết kế rubric riêng.
 
 ## Giới hạn (caveats — sẽ ghi rõ trong report)
 
-1. **Self-enhancement bias**: judge = GPT-4o-mini, generator cũng = GPT-4o-mini → có thể bias. Tuy nhiên cả 2 arm dùng cùng generator nên bias affect đều → **relative ranking vẫn fair**. Zheng et al. NeurIPS'23 cảnh báo nhưng ghi rõ "controlled comparison" vẫn dùng được. Để strict-fair, có thể chạy lại với judge khác provider.
-2. **Position bias**: pairwise judge sẽ swap A↔B mỗi câu và lấy trung bình.
-3. **Law version mismatch**: 49/200 câu có thể về luật cũ → GraphRAG sẽ trả lời "không có thông tin" (đúng theo design). LLM-only có training data Luật cũ → có thể trả lời nhưng không verify được. Sẽ report breakdown.
-4. **Ground truth quality**: gold_answer từ FB group, không phải nguồn pháp chính thức → dùng làm reference loose, không strict.
+1. **Gold citation quality**: `gold_citations_raw` là source of truth; validator sẽ dừng nếu thiếu/sai hoặc không parse được.
+2. **Law/source mismatch**: predicted citation phải đúng văn bản và đúng điều. Khác văn bản là sai hoàn toàn.
+3. **BERTScore**: chỉ là semantic reference vs `gold_answer`; headline citation metrics vẫn lấy từ dataset gold.
+4. **Judge metrics**: không nằm trong main workflow và không được tính ngầm.
 
 ## Chạy
 
 ```powershell
-# 1. Inference cả 2 arms (cost ~$0.80, ~30 phút với 200 câu × 2)
-python -m experiments.run_inference --n 200
+# 1. Inference main experiment arms
+python -m experiments.run_inference --arms main --n 200
 
-# 2. Compute metrics (cost ~$3.20, ~15 phút)
-python -m experiments.compute_metrics
+# 2. Validate gold citations; lệnh metrics cũng tự gọi bước này
+python -m experiments.validate_gold_citations
 
-# 3. Generate report
-python -m experiments.generate_report
+# 3. Compute deterministic academic metrics for the same main arms
+python -m experiments.compute_academic_metrics --arms main
 ```
 
 Pilot trước với `--n 10` để xác nhận pipeline.
 
 ## Tính trung thực
 
-- Không sửa bất kỳ file nào trong `src/`, `schema/`. Chỉ thêm code trong `experiments/`.
+- Metrics hiện tại dùng registry citation chung trong `data/legal_sources.yaml` và
+  parser chung `src/citations.py`; không hardcode authority trong từng script.
 - Mọi LLM call thật → API.
-- Mọi metric tính từ output thật, không hardcode.
-- Per-question result lưu đầy đủ (question, answer, citations, judge raw response) → reproducible/auditable.
+- Mọi metric headline tính từ output thật + dataset gold; judge metrics tách riêng.
+- Per-question result lưu đầy đủ (question, answer, citations) → reproducible/auditable.
