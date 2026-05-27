@@ -1,0 +1,44 @@
+{
+  "clause_id": "L41_2024.A75.K2",
+  "extraction": {
+    "clause_id": "L41_2024.A75.K2",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Chấm dứt hưởng lương hưu, trợ cấp bảo hiểm xã hội",
+        "if_conditions_idx": [],
+        "then_predicate": "pension",
+        "then_value": false,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 2.73,
+  "usage": {
+    "prompt_tokens": 2724,
+    "completion_tokens": 157
+  },
+  "extracted_at": "2026-05-27T08:26:46"
+}

@@ -1,0 +1,52 @@
+{
+  "clause_id": "L41_2024.A36.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A36.K1",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 22,
+        "unit": "percent",
+        "direction": "exact",
+        "context": "voluntary_social_insurance_contribution_rate",
+        "description_vi": "22% mức thu nhập làm căn cứ đóng BHXH tự nguyện"
+      }
+    ],
+    "rules": [],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 2,
+        "clause": 4,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [
+      22.0
+    ],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": [
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 2.78,
+  "usage": {
+    "prompt_tokens": 2729,
+    "completion_tokens": 176
+  },
+  "extracted_at": "2026-05-27T08:18:39"
+}

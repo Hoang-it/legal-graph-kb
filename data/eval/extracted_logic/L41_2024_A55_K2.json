@@ -1,0 +1,78 @@
+{
+  "clause_id": "L41_2024.A55.K2",
+  "extraction": {
+    "clause_id": "L41_2024.A55.K2",
+    "conditions": [
+      {
+        "predicate": "gender",
+        "operator": "=",
+        "value": "female",
+        "unit": "enum",
+        "description_vi": "Lao động nữ"
+      },
+      {
+        "predicate": "months_contributed",
+        "operator": ">=",
+        "value": 6,
+        "unit": "month",
+        "description_vi": "Thời gian chăm sóc con chưa đủ 06 tháng tuổi"
+      },
+      {
+        "predicate": "social_insurance",
+        "operator": "=",
+        "value": true,
+        "unit": "bool",
+        "description_vi": "Đang tham gia bảo hiểm xã hội bắt buộc"
+      }
+    ],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Quyền lợi nghỉ việc hưởng chế độ thai sản",
+        "if_conditions_idx": [
+          0,
+          1,
+          2
+        ],
+        "then_predicate": "maternity",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 1,
+        "clause": null,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.85,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [
+      6
+    ],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 4.12,
+  "usage": {
+    "prompt_tokens": 2785,
+    "completion_tokens": 337
+  },
+  "extracted_at": "2026-05-27T08:22:44"
+}

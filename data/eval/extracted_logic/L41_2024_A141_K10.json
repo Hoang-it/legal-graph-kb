@@ -1,0 +1,121 @@
+{
+  "clause_id": "L41_2024.A141.K10",
+  "extraction": {
+    "clause_id": "L41_2024.A141.K10",
+    "conditions": [
+      {
+        "predicate": "years_contributed",
+        "operator": ">=",
+        "value": 15,
+        "unit": "year",
+        "description_vi": "Đóng bảo hiểm xã hội đủ 15 năm trở lên"
+      },
+      {
+        "predicate": "age",
+        "operator": ">=",
+        "value": 60,
+        "unit": "year",
+        "description_vi": "Nam đủ 60 tuổi để hưởng lương hưu"
+      },
+      {
+        "predicate": "age",
+        "operator": ">=",
+        "value": 55,
+        "unit": "year",
+        "description_vi": "Nữ đủ 55 tuổi để hưởng lương hưu"
+      },
+      {
+        "predicate": "age",
+        "operator": ">=",
+        "value": 55,
+        "unit": "year",
+        "description_vi": "Nam đủ 55 tuổi để hưởng trợ cấp hằng tháng"
+      },
+      {
+        "predicate": "age",
+        "operator": ">=",
+        "value": 50,
+        "unit": "year",
+        "description_vi": "Nữ đủ 50 tuổi để hưởng trợ cấp hằng tháng"
+      }
+    ],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Điều kiện hưởng lương hưu",
+        "if_conditions_idx": [
+          0,
+          1
+        ],
+        "then_predicate": "eligible_pension",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      },
+      {
+        "name": "Điều kiện hưởng trợ cấp hằng tháng",
+        "if_conditions_idx": [
+          0,
+          3
+        ],
+        "then_predicate": "monthly_support",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 12,
+        "clause": null,
+        "law": "other"
+      },
+      {
+        "article": 1,
+        "clause": null,
+        "law": "other"
+      },
+      {
+        "article": 9,
+        "clause": null,
+        "law": "other"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [
+      15,
+      1,
+      1,
+      1
+    ],
+    "months": [
+      26,
+      9,
+      23
+    ],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 7.94,
+  "usage": {
+    "prompt_tokens": 2827,
+    "completion_tokens": 491
+  },
+  "extracted_at": "2026-05-27T08:37:57"
+}

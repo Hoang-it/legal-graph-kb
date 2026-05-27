@@ -1,0 +1,61 @@
+{
+  "clause_id": "L41_2024.A51.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A51.K1",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 5,
+        "unit": "times",
+        "direction": "max",
+        "context": "maternity_checkups_max",
+        "description_vi": "Tối đa 05 lần khám thai"
+      },
+      {
+        "value": 2,
+        "unit": "day",
+        "direction": "max",
+        "context": "maternity_checkup_duration_max",
+        "description_vi": "Mỗi lần không quá 02 ngày"
+      }
+    ],
+    "rules": [
+      {
+        "name": "Quyền nghỉ việc để khám thai",
+        "if_conditions_idx": [],
+        "then_predicate": "maternity",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.95,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [
+      2
+    ],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.18,
+  "usage": {
+    "prompt_tokens": 2647,
+    "completion_tokens": 253
+  },
+  "extracted_at": "2026-05-27T08:21:26"
+}

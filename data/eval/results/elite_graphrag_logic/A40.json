@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 40,
+  "question": "Em đóng bhxh t8/2025 đến t4/2026, ngày dự sinh của em là19/8. Vậy em có đủ đk để nhận trợ cấp không? Làm hểt tháng 4 là em nghỉ cty luôn. Em có đủ đk để nhận bhts k?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'eligible_pension(user']",
+  "plain_answer": "",
+  "citations": [
+    "[Điều 41 khoản 5]",
+    "[Điều 41 khoản 55]",
+    "[Điều 41 khoản 94]"
+  ],
+  "citation_ids": [
+    "L41_2024.A41.K5",
+    "L41_2024.A41.K55",
+    "L41_2024.A41.K94"
+  ],
+  "citation_indices": [
+    0,
+    1,
+    6
+  ],
+  "prolog_success": false,
+  "prolog_status": "invalid_query",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "prolog_program": "months_contributed(user, 8).\nlegal_source(source_a41_k6, law_bhxh_2024, article_41, clause_5, none, 'Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng.').\nlegal_source(source_a41_k55, law_bhxh_2024, article_41, clause_55, none, 'Được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi.').\nlegal_source(source_a41_k94, law_bhxh_2024, article_41, clause_94, none, 'Điều kiện hưởng trợ cấp thai sản là thời gian đóng BHXH tự nguyện hoặc vừa có thời gian đóng BHXH bắt buộc vừa có thời gian đóng BHXH tự nguyện từ đủ 06 tháng trở lên.').\nmaternity(Person, Eligible, Trace) :- months_contributed(Person, M), M >= 6, Eligible = true, Trace = [step(condition, months_contributed_at_least_6, based_on(source_a41_k94)), step(conclusion, maternity(Person, Eligible), based_on(source_a41_k55))].\neligible_pension(Person, Eligible, Trace) :- months_contributed(Person, M), M >= 12, Eligible = true, Trace = [step(condition, months_contributed_at_least_12, based_on(source_a41_k6)), step(conclusion, eligible_pension(Person, Eligible), based_on(source_a41_k6))].",
+  "prolog_error": "query argument must be variable or user, got 'eligible_pension(user'",
+  "irac_sections": {},
+  "elapsed_s": 55.452,
+  "prompt_tokens": 12522,
+  "completion_tokens": 1457,
+  "error": null,
+  "gold_answer": "Nếu bạn đóng BHXH bắt buộc từ 8/2025 đến hết 4/2026 thì có 9 tháng đóng trong 12 tháng trước khi sinh 8/2026, nên về nguyên tắc đủ điều kiện hưởng thai sản khi sinh con. Việc nghỉ việc sau tháng 4/2026 không làm mất quyền hưởng nếu bạn đã đủ điều kiện trước khi sinh. Bạn vẫn được nộp hồ sơ hưởng thai sản qua cơ quan BHXH theo nơi cư trú hoặc qua đơn vị nếu còn quan hệ lao động.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50, Điều 53"
+}

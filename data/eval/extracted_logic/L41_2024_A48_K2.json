@@ -1,0 +1,70 @@
+{
+  "clause_id": "L41_2024.A48.K2",
+  "extraction": {
+    "clause_id": "L41_2024.A48.K2",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 7,
+        "unit": "day",
+        "direction": "exact",
+        "context": "time_limit_for_submission",
+        "description_vi": "Thời hạn 07 ngày làm việc để lập danh sách"
+      }
+    ],
+    "rules": [
+      {
+        "name": "Trách nhiệm lập danh sách người lao động nghỉ việc",
+        "if_conditions_idx": [],
+        "then_predicate": "employer_responsibility",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NSDLĐ",
+          "BHXH_agency"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NSDLĐ",
+      "NLĐ",
+      "BHXH_agency"
+    ],
+    "procedure_steps": [
+      {
+        "step_order": 1,
+        "actor": "NSDLĐ",
+        "action": "Lập danh sách người lao động nghỉ việc hưởng chế độ ốm đau",
+        "prerequisite": "Nhận đủ hồ sơ từ người lao động"
+      },
+      {
+        "step_order": 2,
+        "actor": "NSDLĐ",
+        "action": "Nộp danh sách kèm hồ sơ cho cơ quan bảo hiểm xã hội",
+        "prerequisite": "Lập danh sách người lao động nghỉ việc hưởng chế độ ốm đau"
+      }
+    ],
+    "extractor_confidence": 0.95,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [
+      7
+    ],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 4.49,
+  "usage": {
+    "prompt_tokens": 2674,
+    "completion_tokens": 359
+  },
+  "extracted_at": "2026-05-27T08:20:52"
+}

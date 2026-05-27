@@ -1,0 +1,34 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 89,
+  "question": "E đóng BHXH tự nguyện mấy tháng giờ muốn chốt sổ để đóng sang BHXH bắt buộc thì như nào?",
+  "answer": "Issue: Người hỏi đã đóng BHXH tự nguyện và muốn biết cách chốt sổ để chuyển sang BHXH bắt buộc.\nRule: Theo Điều 33 khoản 7 Luật BHXH 2024, người lao động có thể đóng tiếp bảo hiểm xã hội bắt buộc nếu còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng.\nApplication: Không có thông tin về số tháng đã đóng BHXH tự nguyện. Prolog query xác định rằng người lao động đủ điều kiện đóng tiếp bảo hiểm xã hội bắt buộc. Prolog trả về Eligible = true.\nConclusion: Theo Prolog, người dùng CÓ đủ điều kiện để chốt sổ và chuyển sang BHXH bắt buộc.",
+  "plain_answer": "Bạn có thể chốt sổ và chuyển sang BHXH bắt buộc nếu thời gian đóng BHXH tự nguyện của bạn còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng, theo [Điều 33 khoản 7] Luật BHXH 2024. Hãy liên hệ với cơ quan bảo hiểm xã hội để được hướng dẫn cụ thể hơn nhé.",
+  "citations": [
+    "[Điều 33 khoản 7]"
+  ],
+  "citation_ids": [
+    "L41_2024.A33.K7"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(condition,eligible_benefits_condition,based_on(source_a41_k1)),step(conclusion,eligible_benefits(true),based_on(source_a41_k1))]",
+  "prolog_program": "legal_source(source_a41_k1, law_bhxh_2024, article_41, clause_1, none, 'Người lao động có thể đóng tiếp bảo hiểm xã hội bắt buộc nếu còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng.').\neligible_benefits(Eligible, Trace) :- Eligible = true, Trace = [step(condition, eligible_benefits_condition, based_on(source_a41_k1)), step(conclusion, eligible_benefits(Eligible), based_on(source_a41_k1))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi đã đóng BHXH tự nguyện và muốn biết cách chốt sổ để chuyển sang BHXH bắt buộc.",
+    "rule": "Theo Điều 33 khoản 7 Luật BHXH 2024, người lao động có thể đóng tiếp bảo hiểm xã hội bắt buộc nếu còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng.",
+    "application": "Không có thông tin về số tháng đã đóng BHXH tự nguyện. Prolog query xác định rằng người lao động đủ điều kiện đóng tiếp bảo hiểm xã hội bắt buộc. Prolog trả về Eligible = true.",
+    "conclusion": "Theo Prolog, người dùng CÓ đủ điều kiện để chốt sổ và chuyển sang BHXH bắt buộc."
+  },
+  "elapsed_s": 65.462,
+  "prompt_tokens": 8860,
+  "completion_tokens": 688,
+  "error": null,
+  "gold_answer": "Bạn không phải 'chốt sổ' BHXH tự nguyện theo cách của doanh nghiệp. Khi chuyển sang BHXH bắt buộc, bạn chỉ cần dùng đúng mã số BHXH hiện có để đơn vị mới đăng ký tham gia bắt buộc; toàn bộ thời gian tự nguyện trước đó sẽ được bảo lưu trên cùng mã số. Nếu có đóng trùng hoặc thông tin cá nhân chưa khớp thì liên hệ cơ quan BHXH để điều chỉnh trước khi đơn vị báo tăng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25, Điều 36"
+}

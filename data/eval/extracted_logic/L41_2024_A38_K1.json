@@ -1,0 +1,59 @@
+{
+  "clause_id": "L41_2024.A38.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A38.K1",
+    "conditions": [
+      {
+        "predicate": "contribution",
+        "operator": "<",
+        "value": "required_amount",
+        "unit": "vnd",
+        "description_vi": "Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia BHXH bắt buộc, BH thất nghiệp"
+      }
+    ],
+    "thresholds": [],
+    "rules": [],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 34,
+        "clause": 4,
+        "law": "L41_2024"
+      },
+      {
+        "article": 39,
+        "clause": 1,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": [
+      [
+        34,
+        null
+      ],
+      [
+        39,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.05,
+  "usage": {
+    "prompt_tokens": 2720,
+    "completion_tokens": 201
+  },
+  "extracted_at": "2026-05-27T08:19:00"
+}

@@ -1,0 +1,54 @@
+{
+  "clause_id": "L41_2024.A89.K3",
+  "extraction": {
+    "clause_id": "L41_2024.A89.K3",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 3,
+        "unit": "month",
+        "direction": "exact",
+        "context": "one_time_survivorship_support",
+        "description_vi": "03 tháng trợ cấp tai nạn lao động, bệnh nghề nghiệp hằng tháng"
+      }
+    ],
+    "rules": [
+      {
+        "name": "Mức trợ cấp tuất một lần",
+        "if_conditions_idx": [],
+        "then_predicate": "one_time_social_insurance",
+        "then_value": "formula:3 * monthly_amount",
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.95,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [
+      3
+    ],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.98,
+  "usage": {
+    "prompt_tokens": 2681,
+    "completion_tokens": 219
+  },
+  "extracted_at": "2026-05-27T08:29:13"
+}

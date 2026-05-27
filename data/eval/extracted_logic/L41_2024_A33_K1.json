@@ -1,0 +1,80 @@
+{
+  "clause_id": "L41_2024.A33.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A33.K1",
+    "conditions": [
+      {
+        "predicate": "contribution_rate",
+        "operator": "=",
+        "value": 8,
+        "unit": "percent",
+        "description_vi": "Mức đóng hằng tháng bằng 8% tiền lương"
+      }
+    ],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Phương thức đóng bảo hiểm xã hội",
+        "if_conditions_idx": [],
+        "then_predicate": "mandatory_social_insurance",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ",
+          "NSDLĐ",
+          "BHXH_agency"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 2,
+        "clause": 1,
+        "law": "L41_2024"
+      },
+      {
+        "article": 2,
+        "clause": 2,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NLĐ",
+      "NSDLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [
+      8.0
+    ],
+    "years": [],
+    "months": [
+      3,
+      6
+    ],
+    "days": [],
+    "vnd_amounts": [],
+    "references": [
+      [
+        2,
+        null
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 8.55,
+  "usage": {
+    "prompt_tokens": 2817,
+    "completion_tokens": 272
+  },
+  "extracted_at": "2026-05-27T08:06:50"
+}

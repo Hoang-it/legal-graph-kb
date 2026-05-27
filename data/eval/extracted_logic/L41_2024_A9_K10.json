@@ -1,0 +1,33 @@
+{
+  "clause_id": "L41_2024.A9.K10",
+  "extraction": {
+    "clause_id": "L41_2024.A9.K10",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 1.0,
+    "non_canonical_flags": [
+      "Hành vi khác không được định nghĩa rõ ràng trong văn bản"
+    ]
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 2.2,
+  "usage": {
+    "prompt_tokens": 2625,
+    "completion_tokens": 100
+  },
+  "extracted_at": "2026-05-27T08:14:02"
+}

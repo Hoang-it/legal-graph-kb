@@ -1,0 +1,93 @@
+{
+  "clause_id": "L41_2024.A100.K2",
+  "extraction": {
+    "clause_id": "L41_2024.A100.K2",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 0.5,
+        "unit": "vnd_per_month",
+        "direction": "exact",
+        "context": "one_time_social_insurance_per_year_above_standard",
+        "description_vi": "0,5 lần mức bình quân thu nhập làm căn cứ đóng BHXH cho mỗi năm đóng cao hơn"
+      },
+      {
+        "value": 2.0,
+        "unit": "vnd_per_month",
+        "direction": "exact",
+        "context": "one_time_social_insurance_per_year_after_retirement_age",
+        "description_vi": "2 lần mức bình quân thu nhập làm căn cứ đóng BHXH cho mỗi năm đóng cao hơn"
+      }
+    ],
+    "rules": [
+      {
+        "name": "Mức hưởng trợ cấp một lần cho mỗi năm đóng",
+        "if_conditions_idx": [],
+        "then_predicate": "one_time_social_insurance",
+        "then_value": "formula:0.5 * average_salary",
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      },
+      {
+        "name": "Mức trợ cấp cho NLĐ tiếp tục đóng BHXH sau khi đủ điều kiện hưởng lương hưu",
+        "if_conditions_idx": [],
+        "then_predicate": "one_time_social_insurance",
+        "then_value": "formula:2 * average_salary",
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 104,
+        "clause": null,
+        "law": "L41_2024"
+      },
+      {
+        "article": 98,
+        "clause": null,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": [
+      [
+        104,
+        null
+      ],
+      [
+        98,
+        null
+      ],
+      [
+        104,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 7.26,
+  "usage": {
+    "prompt_tokens": 2790,
+    "completion_tokens": 447
+  },
+  "extracted_at": "2026-05-27T08:31:10"
+}

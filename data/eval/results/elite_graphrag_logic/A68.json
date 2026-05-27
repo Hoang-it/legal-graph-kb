@@ -1,0 +1,29 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 68,
+  "question": "Nld làm việc bên em từ 2025 đến giờ vẫn làm, vẫn đóng bhxh bình thường. Tự nhiên nay nld báo là trên app hiện 1 bên cty khác từ t2/2026-t4/2026. Em gọi lên bhxh thì họ bảo nld này đóng ở cty em từ 2025 đến t1/2026. Còn từ t2/2026 đóng ở cty khác. E có hỏi là nld có nghỉ bên em đâu, từ tháng 2 đến tháng 4 này bên em vẫn đang đóng bhxh cho c ấy bình thường. Bên em chưa báo giảm thì sao bên kia báo tăng dc. Bảo hiểm báo hỏi lại nld.\nEm hỏi nld thì họ báo là có làm thêm bên kia nhưng kb sao họ lại báo tăng bhxh.\nTrường hợp này bên em xử lý ntn?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=derived_false, repair_rounds=2, error=Prolog produced no solutions]",
+  "plain_answer": "",
+  "citations": [
+    "[Điều 41 khoản 12]"
+  ],
+  "citation_ids": [
+    "L41_2024.A41.K12"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": false,
+  "prolog_status": "derived_false",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "prolog_program": "legal_source(source_a141_k12, law_bhxh_2024, article_41, clause_12, none, 'Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30 tháng 6 năm 2025 mà không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.').\nprohibited_acts(NSDL) :- Trace = [step(condition, cham_dong_bhxh, based_on(source_a141_k12))].",
+  "prolog_error": "Prolog produced no solutions",
+  "irac_sections": {},
+  "elapsed_s": 14.452,
+  "prompt_tokens": 11173,
+  "completion_tokens": 697,
+  "error": null,
+  "gold_answer": "Một người có nhiều nơi làm việc nhưng BHXH bắt buộc chỉ đóng theo một quan hệ lao động thuộc diện luật định, không được để 2 đơn vị cùng đóng trùng cùng thời gian. Bạn cần yêu cầu NLĐ giải trình, cung cấp HĐLĐ bên kia; đồng thời làm việc với cơ quan BHXH để xác định đơn vị nào đóng đúng, đơn vị nào đóng trùng. Phần đóng trùng sẽ phải điều chỉnh/hoàn trả theo thủ tục, tránh để dữ liệu sai kéo dài ảnh hưởng chế độ của NLĐ.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 33; Bộ luật Lao động 2019 Điều 13"
+}

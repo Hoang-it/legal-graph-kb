@@ -1,0 +1,97 @@
+{
+  "clause_id": "L41_2024.A92.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A92.K1",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 48,
+        "clause": 1,
+        "law": "L41_2024"
+      },
+      {
+        "article": 48,
+        "clause": 2,
+        "law": "L41_2024"
+      },
+      {
+        "article": 49,
+        "clause": 1,
+        "law": "L41_2024"
+      },
+      {
+        "article": 62,
+        "clause": 1,
+        "law": "L41_2024"
+      },
+      {
+        "article": 63,
+        "clause": 1,
+        "law": "L41_2024"
+      },
+      {
+        "article": 79,
+        "clause": 1,
+        "law": "L41_2024"
+      },
+      {
+        "article": 91,
+        "clause": 1,
+        "law": "L41_2024"
+      },
+      {
+        "article": 91,
+        "clause": 2,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 1.0,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": [
+      [
+        48,
+        null
+      ],
+      [
+        49,
+        null
+      ],
+      [
+        62,
+        null
+      ],
+      [
+        63,
+        null
+      ],
+      [
+        79,
+        null
+      ],
+      [
+        91,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.79,
+  "usage": {
+    "prompt_tokens": 2705,
+    "completion_tokens": 275
+  },
+  "extracted_at": "2026-05-27T08:29:43"
+}

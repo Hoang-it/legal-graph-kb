@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 67,
+  "question": "Công ty em có 1 nhân sự nghỉ thai sản nhưng báo giảm sai tháng (giảm đúng T12 nhưng báo giảm T11 và đã được duyệt). Em có báo On thai sản vào T11 để giảm lại T12 cho đúng nhưng BH không duyệt với lý do \"Nlđ nghỉ ts từ T11-T4 nên không phát sinh tăng vào T11 được\"\nGiờ mình phải làm sao?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'employer_responsibility(Responsibility']",
+  "plain_answer": "",
+  "citations": [
+    "[Điều 55 khoản 1]",
+    "[Điều 62 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A55.K1",
+    "L41_2024.A62.K1"
+  ],
+  "citation_indices": [
+    0,
+    1
+  ],
+  "prolog_success": false,
+  "prolog_status": "invalid_query",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "prolog_program": "legal_source(source_a55_k1, law_bhxh_2024, article_55, clause_1, none, 'Người lao động được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi.').\nlegal_source(source_a62_k1, law_bhxh_2024, article_62, clause_1, none, 'Người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ thai sản kèm theo hồ sơ quy định.').\nmaternity_leave_eligible(Employee, Eligible, Trace) :- maternity(True), Eligible = true, Trace = [step(condition, maternity_leave_duration, based_on(source_a55_k1)), step(conclusion, maternity_leave_eligible(Employee, Eligible), based_on(source_a55_k1))].\nemployer_responsibility(True, Trace) :- employer_responsibility(True), Trace = [step(condition, employer_responsibility, based_on(source_a62_k1)), step(conclusion, employer_responsibility(True), based_on(source_a62_k1))].",
+  "prolog_error": "query argument must be variable or user, got 'employer_responsibility(Responsibility'",
+  "irac_sections": {},
+  "elapsed_s": 27.673,
+  "prompt_tokens": 11651,
+  "completion_tokens": 975,
+  "error": null,
+  "gold_answer": "Trường hợp đã báo giảm sai tháng và hồ sơ đã duyệt, bạn nên làm văn bản giải trình kèm hồ sơ điều chỉnh gửi cơ quan BHXH, nêu rõ NLĐ thực tế nghỉ thai sản từ tháng nào và đề nghị điều chỉnh dữ liệu thay vì báo tăng giả tạo rồi giảm lại. Cơ quan BHXH từ chối 'báo On' tháng 11 là hợp lý nếu NLĐ thực tế đang nghỉ thai sản trong toàn giai đoạn đó. Cách xử lý đúng là điều chỉnh hồ sơ đã sai, không tạo phát sinh không có thật.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 53; quy trình hồ sơ điện tử của BHXH Việt Nam"
+}

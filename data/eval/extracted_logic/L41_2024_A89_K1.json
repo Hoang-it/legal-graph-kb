@@ -1,0 +1,108 @@
+{
+  "clause_id": "L41_2024.A89.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A89.K1",
+    "conditions": [
+      {
+        "predicate": "years_before_2014",
+        "operator": ">=",
+        "value": 1,
+        "unit": "year",
+        "description_vi": "Có thời gian đóng BHXH trước năm 2014"
+      },
+      {
+        "predicate": "years_after_2014",
+        "operator": ">=",
+        "value": 1,
+        "unit": "year",
+        "description_vi": "Có thời gian đóng BHXH từ năm 2014 trở đi"
+      }
+    ],
+    "thresholds": [
+      {
+        "value": 3,
+        "unit": "month",
+        "direction": "min",
+        "context": "one_time_survivorship_minimum",
+        "description_vi": "Không thấp hơn 03 tháng mức bình quân tiền lương"
+      },
+      {
+        "value": 1.5,
+        "unit": "month",
+        "direction": "exact",
+        "context": "one_time_survivorship_rate_before_2014",
+        "description_vi": "Mức trợ cấp tuất cho mỗi năm đóng BHXH trước năm 2014"
+      },
+      {
+        "value": 2,
+        "unit": "month",
+        "direction": "exact",
+        "context": "one_time_survivorship_rate_after_2014",
+        "description_vi": "Mức trợ cấp tuất cho mỗi năm đóng BHXH từ năm 2014 trở đi"
+      }
+    ],
+    "rules": [
+      {
+        "name": "Mức trợ cấp tuất một lần",
+        "if_conditions_idx": [
+          0,
+          1
+        ],
+        "then_predicate": "monthly_amount",
+        "then_value": "formula: (1.5 * average_salary * years_before_2014) + (2 * average_salary * years_after_2014)",
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 88,
+        "clause": 1,
+        "law": "L41_2024"
+      },
+      {
+        "article": 72,
+        "clause": null,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.95,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [
+      3,
+      5,
+      2
+    ],
+    "days": [],
+    "vnd_amounts": [],
+    "references": [
+      [
+        88,
+        null
+      ],
+      [
+        72,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 7.61,
+  "usage": {
+    "prompt_tokens": 2895,
+    "completion_tokens": 539
+  },
+  "extracted_at": "2026-05-27T08:29:03"
+}

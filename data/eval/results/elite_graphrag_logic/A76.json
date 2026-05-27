@@ -1,0 +1,37 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 76,
+  "question": "bhxh của e theo cty cũ đến 2/2026,\n3/2026 e đóng bhxh tự nguyện đến 5/2026.\nGiờ e đóng bh theo cty mới từ 4/2026 có được không? Và có được hưởng bhxh theo cty mới không khi t9 em sinh ?",
+  "answer": "Issue: Người hỏi muốn biết liệu có thể đóng bảo hiểm xã hội (BHXH) theo công ty mới từ tháng 4/2026 và có được hưởng BHXH khi sinh con không.\nRule: Theo Điều 94 khoản 1 Luật BHXH 2024, đối tượng có thời gian đóng BHXH tự nguyện từ đủ 06 tháng trở lên trong thời gian 12 tháng trước khi sinh con được hưởng trợ cấp thai sản. Theo Điều 5 khoản 3, người có thời gian đóng BHXH bắt buộc và tự nguyện được hưởng chế độ trợ cấp hằng tháng.\nApplication: Không có slot nào được gán giá trị. Prolog đã kiểm tra điều kiện và xác định rằng người dùng không đủ điều kiện hưởng trợ cấp thai sản do thời gian đóng BHXH tự nguyện chưa đủ 6 tháng.\nConclusion: Theo Prolog, người dùng KHÔNG đủ điều kiện hưởng trợ cấp thai sản do thời gian đóng BHXH tự nguyện ít hơn 6 tháng.",
+  "plain_answer": "Bạn không thể hưởng trợ cấp thai sản khi sinh con nếu thời gian đóng BHXH tự nguyện chưa đủ 6 tháng trong 12 tháng trước khi sinh, theo [Điều 94 khoản 1] Luật BHXH 2024. Hiện tại, bạn không đủ điều kiện để nhận trợ cấp này vì thời gian đóng của bạn chưa đủ.",
+  "citations": [
+    "[Điều 94 khoản 1]",
+    "[Điều 5 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A94.K1",
+    "L41_2024.A5.K3"
+  ],
+  "citation_indices": [
+    0,
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(condition,months_contributed_less_than_6,based_on(source_a94_k1)),step(conclusion,eligible_benefits(user,false),based_on(source_a5_k3))]",
+  "prolog_program": "months_contributed(user, 3).\nlegal_source(source_a5_k3, law_bhxh_2024, article_5, clause_3, none, 'Người vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện được hưởng chế độ trợ cấp hằng tháng, chế độ hưu trí và chế độ tử tuất trên cơ sở thời gian đã đóng bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện.').\nlegal_source(source_a94_k1, law_bhxh_2024, article_94, clause_1, none, 'Đối tượng có thời gian đóng bảo hiểm xã hội tự nguyện hoặc vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện từ đủ 06 tháng trở lên trong thời gian 12 tháng trước khi sinh con được hưởng trợ cấp thai sản.').\neligible_benefits(Person, Eligible, Trace) :- months_contributed(Person, M), M >= 6, Eligible = true, Trace = [step(condition, months_contributed_at_least_6, based_on(source_a94_k1)), step(conclusion, eligible_benefits(Person, Eligible), based_on(source_a5_k3))].\neligible_benefits(Person, Eligible, Trace) :- months_contributed(Person, M), M < 6, Eligible = false, Trace = [step(condition, months_contributed_less_than_6, based_on(source_a94_k1)), step(conclusion, eligible_benefits(Person, Eligible), based_on(source_a5_k3))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết liệu có thể đóng bảo hiểm xã hội (BHXH) theo công ty mới từ tháng 4/2026 và có được hưởng BHXH khi sinh con không.",
+    "rule": "Theo Điều 94 khoản 1 Luật BHXH 2024, đối tượng có thời gian đóng BHXH tự nguyện từ đủ 06 tháng trở lên trong thời gian 12 tháng trước khi sinh con được hưởng trợ cấp thai sản. Theo Điều 5 khoản 3, người có thời gian đóng BHXH bắt buộc và tự nguyện được hưởng chế độ trợ cấp hằng tháng.",
+    "application": "Không có slot nào được gán giá trị. Prolog đã kiểm tra điều kiện và xác định rằng người dùng không đủ điều kiện hưởng trợ cấp thai sản do thời gian đóng BHXH tự nguyện chưa đủ 6 tháng.",
+    "conclusion": "Theo Prolog, người dùng KHÔNG đủ điều kiện hưởng trợ cấp thai sản do thời gian đóng BHXH tự nguyện ít hơn 6 tháng."
+  },
+  "elapsed_s": 41.088,
+  "prompt_tokens": 10214,
+  "completion_tokens": 1144,
+  "error": null,
+  "gold_answer": "Bạn không thể cùng lúc đóng BHXH tự nguyện và BHXH bắt buộc trùng thời gian cho cùng một người. Nếu từ 4/2026 bạn đã thuộc diện đóng BHXH bắt buộc ở công ty mới thì thời gian 4-5/2026 phải xử lý theo diện bắt buộc; phần tự nguyện bị trùng cần liên hệ cơ quan BHXH để điều chỉnh. Về thai sản tháng 9, cần tính số tháng đóng đủ điều kiện trong 12 tháng trước sinh; thời gian bắt buộc và tự nguyện có thể được xem xét theo từng chế độ tương ứng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 36, Điều 50, Điều 94"
+}

@@ -1,0 +1,29 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 21,
+  "question": "Ông Quang Lành (Tây Ninh) hỏi, các đối tượng hưởng trợ cấp BHXH hằng tháng gồm những đối tượng nào để xác định không được hưởng trợ cấp hưu trí xã hội?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_program, repair_rounds=2, error=LLM returned predicate_inputs but no verify_facts]",
+  "plain_answer": "",
+  "citations": [
+    "[Điều 23 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A23.K1"
+  ],
+  "citation_indices": [
+    1
+  ],
+  "prolog_success": false,
+  "prolog_status": "invalid_program",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "prolog_program": "legal_source(source_a23_k1, law_bhxh_2024, article_23, clause_1, none, 'Công dân Việt Nam đủ tuổi nghỉ hưu có thời gian đóng bảo hiểm xã hội nhưng không đủ điều kiện hưởng lương hưu theo quy định của pháp luật và chưa đủ điều kiện hưởng trợ cấp hưu trí xã hội thì được hưởng trợ cấp hằng tháng.').\neligible_survivorship(Person, Eligible, Trace) :- monthly_amount(M, ref), M < ref, Eligible = false, Trace = [step(condition, monthly_amount_less_than_ref, based_on(source_a86_k3)), step(conclusion, eligible_survivorship(Person, Eligible), based_on(source_a86_k3))].\nmonthly_amount(Person, Amount) :- Amount < ref, Trace = [step(condition, monthly_amount_less_than_ref, based_on(source_a86_k3))].",
+  "prolog_error": "LLM returned predicate_inputs but no verify_facts",
+  "irac_sections": {},
+  "elapsed_s": 18.802,
+  "prompt_tokens": 11146,
+  "completion_tokens": 792,
+  "error": null,
+  "gold_answer": "Các đối tượng hưởng trợ cấp BHXH hằng tháng bao gồm:\n- Trợ cấp mất sức lao động;\n- Trợ cấp tai nạn lao động, bệnh nghề nghiệp;\n- Trợ cấp tuất;…\nĐây là những đối tượng không được hưởng trợ cấp hưu trí xã hội.",
+  "gold_citations_raw": null
+}

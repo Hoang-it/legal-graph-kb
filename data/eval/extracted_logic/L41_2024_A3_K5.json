@@ -1,0 +1,37 @@
+{
+  "clause_id": "L41_2024.A3.K5",
+  "extraction": {
+    "clause_id": "L41_2024.A3.K5",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [],
+    "exceptions": [],
+    "references": [],
+    "defines": [
+      {
+        "term_vi": "Bảo hiểm hưu trí bổ sung",
+        "definition": "Loại hình bảo hiểm mang tính chất tự nguyện theo nguyên tắc thị trường nhằm bổ sung cho chế độ hưu trí trong bảo hiểm xã hội bắt buộc, có cơ chế tạo lập quỹ từ đóng góp của người sử dụng lao động hoặc của người sử dụng lao động và người lao động.",
+        "related_predicate": null
+      }
+    ],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 1.0,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.93,
+  "usage": {
+    "prompt_tokens": 2686,
+    "completion_tokens": 178
+  },
+  "extracted_at": "2026-05-27T08:12:08"
+}

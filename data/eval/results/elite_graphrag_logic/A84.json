@@ -1,0 +1,34 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 84,
+  "question": "Mình muốn đóng bảo hiểm tự nguyện mà bây giờ họ không làm số, vậy có cách nào biết là mình đóng được bao nhiêu thời gian ko?",
+  "answer": "Issue: Người hỏi muốn biết cách xác định thời gian đã đóng bảo hiểm tự nguyện khi không có số liệu cụ thể. \nRule: Theo Điều 3 khoản 6 Luật BHXH 2024, \"Thời gian đóng bảo hiểm xã hội là tổng thời gian đã đóng bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện theo quy định của Luật này...\". \nApplication: Không có slot nào được gán giá trị. Prolog query total_contribution_time(TotalTime, Trace) trả về TotalTime = 0, cho thấy không có thời gian đóng bảo hiểm nào được ghi nhận. \nConclusion: Hệ thống không thể tính được kết quả cuối cùng do thiếu thông tin về thời gian đóng bảo hiểm tự nguyện.",
+  "plain_answer": "Hệ thống chưa đủ thông tin để tính chính xác thời gian bạn đã đóng bảo hiểm tự nguyện. Theo [Điều 3 khoản 6] Luật BHXH 2024, thời gian đóng bảo hiểm xã hội là tổng thời gian đã đóng bảo hiểm bắt buộc và tự nguyện. Bạn có thể cần kiểm tra lại với cơ quan bảo hiểm để có thông tin cụ thể hơn.",
+  "citations": [
+    "[Điều 3 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A3.K6"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(condition,total_contribution_time_calculation,based_on(source_a41_k6))]",
+  "prolog_program": "legal_source(source_a41_k6, law_bhxh_2024, article_41, clause_6, none, 'Thời gian đóng bảo hiểm xã hội là tổng thời gian đã đóng bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện theo quy định của Luật này, trừ trường hợp điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên có quy định khác.').\ntotal_contribution_time(TotalTime, Trace) :- TotalTime = 0, Trace = [step(condition, total_contribution_time_calculation, based_on(source_a41_k6))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết cách xác định thời gian đã đóng bảo hiểm tự nguyện khi không có số liệu cụ thể.",
+    "rule": "Theo Điều 3 khoản 6 Luật BHXH 2024, \"Thời gian đóng bảo hiểm xã hội là tổng thời gian đã đóng bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện theo quy định của Luật này...\".",
+    "application": "Không có slot nào được gán giá trị. Prolog query total_contribution_time(TotalTime, Trace) trả về TotalTime = 0, cho thấy không có thời gian đóng bảo hiểm nào được ghi nhận.",
+    "conclusion": "Hệ thống không thể tính được kết quả cuối cùng do thiếu thông tin về thời gian đóng bảo hiểm tự nguyện."
+  },
+  "elapsed_s": 13.455,
+  "prompt_tokens": 5469,
+  "completion_tokens": 471,
+  "error": null,
+  "gold_answer": "Hiện việc quản lý BHXH chủ yếu theo mã số và dữ liệu điện tử, nên dù không 'làm số' bằng cách hiểu cũ thì bạn vẫn có thể tra cứu thời gian đã đóng qua VssID, Cổng BHXH Việt Nam hoặc trực tiếp tại cơ quan BHXH. Nếu chưa biết mã số, dùng CCCD/họ tên/ngày sinh để tra cứu. Khi có mã số BHXH, hệ thống sẽ thể hiện thời gian tham gia BHXH tự nguyện đã được ghi nhận.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn tra cứu BHXH điện tử"
+}

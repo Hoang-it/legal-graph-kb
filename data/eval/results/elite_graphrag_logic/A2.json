@@ -1,0 +1,37 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 2,
+  "question": "Bà Minh Châu (Long An) ký hợp đồng lao động theo diện làm việc bán thời gian.\nBà Châu hỏi, bà có được mua BHXH bắt buộc theo đối tượng cá nhân không? Nếu được thì mức đóng được tính như thế nào?",
+  "answer": "Issue: Bà Minh Châu hỏi về việc có được mua BHXH bắt buộc theo đối tượng cá nhân và mức đóng như thế nào. \nRule: Theo Điều 5 khoản 2 Luật BHXH 2024, mức đóng bảo hiểm xã hội bắt buộc được tính trên cơ sở tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc. Theo Điều 36 khoản 1, đối tượng quy định hằng tháng đóng bằng 22% mức thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện vào quỹ hưu trí và tử tuất. \nApplication: Không có slot nào được gán giá trị. Prolog query trả về ContributionRate = 22.0, cho thấy mức đóng là 22%. \nConclusion: Theo Prolog, mức đóng bảo hiểm xã hội bắt buộc cho bà Châu là 22% mức thu nhập làm căn cứ đóng.",
+  "plain_answer": "Bà Minh Châu có thể mua BHXH bắt buộc theo đối tượng cá nhân. Mức đóng sẽ được tính là 22% mức thu nhập làm căn cứ đóng theo [Điều 36 khoản 1] Luật BHXH 2024. Bà cần lưu ý rằng mức đóng này dựa trên tiền lương mà bà chọn làm căn cứ để đóng bảo hiểm.",
+  "citations": [
+    "[Điều 5 khoản 2]",
+    "[Điều 36 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K2",
+    "L41_2024.A36.K1"
+  ],
+  "citation_indices": [
+    0,
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(threshold,voluntary_social_insurance_contribution_rate,based_on(source_a41_k36))]",
+  "prolog_program": "legal_source(source_a41_k5, law_bhxh_2024, article_5, clause_2, none, 'Mức đóng bảo hiểm xã hội bắt buộc được tính trên cơ sở tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc.').\nlegal_source(source_a41_k36, law_bhxh_2024, article_36, clause_1, none, 'Đối tượng quy định tại khoản 4 Điều 2 của Luật này, hằng tháng đóng bằng 22% mức thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện vào quỹ hưu trí và tử tuất.').\neligible_benefits(Person, Eligible, Trace) :- Eligible = true, Trace = [step(condition, eligible_benefits, based_on(source_a41_k5))].\nvoluntary_social_insurance_contribution_rate(ContributionRate, Trace) :- ContributionRate = 22.0, Trace = [step(threshold, voluntary_social_insurance_contribution_rate, based_on(source_a41_k36))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Bà Minh Châu hỏi về việc có được mua BHXH bắt buộc theo đối tượng cá nhân và mức đóng như thế nào.",
+    "rule": "Theo Điều 5 khoản 2 Luật BHXH 2024, mức đóng bảo hiểm xã hội bắt buộc được tính trên cơ sở tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc. Theo Điều 36 khoản 1, đối tượng quy định hằng tháng đóng bằng 22% mức thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện vào quỹ hưu trí và tử tuất.",
+    "application": "Không có slot nào được gán giá trị. Prolog query trả về ContributionRate = 22.0, cho thấy mức đóng là 22%.",
+    "conclusion": "Theo Prolog, mức đóng bảo hiểm xã hội bắt buộc cho bà Châu là 22% mức thu nhập làm căn cứ đóng."
+  },
+  "elapsed_s": 14.101,
+  "prompt_tokens": 5461,
+  "completion_tokens": 595,
+  "error": null,
+  "gold_answer": "Pháp luật về BHXH hiện hành không có quy định đối với trường hợp người lao động tự tham gia BHXH bắt buộc.\nDo vậy, trường hợp của bà ký hợp đồng lao động làm việc không trọn thời gian, không thuộc đối tượng tham gia BHXH bắt buộc thì có thể liên hệ tới cơ quan BHXH tại nơi cư trú để tham gia BHXH tự nguyện.",
+  "gold_citations_raw": "Luật BHXH 2014"
+}

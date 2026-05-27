@@ -1,0 +1,64 @@
+{
+  "clause_id": "L41_2024.A62.K3",
+  "extraction": {
+    "clause_id": "L41_2024.A62.K3",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 7,
+        "unit": "day",
+        "direction": "max",
+        "context": "insurance_agency_resolution_time_employer",
+        "description_vi": "Thời hạn giải quyết từ cơ quan BHXH đối với hồ sơ của người sử dụng lao động"
+      },
+      {
+        "value": 5,
+        "unit": "day",
+        "direction": "max",
+        "context": "insurance_agency_resolution_time_employee",
+        "description_vi": "Thời hạn giải quyết từ cơ quan BHXH đối với hồ sơ của người lao động"
+      }
+    ],
+    "rules": [
+      {
+        "name": "Thời hạn giải quyết hồ sơ",
+        "if_conditions_idx": [],
+        "then_predicate": "insurance_agency_response",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "BHXH_agency"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "BHXH_agency",
+      "NSDLĐ",
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.95,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [
+      7,
+      5
+    ],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 4.34,
+  "usage": {
+    "prompt_tokens": 2685,
+    "completion_tokens": 295
+  },
+  "extracted_at": "2026-05-27T08:24:25"
+}

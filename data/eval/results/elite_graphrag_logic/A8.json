@@ -1,0 +1,34 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 8,
+  "question": "Năm 2022, ông Bình Châu (Tây Ninh) có 11 tháng thất nghiệp nhưng chưa hưởng trợ cấp. Tháng 1-7/2024 ông thất nghiệp.\nÔng Châu hỏi, trường hợp của ông có được đăng ký hưởng trợ cấp thất nghiệp không?",
+  "answer": "Issue: Ông Bình Châu hỏi về khả năng đăng ký hưởng trợ cấp thất nghiệp sau 11 tháng thất nghiệp mà chưa hưởng trợ cấp. \nRule: Theo Điều 23 khoản 1 Luật BHXH 2024, công dân có thời gian đóng bảo hiểm xã hội nhưng không đủ điều kiện hưởng trợ cấp hưu trí xã hội có thể được hưởng trợ cấp hằng tháng nếu có yêu cầu. \nApplication: Không có slot nào được gán giá trị. Prolog đã kiểm tra điều kiện và xác định rằng ông Châu không đủ điều kiện hưởng trợ cấp thất nghiệp do có 11 tháng thất nghiệp. \nConclusion: Theo Prolog, ông Bình Châu KHÔNG đủ điều kiện hưởng trợ cấp thất nghiệp do có thời gian thất nghiệp dưới 12 tháng.",
+  "plain_answer": "Ông Bình Châu không đủ điều kiện để đăng ký hưởng trợ cấp thất nghiệp vì ông chỉ có 11 tháng thất nghiệp, theo quy định tại [Điều 23 khoản 1] Luật BHXH 2024 yêu cầu tối thiểu 12 tháng. Ông có thể cần xem xét các lựa chọn khác hoặc chờ thêm thời gian để đủ điều kiện.",
+  "citations": [
+    "[Điều 23 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A23.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(condition,months_contributed_less_than_12,based_on(source_a38_k3)),step(conclusion,eligible_unemployment_benefit(user,_3422),based_on(source_a38_k3))]",
+  "prolog_program": "months_contributed(user, 11).\nlegal_source(source_a38_k3, law_bhxh_2024, article_38, clause_1, none, 'Thời hạn 60 ngày để đăng ký bảo hiểm thất nghiệp.').\neligible_unemployment_benefit(Person, Eligible, Trace) :- months_contributed(Person, M), M >= 12, Trace = [step(condition, months_contributed_at_least_12, based_on(source_a38_k3)), step(conclusion, eligible_unemployment_benefit(Person, Eligible), based_on(source_a38_k3))].\neligible_unemployment_benefit(Person, Eligible, Trace) :- months_contributed(Person, M), M < 12, Trace = [step(condition, months_contributed_less_than_12, based_on(source_a38_k3)), step(conclusion, eligible_unemployment_benefit(Person, Eligible), based_on(source_a38_k3))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Ông Bình Châu hỏi về khả năng đăng ký hưởng trợ cấp thất nghiệp sau 11 tháng thất nghiệp mà chưa hưởng trợ cấp.",
+    "rule": "Theo Điều 23 khoản 1 Luật BHXH 2024, công dân có thời gian đóng bảo hiểm xã hội nhưng không đủ điều kiện hưởng trợ cấp hưu trí xã hội có thể được hưởng trợ cấp hằng tháng nếu có yêu cầu.",
+    "application": "Không có slot nào được gán giá trị. Prolog đã kiểm tra điều kiện và xác định rằng ông Châu không đủ điều kiện hưởng trợ cấp thất nghiệp do có 11 tháng thất nghiệp.",
+    "conclusion": "Theo Prolog, ông Bình Châu KHÔNG đủ điều kiện hưởng trợ cấp thất nghiệp do có thời gian thất nghiệp dưới 12 tháng."
+  },
+  "elapsed_s": 14.574,
+  "prompt_tokens": 5415,
+  "completion_tokens": 566,
+  "error": null,
+  "gold_answer": "Tại Điều 49 Luật Việc làm quy định, người lao động đang đóng bảo hiểm thất nghiệp được hưởng trợ cấp thất nghiệp khi có đủ các điều kiện sau đây:\n- Chấm dứt hợp đồng lao động hoặc hợp đồng làm việc, trừ các trường hợp sau đây:\n+ Người lao động đơn phương chấm dứt hợp đồng lao động, hợp đồng làm việc trái pháp luật;\n+ Hưởng lương hưu, trợ cấp mất sức lao động hằng tháng.\n- Đã đóng bảo hiểm thất nghiệp từ đủ:\n+ 12 tháng trở lên trong thời gian 24 tháng trước khi chấm dứt hợp đồng lao động đối với các trường hợp: hợp đồng lao động có xác định và không xác định thời hạn;\n+ 12 tháng trở lên trong thời gian 36 tháng trước khi chấm dứt hợp đồng lao động đối với các trường hợp: ký hợp đồng lao động theo mùa vụ hoặc theo một công việc nhất định có thời hạn từ đủ 3 tháng đến dưới 12 tháng.\n- Đã nộp hồ sơ hưởng trợ cấp thất nghiệp tại Trung tâm dịch vụ việc làm trong thời hạn 3 tháng kể từ ngày chấm dứt hợp đồng lao động hoặc hợp đồng làm việc.\n- Chưa tìm được việc làm sau 15 ngày, kể từ ngày nộp hồ sơ hưởng bảo hiểm thất nghiệp, trừ các trường hợp sau đây:\n+ Thực hiện nghĩa vụ quân sự, nghĩa vụ công an;\n+ Đi học tập có thời hạn từ đủ 12 tháng trở lên;\n+ Chấp hành quyết định áp dụng biện pháp đưa vào trường giáo dưỡng, cơ sở giáo dục bắt buộc, cơ sở cai nghiện bắt buộc;\n+ Bị tạm giam; chấp hành hình phạt tù;\n+ Ra nước ngoài định cư; đi lao động ở nước ngoài theo hợp đồng;\n+ Chết.\nTại Khoản 1 Điều 45 Luật Việc làm quy định, thời gian đóng bảo hiểm thất nghiệp để xét hưởng bảo hiểm thất nghiệp là tổng các khoảng thời gian đã đóng bảo hiểm thất nghiệp liên tục hoặc không liên tục được cộng dồn từ khi bắt đầu đóng bảo hiểm thất nghiệp cho đến khi người lao động chấm dứt hợp đồng lao động hoặc hợp đồng làm việc theo quy định của pháp luật mà chưa hưởng trợ cấp thất nghiệp.\nBHXH Việt Nam thông tin quy định của chính sách đến ông Châu để ông nắm được và đối chiếu với trường hợp cụ thể của bản thân để xác định quyền lợi về hưởng trợ cấp thất nghiệp của mình.",
+  "gold_citations_raw": "Điều 49 Luật Việc\nKhoản 1 Điều 45 Luật Việc"
+}

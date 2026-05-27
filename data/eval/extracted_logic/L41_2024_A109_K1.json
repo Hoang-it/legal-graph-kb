@@ -1,0 +1,56 @@
+{
+  "clause_id": "L41_2024.A109.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A109.K1",
+    "conditions": [
+      {
+        "predicate": "years_contributed",
+        "operator": ">=",
+        "value": 5,
+        "unit": "year",
+        "description_vi": "Thời gian đóng bảo hiểm xã hội từ đủ 60 tháng trở lên"
+      }
+    ],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Điều kiện nhận trợ cấp mai táng",
+        "if_conditions_idx": [
+          0
+        ],
+        "then_predicate": "one_time_social_insurance",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [
+      60
+    ],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.78,
+  "usage": {
+    "prompt_tokens": 2685,
+    "completion_tokens": 212
+  },
+  "extracted_at": "2026-05-27T08:32:04"
+}

@@ -1,0 +1,37 @@
+{
+  "clause_id": "L41_2024.A130.K2",
+  "extraction": {
+    "clause_id": "L41_2024.A130.K2",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [],
+    "exceptions": [],
+    "references": [],
+    "defines": [
+      {
+        "term_vi": "Hành vi về bảo hiểm xã hội",
+        "definition": "Hành vi của cơ quan bảo hiểm xã hội, người có thẩm quyền trong cơ quan bảo hiểm xã hội thực hiện hoặc không thực hiện trách nhiệm theo quy định của pháp luật về bảo hiểm xã hội.",
+        "related_predicate": null
+      }
+    ],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 1.0,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.28,
+  "usage": {
+    "prompt_tokens": 2666,
+    "completion_tokens": 158
+  },
+  "extracted_at": "2026-05-27T08:35:11"
+}

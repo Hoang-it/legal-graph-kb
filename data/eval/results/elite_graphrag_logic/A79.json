@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 79,
+  "question": "Anh chị cho em hỏi, mấy năm trước e có đi làm ở công ty cũ và đóng bảo hiểm đầy đủ, công ty cũng không nợ tiền BH. Do dịch covid công ty không trụ được nên đã giải thể, cũng đã báo giảm cho em nhưng năm ấy các nhân viên lại chẳng ai lấy tờ rời về . Sau đó e cũng có đi làm cty khác và đóng BH nối tiếp cho tới hiện tại . \nVậy mấy năm đóng ở cty cũ kia em chưa lấy tờ rời thì sau này em có thể tự lên cơ quan bảo hiểm xin lấy tờ rời được không?",
+  "answer": "Issue: Người hỏi muốn biết liệu có thể tự lên cơ quan bảo hiểm xin lấy tờ rời cho thời gian đóng bảo hiểm ở công ty cũ hay không. \nRule: Theo Điều 107 khoản 2 Luật BHXH 2024, người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ cho cơ quan bảo hiểm xã hội. \nApplication: Không có slot nào được gán giá trị. Prolog query complaint(user, Answer, Trace) trả về Answer = true, cho thấy người hỏi có thể thực hiện yêu cầu này. \nConclusion: Theo Prolog, người dùng CÓ thể tự lên cơ quan bảo hiểm xin lấy tờ rời.",
+  "plain_answer": "Bạn hoàn toàn có thể tự lên cơ quan bảo hiểm để xin lấy tờ rời cho thời gian đóng bảo hiểm ở công ty cũ. Theo [Điều 107 khoản 2] Luật BHXH 2024, nếu bạn đủ điều kiện và có yêu cầu, bạn có thể nộp hồ sơ để hưởng bảo hiểm xã hội một lần. Hãy chuẩn bị hồ sơ cần thiết để thực hiện yêu cầu này nhé!",
+  "citations": [
+    "[Điều 107 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A107.K2"
+  ],
+  "citation_indices": [
+    1,
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(condition,complaint_process,based_on(source_a130_k5))]",
+  "prolog_program": "legal_source(source_a107_k2, law_bhxh_2024, article_41, clause_2, none, 'Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.').\nlegal_source(source_a130_k5, law_bhxh_2024, article_41, clause_5, none, 'Việc giải quyết khiếu nại đối với quyết định, hành vi có liên quan đến việc thụ hưởng các chế độ bảo hiểm xã hội hoặc tính thời gian công tác trong khu vực nhà nước để hưởng bảo hiểm xã hội trước ngày 01 tháng 01 năm 1995 mà không đủ hồ sơ gốc, không còn hồ sơ gốc hoặc không còn cơ quan, đơn vị trực tiếp quản lý người lao động được thực hiện như sau:').\ncomplaint(Person, True, Trace) :- True = true, Trace = [step(condition, complaint_process, based_on(source_a130_k5))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết liệu có thể tự lên cơ quan bảo hiểm xin lấy tờ rời cho thời gian đóng bảo hiểm ở công ty cũ hay không.",
+    "rule": "Theo Điều 107 khoản 2 Luật BHXH 2024, người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ cho cơ quan bảo hiểm xã hội.",
+    "application": "Không có slot nào được gán giá trị. Prolog query complaint(user, Answer, Trace) trả về Answer = true, cho thấy người hỏi có thể thực hiện yêu cầu này.",
+    "conclusion": "Theo Prolog, người dùng CÓ thể tự lên cơ quan bảo hiểm xin lấy tờ rời."
+  },
+  "elapsed_s": 18.313,
+  "prompt_tokens": 5799,
+  "completion_tokens": 561,
+  "error": null,
+  "gold_answer": "Có. Nếu công ty cũ đã giải thể, đã báo giảm và không nợ BHXH, bạn vẫn có thể liên hệ cơ quan BHXH để đề nghị xác nhận/cấp lại tờ rời hoặc cập nhật dữ liệu quá trình đóng. Việc chưa lấy tờ rời trước đây không làm mất thời gian đã đóng hợp pháp, nhất là khi sau đó bạn tiếp tục đóng nối tiếp ở công ty khác trên cùng mã số BHXH. Nên mang CCCD và thông tin đơn vị cũ để cơ quan BHXH tra cứu nhanh hơn.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn cấp lại/xác nhận sổ BHXH của BHXH Việt Nam"
+}

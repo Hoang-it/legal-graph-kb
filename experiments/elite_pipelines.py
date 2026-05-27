@@ -67,6 +67,7 @@ from solvers.prolog_solver import PrologSolver  # type: ignore  # noqa: F401
 ELITE_ONTOLOGY_PATH = Path("data/eval/elite_ontology_2024.json")
 NO_RETRIEVAL_PROMPT_PATH = Path("experiments/prompts/elite_no_retrieval.md")
 IRAC_WITH_PLAIN_PROMPT_PATH = Path("experiments/prompts/irac_with_plain.md")
+GRAPHRAG_LOGIC_PROMPT_PATH = Path("experiments/prompts/elite_graphrag_logic.md")
 
 
 # ---------------------------------------------------------------------------
@@ -85,6 +86,8 @@ class EliteAnswer:
     prolog_success: bool = False
     n_repair_rounds: int = 0
     prolog_trace: str = ""
+    prolog_program: str = ""        # raw Prolog source text (envelope.raw_program_text) cho debugging
+    prolog_error: str = ""          # solver error message (ExecutionResult.error)
     irac_sections: dict[str, str] = field(default_factory=dict)
     elapsed_s: float = 0.0
     prompt_tokens: int = 0
@@ -204,6 +207,47 @@ def _parse_irac_sections(text: str) -> dict[str, str]:
 
 
 # ---------------------------------------------------------------------------
+# Prolog output sanitizer
+# ---------------------------------------------------------------------------
+
+def _sanitize_prolog_output(parsed: dict) -> dict:
+    """Fix common syntactic bugs in LLM-gen Prolog before pipeline parses it.
+
+    gpt-4o-mini reliably violates a few Prolog atom/clause invariants even when
+    prompted explicitly. Most common failures observed:
+    1. `legal_sources` list: only LAST entry ends with `.`, intermediate entries
+       end with `)` only → `legal_source(...) legal_source(...).` → parser sees
+       adjacent terms → "Operator expected" error.
+    2. `rules` entries: same bug occasionally.
+    3. `verify_facts`: usually OK but defensive-fix anyway.
+
+    This sanitizer ensures every entry ends with exactly one `.` after its
+    closing `)`. Stripping trailing whitespace first, then appending `.` if
+    missing. Idempotent — re-running on already-correct strings is no-op.
+    """
+    def _ensure_period(s: str) -> str:
+        if not isinstance(s, str):
+            return s
+        t = s.rstrip()
+        if not t:
+            return t
+        # Already ends with period
+        if t.endswith("."):
+            return t
+        # Strip stray trailing commas/semicolons → then add period
+        while t.endswith((",", ";")):
+            t = t[:-1].rstrip()
+        return t + "."
+
+    for key in ("legal_sources", "rules", "verify_facts"):
+        items = parsed.get(key)
+        if isinstance(items, list):
+            parsed[key] = [_ensure_period(x) for x in items]
+
+    return parsed
+
+
+# ---------------------------------------------------------------------------
 # Token accounting LLM wrapper
 # ---------------------------------------------------------------------------
 
@@ -317,7 +361,7 @@ class _TokenTrackingLLMClient(LLMClient):
         raw = resp.choices[0].message.content or "{}"
         try:
             parsed = json.loads(raw)
-            return parsed if isinstance(parsed, dict) else {}
+            return _sanitize_prolog_output(parsed) if isinstance(parsed, dict) else {}
         except json.JSONDecodeError:
             return {}
 
@@ -688,6 +732,8 @@ class _EliteBasePipeline:
                 prolog_success=prolog_success,
                 n_repair_rounds=n_rounds,
                 prolog_trace=str(trace_value) if trace_value is not None else "",
+                prolog_program=str(getattr(envelope, "raw_program_text", "") or "")[:5000],
+                prolog_error=str(getattr(result, "error", "") or "")[:1500],
                 irac_sections=irac_sections,
                 elapsed_s=round(elapsed, 3),
                 prompt_tokens=llm.prompt_tokens,
@@ -829,12 +875,59 @@ class EliteGraphRAGPipeline(_EliteBasePipeline):
             pass
 
 
+class EliteGraphRAGLogicPipeline(_EliteBasePipeline):
+    """Arm F (NEW): GraphRAG + Phase 2 logic facts → Logic-LLM Prolog generator.
+
+    Khác `EliteGraphRAGPipeline`:
+    - Retriever = `GraphRAGLogicAsEliteRetriever` (vector + extracted facts +
+      multi-hop REFERS_TO refs inlined vào chunks).
+    - System prompt = `elite_graphrag_logic.md` — instruct LLM dùng FACTS thay
+      vì hallucinate predicates / threshold values.
+
+    Hypothesis (Phase 5 sẽ test): prolog_success_rate sẽ improve so với
+    `elite_graphrag` (65.5% với gpt-4o-mini per audit) bằng cách cung cấp
+    pre-extracted facts thay vì để LLM reconstruct từ raw clauses.
+    """
+
+    arm_name = "elite_graphrag_logic"
+
+    def __init__(self, rag_pipeline=None, max_hops: int = 1, **kwargs):
+        from experiments.graphrag_retriever_adapter import GraphRAGLogicAsEliteRetriever
+        if rag_pipeline is None:
+            from src.rag_query import RagPipeline
+            rag_pipeline = RagPipeline()
+            _ = rag_pipeline.embed_model  # warm up
+        self._owned_rag = rag_pipeline
+        adapter = GraphRAGLogicAsEliteRetriever(rag_pipeline, max_hops=max_hops)
+
+        # Load logic-aware system prompt
+        if not GRAPHRAG_LOGIC_PROMPT_PATH.exists():
+            raise FileNotFoundError(
+                f"Prompt not found: {GRAPHRAG_LOGIC_PROMPT_PATH}. "
+                f"Should ship with this arm — verify file exists."
+            )
+        prompt = GRAPHRAG_LOGIC_PROMPT_PATH.read_text(encoding="utf-8")
+
+        super().__init__(
+            retriever=adapter,
+            prompt_override=prompt,
+            **kwargs,
+        )
+
+    def close(self):
+        try:
+            self._owned_rag.close()
+        except Exception:
+            pass
+
+
 if __name__ == "__main__":
     # Smoke test: chạy 1 câu hỏi qua mỗi arm
     test_question = "Người sử dụng lao động có trách nhiệm gì về bảo hiểm xã hội?"
     print(f"Q: {test_question}\n")
 
-    for cls in (EliteNoRetrievalPipeline, EliteOntologyPipeline, EliteGraphRAGPipeline):
+    for cls in (EliteNoRetrievalPipeline, EliteOntologyPipeline, EliteGraphRAGPipeline,
+                EliteGraphRAGLogicPipeline):
         print(f"--- {cls.arm_name} ---")
         try:
             p = cls()

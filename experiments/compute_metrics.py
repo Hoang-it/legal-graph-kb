@@ -56,8 +56,9 @@ ALL_ARMS = (
     "elite_no_retrieval",
     "elite_ontology",
     "elite_graphrag",
+    "elite_graphrag_logic",
 )
-ELITE_ARMS = {"elite_no_retrieval", "elite_ontology", "elite_graphrag"}
+ELITE_ARMS = {"elite_no_retrieval", "elite_ontology", "elite_graphrag", "elite_graphrag_logic"}
 # Pairwise: so sánh mỗi arm khác vs graphrag (baseline). Có thể mở rộng sau.
 PAIRWISE_BASELINE = "graphrag"
 

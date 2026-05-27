@@ -1,0 +1,34 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 63,
+  "question": "Tôi làm việc tại cty được 18 năm, giờ tôi nghỉ ngang vì ko xin được giấy thôi việc, hiện tại tôi đã đi làm ở 1 công ty khác.vậy bảo hiểm thất nghiệp của tôi cộng dồn vào những năm tiếp theo tôi đóng ở công ty mới hay sẽ bị mất?",
+  "answer": "Issue: Người hỏi đã làm việc 18 năm và nghỉ việc mà không có giấy thôi việc, hỏi về việc bảo hiểm thất nghiệp có được cộng dồn hay không. \nRule: Theo Điều 9 khoản 2 Luật BHXH 2024 (Luật BHXH 2024 (41/2024/QH15), Điều 9 khoản 2), người lao động có quyền hưởng bảo hiểm thất nghiệp. \nApplication: Không có slot nào được gán giá trị. Prolog query không thể thực hiện do thiếu thông tin cần thiết để xác định tình trạng bảo hiểm thất nghiệp. \nConclusion: Hệ thống không thể tính được kết quả cuối cùng do thiếu slot bindings.",
+  "plain_answer": "Hệ thống chưa đủ thông tin để tính chính xác về việc bảo hiểm thất nghiệp của bạn có được cộng dồn hay không. Bạn cần cung cấp thêm thông tin về tình trạng bảo hiểm thất nghiệp của mình. Theo [Điều 9 khoản 2] Luật BHXH 2024, bạn có quyền hưởng bảo hiểm thất nghiệp nếu đủ điều kiện.",
+  "citations": [
+    "[Điều 9 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A9.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(condition,years_contributed_at_least_15,based_on(source_a64_k1)),step(conclusion,eligible_pension(user,true),based_on(source_a64_k1))]",
+  "prolog_program": "years_contributed(user, 18).\nlegal_source(source_a64_k1, law_bhxh_2024, article_64, clause_1, none, 'Người lao động đủ 15 năm đóng BHXH và đủ tuổi nghỉ hưu thì được hưởng lương hưu.').\neligible_pension(Person, Eligible, Trace) :- years_contributed(Person, Y), Y >= 15, Eligible = true, Trace = [step(condition, years_contributed_at_least_15, based_on(source_a64_k1)), step(conclusion, eligible_pension(Person, Eligible), based_on(source_a64_k1))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi đã làm việc 18 năm và nghỉ việc mà không có giấy thôi việc, hỏi về việc bảo hiểm thất nghiệp có được cộng dồn hay không.",
+    "rule": "Theo Điều 9 khoản 2 Luật BHXH 2024 (Luật BHXH 2024 (41/2024/QH15), Điều 9 khoản 2), người lao động có quyền hưởng bảo hiểm thất nghiệp.",
+    "application": "Không có slot nào được gán giá trị. Prolog query không thể thực hiện do thiếu thông tin cần thiết để xác định tình trạng bảo hiểm thất nghiệp.",
+    "conclusion": "Hệ thống không thể tính được kết quả cuối cùng do thiếu slot bindings."
+  },
+  "elapsed_s": 10.999,
+  "prompt_tokens": 5270,
+  "completion_tokens": 478,
+  "error": null,
+  "gold_answer": "Thời gian đóng BHTN chưa hưởng sẽ được bảo lưu để cộng dồn với thời gian đóng ở công ty mới, không tự mất chỉ vì bạn nghỉ ngang. Điều quan trọng là lần nghỉ việc trước bạn chưa nhận trợ cấp thất nghiệp cho khoảng thời gian đó. Khi đủ điều kiện hưởng ở lần sau, cơ quan có thẩm quyền sẽ cộng dồn thời gian đóng BHTN chưa hưởng để tính số tháng trợ cấp. Tuy nhiên hồ sơ chấm dứt HĐLĐ của từng giai đoạn vẫn phải hợp lệ.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 49"
+}

@@ -1,0 +1,37 @@
+{
+  "clause_id": "L41_2024.A27.K3",
+  "extraction": {
+    "clause_id": "L41_2024.A27.K3",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [],
+    "exceptions": [],
+    "references": [],
+    "defines": [
+      {
+        "term_vi": "Hồ sơ đăng ký tham gia bảo hiểm xã hội tự nguyện",
+        "definition": "tờ khai đăng ký tham gia bảo hiểm xã hội của người tham gia bảo hiểm xã hội tự nguyện",
+        "related_predicate": null
+      }
+    ],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 1.0,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 1.85,
+  "usage": {
+    "prompt_tokens": 2653,
+    "completion_tokens": 144
+  },
+  "extracted_at": "2026-05-27T08:17:21"
+}

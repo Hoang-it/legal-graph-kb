@@ -1,0 +1,34 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 20,
+  "question": "Vợ chồng bà Hải Bắc làm chung một cơ quan, đã đóng BHXH trên 3 năm.\nBà Bắc hỏi, khi bà nghỉ sinh con thì chồng của bà có được hưởng tiền trợ cấp thai sản không?",
+  "answer": "Issue: Bà Bắc hỏi về quyền lợi của chồng khi bà nghỉ sinh con. \nRule: Theo Điều 55 khoản 1 Luật BHXH 2024, người chồng đang tham gia bảo hiểm xã hội bắt buộc được nghỉ việc hưởng chế độ thai sản khi lao động nữ sinh con. \nApplication: Không có slot nào được gán giá trị, nhưng Prolog đã xác định rằng chồng của bà Bắc có quyền hưởng trợ cấp thai sản vì đã đóng BHXH trên 3 năm. \nConclusion: Theo Prolog, chồng của bà Bắc CÓ quyền hưởng trợ cấp thai sản.",
+  "plain_answer": "Chồng của bà Bắc có quyền hưởng tiền trợ cấp thai sản khi bà nghỉ sinh con, vì theo [Điều 55 khoản 1] Luật BHXH 2024, người chồng đang tham gia bảo hiểm xã hội bắt buộc được nghỉ việc hưởng chế độ này. Điều kiện là chồng đã đóng BHXH trên 3 năm, và trong trường hợp này, điều kiện đã được đáp ứng.",
+  "citations": [
+    "[Điều 55 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A55.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(condition,years_contributed_at_least_3,based_on(source_a54_k4)),step(conclusion,maternity(user,true),based_on(source_a54_k4))]",
+  "prolog_program": "years_contributed(user, 3).\nlegal_source(source_a54_k4, law_bhxh_2024, article_54, clause_4, none, 'Người chồng đang tham gia bảo hiểm xã hội bắt buộc được nghỉ việc hưởng chế độ thai sản khi lao động nữ mang thai hộ sinh con.').\nmaternity(Person, Maternity, Trace) :- years_contributed(Person, Y), Y >= 3, Maternity = true, Trace = [step(condition, years_contributed_at_least_3, based_on(source_a54_k4)), step(conclusion, maternity(Person, Maternity), based_on(source_a54_k4))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Bà Bắc hỏi về quyền lợi của chồng khi bà nghỉ sinh con.",
+    "rule": "Theo Điều 55 khoản 1 Luật BHXH 2024, người chồng đang tham gia bảo hiểm xã hội bắt buộc được nghỉ việc hưởng chế độ thai sản khi lao động nữ sinh con.",
+    "application": "Không có slot nào được gán giá trị, nhưng Prolog đã xác định rằng chồng của bà Bắc có quyền hưởng trợ cấp thai sản vì đã đóng BHXH trên 3 năm.",
+    "conclusion": "Theo Prolog, chồng của bà Bắc CÓ quyền hưởng trợ cấp thai sản."
+  },
+  "elapsed_s": 11.369,
+  "prompt_tokens": 5419,
+  "completion_tokens": 481,
+  "error": null,
+  "gold_answer": "Tại Điểm e Khoản 1 Điều 31 và Khoản 2 Điều 34 Luật BHXH năm 2014 quy định lao động nam đang đóng BHXH có vợ sinh con được nghỉ việc hưởng chế độ thai sản 5 ngày làm việc.\nTrường hợp vợ sinh con phải phẫu thuật, sinh con dưới 32 tuần tuổi được nghỉ 7 ngày làm việc. Trường hợp vợ sinh đôi thì được nghỉ 10 ngày làm việc, từ sinh ba trở lên thì cứ thêm mỗi con được nghỉ thêm 3 ngày làm việc.\nTrường hợp vợ sinh đôi trở lên mà phải phẫu thuật thì được nghỉ 14 ngày làm việc. Thời gian nghỉ việc hưởng chế độ thai sản quy định nêu trên được tính trong khoảng thời gian 30 ngày đầu kể từ ngày vợ sinh con.\nBHXH Việt Nam thông tin để bà Bắc nắm được các quyền lợi về chế độ thai sản.",
+  "gold_citations_raw": "Điểm e Khoản 1 Điều 31 và Khoản 2 Điều 34 Luật BHXH năm 2014"
+}

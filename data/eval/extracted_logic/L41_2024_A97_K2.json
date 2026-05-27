@@ -1,0 +1,60 @@
+{
+  "clause_id": "L41_2024.A97.K2",
+  "extraction": {
+    "clause_id": "L41_2024.A97.K2",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 5,
+        "unit": "day",
+        "direction": "max",
+        "context": "insurance_resolution_time_limit",
+        "description_vi": "Thời hạn giải quyết hồ sơ là 05 ngày làm việc"
+      }
+    ],
+    "rules": [
+      {
+        "name": "Trách nhiệm giải quyết hồ sơ",
+        "if_conditions_idx": [],
+        "then_predicate": "insurance_resolution",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "BHXH_agency"
+        ]
+      }
+    ],
+    "exceptions": [
+      {
+        "of_rule_idx": 0,
+        "condition_description": "Trường hợp không giải quyết hồ sơ",
+        "modifies": "insurance_resolution"
+      }
+    ],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "BHXH_agency"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [
+      5
+    ],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.93,
+  "usage": {
+    "prompt_tokens": 2665,
+    "completion_tokens": 249
+  },
+  "extracted_at": "2026-05-27T08:30:32"
+}

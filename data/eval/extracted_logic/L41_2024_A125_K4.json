@@ -1,0 +1,37 @@
+{
+  "clause_id": "L41_2024.A125.K4",
+  "extraction": {
+    "clause_id": "L41_2024.A125.K4",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [],
+    "exceptions": [],
+    "references": [],
+    "defines": [
+      {
+        "term_vi": "Mức chi trả bảo hiểm hưu trí bổ sung",
+        "definition": "Mức chi trả bảo hiểm hưu trí bổ sung được xác định trên cơ sở số dư tài khoản hưu trí cá nhân tại thời điểm chi trả, được tích lũy thông qua hoạt động đầu tư quỹ bảo hiểm hưu trí bổ sung theo nguyên tắc thị trường.",
+        "related_predicate": null
+      }
+    ],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 1.0,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.28,
+  "usage": {
+    "prompt_tokens": 2674,
+    "completion_tokens": 177
+  },
+  "extracted_at": "2026-05-27T08:34:52"
+}

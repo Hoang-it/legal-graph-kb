@@ -40,8 +40,11 @@ R2_METRICS = Path("data/eval/multimodel/metrics.json")
 OUT = Path("reports/significance.md")
 
 ALPHA = 0.05
-N_CLAIMS = 5
-BONFERRONI_ALPHA = ALPHA / N_CLAIMS  # 0.01
+# N_CLAIMS dynamic: 5 paper-baseline claims + 2 logic-extraction claims (chỉ tested
+# khi `elite_graphrag_logic` xuất hiện trong R1 metrics). BONFERRONI_ALPHA được
+# update trong main() trước khi gọi claim_*() để mỗi claim có flag đúng.
+N_CLAIMS = 5  # default; main() sẽ overwrite
+BONFERRONI_ALPHA = ALPHA / N_CLAIMS
 N_BOOTSTRAP = 10_000
 
 
@@ -241,6 +244,12 @@ def main():
     r1 = json.loads(R1_METRICS.read_text(encoding="utf-8"))
     r2 = json.loads(R2_METRICS.read_text(encoding="utf-8"))
 
+    # Recompute Bonferroni dynamically based on which arms are present
+    global N_CLAIMS, BONFERRONI_ALPHA
+    extra_logic_claims = 2 if "elite_graphrag_logic" in r1 else 0
+    N_CLAIMS = 5 + extra_logic_claims
+    BONFERRONI_ALPHA = ALPHA / N_CLAIMS
+
     results = []
 
     # C1: llm_only beats graphrag (R1 pairwise)
@@ -293,10 +302,29 @@ def main():
         label="C5: GR vs NR prolog_success for gpt-5-mini (after API-error exclude)",
     ))
 
+    # Phase 5 logic-extraction claims — only ran nếu arm `elite_graphrag_logic`
+    # đã có metrics. Pre-registered hypothesis từ plan_logic_extraction.md §7:
+    #   prolog_success(logic) ≥ prolog_success(semantic) + 5pp
+    if "elite_graphrag_logic" in r1:
+        # C6: elite_graphrag_logic prolog_success > elite_graphrag (main hypothesis)
+        results.append(claim_paired_binary(
+            recs_a=r1["elite_graphrag_logic"], recs_b=r1["elite_graphrag"],
+            chain=["prolog_rollback", "prolog_success"],
+            arm_a="elite_graphrag_logic", arm_b="elite_graphrag",
+            label="C6: elite_graphrag_logic prolog_success > elite_graphrag (R1, main hypothesis)",
+        ))
+        # C7: faithfulness diff (secondary, bootstrap CI)
+        results.append(claim_paired_continuous(
+            recs_a=r1["elite_graphrag_logic"], recs_b=r1["elite_graphrag"],
+            chain=["faithfulness", "faithfulness"],
+            arm_a="elite_graphrag_logic", arm_b="elite_graphrag",
+            label="C7: elite_graphrag_logic faithfulness > elite_graphrag (R1, secondary)",
+        ))
+
     # Write report
     OUT.parent.mkdir(parents=True, exist_ok=True)
     lines = []
-    lines.append("# Significance Tests — Top 5 Paper Claims")
+    lines.append(f"# Significance Tests — Top {N_CLAIMS} Paper Claims")
     lines.append("")
     lines.append(f"- α = {ALPHA}")
     lines.append(f"- Bonferroni correction for {N_CLAIMS} claims → α_bonf = {BONFERRONI_ALPHA:.4f}")

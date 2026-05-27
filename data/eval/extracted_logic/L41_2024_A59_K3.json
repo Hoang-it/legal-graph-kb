@@ -1,0 +1,76 @@
+{
+  "clause_id": "L41_2024.A59.K3",
+  "extraction": {
+    "clause_id": "L41_2024.A59.K3",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 30,
+        "unit": "day",
+        "direction": "exact",
+        "context": "maternity_allowance_daily_rate",
+        "description_vi": "Chia cho 30 ngày để tính mức trợ cấp mỗi ngày"
+      }
+    ],
+    "rules": [
+      {
+        "name": "Mức trợ cấp thai sản mỗi ngày",
+        "if_conditions_idx": [],
+        "then_predicate": "monthly_amount",
+        "then_value": "formula:monthly_maternity_allowance / 30",
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 52,
+        "clause": null,
+        "law": "L41_2024"
+      },
+      {
+        "article": 57,
+        "clause": null,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.95,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [
+      6
+    ],
+    "days": [
+      30
+    ],
+    "vnd_amounts": [],
+    "references": [
+      [
+        52,
+        null
+      ],
+      [
+        57,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 4.54,
+  "usage": {
+    "prompt_tokens": 2706,
+    "completion_tokens": 265
+  },
+  "extracted_at": "2026-05-27T08:23:33"
+}

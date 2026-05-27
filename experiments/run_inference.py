@@ -37,6 +37,7 @@ ALL_ARMS = (
     "elite_no_retrieval",
     "elite_ontology",
     "elite_graphrag",
+    "elite_graphrag_logic",
 )
 
 
@@ -212,6 +213,8 @@ def _run_elite(
                     "prolog_status": ans.prolog_status,
                     "n_repair_rounds": ans.n_repair_rounds,
                     "prolog_trace": ans.prolog_trace,
+                    "prolog_program": getattr(ans, "prolog_program", ""),
+                    "prolog_error": getattr(ans, "prolog_error", ""),
                     "irac_sections": ans.irac_sections,
                     # ---- Standard fields ----
                     "elapsed_s": ans.elapsed_s,
@@ -263,12 +266,19 @@ def run_elite_graphrag(questions, force, verbose):
     _run_elite("elite_graphrag", p, questions, force, verbose)
 
 
+def run_elite_graphrag_logic(questions, force, verbose):
+    from experiments.elite_pipelines import EliteGraphRAGLogicPipeline
+    p = EliteGraphRAGLogicPipeline()
+    _run_elite("elite_graphrag_logic", p, questions, force, verbose)
+
+
 ARM_RUNNERS = {
     "graphrag": run_graphrag,
     "llm_only": run_llm_only,
     "elite_no_retrieval": run_elite_no_retrieval,
     "elite_ontology": run_elite_ontology,
     "elite_graphrag": run_elite_graphrag,
+    "elite_graphrag_logic": run_elite_graphrag_logic,
 }
 
 

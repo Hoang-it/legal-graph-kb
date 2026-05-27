@@ -1,0 +1,46 @@
+{
+  "clause_id": "L41_2024.A23.K6",
+  "extraction": {
+    "clause_id": "L41_2024.A23.K6",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Hưởng bảo hiểm y tế từ ngân sách nhà nước",
+        "if_conditions_idx": [],
+        "then_predicate": "health_insurance",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ",
+          "Nhà_nước"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NLĐ",
+      "Nhà_nước"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 2.31,
+  "usage": {
+    "prompt_tokens": 2639,
+    "completion_tokens": 164
+  },
+  "extracted_at": "2026-05-27T08:16:54"
+}

@@ -1,0 +1,34 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 88,
+  "question": "Em nghỉ việc ở công ty cũ đc gần 6 tháng , thì bây h em có thể rút BHXH hay BHTN đc không?",
+  "answer": "Issue: Người hỏi đã nghỉ việc ở công ty cũ gần 6 tháng và muốn biết có thể rút BHXH hay BHTN không.\nRule: Theo Điều 64 khoản 1 Luật BHXH 2024, người lao động cần đủ 15 năm đóng BHXH để được hưởng lương hưu.\nApplication: Không có slot nào được gán giá trị. Prolog query eligible_pension(user, Eligible, Trace) trả về Eligible = false vì số năm đóng BHXH (6) chưa đủ 15 năm.\nConclusion: Theo Prolog, người dùng KHÔNG đủ điều kiện hưởng lương hưu do số năm đóng BHXH là 6 năm, chưa đạt yêu cầu tối thiểu 15 năm.",
+  "plain_answer": "Bạn đã nghỉ việc gần 6 tháng, nhưng theo [Điều 64 khoản 1] Luật BHXH 2024, bạn cần có ít nhất 15 năm đóng BHXH để đủ điều kiện hưởng lương hưu. Hiện tại, bạn chưa đủ điều kiện vì chỉ có 6 năm đóng. Bạn có thể tìm hiểu thêm về chế độ BHTN nếu cần.",
+  "citations": [
+    "[Điều 64 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A64.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(condition,years_contributed_less_than_15,based_on(source_a64_k1)),step(conclusion,eligible_pension(user,false),based_on(source_a64_k1))]",
+  "prolog_program": "years_contributed(user, 6).\nlegal_source(source_a64_k1, law_bhxh_2024, article_64, clause_1, none, 'Người lao động đủ 15 năm đóng BHXH và đủ tuổi nghỉ hưu thì được hưởng lương hưu.').\neligible_pension(Person, Eligible, Trace) :- years_contributed(Person, Y), Y >= 15, Eligible = true, Trace = [step(condition, years_contributed_at_least_15, based_on(source_a64_k1)), step(conclusion, eligible_pension(Person, Eligible), based_on(source_a64_k1))].\neligible_pension(Person, Eligible, Trace) :- years_contributed(Person, Y), Y < 15, Eligible = false, Trace = [step(condition, years_contributed_less_than_15, based_on(source_a64_k1)), step(conclusion, eligible_pension(Person, Eligible), based_on(source_a64_k1))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi đã nghỉ việc ở công ty cũ gần 6 tháng và muốn biết có thể rút BHXH hay BHTN không.",
+    "rule": "Theo Điều 64 khoản 1 Luật BHXH 2024, người lao động cần đủ 15 năm đóng BHXH để được hưởng lương hưu.",
+    "application": "Không có slot nào được gán giá trị. Prolog query eligible_pension(user, Eligible, Trace) trả về Eligible = false vì số năm đóng BHXH (6) chưa đủ 15 năm.",
+    "conclusion": "Theo Prolog, người dùng KHÔNG đủ điều kiện hưởng lương hưu do số năm đóng BHXH là 6 năm, chưa đạt yêu cầu tối thiểu 15 năm."
+  },
+  "elapsed_s": 15.135,
+  "prompt_tokens": 8935,
+  "completion_tokens": 806,
+  "error": null,
+  "gold_answer": "Với BHTN, nếu bạn nghỉ gần 6 tháng rồi thì vẫn phải kiểm tra còn trong hạn 3 tháng nộp hồ sơ hay đã quá hạn. Nếu đã quá 3 tháng kể từ ngày chấm dứt HĐLĐ thì đợt này bạn không nộp hưởng BHTN được, nhưng thời gian đóng chưa hưởng vẫn được bảo lưu. Với BHXH một lần, thường phải chờ đủ điều kiện luật định, phổ biến là đã ngừng tham gia từ 12 tháng trở lên và thuộc trường hợp được hưởng.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 45; Luật BHXH 2024 Điều 70"
+}

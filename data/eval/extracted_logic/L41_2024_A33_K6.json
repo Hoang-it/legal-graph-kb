@@ -1,0 +1,56 @@
+{
+  "clause_id": "L41_2024.A33.K6",
+  "extraction": {
+    "clause_id": "L41_2024.A33.K6",
+    "conditions": [
+      {
+        "predicate": "so_ngay",
+        "operator": ">=",
+        "value": 14,
+        "unit": "day",
+        "description_vi": "Nghỉ việc hưởng chế độ ốm đau từ 14 ngày làm việc trở lên"
+      }
+    ],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Đóng bảo hiểm xã hội trong tháng đầu làm việc",
+        "if_conditions_idx": [
+          0
+        ],
+        "then_predicate": "mandatory_social_insurance",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [
+      14
+    ],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.47,
+  "usage": {
+    "prompt_tokens": 2664,
+    "completion_tokens": 217
+  },
+  "extracted_at": "2026-05-27T08:18:13"
+}

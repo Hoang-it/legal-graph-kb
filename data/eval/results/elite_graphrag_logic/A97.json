@@ -1,0 +1,34 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 97,
+  "question": "Mình đã rút Bảo hiểm xã hội lần 1 nhưng chưa trả sổ giờ mình đóng đc gần 4 năm rồi, cho mình hỏi bao lâu mình mới dx trả sổ vậy?",
+  "answer": "Issue: Người hỏi đã rút Bảo hiểm xã hội lần 1 nhưng chưa trả sổ và muốn biết thời gian cấp lại sổ bảo hiểm xã hội. \nRule: Theo Điều 28 khoản 4 Luật BHXH 2024 (citation source_L41_2024.A28.K4), cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ. \nApplication: Không có slot nào được gán giá trị. Prolog query không thể xác định thời gian cấp sổ bảo hiểm xã hội do thiếu thông tin cần thiết. \nConclusion: Hệ thống không thể tính được kết quả cuối cùng do thiếu slot nào.",
+  "plain_answer": "Hệ thống chưa đủ thông tin để tính chính xác thời gian cấp lại sổ bảo hiểm xã hội. Theo [Điều 28 khoản 4] Luật BHXH 2024, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ trong thời hạn 05 ngày làm việc kể từ khi nhận đủ hồ sơ. Bạn vui lòng cung cấp thêm thông tin để mình tính giúp.",
+  "citations": [
+    "[Điều 28 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A28.K4"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(condition,social_insurance_book_issuance_time_limit,based_on(source_a28_k4))]",
+  "prolog_program": "legal_source(source_a28_k4, law_bhxh_2024, article_28, clause_4, none, 'Cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ.').\nsocial_insurance_book(Person, True, Trace) :- True = true, Trace = [step(condition, social_insurance_book_issuance_time_limit, based_on(source_a28_k4))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi đã rút Bảo hiểm xã hội lần 1 nhưng chưa trả sổ và muốn biết thời gian cấp lại sổ bảo hiểm xã hội.",
+    "rule": "Theo Điều 28 khoản 4 Luật BHXH 2024 (citation source_L41_2024.A28.K4), cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ.",
+    "application": "Không có slot nào được gán giá trị. Prolog query không thể xác định thời gian cấp sổ bảo hiểm xã hội do thiếu thông tin cần thiết.",
+    "conclusion": "Hệ thống không thể tính được kết quả cuối cùng do thiếu slot nào."
+  },
+  "elapsed_s": 9.639,
+  "prompt_tokens": 5445,
+  "completion_tokens": 429,
+  "error": null,
+  "gold_answer": "Sau khi đã nhận BHXH một lần, nếu bạn đi làm lại và đóng BHXH gần 4 năm thì quá trình tham gia mới vẫn được ghi nhận bình thường trên cùng mã số BHXH. Việc 'trả sổ' hiện nay chủ yếu là cập nhật dữ liệu điện tử; nếu cần bản giấy/tờ rời thì cơ quan BHXH hoặc đơn vị sẽ xác nhận khi có phát sinh chốt sổ, nghỉ việc hoặc cấp lại. Không có quy định phải chờ đủ bao lâu mới được 'trả sổ'; quan trọng là quá trình đóng mới đã được cập nhật đúng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25, Điều 102"
+}

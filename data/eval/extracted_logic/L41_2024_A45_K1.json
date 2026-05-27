@@ -1,0 +1,44 @@
+{
+  "clause_id": "L41_2024.A45.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A45.K1",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Mức hưởng trợ cấp ốm đau",
+        "if_conditions_idx": [],
+        "then_predicate": "monthly_amount",
+        "then_value": "formula:average_salary_previous_month + average_salary_first_month",
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.1,
+  "usage": {
+    "prompt_tokens": 2725,
+    "completion_tokens": 160
+  },
+  "extracted_at": "2026-05-27T08:19:59"
+}

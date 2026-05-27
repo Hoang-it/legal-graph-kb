@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 6,
+  "question": "Bà Thảo hỏi, trên giấy ra viện có ghi chú người lao động được nghỉ lao động 10 ngày, vậy, có cần xin thêm Giấy chứng nhận nghỉ việc hưởng BHXH để hưởng 10 ngày đó không?",
+  "answer": "Issue: Bà Thảo hỏi có cần xin Giấy chứng nhận nghỉ việc hưởng BHXH để hưởng 10 ngày nghỉ lao động không.\nRule: Theo Điều 48 khoản 2 Luật BHXH 2024, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ ốm đau kèm theo hồ sơ nộp cho cơ quan bảo hiểm xã hội.\nApplication: Không có slot nào được gán giá trị. Prolog query cần xác định xem có cần Giấy chứng nhận hay không, và đã trả về kết quả là cần Giấy chứng nhận nghỉ việc hưởng BHXH.\nConclusion: Theo Prolog, bà Thảo CẦN xin Giấy chứng nhận nghỉ việc để hưởng 10 ngày nghỉ này.",
+  "plain_answer": "Bạn cần xin Giấy chứng nhận nghỉ việc hưởng BHXH để hưởng 10 ngày nghỉ lao động này. Theo [Điều 48 khoản 2] Luật BHXH 2024, người sử dụng lao động có trách nhiệm lập danh sách và nộp hồ sơ cho cơ quan bảo hiểm xã hội. Hãy đảm bảo bạn có đầy đủ giấy tờ cần thiết để được hưởng quyền lợi nhé.",
+  "citations": [
+    "[Điều 48 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A48.K2"
+  ],
+  "citation_indices": [
+    0,
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(condition,employer_responsibility,based_on(source_a48_k2)),step(condition,employer_obligation,based_on(source_a49_k1)),step(conclusion,need_additional_certificate(true),based_on(source_a48_k2))]",
+  "prolog_program": "legal_source(source_a48_k2, law_bhxh_2024, article_48, clause_2, none, 'Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ ốm đau kèm theo hồ sơ nộp cho cơ quan bảo hiểm xã hội.').\nlegal_source(source_a49_k1, law_bhxh_2024, article_49, clause_1, none, 'Trong thời hạn 07 ngày làm việc kể từ ngày người lao động nghỉ việc hưởng trợ cấp dưỡng sức, phục hồi sức khỏe sau khi ốm đau, người sử dụng lao động lập danh sách người lao động nghỉ việc hưởng trợ cấp dưỡng sức, phục hồi sức khỏe và nộp cho cơ quan bảo hiểm xã hội.').\nneed_additional_certificate(NeedCertificate, Trace) :- NeedCertificate = true, Trace = [step(condition, employer_responsibility, based_on(source_a48_k2)), step(condition, employer_obligation, based_on(source_a49_k1)), step(conclusion, need_additional_certificate(NeedCertificate), based_on(source_a48_k2))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Bà Thảo hỏi có cần xin Giấy chứng nhận nghỉ việc hưởng BHXH để hưởng 10 ngày nghỉ lao động không.",
+    "rule": "Theo Điều 48 khoản 2 Luật BHXH 2024, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ ốm đau kèm theo hồ sơ nộp cho cơ quan bảo hiểm xã hội.",
+    "application": "Không có slot nào được gán giá trị. Prolog query cần xác định xem có cần Giấy chứng nhận hay không, và đã trả về kết quả là cần Giấy chứng nhận nghỉ việc hưởng BHXH.",
+    "conclusion": "Theo Prolog, bà Thảo CẦN xin Giấy chứng nhận nghỉ việc để hưởng 10 ngày nghỉ này."
+  },
+  "elapsed_s": 20.014,
+  "prompt_tokens": 9457,
+  "completion_tokens": 668,
+  "error": null,
+  "gold_answer": "Tại Khoản 14 Điều 1 Thông tư số 18/2022/TT-BYT ngày 31/12/2022 của Bộ trưởng Bộ Y tế sửa đổi, bổ sung một số điều của Thông tư số 56/2017/TT-BYT ngày 29/12/2017 của Bộ trưởng Bộ Y tế quy định chi tiết thi hành Luật BHXH và Luật An toàn, vệ sinh lao động thuộc lĩnh y tế quy định như sau:\nTrường hợp người bệnh cần nghỉ để điều trị ngoại trú sau khi ra viện thì cơ quan BHXH căn cứ số ngày nghỉ ghi tại phần ghi chú của giấy ra viện để làm căn cứ thanh toán chế độ BHXH theo quy định.\nĐối chiếu quy định nêu trên, việc cơ sở khám bệnh, chữa bệnh ghi thêm số ngày nghỉ để điều trị ngoại trú tại phần ghi chú trên giấy ra viện là đúng quy định và số ngày nghỉ điều trị ngoại trú đó sẽ được cơ quan BHXH căn cứ để giải quyết chế độ BHXH đối với bà theo quy định.\nDo đó, bà không phải xin cấp thêm Giấy chứng nhận nghỉ việc hưởng BHXH đối với 10 ngày nghỉ việc điều trị ngoại trú nêu trên",
+  "gold_citations_raw": "Khoản 14 Điều 1 Thông tư số 18/2022/TT-BYT\nThông tư số 56/2017/TT-BYT"
+}

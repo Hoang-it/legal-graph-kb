@@ -1,0 +1,34 @@
+{
+  "clause_id": "L41_2024.A13.K7",
+  "extraction": {
+    "clause_id": "L41_2024.A13.K7",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NSDLĐ",
+      "BHXH_agency"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 1.0,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 1.94,
+  "usage": {
+    "prompt_tokens": 2669,
+    "completion_tokens": 92
+  },
+  "extracted_at": "2026-05-27T08:14:27"
+}

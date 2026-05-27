@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 73,
+  "question": "Mình nghỉ việc mà công ty không in tờ rời bhxh cho mình , giờ mình liên hệ với ai để nhận tờ rời?",
+  "answer": "Issue: Người hỏi muốn biết ai sẽ giúp họ nhận tờ rời bảo hiểm xã hội khi công ty không cung cấp. \nRule: Theo Điều 28 khoản 4 Luật BHXH 2024, 'Cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ.' \nApplication: Không có slot nào được gán giá trị. Prolog query contact_bhxh_agency(user, Trace) trả về Trace = [step(condition, contact_bhxh_agency, based_on(source_a28_k4)]. \nConclusion: Hệ thống không thể tính được kết quả cuối cùng do thiếu thông tin cụ thể về hồ sơ cần thiết.",
+  "plain_answer": "Bạn nên liên hệ với cơ quan bảo hiểm xã hội để nhận tờ rời bảo hiểm xã hội. Theo [Điều 28 khoản 4] Luật BHXH 2024, cơ quan này có trách nhiệm cấp sổ trong thời hạn 05 ngày làm việc kể từ khi nhận đủ hồ sơ. Tuy nhiên, mình cần thêm thông tin về hồ sơ bạn đã nộp để hỗ trợ chính xác hơn.",
+  "citations": [
+    "[Điều 28 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A28.K4"
+  ],
+  "citation_indices": [
+    0,
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(condition,contact_bhxh_agency,based_on(source_a28_k4))]",
+  "prolog_program": "legal_source(source_a28_k4, law_bhxh_2024, article_28, clause_4, none, 'Cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ.').\nlegal_source(source_a76_k5, law_bhxh_2024, article_76, clause_5, none, 'Thời hạn giải quyết hồ sơ là 07 ngày làm việc.').\ncontact_bhxh_agency(User, Trace) :- Trace = [step(condition, contact_bhxh_agency, based_on(source_a28_k4))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết ai sẽ giúp họ nhận tờ rời bảo hiểm xã hội khi công ty không cung cấp.",
+    "rule": "Theo Điều 28 khoản 4 Luật BHXH 2024, 'Cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ.'",
+    "application": "Không có slot nào được gán giá trị. Prolog query contact_bhxh_agency(user, Trace) trả về Trace = [step(condition, contact_bhxh_agency, based_on(source_a28_k4)].",
+    "conclusion": "Hệ thống không thể tính được kết quả cuối cùng do thiếu thông tin cụ thể về hồ sơ cần thiết."
+  },
+  "elapsed_s": 62.241,
+  "prompt_tokens": 5343,
+  "completion_tokens": 477,
+  "error": null,
+  "gold_answer": "Bạn nên liên hệ trước hết với công ty cũ bằng văn bản yêu cầu trả tờ rời/sổ BHXH. Nếu công ty không thực hiện, liên hệ cơ quan BHXH nơi công ty đóng BHXH hoặc cơ quan BHXH nơi bạn cư trú để được hướng dẫn cấp lại/xác nhận quá trình tham gia. Doanh nghiệp có trách nhiệm phối hợp xác nhận thời gian đóng và trả giấy tờ cho người lao động khi chấm dứt HĐLĐ, nên việc giữ hoặc không in trả là không đúng quy định.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48"
+}

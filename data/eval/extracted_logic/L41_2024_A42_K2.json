@@ -1,0 +1,44 @@
+{
+  "clause_id": "L41_2024.A42.K2",
+  "extraction": {
+    "clause_id": "L41_2024.A42.K2",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Điều kiện không được hưởng chế độ ốm đau",
+        "if_conditions_idx": [],
+        "then_predicate": "eligible_sick_leave",
+        "then_value": false,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.95,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.07,
+  "usage": {
+    "prompt_tokens": 2834,
+    "completion_tokens": 154
+  },
+  "extracted_at": "2026-05-27T08:19:30"
+}

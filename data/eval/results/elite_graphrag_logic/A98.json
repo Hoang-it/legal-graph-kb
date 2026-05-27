@@ -1,0 +1,34 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 98,
+  "question": "Em nghỉ việc từ tháng 8 năm 2025 , giờ tháng 4 e mới đi rút bảo hiểm thất nghiệp được k?",
+  "answer": "Issue: Người hỏi nghỉ việc từ tháng 8 năm 2025 và muốn biết có thể rút bảo hiểm thất nghiệp vào tháng 4 hay không.\nRule: Theo Điều 141 khoản 12 Luật BHXH 2024, người lao động cần đủ điều kiện để hưởng bảo hiểm thất nghiệp.\nApplication: Không có thông tin về số năm đóng bảo hiểm xã hội của người hỏi. Prolog xác định rằng người dùng không đủ điều kiện hưởng bảo hiểm thất nghiệp vì không có năm đóng bảo hiểm (0 < 12).\nConclusion: Theo Prolog, người dùng KHÔNG đủ điều kiện hưởng bảo hiểm thất nghiệp do không có năm đóng bảo hiểm xã hội (0 < 12).",
+  "plain_answer": "Bạn không đủ điều kiện để rút bảo hiểm thất nghiệp vì chưa có năm nào đóng bảo hiểm xã hội. Theo [Điều 141 khoản 12] Luật BHXH 2024, bạn cần ít nhất 12 năm đóng bảo hiểm để đủ điều kiện. Bạn có thể cần xem xét các lựa chọn khác hoặc tiếp tục đóng bảo hiểm để đủ điều kiện trong tương lai.",
+  "citations": [
+    "[Điều 141 khoản 12]"
+  ],
+  "citation_ids": [
+    "L41_2024.A141.K12"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(condition,years_contributed_less_than_12,based_on(source_a107_k2)),step(conclusion,eligible_unemployment_benefit(user,false),based_on(source_a107_k2))]",
+  "prolog_program": "years_contributed(user, 0).\nlegal_source(source_a107_k2, law_bhxh_2024, article_107, clause_2, none, 'Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.').\neligible_unemployment_benefit(Person, Eligible, Trace) :- years_contributed(Person, Y), Y >= 12, Eligible = true, Trace = [step(condition, years_contributed_at_least_12, based_on(source_a107_k2)), step(conclusion, eligible_unemployment_benefit(Person, Eligible), based_on(source_a107_k2))].\neligible_unemployment_benefit(Person, Eligible, Trace) :- years_contributed(Person, Y), Y < 12, Eligible = false, Trace = [step(condition, years_contributed_less_than_12, based_on(source_a107_k2)), step(conclusion, eligible_unemployment_benefit(Person, Eligible), based_on(source_a107_k2))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi nghỉ việc từ tháng 8 năm 2025 và muốn biết có thể rút bảo hiểm thất nghiệp vào tháng 4 hay không.",
+    "rule": "Theo Điều 141 khoản 12 Luật BHXH 2024, người lao động cần đủ điều kiện để hưởng bảo hiểm thất nghiệp.",
+    "application": "Không có thông tin về số năm đóng bảo hiểm xã hội của người hỏi. Prolog xác định rằng người dùng không đủ điều kiện hưởng bảo hiểm thất nghiệp vì không có năm đóng bảo hiểm (0 < 12).",
+    "conclusion": "Theo Prolog, người dùng KHÔNG đủ điều kiện hưởng bảo hiểm thất nghiệp do không có năm đóng bảo hiểm xã hội (0 < 12)."
+  },
+  "elapsed_s": 31.699,
+  "prompt_tokens": 9373,
+  "completion_tokens": 849,
+  "error": null,
+  "gold_answer": "Nếu bạn nghỉ việc từ tháng 8/2025 mà đến tháng 4/2026 mới đi nộp hồ sơ BHTN thì đã quá hạn 3 tháng kể từ ngày chấm dứt HĐLĐ, nên đợt này thường không được giải quyết hưởng trợ cấp thất nghiệp. Tuy vậy, thời gian đóng BHTN chưa hưởng sẽ được bảo lưu để cộng dồn cho lần thất nghiệp sau nếu bạn tiếp tục đi làm và đóng BHTN trở lại.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 45"
+}

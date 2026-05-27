@@ -1,0 +1,65 @@
+{
+  "clause_id": "L41_2024.A34.K2",
+  "extraction": {
+    "clause_id": "L41_2024.A34.K2",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 22,
+        "unit": "percent",
+        "direction": "exact",
+        "context": "employer_contribution_rate",
+        "description_vi": "Tỷ lệ đóng của người sử dụng lao động vào BHXH bắt buộc"
+      }
+    ],
+    "rules": [
+      {
+        "name": "Tỷ lệ đóng bảo hiểm xã hội bắt buộc",
+        "if_conditions_idx": [],
+        "then_predicate": "employer_contribution",
+        "then_value": "formula:0.22 * contribution_salary",
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NSDLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 2,
+        "clause": 1,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NSDLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.95,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [
+      22.0
+    ],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": [
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.37,
+  "usage": {
+    "prompt_tokens": 2674,
+    "completion_tokens": 257
+  },
+  "extracted_at": "2026-05-27T08:18:22"
+}

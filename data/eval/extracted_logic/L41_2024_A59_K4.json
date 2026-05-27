@@ -1,0 +1,47 @@
+{
+  "clause_id": "L41_2024.A59.K4",
+  "extraction": {
+    "clause_id": "L41_2024.A59.K4",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 59,
+        "clause": 1,
+        "law": "L41_2024"
+      },
+      {
+        "article": 59,
+        "clause": 2,
+        "law": "L41_2024"
+      },
+      {
+        "article": 59,
+        "clause": 3,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 1.0,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 2.11,
+  "usage": {
+    "prompt_tokens": 2710,
+    "completion_tokens": 155
+  },
+  "extracted_at": "2026-05-27T08:23:35"
+}

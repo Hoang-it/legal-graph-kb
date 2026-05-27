@@ -1,0 +1,33 @@
+{
+  "clause_id": "L41_2024.A9.K9",
+  "extraction": {
+    "clause_id": "L41_2024.A9.K9",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 1.0,
+    "non_canonical_flags": [
+      "Cầm cố, mua bán, thế chấp, đặt cọc không thuộc các khái niệm bảo hiểm xã hội đã định nghĩa."
+    ]
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 2.32,
+  "usage": {
+    "prompt_tokens": 2640,
+    "completion_tokens": 114
+  },
+  "extracted_at": "2026-05-27T08:13:59"
+}

@@ -1,0 +1,81 @@
+{
+  "clause_id": "L41_2024.A88.K2",
+  "extraction": {
+    "clause_id": "L41_2024.A88.K2",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Điều kiện hưởng tiền tuất một lần",
+        "if_conditions_idx": [],
+        "then_predicate": "one_time_social_insurance",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 86,
+        "clause": 1,
+        "law": "L41_2024"
+      },
+      {
+        "article": 86,
+        "clause": 2,
+        "law": "L41_2024"
+      },
+      {
+        "article": 3,
+        "clause": 7,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": [
+      [
+        86,
+        null
+      ],
+      [
+        86,
+        null
+      ],
+      [
+        86,
+        null
+      ],
+      [
+        86,
+        null
+      ],
+      [
+        3,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.55,
+  "usage": {
+    "prompt_tokens": 2808,
+    "completion_tokens": 226
+  },
+  "extracted_at": "2026-05-27T08:28:55"
+}

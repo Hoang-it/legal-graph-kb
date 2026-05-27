@@ -1,0 +1,67 @@
+{
+  "clause_id": "L41_2024.A141.K11",
+  "extraction": {
+    "clause_id": "L41_2024.A141.K11",
+    "conditions": [
+      {
+        "predicate": "years_contributed",
+        "operator": ">=",
+        "value": 20,
+        "unit": "year",
+        "description_vi": "Tham gia BHXH bắt buộc đủ 20 năm trở lên"
+      }
+    ],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Mức lương hưu hằng tháng tối thiểu",
+        "if_conditions_idx": [
+          0
+        ],
+        "then_predicate": "monthly_amount",
+        "then_value": "standard_amount",
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 2,
+        "clause": 1,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [
+      20
+    ],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": [
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 2.95,
+  "usage": {
+    "prompt_tokens": 2698,
+    "completion_tokens": 246
+  },
+  "extracted_at": "2026-05-27T08:38:00"
+}

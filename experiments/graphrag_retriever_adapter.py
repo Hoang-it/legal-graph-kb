@@ -65,6 +65,81 @@ class GraphRAGAsEliteRetriever:
         return RetrievedKnowledgeContext(chunks=chunks, scores=scores)
 
 
+class GraphRAGLogicAsEliteRetriever(GraphRAGAsEliteRetriever):
+    """Adapter cho elite_graphrag_logic arm — vector hits PLUS pre-extracted facts.
+
+    Khác `GraphRAGAsEliteRetriever`:
+    - Mỗi chunk.text = raw clause text + `=== FACTS ===` block kèm rules/conditions
+      /thresholds đã extract sẵn từ Phase 2.
+    - Thêm 1 chunk "synthetic" cuối cùng chứa block `# REFERENCES` (multi-hop
+      REFERS_TO) nếu có refs.
+
+    LLM được instruct (qua prompt `elite_graphrag_logic.md`) để xài FACTS thay
+    vì hallucinate predicate names / threshold values từ raw text.
+    """
+
+    def __init__(self, rag_pipeline, max_hops: int = 1, include_references: bool = True):
+        super().__init__(rag_pipeline)
+        self.max_hops = max_hops
+        self.include_references = include_references
+
+    def retrieve(self, query: str, top_k: int = 8) -> RetrievedKnowledgeContext:
+        if not query or top_k <= 0:
+            return RetrievedKnowledgeContext(chunks=[], scores={})
+
+        # Use full hybrid_search — leverages Phase 3 API
+        result = self._rag.hybrid_search(query, top_k=top_k, max_hops=self.max_hops)
+        # Group facts by source clause for inlining
+        from collections import defaultdict
+        facts_by_clause: dict[str, list] = defaultdict(list)
+        for f in result.facts:
+            facts_by_clause[f.clause_id].append(f)
+
+        chunks = []
+        for h in result.hits:
+            text = h.text
+            cfacts = facts_by_clause.get(h.clause_id, [])
+            if cfacts:
+                # Render facts inline using same formatter
+                from src.rag_query import HybridResult
+                sub = HybridResult(hits=[h], facts=cfacts, referenced=[])
+                fact_block = self._rag.format_facts_for_prompt(sub, max_chars=2000)
+                text = f"{h.text}\n\n=== FACTS ===\n{fact_block}"
+            chunks.append(
+                RetrievedKnowledgeChunk(
+                    id=h.clause_id,
+                    text=text,
+                    document=DOCUMENT_LABEL,
+                    article=str(h.article_n),
+                    clause=str(h.clause_n),
+                    point=None,
+                )
+            )
+
+        # Append synthetic chunk for cross-references (multi-hop)
+        if self.include_references and result.referenced:
+            ref_lines = ["# REFERENCES — Điều khoản viện dẫn (multi-hop từ retrieved clauses)"]
+            for r in result.referenced[:15]:
+                ref_lines.append(
+                    f"- {r['source_clause_id']} → {r['target_id']} "
+                    f"(hop={r['hop_distance']}, {r['target_label']}: "
+                    f"{(r.get('target_title') or '')[:80]})"
+                )
+            chunks.append(
+                RetrievedKnowledgeChunk(
+                    id="__refs__",
+                    text="\n".join(ref_lines),
+                    document=DOCUMENT_LABEL,
+                    article=None,
+                    clause=None,
+                    point=None,
+                )
+            )
+
+        scores = {h.clause_id: float(h.score) for h in result.hits}
+        return RetrievedKnowledgeContext(chunks=chunks, scores=scores)
+
+
 if __name__ == "__main__":
     # Smoke test
     import os
@@ -80,9 +155,16 @@ if __name__ == "__main__":
         _ = rag.embed_model  # warm up
         adapter = GraphRAGAsEliteRetriever(rag)
         ctx = adapter.retrieve("Bảo hiểm xã hội là gì?", top_k=5)
-        print(f"Retrieved {len(ctx.chunks)} chunks:")
+        print(f"[semantic] Retrieved {len(ctx.chunks)} chunks:")
         for c in ctx.chunks:
             print(f"  [{c.id}] art={c.article} cl={c.clause}  "
                   f"score={ctx.scores.get(c.id, 0):.3f}  text={c.text[:80]}")
+
+        adapter2 = GraphRAGLogicAsEliteRetriever(rag, max_hops=1)
+        ctx2 = adapter2.retrieve("Điều kiện hưởng lương hưu?", top_k=5)
+        print(f"\n[logic] Retrieved {len(ctx2.chunks)} chunks:")
+        for c in ctx2.chunks[:3]:
+            print(f"  [{c.id}] text (250ch): {c.text[:250]}")
+            print()
     finally:
         rag.close()

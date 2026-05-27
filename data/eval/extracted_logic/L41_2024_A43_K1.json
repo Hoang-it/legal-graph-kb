@@ -1,0 +1,209 @@
+{
+  "clause_id": "L41_2024.A43.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A43.K1",
+    "conditions": [
+      {
+        "predicate": "years_contributed",
+        "operator": "<",
+        "value": 15,
+        "unit": "year",
+        "description_vi": "Đóng BHXH bắt buộc dưới 15 năm"
+      },
+      {
+        "predicate": "years_contributed",
+        "operator": "in_range",
+        "value": [
+          15,
+          30
+        ],
+        "unit": "year",
+        "description_vi": "Đóng từ đủ 15 năm đến dưới 30 năm"
+      },
+      {
+        "predicate": "years_contributed",
+        "operator": ">=",
+        "value": 30,
+        "unit": "year",
+        "description_vi": "Đóng từ đủ 30 năm trở lên"
+      }
+    ],
+    "thresholds": [
+      {
+        "value": 30,
+        "unit": "day",
+        "direction": "exact",
+        "context": "sick_leave_normal_condition_under_15_years",
+        "description_vi": "30 ngày cho người làm việc trong điều kiện bình thường dưới 15 năm"
+      },
+      {
+        "value": 40,
+        "unit": "day",
+        "direction": "exact",
+        "context": "sick_leave_normal_condition_15_to_30_years",
+        "description_vi": "40 ngày cho người làm việc trong điều kiện bình thường từ đủ 15 năm đến dưới 30 năm"
+      },
+      {
+        "value": 60,
+        "unit": "day",
+        "direction": "exact",
+        "context": "sick_leave_normal_condition_30_years",
+        "description_vi": "60 ngày cho người làm việc trong điều kiện bình thường từ đủ 30 năm trở lên"
+      },
+      {
+        "value": 40,
+        "unit": "day",
+        "direction": "exact",
+        "context": "sick_leave_hazardous_condition_under_15_years",
+        "description_vi": "40 ngày cho người làm nghề nặng nhọc dưới 15 năm"
+      },
+      {
+        "value": 50,
+        "unit": "day",
+        "direction": "exact",
+        "context": "sick_leave_hazardous_condition_15_to_30_years",
+        "description_vi": "50 ngày cho người làm nghề nặng nhọc từ đủ 15 năm đến dưới 30 năm"
+      },
+      {
+        "value": 70,
+        "unit": "day",
+        "direction": "exact",
+        "context": "sick_leave_hazardous_condition_30_years",
+        "description_vi": "70 ngày cho người làm nghề nặng nhọc từ đủ 30 năm trở lên"
+      }
+    ],
+    "rules": [
+      {
+        "name": "Mức hưởng chế độ ốm đau trong điều kiện bình thường",
+        "if_conditions_idx": [
+          0
+        ],
+        "then_predicate": "so_thang",
+        "then_value": 30,
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      },
+      {
+        "name": "Mức hưởng chế độ ốm đau trong điều kiện bình thường từ 15 đến dưới 30 năm",
+        "if_conditions_idx": [
+          1
+        ],
+        "then_predicate": "so_thang",
+        "then_value": 40,
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      },
+      {
+        "name": "Mức hưởng chế độ ốm đau trong điều kiện bình thường từ 30 năm trở lên",
+        "if_conditions_idx": [
+          2
+        ],
+        "then_predicate": "so_thang",
+        "then_value": 60,
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      },
+      {
+        "name": "Mức hưởng chế độ ốm đau cho nghề nặng nhọc dưới 15 năm",
+        "if_conditions_idx": [
+          0
+        ],
+        "then_predicate": "so_thang",
+        "then_value": 40,
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      },
+      {
+        "name": "Mức hưởng chế độ ốm đau cho nghề nặng nhọc từ 15 đến dưới 30 năm",
+        "if_conditions_idx": [
+          1
+        ],
+        "then_predicate": "so_thang",
+        "then_value": 50,
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      },
+      {
+        "name": "Mức hưởng chế độ ốm đau cho nghề nặng nhọc từ 30 năm trở lên",
+        "if_conditions_idx": [
+          2
+        ],
+        "then_predicate": "so_thang",
+        "then_value": 70,
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 2,
+        "clause": 1,
+        "law": "L41_2024"
+      },
+      {
+        "article": 2,
+        "clause": 2,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [
+      15,
+      15,
+      30,
+      30,
+      15,
+      15,
+      30,
+      30
+    ],
+    "months": [
+      1,
+      31
+    ],
+    "days": [
+      30,
+      40,
+      60,
+      40,
+      50,
+      70
+    ],
+    "vnd_amounts": [],
+    "references": [
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 12.13,
+  "usage": {
+    "prompt_tokens": 2928,
+    "completion_tokens": 1090
+  },
+  "extracted_at": "2026-05-27T08:19:42"
+}

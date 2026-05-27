@@ -1,0 +1,56 @@
+{
+  "clause_id": "L41_2024.A95.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A95.K1",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 2000000,
+        "unit": "vnd",
+        "direction": "exact",
+        "context": "maternity_allowance_per_child",
+        "description_vi": "Mức trợ cấp thai sản cho mỗi con được sinh ra hoặc thai chết trong tử cung"
+      }
+    ],
+    "rules": [
+      {
+        "name": "Mức trợ cấp thai sản",
+        "if_conditions_idx": [],
+        "then_predicate": "monthly_amount",
+        "then_value": 2000000,
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": [
+      "Chính sách hỗ trợ khác không được định nghĩa rõ ràng"
+    ]
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [
+      0.0
+    ],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 6.24,
+  "usage": {
+    "prompt_tokens": 2715,
+    "completion_tokens": 234
+  },
+  "extracted_at": "2026-05-27T08:30:19"
+}

@@ -1,0 +1,46 @@
+{
+  "clause_id": "L41_2024.A31.K2",
+  "extraction": {
+    "clause_id": "L41_2024.A31.K2",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": "standard_amount",
+        "unit": "vnd",
+        "direction": "min",
+        "context": "minimum_voluntary_insurance_income",
+        "description_vi": "Thu nhập làm căn cứ đóng BHXH tự nguyện thấp nhất bằng mức chuẩn hộ nghèo khu vực nông thôn"
+      },
+      {
+        "value": 20,
+        "unit": "times",
+        "direction": "max",
+        "context": "maximum_voluntary_insurance_income",
+        "description_vi": "Thu nhập làm căn cứ đóng BHXH tự nguyện cao nhất bằng 20 lần mức tham chiếu"
+      }
+    ],
+    "rules": [],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.36,
+  "usage": {
+    "prompt_tokens": 2659,
+    "completion_tokens": 221
+  },
+  "extracted_at": "2026-05-27T08:17:48"
+}

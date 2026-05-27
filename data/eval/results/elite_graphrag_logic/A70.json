@@ -1,0 +1,41 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 70,
+  "question": "Mình đi làm công ty và có tham gia BHXH, đầu tháng 12-2025 mình nghỉ thai sản, trước khi nghỉ thai sản mình có giấy ốm nghỉ 2 lần là 14 ngày, mình có nộp cho nhân sự, nhưng tới hiện tại mình chưa nhận được tiền hưởng\nĐã nhiều lần mình nhắn hỏi, mấy lần đầu không trả lời, tháng trước mình hỏi tiếp và nói là “ đang gửi hồ sơ lại nhờ BHXH duyệt” tới nay 1 tháng nữa vẫn chưa có, hôm qua mình nhắn hỏi thì không trả lời\nVậy là nhân sự có vấn đề hay hồ sơ của mình có vấn đề?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_program, repair_rounds=2, error=predicate_inputs missing specs for: months_contributed, years_contributed]",
+  "plain_answer": "",
+  "citations": [
+    "[Điều 62 khoản 1]",
+    "[Điều 107 khoản 3]",
+    "[Điều 79 khoản 3]",
+    "[Điều 62 khoản 3]",
+    "[Điều 97 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A62.K1",
+    "L41_2024.A107.K3",
+    "L41_2024.A79.K3",
+    "L41_2024.A62.K3",
+    "L41_2024.A97.K2"
+  ],
+  "citation_indices": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "prolog_success": false,
+  "prolog_status": "invalid_program",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "prolog_program": "years_contributed(user, 0).\nmonths_contributed(user, 0).\nlegal_source(source_a62_k1, law_bhxh_2024, article_62, clause_1, none, 'Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản.').\nlegal_source(source_a107_k3, law_bhxh_2024, article_107, clause_3, none, 'Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng bảo hiểm xã hội một lần, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.').\nlegal_source(source_a79_k3, law_bhxh_2024, article_79, clause_3, none, 'Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng bảo hiểm xã hội một lần, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.').\nlegal_source(source_a62_k3, law_bhxh_2024, article_62, clause_3, none, 'Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động, 05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.').\nlegal_source(source_a97_k2, law_bhxh_2024, article_97, clause_2, none, 'Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.').\nemployer_responsibility(Employer, True, Trace) :- Trace = [step(condition, employer_responsibility, based_on(source_a62_k1))].\ninsurance_agency_response(Agency, True, Trace) :- Trace = [step(condition, insurance_agency_response, based_on(source_a62_k3))].\ninsurance_resolution(Agency, True, Trace) :- Trace = [step(condition, insurance_resolution, based_on(source_a97_k2))].\nmaternity_conditions(Conditions, Trace) :- Conditions = [employer_responsibility, insurance_agency_response, insurance_resolution], Trace = [step(condition, maternity_conditions, based_on(source_a62_k1))].",
+  "prolog_error": "predicate_inputs missing specs for: months_contributed, years_contributed",
+  "irac_sections": {},
+  "elapsed_s": 43.993,
+  "prompt_tokens": 14410,
+  "completion_tokens": 2593,
+  "error": null,
+  "gold_answer": "Trường hợp này có thể do hồ sơ chưa được doanh nghiệp nộp, nộp thiếu chứng từ, hoặc cơ quan BHXH yêu cầu bổ sung nên chưa giải quyết. Theo luật, doanh nghiệp phải lập hồ sơ và nộp cho cơ quan BHXH trong thời hạn quy định sau khi nhận đủ giấy tờ của NLĐ; cơ quan BHXH cũng phải giải quyết trong thời hạn luật định. Bạn nên yêu cầu nhân sự trả lời bằng văn bản/email về tình trạng hồ sơ; nếu bị chậm không rõ lý do thì liên hệ trực tiếp cơ quan BHXH nơi đơn vị tham gia để kiểm tra.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 53, Điều 54, Điều 116"
+}

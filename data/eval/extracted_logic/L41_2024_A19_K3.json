@@ -1,0 +1,41 @@
+{
+  "clause_id": "L41_2024.A19.K3",
+  "extraction": {
+    "clause_id": "L41_2024.A19.K3",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 5,
+        "unit": "year",
+        "direction": "exact",
+        "context": "term_of_office",
+        "description_vi": "Nhiệm kỳ của thành viên Hội đồng quản lý bảo hiểm xã hội là 05 năm"
+      }
+    ],
+    "rules": [],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 1.0,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [
+      5
+    ],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 2.36,
+  "usage": {
+    "prompt_tokens": 2674,
+    "completion_tokens": 144
+  },
+  "extracted_at": "2026-05-27T08:15:57"
+}

@@ -1,0 +1,65 @@
+{
+  "clause_id": "L41_2024.A130.K3",
+  "extraction": {
+    "clause_id": "L41_2024.A130.K3",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Trình tự khiếu nại",
+        "if_conditions_idx": [],
+        "then_predicate": "complaint",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NLĐ",
+      "BHXH_agency",
+      "Tòa_án"
+    ],
+    "procedure_steps": [
+      {
+        "step_order": 1,
+        "actor": "NLĐ",
+        "action": "Khiếu nại lần đầu đến người đã ra quyết định hoặc cơ quan bảo hiểm xã hội",
+        "prerequisite": null
+      },
+      {
+        "step_order": 2,
+        "actor": "NLĐ",
+        "action": "Khiếu nại lần hai đến Thủ trưởng cơ quan bảo hiểm xã hội cấp trên",
+        "prerequisite": "Không đồng ý với quyết định giải quyết khiếu nại lần đầu"
+      },
+      {
+        "step_order": 3,
+        "actor": "NLĐ",
+        "action": "Khởi kiện tại Tòa án",
+        "prerequisite": "Không đồng ý với quyết định giải quyết khiếu nại lần hai"
+      }
+    ],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 5.84,
+  "usage": {
+    "prompt_tokens": 2958,
+    "completion_tokens": 338
+  },
+  "extracted_at": "2026-05-27T08:35:16"
+}

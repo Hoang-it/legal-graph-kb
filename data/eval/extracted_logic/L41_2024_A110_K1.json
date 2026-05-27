@@ -1,0 +1,44 @@
+{
+  "clause_id": "L41_2024.A110.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A110.K1",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Điều kiện hưởng trợ cấp tuất một lần",
+        "if_conditions_idx": [],
+        "then_predicate": "survivorship",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 2.56,
+  "usage": {
+    "prompt_tokens": 2670,
+    "completion_tokens": 151
+  },
+  "extracted_at": "2026-05-27T08:32:13"
+}

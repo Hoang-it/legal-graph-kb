@@ -1,0 +1,34 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 47,
+  "question": "Mình vừa được thăng chức, tăng lương xong mấy ngày thì biết tin có bầu. Mình đã đóng bảo hiểm được 5 năm. Thời gian tăng lương đến khi nghỉ thai sản đúng 6 tháng trước sinh ( tăng hơn 1 triệu ) . Giờ mình xin nghỉ thai sản trước 2 tháng và nghỉ việc luôn thì có bị thanh tra không? Mình có đầy đủ quyết định điều chỉnh lương , bảng lương, quyết định bổ nhiệm nhưng nhận quyết định qua mail k có bản dấu đỏ thì khi thanh tra có được chấp nhận không?",
+  "answer": "Issue: Người hỏi muốn biết việc nghỉ thai sản trước 2 tháng và nghỉ việc luôn có bị thanh tra không, cũng như tính hợp lệ của quyết định điều chỉnh lương nhận qua email. \nRule: Theo Điều 50 khoản 4 Luật BHXH 2024, đối tượng đủ điều kiện chấm dứt hợp đồng lao động trước thời điểm sinh con vẫn được hưởng chế độ thai sản. \nApplication: Không có slot nào được gán giá trị. Prolog đã xác định rằng người dùng đủ điều kiện hưởng chế độ thai sản dựa trên 5 năm đóng bảo hiểm và thời gian mang thai đủ 22 tuần. \nConclusion: Theo Prolog, người dùng đủ điều kiện hưởng chế độ thai sản, nhưng không có thông tin về việc có bị thanh tra hay không do thiếu thông tin cần thiết.",
+  "plain_answer": "Bạn đã đóng bảo hiểm 5 năm và đủ điều kiện hưởng chế độ thai sản theo [Điều 50 khoản 4] Luật BHXH 2024. Tuy nhiên, hệ thống chưa đủ thông tin để xác định liệu bạn có bị thanh tra hay không. Bạn nên kiểm tra với cơ quan bảo hiểm xã hội để biết thêm chi tiết về tình huống của mình.",
+  "citations": [
+    "[Điều 50 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A50.K4"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(condition,years_contributed_at_least_5,based_on(source_a50_k4)),step(condition,pregnancy_duration_at_least_22_weeks,based_on(source_a50_k4)),step(conclusion,maternity(user,true),based_on(source_a50_k4))]",
+  "prolog_program": "years_contributed(user, 5).\ntime_period_weeks(user, 26).\nlegal_source(source_a50_k4, law_bhxh_2024, article_50, clause_4, none, 'Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con hoặc nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 06 tháng tuổi thì vẫn được hưởng chế độ thai sản.').\nmaternity(Person, Maternity, Trace) :- years_contributed(Person, Y), Y >= 5, time_period_weeks(Person, Weeks), Weeks >= 22, Maternity = true, Trace = [step(condition, years_contributed_at_least_5, based_on(source_a50_k4)), step(condition, pregnancy_duration_at_least_22_weeks, based_on(source_a50_k4)), step(conclusion, maternity(Person, Maternity), based_on(source_a50_k4))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết việc nghỉ thai sản trước 2 tháng và nghỉ việc luôn có bị thanh tra không, cũng như tính hợp lệ của quyết định điều chỉnh lương nhận qua email.",
+    "rule": "Theo Điều 50 khoản 4 Luật BHXH 2024, đối tượng đủ điều kiện chấm dứt hợp đồng lao động trước thời điểm sinh con vẫn được hưởng chế độ thai sản.",
+    "application": "Không có slot nào được gán giá trị. Prolog đã xác định rằng người dùng đủ điều kiện hưởng chế độ thai sản dựa trên 5 năm đóng bảo hiểm và thời gian mang thai đủ 22 tuần.",
+    "conclusion": "Theo Prolog, người dùng đủ điều kiện hưởng chế độ thai sản, nhưng không có thông tin về việc có bị thanh tra hay không do thiếu thông tin cần thiết."
+  },
+  "elapsed_s": 27.335,
+  "prompt_tokens": 5800,
+  "completion_tokens": 626,
+  "error": null,
+  "gold_answer": "Việc tăng lương rồi sau đó nghỉ thai sản không mặc nhiên bị thanh tra hay bị từ chối chế độ. Cơ quan BHXH chỉ kiểm tra khi nghi ngờ việc tăng lương không có căn cứ thực tế, không đúng quy chế hoặc đóng BHXH không đúng bản chất quan hệ lao động. Nếu bạn có quyết định điều chỉnh lương, bổ nhiệm, bảng lương, chứng từ trả lương và việc tăng lương là thật, đúng quy trình thì thường vẫn được chấp nhận. Văn bản điện tử hợp lệ không bắt buộc phải có bản dấu đỏ giấy.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 53; Bộ luật Lao động 2019 Điều 90, Điều 94; Luật Giao dịch điện tử 2023"
+}

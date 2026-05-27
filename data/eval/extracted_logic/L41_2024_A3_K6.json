@@ -1,0 +1,37 @@
+{
+  "clause_id": "L41_2024.A3.K6",
+  "extraction": {
+    "clause_id": "L41_2024.A3.K6",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [],
+    "exceptions": [],
+    "references": [],
+    "defines": [
+      {
+        "term_vi": "Thời gian đóng bảo hiểm xã hội",
+        "definition": "Tổng thời gian đã đóng bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện theo quy định của Luật này, trừ trường hợp điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên có quy định khác.",
+        "related_predicate": null
+      }
+    ],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 1.0,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 4.04,
+  "usage": {
+    "prompt_tokens": 2680,
+    "completion_tokens": 172
+  },
+  "extracted_at": "2026-05-27T08:12:12"
+}

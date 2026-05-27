@@ -1,0 +1,34 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 48,
+  "question": "Mình đóng BHXH 21nam,  sinh ngày 02/08/1976, nam, công việc bảo vệ vượn cây cao su, thì khi nào được nghi hưu?",
+  "answer": "Issue: Người hỏi đã đóng BHXH 21 năm và sinh ngày 02/08/1976, hỏi khi nào được nghỉ hưu. \nRule: Theo Điều 141 khoản 9 Luật BHXH 2024, người tham gia bảo hiểm xã hội tự nguyện đủ 20 năm và đủ 60 tuổi đối với nam thì được hưởng lương hưu. \nApplication: Không có slot bindings nào được cung cấp. Prolog đã xác định rằng người dùng không đủ điều kiện hưởng lương hưu vì chưa đủ tuổi nghỉ hưu. \nConclusion: Theo Prolog, người dùng KHÔNG đủ điều kiện hưởng lương hưu do chưa đủ tuổi (47 < 60).",
+  "plain_answer": "Bạn đã đóng BHXH 21 năm nhưng chưa đủ tuổi để nghỉ hưu. Theo [Điều 141 khoản 9] Luật BHXH 2024, bạn cần đủ 60 tuổi để được hưởng lương hưu. Bạn sẽ cần chờ thêm 13 năm nữa để đủ điều kiện nghỉ hưu.",
+  "citations": [
+    "[Điều 141 khoản 9]"
+  ],
+  "citation_ids": [
+    "L41_2024.A141.K9"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(condition,years_contributed_at_least_20,based_on(source_a141_k9)),step(condition,age_at_retirement,based_on(source_a141_k9)),step(conclusion,eligible_pension(user,false),based_on(source_a141_k9))]",
+  "prolog_program": "years_contributed(user, 21).\nage(user, 47).\nlegal_source(source_a141_k9, law_bhxh_2024, article_141, clause_9, none, 'Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ.').\neligible_pension(Person, Eligible, Trace) :- years_contributed(Person, Y), Y >= 20, age(Person, A), A >= 60, Eligible = true, Trace = [step(condition, years_contributed_at_least_20, based_on(source_a141_k9)), step(condition, age_at_retirement, based_on(source_a141_k9)), step(conclusion, eligible_pension(Person, Eligible), based_on(source_a141_k9))].\neligible_pension(Person, Eligible, Trace) :- years_contributed(Person, Y), Y >= 20, age(Person, A), A < 60, Eligible = false, Trace = [step(condition, years_contributed_at_least_20, based_on(source_a141_k9)), step(condition, age_at_retirement, based_on(source_a141_k9)), step(conclusion, eligible_pension(Person, Eligible), based_on(source_a141_k9))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi đã đóng BHXH 21 năm và sinh ngày 02/08/1976, hỏi khi nào được nghỉ hưu.",
+    "rule": "Theo Điều 141 khoản 9 Luật BHXH 2024, người tham gia bảo hiểm xã hội tự nguyện đủ 20 năm và đủ 60 tuổi đối với nam thì được hưởng lương hưu.",
+    "application": "Không có slot bindings nào được cung cấp. Prolog đã xác định rằng người dùng không đủ điều kiện hưởng lương hưu vì chưa đủ tuổi nghỉ hưu.",
+    "conclusion": "Theo Prolog, người dùng KHÔNG đủ điều kiện hưởng lương hưu do chưa đủ tuổi (47 < 60)."
+  },
+  "elapsed_s": 71.472,
+  "prompt_tokens": 10184,
+  "completion_tokens": 993,
+  "error": null,
+  "gold_answer": "Nếu tính theo tuổi nghỉ hưu thông thường của lao động nam, bạn sinh ngày 02/08/1976 thì đủ 62 tuổi vào ngày 02/08/2038. Hiện thông tin bạn nêu 'bảo vệ vườn cây cao su' chưa đủ căn cứ khẳng định thuộc nghề, công việc nặng nhọc/đặc biệt nặng nhọc để được nghỉ hưu sớm hơn. 21 năm đóng BHXH mới chỉ đáp ứng về thời gian tối thiểu nếu đến tuổi, còn thời điểm nghỉ hưu vẫn phải căn cứ thêm điều kiện tuổi và tính chất công việc.",
+  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 169; Nghị định 135/2020/NĐ-CP"
+}

@@ -1,0 +1,60 @@
+{
+  "clause_id": "L41_2024.A28.K4",
+  "extraction": {
+    "clause_id": "L41_2024.A28.K4",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 5,
+        "unit": "day",
+        "direction": "max",
+        "context": "insurance_book_issuance_time_limit",
+        "description_vi": "Thời hạn cấp sổ bảo hiểm xã hội"
+      }
+    ],
+    "rules": [
+      {
+        "name": "Trách nhiệm cấp sổ bảo hiểm xã hội",
+        "if_conditions_idx": [],
+        "then_predicate": "social_insurance_book",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "BHXH_agency"
+        ]
+      }
+    ],
+    "exceptions": [
+      {
+        "of_rule_idx": 0,
+        "condition_description": "Không cấp sổ bảo hiểm xã hội",
+        "modifies": "then_value"
+      }
+    ],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "BHXH_agency"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.95,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [
+      5
+    ],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.21,
+  "usage": {
+    "prompt_tokens": 2675,
+    "completion_tokens": 254
+  },
+  "extracted_at": "2026-05-27T08:17:34"
+}

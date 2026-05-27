@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 65,
+  "question": "Mình có hai mã sổ BHXH phải làm sao?",
+  "answer": "Issue: Người hỏi có hai mã sổ BHXH và muốn biết phải làm gì. \nRule: Theo Điều 25 khoản 2 Luật BHXH 2024 (41/2024/QH15), sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau. \nApplication: Không có slot nào được gán giá trị. Prolog query handle_multiple_social_insurance_books(user, Action, Trace) trả về Action = 'Người lao động có thể yêu cầu cấp sổ bảo hiểm xã hội bản giấy hoặc bản điện tử.'. \nConclusion: Theo Prolog, người dùng có thể yêu cầu cấp sổ bảo hiểm xã hội bản giấy hoặc bản điện tử.",
+  "plain_answer": "Nếu bạn có hai mã sổ BHXH, bạn có thể yêu cầu cấp sổ bảo hiểm xã hội bản giấy hoặc bản điện tử, vì cả hai loại sổ này đều có giá trị pháp lý như nhau theo [Điều 25 khoản 2] Luật BHXH 2024. Bạn nên liên hệ với cơ quan bảo hiểm xã hội để được hướng dẫn cụ thể hơn.",
+  "citations": [
+    "[Điều 25 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A25.K2"
+  ],
+  "citation_indices": [
+    0,
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(condition,social_insurance_book_options,based_on(source_a25_k2))]",
+  "prolog_program": "legal_source(source_a25_k2, law_bhxh_2024, article_25, clause_2, none, 'Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau.').\nlegal_source(source_a25_k1, law_bhxh_2024, article_25, clause_1, none, 'Sổ bảo hiểm xã hội được cấp cho từng người lao động, trong đó chứa đựng thông tin cơ bản về nhân thân, ghi nhận việc đóng, hưởng, giải quyết các chế độ bảo hiểm xã hội và các thông tin cần thiết khác có liên quan.').\nhandle_multiple_social_insurance_books(User, Action, Trace) :- Action = 'Người lao động có thể yêu cầu cấp sổ bảo hiểm xã hội bản giấy hoặc bản điện tử.', Trace = [step(condition, social_insurance_book_options, based_on(source_a25_k2))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi có hai mã sổ BHXH và muốn biết phải làm gì.",
+    "rule": "Theo Điều 25 khoản 2 Luật BHXH 2024 (41/2024/QH15), sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau.",
+    "application": "Không có slot nào được gán giá trị. Prolog query handle_multiple_social_insurance_books(user, Action, Trace) trả về Action = 'Người lao động có thể yêu cầu cấp sổ bảo hiểm xã hội bản giấy hoặc bản điện tử.'.",
+    "conclusion": "Theo Prolog, người dùng có thể yêu cầu cấp sổ bảo hiểm xã hội bản giấy hoặc bản điện tử."
+  },
+  "elapsed_s": 202.752,
+  "prompt_tokens": 7847,
+  "completion_tokens": 736,
+  "error": null,
+  "gold_answer": "Một người chỉ có một mã số BHXH. Nếu bạn đang có 2 mã, cần làm thủ tục gộp sổ/mã số để cơ quan BHXH hợp nhất toàn bộ quá trình tham gia về một mã duy nhất. Bạn nên nộp tờ khai điều chỉnh thông tin kèm CCCD và các giấy tờ liên quan đến cả hai mã tại cơ quan BHXH nơi cư trú hoặc nơi đang tham gia. Sau khi gộp, quyền lợi và thời gian đóng hợp pháp của bạn được cộng nối, không bị mất.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn quản lý sổ BHXH, gộp sổ của BHXH Việt Nam"
+}

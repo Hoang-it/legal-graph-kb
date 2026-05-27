@@ -1,0 +1,69 @@
+{
+  "clause_id": "L41_2024.A63.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A63.K1",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 7,
+        "unit": "day",
+        "direction": "max",
+        "context": "time_limit_for_submission",
+        "description_vi": "Thời hạn 07 ngày làm việc để nộp danh sách"
+      }
+    ],
+    "rules": [
+      {
+        "name": "Thời hạn lập danh sách người lao động",
+        "if_conditions_idx": [],
+        "then_predicate": "employer_submission",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NSDLĐ",
+          "BHXH_agency"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NSDLĐ",
+      "BHXH_agency"
+    ],
+    "procedure_steps": [
+      {
+        "step_order": 1,
+        "actor": "NSDLĐ",
+        "action": "Lập danh sách người lao động nghỉ việc hưởng trợ cấp dưỡng sức, phục hồi sức khỏe sau thai sản",
+        "prerequisite": "Người lao động nghỉ việc"
+      },
+      {
+        "step_order": 2,
+        "actor": "NSDLĐ",
+        "action": "Nộp danh sách cho cơ quan bảo hiểm xã hội",
+        "prerequisite": "Đã lập danh sách trong thời hạn 07 ngày làm việc"
+      }
+    ],
+    "extractor_confidence": 0.95,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [
+      7
+    ],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 4.79,
+  "usage": {
+    "prompt_tokens": 2683,
+    "completion_tokens": 349
+  },
+  "extracted_at": "2026-05-27T08:24:29"
+}

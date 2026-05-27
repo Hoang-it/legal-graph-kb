@@ -1,0 +1,62 @@
+{
+  "clause_id": "L41_2024.A94.K5",
+  "extraction": {
+    "clause_id": "L41_2024.A94.K5",
+    "conditions": [
+      {
+        "predicate": "maternity",
+        "operator": "=",
+        "value": true,
+        "unit": "enum",
+        "description_vi": "Mẹ đủ điều kiện hưởng chế độ thai sản trong BHXH bắt buộc"
+      },
+      {
+        "predicate": "maternity",
+        "operator": "=",
+        "value": true,
+        "unit": "enum",
+        "description_vi": "Cha đủ điều kiện hưởng trợ cấp thai sản trong BHXH tự nguyện"
+      }
+    ],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Hưởng chế độ thai sản",
+        "if_conditions_idx": [
+          0,
+          1
+        ],
+        "then_predicate": "maternity",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.8,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 4.2,
+  "usage": {
+    "prompt_tokens": 2686,
+    "completion_tokens": 263
+  },
+  "extracted_at": "2026-05-27T08:30:08"
+}

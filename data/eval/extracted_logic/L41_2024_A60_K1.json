@@ -1,0 +1,85 @@
+{
+  "clause_id": "L41_2024.A60.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A60.K1",
+    "conditions": [
+      {
+        "predicate": "time_period_days",
+        "operator": "<=",
+        "value": 30,
+        "unit": "day",
+        "description_vi": "Thời gian nghỉ việc hưởng chế độ thai sản không quá 30 ngày"
+      }
+    ],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Quyền nghỉ dưỡng sức sau thai sản",
+        "if_conditions_idx": [
+          0
+        ],
+        "then_predicate": "social_insurance",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 52,
+        "clause": 1,
+        "law": "L41_2024"
+      },
+      {
+        "article": 53,
+        "clause": 4,
+        "law": "L41_2024"
+      },
+      {
+        "article": 54,
+        "clause": 3,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [
+      30
+    ],
+    "vnd_amounts": [],
+    "references": [
+      [
+        52,
+        null
+      ],
+      [
+        53,
+        null
+      ],
+      [
+        54,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 4.63,
+  "usage": {
+    "prompt_tokens": 2750,
+    "completion_tokens": 284
+  },
+  "extracted_at": "2026-05-27T08:23:41"
+}

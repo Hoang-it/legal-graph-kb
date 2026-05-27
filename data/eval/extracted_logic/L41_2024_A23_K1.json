@@ -1,0 +1,100 @@
+{
+  "clause_id": "L41_2024.A23.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A23.K1",
+    "conditions": [
+      {
+        "predicate": "age",
+        "operator": ">=",
+        "value": "retirement_age",
+        "unit": "year",
+        "description_vi": "Đủ tuổi nghỉ hưu"
+      },
+      {
+        "predicate": "years_contributed",
+        "operator": ">",
+        "value": 0,
+        "unit": "year",
+        "description_vi": "Có thời gian đóng bảo hiểm xã hội"
+      },
+      {
+        "predicate": "social_insurance",
+        "operator": "in",
+        "value": [
+          "not eligible for pension",
+          "not eligible for social pension"
+        ],
+        "unit": "enum",
+        "description_vi": "Không đủ điều kiện hưởng lương hưu và trợ cấp hưu trí xã hội"
+      },
+      {
+        "predicate": "one_time_social_insurance",
+        "operator": "=",
+        "value": false,
+        "unit": "bool",
+        "description_vi": "Không hưởng bảo hiểm xã hội một lần"
+      },
+      {
+        "predicate": "reservation",
+        "operator": "=",
+        "value": false,
+        "unit": "bool",
+        "description_vi": "Không bảo lưu"
+      }
+    ],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Điều kiện hưởng trợ cấp hằng tháng",
+        "if_conditions_idx": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "then_predicate": "monthly_amount",
+        "then_value": "contribution",
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 21,
+        "clause": null,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": [
+      [
+        21,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 5.42,
+  "usage": {
+    "prompt_tokens": 2715,
+    "completion_tokens": 450
+  },
+  "extracted_at": "2026-05-27T08:16:41"
+}

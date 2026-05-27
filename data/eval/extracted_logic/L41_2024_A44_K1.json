@@ -1,0 +1,52 @@
+{
+  "clause_id": "L41_2024.A44.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A44.K1",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 20,
+        "unit": "day",
+        "direction": "max",
+        "context": "sick_leave_for_child_under_3",
+        "description_vi": "Thời gian tối đa hưởng chế độ cho con dưới 03 tuổi"
+      },
+      {
+        "value": 15,
+        "unit": "day",
+        "direction": "max",
+        "context": "sick_leave_for_child_3_to_7",
+        "description_vi": "Thời gian tối đa hưởng chế độ cho con từ đủ 03 tuổi đến dưới 07 tuổi"
+      }
+    ],
+    "rules": [],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 1.0,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [
+      1,
+      31
+    ],
+    "days": [
+      20,
+      15
+    ],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.12,
+  "usage": {
+    "prompt_tokens": 2684,
+    "completion_tokens": 211
+  },
+  "extracted_at": "2026-05-27T08:19:51"
+}

@@ -1,0 +1,104 @@
+{
+  "clause_id": "L41_2024.A85.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A85.K1",
+    "conditions": [
+      {
+        "predicate": "years_contributed",
+        "operator": ">=",
+        "value": 1,
+        "unit": "year",
+        "description_vi": "Thời gian đóng BHXH bắt buộc từ đủ 12 tháng trở lên"
+      },
+      {
+        "predicate": "work_accident",
+        "operator": "=",
+        "value": true,
+        "unit": "enum",
+        "description_vi": "Chết do tai nạn lao động"
+      },
+      {
+        "predicate": "disability",
+        "operator": "=",
+        "value": true,
+        "unit": "enum",
+        "description_vi": "Chết do bệnh nghề nghiệp"
+      },
+      {
+        "predicate": "pension",
+        "operator": "=",
+        "value": true,
+        "unit": "enum",
+        "description_vi": "Người đang hưởng hoặc đang tạm dừng hưởng lương hưu"
+      },
+      {
+        "predicate": "one_time_social_insurance",
+        "operator": "=",
+        "value": true,
+        "unit": "enum",
+        "description_vi": "Người đang hưởng hoặc đang tạm dừng hưởng trợ cấp tai nạn lao động, bệnh nghề nghiệp hằng tháng đã nghỉ việc"
+      }
+    ],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Điều kiện nhận trợ cấp mai táng",
+        "if_conditions_idx": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "then_predicate": "one_time_social_insurance",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 2,
+        "clause": 1,
+        "law": "L41_2024"
+      },
+      {
+        "article": 2,
+        "clause": 2,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.85,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [
+      12
+    ],
+    "days": [],
+    "vnd_amounts": [],
+    "references": [
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 5.78,
+  "usage": {
+    "prompt_tokens": 2762,
+    "completion_tokens": 449
+  },
+  "extracted_at": "2026-05-27T08:28:09"
+}

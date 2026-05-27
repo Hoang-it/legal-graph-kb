@@ -1,0 +1,66 @@
+{
+  "clause_id": "L41_2024.A18.K12",
+  "extraction": {
+    "clause_id": "L41_2024.A18.K12",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [],
+    "procedure_steps": [
+      {
+        "step_order": 1,
+        "actor": "BHXH_agency",
+        "action": "Báo cáo Hội đồng quản lý bảo hiểm xã hội tình hình thực hiện chính sách, chế độ bảo hiểm xã hội, bảo hiểm thất nghiệp, bảo hiểm y tế định kỳ 03 tháng.",
+        "prerequisite": null
+      },
+      {
+        "step_order": 2,
+        "actor": "BHXH_agency",
+        "action": "Báo cáo Bộ Lao động - Thương binh và Xã hội về tình hình thực hiện chính sách, chế độ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp định kỳ 06 tháng.",
+        "prerequisite": null
+      },
+      {
+        "step_order": 3,
+        "actor": "BHXH_agency",
+        "action": "Báo cáo Bộ Y tế về tình hình thực hiện chính sách, chế độ bảo hiểm y tế định kỳ 06 tháng.",
+        "prerequisite": null
+      },
+      {
+        "step_order": 4,
+        "actor": "BHXH_agency",
+        "action": "Báo cáo Ủy ban nhân dân cùng cấp về tình hình thực hiện chính sách, chế độ bảo hiểm xã hội, bảo hiểm thất nghiệp, bảo hiểm y tế trong phạm vi địa phương quản lý định kỳ 06 tháng.",
+        "prerequisite": null
+      },
+      {
+        "step_order": 5,
+        "actor": "BHXH_agency",
+        "action": "Báo cáo Bộ Tài chính về tình hình quản lý và sử dụng quỹ bảo hiểm xã hội, quỹ bảo hiểm thất nghiệp, quỹ bảo hiểm y tế hằng năm.",
+        "prerequisite": null
+      }
+    ],
+    "extractor_confidence": 1.0,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [
+      3,
+      6,
+      6
+    ],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 6.69,
+  "usage": {
+    "prompt_tokens": 2851,
+    "completion_tokens": 472
+  },
+  "extracted_at": "2026-05-27T08:15:39"
+}

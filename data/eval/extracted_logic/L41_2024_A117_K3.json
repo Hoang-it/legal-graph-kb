@@ -1,0 +1,37 @@
+{
+  "clause_id": "L41_2024.A117.K3",
+  "extraction": {
+    "clause_id": "L41_2024.A117.K3",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [],
+    "exceptions": [],
+    "references": [],
+    "defines": [
+      {
+        "term_vi": "Tiền sinh lời của hoạt động đầu tư quỹ",
+        "definition": "Tiền sinh lời của hoạt động đầu tư quỹ.",
+        "related_predicate": null
+      }
+    ],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 1.0,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.24,
+  "usage": {
+    "prompt_tokens": 2627,
+    "completion_tokens": 130
+  },
+  "extracted_at": "2026-05-27T08:33:29"
+}

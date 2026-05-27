@@ -1,0 +1,59 @@
+{
+  "clause_id": "L41_2024.A21.K2",
+  "extraction": {
+    "clause_id": "L41_2024.A21.K2",
+    "conditions": [
+      {
+        "predicate": "age",
+        "operator": "in_range",
+        "value": [
+          70,
+          75
+        ],
+        "unit": "year",
+        "description_vi": "Công dân từ đủ 70 tuổi đến dưới 75 tuổi"
+      }
+    ],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Điều kiện hưởng trợ cấp hưu trí xã hội",
+        "if_conditions_idx": [
+          0
+        ],
+        "then_predicate": "social_insurance",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": [
+      "Không có thông tin về hộ nghèo, hộ cận nghèo và điều kiện quy định tại điểm b và điểm c"
+    ]
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 4.11,
+  "usage": {
+    "prompt_tokens": 2670,
+    "completion_tokens": 242
+  },
+  "extracted_at": "2026-05-27T08:16:24"
+}

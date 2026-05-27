@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 101,
+  "question": "e làm cty này từ năm 2012 đến 2025 thì e nghỉ và hiện e đang làm cty khác .cty đã trả sổ bh ,cùng các tờ rồi từ năm 2012 đến hết 2018 ,khi e xin nghỉ thì cty cũng đã chốt và trả các tờ rời từ năm 2019 đến đến 2025 ,nhưng e lại làm mất sổ cùng các tờ rời từ năm 2012 đến năm 2019 .vậy e hỏi là e muốn làm lại sổ bh cùng các tờ rời đó thì đến đâu làm?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=derived_false, repair_rounds=2, error=Prolog produced no solutions]",
+  "plain_answer": "",
+  "citations": [
+    "[Điều 25 khoản 2]",
+    "[Điều 28 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A25.K2",
+    "L41_2024.A28.K4"
+  ],
+  "citation_indices": [
+    1,
+    2
+  ],
+  "prolog_success": false,
+  "prolog_status": "derived_false",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "prolog_program": "legal_source(source_a25_k2, law_bhxh_2024, article_25, clause_2, none, 'Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau.').\nlegal_source(source_a28_k4, law_bhxh_2024, article_28, clause_4, none, 'Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội.').\nsocial_insurance_book(Issued, Trace) :- social_insurance_book(True), Issued = true, Trace = [step(condition, social_insurance_book_issued, based_on(source_a28_k4)), step(conclusion, social_insurance_book(Issued), based_on(source_a28_k4))].\nsocial_insurance_book(False, Trace) :- social_insurance_book(False), Trace = [step(condition, social_insurance_book_not_issued, based_on(source_a28_k4)), step(conclusion, social_insurance_book(False), based_on(source_a28_k4))].",
+  "prolog_error": "Prolog produced no solutions",
+  "irac_sections": {},
+  "elapsed_s": 15.594,
+  "prompt_tokens": 11359,
+  "completion_tokens": 830,
+  "error": null,
+  "gold_answer": "Bạn có thể làm thủ tục cấp lại sổ BHXH/tờ rời tại cơ quan BHXH nơi cư trú hoặc nơi đang tham gia BHXH hiện nay; không bắt buộc quay lại công ty cũ. Hồ sơ thường gồm tờ khai thay đổi thông tin, CCCD và nêu rõ phần sổ, tờ rời bị mất. Quá trình đã đóng vẫn được quản lý trên dữ liệu BHXH nên việc mất sổ giấy không làm mất thời gian tham gia.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

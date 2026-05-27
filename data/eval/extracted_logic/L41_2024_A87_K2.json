@@ -1,0 +1,70 @@
+{
+  "clause_id": "L41_2024.A87.K2",
+  "extraction": {
+    "clause_id": "L41_2024.A87.K2",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 4,
+        "unit": "times",
+        "direction": "max",
+        "context": "maximum_survivors_support",
+        "description_vi": "Số thân nhân tối đa được hưởng trợ cấp tuất hằng tháng"
+      },
+      {
+        "value": 2,
+        "unit": "times",
+        "direction": "exact",
+        "context": "survivors_support_multiplier",
+        "description_vi": "Số lần mức trợ cấp cho trường hợp có từ 02 người chết trở lên"
+      }
+    ],
+    "rules": [
+      {
+        "name": "Quy định về trợ cấp tuất hằng tháng",
+        "if_conditions_idx": [],
+        "then_predicate": "survivorship",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 86,
+        "clause": 1,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": [
+      [
+        86,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 4.14,
+  "usage": {
+    "prompt_tokens": 2708,
+    "completion_tokens": 304
+  },
+  "extracted_at": "2026-05-27T08:28:45"
+}

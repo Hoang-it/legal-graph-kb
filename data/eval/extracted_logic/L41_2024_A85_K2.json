@@ -1,0 +1,54 @@
+{
+  "clause_id": "L41_2024.A85.K2",
+  "extraction": {
+    "clause_id": "L41_2024.A85.K2",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 10,
+        "unit": "times",
+        "direction": "exact",
+        "context": "burial_support_amount",
+        "description_vi": "Mức trợ cấp mai táng bằng 10 lần mức tham chiếu"
+      }
+    ],
+    "rules": [
+      {
+        "name": "Mức trợ cấp mai táng",
+        "if_conditions_idx": [],
+        "then_predicate": "monthly_amount",
+        "then_value": "formula:10 * standard_amount",
+        "conclusion_type": "scalar",
+        "involves_entities": []
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 1,
+        "clause": null,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 0.95,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.6,
+  "usage": {
+    "prompt_tokens": 2644,
+    "completion_tokens": 237
+  },
+  "extracted_at": "2026-05-27T08:28:13"
+}

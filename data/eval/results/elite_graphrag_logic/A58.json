@@ -1,0 +1,32 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 58,
+  "question": "e là hộ kinh doanh mới , tham gia bhxh cho hkd thì phải làm như thế nào?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_program, repair_rounds=2, error=LLM returned predicate_inputs but no verify_facts]",
+  "plain_answer": "",
+  "citations": [
+    "[Điều 28 khoản 1]",
+    "[Điều 3 khoản 9]"
+  ],
+  "citation_ids": [
+    "L41_2024.A28.K1",
+    "L41_2024.A3.K9"
+  ],
+  "citation_indices": [
+    0,
+    1
+  ],
+  "prolog_success": false,
+  "prolog_status": "invalid_program",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "prolog_program": "legal_source(source_a28_k1, law_bhxh_2024, article_28, clause_1, none, 'Người sử dụng lao động có trách nhiệm kê khai và nộp hồ sơ tham gia bảo hiểm xã hội bắt buộc của người lao động trong thời hạn 30 ngày.').\nlegal_source(source_a3_k9, law_bhxh_2024, article_3, clause_9, none, 'Đăng ký tham gia bảo hiểm xã hội là việc người sử dụng lao động, người lao động nộp hồ sơ kê khai thông tin về người lao động.').\nregister_social_insurance(Employer, Trace) :- employer(Employer, true), Trace = [step(condition, employer_responsibility, based_on(source_a28_k1)), step(conclusion, register_social_insurance(Employer), based_on(source_a28_k1))].\nemployer(user, true).",
+  "prolog_error": "LLM returned predicate_inputs but no verify_facts",
+  "irac_sections": {},
+  "elapsed_s": 58.267,
+  "prompt_tokens": 9827,
+  "completion_tokens": 877,
+  "error": null,
+  "gold_answer": "Nếu bạn là chủ hộ kinh doanh thuộc diện phải tham gia BHXH bắt buộc thì cần liên hệ cơ quan BHXH hoặc tổ chức dịch vụ thu để đăng ký hồ sơ tham gia theo mã số BHXH, kê khai mức tiền lương làm căn cứ đóng và phương thức đóng. Nếu chưa thuộc diện bắt buộc thì có thể tham gia BHXH tự nguyện. Khi đi đăng ký nên mang CCCD, thông tin đăng ký hộ kinh doanh và giấy tờ liên quan đến mã số BHXH nếu đã có.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 25, Điều 31; Nghị định 158/2025/NĐ-CP"
+}

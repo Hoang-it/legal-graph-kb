@@ -1,0 +1,47 @@
+{
+  "clause_id": "L41_2024.A119.K2",
+  "extraction": {
+    "clause_id": "L41_2024.A119.K2",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Chi đóng bảo hiểm y tế",
+        "if_conditions_idx": [],
+        "then_predicate": "health_insurance",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [
+      14,
+      14
+    ],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.86,
+  "usage": {
+    "prompt_tokens": 2753,
+    "completion_tokens": 147
+  },
+  "extracted_at": "2026-05-27T08:33:48"
+}

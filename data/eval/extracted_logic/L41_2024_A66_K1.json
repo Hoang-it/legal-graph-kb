@@ -1,0 +1,198 @@
+{
+  "clause_id": "L41_2024.A66.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A66.K1",
+    "conditions": [
+      {
+        "predicate": "gender",
+        "operator": "=",
+        "value": "female",
+        "unit": "enum",
+        "description_vi": "Đối tượng là lao động nữ"
+      },
+      {
+        "predicate": "years_contributed",
+        "operator": ">=",
+        "value": 15,
+        "unit": "year",
+        "description_vi": "Đủ 15 năm đóng bảo hiểm xã hội"
+      },
+      {
+        "predicate": "gender",
+        "operator": "=",
+        "value": "male",
+        "unit": "enum",
+        "description_vi": "Đối tượng là lao động nam"
+      },
+      {
+        "predicate": "years_contributed",
+        "operator": ">=",
+        "value": 20,
+        "unit": "year",
+        "description_vi": "Đủ 20 năm đóng bảo hiểm xã hội"
+      },
+      {
+        "predicate": "years_contributed",
+        "operator": "in_range",
+        "value": [
+          15,
+          20
+        ],
+        "unit": "year",
+        "description_vi": "Thời gian đóng bảo hiểm xã hội từ đủ 15 năm đến dưới 20 năm"
+      }
+    ],
+    "thresholds": [
+      {
+        "value": 45.0,
+        "unit": "percent",
+        "direction": "exact",
+        "context": "pension_rate_initial_female",
+        "description_vi": "45% mức bình quân tiền lương cho lao động nữ"
+      },
+      {
+        "value": 45.0,
+        "unit": "percent",
+        "direction": "exact",
+        "context": "pension_rate_initial_male",
+        "description_vi": "45% mức bình quân tiền lương cho lao động nam"
+      },
+      {
+        "value": 2.0,
+        "unit": "percent",
+        "direction": "exact",
+        "context": "pension_rate_increment",
+        "description_vi": "Tính thêm 2% cho mỗi năm đóng bảo hiểm xã hội"
+      },
+      {
+        "value": 75.0,
+        "unit": "percent",
+        "direction": "max",
+        "context": "pension_rate_max",
+        "description_vi": "Mức tối đa bằng 75%"
+      },
+      {
+        "value": 40.0,
+        "unit": "percent",
+        "direction": "exact",
+        "context": "pension_rate_initial_male_15_to_20_years",
+        "description_vi": "40% mức bình quân tiền lương cho lao động nam từ đủ 15 năm đến dưới 20 năm"
+      },
+      {
+        "value": 1.0,
+        "unit": "percent",
+        "direction": "exact",
+        "context": "pension_rate_increment_male_15_to_20_years",
+        "description_vi": "Tính thêm 1% cho mỗi năm đóng bảo hiểm xã hội cho lao động nam từ đủ 15 năm đến dưới 20 năm"
+      }
+    ],
+    "rules": [
+      {
+        "name": "Mức lương hưu hằng tháng cho lao động nữ",
+        "if_conditions_idx": [
+          0,
+          1
+        ],
+        "then_predicate": "pension",
+        "then_value": "formula:0.45 * average_salary + (years_contributed - 15) * 0.02 * average_salary",
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      },
+      {
+        "name": "Mức lương hưu hằng tháng cho lao động nam",
+        "if_conditions_idx": [
+          2,
+          3
+        ],
+        "then_predicate": "pension",
+        "then_value": "formula:0.45 * average_salary + (years_contributed - 20) * 0.02 * average_salary",
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      },
+      {
+        "name": "Mức lương hưu hằng tháng cho lao động nam từ 15 đến dưới 20 năm",
+        "if_conditions_idx": [
+          2,
+          4
+        ],
+        "then_predicate": "pension",
+        "then_value": "formula:0.40 * average_salary + (years_contributed - 15) * 0.01 * average_salary",
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 64,
+        "clause": null,
+        "law": "L41_2024"
+      },
+      {
+        "article": 72,
+        "clause": null,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [
+      45.0,
+      2.0,
+      75.0,
+      45.0,
+      2.0,
+      75.0,
+      40.0,
+      1.0
+    ],
+    "years": [
+      15,
+      20,
+      15,
+      20,
+      15
+    ],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": [
+      [
+        64,
+        null
+      ],
+      [
+        72,
+        null
+      ],
+      [
+        72,
+        null
+      ],
+      [
+        72,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 10.95,
+  "usage": {
+    "prompt_tokens": 2872,
+    "completion_tokens": 1073
+  },
+  "extracted_at": "2026-05-27T08:25:12"
+}

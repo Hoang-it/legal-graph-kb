@@ -1,0 +1,52 @@
+{
+  "clause_id": "L41_2024.A110.K2",
+  "extraction": {
+    "clause_id": "L41_2024.A110.K2",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Mức trợ cấp tuất một lần",
+        "if_conditions_idx": [],
+        "then_predicate": "one_time_social_insurance",
+        "then_value": "formula:1.5 * average_salary_before_2014 + 2 * average_salary_after_2014",
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [
+      {
+        "of_rule_idx": 0,
+        "condition_description": "Thời gian đóng bảo hiểm xã hội chưa đủ 60 tháng",
+        "modifies": "then_value"
+      }
+    ],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [
+      60
+    ],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.7,
+  "usage": {
+    "prompt_tokens": 2837,
+    "completion_tokens": 217
+  },
+  "extracted_at": "2026-05-27T08:32:17"
+}

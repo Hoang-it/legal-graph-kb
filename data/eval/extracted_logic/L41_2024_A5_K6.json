@@ -1,0 +1,59 @@
+{
+  "clause_id": "L41_2024.A5.K6",
+  "extraction": {
+    "clause_id": "L41_2024.A5.K6",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 12,
+        "unit": "month",
+        "direction": "exact",
+        "context": "minimum_months_for_pension",
+        "description_vi": "Một năm phải tính đủ 12 tháng"
+      },
+      {
+        "value": 6,
+        "unit": "month",
+        "direction": "exact",
+        "context": "half_year_calculation",
+        "description_vi": "Thời gian đóng BHXH có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm"
+      },
+      {
+        "value": 11,
+        "unit": "month",
+        "direction": "exact",
+        "context": "full_year_calculation",
+        "description_vi": "Thời gian đóng BHXH có tháng lẻ từ 07 tháng đến 11 tháng được tính là một năm"
+      }
+    ],
+    "rules": [],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 1.0,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [
+      12,
+      1,
+      6,
+      7,
+      11
+    ],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 5.28,
+  "usage": {
+    "prompt_tokens": 2704,
+    "completion_tokens": 250
+  },
+  "extracted_at": "2026-05-27T08:13:07"
+}

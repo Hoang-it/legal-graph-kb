@@ -1,0 +1,75 @@
+{
+  "clause_id": "L41_2024.A53.K5",
+  "extraction": {
+    "clause_id": "L41_2024.A53.K5",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 6,
+        "unit": "month",
+        "direction": "exact",
+        "context": "maternity_leave_duration_until_6_months",
+        "description_vi": "Được nghỉ thai sản cho đến khi con đủ 06 tháng tuổi"
+      }
+    ],
+    "rules": [
+      {
+        "name": "Quyền lợi nghỉ thai sản",
+        "if_conditions_idx": [],
+        "then_predicate": "maternity",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 50,
+        "clause": 2,
+        "law": "L41_2024"
+      },
+      {
+        "article": 50,
+        "clause": 3,
+        "law": "L41_2024"
+      },
+      {
+        "article": 50,
+        "clause": 5,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [
+      6
+    ],
+    "days": [],
+    "vnd_amounts": [],
+    "references": [
+      [
+        50,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.42,
+  "usage": {
+    "prompt_tokens": 2751,
+    "completion_tokens": 284
+  },
+  "extracted_at": "2026-05-27T08:22:09"
+}

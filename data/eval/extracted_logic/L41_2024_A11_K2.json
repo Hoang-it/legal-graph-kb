@@ -1,0 +1,44 @@
+{
+  "clause_id": "L41_2024.A11.K2",
+  "extraction": {
+    "clause_id": "L41_2024.A11.K2",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Trách nhiệm của người thụ hưởng chế độ bảo hiểm xã hội",
+        "if_conditions_idx": [],
+        "then_predicate": "responsibility",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.91,
+  "usage": {
+    "prompt_tokens": 2791,
+    "completion_tokens": 154
+  },
+  "extracted_at": "2026-05-27T08:08:01"
+}

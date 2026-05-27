@@ -1,0 +1,34 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 54,
+  "question": "Em đóng bảo hiểm từ 2008 đến nay (hiện tại em làm cqnn) (gan 18 năm) hiện tại em mới có thai, mà e muốn xin nghỉ việc ở nhà để dưỡng thai do tuổi cao rồi. (45 tuổi),  e muốn hỏi là trường hợp em muốn nghỉ, e muốn đóng bảo hiểm tự nguyện  những tháng tiếp theo như thế nào để khi em sinh con thì em được chế độ thai sản?",
+  "answer": "Issue: Người hỏi muốn biết cách đóng bảo hiểm tự nguyện để đủ điều kiện hưởng chế độ thai sản khi nghỉ việc. \nRule: Theo Điều 50 khoản 4 Luật BHXH 2024, đối tượng đủ điều kiện chấm dứt hợp đồng lao động trước khi sinh con vẫn được hưởng chế độ thai sản. \nApplication: Không có slot nào được gán giá trị. Prolog đã xác định rằng người dùng đủ điều kiện hưởng chế độ thai sản vì đã đóng bảo hiểm đủ 18 năm. \nConclusion: Theo Prolog, người dùng ĐỦ điều kiện hưởng chế độ thai sản.",
+  "plain_answer": "Bạn đã đóng bảo hiểm 18 năm, nên bạn đủ điều kiện hưởng chế độ thai sản theo [Điều 50 khoản 4] Luật BHXH 2024, ngay cả khi bạn nghỉ việc trước khi sinh. Bạn có thể đóng bảo hiểm tự nguyện trong thời gian nghỉ để đảm bảo quyền lợi này.",
+  "citations": [
+    "[Điều 50 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A50.K4"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(condition,months_contributed_at_least_6,based_on(source_a94_k1)),step(conclusion,maternity(user,true),based_on(source_a50_k4))]",
+  "prolog_program": "years_contributed(user, 18).\nage(user, 45).\nlegal_source(source_a50_k4, law_bhxh_2024, article_50, clause_4, none, 'Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con hoặc nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 06 tháng tuổi thì vẫn được hưởng chế độ thai sản theo quy định tại các điều 53, 54, 55 và 56 và các khoản 1, 2 và 3 Điều 58 của Luật này. Thời gian hưởng chế độ thai sản không được tính là thời gian đóng bảo hiểm xã hội.').\nmaternity(Person, Eligible, Trace) :- years_contributed(Person, Y), Y >= 6, Eligible = true, Trace = [step(condition, months_contributed_at_least_6, based_on(source_a94_k1)), step(conclusion, maternity(Person, Eligible), based_on(source_a50_k4))].\nmandatory_social_insurance(Person, Eligible, Trace) :- months_contributed(Person, M), M >= 3, Eligible = true, Trace = [step(condition, mandatory_social_insurance_required, based_on(source_a50_k3)), step(conclusion, mandatory_social_insurance(Person, Eligible), based_on(source_a50_k3))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết cách đóng bảo hiểm tự nguyện để đủ điều kiện hưởng chế độ thai sản khi nghỉ việc.",
+    "rule": "Theo Điều 50 khoản 4 Luật BHXH 2024, đối tượng đủ điều kiện chấm dứt hợp đồng lao động trước khi sinh con vẫn được hưởng chế độ thai sản.",
+    "application": "Không có slot nào được gán giá trị. Prolog đã xác định rằng người dùng đủ điều kiện hưởng chế độ thai sản vì đã đóng bảo hiểm đủ 18 năm.",
+    "conclusion": "Theo Prolog, người dùng ĐỦ điều kiện hưởng chế độ thai sản."
+  },
+  "elapsed_s": 23.375,
+  "prompt_tokens": 10324,
+  "completion_tokens": 1125,
+  "error": null,
+  "gold_answer": "Từ 1/7/2025, người tham gia BHXH tự nguyện đủ điều kiện có thể hưởng trợ cấp thai sản, nhưng đây không giống đầy đủ chế độ thai sản của BHXH bắt buộc. Nếu bạn nghỉ việc và chuyển sang BHXH tự nguyện, bạn cần xem mình có đủ từ 6 tháng đóng BHXH tự nguyện hoặc kết hợp bắt buộc + tự nguyện trong 12 tháng trước sinh hay không. Mức trợ cấp thai sản của BHXH tự nguyện hiện là 2 triệu đồng cho mỗi con, không phải tiền nghỉ thai sản 6 tháng như BHXH bắt buộc.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 94; Nghị định 159/2025/NĐ-CP"
+}

@@ -1,0 +1,72 @@
+{
+  "clause_id": "L41_2024.A50.K3",
+  "extraction": {
+    "clause_id": "L41_2024.A50.K3",
+    "conditions": [
+      {
+        "predicate": "years_contributed",
+        "operator": ">=",
+        "value": 1,
+        "unit": "year",
+        "description_vi": "Đóng BHXH bắt buộc đủ 12 tháng trở lên"
+      },
+      {
+        "predicate": "months_contributed",
+        "operator": ">=",
+        "value": 3,
+        "unit": "month",
+        "description_vi": "Đóng BHXH bắt buộc đủ 03 tháng trở lên trong 12 tháng liền kề trước khi sinh con"
+      }
+    ],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Điều kiện đóng BHXH khi mang thai",
+        "if_conditions_idx": [
+          0,
+          1
+        ],
+        "then_predicate": "mandatory_social_insurance",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 1,
+        "clause": null,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [
+      12,
+      3,
+      12
+    ],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.43,
+  "usage": {
+    "prompt_tokens": 2709,
+    "completion_tokens": 286
+  },
+  "extracted_at": "2026-05-27T08:21:16"
+}

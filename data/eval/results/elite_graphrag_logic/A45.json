@@ -1,0 +1,35 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 45,
+  "question": "Em có quyết định nghỉ việc từ tháng 3/2025, giờ em muốn rút bảo hiểm xã hội đã làm thủ tục đuợc chưa ạ? em ở Phú xuyên Hà Nội thì làm thủ tục giải quyết ở đâu và hồ sơ cần những giấy tờ gì? em đóng bảo hiểm tổng 73 tháng thì  đuợc huởng tổng  bao nhiêu tiền bảo hiểm?",
+  "answer": "Issue: Người hỏi muốn biết có thể rút bảo hiểm xã hội một lần sau khi nghỉ việc từ tháng 3/2025 không và cần làm thủ tục ở đâu. \nRule: Theo Điều 107 khoản 2 Luật BHXH 2024, người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ cho cơ quan bảo hiểm xã hội. \nApplication: Không có slot nào được gán giá trị, nhưng Prolog đã xác định rằng người dùng đủ điều kiện hưởng bảo hiểm xã hội một lần dựa trên việc đã đóng bảo hiểm 73 tháng. \nConclusion: Theo Prolog, người dùng CÓ đủ điều kiện để rút bảo hiểm xã hội một lần.",
+  "plain_answer": "Bạn có thể rút bảo hiểm xã hội một lần vì đã đủ điều kiện theo [Điều 107 khoản 2] Luật BHXH 2024. Để làm thủ tục, bạn cần nộp hồ sơ tại cơ quan bảo hiểm xã hội nơi bạn cư trú ở Phú Xuyên, Hà Nội. Bạn nên chuẩn bị các giấy tờ theo quy định để được giải quyết nhanh chóng.",
+  "citations": [
+    "[Điều 107 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A107.K2"
+  ],
+  "citation_indices": [
+    0,
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(condition,years_contributed_at_least_12,based_on(source_a5_k6)),step(conclusion,one_time_social_insurance(user,true),based_on(source_a107_k2))]",
+  "prolog_program": "years_contributed(user, 73).\nlegal_source(source_a107_k2, law_bhxh_2024, article_107, clause_2, none, 'Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ cho cơ quan bảo hiểm xã hội.').\nlegal_source(source_a79_k3, law_bhxh_2024, article_79, clause_3, none, 'Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết.').\none_time_social_insurance(Person, Eligible, Trace) :- years_contributed(Person, Y), Y >= 12, Eligible = true, Trace = [step(condition, years_contributed_at_least_12, based_on(source_a5_k6)), step(conclusion, one_time_social_insurance(Person, Eligible), based_on(source_a107_k2))].\nbhxh_agency_responsibility(Agency, Trace) :- Trace = [step(condition, bhxh_agency_response_time, based_on(source_a79_k3))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết có thể rút bảo hiểm xã hội một lần sau khi nghỉ việc từ tháng 3/2025 không và cần làm thủ tục ở đâu.",
+    "rule": "Theo Điều 107 khoản 2 Luật BHXH 2024, người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ cho cơ quan bảo hiểm xã hội.",
+    "application": "Không có slot nào được gán giá trị, nhưng Prolog đã xác định rằng người dùng đủ điều kiện hưởng bảo hiểm xã hội một lần dựa trên việc đã đóng bảo hiểm 73 tháng.",
+    "conclusion": "Theo Prolog, người dùng CÓ đủ điều kiện để rút bảo hiểm xã hội một lần."
+  },
+  "elapsed_s": 28.53,
+  "prompt_tokens": 6013,
+  "completion_tokens": 609,
+  "error": null,
+  "gold_answer": "Nếu bạn nghỉ từ 3/2025 thì đến nay thường đã đủ mốc 12 tháng không tham gia để xem xét hưởng BHXH một lần, nếu không thuộc diện tiếp tục bảo lưu. Hồ sơ thường gồm đơn đề nghị, CCCD và sổ/ dữ liệu BHXH theo hướng dẫn của cơ quan BHXH. Bạn nộp tại cơ quan BHXH nơi cư trú hoặc bộ phận một cửa. Với 73 tháng đóng, mức hưởng không thể tính chính xác nếu chưa có toàn bộ tiền lương đóng từng giai đoạn; công thức tính dựa trên mức bình quân tiền lương đóng BHXH.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 104, Điều 110"
+}

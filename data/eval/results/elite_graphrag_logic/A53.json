@@ -1,0 +1,37 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 53,
+  "question": "Cty nợ gần 1 năm BH ( mất 6 năm ko chốt) giờ mình đã đi làm cty khác đc 2 năm rồi.\nBây giờ làm thế nào để mình chốt được tờ rời ở công ty cũ?",
+  "answer": "Issue: Người hỏi muốn biết cách chốt tờ rời bảo hiểm xã hội ở công ty cũ sau khi công ty này nợ bảo hiểm gần 1 năm và họ đã làm việc ở công ty mới được 2 năm.\nRule: Theo Điều 81 khoản 2 Luật BHXH 2024 (41/2024/QH15), cơ quan bảo hiểm xã hội có trách nhiệm giải quyết hồ sơ trong thời hạn 10 ngày làm việc.\nApplication: Không có slot nào được gán giá trị. Prolog query insurance_resolution(user, Resolution, Trace) trả về Resolution = true, cho thấy người dùng có quyền yêu cầu giải quyết hồ sơ bảo hiểm xã hội.\nConclusion: Theo Prolog, bạn có quyền yêu cầu giải quyết hồ sơ bảo hiểm xã hội và cơ quan bảo hiểm xã hội sẽ xử lý trong thời hạn 10 ngày làm việc.",
+  "plain_answer": "Bạn có quyền yêu cầu giải quyết hồ sơ bảo hiểm xã hội của mình theo [Điều 81 khoản 2] Luật BHXH 2024. Cơ quan bảo hiểm xã hội sẽ có trách nhiệm xử lý hồ sơ của bạn trong thời hạn 10 ngày làm việc. Bạn nên chuẩn bị đầy đủ hồ sơ để nộp cho cơ quan bảo hiểm xã hội nhé.",
+  "citations": [
+    "[Điều 81 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A81.K2"
+  ],
+  "citation_indices": [
+    1,
+    3,
+    4,
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(condition,insurance_resolution_time_limit,based_on(source_a81_k2)),step(conclusion,insurance_resolution(user,true),based_on(source_a81_k2))]",
+  "prolog_program": "legal_source(source_a41_k1, law_bhxh_2024, article_41, clause_1, none, 'Người lao động có quyền yêu cầu giải quyết hồ sơ bảo hiểm xã hội trong thời hạn quy định.').\nlegal_source(source_a81_k2, law_bhxh_2024, article_81, clause_2, none, 'Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết hồ sơ trong thời hạn 10 ngày làm việc.').\nlegal_source(source_a76_k5, law_bhxh_2024, article_76, clause_5, none, 'Thời hạn giải quyết hồ sơ là 07 ngày làm việc.').\nlegal_source(source_a97_k2, law_bhxh_2024, article_97, clause_2, none, 'Thời hạn giải quyết hồ sơ là 05 ngày làm việc.').\ninsurance_resolution(Person, Resolution, Trace) :- insurance_resolution=True, Resolution = true, Trace = [step(condition, insurance_resolution_time_limit, based_on(source_a81_k2)), step(conclusion, insurance_resolution(Person, Resolution), based_on(source_a81_k2))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết cách chốt tờ rời bảo hiểm xã hội ở công ty cũ sau khi công ty này nợ bảo hiểm gần 1 năm và họ đã làm việc ở công ty mới được 2 năm.",
+    "rule": "Theo Điều 81 khoản 2 Luật BHXH 2024 (41/2024/QH15), cơ quan bảo hiểm xã hội có trách nhiệm giải quyết hồ sơ trong thời hạn 10 ngày làm việc.",
+    "application": "Không có slot nào được gán giá trị. Prolog query insurance_resolution(user, Resolution, Trace) trả về Resolution = true, cho thấy người dùng có quyền yêu cầu giải quyết hồ sơ bảo hiểm xã hội.",
+    "conclusion": "Theo Prolog, bạn có quyền yêu cầu giải quyết hồ sơ bảo hiểm xã hội và cơ quan bảo hiểm xã hội sẽ xử lý trong thời hạn 10 ngày làm việc."
+  },
+  "elapsed_s": 12.882,
+  "prompt_tokens": 5896,
+  "completion_tokens": 608,
+  "error": null,
+  "gold_answer": "Nếu công ty cũ nợ BHXH gần 1 năm và kéo dài không chốt sổ, bạn cần yêu cầu công ty xác nhận bằng văn bản toàn bộ thời gian đã làm việc, bảng lương, HĐLĐ, quyết định nghỉ việc và chứng cứ bị nợ đóng. Sau đó gửi đơn đến cơ quan BHXH quản lý công ty cũ và Thanh tra có thẩm quyền để yêu cầu truy đóng/chốt sổ đến thời điểm đã đóng thực tế. Thời gian công ty còn nợ sẽ không bị mất nhưng cần xử lý theo thủ tục cưỡng chế hoặc thanh tra.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48; quy định xử lý chậm đóng BHXH"
+}

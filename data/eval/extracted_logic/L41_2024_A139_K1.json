@@ -1,0 +1,136 @@
+{
+  "clause_id": "L41_2024.A139.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A139.K1",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 42,
+        "clause": 7,
+        "law": "L41_2024"
+      },
+      {
+        "article": 43,
+        "clause": 1,
+        "law": "L41_2024"
+      },
+      {
+        "article": 44,
+        "clause": 2,
+        "law": "L41_2024"
+      },
+      {
+        "article": 49,
+        "clause": 3,
+        "law": "L41_2024"
+      },
+      {
+        "article": 49,
+        "clause": 5,
+        "law": "L41_2024"
+      },
+      {
+        "article": 53,
+        "clause": 3,
+        "law": "L41_2024"
+      },
+      {
+        "article": 90,
+        "clause": 1,
+        "law": "L41_2024"
+      },
+      {
+        "article": 120,
+        "clause": null,
+        "law": "L41_2024"
+      },
+      {
+        "article": 121,
+        "clause": null,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 1.0,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [
+      3
+    ],
+    "days": [],
+    "vnd_amounts": [],
+    "references": [
+      [
+        42,
+        null
+      ],
+      [
+        43,
+        null
+      ],
+      [
+        2,
+        null
+      ],
+      [
+        2,
+        null
+      ],
+      [
+        44,
+        null
+      ],
+      [
+        120,
+        null
+      ],
+      [
+        121,
+        null
+      ],
+      [
+        49,
+        null
+      ],
+      [
+        75,
+        null
+      ],
+      [
+        80,
+        null
+      ],
+      [
+        81,
+        null
+      ],
+      [
+        49,
+        null
+      ],
+      [
+        53,
+        null
+      ],
+      [
+        90,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 5.97,
+  "usage": {
+    "prompt_tokens": 3189,
+    "completion_tokens": 297
+  },
+  "extracted_at": "2026-05-27T08:37:09"
+}

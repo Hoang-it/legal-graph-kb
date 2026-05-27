@@ -1,0 +1,45 @@
+{
+  "clause_id": "L41_2024.A13.K8",
+  "extraction": {
+    "clause_id": "L41_2024.A13.K8",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Bồi thường cho người lao động",
+        "if_conditions_idx": [],
+        "then_predicate": "state_support",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NSDLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NLĐ",
+      "NSDLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 4.96,
+  "usage": {
+    "prompt_tokens": 2673,
+    "completion_tokens": 153
+  },
+  "extracted_at": "2026-05-27T08:05:48"
+}

@@ -1,0 +1,37 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 49,
+  "question": "Cty em có NLĐ ngày 20/4 là hết thời gian nghỉ thai sản và cũng xin nghỉ hẳn luôn. Vậy ngày 21/4 em làm hồ sơ báo giảm hẳn từ tháng 4 có đc ko? \nPhải như làm thế nào mới đúng?",
+  "answer": "Issue: Người hỏi muốn biết liệu có thể làm hồ sơ báo giảm hẳn cho NLĐ từ tháng 4 sau khi NLĐ hết thời gian nghỉ thai sản vào ngày 20/4 không.\nRule: Theo Điều 62 khoản 1 Luật BHXH 2024, \"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản.\"\nApplication: Không có slot nào được gán giá trị. Prolog không thể xác định trách nhiệm của người sử dụng lao động trong trường hợp này do thiếu thông tin cần thiết.\nConclusion: Hệ thống không thể tính được kết quả cuối cùng do thiếu slot nào đó.",
+  "plain_answer": "Hệ thống chưa đủ thông tin để tính chính xác vì không có thông tin về hồ sơ cụ thể. Theo [Điều 62 khoản 1] Luật BHXH 2024, bạn cần nộp hồ sơ trong vòng 45 ngày kể từ ngày NLĐ hết thời gian nghỉ thai sản. Bạn nên kiểm tra lại các yêu cầu hồ sơ để đảm bảo đúng quy trình.",
+  "citations": [
+    "[Điều 62 khoản 1]",
+    "[Điều 61]"
+  ],
+  "citation_ids": [
+    "L41_2024.A62.K1",
+    "L41_2024.A61"
+  ],
+  "citation_indices": [
+    0,
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(condition,employer_responsibility,based_on(source_a41_k1))]",
+  "prolog_program": "legal_source(source_a41_k1, law_bhxh_2024, article_41, clause_1, none, 'Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản.').\nlegal_source(source_a60_k1, law_bhxh_2024, article_60, clause_1, none, 'Trong thời gian 30 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản, lao động nữ chưa phục hồi sức khỏe thì được nghỉ dưỡng sức, phục hồi sức khỏe.').\nemployer_responsibility(True, Trace) :- Trace = [step(condition, employer_responsibility, based_on(source_a41_k1))].\nmaternity(True, Trace) :- Trace = [step(condition, maternity, based_on(source_a55_k1))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết liệu có thể làm hồ sơ báo giảm hẳn cho NLĐ từ tháng 4 sau khi NLĐ hết thời gian nghỉ thai sản vào ngày 20/4 không.",
+    "rule": "Theo Điều 62 khoản 1 Luật BHXH 2024, \"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản.\"",
+    "application": "Không có slot nào được gán giá trị. Prolog không thể xác định trách nhiệm của người sử dụng lao động trong trường hợp này do thiếu thông tin cần thiết.",
+    "conclusion": "Hệ thống không thể tính được kết quả cuối cùng do thiếu slot nào đó."
+  },
+  "elapsed_s": 14.509,
+  "prompt_tokens": 5772,
+  "completion_tokens": 567,
+  "error": null,
+  "gold_answer": "Bạn không nên báo giảm sai tháng. Nếu NLĐ hết nghỉ thai sản ngày 20/4 và chấm dứt HĐLĐ từ 21/4 thì phải lập quyết định chấm dứt đúng ngày đó và làm hồ sơ báo giảm/chốt quá trình theo đúng thời điểm chấm dứt. Việc ghi giảm lùi hoặc tăng - giảm lại sai bản chất rất dễ bị cơ quan BHXH từ chối. Cách đúng là bám theo quyết định chấm dứt HĐLĐ và dữ liệu nghỉ thai sản thực tế.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 34, Điều 48"
+}

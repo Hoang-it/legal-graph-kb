@@ -1,0 +1,37 @@
+{
+  "clause_id": "L41_2024.A3.K3",
+  "extraction": {
+    "clause_id": "L41_2024.A3.K3",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [],
+    "exceptions": [],
+    "references": [],
+    "defines": [
+      {
+        "term_vi": "Bảo hiểm xã hội bắt buộc",
+        "definition": "Loại hình bảo hiểm xã hội do Nhà nước tổ chức mà người lao động, người sử dụng lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc phải tham gia.",
+        "related_predicate": "mandatory_social_insurance"
+      }
+    ],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 1.0,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 4.12,
+  "usage": {
+    "prompt_tokens": 2661,
+    "completion_tokens": 157
+  },
+  "extracted_at": "2026-05-27T08:12:00"
+}

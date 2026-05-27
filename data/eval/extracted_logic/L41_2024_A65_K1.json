@@ -1,0 +1,170 @@
+{
+  "clause_id": "L41_2024.A65.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A65.K1",
+    "conditions": [
+      {
+        "predicate": "years_contributed",
+        "operator": ">=",
+        "value": 20,
+        "unit": "year",
+        "description_vi": "Đóng BHXH bắt buộc đủ 20 năm trở lên"
+      },
+      {
+        "predicate": "age",
+        "operator": "<",
+        "value": "retirement_age - 5",
+        "unit": "year",
+        "description_vi": "Tuổi thấp hơn tối đa 5 tuổi so với tuổi quy định"
+      },
+      {
+        "predicate": "disability_percentage",
+        "operator": "in_range",
+        "value": [
+          61,
+          81
+        ],
+        "unit": "percent",
+        "description_vi": "Suy giảm khả năng lao động từ 61% đến dưới 81%"
+      },
+      {
+        "predicate": "age",
+        "operator": "<",
+        "value": "retirement_age - 10",
+        "unit": "year",
+        "description_vi": "Tuổi thấp hơn tối đa 10 tuổi so với tuổi quy định"
+      },
+      {
+        "predicate": "disability_percentage",
+        "operator": ">=",
+        "value": 81,
+        "unit": "percent",
+        "description_vi": "Suy giảm khả năng lao động từ 81% trở lên"
+      },
+      {
+        "predicate": "years_contributed",
+        "operator": ">=",
+        "value": 15,
+        "unit": "year",
+        "description_vi": "Có từ đủ 15 năm trở lên làm nghề đặc biệt nặng nhọc"
+      },
+      {
+        "predicate": "disability_percentage",
+        "operator": ">=",
+        "value": 61,
+        "unit": "percent",
+        "description_vi": "Suy giảm khả năng lao động từ 61% trở lên"
+      }
+    ],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Điều kiện hưởng lương hưu với mức thấp hơn",
+        "if_conditions_idx": [
+          0,
+          1,
+          2
+        ],
+        "then_predicate": "pension",
+        "then_value": "lower_than_standard",
+        "conclusion_type": "categorical",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      },
+      {
+        "name": "Điều kiện hưởng lương hưu với mức thấp hơn",
+        "if_conditions_idx": [
+          0,
+          3,
+          4
+        ],
+        "then_predicate": "pension",
+        "then_value": "lower_than_standard",
+        "conclusion_type": "categorical",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      },
+      {
+        "name": "Điều kiện hưởng lương hưu với mức thấp hơn",
+        "if_conditions_idx": [
+          0,
+          5,
+          6
+        ],
+        "then_predicate": "pension",
+        "then_value": "lower_than_standard",
+        "conclusion_type": "categorical",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 2,
+        "clause": 1,
+        "law": "L41_2024"
+      },
+      {
+        "article": 2,
+        "clause": 2,
+        "law": "L41_2024"
+      },
+      {
+        "article": 64,
+        "clause": 1,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [
+      61.0,
+      81.0,
+      81.0,
+      61.0
+    ],
+    "years": [
+      20,
+      15
+    ],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": [
+      [
+        2,
+        null
+      ],
+      [
+        64,
+        null
+      ],
+      [
+        64,
+        null
+      ],
+      [
+        64,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 10.78,
+  "usage": {
+    "prompt_tokens": 2906,
+    "completion_tokens": 725
+  },
+  "extracted_at": "2026-05-27T08:24:57"
+}

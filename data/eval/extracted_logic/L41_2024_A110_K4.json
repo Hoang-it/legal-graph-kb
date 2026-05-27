@@ -1,0 +1,71 @@
+{
+  "clause_id": "L41_2024.A110.K4",
+  "extraction": {
+    "clause_id": "L41_2024.A110.K4",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 48,
+        "unit": "month",
+        "direction": "exact",
+        "context": "one_time_survivorship_initial_amount",
+        "description_vi": "Mức trợ cấp tuất một lần bằng 48 tháng lương hưu nếu chết trong 02 tháng đầu"
+      },
+      {
+        "value": 0.5,
+        "unit": "month",
+        "direction": "exact",
+        "context": "one_time_survivorship_reduction_rate",
+        "description_vi": "Giảm 0,5 tháng lương hưu cho mỗi tháng từ tháng thứ ba trở đi"
+      },
+      {
+        "value": 3,
+        "unit": "month",
+        "direction": "min",
+        "context": "one_time_survivorship_minimum_amount",
+        "description_vi": "Không thấp hơn 03 tháng lương hưu của tháng đang hưởng"
+      }
+    ],
+    "rules": [
+      {
+        "name": "Mức trợ cấp tuất một lần",
+        "if_conditions_idx": [],
+        "then_predicate": "one_time_social_insurance",
+        "then_value": "formula: if(death_within_2_months, 48 * pension, max(3 * pension, (48 - (months_since_death - 2) * 0.5) * pension))",
+        "conclusion_type": "scalar",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.95,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [
+      2,
+      48,
+      5,
+      3
+    ],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 6.73,
+  "usage": {
+    "prompt_tokens": 2762,
+    "completion_tokens": 393
+  },
+  "extracted_at": "2026-05-27T08:32:27"
+}

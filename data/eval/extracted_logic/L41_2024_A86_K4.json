@@ -1,0 +1,47 @@
+{
+  "clause_id": "L41_2024.A86.K4",
+  "extraction": {
+    "clause_id": "L41_2024.A86.K4",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 6,
+        "unit": "month",
+        "direction": "max",
+        "context": "disability_assessment_deadline",
+        "description_vi": "Thời hạn tối đa để xác định mức suy giảm khả năng lao động"
+      }
+    ],
+    "rules": [],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 2,
+        "clause": 2,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 1.0,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [
+      6
+    ],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 2.41,
+  "usage": {
+    "prompt_tokens": 2685,
+    "completion_tokens": 174
+  },
+  "extracted_at": "2026-05-27T08:28:36"
+}

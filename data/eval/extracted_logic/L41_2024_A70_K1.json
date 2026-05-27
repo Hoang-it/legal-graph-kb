@@ -1,0 +1,112 @@
+{
+  "clause_id": "L41_2024.A70.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A70.K1",
+    "conditions": [
+      {
+        "predicate": "age",
+        "operator": ">=",
+        "value": "retirement_age",
+        "unit": "year",
+        "description_vi": "Đủ tuổi hưởng lương hưu"
+      },
+      {
+        "predicate": "years_contributed",
+        "operator": "<",
+        "value": 15,
+        "unit": "year",
+        "description_vi": "Chưa đủ 15 năm đóng bảo hiểm xã hội"
+      },
+      {
+        "predicate": "disability_percentage",
+        "operator": ">=",
+        "value": 81,
+        "unit": "percent",
+        "description_vi": "Mức suy giảm khả năng lao động từ 81% trở lên"
+      }
+    ],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Điều kiện hưởng bảo hiểm xã hội một lần",
+        "if_conditions_idx": [
+          0,
+          1
+        ],
+        "then_predicate": "one_time_social_insurance",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      },
+      {
+        "name": "Điều kiện hưởng bảo hiểm xã hội một lần do bệnh tật",
+        "if_conditions_idx": [
+          2
+        ],
+        "then_predicate": "one_time_social_insurance",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 2,
+        "clause": 1,
+        "law": "L41_2024"
+      },
+      {
+        "article": 23,
+        "clause": null,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [
+      81.0
+    ],
+    "years": [
+      15,
+      20
+    ],
+    "months": [
+      12
+    ],
+    "days": [],
+    "vnd_amounts": [],
+    "references": [
+      [
+        2,
+        null
+      ],
+      [
+        23,
+        null
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 13.63,
+  "usage": {
+    "prompt_tokens": 2946,
+    "completion_tokens": 405
+  },
+  "extracted_at": "2026-05-27T08:26:00"
+}

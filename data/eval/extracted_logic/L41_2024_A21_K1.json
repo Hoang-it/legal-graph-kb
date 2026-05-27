@@ -1,0 +1,79 @@
+{
+  "clause_id": "L41_2024.A21.K1",
+  "extraction": {
+    "clause_id": "L41_2024.A21.K1",
+    "conditions": [
+      {
+        "predicate": "age",
+        "operator": ">=",
+        "value": 75,
+        "unit": "year",
+        "description_vi": "Từ đủ 75 tuổi trở lên"
+      },
+      {
+        "predicate": "pension",
+        "operator": "=",
+        "value": false,
+        "unit": "enum",
+        "description_vi": "Không hưởng lương hưu"
+      },
+      {
+        "predicate": "one_time_social_insurance",
+        "operator": "=",
+        "value": false,
+        "unit": "enum",
+        "description_vi": "Không hưởng trợ cấp bảo hiểm xã hội hằng tháng"
+      },
+      {
+        "predicate": "legal_dossier",
+        "operator": "in",
+        "value": [
+          "trường hợp khác theo quy định của Chính phủ"
+        ],
+        "unit": "enum",
+        "description_vi": "Trừ trường hợp khác theo quy định của Chính phủ"
+      }
+    ],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Điều kiện hưởng trợ cấp hưu trí xã hội",
+        "if_conditions_idx": [
+          0,
+          1,
+          2
+        ],
+        "then_predicate": "eligible_social_pension",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.9,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 6.33,
+  "usage": {
+    "prompt_tokens": 2702,
+    "completion_tokens": 367
+  },
+  "extracted_at": "2026-05-27T08:16:20"
+}

@@ -1,0 +1,66 @@
+{
+  "clause_id": "L41_2024.A60.K2",
+  "extraction": {
+    "clause_id": "L41_2024.A60.K2",
+    "conditions": [],
+    "thresholds": [
+      {
+        "value": 10,
+        "unit": "day",
+        "direction": "max",
+        "context": "maximum_recovery_time_female_multiple_births",
+        "description_vi": "Thời gian tối đa nghỉ dưỡng sức cho lao động nữ sinh từ hai con trở lên"
+      },
+      {
+        "value": 7,
+        "unit": "day",
+        "direction": "max",
+        "context": "maximum_recovery_time_female_surgery",
+        "description_vi": "Thời gian tối đa nghỉ dưỡng sức cho lao động nữ sinh con phải phẫu thuật"
+      },
+      {
+        "value": 5,
+        "unit": "day",
+        "direction": "max",
+        "context": "maximum_recovery_time_other_cases",
+        "description_vi": "Thời gian tối đa nghỉ dưỡng sức cho các trường hợp khác"
+      }
+    ],
+    "rules": [],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 60,
+        "clause": 1,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NSDLĐ",
+      "Công_đoàn"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.95,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [
+      10,
+      7,
+      5
+    ],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 4.04,
+  "usage": {
+    "prompt_tokens": 2783,
+    "completion_tokens": 313
+  },
+  "extracted_at": "2026-05-27T08:23:45"
+}

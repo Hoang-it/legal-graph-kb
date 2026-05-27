@@ -1,0 +1,64 @@
+{
+  "clause_id": "L41_2024.A23.K5",
+  "extraction": {
+    "clause_id": "L41_2024.A23.K5",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Hưởng trợ cấp cho thân nhân khi người hưởng trợ cấp chết",
+        "if_conditions_idx": [],
+        "then_predicate": "survivorship",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 85,
+        "clause": 1,
+        "law": "L41_2024"
+      },
+      {
+        "article": 109,
+        "clause": 1,
+        "law": "L41_2024"
+      }
+    ],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.95,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": [
+      [
+        85,
+        null
+      ],
+      [
+        109,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 3.07,
+  "usage": {
+    "prompt_tokens": 2680,
+    "completion_tokens": 204
+  },
+  "extracted_at": "2026-05-27T08:16:52"
+}

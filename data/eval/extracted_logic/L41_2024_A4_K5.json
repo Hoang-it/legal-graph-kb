@@ -1,0 +1,37 @@
+{
+  "clause_id": "L41_2024.A4.K5",
+  "extraction": {
+    "clause_id": "L41_2024.A4.K5",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [],
+    "exceptions": [],
+    "references": [],
+    "defines": [
+      {
+        "term_vi": "Bảo hiểm hưu trí bổ sung",
+        "definition": "Bảo hiểm hưu trí bổ sung.",
+        "related_predicate": null
+      }
+    ],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 1.0,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 2.74,
+  "usage": {
+    "prompt_tokens": 2624,
+    "completion_tokens": 124
+  },
+  "extracted_at": "2026-05-27T08:12:48"
+}

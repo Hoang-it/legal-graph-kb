@@ -1,0 +1,80 @@
+{
+  "clause_id": "L41_2024.A2.K4",
+  "extraction": {
+    "clause_id": "L41_2024.A2.K4",
+    "conditions": [
+      {
+        "predicate": "age",
+        "operator": ">=",
+        "value": 15,
+        "unit": "year",
+        "description_vi": "Công dân Việt Nam từ đủ 15 tuổi trở lên"
+      },
+      {
+        "predicate": "social_insurance",
+        "operator": "in",
+        "value": [
+          "voluntary_social_insurance"
+        ],
+        "unit": "enum",
+        "description_vi": "Không thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc"
+      },
+      {
+        "predicate": "pension",
+        "operator": "=",
+        "value": false,
+        "unit": "bool",
+        "description_vi": "Không phải là người đang hưởng lương hưu"
+      },
+      {
+        "predicate": "support_percentage",
+        "operator": "=",
+        "value": false,
+        "unit": "bool",
+        "description_vi": "Không phải là người đang hưởng trợ cấp bảo hiểm xã hội, trợ cấp hằng tháng"
+      }
+    ],
+    "thresholds": [],
+    "rules": [
+      {
+        "name": "Đối tượng tham gia bảo hiểm xã hội tự nguyện",
+        "if_conditions_idx": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "then_predicate": "voluntary_social_insurance",
+        "then_value": true,
+        "conclusion_type": "boolean",
+        "involves_entities": [
+          "NLĐ"
+        ]
+      }
+    ],
+    "exceptions": [],
+    "references": [],
+    "defines": [],
+    "actors": [
+      "NLĐ"
+    ],
+    "procedure_steps": [],
+    "extractor_confidence": 0.95,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": []
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 5.82,
+  "usage": {
+    "prompt_tokens": 2745,
+    "completion_tokens": 381
+  },
+  "extracted_at": "2026-05-27T08:11:36"
+}

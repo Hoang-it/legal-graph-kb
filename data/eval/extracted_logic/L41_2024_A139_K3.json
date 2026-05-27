@@ -1,0 +1,42 @@
+{
+  "clause_id": "L41_2024.A139.K3",
+  "extraction": {
+    "clause_id": "L41_2024.A139.K3",
+    "conditions": [],
+    "thresholds": [],
+    "rules": [],
+    "exceptions": [],
+    "references": [
+      {
+        "article": 17,
+        "clause": 2,
+        "law": "BLLĐ"
+      }
+    ],
+    "defines": [],
+    "actors": [],
+    "procedure_steps": [],
+    "extractor_confidence": 1.0,
+    "non_canonical_flags": []
+  },
+  "regex_facts": {
+    "percentages": [],
+    "years": [],
+    "months": [],
+    "days": [],
+    "vnd_amounts": [],
+    "references": [
+      [
+        17,
+        null
+      ]
+    ]
+  },
+  "model": "gpt-4o-mini",
+  "elapsed_s": 2.25,
+  "usage": {
+    "prompt_tokens": 2640,
+    "completion_tokens": 104
+  },
+  "extracted_at": "2026-05-27T08:37:14"
+}

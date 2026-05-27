@@ -1,0 +1,36 @@
+{
+  "arm": "elite_graphrag_logic",
+  "stt": 90,
+  "question": "BHXH tự nguyện thì chuyển sang BHXH bắt buộc như thế nào cho hộ kinh doanh mới thành lập?",
+  "answer": "Issue: Người hỏi muốn biết cách chuyển từ BHXH tự nguyện sang BHXH bắt buộc cho hộ kinh doanh mới thành lập. \nRule: Theo Điều 3 khoản 4 Luật BHXH 2024, \"Bảo hiểm xã hội tự nguyện là loại hình bảo hiểm xã hội do Nhà nước tổ chức mà công dân Việt Nam tự nguyện tham gia và được lựa chọn mức đóng, phương thức đóng phù hợp với thu nhập của mình.\" \nApplication: Không có slot nào được gán giá trị. Prolog query trả về thông tin rằng người lao động có thể chuyển từ BHXH tự nguyện sang BHXH bắt buộc bằng cách thực hiện các thủ tục đăng ký theo quy định của pháp luật. \nConclusion: Theo Prolog, người lao động có thể chuyển từ BHXH tự nguyện sang BHXH bắt buộc bằng cách thực hiện các thủ tục đăng ký theo quy định của pháp luật.",
+  "plain_answer": "Bạn có thể chuyển từ BHXH tự nguyện sang BHXH bắt buộc bằng cách thực hiện các thủ tục đăng ký theo quy định của pháp luật. Điều này được quy định trong [Điều 3 khoản 4] Luật BHXH 2024. Nếu cần thêm thông tin chi tiết về thủ tục, bạn có thể tham khảo thêm hoặc hỏi trực tiếp cơ quan bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 3 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A3.K4"
+  ],
+  "citation_indices": [
+    0,
+    1,
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(condition,voluntary_social_insurance,based_on(source_a3_k4)),step(condition,mandatory_social_insurance,based_on(source_a3_k3)),step(conclusion,transition_voluntary_to_mandatory_insurance(Người lao động có thể chuyển từ BHXH tự nguyện sang BHXH bắt buộc bằng cách thực hiện các thủ tục đăng ký theo quy định của pháp luật.),based_on(source_a3_k4))]",
+  "prolog_program": "legal_source(source_a31_k2, law_bhxh_2024, article_31, clause_2, none, 'Thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện thấp nhất bằng mức chuẩn hộ nghèo của khu vực nông thôn và cao nhất bằng 20 lần mức tham chiếu tại thời điểm đóng.').\nlegal_source(source_a3_k4, law_bhxh_2024, article_3, clause_4, none, 'Bảo hiểm xã hội tự nguyện là loại hình bảo hiểm xã hội do Nhà nước tổ chức mà công dân Việt Nam tự nguyện tham gia và được lựa chọn mức đóng, phương thức đóng phù hợp với thu nhập của mình.').\nlegal_source(source_a36_k1, law_bhxh_2024, article_36, clause_1, none, 'Đối tượng quy định tại khoản 4 Điều 2 của Luật này, hằng tháng đóng bằng 22% mức thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện vào quỹ hưu trí và tử tuất.').\ntransition_voluntary_to_mandatory_insurance(Transition, Trace) :- Transition = 'Người lao động có thể chuyển từ BHXH tự nguyện sang BHXH bắt buộc bằng cách thực hiện các thủ tục đăng ký theo quy định của pháp luật.', Trace = [step(condition, voluntary_social_insurance, based_on(source_a3_k4)), step(condition, mandatory_social_insurance, based_on(source_a3_k3)), step(conclusion, transition_voluntary_to_mandatory_insurance(Transition), based_on(source_a3_k4))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết cách chuyển từ BHXH tự nguyện sang BHXH bắt buộc cho hộ kinh doanh mới thành lập.",
+    "rule": "Theo Điều 3 khoản 4 Luật BHXH 2024, \"Bảo hiểm xã hội tự nguyện là loại hình bảo hiểm xã hội do Nhà nước tổ chức mà công dân Việt Nam tự nguyện tham gia và được lựa chọn mức đóng, phương thức đóng phù hợp với thu nhập của mình.\"",
+    "application": "Không có slot nào được gán giá trị. Prolog query trả về thông tin rằng người lao động có thể chuyển từ BHXH tự nguyện sang BHXH bắt buộc bằng cách thực hiện các thủ tục đăng ký theo quy định của pháp luật.",
+    "conclusion": "Theo Prolog, người lao động có thể chuyển từ BHXH tự nguyện sang BHXH bắt buộc bằng cách thực hiện các thủ tục đăng ký theo quy định của pháp luật."
+  },
+  "elapsed_s": 21.529,
+  "prompt_tokens": 9637,
+  "completion_tokens": 1039,
+  "error": null,
+  "gold_answer": "Khi hộ kinh doanh mới thành lập và chủ hộ thuộc diện tham gia BHXH bắt buộc, bạn cần đăng ký tham gia bắt buộc theo mã số BHXH đang có; không phải tạo mã mới. Nếu trước đó bạn đang đóng tự nguyện, thời gian đã đóng sẽ được bảo lưu và nối tiếp trên cùng mã số. Bạn chỉ cần liên hệ cơ quan BHXH để chuyển phương thức tham gia và tránh đóng trùng cùng thời gian ở cả 2 diện.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 25, Điều 36; Nghị định 158/2025/NĐ-CP"
+}
