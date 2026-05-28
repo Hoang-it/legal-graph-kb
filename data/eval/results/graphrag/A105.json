@@ -2,62 +2,50 @@
   "arm": "graphrag",
   "stt": 105,
   "question": "Chốt sổ em lãnh Bh thât nghiệp đến tháng 3/2025 nhưng giờ trên hệ thống chỉ đến tháng 2/2025, em không lãnh được tiền bhxh vì bị chênh lệch 1 tháng công ty không xử lý cho em. giờ em phải làm như nào để lãnh bảo hiểm được?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 28 khoản 4]\n- [Điều 141 khoản 12]\n- [Điều 97 khoản 2]\n- [Điều 62 khoản 3]\n- [Điều 81 khoản 2]\n- [Điều 91 khoản 3]",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 28 khoản 4] — quy định về việc cấp sổ bảo hiểm xã hội.\n- [Điều 141 khoản 12] — quy định về xử lý chậm đóng bảo hiểm xã hội.",
   "citations": [
     "[Điều 28 khoản 4]",
-    "[Điều 141 khoản 12]",
-    "[Điều 97 khoản 2]",
-    "[Điều 62 khoản 3]",
-    "[Điều 81 khoản 2]",
-    "[Điều 91 khoản 3]"
+    "[Điều 141 khoản 12]"
   ],
   "citation_ids": [
     "L41_2024.A28.K4",
-    "L41_2024.A141.K12",
-    "L41_2024.A97.K2",
-    "L41_2024.A62.K3",
-    "L41_2024.A81.K2",
-    "L41_2024.A91.K3"
+    "L41_2024.A141.K12"
   ],
   "citation_verified": {
     "L41_2024.A28.K4": true,
-    "L41_2024.A141.K12": true,
-    "L41_2024.A97.K2": true,
-    "L41_2024.A62.K3": true,
-    "L41_2024.A81.K2": true,
-    "L41_2024.A91.K3": true
+    "L41_2024.A141.K12": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
+      "clause_id": "L58_2014.A17.K2",
+      "score": 0.8297079801559448,
+      "text_preview": "Chậm đóng tiền bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
       "clause_id": "L41_2024.A28.K4",
-      "score": 0.8165911436080933,
+      "score": 0.8163350820541382,
       "text_preview": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn"
     },
     {
       "clause_id": "L41_2024.A141.K12",
-      "score": 0.8152198791503906,
+      "score": 0.8150719404220581,
       "text_preview": "Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30"
     },
     {
-      "clause_id": "L41_2024.A97.K2",
-      "score": 0.8082008361816406,
-      "text_preview": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do."
+      "clause_id": "L58_2014.A116.K2",
+      "score": 0.8131603598594666,
+      "text_preview": "Trường hợp nộp hồ sơ và giải quyết hưởng chế độ bảo hiểm xã hội chậm so với thời hạn quy định, gây thiệt hại đến quyền, lợi ích hợp pháp của người hưởng thì phải bồi thường theo quy định của pháp luật"
     },
     {
-      "clause_id": "L41_2024.A75.K5",
-      "score": 0.8065934181213379,
-      "text_preview": "Người hưởng lương hưu hoặc trợ cấp bảo hiểm xã hội hằng tháng có thời gian chưa nhận lương hưu, trợ cấp trước khi chết thì thân nhân của người đó được nhận lương hưu, trợ cấp của những tháng chưa nhận"
-    },
-    {
-      "clause_id": "L41_2024.A62.K3",
-      "score": 0.8063675165176392,
-      "text_preview": "Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động, 05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động; trườn"
+      "clause_id": "L58_2014.A106.K2",
+      "score": 0.809524416923523,
+      "text_preview": "Trong thời hạn 15 ngày kể từ ngày nhận đủ hồ sơ, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết hưởng chế độ tai nạn lao động, bệnh nghề nghiệp; trường hợp không giải quyết thì phải trả lời bằng vă"
     }
   ],
   "n_semantic_edges": 4,
   "n_refs": 2,
-  "elapsed_s": 2.0,
+  "elapsed_s": 3.53,
   "gold_answer": "Bạn cần yêu cầu công ty và cơ quan BHXH điều chỉnh lại quá trình đóng cho đúng đến tháng 3/2025. Khi dữ liệu trên hệ thống còn thiếu 1 tháng thì hồ sơ hưởng BHXH 1 lần dễ bị treo hoặc từ chối. Nếu công ty không phối hợp, bạn có thể gửi đơn khiếu nại tới cơ quan BHXH quản lý đơn vị hoặc Thanh tra Sở Nội vụ/Lao động để yêu cầu xác minh, truy đóng hoặc điều chỉnh dữ liệu.",
-  "gold_citations_raw": "Điều 27, 33 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Luật Khiếu nại 2011"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
 }

@@ -2,50 +2,50 @@
   "arm": "graphrag",
   "stt": 36,
   "question": "Bà T.H sinh con vào ngày mùng 1 Tết Nguyên đán.\nBà hỏi, khi tính thời gian nghỉ thai sản bà được tính bắt đầu từ ngày làm việc sau kỳ nghỉ lễ hay tính từ ngày sinh con?",
-  "answer": "Thời gian nghỉ thai sản của bà T.H được tính bắt đầu từ ngày sinh con, tức là ngày mùng 1 Tết Nguyên đán. Theo quy định, thời gian nghỉ việc hưởng chế độ thai sản khi sinh con được thực hiện theo quy định tại khoản 1 Điều 139 của Bộ luật Lao động, và thời gian nghỉ này tính cả ngày nghỉ lễ, tết, ngày nghỉ hằng tuần.\n\nDo đó, bà T.H sẽ được tính thời gian nghỉ thai sản từ ngày sinh con mà không phải chờ đến ngày làm việc sau kỳ nghỉ lễ.\n\nCác citation liên quan:\n- [Điều 53 khoản 1] \n- [Điều 53 khoản 9]",
+  "answer": "Thời gian nghỉ thai sản của bà T.H được tính từ ngày sinh con, không tính từ ngày làm việc sau kỳ nghỉ lễ. \n\nCụ thể, theo quy định, thời gian nghỉ việc hưởng chế độ thai sản khi sinh con được tính từ ngày sinh con và không bị ảnh hưởng bởi các ngày nghỉ lễ, nghỉ Tết. \n\nCác điều luật liên quan:\n- Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con được quy định tại Điều 34 khoản 1, trong đó nêu rõ lao động nữ sinh con được nghỉ việc hưởng chế độ thai sản trước và sau khi sinh con là 06 tháng, không đề cập đến việc bắt đầu tính từ ngày làm việc sau kỳ nghỉ lễ. \n- Thời gian nghỉ việc hưởng chế độ thai sản cũng được quy định tại Điều 53 khoản 3, nêu rõ ngày bắt đầu nghỉ việc hưởng chế độ thai sản phải trong khoảng thời gian 60 ngày kể từ ngày vợ sinh con.\n\nVì vậy, bà T.H sẽ bắt đầu nghỉ thai sản từ ngày 1 Tết Nguyên đán, ngày sinh con của bà. \n\nCitation:\n- [Điều 34 khoản 1]\n- [Điều 53 khoản 3]",
   "citations": [
-    "[Điều 53 khoản 1]",
-    "[Điều 53 khoản 9]"
+    "[Điều 34 khoản 1]",
+    "[Điều 53 khoản 3]"
   ],
   "citation_ids": [
-    "L41_2024.A53.K1",
-    "L41_2024.A53.K9"
+    "L41_2024.A34.K1",
+    "L41_2024.A53.K3"
   ],
   "citation_verified": {
-    "L41_2024.A53.K1": true,
-    "L41_2024.A53.K9": true
+    "L41_2024.A34.K1": true,
+    "L41_2024.A53.K3": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
       "clause_id": "L41_2024.A53.K3",
-      "score": 0.8678396940231323,
+      "score": 0.8678320050239563,
       "text_preview": "Ngày bắt đầu nghỉ việc hưởng chế độ thai sản quy định tại khoản 2 Điều này phải trong khoảng thời gian 60 ngày kể từ ngày vợ sinh con, trường hợp người lao động nghỉ nhiều lần thì ngày bắt đầu nghỉ vi"
     },
     {
+      "clause_id": "L58_2014.A32.K2",
+      "score": 0.8652092814445496,
+      "text_preview": "Thời gian nghỉ việc hưởng chế độ thai sản quy định tại Điều này tính theo ngày làm việc không kể ngày nghỉ lễ, nghỉ Tết, ngày nghỉ hằng tuần."
+    },
+    {
+      "clause_id": "L58_2014.A33.K2",
+      "score": 0.8615166544914246,
+      "text_preview": "Thời gian nghỉ việc hưởng chế độ thai sản quy định tại khoản 1 Điều này tính cả ngày nghỉ lễ, nghỉ Tết, ngày nghỉ hằng tuần."
+    },
+    {
       "clause_id": "L41_2024.A51.K2",
-      "score": 0.8612957000732422,
+      "score": 0.8614928722381592,
       "text_preview": "Thời gian nghỉ việc hưởng chế độ thai sản khi khám thai được tính theo ngày làm việc không kể ngày nghỉ lễ, tết, ngày nghỉ hằng tuần."
     },
     {
-      "clause_id": "L41_2024.A53.K1",
-      "score": 0.8570716381072998,
-      "text_preview": "Thời gian nghỉ việc hưởng chế độ thai sản của lao động nữ khi sinh con được thực hiện theo quy định tại khoản 1 Điều 139 của Bộ luật Lao động.\nTrường hợp lao động nữ trở lại làm việc trước khi hết thờ"
-    },
-    {
-      "clause_id": "L41_2024.A57.K2",
-      "score": 0.8568540811538696,
-      "text_preview": "Thời gian nghỉ việc hưởng chế độ thai sản quy định tại khoản 1 Điều này tính cả ngày nghỉ lễ, tết, ngày nghỉ hằng tuần."
-    },
-    {
-      "clause_id": "L41_2024.A52.K3",
-      "score": 0.8568540811538696,
-      "text_preview": "Thời gian nghỉ việc hưởng chế độ thai sản quy định tại khoản 1 Điều này tính cả ngày nghỉ lễ, tết, ngày nghỉ hằng tuần."
+      "clause_id": "L58_2014.A34.K1",
+      "score": 0.8605412244796753,
+      "text_preview": "Lao động nữ sinh con được nghỉ việc hưởng chế độ thai sản trước và sau khi sinh con là 06 tháng. Trường hợp lao động nữ sinh đôi trở lên thì tính từ con thứ hai trở đi, cứ mỗi con, người mẹ được nghỉ "
     }
   ],
   "n_semantic_edges": 2,
-  "n_refs": 11,
-  "elapsed_s": 3.01,
+  "n_refs": 6,
+  "elapsed_s": 6.31,
   "gold_answer": "Căn cứ khoản 9 Điều 53 Luật BHXH 2024, thời gian nghỉ việc hưởng chế độ thai sản tính cả ngày nghỉ lễ, tết, ngày nghỉ hằng tuần.\nĐối chiếu quy định nêu trên, trường hợp bà T.H sinh con vào ngày mùng 1 Tết Nguyên đán thì thời gian nghỉ hưởng chế độ thai sản 6 tháng được tính từ ngày sinh con, kể cả thời gian trùng với kỳ nghỉ Tết.",
-  "gold_citations_raw": "khoản 9 Điều 53 Luật BHXH 2024"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 53]"
 }

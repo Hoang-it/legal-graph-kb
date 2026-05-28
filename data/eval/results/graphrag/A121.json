@@ -2,41 +2,50 @@
   "arm": "graphrag",
   "stt": 121,
   "question": "Nộp sổ lm bh 1 lần xong có hẹn ngày lấy quyết định. Trong tờ quyết định đó nó có ghi số tiền mình được hưởng là bao nhiêu ko?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- Điều 102. Hưởng bảo hiểm xã hội một lần - Khoản 4\n- Điều 70. Hưởng bảo hiểm xã hội một lần - Khoản 5\n- Điều 23. Chế độ đối với người lao động không đủ điều kiện hưởng lương hưu và chưa đủ tuổi hưởng trợ cấp hưu trí xã hội - Khoản 2",
-  "citations": [],
-  "citation_ids": [],
-  "citation_verified": {},
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 102 khoản 4]\n- [Điều 70 khoản 5]",
+  "citations": [
+    "[Điều 102 khoản 4]",
+    "[Điều 70 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A102.K4",
+    "L41_2024.A70.K5"
+  ],
+  "citation_verified": {
+    "L41_2024.A102.K4": true,
+    "L41_2024.A70.K5": true
+  },
   "n_vector_hits": 8,
   "vector_hits": [
     {
-      "clause_id": "L41_2024.A102.K4",
-      "score": 0.8181734085083008,
+      "clause_id": "L58_2014.A77.K4",
+      "score": 0.8182575702667236,
       "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm ghi trong quyết định của cơ quan bảo hiểm xã hội."
     },
     {
+      "clause_id": "L58_2014.A60.K4",
+      "score": 0.8182575702667236,
+      "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm ghi trong quyết định của cơ quan bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L41_2024.A102.K4",
+      "score": 0.8180930018424988,
+      "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm ghi trong quyết định của cơ quan bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L58_2014.A18.K2",
+      "score": 0.8080748319625854,
+      "text_preview": "Được cấp và quản lý sổ bảo hiểm xã hội."
+    },
+    {
       "clause_id": "L41_2024.A70.K5",
-      "score": 0.8033150434494019,
+      "score": 0.8033037781715393,
       "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hội ban hành quyết định hưởng bảo hiểm xã hội một lần."
-    },
-    {
-      "clause_id": "L41_2024.A23.K2",
-      "score": 0.7903929948806763,
-      "text_preview": "Thời gian hưởng, mức hưởng trợ cấp hằng tháng được xác định căn cứ vào thời gian đóng, căn cứ đóng bảo hiểm xã hội của người lao động."
-    },
-    {
-      "clause_id": "L41_2024.A23.K6",
-      "score": 0.7881267070770264,
-      "text_preview": "Người đang trong thời gian hưởng trợ cấp hằng tháng thì được ngân sách nhà nước đóng bảo hiểm y tế."
-    },
-    {
-      "clause_id": "L41_2024.A7.K1",
-      "score": 0.7865240573883057,
-      "text_preview": "Mức tham chiếu là mức tiền do Chính phủ quyết định dùng để tính mức đóng, mức hưởng một số chế độ bảo hiểm xã hội quy định trong Luật này."
     }
   ],
   "n_semantic_edges": 0,
   "n_refs": 0,
-  "elapsed_s": 2.44,
+  "elapsed_s": 2.48,
   "gold_answer": "Có. Quyết định hưởng BHXH 1 lần thường thể hiện rõ căn cứ giải quyết, thời gian đóng được tính hưởng và số tiền được chi trả. Bạn nên kiểm tra kỹ họ tên, số sổ, số tài khoản, thời gian đóng và số tiền trong quyết định. Nếu sai thì khiếu nại ngay trước khi nhận tiền để tránh phải điều chỉnh lại sau.",
-  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
 }

@@ -2,53 +2,53 @@
   "arm": "graphrag",
   "stt": 37,
   "question": "Mình nghỉ cty cũ từ tháng 1/2026. (nghỉ ngang) nhưng cty vẫn chốt sổ cho Mình. Nhưng nay mình muốn ra lấy tờ rời BHXH, giờ mình phải làm sao?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 13 khoản 2] - Trách nhiệm của người sử dụng lao động trong việc lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\n- [Điều 25 khoản 2] - Quy định về sổ bảo hiểm xã hội.\n- [Điều 107 khoản 2] - Quy định về việc nộp hồ sơ hưởng bảo hiểm xã hội một lần.",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 18 khoản 2] - Quyền của người lao động.\n- [Điều 19 khoản 3] - Trách nhiệm của người lao động.\n- [Điều 21 khoản 1] - Trách nhiệm của người sử dụng lao động.",
   "citations": [
-    "[Điều 13 khoản 2]",
-    "[Điều 25 khoản 2]",
-    "[Điều 107 khoản 2]"
+    "[Điều 18 khoản 2]",
+    "[Điều 19 khoản 3]",
+    "[Điều 21 khoản 1]"
   ],
   "citation_ids": [
-    "L41_2024.A13.K2",
-    "L41_2024.A25.K2",
-    "L41_2024.A107.K2"
+    "L41_2024.A18.K2",
+    "L41_2024.A19.K3",
+    "L41_2024.A21.K1"
   ],
   "citation_verified": {
-    "L41_2024.A13.K2": true,
-    "L41_2024.A25.K2": true,
-    "L41_2024.A107.K2": true
+    "L41_2024.A18.K2": true,
+    "L41_2024.A19.K3": true,
+    "L41_2024.A21.K1": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
-      "clause_id": "L41_2024.A13.K2",
-      "score": 0.789592444896698,
-      "text_preview": "Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội."
+      "clause_id": "L58_2014.A18.K2",
+      "score": 0.8175444602966309,
+      "text_preview": "Được cấp và quản lý sổ bảo hiểm xã hội."
     },
     {
-      "clause_id": "L41_2024.A9.K2",
-      "score": 0.788779616355896,
-      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+      "clause_id": "L58_2014.A105.K1",
+      "score": 0.8073135614395142,
+      "text_preview": "Sổ bảo hiểm xã hội."
     },
     {
-      "clause_id": "L41_2024.A13.K3",
-      "score": 0.786506175994873,
-      "text_preview": "Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật."
+      "clause_id": "L58_2014.A109.K1",
+      "score": 0.8073135614395142,
+      "text_preview": "Sổ bảo hiểm xã hội."
     },
     {
-      "clause_id": "L41_2024.A25.K2",
-      "score": 0.7851791381835938,
-      "text_preview": "Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau.\nChậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằn"
+      "clause_id": "L58_2014.A104.K1",
+      "score": 0.8073135614395142,
+      "text_preview": "Sổ bảo hiểm xã hội."
     },
     {
-      "clause_id": "L41_2024.A107.K2",
-      "score": 0.7848175168037415,
-      "text_preview": "Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.\nThời điểm kết thúc ngày cuối cùng của tháng dừng đ"
+      "clause_id": "L58_2014.A104.K3",
+      "score": 0.8072333335876465,
+      "text_preview": "Giấy ra viện sau khi đã điều trị tai nạn lao động."
     }
   ],
-  "n_semantic_edges": 1,
-  "n_refs": 3,
-  "elapsed_s": 2.03,
+  "n_semantic_edges": 0,
+  "n_refs": 0,
+  "elapsed_s": 4.3,
   "gold_answer": "Nếu công ty đã chốt sổ nhưng chưa trả tờ rời cho bạn thì trước hết yêu cầu công ty bàn giao lại sổ/tờ rời bằng văn bản hoặc email. Khi chấm dứt HĐLĐ, người sử dụng lao động phải phối hợp xác nhận thời gian đóng BHXH và trả lại giấy tờ liên quan cho người lao động. Nếu công ty chây ì, bạn có thể khiếu nại đến Thanh tra Sở Nội vụ/LĐTBXH hoặc cơ quan BHXH nơi đơn vị đang tham gia để được hỗ trợ cấp lại, xác nhận quá trình đóng.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 13]\n[Bộ luật Lao động 2019, Điều 48]"
 }

@@ -2,41 +2,50 @@
   "arm": "graphrag",
   "stt": 175,
   "question": "Mình đóng bảo hiểm đc 6 năm, lương trung bình 20tr/ tháng ,giờ cần tiền muốn rút thì được tầm bao nhiêu?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 5 khoản 6\n- Điều 68 khoản 2\n- Điều 100 khoản 2",
-  "citations": [],
-  "citation_ids": [],
-  "citation_verified": {},
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 65 khoản 2] về mức trợ cấp một lần đối với người đang hưởng lương hưu.\n- [Điều 76 khoản 2] về mức trợ cấp một lần đối với người đang hưởng lương hưu ra nước ngoài để định cư.",
+  "citations": [
+    "[Điều 65 khoản 2]",
+    "[Điều 76 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A65.K2",
+    "L41_2024.A76.K2"
+  ],
+  "citation_verified": {
+    "L41_2024.A65.K2": true,
+    "L41_2024.A76.K2": true
+  },
   "n_vector_hits": 8,
   "vector_hits": [
     {
+      "clause_id": "L58_2014.A89.K3",
+      "score": 0.8188360929489136,
+      "text_preview": "Trường hợp tiền lương tháng quy định tại khoản 1 và khoản 2 Điều này cao hơn 20 lần mức lương cơ sở thì tiền lương tháng đóng bảo hiểm xã hội bằng 20 lần mức lương cơ sở."
+    },
+    {
+      "clause_id": "L58_2014.A56.K1",
+      "score": 0.8119226694107056,
+      "text_preview": "Từ ngày Luật này có hiệu lực thi hành cho đến trước ngày 01 tháng 01 năm 2018, mức lương hưu hằng tháng của người lao động đủ điều kiện quy định tại Điều 54 của Luật này được tính bằng 45% mức bình qu"
+    },
+    {
       "clause_id": "L41_2024.A141.K9",
-      "score": 0.8111238479614258,
+      "score": 0.811086893081665,
       "text_preview": "Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ,"
     },
     {
+      "clause_id": "L58_2014.A74.K1",
+      "score": 0.8100084066390991,
+      "text_preview": "Từ ngày Luật này có hiệu lực thi hành cho đến trước ngày 01 tháng 01 năm 2018 mức lương hưu hằng tháng của người lao động đủ điều kiện quy định tại Điều 73 của Luật này được tính bằng 45% mức bình quâ"
+    },
+    {
       "clause_id": "L41_2024.A9.K2",
-      "score": 0.8088411092758179,
+      "score": 0.808614194393158,
       "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
-    },
-    {
-      "clause_id": "L41_2024.A76.K2",
-      "score": 0.8082914352416992,
-      "text_preview": "Mức trợ cấp một lần đối với người đang hưởng lương hưu được tính theo thời gian đã đóng bảo hiểm xã hội trong đó mỗi năm đóng bảo hiểm xã hội trước năm 2014 được tính bằng 1,5 tháng lương hưu đang hưở"
-    },
-    {
-      "clause_id": "L41_2024.A5.K6",
-      "score": 0.8043524026870728,
-      "text_preview": "Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hi"
-    },
-    {
-      "clause_id": "L41_2024.A68.K2",
-      "score": 0.8033342361450195,
-      "text_preview": "Mức hưởng trợ cấp một lần cho mỗi năm đóng cao hơn quy định tại khoản 1 Điều này bằng 0,5 lần của mức bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội quy định tại Điều 72 của Luật này cho mỗi năm"
     }
   ],
-  "n_semantic_edges": 0,
-  "n_refs": 14,
-  "elapsed_s": 1.41,
+  "n_semantic_edges": 16,
+  "n_refs": 4,
+  "elapsed_s": 6.52,
   "gold_answer": "Nếu 6 năm đóng BHXH của bạn đều từ 2014 trở đi, lương bình quân khoảng 20 triệu/tháng thì BHXH 1 lần ước khoảng khoảng 240,0 triệu. Số thực nhận có thể chênh do hệ số điều chỉnh tiền lương từng năm. Trước khi rút, bạn nên cân nhắc vì thời gian 6 năm đó có thể tiếp tục bảo lưu để hưởng hưu sau này.",
-  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
 }

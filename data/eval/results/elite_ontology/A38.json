@@ -2,12 +2,13 @@
   "arm": "elite_ontology",
   "stt": 38,
   "question": "Em mới học xong, lúc mới vào cty, khi đang đào tạo người ta hỏi em có BHXH thì em bảo không có, người ta bảo là có thế là thế màp? Bây giờ em muốn xem mình đóng bảo hiểm được bao nhiêu mà không biết số bảo hiểm thì phải làm sao ?",
-  "answer": "Issue: Bạn muốn biết cách kiểm tra thông tin bảo hiểm xã hội của mình khi không biết số bảo hiểm.\n\nRule: \"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng từ các slot để thực hiện truy vấn.\n\nConclusion: Hệ thống không thể tính toán số liệu cuối cùng vì không có giá trị nào được gán cho các slot.",
+  "answer": "Issue: Người hỏi muốn biết cách kiểm tra thông tin bảo hiểm xã hội của mình khi không biết số bảo hiểm. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 14], cơ quan nhà nước có thẩm quyền có trách nhiệm cung cấp thông tin liên quan đến bảo hiểm xã hội. \nApplication: Không có slot nào được gán giá trị. Prolog query how_to_check_insurance(Answer, Trace) trả về Answer = 'Bạn có thể yêu cầu thông tin về bảo hiểm xã hội của mình từ cơ quan bảo hiểm xã hội hoặc nơi làm việc của bạn.'. \nConclusion: Theo Prolog, bạn có thể yêu cầu thông tin về bảo hiểm xã hội của mình từ cơ quan bảo hiểm xã hội hoặc nơi làm việc của bạn.",
+  "plain_answer": "Bạn có thể yêu cầu thông tin về bảo hiểm xã hội của mình từ cơ quan bảo hiểm xã hội hoặc nơi làm việc của bạn. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 14], bạn có quyền nhận thông tin này khi cần.",
   "citations": [
-    "[Điều 18 khoản 2]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 14]"
   ],
   "citation_ids": [
-    "L41_2024.A18.K2"
+    "L41_2024.A18.K14"
   ],
   "citation_indices": [
     0
@@ -15,17 +16,19 @@
   "prolog_success": true,
   "prolog_status": "success",
   "n_repair_rounds": 1,
-  "prolog_trace": "[step(conclusion,how_to_check_insurance(Bạn có thể liên hệ với cơ quan bảo hiểm xã hội địa phương để kiểm tra thông tin bảo hiểm của mình.),based_on(source_c002))]",
+  "prolog_trace": "[step(conclusion,how_to_check_insurance(Bạn có thể yêu cầu thông tin về bảo hiểm xã hội của mình từ cơ quan bảo hiểm xã hội hoặc nơi làm việc của bạn.),based_on(source_c003))]",
+  "prolog_program": "legal_source(source_c003, law_bhxh_2024, article_18, clause_3, none, 'source text').\nhow_to_check_insurance(Answer, Trace) :- Answer = 'Bạn có thể yêu cầu thông tin về bảo hiểm xã hội của mình từ cơ quan bảo hiểm xã hội hoặc nơi làm việc của bạn.', Trace = [step(conclusion, how_to_check_insurance(Answer), based_on(source_c003))].",
+  "prolog_error": "",
   "irac_sections": {
-    "issue": "Bạn muốn biết cách kiểm tra thông tin bảo hiểm xã hội của mình khi không biết số bảo hiểm.",
-    "rule": "\"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)",
-    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng từ các slot để thực hiện truy vấn.",
-    "conclusion": "Hệ thống không thể tính toán số liệu cuối cùng vì không có giá trị nào được gán cho các slot."
+    "issue": "Người hỏi muốn biết cách kiểm tra thông tin bảo hiểm xã hội của mình khi không biết số bảo hiểm.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 14], cơ quan nhà nước có thẩm quyền có trách nhiệm cung cấp thông tin liên quan đến bảo hiểm xã hội.",
+    "application": "Không có slot nào được gán giá trị. Prolog query how_to_check_insurance(Answer, Trace) trả về Answer = 'Bạn có thể yêu cầu thông tin về bảo hiểm xã hội của mình từ cơ quan bảo hiểm xã hội hoặc nơi làm việc của bạn.'.",
+    "conclusion": "Theo Prolog, bạn có thể yêu cầu thông tin về bảo hiểm xã hội của mình từ cơ quan bảo hiểm xã hội hoặc nơi làm việc của bạn."
   },
-  "elapsed_s": 7.415,
-  "prompt_tokens": 4723,
-  "completion_tokens": 379,
+  "elapsed_s": 13.995,
+  "prompt_tokens": 5229,
+  "completion_tokens": 461,
   "error": null,
   "gold_answer": "Bạn có thể tra cứu mã số BHXH bằng CCCD/họ tên/ngày sinh trên Cổng BHXH Việt Nam hoặc ứng dụng VssID. Nếu không tự tra được, mang CCCD đến cơ quan BHXH gần nhất để được hỗ trợ tra cứu, đồng bộ dữ liệu và cấp lại thông tin tài khoản. Khi đã có mã số BHXH, bạn sẽ xem được toàn bộ quá trình tham gia BHXH, BHTN, BHYT trên VssID hoặc cổng tra cứu điện tử.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn tra cứu VssID/BHXH Việt Nam"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 25]"
 }

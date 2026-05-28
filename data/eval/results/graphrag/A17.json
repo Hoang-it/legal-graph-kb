@@ -2,47 +2,50 @@
   "arm": "graphrag",
   "stt": 17,
   "question": "Bà Hiền Thanh (Tây Ninh) hỏi, từ ngày 1/7/2025 phụ cấp ăn ca và các khoản tiền: xăng xe, điện thoại, nhà ở, hỗ trợ nuôi con nhỏ, trang phục, có ghi mức hưởng cụ thể tại hợp đồng lao động thì có phải tính đóng BHXH không?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 33 khoản 5] \n- [Điều 2 khoản 1 và 2]",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 89 khoản 1] về tiền lương tháng đóng bảo hiểm xã hội bắt buộc.\n- [Điều 89 khoản 2] về tiền lương tháng đóng bảo hiểm xã hội bắt buộc.",
   "citations": [
-    "[Điều 33 khoản 5]"
+    "[Điều 89 khoản 1]",
+    "[Điều 89 khoản 2]"
   ],
   "citation_ids": [
-    "L41_2024.A33.K5"
+    "L41_2024.A89.K1",
+    "L41_2024.A89.K2"
   ],
   "citation_verified": {
-    "L41_2024.A33.K5": true
+    "L41_2024.A89.K1": true,
+    "L41_2024.A89.K2": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
+      "clause_id": "L58_2014.A123.K6",
+      "score": 0.8197706341743469,
+      "text_preview": "Người lao động có thời gian làm việc trong khu vực nhà nước trước ngày 01 tháng 01 năm 1995 nếu đủ điều kiện hưởng nhưng chưa được giải quyết trợ cấp thôi việc hoặc trợ cấp một lần, trợ cấp xuất ngũ, "
+    },
+    {
+      "clause_id": "L58_2014.A89.K2",
+      "score": 0.8192685842514038,
+      "text_preview": "Đối với người lao động đóng bảo hiểm xã hội theo chế độ tiền lương do người sử dụng lao động quyết định thì tiền lương tháng đóng bảo hiểm xã hội là mức lương và phụ cấp lương theo quy định của pháp l"
+    },
+    {
+      "clause_id": "L58_2014.A89.K1",
+      "score": 0.8162730932235718,
+      "text_preview": "Người lao động thuộc đối tượng thực hiện chế độ tiền lương do Nhà nước quy định thì tiền lương tháng đóng bảo hiểm xã hội là tiền lương theo ngạch, bậc, cấp bậc quân hàm và các khoản phụ cấp chức vụ, "
+    },
+    {
       "clause_id": "L41_2024.A141.K3",
-      "score": 0.8154085874557495,
+      "score": 0.8154588937759399,
       "text_preview": "Người lao động đã có thời gian công tác và tham gia bảo hiểm xã hội trước ngày 01 tháng 01 năm 1995 tại nơi có phụ cấp khu vực, người lao động đã có thời gian đóng bảo hiểm xã hội bao gồm phụ cấp khu "
     },
     {
-      "clause_id": "L41_2024.A53.K8",
-      "score": 0.8123201131820679,
-      "text_preview": "Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ "
-    },
-    {
-      "clause_id": "L41_2024.A33.K5",
-      "score": 0.8099089860916138,
-      "text_preview": "Đối tượng quy định tại các điểm a, b, c, d và i khoản 1 và khoản 2 Điều 2 của Luật này mà không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì người lao động không phải đóng bảo hiểm xã "
-    },
-    {
-      "clause_id": "L41_2024.A68.K2",
-      "score": 0.8075700998306274,
-      "text_preview": "Mức hưởng trợ cấp một lần cho mỗi năm đóng cao hơn quy định tại khoản 1 Điều này bằng 0,5 lần của mức bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội quy định tại Điều 72 của Luật này cho mỗi năm"
-    },
-    {
-      "clause_id": "L41_2024.A100.K2",
-      "score": 0.8065989017486572,
-      "text_preview": "Mức hưởng trợ cấp một lần cho mỗi năm đóng cao hơn quy định tại khoản 1 Điều này bằng 0,5 lần của mức bình quân thu nhập làm căn cứ đóng bảo hiểm xã hội quy định tại Điều 104 của Luật này cho mỗi năm "
+      "clause_id": "L58_2014.A84.K2",
+      "score": 0.8148665428161621,
+      "text_preview": "Đóng bảo hiểm y tế cho người đang hưởng lương hưu hoặc nghỉ việc hưởng trợ cấp tai nạn lao động, bệnh nghề nghiệp hằng tháng hoặc nghỉ việc hưởng trợ cấp thai sản khi sinh con hoặc nhận nuôi con nuôi "
     }
   ],
-  "n_semantic_edges": 1,
-  "n_refs": 20,
-  "elapsed_s": 2.83,
+  "n_semantic_edges": 16,
+  "n_refs": 0,
+  "elapsed_s": 2.78,
   "gold_answer": "Căn cứ quy định của Luật BHXH số 41/2024/QH15, tiền lương làm căn cứ đóng BHXH bắt buộc được quy định như sau:\nNgười lao động thuộc đối tượng thực hiện chế độ tiền lương do người sử dụng lao động quyết định thì tiền lương làm căn cứ đóng BHXH bắt buộc là tiền lương tháng, bao gồm mức lương theo công việc hoặc chức danh, phụ cấp lương và các khoản bổ sung khác được thỏa thuận trả thường xuyên, ổn định trong mỗi kỳ trả lương.\nCăn cứ quy định tại Điều 3 Thông tư số 10/2020/TT-BLĐTBXH ngày 12/11/2020 quy định chi tiết và hướng dẫn thi hành một số điều của Bộ luật Lao động về nội dung của hợp đồng lao động, hội đồng thương lượng tập thể và nghề, công việc có ảnh hưởng xấu tới chức năng sinh sản, nuôi con:\n\"c) Các khoản bổ sung khác theo thỏa thuận của hai bên như sau:\n... c2) Các khoản bổ sung không xác định được mức tiền cụ thể cùng với mức lương thỏa thuận trong hợp đồng lao động, trả thường xuyên hoặc không thường xuyên trong mỗi kỳ trả lương gắn với quá trình làm việc, kết quả thực hiện công việc của người lao động.\nĐối với các chế độ và phúc lợi khác như thưởng theo quy định tại Điều 104 của Bộ luật Lao động, tiền thưởng sáng kiến; tiền ăn giữa ca; các khoản hỗ trợ xăng xe, điện thoại, đi lại, tiền nhà ở, tiền giữ trẻ, nuôi con nhỏ; hỗ trợ khi người lao động có thân nhân bị chết, người lao động có người thân kết hôn, sinh nhật của người lao động, trợ cấp cho người lao động gặp hoàn cảnh khó khăn khi bị tai nạn lao động, bệnh nghề nghiệp và các khoản hỗ trợ, trợ cấp khác thì ghi thành mục riêng trong hợp đồng lao động\".\nNhư vậy, bà có thể đối chiếu với quy định trên để biết các loại phụ cấp phải đóng BHXH.\nĐối với phụ cấp ăn ca, xăng xe, điện thoại, nhà ở, hỗ trợ nuôi con nhỏ, trang phục nếu được ghi thành mục riêng trong hợp đồng lao động thì đây là khoản không tính đóng BHXH.",
-  "gold_citations_raw": "Điều 3 Thông tư số 10/2020/TT-BLĐTBXH"
+  "gold_citations_raw": "[Thông tư 10/2020/TT-BLĐTBXH, Điều 3]"
 }

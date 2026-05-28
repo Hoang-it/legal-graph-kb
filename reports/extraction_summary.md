@@ -1,56 +1,60 @@
-# Báo cáo trích xuất KG — Luật 41/2024/QH15
+# Báo cáo trích xuất KG — Multi-law Phase 6
 
 ## Tổng quan
 
-- **Tổng số node:** 1,334
-- **Tổng số edge:** 1,942
+- **Tổng số node:** 3,268
+- **Tổng số edge:** 5,371
 
 ## Nodes theo label
 
 | Label | Số lượng |
 |---|---:|
-| `Clause` | 543 |
-| `Point` | 359 |
-| `Article` | 141 |
+| `Clause` | 1,585 |
+| `Point` | 829 |
+| `Article` | 486 |
 | `Obligation` | 72 |
 | `Condition` | 47 |
+| `Section` | 46 |
 | `Subject` | 45 |
+| `Chapter` | 37 |
 | `Benefit` | 34 |
+| `LegalConcept` | 22 |
 | `Organization` | 21 |
-| `Section` | 13 |
-| `LegalConcept` | 12 |
-| `Chapter` | 11 |
+| `ExternalLaw` | 15 |
 | `ProhibitedAct` | 11 |
-| `ExternalLaw` | 10 |
 | `Right` | 7 |
 | `Fund` | 6 |
-| `Law` | 1 |
+| `Law` | 3 |
+| `Table` | 1 |
 | `Role` | 1 |
 
 ## Edges theo type
 
 | Type | Số lượng |
 |---|---:|
-| `HAS_CLAUSE` | 543 |
-| `REFERENCES` | 387 |
-| `HAS_POINT` | 359 |
-| `HAS_ARTICLE` | 141 |
-| `NEXT` | 140 |
-| `IN_SECTION` | 110 |
+| `HAS_CLAUSE` | 1,585 |
+| `HAS_POINT` | 829 |
+| `REFERENCES` | 763 |
+| `HAS_ARTICLE` | 486 |
+| `BELONGS_TO` | 486 |
+| `NEXT` | 483 |
+| `IN_SECTION` | 348 |
 | `ENTITLED_TO` | 82 |
 | `HAS_OBLIGATION` | 70 |
-| `CITES_EXTERNAL` | 30 |
-| `HAS_SECTION` | 13 |
+| `CITES_EXTERNAL` | 50 |
+| `HAS_SECTION` | 46 |
+| `HAS_CHAPTER` | 37 |
+| `DEFINES` | 28 |
+| `REFERS_TO` | 25 |
 | `REQUIRES` | 13 |
-| `DEFINES` | 12 |
-| `HAS_CHAPTER` | 11 |
+| `AMENDS` | 7 |
+| `REPLACES` | 7 |
 | `APPLIES_TO` | 7 |
 | `RESPONSIBLE_FOR` | 7 |
 | `MANAGES` | 6 |
-| `REPLACES` | 5 |
-| `AMENDS` | 2 |
+| `REPEALS` | 2 |
 | `PAID_FROM` | 2 |
-| `REPEALS` | 1 |
+| `HAS_TABLE` | 1 |
 | `HAS_RIGHT` | 1 |
 
 ## Top 10 Subjects theo độ degree
@@ -87,12 +91,17 @@
 
 | Code | Title | #Cite |
 |---|---|---:|
-| `—` | Bộ luật Lao động | 15 |
-| `84/2015/QH13` | Luật An toàn, vệ sinh lao động | 2 |
+| `—` | Bộ luật Lao động | 26 |
+| `—` | Bộ luật Tố tụng hình | 1 |
+| `—` | Bộ luật Hình sự | 1 |
+| `58/2014/QH13` | Luật Bảo hiểm xã hội | 6 |
+| `84/2015/QH13` | Luật | 3 |
+| `35/2018/QH14` | Luật | 2 |
+| `92/2015/QH13` | Bộ luật | 1 |
+| `10/2012/QH13` | Bộ luật Lao động | 1 |
+| `71/2006/QH11` | Luật này có hiệu lực thi hành thì vẫn thực hiện theo quy định của Luật bảo hiểm xã hội | 2 |
 | `38/2013/QH13` | Luật | 2 |
 | `39/2009/QH12` | Luật | 1 |
-| `58/2014/QH13` | Luật Bảo hiểm xã hội | 5 |
-| `35/2018/QH14` | Luật | 1 |
 | `45/2019/QH14` | Bộ luật | 1 |
 | `93/2015/QH13` | Nghị quyết | 1 |
 | `01/2003/NĐ-CP` | Nghị định | 1 |
@@ -106,16 +115,16 @@
 |---|---:|
 | L41_2024.A18 — Trách nhiệm của cơ quan bảo hiểm xã hội | 13 |
 | L41_2024.A3 — Giải thích từ ngữ | 12 |
+| L45_2019.A3 — Giải thích từ ngữ | 9 |
+| L58_2014.A3 — Giải thích từ ngữ | 7 |
+| L41_2024.A15 — Quyền và trách nhiệm của tổ chức đại diện người sử dụng lao  | 5 |
 | L41_2024.A111 — Chế độ hưu trí và chế độ tử tuất đối với người vừa có thời g | 5 |
 | L41_2024.A119 — Sử dụng quỹ bảo hiểm xã hội | 5 |
-| L41_2024.A15 — Quyền và trách nhiệm của tổ chức đại diện người sử dụng lao  | 5 |
 | L41_2024.A58 — Trợ cấp một lần khi sinh con, nhận con khi nhờ mang thai hộ  | 5 |
 | L41_2024.A94 — Đối tượng và điều kiện hưởng trợ cấp thai sản | 5 |
-| L41_2024.A64 — Đối tượng và điều kiện hưởng lương hưu | 4 |
 | L41_2024.A13 — Trách nhiệm của người sử dụng lao động | 4 |
-| L41_2024.A75 — Tạm dừng, chấm dứt, tiếp tục hưởng lương hưu, trợ cấp bảo hi | 4 |
 
-**Số Article không có semantic edge nào:** 48 / 141
+**Số Article không có semantic edge nào:** 391 / 486
 
 <details><summary>Danh sách (cần review B3 prompt hoặc rerun)</summary>
 
@@ -167,5 +176,8 @@
 - L41_2024.A96: Hồ sơ đề nghị hưởng trợ cấp thai sản
 - L41_2024.A97: Giải quyết hưởng trợ cấp thai sản
 - L41_2024.A98: Đối tượng và điều kiện hưởng lương hưu
+- L45_2019.A1: Phạm vi điều chỉnh
+- L45_2019.A10: Quyền làm việc của người lao động
+- ... và 341 điều khác
 
 </details>

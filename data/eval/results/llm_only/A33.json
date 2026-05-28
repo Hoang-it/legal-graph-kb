@@ -2,16 +2,18 @@
   "arm": "llm_only",
   "stt": 33,
   "question": "Ông H. Quyết (TPHCM) sinh ngày ../2/1968, là giáo viên dạy môn Thể dục, đóng BHXH đến tháng 1/2026 được 17 năm 10 tháng.\nÔng bị suy tim nên suy giảm 71% khả năng lao động, không đủ sức khỏe tiếp tục giảng dạy.\nÔng Quyết hỏi, ông có đủ điều kiện hưởng lương hưu theo chế độ hưu trí không?\nNếu không được thì ông có thể đóng BHXH tự nguyện để đủ điều kiện hưởng lương hưu không?\nĐóng BHXH tự nguyện bao nhiêu năm nữa thì đủ điều kiện?\nNếu không đóng thêm BHXH tự nguyện thì ông có được hưởng BHXH một lần không?",
-  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, ông H. Quyết có thể đủ điều kiện hưởng lương hưu theo chế độ hưu trí nếu đáp ứng các điều kiện về thời gian đóng bảo hiểm xã hội và tỷ lệ suy giảm khả năng lao động.\n\n1. **Điều kiện hưởng lương hưu**: Ông Quyết đã đóng BHXH được 17 năm 10 tháng và có tỷ lệ suy giảm khả năng lao động là 71%. Theo quy định, người lao động có tỷ lệ suy giảm khả năng lao động từ 61% trở lên và có đủ 15 năm đóng BHXH thì có thể được hưởng lương hưu. Do đó, ông Quyết đủ điều kiện hưởng lương hưu theo chế độ hưu trí.\n\n2. **Đóng BHXH tự nguyện**: Nếu ông Quyết không muốn nghỉ hưu ngay mà muốn tiếp tục đóng BHXH tự nguyện để tăng mức lương hưu, ông có thể làm như vậy. Tuy nhiên, để đủ điều kiện hưởng lương hưu, ông cần có ít nhất 20 năm đóng BHXH. Hiện tại, ông đã có 17 năm 10 tháng, do đó ông cần đóng thêm ít nhất 2 tháng BHXH tự nguyện để đủ 18 năm, và sau đó tiếp tục đóng thêm 2 năm nữa (tổng cộng 2 năm 2 tháng) để đạt đủ 20 năm.\n\n3. **Hưởng BHXH một lần**: Nếu ông Quyết không đóng thêm BHXH tự nguyện và không đủ điều kiện hưởng lương hưu, ông có thể được hưởng BHXH một lần. Theo quy định, người lao động có thời gian đóng BHXH từ đủ 1 năm trở lên có quyền yêu cầu nhận BHXH một lần [Điều 60 khoản 1]. Do đó, ông có thể nhận BHXH một lần nếu không tiếp tục đóng BHXH.\n\nTóm lại, ông Quyết có đủ điều kiện hưởng lương hưu ngay, có thể đóng BHXH tự nguyện để tăng mức lương hưu, và cũng có quyền nhận BHXH một lần nếu không tiếp tục đóng.",
+  "answer": "Ông H. Quyết có thể đủ điều kiện hưởng lương hưu theo chế độ hưu trí nếu đáp ứng các điều kiện quy định tại Luật Bảo hiểm xã hội. Cụ thể, theo quy định, người lao động có thể nghỉ hưu khi đủ tuổi và có đủ số năm đóng BHXH tối thiểu. Đối với trường hợp của ông, ông đã đóng BHXH được 17 năm 10 tháng và bị suy giảm khả năng lao động 71%, nên ông có thể đủ điều kiện nghỉ hưu trước tuổi theo quy định về hưu trí do suy giảm khả năng lao động.\n\nTheo Luật Bảo hiểm xã hội, người lao động có tỷ lệ suy giảm khả năng lao động từ 61% trở lên có thể nghỉ hưu trước tuổi với điều kiện có đủ 15 năm đóng BHXH [Luật BHXH 2024 (41/2024/QH15), Điều 54 khoản 1]. Do đó, ông H. Quyết có thể đủ điều kiện hưởng lương hưu.\n\nNếu ông không đủ điều kiện hưởng lương hưu ngay, ông có thể tham gia BHXH tự nguyện để đủ điều kiện. Để đủ điều kiện hưởng lương hưu, ông cần có ít nhất 20 năm đóng BHXH [Luật BHXH 2024 (41/2024/QH15), Điều 54 khoản 1]. Hiện tại, ông đã có 17 năm 10 tháng, tức là ông cần đóng thêm ít nhất 2 tháng BHXH tự nguyện để đủ 20 năm.\n\nNếu ông không đóng thêm BHXH tự nguyện, ông có thể được hưởng BHXH một lần. Theo quy định, người lao động có quyền yêu cầu nhận BHXH một lần nếu không đủ điều kiện hưởng lương hưu và đã đóng BHXH từ đủ 1 năm trở lên [Luật BHXH 2024 (41/2024/QH15), Điều 60 khoản 1]. Do đó, ông có thể nhận BHXH một lần nếu không tiếp tục tham gia BHXH.",
   "citations": [
-    "[Điều 60 khoản 1]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 54 khoản 1]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 60 khoản 1]"
   ],
   "citation_ids": [
+    "L41_2024.A54.K1",
     "L41_2024.A60.K1"
   ],
-  "elapsed_s": 8.084,
-  "prompt_tokens": 321,
-  "completion_tokens": 472,
+  "elapsed_s": 10.387,
+  "prompt_tokens": 364,
+  "completion_tokens": 444,
   "gold_answer": "Căn cứ điểm b khoản 2 Điều 11 Nghị định số 159/2025/NĐ-CP quy định về điều kiện hưởng lương hưu:\n\"Trường hợp người tham gia bảo hiểm xã hội tự nguyện có từ đủ 20 năm đóng bảo hiểm xã hội bắt buộc trở lên mà bị suy giảm khả năng lao động từ 61% trở lên thì điều kiện về tuổi đời hưởng lương hưu được thực hiện theo quy định tại Điều 65 của Luật Bảo hiểm xã hội\".\nĐối chiếu với quy định trên, ông sinh ngày 25/02/1968, thời gian tham gia BHXH bắt buộc là 17 năm 10 tháng, ông không đủ điều kiện hưởng chế độ hưu trí. Ông có thể tiếp tục tham gia BHXH tự nguyện để hưởng mức lương hưu cao hơn hoặc bảo lưu thời gian tham gia cho đến khi đủ tuổi nghỉ hưu theo quy định tại khoản 1 Điều 64 Luật BHXH 2024.\nTrường hợp ông không còn tham gia BHXH, sau 12 tháng nếu không tiếp tục đóng BHXH bắt buộc hoặc không tham gia BHXH tự nguyện thì ông có thể liên hệ BHXH cơ sở làm thủ tục hưởng BHXH một lần.",
-  "gold_citations_raw": "điểm b khoản 2 Điều 11 Nghị định số 159/2025/NĐ-CP"
+  "gold_citations_raw": "[Nghị định 159/2025/NĐ-CP, Điều 11]"
 }

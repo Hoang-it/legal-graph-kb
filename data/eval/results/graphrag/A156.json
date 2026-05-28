@@ -2,47 +2,50 @@
   "arm": "graphrag",
   "stt": 156,
   "question": "E nghỉ ngang cty cũ k chốt tờ rời cho giờ có cách nào chốt được không?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 13 khoản 3] — Trách nhiệm của người sử dụng lao động trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động.",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 40 khoản 1] - Nghĩa vụ của người lao động khi đơn phương chấm dứt hợp đồng lao động trái pháp luật.\n- [Điều 34 khoản 3] - Các trường hợp chấm dứt hợp đồng lao động.",
   "citations": [
-    "[Điều 13 khoản 3]"
+    "[Điều 40 khoản 1]",
+    "[Điều 34 khoản 3]"
   ],
   "citation_ids": [
-    "L41_2024.A13.K3"
+    "L41_2024.A40.K1",
+    "L41_2024.A34.K3"
   ],
   "citation_verified": {
-    "L41_2024.A13.K3": true
+    "L41_2024.A40.K1": true,
+    "L41_2024.A34.K3": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
-      "clause_id": "L41_2024.A93.K3",
-      "score": 0.7783194780349731,
-      "text_preview": "Thông qua người sử dụng lao động."
+      "clause_id": "L45_2019.A156.K1",
+      "score": 0.8159270286560059,
+      "text_preview": "Giấy phép lao động hết thời hạn."
     },
     {
-      "clause_id": "L41_2024.A117.K2",
-      "score": 0.7729243040084839,
-      "text_preview": "Người lao động đóng theo quy định."
+      "clause_id": "L45_2019.A156.K2",
+      "score": 0.8052386045455933,
+      "text_preview": "Chấm dứt hợp đồng lao động."
     },
     {
-      "clause_id": "L41_2024.A9.K1",
-      "score": 0.7709190845489502,
-      "text_preview": "Chậm đóng, trốn đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp."
+      "clause_id": "L58_2014.A17.K2",
+      "score": 0.7963168621063232,
+      "text_preview": "Chậm đóng tiền bảo hiểm xã hội, bảo hiểm thất nghiệp."
     },
     {
-      "clause_id": "L41_2024.A9.K2",
-      "score": 0.76951664686203,
-      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+      "clause_id": "L45_2019.A200.K3",
+      "score": 0.7927331924438477,
+      "text_preview": "Tiến hành đình công."
     },
     {
-      "clause_id": "L41_2024.A13.K2",
-      "score": 0.7652308940887451,
-      "text_preview": "Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội."
+      "clause_id": "L45_2019.A124.K3",
+      "score": 0.7890850305557251,
+      "text_preview": "Cách chức."
     }
   ],
-  "n_semantic_edges": 2,
-  "n_refs": 2,
-  "elapsed_s": 1.92,
+  "n_semantic_edges": 1,
+  "n_refs": 0,
+  "elapsed_s": 3.09,
   "gold_answer": "Nếu công ty cũ chưa chốt tờ rời thì bạn không tự chốt thay hoàn toàn được, vì doanh nghiệp phải báo giảm và hoàn tất nghĩa vụ đóng. Việc bạn cần làm là yêu cầu công ty chốt sổ bằng văn bản; nếu công ty chây ì thì gửi đơn tới cơ quan BHXH quản lý đơn vị, thanh tra lao động hoặc khởi kiện yêu cầu chốt sổ và bồi thường thiệt hại nếu có.",
-  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
 }

@@ -2,33 +2,32 @@
   "arm": "elite_graphrag",
   "stt": 44,
   "question": "Mình đóng bhxh từ năm 2024 là 10 tháng \nSau đó vào cty khác đóng tiếp tục 6 tháng cùng luật bảo hiểm 1/7/2025 không cho rút 1 lần \nTổng thời gian mình đóng là 1 năm 4 tháng, giờ mình nghỉ cty luôn thì mình có được rút 1 lần bhxh không?",
-  "answer": "Issue: Người hỏi đã đóng bảo hiểm xã hội tổng cộng 1 năm 4 tháng và muốn biết có đủ điều kiện để rút một lần không. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 64 khoản 1], người lao động cần có thời gian đóng bảo hiểm xã hội từ đủ 15 năm trở lên để được hưởng lương hưu. \nApplication: Không có giá trị nào được gán cho các slot, do đó Prolog không thể tính toán. \nConclusion: Hệ thống không thể tính được kết quả cuối cùng do thiếu slot bindings.",
-  "plain_answer": "Hệ thống chưa đủ thông tin để tính chính xác vì không có dữ liệu về thời gian đóng bảo hiểm xã hội của bạn. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 64 khoản 1], bạn cần có ít nhất 15 năm đóng bảo hiểm xã hội để đủ điều kiện rút một lần. Bạn vui lòng cung cấp thêm thông tin để mình tính giúp.",
+  "answer": "Issue: Người hỏi đã đóng bảo hiểm xã hội tổng cộng 1 năm 4 tháng và muốn biết có được rút một lần không. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 85 khoản 6], thời gian đóng bảo hiểm xã hội để tính hưởng lương hưu phải đủ 12 tháng, nếu thiếu tối đa 6 tháng thì có thể đóng tiếp để đủ. \nApplication: Không có slot nào được gán giá trị. Prolog đã xác định rằng với 1 năm và 4 tháng đóng, người dùng không đủ điều kiện để rút một lần. \nConclusion: Theo Prolog, người dùng KHÔNG được rút một lần bảo hiểm xã hội.",
+  "plain_answer": "Bạn đã đóng bảo hiểm xã hội tổng cộng 1 năm 4 tháng, nhưng theo quy định [Luật BHXH 2024 (41/2024/QH15), Điều 85 khoản 6], bạn không đủ điều kiện để rút một lần. Bạn cần có ít nhất 12 tháng đóng bảo hiểm để đủ điều kiện rút, hoặc có thể đóng thêm để đủ thời gian yêu cầu.",
   "citations": [
-    "[Luật BHXH 2024 (41/2024/QH15), Điều 64 khoản 1]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 85 khoản 6]"
   ],
   "citation_ids": [
-    "L41_2024.A64.K1"
+    "L41_2024.A85.K6"
   ],
   "citation_indices": [
-    0,
-    3
+    1
   ],
   "prolog_success": true,
   "prolog_status": "success",
-  "n_repair_rounds": 0,
-  "prolog_trace": "[step(conclusion,withdrawal_one_time_conditions([not_enough_contribution_time]),based_on(source_c0041))]",
-  "prolog_program": "years_contributed(user, 1).\nmonths_contributed(user, 4).\nlegal_source(source_c0041, law_bhxh_2024, article_5, clause_6, none, 'Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.').\nlegal_source(source_c0041, law_bhxh_2024, article_64, clause_1, none, 'Đối tượng quy định tại các điểm a, b, c, g, h, i, k, l, m và n khoản 1 và khoản 2 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 15 năm trở lên thì được hưởng lương hưu nếu thuộc một trong các trường hợp sau đây:').\nwithdrawal_one_time_conditions(Conditions, Trace) :- Conditions = [not_enough_contribution_time], Trace = [step(conclusion, withdrawal_one_time_conditions(Conditions), based_on(source_c0041))].",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,withdraw_one_time_bhxh(user,no),based_on(source_c085))]",
+  "prolog_program": "years_contributed(user, 1).\nmonths_contributed(user, 4).\nlegal_source(source_c085, law_bhxh_2024, article_85, clause_6, none, 'Việc xác định thời gian đóng bảo hiểm xã hội để tính hưởng lương hưu và trợ cấp tuất hằng tháng thì một năm phải tính đủ 12 tháng; trường hợp người lao động đủ điều kiện về tuổi hưởng lương hưu mà thời gian đóng bảo hiểm xã hội còn thiếu tối đa 06 tháng thì người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động theo mức tiền lương tháng đóng bảo hiểm xã hội trước khi nghỉ việc vào quỹ hưu trí và tử tuất.').\nwithdraw_one_time_bhxh(User, Answer, Trace) :- years_contributed(User, Years), months_contributed(User, Months), Years < 1, Months < 6, Answer = no, Trace = [step(conclusion, withdraw_one_time_bhxh(User, Answer), based_on(source_c085))].\nwithdraw_one_time_bhxh(User, Answer, Trace) :- years_contributed(User, Years), months_contributed(User, Months), Years = 1, Months >= 4, Answer = no, Trace = [step(conclusion, withdraw_one_time_bhxh(User, Answer), based_on(source_c085))].",
   "prolog_error": "",
   "irac_sections": {
-    "issue": "Người hỏi đã đóng bảo hiểm xã hội tổng cộng 1 năm 4 tháng và muốn biết có đủ điều kiện để rút một lần không.",
-    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 64 khoản 1], người lao động cần có thời gian đóng bảo hiểm xã hội từ đủ 15 năm trở lên để được hưởng lương hưu.",
-    "application": "Không có giá trị nào được gán cho các slot, do đó Prolog không thể tính toán.",
-    "conclusion": "Hệ thống không thể tính được kết quả cuối cùng do thiếu slot bindings."
+    "issue": "Người hỏi đã đóng bảo hiểm xã hội tổng cộng 1 năm 4 tháng và muốn biết có được rút một lần không.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 85 khoản 6], thời gian đóng bảo hiểm xã hội để tính hưởng lương hưu phải đủ 12 tháng, nếu thiếu tối đa 6 tháng thì có thể đóng tiếp để đủ.",
+    "application": "Không có slot nào được gán giá trị. Prolog đã xác định rằng với 1 năm và 4 tháng đóng, người dùng không đủ điều kiện để rút một lần.",
+    "conclusion": "Theo Prolog, người dùng KHÔNG được rút một lần bảo hiểm xã hội."
   },
-  "elapsed_s": 13.574,
-  "prompt_tokens": 4290,
-  "completion_tokens": 665,
+  "elapsed_s": 28.572,
+  "prompt_tokens": 6870,
+  "completion_tokens": 1137,
   "error": null,
   "gold_answer": "Bạn đã có 10 tháng đóng trước 1/7/2025 và thêm 6 tháng sau đó, tổng 1 năm 4 tháng. Nếu hiện đã nghỉ việc, ngừng tham gia đủ 12 tháng và thuộc diện được giải quyết BHXH một lần theo quy định chuyển tiếp của Luật BHXH 2024 thì vẫn có thể được rút đối với thời gian đã đóng. Cần kiểm tra thêm thời điểm đề nghị và việc bạn có tiếp tục tham gia BHXH ở nơi khác hay không.",
   "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 102]\n[Luật BHXH 2024 (41/2024/QH15), Điều 110]"

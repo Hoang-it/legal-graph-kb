@@ -2,10 +2,11 @@
   "arm": "elite_ontology",
   "stt": 43,
   "question": "Cty mình cần đóng BHXH cho 2 NV, mức đóng tối thiếu khoảng bao nhiêu 1 tháng/1 người?\nNếu NV nghỉ việc thì tối thiếu bao nhiêu tháng NV sẽ rút dc tiền 1 cục?",
-  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'withdrawal_conditions(MinMonths']",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'withdrawal_conditions(Months']",
+  "plain_answer": "",
   "citations": [
-    "[Điều 33 khoản 1]",
-    "[Điều 33 khoản 3]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 33 khoản 1]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 33 khoản 3]"
   ],
   "citation_ids": [
     "L41_2024.A33.K1",
@@ -19,11 +20,13 @@
   "prolog_status": "invalid_query",
   "n_repair_rounds": 2,
   "prolog_trace": "",
+  "prolog_program": "legal_source(source_c001, law_bhxh_2024, article_33, clause_1, none, 'Mức đóng hằng tháng bằng 22% tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc vào quỹ hưu trí và tử tuất.').\nlegal_source(source_c002, law_bhxh_2024, article_33, clause_3, none, 'Mức đóng, phương thức và thời hạn đóng của đối tượng quy định tại điểm h khoản 1 Điều 2 của Luật này được quy định như sau: a) Mức đóng hằng tháng bằng 22% tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc vào quỹ hưu trí và tử tuất.').\nminimum_contribution_per_person(MinContribution, Trace) :- MinContribution = 0.22 * Salary, Trace = [step(conclusion, minimum_contribution_per_person(MinContribution), based_on(source_c001))].\nwithdrawal_conditions(Months, Trace) :- Months = 12, Trace = [step(conclusion, withdrawal_conditions(Months), based_on(source_c002))].",
+  "prolog_error": "query argument must be variable or user, got 'withdrawal_conditions(Months'",
   "irac_sections": {},
-  "elapsed_s": 13.987,
-  "prompt_tokens": 8029,
-  "completion_tokens": 990,
+  "elapsed_s": 26.454,
+  "prompt_tokens": 8045,
+  "completion_tokens": 997,
   "error": null,
   "gold_answer": "Mức đóng tối thiểu phụ thuộc địa bàn lương tối thiểu vùng và mức lương ghi trong HĐLĐ, vì tiền lương làm căn cứ đóng BHXH không được thấp hơn lương tối thiểu vùng. Tổng mức đóng thông thường hiện vào khoảng 32% tiền lương tháng làm căn cứ đóng (doanh nghiệp và người lao động cùng đóng các quỹ BHXH, BHYT, BHTN). Về rút BHXH một lần, không phải cứ nghỉ là rút ngay; thường phải thuộc trường hợp luật cho phép, phổ biến là sau 12 tháng ngừng tham gia mà đủ điều kiện.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 31, Điều 33, Điều 70; Luật Việc làm 2013 Điều 57; Nghị định 293/2025/NĐ-CP"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 31]\n[Luật BHXH 2024 (41/2024/QH15), Điều 33]\n[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật Việc làm 2013, Điều 57]"
 }

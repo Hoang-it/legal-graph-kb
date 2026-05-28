@@ -2,12 +2,16 @@
   "arm": "llm_only",
   "stt": 2,
   "question": "Bà Minh Châu (Long An) ký hợp đồng lao động theo diện làm việc bán thời gian.\nBà Châu hỏi, bà có được mua BHXH bắt buộc theo đối tượng cá nhân không? Nếu được thì mức đóng được tính như thế nào?",
-  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động làm việc theo hợp đồng lao động bán thời gian có thể tham gia bảo hiểm xã hội (BHXH) bắt buộc nếu thuộc đối tượng tham gia BHXH theo quy định. \n\nCụ thể, tại Điều 4 khoản 1 quy định về đối tượng tham gia BHXH bắt buộc, người lao động làm việc theo hợp đồng lao động từ 1 tháng trở lên sẽ được tham gia BHXH bắt buộc. \n\nVề mức đóng, mức đóng BHXH bắt buộc được tính trên mức lương tháng của người lao động, theo tỷ lệ quy định tại Điều 5 khoản 1. Tỷ lệ đóng BHXH bắt buộc cho người lao động là 8% trên mức lương tháng, trong khi người sử dụng lao động đóng 17.5%.\n\nDo đó, nếu bà Minh Châu ký hợp đồng lao động bán thời gian từ 1 tháng trở lên, bà có thể tham gia BHXH bắt buộc và mức đóng sẽ được tính theo tỷ lệ trên mức lương tháng của bà.",
-  "citations": [],
-  "citation_ids": [],
-  "elapsed_s": 5.121,
-  "prompt_tokens": 213,
-  "completion_tokens": 243,
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội Việt Nam, người lao động làm việc theo hợp đồng lao động bán thời gian có thể tham gia bảo hiểm xã hội (BHXH) bắt buộc nếu thuộc đối tượng tham gia BHXH theo quy định. Tuy nhiên, việc tham gia BHXH bắt buộc cho người lao động bán thời gian không phải là bắt buộc mà phụ thuộc vào thỏa thuận trong hợp đồng lao động và quy định của doanh nghiệp.\n\nNếu bà Minh Châu muốn tham gia BHXH bắt buộc, bà có thể tham gia theo hình thức cá nhân, nhưng mức đóng sẽ được tính dựa trên mức lương tháng đóng BHXH. Mức đóng BHXH bắt buộc là 22% trên mức lương tháng, trong đó người lao động đóng 8% và người sử dụng lao động đóng 14% [Luật BHXH 2024 (41/2024/QH15), Điều 85 khoản 1].\n\nTóm lại, bà Châu có thể tham gia BHXH bắt buộc nếu có thỏa thuận và mức đóng sẽ được tính theo quy định nêu trên.",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 85 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A85.K1"
+  ],
+  "elapsed_s": 7.289,
+  "prompt_tokens": 256,
+  "completion_tokens": 242,
   "gold_answer": "Pháp luật về BHXH hiện hành không có quy định đối với trường hợp người lao động tự tham gia BHXH bắt buộc.\nDo vậy, trường hợp của bà ký hợp đồng lao động làm việc không trọn thời gian, không thuộc đối tượng tham gia BHXH bắt buộc thì có thể liên hệ tới cơ quan BHXH tại nơi cư trú để tham gia BHXH tự nguyện.",
-  "gold_citations_raw": "Luật BHXH 2014"
+  "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 2]"
 }

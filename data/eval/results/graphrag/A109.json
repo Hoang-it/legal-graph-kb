@@ -2,53 +2,50 @@
   "arm": "graphrag",
   "stt": 109,
   "question": "Đóng bảo hiểm xã hội bao nhiêu năm là được về hưu vậy?",
-  "answer": "Người lao động muốn hưởng lương hưu phải có thời gian đóng bảo hiểm xã hội từ đủ 15 năm trở lên. Cụ thể, đối với người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021, nam phải đủ 60 tuổi và nữ phải đủ 55 tuổi để được hưởng lương hưu, nếu có đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên. \n\nNgoài ra, lao động nam có thời gian đóng bảo hiểm xã hội cao hơn 35 năm và lao động nữ có thời gian đóng bảo hiểm xã hội cao hơn 30 năm thì khi nghỉ hưu, ngoài lương hưu còn được hưởng trợ cấp một lần.\n\nCác quy định này được nêu trong các điều luật sau:\n- [Điều 141 khoản 9] \n- [Điều 64 khoản 1] \n- [Điều 100 khoản 1]",
+  "answer": "Để được hưởng lương hưu, người lao động cần có thời gian đóng bảo hiểm xã hội tối thiểu là 20 năm. Tuy nhiên, có một số trường hợp đặc biệt:\n\n1. Người lao động đã đủ điều kiện về tuổi nhưng thời gian đóng bảo hiểm xã hội chưa đủ 20 năm thì có thể tiếp tục đóng cho đến khi đủ 20 năm để hưởng lương hưu [Điều 73 khoản 2].\n2. Lao động nữ hoạt động chuyên trách hoặc không chuyên trách ở xã, phường, thị trấn có từ đủ 15 năm đến dưới 20 năm đóng bảo hiểm xã hội và đủ 55 tuổi cũng được hưởng lương hưu [Điều 54 khoản 3].\n\nTóm lại, thông thường cần 20 năm đóng bảo hiểm xã hội, nhưng có thể nghỉ hưu sớm hơn trong một số trường hợp đặc biệt.\n\nCitation:\n- [Điều 73 khoản 2]\n- [Điều 54 khoản 3]",
   "citations": [
-    "[Điều 141 khoản 9]",
-    "[Điều 64 khoản 1]",
-    "[Điều 100 khoản 1]"
+    "[Điều 73 khoản 2]",
+    "[Điều 54 khoản 3]"
   ],
   "citation_ids": [
-    "L41_2024.A141.K9",
-    "L41_2024.A64.K1",
-    "L41_2024.A100.K1"
+    "L41_2024.A73.K2",
+    "L41_2024.A54.K3"
   ],
   "citation_verified": {
-    "L41_2024.A141.K9": true,
-    "L41_2024.A64.K1": true,
-    "L41_2024.A100.K1": true
+    "L41_2024.A73.K2": true,
+    "L41_2024.A54.K3": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
       "clause_id": "L41_2024.A141.K9",
-      "score": 0.8680884838104248,
+      "score": 0.8680243492126465,
       "text_preview": "Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ,"
     },
     {
       "clause_id": "L41_2024.A100.K1",
-      "score": 0.8505806922912598,
+      "score": 0.8505811095237732,
       "text_preview": "Lao động nam có thời gian đóng bảo hiểm xã hội cao hơn 35 năm, lao động nữ có thời gian đóng bảo hiểm xã hội cao hơn 30 năm thì khi nghỉ hưu, ngoài lương hưu còn được hưởng trợ cấp một lần."
     },
     {
       "clause_id": "L41_2024.A68.K1",
-      "score": 0.8505195379257202,
+      "score": 0.8504214882850647,
       "text_preview": "Lao động nam có thời gian đóng bảo hiểm xã hội cao hơn 35 năm, lao động nữ có thời gian đóng bảo hiểm xã hội cao hơn 30 năm thì khi nghỉ hưu, ngoài lương hưu còn được hưởng trợ cấp một lần."
     },
     {
       "clause_id": "L41_2024.A141.K10",
-      "score": 0.8471804857254028,
+      "score": 0.8472139835357666,
       "text_preview": "Người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên và có văn bản của cơ quan bảo hiểm xã hội xác nhận về việc chờ đủ điều kiện về tuổi đời để hưởng lương hưu được quy định tại Nghị định số 12"
     },
     {
-      "clause_id": "L41_2024.A5.K6",
-      "score": 0.836835503578186,
-      "text_preview": "Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hi"
+      "clause_id": "L58_2014.A73.K2",
+      "score": 0.8437473773956299,
+      "text_preview": "Người lao động đã đủ điều kiện về tuổi theo quy định tại điểm a khoản 1 Điều này nhưng thời gian đóng bảo hiểm xã hội chưa đủ 20 năm thì được đóng cho đến khi đủ 20 năm để hưởng lương hưu."
     }
   ],
-  "n_semantic_edges": 4,
-  "n_refs": 9,
-  "elapsed_s": 4.91,
+  "n_semantic_edges": 26,
+  "n_refs": 3,
+  "elapsed_s": 6.22,
   "gold_answer": "Từ 01/7/2025, điều kiện về thời gian đóng để hưởng lương hưu với nhiều nhóm lao động là từ đủ 15 năm BHXH, nhưng vẫn phải đủ tuổi nghỉ hưu theo luật. Năm 2026, tuổi nghỉ hưu trong điều kiện bình thường là 61 tuổi 6 tháng đối với nam và 57 tuổi đối với nữ, trừ trường hợp làm nghề nặng nhọc, suy giảm khả năng lao động hoặc có điều kiện đặc thù.",
-  "gold_citations_raw": "Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 64]\n[Bộ luật Lao động 2019, Điều 169]"
 }

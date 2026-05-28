@@ -2,12 +2,16 @@
   "arm": "llm_only",
   "stt": 31,
   "question": "Ông Tất Thắng (TPHCM) hỏi, người lao động ký hợp đồng dưới 1 tháng, làm đủ từ 14 công trở lên có mức lương cao hơn mức lương tối thiểu vùng thì có thuộc đối tượng đóng BHXH không?",
-  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động ký hợp đồng lao động từ 1 tháng trở lên sẽ thuộc đối tượng tham gia bảo hiểm xã hội. Đối với hợp đồng dưới 1 tháng, người lao động không thuộc đối tượng bắt buộc tham gia bảo hiểm xã hội, ngay cả khi làm đủ từ 14 công trở lên và có mức lương cao hơn mức lương tối thiểu vùng. \n\nCụ thể, Điều 2 khoản 1 quy định về đối tượng tham gia bảo hiểm xã hội bắt buộc. Do đó, ông Tất Thắng không thuộc đối tượng đóng BHXH trong trường hợp này.",
-  "citations": [],
-  "citation_ids": [],
-  "elapsed_s": 3.476,
-  "prompt_tokens": 213,
-  "completion_tokens": 146,
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội Việt Nam, người lao động làm việc theo hợp đồng lao động từ 1 tháng trở lên sẽ thuộc đối tượng tham gia bảo hiểm xã hội. Đối với hợp đồng lao động dưới 1 tháng, người lao động không thuộc đối tượng bắt buộc tham gia bảo hiểm xã hội, trừ một số trường hợp đặc biệt được quy định khác.\n\nDo đó, nếu ông Tất Thắng ký hợp đồng dưới 1 tháng, thì người lao động này không thuộc đối tượng đóng bảo hiểm xã hội, bất kể mức lương có cao hơn mức lương tối thiểu vùng hay không. Điều này được quy định tại [Luật BHXH 2024 (41/2024/QH15), Điều 2 khoản 1].",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 2 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2.K1"
+  ],
+  "elapsed_s": 3.781,
+  "prompt_tokens": 256,
+  "completion_tokens": 164,
   "gold_answer": "Căn cứ điểm a khoản 1 Điều 2 Luật BHXH 2024; Nghị định số 158/2025/NĐ-CP ngày 25/6/2025 của Chính phủ, người lao động làm việc theo hợp đồng lao động từ đủ 1 tháng trở lên thuộc đối tượng tham gia BHXH bắt buộc.\nDo đó, trường hợp người lao động ký hợp đồng lao động dưới 1 tháng không thuộc đối tượng tham gia BHXH bắt buộc, quy định làm đủ 14 ngày công trở lên chỉ áp dụng đối với người lao động có hợp đồng lao động từ đủ 1 tháng trở lên.",
-  "gold_citations_raw": "điểm a khoản 1 Điều 2 Luật BHXH 2024; Nghị định số 158/2025/NĐ-CP"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]"
 }

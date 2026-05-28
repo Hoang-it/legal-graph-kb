@@ -2,12 +2,16 @@
   "arm": "llm_only",
   "stt": 19,
   "question": "Ông N.Đinh là lao động Việt Nam tại Hàn Quốc theo diện visa E7 (thị thực lao động dành cho người nước ngoài có trình độ chuyên môn và tay nghề cao), đóng BHXH đầy đủ.\nÔng Đinh nhận được thông tin, những lao động có visa E7, F2 (thị thực định cư dài hạn) đóng BHXH khi trở về Việt Nam không nhận được BHXH một lần.\nÔng Đinh hỏi, thông tin này có đúng không?",
-  "answer": "Theo quy định tại Luật Bảo hiểm xã hội Việt Nam, người lao động Việt Nam làm việc ở nước ngoài và có đóng bảo hiểm xã hội đầy đủ vẫn có quyền nhận BHXH một lần khi trở về nước, trừ trường hợp họ thuộc đối tượng không được nhận theo quy định của pháp luật.\n\nCụ thể, Điều 60 Luật Bảo hiểm xã hội số 41/2024/QH15 quy định về việc hưởng BHXH một lần. Theo đó, người lao động có quyền yêu cầu nhận BHXH một lần nếu không thuộc các trường hợp bị từ chối.\n\nDo đó, thông tin mà ông Đinh nhận được là không chính xác. Ông Đinh vẫn có quyền nhận BHXH một lần khi trở về Việt Nam nếu đáp ứng đủ điều kiện theo quy định.",
-  "citations": [],
-  "citation_ids": [],
-  "elapsed_s": 4.795,
-  "prompt_tokens": 264,
-  "completion_tokens": 170,
+  "answer": "Thông tin mà ông Đinh nhận được là không chính xác. Theo quy định của Luật Bảo hiểm xã hội Việt Nam, người lao động Việt Nam làm việc ở nước ngoài, bao gồm cả những người có visa E7 và F2, nếu đã đóng bảo hiểm xã hội đầy đủ và trở về Việt Nam, vẫn có quyền nhận BHXH một lần. Cụ thể, điều này được quy định tại Điều 60 của Luật Bảo hiểm xã hội 2024, trong đó nêu rõ quyền lợi của người lao động khi trở về nước sau thời gian làm việc ở nước ngoài. \n\nDo đó, ông Đinh có thể làm thủ tục để nhận BHXH một lần khi trở về Việt Nam nếu đáp ứng đủ điều kiện.",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 60]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60"
+  ],
+  "elapsed_s": 3.677,
+  "prompt_tokens": 307,
+  "completion_tokens": 156,
   "gold_answer": "Theo quy định tại khoản 1 Điều 6 (bản tiếng Việt) Hiệp định giữa Chính phủ nước Cộng hòa xã hội chủ nghĩa Việt Nam và Chính phủ nước Đại hàn dân quốc (Hàn Quốc) về BHXH (Hiệp định) thì:\n\"Nếu một người lao động làm việc cho một người sử dụng lao động có trụ sở đăng ký trên lãnh thổ của một Bên ký kết Hiệp định và được người sử dụng lao động đó cử đi làm việc, thay mặt cho người sử dụng lao động đó trên lãnh thổ của Bên ký kết Hiệp định còn lại thì chỉ có pháp luật của Bên ký kết Hiệp định đầu tiên sẽ có hiệu lực đối với công việc này trong vòng sáu mươi (60) tháng đầu tiên coi như là người này đang làm việc trên lãnh thổ của Bên ký kết đầu tiên. Khoản này cũng áp dụng cho người lao động làm việc theo hợp đồng lao động được phái cử bởi người sử dụng lao động trên lãnh thổ của một Bên ký kết Hiệp định sang làm việc tại một chi nhánh hoặc một công ty con của người sử dụng lao động trên lãnh thổ của Bên ký kết Hiệp định còn lại\".\nTại khoản 1 Điều 7 Hiệp định quy định: \"Khi một công dân của một Bên ký kết Hiệp định đang tạm trú trên lãnh thổ của Bên ký kết Hiệp định kia được tuyển dụng bởi người sử dụng lao động có cơ sở làm việc tại Bên ký kết Hiệp định kia và làm việc cho người sử dụng lao động đó trên lãnh thổ Bên ký kết Hiệp định kia, thì chỉ pháp luật của Bên ký kết Hiệp định kia sẽ có hiệu lực trong quá trình làm công việc đó\".\nQuy định nêu trên được thực hiện từ ngày 1/1/2024 (thời điểm BHXH Việt Nam và Cơ quan hưu trí Quốc gia Hàn Quốc ký kết Thỏa thuận thực hiện liên quan đến đối tượng BHXH).\nTheo các quy định nêu trên, nếu ông Đinh đi làm việc tại Hàn Quốc theo sự phân công của người sử dụng lao động tại Việt Nam thì vẫn thuộc đối tượng tham gia BHXH tại Việt Nam và được hưởng BHXH một lần theo quy định của pháp luật Việt Nam, không được hưởng BHXH một lần theo quy định của pháp luật Hàn Quốc.\nTrường hợp ông Đinh làm việc cho người sử dụng lao động có trụ sở đăng ký tại Hàn Quốc và tham gia BHXH theo quy định của pháp luật Hàn Quốc thì được hưởng BHXH một lần theo quy định của Hàn Quốc.\nBHXH Việt Nam xin cung cấp thông tin về việc tham gia BHXH và hưởng chế độ BHXH theo quy định của Hiệp định để ông được biết.",
-  "gold_citations_raw": "khoản 1 Điều 6 Hiệp định giữa Chính phủ nước Cộng hòa xã hội chủ nghĩa Việt Nam và Chính phủ nước Đại hàn dân quốc (Hàn Quốc) về BHXH (Hiệp định)"
+  "gold_citations_raw": "[Hiệp định Việt Nam - Hàn Quốc về BHXH, Điều 6]"
 }

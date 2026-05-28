@@ -2,47 +2,47 @@
   "arm": "graphrag",
   "stt": 196,
   "question": "sổ BHXH (sổ xanh) + tờ rời kẹp sổ e bị mất. chỉ còn lại thông tin trên app. \nEm muốn xin cấp lại full sổ cứng thì e cần tới đâu?\nEm có đến BHXH nơi chốt sổ lần cuối cùng ở Nam Từ Liêm,Hà Nội.\nnhưng họ lại bảo em về cơ quan BHXH nơi e sinh sống (e đang trọ ở Thụy Khuê,HN) để làm. 2 bên cứ đẩy qua đẩy lại miết luôn",
-  "answer": "Bạn cần đến cơ quan bảo hiểm xã hội nơi bạn đang sinh sống để xin cấp lại sổ bảo hiểm xã hội. Theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm tiếp nhận hồ sơ và cấp sổ bảo hiểm xã hội cho người lao động. \n\nNếu bạn đã đến cơ quan BHXH nơi chốt sổ lần cuối nhưng họ yêu cầu bạn quay về cơ quan BHXH nơi bạn đang sinh sống, bạn nên làm theo hướng dẫn đó. Cơ quan BHXH nơi bạn sinh sống sẽ có trách nhiệm tiếp nhận hồ sơ và cấp lại sổ cho bạn.\n\nCụ thể, theo quy định tại Điều 18 khoản 4, cơ quan bảo hiểm xã hội có trách nhiệm tiếp nhận hồ sơ tham gia bảo hiểm xã hội và cấp sổ bảo hiểm xã hội cho người lao động. \n\nCitation: [Điều 18 khoản 4]",
+  "answer": "Bạn cần đến cơ quan bảo hiểm xã hội nơi bạn đang sinh sống để xin cấp lại sổ bảo hiểm xã hội. Theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội trong thời hạn 05 ngày làm việc kể từ khi nhận đủ hồ sơ. Nếu không cấp, họ phải trả lời bằng văn bản và nêu rõ lý do [Điều 28 khoản 4].\n\nTuy nhiên, bạn cũng có thể cần cung cấp thông tin và hồ sơ liên quan đến việc cấp lại sổ, như sổ bảo hiểm xã hội cũ (nếu có) hoặc các giấy tờ chứng minh khác. Nếu gặp khó khăn, bạn có thể yêu cầu sự hỗ trợ từ cơ quan bảo hiểm xã hội nơi bạn đang sinh sống để được hướng dẫn cụ thể hơn. \n\nCitation: [Điều 28 khoản 4].",
   "citations": [
-    "[Điều 18 khoản 4]"
+    "[Điều 28 khoản 4]"
   ],
   "citation_ids": [
-    "L41_2024.A18.K4"
+    "L41_2024.A28.K4"
   ],
   "citation_verified": {
-    "L41_2024.A18.K4": true
+    "L41_2024.A28.K4": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
       "clause_id": "L41_2024.A25.K2",
-      "score": 0.8098095655441284,
+      "score": 0.8099431991577148,
       "text_preview": "Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau.\nChậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằn"
     },
     {
-      "clause_id": "L41_2024.A25.K1",
-      "score": 0.798048734664917,
-      "text_preview": "Sổ bảo hiểm xã hội được cấp cho từng người lao động, trong đó chứa đựng thông tin cơ bản về nhân thân, ghi nhận việc đóng, hưởng, giải quyết các chế độ bảo hiểm xã hội và các thông tin cần thiết khác "
+      "clause_id": "L58_2014.A104.K1",
+      "score": 0.8062460422515869,
+      "text_preview": "Sổ bảo hiểm xã hội."
     },
     {
-      "clause_id": "L41_2024.A28.K4",
-      "score": 0.7936232089996338,
-      "text_preview": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn"
+      "clause_id": "L58_2014.A105.K1",
+      "score": 0.8062460422515869,
+      "text_preview": "Sổ bảo hiểm xã hội."
     },
     {
-      "clause_id": "L41_2024.A17.K2",
-      "score": 0.7833824753761292,
-      "text_preview": "Được cơ quan đăng ký kinh doanh, cơ quan cấp giấy chứng nhận hoạt động hoặc giấy phép hoạt động kết nối, chia sẻ thông tin hoặc cung cấp bản sao giấy phép hoạt động, giấy chứng nhận hoạt động hoặc giấ"
+      "clause_id": "L58_2014.A109.K1",
+      "score": 0.8062460422515869,
+      "text_preview": "Sổ bảo hiểm xã hội."
     },
     {
-      "clause_id": "L41_2024.A82.K1",
-      "score": 0.7814275026321411,
-      "text_preview": "Người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng có nguyện vọng thay đổi hình thức nhận hoặc thay đổi nơi nhận do chuyển nơi cư trú trong nước thì có văn bản gửi cơ quan bảo hiểm xã hội "
+      "clause_id": "L58_2014.A18.K2",
+      "score": 0.8046875,
+      "text_preview": "Được cấp và quản lý sổ bảo hiểm xã hội."
     }
   ],
-  "n_semantic_edges": 2,
-  "n_refs": 2,
-  "elapsed_s": 2.85,
+  "n_semantic_edges": 0,
+  "n_refs": 0,
+  "elapsed_s": 5.46,
   "gold_answer": "Bạn có thể nộp thủ tục cấp lại sổ BHXH tại cơ quan BHXH nơi cư trú hợp pháp (thường trú hoặc tạm trú), không nhất thiết đúng nơi chốt cuối cùng. Nếu đang ở Thụy Khuê, Hà Nội và có đăng ký tạm trú/cư trú hợp lệ thì có thể làm tại BHXH nơi cư trú. Trường hợp cơ quan tiếp nhận đùn đẩy, bạn nên yêu cầu họ trả lời bằng văn bản hoặc tiếp nhận hồ sơ theo đúng nơi cư trú.",
-  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
 }

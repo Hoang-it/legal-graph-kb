@@ -2,41 +2,53 @@
   "arm": "graphrag",
   "stt": 163,
   "question": "cty em trả tờ rời chứ k thấy trả sổ. Nếu em rút 1 lần có cần đi làm lại sổ không?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 28 khoản 4: quy định về việc cấp sổ bảo hiểm xã hội.\n- Điều 25 khoản 2: quy định về sổ bảo hiểm xã hội.",
-  "citations": [],
-  "citation_ids": [],
-  "citation_verified": {},
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 18 khoản 2] - Quyền của người lao động về sổ bảo hiểm xã hội.\n- [Điều 28 khoản 4] - Quy định về việc cấp sổ bảo hiểm xã hội. \n- [Điều 109 khoản 1] - Hồ sơ hưởng bảo hiểm xã hội một lần cần có sổ bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 18 khoản 2]",
+    "[Điều 28 khoản 4]",
+    "[Điều 109 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K2",
+    "L41_2024.A28.K4",
+    "L41_2024.A109.K1"
+  ],
+  "citation_verified": {
+    "L41_2024.A18.K2": true,
+    "L41_2024.A28.K4": true,
+    "L41_2024.A109.K1": true
+  },
   "n_vector_hits": 8,
   "vector_hits": [
     {
+      "clause_id": "L58_2014.A18.K2",
+      "score": 0.8048959374427795,
+      "text_preview": "Được cấp và quản lý sổ bảo hiểm xã hội."
+    },
+    {
       "clause_id": "L41_2024.A28.K4",
-      "score": 0.7916810512542725,
+      "score": 0.7918317317962646,
       "text_preview": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn"
     },
     {
-      "clause_id": "L41_2024.A17.K1",
-      "score": 0.7739831209182739,
-      "text_preview": "Yêu cầu người sử dụng lao động xuất trình sổ quản lý lao động, thang lương, bảng lương và thông tin, tài liệu khác liên quan đến việc đóng, hưởng chế độ bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp,"
+      "clause_id": "L58_2014.A105.K3",
+      "score": 0.7879478931427002,
+      "text_preview": "Giấy ra viện sau khi điều trị bệnh nghề nghiệp, trường hợp không điều trị tại bệnh viện thì phải có giấy khám bệnh nghề nghiệp."
     },
     {
-      "clause_id": "L41_2024.A117.K2",
-      "score": 0.7646957635879517,
-      "text_preview": "Người lao động đóng theo quy định."
+      "clause_id": "L45_2019.A95.K3",
+      "score": 0.7827306985855103,
+      "text_preview": "Mỗi lần trả lương, người sử dụng lao động phải thông báo bảng kê trả lương cho người lao động, trong đó ghi rõ tiền lương, tiền lương làm thêm giờ, tiền lương làm việc vào ban đêm, nội dung và số tiền"
     },
     {
-      "clause_id": "L41_2024.A49.K2",
-      "score": 0.763279914855957,
-      "text_preview": "Trong thời hạn 07 ngày làm việc kể từ ngày nhận danh sách do người sử dụng lao động lập, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và"
-    },
-    {
-      "clause_id": "L41_2024.A63.K2",
-      "score": 0.7606101036071777,
-      "text_preview": "Trong thời hạn 07 ngày làm việc kể từ ngày nhận danh sách theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do."
+      "clause_id": "L58_2014.A109.K1",
+      "score": 0.7803758382797241,
+      "text_preview": "Sổ bảo hiểm xã hội."
     }
   ],
-  "n_semantic_edges": 5,
+  "n_semantic_edges": 0,
   "n_refs": 0,
-  "elapsed_s": 2.23,
+  "elapsed_s": 2.78,
   "gold_answer": "Nếu công ty chỉ trả tờ rời mà không trả bìa sổ, bạn vẫn nên làm rõ tình trạng sổ BHXH. Khi giải quyết BHXH 1 lần hiện nay cơ quan BHXH đối chiếu dữ liệu điện tử là chính, nhưng nếu hồ sơ giấy thiếu, bạn có thể làm thủ tục cấp lại sổ. Vì vậy không nhất thiết phải có bìa cũ mới rút được, nhưng nên chuẩn hóa hồ sơ trước để tránh bị yêu cầu bổ sung.",
-  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]\n[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
 }

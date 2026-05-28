@@ -2,50 +2,47 @@
   "arm": "graphrag",
   "stt": 73,
   "question": "Mình nghỉ việc mà công ty không in tờ rời bhxh cho mình , giờ mình liên hệ với ai để nhận tờ rời?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 13 khoản 2] - Trách nhiệm của người sử dụng lao động trong việc lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\n- [Điều 28 khoản 4] - Quy định về việc cấp sổ bảo hiểm xã hội.",
+  "answer": "Bạn nên liên hệ với bộ phận nhân sự hoặc phòng bảo hiểm xã hội của công ty nơi bạn đã làm việc để yêu cầu cấp tờ rời bảo hiểm xã hội. Theo quy định, người sử dụng lao động có trách nhiệm lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội, bao gồm việc cấp tờ rời bảo hiểm xã hội khi người lao động nghỉ việc [Điều 13 khoản 2]. \n\nNếu công ty không hợp tác, bạn có thể liên hệ với cơ quan bảo hiểm xã hội địa phương để được hỗ trợ. \n\nCitation: [Điều 13 khoản 2]",
   "citations": [
-    "[Điều 13 khoản 2]",
-    "[Điều 28 khoản 4]"
+    "[Điều 13 khoản 2]"
   ],
   "citation_ids": [
-    "L41_2024.A13.K2",
-    "L41_2024.A28.K4"
+    "L41_2024.A13.K2"
   ],
   "citation_verified": {
-    "L41_2024.A13.K2": true,
-    "L41_2024.A28.K4": true
+    "L41_2024.A13.K2": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
-      "clause_id": "L41_2024.A13.K2",
-      "score": 0.7785035967826843,
-      "text_preview": "Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội."
+      "clause_id": "L58_2014.A104.K3",
+      "score": 0.7994784116744995,
+      "text_preview": "Giấy ra viện sau khi đã điều trị tai nạn lao động."
     },
     {
-      "clause_id": "L41_2024.A61.K5",
-      "score": 0.7756170034408569,
-      "text_preview": "Hồ sơ đề nghị nghỉ việc hưởng chế độ thai sản hoặc hưởng trợ cấp một lần đối với lao động nam khi vợ sinh con là bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con; t"
+      "clause_id": "L45_2019.A40.K1",
+      "score": 0.7989339232444763,
+      "text_preview": "Không được trợ cấp thôi việc."
     },
     {
-      "clause_id": "L41_2024.A28.K4",
-      "score": 0.7742125988006592,
-      "text_preview": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn"
+      "clause_id": "L45_2019.A156.K1",
+      "score": 0.7817848920822144,
+      "text_preview": "Giấy phép lao động hết thời hạn."
     },
     {
-      "clause_id": "L41_2024.A81.K2",
-      "score": 0.769425630569458,
-      "text_preview": "Trong thời hạn 10 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do."
+      "clause_id": "L58_2014.A100.K1",
+      "score": 0.7817016839981079,
+      "text_preview": "Bản chính hoặc bản sao giấy ra viện đối với người lao động hoặc con của người lao động điều trị nội trú. Trường hợp người lao động hoặc con của người lao động điều trị ngoại trú phải có giấy chứng nhậ"
     },
     {
-      "clause_id": "L41_2024.A91.K3",
-      "score": 0.769425630569458,
-      "text_preview": "Trong thời hạn 10 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do."
+      "clause_id": "L45_2019.A156.K6",
+      "score": 0.7787542939186096,
+      "text_preview": "Có văn bản thông báo của phía nước ngoài thôi cử lao động là người nước ngoài làm việc tại Việt Nam."
     }
   ],
-  "n_semantic_edges": 2,
+  "n_semantic_edges": 1,
   "n_refs": 0,
-  "elapsed_s": 2.13,
+  "elapsed_s": 5.78,
   "gold_answer": "Bạn nên liên hệ trước hết với công ty cũ bằng văn bản yêu cầu trả tờ rời/sổ BHXH. Nếu công ty không thực hiện, liên hệ cơ quan BHXH nơi công ty đóng BHXH hoặc cơ quan BHXH nơi bạn cư trú để được hướng dẫn cấp lại/xác nhận quá trình tham gia. Doanh nghiệp có trách nhiệm phối hợp xác nhận thời gian đóng và trả giấy tờ cho người lao động khi chấm dứt HĐLĐ, nên việc giữ hoặc không in trả là không đúng quy định.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 13]\n[Bộ luật Lao động 2019, Điều 48]"
 }

@@ -3,27 +3,33 @@
   "stt": 45,
   "question": "Em có quyết định nghỉ việc từ tháng 3/2025, giờ em muốn rút bảo hiểm xã hội đã làm thủ tục đuợc chưa ạ? em ở Phú xuyên Hà Nội thì làm thủ tục giải quyết ở đâu và hồ sơ cần những giấy tờ gì? em đóng bảo hiểm tổng 73 tháng thì  đuợc huởng tổng  bao nhiêu tiền bảo hiểm?",
   "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'benefit_amount(Amount']",
+  "plain_answer": "",
   "citations": [
-    "[Điều 18 khoản 4]",
-    "[Điều 18 khoản 5]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 1]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 5]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 4]"
   ],
   "citation_ids": [
-    "L41_2024.A18.K4",
-    "L41_2024.A18.K5"
+    "L41_2024.A18.K1",
+    "L41_2024.A18.K5",
+    "L41_2024.A18.K4"
   ],
   "citation_indices": [
     0,
-    1
+    1,
+    2
   ],
   "prolog_success": false,
   "prolog_status": "invalid_query",
   "n_repair_rounds": 2,
   "prolog_trace": "",
+  "prolog_program": "years_contributed(user, 73).\nlegal_source(source_c001, law_bhxh_2024, article_18, clause_1, none, 'Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.').\nlegal_source(source_c002, law_bhxh_2024, article_18, clause_5, none, 'Tiếp nhận hồ sơ đề nghị hưởng và giải quyết hưởng chế độ bảo hiểm xã hội; tổ chức trả lương hưu, trợ cấp bảo hiểm xã hội, bảo hiểm thất nghiệp đầy đủ, thuận tiện và đúng thời hạn.').\nlegal_source(source_c003, law_bhxh_2024, article_18, clause_4, none, 'Tiếp nhận hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế và cấp sổ bảo hiểm xã hội, thẻ bảo hiểm y tế cho người lao động.').\nwithdrawal_conditions(Conditions, Trace) :- Conditions = [documents_required, application_process], Trace = [step(conclusion, withdrawal_conditions(Conditions), based_on(source_c001))].\nbenefit_amount(Amount, Trace) :- years_contributed(user, Years), Amount is Years * 1.5, Trace = [step(conclusion, benefit_amount(Amount), based_on(source_c002))].",
+  "prolog_error": "query argument must be variable or user, got 'benefit_amount(Amount'",
   "irac_sections": {},
-  "elapsed_s": 14.677,
-  "prompt_tokens": 6165,
-  "completion_tokens": 783,
+  "elapsed_s": 21.378,
+  "prompt_tokens": 5865,
+  "completion_tokens": 958,
   "error": null,
   "gold_answer": "Nếu bạn nghỉ từ 3/2025 thì đến nay thường đã đủ mốc 12 tháng không tham gia để xem xét hưởng BHXH một lần, nếu không thuộc diện tiếp tục bảo lưu. Hồ sơ thường gồm đơn đề nghị, CCCD và sổ/ dữ liệu BHXH theo hướng dẫn của cơ quan BHXH. Bạn nộp tại cơ quan BHXH nơi cư trú hoặc bộ phận một cửa. Với 73 tháng đóng, mức hưởng không thể tính chính xác nếu chưa có toàn bộ tiền lương đóng từng giai đoạn; công thức tính dựa trên mức bình quân tiền lương đóng BHXH.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 104, Điều 110"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 104]\n[Luật BHXH 2024 (41/2024/QH15), Điều 110]"
 }

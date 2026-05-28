@@ -2,41 +2,50 @@
   "arm": "graphrag",
   "stt": 104,
   "question": "Giờ rút bhxh 1 lần ở đâu cũng được phải không?\nVà có cần giấy quyết định thôi việc không?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [L41_2024.A107.K2] Điều 107. Giải quyết hưởng lương hưu, bảo hiểm xã hội một lần đối với người đang bảo lưu thời gian đóng bảo hiểm xã hội, người tham gia bảo hiểm xã hội tự nguyện.\n- [L41_2024.A106.K2] Điều 106. Hồ sơ đề nghị hưởng bảo hiểm xã hội một lần.",
-  "citations": [],
-  "citation_ids": [],
-  "citation_verified": {},
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 40 khoản 1] về nghĩa vụ của người lao động khi đơn phương chấm dứt hợp đồng lao động.\n- [Điều 42 khoản 6] về nghĩa vụ của người sử dụng lao động trong trường hợp thay đổi cơ cấu, công nghệ hoặc vì lý do kinh tế.",
+  "citations": [
+    "[Điều 40 khoản 1]",
+    "[Điều 42 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A40.K1",
+    "L41_2024.A42.K6"
+  ],
+  "citation_verified": {
+    "L41_2024.A40.K1": true,
+    "L41_2024.A42.K6": false
+  },
   "n_vector_hits": 8,
   "vector_hits": [
     {
-      "clause_id": "L41_2024.A61.K5",
-      "score": 0.7770529985427856,
-      "text_preview": "Hồ sơ đề nghị nghỉ việc hưởng chế độ thai sản hoặc hưởng trợ cấp một lần đối với lao động nam khi vợ sinh con là bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con; t"
+      "clause_id": "L45_2019.A156.K1",
+      "score": 0.7926936745643616,
+      "text_preview": "Giấy phép lao động hết thời hạn."
     },
     {
-      "clause_id": "L41_2024.A13.K3",
-      "score": 0.7632916569709778,
-      "text_preview": "Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật."
+      "clause_id": "L58_2014.A101.K2",
+      "score": 0.7867337465286255,
+      "text_preview": "Trường hợp lao động nữ đi khám thai, sẩy thai, nạo, hút thai, thai chết lưu hoặc phá thai bệnh lý, người lao động thực hiện biện pháp tránh thai theo quy định tại khoản 1 Điều 37 của Luật này phải có "
     },
     {
-      "clause_id": "L41_2024.A107.K2",
-      "score": 0.7584037184715271,
-      "text_preview": "Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.\nThời điểm kết thúc ngày cuối cùng của tháng dừng đ"
+      "clause_id": "L58_2014.A104.K3",
+      "score": 0.7823195457458496,
+      "text_preview": "Giấy ra viện sau khi đã điều trị tai nạn lao động."
     },
     {
-      "clause_id": "L41_2024.A130.K5",
-      "score": 0.7553834915161133,
-      "text_preview": "Việc giải quyết khiếu nại đối với quyết định, hành vi có liên quan đến việc thụ hưởng các chế độ bảo hiểm xã hội hoặc tính thời gian công tác trong khu vực nhà nước để hưởng bảo hiểm xã hội trước ngày"
+      "clause_id": "L45_2019.A156.K8",
+      "score": 0.7818697690963745,
+      "text_preview": "Giấy phép lao động bị thu hồi."
     },
     {
-      "clause_id": "L41_2024.A17.K1",
-      "score": 0.7553789615631104,
-      "text_preview": "Yêu cầu người sử dụng lao động xuất trình sổ quản lý lao động, thang lương, bảng lương và thông tin, tài liệu khác liên quan đến việc đóng, hưởng chế độ bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp,"
+      "clause_id": "L45_2019.A40.K1",
+      "score": 0.7812327742576599,
+      "text_preview": "Không được trợ cấp thôi việc."
     }
   ],
   "n_semantic_edges": 1,
-  "n_refs": 4,
-  "elapsed_s": 2.8,
+  "n_refs": 2,
+  "elapsed_s": 3.1,
   "gold_answer": "Hồ sơ BHXH 1 lần nộp tại cơ quan BHXH nơi cư trú (thường trú hoặc tạm trú), không phải nộp ở đâu cũng được. Thông thường không bắt buộc có quyết định thôi việc; giấy tờ chính là đơn đề nghị, CCCD và thông tin tài khoản. Tuy nhiên bạn phải thuộc trường hợp đủ điều kiện hưởng BHXH 1 lần, phổ biến là sau 12 tháng không tiếp tục tham gia mà chưa đủ điều kiện hưởng lương hưu.",
-  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
 }

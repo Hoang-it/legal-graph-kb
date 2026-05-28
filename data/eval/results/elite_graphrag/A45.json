@@ -2,30 +2,30 @@
   "arm": "elite_graphrag",
   "stt": 45,
   "question": "Em có quyết định nghỉ việc từ tháng 3/2025, giờ em muốn rút bảo hiểm xã hội đã làm thủ tục đuợc chưa ạ? em ở Phú xuyên Hà Nội thì làm thủ tục giải quyết ở đâu và hồ sơ cần những giấy tờ gì? em đóng bảo hiểm tổng 73 tháng thì  đuợc huởng tổng  bao nhiêu tiền bảo hiểm?",
-  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'benefit_amount(Amount']",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'withdrawal_amount(Amount']",
   "plain_answer": "",
   "citations": [
     "[Luật BHXH 2024 (41/2024/QH15), Điều 106 khoản 1]",
-    "[Luật BHXH 2024 (41/2024/QH15), Điều 79 khoản 3]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 107 khoản 3]"
   ],
   "citation_ids": [
     "L41_2024.A106.K1",
-    "L41_2024.A79.K3"
+    "L41_2024.A107.K3"
   ],
   "citation_indices": [
     0,
-    4
+    1
   ],
   "prolog_success": false,
   "prolog_status": "invalid_query",
   "n_repair_rounds": 2,
   "prolog_trace": "",
-  "prolog_program": "years_contributed(user, 73).\nlegal_source(source_c000, law_bhxh_2024, article_106, clause_1, none, 'Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.').\nlegal_source(source_c004, law_bhxh_2024, article_79, clause_3, none, 'Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng bảo hiểm xã hội một lần, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.').\nwithdrawal_conditions(Conditions, Trace) :- Conditions = [nộp_hồ_sơ_tại_cơ_quan_bảo_hiểm_xã_hội, thời_hạn_xử_lý_7_ngày], Trace = [step(conclusion, withdrawal_conditions(Conditions), based_on(source_c000)), step(conclusion, withdrawal_conditions(Conditions), based_on(source_c004))].\nbenefit_amount(Amount, Trace) :- years_contributed(user, Years), Amount is Years * 1.5, Trace = [step(conclusion, benefit_amount(Amount), based_on(source_c000))].",
-  "prolog_error": "query argument must be variable or user, got 'benefit_amount(Amount'",
+  "prolog_program": "years_contributed(user, 73).\nlegal_source(source_c106, law_bhxh_2024, article_106, clause_1, none, 'Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.').\nlegal_source(source_c107, law_bhxh_2024, article_107, clause_3, none, 'Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng bảo hiểm xã hội một lần, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.').\nwithdrawal_conditions(Conditions, Trace) :- Conditions = [submit_application_to_social_insurance, processing_time_7_days], Trace = [step(conclusion, withdrawal_conditions(Conditions), based_on(source_c106))].\nwithdrawal_amount(Amount, Trace) :- years_contributed(user, Years), Amount is Years * 1.5, Trace = [step(conclusion, withdrawal_amount(Amount), based_on(source_c107))].",
+  "prolog_error": "query argument must be variable or user, got 'withdrawal_amount(Amount'",
   "irac_sections": {},
-  "elapsed_s": 39.175,
-  "prompt_tokens": 7571,
-  "completion_tokens": 1241,
+  "elapsed_s": 31.702,
+  "prompt_tokens": 7323,
+  "completion_tokens": 1124,
   "error": null,
   "gold_answer": "Nếu bạn nghỉ từ 3/2025 thì đến nay thường đã đủ mốc 12 tháng không tham gia để xem xét hưởng BHXH một lần, nếu không thuộc diện tiếp tục bảo lưu. Hồ sơ thường gồm đơn đề nghị, CCCD và sổ/ dữ liệu BHXH theo hướng dẫn của cơ quan BHXH. Bạn nộp tại cơ quan BHXH nơi cư trú hoặc bộ phận một cửa. Với 73 tháng đóng, mức hưởng không thể tính chính xác nếu chưa có toàn bộ tiền lương đóng từng giai đoạn; công thức tính dựa trên mức bình quân tiền lương đóng BHXH.",
   "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 104]\n[Luật BHXH 2024 (41/2024/QH15), Điều 110]"

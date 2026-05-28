@@ -2,41 +2,50 @@
   "arm": "graphrag",
   "stt": 184,
   "question": "Em làm công ty.vừa rồi 17/4 e hết thời gian nghỉ thai sản và e ra để viết đơn nghỉ dưỡng sức sau đó viết đơn nghỉ việc. Công ty cho nghỉ thêm 3 tháng hưởng 85% lương.và 3 tháng đó vẫn đóng bảo hiểm\nBên bảo hiểm hẹn 30-45 ngày hẹn ra lấy sổ bảo hiểm. Vậy ngày lấy sổ của em tính từ tháng 4 này hay là hết 3 tháng kia mới chốt?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- Điều 28 khoản 4 về thời hạn cấp sổ bảo hiểm xã hội.\n- Điều 60 khoản 1 về thời gian nghỉ dưỡng sức, phục hồi sức khỏe sau thai sản.",
-  "citations": [],
-  "citation_ids": [],
-  "citation_verified": {},
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 28 khoản 4] — quy định về thời gian cấp sổ bảo hiểm xã hội.\n- [Điều 60 khoản 1] — quy định về thời gian nghỉ dưỡng sức sau thai sản.",
+  "citations": [
+    "[Điều 28 khoản 4]",
+    "[Điều 60 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A28.K4",
+    "L41_2024.A60.K1"
+  ],
+  "citation_verified": {
+    "L41_2024.A28.K4": true,
+    "L41_2024.A60.K1": true
+  },
   "n_vector_hits": 8,
   "vector_hits": [
     {
+      "clause_id": "L58_2014.A39.K2",
+      "score": 0.8545781970024109,
+      "text_preview": "Thời gian nghỉ việc hưởng chế độ thai sản từ 14 ngày làm việc trở lên trong tháng được tính là thời gian đóng bảo hiểm xã hội, người lao động và người sử dụng lao động không phải đóng bảo hiểm xã hội."
+    },
+    {
       "clause_id": "L41_2024.A62.K1",
-      "score": 0.8420376777648926,
+      "score": 0.8420288562774658,
       "text_preview": "Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản.\n"
     },
     {
       "clause_id": "L41_2024.A28.K4",
-      "score": 0.8393160104751587,
+      "score": 0.8393458127975464,
       "text_preview": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn"
     },
     {
       "clause_id": "L41_2024.A53.K8",
-      "score": 0.8391920328140259,
+      "score": 0.8393371105194092,
       "text_preview": "Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ "
     },
     {
       "clause_id": "L41_2024.A60.K1",
-      "score": 0.838284969329834,
+      "score": 0.8382091522216797,
       "text_preview": "Trong thời gian 30 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản quy định tại Điều 52, khoản 1 hoặc khoản 4 Điều 53, điểm a khoản 3 Điều 54 của Luật này, lao động nữ chưa phục hồi sức "
-    },
-    {
-      "clause_id": "L41_2024.A63.K1",
-      "score": 0.8360656499862671,
-      "text_preview": "Trong thời hạn 07 ngày làm việc kể từ ngày người lao động nghỉ việc hưởng trợ cấp dưỡng sức, phục hồi sức khỏe sau thai sản, người sử dụng lao động lập danh sách người lao động nghỉ việc hưởng trợ cấp"
     }
   ],
-  "n_semantic_edges": 3,
-  "n_refs": 10,
-  "elapsed_s": 1.91,
+  "n_semantic_edges": 15,
+  "n_refs": 6,
+  "elapsed_s": 2.63,
   "gold_answer": "Nếu công ty cho bạn nghỉ thêm 3 tháng hưởng 85% lương và vẫn tiếp tục đóng BHXH trong 3 tháng đó thì quan hệ lao động và quá trình tham gia BHXH của bạn chưa kết thúc ngay sau tháng 4. Khi đó việc chốt sổ sẽ tính sau khi hết giai đoạn 3 tháng này, trừ khi công ty chỉ ghi hỗ trợ riêng mà không tiếp tục đóng BHXH thực tế. Bạn nên yêu cầu công ty xác nhận bằng văn bản.",
-  "gold_citations_raw": "Điều 27 Luật BHXH 2024; Bộ luật Lao động 2019"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
 }

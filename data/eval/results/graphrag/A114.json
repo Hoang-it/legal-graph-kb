@@ -2,53 +2,50 @@
   "arm": "graphrag",
   "stt": 114,
   "question": "E tham gia bảo hiểm xã hội được 5 năm rồi nghĩ làm từ 2022 ( e vẫn chưa rút hết bảo hiểm thất nghiệp và bảo hiểm 1 lần ) . Nếu giờ e đóng bảo hiểm 7_  8 tháng rồi sinh bé thì có bị thanh tra không?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 50 khoản 4]\n- [Điều 50 khoản 2]\n- [Điều 38 khoản 1]",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 50 khoản 2]\n- [Điều 50 khoản 4]",
   "citations": [
-    "[Điều 50 khoản 4]",
     "[Điều 50 khoản 2]",
-    "[Điều 38 khoản 1]"
+    "[Điều 50 khoản 4]"
   ],
   "citation_ids": [
-    "L41_2024.A50.K4",
     "L41_2024.A50.K2",
-    "L41_2024.A38.K1"
+    "L41_2024.A50.K4"
   ],
   "citation_verified": {
-    "L41_2024.A50.K4": true,
     "L41_2024.A50.K2": true,
-    "L41_2024.A38.K1": true
+    "L41_2024.A50.K4": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
       "clause_id": "L41_2024.A50.K4",
-      "score": 0.8187559843063354,
+      "score": 0.8188399076461792,
       "text_preview": "Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con hoặc nhận con khi nhờ mang thai "
     },
     {
       "clause_id": "L41_2024.A141.K12",
-      "score": 0.818580150604248,
+      "score": 0.8185129165649414,
       "text_preview": "Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30"
     },
     {
+      "clause_id": "L58_2014.A31.K3",
+      "score": 0.8177902102470398,
+      "text_preview": "Người lao động quy định tại điểm b khoản 1 Điều này đã đóng bảo hiểm xã hội từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của cơ sở khám bệnh, chữa bệnh co"
+    },
+    {
       "clause_id": "L41_2024.A53.K8",
-      "score": 0.8171696662902832,
+      "score": 0.8174523115158081,
       "text_preview": "Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ "
     },
     {
       "clause_id": "L41_2024.A50.K3",
-      "score": 0.814710259437561,
+      "score": 0.8148519992828369,
       "text_preview": "Đối tượng quy định tại điểm b và điểm c khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của người hành nghề khám bệ"
-    },
-    {
-      "clause_id": "L41_2024.A50.K2",
-      "score": 0.810744047164917,
-      "text_preview": "Đối tượng quy định tại các điểm b, c, d và đ khoản 1 Điều này phải đóng bảo hiểm xã hội bắt buộc từ đủ 06 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con hoặc nhận con khi nhờ mang t"
     }
   ],
-  "n_semantic_edges": 1,
+  "n_semantic_edges": 20,
   "n_refs": 11,
-  "elapsed_s": 1.99,
+  "elapsed_s": 2.66,
   "gold_answer": "Việc đóng lại 7-8 tháng rồi sinh con không tự động bị thanh tra. Quan trọng là bạn có đủ điều kiện thai sản hay không: thường phải đóng từ đủ 06 tháng trong 12 tháng trước sinh; nếu nghỉ dưỡng thai theo chỉ định và đã có đủ 12 tháng tham gia trước đó thì có trường hợp chỉ cần đủ 03 tháng. Nếu hồ sơ, hợp đồng, bảng lương thật và đóng đúng thực tế thì không phải sợ.",
-  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
 }

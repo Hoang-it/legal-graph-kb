@@ -2,25 +2,33 @@
   "arm": "elite_no_retrieval",
   "stt": 2,
   "question": "Bà Minh Châu (Long An) ký hợp đồng lao động theo diện làm việc bán thời gian.\nBà Châu hỏi, bà có được mua BHXH bắt buộc theo đối tượng cá nhân không? Nếu được thì mức đóng được tính như thế nào?",
-  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmp6wcic9sx.pl:1:282: Syntax error: Operator expected]",
+  "answer": "Issue: Bà Minh Châu hỏi về quyền tham gia BHXH bắt buộc và cách tính mức đóng cho người làm việc bán thời gian. \nRule: Theo [Luật BHXH 2024, Điều 2 khoản 1], người lao động làm việc theo hợp đồng lao động có quyền tham gia BHXH bắt buộc. Mức đóng BHXH bắt buộc được tính dựa trên mức lương tháng và tỷ lệ phần trăm theo quy định [Luật BHXH 2024, Điều 86 khoản 1]. \nApplication: Không có slot nào được gán giá trị. Prolog đã trả về thông tin rằng Bà Minh Châu có quyền tham gia BHXH bắt buộc và mức đóng được tính theo lương tháng, tỷ lệ phần trăm theo quy định. \nConclusion: Theo Prolog, Bà Minh Châu có quyền tham gia BHXH bắt buộc và mức đóng được tính theo lương tháng, tỷ lệ phần trăm theo quy định.",
+  "plain_answer": "Bà Minh Châu có quyền tham gia BHXH bắt buộc theo [Luật BHXH 2024, Điều 2 khoản 1]. Mức đóng sẽ được tính dựa trên mức lương tháng và tỷ lệ phần trăm theo quy định trong [Luật BHXH 2024, Điều 86 khoản 1]. Nếu cần thêm thông tin chi tiết về mức lương cụ thể, bà có thể tham khảo thêm hoặc hỏi trực tiếp cơ quan BHXH.",
   "citations": [
-    "[Điều 86 khoản 1]",
-    "[Điều 87 khoản 1]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 2 khoản 1]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 86 khoản 1]"
   ],
   "citation_ids": [
-    "L41_2024.A86.K1",
-    "L41_2024.A87.K1"
+    "L41_2024.A2.K1",
+    "L41_2024.A86.K1"
   ],
   "citation_indices": [],
-  "prolog_success": false,
-  "prolog_status": "syntax_error",
-  "n_repair_rounds": 2,
-  "prolog_trace": "",
-  "irac_sections": {},
-  "elapsed_s": 12.898,
-  "prompt_tokens": 3793,
-  "completion_tokens": 572,
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,conditions_for_mandatory_insurance(user,Bà Minh Châu có quyền tham gia BHXH bắt buộc và mức đóng được tính theo lương tháng, tỷ lệ phần trăm theo quy định.),based_on(source_a2_k1)),step(conclusion,conditions_for_mandatory_insurance(user,Bà Minh Châu có quyền tham gia BHXH bắt buộc và mức đóng được tính theo lương tháng, tỷ lệ phần trăm theo quy định.),based_on(source_a86_k1))]",
+  "prolog_program": "legal_source(source_a2_k1, law_bhxh_2024, article_2, clause_1, none, 'Người lao động làm việc theo hợp đồng lao động có quyền tham gia BHXH bắt buộc.').\nlegal_source(source_a86_k1, law_bhxh_2024, article_86, clause_1, none, 'Mức đóng BHXH bắt buộc được tính dựa trên mức lương tháng và tỷ lệ phần trăm theo quy định.').\nconditions_for_mandatory_insurance(Person, Conditions, Trace) :- Conditions = 'Bà Minh Châu có quyền tham gia BHXH bắt buộc và mức đóng được tính theo lương tháng, tỷ lệ phần trăm theo quy định.', Trace = [step(conclusion, conditions_for_mandatory_insurance(Person, Conditions), based_on(source_a2_k1)), step(conclusion, conditions_for_mandatory_insurance(Person, Conditions), based_on(source_a86_k1))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Bà Minh Châu hỏi về quyền tham gia BHXH bắt buộc và cách tính mức đóng cho người làm việc bán thời gian.",
+    "rule": "Theo [Luật BHXH 2024, Điều 2 khoản 1], người lao động làm việc theo hợp đồng lao động có quyền tham gia BHXH bắt buộc. Mức đóng BHXH bắt buộc được tính dựa trên mức lương tháng và tỷ lệ phần trăm theo quy định [Luật BHXH 2024, Điều 86 khoản 1].",
+    "application": "Không có slot nào được gán giá trị. Prolog đã trả về thông tin rằng Bà Minh Châu có quyền tham gia BHXH bắt buộc và mức đóng được tính theo lương tháng, tỷ lệ phần trăm theo quy định.",
+    "conclusion": "Theo Prolog, Bà Minh Châu có quyền tham gia BHXH bắt buộc và mức đóng được tính theo lương tháng, tỷ lệ phần trăm theo quy định."
+  },
+  "elapsed_s": 313.448,
+  "prompt_tokens": 4183,
+  "completion_tokens": 16995,
   "error": null,
   "gold_answer": "Pháp luật về BHXH hiện hành không có quy định đối với trường hợp người lao động tự tham gia BHXH bắt buộc.\nDo vậy, trường hợp của bà ký hợp đồng lao động làm việc không trọn thời gian, không thuộc đối tượng tham gia BHXH bắt buộc thì có thể liên hệ tới cơ quan BHXH tại nơi cư trú để tham gia BHXH tự nguyện.",
-  "gold_citations_raw": "Luật BHXH 2014"
+  "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 2]"
 }

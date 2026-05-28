@@ -2,8 +2,8 @@
   "arm": "elite_graphrag",
   "stt": 24,
   "question": "Chồng của bà Thiên Kim (TPHCM) là thương binh loại A hạng Ba đã được công nhận trước năm 1995, được cấp thẻ BHYT miễn phí và được hưởng 100% chi phí khám, chữa bệnh trong phạm vi chi trả của BHYT.\nBà Kim hỏi, vợ của thương binh (hiện không có nguồn thu nhập) thì có được Nhà nước cấp thẻ BHYT miễn phí không?",
-  "answer": "Issue: Bà Thiên Kim hỏi về việc vợ của thương binh có được cấp thẻ BHYT miễn phí hay không. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 23 khoản 6], người đang trong thời gian hưởng trợ cấp hằng tháng thì được ngân sách nhà nước đóng bảo hiểm y tế. \nApplication: Không có slot nào được gán giá trị. Prolog query free_health_insurance_eligibility(Eligibility, Trace) trả về Eligibility = yes, cho thấy vợ của thương binh đủ điều kiện. \nConclusion: Theo Prolog, vợ của thương binh đủ điều kiện được cấp thẻ BHYT miễn phí.",
-  "plain_answer": "Vợ của thương binh sẽ được cấp thẻ BHYT miễn phí theo quy định tại [Luật BHXH 2024 (41/2024/QH15), Điều 23 khoản 6] vì bà đang trong thời gian hưởng trợ cấp hằng tháng. Bạn có thể yên tâm về quyền lợi này nhé!",
+  "answer": "Issue: Bà Thiên Kim hỏi về việc vợ của thương binh có được cấp thẻ BHYT miễn phí hay không. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 23 khoản 6], người đang trong thời gian hưởng trợ cấp hằng tháng thì được ngân sách nhà nước đóng bảo hiểm y tế. \nApplication: Không có slot nào được gán giá trị. Prolog query health_insurance_entitlement(Answer, Trace) trả về Answer = yes, cho thấy vợ của thương binh đủ điều kiện. \nConclusion: Theo Prolog, vợ của thương binh sẽ được cấp thẻ BHYT miễn phí.",
+  "plain_answer": "Vợ của thương binh sẽ được cấp thẻ BHYT miễn phí theo quy định của [Luật BHXH 2024 (41/2024/QH15), Điều 23 khoản 6] vì bà đang trong thời gian hưởng trợ cấp hằng tháng. Bạn có thể yên tâm về quyền lợi này.",
   "citations": [
     "[Luật BHXH 2024 (41/2024/QH15), Điều 23 khoản 6]"
   ],
@@ -11,23 +11,23 @@
     "L41_2024.A23.K6"
   ],
   "citation_indices": [
-    0
+    1
   ],
   "prolog_success": true,
   "prolog_status": "success",
   "n_repair_rounds": 0,
-  "prolog_trace": "[step(conclusion,free_health_insurance_eligibility(yes),based_on(source_c000))]",
-  "prolog_program": "legal_source(source_c000, law_bhxh_2024, article_41, clause_6, none, 'Người đang trong thời gian hưởng trợ cấp hằng tháng thì được ngân sách nhà nước đóng bảo hiểm y tế.').\nfree_health_insurance_eligibility(Eligibility, Trace) :- Eligibility = yes, Trace = [step(conclusion, free_health_insurance_eligibility(Eligibility), based_on(source_c000))].",
+  "prolog_trace": "[step(conclusion,health_insurance_entitlement(yes),based_on(source_c001))]",
+  "prolog_program": "legal_source(source_c001, law_bhxh_2024, article_23, clause_6, none, 'Người đang trong thời gian hưởng trợ cấp hằng tháng thì được ngân sách nhà nước đóng bảo hiểm y tế.').\nhealth_insurance_entitlement(Answer, Trace) :- Answer = yes, Trace = [step(conclusion, health_insurance_entitlement(Answer), based_on(source_c001))].",
   "prolog_error": "",
   "irac_sections": {
     "issue": "Bà Thiên Kim hỏi về việc vợ của thương binh có được cấp thẻ BHYT miễn phí hay không.",
     "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 23 khoản 6], người đang trong thời gian hưởng trợ cấp hằng tháng thì được ngân sách nhà nước đóng bảo hiểm y tế.",
-    "application": "Không có slot nào được gán giá trị. Prolog query free_health_insurance_eligibility(Eligibility, Trace) trả về Eligibility = yes, cho thấy vợ của thương binh đủ điều kiện.",
-    "conclusion": "Theo Prolog, vợ của thương binh đủ điều kiện được cấp thẻ BHYT miễn phí."
+    "application": "Không có slot nào được gán giá trị. Prolog query health_insurance_entitlement(Answer, Trace) trả về Answer = yes, cho thấy vợ của thương binh đủ điều kiện.",
+    "conclusion": "Theo Prolog, vợ của thương binh sẽ được cấp thẻ BHYT miễn phí."
   },
-  "elapsed_s": 10.768,
-  "prompt_tokens": 3809,
-  "completion_tokens": 398,
+  "elapsed_s": 11.277,
+  "prompt_tokens": 3692,
+  "completion_tokens": 388,
   "error": null,
   "gold_answer": "Theo quy định tại Pháp lệnh Ưu đãi người có công với cách mạng và Nghị định số 146/2018/NĐ-CP, Nhà nước có chính sách cấp thẻ BHYT miễn phí cho thân nhân của thương binh dựa trên tỷ lệ tổn thương cơ thể của thương binh đó.\nCụ thể, đối tượng được cấp thẻ BHYT miễn phí bao gồm: Cha đẻ, mẹ đẻ, vợ hoặc chồng, con từ đủ 6 tuổi đến dưới 18 tuổi hoặc từ đủ 18 tuổi trở lên nếu còn tiếp tục đi học hoặc bị khuyết tật nặng, khuyết tật đặc biệt nặng của: Thương binh, người hưởng chính sách như thương binh có tỷ lệ tổn thương cơ thể từ 61% trở lên.\nDựa trên thông tin bà cung cấp, chồng là thương binh loại A, hạng Ba.\nTheo cách xếp hạng cũ trước năm 1995, thương binh hạng Ba (3/4) có tỷ lệ mất sức lao động từ 41% đến 60%.\nVì tỷ lệ tổn thương cơ thể của chồng bà chưa đạt mức 61% trở lên, nên theo quy định hiện hành, người vợ chưa thuộc diện được Nhà nước cấp thẻ BHYT miễn phí theo diện thân nhân người có công.\nTrong trường hợp này người vợ, chồng thường phải tham gia BHYT theo hộ gia đình và tự đóng phí theo quy định chung, hoặc tham gia theo nhóm đối tượng khác có quyền lợi hỗ trợ.",
   "gold_citations_raw": "[Pháp lệnh Ưu đãi người có công với cách mạng, Điều 25]\n[Nghị định 146/2018/NĐ-CP, Điều 3]"

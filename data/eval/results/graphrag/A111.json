@@ -2,41 +2,41 @@
   "arm": "graphrag",
   "stt": 111,
   "question": "Nghỉ việc thiếu tờ rơi có lãnh được bảo hiểm thất nghiệp không?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 38. Chậm đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp\n- Điều 61. Hồ sơ đề nghị hưởng chế độ thai sản\n- Điều 62. Giải quyết hưởng chế độ thai sản đối với người tham gia bảo hiểm xã hội bắt buộc",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [L58_2014.A85.K3] về mức đóng và phương thức đóng của người lao động tham gia bảo hiểm xã hội.\n- [L41_2024.A38.K3] về chậm đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp.",
   "citations": [],
   "citation_ids": [],
   "citation_verified": {},
   "n_vector_hits": 8,
   "vector_hits": [
     {
-      "clause_id": "L41_2024.A9.K2",
-      "score": 0.785456120967865,
-      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+      "clause_id": "L45_2019.A40.K1",
+      "score": 0.8223618268966675,
+      "text_preview": "Không được trợ cấp thôi việc."
     },
     {
-      "clause_id": "L41_2024.A38.K3",
-      "score": 0.7848665714263916,
-      "text_preview": "Không đăng ký hoặc đăng ký không đầy đủ số người phải tham gia bảo hiểm thất nghiệp trong thời hạn 60 ngày kể từ ngày hết thời hạn phải tham gia bảo hiểm thất nghiệp theo quy định của pháp luật về bảo"
+      "clause_id": "L58_2014.A17.K2",
+      "score": 0.7928138971328735,
+      "text_preview": "Chậm đóng tiền bảo hiểm xã hội, bảo hiểm thất nghiệp."
     },
     {
-      "clause_id": "L41_2024.A61.K5",
-      "score": 0.7841415405273438,
-      "text_preview": "Hồ sơ đề nghị nghỉ việc hưởng chế độ thai sản hoặc hưởng trợ cấp một lần đối với lao động nam khi vợ sinh con là bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con; t"
+      "clause_id": "L58_2014.A101.K2",
+      "score": 0.7923634052276611,
+      "text_preview": "Trường hợp lao động nữ đi khám thai, sẩy thai, nạo, hút thai, thai chết lưu hoặc phá thai bệnh lý, người lao động thực hiện biện pháp tránh thai theo quy định tại khoản 1 Điều 37 của Luật này phải có "
     },
     {
-      "clause_id": "L41_2024.A38.K1",
-      "score": 0.7822082042694092,
-      "text_preview": "Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều "
+      "clause_id": "L58_2014.A100.K1",
+      "score": 0.7921024560928345,
+      "text_preview": "Bản chính hoặc bản sao giấy ra viện đối với người lao động hoặc con của người lao động điều trị nội trú. Trường hợp người lao động hoặc con của người lao động điều trị ngoại trú phải có giấy chứng nhậ"
     },
     {
-      "clause_id": "L41_2024.A28.K4",
-      "score": 0.7795219421386719,
-      "text_preview": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn"
+      "clause_id": "L58_2014.A85.K3",
+      "score": 0.7900545597076416,
+      "text_preview": "Người lao động không làm việc và không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì không đóng bảo hiểm xã hội tháng đó. Thời gian này không được tính để hưởng bảo hiểm xã hội, trừ trư"
     }
   ],
-  "n_semantic_edges": 1,
-  "n_refs": 4,
-  "elapsed_s": 2.29,
+  "n_semantic_edges": 2,
+  "n_refs": 1,
+  "elapsed_s": 2.77,
   "gold_answer": "Thực tế hồ sơ BHTN cần có tài liệu chứng minh chấm dứt HĐLĐ và dữ liệu quá trình đóng BHTN. Nếu thiếu tờ rời/sổ giấy nhưng dữ liệu trên hệ thống BHXH đã chốt đầy đủ thì trung tâm dịch vụ việc làm vẫn có thể tiếp nhận theo dữ liệu điện tử hoặc yêu cầu bổ sung. Bạn nên xin xác nhận quá trình đóng/chốt sổ trước, tránh nộp sát hạn 03 tháng.",
-  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+  "gold_citations_raw": "[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
 }

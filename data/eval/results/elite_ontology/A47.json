@@ -2,12 +2,17 @@
   "arm": "elite_ontology",
   "stt": 47,
   "question": "Mình vừa được thăng chức, tăng lương xong mấy ngày thì biết tin có bầu. Mình đã đóng bảo hiểm được 5 năm. Thời gian tăng lương đến khi nghỉ thai sản đúng 6 tháng trước sinh ( tăng hơn 1 triệu ) . Giờ mình xin nghỉ thai sản trước 2 tháng và nghỉ việc luôn thì có bị thanh tra không? Mình có đầy đủ quyết định điều chỉnh lương , bảng lương, quyết định bổ nhiệm nhưng nhận quyết định qua mail k có bản dấu đỏ thì khi thanh tra có được chấp nhận không?",
-  "answer": "Issue: Người dùng hỏi về khả năng bị thanh tra khi xin nghỉ thai sản trước 2 tháng và nghỉ việc, mặc dù đã có quyết định điều chỉnh lương nhưng không có bản dấu đỏ.\n\nRule: \"1. Thời gian nghỉ việc hưởng chế độ thai sản của lao động nữ khi sinh con được thực hiện theo quy định tại khoản 1 Điều 139 của Bộ luật Lao động.\"\n\nApplication: Không có giá trị nào được gán cho các slot trong quá trình thực hiện truy vấn. Tuy nhiên, Prolog đã kiểm tra điều kiện về thời gian đóng bảo hiểm của người dùng, xác nhận rằng người dùng đã đóng bảo hiểm được 5 năm.\n\nConclusion: Hệ thống không thể tính toán số liệu cuối cùng do không có giá trị nào được gán cho các slot.",
+  "answer": "Issue: Người hỏi muốn biết liệu việc nghỉ thai sản trước 2 tháng và nghỉ việc luôn có bị thanh tra không, và liệu quyết định điều chỉnh lương nhận qua email có được chấp nhận không.\nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 1], thời gian nghỉ việc hưởng chế độ thai sản của lao động nữ khi sinh con được thực hiện theo quy định tại khoản 1 Điều 139 của Bộ luật Lao động.\nApplication: Không có slot nào được gán giá trị. Prolog không thể tính toán kết quả cuối cùng do thiếu thông tin cần thiết để xác định tình trạng thanh tra.\nConclusion: Hệ thống không thể tính được kết quả cuối cùng do thiếu slot nào đó.",
+  "plain_answer": "Hệ thống chưa đủ thông tin để tính chính xác về việc bạn có bị thanh tra hay không. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 1], bạn cần cung cấp thêm thông tin về thời gian nghỉ việc và các giấy tờ liên quan để mình có thể hỗ trợ tốt hơn.",
   "citations": [
-    "[Điều 139]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 1]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 139]",
+    "[Bộ luật Lao động 2019 (45/2019/QH14), Điều 139]"
   ],
   "citation_ids": [
-    "L41_2024.A139"
+    "L41_2024.A53.K1",
+    "L41_2024.A139",
+    "L45_2019.A139"
   ],
   "citation_indices": [
     0
@@ -16,16 +21,18 @@
   "prolog_status": "success",
   "n_repair_rounds": 0,
   "prolog_trace": "[step(conclusion,check_inspection(user),based_on(source_c053))]",
+  "prolog_program": "years_contributed(user, 5).\nlegal_source(source_c053, law_bhxh_2024, article_139, clause_1, none, 'Thời gian nghỉ việc hưởng chế độ thai sản của lao động nữ khi sinh con được thực hiện theo quy định tại khoản 1 Điều 139 của Bộ luật Lao động.').\ncheck_inspection(user, Trace) :- years_contributed(user, Years), Years >= 5, Trace = [step(conclusion, check_inspection(user), based_on(source_c053))].",
+  "prolog_error": "",
   "irac_sections": {
-    "issue": "Người dùng hỏi về khả năng bị thanh tra khi xin nghỉ thai sản trước 2 tháng và nghỉ việc, mặc dù đã có quyết định điều chỉnh lương nhưng không có bản dấu đỏ.",
-    "rule": "\"1. Thời gian nghỉ việc hưởng chế độ thai sản của lao động nữ khi sinh con được thực hiện theo quy định tại khoản 1 Điều 139 của Bộ luật Lao động.\"",
-    "application": "Không có giá trị nào được gán cho các slot trong quá trình thực hiện truy vấn. Tuy nhiên, Prolog đã kiểm tra điều kiện về thời gian đóng bảo hiểm của người dùng, xác nhận rằng người dùng đã đóng bảo hiểm được 5 năm.",
-    "conclusion": "Hệ thống không thể tính toán số liệu cuối cùng do không có giá trị nào được gán cho các slot."
+    "issue": "Người hỏi muốn biết liệu việc nghỉ thai sản trước 2 tháng và nghỉ việc luôn có bị thanh tra không, và liệu quyết định điều chỉnh lương nhận qua email có được chấp nhận không.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 1], thời gian nghỉ việc hưởng chế độ thai sản của lao động nữ khi sinh con được thực hiện theo quy định tại khoản 1 Điều 139 của Bộ luật Lao động.",
+    "application": "Không có slot nào được gán giá trị. Prolog không thể tính toán kết quả cuối cùng do thiếu thông tin cần thiết để xác định tình trạng thanh tra.",
+    "conclusion": "Hệ thống không thể tính được kết quả cuối cùng do thiếu slot nào đó."
   },
-  "elapsed_s": 8.443,
-  "prompt_tokens": 3470,
-  "completion_tokens": 381,
+  "elapsed_s": 11.568,
+  "prompt_tokens": 4166,
+  "completion_tokens": 471,
   "error": null,
   "gold_answer": "Việc tăng lương rồi sau đó nghỉ thai sản không mặc nhiên bị thanh tra hay bị từ chối chế độ. Cơ quan BHXH chỉ kiểm tra khi nghi ngờ việc tăng lương không có căn cứ thực tế, không đúng quy chế hoặc đóng BHXH không đúng bản chất quan hệ lao động. Nếu bạn có quyết định điều chỉnh lương, bổ nhiệm, bảng lương, chứng từ trả lương và việc tăng lương là thật, đúng quy trình thì thường vẫn được chấp nhận. Văn bản điện tử hợp lệ không bắt buộc phải có bản dấu đỏ giấy.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 53; Bộ luật Lao động 2019 Điều 90, Điều 94; Luật Giao dịch điện tử 2023"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 53]\n[Bộ luật Lao động 2019, Điều 90]\n[Bộ luật Lao động 2019, Điều 94]"
 }

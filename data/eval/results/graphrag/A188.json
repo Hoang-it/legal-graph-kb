@@ -2,50 +2,53 @@
   "arm": "graphrag",
   "stt": 188,
   "question": "cho mình hỏi đóng bhxh th 4 2026 về sao có đc rút 1 lần không?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 102 khoản 4] về thời điểm tính hưởng bảo hiểm xã hội một lần.\n- [Điều 107 khoản 2] về điều kiện và hồ sơ để hưởng bảo hiểm xã hội một lần.",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 33 khoản 7] — quy định về việc đóng tiếp bảo hiểm xã hội.\n- [Điều 60 khoản 4] — quy định về thời điểm tính hưởng bảo hiểm xã hội một lần.\n- [Điều 102 khoản 4] — quy định về thời điểm tính hưởng bảo hiểm xã hội một lần.",
   "citations": [
-    "[Điều 102 khoản 4]",
-    "[Điều 107 khoản 2]"
+    "[Điều 33 khoản 7]",
+    "[Điều 60 khoản 4]",
+    "[Điều 102 khoản 4]"
   ],
   "citation_ids": [
-    "L41_2024.A102.K4",
-    "L41_2024.A107.K2"
+    "L41_2024.A33.K7",
+    "L41_2024.A60.K4",
+    "L41_2024.A102.K4"
   ],
   "citation_verified": {
-    "L41_2024.A102.K4": true,
-    "L41_2024.A107.K2": true
+    "L41_2024.A33.K7": true,
+    "L41_2024.A60.K4": true,
+    "L41_2024.A102.K4": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
+      "clause_id": "L58_2014.A109.K2",
+      "score": 0.7759238481521606,
+      "text_preview": "Đơn đề nghị hưởng bảo hiểm xã hội một lần của người lao động."
+    },
+    {
+      "clause_id": "L58_2014.A17.K2",
+      "score": 0.7654922008514404,
+      "text_preview": "Chậm đóng tiền bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
       "clause_id": "L41_2024.A33.K7",
-      "score": 0.7622376680374146,
+      "score": 0.7622205018997192,
       "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
     },
     {
-      "clause_id": "L41_2024.A102.K4",
-      "score": 0.7612360119819641,
+      "clause_id": "L58_2014.A60.K4",
+      "score": 0.7610859870910645,
       "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm ghi trong quyết định của cơ quan bảo hiểm xã hội."
     },
     {
-      "clause_id": "L41_2024.A40.K1",
-      "score": 0.7576069831848145,
-      "text_preview": "Bắt buộc đóng đủ số tiền chậm đóng; nộp số tiền bằng 0,03%/ngày tính trên số tiền bảo hiểm xã hội, bảo hiểm thất nghiệp chậm đóng và số ngày chậm đóng vào quỹ bảo hiểm xã hội, quỹ bảo hiểm thất nghiệp"
-    },
-    {
-      "clause_id": "L41_2024.A70.K3",
-      "score": 0.7572472095489502,
-      "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn cứ đóng bảo hiểm xã hội nhưng không bao gồm số tiền ngân sách nhà nước hỗ trợ đóng bảo hiểm xã hội tự nguyện, cứ mỗi nă"
-    },
-    {
-      "clause_id": "L41_2024.A141.K12",
-      "score": 0.7544937133789062,
-      "text_preview": "Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30"
+      "clause_id": "L58_2014.A77.K4",
+      "score": 0.7610859870910645,
+      "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm ghi trong quyết định của cơ quan bảo hiểm xã hội."
     }
   ],
-  "n_semantic_edges": 3,
-  "n_refs": 4,
-  "elapsed_s": 1.73,
+  "n_semantic_edges": 6,
+  "n_refs": 1,
+  "elapsed_s": 3.34,
   "gold_answer": "Chỉ đóng BHXH từ tháng 4/2026 thì không thể rút 1 lần ngay. Với trường hợp thông thường, bạn phải thuộc trường hợp luật cho phép và thường phải chờ sau 12 tháng không tiếp tục tham gia BHXH bắt buộc, không tham gia BHXH tự nguyện. Nếu sau đó bạn tiếp tục đi làm ở nơi khác thì thời gian tháng 4/2026 sẽ được cộng nối.",
-  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
 }

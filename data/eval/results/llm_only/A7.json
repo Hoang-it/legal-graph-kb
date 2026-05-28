@@ -2,16 +2,16 @@
   "arm": "llm_only",
   "stt": 7,
   "question": "Bà Thị Hải đóng BHXH tại công ty A từ tháng 7/2022, đến tháng 1/2023 nghỉ việc.\nBà tiếp tục đóng BHXH tại công ty B từ tháng 8/2023, đến tháng 12/2023 nghỉ việc.\nBà Hải hỏi, bà đã sinh con ngày 10/3/2024 thì có đủ điều kiện để hưởng chế độ thai sản không?",
-  "answer": "Để đủ điều kiện hưởng chế độ thai sản, bà Thị Hải cần đáp ứng các điều kiện theo quy định tại Luật Bảo hiểm xã hội. Cụ thể, bà phải có thời gian đóng BHXH tối thiểu là 6 tháng trong 12 tháng trước khi sinh con.\n\nTrong trường hợp của bà Hải:\n- Bà đóng BHXH tại công ty A từ tháng 7/2022 đến tháng 1/2023 (7 tháng).\n- Bà tiếp tục đóng BHXH tại công ty B từ tháng 8/2023 đến tháng 12/2023 (5 tháng).\n\nTổng thời gian đóng BHXH của bà Hải trong 12 tháng trước khi sinh (từ tháng 3/2023 đến tháng 3/2024) là 5 tháng (từ tháng 8/2023 đến tháng 12/2023) và 7 tháng (từ tháng 7/2022 đến tháng 1/2023), nhưng chỉ tính 5 tháng gần nhất trước khi sinh.\n\nDo đó, bà Hải không đủ 6 tháng đóng BHXH trong 12 tháng trước khi sinh con. Vì vậy, bà không đủ điều kiện để hưởng chế độ thai sản theo quy định tại [Điều 31 khoản 1].",
+  "answer": "Để đủ điều kiện hưởng chế độ thai sản, bà Thị Hải cần đáp ứng các yêu cầu về thời gian đóng bảo hiểm xã hội. Cụ thể, bà phải có ít nhất 6 tháng đóng BHXH trong 12 tháng trước khi sinh con.\n\nTrong trường hợp của bà Hải:\n- Bà đã đóng BHXH tại công ty A từ tháng 7/2022 đến tháng 1/2023 (7 tháng).\n- Sau đó, bà đóng BHXH tại công ty B từ tháng 8/2023 đến tháng 12/2023 (5 tháng).\n\nTính từ tháng 3/2023 đến tháng 3/2024, bà Hải có tổng cộng 7 tháng (từ công ty A) và 5 tháng (từ công ty B) trong khoảng thời gian 12 tháng trước khi sinh. Tuy nhiên, thời gian đóng BHXH từ công ty A không nằm trong khoảng 12 tháng trước khi sinh (từ tháng 3/2023 đến tháng 3/2024).\n\nDo đó, bà Hải không đủ điều kiện để hưởng chế độ thai sản vì không có đủ 6 tháng đóng BHXH trong 12 tháng trước khi sinh con. Căn cứ theo quy định tại [Luật BHXH 2024 (41/2024/QH15), Điều 31 khoản 1].",
   "citations": [
-    "[Điều 31 khoản 1]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 31 khoản 1]"
   ],
   "citation_ids": [
     "L41_2024.A31.K1"
   ],
-  "elapsed_s": 5.731,
-  "prompt_tokens": 248,
-  "completion_tokens": 268,
+  "elapsed_s": 7.817,
+  "prompt_tokens": 291,
+  "completion_tokens": 284,
   "gold_answer": "Tại Khoản 2, Khoản 3 Điều 31 Luật BHXH năm 2014 quy định về điều kiện hưởng chế độ thai sản đối với lao động nữ sinh con là: Phải đóng BHXH từ đủ 6 tháng trở lên trong thời gian 12 tháng trước khi sinh con hoặc lao động nữ đã đóng BHXH từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của cơ sở khám bệnh, chữa bệnh có thẩm quyền thì phải đóng BHXH từ đủ 3 tháng trở lên trong thời gian 12 tháng trước khi sinh con.\nTại Khoản 4 Điều 31 Luật BHXH năm 2014 quy định: Người lao động đủ điều kiện quy định tại Khoản 2 và Khoản 3 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con vẫn được hưởng chế độ thai sản theo quy định.\nĐối chiếu với các quy định nêu trên, trường hợp của bà nếu sinh con vào tháng 3/2024 thì trong thời gian 12 tháng trước khi sinh con (được xác định từ tháng 3/2023 đến tháng 2/2024), bà có 5 tháng đóng BHXH (từ tháng 8/2023 đến tháng 12/2023). Nếu trong thời gian mang thai bà không phải nghỉ việc để dưỡng thai theo chỉ định của cơ sở khám bệnh có thẩm quyền thì bà không đủ điều kiện để hưởng chế độ thai sản khi sinh con.",
-  "gold_citations_raw": "Khoản 2, Khoản 3 Điều 31 Luật BHXH năm 2014\nKhoản 4 Điều 31 Luật BHXH năm 2014"
+  "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 31]"
 }

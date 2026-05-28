@@ -2,12 +2,16 @@
   "arm": "llm_only",
   "stt": 9,
   "question": "Người lao động sinh con ngày 18/12/2023, trong tháng 12 có 12 ngày nghỉ thai sản sinh con và 2 ngày nghỉ thai sản khám thai. Công ty đã báo giảm thai sản từ tháng 12/2023 đến tháng 5/2024.\nNgày 18/6/2024, người lao động đi làm lại và nghỉ tiếp 5 ngày dưỡng sức sau sinh. Trong tháng 6/2024, có 14 ngày nghỉ thai sản sinh con và 5 ngày nghỉ dưỡng sức sau sinh.\nBà Kim Ngân hỏi, đối với trường hợp trên, tháng 6/2024, công ty báo giảm không lương, giảm thai sản hay đóng BHXH bình thường?",
-  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động sinh con sẽ được hưởng chế độ thai sản. Cụ thể, trong thời gian nghỉ thai sản, người lao động sẽ được hưởng trợ cấp thai sản và không bị giảm lương.\n\nTrong trường hợp của bà Kim Ngân, tháng 6/2024, bà đã nghỉ 14 ngày thai sản và 5 ngày dưỡng sức sau sinh. Theo quy định, thời gian nghỉ thai sản và dưỡng sức sau sinh đều được tính là thời gian không làm việc, do đó công ty không được phép báo giảm lương hay giảm thai sản trong tháng này.\n\nCông ty cần đóng BHXH bình thường cho bà Kim Ngân trong tháng 6/2024, vì bà vẫn đang trong thời gian hưởng chế độ thai sản và dưỡng sức sau sinh. \n\nTóm lại, công ty không được báo giảm không lương hay giảm thai sản, mà phải đóng BHXH bình thường cho bà Kim Ngân trong tháng 6/2024.",
-  "citations": [],
-  "citation_ids": [],
-  "elapsed_s": 4.904,
-  "prompt_tokens": 309,
-  "completion_tokens": 219,
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội Việt Nam, người lao động có quyền nghỉ thai sản và hưởng chế độ thai sản khi sinh con. Trong trường hợp của bà Kim Ngân, bà đã nghỉ thai sản từ tháng 12/2023 và trở lại làm việc vào ngày 18/6/2024, đồng thời có 5 ngày nghỉ dưỡng sức sau sinh.\n\nTheo Điều 34 Luật Bảo hiểm xã hội 2024, người lao động được hưởng chế độ thai sản trong thời gian nghỉ sinh con và có thể nghỉ dưỡng sức sau sinh. Tuy nhiên, trong tháng 6/2024, bà Kim Ngân đã đi làm lại sau khi nghỉ thai sản và chỉ còn 5 ngày nghỉ dưỡng sức.\n\nVì vậy, trong tháng 6/2024, công ty sẽ không báo giảm thai sản mà sẽ đóng BHXH bình thường cho bà Kim Ngân trong thời gian bà đi làm lại. Tuy nhiên, 5 ngày nghỉ dưỡng sức sau sinh sẽ không được tính là thời gian làm việc để hưởng lương, mà sẽ được chi trả theo chế độ dưỡng sức theo quy định.\n\nTóm lại, công ty sẽ đóng BHXH bình thường cho bà Kim Ngân trong tháng 6/2024, không báo giảm thai sản hay giảm không lương.",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 34]"
+  ],
+  "citation_ids": [
+    "L41_2024.A34"
+  ],
+  "elapsed_s": 7.583,
+  "prompt_tokens": 352,
+  "completion_tokens": 270,
   "gold_answer": "Căn cứ quy định tại Khoản 1, Khoản 7 Điều 34, Khoản 2 Điều 39, Khoản 3 Điều 85 và Khoản 4 Điều 86 Luật BHXH năm 2014:\nLao động nữ sinh con được nghỉ việc hưởng chế độ thai sản trước và sau khi sinh con là 6 tháng. Trường hợp lao động nữ sinh đôi trở lên thì tính từ con thứ 2 trở đi, cứ mỗi con, người mẹ được nghỉ thêm một tháng. Thời gian hưởng chế độ thai sản tính cả ngày nghỉ lễ, nghỉ Tết, ngày nghỉ hàng tuần.\nThời gian nghỉ việc hưởng chế độ thai sản từ 14 ngày làm việc trở lên trong tháng được tính là thời gian đóng BHXH, người lao động và người sử dụng lao động không phải đóng BHXH.\nNgười lao động không làm việc và không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì cả người lao động và người sử dụng lao động không đóng BHXH tháng đó. Thời gian này không được tính để hưởng BHXH trừ trường hợp nghỉ việc hưởng chế độ thai sản.\nVì vậy, trường hợp người lao động sinh con ngày 18/12/2023, công ty đã báo giảm thai sản từ tháng 12/2023 đến tháng 5/2024. Tháng 6/2024 chỉ được tính 5 ngày dưỡng sức sau sinh là số ngày không làm việc, không hưởng tiền lương. Do đó, tháng 6/2024 người lao động và công ty vẫn phải tham gia, đóng BHXH bắt buộc theo đúng quy định của pháp luật.",
-  "gold_citations_raw": "Khoản 7 Điều 34, Khoản 2 Điều 39, Khoản 3 Điều 85 và Khoản 4 Điều 86 Luật BHXH năm 2014"
+  "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 34]\n[Luật BHXH 2014 (58/2014/QH13), Điều 39]\n[Luật BHXH 2014 (58/2014/QH13), Điều 85]\n[Luật BHXH 2014 (58/2014/QH13), Điều 86]"
 }

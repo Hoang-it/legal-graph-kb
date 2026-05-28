@@ -2,53 +2,56 @@
   "arm": "graphrag",
   "stt": 81,
   "question": "Mình vừa lập hộ kinh doanh là chủ hộ, ko có thuê lao động. Theo quy định phải đăng ký và đóng BHXH cho chủ hộ. Mình ở Tp.HCM tính theo Vùng I.\nMình muốn hỏi là có thể đóng theo diện cá nhân tự nguyện được hay ko? do mình muốn đóng BHXH lâu dài.\nTrường hợp đăng ký và đóng theo diện chủ hộ thì sau này khi ngừng kinh doanh phải chuyển đổi BHXH về cá nhân tự nguyện hay ko?\nMình là nam 35t và độc thân. Mình đọc thông tin có chế độ tử tuất các thứ thì ai sẽ là người thụ hưởng nếu mình ko còn. (mình còn em trai và Mẹ lớn tuổi (67t) ).\nNên đóng BHXH bao nhiêu 1 tháng thì hợp lý? Tài chính của mình nếu đóng tự nguyện ~10tr/tháng vẫn nằm ở mức cho phép",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 3 khoản 4] về bảo hiểm xã hội tự nguyện.\n- [Điều 36 khoản 1] về mức đóng bảo hiểm xã hội tự nguyện.\n- [Điều 5 khoản 2] về mức đóng bảo hiểm xã hội tự nguyện.",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 36 khoản 1] về mức đóng bảo hiểm xã hội tự nguyện.\n- [Điều 87 khoản 1] về mức đóng và phương thức đóng của người lao động tham gia bảo hiểm xã hội tự nguyện.\n- [Điều 33 khoản 7] về việc đóng tiếp bảo hiểm xã hội tự nguyện khi ngừng đóng bảo hiểm xã hội bắt buộc. \n- [Điều 5 khoản 3] về quyền lợi của người có thời gian đóng bảo hiểm xã hội bắt buộc và tự nguyện.",
   "citations": [
-    "[Điều 3 khoản 4]",
     "[Điều 36 khoản 1]",
-    "[Điều 5 khoản 2]"
+    "[Điều 87 khoản 1]",
+    "[Điều 33 khoản 7]",
+    "[Điều 5 khoản 3]"
   ],
   "citation_ids": [
-    "L41_2024.A3.K4",
     "L41_2024.A36.K1",
-    "L41_2024.A5.K2"
+    "L41_2024.A87.K1",
+    "L41_2024.A33.K7",
+    "L41_2024.A5.K3"
   ],
   "citation_verified": {
-    "L41_2024.A3.K4": true,
     "L41_2024.A36.K1": true,
-    "L41_2024.A5.K2": true
+    "L41_2024.A87.K1": true,
+    "L41_2024.A33.K7": true,
+    "L41_2024.A5.K3": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
       "clause_id": "L41_2024.A36.K1",
-      "score": 0.8553317785263062,
+      "score": 0.8550736904144287,
       "text_preview": "Đối tượng quy định tại khoản 4 Điều 2 của Luật này, hằng tháng đóng bằng 22% mức thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện vào quỹ hưu trí và tử tuất.\nCăn cứ vào điều kiện phát triển kinh tế "
     },
     {
+      "clause_id": "L58_2014.A87.K1",
+      "score": 0.8515535593032837,
+      "text_preview": "Người lao động quy định tại khoản 4 Điều 2 của Luật này, hằng tháng đóng bằng 22% mức thu nhập tháng do người lao động lựa chọn để đóng vào quỹ hưu trí và tử tuất; mức thu nhập tháng làm căn cứ đóng b"
+    },
+    {
       "clause_id": "L41_2024.A33.K7",
-      "score": 0.8382281064987183,
+      "score": 0.8379251956939697,
       "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
     },
     {
+      "clause_id": "L58_2014.A5.K2",
+      "score": 0.8352307081222534,
+      "text_preview": "Mức đóng bảo hiểm xã hội bắt buộc được tính trên cơ sở tiền lương tháng của người lao động. Mức đóng bảo hiểm xã hội tự nguyện được tính trên cơ sở mức thu nhập tháng do người lao động lựa chọn."
+    },
+    {
       "clause_id": "L41_2024.A5.K3",
-      "score": 0.8346537947654724,
+      "score": 0.8347719311714172,
       "text_preview": "Người vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện được hưởng chế độ trợ cấp hằng tháng, chế độ hưu trí và chế độ tử tuất trên cơ sở thời gian đã đóng"
-    },
-    {
-      "clause_id": "L41_2024.A31.K2",
-      "score": 0.8333350419998169,
-      "text_preview": "Thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện thấp nhất bằng mức chuẩn hộ nghèo của khu vực nông thôn và cao nhất bằng 20 lần mức tham chiếu tại thời điểm đóng."
-    },
-    {
-      "clause_id": "L41_2024.A3.K4",
-      "score": 0.8299394845962524,
-      "text_preview": "Bảo hiểm xã hội tự nguyện là loại hình bảo hiểm xã hội do Nhà nước tổ chức mà công dân Việt Nam tự nguyện tham gia và được lựa chọn mức đóng, phương thức đóng phù hợp với thu nhập của mình."
     }
   ],
-  "n_semantic_edges": 2,
+  "n_semantic_edges": 14,
   "n_refs": 2,
-  "elapsed_s": 2.22,
+  "elapsed_s": 6.45,
   "gold_answer": "Nếu bạn là chủ hộ kinh doanh thuộc diện BHXH bắt buộc thì không được tự chọn đóng theo diện BHXH tự nguyện cho cùng thời gian thuộc diện bắt buộc. Khi ngừng kinh doanh và không còn thuộc diện bắt buộc, bạn có thể chuyển sang BHXH tự nguyện để đóng tiếp trên cùng mã số. Về tử tuất, thân nhân đủ điều kiện theo luật như mẹ già phụ thuộc có thể là người thụ hưởng; em trai chỉ được hưởng nếu thuộc diện thân nhân đủ điều kiện. Mức đóng nên cân đối khả năng dài hạn; đóng cao giúp tăng nền tính chế độ nhưng phải duy trì bền vững.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 36, Điều 85, Điều 111; Nghị định 158/2025/NĐ-CP"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]\n[Luật BHXH 2024 (41/2024/QH15), Điều 36]\n[Luật BHXH 2024 (41/2024/QH15), Điều 85]\n[Luật BHXH 2024 (41/2024/QH15), Điều 111]"
 }

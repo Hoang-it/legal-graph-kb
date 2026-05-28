@@ -2,53 +2,50 @@
   "arm": "graphrag",
   "stt": 125,
   "question": "Em nghỉ công ty từ ngày 25/2 công ty cũ đã gửi sổ để  e đi chốt nhưng đã 2 tháng mà bảo hiểm vẫn chưa chốt và chưa trả lại e sổ và tờ rời. vậy giờ e làm như thế nào để hưởng bảo hiểm thất nghiệp? còn 1 tháng nữa là hết hạn rồi ạ mà e vẫn chưa lấy lại được sổ",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 28 khoản 4] — quy định về thời hạn cấp sổ bảo hiểm xã hội.\n- [Điều 38 khoản 1] — quy định về chậm đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp.\n- [Điều 79 khoản 3] — quy định về thời hạn giải quyết hồ sơ hưởng bảo hiểm xã hội một lần.",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 28 khoản 4] — quy định về việc cấp sổ bảo hiểm xã hội.\n- [Điều 38 khoản 1] — quy định về chậm đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp.",
   "citations": [
     "[Điều 28 khoản 4]",
-    "[Điều 38 khoản 1]",
-    "[Điều 79 khoản 3]"
+    "[Điều 38 khoản 1]"
   ],
   "citation_ids": [
     "L41_2024.A28.K4",
-    "L41_2024.A38.K1",
-    "L41_2024.A79.K3"
+    "L41_2024.A38.K1"
   ],
   "citation_verified": {
     "L41_2024.A28.K4": true,
-    "L41_2024.A38.K1": true,
-    "L41_2024.A79.K3": true
+    "L41_2024.A38.K1": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
       "clause_id": "L41_2024.A28.K4",
-      "score": 0.8397253751754761,
+      "score": 0.8396223783493042,
       "text_preview": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn"
     },
     {
       "clause_id": "L41_2024.A38.K1",
-      "score": 0.835902214050293,
+      "score": 0.8359478712081909,
       "text_preview": "Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều "
     },
     {
       "clause_id": "L41_2024.A141.K12",
-      "score": 0.831594705581665,
+      "score": 0.8314775228500366,
       "text_preview": "Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30"
     },
     {
-      "clause_id": "L41_2024.A107.K3",
-      "score": 0.8258423805236816,
-      "text_preview": "Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo"
+      "clause_id": "L58_2014.A17.K2",
+      "score": 0.8299828767776489,
+      "text_preview": "Chậm đóng tiền bảo hiểm xã hội, bảo hiểm thất nghiệp."
     },
     {
-      "clause_id": "L41_2024.A79.K3",
-      "score": 0.8258347511291504,
-      "text_preview": "Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo"
+      "clause_id": "L45_2019.A113.K3",
+      "score": 0.828446626663208,
+      "text_preview": "Trường hợp do thôi việc, bị mất việc làm mà chưa nghỉ hằng năm hoặc chưa nghỉ hết số ngày nghỉ hằng năm thì được người sử dụng lao động thanh toán tiền lương cho những ngày chưa nghỉ."
     }
   ],
-  "n_semantic_edges": 3,
-  "n_refs": 7,
-  "elapsed_s": 2.23,
+  "n_semantic_edges": 7,
+  "n_refs": 11,
+  "elapsed_s": 4.59,
   "gold_answer": "Bạn cần nộp hồ sơ BHTN trong 03 tháng từ ngày nghỉ việc, nên không nên đợi quá sát hạn. Hãy yêu cầu công ty hoặc cơ quan BHXH cấp xác nhận quá trình đóng/chốt dữ liệu để kịp nộp hồ sơ. Nếu việc chậm chốt do phía công ty/BHXH, bạn nên nộp trước các giấy tờ đang có tại trung tâm dịch vụ việc làm và xin hướng dẫn bổ sung, đồng thời làm đơn khiếu nại về việc chậm chốt.",
-  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+  "gold_citations_raw": "[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
 }

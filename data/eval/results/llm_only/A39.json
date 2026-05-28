@@ -2,12 +2,12 @@
   "arm": "llm_only",
   "stt": 39,
   "question": "Mình ngưng đóng bảo hiểm xã hội từ 2017 đến bây giờ là năm 2026 rồi. Liệu mình có đi thanh toán bhxh đc k ạ?",
-  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, nếu bạn đã ngừng đóng bảo hiểm xã hội từ năm 2017 và đến năm 2026 vẫn chưa tiếp tục đóng, bạn có thể thực hiện thủ tục để nhận bảo hiểm xã hội một lần nếu đủ điều kiện. Cụ thể, bạn cần đáp ứng các điều kiện về thời gian đóng bảo hiểm và lý do rút bảo hiểm.\n\nTuy nhiên, để có thông tin chính xác và đầy đủ hơn về quyền lợi của mình, bạn nên liên hệ với cơ quan bảo hiểm xã hội địa phương để được tư vấn cụ thể.",
+  "answer": "Theo quy định tại Luật Bảo hiểm xã hội Việt Nam, người lao động có quyền yêu cầu thanh toán bảo hiểm xã hội khi đủ điều kiện về thời gian tham gia bảo hiểm và các điều kiện khác theo quy định. Nếu bạn đã ngừng đóng bảo hiểm xã hội từ năm 2017 và đến năm 2026 vẫn chưa tham gia lại, bạn có thể đủ điều kiện để nhận bảo hiểm xã hội một lần nếu bạn không tiếp tục tham gia bảo hiểm xã hội.\n\nCụ thể, bạn có thể nhận bảo hiểm xã hội một lần khi đã đủ 1 năm tham gia bảo hiểm và không còn tham gia bảo hiểm xã hội nữa. Tuy nhiên, bạn cần kiểm tra thêm về các điều kiện cụ thể khác như lý do ngừng tham gia và thời gian tham gia để xác định chính xác quyền lợi của mình. \n\nNếu bạn cần thông tin chi tiết hơn, tôi không có đủ thông tin chính xác để trả lời câu hỏi này.",
   "citations": [],
   "citation_ids": [],
-  "elapsed_s": 3.129,
-  "prompt_tokens": 196,
-  "completion_tokens": 133,
+  "elapsed_s": 3.56,
+  "prompt_tokens": 239,
+  "completion_tokens": 197,
   "gold_answer": "Nếu bạn đã ngừng đóng từ năm 2017 đến nay và không tiếp tục tham gia BHXH, thì thường có thể làm thủ tục hưởng BHXH một lần nếu thuộc trường hợp luật cho phép, nhất là đã ngừng tham gia từ đủ 12 tháng trở lên mà chưa đủ thời gian hưởng lương hưu. Nếu không rút một lần, bạn cũng có thể bảo lưu thời gian đã đóng để sau này tham gia tiếp hoặc chuyển sang BHXH tự nguyện.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 102]\n[Luật BHXH 2024 (41/2024/QH15), Điều 110]"
 }

@@ -2,24 +2,31 @@
   "arm": "elite_no_retrieval",
   "stt": 9,
   "question": "Người lao động sinh con ngày 18/12/2023, trong tháng 12 có 12 ngày nghỉ thai sản sinh con và 2 ngày nghỉ thai sản khám thai. Công ty đã báo giảm thai sản từ tháng 12/2023 đến tháng 5/2024.\nNgày 18/6/2024, người lao động đi làm lại và nghỉ tiếp 5 ngày dưỡng sức sau sinh. Trong tháng 6/2024, có 14 ngày nghỉ thai sản sinh con và 5 ngày nghỉ dưỡng sức sau sinh.\nBà Kim Ngân hỏi, đối với trường hợp trên, tháng 6/2024, công ty báo giảm không lương, giảm thai sản hay đóng BHXH bình thường?",
-  "answer": "Issue: Bà Kim Ngân hỏi về tình huống của người lao động sinh con và nghỉ thai sản trong tháng 6/2024, liệu công ty sẽ báo giảm không lương, giảm thai sản hay đóng BHXH bình thường.\n\nRule: Không có trích dẫn pháp lý nào được cung cấp.\n\nApplication: Không có giá trị nào được gán cho các slot trong quá trình thực hiện truy vấn. Tuy nhiên, Prolog đã trả về kết quả rằng người lao động sẽ \"đóng BHXH bình thường\".\n\nConclusion: Prolog đã trả về giá trị \"đóng BHXH bình thường\" cho biến Answer. Không có slot nào bị thiếu hoặc lỗi trong quá trình thực hiện.",
-  "citations": [],
-  "citation_ids": [],
+  "answer": "Issue: Bà Kim Ngân hỏi về việc công ty có phải đóng BHXH bình thường cho người lao động trong tháng 6/2024 hay không, sau khi người lao động sinh con và nghỉ thai sản. \nRule: Theo [Luật BHXH 2024, Điều 26 khoản 1], mức hưởng chế độ thai sản cho người lao động là 100% mức tiền lương đóng BHXH của tháng liền kề trước khi nghỉ việc. \nApplication: Không có slot nào được gán giá trị. Prolog query trả về kết quả rằng công ty phải đóng BHXH bình thường cho người lao động trong tháng 6/2024. \nConclusion: Theo Prolog, công ty phải đóng BHXH bình thường cho người lao động trong tháng 6/2024.",
+  "plain_answer": "Công ty phải đóng BHXH bình thường cho người lao động trong tháng 6/2024. Điều này được quy định trong [Luật BHXH 2024, Điều 26 khoản 1], nơi nêu rõ mức hưởng chế độ thai sản là 100% mức tiền lương đóng BHXH của tháng trước khi nghỉ việc.",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 26 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A26.K1"
+  ],
   "citation_indices": [],
   "prolog_success": true,
   "prolog_status": "success",
-  "n_repair_rounds": 0,
-  "prolog_trace": "[step(conclusion,answer_predicate(user,đóng BHXH bình thường),based_on(none))]",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,Công ty phải đóng BHXH bình thường cho người lao động trong tháng 6/2024.),based_on(source_a26_k1))]",
+  "prolog_program": "legal_source(source_a26_k1, law_bhxh_2024, article_26, clause_1, none, 'Mức hưởng chế độ thai sản cho người lao động là 100% mức tiền lương đóng BHXH của tháng liền kề trước khi nghỉ việc.').\nlegal_source(source_a28, law_bhxh_2024, article_28, clause_1, none, 'Người lao động được nghỉ thai sản tối đa 6 tháng.').\nlegal_source(source_a29, law_bhxh_2024, article_29, clause_1, none, 'Người lao động có quyền nghỉ dưỡng sức sau sinh tối đa 5 ngày.').\nanswer_predicate(user, Answer, Trace) :- Answer = 'Công ty phải đóng BHXH bình thường cho người lao động trong tháng 6/2024.', Trace = [step(conclusion, answer_predicate(user, Answer), based_on(source_a26_k1))].",
+  "prolog_error": "",
   "irac_sections": {
-    "issue": "Bà Kim Ngân hỏi về tình huống của người lao động sinh con và nghỉ thai sản trong tháng 6/2024, liệu công ty sẽ báo giảm không lương, giảm thai sản hay đóng BHXH bình thường.",
-    "rule": "Không có trích dẫn pháp lý nào được cung cấp.",
-    "application": "Không có giá trị nào được gán cho các slot trong quá trình thực hiện truy vấn. Tuy nhiên, Prolog đã trả về kết quả rằng người lao động sẽ \"đóng BHXH bình thường\".",
-    "conclusion": "Prolog đã trả về giá trị \"đóng BHXH bình thường\" cho biến Answer. Không có slot nào bị thiếu hoặc lỗi trong quá trình thực hiện."
+    "issue": "Bà Kim Ngân hỏi về việc công ty có phải đóng BHXH bình thường cho người lao động trong tháng 6/2024 hay không, sau khi người lao động sinh con và nghỉ thai sản.",
+    "rule": "Theo [Luật BHXH 2024, Điều 26 khoản 1], mức hưởng chế độ thai sản cho người lao động là 100% mức tiền lương đóng BHXH của tháng liền kề trước khi nghỉ việc.",
+    "application": "Không có slot nào được gán giá trị. Prolog query trả về kết quả rằng công ty phải đóng BHXH bình thường cho người lao động trong tháng 6/2024.",
+    "conclusion": "Theo Prolog, công ty phải đóng BHXH bình thường cho người lao động trong tháng 6/2024."
   },
-  "elapsed_s": 12.063,
-  "prompt_tokens": 2372,
-  "completion_tokens": 434,
+  "elapsed_s": 18.897,
+  "prompt_tokens": 4888,
+  "completion_tokens": 825,
   "error": null,
   "gold_answer": "Căn cứ quy định tại Khoản 1, Khoản 7 Điều 34, Khoản 2 Điều 39, Khoản 3 Điều 85 và Khoản 4 Điều 86 Luật BHXH năm 2014:\nLao động nữ sinh con được nghỉ việc hưởng chế độ thai sản trước và sau khi sinh con là 6 tháng. Trường hợp lao động nữ sinh đôi trở lên thì tính từ con thứ 2 trở đi, cứ mỗi con, người mẹ được nghỉ thêm một tháng. Thời gian hưởng chế độ thai sản tính cả ngày nghỉ lễ, nghỉ Tết, ngày nghỉ hàng tuần.\nThời gian nghỉ việc hưởng chế độ thai sản từ 14 ngày làm việc trở lên trong tháng được tính là thời gian đóng BHXH, người lao động và người sử dụng lao động không phải đóng BHXH.\nNgười lao động không làm việc và không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì cả người lao động và người sử dụng lao động không đóng BHXH tháng đó. Thời gian này không được tính để hưởng BHXH trừ trường hợp nghỉ việc hưởng chế độ thai sản.\nVì vậy, trường hợp người lao động sinh con ngày 18/12/2023, công ty đã báo giảm thai sản từ tháng 12/2023 đến tháng 5/2024. Tháng 6/2024 chỉ được tính 5 ngày dưỡng sức sau sinh là số ngày không làm việc, không hưởng tiền lương. Do đó, tháng 6/2024 người lao động và công ty vẫn phải tham gia, đóng BHXH bắt buộc theo đúng quy định của pháp luật.",
-  "gold_citations_raw": "Khoản 7 Điều 34, Khoản 2 Điều 39, Khoản 3 Điều 85 và Khoản 4 Điều 86 Luật BHXH năm 2014"
+  "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 34]\n[Luật BHXH 2014 (58/2014/QH13), Điều 39]\n[Luật BHXH 2014 (58/2014/QH13), Điều 85]\n[Luật BHXH 2014 (58/2014/QH13), Điều 86]"
 }

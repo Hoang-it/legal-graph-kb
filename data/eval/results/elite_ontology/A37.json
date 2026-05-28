@@ -2,12 +2,13 @@
   "arm": "elite_ontology",
   "stt": 37,
   "question": "Mình nghỉ cty cũ từ tháng 1/2026. (nghỉ ngang) nhưng cty vẫn chốt sổ cho Mình. Nhưng nay mình muốn ra lấy tờ rời BHXH, giờ mình phải làm sao?",
-  "answer": "Issue: Bạn muốn biết cách lấy tờ rời BHXH sau khi nghỉ việc tại công ty cũ từ tháng 1/2026.\n\nRule: \"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Prolog đã không tiêu thụ bất kỳ giá trị nào từ các slot.\n\nConclusion: Hệ thống không thể tính toán một số cuối cùng vì không có giá trị nào được gán cho các slot.",
+  "answer": "Issue: Người hỏi muốn biết cách lấy tờ rời BHXH sau khi nghỉ việc tại công ty cũ. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 14], cơ quan nhà nước có thẩm quyền có trách nhiệm cung cấp tài liệu liên quan đến bảo hiểm xã hội. \nApplication: Không có slot nào được gán giá trị. Prolog query how_to_get_social_insurance_document(Answer, Trace) trả về Answer = 'Bạn cần liên hệ với cơ quan bảo hiểm xã hội nơi bạn đã làm việc để yêu cầu cấp tờ rời BHXH.'. \nConclusion: Theo Prolog, bạn cần liên hệ với cơ quan bảo hiểm xã hội nơi bạn đã làm việc để yêu cầu cấp tờ rời BHXH.",
+  "plain_answer": "Bạn cần liên hệ với cơ quan bảo hiểm xã hội nơi bạn đã làm việc để yêu cầu cấp tờ rời BHXH. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 14], cơ quan này có trách nhiệm cung cấp tài liệu liên quan đến bảo hiểm xã hội cho bạn.",
   "citations": [
-    "[Điều 18 khoản 2]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 14]"
   ],
   "citation_ids": [
-    "L41_2024.A18.K2"
+    "L41_2024.A18.K14"
   ],
   "citation_indices": [
     0
@@ -15,17 +16,19 @@
   "prolog_success": true,
   "prolog_status": "success",
   "n_repair_rounds": 1,
-  "prolog_trace": "[step(conclusion,how_to_get_social_insurance_document(Bạn cần liên hệ với cơ quan bảo hiểm xã hội nơi bạn cư trú để được hướng dẫn cụ thể về việc lấy tờ rời BHXH.),based_on(source_c004))]",
+  "prolog_trace": "[step(conclusion,how_to_get_social_insurance_document(Bạn cần liên hệ với cơ quan bảo hiểm xã hội nơi bạn đã làm việc để yêu cầu cấp tờ rời BHXH.),based_on(source_c003))]",
+  "prolog_program": "legal_source(source_c003, law_bhxh_2024, article_18, clause_3, none, 'source text').\nhow_to_get_social_insurance_document(Answer, Trace) :- Answer = 'Bạn cần liên hệ với cơ quan bảo hiểm xã hội nơi bạn đã làm việc để yêu cầu cấp tờ rời BHXH.', Trace = [step(conclusion, how_to_get_social_insurance_document(Answer), based_on(source_c003))].",
+  "prolog_error": "",
   "irac_sections": {
-    "issue": "Bạn muốn biết cách lấy tờ rời BHXH sau khi nghỉ việc tại công ty cũ từ tháng 1/2026.",
-    "rule": "\"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)",
-    "application": "Không có slot nào được gán giá trị trong trường hợp này. Prolog đã không tiêu thụ bất kỳ giá trị nào từ các slot.",
-    "conclusion": "Hệ thống không thể tính toán một số cuối cùng vì không có giá trị nào được gán cho các slot."
+    "issue": "Người hỏi muốn biết cách lấy tờ rời BHXH sau khi nghỉ việc tại công ty cũ.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 14], cơ quan nhà nước có thẩm quyền có trách nhiệm cung cấp tài liệu liên quan đến bảo hiểm xã hội.",
+    "application": "Không có slot nào được gán giá trị. Prolog query how_to_get_social_insurance_document(Answer, Trace) trả về Answer = 'Bạn cần liên hệ với cơ quan bảo hiểm xã hội nơi bạn đã làm việc để yêu cầu cấp tờ rời BHXH.'.",
+    "conclusion": "Theo Prolog, bạn cần liên hệ với cơ quan bảo hiểm xã hội nơi bạn đã làm việc để yêu cầu cấp tờ rời BHXH."
   },
-  "elapsed_s": 9.457,
-  "prompt_tokens": 4757,
-  "completion_tokens": 442,
+  "elapsed_s": 12.176,
+  "prompt_tokens": 5185,
+  "completion_tokens": 480,
   "error": null,
   "gold_answer": "Nếu công ty đã chốt sổ nhưng chưa trả tờ rời cho bạn thì trước hết yêu cầu công ty bàn giao lại sổ/tờ rời bằng văn bản hoặc email. Khi chấm dứt HĐLĐ, người sử dụng lao động phải phối hợp xác nhận thời gian đóng BHXH và trả lại giấy tờ liên quan cho người lao động. Nếu công ty chây ì, bạn có thể khiếu nại đến Thanh tra Sở Nội vụ/LĐTBXH hoặc cơ quan BHXH nơi đơn vị đang tham gia để được hỗ trợ cấp lại, xác nhận quá trình đóng.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 13]\n[Bộ luật Lao động 2019, Điều 48]"
 }

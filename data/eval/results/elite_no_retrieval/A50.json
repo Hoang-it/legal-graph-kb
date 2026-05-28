@@ -2,7 +2,8 @@
   "arm": "elite_no_retrieval",
   "stt": 50,
   "question": "Mình sinh năm 1979. Thì đến năm bao nhiêu mình đủ tuổi về hưu?",
-  "answer": "Issue: Mình sinh năm 1979. Thì đến năm bao nhiêu mình đủ tuổi về hưu?  \nRule: Không có quy định cụ thể nào được trích dẫn trong trường hợp này.  \nApplication: Không có slot nào được gán giá trị trong trace. Prolog đã sử dụng quy tắc để tính toán tuổi về hưu dựa trên tuổi của người dùng, nhưng không có thông tin nào được cung cấp để xác định tuổi hiện tại.  \nConclusion: Prolog đã trả về giá trị 2040 cho biến Year, nhưng không có thông tin nào từ slot_bindings để hỗ trợ kết luận. Do đó, không thể xác định tuổi về hưu chính xác mà không có dữ liệu đầu vào.",
+  "answer": "Issue: Người hỏi sinh năm 1979, hỏi năm nào đủ tuổi về hưu.\nRule: Không có quy định cụ thể trong tài liệu, nhưng theo quy tắc tính tuổi nghỉ hưu, người lao động cần đủ 60 tuổi.\nApplication: Hệ thống xác định tuổi của người hỏi là 44. Prolog tính toán năm nghỉ hưu là 2040 dựa trên quy tắc tính tuổi nghỉ hưu. \nConclusion: Theo Prolog, người hỏi sẽ đủ tuổi về hưu vào năm 2040.",
+  "plain_answer": "Bạn sinh năm 1979, theo tính toán thì bạn sẽ đủ tuổi về hưu vào năm 2040. Điều này dựa trên quy tắc là bạn cần đủ 60 tuổi để nghỉ hưu. Nếu bạn cần thêm thông tin về quy định nghỉ hưu, hãy cho mình biết nhé!",
   "citations": [],
   "citation_ids": [],
   "citation_indices": [],
@@ -10,16 +11,18 @@
   "prolog_status": "success",
   "n_repair_rounds": 0,
   "prolog_trace": "[step(calculation,retirement_age(user,2040),based_on(none))]",
+  "prolog_program": "age(user, 44).\nretirement_age(Person, Year, Trace) :- age(Person, Age), Year is 2024 - Age + 60, Trace = [step(calculation, retirement_age(Person, Year), based_on(none))].",
+  "prolog_error": "",
   "irac_sections": {
-    "issue": "Mình sinh năm 1979. Thì đến năm bao nhiêu mình đủ tuổi về hưu?",
-    "rule": "Không có quy định cụ thể nào được trích dẫn trong trường hợp này.",
-    "application": "Không có slot nào được gán giá trị trong trace. Prolog đã sử dụng quy tắc để tính toán tuổi về hưu dựa trên tuổi của người dùng, nhưng không có thông tin nào được cung cấp để xác định tuổi hiện tại.",
-    "conclusion": "Prolog đã trả về giá trị 2040 cho biến Year, nhưng không có thông tin nào từ slot_bindings để hỗ trợ kết luận. Do đó, không thể xác định tuổi về hưu chính xác mà không có dữ liệu đầu vào."
+    "issue": "Người hỏi sinh năm 1979, hỏi năm nào đủ tuổi về hưu.",
+    "rule": "Không có quy định cụ thể trong tài liệu, nhưng theo quy tắc tính tuổi nghỉ hưu, người lao động cần đủ 60 tuổi.",
+    "application": "Hệ thống xác định tuổi của người hỏi là 44. Prolog tính toán năm nghỉ hưu là 2040 dựa trên quy tắc tính tuổi nghỉ hưu.",
+    "conclusion": "Theo Prolog, người hỏi sẽ đủ tuổi về hưu vào năm 2040."
   },
-  "elapsed_s": 9.751,
-  "prompt_tokens": 1864,
-  "completion_tokens": 285,
+  "elapsed_s": 9.861,
+  "prompt_tokens": 2573,
+  "completion_tokens": 325,
   "error": null,
   "gold_answer": "Bạn sinh năm 1979 thì thời điểm đủ tuổi nghỉ hưu còn phụ thuộc giới tính và trường hợp nghỉ hưu bình thường hay sớm. Nếu là nữ, mốc chuẩn hiện hành là đủ 60 tuổi, tương ứng khoảng năm 2039. Nếu là nam, mốc chuẩn là đủ 62 tuổi, tương ứng khoảng năm 2041. Nếu làm nghề, công việc nặng nhọc hoặc thuộc trường hợp đặc biệt thì có thể nghỉ sớm hơn theo luật.",
-  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 169; Nghị định 135/2020/NĐ-CP"
+  "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 169]"
 }

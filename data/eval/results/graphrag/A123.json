@@ -2,62 +2,41 @@
   "arm": "graphrag",
   "stt": 123,
   "question": "NLĐ bị tại nạn trên đường từ VP đi ra công trường làm việc, đang làm hồ sơ TNLĐ, NLĐ có xin giấy xác nhận vụ việc của công an rồi, tuy nhiên bên bảo hiểm không chấp nhận giấy đó vì bảo không đúng mẫu, nlđ đi xin lại theo đúng mẫu thì bên công an không chịu ký lại cho họ. \nVậy giờ nên làm thế nào?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 12 khoản 1] - Quyền của người sử dụng lao động.\n- [Điều 13 khoản 1] - Trách nhiệm của người sử dụng lao động.\n- [Điều 62 khoản 3] - Giải quyết hưởng chế độ thai sản đối với người tham gia bảo hiểm xã hội bắt buộc.\n- [Điều 91 khoản 3] - Giải quyết hưởng chế độ tử tuất.\n- [Điều 81 khoản 2] - Giải quyết tiếp tục hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng.\n- [Điều 76 khoản 5] - Trợ cấp một lần đối với người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng ra nước ngoài để định cư.",
-  "citations": [
-    "[Điều 12 khoản 1]",
-    "[Điều 13 khoản 1]",
-    "[Điều 62 khoản 3]",
-    "[Điều 91 khoản 3]",
-    "[Điều 81 khoản 2]",
-    "[Điều 76 khoản 5]"
-  ],
-  "citation_ids": [
-    "L41_2024.A12.K1",
-    "L41_2024.A13.K1",
-    "L41_2024.A62.K3",
-    "L41_2024.A91.K3",
-    "L41_2024.A81.K2",
-    "L41_2024.A76.K5"
-  ],
-  "citation_verified": {
-    "L41_2024.A12.K1": true,
-    "L41_2024.A13.K1": true,
-    "L41_2024.A62.K3": true,
-    "L41_2024.A91.K3": true,
-    "L41_2024.A81.K2": true,
-    "L41_2024.A76.K5": true
-  },
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 106 khoản 2 về giải quyết hưởng chế độ tai nạn lao động, bệnh nghề nghiệp.\n- Điều 104 khoản 5 về hồ sơ hưởng chế độ tai nạn lao động.\n- Điều 104 khoản 3 về giấy ra viện sau khi đã điều trị tai nạn lao động.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
   "n_vector_hits": 8,
   "vector_hits": [
     {
-      "clause_id": "L41_2024.A12.K1",
-      "score": 0.7926459908485413,
-      "text_preview": "Từ chối thực hiện yêu cầu không đúng quy định của pháp luật về bảo hiểm xã hội."
+      "clause_id": "L58_2014.A106.K2",
+      "score": 0.8039019107818604,
+      "text_preview": "Trong thời hạn 15 ngày kể từ ngày nhận đủ hồ sơ, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết hưởng chế độ tai nạn lao động, bệnh nghề nghiệp; trường hợp không giải quyết thì phải trả lời bằng vă"
     },
     {
-      "clause_id": "L41_2024.A13.K2",
-      "score": 0.7921115159988403,
-      "text_preview": "Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội."
+      "clause_id": "L58_2014.A104.K5",
+      "score": 0.8030503988265991,
+      "text_preview": "Văn bản đề nghị giải quyết chế độ tai nạn lao động."
     },
     {
-      "clause_id": "L41_2024.A13.K1",
-      "score": 0.7916465401649475,
-      "text_preview": "Đăng ký tham gia bảo hiểm xã hội bắt buộc cho người lao động theo quy định của Luật này; phối hợp với cơ quan bảo hiểm xã hội trong việc trả sổ bảo hiểm xã hội bản giấy cho người lao động."
+      "clause_id": "L58_2014.A104.K3",
+      "score": 0.7995182275772095,
+      "text_preview": "Giấy ra viện sau khi đã điều trị tai nạn lao động."
     },
     {
-      "clause_id": "L41_2024.A18.K2",
-      "score": 0.7874055504798889,
-      "text_preview": "Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội."
+      "clause_id": "L58_2014.A102.K4",
+      "score": 0.7954123020172119,
+      "text_preview": "Trường hợp cơ quan bảo hiểm xã hội không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do."
     },
     {
-      "clause_id": "L41_2024.A62.K3",
-      "score": 0.7810689210891724,
-      "text_preview": "Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động, 05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động; trườn"
+      "clause_id": "L45_2019.A156.K3",
+      "score": 0.7944208383560181,
+      "text_preview": "Nội dung của hợp đồng lao động không đúng với nội dung của giấy phép lao động đã được cấp."
     }
   ],
-  "n_semantic_edges": 3,
+  "n_semantic_edges": 1,
   "n_refs": 0,
-  "elapsed_s": 5.59,
+  "elapsed_s": 4.6,
   "gold_answer": "Tai nạn trên đường từ nơi làm việc đi làm nhiệm vụ có thể được xem xét là tai nạn lao động nếu đáp ứng điều kiện. Nếu BHXH không nhận giấy xác nhận vì sai mẫu, bạn nên đề nghị công an hoặc cơ quan lập hồ sơ bổ sung nội dung còn thiếu; trường hợp bị từ chối, doanh nghiệp cần lập biên bản điều tra TNLĐ và gửi kèm tài liệu liên quan. Có thể khiếu nại yêu cầu trả lời bằng văn bản để làm căn cứ bổ sung hồ sơ.",
-  "gold_citations_raw": "Luật An toàn, vệ sinh lao động 2015; Nghị định 88/2020/NĐ-CP; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "[Luật An toàn, vệ sinh lao động 2015, Điều 45]\n[Quyết định 166/QĐ-BHXH, Điều 6]"
 }

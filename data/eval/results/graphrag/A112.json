@@ -2,50 +2,47 @@
   "arm": "graphrag",
   "stt": 112,
   "question": "Trước mình nghỉ ngang công ty cũ chưa chốt và lấy bìa xanh bây giờ ra bhxh huyện làm lại được không?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 13 khoản 2] - Trách nhiệm của người sử dụng lao động trong việc lập hồ sơ cho người lao động hưởng chế độ bảo hiểm xã hội.\n- [Điều 48 khoản 1] - Người lao động có trách nhiệm nộp hồ sơ cho người sử dụng lao động trong thời hạn quy định.",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 18 khoản 2] — Quyền của người lao động về việc được cấp và quản lý sổ bảo hiểm xã hội.",
   "citations": [
-    "[Điều 13 khoản 2]",
-    "[Điều 48 khoản 1]"
+    "[Điều 18 khoản 2]"
   ],
   "citation_ids": [
-    "L41_2024.A13.K2",
-    "L41_2024.A48.K1"
+    "L41_2024.A18.K2"
   ],
   "citation_verified": {
-    "L41_2024.A13.K2": true,
-    "L41_2024.A48.K1": true
+    "L41_2024.A18.K2": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
-      "clause_id": "L41_2024.A13.K2",
-      "score": 0.7545231580734253,
-      "text_preview": "Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội."
+      "clause_id": "L45_2019.A156.K1",
+      "score": 0.7859984636306763,
+      "text_preview": "Giấy phép lao động hết thời hạn."
     },
     {
-      "clause_id": "L41_2024.A33.K6",
-      "score": 0.7464035749435425,
-      "text_preview": "Trường hợp trong tháng đầu làm việc hoặc trong tháng đầu trở lại làm việc mà người lao động nghỉ việc hưởng chế độ ốm đau từ 14 ngày làm việc trở lên thì vẫn phải đóng bảo hiểm xã hội của tháng đó."
+      "clause_id": "L45_2019.A156.K8",
+      "score": 0.7796562910079956,
+      "text_preview": "Giấy phép lao động bị thu hồi."
     },
     {
-      "clause_id": "L41_2024.A60.K1",
-      "score": 0.7458775043487549,
-      "text_preview": "Trong thời gian 30 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản quy định tại Điều 52, khoản 1 hoặc khoản 4 Điều 53, điểm a khoản 3 Điều 54 của Luật này, lao động nữ chưa phục hồi sức "
+      "clause_id": "L45_2019.A205.K3",
+      "score": 0.7755550146102905,
+      "text_preview": "Ủy ban nhân dân cấp huyện có nơi làm việc dự kiến đóng cửa."
     },
     {
-      "clause_id": "L41_2024.A117.K2",
-      "score": 0.7454967498779297,
-      "text_preview": "Người lao động đóng theo quy định."
+      "clause_id": "L45_2019.A156.K4",
+      "score": 0.773236870765686,
+      "text_preview": "Làm việc không đúng với nội dung trong giấy phép lao động đã được cấp."
     },
     {
-      "clause_id": "L41_2024.A48.K1",
-      "score": 0.7447594404220581,
-      "text_preview": "Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 47 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày trở lại làm việc."
+      "clause_id": "L45_2019.A34.K2",
+      "score": 0.7648369669914246,
+      "text_preview": "Đã hoàn thành công việc theo hợp đồng lao động."
     }
   ],
-  "n_semantic_edges": 2,
-  "n_refs": 5,
-  "elapsed_s": 1.95,
+  "n_semantic_edges": 1,
+  "n_refs": 0,
+  "elapsed_s": 2.6,
   "gold_answer": "Bạn có thể đến cơ quan BHXH nơi quản lý quá trình tham gia để kiểm tra tình trạng sổ. Nếu công ty cũ chưa chốt thì BHXH huyện không thể tự chốt thay công ty, trừ khi có hồ sơ truy đóng/xác nhận quá trình. Việc cần làm là yêu cầu công ty làm thủ tục báo giảm, chốt sổ; nếu công ty không thực hiện thì khiếu nại tới cơ quan BHXH quản lý đơn vị.",
-  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
 }

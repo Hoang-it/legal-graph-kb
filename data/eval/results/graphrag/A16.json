@@ -2,50 +2,50 @@
   "arm": "graphrag",
   "stt": 16,
   "question": "Ông Nam Hoàng (Huế) là viên chức, đóng BHXH được 20 năm nhưng chưa đến tuổi nghỉ hưu.\nÔng Hoàng hỏi, nếu ông nghỉ hưu thì có được hưởng chế độ hưu trí không? Hay hưởng trợ cấp một lần?",
-  "answer": "Ông Nam Hoàng không đủ điều kiện hưởng chế độ hưu trí và cũng không được hưởng trợ cấp một lần khi nghỉ hưu. \n\nGiải thích: Theo quy định, công dân Việt Nam đủ tuổi nghỉ hưu và có thời gian đóng bảo hiểm xã hội mới được hưởng lương hưu. Ông Hoàng đã đóng bảo hiểm xã hội được 20 năm nhưng chưa đến tuổi nghỉ hưu, do đó không đủ điều kiện hưởng lương hưu. Hơn nữa, ông cũng không đủ điều kiện để hưởng trợ cấp một lần vì không có thời gian đóng bảo hiểm xã hội cao hơn 30 năm (đối với lao động nữ) hoặc 35 năm (đối với lao động nam) [Điều 23 khoản 1] và [Điều 100 khoản 1].\n\nCitation: [Điều 23 khoản 1], [Điều 100 khoản 1].",
+  "answer": "Ông Nam Hoàng không đủ điều kiện hưởng chế độ hưu trí và cũng không được hưởng trợ cấp một lần khi nghỉ hưu. \n\nGiải thích: Theo quy định, để được hưởng lương hưu, người lao động phải có đủ 20 năm đóng bảo hiểm xã hội và đủ tuổi nghỉ hưu. Trong trường hợp của ông Hoàng, mặc dù ông đã đóng bảo hiểm xã hội được 20 năm, nhưng ông chưa đến tuổi nghỉ hưu, do đó không đủ điều kiện để hưởng lương hưu theo quy định. Hơn nữa, ông cũng không đủ điều kiện để hưởng trợ cấp một lần khi nghỉ hưu vì chưa đủ tuổi nghỉ hưu.\n\nCitation: [Điều 54 khoản 1] và [Điều 23 khoản 1].",
   "citations": [
-    "[Điều 23 khoản 1]",
-    "[Điều 100 khoản 1]"
+    "[Điều 54 khoản 1]",
+    "[Điều 23 khoản 1]"
   ],
   "citation_ids": [
-    "L41_2024.A23.K1",
-    "L41_2024.A100.K1"
+    "L41_2024.A54.K1",
+    "L41_2024.A23.K1"
   ],
   "citation_verified": {
-    "L41_2024.A23.K1": true,
-    "L41_2024.A100.K1": true
+    "L41_2024.A54.K1": true,
+    "L41_2024.A23.K1": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
       "clause_id": "L41_2024.A100.K1",
-      "score": 0.8732891082763672,
+      "score": 0.8734400272369385,
       "text_preview": "Lao động nam có thời gian đóng bảo hiểm xã hội cao hơn 35 năm, lao động nữ có thời gian đóng bảo hiểm xã hội cao hơn 30 năm thì khi nghỉ hưu, ngoài lương hưu còn được hưởng trợ cấp một lần."
     },
     {
       "clause_id": "L41_2024.A68.K1",
-      "score": 0.8732858896255493,
+      "score": 0.8732956647872925,
       "text_preview": "Lao động nam có thời gian đóng bảo hiểm xã hội cao hơn 35 năm, lao động nữ có thời gian đóng bảo hiểm xã hội cao hơn 30 năm thì khi nghỉ hưu, ngoài lương hưu còn được hưởng trợ cấp một lần."
     },
     {
+      "clause_id": "L58_2014.A58.K1",
+      "score": 0.8714292049407959,
+      "text_preview": "Người lao động có thời gian đóng bảo hiểm xã hội cao hơn số năm tương ứng với tỷ lệ hưởng lương hưu 75% thì khi nghỉ hưu, ngoài lương hưu còn được hưởng trợ cấp một lần."
+    },
+    {
+      "clause_id": "L58_2014.A75.K1",
+      "score": 0.8696035146713257,
+      "text_preview": "Người lao động có thời gian đóng bảo hiểm xã hội cao hơn số năm tương ứng với tỷ lệ hưởng lương hưu 75%, khi nghỉ hưu, ngoài lương hưu còn được hưởng trợ cấp một lần."
+    },
+    {
       "clause_id": "L41_2024.A23.K1",
-      "score": 0.8593316078186035,
+      "score": 0.8593688011169434,
       "text_preview": "Công dân Việt Nam đủ tuổi nghỉ hưu có thời gian đóng bảo hiểm xã hội nhưng không đủ điều kiện hưởng lương hưu theo quy định của pháp luật và chưa đủ điều kiện hưởng trợ cấp hưu trí xã hội theo quy địn"
-    },
-    {
-      "clause_id": "L41_2024.A5.K3",
-      "score": 0.8455694317817688,
-      "text_preview": "Người vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện được hưởng chế độ trợ cấp hằng tháng, chế độ hưu trí và chế độ tử tuất trên cơ sở thời gian đã đóng"
-    },
-    {
-      "clause_id": "L41_2024.A100.K2",
-      "score": 0.8415533304214478,
-      "text_preview": "Mức hưởng trợ cấp một lần cho mỗi năm đóng cao hơn quy định tại khoản 1 Điều này bằng 0,5 lần của mức bình quân thu nhập làm căn cứ đóng bảo hiểm xã hội quy định tại Điều 104 của Luật này cho mỗi năm "
     }
   ],
-  "n_semantic_edges": 5,
-  "n_refs": 15,
-  "elapsed_s": 3.55,
+  "n_semantic_edges": 29,
+  "n_refs": 4,
+  "elapsed_s": 4.42,
   "gold_answer": "Luật BHXH năm 2024 có hiệu lực thi hành từ ngày 01/7/2025 quy định về điều kiện nghỉ hưu và điều kiện hưởng BHXH một lần như sau:\nKhoản 1 Điều 64 quy định: \"Đối tượng quy định tại các điểm a, b, c, g, h, i, k, l, m và n khoản 1 và khoản 2 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 15 năm trở lên thì được hưởng lương hưu nếu thuộc một trong các trường hợp sau đây:\na) Đủ tuổi nghỉ hưu theo quy định tại khoản 2 Điều 169 của Bộ luật Lao động;\nb) Đủ tuổi nghỉ hưu theo quy định tại khoản 3 Điều 169 của Bộ luật Lao động và có tổng thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 15 năm trở lên khi làm nghề, công việc nặng nhọc, độc hại, nguy hiểm hoặc đặc biệt nặng nhọc, độc hại, nguy hiểm thuộc danh mục nghề, công việc nặng nhọc, độc hại, nguy hiếm hoặc đặc biệt nặng nhọc, độc hại, nguy hiểm do Bộ trưởng Bộ Lao động - Thương binh và Xã hội ban hành hoặc làm việc ở vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn bao gồm cả thời gian làm việc ở nơi có phụ cấp khu vực hệ số 0,7 trở lên trước ngày 01 tháng 01 năm 2021;\nc) Có tuổi thấp hơn tối đa 10 tuổi so với tuổi quy định tại khoản 2 Điều 169 của Bộ luật Lao động và có từ đủ 15 năm trở lên làm công việc khai thác than trong hầm lò theo quy định của Chính phủ;\nd) Người bị nhiễm HIV/AIDS do tai nạn rủi ro nghề nghiệp trong khi thực hiện nhiệm vụ được giao\".\nTại Khoản 1 Điều 65 quy định: \"Đối tượng quy định tại các điểm a, b, c, g, h, i, k, l, m và n khoản 1 và khoản 2 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 20 năm trở lên thì được hưởng lương hưu với mức thấp hơn so với người đủ điều kiện hưởng lương hưu quy định tại các điểm a, b và c khoản 1 Điều 64 của Luật này nếu thuộc một trong các trường hợp sau đây:\na) Có tuổi thấp hơn tối đa 05 tuổi so với tuổi quy định tại điểm a khoản 1 Điều 64 của Luật này và bị suy giảm khả năng lao động từ 61% đến dưới 81%;\nb) Có tuổi thấp hơn tối đa 10 tuổi so với tuổi quy định tại điểm a khoản 1 Điều 64 của Luật này và bị suy giảm khả năng lao động từ 81% trở lên;\nc) Có từ đủ 15 năm trở lên làm nghề, công việc đặc biệt nặng nhọc, độc hại, nguy hiểm thuộc danh mục nghề, công việc đặc biệt nặng nhọc, độc hại, nguy hiểm do Bộ trưởng Bộ Lao động - Thương binh và Xã hội ban hành và bị suy giảm khả năng lao động từ 61% trở lên\".\nTrường hợp ông Lê Nam Hoàng là viên chức đã đóng BHXH được 20 năm thì hưởng BHXH một lần theo quy định tại khoản 1 Điều 70 Luật BHXH năm 2024 như sau:\n\"Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm xã hội mà có đề nghị thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây:\n... b) Ra nước ngoài để định cư;\nc) Người đang mắc một trong những bệnh ung thư, bại liệt, xơ gan mất bù, lao nặng, AIDS;\nd) Người có mức suy giảm khả năng lao động từ 81% trở lên; người khuyết tật đặc biệt nặng...\".\nKhoản 6 Điều 70 Luật BHXH năm 2024 quy định: \"Trường hợp người lao động quy định tại các điểm b, c và d khoản 1... Điều này vừa đủ điều kiện hưởng lương hưu vừa đủ điều kiện hưởng bảo hiểm xã hội một lần thì người lao động được lựa chọn hưởng lương hưu hằng tháng hoặc hưởng bảo hiểm xã hội một lần\".\nBHXH Việt Nam cung cấp quy định của Luật BHXH năm 2024 về điều kiện hưởng lương hưu, điều kiện hưởng BHXH một lần để ông đối chiếu với điều kiện của bản thân (tuổi đời, tình trạng sức khỏe, diễn biến quá trình đóng BHXH, chức danh nghề, địa điểm đơn vị làm việc...) hoặc liên hệ với cơ quan BHXH nơi đang đóng BHXH để được hướng dẫn, tư vấn cụ thể.",
-  "gold_citations_raw": "Luật BHXH năm 2024"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 64]\n[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Bộ luật Lao động 2019, Điều 169]"
 }

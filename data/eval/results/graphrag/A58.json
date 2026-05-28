@@ -2,53 +2,56 @@
   "arm": "graphrag",
   "stt": 58,
   "question": "e là hộ kinh doanh mới , tham gia bhxh cho hkd thì phải làm như thế nào?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Tuy nhiên, có một số điều liên quan đến trách nhiệm của người sử dụng lao động và quy trình đăng ký tham gia bảo hiểm xã hội:\n\n1. Người sử dụng lao động có trách nhiệm đăng ký tham gia bảo hiểm xã hội bắt buộc cho người lao động và lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội [Điều 13 khoản 1, khoản 2].\n2. Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc cần được nộp cho cơ quan bảo hiểm xã hội trong thời hạn quy định [Điều 28 khoản 1].\n\nCác điều luật liên quan:\n- [Điều 13 khoản 1]\n- [Điều 13 khoản 2]\n- [Điều 28 khoản 1]",
+  "answer": "Để hộ kinh doanh mới tham gia bảo hiểm xã hội (BHXH), cần thực hiện các bước sau:\n\n1. **Đăng ký tham gia BHXH**: Hộ kinh doanh phải đăng ký tham gia BHXH bắt buộc cho người lao động theo quy định của Luật này. Điều này bao gồm việc lập hồ sơ để người lao động được hưởng chế độ BHXH [Điều 13 khoản 1 và khoản 2].\n\n2. **Chuẩn bị hồ sơ**: Hồ sơ đăng ký tham gia BHXH bắt buộc cần được nộp qua người sử dụng lao động hoặc tự nộp, tùy thuộc vào quy định cụ thể [Điều 27 khoản 2].\n\n3. **Cung cấp thông tin**: Cơ quan bảo hiểm xã hội có quyền kết nối, chia sẻ thông tin hoặc yêu cầu bản sao giấy phép hoạt động, giấy chứng nhận hoạt động để rà soát, kiểm tra việc thực hiện đăng ký tham gia BHXH [Điều 17 khoản 2].\n\nTóm lại, hộ kinh doanh mới cần thực hiện đăng ký tham gia BHXH cho người lao động và chuẩn bị hồ sơ theo quy định của pháp luật. \n\nCác điều luật liên quan:\n- [Điều 13 khoản 1]\n- [Điều 13 khoản 2]\n- [Điều 27 khoản 2]\n- [Điều 17 khoản 2]",
   "citations": [
-    "[Điều 28 khoản 1]",
+    "[Điều 27 khoản 2]",
+    "[Điều 17 khoản 2]",
     "[Điều 13 khoản 1]",
     "[Điều 13 khoản 2]"
   ],
   "citation_ids": [
-    "L41_2024.A28.K1",
+    "L41_2024.A27.K2",
+    "L41_2024.A17.K2",
     "L41_2024.A13.K1",
     "L41_2024.A13.K2"
   ],
   "citation_verified": {
-    "L41_2024.A28.K1": true,
+    "L41_2024.A27.K2": true,
+    "L41_2024.A17.K2": true,
     "L41_2024.A13.K1": true,
     "L41_2024.A13.K2": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
+      "clause_id": "L58_2014.A22.K4",
+      "score": 0.7697630524635315,
+      "text_preview": "Được cơ quan đăng ký doanh nghiệp, cơ quan cấp giấy chứng nhận hoạt động hoặc giấy phép hoạt động gửi bản sao giấy chứng nhận đăng ký doanh nghiệp, giấy phép hoạt động, giấy chứng nhận hoạt động hoặc "
+    },
+    {
       "clause_id": "L41_2024.A17.K2",
-      "score": 0.7686312198638916,
+      "score": 0.7683440446853638,
       "text_preview": "Được cơ quan đăng ký kinh doanh, cơ quan cấp giấy chứng nhận hoạt động hoặc giấy phép hoạt động kết nối, chia sẻ thông tin hoặc cung cấp bản sao giấy phép hoạt động, giấy chứng nhận hoạt động hoặc giấ"
     },
     {
+      "clause_id": "L58_2014.A19.K2",
+      "score": 0.7650859355926514,
+      "text_preview": "Thực hiện quy định về việc lập hồ sơ bảo hiểm xã hội."
+    },
+    {
       "clause_id": "L41_2024.A13.K2",
-      "score": 0.7589789628982544,
+      "score": 0.7589185237884521,
       "text_preview": "Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội."
     },
     {
       "clause_id": "L41_2024.A13.K1",
-      "score": 0.7559943795204163,
+      "score": 0.7558996677398682,
       "text_preview": "Đăng ký tham gia bảo hiểm xã hội bắt buộc cho người lao động theo quy định của Luật này; phối hợp với cơ quan bảo hiểm xã hội trong việc trả sổ bảo hiểm xã hội bản giấy cho người lao động."
-    },
-    {
-      "clause_id": "L41_2024.A27.K2",
-      "score": 0.7538281679153442,
-      "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm m và điểm n khoản 1 Điều 2 của Luật này nếu nộp qua người sử dụng lao động thì thực hiện theo quy định tại khoản 1 Điều "
-    },
-    {
-      "clause_id": "L41_2024.A3.K9",
-      "score": 0.7496989369392395,
-      "text_preview": "Đăng ký tham gia bảo hiểm xã hội là việc người sử dụng lao động, người lao động nộp hồ sơ kê khai thông tin về người lao động, người sử dụng lao động, tiền lương, thu nhập làm căn cứ đóng bảo hiểm xã "
     }
   ],
-  "n_semantic_edges": 3,
-  "n_refs": 7,
-  "elapsed_s": 3.03,
+  "n_semantic_edges": 2,
+  "n_refs": 5,
+  "elapsed_s": 6.79,
   "gold_answer": "Nếu bạn là chủ hộ kinh doanh thuộc diện phải tham gia BHXH bắt buộc thì cần liên hệ cơ quan BHXH hoặc tổ chức dịch vụ thu để đăng ký hồ sơ tham gia theo mã số BHXH, kê khai mức tiền lương làm căn cứ đóng và phương thức đóng. Nếu chưa thuộc diện bắt buộc thì có thể tham gia BHXH tự nguyện. Khi đi đăng ký nên mang CCCD, thông tin đăng ký hộ kinh doanh và giấy tờ liên quan đến mã số BHXH nếu đã có.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 25, Điều 31; Nghị định 158/2025/NĐ-CP"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]\n[Luật BHXH 2024 (41/2024/QH15), Điều 25]\n[Luật BHXH 2024 (41/2024/QH15), Điều 31]"
 }

@@ -18,34 +18,34 @@
   "n_vector_hits": 8,
   "vector_hits": [
     {
+      "clause_id": "L58_2014.A86.K5",
+      "score": 0.7979735136032104,
+      "text_preview": "Người sử dụng lao động là doanh nghiệp, hợp tác xã, hộ kinh doanh cá thể, tổ hợp tác hoạt động trong lĩnh vực nông nghiệp, lâm nghiệp, ngư nghiệp, diêm nghiệp trả lương theo sản phẩm, theo khoán thì m"
+    },
+    {
+      "clause_id": "L45_2019.A102.K3",
+      "score": 0.7898038625717163,
+      "text_preview": "Mức khấu trừ tiền lương hằng tháng không được quá 30% tiền lương thực trả hằng tháng của người lao động sau khi trích nộp các khoản bảo hiểm xã hội bắt buộc, bảo hiểm y tế, bảo hiểm thất nghiệp, thuế "
+    },
+    {
       "clause_id": "L41_2024.A117.K2",
-      "score": 0.7884113788604736,
+      "score": 0.7884348630905151,
       "text_preview": "Người lao động đóng theo quy định."
     },
     {
-      "clause_id": "L41_2024.A117.K1",
-      "score": 0.7839910984039307,
-      "text_preview": "Người sử dụng lao động đóng theo quy định."
+      "clause_id": "L58_2014.A85.K1",
+      "score": 0.7872403860092163,
+      "text_preview": "Người lao động quy định tại các điểm a, b, c, d, đ và h khoản 1 Điều 2 của Luật này, hằng tháng đóng bằng 8% mức tiền lương tháng vào quỹ hưu trí và tử tuất.\nNgười lao động quy định điểm i khoản 1 Điề"
     },
     {
-      "clause_id": "L41_2024.A33.K6",
-      "score": 0.7721729278564453,
-      "text_preview": "Trường hợp trong tháng đầu làm việc hoặc trong tháng đầu trở lại làm việc mà người lao động nghỉ việc hưởng chế độ ốm đau từ 14 ngày làm việc trở lên thì vẫn phải đóng bảo hiểm xã hội của tháng đó."
-    },
-    {
-      "clause_id": "L41_2024.A33.K7",
-      "score": 0.7700245380401611,
-      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
-    },
-    {
-      "clause_id": "L41_2024.A120.K2",
-      "score": 0.7686562538146973,
-      "text_preview": "Mức chi tổ chức và hoạt động bảo hiểm xã hội được tính trên cơ sở số phần trăm của dự toán thu, chi bảo hiểm xã hội, không bao gồm số chi đóng bảo hiểm y tế cho người hưởng các chế độ bảo hiểm xã hội "
+      "clause_id": "L45_2019.A85.K2",
+      "score": 0.7848864793777466,
+      "text_preview": "Doanh nghiệp thành viên của thỏa ước lao động tập thể ngành, thỏa ước lao động tập thể có nhiều doanh nghiệp được rút khỏi thỏa ước lao động tập thể khi có sự đồng thuận của tất cả người sử dụng lao đ"
     }
   ],
-  "n_semantic_edges": 4,
-  "n_refs": 3,
-  "elapsed_s": 2.35,
+  "n_semantic_edges": 9,
+  "n_refs": 4,
+  "elapsed_s": 2.7,
   "gold_answer": "Khi hưởng BHXH 1 lần, mức hưởng được tính trên toàn bộ quá trình đóng vào quỹ hưu trí, tử tuất theo mức bình quân lương tháng đóng BHXH, không chỉ phần bạn tự đóng. Nói dễ hiểu, số tiền hưởng không tách riêng 'phần công ty đóng' hay 'phần mình đóng' để hoàn lại từng khoản, mà tính theo công thức luật định trên toàn bộ thời gian và mức đóng hợp lệ.",
-  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
 }

@@ -2,50 +2,47 @@
   "arm": "graphrag",
   "stt": 20,
   "question": "Vợ chồng bà Hải Bắc làm chung một cơ quan, đã đóng BHXH trên 3 năm.\nBà Bắc hỏi, khi bà nghỉ sinh con thì chồng của bà có được hưởng tiền trợ cấp thai sản không?",
-  "answer": "Chồng của bà Bắc có thể được hưởng tiền trợ cấp thai sản khi bà nghỉ sinh con nếu ông đang tham gia bảo hiểm xã hội bắt buộc. Cụ thể, theo quy định, khi lao động nữ mang thai hộ sinh con, người chồng đang tham gia bảo hiểm xã hội bắt buộc được nghỉ việc hưởng chế độ thai sản theo quy định của Luật này [Điều 54 khoản 4].\n\nNgoài ra, nếu bà Bắc nhờ mang thai hộ và chồng bà đang tham gia bảo hiểm xã hội bắt buộc, ông cũng có quyền hưởng trợ cấp thai sản trong thời gian bà Bắc nghỉ sinh con [Điều 55 khoản 2].\n\nTóm lại, chồng bà Bắc có quyền hưởng trợ cấp thai sản nếu đáp ứng các điều kiện nêu trên. \n\nCitation: [Điều 54 khoản 4], [Điều 55 khoản 2].",
+  "answer": "Chồng của bà Bắc có thể được hưởng tiền trợ cấp thai sản khi bà sinh con. Cụ thể, khi lao động nữ mang thai hộ sinh con, người chồng đang tham gia bảo hiểm xã hội bắt buộc được nghỉ việc hưởng chế độ thai sản theo quy định. \n\nĐiều này có nghĩa là nếu bà Bắc sinh con, chồng bà sẽ được hưởng chế độ thai sản theo quy định của pháp luật về bảo hiểm xã hội.\n\nCitation: [Điều 54 khoản 4]",
   "citations": [
-    "[Điều 54 khoản 4]",
-    "[Điều 55 khoản 2]"
+    "[Điều 54 khoản 4]"
   ],
   "citation_ids": [
-    "L41_2024.A54.K4",
-    "L41_2024.A55.K2"
+    "L41_2024.A54.K4"
   ],
   "citation_verified": {
-    "L41_2024.A54.K4": true,
-    "L41_2024.A55.K2": true
+    "L41_2024.A54.K4": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
       "clause_id": "L41_2024.A55.K1",
-      "score": 0.8663731813430786,
+      "score": 0.866545557975769,
       "text_preview": "Được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi. Trường hợp sinh đôi trở lên thì được nghỉ thêm 01 tháng cho mỗi con tính từ con thứ hai trở đi.\nTrường hợp "
     },
     {
       "clause_id": "L41_2024.A55.K2",
-      "score": 0.859671950340271,
+      "score": 0.8597078323364258,
       "text_preview": "Trường hợp lao động nữ nhờ mang thai hộ chết hoặc được cơ sở khám bệnh, chữa bệnh xác nhận không đủ sức khỏe để chăm sóc con khi con chưa đủ 06 tháng tuổi thì người chồng của lao động nữ nhờ mang thai"
     },
     {
+      "clause_id": "L45_2019.A139.K5",
+      "score": 0.8585175275802612,
+      "text_preview": "Lao động nam khi vợ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ và người lao động là người mẹ nhờ mang thai hộ được nghỉ việc hưởng chế độ thai sản theo qu"
+    },
+    {
       "clause_id": "L41_2024.A54.K4",
-      "score": 0.8546712398529053,
+      "score": 0.8547887802124023,
       "text_preview": "Khi lao động nữ mang thai hộ sinh con thì người chồng đang tham gia bảo hiểm xã hội bắt buộc được nghỉ việc hưởng chế độ thai sản theo quy định tại khoản 2 và khoản 3 Điều 53 của Luật này."
     },
     {
-      "clause_id": "L41_2024.A53.K1",
-      "score": 0.846515417098999,
-      "text_preview": "Thời gian nghỉ việc hưởng chế độ thai sản của lao động nữ khi sinh con được thực hiện theo quy định tại khoản 1 Điều 139 của Bộ luật Lao động.\nTrường hợp lao động nữ trở lại làm việc trước khi hết thờ"
-    },
-    {
-      "clause_id": "L41_2024.A53.K8",
-      "score": 0.845423698425293,
-      "text_preview": "Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ "
+      "clause_id": "L45_2019.A139.K2",
+      "score": 0.8477728366851807,
+      "text_preview": "Trong thời gian nghỉ thai sản, lao động nữ được hưởng chế độ thai sản theo quy định của pháp luật về bảo hiểm xã hội."
     }
   ],
-  "n_semantic_edges": 7,
-  "n_refs": 13,
-  "elapsed_s": 4.27,
+  "n_semantic_edges": 14,
+  "n_refs": 12,
+  "elapsed_s": 2.95,
   "gold_answer": "Tại Điểm e Khoản 1 Điều 31 và Khoản 2 Điều 34 Luật BHXH năm 2014 quy định lao động nam đang đóng BHXH có vợ sinh con được nghỉ việc hưởng chế độ thai sản 5 ngày làm việc.\nTrường hợp vợ sinh con phải phẫu thuật, sinh con dưới 32 tuần tuổi được nghỉ 7 ngày làm việc. Trường hợp vợ sinh đôi thì được nghỉ 10 ngày làm việc, từ sinh ba trở lên thì cứ thêm mỗi con được nghỉ thêm 3 ngày làm việc.\nTrường hợp vợ sinh đôi trở lên mà phải phẫu thuật thì được nghỉ 14 ngày làm việc. Thời gian nghỉ việc hưởng chế độ thai sản quy định nêu trên được tính trong khoảng thời gian 30 ngày đầu kể từ ngày vợ sinh con.\nBHXH Việt Nam thông tin để bà Bắc nắm được các quyền lợi về chế độ thai sản.",
-  "gold_citations_raw": "Điểm e Khoản 1 Điều 31 và Khoản 2 Điều 34 Luật BHXH năm 2014"
+  "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 31]\n[Luật BHXH 2014 (58/2014/QH13), Điều 34]"
 }

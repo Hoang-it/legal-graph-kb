@@ -2,25 +2,35 @@
   "arm": "elite_ontology",
   "stt": 5,
   "question": "Công ty của ông Tuấn Tú (Lào Cai) có phát sinh ký hợp đồng lao động với người lao động từ tháng 3/2024.\nÔng Tú hỏi, ông có thể kê khai thông tin qua mạng để đóng BHXH cho người lao động không? Hồ sơ kê khai gồm những gì?\nNếu kê khai qua mạng thì cần làm gì để được cấp mã đăng nhập?",
-  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpmlqmr8s2.pl:2:101: Syntax error: Operator expected]",
+  "answer": "Issue: Ông Tuấn Tú hỏi về khả năng kê khai thông tin qua mạng để đóng BHXH cho người lao động và hồ sơ cần thiết. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 6], cần cung cấp đầy đủ thông tin về việc đóng và thủ tục thực hiện bảo hiểm xã hội. \nApplication: Hệ thống đã xác định các điều kiện cần thiết cho việc kê khai qua mạng, bao gồm thông tin cần cung cấp, hồ sơ yêu cầu và quy trình cấp mã đăng nhập. Prolog trả về Conditions = [information_submission, required_documents, login_code_process]. \nConclusion: Theo Prolog, để kê khai qua mạng, ông Tú cần chuẩn bị thông tin, hồ sơ và thực hiện quy trình cấp mã đăng nhập.",
+  "plain_answer": "Ông Tú có thể kê khai thông tin qua mạng để đóng BHXH cho người lao động. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 6], ông cần chuẩn bị thông tin đầy đủ và hồ sơ cần thiết, cũng như thực hiện quy trình để được cấp mã đăng nhập. Nếu cần thêm thông tin cụ thể về hồ sơ, ông có thể tham khảo thêm các quy định liên quan.",
   "citations": [
-    "[Điều 18 khoản 7]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 6]"
   ],
   "citation_ids": [
-    "L41_2024.A18.K7"
+    "L41_2024.A18.K6"
   ],
   "citation_indices": [
-    0
+    0,
+    1,
+    4
   ],
-  "prolog_success": false,
-  "prolog_status": "syntax_error",
-  "n_repair_rounds": 2,
-  "prolog_trace": "",
-  "irac_sections": {},
-  "elapsed_s": 13.002,
-  "prompt_tokens": 5963,
-  "completion_tokens": 715,
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,online_registration_conditions([information_submission,required_documents,login_code_process]),based_on(source_c004))]",
+  "prolog_program": "legal_source(source_c004, law_bhxh_2024, article_18, clause_6, none, 'Xác nhận thời gian đóng bảo hiểm xã hội, bảo hiểm thất nghiệp cho từng người lao động; cung cấp đầy đủ và kịp thời thông tin về việc đóng, quyền được hưởng chế độ, thủ tục thực hiện bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện khi người lao động, người sử dụng lao động hoặc tổ chức công đoàn yêu cầu.').\nlegal_source(source_c004, law_bhxh_2024, article_18, clause_4, none, 'Tiếp nhận hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế và cấp sổ bảo hiểm xã hội, thẻ bảo hiểm y tế cho người lao động.').\nlegal_source(source_c004, law_bhxh_2024, article_18, clause_7, none, 'Ứng dụng công nghệ thông tin, thực hiện cải cách thủ tục hành chính bảo đảm công khai, minh bạch, đơn giản, thuận tiện cho người tham gia và người thụ hưởng chế độ bảo hiểm xã hội; lưu trữ hồ sơ của người tham gia và người thụ hưởng chế độ bảo hiểm xã hội, bảo hiểm thất nghiệp theo quy định của pháp luật.').\nonline_registration_conditions(Conditions, Trace) :- Conditions = [information_submission, required_documents, login_code_process], Trace = [step(conclusion, online_registration_conditions(Conditions), based_on(source_c004))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Ông Tuấn Tú hỏi về khả năng kê khai thông tin qua mạng để đóng BHXH cho người lao động và hồ sơ cần thiết.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 6], cần cung cấp đầy đủ thông tin về việc đóng và thủ tục thực hiện bảo hiểm xã hội.",
+    "application": "Hệ thống đã xác định các điều kiện cần thiết cho việc kê khai qua mạng, bao gồm thông tin cần cung cấp, hồ sơ yêu cầu và quy trình cấp mã đăng nhập. Prolog trả về Conditions = [information_submission, required_documents, login_code_process].",
+    "conclusion": "Theo Prolog, để kê khai qua mạng, ông Tú cần chuẩn bị thông tin, hồ sơ và thực hiện quy trình cấp mã đăng nhập."
+  },
+  "elapsed_s": 14.264,
+  "prompt_tokens": 4124,
+  "completion_tokens": 703,
   "error": null,
   "gold_answer": "Đơn vị có thể thực hiện giao dịch BHXH điện tử qua Cổng thông tin điện tử của BHXH Việt Nam hoặc qua Tổ chức cung cấp dịch vụ I-VAN để kê khai đóng BHXH cho người lao động.\nHồ sơ kê khai bao gồm: Tờ khai đơn vị tham gia, điều chỉnh thông tin BHXH, BHYT (Mẫu TK3-TS); báo cáo tình hình sử dụng lao động và danh sách tham gia BHXH, BHYT, BHTN, BHTNLĐ, BNN (Mẫu D02-LT); tờ khai tham gia, điều chỉnh thông tin BHXH, BHYT (Mẫu TK1-TS) đối với người tham gia lần đầu hoặc có mã số BHXH nhưng chưa đủ thông tin; trường hợp người lao động được hưởng quyền lợi BHYT cao hơn: Bổ sung Giấy tờ chứng minh (nếu có).\nKhi kê khai giao dịch BHXH điện tử thì cần điều kiện sau để được cấp mã đăng nhập: Đơn vị cần có chứng thư số (chữ ký số) còn hiệu lực được cấp bởi tổ chức cung cấp dịch vụ chứng thực chữ ký số cấp theo quy định; có khả năng truy cập và sử dụng mạng internet; có địa chỉ hòm thư điện tử (email) thường xuyên sử dụng.\nKhi đơn vị đã có chữ ký số thì có thể kê khai giao dịch BHXH điện tử qua các phương thức sau:\nPhương thức 1: Đăng ký qua Cổng thông tin điện tử của BHXH Việt Nam:\nĐơn vị sử dụng chữ ký số trên máy tính, mở trình duyệt bất kỳ, truy cập theo đường dẫn https://dichvucong.baohiemxahoi.gov.vn, chọn mục đăng ký, thực hiện các bước theo hướng dẫn trên hệ thống để hoàn tất đăng ký và kê khai hồ sơ theo quy định.\nPhương thức 2: Đăng ký sử dụng dịch vụ I-VAN:\nĐơn vị sử dụng phần mềm kê khai BHXH điện tử do Tổ chức I-VAN cung cấp: Đề nghị liên hệ với cơ quan BHXH để được cấp mã đơn vị lần đầu (do phần mềm kê khai BHXH điện tử của một số Tổ chức I-VAN chưa hỗ trợ đăng ký cấp mã đơn vị lần đầu cho doanh nghiệp), sau đó thực hiện đăng ký giao dịch điện tử và kê khai hồ sơ theo quy định.",
-  "gold_citations_raw": null
+  "gold_citations_raw": "[Quyết định 595/QĐ-BHXH, Điều 23]\n[Quyết định 838/QĐ-BHXH, Điều 4]\n[Quyết định 838/QĐ-BHXH, Điều 7]"
 }

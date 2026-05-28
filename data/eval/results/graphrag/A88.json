@@ -2,50 +2,53 @@
   "arm": "graphrag",
   "stt": 88,
   "question": "Em nghỉ việc ở công ty cũ đc gần 6 tháng , thì bây h em có thể rút BHXH hay BHTN đc không?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 33 khoản 7]\n- [Điều 64 khoản 1]",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Điều 33 khoản 7] về việc đóng tiếp bảo hiểm xã hội.\n- [Điều 50 khoản 4] về điều kiện hưởng chế độ thai sản.\n- [Điều 62 khoản 2] về việc nộp hồ sơ cho cơ quan bảo hiểm xã hội.",
   "citations": [
     "[Điều 33 khoản 7]",
-    "[Điều 64 khoản 1]"
+    "[Điều 50 khoản 4]",
+    "[Điều 62 khoản 2]"
   ],
   "citation_ids": [
     "L41_2024.A33.K7",
-    "L41_2024.A64.K1"
+    "L41_2024.A50.K4",
+    "L41_2024.A62.K2"
   ],
   "citation_verified": {
     "L41_2024.A33.K7": true,
-    "L41_2024.A64.K1": true
+    "L41_2024.A50.K4": true,
+    "L41_2024.A62.K2": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
       "clause_id": "L41_2024.A33.K7",
-      "score": 0.8067315816879272,
+      "score": 0.8065733313560486,
       "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
     },
     {
-      "clause_id": "L41_2024.A33.K6",
-      "score": 0.7916451096534729,
-      "text_preview": "Trường hợp trong tháng đầu làm việc hoặc trong tháng đầu trở lại làm việc mà người lao động nghỉ việc hưởng chế độ ốm đau từ 14 ngày làm việc trở lên thì vẫn phải đóng bảo hiểm xã hội của tháng đó."
+      "clause_id": "L58_2014.A17.K3",
+      "score": 0.7974994778633118,
+      "text_preview": "Chiếm dụng tiền đóng, hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
     },
     {
       "clause_id": "L41_2024.A9.K2",
-      "score": 0.7916200757026672,
+      "score": 0.7917940020561218,
       "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
     },
     {
-      "clause_id": "L41_2024.A62.K2",
-      "score": 0.7898217439651489,
-      "text_preview": "Người lao động nộp hồ sơ quy định tại Điều 61 của Luật này cho cơ quan bảo hiểm xã hội trong trường hợp thôi việc trước thời điểm sinh con, nhận con khi nhờ mang thai hộ, nhận nuôi con nuôi dưới 06 th"
+      "clause_id": "L41_2024.A33.K6",
+      "score": 0.7917761206626892,
+      "text_preview": "Trường hợp trong tháng đầu làm việc hoặc trong tháng đầu trở lại làm việc mà người lao động nghỉ việc hưởng chế độ ốm đau từ 14 ngày làm việc trở lên thì vẫn phải đóng bảo hiểm xã hội của tháng đó."
     },
     {
-      "clause_id": "L41_2024.A50.K4",
-      "score": 0.7877489328384399,
-      "text_preview": "Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con hoặc nhận con khi nhờ mang thai "
+      "clause_id": "L41_2024.A62.K2",
+      "score": 0.7898163199424744,
+      "text_preview": "Người lao động nộp hồ sơ quy định tại Điều 61 của Luật này cho cơ quan bảo hiểm xã hội trong trường hợp thôi việc trước thời điểm sinh con, nhận con khi nhờ mang thai hộ, nhận nuôi con nuôi dưới 06 th"
     }
   ],
-  "n_semantic_edges": 1,
-  "n_refs": 8,
-  "elapsed_s": 1.61,
+  "n_semantic_edges": 10,
+  "n_refs": 5,
+  "elapsed_s": 2.58,
   "gold_answer": "Với BHTN, nếu bạn nghỉ gần 6 tháng rồi thì vẫn phải kiểm tra còn trong hạn 3 tháng nộp hồ sơ hay đã quá hạn. Nếu đã quá 3 tháng kể từ ngày chấm dứt HĐLĐ thì đợt này bạn không nộp hưởng BHTN được, nhưng thời gian đóng chưa hưởng vẫn được bảo lưu. Với BHXH một lần, thường phải chờ đủ điều kiện luật định, phổ biến là đã ngừng tham gia từ 12 tháng trở lên và thuộc trường hợp được hưởng.",
-  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 45; Luật BHXH 2024 Điều 70"
+  "gold_citations_raw": "[Luật Việc làm 2013, Điều 46]\n[Luật Việc làm 2013, Điều 45]\n[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
 }

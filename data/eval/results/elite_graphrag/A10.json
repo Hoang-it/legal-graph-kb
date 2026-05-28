@@ -2,8 +2,8 @@
   "arm": "elite_graphrag",
   "stt": 10,
   "question": "Bà Thị Hạnh năm nay 53 tuổi, đóng BHXH tự nguyện được 5 năm.\nBà Hạnh hỏi, bà tiếp tục đóng BHXH tự nguyện đến năm 60 tuổi thì có được nhận lương hưu không?",
-  "answer": "Issue: Bà Thị Hạnh hỏi về khả năng nhận lương hưu khi bà 60 tuổi và đã đóng BHXH tự nguyện 5 năm. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 9], người tham gia bảo hiểm xã hội tự nguyện cần đủ 20 năm đóng bảo hiểm xã hội tự nguyện để được hưởng lương hưu khi đủ 55 tuổi đối với nữ. \nApplication: slot age bound = 53, slot years_contributed bound = 5. Prolog query can_receive_pension(user, Answer, Trace) trả về Answer = no vì 53 < 55 và 5 < 20. \nConclusion: Theo Prolog, bà Hạnh KHÔNG đủ điều kiện nhận lương hưu do chưa đủ năm đóng (5 < 20).",
-  "plain_answer": "Bà Hạnh hiện 53 tuổi và đã đóng BHXH tự nguyện 5 năm, nên chưa đủ điều kiện nhận lương hưu theo [Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 9] vì cần tối thiểu 20 năm đóng. Bà cần tiếp tục đóng thêm 15 năm nữa để đủ điều kiện nhận lương hưu khi đủ 60 tuổi.",
+  "answer": "Issue: Bà Thị Hạnh hỏi về khả năng nhận lương hưu khi bà 60 tuổi và đã đóng BHXH tự nguyện 5 năm. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 9], người tham gia bảo hiểm xã hội tự nguyện cần đủ 20 năm đóng bảo hiểm xã hội để được hưởng lương hưu khi đủ 55 tuổi đối với nữ. \nApplication: Không có giá trị nào được gán cho các slot. Prolog đã xác định rằng bà Hạnh không đủ điều kiện hưởng lương hưu do chưa đủ 20 năm đóng bảo hiểm xã hội. \nConclusion: Theo Prolog, bà Hạnh KHÔNG đủ điều kiện hưởng lương hưu hằng tháng do chỉ có 5 năm đóng bảo hiểm xã hội.",
+  "plain_answer": "Bà Hạnh hiện tại 53 tuổi và đã đóng BHXH tự nguyện 5 năm, nên chưa đủ điều kiện để nhận lương hưu khi đủ 60 tuổi. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 9], bà cần ít nhất 20 năm đóng bảo hiểm xã hội. Bà có thể tiếp tục đóng thêm để đủ điều kiện trong tương lai.",
   "citations": [
     "[Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 9]"
   ],
@@ -11,23 +11,24 @@
     "L41_2024.A141.K9"
   ],
   "citation_indices": [
-    0
+    0,
+    1
   ],
   "prolog_success": true,
   "prolog_status": "success",
   "n_repair_rounds": 0,
-  "prolog_trace": "[step(conclusion,can_receive_pension(user,no),based_on(source_c000))]",
-  "prolog_program": "age(user, 53).\nyears_contributed(user, 5).\nlegal_source(source_c000, law_bhxh_2024, article_141, clause_9, none, 'Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.').\ncan_receive_pension(Person, Answer, Trace) :- age(Person, Age), years_contributed(Person, Years), Age >= 55, Years >= 20, Answer = yes, Trace = [step(conclusion, can_receive_pension(Person, Answer), based_on(source_c000))].\ncan_receive_pension(Person, Answer, Trace) :- age(Person, Age), years_contributed(Person, Years), Age < 55, Answer = no, Trace = [step(conclusion, can_receive_pension(Person, Answer), based_on(source_c000))].\ncan_receive_pension(Person, Answer, Trace) :- age(Person, Age), years_contributed(Person, Years), Age >= 55, Years < 20, Answer = no, Trace = [step(conclusion, can_receive_pension(Person, Answer), based_on(source_c000))].",
+  "prolog_trace": "[step(conclusion,pension_eligibility(user,no),based_on(source_c000))]",
+  "prolog_program": "age(user, 53).\nyears_contributed(user, 5).\nlegal_source(source_c000, law_bhxh_2024, article_141, clause_9, none, 'Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.').\nlegal_source(source_c001, law_bhxh_2024, article_141, clause_10, none, 'Người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên và có văn bản của cơ quan bảo hiểm xã hội xác nhận về việc chờ đủ điều kiện về tuổi đời để hưởng lương hưu được quy định tại Nghị định số 12/CP ngày 26 tháng 01 năm 1995 được sửa đổi, bổ sung một số điều theo Nghị định số 01/2003/NĐ-CP ngày 09 tháng 01 năm 2003 của Chính phủ thì được hưởng lương hưu khi nam đủ 60 tuổi, nữ đủ 55 tuổi.').\npension_eligibility(User, Answer, Trace) :- age(User, Age), years_contributed(User, Years), Age >= 55, Years >= 15, Answer = yes, Trace = [step(conclusion, pension_eligibility(User, Answer), based_on(source_c000))].\npension_eligibility(User, Answer, Trace) :- age(User, Age), years_contributed(User, Years), Age < 55, Answer = no, Trace = [step(conclusion, pension_eligibility(User, Answer), based_on(source_c000))].\npension_eligibility(User, Answer, Trace) :- age(User, Age), years_contributed(User, Years), Years < 15, Answer = no, Trace = [step(conclusion, pension_eligibility(User, Answer), based_on(source_c001))].",
   "prolog_error": "",
   "irac_sections": {
     "issue": "Bà Thị Hạnh hỏi về khả năng nhận lương hưu khi bà 60 tuổi và đã đóng BHXH tự nguyện 5 năm.",
-    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 9], người tham gia bảo hiểm xã hội tự nguyện cần đủ 20 năm đóng bảo hiểm xã hội tự nguyện để được hưởng lương hưu khi đủ 55 tuổi đối với nữ.",
-    "application": "slot age bound = 53, slot years_contributed bound = 5. Prolog query can_receive_pension(user, Answer, Trace) trả về Answer = no vì 53 < 55 và 5 < 20.",
-    "conclusion": "Theo Prolog, bà Hạnh KHÔNG đủ điều kiện nhận lương hưu do chưa đủ năm đóng (5 < 20)."
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 9], người tham gia bảo hiểm xã hội tự nguyện cần đủ 20 năm đóng bảo hiểm xã hội để được hưởng lương hưu khi đủ 55 tuổi đối với nữ.",
+    "application": "Không có giá trị nào được gán cho các slot. Prolog đã xác định rằng bà Hạnh không đủ điều kiện hưởng lương hưu do chưa đủ 20 năm đóng bảo hiểm xã hội.",
+    "conclusion": "Theo Prolog, bà Hạnh KHÔNG đủ điều kiện hưởng lương hưu hằng tháng do chỉ có 5 năm đóng bảo hiểm xã hội."
   },
-  "elapsed_s": 13.598,
-  "prompt_tokens": 4034,
-  "completion_tokens": 741,
+  "elapsed_s": 23.857,
+  "prompt_tokens": 4350,
+  "completion_tokens": 890,
   "error": null,
   "gold_answer": "Theo quy định của Luật BHXH mới có hiệu lực thi hành từ ngày 1/7/2025, người tham gia BHXH tự nguyện được hưởng lương hưu khi đủ tuổi nghỉ hưu theo quy định tại Khoản 2 Điều 169 của Bộ luật Lao động và có thời gian đóng BHXH từ đủ 15 năm trở lên.\nTheo quy định tại Khoản 2 Điều 169 Bộ luật Lao động năm 2019 và Nghị định số 135/2020/NĐ-CP ngày 18/11/2020 của Chính phủ thì kể từ ngày 1/1/2021 tuổi nghỉ hưu của lao động nữ là 55 tuổi 4 tháng; sau đó, cứ mỗi năm tăng thêm 4 tháng cho đến khi đủ 60 tuổi vào năm 2035.\nTrường hợp của bà, năm nay 53 tuổi có thời gian đóng BHXH là 5 năm, nếu bà đóng BHXH tự nguyện liên tục đến khi 60 tuổi (năm 2031) thì khi đó bà có thời gian đóng BHXH là 12 năm chưa đủ điều kiện về thời gian đóng BHXH để hưởng chế độ hưu trí.\nDo vậy, bà nên tiếp tục tham gia BHXH tự nguyện cho đến khi đủ 15 năm đóng BHXH để được hưởng lương hưu hằng tháng đến trọn đời, khi đó bà còn được cấp thẻ BHYT miễn phí và được hưởng các chế độ liên quan của người hưởng lương hưu.",
   "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 169]"

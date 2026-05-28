@@ -2,41 +2,53 @@
   "arm": "graphrag",
   "stt": 90,
   "question": "BHXH tự nguyện thì chuyển sang BHXH bắt buộc như thế nào cho hộ kinh doanh mới thành lập?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 3: Giải thích từ ngữ\n- Điều 27: Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện\n- Điều 36: Mức đóng, phương thức và thời hạn đóng bảo hiểm xã hội của người tham gia bảo hiểm xã hội tự nguyện",
-  "citations": [],
-  "citation_ids": [],
-  "citation_verified": {},
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 3 khoản 4] - Giải thích về bảo hiểm xã hội tự nguyện.\n- [Điều 33 khoản 7] - Quy định về việc đóng tiếp bảo hiểm xã hội bắt buộc.\n- [Điều 27 khoản 2] - Hồ sơ đăng ký tham gia bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 3 khoản 4]",
+    "[Điều 33 khoản 7]",
+    "[Điều 27 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A3.K4",
+    "L41_2024.A33.K7",
+    "L41_2024.A27.K2"
+  ],
+  "citation_verified": {
+    "L41_2024.A3.K4": true,
+    "L41_2024.A33.K7": true,
+    "L41_2024.A27.K2": true
+  },
   "n_vector_hits": 8,
   "vector_hits": [
     {
       "clause_id": "L41_2024.A31.K2",
-      "score": 0.7893741130828857,
+      "score": 0.7893441915512085,
       "text_preview": "Thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện thấp nhất bằng mức chuẩn hộ nghèo của khu vực nông thôn và cao nhất bằng 20 lần mức tham chiếu tại thời điểm đóng."
     },
     {
+      "clause_id": "L58_2014.A5.K2",
+      "score": 0.7874432802200317,
+      "text_preview": "Mức đóng bảo hiểm xã hội bắt buộc được tính trên cơ sở tiền lương tháng của người lao động. Mức đóng bảo hiểm xã hội tự nguyện được tính trên cơ sở mức thu nhập tháng do người lao động lựa chọn."
+    },
+    {
       "clause_id": "L41_2024.A3.K4",
-      "score": 0.7862865328788757,
+      "score": 0.7863313555717468,
       "text_preview": "Bảo hiểm xã hội tự nguyện là loại hình bảo hiểm xã hội do Nhà nước tổ chức mà công dân Việt Nam tự nguyện tham gia và được lựa chọn mức đóng, phương thức đóng phù hợp với thu nhập của mình."
     },
     {
       "clause_id": "L41_2024.A33.K7",
-      "score": 0.785400390625,
+      "score": 0.7854275703430176,
       "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
     },
     {
-      "clause_id": "L41_2024.A5.K2",
-      "score": 0.7842490077018738,
-      "text_preview": "Mức đóng bảo hiểm xã hội bắt buộc được tính trên cơ sở tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc. Mức đóng bảo hiểm xã hội tự nguyện được tính trên cơ sở thu nhập làm căn cứ đóng bảo hiểm xã"
-    },
-    {
-      "clause_id": "L41_2024.A36.K1",
-      "score": 0.7835943698883057,
-      "text_preview": "Đối tượng quy định tại khoản 4 Điều 2 của Luật này, hằng tháng đóng bằng 22% mức thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện vào quỹ hưu trí và tử tuất.\nCăn cứ vào điều kiện phát triển kinh tế "
+      "clause_id": "L58_2014.A3.K3",
+      "score": 0.7843626141548157,
+      "text_preview": "Bảo hiểm xã hội tự nguyện là loại hình bảo hiểm xã hội do Nhà nước tổ chức mà người tham gia được lựa chọn mức đóng, phương thức đóng phù hợp với thu nhập của mình và Nhà nước có chính sách hỗ trợ tiề"
     }
   ],
-  "n_semantic_edges": 3,
+  "n_semantic_edges": 8,
   "n_refs": 5,
-  "elapsed_s": 2.44,
+  "elapsed_s": 3.33,
   "gold_answer": "Khi hộ kinh doanh mới thành lập và chủ hộ thuộc diện tham gia BHXH bắt buộc, bạn cần đăng ký tham gia bắt buộc theo mã số BHXH đang có; không phải tạo mã mới. Nếu trước đó bạn đang đóng tự nguyện, thời gian đã đóng sẽ được bảo lưu và nối tiếp trên cùng mã số. Bạn chỉ cần liên hệ cơ quan BHXH để chuyển phương thức tham gia và tránh đóng trùng cùng thời gian ở cả 2 diện.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 25, Điều 36; Nghị định 158/2025/NĐ-CP"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]\n[Luật BHXH 2024 (41/2024/QH15), Điều 25]\n[Luật BHXH 2024 (41/2024/QH15), Điều 36]"
 }

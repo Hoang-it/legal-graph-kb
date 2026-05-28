@@ -2,12 +2,16 @@
   "arm": "llm_only",
   "stt": 3,
   "question": "Bà H.T. T đã chấm dứt hợp đồng lao động với doanh nghiệp từ năm 2018. Hiện tại, bà phát hiện là tháng 9/2018 bà chưa được chốt sổ BHXH.\nBà T. hỏi, bà có thể tự chốt sổ BHXH với cơ quan bảo hiểm quận qua hình thức nộp hồ sơ online được không?",
-  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động có quyền yêu cầu chốt sổ bảo hiểm xã hội khi chấm dứt hợp đồng lao động. Tuy nhiên, việc chốt sổ BHXH thường phải được thực hiện qua đơn vị sử dụng lao động hoặc cơ quan bảo hiểm xã hội.\n\nHiện tại, việc nộp hồ sơ online để chốt sổ BHXH có thể được thực hiện nếu cơ quan bảo hiểm xã hội có quy định cho phép. Tuy nhiên, bà H.T. T cần liên hệ trực tiếp với cơ quan bảo hiểm xã hội quận để xác nhận quy trình cụ thể và hình thức nộp hồ sơ.\n\nTóm lại, bà T có thể tự chốt sổ BHXH nhưng cần kiểm tra quy định cụ thể từ cơ quan bảo hiểm xã hội.",
-  "citations": [],
-  "citation_ids": [],
-  "elapsed_s": 4.183,
-  "prompt_tokens": 243,
-  "completion_tokens": 185,
+  "answer": "Bà H.T. T không thể tự chốt sổ BHXH với cơ quan bảo hiểm xã hội qua hình thức nộp hồ sơ online. Theo quy định, việc chốt sổ BHXH phải được thực hiện bởi đơn vị sử dụng lao động nơi bà T làm việc trước khi chấm dứt hợp đồng lao động. Nếu doanh nghiệp không thực hiện việc chốt sổ, bà T có thể yêu cầu doanh nghiệp thực hiện hoặc khiếu nại đến cơ quan bảo hiểm xã hội để được hỗ trợ [Luật BHXH 2024 (41/2024/QH15), Điều 21 khoản 1].",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 21 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A21.K1"
+  ],
+  "elapsed_s": 3.889,
+  "prompt_tokens": 286,
+  "completion_tokens": 136,
   "gold_answer": "Khoản 5 Điều 21 Luật BHXH 2014 quy định: \"Người sử dụng lao động có trách nhiệm phối hợp với cơ quan BHXH trả sổ BHXH cho người lao động, xác nhận thời gian đóng BHXH khi người lao động chấm dứt HĐLĐ, HĐLV hoặc thôi việc theo quy định của pháp luật\".\nTheo Khoản 3, Điều 48 Bộ luật lao động năm 2019 quy định trách nhiệm của người sử dụng lao động khi hợp đồng lao động chấm dứt như sau:\n\"Người sử dụng lao động có trách nhiệm hoàn thành thủ tục xác nhận thời gian đóng BHXH, BH thất nghiệp và trả lại cùng với bản chính giấy tờ khác nếu người sử dụng lao động đã giữ của người lao động.\"\nTừ những căn cứ trên, thì trách nhiệm chốt sổ BHXH do người sử dụng lao động thực hiện, đồng thời có sự phối hợp của cơ quan BHXH.\nQua kiểm tra theo thông tin bà T. cung cấp trên hệ thống phần mềm của Bảo hiểm xã hội Việt Nam thì bà có quá trình tham gia BHXH như sau:\nThời gian từ tháng 1/2017 đến tháng 9/2018 làm việc và đóng BHXH tại Chi nhánh doanh nghiệp.\nThời gian làm việc và đóng BHXH tại Chi nhánh doanh nghiệp đã được đơn vị đề nghị BHXH chốt sổ và in tờ rời cho bà.\nĐề nghị bà T. liên hệ với các đơn vị cũ của bà để nhận lại sổ và tờ rời quá trình tham gia BHXH.",
-  "gold_citations_raw": "Khoản 5 Điều 21 Luật BHXH 2014\nKhoản 3, Điều 48 Bộ luật lao động năm 2019"
+  "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 21]\n[Bộ luật Lao động 2019, Điều 48]"
 }

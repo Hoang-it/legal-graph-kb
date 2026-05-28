@@ -2,50 +2,68 @@
   "arm": "graphrag",
   "stt": 46,
   "question": "Lúc còn huyện cũ thì mình nộp bhxh ở huyện.Còn bây giờ không còn huyện nữa thì mình nộp ở đâu? ở xã hay là hành chính công?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 18 khoản 4] — Trách nhiệm của cơ quan bảo hiểm xã hội.\n- [Điều 17 khoản 2] — Quyền hạn của cơ quan bảo hiểm xã hội.",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 205 khoản 3] — Thông báo quyết định đóng cửa tạm thời nơi làm việc.\n- [Điều 119 khoản 5] — Đăng ký nội quy lao động.\n- [Điều 119 khoản 4] — Đăng ký nội quy lao động.\n- [Điều 92 khoản 1] — Giải quyết hưởng chế độ bảo hiểm xã hội bắt buộc chậm so với thời hạn quy định.\n- [Điều 113 khoản 1] — Giải quyết hưởng chế độ bảo hiểm xã hội tự nguyện chậm so với thời hạn quy định.\n- [Điều 22 khoản 4] — Quyền của cơ quan bảo hiểm xã hội.\n- [Điều 18 khoản 2] — Quyền của người lao động.\n- [Điều 19 khoản 2] — Trách nhiệm của người lao động.",
   "citations": [
-    "[Điều 18 khoản 4]",
-    "[Điều 17 khoản 2]"
+    "[Điều 205 khoản 3]",
+    "[Điều 119 khoản 5]",
+    "[Điều 119 khoản 4]",
+    "[Điều 92 khoản 1]",
+    "[Điều 113 khoản 1]",
+    "[Điều 22 khoản 4]",
+    "[Điều 18 khoản 2]",
+    "[Điều 19 khoản 2]"
   ],
   "citation_ids": [
-    "L41_2024.A18.K4",
-    "L41_2024.A17.K2"
+    "L41_2024.A205.K3",
+    "L41_2024.A119.K5",
+    "L41_2024.A119.K4",
+    "L41_2024.A92.K1",
+    "L41_2024.A113.K1",
+    "L41_2024.A22.K4",
+    "L41_2024.A18.K2",
+    "L41_2024.A19.K2"
   ],
   "citation_verified": {
-    "L41_2024.A18.K4": true,
-    "L41_2024.A17.K2": true
+    "L41_2024.A205.K3": false,
+    "L41_2024.A119.K5": true,
+    "L41_2024.A119.K4": true,
+    "L41_2024.A92.K1": true,
+    "L41_2024.A113.K1": true,
+    "L41_2024.A22.K4": true,
+    "L41_2024.A18.K2": true,
+    "L41_2024.A19.K2": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
+      "clause_id": "L45_2019.A205.K3",
+      "score": 0.7821925282478333,
+      "text_preview": "Ủy ban nhân dân cấp huyện có nơi làm việc dự kiến đóng cửa."
+    },
+    {
+      "clause_id": "L45_2019.A119.K5",
+      "score": 0.7779769897460938,
+      "text_preview": "Căn cứ điều kiện cụ thể, cơ quan chuyên môn về lao động thuộc Ủy ban nhân dân cấp tỉnh có thể ủy quyền cho cơ quan chuyên môn về lao động thuộc Ủy ban nhân dân cấp huyện thực hiện việc đăng ký nội quy"
+    },
+    {
+      "clause_id": "L45_2019.A119.K4",
+      "score": 0.7768508195877075,
+      "text_preview": "Người sử dụng lao động có các chi nhánh, đơn vị, cơ sở sản xuất, kinh doanh đặt ở nhiều địa bàn khác nhau thì gửi nội quy lao động đã được đăng ký đến cơ quan chuyên môn về lao động thuộc Ủy ban nhân "
+    },
+    {
       "clause_id": "L41_2024.A92.K1",
-      "score": 0.7688602209091187,
+      "score": 0.7689090371131897,
       "text_preview": "Trường hợp nộp hồ sơ quá thời hạn quy định tại khoản 1 và khoản 2 Điều 48, khoản 1 Điều 49, khoản 1 Điều 62, khoản 1 Điều 63, khoản 1 Điều 79, khoản 1 và khoản 2 Điều 91 của Luật này thì phải giải trì"
     },
     {
-      "clause_id": "L41_2024.A113.K1",
-      "score": 0.7684490084648132,
-      "text_preview": "Trường hợp nộp hồ sơ quá thời hạn quy định tại khoản 1 Điều 97, khoản 1 Điều 107, điểm a khoản 2 Điều 112 của Luật này thì phải giải trình bằng văn bản và gửi cho cơ quan bảo hiểm xã hội khi nộp hồ sơ"
-    },
-    {
-      "clause_id": "L41_2024.A130.K5",
-      "score": 0.762904703617096,
-      "text_preview": "Việc giải quyết khiếu nại đối với quyết định, hành vi có liên quan đến việc thụ hưởng các chế độ bảo hiểm xã hội hoặc tính thời gian công tác trong khu vực nhà nước để hưởng bảo hiểm xã hội trước ngày"
-    },
-    {
-      "clause_id": "L41_2024.A27.K2",
-      "score": 0.7604666948318481,
-      "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm m và điểm n khoản 1 Điều 2 của Luật này nếu nộp qua người sử dụng lao động thì thực hiện theo quy định tại khoản 1 Điều "
-    },
-    {
-      "clause_id": "L41_2024.A82.K1",
-      "score": 0.7593355178833008,
-      "text_preview": "Người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng có nguyện vọng thay đổi hình thức nhận hoặc thay đổi nơi nhận do chuyển nơi cư trú trong nước thì có văn bản gửi cơ quan bảo hiểm xã hội "
+      "clause_id": "L58_2014.A22.K4",
+      "score": 0.7685681581497192,
+      "text_preview": "Được cơ quan đăng ký doanh nghiệp, cơ quan cấp giấy chứng nhận hoạt động hoặc giấy phép hoạt động gửi bản sao giấy chứng nhận đăng ký doanh nghiệp, giấy phép hoạt động, giấy chứng nhận hoạt động hoặc "
     }
   ],
-  "n_semantic_edges": 1,
-  "n_refs": 16,
-  "elapsed_s": 2.01,
+  "n_semantic_edges": 0,
+  "n_refs": 11,
+  "elapsed_s": 7.92,
   "gold_answer": "Sau khi thay đổi mô hình tổ chức hành chính, hồ sơ BHXH thường nộp tại cơ quan BHXH khu vực/cơ quan được phân công tiếp nhận hoặc Trung tâm phục vụ hành chính công, không phải xã nào cũng trực tiếp thu hồ sơ. Bạn nên tra cứu nơi tiếp nhận mới tại địa phương hoặc gọi cơ quan BHXH gần nhất để tránh đi sai nơi. Nguyên tắc là cơ quan BHXH nơi cư trú vẫn có trách nhiệm hướng dẫn, tiếp nhận hoặc chỉ dẫn nơi nộp đúng.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 25; quy định tổ chức thực hiện của BHXH Việt Nam"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 25]"
 }

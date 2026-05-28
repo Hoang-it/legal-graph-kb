@@ -2,50 +2,47 @@
   "arm": "graphrag",
   "stt": 78,
   "question": "Giờ luật bảo hiểm nữ bao nhiêu tuổi thì về hưu?",
-  "answer": "Theo quy định, nữ có thể về hưu khi đủ 55 tuổi nếu tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên. Ngoài ra, nữ cũng có thể về hưu khi đủ 55 tuổi nếu có từ đủ 15 năm đóng bảo hiểm xã hội và có văn bản xác nhận của cơ quan bảo hiểm xã hội về việc chờ đủ điều kiện về tuổi đời để hưởng lương hưu.\n\nCụ thể:\n- Đủ 20 năm đóng bảo hiểm xã hội tự nguyện: đủ 55 tuổi [Điều 141 khoản 9].\n- Đủ 15 năm đóng bảo hiểm xã hội và có xác nhận: đủ 55 tuổi [Điều 141 khoản 10].\n\nTóm lại, nữ có thể về hưu khi đủ 55 tuổi theo các điều kiện nêu trên.",
+  "answer": "Theo quy định hiện hành, tuổi nghỉ hưu của lao động nữ trong điều kiện lao động bình thường là đủ 55 tuổi 04 tháng vào năm 2021, và sau đó sẽ tăng thêm 04 tháng mỗi năm cho đến khi đủ 60 tuổi vào năm 2035. \n\nGiải thích: Điều này có nghĩa là từ năm 2021, lao động nữ có thể nghỉ hưu khi đủ 55 tuổi 04 tháng, và tuổi nghỉ hưu sẽ dần dần tăng lên cho đến khi đạt 60 tuổi.\n\nCitation: [Điều 169 khoản 2]",
   "citations": [
-    "[Điều 141 khoản 9]",
-    "[Điều 141 khoản 10]"
+    "[Điều 169 khoản 2]"
   ],
   "citation_ids": [
-    "L41_2024.A141.K9",
-    "L41_2024.A141.K10"
+    "L41_2024.A169.K2"
   ],
   "citation_verified": {
-    "L41_2024.A141.K9": true,
-    "L41_2024.A141.K10": true
+    "L41_2024.A169.K2": false
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
+      "clause_id": "L58_2014.A54.K3",
+      "score": 0.8474469184875488,
+      "text_preview": "Lao động nữ là người hoạt động chuyên trách hoặc không chuyên trách ở xã, phường, thị trấn tham gia bảo hiểm xã hội khi nghỉ việc mà có từ đủ 15 năm đến dưới 20 năm đóng bảo hiểm xã hội và đủ 55 tuổi "
+    },
+    {
       "clause_id": "L41_2024.A141.K9",
-      "score": 0.8422960042953491,
+      "score": 0.8423151969909668,
       "text_preview": "Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ,"
     },
     {
+      "clause_id": "L45_2019.A169.K2",
+      "score": 0.837672233581543,
+      "text_preview": "Tuổi nghỉ hưu của người lao động trong điều kiện lao động bình thường được điều chỉnh theo lộ trình cho đến khi đủ 62 tuổi đối với lao động nam vào năm 2028 và đủ 60 tuổi đối với lao động nữ vào năm 2"
+    },
+    {
+      "clause_id": "L58_2014.A56.K4",
+      "score": 0.8324968814849854,
+      "text_preview": "Mức lương hưu hằng tháng của lao động nữ đủ điều kiện hưởng lương hưu theo quy định tại khoản 3 Điều 54 được tính theo số năm đóng bảo hiểm xã hội và mức bình quân tiền lương tháng đóng bảo hiểm xã hộ"
+    },
+    {
       "clause_id": "L41_2024.A68.K1",
-      "score": 0.8322206735610962,
+      "score": 0.8320750594139099,
       "text_preview": "Lao động nam có thời gian đóng bảo hiểm xã hội cao hơn 35 năm, lao động nữ có thời gian đóng bảo hiểm xã hội cao hơn 30 năm thì khi nghỉ hưu, ngoài lương hưu còn được hưởng trợ cấp một lần."
-    },
-    {
-      "clause_id": "L41_2024.A100.K1",
-      "score": 0.832109808921814,
-      "text_preview": "Lao động nam có thời gian đóng bảo hiểm xã hội cao hơn 35 năm, lao động nữ có thời gian đóng bảo hiểm xã hội cao hơn 30 năm thì khi nghỉ hưu, ngoài lương hưu còn được hưởng trợ cấp một lần."
-    },
-    {
-      "clause_id": "L41_2024.A141.K10",
-      "score": 0.8181527853012085,
-      "text_preview": "Người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên và có văn bản của cơ quan bảo hiểm xã hội xác nhận về việc chờ đủ điều kiện về tuổi đời để hưởng lương hưu được quy định tại Nghị định số 12"
-    },
-    {
-      "clause_id": "L41_2024.A64.K1",
-      "score": 0.7952597141265869,
-      "text_preview": "Đối tượng quy định tại các điểm a, b, c, g, h, i, k, l, m và n khoản 1 và khoản 2 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 15 năm trở lên thì được hưởng lương"
     }
   ],
-  "n_semantic_edges": 5,
-  "n_refs": 14,
-  "elapsed_s": 3.41,
+  "n_semantic_edges": 27,
+  "n_refs": 6,
+  "elapsed_s": 4.8,
   "gold_answer": "Theo lộ trình tuổi nghỉ hưu hiện hành, lao động nữ nghỉ hưu ở tuổi 60 trong điều kiện bình thường. Từ năm 2021 đến năm 2035 tuổi nghỉ hưu của nữ tăng dần mỗi năm 4 tháng cho đến khi đủ 60 tuổi. Vì vậy hiện nay không phải cứ tất cả lao động nữ đều nghỉ đúng 60 ngay, mà phải đối chiếu năm sinh, năm nghỉ hưu và trường hợp làm việc bình thường hay nặng nhọc, đặc biệt nặng nhọc.",
-  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 169; Nghị định 135/2020/NĐ-CP"
+  "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 169]"
 }

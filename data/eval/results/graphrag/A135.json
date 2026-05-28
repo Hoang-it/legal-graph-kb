@@ -2,7 +2,7 @@
   "arm": "graphrag",
   "stt": 135,
   "question": "Người được hưởng trợ cấp hàng tháng mất sức lao động khi nghĩ việc được hưởng quyền loi gì?",
-  "answer": "Người đang hưởng trợ cấp hàng tháng mất sức lao động khi nghỉ việc sẽ được điều chỉnh mức hưởng theo quy định của Chính phủ. \n\nGiải thích: Điều này có nghĩa là mức trợ cấp mà họ nhận sẽ được xem xét và điều chỉnh phù hợp với các quy định mới của Chính phủ, đảm bảo quyền lợi cho người lao động trong trường hợp họ không còn làm việc.\n\nCitation: [Điều 141 khoản 1]",
+  "answer": "Người đang hưởng trợ cấp hàng tháng mất sức lao động khi nghỉ việc sẽ được điều chỉnh mức hưởng theo quy định của Chính phủ. \n\nGiải thích: Điều này có nghĩa là khi người lao động đang nhận trợ cấp hàng tháng vì mất sức lao động và họ nghỉ việc, mức trợ cấp mà họ nhận sẽ được điều chỉnh theo các quy định hiện hành của Chính phủ.\n\nCitation: [Điều 141 khoản 1]",
   "citations": [
     "[Điều 141 khoản 1]"
   ],
@@ -16,33 +16,33 @@
   "vector_hits": [
     {
       "clause_id": "L41_2024.A141.K1",
-      "score": 0.8177453279495239,
+      "score": 0.8179322481155396,
       "text_preview": "Người đang hưởng trợ cấp mất sức lao động, trợ cấp tai nạn lao động, bệnh nghề nghiệp, trợ cấp tuất hằng tháng, trợ cấp hằng tháng đối với cán bộ xã, phường, thị trấn đã nghỉ việc, trợ cấp hằng tháng "
     },
     {
       "clause_id": "L41_2024.A141.K6",
-      "score": 0.8140939474105835,
+      "score": 0.8141112327575684,
       "text_preview": "Người đang hưởng trợ cấp mất sức lao động, đang hưởng trợ cấp hằng tháng sau khi đã hết thời hạn hưởng trợ cấp mất sức lao động, đang hưởng trợ cấp hằng tháng đối với công nhân cao su, đang hưởng trợ "
     },
     {
-      "clause_id": "L41_2024.A23.K6",
-      "score": 0.7930706739425659,
-      "text_preview": "Người đang trong thời gian hưởng trợ cấp hằng tháng thì được ngân sách nhà nước đóng bảo hiểm y tế."
+      "clause_id": "L58_2014.A47.K1",
+      "score": 0.8128081560134888,
+      "text_preview": "Người lao động bị suy giảm khả năng lao động từ 31% trở lên thì được hưởng trợ cấp hằng tháng."
     },
     {
-      "clause_id": "L41_2024.A86.K3",
-      "score": 0.7861543893814087,
-      "text_preview": "Không áp dụng trợ cấp tuất hằng tháng đối với thân nhân quy định tại các điểm b, c, d và đ khoản 2 Điều này là người đang hưởng tiền lương và tham gia bảo hiểm xã hội bắt buộc hoặc đang hưởng lương hư"
+      "clause_id": "L58_2014.A18.K6",
+      "score": 0.7980118989944458,
+      "text_preview": "Uỷ quyền cho người khác nhận lương hưu, trợ cấp bảo hiểm xã hội."
     },
     {
-      "clause_id": "L41_2024.A75.K6",
-      "score": 0.7861406803131104,
-      "text_preview": "Người bị tạm dừng hưởng lương hưu hoặc trợ cấp bảo hiểm xã hội hằng tháng khi có quyết định của Tòa án tuyên bố mất tích, sau đó có quyết định của Tòa án tuyên bố là đã chết thì thân nhân của người đó"
+      "clause_id": "L45_2019.A47.K1",
+      "score": 0.7969675064086914,
+      "text_preview": "Người sử dụng lao động trả trợ cấp mất việc làm cho người lao động đã làm việc thường xuyên cho mình từ đủ 12 tháng trở lên mà bị mất việc làm theo quy định tại khoản 11 Điều 34 của Bộ luật này, cứ mỗ"
     }
   ],
-  "n_semantic_edges": 4,
-  "n_refs": 3,
-  "elapsed_s": 2.12,
+  "n_semantic_edges": 9,
+  "n_refs": 0,
+  "elapsed_s": 3.58,
   "gold_answer": "Người đang hưởng trợ cấp mất sức lao động hằng tháng vẫn có các quyền lợi theo chế độ đang hưởng và có thể được điều chỉnh mức trợ cấp khi Nhà nước điều chỉnh chính sách. Khi qua đời thì thân nhân có thể được xem xét chế độ tử tuất theo điều kiện luật định. Cần xem rõ bạn thuộc diện trợ cấp mất sức lao động theo văn bản nào để xác định chính xác quyền lợi hiện còn.",
-  "gold_citations_raw": "Điều 141 Luật BHXH 2024; quy định chuyển tiếp về trợ cấp hằng tháng"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 141]"
 }

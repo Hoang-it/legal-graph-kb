@@ -2,12 +2,12 @@
   "arm": "llm_only",
   "stt": 46,
   "question": "Lúc còn huyện cũ thì mình nộp bhxh ở huyện.Còn bây giờ không còn huyện nữa thì mình nộp ở đâu? ở xã hay là hành chính công?",
-  "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, việc nộp bảo hiểm xã hội (BHXH) sẽ được thực hiện tại cơ quan bảo hiểm xã hội cấp huyện hoặc cấp tỉnh, tùy thuộc vào quy định của từng địa phương. Nếu huyện cũ đã được sáp nhập hoặc không còn, bạn nên liên hệ với cơ quan BHXH cấp tỉnh hoặc cấp huyện mới để biết rõ địa điểm nộp BHXH. \n\nThông thường, bạn có thể nộp tại cơ quan BHXH hoặc tại bộ phận một cửa của Ủy ban nhân dân cấp xã nếu có quy định cụ thể. Tuy nhiên, để có thông tin chính xác nhất, bạn nên kiểm tra với cơ quan BHXH địa phương.",
+  "answer": "Theo quy định, khi địa giới hành chính thay đổi, cơ quan bảo hiểm xã hội sẽ có hướng dẫn cụ thể về việc nộp bảo hiểm xã hội. Thông thường, bạn sẽ nộp tại cơ quan bảo hiểm xã hội cấp huyện hoặc cấp tỉnh mới được thành lập. Nếu không có cơ quan bảo hiểm xã hội cấp huyện, bạn có thể nộp tại cơ quan hành chính công hoặc cơ quan bảo hiểm xã hội cấp tỉnh.\n\nĐể biết chính xác, bạn nên liên hệ với cơ quan bảo hiểm xã hội địa phương hoặc tra cứu thông tin trên trang web của cơ quan bảo hiểm xã hội để được hướng dẫn cụ thể.",
   "citations": [],
   "citation_ids": [],
-  "elapsed_s": 3.973,
-  "prompt_tokens": 197,
-  "completion_tokens": 166,
+  "elapsed_s": 2.772,
+  "prompt_tokens": 240,
+  "completion_tokens": 135,
   "gold_answer": "Sau khi thay đổi mô hình tổ chức hành chính, hồ sơ BHXH thường nộp tại cơ quan BHXH khu vực/cơ quan được phân công tiếp nhận hoặc Trung tâm phục vụ hành chính công, không phải xã nào cũng trực tiếp thu hồ sơ. Bạn nên tra cứu nơi tiếp nhận mới tại địa phương hoặc gọi cơ quan BHXH gần nhất để tránh đi sai nơi. Nguyên tắc là cơ quan BHXH nơi cư trú vẫn có trách nhiệm hướng dẫn, tiếp nhận hoặc chỉ dẫn nơi nộp đúng.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 25; quy định tổ chức thực hiện của BHXH Việt Nam"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 25]"
 }

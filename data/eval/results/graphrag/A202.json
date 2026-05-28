@@ -2,50 +2,50 @@
   "arm": "graphrag",
   "stt": 202,
   "question": "Cho mình hỏi trước mình có làm ở fpt telecom khoảng 2 năm sau đó nghỉ có nhận sổ (bị mất) rồi sau mình có xin làm lại được thêm 1 năm . Giờ mình muốn tra thời gian tham gia bhxh thì làm sao ạ . Mình có tra đc mã số rồi . Còn tk Vssid thì mình chưa có",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 28 khoản 4] — quy định về việc cấp sổ bảo hiểm xã hội.\n- [Điều 13 khoản 3] — quy định về trách nhiệm của người sử dụng lao động trong việc xác nhận thời gian đóng bảo hiểm xã hội.",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 28 khoản 4] — quy định về việc cấp sổ bảo hiểm xã hội.\n- [Điều 18 khoản 7] — quyền của người lao động trong việc yêu cầu thông tin về đóng bảo hiểm xã hội.",
   "citations": [
     "[Điều 28 khoản 4]",
-    "[Điều 13 khoản 3]"
+    "[Điều 18 khoản 7]"
   ],
   "citation_ids": [
     "L41_2024.A28.K4",
-    "L41_2024.A13.K3"
+    "L41_2024.A18.K7"
   ],
   "citation_verified": {
     "L41_2024.A28.K4": true,
-    "L41_2024.A13.K3": true
+    "L41_2024.A18.K7": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
       "clause_id": "L41_2024.A28.K4",
-      "score": 0.7880105972290039,
+      "score": 0.787973165512085,
       "text_preview": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn"
     },
     {
+      "clause_id": "L58_2014.A123.K6",
+      "score": 0.7867709398269653,
+      "text_preview": "Người lao động có thời gian làm việc trong khu vực nhà nước trước ngày 01 tháng 01 năm 1995 nếu đủ điều kiện hưởng nhưng chưa được giải quyết trợ cấp thôi việc hoặc trợ cấp một lần, trợ cấp xuất ngũ, "
+    },
+    {
       "clause_id": "L41_2024.A33.K7",
-      "score": 0.7856645584106445,
+      "score": 0.7859343886375427,
       "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
     },
     {
-      "clause_id": "L41_2024.A130.K5",
-      "score": 0.7839131951332092,
-      "text_preview": "Việc giải quyết khiếu nại đối với quyết định, hành vi có liên quan đến việc thụ hưởng các chế độ bảo hiểm xã hội hoặc tính thời gian công tác trong khu vực nhà nước để hưởng bảo hiểm xã hội trước ngày"
+      "clause_id": "L58_2014.A85.K6",
+      "score": 0.7854053974151611,
+      "text_preview": "Việc xác định thời gian đóng bảo hiểm xã hội để tính hưởng lương hưu và trợ cấp tuất hằng tháng thì một năm phải tính đủ 12 tháng; trường hợp người lao động đủ điều kiện về tuổi hưởng lương hưu mà thờ"
     },
     {
-      "clause_id": "L41_2024.A13.K3",
-      "score": 0.7808695435523987,
-      "text_preview": "Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật."
-    },
-    {
-      "clause_id": "L41_2024.A5.K6",
-      "score": 0.7804955840110779,
-      "text_preview": "Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hi"
+      "clause_id": "L58_2014.A18.K7",
+      "score": 0.7852052450180054,
+      "text_preview": "Định kỳ 06 tháng được người sử dụng lao động cung cấp thông tin về đóng bảo hiểm xã hội; định kỳ hằng năm được cơ quan bảo hiểm xã hội xác nhận về việc đóng bảo hiểm xã hội; được yêu cầu người sử dụng"
     }
   ],
-  "n_semantic_edges": 1,
+  "n_semantic_edges": 8,
   "n_refs": 0,
-  "elapsed_s": 2.16,
+  "elapsed_s": 2.92,
   "gold_answer": null,
-  "gold_citations_raw": null
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 25]\n[Quyết định 595/QĐ-BHXH, Điều 29]"
 }

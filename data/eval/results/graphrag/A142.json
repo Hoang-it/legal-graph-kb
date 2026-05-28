@@ -2,41 +2,50 @@
   "arm": "graphrag",
   "stt": 142,
   "question": "Mình nghĩ công ty được khoảng hơn 2 năm rồi, mà chưa vào lấy được số bảo hiểm, nhưng có tờ rời, giờ vào có lấy được số bảo hiểm, hay ở nhà vẫn lấy được?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- Điều 25 khoản 2: về việc cấp sổ bảo hiểm xã hội.\n- Điều 28 khoản 4: về thời hạn cấp sổ bảo hiểm xã hội.",
-  "citations": [],
-  "citation_ids": [],
-  "citation_verified": {},
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 25 khoản 2] về việc cấp sổ bảo hiểm xã hội.\n- [Điều 28 khoản 4] về thời hạn cấp sổ bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 25 khoản 2]",
+    "[Điều 28 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A25.K2",
+    "L41_2024.A28.K4"
+  ],
+  "citation_verified": {
+    "L41_2024.A25.K2": true,
+    "L41_2024.A28.K4": true
+  },
   "n_vector_hits": 8,
   "vector_hits": [
     {
+      "clause_id": "L58_2014.A18.K2",
+      "score": 0.8241527080535889,
+      "text_preview": "Được cấp và quản lý sổ bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L58_2014.A104.K1",
+      "score": 0.8151540756225586,
+      "text_preview": "Sổ bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L58_2014.A105.K1",
+      "score": 0.8151540756225586,
+      "text_preview": "Sổ bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L58_2014.A109.K1",
+      "score": 0.8151540756225586,
+      "text_preview": "Sổ bảo hiểm xã hội."
+    },
+    {
       "clause_id": "L41_2024.A25.K2",
-      "score": 0.8150331974029541,
+      "score": 0.8150167465209961,
       "text_preview": "Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau.\nChậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằn"
-    },
-    {
-      "clause_id": "L41_2024.A28.K4",
-      "score": 0.8136425018310547,
-      "text_preview": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn"
-    },
-    {
-      "clause_id": "L41_2024.A62.K3",
-      "score": 0.8027278184890747,
-      "text_preview": "Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động, 05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động; trườn"
-    },
-    {
-      "clause_id": "L41_2024.A81.K2",
-      "score": 0.800891637802124,
-      "text_preview": "Trong thời hạn 10 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do."
-    },
-    {
-      "clause_id": "L41_2024.A91.K3",
-      "score": 0.800891637802124,
-      "text_preview": "Trong thời hạn 10 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do."
     }
   ],
   "n_semantic_edges": 2,
   "n_refs": 0,
-  "elapsed_s": 1.96,
+  "elapsed_s": 3.32,
   "gold_answer": "Số BHXH là mã số cá nhân quản lý trên hệ thống, không phụ thuộc việc bạn có cầm sổ giấy hay không. Bạn có thể tra cứu trên ứng dụng VssID, VNeID, cổng BHXH Việt Nam hoặc tới cơ quan BHXH để xin xác nhận. Nếu đã có tờ rời thì thường vẫn đối chiếu được số sổ. Không nhất thiết phải về công ty mới biết số BHXH.",
-  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
 }

@@ -2,41 +2,47 @@
   "arm": "graphrag",
   "stt": 159,
   "question": "tiền dưỡng sức sau sinh bao lâu thì mình nhận được?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- Điều 60 khoản 1: quy định về thời gian nghỉ dưỡng sức, phục hồi sức khỏe sau thai sản.\n- Điều 63 khoản 1: quy định về thời hạn nộp danh sách người lao động nghỉ việc hưởng trợ cấp dưỡng sức, phục hồi sức khỏe sau thai sản.",
-  "citations": [],
-  "citation_ids": [],
-  "citation_verified": {},
+  "answer": "Theo quy định, trong thời hạn 15 ngày kể từ khi nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết chế độ dưỡng sức, phục hồi sức khỏe cho người lao động và chuyển tiền cho đơn vị sử dụng lao động. Nếu không giải quyết, cơ quan bảo hiểm xã hội phải trả lời bằng văn bản và nêu rõ lý do. \n\nGiải thích: Điều này có nghĩa là sau khi bạn nộp hồ sơ yêu cầu trợ cấp dưỡng sức, bạn sẽ nhận được tiền trong vòng 15 ngày nếu hồ sơ đầy đủ và hợp lệ.\n\nCitation: [Điều 107 khoản 2]",
+  "citations": [
+    "[Điều 107 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A107.K2"
+  ],
+  "citation_verified": {
+    "L41_2024.A107.K2": true
+  },
   "n_vector_hits": 8,
   "vector_hits": [
     {
+      "clause_id": "L58_2014.A41.K3",
+      "score": 0.8435636758804321,
+      "text_preview": "Mức hưởng chế độ dưỡng sức, phục hồi sức khoẻ sau thai sản một ngày bằng 30% mức lương cơ sở."
+    },
+    {
       "clause_id": "L41_2024.A63.K1",
-      "score": 0.8347880840301514,
+      "score": 0.8346782326698303,
       "text_preview": "Trong thời hạn 07 ngày làm việc kể từ ngày người lao động nghỉ việc hưởng trợ cấp dưỡng sức, phục hồi sức khỏe sau thai sản, người sử dụng lao động lập danh sách người lao động nghỉ việc hưởng trợ cấp"
     },
     {
+      "clause_id": "L58_2014.A103.K1",
+      "score": 0.8329319953918457,
+      "text_preview": "Trong thời hạn 10 ngày kể từ ngày người lao động đủ điều kiện hưởng trợ cấp dưỡng sức, phục hồi sức khoẻ sau ốm đau, thai sản, người sử dụng lao động lập danh sách và nộp cho cơ quan bảo hiểm xã hội."
+    },
+    {
+      "clause_id": "L58_2014.A107.K2",
+      "score": 0.8299503922462463,
+      "text_preview": "Trong thời hạn 15 ngày kể từ khi nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết chế độ dưỡng sức, phục hồi sức khỏe cho người lao động và chuyển tiền cho đơn vị sử dụng"
+    },
+    {
       "clause_id": "L41_2024.A60.K1",
-      "score": 0.8281848430633545,
+      "score": 0.8280423283576965,
       "text_preview": "Trong thời gian 30 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản quy định tại Điều 52, khoản 1 hoặc khoản 4 Điều 53, điểm a khoản 3 Điều 54 của Luật này, lao động nữ chưa phục hồi sức "
-    },
-    {
-      "clause_id": "L41_2024.A60.K3",
-      "score": 0.82677161693573,
-      "text_preview": "Mức hưởng cho một ngày nghỉ dưỡng sức, phục hồi sức khỏe sau thai sản bằng 30% mức tham chiếu."
-    },
-    {
-      "clause_id": "L41_2024.A55.K1",
-      "score": 0.8156070709228516,
-      "text_preview": "Được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi. Trường hợp sinh đôi trở lên thì được nghỉ thêm 01 tháng cho mỗi con tính từ con thứ hai trở đi.\nTrường hợp "
-    },
-    {
-      "clause_id": "L41_2024.A49.K1",
-      "score": 0.8131587505340576,
-      "text_preview": "Trong thời hạn 07 ngày làm việc kể từ ngày người lao động nghỉ việc hưởng trợ cấp dưỡng sức, phục hồi sức khỏe sau khi ốm đau, người sử dụng lao động lập danh sách người lao động nghỉ việc hưởng trợ c"
     }
   ],
-  "n_semantic_edges": 5,
-  "n_refs": 9,
-  "elapsed_s": 2.63,
+  "n_semantic_edges": 8,
+  "n_refs": 5,
+  "elapsed_s": 3.73,
   "gold_answer": "Tiền dưỡng sức sau sinh thường được chi trả sau khi hồ sơ được đơn vị và cơ quan BHXH giải quyết xong; thực tế nhiều nơi nhận trong vài tuần đến khoảng 10 ngày làm việc sau khi có quyết định. Điều kiện là trong 30 ngày đầu đi làm lại sau thai sản mà sức khỏe chưa phục hồi và được đơn vị lập danh sách đề nghị. Nếu công ty chậm nộp hồ sơ thì tiền sẽ chậm theo.",
-  "gold_citations_raw": "Điều 59, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 59]"
 }

@@ -2,7 +2,8 @@
   "arm": "elite_no_retrieval",
   "stt": 39,
   "question": "Mình ngưng đóng bảo hiểm xã hội từ 2017 đến bây giờ là năm 2026 rồi. Liệu mình có đi thanh toán bhxh đc k ạ?",
-  "answer": "Issue: Người dùng đã ngưng đóng bảo hiểm xã hội từ năm 2017 đến năm 2026. Họ muốn biết liệu có thể thanh toán bảo hiểm xã hội hay không.\n\nRule: Không có trích dẫn nào được cung cấp.\n\nApplication: Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được Prolog sử dụng để đưa ra kết luận.\n\nConclusion: Prolog đã trả về kết quả là \"không thể thanh toán\" nhưng không có giá trị nào từ các slot để tính toán. Do đó, không thể đưa ra kết luận chính xác về khả năng thanh toán bảo hiểm xã hội.",
+  "answer": "Issue: Người hỏi đã ngưng đóng bảo hiểm xã hội từ năm 2017 đến năm 2026, hỏi liệu có thể thanh toán bảo hiểm xã hội không.\nRule: Không có quy định cụ thể nào được trích dẫn trong trường hợp này.\nApplication: Không có slot nào được gán giá trị. Prolog đã xác định rằng người dùng không thể thanh toán do số năm đóng bảo hiểm dưới 10 năm.\nConclusion: Theo Prolog, người dùng KHÔNG thể thanh toán bảo hiểm xã hội.",
+  "plain_answer": "Theo thông tin từ hệ thống, bạn không thể thanh toán bảo hiểm xã hội vì số năm bạn đã đóng dưới 10 năm. Bạn đã ngưng từ năm 2017 và hiện tại là năm 2026, nên bạn cần xem xét lại điều kiện để có thể tham gia lại hoặc tìm hiểu các lựa chọn khác.",
   "citations": [],
   "citation_ids": [],
   "citation_indices": [],
@@ -10,16 +11,18 @@
   "prolog_status": "success",
   "n_repair_rounds": 0,
   "prolog_trace": "[step(conclusion,answer_predicate(user,không thể thanh toán),based_on(none))]",
+  "prolog_program": "years_contributed(user, 9).\nanswer_predicate(Person, Answer, Trace) :- years_contributed(Person, Years), Years < 10, Answer = 'không thể thanh toán', Trace = [step(conclusion, answer_predicate(Person, Answer), based_on(none))].",
+  "prolog_error": "",
   "irac_sections": {
-    "issue": "Người dùng đã ngưng đóng bảo hiểm xã hội từ năm 2017 đến năm 2026. Họ muốn biết liệu có thể thanh toán bảo hiểm xã hội hay không.",
-    "rule": "Không có trích dẫn nào được cung cấp.",
-    "application": "Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được Prolog sử dụng để đưa ra kết luận.",
-    "conclusion": "Prolog đã trả về kết quả là \"không thể thanh toán\" nhưng không có giá trị nào từ các slot để tính toán. Do đó, không thể đưa ra kết luận chính xác về khả năng thanh toán bảo hiểm xã hội."
+    "issue": "Người hỏi đã ngưng đóng bảo hiểm xã hội từ năm 2017 đến năm 2026, hỏi liệu có thể thanh toán bảo hiểm xã hội không.",
+    "rule": "Không có quy định cụ thể nào được trích dẫn trong trường hợp này.",
+    "application": "Không có slot nào được gán giá trị. Prolog đã xác định rằng người dùng không thể thanh toán do số năm đóng bảo hiểm dưới 10 năm.",
+    "conclusion": "Theo Prolog, người dùng KHÔNG thể thanh toán bảo hiểm xã hội."
   },
-  "elapsed_s": 6.371,
-  "prompt_tokens": 1933,
-  "completion_tokens": 281,
+  "elapsed_s": 7.776,
+  "prompt_tokens": 2642,
+  "completion_tokens": 338,
   "error": null,
   "gold_answer": "Nếu bạn đã ngừng đóng từ năm 2017 đến nay và không tiếp tục tham gia BHXH, thì thường có thể làm thủ tục hưởng BHXH một lần nếu thuộc trường hợp luật cho phép, nhất là đã ngừng tham gia từ đủ 12 tháng trở lên mà chưa đủ thời gian hưởng lương hưu. Nếu không rút một lần, bạn cũng có thể bảo lưu thời gian đã đóng để sau này tham gia tiếp hoặc chuyển sang BHXH tự nguyện.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 102]\n[Luật BHXH 2024 (41/2024/QH15), Điều 110]"
 }

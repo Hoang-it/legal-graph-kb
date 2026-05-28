@@ -2,41 +2,50 @@
   "arm": "graphrag",
   "stt": 189,
   "question": "Cty em từ tháng 11/2025 từ Cty cổ phần chuyển đổi thành Cty TNHH 1tv, giám đốc là chủ sở hữu mà bên em đóng bảo hiểm xã hội 32% được không?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 32. Tỷ lệ đóng bảo hiểm xã hội - Khoản 2\n- Điều 34. Mức đóng, phương thức và thời hạn đóng bảo hiểm xã hội bắt buộc của người sử dụng lao động - Khoản 2\n- Điều 36. Mức đóng, phương thức và thời hạn đóng bảo hiểm xã hội của người tham gia bảo hiểm xã hội tự nguyện - Khoản 1",
-  "citations": [],
-  "citation_ids": [],
-  "citation_verified": {},
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 85 khoản 5] về mức đóng và phương thức đóng của người lao động tham gia bảo hiểm xã hội bắt buộc.\n- [Điều 154 khoản 1] về người lao động nước ngoài làm việc tại Việt Nam không thuộc diện cấp giấy phép lao động.",
+  "citations": [
+    "[Điều 85 khoản 5]",
+    "[Điều 154 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A85.K5",
+    "L41_2024.A154.K1"
+  ],
+  "citation_verified": {
+    "L41_2024.A85.K5": false,
+    "L41_2024.A154.K1": false
+  },
   "n_vector_hits": 8,
   "vector_hits": [
     {
+      "clause_id": "L58_2014.A17.K3",
+      "score": 0.7705878019332886,
+      "text_preview": "Chiếm dụng tiền đóng, hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L45_2019.A154.K2",
+      "score": 0.7695242166519165,
+      "text_preview": "Là Chủ tịch Hội đồng quản trị hoặc thành viên Hội đồng quản trị của công ty cổ phần có giá trị góp vốn theo quy định của Chính phủ."
+    },
+    {
       "clause_id": "L41_2024.A9.K2",
-      "score": 0.768156111240387,
+      "score": 0.7681491374969482,
       "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
     },
     {
-      "clause_id": "L41_2024.A32.K2",
-      "score": 0.7641993761062622,
-      "text_preview": "Tỷ lệ đóng bảo hiểm xã hội tự nguyện bằng 22% thu nhập làm căn cứ đóng bảo hiểm xã hội vào quỹ hưu trí và tử tuất."
+      "clause_id": "L45_2019.A154.K1",
+      "score": 0.7674874067306519,
+      "text_preview": "Là chủ sở hữu hoặc thành viên góp vốn của công ty trách nhiệm hữu hạn có giá trị góp vốn theo quy định của Chính phủ."
     },
     {
-      "clause_id": "L41_2024.A36.K1",
-      "score": 0.7626492977142334,
-      "text_preview": "Đối tượng quy định tại khoản 4 Điều 2 của Luật này, hằng tháng đóng bằng 22% mức thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện vào quỹ hưu trí và tử tuất.\nCăn cứ vào điều kiện phát triển kinh tế "
-    },
-    {
-      "clause_id": "L41_2024.A26.K3",
-      "score": 0.758836030960083,
-      "text_preview": "Chậm nhất là ngày 01 tháng 01 năm 2027, cơ quan bảo hiểm xã hội phải bảo đảm điều kiện để thực hiện giao dịch điện tử thuộc lĩnh vực bảo hiểm xã hội."
-    },
-    {
-      "clause_id": "L41_2024.A34.K2",
-      "score": 0.7584682703018188,
-      "text_preview": "Người sử dụng lao động hằng tháng đóng 22% tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc vào quỹ hưu trí và tử tuất cho đối tượng quy định tại điểm đ và điểm e khoản 1 Điều 2 của Luật này."
+      "clause_id": "L58_2014.A85.K5",
+      "score": 0.766958475112915,
+      "text_preview": "Người lao động hưởng tiền lương theo sản phẩm, theo khoán tại các doanh nghiệp, hợp tác xã, hộ kinh doanh cá thể, tổ hợp tác hoạt động trong lĩnh vực nông nghiệp, lâm nghiệp, ngư nghiệp, diêm nghiệp t"
     }
   ],
-  "n_semantic_edges": 2,
-  "n_refs": 4,
-  "elapsed_s": 2.54,
+  "n_semantic_edges": 1,
+  "n_refs": 1,
+  "elapsed_s": 2.86,
   "gold_answer": "Tỷ lệ 32% chỉ có thể là cách cộng gộp nhiều khoản phải đóng của cả doanh nghiệp và người lao động, không phải lúc nào cũng áp dụng đúng cho mọi trường hợp. Với công ty TNHH MTV, giám đốc/chủ sở hữu có thuộc diện đóng BHXH hay không còn phụ thuộc việc hưởng lương, chức danh và hướng dẫn áp dụng cho người quản lý doanh nghiệp. Bạn nên rà lại đối tượng tham gia theo Luật BHXH 2024 và nghị định hướng dẫn.",
-  "gold_citations_raw": "Điều 2, 13, 14 Luật BHXH 2024; Nghị định 158/2025/NĐ-CP"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]"
 }

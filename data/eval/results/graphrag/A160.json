@@ -2,50 +2,50 @@
   "arm": "graphrag",
   "stt": 160,
   "question": "mình nghỉ công ty được 10 tháng rồi 2 tháng nữa là mình rút bhxh , nhưng hiện tại mình đi làm thời vụ mình đóng tiền thuế thu nhập cá nhân , vậy mình có rút đc bhxh nữa không?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 5 khoản 3]\n- [Điều 33 khoản 7]",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 33 khoản 7]\n- [Điều 5 khoản 3]",
   "citations": [
-    "[Điều 5 khoản 3]",
-    "[Điều 33 khoản 7]"
+    "[Điều 33 khoản 7]",
+    "[Điều 5 khoản 3]"
   ],
   "citation_ids": [
-    "L41_2024.A5.K3",
-    "L41_2024.A33.K7"
+    "L41_2024.A33.K7",
+    "L41_2024.A5.K3"
   ],
   "citation_verified": {
-    "L41_2024.A5.K3": true,
-    "L41_2024.A33.K7": true
+    "L41_2024.A33.K7": true,
+    "L41_2024.A5.K3": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
       "clause_id": "L41_2024.A33.K7",
-      "score": 0.8040690422058105,
+      "score": 0.8040642738342285,
       "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
     },
     {
       "clause_id": "L41_2024.A5.K3",
-      "score": 0.7891414761543274,
+      "score": 0.7891191244125366,
       "text_preview": "Người vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện được hưởng chế độ trợ cấp hằng tháng, chế độ hưu trí và chế độ tử tuất trên cơ sở thời gian đã đóng"
     },
     {
+      "clause_id": "L58_2014.A123.K3",
+      "score": 0.7887900471687317,
+      "text_preview": "Người lao động đã có thời gian đóng bảo hiểm xã hội bao gồm phụ cấp khu vực thì ngoài lương hưu, bảo hiểm xã hội một lần và trợ cấp tuất thì được giải quyết hưởng trợ cấp khu vực một lần; người đang h"
+    },
+    {
+      "clause_id": "L58_2014.A39.K2",
+      "score": 0.786009669303894,
+      "text_preview": "Thời gian nghỉ việc hưởng chế độ thai sản từ 14 ngày làm việc trở lên trong tháng được tính là thời gian đóng bảo hiểm xã hội, người lao động và người sử dụng lao động không phải đóng bảo hiểm xã hội."
+    },
+    {
       "clause_id": "L41_2024.A33.K6",
-      "score": 0.7857011556625366,
+      "score": 0.7858669757843018,
       "text_preview": "Trường hợp trong tháng đầu làm việc hoặc trong tháng đầu trở lại làm việc mà người lao động nghỉ việc hưởng chế độ ốm đau từ 14 ngày làm việc trở lên thì vẫn phải đóng bảo hiểm xã hội của tháng đó."
-    },
-    {
-      "clause_id": "L41_2024.A101.K2",
-      "score": 0.7829807996749878,
-      "text_preview": "Trường hợp người tham gia bảo hiểm xã hội tiếp tục đóng bảo hiểm xã hội tự nguyện sau khi đã đủ điều kiện hưởng lương hưu thì thời điểm hưởng lương hưu là ngày đầu tiên của tháng liền kề sau tháng dừn"
-    },
-    {
-      "clause_id": "L41_2024.A60.K1",
-      "score": 0.7815496921539307,
-      "text_preview": "Trong thời gian 30 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản quy định tại Điều 52, khoản 1 hoặc khoản 4 Điều 53, điểm a khoản 3 Điều 54 của Luật này, lao động nữ chưa phục hồi sức "
     }
   ],
-  "n_semantic_edges": 3,
-  "n_refs": 10,
-  "elapsed_s": 1.57,
+  "n_semantic_edges": 19,
+  "n_refs": 1,
+  "elapsed_s": 2.26,
   "gold_answer": "Việc bạn đi làm thời vụ và bị khấu trừ thuế TNCN không tự động làm mất quyền hưởng BHXH 1 lần. Điều quan trọng là tại thời điểm nộp hồ sơ, bạn có còn thuộc đối tượng tham gia BHXH bắt buộc hay đang tham gia BHXH tự nguyện hay không. Nếu công việc thời vụ không thuộc diện đóng BHXH bắt buộc và bạn đã đủ 12 tháng không tham gia thì vẫn có thể làm BHXH 1 lần.",
-  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
 }

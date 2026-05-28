@@ -2,9 +2,10 @@
   "arm": "elite_ontology",
   "stt": 40,
   "question": "Em đóng bhxh t8/2025 đến t4/2026, ngày dự sinh của em là19/8. Vậy em có đủ đk để nhận trợ cấp không? Làm hểt tháng 4 là em nghỉ cty luôn. Em có đủ đk để nhận bhts k?",
-  "answer": "Issue: Người dùng hỏi về điều kiện nhận trợ cấp bảo hiểm xã hội và bảo hiểm thất nghiệp sau khi đóng bảo hiểm từ tháng 8/2025 đến tháng 4/2026, với ngày dự sinh là 19/8.\n\nRule: \"6. Xác nhận thời gian đóng bảo hiểm xã hội, bảo hiểm thất nghiệp cho từng người lao động; cung cấp đầy đủ và kịp thời thông tin về việc đóng, quyền được hưởng chế độ, thủ tục thực hiện bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện khi người lao động, người sử dụng lao động hoặc tổ chức công đoàn yêu cầu.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 6)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog đã kiểm tra số năm đóng bảo hiểm của người dùng và xác định rằng người dùng không đủ điều kiện nhận trợ cấp.\n\nConclusion: Prolog đã trả về giá trị \"no\" cho biến \"Answer\", cho thấy người dùng không đủ điều kiện nhận trợ cấp.",
+  "answer": "Issue: Người hỏi đã đóng bảo hiểm xã hội từ tháng 8 năm 2025 đến tháng 4 năm 2026 và hỏi về điều kiện nhận trợ cấp. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 6], cần xác nhận thời gian đóng bảo hiểm xã hội để hưởng chế độ. \nApplication: Không có thông tin về số năm đóng bảo hiểm xã hội, Prolog xác định rằng người dùng đã đóng 0 năm. Prolog trả về Answer = no vì không đủ điều kiện. \nConclusion: Theo Prolog, người dùng KHÔNG đủ điều kiện nhận trợ cấp do không có thời gian đóng bảo hiểm xã hội.",
+  "plain_answer": "Bạn đã đóng bảo hiểm xã hội từ tháng 8 năm 2025 đến tháng 4 năm 2026, nhưng hệ thống cho biết bạn chưa có thời gian đóng nào. Do đó, bạn không đủ điều kiện để nhận trợ cấp theo quy định hiện hành. Bạn có thể cần xem xét lại thời gian đóng hoặc tìm hiểu thêm về các quyền lợi khác nếu có.",
   "citations": [
-    "[Điều 18 khoản 6]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 6]"
   ],
   "citation_ids": [
     "L41_2024.A18.K6"
@@ -16,16 +17,18 @@
   "prolog_status": "success",
   "n_repair_rounds": 0,
   "prolog_trace": "[step(conclusion,eligibility_for_benefits(user,no),based_on(source_c006))]",
+  "prolog_program": "years_contributed(user, 0).\nlegal_source(source_c006, law_bhxh_2024, article_33, clause_7, none, 'Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất.').\neligibility_for_benefits(User, Answer, Trace) :- years_contributed(User, Years), Years < 6, Answer = no, Trace = [step(conclusion, eligibility_for_benefits(User, Answer), based_on(source_c006))].",
+  "prolog_error": "",
   "irac_sections": {
-    "issue": "Người dùng hỏi về điều kiện nhận trợ cấp bảo hiểm xã hội và bảo hiểm thất nghiệp sau khi đóng bảo hiểm từ tháng 8/2025 đến tháng 4/2026, với ngày dự sinh là 19/8.",
-    "rule": "\"6. Xác nhận thời gian đóng bảo hiểm xã hội, bảo hiểm thất nghiệp cho từng người lao động; cung cấp đầy đủ và kịp thời thông tin về việc đóng, quyền được hưởng chế độ, thủ tục thực hiện bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện khi người lao động, người sử dụng lao động hoặc tổ chức công đoàn yêu cầu.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 6)",
-    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog đã kiểm tra số năm đóng bảo hiểm của người dùng và xác định rằng người dùng không đủ điều kiện nhận trợ cấp.",
-    "conclusion": "Prolog đã trả về giá trị \"no\" cho biến \"Answer\", cho thấy người dùng không đủ điều kiện nhận trợ cấp."
+    "issue": "Người hỏi đã đóng bảo hiểm xã hội từ tháng 8 năm 2025 đến tháng 4 năm 2026 và hỏi về điều kiện nhận trợ cấp.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 6], cần xác nhận thời gian đóng bảo hiểm xã hội để hưởng chế độ.",
+    "application": "Không có thông tin về số năm đóng bảo hiểm xã hội, Prolog xác định rằng người dùng đã đóng 0 năm. Prolog trả về Answer = no vì không đủ điều kiện.",
+    "conclusion": "Theo Prolog, người dùng KHÔNG đủ điều kiện nhận trợ cấp do không có thời gian đóng bảo hiểm xã hội."
   },
-  "elapsed_s": 10.098,
-  "prompt_tokens": 3497,
-  "completion_tokens": 586,
+  "elapsed_s": 12.398,
+  "prompt_tokens": 4158,
+  "completion_tokens": 540,
   "error": null,
   "gold_answer": "Nếu bạn đóng BHXH bắt buộc từ 8/2025 đến hết 4/2026 thì có 9 tháng đóng trong 12 tháng trước khi sinh 8/2026, nên về nguyên tắc đủ điều kiện hưởng thai sản khi sinh con. Việc nghỉ việc sau tháng 4/2026 không làm mất quyền hưởng nếu bạn đã đủ điều kiện trước khi sinh. Bạn vẫn được nộp hồ sơ hưởng thai sản qua cơ quan BHXH theo nơi cư trú hoặc qua đơn vị nếu còn quan hệ lao động.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 50, Điều 53"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]\n[Luật BHXH 2024 (41/2024/QH15), Điều 53]"
 }

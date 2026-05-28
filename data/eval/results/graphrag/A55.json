@@ -2,53 +2,53 @@
   "arm": "graphrag",
   "stt": 55,
   "question": "Thời điểm năm 5/2016-5/2017 em có làm việc tại công ty cổ phần nam an. Khi em nghỉ chưa lấy tờ rời quá trình tại công ty này. Nay tôi quay lại công ty họ nói tôi nghỉ ngang và phạt 7-8tr. Giờ em phải làm sao?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 40 khoản 2] về xử phạt vi phạm hành chính.\n- [Điều 41 khoản 2] về xử phạt vi phạm hành chính hoặc truy cứu trách nhiệm hình sự.\n- [Điều 132 khoản 2] về xử lý vi phạm pháp luật về bảo hiểm xã hội.",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 34 khoản 8] - Các trường hợp chấm dứt hợp đồng lao động.\n- [Điều 127 khoản 2] - Các hành vi bị nghiêm cấm khi xử lý kỷ luật lao động.\n- [Điều 122 khoản 1] - Xử lý vi phạm pháp luật về bảo hiểm xã hội.",
   "citations": [
-    "[Điều 40 khoản 2]",
-    "[Điều 41 khoản 2]",
-    "[Điều 132 khoản 2]"
+    "[Điều 34 khoản 8]",
+    "[Điều 127 khoản 2]",
+    "[Điều 122 khoản 1]"
   ],
   "citation_ids": [
-    "L41_2024.A40.K2",
-    "L41_2024.A41.K2",
-    "L41_2024.A132.K2"
+    "L41_2024.A34.K8",
+    "L41_2024.A127.K2",
+    "L41_2024.A122.K1"
   ],
   "citation_verified": {
-    "L41_2024.A40.K2": true,
-    "L41_2024.A41.K2": true,
-    "L41_2024.A132.K2": true
+    "L41_2024.A34.K8": false,
+    "L41_2024.A127.K2": true,
+    "L41_2024.A122.K1": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
+      "clause_id": "L45_2019.A156.K4",
+      "score": 0.8095661401748657,
+      "text_preview": "Làm việc không đúng với nội dung trong giấy phép lao động đã được cấp."
+    },
+    {
+      "clause_id": "L45_2019.A127.K2",
+      "score": 0.8026058673858643,
+      "text_preview": "Phạt tiền, cắt lương thay việc xử lý kỷ luật lao động."
+    },
+    {
+      "clause_id": "L45_2019.A34.K8",
+      "score": 0.7998623251914978,
+      "text_preview": "Người lao động bị xử lý kỷ luật sa thải."
+    },
+    {
+      "clause_id": "L45_2019.A156.K8",
+      "score": 0.7990740537643433,
+      "text_preview": "Giấy phép lao động bị thu hồi."
+    },
+    {
       "clause_id": "L41_2024.A40.K2",
-      "score": 0.7954785227775574,
+      "score": 0.7956011295318604,
       "text_preview": "Xử phạt vi phạm hành chính theo quy định của pháp luật."
-    },
-    {
-      "clause_id": "L41_2024.A117.K2",
-      "score": 0.7810312509536743,
-      "text_preview": "Người lao động đóng theo quy định."
-    },
-    {
-      "clause_id": "L41_2024.A41.K2",
-      "score": 0.7795960903167725,
-      "text_preview": "Xử phạt vi phạm hành chính hoặc truy cứu trách nhiệm hình sự theo quy định của pháp luật."
-    },
-    {
-      "clause_id": "L41_2024.A48.K3",
-      "score": 0.7792422771453857,
-      "text_preview": "Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định từ người sử dụng lao động, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng v"
-    },
-    {
-      "clause_id": "L41_2024.A63.K2",
-      "score": 0.7772419452667236,
-      "text_preview": "Trong thời hạn 07 ngày làm việc kể từ ngày nhận danh sách theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do."
     }
   ],
-  "n_semantic_edges": 4,
+  "n_semantic_edges": 5,
   "n_refs": 0,
-  "elapsed_s": 2.67,
+  "elapsed_s": 3.63,
   "gold_answer": "Công ty không được tự ý phạt bạn 7-8 triệu chỉ vì 'nghỉ ngang' nếu không có căn cứ pháp luật rõ ràng. Trường hợp đơn phương chấm dứt HĐLĐ trái luật thì nghĩa vụ bồi thường cũng phải theo Bộ luật Lao động, không phải doanh nghiệp muốn ấn định bao nhiêu cũng được. Việc chưa lấy tờ rời BHXH không làm mất quyền được nhận quá trình đóng. Bạn nên yêu cầu công ty trả sổ/tờ rời; nếu bị giữ trái luật thì khiếu nại đến cơ quan lao động hoặc BHXH.",
-  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 35, Điều 40, Điều 48; Luật BHXH 2024 Điều 13"
+  "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 35]\n[Bộ luật Lao động 2019, Điều 40]\n[Bộ luật Lao động 2019, Điều 48]\n[Luật BHXH 2024 (41/2024/QH15), Điều 13]"
 }

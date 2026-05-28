@@ -2,50 +2,41 @@
   "arm": "graphrag",
   "stt": 131,
   "question": "Em bị mất sổ BHXH, chỉ còn thông tin, thời gian đóng tích hợp trên VNEID thì có rút BH 1 lần được không?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 70 khoản 1] — Quy định về đối tượng được hưởng bảo hiểm xã hội một lần.\n- [Điều 107 khoản 2] — Quy định về việc nộp hồ sơ để hưởng bảo hiểm xã hội một lần.",
-  "citations": [
-    "[Điều 70 khoản 1]",
-    "[Điều 107 khoản 2]"
-  ],
-  "citation_ids": [
-    "L41_2024.A70.K1",
-    "L41_2024.A107.K2"
-  ],
-  "citation_verified": {
-    "L41_2024.A70.K1": true,
-    "L41_2024.A107.K2": true
-  },
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 109 khoản 1: Hồ sơ hưởng bảo hiểm xã hội một lần cần có sổ bảo hiểm xã hội.\n- Điều 18 khoản 2: Quyền của người lao động liên quan đến việc được cấp và quản lý sổ bảo hiểm xã hội.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_verified": {},
   "n_vector_hits": 8,
   "vector_hits": [
     {
-      "clause_id": "L41_2024.A102.K4",
-      "score": 0.7848693132400513,
-      "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm ghi trong quyết định của cơ quan bảo hiểm xã hội."
+      "clause_id": "L58_2014.A109.K1",
+      "score": 0.7942296266555786,
+      "text_preview": "Sổ bảo hiểm xã hội."
     },
     {
-      "clause_id": "L41_2024.A9.K2",
-      "score": 0.7816348075866699,
-      "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+      "clause_id": "L58_2014.A105.K1",
+      "score": 0.7942296266555786,
+      "text_preview": "Sổ bảo hiểm xã hội."
     },
     {
-      "clause_id": "L41_2024.A70.K1",
-      "score": 0.7810665369033813,
-      "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm xã hội mà có đề nghị thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây:"
+      "clause_id": "L58_2014.A104.K1",
+      "score": 0.7942296266555786,
+      "text_preview": "Sổ bảo hiểm xã hội."
     },
     {
-      "clause_id": "L41_2024.A107.K2",
-      "score": 0.7785447239875793,
-      "text_preview": "Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.\nThời điểm kết thúc ngày cuối cùng của tháng dừng đ"
+      "clause_id": "L58_2014.A109.K2",
+      "score": 0.793960690498352,
+      "text_preview": "Đơn đề nghị hưởng bảo hiểm xã hội một lần của người lao động."
     },
     {
-      "clause_id": "L41_2024.A33.K7",
-      "score": 0.7784994840621948,
-      "text_preview": "Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng"
+      "clause_id": "L58_2014.A18.K2",
+      "score": 0.791454553604126,
+      "text_preview": "Được cấp và quản lý sổ bảo hiểm xã hội."
     }
   ],
-  "n_semantic_edges": 3,
-  "n_refs": 12,
-  "elapsed_s": 1.88,
+  "n_semantic_edges": 0,
+  "n_refs": 0,
+  "elapsed_s": 3.97,
   "gold_answer": "Nếu bạn bị mất sổ BHXH nhưng dữ liệu quá trình đóng đã tích hợp trên VNeID thì vẫn có thể làm hồ sơ hưởng BHXH 1 lần. Cơ quan BHXH hiện đối chiếu dữ liệu điện tử là chính; khi cần, bạn làm thêm thủ tục cấp lại sổ hoặc xác nhận quá trình đóng. Quan trọng là bạn phải đủ điều kiện hưởng BHXH 1 lần theo luật và hồ sơ định danh phải trùng khớp.",
-  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]\n[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
 }

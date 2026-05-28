@@ -2,53 +2,53 @@
   "arm": "graphrag",
   "stt": 185,
   "question": "minh tham gia bh từ 2021 đến nay đóng phí đều hàng tháng.nhưng mở  định danh kiểm tra thì 21 23 24 25 đều có phí còn 22 trống không thấy có phí mình cảm thấy chưa hiểu, tại sao mình bị thiếu tháng này?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 38 khoản 1] — Chậm đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp.\n- [Điều 38 khoản 2] — Không đăng ký hoặc đăng ký không đầy đủ số người phải tham gia bảo hiểm xã hội bắt buộc.\n- [Điều 40 khoản 1] — Biện pháp xử lý hành vi chậm đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp.",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 38 khoản 1] - Chậm đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp.\n- [Điều 38 khoản 2] - Không đăng ký hoặc đăng ký không đầy đủ số người phải tham gia bảo hiểm xã hội bắt buộc.\n- [Điều 38 khoản 3] - Không đăng ký hoặc đăng ký không đầy đủ số người phải tham gia bảo hiểm thất nghiệp.",
   "citations": [
     "[Điều 38 khoản 1]",
     "[Điều 38 khoản 2]",
-    "[Điều 40 khoản 1]"
+    "[Điều 38 khoản 3]"
   ],
   "citation_ids": [
     "L41_2024.A38.K1",
     "L41_2024.A38.K2",
-    "L41_2024.A40.K1"
+    "L41_2024.A38.K3"
   ],
   "citation_verified": {
     "L41_2024.A38.K1": true,
     "L41_2024.A38.K2": true,
-    "L41_2024.A40.K1": true
+    "L41_2024.A38.K3": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
+      "clause_id": "L58_2014.A17.K2",
+      "score": 0.7718572020530701,
+      "text_preview": "Chậm đóng tiền bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
       "clause_id": "L41_2024.A38.K1",
-      "score": 0.7598574161529541,
+      "score": 0.7598321437835693,
       "text_preview": "Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều "
     },
     {
       "clause_id": "L41_2024.A38.K2",
-      "score": 0.7577617168426514,
+      "score": 0.7575716376304626,
       "text_preview": "Không đăng ký hoặc đăng ký không đầy đủ số người phải tham gia bảo hiểm xã hội bắt buộc trong thời hạn 60 ngày kể từ ngày hết thời hạn quy định tại khoản 1 Điều 28 của Luật này;"
     },
     {
-      "clause_id": "L41_2024.A63.K2",
-      "score": 0.753534197807312,
-      "text_preview": "Trong thời hạn 07 ngày làm việc kể từ ngày nhận danh sách theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do."
+      "clause_id": "L41_2024.A38.K3",
+      "score": 0.7533954381942749,
+      "text_preview": "Không đăng ký hoặc đăng ký không đầy đủ số người phải tham gia bảo hiểm thất nghiệp trong thời hạn 60 ngày kể từ ngày hết thời hạn phải tham gia bảo hiểm thất nghiệp theo quy định của pháp luật về bảo"
     },
     {
       "clause_id": "L41_2024.A40.K1",
-      "score": 0.7534390687942505,
+      "score": 0.7533812522888184,
       "text_preview": "Bắt buộc đóng đủ số tiền chậm đóng; nộp số tiền bằng 0,03%/ngày tính trên số tiền bảo hiểm xã hội, bảo hiểm thất nghiệp chậm đóng và số ngày chậm đóng vào quỹ bảo hiểm xã hội, quỹ bảo hiểm thất nghiệp"
-    },
-    {
-      "clause_id": "L41_2024.A38.K3",
-      "score": 0.7533454895019531,
-      "text_preview": "Không đăng ký hoặc đăng ký không đầy đủ số người phải tham gia bảo hiểm thất nghiệp trong thời hạn 60 ngày kể từ ngày hết thời hạn phải tham gia bảo hiểm thất nghiệp theo quy định của pháp luật về bảo"
     }
   ],
-  "n_semantic_edges": 4,
-  "n_refs": 6,
-  "elapsed_s": 2.55,
+  "n_semantic_edges": 6,
+  "n_refs": 4,
+  "elapsed_s": 3.87,
   "gold_answer": "Nếu app không hiển thị năm 2022 nhưng các năm khác vẫn có, có thể do lỗi đồng bộ dữ liệu, gộp mã số hoặc đơn vị chưa hoàn tất hạch toán năm đó. Thời gian đóng hợp lệ không tự nhiên bị mất, nhưng bạn nên đề nghị BHXH in chi tiết quá trình đóng để kiểm tra. Nếu thật sự thiếu dữ liệu, có thể yêu cầu đơn vị cũ đối chiếu chứng từ đóng và cơ quan BHXH cập nhật lại.",
-  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
 }

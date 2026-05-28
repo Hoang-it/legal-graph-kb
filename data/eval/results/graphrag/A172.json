@@ -2,41 +2,56 @@
   "arm": "graphrag",
   "stt": 172,
   "question": "đăng kí bhtn xong tầm bnh ngày là sẽ nhận tiền?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- Điều 24. Trình tự, thủ tục thực hiện chế độ đối với người lao động không đủ điều kiện hưởng lương hưu và chưa đủ tuổi hưởng trợ cấp hưu trí xã hội.\n- Điều 48. Giải quyết hưởng trợ cấp ốm đau.\n- Điều 76. Trợ cấp một lần đối với người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng ra nước ngoài để định cư.\n- Điều 79. Giải quyết hưởng lương hưu, hưởng bảo hiểm xã hội một lần.\n- Điều 81. Giải quyết tiếp tục hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng trong trường hợp đã bị tạm dừng hoặc chấm dứt hưởng.\n- Điều 91. Giải quyết hưởng chế độ tử tuất.\n- Điều 97. Giải quyết hưởng trợ cấp thai sản.\n- Điều 107. Giải quyết hưởng lương hưu, bảo hiểm xã hội một lần đối với người đang bảo lưu thời gian đóng bảo hiểm xã hội, người tham gia bảo hiểm xã hội tự nguyện.",
-  "citations": [],
-  "citation_ids": [],
-  "citation_verified": {},
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 97 khoản 2] - Giải quyết hưởng trợ cấp thai sản\n- [Điều 91 khoản 3] - Giải quyết hưởng chế độ tử tuất\n- [Điều 81 khoản 2] - Giải quyết tiếp tục hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng trong trường hợp đã bị tạm dừng hoặc chấm dứt hưởng\n- [Điều 110 khoản 4] - Giải quyết hưởng lương hưu, bảo hiểm xã hội một lần",
+  "citations": [
+    "[Điều 97 khoản 2]",
+    "[Điều 91 khoản 3]",
+    "[Điều 81 khoản 2]",
+    "[Điều 110 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A97.K2",
+    "L41_2024.A91.K3",
+    "L41_2024.A81.K2",
+    "L41_2024.A110.K4"
+  ],
+  "citation_verified": {
+    "L41_2024.A97.K2": true,
+    "L41_2024.A91.K3": true,
+    "L41_2024.A81.K2": true,
+    "L41_2024.A110.K4": true
+  },
   "n_vector_hits": 8,
   "vector_hits": [
     {
+      "clause_id": "L58_2014.A103.K2",
+      "score": 0.8061097860336304,
+      "text_preview": "Trong thời hạn 10 ngày kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết và tổ chức chi trả cho người lao động; trường hợp không giải quyết thì phải trả lời bằn"
+    },
+    {
+      "clause_id": "L58_2014.A112.K3",
+      "score": 0.7975273728370667,
+      "text_preview": "Trong thời hạn 15 ngày kể từ ngày nhận đủ hồ sơ, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết và tổ chức chi trả cho thân nhân của người lao động. Trường hợp không giải quyết thì phải trả lời bằn"
+    },
+    {
+      "clause_id": "L58_2014.A110.K4",
+      "score": 0.793369472026825,
+      "text_preview": "Trong thời hạn 20 ngày kể từ ngày nhận đủ hồ sơ theo quy định đối với người hưởng lương hưu hoặc trong thời hạn 10 ngày, kể từ ngày nhận đủ hồ sơ theo quy định đối với trường hợp hưởng bảo hiểm xã hội"
+    },
+    {
       "clause_id": "L41_2024.A97.K2",
-      "score": 0.7888991832733154,
+      "score": 0.7888594269752502,
       "text_preview": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do."
     },
     {
-      "clause_id": "L41_2024.A91.K3",
-      "score": 0.7875885963439941,
-      "text_preview": "Trong thời hạn 10 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do."
-    },
-    {
-      "clause_id": "L41_2024.A81.K2",
-      "score": 0.7875885963439941,
-      "text_preview": "Trong thời hạn 10 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do."
-    },
-    {
-      "clause_id": "L41_2024.A107.K3",
-      "score": 0.7865951657295227,
-      "text_preview": "Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo"
-    },
-    {
-      "clause_id": "L41_2024.A79.K3",
-      "score": 0.7865800857543945,
-      "text_preview": "Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo"
+      "clause_id": "L45_2019.A48.K1",
+      "score": 0.7886326313018799,
+      "text_preview": "Trong thời hạn 14 ngày làm việc kể từ ngày chấm dứt hợp đồng lao động, hai bên có trách nhiệm thanh toán đầy đủ các khoản tiền có liên quan đến quyền lợi của mỗi bên, trừ trường hợp sau đây có thể kéo"
     }
   ],
-  "n_semantic_edges": 3,
-  "n_refs": 1,
-  "elapsed_s": 4.7,
+  "n_semantic_edges": 8,
+  "n_refs": 0,
+  "elapsed_s": 5.11,
   "gold_answer": "Sau khi bạn nộp đủ hồ sơ BHTN, nếu sau 15 ngày làm việc vẫn chưa có việc làm thì sẽ được giải quyết hưởng. Tiền trợ cấp thường được chi trả sau khi có quyết định hưởng, thực tế nhiều nơi nhận trong vài ngày đến khoảng 1-2 tuần sau quyết định đầu tiên. Bạn nhớ theo dõi lịch thông báo việc làm hằng tháng để không bị tạm dừng hoặc chấm dứt hưởng.",
-  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+  "gold_citations_raw": "[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
 }

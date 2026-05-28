@@ -2,33 +2,33 @@
   "arm": "elite_graphrag",
   "stt": 30,
   "question": "Người lao động sinh con tháng 01/2026, đã nghỉ việc hưởng chế độ thai sản từ thời điểm sinh con.\nKhi thực hiện thủ tục báo giảm lao động, cơ quan BHXH yêu cầu đơn vị phải điều chỉnh nơi đăng ký khám bệnh, chữa bệnh ban đầu của người lao động.\nTuy nhiên, thời điểm hiện tại đã quá hạn đầu quý I/2026 nên đơn vị chưa thể thực hiện thủ tục điều chỉnh khám bệnh, chữa bệnh, dự kiến đến đầu quý II/2026 mới thực hiện được.\nBà Thị Oanh (TPHCM) hỏi, vậy trong thời gian chờ để điều chỉnh nơi khám bệnh, chữa bệnh và báo giảm người lao động hưởng thai sản từ tháng 01/2026, đơn vị có phải tiếp tục đóng BHXH cho người lao động này không?\nViệc báo giảm và nộp hồ sơ thai sản muộn so với thời điểm phát sinh có ảnh hưởng đến quyền lợi của người lao động và trách nhiệm của đơn vị không?",
-  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'impact_of_late_submission(Trace']",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'impact_of_late_submission(Impact']",
   "plain_answer": "",
   "citations": [
-    "[Luật BHXH 2024 (41/2024/QH15), Điều 62 khoản 1]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 61 khoản 1]",
     "[Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 1]",
     "[Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 8]"
   ],
   "citation_ids": [
-    "L41_2024.A62.K1",
+    "L41_2024.A61.K1",
     "L41_2024.A53.K1",
     "L41_2024.A53.K8"
   ],
   "citation_indices": [
     0,
     1,
-    3
+    5
   ],
   "prolog_success": false,
   "prolog_status": "invalid_query",
   "n_repair_rounds": 2,
   "prolog_trace": "",
-  "prolog_program": "legal_source(source_c000, law_bhxh_2024, article_62, clause_1, none, 'Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản.').\nlegal_source(source_c001, law_bhxh_2024, article_53, clause_1, none, 'Thời gian nghỉ việc hưởng chế độ thai sản của lao động nữ khi sinh con được thực hiện theo quy định tại khoản 1 Điều 139 của Bộ luật Lao động.').\nlegal_source(source_c003, law_bhxh_2024, article_53, clause_8, none, 'Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ thai sản được tính là thời gian đóng bảo hiểm xã hội bắt buộc, người lao động và người sử dụng lao động không phải đóng bảo hiểm xã hội.').\ncontinue_social_insurance_payment(Trace) :- Trace = [step(conclusion, continue_social_insurance_payment, based_on(source_c003))].\nimpact_of_late_submission(Trace) :- Trace = [step(conclusion, impact_of_late_submission, based_on(source_c000))].",
-  "prolog_error": "query argument must be variable or user, got 'impact_of_late_submission(Trace'",
+  "prolog_program": "legal_source(source_c000, law_bhxh_2024, article_61, clause_1, none, 'Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản.').\nlegal_source(source_c001, law_bhxh_2024, article_53, clause_1, none, 'Thời gian nghỉ việc hưởng chế độ thai sản của lao động nữ khi sinh con được thực hiện theo quy định tại khoản 1 Điều 139 của Bộ luật Lao động.').\nlegal_source(source_c005, law_bhxh_2024, article_53, clause_8, none, 'Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ thai sản được tính là thời gian đóng bảo hiểm xã hội bắt buộc, người lao động và người sử dụng lao động không phải đóng bảo hiểm xã hội.').\ncontinue_social_insurance_payment(Answer, Trace) :- Answer = yes, Trace = [step(conclusion, continue_social_insurance_payment(Answer), based_on(source_c005))].\nimpact_of_late_submission(Answer, Trace) :- Answer = may_affect_rights_and_responsibilities, Trace = [step(conclusion, impact_of_late_submission(Answer), based_on(source_c000))].",
+  "prolog_error": "query argument must be variable or user, got 'impact_of_late_submission(Impact'",
   "irac_sections": {},
-  "elapsed_s": 23.1,
-  "prompt_tokens": 8218,
-  "completion_tokens": 1237,
+  "elapsed_s": 29.452,
+  "prompt_tokens": 8595,
+  "completion_tokens": 1320,
   "error": null,
   "gold_answer": "Khoản 1 Điều 13 Luật BHXH 2024 quy định trách nhiệm của người sử dụng lao động: \"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội\".\nĐối chiếu với quy định trên, đơn vị có trách nhiệm nộp hồ sơ báo giảm lao động nghỉ thai sản ngay khi người lao động nghỉ việc hưởng chế độ, việc thay đổi nơi đăng ký khám bệnh, chữa bệnh ban đầu không ảnh hưởng đến việc báo giảm.\nTuy nhiên, trường hợp người lao động đăng ký khám bệnh, chữa bệnh ban đầu tại cơ sở khám bệnh, chữa bệnh ban đầu đã ngừng ký hợp đồng khám, chữa bệnh BHYT thì được nộp ngay hồ sơ 613 để chuyển đổi nơi khám bệnh, chữa bệnh khác (không chờ đến 15 ngày của tháng đầu quý).\nTrường hợp khi nộp hồ sơ đề nghị giải quyết hưởng chế độ thai sản cho người lao động chậm so với thời hạn quy định, đề nghị đơn vị giải trình bằng văn bản lý do chậm nộp khi kê khai hồ sơ đề nghị giải quyết chế độ cho cơ quan BHXH, người lao động vẫn được giải quyết chế độ thai sản theo quy định.",
   "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 13]"

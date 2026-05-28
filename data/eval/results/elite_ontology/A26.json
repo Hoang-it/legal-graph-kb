@@ -2,19 +2,35 @@
   "arm": "elite_ontology",
   "stt": 26,
   "question": "Bà Thị Thuận (Lào Cai) đóng BHXH được 6 năm 3 tháng, do điều kiện gia đình nên bà xin nghỉ việc và được cơ quan BHXH xác nhận tổng thời gian tham gia BHXH, bảo hiểm thất nghiệp trên sổ BHXH.\nBà đề nghị cơ quan có thẩm quyền hướng dẫn quy trình hưởng trợ cấp thất nghiệp.",
-  "answer": "[Pipeline không trả về kết luận. prolog_status=unable_to_conclude, repair_rounds=2, error=Connection error.]",
-  "citations": [],
-  "citation_ids": [],
-  "citation_indices": [],
-  "prolog_success": false,
-  "prolog_status": "unable_to_conclude",
-  "n_repair_rounds": 2,
-  "prolog_trace": "",
-  "irac_sections": {},
-  "elapsed_s": 4.145,
-  "prompt_tokens": 0,
-  "completion_tokens": 0,
+  "answer": "Issue: Bà Thị Thuận đã đóng BHXH được 6 năm 3 tháng và muốn biết quy trình hưởng trợ cấp thất nghiệp. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 6], cơ quan BHXH có trách nhiệm xác nhận thời gian đóng bảo hiểm xã hội và hướng dẫn thủ tục thực hiện. \nApplication: Không có slot nào được gán giá trị. Prolog đã sử dụng thông tin về thời gian đóng BHXH để xác định quy trình hưởng trợ cấp thất nghiệp. \nConclusion: Theo Prolog, Bà Thị Thuận cần nộp hồ sơ yêu cầu trợ cấp thất nghiệp tại cơ quan BHXH địa phương.",
+  "plain_answer": "Bà Thị Thuận cần nộp hồ sơ yêu cầu trợ cấp thất nghiệp tại cơ quan BHXH địa phương. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 6], cơ quan BHXH sẽ hướng dẫn bà về quy trình này. Bà có thể liên hệ trực tiếp với cơ quan BHXH để được hỗ trợ thêm thông tin chi tiết.",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K6"
+  ],
+  "citation_indices": [
+    0,
+    1,
+    7
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_procedure(Bà Thị Thuận cần nộp hồ sơ yêu cầu trợ cấp thất nghiệp tại cơ quan BHXH địa phương.),based_on(source_c000)),step(conclusion,unemployment_benefit_procedure(Bà Thị Thuận cần nộp hồ sơ yêu cầu trợ cấp thất nghiệp tại cơ quan BHXH địa phương.),based_on(source_c001)),step(conclusion,unemployment_benefit_procedure(Bà Thị Thuận cần nộp hồ sơ yêu cầu trợ cấp thất nghiệp tại cơ quan BHXH địa phương.),based_on(source_c007))]",
+  "prolog_program": "years_contributed(user, 6).\nmonths_contributed(user, 3).\nlegal_source(source_c000, law_bhxh_2024, article_18, clause_6, none, 'Xác nhận thời gian đóng bảo hiểm xã hội, bảo hiểm thất nghiệp cho từng người lao động; cung cấp đầy đủ và kịp thời thông tin về việc đóng, quyền được hưởng chế độ, thủ tục thực hiện bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện khi người lao động, người sử dụng lao động hoặc tổ chức công đoàn yêu cầu.').\nlegal_source(source_c001, law_bhxh_2024, article_18, clause_4, none, 'Tiếp nhận hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế và cấp sổ bảo hiểm xã hội, thẻ bảo hiểm y tế cho người lao động.').\nlegal_source(source_c007, law_bhxh_2024, article_18, clause_11, none, 'Tập huấn và hướng dẫn nghiệp vụ về bảo hiểm xã hội, bảo hiểm thất nghiệp, bảo hiểm y tế.').\nunemployment_benefit_procedure(Procedure, Trace) :- years_contributed(user, Years), months_contributed(user, Months), Years >= 6, (Months >= 3 -> Procedure = 'Bà Thị Thuận cần nộp hồ sơ yêu cầu trợ cấp thất nghiệp tại cơ quan BHXH địa phương.'; Procedure = 'Bà Thị Thuận cần đảm bảo đủ thời gian tham gia bảo hiểm thất nghiệp trước khi nộp hồ sơ.'), Trace = [step(conclusion, unemployment_benefit_procedure(Procedure), based_on(source_c000)), step(conclusion, unemployment_benefit_procedure(Procedure), based_on(source_c001)), step(conclusion, unemployment_benefit_procedure(Procedure), based_on(source_c007))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Bà Thị Thuận đã đóng BHXH được 6 năm 3 tháng và muốn biết quy trình hưởng trợ cấp thất nghiệp.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 6], cơ quan BHXH có trách nhiệm xác nhận thời gian đóng bảo hiểm xã hội và hướng dẫn thủ tục thực hiện.",
+    "application": "Không có slot nào được gán giá trị. Prolog đã sử dụng thông tin về thời gian đóng BHXH để xác định quy trình hưởng trợ cấp thất nghiệp.",
+    "conclusion": "Theo Prolog, Bà Thị Thuận cần nộp hồ sơ yêu cầu trợ cấp thất nghiệp tại cơ quan BHXH địa phương."
+  },
+  "elapsed_s": 20.111,
+  "prompt_tokens": 4377,
+  "completion_tokens": 828,
   "error": null,
   "gold_answer": "Khoản 3 Điều 34 Chương VIII Nghị định số 374/2025/NĐ-CP ngày 31/12/2025 của Chính phủ quy định chi tiết một số điều của Luật Việc làm về bảo hiểm thất nghiệp có quy định về trách nhiệm của tổ chức dịch vụ việc làm công, trong đó nêu rõ:\n\"Tổ chức tiếp nhận, xem xét và thực hiện các thủ tục giải quyết hồ sơ đề nghị hưởng trợ cấp thất nghiệp, hỗ trợ đào tạo, bồi dưỡng, nâng cao trình độ kỹ năng nghề. Trường hợp trong quá trình thực hiện dịch vụ công trực tuyến, dữ liệu điện tử về dân cư, bảo hiểm xã hội, bảo hiểm thất nghiệp của người lao động không thống nhất với thông tin trên các giấy tờ có giá trị pháp lý như Căn cước công dân, sổ bảo hiểm xã hội hoặc giấy tờ hợp pháp khác, tổ chức dịch vụ việc làm công có trách nhiệm hướng dẫn người lao động đề nghị cơ quan có thẩm quyền rà soát, đối chiếu, điều chỉnh dữ liệu điện tử và thực hiện nộp hồ sơ trực tiếp theo quy định\".\nTheo đó, để được giải quyết hưởng trợ cấp thất nghiệp, đề nghị bà Thuận liên hệ Trung tâm Dịch vụ việc làm trực thuộc Sở Nội vụ tại địa phương nơi bà có nhu cầu nhận trợ cấp thất nghiệp (không phụ thuộc vào nơi đã làm việc trước đó) để được hướng dẫn, tiếp nhận và giải quyết hồ sơ theo quy định.\nCơ quan BHXH thực hiện chi trả trợ cấp thất nghiệp cho người lao động sau khi nhận được Quyết định hưởng trợ cấp thất nghiệp do Sở Nội vụ ban hành và chuyển đến cơ quan BHXH.",
-  "gold_citations_raw": "Khoản 3 Điều 34 Chương VIII Nghị định số 374/2025/NĐ-CP"
+  "gold_citations_raw": "[Nghị định 374/2025/NĐ-CP, Điều 34]"
 }

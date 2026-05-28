@@ -2,9 +2,10 @@
   "arm": "elite_no_retrieval",
   "stt": 22,
   "question": "Mẹ của bà Thị Thu Trang đã 57 tuổi, đóng BHXH được 5 năm 7 tháng, mức lương bình quân đóng BHXH là 3.641.233 đồng.\nMẹ của bà muốn đóng BHXH tự nguyện thêm 9 năm 5 tháng với mức đóng 4.000.000 đồng/tháng để tròn 15 năm được hưởng lương hưu từ ngày 1/7/2025.",
-  "answer": "Issue: Mẹ của bà Thị Thu Trang đã 57 tuổi, đóng BHXH được 5 năm 7 tháng và muốn đóng BHXH tự nguyện thêm 9 năm 5 tháng để đủ điều kiện hưởng lương hưu.\n\nRule: \"Người lao động được hưởng lương hưu khi có đủ điều kiện về tuổi và thời gian đóng BHXH.\" (law_bhxh_2024, article_64, clause_1)\n\nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng mẹ của bà Thị Thu Trang đủ điều kiện hưởng lương hưu dựa trên các quy tắc đã được thiết lập.\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy mẹ của bà Thị Thu Trang đủ điều kiện hưởng lương hưu.",
+  "answer": "Issue: Mẹ của bà Thị Thu Trang đã 57 tuổi và đã đóng BHXH được 5 năm 7 tháng, hỏi có đủ điều kiện hưởng lương hưu không. \nRule: Theo [Luật BHXH 2024, Điều 64 khoản 1], người lao động được hưởng lương hưu khi có đủ điều kiện về tuổi và thời gian đóng BHXH. \nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Prolog query eligible_for_pension(user, Answer, Trace) trả về Answer = no. \nConclusion: Hệ thống không thể tính được kết quả cuối cùng do thiếu thông tin về tổng số năm đóng BHXH.",
+  "plain_answer": "Hệ thống chưa đủ thông tin để tính chính xác vì không có dữ liệu về tổng số năm đóng BHXH của mẹ bạn. Theo [Luật BHXH 2024, Điều 64 khoản 1], để được hưởng lương hưu, cần đủ điều kiện về tuổi và thời gian đóng. Bạn vui lòng cung cấp thêm thông tin để mình tính giúp.",
   "citations": [
-    "[Điều 64 khoản 1]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 64 khoản 1]"
   ],
   "citation_ids": [
     "L41_2024.A64.K1"
@@ -12,18 +13,20 @@
   "citation_indices": [],
   "prolog_success": true,
   "prolog_status": "success",
-  "n_repair_rounds": 0,
-  "prolog_trace": "[step(conclusion,eligible_for_pension(user,yes),based_on(source_a64))]",
+  "n_repair_rounds": 2,
+  "prolog_trace": "[step(conclusion,eligible_for_pension(user,no),based_on(source_a64))]",
+  "prolog_program": "years_contributed(user, 5).\nmonths_contributed(user, 7).\nlegal_source(source_a64, law_bhxh_2024, article_64, clause_1, none, 'Người lao động được hưởng lương hưu khi có đủ điều kiện về tuổi và thời gian đóng BHXH.').\ntotal_contribution_years(Person, TotalYears) :- years_contributed(Person, Years1), months_contributed(Person, Months1), Years1PlusMonths is Years1 + Months1 / 12, TotalYears is Years1PlusMonths + 9 + 5 / 12.\neligible_for_pension(Person, Answer, Trace) :- total_contribution_years(Person, TotalYears), TotalYears >= 15, Answer = yes, Trace = [step(conclusion, eligible_for_pension(Person, Answer), based_on(source_a64))].\neligible_for_pension(Person, Answer, Trace) :- total_contribution_years(Person, TotalYears), TotalYears < 15, Answer = no, Trace = [step(conclusion, eligible_for_pension(Person, Answer), based_on(source_a64))].",
+  "prolog_error": "",
   "irac_sections": {
-    "issue": "Mẹ của bà Thị Thu Trang đã 57 tuổi, đóng BHXH được 5 năm 7 tháng và muốn đóng BHXH tự nguyện thêm 9 năm 5 tháng để đủ điều kiện hưởng lương hưu.",
-    "rule": "\"Người lao động được hưởng lương hưu khi có đủ điều kiện về tuổi và thời gian đóng BHXH.\" (law_bhxh_2024, article_64, clause_1)",
-    "application": "Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng mẹ của bà Thị Thu Trang đủ điều kiện hưởng lương hưu dựa trên các quy tắc đã được thiết lập.",
-    "conclusion": "Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy mẹ của bà Thị Thu Trang đủ điều kiện hưởng lương hưu."
+    "issue": "Mẹ của bà Thị Thu Trang đã 57 tuổi và đã đóng BHXH được 5 năm 7 tháng, hỏi có đủ điều kiện hưởng lương hưu không.",
+    "rule": "Theo [Luật BHXH 2024, Điều 64 khoản 1], người lao động được hưởng lương hưu khi có đủ điều kiện về tuổi và thời gian đóng BHXH.",
+    "application": "Không có giá trị nào được gán cho các slot trong slot_bindings. Prolog query eligible_for_pension(user, Answer, Trace) trả về Answer = no.",
+    "conclusion": "Hệ thống không thể tính được kết quả cuối cùng do thiếu thông tin về tổng số năm đóng BHXH."
   },
-  "elapsed_s": 13.591,
-  "prompt_tokens": 2311,
-  "completion_tokens": 588,
+  "elapsed_s": 29.533,
+  "prompt_tokens": 6499,
+  "completion_tokens": 1282,
   "error": null,
   "gold_answer": "Luật BHXH số 41/2024/QH15 của Quốc hội có hiệu lực thi hành từ ngày 1/7/2025, trong đó:\nTại Điều 98 quy định: \"Người tham gia bảo hiểm xã hội tự nguyện được hưởng lương hưu khi đủ tuổi nghỉ hưu theo quy định tại khoản 2 Điều 169 của Bộ luật Lao động và có thời gian đóng bảo hiểm xã hội từ đủ 15 năm trở lên\".\nTại khoản 11 Điều 141 quy định: \"Đối tượng quy định tại điểm a, b, c, d, đ, g, i khoản 1 Điều 2 của Luật này đã tham gia bảo hiểm xã hội trước ngày Luật này có hiệu lực thi hành mà có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 20 năm trở lên thì mức lương hưu hằng tháng thấp nhất bằng mức tham chiếu\".\nTheo thông tin bà cung cấp, mẹ của bà đã đóng BHXH bắt buộc được 5 năm 7 tháng, muốn đóng BHXH tự nguyện thêm 9 năm 5 tháng cho tròn 15 năm để nghỉ hưu từ ngày 1/7/2025 và khi tính lương hưu có mức lương hưu hằng tháng là 1.739.906 đồng, thấp hơn mức tham chiếu (nay là mức lương cơ sở); đối chiếu với quy định nêu trên thì mẹ của bà không được hưởng mức lương hưu hằng tháng thấp nhất bằng mức tham chiếu, do mẹ của bà chưa có đủ 20 năm đóng BHXH bắt buộc theo quy định tại khoản 11 Điều 141 Luật BHXH số 41/2024/QH15.",
-  "gold_citations_raw": "Luật BHXH số 41/2024/QH15"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 98]\n[Luật BHXH 2024 (41/2024/QH15), Điều 141]"
 }

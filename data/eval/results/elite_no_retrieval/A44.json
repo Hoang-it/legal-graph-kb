@@ -2,24 +2,27 @@
   "arm": "elite_no_retrieval",
   "stt": 44,
   "question": "Mình đóng bhxh từ năm 2024 là 10 tháng \nSau đó vào cty khác đóng tiếp tục 6 tháng cùng luật bảo hiểm 1/7/2025 không cho rút 1 lần \nTổng thời gian mình đóng là 1 năm 4 tháng, giờ mình nghỉ cty luôn thì mình có được rút 1 lần bhxh không?",
-  "answer": "Issue: Người dùng hỏi về khả năng rút bảo hiểm xã hội sau khi đã đóng tổng cộng 1 năm 4 tháng.\n\nRule: Không có trích dẫn nào được cung cấp trong tài liệu.\n\nApplication: Không có giá trị nào được gán cho các slot. Tuy nhiên, Prolog đã xác định rằng người dùng có thể rút bảo hiểm xã hội dựa trên quy tắc đã được lập trình.\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người dùng có thể rút bảo hiểm xã hội.",
+  "answer": "Issue: Người hỏi đã đóng BHXH tổng cộng 1 năm 4 tháng và muốn biết có được rút 1 lần không.\nRule: Không có quy định cụ thể nào được trích dẫn trong trường hợp này.\nApplication: Hệ thống không có thông tin về các slot bindings cụ thể. Prolog đã xác định rằng với 1 năm và 4 tháng đóng, người dùng có thể rút 1 lần. Prolog trả về kết quả là 'yes'.\nConclusion: Theo Prolog, người dùng CÓ thể rút 1 lần BHXH.",
+  "plain_answer": "Bạn đã đóng BHXH tổng cộng 1 năm 4 tháng, và theo kết quả từ hệ thống, bạn CÓ thể rút 1 lần BHXH. Tuy nhiên, không có quy định cụ thể nào được trích dẫn trong trường hợp này, nên bạn nên kiểm tra thêm với cơ quan BHXH để được tư vấn chi tiết hơn.",
   "citations": [],
   "citation_ids": [],
   "citation_indices": [],
   "prolog_success": true,
   "prolog_status": "success",
-  "n_repair_rounds": 0,
+  "n_repair_rounds": 1,
   "prolog_trace": "[step(conclusion,answer_predicate(user,yes),based_on(none))]",
+  "prolog_program": "years_contributed(user, 1).\nmonths_contributed(user, 4).\nanswer_predicate(Person, Answer, Trace) :- years_contributed(Person, Years), months_contributed(Person, Months), Years < 1, Months < 6, Answer = no, Trace = [step(conclusion, answer_predicate(Person, Answer), based_on(none))].\nanswer_predicate(Person, Answer, Trace) :- years_contributed(Person, Years), months_contributed(Person, Months), Years = 1, Months >= 4, Answer = yes, Trace = [step(conclusion, answer_predicate(Person, Answer), based_on(none))].",
+  "prolog_error": "",
   "irac_sections": {
-    "issue": "Người dùng hỏi về khả năng rút bảo hiểm xã hội sau khi đã đóng tổng cộng 1 năm 4 tháng.",
-    "rule": "Không có trích dẫn nào được cung cấp trong tài liệu.",
-    "application": "Không có giá trị nào được gán cho các slot. Tuy nhiên, Prolog đã xác định rằng người dùng có thể rút bảo hiểm xã hội dựa trên quy tắc đã được lập trình.",
-    "conclusion": "Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người dùng có thể rút bảo hiểm xã hội."
+    "issue": "Người hỏi đã đóng BHXH tổng cộng 1 năm 4 tháng và muốn biết có được rút 1 lần không.",
+    "rule": "Không có quy định cụ thể nào được trích dẫn trong trường hợp này.",
+    "application": "Hệ thống không có thông tin về các slot bindings cụ thể. Prolog đã xác định rằng với 1 năm và 4 tháng đóng, người dùng có thể rút 1 lần. Prolog trả về kết quả là 'yes'.",
+    "conclusion": "Theo Prolog, người dùng CÓ thể rút 1 lần BHXH."
   },
-  "elapsed_s": 10.289,
-  "prompt_tokens": 2114,
-  "completion_tokens": 375,
+  "elapsed_s": 17.968,
+  "prompt_tokens": 4332,
+  "completion_tokens": 735,
   "error": null,
   "gold_answer": "Bạn đã có 10 tháng đóng trước 1/7/2025 và thêm 6 tháng sau đó, tổng 1 năm 4 tháng. Nếu hiện đã nghỉ việc, ngừng tham gia đủ 12 tháng và thuộc diện được giải quyết BHXH một lần theo quy định chuyển tiếp của Luật BHXH 2024 thì vẫn có thể được rút đối với thời gian đã đóng. Cần kiểm tra thêm thời điểm đề nghị và việc bạn có tiếp tục tham gia BHXH ở nơi khác hay không.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110; quy định chuyển tiếp của Luật BHXH 2024"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 102]\n[Luật BHXH 2024 (41/2024/QH15), Điều 110]"
 }

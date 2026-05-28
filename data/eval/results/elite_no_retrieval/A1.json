@@ -2,9 +2,10 @@
   "arm": "elite_no_retrieval",
   "stt": 1,
   "question": "Vợ của ông Trinh (Hậu Giang) đóng BHXH được 9 năm 6 tháng. Vợ ông sinh con từ ngày 23/12/2014 nhưng chưa nộp hồ sơ hưởng chế độ thai sản.\nVậy nay vợ của ông nộp hồ sơ để hưởng chế độ thai sản thì có được không?",
-  "answer": "Issue: Vợ của ông Trinh (Hậu Giang) đã đóng BHXH được 9 năm 6 tháng và sinh con từ ngày 23/12/2014. Câu hỏi là liệu vợ ông có thể nộp hồ sơ để hưởng chế độ thai sản hay không.\n\nRule: \"Người lao động nữ có thời gian đóng BHXH từ đủ 6 tháng trở lên và sinh con thì được hưởng chế độ thai sản.\" (law_bhxh_2024, article_31, clause_1)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng vợ của ông Trinh có thời gian đóng BHXH đủ điều kiện để hưởng chế độ thai sản.\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy vợ của ông Trinh có thể nộp hồ sơ để hưởng chế độ thai sản.",
+  "answer": "Issue: Vợ của ông Trinh đã đóng BHXH 9 năm 6 tháng và hỏi về khả năng hưởng chế độ thai sản sau khi sinh con từ ngày 23/12/2014 mà chưa nộp hồ sơ.\nRule: Theo [Luật BHXH 2024, Điều 31 khoản 1], người lao động nữ có đủ điều kiện về thời gian đóng BHXH và nộp hồ sơ đúng thời hạn sẽ được hưởng chế độ thai sản.\nApplication: Không có slot nào được gán giá trị. Prolog đã xác định rằng vợ ông Trinh đủ điều kiện hưởng chế độ thai sản dựa trên quy định về thời gian đóng BHXH. Prolog trả về kết quả là có thể hưởng chế độ thai sản.\nConclusion: Theo Prolog, vợ của ông Trinh CÓ thể nộp hồ sơ để hưởng chế độ thai sản.",
+  "plain_answer": "Vợ của ông Trinh có thể nộp hồ sơ để hưởng chế độ thai sản vì đã đủ điều kiện về thời gian đóng BHXH theo [Luật BHXH 2024, Điều 31 khoản 1]. Mặc dù chưa nộp hồ sơ trước đó, nhưng vẫn có quyền hưởng chế độ thai sản nếu đáp ứng các yêu cầu khác.",
   "citations": [
-    "[Điều 31 khoản 1]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 31 khoản 1]"
   ],
   "citation_ids": [
     "L41_2024.A31.K1"
@@ -14,16 +15,18 @@
   "prolog_status": "success",
   "n_repair_rounds": 0,
   "prolog_trace": "[step(conclusion,answer_predicate(user,yes),based_on(source_a31_k1))]",
+  "prolog_program": "years_contributed(user, 9).\nmonths_contributed(user, 6).\nlegal_source(source_a31_k1, law_bhxh_2024, article_31, clause_1, none, 'Người lao động nữ có đủ điều kiện về thời gian đóng BHXH và nộp hồ sơ đúng thời hạn sẽ được hưởng chế độ thai sản.').\nanswer_predicate(Person, Answer, Trace) :- years_contributed(Person, Years), months_contributed(Person, Months), Years * 12 + Months >= 12, Answer = yes, Trace = [step(conclusion, answer_predicate(Person, Answer), based_on(source_a31_k1))].\nanswer_predicate(Person, Answer, Trace) :- years_contributed(Person, Years), months_contributed(Person, Months), Years * 12 + Months < 12, Answer = no, Trace = [step(conclusion, answer_predicate(Person, Answer), based_on(source_a31_k1))].",
+  "prolog_error": "",
   "irac_sections": {
-    "issue": "Vợ của ông Trinh (Hậu Giang) đã đóng BHXH được 9 năm 6 tháng và sinh con từ ngày 23/12/2014. Câu hỏi là liệu vợ ông có thể nộp hồ sơ để hưởng chế độ thai sản hay không.",
-    "rule": "\"Người lao động nữ có thời gian đóng BHXH từ đủ 6 tháng trở lên và sinh con thì được hưởng chế độ thai sản.\" (law_bhxh_2024, article_31, clause_1)",
-    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng vợ của ông Trinh có thời gian đóng BHXH đủ điều kiện để hưởng chế độ thai sản.",
-    "conclusion": "Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy vợ của ông Trinh có thể nộp hồ sơ để hưởng chế độ thai sản."
+    "issue": "Vợ của ông Trinh đã đóng BHXH 9 năm 6 tháng và hỏi về khả năng hưởng chế độ thai sản sau khi sinh con từ ngày 23/12/2014 mà chưa nộp hồ sơ.",
+    "rule": "Theo [Luật BHXH 2024, Điều 31 khoản 1], người lao động nữ có đủ điều kiện về thời gian đóng BHXH và nộp hồ sơ đúng thời hạn sẽ được hưởng chế độ thai sản.",
+    "application": "Không có slot nào được gán giá trị. Prolog đã xác định rằng vợ ông Trinh đủ điều kiện hưởng chế độ thai sản dựa trên quy định về thời gian đóng BHXH. Prolog trả về kết quả là có thể hưởng chế độ thai sản.",
+    "conclusion": "Theo Prolog, vợ của ông Trinh CÓ thể nộp hồ sơ để hưởng chế độ thai sản."
   },
-  "elapsed_s": 14.646,
-  "prompt_tokens": 2172,
-  "completion_tokens": 529,
+  "elapsed_s": 12.789,
+  "prompt_tokens": 2894,
+  "completion_tokens": 624,
   "error": null,
   "gold_answer": "Tại Khoản 4 Điều 28 Nghị định số 115/2015/NĐ-CP ngày 11/11/2015 của Chính phủ quy định: Người lao động đủ điều kiện và hưởng các chế độ BHXH trước ngày 1/1/2016 thì vẫn thực hiện theo quy định của pháp luật trước ngày 1/1/2016.\nTại Khoản 2 Điều 53 Nghị định số 152/2006/NĐ-CP ngày 22/12/2006 của Chính phủ quy định về hồ sơ hưởng chế độ thai sản như sau:\n\"2. Hồ sơ hưởng chế độ thai sản khi sinh con hoặc nhận con nuôi của người lao động không còn quan hệ lao động gồm có:\na) Sổ bảo hiểm xã hội;\nb) Bản sao Giấy chứng sinh hoặc bản sao Giấy khai sinh của con hoặc Giấy chứng tử trong trường hợp sau khi sinh mà con chết; nhận nuôi con nuôi dưới 4 tháng tuổi phải có chứng nhận theo quy định của pháp luật\".\nĐối chiếu quy định nêu trên, qua tra cứu dữ liệu tham gia BHXH đối với mã số BHXH và thông tin ông Trinh cung cấp, vợ của ông sinh con vào ngày 23/12/2014 trong khoảng thời gian 12 tháng trước khi sinh con của vợ của ông được tính từ tháng 12/2013 đến tháng 11/2014, vợ của ông có 9 tháng đóng BHXH (từ tháng 12/2013 đến tháng 8/2014) do đó vợ của ông đủ điều kiện hưởng chế độ thai sản khi sinh con và có thể nộp hồ sơ theo quy định nêu trên đến cơ quan BHXH để được xem xét, giải quyết.",
-  "gold_citations_raw": "Khoản 4 Điều 28 Nghị định số 115/2015/NĐ-CP\nTại Khoản 2 Điều 53 Nghị định số 152/2006/NĐ-CP"
+  "gold_citations_raw": "[Nghị định 115/2015/NĐ-CP, Điều 28]\n[Nghị định 152/2006/NĐ-CP, Điều 53]"
 }

@@ -2,7 +2,7 @@
   "questions_path": "data\\eval\\questions_200.json",
   "questions_sha256": "5563e3d54de40ae091f345f198bc2e5c9066e03c2b69f6dc66d7043e5552284c",
   "registry_path": "data\\legal_sources.yaml",
-  "registry_sha256": "192b5685b78626f726f0524f7f188eb44e69deda1ab10a6c751421fa5f0bb3f7",
+  "registry_sha256": "3c5ab75c1e35d785403604c29aa2a54856c6736c3e168c6ed99db5dd0e5dc853",
   "source": "gold_citations_raw",
   "granularity": "article",
   "records": {
@@ -21,7 +21,7 @@
     },
     "3": {
       "gold_articles": [
-        "BLLD_2019.A48",
+        "L45_2019.A48",
         "L58_2014.A21"
       ],
       "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 21]\n[Bộ luật Lao động 2019, Điều 48]"
@@ -71,7 +71,7 @@
     },
     "10": {
       "gold_articles": [
-        "BLLD_2019.A169"
+        "L45_2019.A169"
       ],
       "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 169]"
     },
@@ -113,9 +113,9 @@
     },
     "16": {
       "gold_articles": [
-        "BLLD_2019.A169",
         "L41_2024.A64",
-        "L41_2024.A70"
+        "L41_2024.A70",
+        "L45_2019.A169"
       ],
       "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 64]\n[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Bộ luật Lao động 2019, Điều 169]"
     },
@@ -203,7 +203,7 @@
     },
     "29": {
       "gold_articles": [
-        "BLLD_2019.A139",
+        "L45_2019.A139",
         "LDS_2025.A29"
       ],
       "gold_citations_raw": "[Luật Dân số 2025, Điều 29]\n[Bộ luật Lao động 2019, Điều 139]"
@@ -252,8 +252,8 @@
     },
     "37": {
       "gold_articles": [
-        "BLLD_2019.A48",
-        "L41_2024.A13"
+        "L41_2024.A13",
+        "L45_2019.A48"
       ],
       "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 13]\n[Bộ luật Lao động 2019, Điều 48]"
     },
@@ -326,29 +326,29 @@
     },
     "47": {
       "gold_articles": [
-        "BLLD_2019.A90",
-        "BLLD_2019.A94",
-        "L41_2024.A53"
+        "L41_2024.A53",
+        "L45_2019.A90",
+        "L45_2019.A94"
       ],
       "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 53]\n[Bộ luật Lao động 2019, Điều 90]\n[Bộ luật Lao động 2019, Điều 94]"
     },
     "48": {
       "gold_articles": [
-        "BLLD_2019.A169"
+        "L45_2019.A169"
       ],
       "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 169]"
     },
     "49": {
       "gold_articles": [
-        "BLLD_2019.A34",
-        "BLLD_2019.A48",
-        "L41_2024.A13"
+        "L41_2024.A13",
+        "L45_2019.A34",
+        "L45_2019.A48"
       ],
       "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 13]\n[Bộ luật Lao động 2019, Điều 34]\n[Bộ luật Lao động 2019, Điều 48]"
     },
     "50": {
       "gold_articles": [
-        "BLLD_2019.A169"
+        "L45_2019.A169"
       ],
       "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 169]"
     },
@@ -362,15 +362,15 @@
     },
     "52": {
       "gold_articles": [
-        "BLLD_2019.A48",
-        "L41_2024.A13"
+        "L41_2024.A13",
+        "L45_2019.A48"
       ],
       "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 13]\n[Bộ luật Lao động 2019, Điều 48]"
     },
     "53": {
       "gold_articles": [
-        "BLLD_2019.A48",
-        "L41_2024.A13"
+        "L41_2024.A13",
+        "L45_2019.A48"
       ],
       "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 13]\n[Bộ luật Lao động 2019, Điều 48]"
     },
@@ -382,17 +382,17 @@
     },
     "55": {
       "gold_articles": [
-        "BLLD_2019.A35",
-        "BLLD_2019.A40",
-        "BLLD_2019.A48",
-        "L41_2024.A13"
+        "L41_2024.A13",
+        "L45_2019.A35",
+        "L45_2019.A40",
+        "L45_2019.A48"
       ],
       "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 35]\n[Bộ luật Lao động 2019, Điều 40]\n[Bộ luật Lao động 2019, Điều 48]\n[Luật BHXH 2024 (41/2024/QH15), Điều 13]"
     },
     "56": {
       "gold_articles": [
-        "BLLD_2019.A13",
-        "L41_2024.A2"
+        "L41_2024.A2",
+        "L45_2019.A13"
       ],
       "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]\n[Bộ luật Lao động 2019, Điều 13]"
     },
@@ -432,8 +432,8 @@
     },
     "62": {
       "gold_articles": [
-        "BLLD_2019.A48",
-        "L41_2024.A13"
+        "L41_2024.A13",
+        "L45_2019.A48"
       ],
       "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 13]\n[Bộ luật Lao động 2019, Điều 48]"
     },
@@ -472,9 +472,9 @@
     },
     "68": {
       "gold_articles": [
-        "BLLD_2019.A13",
         "L41_2024.A2",
-        "L41_2024.A33"
+        "L41_2024.A33",
+        "L45_2019.A13"
       ],
       "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]\n[Luật BHXH 2024 (41/2024/QH15), Điều 33]\n[Bộ luật Lao động 2019, Điều 13]"
     },
@@ -509,8 +509,8 @@
     },
     "73": {
       "gold_articles": [
-        "BLLD_2019.A48",
-        "L41_2024.A13"
+        "L41_2024.A13",
+        "L45_2019.A48"
       ],
       "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 13]\n[Bộ luật Lao động 2019, Điều 48]"
     },
@@ -546,7 +546,7 @@
     },
     "78": {
       "gold_articles": [
-        "BLLD_2019.A169"
+        "L45_2019.A169"
       ],
       "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 169]"
     },
@@ -758,16 +758,16 @@
     },
     "109": {
       "gold_articles": [
-        "BLLD_2019.A169",
-        "L41_2024.A64"
+        "L41_2024.A64",
+        "L45_2019.A169"
       ],
       "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 64]\n[Bộ luật Lao động 2019, Điều 169]"
     },
     "110": {
       "gold_articles": [
-        "BLLD_2019.A169",
         "L41_2024.A64",
-        "L41_2024.A70"
+        "L41_2024.A70",
+        "L45_2019.A169"
       ],
       "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 64]\n[Bộ luật Lao động 2019, Điều 169]"
     },
@@ -930,8 +930,8 @@
     },
     "134": {
       "gold_articles": [
-        "BLLD_2019.A169",
         "L41_2024.A64",
+        "L45_2019.A169",
         "LVL_2013.A46",
         "LVL_2025.A38",
         "LVL_2025.A39",
@@ -1164,9 +1164,9 @@
     },
     "169": {
       "gold_articles": [
-        "BLLD_2019.A169",
         "L41_2024.A64",
         "L41_2024.A70",
+        "L45_2019.A169",
         "LVL_2013.A46",
         "LVL_2025.A38",
         "LVL_2025.A39",
@@ -1203,8 +1203,8 @@
     },
     "174": {
       "gold_articles": [
-        "BLLD_2019.A169",
         "L41_2024.A64",
+        "L45_2019.A169",
         "LVL_2013.A46",
         "LVL_2025.A38",
         "LVL_2025.A39",
@@ -1220,9 +1220,9 @@
     },
     "176": {
       "gold_articles": [
-        "BLLD_2019.A169",
         "L41_2024.A64",
-        "L41_2024.A70"
+        "L41_2024.A70",
+        "L45_2019.A169"
       ],
       "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 64]\n[Bộ luật Lao động 2019, Điều 169]"
     },
@@ -1249,8 +1249,8 @@
     },
     "180": {
       "gold_articles": [
-        "BLLD_2019.A169",
         "L41_2024.A64",
+        "L45_2019.A169",
         "LVL_2013.A46",
         "LVL_2025.A38",
         "LVL_2025.A39",
@@ -1295,8 +1295,8 @@
     },
     "186": {
       "gold_articles": [
-        "BLLD_2019.A48",
-        "L41_2024.A27"
+        "L41_2024.A27",
+        "L45_2019.A48"
       ],
       "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 48]\n[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
     },
@@ -1367,8 +1367,8 @@
     },
     "197": {
       "gold_articles": [
-        "BLLD_2019.A169",
-        "L41_2024.A64"
+        "L41_2024.A64",
+        "L45_2019.A169"
       ],
       "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 64]\n[Bộ luật Lao động 2019, Điều 169]"
     },
@@ -1387,9 +1387,9 @@
     },
     "200": {
       "gold_articles": [
-        "BLLD_2019.A169",
         "L41_2024.A64",
-        "L41_2024.A70"
+        "L41_2024.A70",
+        "L45_2019.A169"
       ],
       "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 64]\n[Bộ luật Lao động 2019, Điều 169]"
     },

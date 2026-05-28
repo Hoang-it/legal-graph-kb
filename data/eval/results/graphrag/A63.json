@@ -2,53 +2,50 @@
   "arm": "graphrag",
   "stt": 63,
   "question": "Tôi làm việc tại cty được 18 năm, giờ tôi nghỉ ngang vì ko xin được giấy thôi việc, hiện tại tôi đã đi làm ở 1 công ty khác.vậy bảo hiểm thất nghiệp của tôi cộng dồn vào những năm tiếp theo tôi đóng ở công ty mới hay sẽ bị mất?",
-  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 13 khoản 3] về trách nhiệm của người sử dụng lao động trong việc xác nhận thời gian đóng bảo hiểm xã hội.\n- [Điều 64 khoản 1] về đối tượng và điều kiện hưởng lương hưu.\n- [Điều 65 khoản 1] về đối tượng và điều kiện hưởng lương hưu khi suy giảm khả năng lao động.",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Điều 64 khoản 1] quy định về đối tượng và điều kiện hưởng lương hưu.\n- [Điều 65 khoản 1] quy định về đối tượng và điều kiện hưởng lương hưu khi suy giảm khả năng lao động.",
   "citations": [
-    "[Điều 13 khoản 3]",
     "[Điều 64 khoản 1]",
     "[Điều 65 khoản 1]"
   ],
   "citation_ids": [
-    "L41_2024.A13.K3",
     "L41_2024.A64.K1",
     "L41_2024.A65.K1"
   ],
   "citation_verified": {
-    "L41_2024.A13.K3": true,
     "L41_2024.A64.K1": true,
     "L41_2024.A65.K1": true
   },
   "n_vector_hits": 8,
   "vector_hits": [
     {
+      "clause_id": "L45_2019.A113.K3",
+      "score": 0.8156473636627197,
+      "text_preview": "Trường hợp do thôi việc, bị mất việc làm mà chưa nghỉ hằng năm hoặc chưa nghỉ hết số ngày nghỉ hằng năm thì được người sử dụng lao động thanh toán tiền lương cho những ngày chưa nghỉ."
+    },
+    {
+      "clause_id": "L58_2014.A17.K3",
+      "score": 0.8128703236579895,
+      "text_preview": "Chiếm dụng tiền đóng, hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+    },
+    {
+      "clause_id": "L58_2014.A85.K3",
+      "score": 0.8069101572036743,
+      "text_preview": "Người lao động không làm việc và không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì không đóng bảo hiểm xã hội tháng đó. Thời gian này không được tính để hưởng bảo hiểm xã hội, trừ trư"
+    },
+    {
       "clause_id": "L41_2024.A9.K2",
-      "score": 0.8016538023948669,
+      "score": 0.8018293976783752,
       "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
     },
     {
       "clause_id": "L41_2024.A64.K1",
-      "score": 0.7976939678192139,
+      "score": 0.7975135445594788,
       "text_preview": "Đối tượng quy định tại các điểm a, b, c, g, h, i, k, l, m và n khoản 1 và khoản 2 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 15 năm trở lên thì được hưởng lương"
-    },
-    {
-      "clause_id": "L41_2024.A33.K6",
-      "score": 0.7950528860092163,
-      "text_preview": "Trường hợp trong tháng đầu làm việc hoặc trong tháng đầu trở lại làm việc mà người lao động nghỉ việc hưởng chế độ ốm đau từ 14 ngày làm việc trở lên thì vẫn phải đóng bảo hiểm xã hội của tháng đó."
-    },
-    {
-      "clause_id": "L41_2024.A65.K1",
-      "score": 0.7945562601089478,
-      "text_preview": "Đối tượng quy định tại các điểm a, b, c, g, h, i, k, l, m và n khoản 1 và khoản 2 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 20 năm trở lên thì được hưởng lương"
-    },
-    {
-      "clause_id": "L41_2024.A141.K12",
-      "score": 0.79192054271698,
-      "text_preview": "Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30"
     }
   ],
-  "n_semantic_edges": 5,
-  "n_refs": 12,
-  "elapsed_s": 2.84,
+  "n_semantic_edges": 22,
+  "n_refs": 10,
+  "elapsed_s": 5.63,
   "gold_answer": "Thời gian đóng BHTN chưa hưởng sẽ được bảo lưu để cộng dồn với thời gian đóng ở công ty mới, không tự mất chỉ vì bạn nghỉ ngang. Điều quan trọng là lần nghỉ việc trước bạn chưa nhận trợ cấp thất nghiệp cho khoảng thời gian đó. Khi đủ điều kiện hưởng ở lần sau, cơ quan có thẩm quyền sẽ cộng dồn thời gian đóng BHTN chưa hưởng để tính số tháng trợ cấp. Tuy nhiên hồ sơ chấm dứt HĐLĐ của từng giai đoạn vẫn phải hợp lệ.",
-  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 49"
+  "gold_citations_raw": "[Luật Việc làm 2013, Điều 45]\n[Luật Việc làm 2013, Điều 49]"
 }
