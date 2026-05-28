@@ -48,13 +48,14 @@ STRUCTURAL_EDGE_TYPES = {
     "HAS_CHAPTER",
     "HAS_SECTION",
     "HAS_ARTICLE",
+    "BELONGS_TO",
     "IN_SECTION",
     "HAS_CLAUSE",
     "HAS_POINT",
     "HAS_TABLE",
     "NEXT",
 }
-EDGES_WITH_OFFSET = {"REFERENCES", "CITES_EXTERNAL"}
+EDGES_WITH_OFFSET = {"REFERENCES", "CITES_EXTERNAL", "REFERS_TO"}
 
 
 # ---------------------------------------------------------------------------
@@ -177,21 +178,50 @@ def _merge_edges(session, etype: str, edges: list[dict]) -> int:
             for i in range(0, len(edges), BATCH)
         )
     else:
-        # Semantic + AMENDS/REPEALS/REPLACES — khoá source_clause là đủ
-        query = (
-            "UNWIND $batch AS e "
-            "MATCH (src {id: e.src}) "
-            "MATCH (dst {id: e.dst}) "
-            f"MERGE (src)-[r:{etype} {{source_clause: e.source_clause}}]->(dst) "
-            "SET r += e.props"
-        )
-        chunks_iter = (
-            [_split_edge(e, ["src", "dst"]) for e in edges[i : i + BATCH]]
-            for i in range(0, len(edges), BATCH)
-        )
+        with_source = [e for e in edges if e.get("source_clause") is not None]
+        without_source = [e for e in edges if e.get("source_clause") is None]
+        n = 0
+        if with_source:
+            n += _merge_edges_with_source_clause(session, etype, with_source, BATCH)
+        if without_source:
+            n += _merge_edges_without_source_clause(session, etype, without_source, BATCH)
+        return n
 
     n = 0
     for batch in chunks_iter:
+        session.run(query, batch=batch)
+        n += len(batch)
+    return n
+
+
+def _merge_edges_with_source_clause(session, etype: str, edges: list[dict], batch_size: int) -> int:
+        # Semantic + AMENDS/REPEALS/REPLACES — khoá source_clause là đủ
+    query = (
+        "UNWIND $batch AS e "
+        "MATCH (src {id: e.src}) "
+        "MATCH (dst {id: e.dst}) "
+        f"MERGE (src)-[r:{etype} {{source_clause: e.source_clause}}]->(dst) "
+        "SET r += e.props"
+    )
+    n = 0
+    for i in range(0, len(edges), batch_size):
+        batch = [_split_edge(e, ["src", "dst"]) for e in edges[i : i + batch_size]]
+        session.run(query, batch=batch)
+        n += len(batch)
+    return n
+
+
+def _merge_edges_without_source_clause(session, etype: str, edges: list[dict], batch_size: int) -> int:
+    query = (
+        "UNWIND $batch AS e "
+        "MATCH (src {id: e.src}) "
+        "MATCH (dst {id: e.dst}) "
+        f"MERGE (src)-[r:{etype}]->(dst) "
+        "SET r += e.props"
+    )
+    n = 0
+    for i in range(0, len(edges), batch_size):
+        batch = [_split_edge(e, ["src", "dst"]) for e in edges[i : i + batch_size]]
         session.run(query, batch=batch)
         n += len(batch)
     return n

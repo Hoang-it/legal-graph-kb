@@ -25,6 +25,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from src import ids
+from src.legal_metadata import fold_text, load_law_metadata, load_order, resolve_law_id
 
 # ---------------------------------------------------------------------------
 # Regex
@@ -267,7 +268,8 @@ def extract_internal_refs(
     source_clause: str,
     article_n: int,
     used: list[_Span],
-    law: str = "L41_2024",
+    law: str,
+    max_article: int,
 ) -> list[dict]:
     refs: list[dict] = []
 
@@ -329,10 +331,10 @@ def extract_internal_refs(
         span = m.group(0)
         art_nums = [int(n) for n in re.findall(r"Điều\s+(\d+)", span)]
         for an in art_nums:
-            # CHỈ giữ ref nếu Điều thuộc luật này (1..141). Nếu lớn hơn,
+            # CHỈ giữ ref nếu Điều thuộc luật này (1..max_article). Nếu lớn hơn,
             # khả năng là ref tới luật khác mà regex không catch — bỏ qua
             # để không bịa target.
-            if 1 <= an <= 141:
+            if 1 <= an <= max_article:
                 _emit(
                     ids.article_id(law, an),
                     "REFERENCES_ARTICLE",
@@ -423,9 +425,7 @@ def extract_definitions(structured: dict) -> list[dict]:
 
 
 def extract_amendments(structured: dict, external_refs: list[dict]) -> list[dict]:
-    """Tìm các quy định 'Sửa đổi, bổ sung ...' / 'Bãi bỏ ...' trong các Điều
-    139, 140 và link tới external law được nhắc trong cùng khoản.
-    """
+    """Find amendment/repeal/replacement clauses and link mentioned external laws."""
     amendments: list[dict] = []
     # Map source_clause → external refs trong clause đó
     by_clause: dict[str, list[dict]] = {}
@@ -434,17 +434,11 @@ def extract_amendments(structured: dict, external_refs: list[dict]) -> list[dict
 
     for ch in structured["chapters"]:
         for art in ch["articles"]:
-            if art["number"] not in (139, 140):
-                continue
             for cl in art["clauses"]:
                 text = cl["text"]
                 amend = bool(RE_AMEND.search(text))
                 repeal = bool(RE_REPEAL.search(text))
-                # Điều 140 K2: thay thế luật cũ
-                replaces = (art["number"] == 140 and "hết hiệu lực" in text.lower()) or (
-                    art["number"] == 140
-                    and any(kw in text.lower() for kw in ["hết hiệu lực thi hành"])
-                )
+                replaces = "hết hiệu lực" in text.lower()
                 if not (amend or repeal or replaces):
                     continue
                 action = "AMENDS" if amend else "REPEALS" if repeal else "REPLACES"
@@ -485,14 +479,60 @@ def extract_amendments(structured: dict, external_refs: list[dict]) -> list[dict
 # Main extraction + verification
 # ---------------------------------------------------------------------------
 
-# Điều 139 sửa đổi các luật KHÁC; mọi "Điều N", "khoản X Điều N" trong
-# sub-points của các khoản 139.K1/K2/K3 đều refer tới luật bị sửa, KHÔNG
-# phải luật này. Skip internal extraction để tránh tạo dst giả.
-# (External refs vẫn extract bình thường — chính là các luật bị sửa.)
-SKIP_INTERNAL_IN_ARTICLES = frozenset({139})
+def amendment_article_numbers(structured: dict) -> set[int]:
+    """Articles that amend other laws should not emit internal refs from quoted text."""
+    out: set[int] = set()
+    for ch in structured["chapters"]:
+        for art in ch["articles"]:
+            title = (art.get("title") or "").lower()
+            text = "\n".join(cl.get("text", "") for cl in art.get("clauses", []))
+            folded = f"{title}\n{text}".lower()
+            if (
+                "sửa đổi" in folded
+                or "bổ sung" in folded and "luật" in folded
+                or "bãi bỏ" in folded and "luật" in folded
+            ):
+                out.add(int(art["number"]))
+    return out
 
 
-def extract_all(structured: dict, law: str = "L41_2024") -> dict[str, list[dict]]:
+def _resolve_external_target(ref: dict, source_law: str) -> dict:
+    laws = load_law_metadata()
+    candidates = [
+        ref.get("external_code"),
+        ref.get("external_title"),
+    ]
+    for candidate in candidates:
+        if not candidate:
+            continue
+        try:
+            target_law = resolve_law_id(str(candidate), laws)
+        except KeyError:
+            continue
+        ref["target_law"] = target_law
+        if ref.get("external_article"):
+            ref["target_article_id"] = ids.article_id(target_law, int(ref["external_article"]))
+        if target_law != source_law:
+            ref["is_loaded_cross_law"] = True
+        return ref
+
+    title_folded = fold_text(str(ref.get("external_title") or ""))
+    if "bo luat lao dong" in title_folded and "L45_2019" in laws:
+        ref["target_law"] = "L45_2019"
+        if ref.get("external_article"):
+            ref["target_article_id"] = ids.article_id("L45_2019", int(ref["external_article"]))
+        ref["is_loaded_cross_law"] = source_law != "L45_2019"
+    return ref
+
+
+def extract_all(structured: dict, law: str | None = None) -> dict[str, list[dict]]:
+    law = law or structured.get("law", {}).get("id") or ids.LAW_ID_DEFAULT
+    article_numbers = [
+        int(art["number"]) for ch in structured["chapters"] for art in ch["articles"]
+    ]
+    max_article = max(article_numbers) if article_numbers else 0
+    skip_internal = amendment_article_numbers(structured)
+
     all_internal: list[dict] = []
     all_external: list[dict] = []
 
@@ -502,10 +542,11 @@ def extract_all(structured: dict, law: str = "L41_2024") -> dict[str, list[dict]
         unit_texts[uid] = text
         ext_refs, used = extract_external_refs(text, uid, sclause)
         all_external.extend(ext_refs)
-        if art_n not in SKIP_INTERNAL_IN_ARTICLES:
-            int_refs = extract_internal_refs(text, uid, sclause, art_n, used, law)
+        if art_n not in skip_internal:
+            int_refs = extract_internal_refs(text, uid, sclause, art_n, used, law, max_article)
             all_internal.extend(int_refs)
 
+    all_external = [_resolve_external_target(r, law) for r in all_external]
     defs = extract_definitions(structured)
     amendments = extract_amendments(structured, all_external)
 
@@ -554,17 +595,43 @@ def _verify_provenance(refs: list[dict], unit_texts: dict[str, str], label: str)
 
 
 def main() -> int:
-    src = Path("data/interim/structured_law.json")
+    import argparse
+
+    p = argparse.ArgumentParser()
+    p.add_argument("--input", default="data/interim/structured_law.json")
+    p.add_argument("--out-dir", default="data/interim")
+    p.add_argument("--law", default=None)
+    p.add_argument("--all", action="store_true")
+    args = p.parse_args()
+
+    if args.all:
+        status = 0
+        for law_id in load_order():
+            path = Path(f"data/interim/structured_law_{law_id}.json")
+            if not path.exists():
+                print(f"FAIL: không tìm thấy {path}. Chạy B1 trước.", file=sys.stderr)
+                return 1
+            status = max(status, _run_one(path, Path(args.out_dir), law_id))
+        return status
+
+    src = Path(args.input)
     out_dir = Path("data/interim")
+    if args.out_dir:
+        out_dir = Path(args.out_dir)
     if not src.exists():
         print(f"FAIL: không tìm thấy {src}. Chạy B1 trước.", file=sys.stderr)
         return 1
 
+    return _run_one(src, out_dir, args.law)
+
+
+def _run_one(src: Path, out_dir: Path, law_override: str | None = None) -> int:
     with src.open(encoding="utf-8") as f:
         structured = json.load(f)
 
-    print("Đang trích...")
-    out = extract_all(structured)
+    law = law_override or structured.get("law", {}).get("id") or ids.LAW_ID_DEFAULT
+    print(f"Đang trích {law}...")
+    out = extract_all(structured, law=law)
 
     print("\n=== STATS ===")
     print(f"  Internal refs : {len(out['internal_refs']):>5}")
@@ -605,8 +672,9 @@ def main() -> int:
     print("\n=== VERIFY PROVENANCE ===")
     print("  OK — mọi extraction khớp byte-for-byte với text gốc.")
 
+    suffix = "" if src.name == "structured_law.json" and law == "L41_2024" else f"_{law}"
     for name, items in out.items():
-        path = out_dir / f"{name}.json"
+        path = out_dir / f"{name}{suffix}.json"
         with path.open("w", encoding="utf-8") as f:
             json.dump(items, f, ensure_ascii=False, indent=2)
         print(f"  Saved: {path} ({path.stat().st_size / 1024:.1f} KB)")

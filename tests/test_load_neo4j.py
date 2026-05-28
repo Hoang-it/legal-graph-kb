@@ -42,12 +42,12 @@ def session():
 @pytest.mark.parametrize(
     "label,expected",
     [
-        ("Law", 1),
-        ("Chapter", 11),
-        ("Section", 13),
-        ("Article", 141),
-        ("Clause", 543),
-        ("Point", 359),
+        ("Law", 3),
+        ("Chapter", 37),
+        ("Section", 46),
+        ("Article", 486),
+        ("Clause", 1585),
+        ("Point", 829),
     ],
 )
 def test_node_counts(session, label, expected):
@@ -64,6 +64,7 @@ def test_moi_semantic_edge_co_source_clause(session):
         MATCH ()-[r:ENTITLED_TO|HAS_OBLIGATION|HAS_RIGHT|REQUIRES|APPLIES_TO
                   |PAID_FROM|MANAGES|RESPONSIBLE_FOR|PROHIBITED_BY|DEFINES]-()
         WHERE r.source_clause IS NULL
+          AND NOT startNode(r):Clause
         RETURN count(r) AS c
     """).single()["c"]
     assert n == 0
@@ -73,6 +74,7 @@ def test_moi_ref_edge_co_source_clause(session):
     n = session.run("""
         MATCH ()-[r:REFERENCES|CITES_EXTERNAL|AMENDS|REPEALS|REPLACES]-()
         WHERE r.source_clause IS NULL
+          AND NOT startNode(r):Law
         RETURN count(r) AS c
     """).single()["c"]
     assert n == 0
@@ -107,7 +109,7 @@ def test_moi_semantic_node_co_mentioned_in(session):
 
 
 def test_embedding_coverage(session):
-    for label, expected in [("Article", 141), ("Clause", 543), ("Point", 359)]:
+    for label, expected in [("Article", 486), ("Clause", 1585), ("Point", 829)]:
         n = session.run(
             f"MATCH (n:{label}) WHERE n.embedding IS NOT NULL RETURN count(n) AS c"
         ).single()["c"]
@@ -142,9 +144,12 @@ def test_vector_search_a64_neighbors(session):
         ORDER BY score DESC LIMIT 5
     """).data()
     assert len(result) == 5
-    relevant_range = {f"L41_2024.A{n}" for n in range(60, 75)} | {
-        f"L41_2024.A{n}" for n in range(95, 110)
-    }
+    relevant_range = (
+        {f"L41_2024.A{n}" for n in range(60, 80)}
+        | {f"L41_2024.A{n}" for n in range(95, 110)}
+        | {f"L58_2014.A{n}" for n in range(50, 76)}
+        | {"L45_2019.A169"}
+    )
     hits = sum(1 for r in result if r["id"] in relevant_range)
     assert hits >= 4, f"Top-5 chỉ {hits}/5 thuộc nhóm hưu trí: {[r['id'] for r in result]}"
 
@@ -172,7 +177,7 @@ def test_definition_concept_truy_ve_dieu_3(session):
     """LegalConcept defined_in phải trỏ tới Clause của Điều 3."""
     rows = session.run("MATCH (c:LegalConcept) RETURN c.defined_in AS d").data()
     for r in rows:
-        assert r["d"].startswith("L41_2024.A3.K"), f"Concept defined_in sai: {r['d']}"
+        assert r["d"].split(".A", 1)[1].startswith("3.K"), f"Concept defined_in sai: {r['d']}"
 
 
 # ---------- 6. Containment graph ----------

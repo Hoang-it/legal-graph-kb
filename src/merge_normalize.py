@@ -29,6 +29,8 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+from src.legal_metadata import load_law_metadata, load_order
+
 INTERIM = Path("data/interim")
 LLM_DIR = INTERIM / "llm_extractions"
 OUT = Path("data/processed/merged_graph.json")
@@ -47,15 +49,33 @@ def _load_json(path: Path):
         return json.load(f)
 
 
+def _load_law_inputs() -> list[dict]:
+    laws = load_law_metadata()
+    out = []
+    for law_id in load_order():
+        meta = laws[law_id]
+        structured_path = INTERIM / f"structured_law_{law_id}.json"
+        if not structured_path.exists() and law_id == "L41_2024":
+            structured_path = INTERIM / "structured_law.json"
+        structured = _load_json(structured_path)
+        out.append(
+            {
+                "law_id": law_id,
+                "metadata": meta,
+                "structured": structured,
+                "internal_refs": _load_json(INTERIM / f"internal_refs_{law_id}.json"),
+                "external_refs": _load_json(INTERIM / f"external_refs_{law_id}.json"),
+                "definitions": _load_json(INTERIM / f"definitions_{law_id}.json"),
+                "amendments": _load_json(INTERIM / f"amendments_{law_id}.json"),
+            }
+        )
+    return out
+
+
 def load_all() -> dict:
-    """Load 5 nguồn input vào dict."""
-    structured = _load_json(INTERIM / "structured_law.json")
+    """Load multi-law structural/rule sources into one dict."""
     sources = {
-        "structured": structured,
-        "internal_refs": _load_json(INTERIM / "internal_refs.json"),
-        "external_refs": _load_json(INTERIM / "external_refs.json"),
-        "definitions": _load_json(INTERIM / "definitions.json"),
-        "amendments": _load_json(INTERIM / "amendments.json"),
+        "laws": _load_law_inputs(),
         "llm_files": [],
     }
     if LLM_DIR.exists():
@@ -125,20 +145,15 @@ class _Graph:
 # ---------------------------------------------------------------------------
 
 
-def build_structural(g: _Graph, structured: dict) -> None:
+def build_structural(g: _Graph, structured: dict, metadata=None) -> None:
     """Tạo nodes & edges structural từ B1."""
     law = structured["law"]
+    law_id = law["id"]
+    law_node = metadata.law_node if metadata is not None else law
+    law_node = {**law_node, **{k: v for k, v in law.items() if v is not None}}
     g.add_node(
         "Law",
-        {
-            "id": law["id"],
-            "code": law["code"],
-            "title": law["title"],
-            "issuer": law["issuer"],
-            "issued_date": law["issued_date"],
-            "effective_date": law["effective_date"],
-            "session": law["session"],
-        },
+        law_node,
     )
 
     prev_article_id: str | None = None
@@ -147,6 +162,7 @@ def build_structural(g: _Graph, structured: dict) -> None:
             "Chapter",
             {
                 "id": ch["id"],
+                "law_code": law_id,
                 "number": ch["number"],
                 "roman": ch["roman"],
                 "title": ch["title"],
@@ -159,6 +175,7 @@ def build_structural(g: _Graph, structured: dict) -> None:
                 "Section",
                 {
                     "id": sec["id"],
+                    "law_code": law_id,
                     "number": sec["number"],
                     "title": sec["title"],
                     "chapter_id": ch["id"],
@@ -171,6 +188,7 @@ def build_structural(g: _Graph, structured: dict) -> None:
                 "Article",
                 {
                     "id": art["id"],
+                    "law_code": law_id,
                     "number": art["number"],
                     "title": art["title"],
                     "text": art["text"],
@@ -180,6 +198,7 @@ def build_structural(g: _Graph, structured: dict) -> None:
             )
             # Cạnh containment: Chapter -> Article (luôn có)
             g.add_edge("HAS_ARTICLE", {"src": ch["id"], "dst": art["id"]})
+            g.add_edge("BELONGS_TO", {"src": art["id"], "dst": law_id})
             # Cạnh IN_SECTION nếu thuộc Mục
             if art.get("section_id"):
                 g.add_edge(
@@ -199,6 +218,7 @@ def build_structural(g: _Graph, structured: dict) -> None:
                     "Clause",
                     {
                         "id": cl["id"],
+                        "law_code": law_id,
                         "number": cl["number"],
                         "text": cl["text"],
                         "article_id": art["id"],
@@ -209,8 +229,9 @@ def build_structural(g: _Graph, structured: dict) -> None:
                     g.add_node(
                         "Point",
                         {
-                            "id": pt["id"],
-                            "letter": pt["letter"],
+                        "id": pt["id"],
+                        "law_code": law_id,
+                        "letter": pt["letter"],
                             "text": pt["text"],
                             "clause_id": cl["id"],
                         },
@@ -222,6 +243,7 @@ def build_structural(g: _Graph, structured: dict) -> None:
                     "Table",
                     {
                         "id": tbl["id"],
+                        "law_code": law_id,
                         "article_id": art["id"],
                         "rows_json": json.dumps(tbl["rows"], ensure_ascii=False),
                     },
@@ -261,6 +283,7 @@ def build_external_refs(g: _Graph, external_refs: list[dict]) -> None:
             "id": r["dst"],
             "code": r["external_code"],
             "title": r["external_title"],
+            "target_law": r.get("target_law"),
         }
         g.add_node("ExternalLaw", node)
 
@@ -278,6 +301,39 @@ def build_external_refs(g: _Graph, external_refs: list[dict]) -> None:
                 "external_article": r["external_article"],
                 "external_clause": r["external_clause"],
                 "external_point": r["external_point"],
+                "target_law": r.get("target_law"),
+                "target_article_id": r.get("target_article_id"),
+            },
+            key=key,
+        )
+
+
+def build_cross_law_refs(g: _Graph, external_refs: list[dict]) -> None:
+    """Create Clause/Point -> loaded Article refs when external source is in KG."""
+    article_ids = set(g.nodes.get("Article", {}).keys())
+    for r in external_refs:
+        target_id = r.get("target_article_id")
+        if not target_id or target_id not in article_ids:
+            continue
+        key = (
+            "REFERS_TO",
+            r["src"],
+            target_id,
+            r["source_clause"],
+            r.get("char_offset"),
+        )
+        g.add_edge(
+            "REFERS_TO",
+            {
+                "src": r["src"],
+                "dst": target_id,
+                "source_clause": r["source_clause"],
+                "span": r["span"],
+                "char_offset": r["char_offset"],
+                "law": r.get("target_law"),
+                "external_article": r.get("external_article"),
+                "external_clause": r.get("external_clause"),
+                "external_point": r.get("external_point"),
             },
             key=key,
         )
@@ -290,6 +346,7 @@ def build_amendments(g: _Graph, amendments: list[dict]) -> None:
             "id": a["dst"],
             "code": a["external_code"],
             "title": a["external_title"],
+            "target_law": a.get("target_law"),
         }
         g.add_node("ExternalLaw", node)
         key = (action, a["src"], a["dst"], a["source_clause"], a.get("external_article"))
@@ -304,9 +361,27 @@ def build_amendments(g: _Graph, amendments: list[dict]) -> None:
                 "external_point": a["external_point"],
                 "span_action": a["span_action"],
                 "char_offset_action": a["char_offset_action"],
+                "target_law": a.get("target_law"),
             },
             key=key,
         )
+
+
+def build_law_relations(g: _Graph, law_inputs: list[dict]) -> None:
+    law_ids = set(g.nodes.get("Law", {}).keys())
+    for item in law_inputs:
+        meta = item["metadata"]
+        for target in meta.repeals:
+            if target in law_ids:
+                g.add_edge(
+                    "REPEALS",
+                    {
+                        "src": meta.id,
+                        "dst": target,
+                        "source": "data/legal_metadata.yaml",
+                    },
+                    key=("REPEALS", meta.id, target, "law_metadata"),
+                )
 
 
 def build_internal_refs(g: _Graph, internal_refs: list[dict]) -> None:
@@ -389,7 +464,7 @@ def filter_orphan_edges(g: _Graph) -> dict[str, int]:
     return dict(dropped)
 
 
-def validate(g: _Graph) -> list[str]:
+def validate(g: _Graph, law_inputs: list[dict] | None = None) -> list[str]:
     """Trả về list lỗi cứng (rỗng = OK). Đã filter orphan edges trước đó.
 
     Chỉ fail nếu:
@@ -400,12 +475,30 @@ def validate(g: _Graph) -> list[str]:
     errors: list[str] = []
 
     # 1. Structural sanity
-    if "Law" not in g.nodes or len(g.nodes["Law"]) != 1:
-        errors.append(f"Phải có đúng 1 Law node, có {len(g.nodes.get('Law', {}))}")
-    if len(g.nodes.get("Chapter", {})) != 11:
-        errors.append(f"Phải có 11 Chapter, có {len(g.nodes.get('Chapter', {}))}")
-    if len(g.nodes.get("Article", {})) != 141:
-        errors.append(f"Phải có 141 Article, có {len(g.nodes.get('Article', {}))}")
+    if law_inputs:
+        expected_laws = len(law_inputs)
+        expected_chapters = sum(
+            x["metadata"].expected_chapters or 0
+            for x in law_inputs
+            if x["metadata"].expected_chapters is not None
+        )
+        expected_articles = sum(
+            x["metadata"].expected_articles or 0
+            for x in law_inputs
+            if x["metadata"].expected_articles is not None
+        )
+        if len(g.nodes.get("Law", {})) != expected_laws:
+            errors.append(f"Phải có {expected_laws} Law node, có {len(g.nodes.get('Law', {}))}")
+        if expected_chapters and len(g.nodes.get("Chapter", {})) != expected_chapters:
+            errors.append(
+                f"Phải có {expected_chapters} Chapter, có {len(g.nodes.get('Chapter', {}))}"
+            )
+        if expected_articles and len(g.nodes.get("Article", {})) != expected_articles:
+            errors.append(
+                f"Phải có {expected_articles} Article, có {len(g.nodes.get('Article', {}))}"
+            )
+    elif "Law" not in g.nodes:
+        errors.append("Phải có ít nhất 1 Law node")
 
     # 2. Semantic nodes: mentioned_in non-empty
     for label in SEMANTIC_LABELS:
@@ -452,7 +545,7 @@ def write_graph(g: _Graph, out_path: Path) -> None:
 def write_report(g: _Graph, out_path: Path, drop_stats_total: dict | None = None) -> None:
     out_path.parent.mkdir(parents=True, exist_ok=True)
     lines: list[str] = []
-    lines.append("# Báo cáo trích xuất KG — Luật 41/2024/QH15\n")
+    lines.append("# Báo cáo trích xuất KG — Multi-law Phase 6\n")
     lines.append("## Tổng quan\n")
     total_nodes = sum(len(v) for v in g.nodes.values())
     total_edges = sum(len(v) for v in g.edges.values())
@@ -545,7 +638,10 @@ def write_report(g: _Graph, out_path: Path, drop_stats_total: dict | None = None
 
     all_art_ids = set(g.nodes["Article"].keys())
     arts_no_semantic = sorted(all_art_ids - set(art_edge_counts.keys()))
-    lines.append(f"\n**Số Article không có semantic edge nào:** {len(arts_no_semantic)} / 141")
+    lines.append(
+        f"\n**Số Article không có semantic edge nào:** "
+        f"{len(arts_no_semantic)} / {len(all_art_ids)}"
+    )
     if arts_no_semantic:
         lines.append("\n<details><summary>Danh sách (cần review B3 prompt hoặc rerun)</summary>\n")
         for aid in arts_no_semantic[:50]:
@@ -566,20 +662,29 @@ def write_report(g: _Graph, out_path: Path, drop_stats_total: dict | None = None
 def main() -> int:
     print("Loading sources...")
     src = load_all()
-    print(f"  structured  : {len(src['structured']['chapters'])} chapters")
-    print(f"  internal_refs : {len(src['internal_refs'])}")
-    print(f"  external_refs : {len(src['external_refs'])}")
-    print(f"  definitions   : {len(src['definitions'])}")
-    print(f"  amendments    : {len(src['amendments'])}")
+    print(f"  laws         : {len(src['laws'])}")
+    for item in src["laws"]:
+        print(
+            f"    {item['law_id']:<10} "
+            f"chapters={len(item['structured']['chapters'])} "
+            f"internal_refs={len(item['internal_refs'])} "
+            f"external_refs={len(item['external_refs'])} "
+            f"definitions={len(item['definitions'])} "
+            f"amendments={len(item['amendments'])}"
+        )
     print(f"  llm files     : {len(src['llm_files'])}")
 
     g = _Graph()
     print("\nBuilding graph...")
-    build_structural(g, src["structured"])
-    build_definitions(g, src["definitions"])
-    build_external_refs(g, src["external_refs"])
-    build_amendments(g, src["amendments"])
-    build_internal_refs(g, src["internal_refs"])
+    for item in src["laws"]:
+        build_structural(g, item["structured"], item["metadata"])
+    build_law_relations(g, src["laws"])
+    for item in src["laws"]:
+        build_definitions(g, item["definitions"])
+        build_external_refs(g, item["external_refs"])
+        build_cross_law_refs(g, item["external_refs"])
+        build_amendments(g, item["amendments"])
+        build_internal_refs(g, item["internal_refs"])
     build_from_llm(g, src["llm_files"])
 
     # Filter orphan edges (LLM tạo edge nhưng quên khai báo entity)
@@ -599,7 +704,7 @@ def main() -> int:
         print(f"  {etype:<22} {len(g.edges[etype]):>5}")
 
     print("\n=== VALIDATE ===")
-    errors = validate(g)
+    errors = validate(g, src["laws"])
     if errors:
         for e in errors[:20]:
             print(f"  ✗ {e}", file=sys.stderr)

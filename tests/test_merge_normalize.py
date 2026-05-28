@@ -40,22 +40,22 @@ def structural_ids(graph) -> set[str]:
 
 
 def test_du_so_node_co_ban(graph):
-    assert len(graph["nodes"]["Law"]) == 1
-    assert len(graph["nodes"]["Chapter"]) == 11
-    assert len(graph["nodes"]["Section"]) == 13
-    assert len(graph["nodes"]["Article"]) == 141
-    assert len(graph["nodes"]["Clause"]) == 543
-    assert len(graph["nodes"]["Point"]) == 359
+    assert len(graph["nodes"]["Law"]) == 3
+    assert len(graph["nodes"]["Chapter"]) == 37
+    assert len(graph["nodes"]["Section"]) == 46
+    assert len(graph["nodes"]["Article"]) == 486
+    assert len(graph["nodes"]["Clause"]) == 1585
+    assert len(graph["nodes"]["Point"]) == 829
 
 
 def test_structural_edges_dung_so(graph):
     e = graph["edges"]
-    assert len(e["HAS_CHAPTER"]) == 11
-    assert len(e["HAS_SECTION"]) == 13
-    assert len(e["HAS_ARTICLE"]) == 141
-    assert len(e["HAS_CLAUSE"]) == 543
-    assert len(e["HAS_POINT"]) == 359
-    assert len(e["NEXT"]) == 140  # 141 article → 140 next edges
+    assert len(e["HAS_CHAPTER"]) == 37
+    assert len(e["HAS_SECTION"]) == 46
+    assert len(e["HAS_ARTICLE"]) == 486
+    assert len(e["HAS_CLAUSE"]) == 1585
+    assert len(e["HAS_POINT"]) == 829
+    assert len(e["NEXT"]) == 483
 
 
 # ---------- 2. Provenance: mọi semantic node có mentioned_in ----------
@@ -143,9 +143,12 @@ def test_moi_semantic_edge_co_source_clause(graph, structural_ids):
 
 def test_moi_ref_edge_co_source_clause(graph, structural_ids):
     """REFERENCES / CITES_EXTERNAL cũng phải có source_clause."""
+    law_ids = {n["id"] for n in graph["nodes"]["Law"]}
     for etype in ("REFERENCES", "CITES_EXTERNAL", "AMENDS", "REPEALS", "REPLACES"):
         for e in graph["edges"].get(etype, []):
             sc = e.get("source_clause")
+            if not sc and etype == "REPEALS" and e["src"] in law_ids and e["dst"] in law_ids:
+                continue
             assert sc, f"{etype} thiếu source_clause"
             assert sc in structural_ids, f"{etype}: source_clause {sc} không có thực"
 
@@ -177,7 +180,8 @@ def test_bao_hiem_xa_hoi_concept_co_dinh_nghia(graph):
         None,
     )
     assert bhxh is not None
-    assert bhxh["defined_in"] == "L41_2024.A3.K1"
+    assert bhxh["defined_in"] in {"L58_2014.A3.K1", "L41_2024.A3.K1"}
+    assert "L41_2024.A3.K1" in bhxh["mentioned_in"]
     assert "sự bảo đảm" in bhxh["definition"]
 
 
@@ -219,10 +223,12 @@ def test_external_law_58_2014_ton_tai(graph):
 
 def test_co_the_di_tu_law_xuong_moi_clause(graph):
     """Mọi Clause phải có thể reach từ Law qua HAS_CHAPTER → HAS_ARTICLE → HAS_CLAUSE."""
-    law_id = graph["nodes"]["Law"][0]["id"]
-    chapters = {e["dst"] for e in graph["edges"]["HAS_CHAPTER"] if e["src"] == law_id}
-    articles = {e["dst"] for e in graph["edges"]["HAS_ARTICLE"] if e["src"] in chapters}
-    clauses_reachable = {e["dst"] for e in graph["edges"]["HAS_CLAUSE"] if e["src"] in articles}
+    clauses_reachable = set()
+    for law in graph["nodes"]["Law"]:
+        law_id = law["id"]
+        chapters = {e["dst"] for e in graph["edges"]["HAS_CHAPTER"] if e["src"] == law_id}
+        articles = {e["dst"] for e in graph["edges"]["HAS_ARTICLE"] if e["src"] in chapters}
+        clauses_reachable |= {e["dst"] for e in graph["edges"]["HAS_CLAUSE"] if e["src"] in articles}
     all_clauses = {c["id"] for c in graph["nodes"]["Clause"]}
     missing = all_clauses - clauses_reachable
     assert not missing, f"{len(missing)} Clause không reach được từ Law: {list(missing)[:5]}"

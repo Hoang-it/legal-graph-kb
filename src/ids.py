@@ -31,7 +31,13 @@ def slug(text: str) -> str:
 
 
 def law_id(code: str = "41/2024/QH15") -> str:
-    """L<số>_<năm> — ví dụ '41/2024/QH15' -> 'L41_2024'."""
+    """Return canonical ``L<số>_<năm>`` law ID.
+
+    Accepts both official full IDs such as ``41/2024/QH15`` and already
+    canonical IDs such as ``L41_2024``.
+    """
+    if re.match(r"^L\d+_\d{4}$", code or ""):
+        return code
     m = re.match(r"(\d+)/(\d{4})/", code)
     if not m:
         raise ValueError(f"Mã luật không hợp lệ: {code}")
@@ -119,7 +125,7 @@ _ID_PATTERN = re.compile(
     r"(?:\.C(?P<chapter>\d+))?"
     r"(?:\.A(?P<article>\d+))?"
     r"(?:\.K(?P<clause>\d+))?"
-    r"(?:\.(?P<point>[a-z]))?"
+    r"(?:\.(?P<point>[a-zđ]))?"
     r"(?:\.T(?P<table>\d+))?$"
 )
 

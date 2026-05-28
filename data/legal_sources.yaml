@@ -24,12 +24,19 @@ sources:
     prolog_law_ids:
       - "law_bhxh_2014"
 
-  BLLD_2019:
-    canonical_title: "Bộ luật Lao động 2019"
+  L45_2019:
+    canonical_title: "Bộ luật Lao động 2019 (45/2019/QH14)"
     type: "code"
     aliases:
+      - "BLLD_2019"
       - "Bộ luật Lao động 2019"
       - "Bộ luật lao động năm 2019"
+      - "Bộ luật Lao động"
+      - "Bộ luật số 45/2019/QH14"
+      - "45/2019/QH14"
+    prolog_law_ids:
+      - "law_blld_2019"
+      - "law_lao_dong_2019"
 
   LVL_2013:
     canonical_title: "Luật Việc làm 2013"

@@ -21,7 +21,7 @@ def test_main_arm_preset_is_shared_between_runner_and_metrics():
         "elite_no_retrieval",
         "elite_ontology",
         "elite_graphrag",
-        "elite_graphrag_logic",
+        "elite_graphrag_logic_pl",
     ]
 
     assert list(MAIN_EXPERIMENT_ARMS) == expected

@@ -1,84 +1,161 @@
-"""B1 — Parse Luật .docx thành JSON cây Chương → Mục → Điều → Khoản → Điểm.
+"""B1 - deterministic parser for Vietnamese legal Word documents.
 
-NGUYÊN TẮC: hoàn toàn DETERMINISTIC. Chỉ dùng regex trên text gốc của file
-docx. KHÔNG suy đoán, KHÔNG gọi LLM, KHÔNG sinh nội dung mới. Mọi chuỗi
-trong JSON output đều phải đối chiếu được 1-1 với nội dung trong docx
-(chỉ strip whitespace 2 đầu của paragraph; nối các dòng wrap của title
-bằng dấu cách).
+The parser is intentionally structural only: it reads paragraphs/tables and
+uses regex state transitions for Chapter -> Section -> Article -> Clause ->
+Point. It does not call an LLM and it does not infer missing legal content.
 
-Cấu trúc output (data/interim/structured_law.json):
-    {
-      "law": {id, code, title, issuer, issued_date, effective_date, session},
-      "preamble": [str],
-      "postamble": [str],
-      "chapters": [{
-        id, number, roman, title,
-        sections: [{id, number, title, chapter_id}],   # có thể rỗng
-        articles: [{
-          id, number, title, chapter_id, section_id, lead_text, text,
-          clauses: [{id, number, text, full_text, article_id,
-                     points: [{id, letter, text, clause_id}]}],
-          tables: [{id, article_id, rows}],
-        }],
-      }]
-    }
-
-Bảo đảm cứng (assertion):
-- Đúng 11 Chương, 13 Mục, 141 Điều.
-- Article numbers liên tiếp 1..141.
-- Mọi Điều/Khoản/Điểm có text non-empty.
-- Không có ID trùng.
-Fail-fast nếu sai.
+Phase 6 makes the parser multi-law generic. Law metadata, expected counts,
+source path, and output path come from `data/legal_metadata.yaml` or CLI args.
+Legacy `.doc` files are converted to `.docx` through a real document engine
+(LibreOffice if available, otherwise Microsoft Word COM on Windows).
 """
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
+import shutil
+import subprocess
 import sys
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import Any
 
 from docx import Document
 from docx.oxml.ns import qn
 
 from src import ids
+from src.legal_metadata import LawMetadata, load_law_metadata, load_order, metadata_for
+
 
 # ---------------------------------------------------------------------------
-# Regex (cố tình chặt để tránh false-positive)
+# Regex
 # ---------------------------------------------------------------------------
 
-_ROMAN = "IVXLC"
-RE_CHAPTER = re.compile(rf"^Chương\s+([{_ROMAN}]+)\s*(.*)$")
-RE_SECTION = re.compile(r"^Mục\s+(\d+)\s*(.*)$")
-RE_ARTICLE = re.compile(r"^Điều\s+(\d+)\s*\.\s*(.*)$")
+_ROMAN = "IVXLCDM"
+RE_CHAPTER = re.compile(rf"^Chương\s+([{_ROMAN}]+)\s*(.*)$", re.IGNORECASE)
+RE_SECTION = re.compile(r"^Mục\s+(\d+)\s*(.*)$", re.IGNORECASE)
+RE_ARTICLE = re.compile(r"^Điều\s+(\d+)\s*\.\s*(.*)$", re.IGNORECASE)
 RE_CLAUSE = re.compile(r"^(\d+)\s*\.\s+(.+)$")
-RE_POINT = re.compile(r"^([a-zđ])\)\s+(.+)$")
+RE_POINT = re.compile(r"^([a-zđ])\)\s+(.+)$", re.IGNORECASE)
 
-ROMAN_MAP = {
-    "I": 1,
-    "II": 2,
-    "III": 3,
-    "IV": 4,
-    "V": 5,
-    "VI": 6,
-    "VII": 7,
-    "VIII": 8,
-    "IX": 9,
-    "X": 10,
-    "XI": 11,
-    "XII": 12,
-}
-
-# Metadata patterns
-RE_LAW_CODE = re.compile(r"Luật\s+số:\s*(\d+/\d{4}/QH\d+)")
+RE_LAW_CODE = re.compile(r"(?:Luật|Bộ luật)\s+số:\s*(\d+/\d{4}/QH\d+)", re.IGNORECASE)
 RE_DATE = re.compile(r"ngày\s+(\d{1,2})\s+tháng\s+(\d{1,2})\s+năm\s+(\d{4})")
-RE_SESSION = re.compile(r"khóa\s+([IVXLC]+),?\s+kỳ\s+họp\s+(?:thứ\s+)?(\d+)")
+RE_SESSION = re.compile(r"khóa\s+([IVXLCDM]+),?\s+kỳ\s+họp\s+(?:thứ\s+)?(\d+)", re.IGNORECASE)
 RE_EFFECTIVE = re.compile(
-    r"có\s+hiệu\s+lực\s+thi\s+hành\s+từ\s+ngày\s+" r"(\d{1,2})\s+tháng\s+(\d{1,2})\s+năm\s+(\d{4})"
+    r"có\s+hiệu\s+lực\s+thi\s+hành\s+từ\s+ngày\s+"
+    r"(\d{1,2})\s+tháng\s+(\d{1,2})\s+năm\s+(\d{4})",
+    re.IGNORECASE,
 )
-# Marker postamble: đoạn kết "Luật này được Quốc hội ... thông qua ngày..."
-RE_RATIFICATION = re.compile(r"Luật\s+này\s+được\s+Quốc\s+hội.*thông\s+qua")
+RE_RATIFICATION = re.compile(r"Luật\s+này\s+được\s+Quốc\s+hội.*thông\s+qua", re.IGNORECASE)
+
+
+# ---------------------------------------------------------------------------
+# Document readers
+# ---------------------------------------------------------------------------
+
+
+def _candidate_soffice_paths() -> list[Path]:
+    paths = []
+    for name in ("soffice", "libreoffice"):
+        found = shutil.which(name)
+        if found:
+            paths.append(Path(found))
+    paths.extend(
+        [
+            Path(r"C:\Program Files\LibreOffice\program\soffice.exe"),
+            Path(r"C:\Program Files (x86)\LibreOffice\program\soffice.exe"),
+        ]
+    )
+    return [p for p in paths if p.exists()]
+
+
+def _convert_with_soffice(source: Path, out_dir: Path) -> Path | None:
+    for soffice in _candidate_soffice_paths():
+        cmd = [
+            str(soffice),
+            "--headless",
+            "--convert-to",
+            "docx",
+            "--outdir",
+            str(out_dir),
+            str(source),
+        ]
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+        converted = out_dir / f"{source.stem}.docx"
+        if proc.returncode == 0 and converted.exists():
+            return converted
+    return None
+
+
+def _ps_quote(path: Path) -> str:
+    return "'" + str(path).replace("'", "''") + "'"
+
+
+def _convert_with_word_com(source: Path, out_dir: Path) -> Path | None:
+    converted = out_dir / f"{source.stem}.docx"
+    script = f"""
+$ErrorActionPreference = 'Stop'
+$word = New-Object -ComObject Word.Application
+$word.Visible = $false
+try {{
+  $doc = $word.Documents.Open({_ps_quote(source)}, $false, $true)
+  $doc.SaveAs2({_ps_quote(converted)}, 16)
+  $doc.Close($false)
+}} finally {{
+  $word.Quit()
+}}
+"""
+    proc = subprocess.run(
+        ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", script],
+        capture_output=True,
+        text=True,
+        timeout=180,
+    )
+    if proc.returncode == 0 and converted.exists():
+        return converted
+    return None
+
+
+def ensure_docx(source: Path, out_dir: Path = Path("data/interim/converted_sources")) -> Path:
+    """Return a `.docx` path for a `.docx` or `.doc` source.
+
+    `.doc` conversion is a real conversion step. If no document engine can
+    perform the conversion, the caller gets a hard failure with diagnostics.
+    """
+    source = source.resolve()
+    if not source.exists():
+        raise FileNotFoundError(f"Source document not found: {source}")
+    suffix = source.suffix.lower()
+    if suffix == ".docx":
+        return source
+    if suffix != ".doc":
+        raise ValueError(f"Unsupported source extension {suffix!r}: {source}")
+
+    out_dir = out_dir.resolve()
+    out_dir.mkdir(parents=True, exist_ok=True)
+    converted = out_dir / f"{source.stem}.docx"
+    if converted.exists() and converted.stat().st_mtime >= source.stat().st_mtime:
+        return converted.resolve()
+
+    converted_by_soffice = _convert_with_soffice(source, out_dir)
+    if converted_by_soffice:
+        return converted_by_soffice.resolve()
+
+    converted_by_word = _convert_with_word_com(source, out_dir)
+    if converted_by_word:
+        return converted_by_word.resolve()
+
+    raise RuntimeError(
+        "Cannot convert .doc source to .docx. Install LibreOffice/soffice or "
+        "Microsoft Word COM support, then rerun parser. Source: "
+        f"{source}"
+    )
+
+
+def open_document(source: Path) -> Document:
+    return Document(str(ensure_docx(source)))
 
 
 # ---------------------------------------------------------------------------
@@ -86,8 +163,23 @@ RE_RATIFICATION = re.compile(r"Luật\s+này\s+được\s+Quốc\s+hội.*thông
 # ---------------------------------------------------------------------------
 
 
+def roman_to_int(value: str) -> int | None:
+    vals = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+    total = 0
+    prev = 0
+    for ch in reversed(value.upper()):
+        cur = vals.get(ch)
+        if cur is None:
+            return None
+        if cur < prev:
+            total -= cur
+        else:
+            total += cur
+            prev = cur
+    return total if total > 0 else None
+
+
 def iter_block_items(doc):
-    """Yield ('p', Paragraph) hoặc ('tbl', Table) theo thứ tự xuất hiện."""
     from docx.table import Table
     from docx.text.paragraph import Paragraph
 
@@ -107,13 +199,34 @@ def fmt_date(day: str, month: str, year: str) -> str:
 
 
 def _is_boundary(text: str) -> bool:
-    """Trả True nếu paragraph này mở đầu Chương/Mục/Điều mới."""
-    if RE_ARTICLE.match(text):
-        return True
-    if RE_SECTION.match(text):
+    if RE_ARTICLE.match(text) or RE_SECTION.match(text):
         return True
     m = RE_CHAPTER.match(text)
-    return bool(m and m.group(1).upper() in ROMAN_MAP)
+    return bool(m and roman_to_int(m.group(1)))
+
+
+def _fallback_metadata(law_code: str) -> LawMetadata:
+    law_id = ids.law_id(law_code)
+    return LawMetadata(
+        id=law_id,
+        code=law_id,
+        full_id=law_code if "/" in law_code else law_id,
+        title="",
+        canonical_title=law_id,
+        type="law",
+        hierarchy_level="luật",
+        priority=100,
+        source_file=Path(""),
+    )
+
+
+def _resolve_metadata(law_code: str | None, metadata: LawMetadata | None) -> LawMetadata:
+    if metadata is not None:
+        return metadata
+    try:
+        return metadata_for(law_code or ids.LAW_ID_DEFAULT)
+    except Exception:
+        return _fallback_metadata(law_code or "41/2024/QH15")
 
 
 # ---------------------------------------------------------------------------
@@ -129,8 +242,6 @@ class _State:
     current_article: dict | None = None
     current_clause: dict | None = None
 
-    # Title buffer: dùng cho cả Chương + Mục.
-    # `title_buffer` là list dòng đang tích lũy, `title_owner` là dict được set.
     title_buffer: list[str] | None = None
     title_owner: dict | None = None
 
@@ -141,23 +252,51 @@ class _State:
 
     seen_first_chapter: bool = False
     in_postamble: bool = False
+    in_nested_quote: bool = False
 
 
 def _finalize_title(st: _State) -> None:
-    """Gộp title_buffer thành 1 chuỗi và gán cho owner."""
     if st.title_buffer is not None and st.title_owner is not None:
         st.title_owner["title"] = " ".join(t.strip() for t in st.title_buffer if t.strip()).strip()
     st.title_buffer = None
     st.title_owner = None
 
 
+def _update_quote_state(st: _State, text: str) -> None:
+    """Track quoted replacement text in amendment articles.
+
+    Vietnamese laws often amend another law by embedding quoted replacement
+    articles. Those embedded paragraphs can start with `1.` or `a)`, but they
+    are not clauses/points of the current law. Quote tracking keeps them as
+    continuation text attached to the current top-level clause/point.
+    """
+    opens = text.count("“")
+    closes = text.count("”")
+    if opens > closes:
+        st.in_nested_quote = True
+    elif closes > opens:
+        st.in_nested_quote = False
+
+
+def _append_continuation(text: str, st: _State) -> None:
+    if st.current_clause is not None:
+        if st.current_clause["points"]:
+            st.current_clause["points"][-1]["text"] += "\n" + text
+        else:
+            st.current_clause["text"] += "\n" + text
+    elif st.current_article is not None:
+        sep = "\n" if st.current_article["lead_text"] else ""
+        st.current_article["lead_text"] += sep + text
+    else:
+        st.postamble.append(text)
+    _update_quote_state(st, text)
+
+
 def _handle_paragraph(text: str, st: _State, law: str) -> None:
-    # ---- 0. Đã vào postamble: append tất cả ----
     if st.in_postamble:
         st.postamble.append(text)
         return
 
-    # ---- 1. Detect ratification → enter postamble ----
     if RE_RATIFICATION.search(text):
         _finalize_title(st)
         st.in_postamble = True
@@ -166,47 +305,50 @@ def _handle_paragraph(text: str, st: _State, law: str) -> None:
         st.postamble.append(text)
         return
 
-    # ---- 2. Đang collect title buffer? ----
     if st.title_buffer is not None:
         if _is_boundary(text):
             _finalize_title(st)
-            # fall through để xử lý Chương/Mục/Điều mới
         else:
             st.title_buffer.append(text)
             return
 
-    # ---- 3. Chương ----
-    m = RE_CHAPTER.match(text)
-    if m and m.group(1).upper() in ROMAN_MAP:
-        roman = m.group(1).upper()
-        n = ROMAN_MAP[roman]
-        ch = {
-            "id": ids.chapter_id(law, n),
-            "number": n,
-            "roman": roman,
-            "title": "",
-            "sections": [],
-            "articles": [],
-        }
-        st.chapters.append(ch)
-        st.current_chapter = ch
-        st.current_section = None
-        st.current_article = None
-        st.current_clause = None
-        st.seen_first_chapter = True
-        st.title_buffer = []
-        st.title_owner = ch
-        inline = m.group(2).strip()
-        if inline:
-            st.title_buffer.append(inline)
+    if st.in_nested_quote:
+        _append_continuation(text, st)
         return
 
-    # ---- 4. Mục ----
+    m = RE_CHAPTER.match(text)
+    if m:
+        roman = m.group(1).upper()
+        n = roman_to_int(roman)
+        if n is not None:
+            ch = {
+                "id": ids.chapter_id(law, n),
+                "law_code": law,
+                "number": n,
+                "roman": roman,
+                "title": "",
+                "sections": [],
+                "articles": [],
+            }
+            st.chapters.append(ch)
+            st.current_chapter = ch
+            st.current_section = None
+            st.current_article = None
+            st.current_clause = None
+            st.seen_first_chapter = True
+            st.title_buffer = []
+            st.title_owner = ch
+            inline = m.group(2).strip()
+            if inline:
+                st.title_buffer.append(inline)
+            return
+
     m = RE_SECTION.match(text)
     if m and st.current_chapter is not None:
         sec_n = int(m.group(1))
         sec = {
             "id": ids.section_id(law, st.current_chapter["number"], sec_n),
+            "law_code": law,
             "number": sec_n,
             "chapter_id": st.current_chapter["id"],
             "title": "",
@@ -222,15 +364,14 @@ def _handle_paragraph(text: str, st: _State, law: str) -> None:
             st.title_buffer.append(inline)
         return
 
-    # ---- 5. Điều ----
     m = RE_ARTICLE.match(text)
     if m and st.current_chapter is not None:
         art_n = int(m.group(1))
-        art_title = m.group(2).strip()
         art = {
             "id": ids.article_id(law, art_n),
+            "law_code": law,
             "number": art_n,
-            "title": art_title,
+            "title": m.group(2).strip(),
             "chapter_id": st.current_chapter["id"],
             "section_id": st.current_section["id"] if st.current_section else None,
             "lead_text": "",
@@ -242,13 +383,13 @@ def _handle_paragraph(text: str, st: _State, law: str) -> None:
         st.current_clause = None
         return
 
-    # ---- 6. Khoản (chỉ trong Điều) ----
     if st.current_article is not None:
         m = RE_CLAUSE.match(text)
         if m:
             cl_n = int(m.group(1))
             cl = {
                 "id": ids.clause_id(law, st.current_article["number"], cl_n),
+                "law_code": law,
                 "number": cl_n,
                 "article_id": st.current_article["id"],
                 "text": m.group(2).strip(),
@@ -256,48 +397,45 @@ def _handle_paragraph(text: str, st: _State, law: str) -> None:
             }
             st.current_article["clauses"].append(cl)
             st.current_clause = cl
+            _update_quote_state(st, text)
             return
 
-    # ---- 7. Điểm (chỉ trong Khoản) ----
     if st.current_clause is not None:
         m = RE_POINT.match(text)
         if m:
+            letter = m.group(1).lower()
             pt = {
                 "id": ids.point_id(
                     law,
                     st.current_article["number"],
                     st.current_clause["number"],
-                    m.group(1),
+                    letter,
                 ),
-                "letter": m.group(1),
+                "law_code": law,
+                "letter": letter,
                 "clause_id": st.current_clause["id"],
                 "text": m.group(2).strip(),
             }
             st.current_clause["points"].append(pt)
+            _update_quote_state(st, text)
             return
 
-    # ---- 8. Continuation / fallback ----
     if not st.seen_first_chapter:
         st.preamble.append(text)
         return
 
     if st.current_clause is not None:
-        if st.current_clause["points"]:
-            st.current_clause["points"][-1]["text"] += "\n" + text
-        else:
-            st.current_clause["text"] += "\n" + text
+        _append_continuation(text, st)
         return
 
     if st.current_article is not None:
         if st.current_article["clauses"]:
-            st.current_article["clauses"][-1]["text"] += "\n" + text
+            _append_continuation(text, st)
             st.current_clause = st.current_article["clauses"][-1]
         else:
-            sep = "\n" if st.current_article["lead_text"] else ""
-            st.current_article["lead_text"] += sep + text
+            _append_continuation(text, st)
         return
 
-    # Không thuộc đâu rõ ràng → vào postamble (an toàn)
     st.postamble.append(text)
 
 
@@ -307,7 +445,6 @@ def _handle_paragraph(text: str, st: _State, law: str) -> None:
 
 
 def _build_article_full_text(art: dict) -> str:
-    """Ghép nguyên văn 1 Điều theo đúng thứ tự trong docx."""
     parts = [f"Điều {art['number']}. {art['title']}".rstrip()]
     if art["lead_text"]:
         parts.append(art["lead_text"])
@@ -320,53 +457,50 @@ def _build_article_full_text(art: dict) -> str:
     return "\n".join(parts)
 
 
-def _extract_metadata(st: _State, law_code: str) -> dict:
-    meta = {
-        "id": ids.law_id(law_code),
-        "code": law_code,
-        "title": None,
-        "issuer": None,
-        "issued_date": None,
-        "effective_date": None,
-        "session": None,
-    }
-
-    # Preamble table → issuer + code
+def _detect_source_metadata(st: _State) -> dict[str, Any]:
+    out: dict[str, Any] = {}
     flat_pre_tbl = "\n".join(cell for tbl in st.preamble_tables for row in tbl for cell in row)
-    if "QUỐC HỘI" in flat_pre_tbl:
-        meta["issuer"] = "Quốc hội"
-    m = RE_LAW_CODE.search(flat_pre_tbl)
-    if m:
-        meta["code"] = m.group(1)
-        meta["id"] = ids.law_id(m.group(1))
+    if "QUỐC HỘI" in flat_pre_tbl.upper():
+        out["issuer"] = "Quốc hội"
+    if m := RE_LAW_CODE.search(flat_pre_tbl):
+        out["full_id"] = m.group(1)
 
-    # Title: paragraph "LUẬT" + dòng kế tiếp
     for i, p in enumerate(st.preamble):
-        if p.strip().upper() == "LUẬT" and i + 1 < len(st.preamble):
-            meta["title"] = f"Luật {st.preamble[i + 1].strip()}"
+        if p.strip().upper() in {"LUẬT", "BỘ LUẬT"} and i + 1 < len(st.preamble):
+            out["title"] = f"{p.strip().title()} {st.preamble[i + 1].strip()}"
             break
 
-    # Issued date + session: từ postamble (paragraph ratification)
     flat_post = "\n".join(st.postamble)
-    m = RE_DATE.search(flat_post)
-    if m:
-        meta["issued_date"] = fmt_date(m.group(1), m.group(2), m.group(3))
-    m = RE_SESSION.search(flat_post)
-    if m:
-        meta["session"] = f"Khóa {m.group(1)}, kỳ họp thứ {m.group(2)}"
+    if m := RE_DATE.search(flat_post):
+        out["issued_date"] = fmt_date(m.group(1), m.group(2), m.group(3))
+    if m := RE_SESSION.search(flat_post):
+        out["session"] = f"Khóa {m.group(1).upper()}, kỳ họp thứ {m.group(2)}"
 
-    # Effective date: trong text Điều 140
     all_text = "\n".join(art["text"] for ch in st.chapters for art in ch["articles"])
-    m = RE_EFFECTIVE.search(all_text)
-    if m:
-        meta["effective_date"] = fmt_date(m.group(1), m.group(2), m.group(3))
-
-    return meta
+    if m := RE_EFFECTIVE.search(all_text):
+        out["effective_date"] = fmt_date(m.group(1), m.group(2), m.group(3))
+    return out
 
 
-def parse_docx(path: Path, law_code: str = "41/2024/QH15") -> dict:
-    doc = Document(str(path))
-    law = ids.law_id(law_code)
+def _extract_metadata(st: _State, meta: LawMetadata) -> dict[str, Any]:
+    detected = _detect_source_metadata(st)
+    out = meta.law_node
+    for field_name in ("title", "issuer", "issued_date", "effective_date", "session", "full_id"):
+        if not out.get(field_name) and detected.get(field_name):
+            out[field_name] = detected[field_name]
+    if detected.get("full_id") and detected["full_id"] != out.get("full_id"):
+        out["detected_full_id"] = detected["full_id"]
+    return out
+
+
+def parse_docx(
+    path: Path,
+    law_code: str = "41/2024/QH15",
+    metadata: LawMetadata | None = None,
+) -> dict:
+    meta = _resolve_metadata(law_code, metadata)
+    doc = open_document(path)
+    law = meta.id
     st = _State()
 
     for kind, block in iter_block_items(doc):
@@ -381,32 +515,27 @@ def parse_docx(path: Path, law_code: str = "41/2024/QH15") -> dict:
                 st.current_article["tables"].append(
                     {
                         "id": ids.table_id(law, st.current_article["number"], idx),
+                        "law_code": law,
                         "article_id": st.current_article["id"],
                         "rows": rows,
                     }
                 )
             else:
-                # Chương đã set nhưng chưa vào Điều — hiếm
                 st.postamble_tables.append(rows)
             continue
 
         text = block.text.strip()
-        if not text:
-            continue
-        _handle_paragraph(text, st, law)
+        if text:
+            _handle_paragraph(text, st, law)
 
-    # Đóng title buffer nếu còn (an toàn)
     _finalize_title(st)
 
-    # Build full text mỗi Article
     for ch in st.chapters:
         for art in ch["articles"]:
             art["text"] = _build_article_full_text(art)
 
-    meta = _extract_metadata(st, law_code)
-
     return {
-        "law": meta,
+        "law": _extract_metadata(st, meta),
         "preamble": st.preamble,
         "postamble": st.postamble,
         "chapters": st.chapters,
@@ -414,38 +543,52 @@ def parse_docx(path: Path, law_code: str = "41/2024/QH15") -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Validation (fail-fast)
+# Validation
 # ---------------------------------------------------------------------------
 
 
-def validate(result: dict, expect_chapters=11, expect_sections=13, expect_articles=141) -> None:
+def validate(
+    result: dict,
+    expect_chapters: int | None = None,
+    expect_sections: int | None = None,
+    expect_articles: int | None = None,
+) -> None:
     chapters = result["chapters"]
-    assert (
-        len(chapters) == expect_chapters
-    ), f"Số Chương sai: mong đợi {expect_chapters}, thực tế {len(chapters)}"
+    law_id = result.get("law", {}).get("id", "UNKNOWN")
+
+    if expect_chapters is not None:
+        assert len(chapters) == expect_chapters, (
+            f"{law_id}: số Chương sai: mong đợi {expect_chapters}, thực tế {len(chapters)}"
+        )
 
     n_sec = sum(len(ch["sections"]) for ch in chapters)
-    assert n_sec == expect_sections, f"Số Mục sai: mong đợi {expect_sections}, thực tế {n_sec}"
+    if expect_sections is not None:
+        assert n_sec == expect_sections, (
+            f"{law_id}: số Mục sai: mong đợi {expect_sections}, thực tế {n_sec}"
+        )
 
     n_art = sum(len(ch["articles"]) for ch in chapters)
-    assert n_art == expect_articles, f"Số Điều sai: mong đợi {expect_articles}, thực tế {n_art}"
+    if expect_articles is not None:
+        assert n_art == expect_articles, (
+            f"{law_id}: số Điều sai: mong đợi {expect_articles}, thực tế {n_art}"
+        )
 
     seen_ids: set[str] = set()
     article_numbers: list[int] = []
     for ch in chapters:
-        assert ch["title"], f"Chương {ch['roman']} thiếu title"
-        assert ch["id"] not in seen_ids
+        assert ch["title"], f"{law_id}: Chương {ch['roman']} thiếu title"
+        assert ch["id"] not in seen_ids, f"Trùng ID: {ch['id']}"
         seen_ids.add(ch["id"])
         for sec in ch["sections"]:
-            assert sec["title"], f"Mục {sec['id']} thiếu title"
+            assert sec["title"], f"{law_id}: Mục {sec['id']} thiếu title"
             assert sec["id"] not in seen_ids, f"Trùng ID: {sec['id']}"
             seen_ids.add(sec["id"])
         for art in ch["articles"]:
             assert art["id"] not in seen_ids, f"Trùng ID: {art['id']}"
             seen_ids.add(art["id"])
             article_numbers.append(art["number"])
-            assert art["title"], f"Điều {art['number']} thiếu title"
-            assert art["text"].strip(), f"Điều {art['number']} text rỗng"
+            assert art["title"], f"{law_id}: Điều {art['number']} thiếu title"
+            assert art["text"].strip(), f"{law_id}: Điều {art['number']} text rỗng"
             for cl in art["clauses"]:
                 assert cl["id"] not in seen_ids, f"Trùng ID: {cl['id']}"
                 seen_ids.add(cl["id"])
@@ -455,9 +598,20 @@ def validate(result: dict, expect_chapters=11, expect_sections=13, expect_articl
                     seen_ids.add(pt["id"])
                     assert pt["text"].strip(), f"{pt['id']} text rỗng"
 
-    assert article_numbers == list(
-        range(1, expect_articles + 1)
-    ), "Article number không liên tiếp 1..N"
+    if article_numbers:
+        expected_end = expect_articles or max(article_numbers)
+        assert article_numbers == list(range(1, expected_end + 1)), (
+            f"{law_id}: Article number không liên tiếp 1..{expected_end}"
+        )
+
+
+def validate_against_metadata(result: dict, meta: LawMetadata) -> None:
+    validate(
+        result,
+        expect_chapters=meta.expected_chapters,
+        expect_sections=meta.expected_sections,
+        expect_articles=meta.expected_articles,
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -465,64 +619,80 @@ def validate(result: dict, expect_chapters=11, expect_sections=13, expect_articl
 # ---------------------------------------------------------------------------
 
 
-def main() -> int:
-    src = Path("data/raw/Luật-41-2024-QH15.docx")
-    out = Path("data/interim/structured_law.json")
+def _stats(result: dict) -> dict[str, int]:
+    return {
+        "chapters": len(result["chapters"]),
+        "sections": sum(len(ch["sections"]) for ch in result["chapters"]),
+        "articles": sum(len(ch["articles"]) for ch in result["chapters"]),
+        "clauses": sum(len(art["clauses"]) for ch in result["chapters"] for art in ch["articles"]),
+        "points": sum(
+            len(cl["points"])
+            for ch in result["chapters"]
+            for art in ch["articles"]
+            for cl in art["clauses"]
+        ),
+        "tables": sum(
+            len(art.get("tables", [])) for ch in result["chapters"] for art in ch["articles"]
+        ),
+    }
 
-    if not src.exists():
-        print(f"FAIL: không tìm thấy {src}", file=sys.stderr)
-        return 1
 
-    print(f"Đọc {src} ...")
-    result = parse_docx(src)
-
-    print("\n=== METADATA ===")
-    for k, v in result["law"].items():
-        print(f"  {k}: {v}")
-
-    print("\n=== STATS ===")
-    n_ch = len(result["chapters"])
-    n_sec = sum(len(ch["sections"]) for ch in result["chapters"])
-    n_art = sum(len(ch["articles"]) for ch in result["chapters"])
-    n_cl = sum(len(art["clauses"]) for ch in result["chapters"] for art in ch["articles"])
-    n_pt = sum(
-        len(cl["points"])
-        for ch in result["chapters"]
-        for art in ch["articles"]
-        for cl in art["clauses"]
-    )
-    n_tbl_art = sum(
-        len(art.get("tables", [])) for ch in result["chapters"] for art in ch["articles"]
-    )
-    print(f"  Chương : {n_ch}")
-    print(f"  Mục    : {n_sec}")
-    print(f"  Điều   : {n_art}")
-    print(f"  Khoản  : {n_cl}")
-    print(f"  Điểm   : {n_pt}")
-    print(f"  Bảng trong Điều  : {n_tbl_art}")
-    print(f"  Bảng preamble    : {len(result.get('preamble') and [None]) if False else '—'}")
-    print()
-    for ch in result["chapters"]:
-        n_sec_ch = len(ch["sections"])
-        n_art_ch = len(ch["articles"])
-        sec_info = f", {n_sec_ch} mục" if n_sec_ch else ""
-        print(f"  Chương {ch['roman']:<5} ({n_art_ch:>3} điều{sec_info}) — {ch['title'][:80]}")
-        for sec in ch["sections"]:
-            n_in_sec = sum(1 for a in ch["articles"] if a.get("section_id") == sec["id"])
-            print(f"      Mục {sec['number']} ({n_in_sec} điều) — {sec['title'][:80]}")
-
-    print("\n=== VALIDATE ===")
-    try:
-        validate(result)
-        print("  OK — 11 chương, 13 mục, 141 điều; không trùng ID; mọi text non-empty.")
-    except AssertionError as e:
-        print(f"  FAIL: {e}", file=sys.stderr)
-        return 2
-
+def _write_result(result: dict, out: Path) -> None:
     out.parent.mkdir(parents=True, exist_ok=True)
-    with out.open("w", encoding="utf-8") as f:
-        json.dump(result, f, ensure_ascii=False, indent=2)
-    print(f"\nĐã lưu: {out} ({out.stat().st_size / 1024:.1f} KB)")
+    out.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def parse_one(meta: LawMetadata, source: Path | None = None, out: Path | None = None) -> Path:
+    source = source or meta.source_file
+    out = out or Path(f"data/interim/structured_law_{meta.id}.json")
+    print(f"Đọc {source} cho {meta.id} ...")
+    result = parse_docx(source, metadata=meta)
+    validate_against_metadata(result, meta)
+    _write_result(result, out)
+    stats = _stats(result)
+    print(
+        "  OK "
+        f"chapters={stats['chapters']} sections={stats['sections']} "
+        f"articles={stats['articles']} clauses={stats['clauses']} points={stats['points']}"
+    )
+    print(f"  Saved: {out} ({out.stat().st_size / 1024:.1f} KB)")
+    return out
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Parse Vietnamese legal Word documents.")
+    parser.add_argument("--metadata", default=str(Path("data/legal_metadata.yaml")))
+    parser.add_argument("--law", default=None, help="Canonical law id/code/alias to parse.")
+    parser.add_argument("--source", default=None, help="Override source file for --law.")
+    parser.add_argument("--out", default=None, help="Override output JSON for --law.")
+    parser.add_argument("--all", action="store_true", help="Parse all laws in metadata load_order.")
+    parser.add_argument(
+        "--write-legacy-l41",
+        action="store_true",
+        help="Also write data/interim/structured_law.json when parsing L41_2024.",
+    )
+    args = parser.parse_args()
+
+    laws = load_law_metadata(args.metadata)
+    selected = load_order(args.metadata) if args.all else [args.law or "L41_2024"]
+
+    for law_key in selected:
+        try:
+            meta = metadata_for(law_key, laws)
+        except KeyError as exc:
+            print(f"FAIL: {exc}", file=sys.stderr)
+            return 1
+        source = Path(args.source) if args.source else None
+        out = Path(args.out) if args.out else None
+        try:
+            written = parse_one(meta, source=source, out=out)
+            if args.write_legacy_l41 and meta.id == "L41_2024":
+                legacy_out = Path("data/interim/structured_law.json")
+                shutil.copyfile(written, legacy_out)
+                print(f"  Legacy copy: {legacy_out}")
+        except Exception as exc:
+            print(f"FAIL {meta.id}: {type(exc).__name__}: {exc}", file=sys.stderr)
+            return 2
     return 0
 
 

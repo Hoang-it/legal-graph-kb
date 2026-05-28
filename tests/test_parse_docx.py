@@ -83,8 +83,9 @@ def test_id_khong_trung(parsed):
 
 def test_metadata_dung(parsed):
     law = parsed["law"]
-    assert law["code"] == "41/2024/QH15"
+    assert law["code"] == "L41_2024"
     assert law["id"] == "L41_2024"
+    assert law["full_id"] == "41/2024/QH15"
     assert law["title"] == "Luật Bảo hiểm xã hội"
     assert law["issuer"] == "Quốc hội"
     assert law["issued_date"] == "2024-06-29"

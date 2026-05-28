@@ -35,12 +35,12 @@ def test_columns_dung_format(df):
 
 
 def test_du_so_row(df):
-    # 141 Article + 543 Clause + 359 Point = 1043
-    assert len(df) == 1043
+    # 486 Article + 1585 Clause + 829 Point = 2900 across 3 laws.
+    assert len(df) == 2900
     by_label = df["label"].value_counts().to_dict()
-    assert by_label["Article"] == 141
-    assert by_label["Clause"] == 543
-    assert by_label["Point"] == 359
+    assert by_label["Article"] == 486
+    assert by_label["Clause"] == 1585
+    assert by_label["Point"] == 829
 
 
 def test_id_la_duy_nhat(df):
@@ -126,7 +126,8 @@ def test_top_neighbor_cua_a64_la_dieu_huu_tri(df):
     # Các điều liên quan: hưu trí (64-72), hưu trí TN (98-107)
     relevant_range_bb = {f"L41_2024.A{n}" for n in range(60, 80)}
     relevant_range_tn = {f"L41_2024.A{n}" for n in range(95, 110)}
-    relevant = relevant_range_bb | relevant_range_tn
+    relevant_range_l58 = {f"L58_2014.A{n}" for n in range(50, 76)}
+    relevant = relevant_range_bb | relevant_range_tn | relevant_range_l58 | {"L45_2019.A169"}
     n_hit = sum(1 for tid in top_ids[:5] if tid in relevant)
     assert n_hit >= 4, (
         f"Top-5 neighbors của A64 chỉ {n_hit}/5 thuộc nhóm hưu trí. " f"Top: {top_ids}"

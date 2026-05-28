@@ -1,5 +1,5 @@
 // ============================================================
-// SCHEMA Neo4j 5.x cho KG Luật 41/2024/QH15
+// SCHEMA Neo4j 5.x cho KG multi-law Phase 6
 // Chạy: cypher-shell -u neo4j -p <pw> -f schema/schema.cypher
 // Idempotent — chạy lại an toàn.
 // ============================================================
@@ -26,6 +26,14 @@ CREATE CONSTRAINT right_id          IF NOT EXISTS FOR (n:Right)          REQUIRE
 CREATE CONSTRAINT prohib_id         IF NOT EXISTS FOR (n:ProhibitedAct)  REQUIRE n.id IS UNIQUE;
 CREATE CONSTRAINT fund_id           IF NOT EXISTS FOR (n:Fund)           REQUIRE n.id IS UNIQUE;
 CREATE CONSTRAINT external_law_id   IF NOT EXISTS FOR (n:ExternalLaw)    REQUIRE n.id IS UNIQUE;
+CREATE CONSTRAINT legal_rule_id     IF NOT EXISTS FOR (n:LegalRule)      REQUIRE n.id IS UNIQUE;
+CREATE CONSTRAINT legal_condition_id IF NOT EXISTS FOR (n:LegalCondition) REQUIRE n.id IS UNIQUE;
+CREATE CONSTRAINT numerical_threshold_id IF NOT EXISTS FOR (n:NumericalThreshold) REQUIRE n.id IS UNIQUE;
+CREATE CONSTRAINT legal_term_id     IF NOT EXISTS FOR (n:LegalTerm)      REQUIRE n.id IS UNIQUE;
+CREATE CONSTRAINT procedure_step_id IF NOT EXISTS FOR (n:ProcedureStep)  REQUIRE n.id IS UNIQUE;
+CREATE CONSTRAINT legal_entity_id   IF NOT EXISTS FOR (n:LegalEntity)    REQUIRE n.id IS UNIQUE;
+CREATE CONSTRAINT canonical_predicate_id IF NOT EXISTS FOR (n:CanonicalPredicate) REQUIRE n.id IS UNIQUE;
+CREATE CONSTRAINT canonical_predicate_name IF NOT EXISTS FOR (n:CanonicalPredicate) REQUIRE n.namespaced_name IS UNIQUE;
 
 // ---------- 2. EXISTENCE CONSTRAINTS — bảo đảm PROVENANCE ----------
 // Mọi structural node phải có `text` (Article/Clause/Point) → tự nó là nguồn.
@@ -52,9 +60,10 @@ CREATE CONSTRAINT fund_prov        IF NOT EXISTS FOR (n:Fund)          REQUIRE n
 CREATE CONSTRAINT ref_source       IF NOT EXISTS FOR ()-[r:REFERENCES]-()       REQUIRE r.source_clause IS NOT NULL;
 CREATE CONSTRAINT cite_ext_source  IF NOT EXISTS FOR ()-[r:CITES_EXTERNAL]-()   REQUIRE r.source_clause IS NOT NULL;
 CREATE CONSTRAINT amends_source    IF NOT EXISTS FOR ()-[r:AMENDS]-()           REQUIRE r.source_clause IS NOT NULL;
-CREATE CONSTRAINT repeals_source   IF NOT EXISTS FOR ()-[r:REPEALS]-()          REQUIRE r.source_clause IS NOT NULL;
+DROP CONSTRAINT repeals_source IF EXISTS;
 CREATE CONSTRAINT replaces_source  IF NOT EXISTS FOR ()-[r:REPLACES]-()         REQUIRE r.source_clause IS NOT NULL;
 CREATE CONSTRAINT trans_source     IF NOT EXISTS FOR ()-[r:TRANSITIONS_FROM]-() REQUIRE r.source_clause IS NOT NULL;
+CREATE CONSTRAINT refers_to_source IF NOT EXISTS FOR ()-[r:REFERS_TO]-()        REQUIRE r.source_clause IS NOT NULL;
 
 CREATE CONSTRAINT entitled_src     IF NOT EXISTS FOR ()-[r:ENTITLED_TO]-()      REQUIRE r.source_clause IS NOT NULL;
 CREATE CONSTRAINT entitled_txt     IF NOT EXISTS FOR ()-[r:ENTITLED_TO]-()      REQUIRE r.source_text   IS NOT NULL;
@@ -69,10 +78,17 @@ CREATE CONSTRAINT prohib_by_src    IF NOT EXISTS FOR ()-[r:PROHIBITED_BY]-()    
 
 // ---------- 3. RANGE INDEXES cho query hay dùng ----------
 CREATE INDEX article_number   IF NOT EXISTS FOR (n:Article)   ON (n.number);
+CREATE INDEX article_law      IF NOT EXISTS FOR (n:Article)   ON (n.law_code);
+CREATE INDEX clause_law       IF NOT EXISTS FOR (n:Clause)    ON (n.law_code);
 CREATE INDEX chapter_number   IF NOT EXISTS FOR (n:Chapter)   ON (n.number);
+CREATE INDEX law_code         IF NOT EXISTS FOR (n:Law)       ON (n.code);
+CREATE INDEX law_full_id      IF NOT EXISTS FOR (n:Law)       ON (n.full_id);
 CREATE INDEX subject_name     IF NOT EXISTS FOR (n:Subject)   ON (n.name);
 CREATE INDEX benefit_name     IF NOT EXISTS FOR (n:Benefit)   ON (n.name);
 CREATE INDEX benefit_category IF NOT EXISTS FOR (n:Benefit)   ON (n.category);
+CREATE INDEX legal_rule_law   IF NOT EXISTS FOR (n:LegalRule) ON (n.law_code);
+CREATE INDEX legal_rule_effective IF NOT EXISTS FOR (n:LegalRule) ON (n.effective_from, n.effective_until);
+CREATE INDEX canonical_predicate_base IF NOT EXISTS FOR (n:CanonicalPredicate) ON (n.base_name);
 
 // ---------- 4. FULL-TEXT INDEXES (cho keyword fallback trong RAG) ----------
 CREATE FULLTEXT INDEX clause_fulltext IF NOT EXISTS
