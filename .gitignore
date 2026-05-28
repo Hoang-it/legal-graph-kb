@@ -242,6 +242,7 @@ reports/*.md
 # Human-written documentation (commit these)
 !reports/academic_report.md
 !reports/extraction_summary.md
+!reports/plan_v5_general_retrieval.md
 
 # Model caches & weights (downloaded on demand via scripts/install_b5.ps1)
 .cache/
