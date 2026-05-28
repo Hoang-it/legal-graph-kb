@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 70,
+  "question": "Mình đi làm công ty và có tham gia BHXH, đầu tháng 12-2025 mình nghỉ thai sản, trước khi nghỉ thai sản mình có giấy ốm nghỉ 2 lần là 14 ngày, mình có nộp cho nhân sự, nhưng tới hiện tại mình chưa nhận được tiền hưởng\nĐã nhiều lần mình nhắn hỏi, mấy lần đầu không trả lời, tháng trước mình hỏi tiếp và nói là “ đang gửi hồ sơ lại nhờ BHXH duyệt” tới nay 1 tháng nữa vẫn chưa có, hôm qua mình nhắn hỏi thì không trả lời\nVậy là nhân sự có vấn đề hay hồ sơ của mình có vấn đề?",
+  "answer": "Issue:\nMình đã nộp giấy ốm và hồ sơ nghỉ thai sản cho nhân sự nhưng tới nay chưa nhận tiền; muốn biết nguyên nhân do nhân sự hay hồ sơ.\n\nRule:\nKhông có trích dẫn pháp lý được cung cấp trong dữ liệu đầu vào.\n\nApplication:\nKhông có slot_bindings được cung cấp.\nCác sự kiện xác minh (đã dùng làm dữ liệu vào cho truy vấn Prolog):\nemployed(user).\nparticipating_bhxh(user).\nmaternity_leave_month_year(user, december_2025).\nsick_leave_total_days(user, 14).\nsick_leave_times(user, 2).\nsubmitted_to_hr(user, true).\nhr_reported_submitted_to_bhxh(user, true).\npayment_received(user, false).\nProlog đã khớp các facts submitted_to_hr(user,true), hr_reported_submitted_to_bhxh(user,true) và payment_received(user,false) theo quy tắc diagnose_delay, và kiểm tra khả năng hồ sơ thiếu (missing_documents) dựa trên nguồn source_documents_needed như thể hiện trong Trace.\n\nConclusion:\nResult = diagnosis([bhxh_processing_delay,missing_documents,employer_delay],[ask_hr_for_submission_date,request_bhxh_receipt_or_decision,file_complaint_if_delay_exceeds_limit]).\nTrace = \"[step(confirmed_submission_to_hr,submitted_to_hr(user,true),based_on(source_employer_obligation)),step(confirmed_hr_forwarded_to_bhxh,hr_reported_submitted_to_bhxh(user,true),based_on(source_employer_obligation)),step(no_payment_yet,payment_received(user,false),based_on(source_bhxh_processing)),step(check_documents_and_confirmation,missing_documents,based_on(source_documents_needed))]\".",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(confirmed_submission_to_hr,submitted_to_hr(user,true),based_on(source_employer_obligation)),step(confirmed_hr_forwarded_to_bhxh,hr_reported_submitted_to_bhxh(user,true),based_on(source_employer_obligation)),step(no_payment_yet,payment_received(user,false),based_on(source_bhxh_processing)),step(check_documents_and_confirmation,missing_documents,based_on(source_documents_needed))]",
+  "irac_sections": {
+    "issue": "Mình đã nộp giấy ốm và hồ sơ nghỉ thai sản cho nhân sự nhưng tới nay chưa nhận tiền; muốn biết nguyên nhân do nhân sự hay hồ sơ.",
+    "rule": "Không có trích dẫn pháp lý được cung cấp trong dữ liệu đầu vào.",
+    "application": "Không có slot_bindings được cung cấp.\nCác sự kiện xác minh (đã dùng làm dữ liệu vào cho truy vấn Prolog):\nemployed(user).\nparticipating_bhxh(user).\nmaternity_leave_month_year(user, december_2025).\nsick_leave_total_days(user, 14).\nsick_leave_times(user, 2).\nsubmitted_to_hr(user, true).\nhr_reported_submitted_to_bhxh(user, true).\npayment_received(user, false).\nProlog đã khớp các facts submitted_to_hr(user,true), hr_reported_submitted_to_bhxh(user,true) và payment_received(user,false) theo quy tắc diagnose_delay, và kiểm tra khả năng hồ sơ thiếu (missing_documents) dựa trên nguồn source_documents_needed như thể hiện trong Trace.",
+    "conclusion": "Result = diagnosis([bhxh_processing_delay,missing_documents,employer_delay],[ask_hr_for_submission_date,request_bhxh_receipt_or_decision,file_complaint_if_delay_exceeds_limit]).\nTrace = \"[step(confirmed_submission_to_hr,submitted_to_hr(user,true),based_on(source_employer_obligation)),step(confirmed_hr_forwarded_to_bhxh,hr_reported_submitted_to_bhxh(user,true),based_on(source_employer_obligation)),step(no_payment_yet,payment_received(user,false),based_on(source_bhxh_processing)),step(check_documents_and_confirmation,missing_documents,based_on(source_documents_needed))]\"."
+  },
+  "elapsed_s": 47.994,
+  "prompt_tokens": 2827,
+  "completion_tokens": 5489,
+  "error": null,
+  "gold_answer": "Trường hợp này có thể do hồ sơ chưa được doanh nghiệp nộp, nộp thiếu chứng từ, hoặc cơ quan BHXH yêu cầu bổ sung nên chưa giải quyết. Theo luật, doanh nghiệp phải lập hồ sơ và nộp cho cơ quan BHXH trong thời hạn quy định sau khi nhận đủ giấy tờ của NLĐ; cơ quan BHXH cũng phải giải quyết trong thời hạn luật định. Bạn nên yêu cầu nhân sự trả lời bằng văn bản/email về tình trạng hồ sơ; nếu bị chậm không rõ lý do thì liên hệ trực tiếp cơ quan BHXH nơi đơn vị tham gia để kiểm tra.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 53, Điều 54, Điều 116"
+}

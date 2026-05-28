@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 165,
+  "question": "Dự sinh của em 18/9. Em đóng bhxh 2 năm rồi. Tháng 1 dương vừa rồi không đủ công nên cty ko đóng tháng 1. Hết tháng 4 này em nghỉ luôn thì em có được hưởng thai sản ko?",
+  "answer": "Issue:\nDự sinh 18/9; em đã đóng BHXH 2 năm; tháng 1 vừa qua công ty không đóng; em nghỉ cuối tháng 4 — em có được hưởng chế độ thai sản không?\n\nRule:\n\"Người lao động nữ được hưởng chế độ thai sản khi đã đóng BHXH ít nhất 6 tháng trong 12 tháng trước khi sinh.\" (law_bhxh_2024, article_unknown, clause_unknown)\n\nApplication:\ndue_day(user) = 18 (từ verify_facts: due_day(user, 18)).\ndue_month(user) = 9 (từ verify_facts: due_month(user, 9)).\ncontributed_years(user) = 2 (từ verify_facts: contributed_years(user, 2)).\nmonth_not_paid(user) = 1 (từ verify_facts: month_not_paid(user, 1)).\nwill_quit_end_of_april(user) = present (từ verify_facts: will_quit_end_of_april(user)).\nProlog đã dùng fact month_not_paid(user, 1) trong quy tắc months_contributed_in_12months để suy ra số tháng đã đóng trong 12 tháng trước sinh (kết quả trung gian như trong truy vết), rồi so sánh với điều kiện \"ít nhất 6 tháng\" và áp dụng source_maternity_req.\n\nConclusion:\nProlog trả biến Answer = entitled(yes,11). Truy vết: [step(conclusion,entitled(yes,11),based_on(source_maternity_req))]. Đây là kết quả cuối cùng do Prolog đưa ra.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,entitled(yes,11),based_on(source_maternity_req))]",
+  "irac_sections": {
+    "issue": "Dự sinh 18/9; em đã đóng BHXH 2 năm; tháng 1 vừa qua công ty không đóng; em nghỉ cuối tháng 4 — em có được hưởng chế độ thai sản không?",
+    "rule": "\"Người lao động nữ được hưởng chế độ thai sản khi đã đóng BHXH ít nhất 6 tháng trong 12 tháng trước khi sinh.\" (law_bhxh_2024, article_unknown, clause_unknown)",
+    "application": "due_day(user) = 18 (từ verify_facts: due_day(user, 18)).\ndue_month(user) = 9 (từ verify_facts: due_month(user, 9)).\ncontributed_years(user) = 2 (từ verify_facts: contributed_years(user, 2)).\nmonth_not_paid(user) = 1 (từ verify_facts: month_not_paid(user, 1)).\nwill_quit_end_of_april(user) = present (từ verify_facts: will_quit_end_of_april(user)).\nProlog đã dùng fact month_not_paid(user, 1) trong quy tắc months_contributed_in_12months để suy ra số tháng đã đóng trong 12 tháng trước sinh (kết quả trung gian như trong truy vết), rồi so sánh với điều kiện \"ít nhất 6 tháng\" và áp dụng source_maternity_req.",
+    "conclusion": "Prolog trả biến Answer = entitled(yes,11). Truy vết: [step(conclusion,entitled(yes,11),based_on(source_maternity_req))]. Đây là kết quả cuối cùng do Prolog đưa ra."
+  },
+  "elapsed_s": 79.394,
+  "prompt_tokens": 4079,
+  "completion_tokens": 9368,
+  "error": null,
+  "gold_answer": "Bạn dự sinh 18/9 và đã đóng BHXH 2 năm, nhưng tháng 1 vừa rồi công ty không đóng thì phải tính lại 12 tháng trước sinh. Nếu từ 9/2025 đến 8/2026 bạn vẫn có đủ ít nhất 06 tháng đóng BHXH thì bạn đủ điều kiện hưởng thai sản dù nghỉ cuối tháng 4. Tháng 1 bị hở không làm mất quyền nếu tổng số tháng đủ 06.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 98,
+  "question": "Em nghỉ việc từ tháng 8 năm 2025 , giờ tháng 4 e mới đi rút bảo hiểm thất nghiệp được k?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu nghỉ việc từ tháng 8 năm 2025, đến tháng 4 năm sau mới đi rút bảo hiểm thất nghiệp thì có được không?\n\nRule:\n\"Người lao động được hưởng trợ cấp thất nghiệp nếu nộp hồ sơ trong thời hạn 3 tháng kể từ ngày chấm dứt hợp đồng lao động.\" (law_bhxh_2024, article_17, clause_1)\n\nApplication:\nKhông có slot_id nào được cung cấp trong truy vấn này. Hệ thống đã truy xuất điều kiện từ luật: \"Nộp hồ sơ hưởng trợ cấp thất nghiệp trong thời hạn 3 tháng kể từ ngày chấm dứt hợp đồng lao động.\" Truy vấn Prolog xác nhận điều kiện này dựa trên nguồn dẫn (law_bhxh_2024, article_17, clause_1).\n\nConclusion:\nTheo quy định, bạn chỉ được nộp hồ sơ hưởng trợ cấp thất nghiệp trong thời hạn 3 tháng kể từ ngày chấm dứt hợp đồng lao động. Nếu bạn nghỉ việc từ tháng 8 năm 2025, đến tháng 4 năm sau mới nộp hồ sơ thì đã quá thời hạn quy định và sẽ không đủ điều kiện để nhận trợ cấp thất nghiệp.",
+  "citations": [
+    "[Điều 17 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A17.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(dieu_kien_nop_ho_so,nop_ho_so_tro_cap_that_nghiep_dung_han_conditions(Nộp hồ sơ hưởng trợ cấp thất nghiệp trong thời hạn 3 tháng kể từ ngày chấm dứt hợp đồng lao động.),based_on(source_a17_k1))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu nghỉ việc từ tháng 8 năm 2025, đến tháng 4 năm sau mới đi rút bảo hiểm thất nghiệp thì có được không?",
+    "rule": "\"Người lao động được hưởng trợ cấp thất nghiệp nếu nộp hồ sơ trong thời hạn 3 tháng kể từ ngày chấm dứt hợp đồng lao động.\" (law_bhxh_2024, article_17, clause_1)",
+    "application": "Không có slot_id nào được cung cấp trong truy vấn này. Hệ thống đã truy xuất điều kiện từ luật: \"Nộp hồ sơ hưởng trợ cấp thất nghiệp trong thời hạn 3 tháng kể từ ngày chấm dứt hợp đồng lao động.\" Truy vấn Prolog xác nhận điều kiện này dựa trên nguồn dẫn (law_bhxh_2024, article_17, clause_1).",
+    "conclusion": "Theo quy định, bạn chỉ được nộp hồ sơ hưởng trợ cấp thất nghiệp trong thời hạn 3 tháng kể từ ngày chấm dứt hợp đồng lao động. Nếu bạn nghỉ việc từ tháng 8 năm 2025, đến tháng 4 năm sau mới nộp hồ sơ thì đã quá thời hạn quy định và sẽ không đủ điều kiện để nhận trợ cấp thất nghiệp."
+  },
+  "elapsed_s": 7.5,
+  "prompt_tokens": 3874,
+  "completion_tokens": 878,
+  "error": null,
+  "gold_answer": "Nếu bạn nghỉ việc từ tháng 8/2025 mà đến tháng 4/2026 mới đi nộp hồ sơ BHTN thì đã quá hạn 3 tháng kể từ ngày chấm dứt HĐLĐ, nên đợt này thường không được giải quyết hưởng trợ cấp thất nghiệp. Tuy vậy, thời gian đóng BHTN chưa hưởng sẽ được bảo lưu để cộng dồn cho lần thất nghiệp sau nếu bạn tiếp tục đi làm và đóng BHTN trở lại.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 45"
+}

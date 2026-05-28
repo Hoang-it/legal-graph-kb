@@ -1,0 +1,39 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 139,
+  "question": "E đóng BH từ tháng 8 năm 2023 thì bây giờ có thể rút BHXH đc không?\nVà BH thất nghiệp có rút đc không? Quy trình rút BHTN như thế nào cần giấy tờ gì?",
+  "answer": "Issue: Người dùng hỏi liệu có thể rút bảo hiểm xã hội (BHXH) và bảo hiểm thất nghiệp (BHTN) sau khi đã đóng bảo hiểm từ tháng 8 năm 2023 hay không, và quy trình rút BHTN cần những giấy tờ gì.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 38, Khoản 1: \"Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều 34 của Luật này hoặc kể từ sau ngày đóng bảo hiểm thất nghiệp chậm nhất theo quy định của pháp luật về bảo hiểm thất nghiệp, trừ trường hợp quy định tại điểm đ và điểm e khoản 1 Điều 39 của Luật này.\" Và Điều 17, Khoản 1: \"Yêu cầu người sử dụng lao động xuất trình sổ quản lý lao động, thang lương, bảng lương và thông tin, tài liệu khác liên quan đến việc đóng, hưởng chế độ bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp, bảo hiểm y tế.\"\n\nApplication: Không có thông tin cụ thể về các giá trị đã được cung cấp trong slot_bindings. Tuy nhiên, từ kết quả truy vấn Prolog, các điều kiện để rút BHXH bao gồm: chưa đóng đầy đủ bảo hiểm xã hội và yêu cầu tài liệu từ người sử dụng lao động.\n\nConclusion: Hệ thống xác định rằng các điều kiện để rút BHXH bao gồm \"not_fully_paid_social_insurance\" và \"employer_documentation_required\". Điều này có nghĩa là để rút BHXH, cần phải chưa đóng đầy đủ bảo hiểm và cần có tài liệu từ người sử dụng lao động. Không có thông tin cụ thể về khả năng rút BHTN hoặc quy trình và giấy tờ cần thiết cho việc này trong kết quả truy vấn.",
+  "citations": [
+    "[Điều 38 khoản 1]",
+    "[Điều 34]",
+    "[Điều 39]",
+    "[Điều 17 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A38.K1",
+    "L41_2024.A34",
+    "L41_2024.A39",
+    "L41_2024.A17.K1"
+  ],
+  "citation_indices": [
+    1,
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,withdrawal_conditions_bhxh([not_fully_paid_social_insurance,employer_documentation_required]),based_on(source_c001)),step(conclusion,withdrawal_conditions_bhxh([not_fully_paid_social_insurance,employer_documentation_required]),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Người dùng hỏi liệu có thể rút bảo hiểm xã hội (BHXH) và bảo hiểm thất nghiệp (BHTN) sau khi đã đóng bảo hiểm từ tháng 8 năm 2023 hay không, và quy trình rút BHTN cần những giấy tờ gì.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 38, Khoản 1: \"Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều 34 của Luật này hoặc kể từ sau ngày đóng bảo hiểm thất nghiệp chậm nhất theo quy định của pháp luật về bảo hiểm thất nghiệp, trừ trường hợp quy định tại điểm đ và điểm e khoản 1 Điều 39 của Luật này.\" Và Điều 17, Khoản 1: \"Yêu cầu người sử dụng lao động xuất trình sổ quản lý lao động, thang lương, bảng lương và thông tin, tài liệu khác liên quan đến việc đóng, hưởng chế độ bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp, bảo hiểm y tế.\"",
+    "application": "Không có thông tin cụ thể về các giá trị đã được cung cấp trong slot_bindings. Tuy nhiên, từ kết quả truy vấn Prolog, các điều kiện để rút BHXH bao gồm: chưa đóng đầy đủ bảo hiểm xã hội và yêu cầu tài liệu từ người sử dụng lao động.",
+    "conclusion": "Hệ thống xác định rằng các điều kiện để rút BHXH bao gồm \"not_fully_paid_social_insurance\" và \"employer_documentation_required\". Điều này có nghĩa là để rút BHXH, cần phải chưa đóng đầy đủ bảo hiểm và cần có tài liệu từ người sử dụng lao động. Không có thông tin cụ thể về khả năng rút BHTN hoặc quy trình và giấy tờ cần thiết cho việc này trong kết quả truy vấn."
+  },
+  "elapsed_s": 7.627,
+  "prompt_tokens": 5446,
+  "completion_tokens": 847,
+  "error": null,
+  "gold_answer": "BHXH đóng từ 8/2023 đến nay không phải cứ nghỉ là rút được ngay; với BHXH 1 lần, thông thường phải sau 12 tháng không tiếp tục tham gia và thuộc trường hợp luật cho phép. Còn BHTN chỉ được nộp trong 03 tháng từ ngày chấm dứt HĐLĐ. Hồ sơ BHTN gồm đơn đề nghị, CCCD, giấy tờ chấm dứt HĐLĐ; mức hưởng bằng 60% bình quân lương 6 tháng cuối.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

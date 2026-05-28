@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 181,
+  "question": "Không có sổ bảo hiểm chỉ có tờ rời thì có đi rút bảo hiểm được không?",
+  "answer": "Issue:\nKhông có sổ bảo hiểm chỉ có tờ rời thì có đi rút bảo hiểm được không?\n\nRule:\nlegal_source(source_general_law, law_bhxh_2024, none, none, none, 'Sổ bảo hiểm xã hội là chứng từ ghi nhận quá trình đóng BHXH; nếu mất hoặc không có sổ, người lao động vẫn có thể nộp hồ sơ hưởng hoặc rút BHXH bằng giấy tờ thay thế và cơ quan BHXH có trách nhiệm xác minh, tra cứu hồ sơ, cập nhật dữ liệu và cấp lại sổ hoặc thực hiện chi trả dựa trên kết quả xác minh.').\n\nApplication:\nSlot bindings: không có slot (slot_bindings rỗng).\nTruy vấn Prolog: ?- can_withdraw_without_book(Answer, Trace).\nMô tả tiêu thụ: truy vấn không cần tham số thêm từ người dùng; quy tắc can_withdraw_without_book được gọi và trả về biến Answer cùng Trace dựa trên nguồn source_general_law.\n\nConclusion:\nAnswer được Prolog ràng buộc là conditions([co_the_nop_ho_so_khi_khong_co_so,can_nop_giay_to_thay_the_de_xac_minh,co_quan_bhxh_xac_minh_va_cap_lai_so_hoac_thuc_hien_chi_tra]).\nTrace trả về: [step(conclusion,can_withdraw_without_book(conditions([co_the_nop_ho_so_khi_khong_co_so,can_nop_giay_to_thay_the_de_xac_minh,co_quan_bhxh_xac_minh_va_cap_lai_so_hoac_thuc_hien_chi_tra])),based_on(source_general_law))].",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,can_withdraw_without_book(conditions([co_the_nop_ho_so_khi_khong_co_so,can_nop_giay_to_thay_the_de_xac_minh,co_quan_bhxh_xac_minh_va_cap_lai_so_hoac_thuc_hien_chi_tra])),based_on(source_general_law))]",
+  "irac_sections": {
+    "issue": "Không có sổ bảo hiểm chỉ có tờ rời thì có đi rút bảo hiểm được không?",
+    "rule": "legal_source(source_general_law, law_bhxh_2024, none, none, none, 'Sổ bảo hiểm xã hội là chứng từ ghi nhận quá trình đóng BHXH; nếu mất hoặc không có sổ, người lao động vẫn có thể nộp hồ sơ hưởng hoặc rút BHXH bằng giấy tờ thay thế và cơ quan BHXH có trách nhiệm xác minh, tra cứu hồ sơ, cập nhật dữ liệu và cấp lại sổ hoặc thực hiện chi trả dựa trên kết quả xác minh.').",
+    "application": "Slot bindings: không có slot (slot_bindings rỗng).\nTruy vấn Prolog: ?- can_withdraw_without_book(Answer, Trace).\nMô tả tiêu thụ: truy vấn không cần tham số thêm từ người dùng; quy tắc can_withdraw_without_book được gọi và trả về biến Answer cùng Trace dựa trên nguồn source_general_law.",
+    "conclusion": "Answer được Prolog ràng buộc là conditions([co_the_nop_ho_so_khi_khong_co_so,can_nop_giay_to_thay_the_de_xac_minh,co_quan_bhxh_xac_minh_va_cap_lai_so_hoac_thuc_hien_chi_tra]).\nTrace trả về: [step(conclusion,can_withdraw_without_book(conditions([co_the_nop_ho_so_khi_khong_co_so,can_nop_giay_to_thay_the_de_xac_minh,co_quan_bhxh_xac_minh_va_cap_lai_so_hoac_thuc_hien_chi_tra])),based_on(source_general_law))]."
+  },
+  "elapsed_s": 49.925,
+  "prompt_tokens": 3328,
+  "completion_tokens": 5143,
+  "error": null,
+  "gold_answer": "Không có sổ giấy mà chỉ có tờ rời thì vẫn không phải là trở ngại tuyệt đối. Cơ quan BHXH hiện dựa chủ yếu vào dữ liệu điện tử; nếu hồ sơ giấy thiếu bạn có thể làm thủ tục cấp lại sổ hoặc xác nhận quá trình đóng rồi nộp hồ sơ BHXH 1 lần. Quan trọng là bạn đủ điều kiện hưởng và thông tin định danh thống nhất.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

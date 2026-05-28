@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 107,
+  "question": "Bảo hiểm của e đóng từ 2015, đóng gián đoạn. Đến năm 2021 thì nghỉ đóng, vậy e có được rút không? và rút được bao nhiêu?",
+  "answer": "Issue:\nBạn hỏi: bạn đã tham gia bảo hiểm xã hội tự nguyện, đóng gián đoạn và đã nghỉ đóng; có được rút không và rút được bao nhiêu?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15) - Điều 141 khoản 9: \"Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\"\n\nApplication:\nslot_bindings: none provided.\nProlog derivation (trace) produced contribution_span(user,6) as evidence (step(evidence, contribution_span(user,6), based_on(source_c0))) and then produced the conclusion withdrawal_possibility(user,cannot_determine_withdrawal_due_to_missing_withdrawal_rule) (step(conclusion, withdrawal_possibility(user,cannot_determine_withdrawal_due_to_missing_withdrawal_rule), based_on(source_c0))). Các bước này dựa trên nguồn pháp luật source_c0 (Luật BHXH 2024 Điều 141 khoản 9).\n\nConclusion:\nAnswer = \"cannot_determine_withdrawal_due_to_missing_withdrawal_rule\".\nProlog trả về binding trung gian contribution_span(user,6) nhưng không thể cho kết luận về số tiền rút vì thiếu quy định/luật cho việc tính hoặc rút (cannot_determine_withdrawal_due_to_missing_withdrawal_rule).",
+  "citations": [
+    "[Điều 141 khoản 9]",
+    "[Điều 98]"
+  ],
+  "citation_ids": [
+    "L41_2024.A141.K9",
+    "L41_2024.A98"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(evidence,contribution_span(user,6),based_on(source_c0)),step(conclusion,withdrawal_possibility(user,cannot_determine_withdrawal_due_to_missing_withdrawal_rule),based_on(source_c0))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi: bạn đã tham gia bảo hiểm xã hội tự nguyện, đóng gián đoạn và đã nghỉ đóng; có được rút không và rút được bao nhiêu?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15) - Điều 141 khoản 9: \"Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\"",
+    "application": "slot_bindings: none provided.\nProlog derivation (trace) produced contribution_span(user,6) as evidence (step(evidence, contribution_span(user,6), based_on(source_c0))) and then produced the conclusion withdrawal_possibility(user,cannot_determine_withdrawal_due_to_missing_withdrawal_rule) (step(conclusion, withdrawal_possibility(user,cannot_determine_withdrawal_due_to_missing_withdrawal_rule), based_on(source_c0))). Các bước này dựa trên nguồn pháp luật source_c0 (Luật BHXH 2024 Điều 141 khoản 9).",
+    "conclusion": "Answer = \"cannot_determine_withdrawal_due_to_missing_withdrawal_rule\".\nProlog trả về binding trung gian contribution_span(user,6) nhưng không thể cho kết luận về số tiền rút vì thiếu quy định/luật cho việc tính hoặc rút (cannot_determine_withdrawal_due_to_missing_withdrawal_rule)."
+  },
+  "elapsed_s": 76.48,
+  "prompt_tokens": 5270,
+  "completion_tokens": 6659,
+  "error": null,
+  "gold_answer": "Nếu bạn đã ngừng đóng từ năm 2021 đến nay và không thuộc diện tiếp tục tham gia, về nguyên tắc bạn có thể đề nghị hưởng BHXH 1 lần nếu thuộc trường hợp luật cho phép. Mức hưởng tính theo số năm đã đóng và mức bình quân tiền lương tháng đóng BHXH sau điều chỉnh; mỗi năm từ 2014 trở đi tính 2 tháng bình quân lương, trước 2014 tính 1,5 tháng/năm.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

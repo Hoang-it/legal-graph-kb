@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 171,
+  "question": "Mọi người ơi cho e hỏi nhận tiền trợ cấp thất nghiệp cần những giấy tờ gì vậy?",
+  "answer": "Issue:\nCâu hỏi đặt ra là để nhận tiền trợ cấp thất nghiệp thì người lao động cần chuẩn bị những giấy tờ gì theo quy định pháp luật hiện hành.\n\nRule:\n\"Hồ sơ đề nghị hưởng trợ cấp thất nghiệp bao gồm: đơn đề nghị hưởng trợ cấp thất nghiệp, bản chính hoặc bản sao hợp lệ quyết định thôi việc hoặc hợp đồng lao động đã hết hạn hoặc thỏa thuận chấm dứt hợp đồng lao động, sổ bảo hiểm xã hội, và các giấy tờ liên quan khác theo quy định.\" (law_bhxh_2024, article_46, clause_1)\n\nApplication:\nKhông có slot_id cụ thể nào được nhập từ người dùng. Hệ thống Prolog đã truy vấn và xác định các giấy tờ cần thiết dựa trên quy định tại law_bhxh_2024, article_46, clause_1, bao gồm: don_de_nghi_huong_tro_cap_that_nghiep, quyet_dinh_thoi_viec_hoac_hop_dong_het_han_hoac_thoa_thuan_cham_dut, so_bao_hiem_xa_hoi, giay_to_lien_quan_khac.\n\nConclusion:\nTheo kết quả truy vấn, hồ sơ đề nghị hưởng trợ cấp thất nghiệp cần có: đơn đề nghị hưởng trợ cấp thất nghiệp, quyết định thôi việc hoặc hợp đồng lao động hết hạn hoặc thỏa thuận chấm dứt hợp đồng lao động, sổ bảo hiểm xã hội, và các giấy tờ liên quan khác.",
+  "citations": [
+    "[Điều 46 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A46.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_required_documents([don_de_nghi_huong_tro_cap_that_nghiep,quyet_dinh_thoi_viec_hoac_hop_dong_het_han_hoac_thoa_thuan_cham_dut,so_bao_hiem_xa_hoi,giay_to_lien_quan_khac]),based_on(source_a46_k1))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là để nhận tiền trợ cấp thất nghiệp thì người lao động cần chuẩn bị những giấy tờ gì theo quy định pháp luật hiện hành.",
+    "rule": "\"Hồ sơ đề nghị hưởng trợ cấp thất nghiệp bao gồm: đơn đề nghị hưởng trợ cấp thất nghiệp, bản chính hoặc bản sao hợp lệ quyết định thôi việc hoặc hợp đồng lao động đã hết hạn hoặc thỏa thuận chấm dứt hợp đồng lao động, sổ bảo hiểm xã hội, và các giấy tờ liên quan khác theo quy định.\" (law_bhxh_2024, article_46, clause_1)",
+    "application": "Không có slot_id cụ thể nào được nhập từ người dùng. Hệ thống Prolog đã truy vấn và xác định các giấy tờ cần thiết dựa trên quy định tại law_bhxh_2024, article_46, clause_1, bao gồm: don_de_nghi_huong_tro_cap_that_nghiep, quyet_dinh_thoi_viec_hoac_hop_dong_het_han_hoac_thoa_thuan_cham_dut, so_bao_hiem_xa_hoi, giay_to_lien_quan_khac.",
+    "conclusion": "Theo kết quả truy vấn, hồ sơ đề nghị hưởng trợ cấp thất nghiệp cần có: đơn đề nghị hưởng trợ cấp thất nghiệp, quyết định thôi việc hoặc hợp đồng lao động hết hạn hoặc thỏa thuận chấm dứt hợp đồng lao động, sổ bảo hiểm xã hội, và các giấy tờ liên quan khác."
+  },
+  "elapsed_s": 5.306,
+  "prompt_tokens": 2222,
+  "completion_tokens": 604,
+  "error": null,
+  "gold_answer": "Hồ sơ nhận trợ cấp thất nghiệp thường gồm: đơn đề nghị hưởng trợ cấp thất nghiệp, CCCD và giấy tờ chứng minh chấm dứt HĐLĐ/hợp đồng làm việc. Bạn nộp tại trung tâm dịch vụ việc làm trong 03 tháng kể từ ngày nghỉ việc. Sau đó phải theo lịch hẹn để nhận quyết định và thông báo tìm kiếm việc làm hằng tháng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

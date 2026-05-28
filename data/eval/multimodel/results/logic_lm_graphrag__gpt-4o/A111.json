@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 111,
+  "question": "Nghỉ việc thiếu tờ rơi có lãnh được bảo hiểm thất nghiệp không?",
+  "answer": "Issue: Người lao động nghỉ việc nhưng thiếu tờ rơi có thể lãnh bảo hiểm thất nghiệp không?\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 38, Khoản 3: \"Không đăng ký hoặc đăng ký không đầy đủ số người phải tham gia bảo hiểm thất nghiệp trong thời hạn 60 ngày kể từ ngày hết thời hạn phải tham gia bảo hiểm thất nghiệp theo quy định của pháp luật về bảo hiểm thất nghiệp;\"\n\nApplication: Trong trường hợp này, không có thông tin cụ thể nào được cung cấp về việc đăng ký bảo hiểm thất nghiệp. Tuy nhiên, theo quy định tại Điều 38, Khoản 3 của Luật BHXH 2024, việc không đăng ký hoặc đăng ký không đầy đủ trong thời hạn quy định có thể ảnh hưởng đến khả năng nhận bảo hiểm thất nghiệp.\n\nConclusion: Theo kết quả từ hệ thống, người lao động không đủ điều kiện nhận bảo hiểm thất nghiệp nếu thiếu tờ rơi, dựa trên nguồn thông tin từ Điều 38, Khoản 3 của Luật BHXH 2024.",
+  "citations": [
+    "[Điều 38 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A38.K3"
+  ],
+  "citation_indices": [
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_eligibility_without_document(no),based_on(source_c038))]",
+  "irac_sections": {
+    "issue": "Người lao động nghỉ việc nhưng thiếu tờ rơi có thể lãnh bảo hiểm thất nghiệp không?",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 38, Khoản 3: \"Không đăng ký hoặc đăng ký không đầy đủ số người phải tham gia bảo hiểm thất nghiệp trong thời hạn 60 ngày kể từ ngày hết thời hạn phải tham gia bảo hiểm thất nghiệp theo quy định của pháp luật về bảo hiểm thất nghiệp;\"",
+    "application": "Trong trường hợp này, không có thông tin cụ thể nào được cung cấp về việc đăng ký bảo hiểm thất nghiệp. Tuy nhiên, theo quy định tại Điều 38, Khoản 3 của Luật BHXH 2024, việc không đăng ký hoặc đăng ký không đầy đủ trong thời hạn quy định có thể ảnh hưởng đến khả năng nhận bảo hiểm thất nghiệp.",
+    "conclusion": "Theo kết quả từ hệ thống, người lao động không đủ điều kiện nhận bảo hiểm thất nghiệp nếu thiếu tờ rơi, dựa trên nguồn thông tin từ Điều 38, Khoản 3 của Luật BHXH 2024."
+  },
+  "elapsed_s": 5.164,
+  "prompt_tokens": 2846,
+  "completion_tokens": 434,
+  "error": null,
+  "gold_answer": "Thực tế hồ sơ BHTN cần có tài liệu chứng minh chấm dứt HĐLĐ và dữ liệu quá trình đóng BHTN. Nếu thiếu tờ rời/sổ giấy nhưng dữ liệu trên hệ thống BHXH đã chốt đầy đủ thì trung tâm dịch vụ việc làm vẫn có thể tiếp nhận theo dữ liệu điện tử hoặc yêu cầu bổ sung. Bạn nên xin xác nhận quá trình đóng/chốt sổ trước, tránh nộp sát hạn 03 tháng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

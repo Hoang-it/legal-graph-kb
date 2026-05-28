@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 63,
+  "question": "Tôi làm việc tại cty được 18 năm, giờ tôi nghỉ ngang vì ko xin được giấy thôi việc, hiện tại tôi đã đi làm ở 1 công ty khác.vậy bảo hiểm thất nghiệp của tôi cộng dồn vào những năm tiếp theo tôi đóng ở công ty mới hay sẽ bị mất?",
+  "answer": "Issue:\nCâu hỏi đặt ra là khi người lao động đã làm việc 18 năm tại công ty cũ, nghỉ ngang mà không có giấy thôi việc, sau đó chuyển sang công ty mới thì thời gian đóng bảo hiểm thất nghiệp trước đó có được cộng dồn tiếp hay sẽ bị mất.\n\nRule:\n\"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 3)\n\nApplication:\nKhông có slot_id nào được ràng buộc cụ thể trong trường hợp này. Prolog đã sử dụng quy định tại Điều 13, Khoản 3 Luật BHXH 2024 để xác định rằng việc xác nhận thời gian đóng bảo hiểm xã hội là cần thiết khi người lao động thôi việc, kể cả khi nghỉ ngang, nhằm đảm bảo quyền lợi cộng dồn bảo hiểm thất nghiệp khi chuyển sang công ty mới.\n\nConclusion:\nTheo kết quả Prolog: Thời gian đã đóng bảo hiểm thất nghiệp sẽ được cộng dồn khi tiếp tục tham gia ở công ty mới, không bị mất, nhưng cần xác nhận thời gian đóng tại công ty cũ với cơ quan bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 13 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A13.K3"
+  ],
+  "citation_indices": [
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_accumulation(Thời gian đã đóng bảo hiểm thất nghiệp sẽ được cộng dồn khi tiếp tục tham gia ở công ty mới, không bị mất, nhưng cần xác nhận thời gian đóng tại công ty cũ với cơ quan bảo hiểm xã hội.),based_on(source_c005))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là khi người lao động đã làm việc 18 năm tại công ty cũ, nghỉ ngang mà không có giấy thôi việc, sau đó chuyển sang công ty mới thì thời gian đóng bảo hiểm thất nghiệp trước đó có được cộng dồn tiếp hay sẽ bị mất.",
+    "rule": "\"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 3)",
+    "application": "Không có slot_id nào được ràng buộc cụ thể trong trường hợp này. Prolog đã sử dụng quy định tại Điều 13, Khoản 3 Luật BHXH 2024 để xác định rằng việc xác nhận thời gian đóng bảo hiểm xã hội là cần thiết khi người lao động thôi việc, kể cả khi nghỉ ngang, nhằm đảm bảo quyền lợi cộng dồn bảo hiểm thất nghiệp khi chuyển sang công ty mới.",
+    "conclusion": "Theo kết quả Prolog: Thời gian đã đóng bảo hiểm thất nghiệp sẽ được cộng dồn khi tiếp tục tham gia ở công ty mới, không bị mất, nhưng cần xác nhận thời gian đóng tại công ty cũ với cơ quan bảo hiểm xã hội."
+  },
+  "elapsed_s": 6.108,
+  "prompt_tokens": 3047,
+  "completion_tokens": 529,
+  "error": null,
+  "gold_answer": "Thời gian đóng BHTN chưa hưởng sẽ được bảo lưu để cộng dồn với thời gian đóng ở công ty mới, không tự mất chỉ vì bạn nghỉ ngang. Điều quan trọng là lần nghỉ việc trước bạn chưa nhận trợ cấp thất nghiệp cho khoảng thời gian đó. Khi đủ điều kiện hưởng ở lần sau, cơ quan có thẩm quyền sẽ cộng dồn thời gian đóng BHTN chưa hưởng để tính số tháng trợ cấp. Tuy nhiên hồ sơ chấm dứt HĐLĐ của từng giai đoạn vẫn phải hợp lệ.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 49"
+}

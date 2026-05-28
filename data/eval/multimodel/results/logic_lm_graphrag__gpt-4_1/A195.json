@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 195,
+  "question": "mik đang đi làm đóng bảo hiển xh mà mik xin nghỉ đội 1-2 tháng đi thụ tinh nhân tạo thì có được hưởng ít bảo hiểm nào không?",
+  "answer": "Issue:\nBạn hỏi rằng khi đang đi làm và đóng bảo hiểm xã hội, nếu xin nghỉ 1-2 tháng để đi thụ tinh nhân tạo thì có được hưởng chế độ bảo hiểm xã hội nào không.\n\nRule:\n\"Đối tượng quy định tại điểm b và điểm c khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của người hành nghề khám bệnh, chữa bệnh thuộc cơ sở khám bệnh, chữa bệnh thì phải đóng bảo hiểm xã hội bắt buộc từ đủ 03 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con.\" (Luật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 3)\n\nApplication:\nCác điều kiện được Prolog truy vấn gồm: phai_dong_bhxh_bat_buoc_tu_du_12_thang, nghi_duong_thai_theo_chi_dinh_co_so_kham_chua_benh, da_dong_bhxh_bat_buoc_tu_du_03_thang_trong_12_thang_truoc_khi_sinh. Truy vấn xác định rằng để được hưởng chế độ thai sản khi nghỉ dưỡng thai (bao gồm trường hợp thụ tinh nhân tạo), bạn cần đáp ứng đủ các điều kiện này.\n\nConclusion:\nCác điều kiện cần thiết để hưởng chế độ thai sản khi nghỉ dưỡng thai là: phai_dong_bhxh_bat_buoc_tu_du_12_thang, nghi_duong_thai_theo_chi_dinh_co_so_kham_chua_benh, da_dong_bhxh_bat_buoc_tu_du_03_thang_trong_12_thang_truoc_khi_sinh. Nếu bạn đáp ứng đủ các điều kiện này, bạn sẽ được hưởng chế độ bảo hiểm xã hội theo quy định.",
+  "citations": [
+    "[Điều 50 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A50.K3"
+  ],
+  "citation_indices": [
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,che_do_thai_san_duong_thai_conditions([phai_dong_bhxh_bat_buoc_tu_du_12_thang,nghi_duong_thai_theo_chi_dinh_co_so_kham_chua_benh,da_dong_bhxh_bat_buoc_tu_du_03_thang_trong_12_thang_truoc_khi_sinh]),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi rằng khi đang đi làm và đóng bảo hiểm xã hội, nếu xin nghỉ 1-2 tháng để đi thụ tinh nhân tạo thì có được hưởng chế độ bảo hiểm xã hội nào không.",
+    "rule": "\"Đối tượng quy định tại điểm b và điểm c khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của người hành nghề khám bệnh, chữa bệnh thuộc cơ sở khám bệnh, chữa bệnh thì phải đóng bảo hiểm xã hội bắt buộc từ đủ 03 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con.\" (Luật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 3)",
+    "application": "Các điều kiện được Prolog truy vấn gồm: phai_dong_bhxh_bat_buoc_tu_du_12_thang, nghi_duong_thai_theo_chi_dinh_co_so_kham_chua_benh, da_dong_bhxh_bat_buoc_tu_du_03_thang_trong_12_thang_truoc_khi_sinh. Truy vấn xác định rằng để được hưởng chế độ thai sản khi nghỉ dưỡng thai (bao gồm trường hợp thụ tinh nhân tạo), bạn cần đáp ứng đủ các điều kiện này.",
+    "conclusion": "Các điều kiện cần thiết để hưởng chế độ thai sản khi nghỉ dưỡng thai là: phai_dong_bhxh_bat_buoc_tu_du_12_thang, nghi_duong_thai_theo_chi_dinh_co_so_kham_chua_benh, da_dong_bhxh_bat_buoc_tu_du_03_thang_trong_12_thang_truoc_khi_sinh. Nếu bạn đáp ứng đủ các điều kiện này, bạn sẽ được hưởng chế độ bảo hiểm xã hội theo quy định."
+  },
+  "elapsed_s": 7.388,
+  "prompt_tokens": 3605,
+  "completion_tokens": 729,
+  "error": null,
+  "gold_answer": "Nếu bạn đang đóng BHXH mà xin nghỉ 1-2 tháng để đi thụ tinh nhân tạo thì quyền lợi phụ thuộc loại nghỉ và giấy tờ y tế. Nếu nghỉ ốm/điều trị theo chỉ định của cơ sở khám chữa bệnh có thẩm quyền thì có thể được xem xét chế độ ốm đau. Nếu chỉ tự nghỉ không lương mà không có hồ sơ y tế phù hợp thì thường không có chế độ BHXH riêng cho việc đó.",
+  "gold_citations_raw": "Điều 42, 43, 47 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

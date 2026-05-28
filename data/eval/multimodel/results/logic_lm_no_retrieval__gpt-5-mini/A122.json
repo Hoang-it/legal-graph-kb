@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 122,
+  "question": "E nghỉ từ tháng 6 năm ngoái thì bây giờ có đi làm bảo hiểm thất nghiệp đc không?",
+  "answer": "Issue:\nBạn hỏi: nếu bạn nghỉ từ tháng 6 năm ngoái thì bây giờ có thể đi làm thủ tục hưởng bảo hiểm thất nghiệp hay không?\n\nRule:\n'Người lao động được hưởng trợ cấp thất nghiệp nếu đã đóng bảo hiểm thất nghiệp tối thiểu 12 tháng trong 24 tháng trước khi thất nghiệp.' (document: law_bhxh_2024, article: none, clause: none)\n'Người thất nghiệp phải đăng ký và nộp hồ sơ hưởng trợ cấp tại trung tâm dịch vụ việc làm trong vòng 3 tháng kể từ ngày chấm dứt quan hệ lao động.' (document: law_bhxh_2024, article: none, clause: none)\n\nApplication:\nslot_bindings: none.\nverify_facts: stopped_in_june_last_year(user).\nProlog query answer_unemployment_eligibility(user, Answer, Trace) đã sử dụng fact stopped_in_june_last_year(user) và áp dụng hai điều kiện luật (dựa trên source_bhtn_12m và source_bhtn_register) như thể hiện trong Trace: thông báo kiểm tra thời gian đóng 12 tháng trong 24 tháng và yêu cầu đăng ký trong vòng 3 tháng.\n\nConclusion:\nProlog binding: Answer = \"Bạn cần kiểm tra hai điều: (1) bạn đã đóng bảo hiểm thất nghiệp ít nhất 12 tháng trong 24 tháng trước khi nghỉ việc chưa; (2) bạn đã đăng ký hưởng trợ cấp tại trung tâm dịch vụ việc làm trong vòng 3 tháng kể từ ngày chấm dứt quan hệ lao động hay không. Nếu bạn nghỉ từ tháng 6 năm ngoái, thời hạn đăng ký 3 tháng có thể đã quá, nên liên hệ trung tâm dịch vụ việc làm để xác minh hồ sơ.\" Trace được cung cấp trong execution_result.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(evaluation,Applied general eligibility conditions to a person who stopped in June last year,based_on(source_bhtn_12m)),step(evaluation,Noted registration-deadline requirement (3 months),based_on(source_bhtn_register))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi: nếu bạn nghỉ từ tháng 6 năm ngoái thì bây giờ có thể đi làm thủ tục hưởng bảo hiểm thất nghiệp hay không?",
+    "rule": "'Người lao động được hưởng trợ cấp thất nghiệp nếu đã đóng bảo hiểm thất nghiệp tối thiểu 12 tháng trong 24 tháng trước khi thất nghiệp.' (document: law_bhxh_2024, article: none, clause: none)\n'Người thất nghiệp phải đăng ký và nộp hồ sơ hưởng trợ cấp tại trung tâm dịch vụ việc làm trong vòng 3 tháng kể từ ngày chấm dứt quan hệ lao động.' (document: law_bhxh_2024, article: none, clause: none)",
+    "application": "slot_bindings: none.\nverify_facts: stopped_in_june_last_year(user).\nProlog query answer_unemployment_eligibility(user, Answer, Trace) đã sử dụng fact stopped_in_june_last_year(user) và áp dụng hai điều kiện luật (dựa trên source_bhtn_12m và source_bhtn_register) như thể hiện trong Trace: thông báo kiểm tra thời gian đóng 12 tháng trong 24 tháng và yêu cầu đăng ký trong vòng 3 tháng.",
+    "conclusion": "Prolog binding: Answer = \"Bạn cần kiểm tra hai điều: (1) bạn đã đóng bảo hiểm thất nghiệp ít nhất 12 tháng trong 24 tháng trước khi nghỉ việc chưa; (2) bạn đã đăng ký hưởng trợ cấp tại trung tâm dịch vụ việc làm trong vòng 3 tháng kể từ ngày chấm dứt quan hệ lao động hay không. Nếu bạn nghỉ từ tháng 6 năm ngoái, thời hạn đăng ký 3 tháng có thể đã quá, nên liên hệ trung tâm dịch vụ việc làm để xác minh hồ sơ.\" Trace được cung cấp trong execution_result."
+  },
+  "elapsed_s": 50.971,
+  "prompt_tokens": 2423,
+  "completion_tokens": 6059,
+  "error": null,
+  "gold_answer": "Nếu bạn nghỉ từ tháng 6 năm ngoái mà đến nay mới đi làm BHTN thì thường đã quá thời hạn nộp hồ sơ 03 tháng kể từ ngày chấm dứt HĐLĐ, nên không còn được giải quyết cho đợt nghỉ việc đó. Thời gian đã đóng BHTN nhưng chưa hưởng sẽ được bảo lưu để tính cho lần thất nghiệp sau, nếu sau này bạn đi làm lại và tiếp tục tham gia BHTN.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 127,
+  "question": "nếu đóng BHXH tự nguyện thì có được BHYT hay bảo hiểm thai sản không?",
+  "answer": "Issue: Nếu đóng BHXH tự nguyện thì có được BHYT hay bảo hiểm thai sản không?\n\nRule: \"4. Tiếp nhận hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế và cấp sổ bảo hiểm xã hội, thẻ bảo hiểm y tế cho người lao động.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 4)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để xác định quyền lợi về bảo hiểm y tế và bảo hiểm thai sản.\n\nConclusion: Hệ thống không thể tính toán được số liệu cuối cùng do không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 18 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K4"
+  ],
+  "citation_indices": [
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,health_insurance_and_maternity_benefits([health_insurance,maternity_benefits]),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Nếu đóng BHXH tự nguyện thì có được BHYT hay bảo hiểm thai sản không?",
+    "rule": "\"4. Tiếp nhận hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế và cấp sổ bảo hiểm xã hội, thẻ bảo hiểm y tế cho người lao động.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 4)",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để xác định quyền lợi về bảo hiểm y tế và bảo hiểm thai sản.",
+    "conclusion": "Hệ thống không thể tính toán được số liệu cuối cùng do không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 7.971,
+  "prompt_tokens": 2900,
+  "completion_tokens": 389,
+  "error": null,
+  "gold_answer": "BHXH tự nguyện không bao gồm BHYT đi kèm và không có chế độ thai sản. Hiện BHXH tự nguyện chủ yếu có chế độ hưu trí và tử tuất. Nếu muốn có BHYT, bạn phải tham gia BHYT theo nhóm phù hợp riêng. Nếu muốn hưởng thai sản, phải tham gia BHXH bắt buộc và đáp ứng điều kiện về thời gian đóng theo luật.",
+  "gold_citations_raw": "Điều 4, 5, 36 Luật BHXH 2024; Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

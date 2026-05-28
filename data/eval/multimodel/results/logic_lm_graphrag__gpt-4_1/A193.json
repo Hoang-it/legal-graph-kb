@@ -1,0 +1,38 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 193,
+  "question": "Em nghỉ cty cách đây 8/9 năm r nhưng m chưa chốt lấy bảo hiểm\nGiờ m muốn lấy bảo hiểm thì đến cty m đã lm để lấy hay lấy ở đâu?",
+  "answer": "Issue:\nBạn hỏi rằng sau khi nghỉ việc tại công ty khoảng 8-9 năm nhưng chưa chốt và nhận bảo hiểm xã hội, hiện nay muốn nhận thì phải đến công ty cũ hay đến đâu để làm thủ tục nhận bảo hiểm xã hội.\n\nRule:\n\"Trực tiếp từ cơ quan bảo hiểm xã hội hoặc tổ chức dịch vụ được cơ quan bảo hiểm xã hội ủy quyền.\" (Luật BHXH 2024 (41/2024/QH15), Điều 114, Khoản 2; Điều 93, Khoản 2)\n\"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 3)\n\nApplication:\nKhông có slot cụ thể nào được ràng buộc vì câu hỏi chỉ yêu cầu xác định nơi nhận bảo hiểm xã hội. Prolog đã sử dụng các quy định tại Điều 114, Khoản 2 và Điều 93, Khoản 2 để xác định nơi người lao động có thể làm thủ tục nhận bảo hiểm xã hội là \"cơ quan bảo hiểm xã hội\" hoặc \"tổ chức dịch vụ được cơ quan bảo hiểm xã hội ủy quyền\". Ngoài ra, Điều 13, Khoản 3 quy định trách nhiệm phối hợp xác nhận thời gian đóng bảo hiểm giữa công ty cũ và cơ quan bảo hiểm xã hội.\n\nConclusion:\nTheo kết quả truy vấn Prolog, bạn có thể trực tiếp đến cơ quan bảo hiểm xã hội hoặc tổ chức dịch vụ được cơ quan bảo hiểm xã hội ủy quyền để làm thủ tục nhận bảo hiểm xã hội (Place = [co_quan_bao_hiem_xa_hoi, to_chuc_dich_vu_duoc_uy_quyen]). Công ty cũ có trách nhiệm phối hợp xác nhận thời gian đóng bảo hiểm nếu cần.",
+  "citations": [
+    "[Điều 114 khoản 2]",
+    "[Điều 93 khoản 2]",
+    "[Điều 13 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A114.K2",
+    "L41_2024.A93.K2",
+    "L41_2024.A13.K3"
+  ],
+  "citation_indices": [
+    0,
+    1,
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,where_to_claim_social_insurance([co_quan_bao_hiem_xa_hoi,to_chuc_dich_vu_duoc_uy_quyen]),based_on(source_c001)),step(conclusion,where_to_claim_social_insurance([co_quan_bao_hiem_xa_hoi,to_chuc_dich_vu_duoc_uy_quyen]),based_on(source_c002)),step(conclusion,employer_cooperate_with_bhxh,based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi rằng sau khi nghỉ việc tại công ty khoảng 8-9 năm nhưng chưa chốt và nhận bảo hiểm xã hội, hiện nay muốn nhận thì phải đến công ty cũ hay đến đâu để làm thủ tục nhận bảo hiểm xã hội.",
+    "rule": "\"Trực tiếp từ cơ quan bảo hiểm xã hội hoặc tổ chức dịch vụ được cơ quan bảo hiểm xã hội ủy quyền.\" (Luật BHXH 2024 (41/2024/QH15), Điều 114, Khoản 2; Điều 93, Khoản 2)\n\"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 3)",
+    "application": "Không có slot cụ thể nào được ràng buộc vì câu hỏi chỉ yêu cầu xác định nơi nhận bảo hiểm xã hội. Prolog đã sử dụng các quy định tại Điều 114, Khoản 2 và Điều 93, Khoản 2 để xác định nơi người lao động có thể làm thủ tục nhận bảo hiểm xã hội là \"cơ quan bảo hiểm xã hội\" hoặc \"tổ chức dịch vụ được cơ quan bảo hiểm xã hội ủy quyền\". Ngoài ra, Điều 13, Khoản 3 quy định trách nhiệm phối hợp xác nhận thời gian đóng bảo hiểm giữa công ty cũ và cơ quan bảo hiểm xã hội.",
+    "conclusion": "Theo kết quả truy vấn Prolog, bạn có thể trực tiếp đến cơ quan bảo hiểm xã hội hoặc tổ chức dịch vụ được cơ quan bảo hiểm xã hội ủy quyền để làm thủ tục nhận bảo hiểm xã hội (Place = [co_quan_bao_hiem_xa_hoi, to_chuc_dich_vu_duoc_uy_quyen]). Công ty cũ có trách nhiệm phối hợp xác nhận thời gian đóng bảo hiểm nếu cần."
+  },
+  "elapsed_s": 9.39,
+  "prompt_tokens": 3174,
+  "completion_tokens": 798,
+  "error": null,
+  "gold_answer": "Nếu bạn nghỉ công ty 8-9 năm mà chưa chốt/lấy BHXH, trước hết cần xác định công ty khi đó đã báo giảm, chốt sổ hay chưa. Nếu đã chốt, bạn có thể liên hệ trực tiếp cơ quan BHXH nơi quản lý hoặc nơi cư trú để xin xác nhận/cấp lại. Nếu chưa chốt thì vẫn phải yêu cầu công ty cũ hoàn tất thủ tục; BHXH không thể tự chốt toàn bộ nếu đơn vị chưa báo giảm và chưa hoàn thành nghĩa vụ.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

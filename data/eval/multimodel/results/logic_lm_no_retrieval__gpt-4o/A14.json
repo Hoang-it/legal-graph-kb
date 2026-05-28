@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 14,
+  "question": "Bà Thị Tiếp (Cà Mau) hỏi, xã khu vực III giai đoạn 2016-2020, sang giai đoạn 2021-2025 được xác định là xã khu vực I, đã đạt chuẩn nông thôn mới thì người dân tộc thiểu số tại xã này có thuộc nhóm đối tượng được ngân sách Nhà nước hỗ trợ đóng BHYT không?",
+  "answer": "Issue: Bà Thị Tiếp từ Cà Mau hỏi liệu người dân tộc thiểu số sống tại xã khu vực I, đã đạt chuẩn nông thôn mới trong giai đoạn 2021-2025, có được ngân sách Nhà nước hỗ trợ đóng bảo hiểm y tế (BHYT) không.\n\nRule: Theo quy định tại Điều 12, Khoản 2 của Luật Bảo hiểm xã hội 2024: \"Người dân tộc thiểu số sinh sống tại vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn được ngân sách Nhà nước hỗ trợ đóng BHYT.\"\n\nApplication: Không có thông tin cụ thể về các điều kiện kinh tế - xã hội của xã khu vực I trong giai đoạn 2021-2025 được cung cấp. Do đó, không thể xác định liệu xã này có thuộc vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn hay không.\n\nConclusion: Hệ thống không thể kết luận liệu người dân tộc thiểu số tại xã khu vực I đã đạt chuẩn nông thôn mới có thuộc nhóm đối tượng được hỗ trợ đóng BHYT hay không, do thiếu thông tin về điều kiện kinh tế - xã hội của xã này.",
+  "citations": [
+    "[Điều 12 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A12.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,eligible_for_health_insurance_support(Người dân tộc thiểu số sinh sống tại vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn),based_on(source_a12_k2))]",
+  "irac_sections": {
+    "issue": "Bà Thị Tiếp từ Cà Mau hỏi liệu người dân tộc thiểu số sống tại xã khu vực I, đã đạt chuẩn nông thôn mới trong giai đoạn 2021-2025, có được ngân sách Nhà nước hỗ trợ đóng bảo hiểm y tế (BHYT) không.",
+    "rule": "Theo quy định tại Điều 12, Khoản 2 của Luật Bảo hiểm xã hội 2024: \"Người dân tộc thiểu số sinh sống tại vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn được ngân sách Nhà nước hỗ trợ đóng BHYT.\"",
+    "application": "Không có thông tin cụ thể về các điều kiện kinh tế - xã hội của xã khu vực I trong giai đoạn 2021-2025 được cung cấp. Do đó, không thể xác định liệu xã này có thuộc vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn hay không.",
+    "conclusion": "Hệ thống không thể kết luận liệu người dân tộc thiểu số tại xã khu vực I đã đạt chuẩn nông thôn mới có thuộc nhóm đối tượng được hỗ trợ đóng BHYT hay không, do thiếu thông tin về điều kiện kinh tế - xã hội của xã này."
+  },
+  "elapsed_s": 4.363,
+  "prompt_tokens": 2200,
+  "completion_tokens": 456,
+  "error": null,
+  "gold_answer": "Ngày 23/4/2024, Bộ Y tế ban hành Công văn số 2068/BYT-BH về việc vướng mắc trong triển khai thi hành Nghị định số 75/2023/NĐ-CP thay thế Công văn số 917/BYT-BH, trong đó quy định: Ngày 19/10/2023, Chính phủ ban hành Nghị định số 75/2023/NĐ-CP sửa đổi, bổ sung một số điều của Nghị định số 146/2018/NĐ-CP ngày 17/10/2018 quy định chi tiết và hướng dẫn biện pháp thi hành một số điều của Luật BHYT, trong đó:\n- Tại Điểm c Khoản 2 Điều 1 quy định: Người dân tộc thiểu số đang sinh sống tại địa bàn các xã khu vực II, khu vực III, thôn đặc biệt khó khăn thuộc vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2016-2020 mà các xã này không còn trong danh sách các xã khu vực II, khu vực III, thôn đặc biệt khó khăn thuộc vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2021-2025 theo quyết định của Thủ tướng Chính phủ.\n- Tại Điểm a Khoản 3 Điều 1 quy định ngân sách nhà nước hỗ trợ tối thiểu 70% mức đóng BHYT đối với đối tượng quy định tại Điểm c Khoản 2 Điều 1 Nghị định số 75/2023/NĐ-CP.\n- Tại Khoản 3 Điều 3 quy định ngân sách Nhà nước hỗ trợ cho đối tượng quy định tại Điểm c Khoản 2 Điều 1 Nghị định này trong thời gian 36 (ba mươi sáu) tháng kể từ ngày 1/11/2023.\nVì vậy, người dân tộc thiểu số thuộc đổi tượng nêu trên sẽ được ngân sách nhà nước hỗ trợ tối thiểu 70% mức đóng BHYT trong thời gian 36 tháng kể từ ngày 1/11/2023.",
+  "gold_citations_raw": "Công văn số 2068/BYT-BH"
+}

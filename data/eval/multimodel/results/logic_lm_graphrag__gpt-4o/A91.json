@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 91,
+  "question": "trường hợp nghỉ bệnh hưởng BHXH thì nộp hồ sơ trong vòng bao lâu sẽ được chi trả vậy?",
+  "answer": "Issue: Trường hợp nghỉ bệnh hưởng bảo hiểm xã hội (BHXH), cần nộp hồ sơ trong vòng bao lâu để được chi trả?\n\nRule: \"Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), Điều 76, Khoản 5)\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên quy định tại Điều 76, Khoản 5 của Luật BHXH 2024, cơ quan bảo hiểm xã hội phải giải quyết hồ sơ trong vòng 07 ngày làm việc kể từ khi nhận đủ hồ sơ.\n\nConclusion: Theo kết quả từ Prolog, thời hạn để cơ quan bảo hiểm xã hội giải quyết hồ sơ là 7 ngày làm việc (Days = 7).",
+  "citations": [
+    "[Điều 76 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A76.K5"
+  ],
+  "citation_indices": [
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,sick_leave_submission_deadline(7),based_on(source_c006))]",
+  "irac_sections": {
+    "issue": "Trường hợp nghỉ bệnh hưởng bảo hiểm xã hội (BHXH), cần nộp hồ sơ trong vòng bao lâu để được chi trả?",
+    "rule": "\"Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), Điều 76, Khoản 5)",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên quy định tại Điều 76, Khoản 5 của Luật BHXH 2024, cơ quan bảo hiểm xã hội phải giải quyết hồ sơ trong vòng 07 ngày làm việc kể từ khi nhận đủ hồ sơ.",
+    "conclusion": "Theo kết quả từ Prolog, thời hạn để cơ quan bảo hiểm xã hội giải quyết hồ sơ là 7 ngày làm việc (Days = 7)."
+  },
+  "elapsed_s": 4.482,
+  "prompt_tokens": 2762,
+  "completion_tokens": 408,
+  "error": null,
+  "gold_answer": "Người lao động phải nộp hồ sơ hưởng ốm đau cho doanh nghiệp hoặc cơ quan BHXH theo thời hạn luật định sau khi trở lại làm việc; doanh nghiệp sau đó phải lập hồ sơ gửi cơ quan BHXH trong thời hạn quy định. Khi nhận đủ hồ sơ hợp lệ, cơ quan BHXH phải giải quyết và chi trả trong thời hạn luật quy định. Nếu hồ sơ kéo dài bất thường, bạn nên kiểm tra xem doanh nghiệp đã nộp hay chưa và hồ sơ y tế có hợp lệ không.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 46, Điều 116"
+}

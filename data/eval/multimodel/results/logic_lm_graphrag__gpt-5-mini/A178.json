@@ -1,0 +1,21 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 178,
+  "question": "em làm mất bìa và sổ BHXH . trên app thì cái sdt và gmail đăng ký thì e mất lâu rồi . bây giờ em phải làm sao?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=unable_to_conclude, repair_rounds=2, error=Connection error.]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "unable_to_conclude",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 4.38,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "error": null,
+  "gold_answer": "Bạn bị mất bìa sổ BHXH và mất cả số điện thoại/gmail đăng ký thì vẫn xử lý được. Trước hết mang CCCD tới cơ quan BHXH để cập nhật lại thông tin liên hệ, cấp lại tài khoản/đổi thông tin trên VssID nếu cần, đồng thời làm thủ tục cấp lại sổ BHXH. Dữ liệu tham gia BHXH vẫn nằm trên hệ thống nên không mất quá trình đóng.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

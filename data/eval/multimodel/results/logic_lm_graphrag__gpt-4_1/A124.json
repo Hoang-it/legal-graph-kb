@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 124,
+  "question": "gộp sổ thì bên bảo hiểm để tầm mấy ngày?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Khi thực hiện gộp sổ bảo hiểm xã hội, cơ quan bảo hiểm sẽ giải quyết trong thời gian bao nhiêu ngày?\n\nRule:\nTheo Luật BHXH 2024 (41/2024/QH15), Điều 91, Khoản 3: \"Trong thời hạn 10 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\n\nApplication:\nKhông có slot nào cần điền vì quy định pháp luật đã xác định rõ thời hạn xử lý. Truy vấn Prolog sử dụng quy tắc merge_insurance_books_processing_time(Days) và trả về giá trị Days = 10 dựa trên nguồn dẫn chiếu source_c001.\n\nConclusion:\nThời hạn để cơ quan bảo hiểm xã hội giải quyết việc gộp sổ là 10 ngày làm việc (Days = 10) kể từ ngày nhận đủ hồ sơ theo quy định.",
+  "citations": [
+    "[Điều 91 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A91.K3"
+  ],
+  "citation_indices": [
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,merge_insurance_books_processing_time(10),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Khi thực hiện gộp sổ bảo hiểm xã hội, cơ quan bảo hiểm sẽ giải quyết trong thời gian bao nhiêu ngày?",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 91, Khoản 3: \"Trong thời hạn 10 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"",
+    "application": "Không có slot nào cần điền vì quy định pháp luật đã xác định rõ thời hạn xử lý. Truy vấn Prolog sử dụng quy tắc merge_insurance_books_processing_time(Days) và trả về giá trị Days = 10 dựa trên nguồn dẫn chiếu source_c001.",
+    "conclusion": "Thời hạn để cơ quan bảo hiểm xã hội giải quyết việc gộp sổ là 10 ngày làm việc (Days = 10) kể từ ngày nhận đủ hồ sơ theo quy định."
+  },
+  "elapsed_s": 5.633,
+  "prompt_tokens": 2645,
+  "completion_tokens": 416,
+  "error": null,
+  "gold_answer": "Thời gian gộp sổ BHXH thường không quá 10 ngày làm việc kể từ khi nhận đủ hồ sơ; trường hợp cần xác minh quá trình ở nhiều nơi thì có thể kéo dài nhưng không quá 45 ngày. Bạn nên xin giấy hẹn hoặc tra cứu mã hồ sơ để theo dõi. Nếu quá hạn mà chưa có kết quả, có thể phản ánh trực tiếp với cơ quan BHXH nơi nộp.",
+  "gold_citations_raw": "Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

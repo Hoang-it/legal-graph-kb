@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 169,
+  "question": "Em đã đóng bhxh đc 8 năm. Em định làm đến khi đóng đc 19 năm thì nghỉ hẳn và nhận 1 cục kèm theo bh thất nghiệp thì theo luật có được ko?",
+  "answer": "Issue: Người dùng đã đóng bảo hiểm xã hội được 8 năm và muốn biết liệu có thể nghỉ hẳn và nhận một cục kèm theo bảo hiểm thất nghiệp khi đủ 19 năm hay không.\n\nRule: \"6. Xác nhận thời gian đóng bảo hiểm xã hội, bảo hiểm thất nghiệp cho từng người lao động; cung cấp đầy đủ và kịp thời thông tin về việc đóng, quyền được hưởng chế độ, thủ tục thực hiện bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện khi người lao động, người sử dụng lao động hoặc tổ chức công đoàn yêu cầu.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 6)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Truy vấn Prolog đã kiểm tra số năm đóng bảo hiểm xã hội của người dùng, nhưng không có thông tin nào để xác định khả năng nhận một cục.\n\nConclusion: Hệ thống không thể tính toán được số liệu cuối cùng vì không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 18 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K6"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,can_receive_one_time_payment(user,no),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Người dùng đã đóng bảo hiểm xã hội được 8 năm và muốn biết liệu có thể nghỉ hẳn và nhận một cục kèm theo bảo hiểm thất nghiệp khi đủ 19 năm hay không.",
+    "rule": "\"6. Xác nhận thời gian đóng bảo hiểm xã hội, bảo hiểm thất nghiệp cho từng người lao động; cung cấp đầy đủ và kịp thời thông tin về việc đóng, quyền được hưởng chế độ, thủ tục thực hiện bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện khi người lao động, người sử dụng lao động hoặc tổ chức công đoàn yêu cầu.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 6)",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Truy vấn Prolog đã kiểm tra số năm đóng bảo hiểm xã hội của người dùng, nhưng không có thông tin nào để xác định khả năng nhận một cục.",
+    "conclusion": "Hệ thống không thể tính toán được số liệu cuối cùng vì không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 13.447,
+  "prompt_tokens": 3544,
+  "completion_tokens": 609,
+  "error": null,
+  "gold_answer": "Bạn đóng đến 19 năm rồi nghỉ để 'nhận 1 cục' không phải lúc nào cũng được. Từ 01/7/2025, nhiều trường hợp có từ đủ 15 năm đóng và đủ tuổi nghỉ hưu sẽ thuộc diện hưởng lương hưu, không mặc nhiên được rút 1 lần theo ý muốn. BHTN thì là chế độ riêng: nếu chấm dứt HĐLĐ hợp pháp, đủ thời gian đóng và nộp đúng hạn, bạn vẫn có thể hưởng BHTN.",
+  "gold_citations_raw": "Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

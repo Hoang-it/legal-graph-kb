@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_graphrag",
+  "stt": 107,
+  "question": "Bảo hiểm của e đóng từ 2015, đóng gián đoạn. Đến năm 2021 thì nghỉ đóng, vậy e có được rút không? và rút được bao nhiêu?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'withdrawal_amount(Amount']",
+  "citations": [
+    "[Điều 100 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A100.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": false,
+  "prolog_status": "invalid_query",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 10.116,
+  "prompt_tokens": 6697,
+  "completion_tokens": 861,
+  "error": null,
+  "gold_answer": "Nếu bạn đã ngừng đóng từ năm 2021 đến nay và không thuộc diện tiếp tục tham gia, về nguyên tắc bạn có thể đề nghị hưởng BHXH 1 lần nếu thuộc trường hợp luật cho phép. Mức hưởng tính theo số năm đã đóng và mức bình quân tiền lương tháng đóng BHXH sau điều chỉnh; mỗi năm từ 2014 trở đi tính 2 tháng bình quân lương, trước 2014 tính 1,5 tháng/năm.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

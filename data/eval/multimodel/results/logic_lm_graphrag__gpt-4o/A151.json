@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 151,
+  "question": "11 năm lương 9trieu 8 trăm rút xã hội đc bao nhiêu ạ",
+  "answer": "Issue: Người dùng muốn biết mức trợ cấp một lần có thể nhận được sau khi đã đóng bảo hiểm xã hội trong 11 năm với mức lương trung bình là 9.800.000 đồng.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 76, Khoản 2: \"Mức trợ cấp một lần đối với người đang hưởng lương hưu được tính theo thời gian đã đóng bảo hiểm xã hội trong đó mỗi năm đóng bảo hiểm xã hội trước năm 2014 được tính bằng 1,5 tháng lương hưu đang hưởng, mỗi năm đóng bảo hiểm xã hội từ năm 2014 trở đi được tính bằng 02 tháng lương hưu đang hưởng; sau đó mỗi tháng đã hưởng lương hưu thì mức trợ cấp một lần trừ 0,5 tháng lương hưu.\"\n\nApplication: \n- Số năm đóng bảo hiểm xã hội: 11 năm.\n- Mức lương trung bình: 9.800.000 đồng.\n- Chương trình Prolog đã sử dụng các thông tin này để tính toán mức trợ cấp một lần dựa trên công thức: Allowance is Years * 2 * AvgSalary / 12.\n\nConclusion: Mức trợ cấp một lần được tính toán là 17966666.666666668 đồng.",
+  "citations": [
+    "[Điều 76 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A76.K2"
+  ],
+  "citation_indices": [
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_allowance(user,17966666.666666668),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Người dùng muốn biết mức trợ cấp một lần có thể nhận được sau khi đã đóng bảo hiểm xã hội trong 11 năm với mức lương trung bình là 9.800.000 đồng.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 76, Khoản 2: \"Mức trợ cấp một lần đối với người đang hưởng lương hưu được tính theo thời gian đã đóng bảo hiểm xã hội trong đó mỗi năm đóng bảo hiểm xã hội trước năm 2014 được tính bằng 1,5 tháng lương hưu đang hưởng, mỗi năm đóng bảo hiểm xã hội từ năm 2014 trở đi được tính bằng 02 tháng lương hưu đang hưởng; sau đó mỗi tháng đã hưởng lương hưu thì mức trợ cấp một lần trừ 0,5 tháng lương hưu.\"",
+    "application": "- Số năm đóng bảo hiểm xã hội: 11 năm.\n- Mức lương trung bình: 9.800.000 đồng.\n- Chương trình Prolog đã sử dụng các thông tin này để tính toán mức trợ cấp một lần dựa trên công thức: Allowance is Years * 2 * AvgSalary / 12.",
+    "conclusion": "Mức trợ cấp một lần được tính toán là 17966666.666666668 đồng."
+  },
+  "elapsed_s": 9.914,
+  "prompt_tokens": 3453,
+  "completion_tokens": 663,
+  "error": null,
+  "gold_answer": "Nếu 11 năm đóng của bạn đều từ năm 2014 trở đi thì BHXH 1 lần ước khoảng khoảng 215,6 triệu, chưa tính hệ số điều chỉnh tiền lương. Số thực nhận do cơ quan BHXH tính sẽ căn cứ mức bình quân tiền lương tháng đóng sau điều chỉnh và làm tròn thời gian đóng theo luật. Nếu có thời gian trước 2014 thì phần đó tính theo hệ số 1,5 tháng/năm.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

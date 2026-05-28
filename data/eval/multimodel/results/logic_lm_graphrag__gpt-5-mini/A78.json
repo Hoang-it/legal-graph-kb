@@ -1,0 +1,33 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 78,
+  "question": "Giờ luật bảo hiểm nữ bao nhiêu tuổi thì về hưu?",
+  "answer": "Issue:\nNữ bao nhiêu tuổi thì được về hưu theo quy định hiện hành?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), article 141, clause 9: \"Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\"\nLuật BHXH 2024 (41/2024/QH15), article 141, clause 10: \"Người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên và có văn bản của cơ quan bảo hiểm xã hội xác nhận về việc chờ đủ điều kiện về tuổi đời để hưởng lương hưu được quy định tại Nghị định số 12/CP ngày 26 tháng 01 năm 1995 được sửa đổi, bổ sung một số điều theo Nghị định số 01/2003/NĐ-CP ngày 09 tháng 01 năm 2003 của Chính phủ thì được hưởng lương hưu khi nam đủ 60 tuổi, nữ đủ 55 tuổi.\nCán \"\n\nApplication:\nSlot bindings: không có slot nào được gán giá trị.\nProlog query female_retirement_age(Age, Trace) được thực thi sử dụng nguồn pháp lý source_c000 và source_c003. Kết quả truy vấn gán Age = 55 và Trace = \"[step(conclusion,female_retirement_age(55),based_on(source_c000)),step(conclusion,female_retirement_age(55),based_on(source_c003))]\".\n\nConclusion:\nProlog trả về Age = 55 (biến Age). Trace kết hợp: [step(conclusion,female_retirement_age(55),based_on(source_c000)),step(conclusion,female_retirement_age(55),based_on(source_c003))].",
+  "citations": [
+    "[Điều 98]"
+  ],
+  "citation_ids": [
+    "L41_2024.A98"
+  ],
+  "citation_indices": [
+    0,
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,female_retirement_age(55),based_on(source_c000)),step(conclusion,female_retirement_age(55),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Nữ bao nhiêu tuổi thì được về hưu theo quy định hiện hành?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), article 141, clause 9: \"Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\"\nLuật BHXH 2024 (41/2024/QH15), article 141, clause 10: \"Người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên và có văn bản của cơ quan bảo hiểm xã hội xác nhận về việc chờ đủ điều kiện về tuổi đời để hưởng lương hưu được quy định tại Nghị định số 12/CP ngày 26 tháng 01 năm 1995 được sửa đổi, bổ sung một số điều theo Nghị định số 01/2003/NĐ-CP ngày 09 tháng 01 năm 2003 của Chính phủ thì được hưởng lương hưu khi nam đủ 60 tuổi, nữ đủ 55 tuổi.\nCán \"",
+    "application": "Slot bindings: không có slot nào được gán giá trị.\nProlog query female_retirement_age(Age, Trace) được thực thi sử dụng nguồn pháp lý source_c000 và source_c003. Kết quả truy vấn gán Age = 55 và Trace = \"[step(conclusion,female_retirement_age(55),based_on(source_c000)),step(conclusion,female_retirement_age(55),based_on(source_c003))]\".",
+    "conclusion": "Prolog trả về Age = 55 (biến Age). Trace kết hợp: [step(conclusion,female_retirement_age(55),based_on(source_c000)),step(conclusion,female_retirement_age(55),based_on(source_c003))]."
+  },
+  "elapsed_s": 54.481,
+  "prompt_tokens": 3503,
+  "completion_tokens": 3352,
+  "error": null,
+  "gold_answer": "Theo lộ trình tuổi nghỉ hưu hiện hành, lao động nữ nghỉ hưu ở tuổi 60 trong điều kiện bình thường. Từ năm 2021 đến năm 2035 tuổi nghỉ hưu của nữ tăng dần mỗi năm 4 tháng cho đến khi đủ 60 tuổi. Vì vậy hiện nay không phải cứ tất cả lao động nữ đều nghỉ đúng 60 ngay, mà phải đối chiếu năm sinh, năm nghỉ hưu và trường hợp làm việc bình thường hay nặng nhọc, đặc biệt nặng nhọc.",
+  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 169; Nghị định 135/2020/NĐ-CP"
+}

@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 46,
+  "question": "Lúc còn huyện cũ thì mình nộp bhxh ở huyện.Còn bây giờ không còn huyện nữa thì mình nộp ở đâu? ở xã hay là hành chính công?",
+  "answer": "Issue:\nLúc còn huyện cũ thì mình nộp BHXH ở huyện. Bây giờ huyện không còn nữa thì phải nộp ở đâu: ở xã hay ở cơ quan hành chính công?\n\nRule:\nKhông có trích dẫn pháp luật đính kèm trong kết quả truy vấn.\n\nApplication:\nslot_bindings: (không có slot nào được gán giá trị).\nProlog query đã chay: \"?- where_to_pay(Answer, Trace).\" Prolog trả về binding cho biến Answer và Trace. Trace trả về: [step(conclusion,where_to_pay(Nộp tại cơ quan Bảo hiểm xã hội quản lý hành chính mới của địa bàn: tức là cơ quan BHXH cấp huyện/quận mới hoặc cơ quan BHXH cấp tỉnh nếu có phân cấp; nơi nêu trên là nơi quản lý hành chính hiện tại của xã/phường nơi anh/chị cư trú hoặc nơi đơn vị sử dụng lao động đặt trụ sở.),based_on(none))]\n\nConclusion:\nAnswer = \"Nộp tại cơ quan Bảo hiểm xã hội quản lý hành chính mới của địa bàn: tức là cơ quan BHXH cấp huyện/quận mới hoặc cơ quan BHXH cấp tỉnh nếu có phân cấp; nơi nêu trên là nơi quản lý hành chính hiện tại của xã/phường nơi anh/chị cư trú hoặc nơi đơn vị sử dụng lao động đặt trụ sở.\" Trace dựa trên: based_on(none) (không có nguồn pháp luật cụ thể kèm theo).",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,where_to_pay(Nộp tại cơ quan Bảo hiểm xã hội quản lý hành chính mới của địa bàn: tức là cơ quan BHXH cấp huyện/quận mới hoặc cơ quan BHXH cấp tỉnh nếu có phân cấp; nơi nêu trên là nơi quản lý hành chính hiện tại của xã/phường nơi anh/chị cư trú hoặc nơi đơn vị sử dụng lao động đặt trụ sở.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Lúc còn huyện cũ thì mình nộp BHXH ở huyện. Bây giờ huyện không còn nữa thì phải nộp ở đâu: ở xã hay ở cơ quan hành chính công?",
+    "rule": "Không có trích dẫn pháp luật đính kèm trong kết quả truy vấn.",
+    "application": "slot_bindings: (không có slot nào được gán giá trị).\nProlog query đã chay: \"?- where_to_pay(Answer, Trace).\" Prolog trả về binding cho biến Answer và Trace. Trace trả về: [step(conclusion,where_to_pay(Nộp tại cơ quan Bảo hiểm xã hội quản lý hành chính mới của địa bàn: tức là cơ quan BHXH cấp huyện/quận mới hoặc cơ quan BHXH cấp tỉnh nếu có phân cấp; nơi nêu trên là nơi quản lý hành chính hiện tại của xã/phường nơi anh/chị cư trú hoặc nơi đơn vị sử dụng lao động đặt trụ sở.),based_on(none))]",
+    "conclusion": "Answer = \"Nộp tại cơ quan Bảo hiểm xã hội quản lý hành chính mới của địa bàn: tức là cơ quan BHXH cấp huyện/quận mới hoặc cơ quan BHXH cấp tỉnh nếu có phân cấp; nơi nêu trên là nơi quản lý hành chính hiện tại của xã/phường nơi anh/chị cư trú hoặc nơi đơn vị sử dụng lao động đặt trụ sở.\" Trace dựa trên: based_on(none) (không có nguồn pháp luật cụ thể kèm theo)."
+  },
+  "elapsed_s": 19.373,
+  "prompt_tokens": 2303,
+  "completion_tokens": 2793,
+  "error": null,
+  "gold_answer": "Sau khi thay đổi mô hình tổ chức hành chính, hồ sơ BHXH thường nộp tại cơ quan BHXH khu vực/cơ quan được phân công tiếp nhận hoặc Trung tâm phục vụ hành chính công, không phải xã nào cũng trực tiếp thu hồ sơ. Bạn nên tra cứu nơi tiếp nhận mới tại địa phương hoặc gọi cơ quan BHXH gần nhất để tránh đi sai nơi. Nguyên tắc là cơ quan BHXH nơi cư trú vẫn có trách nhiệm hướng dẫn, tiếp nhận hoặc chỉ dẫn nơi nộp đúng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; quy định tổ chức thực hiện của BHXH Việt Nam"
+}

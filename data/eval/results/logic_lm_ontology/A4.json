@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 4,
+  "question": "Ông Long (Hà Nội) đóng BHXH được 15 năm, vợ ông mới sinh con, theo quy định, ông được nghỉ 5 ngày.\nÔng Long hỏi, ông cần nộp giấy tờ gì để hưởng quyền lợi này?",
+  "answer": "Issue: Ông Long đã đóng BHXH 15 năm và hỏi về giấy tờ cần nộp để hưởng quyền lợi nghỉ 5 ngày khi vợ sinh con.\nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 61 khoản 3], hồ sơ đề nghị hưởng chế độ thai sản bao gồm bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con.\nApplication: Không có slot nào được gán giá trị. Prolog query required_documents_for_paternity_leave(Documents, Trace) trả về Documents = [birth_certificate_or_birth_extract].\nConclusion: Theo Prolog, ông Long cần nộp giấy tờ là bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con.",
+  "plain_answer": "Ông Long cần nộp bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con để hưởng quyền lợi nghỉ 5 ngày theo [Luật BHXH 2024 (41/2024/QH15), Điều 61 khoản 3]. Đây là các giấy tờ cần thiết để đề nghị hưởng chế độ thai sản cho vợ ông.",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 61 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A61.K3"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,required_documents_for_paternity_leave([birth_certificate_or_birth_extract]),based_on(source_c004))]",
+  "prolog_program": "years_contributed(user, 15).\nlegal_source(source_c004, law_bhxh_2024, article_61, clause_1, none, 'Hồ sơ đề nghị hưởng chế độ thai sản đối với lao động nữ sinh con hoặc lao động nữ mang thai hộ sinh con hoặc lao động nữ nhờ mang thai hộ là bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con và giấy tờ khác trong các trường hợp sau đây:').\nrequired_documents_for_paternity_leave(Documents, Trace) :- Documents = [birth_certificate_or_birth_extract], Trace = [step(conclusion, required_documents_for_paternity_leave(Documents), based_on(source_c004))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Ông Long đã đóng BHXH 15 năm và hỏi về giấy tờ cần nộp để hưởng quyền lợi nghỉ 5 ngày khi vợ sinh con.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 61 khoản 3], hồ sơ đề nghị hưởng chế độ thai sản bao gồm bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con.",
+    "application": "Không có slot nào được gán giá trị. Prolog query required_documents_for_paternity_leave(Documents, Trace) trả về Documents = [birth_certificate_or_birth_extract].",
+    "conclusion": "Theo Prolog, ông Long cần nộp giấy tờ là bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con."
+  },
+  "elapsed_s": 12.606,
+  "prompt_tokens": 4071,
+  "completion_tokens": 535,
+  "error": null,
+  "gold_answer": "Theo thư ông trình bày, chưa có thông tin về việc tại thời điểm vợ của ông sinh con thì ông có đang đóng BHXH hay không? Do đó, BHXH Việt Nam chưa có căn cứ trả lời ông có thuộc trường hợp được hưởng chế độ thai sản khi vợ sinh con hay không. BHXH Việt Nam cung cấp các quy định chung để ông tham khảo, đối chiếu với trường hợp của mình:\nTại Khoản 1 Điều 31 Luật BHXH năm 2014 quy định, người lao động được hưởng chế độ thai sản khi thuộc một trong các trường hợp sau đây:\n\"e) Lao động nam đang đóng BHXH có vợ sinh con\".\nTại Khoản 2 Điều 34 Luật BHXH năm 2014 quy định, lao động nam đang đóng BHXH khi vợ sinh con được nghỉ việc hưởng chế độ thai sản như sau:\n\"a) 05 ngày làm việc;\nb) 07 ngày làm việc khi vợ sinh con phải phẫu thuật, sinh con dưới 32 tuần tuổi;\nc) Trường hợp vợ sinh đôi thì được nghỉ 10 ngày làm việc, từ sinh ba trở lên thì cứ thêm mỗi con được nghỉ thêm 3 ngày làm việc;\nd) Trường hợp vợ sinh đôi trở lên mà phải phẫu thuật thì được nghỉ 14 ngày làm việc.\nThời gian nghỉ việc hưởng chế độ thai sản quy định tại Khoản này được tính trong khoảng thời gian 30 ngày đầu kể từ ngày vợ sinh con\".\nHồ sơ hưởng chế độ thai sản tại Khoản 4, Khoản 5 Điều 101 Luật BHXH năm 2014 quy định:\n\"4. Trường hợp lao động nam nghỉ việc khi vợ sinh con phải có bản sao giấy chứng sinh hoặc bản sao giấy khai sinh của con và giấy xác nhận của cơ sở y tế đối với trường hợp sinh con phải phẫu thuật, sinh con dưới 32 tuần tuổi.\n5. Danh sách người lao động nghỉ việc hưởng chế độ thai sản do người sử dụng lao động lập\".",
+  "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 34]\n[Luật BHXH 2014 (58/2014/QH13), Điều 31]"
+}

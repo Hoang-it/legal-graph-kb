@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 199,
+  "question": "Em có quyết định thôi việc ngày 13/4. Cho em hỏi công ty có phải đóng bảo hiểm cho em đến tháng 4 không ? Tại sao chị nhân sự phụ trách bảo hiểm công ty bảo em không đủ điều kiện để được đóng BHXH tháng 4, chỉ đến tháng 3.",
+  "answer": "Issue:\nEm hỏi: quyết định thôi việc ngày 13/4; công ty có phải đóng BHXH cho em đến tháng 4 không? Tại sao nhân sự bảo chỉ đóng đến tháng 3?\n\nRule:\nKhông có trích dẫn pháp lý được cung cấp trong dữ liệu để trích dẫn nguyên văn.\n\nApplication:\nslot_bindings: không có slot nào được gán.\nverify_facts được dùng: resignation_date(user, date(13,4)).\nQuy tắc tạo bởi chương trình Prolog (nguyên văn): \"company_must_pay_social_insurance_for_resignation_month(Person, Month, Answer, Trace) :- resignation_date(Person, date(_, Month)), Answer = must_pay, Trace = [step(conclusion, company_must_pay_social_insurance_for_resignation_month(Person, Month, Answer), based_on(none))].\"\nProlog đã khớp resignation_date(user, date(13,4)) với mẫu date(_, Month) để gán Month = 4 và sau đó gán Answer = must_pay.\n\nConclusion:\nProlog trả về: Month = 4; Answer = must_pay.\nTrace Prolog: [step(conclusion,company_must_pay_social_insurance_for_resignation_month(user,4,must_pay),based_on(none))].",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,company_must_pay_social_insurance_for_resignation_month(user,4,must_pay),based_on(none))]",
+  "irac_sections": {
+    "issue": "Em hỏi: quyết định thôi việc ngày 13/4; công ty có phải đóng BHXH cho em đến tháng 4 không? Tại sao nhân sự bảo chỉ đóng đến tháng 3?",
+    "rule": "Không có trích dẫn pháp lý được cung cấp trong dữ liệu để trích dẫn nguyên văn.",
+    "application": "slot_bindings: không có slot nào được gán.\nverify_facts được dùng: resignation_date(user, date(13,4)).\nQuy tắc tạo bởi chương trình Prolog (nguyên văn): \"company_must_pay_social_insurance_for_resignation_month(Person, Month, Answer, Trace) :- resignation_date(Person, date(_, Month)), Answer = must_pay, Trace = [step(conclusion, company_must_pay_social_insurance_for_resignation_month(Person, Month, Answer), based_on(none))].\"\nProlog đã khớp resignation_date(user, date(13,4)) với mẫu date(_, Month) để gán Month = 4 và sau đó gán Answer = must_pay.",
+    "conclusion": "Prolog trả về: Month = 4; Answer = must_pay.\nTrace Prolog: [step(conclusion,company_must_pay_social_insurance_for_resignation_month(user,4,must_pay),based_on(none))]."
+  },
+  "elapsed_s": 43.506,
+  "prompt_tokens": 2049,
+  "completion_tokens": 4444,
+  "error": null,
+  "gold_answer": "Việc công ty có phải đóng BHXH tháng 4 hay không phụ thuộc bạn có làm việc và hưởng lương từ 14 ngày làm việc trở lên trong tháng đó hay không, cùng với thời điểm chấm dứt HĐLĐ thực tế. Nếu quyết định thôi việc ngày 13/4 và bạn không làm/không hưởng lương đủ 14 ngày trong tháng 4 thì có thể không thuộc diện đóng tháng 4, chỉ đóng đến tháng 3.",
+  "gold_citations_raw": "Luật BHXH 2024; Quyết định 595/QĐ-BHXH"
+}

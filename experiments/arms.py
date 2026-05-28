@@ -10,19 +10,17 @@ from __future__ import annotations
 ALL_ARMS = (
     "graphrag",
     "llm_only",
-    "elite_no_retrieval",
-    "elite_ontology",
-    "elite_graphrag",
-    "elite_graphrag_logic",
+    "logic_lm_no_retrieval",
+    "logic_lm_ontology",
+    "logic_lm_graphrag",
 )
 
 MAIN_EXPERIMENT_ARMS = (
     "graphrag",
     "llm_only",
-    "elite_no_retrieval",
-    "elite_ontology",
-    "elite_graphrag",
-    "elite_graphrag_logic",
+    "logic_lm_no_retrieval",
+    "logic_lm_ontology",
+    "logic_lm_graphrag",
 )
 
 

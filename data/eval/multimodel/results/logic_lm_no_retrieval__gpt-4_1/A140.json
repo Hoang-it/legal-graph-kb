@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 140,
+  "question": "E mới sanh bé, giờ e chuẩn bi làm Hồ sơ thai sản, thì thường hồ sơ thai sản gồm những gì ? E nghe nói giấy chứng sinh Và giấy ra viện. Vậy giấy ra viện là bản gốc hay photo công chứng?",
+  "answer": "Issue:\nBạn hỏi về các giấy tờ cần thiết trong hồ sơ thai sản, cụ thể là giấy chứng sinh, giấy ra viện và loại bản giấy ra viện cần nộp (bản gốc hay bản sao công chứng).\n\nRule:\n\"Hồ sơ hưởng chế độ thai sản gồm giấy khai sinh hoặc giấy chứng sinh của con, giấy ra viện đối với trường hợp sinh con phải điều trị nội trú.\" (law_bhxh_2024, article_101, clause_1)\n\"Bản sao giấy tờ trong hồ sơ hưởng chế độ thai sản có thể là bản sao được cấp từ sổ gốc, bản sao chứng thực hoặc bản sao kèm bản chính để đối chiếu.\" (law_bhxh_2024, article_101, clause_2)\n\nApplication:\nCác trường hợp cần chuẩn bị giấy khai sinh hoặc giấy chứng sinh của con, và giấy ra viện nếu sinh con phải điều trị nội trú (Requirements = [giay_khai_sinh_hoac_giay_chung_sinh, giay_ra_vien_neu_noi_tru]). Đối với giấy ra viện, có thể sử dụng các loại bản sao: bản sao cấp từ sổ gốc, bản sao chứng thực hoặc bản sao kèm bản chính để đối chiếu (DischargePaperType = [ban_sao_cap_tu_so_goc, ban_sao_chung_thuc, ban_sao_kem_ban_chinh_de_doi_chieu]). Các thông tin này được truy xuất từ các bước trong truy vết Prolog.\n\nConclusion:\nTheo kết quả truy vấn, hồ sơ thai sản gồm: giấy khai sinh hoặc giấy chứng sinh của con, giấy ra viện nếu sinh con phải điều trị nội trú (Requirements). Giấy ra viện có thể là bản sao cấp từ sổ gốc, bản sao chứng thực hoặc bản sao kèm bản chính để đối chiếu (DischargePaperType).",
+  "citations": [
+    "[Điều 101 khoản 1]",
+    "[Điều 101 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A101.K1",
+    "L41_2024.A101.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(requirements,maternity_dossier_requirements_and_discharge_paper_type,based_on(source_a101_k1)),step(discharge_paper_type,maternity_dossier_requirements_and_discharge_paper_type,based_on(source_a101_k2))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về các giấy tờ cần thiết trong hồ sơ thai sản, cụ thể là giấy chứng sinh, giấy ra viện và loại bản giấy ra viện cần nộp (bản gốc hay bản sao công chứng).",
+    "rule": "\"Hồ sơ hưởng chế độ thai sản gồm giấy khai sinh hoặc giấy chứng sinh của con, giấy ra viện đối với trường hợp sinh con phải điều trị nội trú.\" (law_bhxh_2024, article_101, clause_1)\n\"Bản sao giấy tờ trong hồ sơ hưởng chế độ thai sản có thể là bản sao được cấp từ sổ gốc, bản sao chứng thực hoặc bản sao kèm bản chính để đối chiếu.\" (law_bhxh_2024, article_101, clause_2)",
+    "application": "Các trường hợp cần chuẩn bị giấy khai sinh hoặc giấy chứng sinh của con, và giấy ra viện nếu sinh con phải điều trị nội trú (Requirements = [giay_khai_sinh_hoac_giay_chung_sinh, giay_ra_vien_neu_noi_tru]). Đối với giấy ra viện, có thể sử dụng các loại bản sao: bản sao cấp từ sổ gốc, bản sao chứng thực hoặc bản sao kèm bản chính để đối chiếu (DischargePaperType = [ban_sao_cap_tu_so_goc, ban_sao_chung_thuc, ban_sao_kem_ban_chinh_de_doi_chieu]). Các thông tin này được truy xuất từ các bước trong truy vết Prolog.",
+    "conclusion": "Theo kết quả truy vấn, hồ sơ thai sản gồm: giấy khai sinh hoặc giấy chứng sinh của con, giấy ra viện nếu sinh con phải điều trị nội trú (Requirements). Giấy ra viện có thể là bản sao cấp từ sổ gốc, bản sao chứng thực hoặc bản sao kèm bản chính để đối chiếu (DischargePaperType)."
+  },
+  "elapsed_s": 10.934,
+  "prompt_tokens": 4108,
+  "completion_tokens": 1145,
+  "error": null,
+  "gold_answer": "Hồ sơ thai sản khi sinh con thường gồm giấy khai sinh/trích lục khai sinh hoặc giấy chứng sinh của bé. Giấy ra viện không phải lúc nào cũng bắt buộc; thường chỉ cần trong trường hợp hồ sơ phải chứng minh thêm tình trạng sinh mổ, sinh non, điều trị hoặc trường hợp đặc biệt khác. Nếu có nộp giấy ra viện thì nên dùng bản sao theo yêu cầu của đơn vị/BHXH, giữ bản gốc để đối chiếu.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

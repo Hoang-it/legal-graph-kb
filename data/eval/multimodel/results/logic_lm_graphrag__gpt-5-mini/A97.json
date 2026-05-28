@@ -1,0 +1,35 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 97,
+  "question": "Mình đã rút Bảo hiểm xã hội lần 1 nhưng chưa trả sổ giờ mình đóng đc gần 4 năm rồi, cho mình hỏi bao lâu mình mới dx trả sổ vậy?",
+  "answer": "Issue:\nMình đã rút BHXH lần 1 nhưng chưa trả sổ; hỏi thời hạn cơ quan BHXH phải trả sổ khi nộp đủ hồ sơ là bao lâu.\n\nRule:\n\"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), article 28, clause 4)\n\"Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động, 05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), article 62, clause 3)\n\nApplication:\nSlot bindings: none.\nProlog query kết luận sử dụng nguồn source_c0. Kết quả thực thi gán biến Answer = issued_within_5_working_days_after_submitting_full_dossier. Trace từ Prolog: [step(conclusion,issue_social_book_processing_time(issued_within_5_working_days_after_submitting_full_dossier),based_on(source_c0))].\n\nConclusion:\nProlog trả về Answer = issued_within_5_working_days_after_submitting_full_dossier, dựa trên nguồn source_c0 (theo trace trên).",
+  "citations": [
+    "[Điều 28 khoản 4]",
+    "[Điều 62 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A28.K4",
+    "L41_2024.A62.K3"
+  ],
+  "citation_indices": [
+    0,
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,issue_social_book_processing_time(issued_within_5_working_days_after_submitting_full_dossier),based_on(source_c0))]",
+  "irac_sections": {
+    "issue": "Mình đã rút BHXH lần 1 nhưng chưa trả sổ; hỏi thời hạn cơ quan BHXH phải trả sổ khi nộp đủ hồ sơ là bao lâu.",
+    "rule": "\"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), article 28, clause 4)\n\"Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động, 05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), article 62, clause 3)",
+    "application": "Slot bindings: none.\nProlog query kết luận sử dụng nguồn source_c0. Kết quả thực thi gán biến Answer = issued_within_5_working_days_after_submitting_full_dossier. Trace từ Prolog: [step(conclusion,issue_social_book_processing_time(issued_within_5_working_days_after_submitting_full_dossier),based_on(source_c0))].",
+    "conclusion": "Prolog trả về Answer = issued_within_5_working_days_after_submitting_full_dossier, dựa trên nguồn source_c0 (theo trace trên)."
+  },
+  "elapsed_s": 40.873,
+  "prompt_tokens": 3290,
+  "completion_tokens": 4732,
+  "error": null,
+  "gold_answer": "Sau khi đã nhận BHXH một lần, nếu bạn đi làm lại và đóng BHXH gần 4 năm thì quá trình tham gia mới vẫn được ghi nhận bình thường trên cùng mã số BHXH. Việc 'trả sổ' hiện nay chủ yếu là cập nhật dữ liệu điện tử; nếu cần bản giấy/tờ rời thì cơ quan BHXH hoặc đơn vị sẽ xác nhận khi có phát sinh chốt sổ, nghỉ việc hoặc cấp lại. Không có quy định phải chờ đủ bao lâu mới được 'trả sổ'; quan trọng là quá trình đóng mới đã được cập nhật đúng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25, Điều 102"
+}

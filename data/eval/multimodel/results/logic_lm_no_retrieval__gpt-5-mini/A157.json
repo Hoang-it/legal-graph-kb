@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 157,
+  "question": "M tham gia BHXH từ đầu tháng 11/2025 đến cuối tháng 4/2026 vừa đủ 6 tháng thì có được nhận thai sản không?",
+  "answer": "Issue:\nM tham gia BHXH từ đầu tháng 11/2025 đến cuối tháng 4/2026 vừa đủ 6 tháng thì có được nhận thai sản không?\n\nRule:\n\"Người lao động nữ sinh con được hưởng chế độ thai sản nếu đã đóng BHXH bắt buộc đủ 6 tháng trở lên trong 12 tháng trước khi sinh.\"\n\nApplication:\ncontrib_period: contrib_period(user, date(2025,11,1), date(2026,4,30)).\nmonths_contributed: months_contributed(user, 6).\nProlog dùng months_contributed(user, 6) trong quy tắc assess_user_contrib; quy tắc kiểm tra điều kiện \"đủ 6 tháng trở lên\" (M >= 6) dựa trên nguồn pháp luật trích dẫn và sau đó yêu cầu đối chiếu với thời điểm sinh để xác định xem 6 tháng đóng có nằm trong 12 tháng trước khi sinh hay không.\n\nConclusion:\nAnswer = \"Có thể được hưởng nếu 6 tháng đóng nằm trong 12 tháng trước khi sinh; cần biết ngày sinh cụ thể để khẳng định.\" (đây là giá trị biến Answer trả về từ Prolog).",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(check_months,months(6),based_on(source_maternity_6m)),step(conclusion,Có thể được hưởng nếu 6 tháng đóng nằm trong 12 tháng trước khi sinh; cần biết ngày sinh cụ thể để khẳng định.,based_on(source_maternity_6m))]",
+  "irac_sections": {
+    "issue": "M tham gia BHXH từ đầu tháng 11/2025 đến cuối tháng 4/2026 vừa đủ 6 tháng thì có được nhận thai sản không?",
+    "rule": "\"Người lao động nữ sinh con được hưởng chế độ thai sản nếu đã đóng BHXH bắt buộc đủ 6 tháng trở lên trong 12 tháng trước khi sinh.\"",
+    "application": "contrib_period: contrib_period(user, date(2025,11,1), date(2026,4,30)).\nmonths_contributed: months_contributed(user, 6).\nProlog dùng months_contributed(user, 6) trong quy tắc assess_user_contrib; quy tắc kiểm tra điều kiện \"đủ 6 tháng trở lên\" (M >= 6) dựa trên nguồn pháp luật trích dẫn và sau đó yêu cầu đối chiếu với thời điểm sinh để xác định xem 6 tháng đóng có nằm trong 12 tháng trước khi sinh hay không.",
+    "conclusion": "Answer = \"Có thể được hưởng nếu 6 tháng đóng nằm trong 12 tháng trước khi sinh; cần biết ngày sinh cụ thể để khẳng định.\" (đây là giá trị biến Answer trả về từ Prolog)."
+  },
+  "elapsed_s": 53.133,
+  "prompt_tokens": 2225,
+  "completion_tokens": 5729,
+  "error": null,
+  "gold_answer": "Nếu bạn tham gia từ đầu 11/2025 đến cuối 4/2026, tức đủ 6 tháng, thì về điều kiện thời gian đóng thai sản là có khả năng đạt, miễn các tháng đó nằm trong 12 tháng liền kề trước sinh và bạn thuộc diện tham gia BHXH bắt buộc. Nếu sau đó nghỉ việc trước sinh thì vẫn có thể được hưởng thai sản nếu đủ điều kiện và nộp hồ sơ đúng.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

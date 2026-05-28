@@ -1,0 +1,21 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 27,
+  "question": "Bà Uyên Phương (TPHCM) hỏi, căn cứ Luật BHXH 2024, người vợ sinh thường ngày 10/9/2025, chồng được nghỉ 5 ngày trong khoảng 10/9-9/11, chồng nghỉ đợt 1 ngày 10-11/9, đợt 2 ngày 9-11/11 thì ngày 10, 11/11/2025 vẫn được thanh toán chế độ thai sản có đúng không?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=derived_false, repair_rounds=2, error=Prolog produced no solutions]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "derived_false",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 80.584,
+  "prompt_tokens": 5119,
+  "completion_tokens": 11502,
+  "error": null,
+  "gold_answer": "Căn cứ khoản 3 Điều 53 Luật BHXH 2024, thời gian nghỉ hưởng chế độ của trường hợp nam nghỉ việc khi vợ sinh con:\n\"3. Ngày bắt đầu nghỉ việc hưởng chế độ thai sản quy định tại khoản 2 Điều này phải trong khoảng thời gian 60 ngày kể từ ngày vợ sinh con, trường hợp người lao động nghỉ nhiều lần thì ngày bắt đầu nghỉ việc của lần cuối cùng phải trong khoảng thời gian 60 ngày đầu kể từ ngày vợ sinh con và tổng thời gian nghỉ việc hưởng chế độ thai sản không quá thời gian quy định tại khoản 2 Điều này\".\nĐối chiếu với quy định trên, trường hợp lao động nam tại đơn vị có vợ sinh con từ ngày 10/9/2025 thì thời gian 60 ngày kể từ ngày vợ sinh con được tính từ ngày 10/9/2025 đến ngày 8/11/2025.\nTheo đó, nếu lao động nam nghỉ đợt 1 từ ngày 10/9/2025 đến ngày 11/9/2025, đợt 2 từ ngày 9/11/2025 đến ngày 11/11/2025 như đơn vị đã nêu thì từ ngày 9/11/2025 đến ngày 11/11/2025 không được thanh toán chế độ lao động nam nghỉ việc khi vợ sinh vì đã quá 60 ngày kể từ ngày vợ sinh con.",
+  "gold_citations_raw": "khoản 3 Điều 53 Luật BHXH 2024"
+}

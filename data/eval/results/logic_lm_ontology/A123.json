@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 123,
+  "question": "NLĐ bị tại nạn trên đường từ VP đi ra công trường làm việc, đang làm hồ sơ TNLĐ, NLĐ có xin giấy xác nhận vụ việc của công an rồi, tuy nhiên bên bảo hiểm không chấp nhận giấy đó vì bảo không đúng mẫu, nlđ đi xin lại theo đúng mẫu thì bên công an không chịu ký lại cho họ. \nVậy giờ nên làm thế nào?",
+  "answer": "Issue: Người lao động bị tai nạn trên đường từ văn phòng đến công trường làm việc và gặp khó khăn trong việc xin giấy xác nhận từ công an để làm hồ sơ tai nạn lao động.\n\nRule: \"1. Hồ sơ đề nghị hưởng chế độ tử tuất đối với thân nhân của người đang tham gia bảo hiểm xã hội hoặc đang bảo lưu thời gian đóng bảo hiểm xã hội bao gồm: Sổ bảo hiểm xã hội; Bản sao giấy chứng tử hoặc trích lục khai tử hoặc bản sao giấy báo tử hoặc bản sao quyết định của Tòa án tuyên bố là đã chết; Tờ khai của thân nhân; Bản chính hoặc bản sao biên bản điều tra tai nạn lao động đối với\" (Luật BHXH 2024 (41/2024/QH15), Điều 90, Khoản 1).\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog không thể thực hiện truy vấn do không có dữ liệu đầu vào.\n\nConclusion: Hệ thống không thể tính toán giá trị cuối cùng vì không có dữ liệu đầu vào nào được cung cấp.",
+  "citations": [
+    "[Điều 90 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A90.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 2,
+  "prolog_trace": "[step(conclusion,advice_on_accident_claim(NLĐ cần yêu cầu công an cung cấp giấy xác nhận theo đúng mẫu quy định hoặc có thể khiếu nại lên cấp trên của công an nếu không được hỗ trợ.),based_on(source_c061))]",
+  "irac_sections": {
+    "issue": "Người lao động bị tai nạn trên đường từ văn phòng đến công trường làm việc và gặp khó khăn trong việc xin giấy xác nhận từ công an để làm hồ sơ tai nạn lao động.",
+    "rule": "\"1. Hồ sơ đề nghị hưởng chế độ tử tuất đối với thân nhân của người đang tham gia bảo hiểm xã hội hoặc đang bảo lưu thời gian đóng bảo hiểm xã hội bao gồm: Sổ bảo hiểm xã hội; Bản sao giấy chứng tử hoặc trích lục khai tử hoặc bản sao giấy báo tử hoặc bản sao quyết định của Tòa án tuyên bố là đã chết; Tờ khai của thân nhân; Bản chính hoặc bản sao biên bản điều tra tai nạn lao động đối với\" (Luật BHXH 2024 (41/2024/QH15), Điều 90, Khoản 1).",
+    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog không thể thực hiện truy vấn do không có dữ liệu đầu vào.",
+    "conclusion": "Hệ thống không thể tính toán giá trị cuối cùng vì không có dữ liệu đầu vào nào được cung cấp."
+  },
+  "elapsed_s": 24.29,
+  "prompt_tokens": 9200,
+  "completion_tokens": 929,
+  "error": null,
+  "gold_answer": "Tai nạn trên đường từ nơi làm việc đi làm nhiệm vụ có thể được xem xét là tai nạn lao động nếu đáp ứng điều kiện. Nếu BHXH không nhận giấy xác nhận vì sai mẫu, bạn nên đề nghị công an hoặc cơ quan lập hồ sơ bổ sung nội dung còn thiếu; trường hợp bị từ chối, doanh nghiệp cần lập biên bản điều tra TNLĐ và gửi kèm tài liệu liên quan. Có thể khiếu nại yêu cầu trả lời bằng văn bản để làm căn cứ bổ sung hồ sơ.",
+  "gold_citations_raw": "Luật An toàn, vệ sinh lao động 2015; Nghị định 88/2020/NĐ-CP; Quyết định 166/QĐ-BHXH"
+}

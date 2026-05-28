@@ -1,0 +1,25 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 131,
+  "question": "Em bị mất sổ BHXH, chỉ còn thông tin, thời gian đóng tích hợp trên VNEID thì có rút BH 1 lần được không?",
+  "answer": "Issue: Em bị mất sổ BHXH, chỉ còn thông tin, thời gian đóng tích hợp trên VNEID thì có rút BH 1 lần được không?\n\nRule: Không có quy định cụ thể nào được trích dẫn trong trường hợp này.\n\nApplication: Không có slot nào được gán giá trị trong quá trình truy vấn Prolog. Do đó, không có thông tin nào được sử dụng để đưa ra kết luận.\n\nConclusion: Prolog đã trả về kết quả là \"Có thể rút BH một lần nếu có đủ điều kiện theo quy định của Luật Bảo hiểm xã hội.\" Tuy nhiên, không có thông tin nào từ các slot để hỗ trợ cho kết luận này.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,Có thể rút BH một lần nếu có đủ điều kiện theo quy định của Luật Bảo hiểm xã hội.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Em bị mất sổ BHXH, chỉ còn thông tin, thời gian đóng tích hợp trên VNEID thì có rút BH 1 lần được không?",
+    "rule": "Không có quy định cụ thể nào được trích dẫn trong trường hợp này.",
+    "application": "Không có slot nào được gán giá trị trong quá trình truy vấn Prolog. Do đó, không có thông tin nào được sử dụng để đưa ra kết luận.",
+    "conclusion": "Prolog đã trả về kết quả là \"Có thể rút BH một lần nếu có đủ điều kiện theo quy định của Luật Bảo hiểm xã hội.\" Tuy nhiên, không có thông tin nào từ các slot để hỗ trợ cho kết luận này."
+  },
+  "elapsed_s": 7.519,
+  "prompt_tokens": 1965,
+  "completion_tokens": 266,
+  "error": null,
+  "gold_answer": "Nếu bạn bị mất sổ BHXH nhưng dữ liệu quá trình đóng đã tích hợp trên VNeID thì vẫn có thể làm hồ sơ hưởng BHXH 1 lần. Cơ quan BHXH hiện đối chiếu dữ liệu điện tử là chính; khi cần, bạn làm thêm thủ tục cấp lại sổ hoặc xác nhận quá trình đóng. Quan trọng là bạn phải đủ điều kiện hưởng BHXH 1 lần theo luật và hồ sơ định danh phải trùng khớp.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

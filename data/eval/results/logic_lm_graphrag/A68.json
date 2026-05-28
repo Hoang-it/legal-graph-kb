@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_graphrag",
+  "stt": 68,
+  "question": "Nld làm việc bên em từ 2025 đến giờ vẫn làm, vẫn đóng bhxh bình thường. Tự nhiên nay nld báo là trên app hiện 1 bên cty khác từ t2/2026-t4/2026. Em gọi lên bhxh thì họ bảo nld này đóng ở cty em từ 2025 đến t1/2026. Còn từ t2/2026 đóng ở cty khác. E có hỏi là nld có nghỉ bên em đâu, từ tháng 2 đến tháng 4 này bên em vẫn đang đóng bhxh cho c ấy bình thường. Bên em chưa báo giảm thì sao bên kia báo tăng dc. Bảo hiểm báo hỏi lại nld.\nEm hỏi nld thì họ báo là có làm thêm bên kia nhưng kb sao họ lại báo tăng bhxh.\nTrường hợp này bên em xử lý ntn?",
+  "answer": "Issue: Người lao động làm việc tại công ty từ năm 2025 đến nay, nhưng có thông tin trên ứng dụng về việc đóng bảo hiểm xã hội tại công ty khác từ tháng 2 đến tháng 4 năm 2026. Công ty cần biết cách xử lý tình huống này.\n\nRule: \"Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30 tháng 6 năm 2025 mà không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), article 141, clause 12)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog không thể thực hiện truy vấn do không có thông tin cần thiết.\n\nConclusion: Hệ thống không thể tính toán được số liệu cuối cùng do không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 38 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A38.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,handle_insurance_case,based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Người lao động làm việc tại công ty từ năm 2025 đến nay, nhưng có thông tin trên ứng dụng về việc đóng bảo hiểm xã hội tại công ty khác từ tháng 2 đến tháng 4 năm 2026. Công ty cần biết cách xử lý tình huống này.",
+    "rule": "\"Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30 tháng 6 năm 2025 mà không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), article 141, clause 12)",
+    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog không thể thực hiện truy vấn do không có thông tin cần thiết.",
+    "conclusion": "Hệ thống không thể tính toán được số liệu cuối cùng do không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 11.005,
+  "prompt_tokens": 3366,
+  "completion_tokens": 415,
+  "error": null,
+  "gold_answer": "Một người có nhiều nơi làm việc nhưng BHXH bắt buộc chỉ đóng theo một quan hệ lao động thuộc diện luật định, không được để 2 đơn vị cùng đóng trùng cùng thời gian. Bạn cần yêu cầu NLĐ giải trình, cung cấp HĐLĐ bên kia; đồng thời làm việc với cơ quan BHXH để xác định đơn vị nào đóng đúng, đơn vị nào đóng trùng. Phần đóng trùng sẽ phải điều chỉnh/hoàn trả theo thủ tục, tránh để dữ liệu sai kéo dài ảnh hưởng chế độ của NLĐ.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 33; Bộ luật Lao động 2019 Điều 13"
+}

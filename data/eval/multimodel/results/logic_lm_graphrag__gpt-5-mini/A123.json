@@ -1,0 +1,41 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 123,
+  "question": "NLĐ bị tại nạn trên đường từ VP đi ra công trường làm việc, đang làm hồ sơ TNLĐ, NLĐ có xin giấy xác nhận vụ việc của công an rồi, tuy nhiên bên bảo hiểm không chấp nhận giấy đó vì bảo không đúng mẫu, nlđ đi xin lại theo đúng mẫu thì bên công an không chịu ký lại cho họ. \nVậy giờ nên làm thế nào?",
+  "answer": "Issue:\nNgười lao động bị tai nạn trên đường đi làm, đã có giấy xác nhận của công an nhưng bảo hiểm không chấp nhận vì \"không đúng mẫu\"; công an từ chối ký lại theo mẫu yêu cầu. Hỏi cần làm gì để hoàn thiện hồ sơ TNLĐ?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15) - Article 12 clause 1: \"Từ chối thực hiện yêu cầu không đúng quy định của pháp luật về bảo hiểm xã hội.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 13 clause 2: \"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 18 clause 2: \"Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 62 clause 3: \"Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động, 05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\n\nApplication:\nslot_bindings: không có giá trị ràng buộc.\nProlog trả về các biến:\nActions = \"[action(nguoi_su_dung_lao_dong_lap_ho_so_va_phoi_hop),action(yeu_cau_bao_hiem_tra_loi_bang_van_ban_va_chi_ra_co_so_phap_luat),action(doi_chung_thuc_mau_hop_le_cua_bhxh_khi_can),action(lien_he_co_quan_bhxh_de_duoc_huong_dan_hoac_khieu_nai)]\"\nTrace = \"[step(action(nguoi_su_dung_lao_dong_lap_ho_so_va_phoi_hop),based_on(source_c1)),step(action(doi_chung_thuc_mau_hop_le_cua_bhxh_khi_can),based_on(source_c3)),step(action(yeu_cau_bao_hiem_tra_loi_bang_van_ban_va_chi_ra_co_so_phap_luat),based_on(source_c0)),step(action(lien_he_co_quan_bhxh_de_duoc_huong_dan_hoac_khieu_nai),based_on(source_c4))]\"\nMô tả tiêu thụ: Prolog gán danh sách hành động khuyến nghị cho Actions và liên kết từng hành động với nguồn pháp luật trong Trace (source_c1, source_c3, source_c0, source_c4).\n\nConclusion:\nProlog trả về Actions (kết quả chính): \"[action(nguoi_su_dung_lao_dong_lap_ho_so_va_phoi_hop),action(yeu_cau_bao_hiem_tra_loi_bang_van_ban_va_chi_ra_co_so_phap_luat),action(doi_chung_thuc_mau_hop_le_cua_bhxh_khi_can),action(lien_he_co_quan_bhxh_de_duoc_huong_dan_hoac_khieu_nai)]\".",
+  "citations": [
+    "[Điều 12 khoản 1]",
+    "[Điều 13 khoản 2]",
+    "[Điều 18 khoản 2]",
+    "[Điều 62 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A12.K1",
+    "L41_2024.A13.K2",
+    "L41_2024.A18.K2",
+    "L41_2024.A62.K3"
+  ],
+  "citation_indices": [
+    0,
+    1,
+    3,
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(action(nguoi_su_dung_lao_dong_lap_ho_so_va_phoi_hop),based_on(source_c1)),step(action(doi_chung_thuc_mau_hop_le_cua_bhxh_khi_can),based_on(source_c3)),step(action(yeu_cau_bao_hiem_tra_loi_bang_van_ban_va_chi_ra_co_so_phap_luat),based_on(source_c0)),step(action(lien_he_co_quan_bhxh_de_duoc_huong_dan_hoac_khieu_nai),based_on(source_c4))]",
+  "irac_sections": {
+    "issue": "Người lao động bị tai nạn trên đường đi làm, đã có giấy xác nhận của công an nhưng bảo hiểm không chấp nhận vì \"không đúng mẫu\"; công an từ chối ký lại theo mẫu yêu cầu. Hỏi cần làm gì để hoàn thiện hồ sơ TNLĐ?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15) - Article 12 clause 1: \"Từ chối thực hiện yêu cầu không đúng quy định của pháp luật về bảo hiểm xã hội.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 13 clause 2: \"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 18 clause 2: \"Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 62 clause 3: \"Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động, 05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"",
+    "application": "slot_bindings: không có giá trị ràng buộc.\nProlog trả về các biến:\nActions = \"[action(nguoi_su_dung_lao_dong_lap_ho_so_va_phoi_hop),action(yeu_cau_bao_hiem_tra_loi_bang_van_ban_va_chi_ra_co_so_phap_luat),action(doi_chung_thuc_mau_hop_le_cua_bhxh_khi_can),action(lien_he_co_quan_bhxh_de_duoc_huong_dan_hoac_khieu_nai)]\"\nTrace = \"[step(action(nguoi_su_dung_lao_dong_lap_ho_so_va_phoi_hop),based_on(source_c1)),step(action(doi_chung_thuc_mau_hop_le_cua_bhxh_khi_can),based_on(source_c3)),step(action(yeu_cau_bao_hiem_tra_loi_bang_van_ban_va_chi_ra_co_so_phap_luat),based_on(source_c0)),step(action(lien_he_co_quan_bhxh_de_duoc_huong_dan_hoac_khieu_nai),based_on(source_c4))]\"\nMô tả tiêu thụ: Prolog gán danh sách hành động khuyến nghị cho Actions và liên kết từng hành động với nguồn pháp luật trong Trace (source_c1, source_c3, source_c0, source_c4).",
+    "conclusion": "Prolog trả về Actions (kết quả chính): \"[action(nguoi_su_dung_lao_dong_lap_ho_so_va_phoi_hop),action(yeu_cau_bao_hiem_tra_loi_bang_van_ban_va_chi_ra_co_so_phap_luat),action(doi_chung_thuc_mau_hop_le_cua_bhxh_khi_can),action(lien_he_co_quan_bhxh_de_duoc_huong_dan_hoac_khieu_nai)]\"."
+  },
+  "elapsed_s": 67.37,
+  "prompt_tokens": 3850,
+  "completion_tokens": 4725,
+  "error": null,
+  "gold_answer": "Tai nạn trên đường từ nơi làm việc đi làm nhiệm vụ có thể được xem xét là tai nạn lao động nếu đáp ứng điều kiện. Nếu BHXH không nhận giấy xác nhận vì sai mẫu, bạn nên đề nghị công an hoặc cơ quan lập hồ sơ bổ sung nội dung còn thiếu; trường hợp bị từ chối, doanh nghiệp cần lập biên bản điều tra TNLĐ và gửi kèm tài liệu liên quan. Có thể khiếu nại yêu cầu trả lời bằng văn bản để làm căn cứ bổ sung hồ sơ.",
+  "gold_citations_raw": "Luật An toàn, vệ sinh lao động 2015; Nghị định 88/2020/NĐ-CP; Quyết định 166/QĐ-BHXH"
+}

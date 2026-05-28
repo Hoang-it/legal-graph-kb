@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 124,
+  "question": "gộp sổ thì bên bảo hiểm để tầm mấy ngày?",
+  "answer": "Issue:\nKhi gộp sổ, cơ quan bảo hiểm mất bao nhiêu ngày để xử lý?\n\nRule:\n\"Không có quy định cụ thể về thời hạn gộp sổ trong Luật Bảo hiểm xã hội 2024; thời hạn thực hiện do cơ quan Bảo hiểm xã hội hướng dẫn bằng văn bản.\" (document: law_bhxh_2024; article: none; clause: none)\n\nApplication:\nslot_bindings: (không có slot nào được gán giá trị)\nChương trình Prolog chứa fact legal_source source_no_time nêu nội dung trên. Truy vấn ?- answer_time_for_gop_so(Answer, Trace). đã được thực thi; Prolog dùng nguồn source_no_time để gán Answer thành chuỗi kết luận và Trace ghi based_on(source_no_time). Execution_result chứa binding Answer với nội dung văn bản trả lời.\n\nConclusion:\nAnswer = \"Luật BHXH 2024 không quy định thời hạn cụ thể cho việc gộp sổ; thời hạn thực hiện do cơ quan BHXH hướng dẫn (xin liên hệ cơ quan BHXH nơi nộp hồ sơ để biết thời gian xử lý cụ thể).\" Trace = [step(conclusion,answer_time_for_gop_so(...),based_on(source_no_time))].",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,answer_time_for_gop_so(Luật BHXH 2024 không quy định thời hạn cụ thể cho việc gộp sổ; thời hạn thực hiện do cơ quan BHXH hướng dẫn (xin liên hệ cơ quan BHXH nơi nộp hồ sơ để biết thời gian xử lý cụ thể).),based_on(source_no_time))]",
+  "irac_sections": {
+    "issue": "Khi gộp sổ, cơ quan bảo hiểm mất bao nhiêu ngày để xử lý?",
+    "rule": "\"Không có quy định cụ thể về thời hạn gộp sổ trong Luật Bảo hiểm xã hội 2024; thời hạn thực hiện do cơ quan Bảo hiểm xã hội hướng dẫn bằng văn bản.\" (document: law_bhxh_2024; article: none; clause: none)",
+    "application": "slot_bindings: (không có slot nào được gán giá trị)\nChương trình Prolog chứa fact legal_source source_no_time nêu nội dung trên. Truy vấn ?- answer_time_for_gop_so(Answer, Trace). đã được thực thi; Prolog dùng nguồn source_no_time để gán Answer thành chuỗi kết luận và Trace ghi based_on(source_no_time). Execution_result chứa binding Answer với nội dung văn bản trả lời.",
+    "conclusion": "Answer = \"Luật BHXH 2024 không quy định thời hạn cụ thể cho việc gộp sổ; thời hạn thực hiện do cơ quan BHXH hướng dẫn (xin liên hệ cơ quan BHXH nơi nộp hồ sơ để biết thời gian xử lý cụ thể).\" Trace = [step(conclusion,answer_time_for_gop_so(...),based_on(source_no_time))]."
+  },
+  "elapsed_s": 38.682,
+  "prompt_tokens": 3266,
+  "completion_tokens": 4749,
+  "error": null,
+  "gold_answer": "Thời gian gộp sổ BHXH thường không quá 10 ngày làm việc kể từ khi nhận đủ hồ sơ; trường hợp cần xác minh quá trình ở nhiều nơi thì có thể kéo dài nhưng không quá 45 ngày. Bạn nên xin giấy hẹn hoặc tra cứu mã hồ sơ để theo dõi. Nếu quá hạn mà chưa có kết quả, có thể phản ánh trực tiếp với cơ quan BHXH nơi nộp.",
+  "gold_citations_raw": "Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

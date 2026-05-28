@@ -1,0 +1,29 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 72,
+  "question": "Em đóng bảo hiểm trên 12 tháng, nhưng hiện tại đã nghỉ việc. Giờ em dự định có em bé thì có được hưởng thai sản không?",
+  "answer": "Issue: Người lao động đã đóng bảo hiểm trên 12 tháng nhưng hiện tại đã nghỉ việc. Họ có được hưởng chế độ thai sản khi có em bé không?\n\nRule: \"Người lao động có đủ điều kiện hưởng chế độ thai sản nếu đã đóng bảo hiểm xã hội từ 6 tháng trở lên và không bị ngắt quãng trong thời gian trước khi sinh.\" (law_bhxh_2024, article_26, clause_1)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Tuy nhiên, Prolog đã xác định rằng người lao động không đủ điều kiện hưởng chế độ thai sản dựa trên số năm đóng bảo hiểm.\n\nConclusion: Prolog đã trả về giá trị \"no\" cho biến Answer, cho thấy người lao động không đủ điều kiện hưởng chế độ thai sản.",
+  "citations": [
+    "[Điều 26 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A26.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,no),based_on(source_a26_k1))]",
+  "irac_sections": {
+    "issue": "Người lao động đã đóng bảo hiểm trên 12 tháng nhưng hiện tại đã nghỉ việc. Họ có được hưởng chế độ thai sản khi có em bé không?",
+    "rule": "\"Người lao động có đủ điều kiện hưởng chế độ thai sản nếu đã đóng bảo hiểm xã hội từ 6 tháng trở lên và không bị ngắt quãng trong thời gian trước khi sinh.\" (law_bhxh_2024, article_26, clause_1)",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Tuy nhiên, Prolog đã xác định rằng người lao động không đủ điều kiện hưởng chế độ thai sản dựa trên số năm đóng bảo hiểm.",
+    "conclusion": "Prolog đã trả về giá trị \"no\" cho biến Answer, cho thấy người lao động không đủ điều kiện hưởng chế độ thai sản."
+  },
+  "elapsed_s": 9.392,
+  "prompt_tokens": 2027,
+  "completion_tokens": 458,
+  "error": null,
+  "gold_answer": "Nếu hiện tại bạn đã nghỉ việc và sau đó mới mang thai thì thông thường vẫn được hưởng thai sản khi sinh con nếu trong 12 tháng trước sinh bạn đã đóng BHXH bắt buộc đủ số tháng luật yêu cầu. Luật không bắt buộc phải còn làm việc tại thời điểm sinh mới được hưởng, miễn là đã đủ điều kiện trước đó. Vì vậy cần xác định chính xác tháng dự sinh để tính 12 tháng liền kề trước sinh và số tháng đã đóng trong khoảng đó.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50, Điều 53"
+}

@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 6,
+  "question": "Bà Thảo hỏi, trên giấy ra viện có ghi chú người lao động được nghỉ lao động 10 ngày, vậy, có cần xin thêm Giấy chứng nhận nghỉ việc hưởng BHXH để hưởng 10 ngày đó không?",
+  "answer": "Issue:\nBà Thảo hỏi: trên giấy ra viện có ghi người lao động được nghỉ lao động 10 ngày, vậy có cần xin thêm Giấy chứng nhận nghỉ việc hưởng BHXH để hưởng 10 ngày đó không?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15) Điều 48 khoản 2: \"Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ ốm đau kèm theo hồ sơ nộp cho cơ quan bảo hiểm xã hội.\"\n\nApplication:\nKhông có slot nào được gán giá trị (slot_bindings trống). Chương trình Prolog đã sử dụng văn bản trích dẫn (Điều 48 khoản 2 Luật BHXH 2024) làm nguồn và chạy quy tắc need_additional_medical_certificate, từ đó sinh ra lời khuyên dựa trên nội dung pháp luật đã cung cấp.\n\nConclusion:\nAdvice = \"Từ văn bản được trích dẫn (Điều 48 khoản 2 Luật BHXH 2024) chỉ nêu người sử dụng lao động phải lập danh sách và nộp cho cơ quan BHXH trong vòng 07 ngày kể từ khi nhận ĐỦ HỒ SƠ từ người lao động. Văn bản được cung cấp không xác định rõ thành phần hồ sơ nào được coi là \"đủ hồ sơ\" để hưởng chế độ ốm đau. Do đó, không thể khẳng định chỉ dựa vào giấy ra viện có ghi nghỉ 10 ngày là đủ hay cần thêm Giấy chứng nhận nghỉ việc hưởng BHXH. Đề nghị: nộp hồ sơ đầy đủ theo hướng dẫn của người sử dụng lao động hoặc cơ quan BHXH (liên hệ cơ quan BHXH hoặc nhà cung cấp dịch vụ y tế để biết chính xác các giấy tờ cần nộp).\"",
+  "citations": [
+    "[Điều 48 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A48.K2"
+  ],
+  "citation_indices": [
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,need_additional_medical_certificate(Từ văn bản được trích dẫn (Điều 48 khoản 2 Luật BHXH 2024) chỉ nêu người sử dụng lao động phải lập danh sách và nộp cho cơ quan BHXH trong vòng 07 ngày kể từ khi nhận ĐỦ HỒ SƠ từ người lao động. Văn bản được cung cấp không xác định rõ thành phần hồ sơ nào được coi là \"đủ hồ sơ\" để hưởng chế độ ốm đau. Do đó, không thể khẳng định chỉ dựa vào giấy ra viện có ghi nghỉ 10 ngày là đủ hay cần thêm Giấy chứng nhận nghỉ việc hưởng BHXH. Đề nghị: nộp hồ sơ đầy đủ theo hướng dẫn của người sử dụng lao động hoặc cơ quan BHXH (liên hệ cơ quan BHXH hoặc nhà cung cấp dịch vụ y tế để biết chính xác các giấy tờ cần nộp).),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Bà Thảo hỏi: trên giấy ra viện có ghi người lao động được nghỉ lao động 10 ngày, vậy có cần xin thêm Giấy chứng nhận nghỉ việc hưởng BHXH để hưởng 10 ngày đó không?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15) Điều 48 khoản 2: \"Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ ốm đau kèm theo hồ sơ nộp cho cơ quan bảo hiểm xã hội.\"",
+    "application": "Không có slot nào được gán giá trị (slot_bindings trống). Chương trình Prolog đã sử dụng văn bản trích dẫn (Điều 48 khoản 2 Luật BHXH 2024) làm nguồn và chạy quy tắc need_additional_medical_certificate, từ đó sinh ra lời khuyên dựa trên nội dung pháp luật đã cung cấp.",
+    "conclusion": "Advice = \"Từ văn bản được trích dẫn (Điều 48 khoản 2 Luật BHXH 2024) chỉ nêu người sử dụng lao động phải lập danh sách và nộp cho cơ quan BHXH trong vòng 07 ngày kể từ khi nhận ĐỦ HỒ SƠ từ người lao động. Văn bản được cung cấp không xác định rõ thành phần hồ sơ nào được coi là \"đủ hồ sơ\" để hưởng chế độ ốm đau. Do đó, không thể khẳng định chỉ dựa vào giấy ra viện có ghi nghỉ 10 ngày là đủ hay cần thêm Giấy chứng nhận nghỉ việc hưởng BHXH. Đề nghị: nộp hồ sơ đầy đủ theo hướng dẫn của người sử dụng lao động hoặc cơ quan BHXH (liên hệ cơ quan BHXH hoặc nhà cung cấp dịch vụ y tế để biết chính xác các giấy tờ cần nộp).\""
+  },
+  "elapsed_s": 44.844,
+  "prompt_tokens": 5839,
+  "completion_tokens": 4982,
+  "error": null,
+  "gold_answer": "Tại Khoản 14 Điều 1 Thông tư số 18/2022/TT-BYT ngày 31/12/2022 của Bộ trưởng Bộ Y tế sửa đổi, bổ sung một số điều của Thông tư số 56/2017/TT-BYT ngày 29/12/2017 của Bộ trưởng Bộ Y tế quy định chi tiết thi hành Luật BHXH và Luật An toàn, vệ sinh lao động thuộc lĩnh y tế quy định như sau:\nTrường hợp người bệnh cần nghỉ để điều trị ngoại trú sau khi ra viện thì cơ quan BHXH căn cứ số ngày nghỉ ghi tại phần ghi chú của giấy ra viện để làm căn cứ thanh toán chế độ BHXH theo quy định.\nĐối chiếu quy định nêu trên, việc cơ sở khám bệnh, chữa bệnh ghi thêm số ngày nghỉ để điều trị ngoại trú tại phần ghi chú trên giấy ra viện là đúng quy định và số ngày nghỉ điều trị ngoại trú đó sẽ được cơ quan BHXH căn cứ để giải quyết chế độ BHXH đối với bà theo quy định.\nDo đó, bà không phải xin cấp thêm Giấy chứng nhận nghỉ việc hưởng BHXH đối với 10 ngày nghỉ việc điều trị ngoại trú nêu trên",
+  "gold_citations_raw": "Khoản 14 Điều 1 Thông tư số 18/2022/TT-BYT\nThông tư số 56/2017/TT-BYT"
+}

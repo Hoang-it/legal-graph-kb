@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 171,
+  "question": "Mọi người ơi cho e hỏi nhận tiền trợ cấp thất nghiệp cần những giấy tờ gì vậy?",
+  "answer": "Issue: Bạn muốn biết những giấy tờ cần thiết để nhận tiền trợ cấp thất nghiệp.\n\nRule: Theo quy định tại Luật Bảo hiểm xã hội 2024, Điều 49, Khoản 1: \"Người lao động cần nộp đơn đề nghị hưởng trợ cấp thất nghiệp và các giấy tờ liên quan theo quy định.\"\n\nApplication: Hệ thống đã xác định các giấy tờ cần thiết bao gồm: Đơn đề nghị hưởng trợ cấp thất nghiệp, Giấy tờ chứng minh đã chấm dứt hợp đồng lao động, và Sổ bảo hiểm xã hội. Các giấy tờ này được xác định dựa trên nguồn thông tin từ Điều 49, Khoản 1 của Luật Bảo hiểm xã hội 2024.\n\nConclusion: Các giấy tờ cần thiết để nhận tiền trợ cấp thất nghiệp là: Đơn đề nghị hưởng trợ cấp thất nghiệp, Giấy tờ chứng minh đã chấm dứt hợp đồng lao động, và Sổ bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 49 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A49.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,required_documents_for_unemployment_benefits([Đơn đề nghị hưởng trợ cấp thất nghiệp,Giấy tờ chứng minh đã chấm dứt hợp đồng lao động,Sổ bảo hiểm xã hội]),based_on(source_a49_k1))]",
+  "irac_sections": {
+    "issue": "Bạn muốn biết những giấy tờ cần thiết để nhận tiền trợ cấp thất nghiệp.",
+    "rule": "Theo quy định tại Luật Bảo hiểm xã hội 2024, Điều 49, Khoản 1: \"Người lao động cần nộp đơn đề nghị hưởng trợ cấp thất nghiệp và các giấy tờ liên quan theo quy định.\"",
+    "application": "Hệ thống đã xác định các giấy tờ cần thiết bao gồm: Đơn đề nghị hưởng trợ cấp thất nghiệp, Giấy tờ chứng minh đã chấm dứt hợp đồng lao động, và Sổ bảo hiểm xã hội. Các giấy tờ này được xác định dựa trên nguồn thông tin từ Điều 49, Khoản 1 của Luật Bảo hiểm xã hội 2024.",
+    "conclusion": "Các giấy tờ cần thiết để nhận tiền trợ cấp thất nghiệp là: Đơn đề nghị hưởng trợ cấp thất nghiệp, Giấy tờ chứng minh đã chấm dứt hợp đồng lao động, và Sổ bảo hiểm xã hội."
+  },
+  "elapsed_s": 5.274,
+  "prompt_tokens": 2057,
+  "completion_tokens": 424,
+  "error": null,
+  "gold_answer": "Hồ sơ nhận trợ cấp thất nghiệp thường gồm: đơn đề nghị hưởng trợ cấp thất nghiệp, CCCD và giấy tờ chứng minh chấm dứt HĐLĐ/hợp đồng làm việc. Bạn nộp tại trung tâm dịch vụ việc làm trong 03 tháng kể từ ngày nghỉ việc. Sau đó phải theo lịch hẹn để nhận quyết định và thông báo tìm kiếm việc làm hằng tháng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

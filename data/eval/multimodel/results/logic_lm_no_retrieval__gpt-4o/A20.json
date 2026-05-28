@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 20,
+  "question": "Vợ chồng bà Hải Bắc làm chung một cơ quan, đã đóng BHXH trên 3 năm.\nBà Bắc hỏi, khi bà nghỉ sinh con thì chồng của bà có được hưởng tiền trợ cấp thai sản không?",
+  "answer": "Issue: Bà Bắc muốn biết liệu chồng của bà có được hưởng tiền trợ cấp thai sản khi bà nghỉ sinh con hay không, trong khi cả hai đã đóng bảo hiểm xã hội trên 3 năm.\n\nRule: Theo quy định tại Điều 34, Khoản 2 của Luật Bảo hiểm xã hội 2024: \"Chồng của người lao động nữ được hưởng trợ cấp thai sản khi vợ sinh con nếu cả hai đã đóng BHXH từ đủ 6 tháng trở lên trong vòng 12 tháng trước khi sinh con.\"\n\nApplication: Không có thông tin cụ thể về các giá trị được gán cho các biến trong truy vấn Prolog ngoài việc xác nhận rằng cả hai vợ chồng đã đóng bảo hiểm xã hội trên 3 năm. Quy tắc Prolog đã sử dụng điều kiện này để xác định tính đủ điều kiện.\n\nConclusion: Theo kết quả từ truy vấn Prolog, chồng của bà Bắc đủ điều kiện để nhận trợ cấp thai sản khi bà nghỉ sinh con. Kết quả này dựa trên nguồn luật được trích dẫn là Điều 34, Khoản 2 của Luật Bảo hiểm xã hội 2024.",
+  "citations": [
+    "[Điều 34 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A34.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,maternity_allowance_for_husband(user,yes),based_on(source_a34_k2))]",
+  "irac_sections": {
+    "issue": "Bà Bắc muốn biết liệu chồng của bà có được hưởng tiền trợ cấp thai sản khi bà nghỉ sinh con hay không, trong khi cả hai đã đóng bảo hiểm xã hội trên 3 năm.",
+    "rule": "Theo quy định tại Điều 34, Khoản 2 của Luật Bảo hiểm xã hội 2024: \"Chồng của người lao động nữ được hưởng trợ cấp thai sản khi vợ sinh con nếu cả hai đã đóng BHXH từ đủ 6 tháng trở lên trong vòng 12 tháng trước khi sinh con.\"",
+    "application": "Không có thông tin cụ thể về các giá trị được gán cho các biến trong truy vấn Prolog ngoài việc xác nhận rằng cả hai vợ chồng đã đóng bảo hiểm xã hội trên 3 năm. Quy tắc Prolog đã sử dụng điều kiện này để xác định tính đủ điều kiện.",
+    "conclusion": "Theo kết quả từ truy vấn Prolog, chồng của bà Bắc đủ điều kiện để nhận trợ cấp thai sản khi bà nghỉ sinh con. Kết quả này dựa trên nguồn luật được trích dẫn là Điều 34, Khoản 2 của Luật Bảo hiểm xã hội 2024."
+  },
+  "elapsed_s": 4.811,
+  "prompt_tokens": 2048,
+  "completion_tokens": 490,
+  "error": null,
+  "gold_answer": "Tại Điểm e Khoản 1 Điều 31 và Khoản 2 Điều 34 Luật BHXH năm 2014 quy định lao động nam đang đóng BHXH có vợ sinh con được nghỉ việc hưởng chế độ thai sản 5 ngày làm việc.\nTrường hợp vợ sinh con phải phẫu thuật, sinh con dưới 32 tuần tuổi được nghỉ 7 ngày làm việc. Trường hợp vợ sinh đôi thì được nghỉ 10 ngày làm việc, từ sinh ba trở lên thì cứ thêm mỗi con được nghỉ thêm 3 ngày làm việc.\nTrường hợp vợ sinh đôi trở lên mà phải phẫu thuật thì được nghỉ 14 ngày làm việc. Thời gian nghỉ việc hưởng chế độ thai sản quy định nêu trên được tính trong khoảng thời gian 30 ngày đầu kể từ ngày vợ sinh con.\nBHXH Việt Nam thông tin để bà Bắc nắm được các quyền lợi về chế độ thai sản.",
+  "gold_citations_raw": "Điểm e Khoản 1 Điều 31 và Khoản 2 Điều 34 Luật BHXH năm 2014"
+}

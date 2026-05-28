@@ -1,0 +1,39 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 174,
+  "question": "Nữ sinh 13/6/1974, e làm công nhân may, đã đóng bảo hiểm được 30 năm, theo quy định thì 6/2026 là e đủ điều kiện được về hưu, tháng 8/2025 e đã làm để hưởng bảo hiểm thất nghiệp và vẫn hưởng đến nay. E muốn hỏi , sau khi hưởng nốt thất nghiệp của tháng 5/2026 thì e đi làm thủ tục cắt hỗ trợ thất nghiệp sau đó e nộp hồ sơ để hưởng lương hưu luôn để được hưởng lương hưu từ tháng 6/2026 thì có được không?",
+  "answer": "Issue:\nBạn hỏi rằng sau khi kết thúc hưởng trợ cấp thất nghiệp vào tháng 5/2026, bạn làm thủ tục cắt hỗ trợ thất nghiệp và nộp hồ sơ để hưởng lương hưu từ tháng 6/2026 thì có được không.\n\nRule:\n\"Thời điểm hưởng lương hưu đối với đối tượng quy định tại các điểm g, h, m và n khoản 1 Điều 2 của Luật này và người đang bảo lưu thời gian đóng bảo hiểm xã hội là thời điểm đủ điều kiện hưởng lương hưu theo quy định và được ghi trong văn bản đề nghị của người lao động.\" (Luật BHXH 2024 (41/2024/QH15), Điều 69, Khoản 2)\n\"Trong thời hạn 20 ngày trước thời điểm đủ điều kiện hưởng lương hưu, người đang bảo lưu thời gian đóng bảo hiểm xã hội bắt buộc nộp hồ sơ quy định tại Điều 77 của Luật này cho cơ quan bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 79, Khoản 1)\n\nApplication:\nCác thông tin được xác nhận gồm: gender = nu; birthdate = date(1974,6,13); years_contributed = 30; occupation = cong_nhan_may; unemployment_benefit_end_month = date(2026,5,1); retirement_eligibility_month = date(2026,6,1). Prolog đã kiểm tra các điều kiện này và xác định bạn đủ điều kiện hưởng lương hưu ngay sau khi kết thúc trợ cấp thất nghiệp, nếu nộp hồ sơ đúng quy định.\n\nConclusion:\nKết quả Prolog: Eligible = yes. Bạn có thể nộp hồ sơ để hưởng lương hưu từ tháng 6/2026 ngay sau khi kết thúc trợ cấp thất nghiệp tháng 5/2026, nếu thực hiện đúng thủ tục theo quy định.",
+  "citations": [
+    "[Điều 2]",
+    "[Điều 69 khoản 2]",
+    "[Điều 77]",
+    "[Điều 79 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2",
+    "L41_2024.A69.K2",
+    "L41_2024.A77",
+    "L41_2024.A79.K1"
+  ],
+  "citation_indices": [
+    3,
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(condition,gender(user,nu),based_on(source_c000)),step(condition,years_contributed(user,30),based_on(source_c000)),step(condition,retirement_eligibility_month(user,date(2026,6,1)),based_on(source_c000)),step(condition,unemployment_benefit_end_month(user,date(2026,5,1)),based_on(source_c000)),step(conclusion,eligible_for_pension_immediately_after_unemployment(user,yes),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi rằng sau khi kết thúc hưởng trợ cấp thất nghiệp vào tháng 5/2026, bạn làm thủ tục cắt hỗ trợ thất nghiệp và nộp hồ sơ để hưởng lương hưu từ tháng 6/2026 thì có được không.",
+    "rule": "\"Thời điểm hưởng lương hưu đối với đối tượng quy định tại các điểm g, h, m và n khoản 1 Điều 2 của Luật này và người đang bảo lưu thời gian đóng bảo hiểm xã hội là thời điểm đủ điều kiện hưởng lương hưu theo quy định và được ghi trong văn bản đề nghị của người lao động.\" (Luật BHXH 2024 (41/2024/QH15), Điều 69, Khoản 2)\n\"Trong thời hạn 20 ngày trước thời điểm đủ điều kiện hưởng lương hưu, người đang bảo lưu thời gian đóng bảo hiểm xã hội bắt buộc nộp hồ sơ quy định tại Điều 77 của Luật này cho cơ quan bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 79, Khoản 1)",
+    "application": "Các thông tin được xác nhận gồm: gender = nu; birthdate = date(1974,6,13); years_contributed = 30; occupation = cong_nhan_may; unemployment_benefit_end_month = date(2026,5,1); retirement_eligibility_month = date(2026,6,1). Prolog đã kiểm tra các điều kiện này và xác định bạn đủ điều kiện hưởng lương hưu ngay sau khi kết thúc trợ cấp thất nghiệp, nếu nộp hồ sơ đúng quy định.",
+    "conclusion": "Kết quả Prolog: Eligible = yes. Bạn có thể nộp hồ sơ để hưởng lương hưu từ tháng 6/2026 ngay sau khi kết thúc trợ cấp thất nghiệp tháng 5/2026, nếu thực hiện đúng thủ tục theo quy định."
+  },
+  "elapsed_s": 12.785,
+  "prompt_tokens": 4036,
+  "completion_tokens": 1079,
+  "error": null,
+  "gold_answer": "Bạn cần phân biệt thời điểm đủ điều kiện hưu và thời điểm bắt đầu hưởng hưu. Khi đang hưởng BHTN, nếu đủ điều kiện và làm thủ tục để hưởng lương hưu thì TCTN sẽ bị chấm dứt từ thời điểm hưởng lương hưu. Vì vậy về nguyên tắc có thể làm thủ tục để nối sang chế độ hưu, nhưng cần tính đúng mốc tháng bắt đầu hưởng hưu để không chồng chéo hoặc bị thu hồi.",
+  "gold_citations_raw": "Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

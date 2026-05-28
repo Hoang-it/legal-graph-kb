@@ -1,0 +1,37 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 191,
+  "question": "Anh chị cho em hỏi trong trường hợp em sinh trước so với ngày ký quyết định nghỉ việc 3 ngày thì hồ sơ thai sản em tự làm hay phải qua công ty?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu người lao động sinh con trước ngày ký quyết định nghỉ việc 3 ngày thì hồ sơ hưởng chế độ thai sản sẽ do cá nhân tự nộp hay phải thông qua công ty?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), Điều 62, Khoản 1: \"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản. Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ thai sản kèm theo hồ sơ quy định t...\"\nLuật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 4: \"Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con... thì vẫn được hưởng chế độ thai sản...\"\n\nApplication:\nKhông có slot_id cụ thể nào được ràng buộc trong trường hợp này. Prolog đã sử dụng các quy định tại Điều 62 Khoản 1 và Điều 50 Khoản 4 Luật BHXH 2024 để xác định hai trường hợp: (1) Nếu còn hợp đồng lao động tại thời điểm sinh con thì hồ sơ nộp qua công ty; (2) Nếu đã chấm dứt hợp đồng trước khi sinh con thì người lao động tự nộp hồ sơ cho cơ quan BHXH.\n\nConclusion:\nProlog trả về: [truong_hop_1:Nếu người lao động vẫn còn hợp đồng lao động tại thời điểm sinh con, hồ sơ thai sản phải nộp cho công ty (người sử dụng lao động), công ty sẽ tổng hợp và nộp cho cơ quan BHXH., truong_hop_2:Nếu người lao động đã chấm dứt hợp đồng lao động trước khi sinh con, người lao động tự nộp hồ sơ trực tiếp cho cơ quan BHXH.].",
+  "citations": [
+    "[Điều 62 khoản 1]",
+    "[Điều 61]",
+    "[Điều 50 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A62.K1",
+    "L41_2024.A61",
+    "L41_2024.A50.K4"
+  ],
+  "citation_indices": [
+    0,
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,thu_tuc_nop_ho_so_thai_san([truong_hop_1:Nếu người lao động vẫn còn hợp đồng lao động tại thời điểm sinh con, hồ sơ thai sản phải nộp cho công ty (người sử dụng lao động), công ty sẽ tổng hợp và nộp cho cơ quan BHXH.,truong_hop_2:Nếu người lao động đã chấm dứt hợp đồng lao động trước khi sinh con, người lao động tự nộp hồ sơ trực tiếp cho cơ quan BHXH.]),based_on(source_c000)),step(conclusion,thu_tuc_nop_ho_so_thai_san([truong_hop_1:Nếu người lao động vẫn còn hợp đồng lao động tại thời điểm sinh con, hồ sơ thai sản phải nộp cho công ty (người sử dụng lao động), công ty sẽ tổng hợp và nộp cho cơ quan BHXH.,truong_hop_2:Nếu người lao động đã chấm dứt hợp đồng lao động trước khi sinh con, người lao động tự nộp hồ sơ trực tiếp cho cơ quan BHXH.]),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu người lao động sinh con trước ngày ký quyết định nghỉ việc 3 ngày thì hồ sơ hưởng chế độ thai sản sẽ do cá nhân tự nộp hay phải thông qua công ty?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), Điều 62, Khoản 1: \"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản. Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ thai sản kèm theo hồ sơ quy định t...\"\nLuật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 4: \"Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con... thì vẫn được hưởng chế độ thai sản...\"",
+    "application": "Không có slot_id cụ thể nào được ràng buộc trong trường hợp này. Prolog đã sử dụng các quy định tại Điều 62 Khoản 1 và Điều 50 Khoản 4 Luật BHXH 2024 để xác định hai trường hợp: (1) Nếu còn hợp đồng lao động tại thời điểm sinh con thì hồ sơ nộp qua công ty; (2) Nếu đã chấm dứt hợp đồng trước khi sinh con thì người lao động tự nộp hồ sơ cho cơ quan BHXH.",
+    "conclusion": "Prolog trả về: [truong_hop_1:Nếu người lao động vẫn còn hợp đồng lao động tại thời điểm sinh con, hồ sơ thai sản phải nộp cho công ty (người sử dụng lao động), công ty sẽ tổng hợp và nộp cho cơ quan BHXH., truong_hop_2:Nếu người lao động đã chấm dứt hợp đồng lao động trước khi sinh con, người lao động tự nộp hồ sơ trực tiếp cho cơ quan BHXH.]."
+  },
+  "elapsed_s": 9.609,
+  "prompt_tokens": 4431,
+  "completion_tokens": 1080,
+  "error": null,
+  "gold_answer": "Nếu bạn sinh trước ngày ký quyết định nghỉ việc 3 ngày, tức thời điểm sinh con vẫn đang trong quan hệ lao động, thì về nguyên tắc hồ sơ thai sản nên do công ty lập và nộp cho cơ quan BHXH. Chỉ khi bạn đã nghỉ việc trước sinh hoặc công ty không còn hoạt động/không nộp hồ sơ thì mới chuyển sang hướng tự nộp trực tiếp.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

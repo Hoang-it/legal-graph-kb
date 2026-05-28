@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 37,
+  "question": "Mình nghỉ cty cũ từ tháng 1/2026. (nghỉ ngang) nhưng cty vẫn chốt sổ cho Mình. Nhưng nay mình muốn ra lấy tờ rời BHXH, giờ mình phải làm sao?",
+  "answer": "Issue:\nMình nghỉ công ty cũ từ tháng 1/2026 (nghỉ ngang) và công ty đã chốt sổ; nay muốn lấy tờ rời BHXH, phải làm sao?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15) - Article 13, clause 3: \"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 25, clause 2: \"Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau.\nChậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằng bản giấy được cấp khi người tham gia bảo hiểm xã hội yêu cầu.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 62, clause 2: \"Người lao động nộp hồ sơ quy định tại Điều 61 của Luật này cho cơ quan bảo hiểm xã hội trong trường hợp thôi việc trước thời điểm sinh con, nhận con khi nhờ mang thai hộ, nhận nuôi con nuôi dưới 06 tháng tuổi hoặc không còn người sử dụng lao động.\"\n\nApplication:\nKhông có slot_bindings. Các fact/prolog đã dùng: left_company_month(user, january_2026). employer_chot_so(user).\nQuy tắc get_paper_bhxh_steps yêu cầu left_company_month(Person, Month) và employer_chot_so(Person); Prolog khớp với left_company_month(user, january_2026) và employer_chot_so(user) và sinh ra danh sách các bước theo luật trích dẫn.\n\nConclusion:\nSteps = ['Yêu cầu cấp sổ BHXH bản giấy tại cơ quan BHXH', 'Nộp giấy tờ tuỳ thân và giấy tờ xác nhận chấm dứt hợp đồng (nếu có)', 'Nhận tờ rời hoặc sổ BHXH bản giấy theo yêu cầu']. Prolog đã trả biến Steps với giá trị trên.",
+  "citations": [
+    "[Điều 61]"
+  ],
+  "citation_ids": [
+    "L41_2024.A61"
+  ],
+  "citation_indices": [
+    2,
+    3,
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(request_paper,get_paper_bhxh_steps(user,[Yêu cầu cấp sổ BHXH bản giấy tại cơ quan BHXH,Nộp giấy tờ tuỳ thân và giấy tờ xác nhận chấm dứt hợp đồng (nếu có),Nhận tờ rời hoặc sổ BHXH bản giấy theo yêu cầu]),based_on(source_c003)),step(coordination,get_paper_bhxh_steps(user,[Yêu cầu cấp sổ BHXH bản giấy tại cơ quan BHXH,Nộp giấy tờ tuỳ thân và giấy tờ xác nhận chấm dứt hợp đồng (nếu có),Nhận tờ rời hoặc sổ BHXH bản giấy theo yêu cầu]),based_on(source_c002)),step(submission,get_paper_bhxh_steps(user,[Yêu cầu cấp sổ BHXH bản giấy tại cơ quan BHXH,Nộp giấy tờ tuỳ thân và giấy tờ xác nhận chấm dứt hợp đồng (nếu có),Nhận tờ rời hoặc sổ BHXH bản giấy theo yêu cầu]),based_on(source_c006))]",
+  "irac_sections": {
+    "issue": "Mình nghỉ công ty cũ từ tháng 1/2026 (nghỉ ngang) và công ty đã chốt sổ; nay muốn lấy tờ rời BHXH, phải làm sao?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15) - Article 13, clause 3: \"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 25, clause 2: \"Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau.\nChậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằng bản giấy được cấp khi người tham gia bảo hiểm xã hội yêu cầu.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 62, clause 2: \"Người lao động nộp hồ sơ quy định tại Điều 61 của Luật này cho cơ quan bảo hiểm xã hội trong trường hợp thôi việc trước thời điểm sinh con, nhận con khi nhờ mang thai hộ, nhận nuôi con nuôi dưới 06 tháng tuổi hoặc không còn người sử dụng lao động.\"",
+    "application": "Không có slot_bindings. Các fact/prolog đã dùng: left_company_month(user, january_2026). employer_chot_so(user).\nQuy tắc get_paper_bhxh_steps yêu cầu left_company_month(Person, Month) và employer_chot_so(Person); Prolog khớp với left_company_month(user, january_2026) và employer_chot_so(user) và sinh ra danh sách các bước theo luật trích dẫn.",
+    "conclusion": "Steps = ['Yêu cầu cấp sổ BHXH bản giấy tại cơ quan BHXH', 'Nộp giấy tờ tuỳ thân và giấy tờ xác nhận chấm dứt hợp đồng (nếu có)', 'Nhận tờ rời hoặc sổ BHXH bản giấy theo yêu cầu']. Prolog đã trả biến Steps với giá trị trên."
+  },
+  "elapsed_s": 45.952,
+  "prompt_tokens": 4052,
+  "completion_tokens": 5039,
+  "error": null,
+  "gold_answer": "Nếu công ty đã chốt sổ nhưng chưa trả tờ rời cho bạn thì trước hết yêu cầu công ty bàn giao lại sổ/tờ rời bằng văn bản hoặc email. Khi chấm dứt HĐLĐ, người sử dụng lao động phải phối hợp xác nhận thời gian đóng BHXH và trả lại giấy tờ liên quan cho người lao động. Nếu công ty chây ì, bạn có thể khiếu nại đến Thanh tra Sở Nội vụ/LĐTBXH hoặc cơ quan BHXH nơi đơn vị đang tham gia để được hỗ trợ cấp lại, xác nhận quá trình đóng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48"
+}

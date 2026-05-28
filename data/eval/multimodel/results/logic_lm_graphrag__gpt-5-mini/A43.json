@@ -1,0 +1,38 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 43,
+  "question": "Cty mình cần đóng BHXH cho 2 NV, mức đóng tối thiếu khoảng bao nhiêu 1 tháng/1 người?\nNếu NV nghỉ việc thì tối thiếu bao nhiêu tháng NV sẽ rút dc tiền 1 cục?",
+  "answer": "Issue:\nCông ty hỏi mức đóng BHXH tối thiểu 1 tháng/1 người và nếu người lao động nghỉ việc thì tối thiểu bao nhiêu tháng để rút một lần.\n\nRule:\nLuật BHXH 2024 (41/2024/QH15) Article 34 clause 2: \"Người sử dụng lao động hằng tháng đóng 22% tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc vào quỹ hưu trí và tử tuất cho đối tượng quy định tại điểm đ và điểm e khoản 1 Điều 2 của Luật này.\"\nLuật BHXH 2024 (41/2024/QH15) Article 33 clause 7: \"Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất. Th\"\nLuật BHXH 2024 (41/2024/QH15) Article 5 clause 6: \"Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\"\n\nApplication:\nslot_bindings: (trống)\nexecution_result.Answer binding (nguyên văn):\nanswer(contribution(employer_rate_percentage(22),basis(salary),note(Người sử dụng lao động phải đóng 22% tiền lương làm căn cứ đóng BHXH hằng tháng vào quỹ hưu trí và tử tuất (Điều 34 khoản 2).)),info(no_explicit_min_months_in_provided_text,note(Không có quy định rõ ràng trong các đoạn trích được cung cấp về số tháng tối thiểu để người lao động rút một lần khi nghỉ việc. Tuy nhiên, Điều 33 khoản 7 cho phép đóng tiếp một lần cho số tháng còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu.)))\nProlog đã dùng source_c034 để xác định employer_rate_percentage(22) và source_c033 để đưa thông tin về khả năng đóng tiếp tối đa \"06 tháng\".\n\nConclusion:\nAnswer = answer(contribution(employer_rate_percentage(22),basis(salary),note(...)),info(no_explicit_min_months_in_provided_text,note(...06 tháng...)))\nProlog trả về tỷ lệ đóng 22% (theo Điều 34 khoản 2) và ghi chú rằng không có quy định rõ ràng về số tháng tối thiểu để rút một lần trong các đoạn trích; Điều 33 khoản 7 cho phép đóng tiếp tối đa 06 tháng. Hệ thống không tính được một số tiền cụ thể hàng tháng cho mỗi người.",
+  "citations": [
+    "[Điều 2]",
+    "[Điều 34 khoản 2]",
+    "[Điều 33 khoản 7]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2",
+    "L41_2024.A34.K2",
+    "L41_2024.A33.K7"
+  ],
+  "citation_indices": [
+    4,
+    1,
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,company_minimum_monthly_contribution(contribution(employer_rate_percentage(22),basis(salary),note(Người sử dụng lao động phải đóng 22% tiền lương làm căn cứ đóng BHXH hằng tháng vào quỹ hưu trí và tử tuất (Điều 34 khoản 2).))),based_on(source_c034)),step(conclusion,withdrawal_one_time_minimum(info(no_explicit_min_months_in_provided_text,note(Không có quy định rõ ràng trong các đoạn trích được cung cấp về số tháng tối thiểu để người lao động rút một lần khi nghỉ việc. Tuy nhiên, Điều 33 khoản 7 cho phép đóng tiếp một lần cho số tháng còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu.))),based_on(source_c033))]",
+  "irac_sections": {
+    "issue": "Công ty hỏi mức đóng BHXH tối thiểu 1 tháng/1 người và nếu người lao động nghỉ việc thì tối thiểu bao nhiêu tháng để rút một lần.",
+    "rule": "Luật BHXH 2024 (41/2024/QH15) Article 34 clause 2: \"Người sử dụng lao động hằng tháng đóng 22% tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc vào quỹ hưu trí và tử tuất cho đối tượng quy định tại điểm đ và điểm e khoản 1 Điều 2 của Luật này.\"\nLuật BHXH 2024 (41/2024/QH15) Article 33 clause 7: \"Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất. Th\"\nLuật BHXH 2024 (41/2024/QH15) Article 5 clause 6: \"Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\"",
+    "application": "slot_bindings: (trống)\nexecution_result.Answer binding (nguyên văn):\nanswer(contribution(employer_rate_percentage(22),basis(salary),note(Người sử dụng lao động phải đóng 22% tiền lương làm căn cứ đóng BHXH hằng tháng vào quỹ hưu trí và tử tuất (Điều 34 khoản 2).)),info(no_explicit_min_months_in_provided_text,note(Không có quy định rõ ràng trong các đoạn trích được cung cấp về số tháng tối thiểu để người lao động rút một lần khi nghỉ việc. Tuy nhiên, Điều 33 khoản 7 cho phép đóng tiếp một lần cho số tháng còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu.)))\nProlog đã dùng source_c034 để xác định employer_rate_percentage(22) và source_c033 để đưa thông tin về khả năng đóng tiếp tối đa \"06 tháng\".",
+    "conclusion": "Answer = answer(contribution(employer_rate_percentage(22),basis(salary),note(...)),info(no_explicit_min_months_in_provided_text,note(...06 tháng...)))\nProlog trả về tỷ lệ đóng 22% (theo Điều 34 khoản 2) và ghi chú rằng không có quy định rõ ràng về số tháng tối thiểu để rút một lần trong các đoạn trích; Điều 33 khoản 7 cho phép đóng tiếp tối đa 06 tháng. Hệ thống không tính được một số tiền cụ thể hàng tháng cho mỗi người."
+  },
+  "elapsed_s": 51.794,
+  "prompt_tokens": 4400,
+  "completion_tokens": 6180,
+  "error": null,
+  "gold_answer": "Mức đóng tối thiểu phụ thuộc địa bàn lương tối thiểu vùng và mức lương ghi trong HĐLĐ, vì tiền lương làm căn cứ đóng BHXH không được thấp hơn lương tối thiểu vùng. Tổng mức đóng thông thường hiện vào khoảng 32% tiền lương tháng làm căn cứ đóng (doanh nghiệp và người lao động cùng đóng các quỹ BHXH, BHYT, BHTN). Về rút BHXH một lần, không phải cứ nghỉ là rút ngay; thường phải thuộc trường hợp luật cho phép, phổ biến là sau 12 tháng ngừng tham gia mà đủ điều kiện.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 31, Điều 33, Điều 70; Luật Việc làm 2013 Điều 57; Nghị định 293/2025/NĐ-CP"
+}

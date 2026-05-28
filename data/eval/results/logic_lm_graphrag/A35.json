@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "stt": 35,
+  "question": "Ông T.Công (TPHCM) hỏi, con của người lao động tham gia BHXH bị ốm thì người lao động có được hưởng chế độ ốm đau không?\nNếu cả bố và mẹ đều tham gia BHXH thì ai được hưởng chế độ này?",
+  "answer": "Issue: Ông T.Công hỏi về quyền lợi hưởng chế độ ốm đau khi con của người lao động tham gia BHXH bị ốm. Rule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 27 khoản 2], trường hợp cả cha và mẹ cùng tham gia bảo hiểm xã hội thì thời gian hưởng chế độ khi con ốm đau của mỗi người cha hoặc người mẹ theo quy định tại khoản 1 Điều này. Application: Hệ thống đã xác định rằng người lao động có quyền hưởng chế độ ốm đau khi con bị ốm, với kết quả là 'yes'. Conclusion: Theo Prolog, người lao động có quyền hưởng chế độ ốm đau khi con bị ốm.",
+  "plain_answer": "Khi con của người lao động tham gia BHXH bị ốm, người lao động có quyền hưởng chế độ ốm đau theo [Luật BHXH 2024 (41/2024/QH15), Điều 27 khoản 2]. Nếu cả bố và mẹ đều tham gia BHXH, thì mỗi người đều có quyền hưởng chế độ này.",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 27 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A27.K2"
+  ],
+  "citation_indices": [
+    0,
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,sick_leave_for_child(yes),based_on(source_c027))]",
+  "prolog_program": "legal_source(source_c027, law_bhxh_2024, article_27, clause_2, none, 'Trường hợp cả cha và mẹ cùng tham gia bảo hiểm xã hội thì thời gian hưởng chế độ khi con ốm đau của mỗi người cha hoặc người mẹ theo quy định tại khoản 1 Điều này.').\nlegal_source(source_c044, law_bhxh_2024, article_44, clause_2, none, 'Trường hợp cả cha và mẹ cùng tham gia bảo hiểm xã hội bắt buộc thì thời gian hưởng chế độ khi chăm sóc con ốm đau của mỗi người theo quy định tại khoản 1 Điều này.').\nsick_leave_for_child(Answer, Trace) :- Answer = yes, Trace = [step(conclusion, sick_leave_for_child(Answer), based_on(source_c027))].\nsick_leave_for_child(Answer, Trace) :- Answer = yes, Trace = [step(conclusion, sick_leave_for_child(Answer), based_on(source_c044))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Ông T.Công hỏi về quyền lợi hưởng chế độ ốm đau khi con của người lao động tham gia BHXH bị ốm. Rule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 27 khoản 2], trường hợp cả cha và mẹ cùng tham gia bảo hiểm xã hội thì thời gian hưởng chế độ khi con ốm đau của mỗi người cha hoặc người mẹ theo quy định tại khoản 1 Điều này. Application: Hệ thống đã xác định rằng người lao động có quyền hưởng chế độ ốm đau khi con bị ốm, với kết quả là 'yes'. Conclusion: Theo Prolog, người lao động có quyền hưởng chế độ ốm đau khi con bị ốm."
+  },
+  "elapsed_s": 14.065,
+  "prompt_tokens": 4010,
+  "completion_tokens": 550,
+  "error": null,
+  "gold_answer": "Căn cứ điểm e khoản 1 Điều 42 Luật BHXH 2024, đối tượng chăm sóc con dưới 07 tuổi bị ốm đau được hưởng chế độ ốm đau khi nghỉ việc.\nTheo khoản 2 Điều 44 Luật BHXH 2024 quy định thời gian hưởng chế độ khi chăm sóc con bị ốm đau: \"Trường hợp cả cha và mẹ cùng tham gia bảo hiểm xã hội bắt buộc thì thời gian hưởng chế độ khi chăm sóc con ốm đau của mỗi người theo quy định tại khoản 1 Điều này\".\nĐối chiếu các quy định trên, trường hợp cả cha và mẹ đang tham gia BHXH cùng phải nghỉ việc chăm sóc con ốm đau thì đều được hưởng chế độ con ốm theo quy định.",
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 42]"
+}

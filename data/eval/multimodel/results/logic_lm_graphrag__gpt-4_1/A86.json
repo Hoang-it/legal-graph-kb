@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 86,
+  "question": "hiện tại em đã nghĩ việc được 2 tháng thì bên nhân sự không chịu trả tờ rời cho em dù đã chốt sổ.\n- Cho em hỏi nếu như vậy thì em có thể lãnh BHTN ko?\n- Và khi em lên xin cấp lại tờ rời thì bên BHXH nói chuyện rất bất lịch sự, vậy thì bên BHXH có thể cấp lại tờ rời này cho mình không hay chỉ doanh nghiệp có thể cấp?",
+  "answer": "Issue:\nNgười lao động đã nghỉ việc 2 tháng nhưng chưa được công ty trả tờ rời (sổ bảo hiểm xã hội đã chốt), hỏi cơ quan bảo hiểm xã hội (BHXH) có thể cấp lại tờ rời này không hay chỉ doanh nghiệp mới có quyền cấp.\n\nRule:\n\"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), Điều 28, Khoản 4)\n\nApplication:\nKhông có slot nào được ràng buộc cụ thể trong truy vấn này. Prolog đã sử dụng quy định tại Điều 28, Khoản 4 Luật BHXH 2024 để xác định rằng cơ quan BHXH có trách nhiệm cấp lại sổ bảo hiểm xã hội (tờ rời) khi người lao động có yêu cầu và nộp đủ hồ sơ.\n\nConclusion:\nTheo kết quả truy vấn Prolog, cơ quan BHXH có thể cấp lại tờ rời sổ bảo hiểm xã hội cho người lao động (Answer = yes).",
+  "citations": [
+    "[Điều 28 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A28.K4"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,can_bhxh_issue_so_bhxh_again(yes),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Người lao động đã nghỉ việc 2 tháng nhưng chưa được công ty trả tờ rời (sổ bảo hiểm xã hội đã chốt), hỏi cơ quan bảo hiểm xã hội (BHXH) có thể cấp lại tờ rời này không hay chỉ doanh nghiệp mới có quyền cấp.",
+    "rule": "\"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), Điều 28, Khoản 4)",
+    "application": "Không có slot nào được ràng buộc cụ thể trong truy vấn này. Prolog đã sử dụng quy định tại Điều 28, Khoản 4 Luật BHXH 2024 để xác định rằng cơ quan BHXH có trách nhiệm cấp lại sổ bảo hiểm xã hội (tờ rời) khi người lao động có yêu cầu và nộp đủ hồ sơ.",
+    "conclusion": "Theo kết quả truy vấn Prolog, cơ quan BHXH có thể cấp lại tờ rời sổ bảo hiểm xã hội cho người lao động (Answer = yes)."
+  },
+  "elapsed_s": 5.835,
+  "prompt_tokens": 3177,
+  "completion_tokens": 490,
+  "error": null,
+  "gold_answer": "Việc công ty chưa trả tờ rời dù đã chốt sổ không làm mất hẳn quyền nộp hồ sơ BHTN, nhưng có thể gây khó trong khâu chứng minh quá trình đóng nếu dữ liệu điện tử chưa đầy đủ. Bạn vẫn nên đi nộp hồ sơ BHTN trong hạn 3 tháng với các giấy tờ đang có, đồng thời yêu cầu công ty hoặc cơ quan BHXH hỗ trợ xác nhận dữ liệu. Nếu tờ rời bị mất/không giao, cơ quan BHXH có thể hướng dẫn cấp lại hoặc xác nhận quá trình, không phải chỉ doanh nghiệp mới thực hiện được.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 49; Luật BHXH 2024 Điều 25"
+}

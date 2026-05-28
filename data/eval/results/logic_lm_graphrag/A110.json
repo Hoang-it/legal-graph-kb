@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_graphrag",
+  "stt": 110,
+  "question": "Đóng BH 20 năm lương cứng 4 triệu ,rút 1lần thì được bảo nhiêu?",
+  "answer": "Issue: Đóng BH 20 năm lương cứng 4 triệu, rút 1 lần thì được bảo nhiêu?  \nRule: \"Mức trợ cấp một lần đối với người đang hưởng lương hưu được tính theo thời gian đã đóng bảo hiểm xã hội trong đó mỗi năm đóng bảo hiểm xã hội trước năm 2014 được tính bằng 1,5 tháng lương hưu đang hưởng, mỗi năm đóng bảo hiểm xã hội từ năm 2014 trở đi được tính bằng 02 tháng lương hưu đang hưởng; sau đó mỗi tháng đã hưởng lương hưu thì mức trợ cấp một lần trừ 0,5 tháng lương hưu.\" (Luật BHXH 2024 (41/2024/QH15), article 76, clause 2)  \nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã sử dụng các giá trị từ các quy tắc đã được xác định, cụ thể là số năm đóng bảo hiểm là 20 và lương cứng là 4 triệu.  \nConclusion: Prolog đã trả về giá trị 8000000 cho biến Amount.",
+  "citations": [
+    "[Điều 76 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A76.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_benefit(8000000),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Đóng BH 20 năm lương cứng 4 triệu, rút 1 lần thì được bảo nhiêu?",
+    "rule": "\"Mức trợ cấp một lần đối với người đang hưởng lương hưu được tính theo thời gian đã đóng bảo hiểm xã hội trong đó mỗi năm đóng bảo hiểm xã hội trước năm 2014 được tính bằng 1,5 tháng lương hưu đang hưởng, mỗi năm đóng bảo hiểm xã hội từ năm 2014 trở đi được tính bằng 02 tháng lương hưu đang hưởng; sau đó mỗi tháng đã hưởng lương hưu thì mức trợ cấp một lần trừ 0,5 tháng lương hưu.\" (Luật BHXH 2024 (41/2024/QH15), article 76, clause 2)",
+    "application": "Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã sử dụng các giá trị từ các quy tắc đã được xác định, cụ thể là số năm đóng bảo hiểm là 20 và lương cứng là 4 triệu.",
+    "conclusion": "Prolog đã trả về giá trị 8000000 cho biến Amount."
+  },
+  "elapsed_s": 10.876,
+  "prompt_tokens": 3269,
+  "completion_tokens": 612,
+  "error": null,
+  "gold_answer": "Nếu toàn bộ 20 năm của bạn đều từ 2014 trở đi thì BHXH 1 lần ước khoảng khoảng 160,0 triệu, chưa tính hệ số điều chỉnh tiền lương. Tuy nhiên cần lưu ý: từ 01/7/2025, người đã đủ tuổi hưu mà có từ đủ 15 năm đóng trở lên thường nên xem xét hưởng lương hưu thay vì rút 1 lần vì lương hưu còn kèm BHYT và quyền lợi lâu dài.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

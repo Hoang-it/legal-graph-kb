@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 28,
+  "question": "Bà Hoàng Tuyết Mây nhận nuôi con nuôi ngày 13/10/2025 (có biên bản làm việc viết tay của chính quyền, có dấu).\nNgày 12/11/2025, bà được cấp giấy chứng nhận nuôi con nuôi. Ngày 17/11/2025 con của bà có Giấy khai sinh, tên bố mẹ bổ sung ở mặt sau giấy khai sinh của con.\nBà Mây hỏi, bà được hưởng trợ cấp thai sản như thế nào? Bắt đầu được nghỉ thai sản từ thời điểm nào?",
+  "answer": "Issue: Bà Hoàng Tuyết Mây hỏi về quyền lợi trợ cấp thai sản và thời điểm bắt đầu nghỉ thai sản sau khi nhận nuôi con nuôi. \nRule: Theo [Luật BHXH 2024, Điều 26 khoản 1], mức hưởng chế độ thai sản cho người nuôi con nuôi tương tự như cho người mẹ sinh con; và theo [Luật BHXH 2024, Điều 28 khoản 1], thời gian nghỉ thai sản bắt đầu từ thời điểm nhận nuôi con. \nApplication: Không có slot nào được gán giá trị. Prolog query maternity_benefit(user, Benefit, StartDate, Trace) trả về Benefit = _5128 và StartDate = '13/10/2025'. \nConclusion: Theo Prolog, bà Hoàng Tuyết Mây được hưởng trợ cấp thai sản với mức _5128, bắt đầu nghỉ thai sản từ ngày 13/10/2025.",
+  "plain_answer": "Bà Hoàng Tuyết Mây sẽ được hưởng trợ cấp thai sản với mức _5128, bắt đầu từ ngày 13/10/2025 theo [Luật BHXH 2024, Điều 26 khoản 1] và [Luật BHXH 2024, Điều 28 khoản 1]. Bà có thể tham khảo thêm thông tin chi tiết về quy trình nhận trợ cấp tại cơ quan bảo hiểm xã hội địa phương.",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 26 khoản 1]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 28 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A26.K1",
+    "L41_2024.A28.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,maternity_benefit(user,_5128,13/10/2025),based_on(source_a26_k1)),step(conclusion,maternity_benefit(user,_5128,13/10/2025),based_on(source_a28))]",
+  "prolog_program": "legal_source(source_a26_k1, law_bhxh_2024, article_26, clause_1, none, 'Mức hưởng chế độ thai sản cho người nuôi con nuôi tương tự như cho người mẹ sinh con.').\nlegal_source(source_a28, law_bhxh_2024, article_28, clause_1, none, 'Thời gian nghỉ thai sản bắt đầu từ thời điểm nhận nuôi con.').\nmaternity_benefit(Person, Benefit, StartDate, Trace) :- Answer = 'Bà Hoàng Tuyết Mây được hưởng trợ cấp thai sản tương tự như người mẹ sinh con, bắt đầu nghỉ thai sản từ thời điểm nhận nuôi con.', StartDate = '13/10/2025', Trace = [step(conclusion, maternity_benefit(Person, Benefit, StartDate), based_on(source_a26_k1)), step(conclusion, maternity_benefit(Person, Benefit, StartDate), based_on(source_a28))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Bà Hoàng Tuyết Mây hỏi về quyền lợi trợ cấp thai sản và thời điểm bắt đầu nghỉ thai sản sau khi nhận nuôi con nuôi.",
+    "rule": "Theo [Luật BHXH 2024, Điều 26 khoản 1], mức hưởng chế độ thai sản cho người nuôi con nuôi tương tự như cho người mẹ sinh con; và theo [Luật BHXH 2024, Điều 28 khoản 1], thời gian nghỉ thai sản bắt đầu từ thời điểm nhận nuôi con.",
+    "application": "Không có slot nào được gán giá trị. Prolog query maternity_benefit(user, Benefit, StartDate, Trace) trả về Benefit = _5128 và StartDate = '13/10/2025'.",
+    "conclusion": "Theo Prolog, bà Hoàng Tuyết Mây được hưởng trợ cấp thai sản với mức _5128, bắt đầu nghỉ thai sản từ ngày 13/10/2025."
+  },
+  "elapsed_s": 14.461,
+  "prompt_tokens": 3123,
+  "completion_tokens": 597,
+  "error": null,
+  "gold_answer": "Về đối tượng và điều kiện hưởng chế độ thai sản, điểm đ khoản 1 Điều 50 Luật BHXH năm 2024 quy định:\n\"1. Đối tượng quy định tại các điểm a, b, c, d, i, k, l, m và n khoản 1 và khoản 2 Điều 2 của Luật này được hưởng chế độ thai sản khi thuộc một trong các trường hợp sau đây:\nđ) Người lao động nhận nuôi con nuôi dưới 06 tháng tuổi;\"\nTại Khoản 2 Điều 50 Luật BHXH năm 2024 quy định, đối tượng quy định tại các điểm b, c, d và đ khoản 1 Điều này (người lao động nhận nuôi con nuôi dưới 06 tháng tuổi) phải đóng BHXH bắt buộc từ đủ 06 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con hoặc nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 6 tháng tuổi.\nVề chế độ thai sản khi nhận nuôi con nuôi dưới 6 tháng tuổi, tại Điều 56 Luật BHXH năm 2024 quy định, người lao động nhận nuôi con nuôi dưới 6 tháng tuổi được nghỉ việc hưởng chế độ thai sản kể từ ngày giao nhận con nuôi cho đến khi con đủ 6 tháng tuổi.\nTrường hợp cả cha và mẹ cùng tham gia BHXH bắt buộc đủ điều kiện hưởng chế độ thai sản quy định tại khoản 2 Điều 50 của Luật này thì chỉ cha hoặc mẹ được nghỉ việc hưởng chế độ thai sản.\nNgười lao động nhận nuôi con nuôi dưới 6 tháng tuổi được hưởng trợ cấp một lần theo quy định tại Điều 58 của Luật này.\nVề trợ cấp một lần khi nhận nuôi con nuôi dưới 6 tháng tuổi, tại khoản 3, khoản 4 Điều 58 Luật BHXH năm 2024 quy định, người lao động nhận nuôi con nuôi dưới 6 tháng tuổi đủ điều kiện theo quy định tại khoản 2 Điều 50 của Luật này thì được trợ cấp một lần. Mức trợ cấp một lần cho mỗi con quy định tại khoản 3 Điều này bằng 2 lần mức tham chiếu tại tháng người lao động nhận nuôi con nuôi.\nVề hồ sơ đề nghị hưởng chế độ thai sản, tại khoản 4 Điều 61 Luật BHXH năm 2024 quy định hồ sơ đề nghị hưởng chế độ thai sản đối với người lao động nhận nuôi con nuôi dưới 6 tháng tuổi bao gồmbản sao giấy chứng nhận nuôi con nuôi và biên bản giao nhận con.\nDo bà chưa cung cấp đầy đủ thông tin về quá trình tham gia BHXH bắt buộc của bà nên BHXH Việt Nam chưa có đủ căn cứ trả lời. Vì vậy, đề nghị bà đến cơ quan BHXH nơi gần nhất và cung cấp đầy đủ thông tin để được trả lời và tư vấn cụ thể.",
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+}

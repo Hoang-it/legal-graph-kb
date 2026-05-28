@@ -1,0 +1,25 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 127,
+  "question": "nếu đóng BHXH tự nguyện thì có được BHYT hay bảo hiểm thai sản không?",
+  "answer": "Issue: Nếu đóng BHXH tự nguyện thì có được BHYT hay bảo hiểm thai sản không?\n\nRule: Không có trích dẫn nào được cung cấp.\n\nApplication: Không có giá trị nào được gán cho các slot, do đó Prolog không thể sử dụng thông tin nào để đưa ra kết luận.\n\nConclusion: Hệ thống không thể tính toán được số liệu cuối cùng vì không có giá trị nào được gán cho các slot.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(conditions),based_on(none))]",
+  "irac_sections": {
+    "issue": "Nếu đóng BHXH tự nguyện thì có được BHYT hay bảo hiểm thai sản không?",
+    "rule": "Không có trích dẫn nào được cung cấp.",
+    "application": "Không có giá trị nào được gán cho các slot, do đó Prolog không thể sử dụng thông tin nào để đưa ra kết luận.",
+    "conclusion": "Hệ thống không thể tính toán được số liệu cuối cùng vì không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 4.912,
+  "prompt_tokens": 1831,
+  "completion_tokens": 192,
+  "error": null,
+  "gold_answer": "BHXH tự nguyện không bao gồm BHYT đi kèm và không có chế độ thai sản. Hiện BHXH tự nguyện chủ yếu có chế độ hưu trí và tử tuất. Nếu muốn có BHYT, bạn phải tham gia BHYT theo nhóm phù hợp riêng. Nếu muốn hưởng thai sản, phải tham gia BHXH bắt buộc và đáp ứng điều kiện về thời gian đóng theo luật.",
+  "gold_citations_raw": "Điều 4, 5, 36 Luật BHXH 2024; Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

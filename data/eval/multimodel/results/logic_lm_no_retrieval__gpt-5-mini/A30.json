@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 30,
+  "question": "Người lao động sinh con tháng 01/2026, đã nghỉ việc hưởng chế độ thai sản từ thời điểm sinh con.\nKhi thực hiện thủ tục báo giảm lao động, cơ quan BHXH yêu cầu đơn vị phải điều chỉnh nơi đăng ký khám bệnh, chữa bệnh ban đầu của người lao động.\nTuy nhiên, thời điểm hiện tại đã quá hạn đầu quý I/2026 nên đơn vị chưa thể thực hiện thủ tục điều chỉnh khám bệnh, chữa bệnh, dự kiến đến đầu quý II/2026 mới thực hiện được.\nBà Thị Oanh (TPHCM) hỏi, vậy trong thời gian chờ để điều chỉnh nơi khám bệnh, chữa bệnh và báo giảm người lao động hưởng thai sản từ tháng 01/2026, đơn vị có phải tiếp tục đóng BHXH cho người lao động này không?\nViệc báo giảm và nộp hồ sơ thai sản muộn so với thời điểm phát sinh có ảnh hưởng đến quyền lợi của người lao động và trách nhiệm của đơn vị không?",
+  "answer": "Issue:\nNgười lao động sinh con tháng 01/2026, hưởng chế độ thai sản từ thời điểm sinh; đơn vị chậm điều chỉnh nơi đăng ký khám bệnh, chữa bệnh và trì hoãn báo giảm tới đầu quý II/2026. Đơn vị hỏi có phải tiếp tục đóng BHXH trong thời gian chờ và việc báo giảm/nộp hồ sơ muộn ảnh hưởng thế nào đến quyền lợi, trách nhiệm.\n\nRule:\nlaw_bhxh_2024, none, none: \"Người sử dụng lao động có trách nhiệm đóng, kê khai và nộp bảo hiểm xã hội; báo tăng, báo giảm khi có thay đổi về lao động; chậm báo giảm không làm mất trách nhiệm nộp đóng và có thể dẫn tới phải nộp bổ sung và chịu xử lý vi phạm hành chính theo quy định.\"\nlaw_bhxh_2024, none, none: \"Người lao động được hưởng chế độ thai sản khi đáp ứng điều kiện về thời gian đóng BHXH (thông thường là tối thiểu 6 tháng trong 12 tháng trước khi sinh); hồ sơ nộp chậm có thể được giải quyết hưởng chế độ theo thời điểm phát sinh nếu đủ điều kiện, nhưng việc nộp muộn có thể làm chậm thời điểm chi trả.\"\n\nApplication:\nKhông có slot_bindings. Sử dụng các sự kiện xác minh: maternity_start(user, jan_2026)., birth_month(user, jan_2026)., report_delay_expected(user, q2_2026).\nProlog quy tắc continue_payment_obligation(Person, yes, Trace) khớp với maternity_start(user, jan_2026) và tạo Trace theo quy tắc.\n\nConclusion:\nProlog trả Obligation = \"yes\".\nTrace = \"[step(employer_must_continue_pay,continue_payment_obligation(user,yes),based_on(source_employer_obligation))]\".",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(employer_must_continue_pay,continue_payment_obligation(user,yes),based_on(source_employer_obligation))]",
+  "irac_sections": {
+    "issue": "Người lao động sinh con tháng 01/2026, hưởng chế độ thai sản từ thời điểm sinh; đơn vị chậm điều chỉnh nơi đăng ký khám bệnh, chữa bệnh và trì hoãn báo giảm tới đầu quý II/2026. Đơn vị hỏi có phải tiếp tục đóng BHXH trong thời gian chờ và việc báo giảm/nộp hồ sơ muộn ảnh hưởng thế nào đến quyền lợi, trách nhiệm.",
+    "rule": "law_bhxh_2024, none, none: \"Người sử dụng lao động có trách nhiệm đóng, kê khai và nộp bảo hiểm xã hội; báo tăng, báo giảm khi có thay đổi về lao động; chậm báo giảm không làm mất trách nhiệm nộp đóng và có thể dẫn tới phải nộp bổ sung và chịu xử lý vi phạm hành chính theo quy định.\"\nlaw_bhxh_2024, none, none: \"Người lao động được hưởng chế độ thai sản khi đáp ứng điều kiện về thời gian đóng BHXH (thông thường là tối thiểu 6 tháng trong 12 tháng trước khi sinh); hồ sơ nộp chậm có thể được giải quyết hưởng chế độ theo thời điểm phát sinh nếu đủ điều kiện, nhưng việc nộp muộn có thể làm chậm thời điểm chi trả.\"",
+    "application": "Không có slot_bindings. Sử dụng các sự kiện xác minh: maternity_start(user, jan_2026)., birth_month(user, jan_2026)., report_delay_expected(user, q2_2026).\nProlog quy tắc continue_payment_obligation(Person, yes, Trace) khớp với maternity_start(user, jan_2026) và tạo Trace theo quy tắc.",
+    "conclusion": "Prolog trả Obligation = \"yes\".\nTrace = \"[step(employer_must_continue_pay,continue_payment_obligation(user,yes),based_on(source_employer_obligation))]\"."
+  },
+  "elapsed_s": 37.439,
+  "prompt_tokens": 2789,
+  "completion_tokens": 5580,
+  "error": null,
+  "gold_answer": "Khoản 1 Điều 13 Luật BHXH 2024 quy định trách nhiệm của người sử dụng lao động: \"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội\".\nĐối chiếu với quy định trên, đơn vị có trách nhiệm nộp hồ sơ báo giảm lao động nghỉ thai sản ngay khi người lao động nghỉ việc hưởng chế độ, việc thay đổi nơi đăng ký khám bệnh, chữa bệnh ban đầu không ảnh hưởng đến việc báo giảm.\nTuy nhiên, trường hợp người lao động đăng ký khám bệnh, chữa bệnh ban đầu tại cơ sở khám bệnh, chữa bệnh ban đầu đã ngừng ký hợp đồng khám, chữa bệnh BHYT thì được nộp ngay hồ sơ 613 để chuyển đổi nơi khám bệnh, chữa bệnh khác (không chờ đến 15 ngày của tháng đầu quý).\nTrường hợp khi nộp hồ sơ đề nghị giải quyết hưởng chế độ thai sản cho người lao động chậm so với thời hạn quy định, đề nghị đơn vị giải trình bằng văn bản lý do chậm nộp khi kê khai hồ sơ đề nghị giải quyết chế độ cho cơ quan BHXH, người lao động vẫn được giải quyết chế độ thai sản theo quy định.",
+  "gold_citations_raw": "Khoản 1 Điều 13 Luật BHXH 2024"
+}

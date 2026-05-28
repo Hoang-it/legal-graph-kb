@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 122,
+  "question": "E nghỉ từ tháng 6 năm ngoái thì bây giờ có đi làm bảo hiểm thất nghiệp đc không?",
+  "answer": "Issue: Bạn hỏi liệu có thể làm bảo hiểm thất nghiệp sau khi nghỉ việc từ tháng 6 năm ngoái hay không.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 4, Khoản 4: \"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, chương trình Prolog đã sử dụng quy định từ nguồn luật để xác định tính đủ điều kiện.\n\nConclusion: Theo kết quả từ chương trình Prolog, bạn đủ điều kiện để làm bảo hiểm thất nghiệp, với giá trị 'Eligible' là 'yes'.",
+  "citations": [
+    "[Điều 4 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A4.K4"
+  ],
+  "citation_indices": [
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_eligibility(yes),based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi liệu có thể làm bảo hiểm thất nghiệp sau khi nghỉ việc từ tháng 6 năm ngoái hay không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 4, Khoản 4: \"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, chương trình Prolog đã sử dụng quy định từ nguồn luật để xác định tính đủ điều kiện.",
+    "conclusion": "Theo kết quả từ chương trình Prolog, bạn đủ điều kiện để làm bảo hiểm thất nghiệp, với giá trị 'Eligible' là 'yes'."
+  },
+  "elapsed_s": 4.213,
+  "prompt_tokens": 2719,
+  "completion_tokens": 302,
+  "error": null,
+  "gold_answer": "Nếu bạn nghỉ từ tháng 6 năm ngoái mà đến nay mới đi làm BHTN thì thường đã quá thời hạn nộp hồ sơ 03 tháng kể từ ngày chấm dứt HĐLĐ, nên không còn được giải quyết cho đợt nghỉ việc đó. Thời gian đã đóng BHTN nhưng chưa hưởng sẽ được bảo lưu để tính cho lần thất nghiệp sau, nếu sau này bạn đi làm lại và tiếp tục tham gia BHTN.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

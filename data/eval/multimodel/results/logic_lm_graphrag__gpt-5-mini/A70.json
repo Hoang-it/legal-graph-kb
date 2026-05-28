@@ -1,0 +1,39 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 70,
+  "question": "Mình đi làm công ty và có tham gia BHXH, đầu tháng 12-2025 mình nghỉ thai sản, trước khi nghỉ thai sản mình có giấy ốm nghỉ 2 lần là 14 ngày, mình có nộp cho nhân sự, nhưng tới hiện tại mình chưa nhận được tiền hưởng\nĐã nhiều lần mình nhắn hỏi, mấy lần đầu không trả lời, tháng trước mình hỏi tiếp và nói là “ đang gửi hồ sơ lại nhờ BHXH duyệt” tới nay 1 tháng nữa vẫn chưa có, hôm qua mình nhắn hỏi thì không trả lời\nVậy là nhân sự có vấn đề hay hồ sơ của mình có vấn đề?",
+  "answer": "Issue: Mình đã nộp hồ sơ nghỉ thai sản và giấy ốm cho nhân sự nhưng chưa nhận tiền; nhân sự nói đã gửi hồ sơ lên BHXH từ 1 tháng trước. Muốn biết lỗi thuộc về nhân sự hay hồ sơ/BHXH.\n\nRule: Luật BHXH 2024 (41/2024/QH15), Điều 62, khoản 1: \"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản. Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ thai sản kèm theo hồ sơ quy định t\"\nLuật BHXH 2024 (41/2024/QH15), Điều 62, khoản 3: \"Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động, 05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\n\nApplication: Không có slot_bindings. Các fact đã xác nhận: employed(user). participates_bhxh(user). maternity_start(user, dec_2025). sick_leave_instances(user, 2). sick_leave_total_days(user, 14). submitted_to_employer(user). employer_reported_sent_to_bhxh(user). time_since_report_months(user, 1).\nProlog đã dùng các fact submitted_to_employer(user), employer_reported_sent_to_bhxh(user), time_since_report_months(user, 1) và quy tắc assessment_for_user(User, Assessment, Trace) (với điều kiện Months >= 1) để sinh kết luận tham chiếu các điều của Điều 62.\n\nConclusion: Prolog trả về Assessment = \"Nhân sự nói đã gửi hồ sơ nhưng đã hơn 7 ngày làm việc (đã 1 tháng); nên yêu cầu xác nhận bằng văn bản và kiểm tra tại BHXH; nếu BHXH đã nhận hồ sơ thì họ phải giải quyết trong 7 ngày làm việc và nếu không giải quyết phải trả lời bằng văn bản nêu rõ lý do; hiện có khả năng nhân sự chậm trễ hoặc BHXH đang xử lý.\"",
+  "citations": [
+    "[Điều 62 khoản 1]",
+    "[Điều 61]",
+    "[Điều 62 khoản 3]",
+    "[Điều 62]"
+  ],
+  "citation_ids": [
+    "L41_2024.A62.K1",
+    "L41_2024.A61",
+    "L41_2024.A62.K3",
+    "L41_2024.A62"
+  ],
+  "citation_indices": [
+    0,
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(check_employer_deadline,assessment_for_user(user,Nhân sự nói đã gửi hồ sơ nhưng đã hơn 7 ngày làm việc (đã 1 tháng); nên yêu cầu xác nhận bằng văn bản và kiểm tra tại BHXH; nếu BHXH đã nhận hồ sơ thì họ phải giải quyết trong 7 ngày làm việc và nếu không giải quyết phải trả lời bằng văn bản nêu rõ lý do; hiện có khả năng nhân sự chậm trễ hoặc BHXH đang xử lý.),based_on(source_c0)),step(check_bhxh_deadline,assessment_for_user(user,Nhân sự nói đã gửi hồ sơ nhưng đã hơn 7 ngày làm việc (đã 1 tháng); nên yêu cầu xác nhận bằng văn bản và kiểm tra tại BHXH; nếu BHXH đã nhận hồ sơ thì họ phải giải quyết trong 7 ngày làm việc và nếu không giải quyết phải trả lời bằng văn bản nêu rõ lý do; hiện có khả năng nhân sự chậm trễ hoặc BHXH đang xử lý.),based_on(source_c4))]",
+  "irac_sections": {
+    "issue": "Mình đã nộp hồ sơ nghỉ thai sản và giấy ốm cho nhân sự nhưng chưa nhận tiền; nhân sự nói đã gửi hồ sơ lên BHXH từ 1 tháng trước. Muốn biết lỗi thuộc về nhân sự hay hồ sơ/BHXH.",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), Điều 62, khoản 1: \"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản. Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ thai sản kèm theo hồ sơ quy định t\"\nLuật BHXH 2024 (41/2024/QH15), Điều 62, khoản 3: \"Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động, 05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"",
+    "application": "Không có slot_bindings. Các fact đã xác nhận: employed(user). participates_bhxh(user). maternity_start(user, dec_2025). sick_leave_instances(user, 2). sick_leave_total_days(user, 14). submitted_to_employer(user). employer_reported_sent_to_bhxh(user). time_since_report_months(user, 1).\nProlog đã dùng các fact submitted_to_employer(user), employer_reported_sent_to_bhxh(user), time_since_report_months(user, 1) và quy tắc assessment_for_user(User, Assessment, Trace) (với điều kiện Months >= 1) để sinh kết luận tham chiếu các điều của Điều 62.",
+    "conclusion": "Prolog trả về Assessment = \"Nhân sự nói đã gửi hồ sơ nhưng đã hơn 7 ngày làm việc (đã 1 tháng); nên yêu cầu xác nhận bằng văn bản và kiểm tra tại BHXH; nếu BHXH đã nhận hồ sơ thì họ phải giải quyết trong 7 ngày làm việc và nếu không giải quyết phải trả lời bằng văn bản nêu rõ lý do; hiện có khả năng nhân sự chậm trễ hoặc BHXH đang xử lý.\""
+  },
+  "elapsed_s": 80.363,
+  "prompt_tokens": 4597,
+  "completion_tokens": 8229,
+  "error": null,
+  "gold_answer": "Trường hợp này có thể do hồ sơ chưa được doanh nghiệp nộp, nộp thiếu chứng từ, hoặc cơ quan BHXH yêu cầu bổ sung nên chưa giải quyết. Theo luật, doanh nghiệp phải lập hồ sơ và nộp cho cơ quan BHXH trong thời hạn quy định sau khi nhận đủ giấy tờ của NLĐ; cơ quan BHXH cũng phải giải quyết trong thời hạn luật định. Bạn nên yêu cầu nhân sự trả lời bằng văn bản/email về tình trạng hồ sơ; nếu bị chậm không rõ lý do thì liên hệ trực tiếp cơ quan BHXH nơi đơn vị tham gia để kiểm tra.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 53, Điều 54, Điều 116"
+}

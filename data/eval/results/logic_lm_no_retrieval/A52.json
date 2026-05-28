@@ -1,0 +1,25 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 52,
+  "question": "Mình làm cty gia đìn, khi nghỉ việc giám đốc cho mình nghỉ việc bằng miệng không có giấy nghỉ việc.\nĐến nay mình đã nghỉ 4 tháng mà cty vẫn chưa đưa tờ rời cho mình \nMình có xuống xã hoằng hóa thanh hóa hỏi về bảo hiểm và tự mình đi chốt nhưng bên bảo hiểm bảo về cty sẽ báo chốt \nNhưng mình có liên hệ kế toán thì đã nghĩ việc Liên hệ giám đốc thì bảo cứ từ từ để xem \nGiờ mình phải làm như thế nào để lấy tờ rời?",
+  "answer": "Issue: Bạn đang gặp khó khăn trong việc lấy giấy nghỉ việc chính thức từ công ty sau khi nghỉ việc bằng miệng.\n\nRule: Không có quy định cụ thể nào được trích dẫn trong trường hợp này.\n\nApplication: Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được Prolog sử dụng để xử lý câu hỏi.\n\nConclusion: Prolog đã trả về câu trả lời là \"Bạn cần yêu cầu công ty cấp giấy nghỉ việc chính thức và có thể liên hệ với cơ quan bảo hiểm xã hội để được hướng dẫn thêm.\" Tuy nhiên, không có giá trị nào được gán cho các slot, vì vậy không thể tính toán một số liệu cụ thể.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(advice,process_resignation(user,Bạn cần yêu cầu công ty cấp giấy nghỉ việc chính thức và có thể liên hệ với cơ quan bảo hiểm xã hội để được hướng dẫn thêm.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Bạn đang gặp khó khăn trong việc lấy giấy nghỉ việc chính thức từ công ty sau khi nghỉ việc bằng miệng.",
+    "rule": "Không có quy định cụ thể nào được trích dẫn trong trường hợp này.",
+    "application": "Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được Prolog sử dụng để xử lý câu hỏi.",
+    "conclusion": "Prolog đã trả về câu trả lời là \"Bạn cần yêu cầu công ty cấp giấy nghỉ việc chính thức và có thể liên hệ với cơ quan bảo hiểm xã hội để được hướng dẫn thêm.\" Tuy nhiên, không có giá trị nào được gán cho các slot, vì vậy không thể tính toán một số liệu cụ thể."
+  },
+  "elapsed_s": 9.588,
+  "prompt_tokens": 3530,
+  "completion_tokens": 342,
+  "error": null,
+  "gold_answer": "Dù công ty cho nghỉ bằng miệng, khi chấm dứt việc làm người sử dụng lao động vẫn phải phối hợp xác nhận thời gian đóng BHXH và trả giấy tờ liên quan cho người lao động. Bạn nên gửi yêu cầu bằng văn bản/email/zalo có lưu vết đến công ty yêu cầu trả tờ rời/sổ. Nếu công ty không thực hiện, bạn khiếu nại đến Thanh tra lao động hoặc cơ quan BHXH nơi đơn vị tham gia để đề nghị hỗ trợ chốt, cấp lại hoặc xác nhận quá trình đã đóng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48"
+}

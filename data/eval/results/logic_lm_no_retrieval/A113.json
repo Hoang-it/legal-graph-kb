@@ -1,0 +1,20 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 113,
+  "question": "E đã nghỉ cty ngày 31/3. Tính đến nay chưa đi làm chính thức ở cty nào cũng chưa xin được việc làm ( tức ko có HĐLĐ VÀ đóng BHXH) . Nhưng e có làm 1 job online ( làm remote)  để kiếm thêm, làm job này có ký HĐ DỊCH VỤ -k đóng BHXH, K trừ gia cảnh. \nLiệu nếu hết tháng 4 hoặc tháng 5 mà vẫn chưa tìm đc việc chính thức thì e có được làm đơn lãnh BHTN ko? Và có được hưởng ko?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpxu2zfitw.pl:1:201: Syntax error: Illegal start of term]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 11.727,
+  "prompt_tokens": 3904,
+  "completion_tokens": 426,
+  "error": null,
+  "gold_answer": "Nếu bạn chỉ làm job online theo hợp đồng dịch vụ, không phải HĐLĐ thuộc diện tham gia BHTN, thì về nguyên tắc vẫn có thể nộp hồ sơ hưởng BHTN nếu đáp ứng điều kiện luật định. Bạn phải nộp trong 03 tháng kể từ ngày chấm dứt HĐLĐ cũ và sau khi nộp, nếu sau 15 ngày vẫn chưa có việc làm thuộc diện phải tham gia BHTN thì được hưởng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

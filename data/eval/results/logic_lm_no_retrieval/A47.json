@@ -1,0 +1,28 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 47,
+  "question": "Mình vừa được thăng chức, tăng lương xong mấy ngày thì biết tin có bầu. Mình đã đóng bảo hiểm được 5 năm. Thời gian tăng lương đến khi nghỉ thai sản đúng 6 tháng trước sinh ( tăng hơn 1 triệu ) . Giờ mình xin nghỉ thai sản trước 2 tháng và nghỉ việc luôn thì có bị thanh tra không? Mình có đầy đủ quyết định điều chỉnh lương , bảng lương, quyết định bổ nhiệm nhưng nhận quyết định qua mail k có bản dấu đỏ thì khi thanh tra có được chấp nhận không?",
+  "answer": "Issue: Người hỏi muốn biết liệu có bị thanh tra khi nghỉ thai sản trước 2 tháng và nghỉ việc luôn hay không. \nRule: Không có quy định cụ thể nào được trích dẫn trong trường hợp này. \nApplication: Không có slot nào được gán giá trị, nhưng Prolog đã xác định rằng người dùng đã đóng bảo hiểm 5 năm. Prolog trả về kết luận rằng có thể bị thanh tra nếu có dấu hiệu lạm dụng chế độ. \nConclusion: Theo Prolog, người dùng có thể bị thanh tra nếu có dấu hiệu lạm dụng chế độ.",
+  "plain_answer": "Bạn có thể bị thanh tra nếu có dấu hiệu lạm dụng chế độ khi nghỉ thai sản và nghỉ việc. Hệ thống không có thông tin cụ thể nào về quy định liên quan, nhưng việc bạn đã đóng bảo hiểm 5 năm có thể là một yếu tố tích cực. Nếu có thêm thông tin về quy trình thanh tra, mình có thể giúp bạn rõ hơn.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,Có thể bị thanh tra nếu có dấu hiệu lạm dụng chế độ.),based_on(none))]",
+  "prolog_program": "years_contributed(user, 5).\nanswer_predicate(Person, Answer, Trace) :- years_contributed(Person, Years), Years >= 5, Answer = 'Có thể bị thanh tra nếu có dấu hiệu lạm dụng chế độ.', Trace = [step(conclusion, answer_predicate(Person, Answer), based_on(none))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết liệu có bị thanh tra khi nghỉ thai sản trước 2 tháng và nghỉ việc luôn hay không.",
+    "rule": "Không có quy định cụ thể nào được trích dẫn trong trường hợp này.",
+    "application": "Không có slot nào được gán giá trị, nhưng Prolog đã xác định rằng người dùng đã đóng bảo hiểm 5 năm. Prolog trả về kết luận rằng có thể bị thanh tra nếu có dấu hiệu lạm dụng chế độ.",
+    "conclusion": "Theo Prolog, người dùng có thể bị thanh tra nếu có dấu hiệu lạm dụng chế độ."
+  },
+  "elapsed_s": 10.59,
+  "prompt_tokens": 2930,
+  "completion_tokens": 371,
+  "error": null,
+  "gold_answer": "Việc tăng lương rồi sau đó nghỉ thai sản không mặc nhiên bị thanh tra hay bị từ chối chế độ. Cơ quan BHXH chỉ kiểm tra khi nghi ngờ việc tăng lương không có căn cứ thực tế, không đúng quy chế hoặc đóng BHXH không đúng bản chất quan hệ lao động. Nếu bạn có quyết định điều chỉnh lương, bổ nhiệm, bảng lương, chứng từ trả lương và việc tăng lương là thật, đúng quy trình thì thường vẫn được chấp nhận. Văn bản điện tử hợp lệ không bắt buộc phải có bản dấu đỏ giấy.",
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 53]\n[Bộ luật Lao động 2019, Điều 90]\n[Bộ luật Lao động 2019, Điều 94]"
+}

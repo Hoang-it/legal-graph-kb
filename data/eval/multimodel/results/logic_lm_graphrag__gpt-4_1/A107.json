@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 107,
+  "question": "Bảo hiểm của e đóng từ 2015, đóng gián đoạn. Đến năm 2021 thì nghỉ đóng, vậy e có được rút không? và rút được bao nhiêu?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Người tham gia bảo hiểm xã hội từ năm 2015, đóng gián đoạn và nghỉ đóng vào năm 2021 thì có được rút bảo hiểm xã hội một lần không, và nếu được thì rút được bao nhiêu?\n\nRule:\n\"Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 9)\n\nApplication:\nCác điều kiện được Prolog truy vấn gồm: tham_gia_bhxh_tu_nguyen_truoc_2021_va_du_20_nam_duoc_huong_luong_huu và truong_hop_co_nguyen_vong_huong_luong_huu_theo_dieu_98. Truy vấn đã xác định các điều kiện này dựa trên nguồn luật được trích dẫn.\n\nConclusion:\nHệ thống xác định các điều kiện để hưởng lương hưu hoặc rút bảo hiểm xã hội một lần là: tham_gia_bhxh_tu_nguyen_truoc_2021_va_du_20_nam_duoc_huong_luong_huu và truong_hop_co_nguyen_vong_huong_luong_huu_theo_dieu_98. Tuy nhiên, hệ thống không trả về số tiền cụ thể bạn sẽ được rút. Nếu cần số tiền cụ thể, bạn cần cung cấp thêm thông tin về thời gian đóng và mức đóng.",
+  "citations": [
+    "[Điều 98]",
+    "[Điều 141 khoản 9]"
+  ],
+  "citation_ids": [
+    "L41_2024.A98",
+    "L41_2024.A141.K9"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_social_insurance_conditions([tham_gia_bhxh_tu_nguyen_truoc_2021_va_du_20_nam_duoc_huong_luong_huu,truong_hop_co_nguyen_vong_huong_luong_huu_theo_dieu_98]),based_on(source_c019))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Người tham gia bảo hiểm xã hội từ năm 2015, đóng gián đoạn và nghỉ đóng vào năm 2021 thì có được rút bảo hiểm xã hội một lần không, và nếu được thì rút được bao nhiêu?",
+    "rule": "\"Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 9)",
+    "application": "Các điều kiện được Prolog truy vấn gồm: tham_gia_bhxh_tu_nguyen_truoc_2021_va_du_20_nam_duoc_huong_luong_huu và truong_hop_co_nguyen_vong_huong_luong_huu_theo_dieu_98. Truy vấn đã xác định các điều kiện này dựa trên nguồn luật được trích dẫn.",
+    "conclusion": "Hệ thống xác định các điều kiện để hưởng lương hưu hoặc rút bảo hiểm xã hội một lần là: tham_gia_bhxh_tu_nguyen_truoc_2021_va_du_20_nam_duoc_huong_luong_huu và truong_hop_co_nguyen_vong_huong_luong_huu_theo_dieu_98. Tuy nhiên, hệ thống không trả về số tiền cụ thể bạn sẽ được rút. Nếu cần số tiền cụ thể, bạn cần cung cấp thêm thông tin về thời gian đóng và mức đóng."
+  },
+  "elapsed_s": 7.798,
+  "prompt_tokens": 3263,
+  "completion_tokens": 667,
+  "error": null,
+  "gold_answer": "Nếu bạn đã ngừng đóng từ năm 2021 đến nay và không thuộc diện tiếp tục tham gia, về nguyên tắc bạn có thể đề nghị hưởng BHXH 1 lần nếu thuộc trường hợp luật cho phép. Mức hưởng tính theo số năm đã đóng và mức bình quân tiền lương tháng đóng BHXH sau điều chỉnh; mỗi năm từ 2014 trở đi tính 2 tháng bình quân lương, trước 2014 tính 1,5 tháng/năm.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

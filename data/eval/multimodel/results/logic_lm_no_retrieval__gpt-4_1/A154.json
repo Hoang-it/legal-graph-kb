@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 154,
+  "question": "Anh chị cho em hỏi là em sinh xong 1 tháng sau em mới đi nộp giấy hưởng chế độ thai sản có được không?",
+  "answer": "Issue:\nBạn hỏi rằng sau khi sinh xong 1 tháng mới đi nộp hồ sơ hưởng chế độ thai sản thì có được không.\n\nRule:\n\"Người lao động phải nộp hồ sơ hưởng chế độ thai sản trong thời hạn 45 ngày kể từ ngày trở lại làm việc.\" (Luật Bảo hiểm xã hội 2024, Điều 102, Khoản 1)\n\nApplication:\nKhông có thông tin cụ thể về ngày bạn trở lại làm việc hoặc ngày nộp hồ sơ, nhưng theo quy định, thời hạn nộp hồ sơ là 45 ngày kể từ ngày trở lại làm việc. Prolog đã xác định rằng việc nộp hồ sơ sau khi sinh 1 tháng vẫn nằm trong quy định nếu bạn chưa trở lại làm việc hoặc vẫn trong thời hạn 45 ngày kể từ ngày trở lại làm việc.\n\nConclusion:\nTheo kết quả truy vấn Prolog, bạn được phép nộp hồ sơ hưởng chế độ thai sản sau khi sinh 1 tháng (Answer = duoc). Tuy nhiên, cần đảm bảo việc nộp hồ sơ trong thời hạn 45 ngày kể từ ngày trở lại làm việc.",
+  "citations": [
+    "[Điều 102 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A102.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,tra_sau_sinh_nop_ho_so_duoc_khong,based_on(source_a102_k1))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi rằng sau khi sinh xong 1 tháng mới đi nộp hồ sơ hưởng chế độ thai sản thì có được không.",
+    "rule": "\"Người lao động phải nộp hồ sơ hưởng chế độ thai sản trong thời hạn 45 ngày kể từ ngày trở lại làm việc.\" (Luật Bảo hiểm xã hội 2024, Điều 102, Khoản 1)",
+    "application": "Không có thông tin cụ thể về ngày bạn trở lại làm việc hoặc ngày nộp hồ sơ, nhưng theo quy định, thời hạn nộp hồ sơ là 45 ngày kể từ ngày trở lại làm việc. Prolog đã xác định rằng việc nộp hồ sơ sau khi sinh 1 tháng vẫn nằm trong quy định nếu bạn chưa trở lại làm việc hoặc vẫn trong thời hạn 45 ngày kể từ ngày trở lại làm việc.",
+    "conclusion": "Theo kết quả truy vấn Prolog, bạn được phép nộp hồ sơ hưởng chế độ thai sản sau khi sinh 1 tháng (Answer = duoc). Tuy nhiên, cần đảm bảo việc nộp hồ sơ trong thời hạn 45 ngày kể từ ngày trở lại làm việc."
+  },
+  "elapsed_s": 5.625,
+  "prompt_tokens": 1981,
+  "completion_tokens": 434,
+  "error": null,
+  "gold_answer": "Được. Bạn sinh xong 1 tháng mới nộp hồ sơ thai sản thường vẫn không vấn đề, miễn hồ sơ đầy đủ và còn trong thời hạn giải quyết theo quy định. Nếu đang làm việc thì nộp cho công ty để công ty lập hồ sơ gửi BHXH; nếu đã nghỉ việc trước sinh mà đủ điều kiện hưởng, bạn nộp trực tiếp cho cơ quan BHXH.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

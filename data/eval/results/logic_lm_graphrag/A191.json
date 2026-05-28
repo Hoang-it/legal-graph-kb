@@ -1,0 +1,33 @@
+{
+  "arm": "logic_lm_graphrag",
+  "stt": 191,
+  "question": "Anh chị cho em hỏi trong trường hợp em sinh trước so với ngày ký quyết định nghỉ việc 3 ngày thì hồ sơ thai sản em tự làm hay phải qua công ty?",
+  "answer": "Issue: Anh chị cho em hỏi trong trường hợp em sinh trước so với ngày ký quyết định nghỉ việc 3 ngày thì hồ sơ thai sản em tự làm hay phải qua công ty?\n\nRule: \"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản.\" (Luật BHXH 2024 (41/2024/QH15), Điều 62, Khoản 1)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog không thể tiêu thụ bất kỳ giá trị nào từ các slot vì không có giá trị nào được cung cấp.\n\nConclusion: Prolog đã trả về kết quả là \"Người lao động phải nộp hồ sơ cho người sử dụng lao động.\" Tuy nhiên, không có giá trị nào được gán từ các slot, do đó không thể kết luận rõ ràng về trách nhiệm nộp hồ sơ trong trường hợp cụ thể này.",
+  "citations": [
+    "[Điều 61]",
+    "[Điều 62 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A61",
+    "L41_2024.A62.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,submission_responsibility(Người lao động phải nộp hồ sơ cho người sử dụng lao động.),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Anh chị cho em hỏi trong trường hợp em sinh trước so với ngày ký quyết định nghỉ việc 3 ngày thì hồ sơ thai sản em tự làm hay phải qua công ty?",
+    "rule": "\"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản.\" (Luật BHXH 2024 (41/2024/QH15), Điều 62, Khoản 1)",
+    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog không thể tiêu thụ bất kỳ giá trị nào từ các slot vì không có giá trị nào được cung cấp.",
+    "conclusion": "Prolog đã trả về kết quả là \"Người lao động phải nộp hồ sơ cho người sử dụng lao động.\" Tuy nhiên, không có giá trị nào được gán từ các slot, do đó không thể kết luận rõ ràng về trách nhiệm nộp hồ sơ trong trường hợp cụ thể này."
+  },
+  "elapsed_s": 7.982,
+  "prompt_tokens": 3336,
+  "completion_tokens": 446,
+  "error": null,
+  "gold_answer": "Nếu bạn sinh trước ngày ký quyết định nghỉ việc 3 ngày, tức thời điểm sinh con vẫn đang trong quan hệ lao động, thì về nguyên tắc hồ sơ thai sản nên do công ty lập và nộp cho cơ quan BHXH. Chỉ khi bạn đã nghỉ việc trước sinh hoặc công ty không còn hoạt động/không nộp hồ sơ thì mới chuyển sang hướng tự nộp trực tiếp.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

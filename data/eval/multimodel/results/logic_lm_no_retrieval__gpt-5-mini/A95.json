@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 95,
+  "question": "Mình dong bao hiểm dc 10 tháng có rút đc 1 lần không?",
+  "answer": "Issue: Mình đóng bảo hiểm được 10 tháng có rút được 1 lần không?\n\nRule: Không có trích dẫn pháp luật được cung cấp trong đầu vào.\n\nApplication: slot_bindings: không có slot nào được gán trong đầu vào.\nDữ kiện được dùng: months_contributed(user,10) (được cung cấp trong verify_facts và xuất hiện trong Prolog trace).\nCách Prolog tiêu thụ: chương trình đối chiếu months_contributed(user,10) với quy tắc nội bộ và sinh kết luận về khả năng rút một lần; kết luận này được đưa vào trace.\n\nConclusion: Prolog trả về biến Answer = \"eligible\".\nProlog trace: [step(months_contributed(user,10),based_on(none)),step(conclusion(eligible_for_one_time_withdrawal),based_on(none))].",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(months_contributed(user,10),based_on(none)),step(conclusion(eligible_for_one_time_withdrawal),based_on(none))]",
+  "irac_sections": {
+    "issue": "Mình đóng bảo hiểm được 10 tháng có rút được 1 lần không?",
+    "rule": "Không có trích dẫn pháp luật được cung cấp trong đầu vào.",
+    "application": "slot_bindings: không có slot nào được gán trong đầu vào.\nDữ kiện được dùng: months_contributed(user,10) (được cung cấp trong verify_facts và xuất hiện trong Prolog trace).\nCách Prolog tiêu thụ: chương trình đối chiếu months_contributed(user,10) với quy tắc nội bộ và sinh kết luận về khả năng rút một lần; kết luận này được đưa vào trace.",
+    "conclusion": "Prolog trả về biến Answer = \"eligible\".\nProlog trace: [step(months_contributed(user,10),based_on(none)),step(conclusion(eligible_for_one_time_withdrawal),based_on(none))]."
+  },
+  "elapsed_s": 42.647,
+  "prompt_tokens": 1964,
+  "completion_tokens": 3763,
+  "error": null,
+  "gold_answer": "Đóng BHXH 10 tháng chưa có nghĩa là rút được ngay. Trường hợp phổ biến muốn nhận BHXH một lần là bạn phải ngừng tham gia BHXH từ đủ 12 tháng trở lên và thuộc trường hợp luật cho phép. Nếu mới nghỉ hoặc vẫn còn đóng nối tiếp nơi khác thì chưa giải quyết được. Nếu không rút, 10 tháng đó vẫn được bảo lưu để sau này cộng nối.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110"
+}

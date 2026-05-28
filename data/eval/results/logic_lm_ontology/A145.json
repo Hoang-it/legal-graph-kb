@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 145,
+  "question": "đóng bảo hiểm xã hội tự nguyện thì có dc rút 1 lần k?",
+  "answer": "Issue: Đóng bảo hiểm xã hội tự nguyện thì có được rút 1 lần không?  \nRule: \"1. Tuyên truyền, phổ biến, giải đáp, tư vấn chính sách, pháp luật về bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế; xây dựng chiến lược phát triển ngành bảo hiểm xã hội, chiến lược đầu tư dài hạn trình cơ quan có thẩm quyền phê duyệt; xây dựng phương án đầu tư hằng năm trình Hội đồng quản lý bảo hiểm xã hội quyết định; tổ chức đánh giá và công bố mức độ h\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 1)  \nApplication: Không có giá trị nào được gán cho các slot. Prolog không thể thực hiện truy vấn do thiếu thông tin cần thiết.  \nConclusion: Hệ thống không thể tính toán giá trị cuối cùng do không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 18 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K1"
+  ],
+  "citation_indices": [
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,withdraw_one_time_social_insurance(yes),based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Đóng bảo hiểm xã hội tự nguyện thì có được rút 1 lần không?",
+    "rule": "\"1. Tuyên truyền, phổ biến, giải đáp, tư vấn chính sách, pháp luật về bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế; xây dựng chiến lược phát triển ngành bảo hiểm xã hội, chiến lược đầu tư dài hạn trình cơ quan có thẩm quyền phê duyệt; xây dựng phương án đầu tư hằng năm trình Hội đồng quản lý bảo hiểm xã hội quyết định; tổ chức đánh giá và công bố mức độ h\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 1)",
+    "application": "Không có giá trị nào được gán cho các slot. Prolog không thể thực hiện truy vấn do thiếu thông tin cần thiết.",
+    "conclusion": "Hệ thống không thể tính toán giá trị cuối cùng do không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 9.131,
+  "prompt_tokens": 4949,
+  "completion_tokens": 543,
+  "error": null,
+  "gold_answer": "BHXH tự nguyện vẫn có thể được hưởng BHXH 1 lần, nhưng chỉ khi thuộc trường hợp luật cho phép. Mức hưởng tính theo số năm đã đóng và căn cứ đóng BHXH tự nguyện, bao gồm cả phần Nhà nước hỗ trợ nếu có. Tuy nhiên cần cân nhắc kỹ vì BHXH tự nguyện nhằm tích lũy cho hưu trí, tử tuất; rút 1 lần sẽ mất lợi ích lâu dài.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 105,
+  "question": "Chốt sổ em lãnh Bh thât nghiệp đến tháng 3/2025 nhưng giờ trên hệ thống chỉ đến tháng 2/2025, em không lãnh được tiền bhxh vì bị chênh lệch 1 tháng công ty không xử lý cho em. giờ em phải làm như nào để lãnh bảo hiểm được?",
+  "answer": "Issue:\nSổ BHXH của bạn được chốt đến tháng 3/2025 nhưng trên hệ thống ghi đến tháng 2/2025, nên bạn không nhận được trợ cấp thất nghiệp; hỏi phải làm gì để được hưởng bảo hiểm.\n\nRule:\nKhông có trích dẫn pháp luật được cung cấp trong trace (mảng citations trống).\n\nApplication:\nKhông có slot_bindings. Prolog đã sử dụng các facts cung cấp: expected_end_month(user, month(2025,3)). recorded_end_month(user, month(2025,2)). company_refuses_correction(user). benefit_type(user, unemployment_insurance).\nProlog trace: [step(check_discrepancy,months_diff(month(2025,3),month(2025,2),1),based_on(none)),step(advice_employer,request_employer,based_on(none)),step(advice_bhxh,report_bhxh,based_on(none))].\nProlog so sánh expected_end_month và recorded_end_month bằng months_diff(month(2025,3),month(2025,2),1); vì kết quả chênh lệch (Diff = 1) và benefit_type là unemployment_insurance, chương trình chọn các hành động khuyến nghị.\n\nConclusion:\nProlog trả về binding Answer = \"[action(request_employer,Yêu cầu công ty sửa sổ BHXH trên hệ thống; yêu cầu công ty xuất biên bản, chứng từ liên quan và cập nhật dữ liệu.),action(report_bhxh,Nếu công ty không xử lý, nộp đơn yêu cầu cơ quan BHXH tỉnh/thành phố xác minh, đối chiếu dữ liệu, yêu cầu chỉnh sửa hồ sơ; BHXH có thẩm quyền cập nhật khi có căn cứ.),action(labor_inspectorate,Nếu BHXH/công ty không giải quyết, gửi khiếu nại tới Thanh tra lao động hoặc khởi kiện hành chính theo trình tự pháp luật.),action(register_employment_center,Khi hồ sơ/sổ BHXH được chỉnh sửa, nộp hồ sơ đã đúng và đăng ký hưởng trợ cấp thất nghiệp tại trung tâm dịch vụ việc làm; bổ sung sổ BHXH, quyết định chấm dứt HĐLĐ và giấy tờ khác.)]\".",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(check_discrepancy,months_diff(month(2025,3),month(2025,2),1),based_on(none)),step(advice_employer,request_employer,based_on(none)),step(advice_bhxh,report_bhxh,based_on(none))]",
+  "irac_sections": {
+    "issue": "Sổ BHXH của bạn được chốt đến tháng 3/2025 nhưng trên hệ thống ghi đến tháng 2/2025, nên bạn không nhận được trợ cấp thất nghiệp; hỏi phải làm gì để được hưởng bảo hiểm.",
+    "rule": "Không có trích dẫn pháp luật được cung cấp trong trace (mảng citations trống).",
+    "application": "Không có slot_bindings. Prolog đã sử dụng các facts cung cấp: expected_end_month(user, month(2025,3)). recorded_end_month(user, month(2025,2)). company_refuses_correction(user). benefit_type(user, unemployment_insurance).\nProlog trace: [step(check_discrepancy,months_diff(month(2025,3),month(2025,2),1),based_on(none)),step(advice_employer,request_employer,based_on(none)),step(advice_bhxh,report_bhxh,based_on(none))].\nProlog so sánh expected_end_month và recorded_end_month bằng months_diff(month(2025,3),month(2025,2),1); vì kết quả chênh lệch (Diff = 1) và benefit_type là unemployment_insurance, chương trình chọn các hành động khuyến nghị.",
+    "conclusion": "Prolog trả về binding Answer = \"[action(request_employer,Yêu cầu công ty sửa sổ BHXH trên hệ thống; yêu cầu công ty xuất biên bản, chứng từ liên quan và cập nhật dữ liệu.),action(report_bhxh,Nếu công ty không xử lý, nộp đơn yêu cầu cơ quan BHXH tỉnh/thành phố xác minh, đối chiếu dữ liệu, yêu cầu chỉnh sửa hồ sơ; BHXH có thẩm quyền cập nhật khi có căn cứ.),action(labor_inspectorate,Nếu BHXH/công ty không giải quyết, gửi khiếu nại tới Thanh tra lao động hoặc khởi kiện hành chính theo trình tự pháp luật.),action(register_employment_center,Khi hồ sơ/sổ BHXH được chỉnh sửa, nộp hồ sơ đã đúng và đăng ký hưởng trợ cấp thất nghiệp tại trung tâm dịch vụ việc làm; bổ sung sổ BHXH, quyết định chấm dứt HĐLĐ và giấy tờ khác.)]\"."
+  },
+  "elapsed_s": 73.107,
+  "prompt_tokens": 2833,
+  "completion_tokens": 5831,
+  "error": null,
+  "gold_answer": "Bạn cần yêu cầu công ty và cơ quan BHXH điều chỉnh lại quá trình đóng cho đúng đến tháng 3/2025. Khi dữ liệu trên hệ thống còn thiếu 1 tháng thì hồ sơ hưởng BHXH 1 lần dễ bị treo hoặc từ chối. Nếu công ty không phối hợp, bạn có thể gửi đơn khiếu nại tới cơ quan BHXH quản lý đơn vị hoặc Thanh tra Sở Nội vụ/Lao động để yêu cầu xác minh, truy đóng hoặc điều chỉnh dữ liệu.",
+  "gold_citations_raw": "Điều 27, 33 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Luật Khiếu nại 2011"
+}

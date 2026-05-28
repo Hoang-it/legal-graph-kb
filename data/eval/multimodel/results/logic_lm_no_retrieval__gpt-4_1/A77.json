@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 77,
+  "question": "Các bạn ơi, mình đóng BHXH tự nguyện được 3 năm. Mình thường đóng theo năm.\nNHưng hiện tại mình ở nước ngoài, số đt cũ đã bỏ, vậy có cách nào tìm được thông tin số tiền cần đóng qua web hay gì ko?\nTrước mình đóng ở BHXH ở huyện",
+  "answer": "Issue:\nBạn hỏi về việc làm thế nào để tra cứu thông tin số tiền cần đóng BHXH tự nguyện khi đang ở nước ngoài, không còn sử dụng số điện thoại cũ và trước đây đã đóng tại BHXH huyện.\n\nRule:\n\"Người tham gia BHXH tự nguyện có quyền tra cứu thông tin về quá trình đóng, mức đóng, phương thức đóng qua cổng thông tin điện tử của cơ quan BHXH.\" (law_bhxh_2024, article_87, clause_1)\n\nApplication:\nKhông có slot nào được cung cấp cụ thể trong truy vấn này. Prolog đã sử dụng quy định tại law_bhxh_2024, article_87, clause_1 để xác định quyền tra cứu thông tin của người tham gia BHXH tự nguyện qua cổng thông tin điện tử của cơ quan BHXH.\n\nConclusion:\nTheo kết quả Prolog, bạn có thể tra cứu thông tin về quá trình đóng, mức đóng, phương thức đóng BHXH tự nguyện qua cổng thông tin điện tử của cơ quan BHXH dựa trên quy định tại law_bhxh_2024, article_87, clause_1.",
+  "citations": [
+    "[Điều 87 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A87.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,tra_cuu_thong_tin_bhxh_tn,based_on(source_a87_k1))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về việc làm thế nào để tra cứu thông tin số tiền cần đóng BHXH tự nguyện khi đang ở nước ngoài, không còn sử dụng số điện thoại cũ và trước đây đã đóng tại BHXH huyện.",
+    "rule": "\"Người tham gia BHXH tự nguyện có quyền tra cứu thông tin về quá trình đóng, mức đóng, phương thức đóng qua cổng thông tin điện tử của cơ quan BHXH.\" (law_bhxh_2024, article_87, clause_1)",
+    "application": "Không có slot nào được cung cấp cụ thể trong truy vấn này. Prolog đã sử dụng quy định tại law_bhxh_2024, article_87, clause_1 để xác định quyền tra cứu thông tin của người tham gia BHXH tự nguyện qua cổng thông tin điện tử của cơ quan BHXH.",
+    "conclusion": "Theo kết quả Prolog, bạn có thể tra cứu thông tin về quá trình đóng, mức đóng, phương thức đóng BHXH tự nguyện qua cổng thông tin điện tử của cơ quan BHXH dựa trên quy định tại law_bhxh_2024, article_87, clause_1."
+  },
+  "elapsed_s": 5.836,
+  "prompt_tokens": 2106,
+  "completion_tokens": 486,
+  "error": null,
+  "gold_answer": "Bạn có thể tra cứu quá trình tham gia và mức đóng BHXH tự nguyện qua ứng dụng VssID hoặc Cổng BHXH Việt Nam nếu còn nhớ mã số BHXH/tài khoản. Nếu mất số điện thoại cũ, bạn có thể liên hệ cơ quan BHXH nơi cư trú hoặc tổng đài hỗ trợ để cập nhật lại thông tin tài khoản, email, số điện thoại. Khi đã đăng nhập được, bạn sẽ xem được quá trình đóng và số tiền cần đóng kỳ tiếp theo theo phương thức đã chọn.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25, Điều 36; hướng dẫn VssID/BHXH Việt Nam"
+}

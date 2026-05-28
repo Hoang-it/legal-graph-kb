@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 172,
+  "question": "đăng kí bhtn xong tầm bnh ngày là sẽ nhận tiền?",
+  "answer": "Issue:\nSau khi đăng ký bảo hiểm thất nghiệp (BHTN), khi nào người lao động sẽ bắt đầu nhận tiền trợ cấp?\n\nRule:\n\"Quy định chung về trợ cấp thất nghiệp: trợ cấp bắt đầu được chi trả từ tháng liền kề sau khi người lao động đăng ký hưởng tại Trung tâm dịch vụ việc làm và hồ sơ được giải quyết/chấp thuận.\" (document: law_bhxh_2024; article: none; clause: none)\n\nApplication:\nCác slot được gán: không có slot nào trong truy vấn.\nCách Prolog sử dụng dữ kiện: truy vấn ?- unemployment_benefit_timing(Answer, Trace). đã gán Answer bằng chuỗi \"Trợ cấp thất nghiệp được chi trả từ tháng liền kề sau khi người lao động đăng ký hưởng tại Trung tâm dịch vụ việc làm và hồ sơ được chấp thuận.\" và Trace là \"[step(conclusion,unemployment_benefit_timing(Trợ cấp thất nghiệp được chi trả từ tháng liền kề sau khi người lao động đăng ký hưởng tại Trung tâm dịch vụ việc làm và hồ sơ được giải quyết/chấp thuận.),based_on(source_bhtn_overview))]\".\n\nConclusion:\nProlog trả về Answer = \"Trợ cấp thất nghiệp được chi trả từ tháng liền kề sau khi người lao động đăng ký hưởng tại Trung tâm dịch vụ việc làm và hồ sơ được chấp thuận.\"",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_timing(Trợ cấp thất nghiệp được chi trả từ tháng liền kề sau khi người lao động đăng ký hưởng tại Trung tâm dịch vụ việc làm và hồ sơ được chấp thuận.),based_on(source_bhtn_overview))]",
+  "irac_sections": {
+    "issue": "Sau khi đăng ký bảo hiểm thất nghiệp (BHTN), khi nào người lao động sẽ bắt đầu nhận tiền trợ cấp?",
+    "rule": "\"Quy định chung về trợ cấp thất nghiệp: trợ cấp bắt đầu được chi trả từ tháng liền kề sau khi người lao động đăng ký hưởng tại Trung tâm dịch vụ việc làm và hồ sơ được giải quyết/chấp thuận.\" (document: law_bhxh_2024; article: none; clause: none)",
+    "application": "Các slot được gán: không có slot nào trong truy vấn.\nCách Prolog sử dụng dữ kiện: truy vấn ?- unemployment_benefit_timing(Answer, Trace). đã gán Answer bằng chuỗi \"Trợ cấp thất nghiệp được chi trả từ tháng liền kề sau khi người lao động đăng ký hưởng tại Trung tâm dịch vụ việc làm và hồ sơ được chấp thuận.\" và Trace là \"[step(conclusion,unemployment_benefit_timing(Trợ cấp thất nghiệp được chi trả từ tháng liền kề sau khi người lao động đăng ký hưởng tại Trung tâm dịch vụ việc làm và hồ sơ được giải quyết/chấp thuận.),based_on(source_bhtn_overview))]\".",
+    "conclusion": "Prolog trả về Answer = \"Trợ cấp thất nghiệp được chi trả từ tháng liền kề sau khi người lao động đăng ký hưởng tại Trung tâm dịch vụ việc làm và hồ sơ được chấp thuận.\""
+  },
+  "elapsed_s": 36.912,
+  "prompt_tokens": 2069,
+  "completion_tokens": 3485,
+  "error": null,
+  "gold_answer": "Sau khi bạn nộp đủ hồ sơ BHTN, nếu sau 15 ngày làm việc vẫn chưa có việc làm thì sẽ được giải quyết hưởng. Tiền trợ cấp thường được chi trả sau khi có quyết định hưởng, thực tế nhiều nơi nhận trong vài ngày đến khoảng 1-2 tuần sau quyết định đầu tiên. Bạn nhớ theo dõi lịch thông báo việc làm hằng tháng để không bị tạm dừng hoặc chấm dứt hưởng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

@@ -1,0 +1,25 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 178,
+  "question": "em làm mất bìa và sổ BHXH . trên app thì cái sdt và gmail đăng ký thì e mất lâu rồi . bây giờ em phải làm sao?",
+  "answer": "Issue: Người dùng đã làm mất bìa và sổ BHXH, và không còn nhớ số điện thoại và email đã đăng ký. Họ muốn biết phải làm gì tiếp theo.\n\nRule: Không có quy định pháp lý nào được trích dẫn trong trường hợp này.\n\nApplication: Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được sử dụng trong truy vấn Prolog. \n\nConclusion: Hệ thống đã trả về hành động là \"Liên hệ với cơ quan BHXH để được hướng dẫn cấp lại bìa và sổ BHXH.\" Tuy nhiên, không có giá trị nào được gán cho các slot, vì vậy không thể tính toán một số liệu cuối cùng.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,process_lost_documents(Liên hệ với cơ quan BHXH để được hướng dẫn cấp lại bìa và sổ BHXH.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người dùng đã làm mất bìa và sổ BHXH, và không còn nhớ số điện thoại và email đã đăng ký. Họ muốn biết phải làm gì tiếp theo.",
+    "rule": "Không có quy định pháp lý nào được trích dẫn trong trường hợp này.",
+    "application": "Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được sử dụng trong truy vấn Prolog.",
+    "conclusion": "Hệ thống đã trả về hành động là \"Liên hệ với cơ quan BHXH để được hướng dẫn cấp lại bìa và sổ BHXH.\" Tuy nhiên, không có giá trị nào được gán cho các slot, vì vậy không thể tính toán một số liệu cuối cùng."
+  },
+  "elapsed_s": 10.267,
+  "prompt_tokens": 3140,
+  "completion_tokens": 338,
+  "error": null,
+  "gold_answer": "Bạn bị mất bìa sổ BHXH và mất cả số điện thoại/gmail đăng ký thì vẫn xử lý được. Trước hết mang CCCD tới cơ quan BHXH để cập nhật lại thông tin liên hệ, cấp lại tài khoản/đổi thông tin trên VssID nếu cần, đồng thời làm thủ tục cấp lại sổ BHXH. Dữ liệu tham gia BHXH vẫn nằm trên hệ thống nên không mất quá trình đóng.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

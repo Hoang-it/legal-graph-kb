@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 65,
+  "question": "Mình có hai mã sổ BHXH phải làm sao?",
+  "answer": "Issue: Bạn có hai mã sổ bảo hiểm xã hội (BHXH) và cần biết phải làm gì trong trường hợp này.\n\nRule: \"Người lao động có nhiều mã sổ BHXH phải thực hiện gộp sổ để đảm bảo quyền lợi.\" (Luật BHXH 2024, Điều 97, Khoản 2)\n\nApplication: Trong trường hợp này, không có thông tin cụ thể nào được cung cấp về các mã sổ BHXH của bạn. Tuy nhiên, theo quy định, nếu bạn có nhiều mã sổ BHXH, bạn cần thực hiện gộp sổ để đảm bảo quyền lợi của mình.\n\nConclusion: Theo kết quả từ hệ thống, điều kiện cần thực hiện là \"Người lao động có nhiều mã sổ BHXH phải thực hiện gộp sổ để đảm bảo quyền lợi.\" Điều này có nghĩa là bạn cần tiến hành gộp các mã sổ BHXH của mình.",
+  "citations": [
+    "[Điều 97 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A97.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,merge_social_insurance_books(Người lao động có nhiều mã sổ BHXH phải thực hiện gộp sổ để đảm bảo quyền lợi.),based_on(source_a97_k2))]",
+  "irac_sections": {
+    "issue": "Bạn có hai mã sổ bảo hiểm xã hội (BHXH) và cần biết phải làm gì trong trường hợp này.",
+    "rule": "\"Người lao động có nhiều mã sổ BHXH phải thực hiện gộp sổ để đảm bảo quyền lợi.\" (Luật BHXH 2024, Điều 97, Khoản 2)",
+    "application": "Trong trường hợp này, không có thông tin cụ thể nào được cung cấp về các mã sổ BHXH của bạn. Tuy nhiên, theo quy định, nếu bạn có nhiều mã sổ BHXH, bạn cần thực hiện gộp sổ để đảm bảo quyền lợi của mình.",
+    "conclusion": "Theo kết quả từ hệ thống, điều kiện cần thực hiện là \"Người lao động có nhiều mã sổ BHXH phải thực hiện gộp sổ để đảm bảo quyền lợi.\" Điều này có nghĩa là bạn cần tiến hành gộp các mã sổ BHXH của mình."
+  },
+  "elapsed_s": 9.475,
+  "prompt_tokens": 3112,
+  "completion_tokens": 444,
+  "error": null,
+  "gold_answer": "Một người chỉ có một mã số BHXH. Nếu bạn đang có 2 mã, cần làm thủ tục gộp sổ/mã số để cơ quan BHXH hợp nhất toàn bộ quá trình tham gia về một mã duy nhất. Bạn nên nộp tờ khai điều chỉnh thông tin kèm CCCD và các giấy tờ liên quan đến cả hai mã tại cơ quan BHXH nơi cư trú hoặc nơi đang tham gia. Sau khi gộp, quyền lợi và thời gian đóng hợp pháp của bạn được cộng nối, không bị mất.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn quản lý sổ BHXH, gộp sổ của BHXH Việt Nam"
+}

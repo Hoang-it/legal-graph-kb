@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 146,
+  "question": "MÌNH ĐÓNG BHXH ở công ty cũ nhưng chưa rút về, hiện tại mình vào công ty mới, côngty mới đóng cho mình nhưng mình xem trên app BHXH thì những tháng công ty cũ mất không hiển thị nữa. cho mình hỏi những tháng đấy như thế nào?",
+  "answer": "Issue: Bạn đã đóng bảo hiểm xã hội (BHXH) ở công ty cũ nhưng chưa rút về, và hiện tại công ty mới cũng đóng BHXH cho bạn. Tuy nhiên, khi kiểm tra trên ứng dụng BHXH, bạn không thấy hiển thị những tháng đóng BHXH ở công ty cũ. Bạn muốn biết về tình trạng của những tháng đó.\n\nRule: \"Người lao động có quyền yêu cầu cơ quan BHXH cung cấp thông tin về quá trình đóng BHXH của mình.\" (Luật BHXH 2024, Điều 97, Khoản 2)\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings để áp dụng vào truy vấn Prolog. Tuy nhiên, theo quy định, người lao động có quyền yêu cầu cơ quan BHXH cung cấp thông tin về quá trình đóng BHXH của mình.\n\nConclusion: Hệ thống đã kết luận rằng bạn có quyền yêu cầu cơ quan BHXH cung cấp thông tin về quá trình đóng BHXH của mình. Điều này có nghĩa là bạn có thể liên hệ với cơ quan BHXH để yêu cầu thông tin chi tiết về các tháng đóng BHXH ở công ty cũ mà không hiển thị trên ứng dụng.",
+  "citations": [
+    "[Điều 97 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A97.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,missing_contributions_info(Người lao động có quyền yêu cầu cơ quan BHXH cung cấp thông tin về quá trình đóng BHXH của mình.),based_on(source_a97_k2))]",
+  "irac_sections": {
+    "issue": "Bạn đã đóng bảo hiểm xã hội (BHXH) ở công ty cũ nhưng chưa rút về, và hiện tại công ty mới cũng đóng BHXH cho bạn. Tuy nhiên, khi kiểm tra trên ứng dụng BHXH, bạn không thấy hiển thị những tháng đóng BHXH ở công ty cũ. Bạn muốn biết về tình trạng của những tháng đó.",
+    "rule": "\"Người lao động có quyền yêu cầu cơ quan BHXH cung cấp thông tin về quá trình đóng BHXH của mình.\" (Luật BHXH 2024, Điều 97, Khoản 2)",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings để áp dụng vào truy vấn Prolog. Tuy nhiên, theo quy định, người lao động có quyền yêu cầu cơ quan BHXH cung cấp thông tin về quá trình đóng BHXH của mình.",
+    "conclusion": "Hệ thống đã kết luận rằng bạn có quyền yêu cầu cơ quan BHXH cung cấp thông tin về quá trình đóng BHXH của mình. Điều này có nghĩa là bạn có thể liên hệ với cơ quan BHXH để yêu cầu thông tin chi tiết về các tháng đóng BHXH ở công ty cũ mà không hiển thị trên ứng dụng."
+  },
+  "elapsed_s": 8.211,
+  "prompt_tokens": 3324,
+  "completion_tokens": 506,
+  "error": null,
+  "gold_answer": "Nếu tháng đóng ở công ty cũ không còn hiển thị trên app, trước hết bạn cần kiểm tra xem có bị gộp mã số, điều chỉnh quá trình hay lỗi đồng bộ dữ liệu hay không. Thời gian đã đóng hợp pháp sẽ không tự mất; BHXH có trách nhiệm cập nhật lại nếu dữ liệu sai. Bạn nên đề nghị BHXH in quá trình đóng chi tiết và đối chiếu với quyết định thôi việc, bảng lương, sổ/tờ rời cũ.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

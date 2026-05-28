@@ -1,0 +1,37 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 41,
+  "question": "Em nghỉ việc tại Công ty cũ từ 28/3. Em xin Công ty quyết định nghỉ việc để làm BHTN, nhưng họ báo: \"Chờ tờ rời BHXH từ 45-50 ngày\". Em có hỏi: \"chờ lâu vậy thì sao mà e làm đc BHTN tháng 4,5\" thì họ bảo: \"Thời hạn hưởng BHTN là 3 tháng kể từ ngày nộp đơn\". Em chưa hiểu chỗ này. Vậy là phải sau 3 tháng nghỉ việc e mới đc nộp chứng từ để hưởng BHTN phải ko? Hay là sau nhận và nộp chứng từ em sẽ đc hưởng BHTN từ tháng 4?",
+  "answer": "Issue:\nEm hỏi: sau khi nghỉ việc có phải chờ một khoảng thời gian mới được nộp hồ sơ để hưởng BHTN, hay nộp ngay khi có quyết định nghỉ việc và sẽ được hưởng từ tháng 4?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15) Điều 62 khoản 1: \"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản. Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ thai sản kèm theo hồ sơ quy định t\"\nLuật BHXH 2024 (41/2024/QH15) Điều 79 khoản 3: \"Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng bảo hiểm xã hội một lần, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\n\nApplication:\nKhông có slot_bindings được cung cấp.\nProlog trả về biến Conditions với giá trị sau: [Người lao động có trách nhiệm nộp hồ sơ cho người sử dụng lao động (Luật BHXH 2024, Điều 62 khoản 1).,Người sử dụng lao động trong 07 ngày làm việc kể từ ngày nhận đủ hồ sơ phải lập danh sách và nộp cho cơ quan bảo hiểm xã hội (Luật BHXH 2024, Điều 62 khoản 1).,Cơ quan bảo hiểm xã hội có thời hạn giải quyết: trong 20 ngày đối với hồ sơ lương hưu; trong 07 ngày làm việc đối với hồ sơ đề nghị hưởng BHXH một lần; nếu không giải quyết phải trả lời bằng văn bản và nêu rõ lý do (Luật BHXH 2024, Điều 79 khoản 3).]\nTruy vấn sử dụng hai nguồn pháp luật (source_c0 và source_c1) để xây dựng chuỗi điều kiện nêu trên.\n\nConclusion:\nProlog binding: Conditions = \"[Người lao động có trách nhiệm nộp hồ sơ cho người sử dụng lao động (Luật BHXH 2024, Điều 62 khoản 1).,Người sử dụng lao động trong 07 ngày làm việc kể từ ngày nhận đủ hồ sơ phải lập danh sách và nộp cho cơ quan bảo hiểm xã hội (Luật BHXH 2024, Điều 62 khoản 1).,Cơ quan bảo hiểm xã hội có thời hạn giải quyết: trong 20 ngày đối với hồ sơ lương hưu; trong 07 ngày làm việc đối với hồ sơ đề nghị hưởng BHXH một lần; nếu không giải quyết phải trả lời bằng văn bản và nêu rõ lý do (Luật BHXH 2024, Điều 79 khoản 3).]\"\n(Đây là kết quả đầy đủ mà Prolog trả về; không có slot thiếu hoặc lỗi thực thi.)",
+  "citations": [
+    "[Điều 62 khoản 1]",
+    "[Điều 61]",
+    "[Điều 79 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A62.K1",
+    "L41_2024.A61",
+    "L41_2024.A79.K3"
+  ],
+  "citation_indices": [
+    0,
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_documents_process([Người lao động có trách nhiệm nộp hồ sơ cho người sử dụng lao động (Luật BHXH 2024, Điều 62 khoản 1).,Người sử dụng lao động trong 07 ngày làm việc kể từ ngày nhận đủ hồ sơ phải lập danh sách và nộp cho cơ quan bảo hiểm xã hội (Luật BHXH 2024, Điều 62 khoản 1).,Cơ quan bảo hiểm xã hội có thời hạn giải quyết: trong 20 ngày đối với hồ sơ lương hưu; trong 07 ngày làm việc đối với hồ sơ đề nghị hưởng BHXH một lần; nếu không giải quyết phải trả lời bằng văn bản và nêu rõ lý do (Luật BHXH 2024, Điều 79 khoản 3).]),based_on(source_c0)),step(conclusion,unemployment_documents_process([Người lao động có trách nhiệm nộp hồ sơ cho người sử dụng lao động (Luật BHXH 2024, Điều 62 khoản 1).,Người sử dụng lao động trong 07 ngày làm việc kể từ ngày nhận đủ hồ sơ phải lập danh sách và nộp cho cơ quan bảo hiểm xã hội (Luật BHXH 2024, Điều 62 khoản 1).,Cơ quan bảo hiểm xã hội có thời hạn giải quyết: trong 20 ngày đối với hồ sơ lương hưu; trong 07 ngày làm việc đối với hồ sơ đề nghị hưởng BHXH một lần; nếu không giải quyết phải trả lời bằng văn bản và nêu rõ lý do (Luật BHXH 2024, Điều 79 khoản 3).]),based_on(source_c1))]",
+  "irac_sections": {
+    "issue": "Em hỏi: sau khi nghỉ việc có phải chờ một khoảng thời gian mới được nộp hồ sơ để hưởng BHTN, hay nộp ngay khi có quyết định nghỉ việc và sẽ được hưởng từ tháng 4?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15) Điều 62 khoản 1: \"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản. Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ thai sản kèm theo hồ sơ quy định t\"\nLuật BHXH 2024 (41/2024/QH15) Điều 79 khoản 3: \"Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng bảo hiểm xã hội một lần, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"",
+    "application": "Không có slot_bindings được cung cấp.\nProlog trả về biến Conditions với giá trị sau: [Người lao động có trách nhiệm nộp hồ sơ cho người sử dụng lao động (Luật BHXH 2024, Điều 62 khoản 1).,Người sử dụng lao động trong 07 ngày làm việc kể từ ngày nhận đủ hồ sơ phải lập danh sách và nộp cho cơ quan bảo hiểm xã hội (Luật BHXH 2024, Điều 62 khoản 1).,Cơ quan bảo hiểm xã hội có thời hạn giải quyết: trong 20 ngày đối với hồ sơ lương hưu; trong 07 ngày làm việc đối với hồ sơ đề nghị hưởng BHXH một lần; nếu không giải quyết phải trả lời bằng văn bản và nêu rõ lý do (Luật BHXH 2024, Điều 79 khoản 3).]\nTruy vấn sử dụng hai nguồn pháp luật (source_c0 và source_c1) để xây dựng chuỗi điều kiện nêu trên.",
+    "conclusion": "Prolog binding: Conditions = \"[Người lao động có trách nhiệm nộp hồ sơ cho người sử dụng lao động (Luật BHXH 2024, Điều 62 khoản 1).,Người sử dụng lao động trong 07 ngày làm việc kể từ ngày nhận đủ hồ sơ phải lập danh sách và nộp cho cơ quan bảo hiểm xã hội (Luật BHXH 2024, Điều 62 khoản 1).,Cơ quan bảo hiểm xã hội có thời hạn giải quyết: trong 20 ngày đối với hồ sơ lương hưu; trong 07 ngày làm việc đối với hồ sơ đề nghị hưởng BHXH một lần; nếu không giải quyết phải trả lời bằng văn bản và nêu rõ lý do (Luật BHXH 2024, Điều 79 khoản 3).]\"\n(Đây là kết quả đầy đủ mà Prolog trả về; không có slot thiếu hoặc lỗi thực thi.)"
+  },
+  "elapsed_s": 54.071,
+  "prompt_tokens": 4882,
+  "completion_tokens": 5678,
+  "error": null,
+  "gold_answer": "Không phải chờ đủ 3 tháng rồi mới nộp hồ sơ BHTN. Đúng luật là bạn phải nộp hồ sơ trong vòng 3 tháng kể từ ngày chấm dứt HĐLĐ. Sau khi nộp đủ hồ sơ, nếu sau 15 ngày chưa có việc làm thì sẽ được giải quyết hưởng trợ cấp thất nghiệp. Vì vậy, bạn nên lấy quyết định nghỉ việc và giấy tờ chốt BHXH sớm để nộp trong hạn, không phải đợi qua 3 tháng.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 49, Điều 50"
+}

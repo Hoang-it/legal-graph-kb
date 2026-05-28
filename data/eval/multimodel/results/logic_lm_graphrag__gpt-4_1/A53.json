@@ -1,0 +1,44 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 53,
+  "question": "Cty nợ gần 1 năm BH ( mất 6 năm ko chốt) giờ mình đã đi làm cty khác đc 2 năm rồi.\nBây giờ làm thế nào để mình chốt được tờ rời ở công ty cũ?",
+  "answer": "Issue:\nNgười lao động đã nghỉ việc tại công ty cũ, công ty này còn nợ bảo hiểm xã hội gần 1 năm và đã không chốt sổ bảo hiểm trong 6 năm. Hiện người lao động đã làm việc tại công ty mới được 2 năm. Câu hỏi đặt ra là làm thế nào để chốt được tờ rời (sổ BHXH) ở công ty cũ trong trường hợp này.\n\nRule:\n\"Trường hợp nộp hồ sơ quá thời hạn quy định tại khoản 1 và khoản 2 Điều 48, khoản 1 Điều 49, khoản 1 Điều 62, khoản 1 Điều 63, khoản 1 Điều 79, khoản 1 và khoản 2 Điều 91 của Luật này thì phải giải trình bằng văn bản và gửi cho cơ quan bảo hiểm xã hội khi nộp hồ sơ.\" (Luật BHXH 2024 (41/2024/QH15), Điều 92, Khoản 1)\n\nApplication:\nKhông có slot_id cụ thể nào được ràng buộc trong trường hợp này. Prolog đã sử dụng thông tin về việc nộp hồ sơ chốt sổ BHXH quá hạn và tình trạng công ty cũ còn nợ bảo hiểm để đưa ra hướng dẫn: (1) Liên hệ cơ quan BHXH nơi công ty cũ tham gia để nộp hồ sơ chốt sổ; (2) Nếu nộp hồ sơ quá hạn, cần làm văn bản giải trình lý do nộp muộn gửi kèm hồ sơ; (3) Nếu công ty cũ còn nợ bảo hiểm, có thể đề nghị cơ quan BHXH xác nhận thời gian đã đóng và hướng dẫn xử lý tiếp theo.\n\nConclusion:\nHệ thống kết luận: Bạn cần liên hệ cơ quan BHXH nơi công ty cũ tham gia để nộp hồ sơ chốt sổ BHXH; nếu nộp hồ sơ quá hạn, phải làm văn bản giải trình lý do nộp muộn; trường hợp công ty cũ còn nợ bảo hiểm, bạn có thể đề nghị cơ quan BHXH xác nhận thời gian đã đóng và hướng dẫn xử lý tiếp theo (HuongDan).",
+  "citations": [
+    "[Điều 48 khoản 1]",
+    "[Điều 49 khoản 1]",
+    "[Điều 62 khoản 1]",
+    "[Điều 63 khoản 1]",
+    "[Điều 79 khoản 1]",
+    "[Điều 91]",
+    "[Điều 92 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A48.K1",
+    "L41_2024.A49.K1",
+    "L41_2024.A62.K1",
+    "L41_2024.A63.K1",
+    "L41_2024.A79.K1",
+    "L41_2024.A91",
+    "L41_2024.A92.K1"
+  ],
+  "citation_indices": [
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,huong_dan_chot_so_bhxh_cong_ty_cu([Liên hệ cơ quan bảo hiểm xã hội nơi công ty cũ tham gia để nộp hồ sơ chốt sổ BHXH.,Nếu nộp hồ sơ quá thời hạn, cần làm văn bản giải trình lý do nộp muộn và gửi kèm hồ sơ cho cơ quan BHXH.,Trường hợp công ty cũ còn nợ bảo hiểm, bạn có thể đề nghị cơ quan BHXH xác nhận thời gian đã đóng và hướng dẫn xử lý tiếp theo.]),based_on(source_c006))]",
+  "irac_sections": {
+    "issue": "Người lao động đã nghỉ việc tại công ty cũ, công ty này còn nợ bảo hiểm xã hội gần 1 năm và đã không chốt sổ bảo hiểm trong 6 năm. Hiện người lao động đã làm việc tại công ty mới được 2 năm. Câu hỏi đặt ra là làm thế nào để chốt được tờ rời (sổ BHXH) ở công ty cũ trong trường hợp này.",
+    "rule": "\"Trường hợp nộp hồ sơ quá thời hạn quy định tại khoản 1 và khoản 2 Điều 48, khoản 1 Điều 49, khoản 1 Điều 62, khoản 1 Điều 63, khoản 1 Điều 79, khoản 1 và khoản 2 Điều 91 của Luật này thì phải giải trình bằng văn bản và gửi cho cơ quan bảo hiểm xã hội khi nộp hồ sơ.\" (Luật BHXH 2024 (41/2024/QH15), Điều 92, Khoản 1)",
+    "application": "Không có slot_id cụ thể nào được ràng buộc trong trường hợp này. Prolog đã sử dụng thông tin về việc nộp hồ sơ chốt sổ BHXH quá hạn và tình trạng công ty cũ còn nợ bảo hiểm để đưa ra hướng dẫn: (1) Liên hệ cơ quan BHXH nơi công ty cũ tham gia để nộp hồ sơ chốt sổ; (2) Nếu nộp hồ sơ quá hạn, cần làm văn bản giải trình lý do nộp muộn gửi kèm hồ sơ; (3) Nếu công ty cũ còn nợ bảo hiểm, có thể đề nghị cơ quan BHXH xác nhận thời gian đã đóng và hướng dẫn xử lý tiếp theo.",
+    "conclusion": "Hệ thống kết luận: Bạn cần liên hệ cơ quan BHXH nơi công ty cũ tham gia để nộp hồ sơ chốt sổ BHXH; nếu nộp hồ sơ quá hạn, phải làm văn bản giải trình lý do nộp muộn; trường hợp công ty cũ còn nợ bảo hiểm, bạn có thể đề nghị cơ quan BHXH xác nhận thời gian đã đóng và hướng dẫn xử lý tiếp theo (HuongDan)."
+  },
+  "elapsed_s": 7.745,
+  "prompt_tokens": 3345,
+  "completion_tokens": 845,
+  "error": null,
+  "gold_answer": "Nếu công ty cũ nợ BHXH gần 1 năm và kéo dài không chốt sổ, bạn cần yêu cầu công ty xác nhận bằng văn bản toàn bộ thời gian đã làm việc, bảng lương, HĐLĐ, quyết định nghỉ việc và chứng cứ bị nợ đóng. Sau đó gửi đơn đến cơ quan BHXH quản lý công ty cũ và Thanh tra có thẩm quyền để yêu cầu truy đóng/chốt sổ đến thời điểm đã đóng thực tế. Thời gian công ty còn nợ sẽ không bị mất nhưng cần xử lý theo thủ tục cưỡng chế hoặc thanh tra.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48; quy định xử lý chậm đóng BHXH"
+}

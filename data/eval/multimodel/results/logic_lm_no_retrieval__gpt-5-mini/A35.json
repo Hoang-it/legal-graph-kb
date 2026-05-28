@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 35,
+  "question": "Ông T.Công (TPHCM) hỏi, con của người lao động tham gia BHXH bị ốm thì người lao động có được hưởng chế độ ốm đau không?\nNếu cả bố và mẹ đều tham gia BHXH thì ai được hưởng chế độ này?",
+  "answer": "Issue:\nÔng T. Công hỏi: người lao động tham gia BHXH có được hưởng chế độ ốm đau khi nghỉ để chăm sóc con bị ốm không? Nếu cả bố và mẹ đều tham gia BHXH thì ai được hưởng chế độ này?\n\nRule:\nKhông có trích dẫn pháp luật được cung cấp trong trace.\n\nApplication:\nCác slot đã bind: Không có slot nào được bind trong slot_bindings.\nCách Prolog tiêu thụ dữ liệu: Prolog gọi quy tắc sick_leave_for_child để sinh điều kiện:\nstep(conditions,sick_leave_for_child(conditions(Người lao động tham gia BHXH được hưởng chế độ ốm đau khi nghỉ việc để chăm sóc con bị ốm nếu đáp ứng điều kiện về đóng BHXH và các điều kiện khác theo quy định.)),based_on(none))\nvà gọi quy tắc sick_leave_priority_when_both_parents để sinh kết luận ưu tiên:\nstep(conclusion,sick_leave_priority_when_both_parents(answer(Nếu cả bố và mẹ đều tham gia BHXH thì người trực tiếp nghỉ để chăm sóc con bị ốm sẽ được hưởng chế độ ốm đau cho những ngày mình nghỉ; hai người không được hưởng cùng lúc cho cùng một ngày nghỉ.)),based_on(none))\n\nConclusion:\nAnswer = result(conditions(Người lao động tham gia BHXH được hưởng chế độ ốm đau khi nghỉ việc để chăm sóc con bị ốm nếu đáp ứng điều kiện về đóng BHXH và các điều kiện khác theo quy định.),answer(Nếu cả bố và mẹ đều tham gia BHXH thì người trực tiếp nghỉ để chăm sóc con bị ốm sẽ được hưởng chế độ ốm đau cho những ngày mình nghỉ; hai người không được hưởng cùng lúc cho cùng một ngày nghỉ.))",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conditions,sick_leave_for_child(conditions(Người lao động tham gia BHXH được hưởng chế độ ốm đau khi nghỉ việc để chăm sóc con bị ốm nếu đáp ứng điều kiện về đóng BHXH và các điều kiện khác theo quy định.)),based_on(none)),step(conclusion,sick_leave_priority_when_both_parents(answer(Nếu cả bố và mẹ đều tham gia BHXH thì người trực tiếp nghỉ để chăm sóc con bị ốm sẽ được hưởng chế độ ốm đau cho những ngày mình nghỉ; hai người không được hưởng cùng lúc cho cùng một ngày nghỉ.)),based_on(none))]",
+  "irac_sections": {
+    "issue": "Ông T. Công hỏi: người lao động tham gia BHXH có được hưởng chế độ ốm đau khi nghỉ để chăm sóc con bị ốm không? Nếu cả bố và mẹ đều tham gia BHXH thì ai được hưởng chế độ này?",
+    "rule": "Không có trích dẫn pháp luật được cung cấp trong trace.",
+    "application": "Các slot đã bind: Không có slot nào được bind trong slot_bindings.\nCách Prolog tiêu thụ dữ liệu: Prolog gọi quy tắc sick_leave_for_child để sinh điều kiện:\nstep(conditions,sick_leave_for_child(conditions(Người lao động tham gia BHXH được hưởng chế độ ốm đau khi nghỉ việc để chăm sóc con bị ốm nếu đáp ứng điều kiện về đóng BHXH và các điều kiện khác theo quy định.)),based_on(none))\nvà gọi quy tắc sick_leave_priority_when_both_parents để sinh kết luận ưu tiên:\nstep(conclusion,sick_leave_priority_when_both_parents(answer(Nếu cả bố và mẹ đều tham gia BHXH thì người trực tiếp nghỉ để chăm sóc con bị ốm sẽ được hưởng chế độ ốm đau cho những ngày mình nghỉ; hai người không được hưởng cùng lúc cho cùng một ngày nghỉ.)),based_on(none))",
+    "conclusion": "Answer = result(conditions(Người lao động tham gia BHXH được hưởng chế độ ốm đau khi nghỉ việc để chăm sóc con bị ốm nếu đáp ứng điều kiện về đóng BHXH và các điều kiện khác theo quy định.),answer(Nếu cả bố và mẹ đều tham gia BHXH thì người trực tiếp nghỉ để chăm sóc con bị ốm sẽ được hưởng chế độ ốm đau cho những ngày mình nghỉ; hai người không được hưởng cùng lúc cho cùng một ngày nghỉ.))"
+  },
+  "elapsed_s": 31.682,
+  "prompt_tokens": 2497,
+  "completion_tokens": 5053,
+  "error": null,
+  "gold_answer": "Căn cứ điểm e khoản 1 Điều 42 Luật BHXH 2024, đối tượng chăm sóc con dưới 07 tuổi bị ốm đau được hưởng chế độ ốm đau khi nghỉ việc.\nTheo khoản 2 Điều 44 Luật BHXH 2024 quy định thời gian hưởng chế độ khi chăm sóc con bị ốm đau: \"Trường hợp cả cha và mẹ cùng tham gia bảo hiểm xã hội bắt buộc thì thời gian hưởng chế độ khi chăm sóc con ốm đau của mỗi người theo quy định tại khoản 1 Điều này\".\nĐối chiếu các quy định trên, trường hợp cả cha và mẹ đang tham gia BHXH cùng phải nghỉ việc chăm sóc con ốm đau thì đều được hưởng chế độ con ốm theo quy định.",
+  "gold_citations_raw": "điểm e khoản 1 Điều 42 Luật BHXH 2024"
+}

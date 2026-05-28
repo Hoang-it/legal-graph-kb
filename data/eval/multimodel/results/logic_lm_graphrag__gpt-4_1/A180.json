@@ -1,0 +1,39 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 180,
+  "question": "mình làm công ty cũ được 8 năm 9 tháng, giờ sang ct mới mình đóng tiếp thì sau này mình vẫn được hưởng bảo hiểm thất nghiệp và bảo hiểm xã hội đúng không? Cách tính sẽ như thế nào?",
+  "answer": "Issue:\nBạn hỏi rằng sau khi làm ở công ty cũ được 8 năm 9 tháng, nếu tiếp tục đóng bảo hiểm tại công ty mới thì sau này bạn có được hưởng bảo hiểm thất nghiệp và bảo hiểm xã hội không, và cách tính như thế nào.\n\nRule:\n\"Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều 34 của Luật này hoặc kể từ sau ngày đóng bảo hiểm thất nghiệp chậm nhất theo quy định của pháp luật về bảo hiểm thất nghiệp, trừ trường hợp quy định tại điểm đ và điểm e khoản 1 Điều 39 của Luật này;\" (Luật BHXH 2024 (41/2024/QH15), Điều 38, Khoản 1)\n\n\"Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30 tháng 6 năm 2025 mà không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 12)\n\nApplication:\nHệ thống xác nhận rằng bạn đã có years_contributed với giá trị 8.75 (tương ứng 8 năm 9 tháng). Dựa trên quy tắc Prolog, chỉ cần có số năm đóng lớn hơn 0 thì bạn đủ điều kiện hưởng bảo hiểm xã hội và bảo hiểm thất nghiệp. Các điều kiện pháp lý được kiểm tra dựa trên Điều 38 Khoản 1 và Điều 141 Khoản 12 của Luật BHXH 2024.\n\nConclusion:\nTheo kết quả truy vấn Prolog, Eligibility = yes. Như vậy, bạn vẫn được hưởng bảo hiểm xã hội và bảo hiểm thất nghiệp nếu tiếp tục đóng liên tục, không bị gián đoạn hoặc thiếu thời gian đóng theo quy định. Hệ thống không trả về công thức tính cụ thể trong truy vấn này.",
+  "citations": [
+    "[Điều 34]",
+    "[Điều 39]",
+    "[Điều 38 khoản 1]",
+    "[Điều 141 khoản 12]"
+  ],
+  "citation_ids": [
+    "L41_2024.A34",
+    "L41_2024.A39",
+    "L41_2024.A38.K1",
+    "L41_2024.A141.K12"
+  ],
+  "citation_indices": [
+    3,
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,eligible_for_bhxh_and_bhtn(user,yes),based_on(source_c003)),step(conclusion,eligible_for_bhxh_and_bhtn(user,yes),based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi rằng sau khi làm ở công ty cũ được 8 năm 9 tháng, nếu tiếp tục đóng bảo hiểm tại công ty mới thì sau này bạn có được hưởng bảo hiểm thất nghiệp và bảo hiểm xã hội không, và cách tính như thế nào.",
+    "rule": "\"Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều 34 của Luật này hoặc kể từ sau ngày đóng bảo hiểm thất nghiệp chậm nhất theo quy định của pháp luật về bảo hiểm thất nghiệp, trừ trường hợp quy định tại điểm đ và điểm e khoản 1 Điều 39 của Luật này;\" (Luật BHXH 2024 (41/2024/QH15), Điều 38, Khoản 1)\n\n\"Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30 tháng 6 năm 2025 mà không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 12)",
+    "application": "Hệ thống xác nhận rằng bạn đã có years_contributed với giá trị 8.75 (tương ứng 8 năm 9 tháng). Dựa trên quy tắc Prolog, chỉ cần có số năm đóng lớn hơn 0 thì bạn đủ điều kiện hưởng bảo hiểm xã hội và bảo hiểm thất nghiệp. Các điều kiện pháp lý được kiểm tra dựa trên Điều 38 Khoản 1 và Điều 141 Khoản 12 của Luật BHXH 2024.",
+    "conclusion": "Theo kết quả truy vấn Prolog, Eligibility = yes. Như vậy, bạn vẫn được hưởng bảo hiểm xã hội và bảo hiểm thất nghiệp nếu tiếp tục đóng liên tục, không bị gián đoạn hoặc thiếu thời gian đóng theo quy định. Hệ thống không trả về công thức tính cụ thể trong truy vấn này."
+  },
+  "elapsed_s": 10.219,
+  "prompt_tokens": 3539,
+  "completion_tokens": 958,
+  "error": null,
+  "gold_answer": "Khi sang công ty mới và tiếp tục đóng, thời gian BHXH sẽ được cộng nối để tính hưu, tử tuất và các quyền lợi dài hạn. Với BHTN, thời gian chưa hưởng ở công ty cũ cũng được bảo lưu để cộng vào lần sau nếu bạn chưa lĩnh. Công thức BHTN là 60% bình quân lương 6 tháng cuối và thời gian hưởng theo tổng số tháng đã đóng chưa hưởng; BHXH hưu trí tính theo tổng thời gian đóng và mức bình quân lương.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

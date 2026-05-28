@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 58,
+  "question": "e là hộ kinh doanh mới , tham gia bhxh cho hkd thì phải làm như thế nào?",
+  "answer": "Issue:\nBạn hỏi: \"e là hộ kinh doanh mới, tham gia BHXH cho HKD thì phải làm như thế nào?\"\n\nRule:\nKhông có trích dẫn pháp luật được cung cấp trong dấu vết.\n\nApplication:\nCác slot được giao: không có slot nào (slot_bindings rỗng).\nCách Prolog sử dụng dữ liệu: truy vấn được chạy là \"?- hkd_bhxh_thu_tuc(Conditions, Trace).\" và không cần input từ các slot. Prolog trả về:\nConditions = \"Hộ kinh doanh (chủ hộ hoặc người làm thuê trong hộ) tham gia Bảo hiểm xã hội theo hình thức BHXH tự nguyện; thủ tục cơ bản: liên hệ cơ quan BHXH cấp huyện/quận hoặc nộp hồ sơ qua cổng dịch vụ công/BHXH số, nộp bản sao CMND/CCCD, giấy tờ đăng ký hộ kinh doanh (nếu có), điền mẫu đăng ký tham gia BHXH tự nguyện, lựa chọn mức đóng và kỳ đóng, nộp tiền theo quy định; quyền lợi chính: được hưởng chế độ hưu trí và tử tuất khi đủ điều kiện; lưu ý liên hệ BHXH địa phương để được hướng dẫn hồ sơ cụ thể và mức đóng hiện hành).\"\nTrace = \"[step(explanation,hkd_bhxh_thu_tuc(Hộ kinh doanh (chủ hộ hoặc người làm thuê trong hộ) tham gia Bảo hiểm xã hội theo hình thức BHXH tự nguyện; thủ tục cơ bản: liên hệ cơ quan BHXH cấp huyện/quận hoặc nộp hồ sơ qua cổng dịch vụ công/BHXH số, nộp bản sao CMND/CCCD, giấy tờ đăng ký hộ kinh doanh (nếu có), điền mẫu đăng ký tham gia BHXH tự nguyện, lựa chọn mức đóng và kỳ đóng, nộp tiền theo quy định; quyền lợi chính: được hưởng chế độ hưu trí và tử tuất khi đủ điều kiện; lưu ý liên hệ BHXH địa phương để được hướng dẫn hồ sơ cụ thể và mức đóng hiện hành).),based_on(none))]\"\n\nConclusion:\nProlog trả binding cho biến Conditions như trên (biến: Conditions). Không có slot thiếu hoặc lỗi thực thi; kết quả này là đầu ra cuối cùng từ truy vấn Prolog.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(explanation,hkd_bhxh_thu_tuc(Hộ kinh doanh (chủ hộ hoặc người làm thuê trong hộ) tham gia Bảo hiểm xã hội theo hình thức BHXH tự nguyện; thủ tục cơ bản: liên hệ cơ quan BHXH cấp huyện/quận hoặc nộp hồ sơ qua cổng dịch vụ công/BHXH số, nộp bản sao CMND/CCCD, giấy tờ đăng ký hộ kinh doanh (nếu có), điền mẫu đăng ký tham gia BHXH tự nguyện, lựa chọn mức đóng và kỳ đóng, nộp tiền theo quy định; quyền lợi chính: được hưởng chế độ hưu trí và tử tuất khi đủ điều kiện; lưu ý liên hệ BHXH địa phương để được hướng dẫn hồ sơ cụ thể và mức đóng hiện hành).),based_on(none))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi: \"e là hộ kinh doanh mới, tham gia BHXH cho HKD thì phải làm như thế nào?\"",
+    "rule": "Không có trích dẫn pháp luật được cung cấp trong dấu vết.",
+    "application": "Các slot được giao: không có slot nào (slot_bindings rỗng).\nCách Prolog sử dụng dữ liệu: truy vấn được chạy là \"?- hkd_bhxh_thu_tuc(Conditions, Trace).\" và không cần input từ các slot. Prolog trả về:\nConditions = \"Hộ kinh doanh (chủ hộ hoặc người làm thuê trong hộ) tham gia Bảo hiểm xã hội theo hình thức BHXH tự nguyện; thủ tục cơ bản: liên hệ cơ quan BHXH cấp huyện/quận hoặc nộp hồ sơ qua cổng dịch vụ công/BHXH số, nộp bản sao CMND/CCCD, giấy tờ đăng ký hộ kinh doanh (nếu có), điền mẫu đăng ký tham gia BHXH tự nguyện, lựa chọn mức đóng và kỳ đóng, nộp tiền theo quy định; quyền lợi chính: được hưởng chế độ hưu trí và tử tuất khi đủ điều kiện; lưu ý liên hệ BHXH địa phương để được hướng dẫn hồ sơ cụ thể và mức đóng hiện hành).\"\nTrace = \"[step(explanation,hkd_bhxh_thu_tuc(Hộ kinh doanh (chủ hộ hoặc người làm thuê trong hộ) tham gia Bảo hiểm xã hội theo hình thức BHXH tự nguyện; thủ tục cơ bản: liên hệ cơ quan BHXH cấp huyện/quận hoặc nộp hồ sơ qua cổng dịch vụ công/BHXH số, nộp bản sao CMND/CCCD, giấy tờ đăng ký hộ kinh doanh (nếu có), điền mẫu đăng ký tham gia BHXH tự nguyện, lựa chọn mức đóng và kỳ đóng, nộp tiền theo quy định; quyền lợi chính: được hưởng chế độ hưu trí và tử tuất khi đủ điều kiện; lưu ý liên hệ BHXH địa phương để được hướng dẫn hồ sơ cụ thể và mức đóng hiện hành).),based_on(none))]\"",
+    "conclusion": "Prolog trả binding cho biến Conditions như trên (biến: Conditions). Không có slot thiếu hoặc lỗi thực thi; kết quả này là đầu ra cuối cùng từ truy vấn Prolog."
+  },
+  "elapsed_s": 33.753,
+  "prompt_tokens": 2501,
+  "completion_tokens": 4252,
+  "error": null,
+  "gold_answer": "Nếu bạn là chủ hộ kinh doanh thuộc diện phải tham gia BHXH bắt buộc thì cần liên hệ cơ quan BHXH hoặc tổ chức dịch vụ thu để đăng ký hồ sơ tham gia theo mã số BHXH, kê khai mức tiền lương làm căn cứ đóng và phương thức đóng. Nếu chưa thuộc diện bắt buộc thì có thể tham gia BHXH tự nguyện. Khi đi đăng ký nên mang CCCD, thông tin đăng ký hộ kinh doanh và giấy tờ liên quan đến mã số BHXH nếu đã có.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 25, Điều 31; Nghị định 158/2025/NĐ-CP"
+}

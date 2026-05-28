@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 156,
+  "question": "E nghỉ ngang cty cũ k chốt tờ rời cho giờ có cách nào chốt được không?",
+  "answer": "Issue:\nNgười lao động nghỉ ngang tại công ty cũ nhưng không được công ty chốt tờ rời (sổ BHXH) thì có cách nào để tự chốt được không?\n\nRule:\n\"Người lao động có quyền yêu cầu cơ quan BHXH xác nhận quá trình đóng BHXH khi có tranh chấp hoặc không được chốt sổ BHXH.\" (law_bhxh_2024, article_23, clause_2)\n\nApplication:\nKhông có slot_id nào được cung cấp vì câu hỏi mang tính tình huống. Theo truy vết Prolog, hệ thống đã áp dụng quy định tại law_bhxh_2024, article_23, clause_2 để xác định quyền của người lao động trong trường hợp không được công ty cũ chốt sổ BHXH.\n\nConclusion:\nNgười lao động có thể liên hệ trực tiếp cơ quan BHXH nơi tham gia để đề nghị xác nhận quá trình đóng BHXH, cung cấp hồ sơ chứng minh quá trình làm việc nếu công ty cũ không chốt sổ. (Answer)",
+  "citations": [
+    "[Điều 23 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A23.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,cach_chot_so_bhxh(Người lao động có thể liên hệ trực tiếp cơ quan BHXH nơi tham gia để đề nghị xác nhận quá trình đóng BHXH, cung cấp hồ sơ chứng minh quá trình làm việc nếu công ty cũ không chốt sổ.),based_on(source_a23_k2))]",
+  "irac_sections": {
+    "issue": "Người lao động nghỉ ngang tại công ty cũ nhưng không được công ty chốt tờ rời (sổ BHXH) thì có cách nào để tự chốt được không?",
+    "rule": "\"Người lao động có quyền yêu cầu cơ quan BHXH xác nhận quá trình đóng BHXH khi có tranh chấp hoặc không được chốt sổ BHXH.\" (law_bhxh_2024, article_23, clause_2)",
+    "application": "Không có slot_id nào được cung cấp vì câu hỏi mang tính tình huống. Theo truy vết Prolog, hệ thống đã áp dụng quy định tại law_bhxh_2024, article_23, clause_2 để xác định quyền của người lao động trong trường hợp không được công ty cũ chốt sổ BHXH.",
+    "conclusion": "Người lao động có thể liên hệ trực tiếp cơ quan BHXH nơi tham gia để đề nghị xác nhận quá trình đóng BHXH, cung cấp hồ sơ chứng minh quá trình làm việc nếu công ty cũ không chốt sổ. (Answer)"
+  },
+  "elapsed_s": 4.907,
+  "prompt_tokens": 2138,
+  "completion_tokens": 465,
+  "error": null,
+  "gold_answer": "Nếu công ty cũ chưa chốt tờ rời thì bạn không tự chốt thay hoàn toàn được, vì doanh nghiệp phải báo giảm và hoàn tất nghĩa vụ đóng. Việc bạn cần làm là yêu cầu công ty chốt sổ bằng văn bản; nếu công ty chây ì thì gửi đơn tới cơ quan BHXH quản lý đơn vị, thanh tra lao động hoặc khởi kiện yêu cầu chốt sổ và bồi thường thiệt hại nếu có.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 7,
+  "question": "Bà Thị Hải đóng BHXH tại công ty A từ tháng 7/2022, đến tháng 1/2023 nghỉ việc.\nBà tiếp tục đóng BHXH tại công ty B từ tháng 8/2023, đến tháng 12/2023 nghỉ việc.\nBà Hải hỏi, bà đã sinh con ngày 10/3/2024 thì có đủ điều kiện để hưởng chế độ thai sản không?",
+  "answer": "Issue: Bà Thị Hải hỏi về điều kiện hưởng chế độ thai sản sau khi đã đóng BHXH tại hai công ty. \nRule: Theo [Luật BHXH 2024, Điều 30 khoản 1], người lao động được hưởng chế độ thai sản khi có đủ thời gian đóng BHXH trước khi sinh con. \nApplication: Prolog xác định rằng bà Hải đã đóng BHXH đủ 6 tháng, do đó bà đủ điều kiện hưởng chế độ thai sản. \nConclusion: Theo Prolog, bà Thị Hải CÓ đủ điều kiện hưởng chế độ thai sản.",
+  "plain_answer": "Bà Thị Hải đã đủ điều kiện để hưởng chế độ thai sản vì đã đóng BHXH đủ 6 tháng trước khi sinh con, theo quy định tại [Luật BHXH 2024, Điều 30 khoản 1]. Bà có thể yên tâm về quyền lợi của mình trong thời gian thai sản sắp tới.",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 30 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A30.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,maternity_benefit_eligibility(user,yes),based_on(source_a30_k1))]",
+  "prolog_program": "months_contributed(user, 6).\nlegal_source(source_a30_k1, law_bhxh_2024, article_30, clause_1, none, 'Người lao động được hưởng chế độ thai sản khi có đủ thời gian đóng BHXH trước khi sinh con.').\nmaternity_benefit_eligibility(Person, Eligibility, Trace) :- months_contributed(Person, Months), Months >= 6, Eligibility = yes, Trace = [step(conclusion, maternity_benefit_eligibility(Person, Eligibility), based_on(source_a30_k1))].\nmaternity_benefit_eligibility(Person, Eligibility, Trace) :- months_contributed(Person, Months), Months < 6, Eligibility = no, Trace = [step(conclusion, maternity_benefit_eligibility(Person, Eligibility), based_on(source_a30_k1))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Bà Thị Hải hỏi về điều kiện hưởng chế độ thai sản sau khi đã đóng BHXH tại hai công ty.",
+    "rule": "Theo [Luật BHXH 2024, Điều 30 khoản 1], người lao động được hưởng chế độ thai sản khi có đủ thời gian đóng BHXH trước khi sinh con.",
+    "application": "Prolog xác định rằng bà Hải đã đóng BHXH đủ 6 tháng, do đó bà đủ điều kiện hưởng chế độ thai sản.",
+    "conclusion": "Theo Prolog, bà Thị Hải CÓ đủ điều kiện hưởng chế độ thai sản."
+  },
+  "elapsed_s": 11.569,
+  "prompt_tokens": 2933,
+  "completion_tokens": 506,
+  "error": null,
+  "gold_answer": "Tại Khoản 2, Khoản 3 Điều 31 Luật BHXH năm 2014 quy định về điều kiện hưởng chế độ thai sản đối với lao động nữ sinh con là: Phải đóng BHXH từ đủ 6 tháng trở lên trong thời gian 12 tháng trước khi sinh con hoặc lao động nữ đã đóng BHXH từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của cơ sở khám bệnh, chữa bệnh có thẩm quyền thì phải đóng BHXH từ đủ 3 tháng trở lên trong thời gian 12 tháng trước khi sinh con.\nTại Khoản 4 Điều 31 Luật BHXH năm 2014 quy định: Người lao động đủ điều kiện quy định tại Khoản 2 và Khoản 3 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con vẫn được hưởng chế độ thai sản theo quy định.\nĐối chiếu với các quy định nêu trên, trường hợp của bà nếu sinh con vào tháng 3/2024 thì trong thời gian 12 tháng trước khi sinh con (được xác định từ tháng 3/2023 đến tháng 2/2024), bà có 5 tháng đóng BHXH (từ tháng 8/2023 đến tháng 12/2023). Nếu trong thời gian mang thai bà không phải nghỉ việc để dưỡng thai theo chỉ định của cơ sở khám bệnh có thẩm quyền thì bà không đủ điều kiện để hưởng chế độ thai sản khi sinh con.",
+  "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 31]"
+}

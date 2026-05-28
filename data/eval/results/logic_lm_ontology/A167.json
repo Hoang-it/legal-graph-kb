@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 167,
+  "question": "Trường hợp làm cho cty có đóng bảo hiểm y tế , xã hội , mà giờ bị cty đuổi việc ,,, trong khi đang mang thai vậy bảo hiểm y tế còn hạn ko hay phải mua mới lại? .. và kể cả bảo hiểm thai sản?",
+  "answer": "Issue: Người lao động đang mang thai bị công ty đuổi việc, cần biết bảo hiểm y tế còn hạn hay phải mua mới lại.\n\nRule: \"5. Trường hợp chỉ có mẹ hoặc cả cha và mẹ đều tham gia bảo hiểm xã hội bắt buộc mà mẹ chết sau khi sinh con thì cha hoặc người trực tiếp nuôi dưỡng được nghỉ việc hưởng chế độ thai sản để chăm sóc con đối với thời gian còn lại của người mẹ theo quy định tại khoản 1 Điều này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 53, Khoản 5)\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Prolog không thể tiêu thụ bất kỳ thông tin nào từ các slot bindings.\n\nConclusion: Hệ thống đã xác định rằng tình trạng bảo hiểm y tế là \"still_valid\". Tuy nhiên, không có thông tin nào từ các slot bindings để tính toán thêm.",
+  "citations": [
+    "[Điều 53 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A53.K5"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,health_insurance_status(still_valid),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Người lao động đang mang thai bị công ty đuổi việc, cần biết bảo hiểm y tế còn hạn hay phải mua mới lại.",
+    "rule": "\"5. Trường hợp chỉ có mẹ hoặc cả cha và mẹ đều tham gia bảo hiểm xã hội bắt buộc mà mẹ chết sau khi sinh con thì cha hoặc người trực tiếp nuôi dưỡng được nghỉ việc hưởng chế độ thai sản để chăm sóc con đối với thời gian còn lại của người mẹ theo quy định tại khoản 1 Điều này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 53, Khoản 5)",
+    "application": "Không có slot nào được gán giá trị trong trường hợp này. Prolog không thể tiêu thụ bất kỳ thông tin nào từ các slot bindings.",
+    "conclusion": "Hệ thống đã xác định rằng tình trạng bảo hiểm y tế là \"still_valid\". Tuy nhiên, không có thông tin nào từ các slot bindings để tính toán thêm."
+  },
+  "elapsed_s": 9.919,
+  "prompt_tokens": 3271,
+  "completion_tokens": 373,
+  "error": null,
+  "gold_answer": "Nếu bị công ty cho nghỉ việc khi đang mang thai thì việc chấm dứt hợp đồng còn phải xem có đúng quy định của Bộ luật Lao động hay không. BHYT do công ty đóng chỉ còn giá trị đến hết thời hạn ghi trên thẻ/thời gian đã đóng; sau đó muốn dùng tiếp phải tham gia theo nhóm khác. Còn thai sản thì nếu bạn đã đủ điều kiện về thời gian đóng BHXH trong 12 tháng trước sinh, nghỉ việc vẫn có thể được hưởng.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Bộ luật Lao động 2019"
+}

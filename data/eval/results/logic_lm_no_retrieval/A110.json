@@ -1,0 +1,25 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 110,
+  "question": "Đóng BH 20 năm lương cứng 4 triệu ,rút 1lần thì được bảo nhiêu?",
+  "answer": "Issue: Người dùng hỏi về số tiền có thể rút từ bảo hiểm xã hội sau 20 năm đóng với lương cứng 4 triệu.\n\nRule: \n\nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã sử dụng các thông tin từ các quy tắc đã được xác định, cụ thể là số năm đóng góp là 20 và lương trung bình là 4 triệu để tính toán số tiền có thể rút.\n\nConclusion: Prolog đã trả về giá trị 40000000.0 cho biến Amount.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(calculation,calculate_withdrawal_amount(user,40000000.0),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người dùng hỏi về số tiền có thể rút từ bảo hiểm xã hội sau 20 năm đóng với lương cứng 4 triệu.",
+    "rule": "",
+    "application": "Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã sử dụng các thông tin từ các quy tắc đã được xác định, cụ thể là số năm đóng góp là 20 và lương trung bình là 4 triệu để tính toán số tiền có thể rút.",
+    "conclusion": "Prolog đã trả về giá trị 40000000.0 cho biến Amount."
+  },
+  "elapsed_s": 7.477,
+  "prompt_tokens": 1919,
+  "completion_tokens": 313,
+  "error": null,
+  "gold_answer": "Nếu toàn bộ 20 năm của bạn đều từ 2014 trở đi thì BHXH 1 lần ước khoảng khoảng 160,0 triệu, chưa tính hệ số điều chỉnh tiền lương. Tuy nhiên cần lưu ý: từ 01/7/2025, người đã đủ tuổi hưu mà có từ đủ 15 năm đóng trở lên thường nên xem xét hưởng lương hưu thay vì rút 1 lần vì lương hưu còn kèm BHYT và quyền lợi lâu dài.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

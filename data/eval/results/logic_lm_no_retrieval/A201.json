@@ -1,0 +1,25 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 201,
+  "question": "Giờ muốn lãnh bảo hiểm thất nghiệp phải làm qua dịch vụ công hả mọi người.",
+  "answer": "Issue: Giờ muốn lãnh bảo hiểm thất nghiệp phải làm qua dịch vụ công hả mọi người.\n\nRule: Để lãnh bảo hiểm thất nghiệp, người lao động cần thực hiện thủ tục qua dịch vụ công, theo quy định của Luật Bảo hiểm xã hội.\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Prolog đã trả về một kết quả mà không cần sử dụng bất kỳ slot nào.\n\nConclusion: Prolog đã trả về giá trị \"Để lãnh bảo hiểm thất nghiệp, người lao động cần thực hiện thủ tục qua dịch vụ công, theo quy định của Luật Bảo hiểm xã hội.\" cho biến Conditions.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(Để lãnh bảo hiểm thất nghiệp, người lao động cần thực hiện thủ tục qua dịch vụ công, theo quy định của Luật Bảo hiểm xã hội.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Giờ muốn lãnh bảo hiểm thất nghiệp phải làm qua dịch vụ công hả mọi người.",
+    "rule": "Để lãnh bảo hiểm thất nghiệp, người lao động cần thực hiện thủ tục qua dịch vụ công, theo quy định của Luật Bảo hiểm xã hội.",
+    "application": "Không có slot nào được gán giá trị trong trường hợp này. Prolog đã trả về một kết quả mà không cần sử dụng bất kỳ slot nào.",
+    "conclusion": "Prolog đã trả về giá trị \"Để lãnh bảo hiểm thất nghiệp, người lao động cần thực hiện thủ tục qua dịch vụ công, theo quy định của Luật Bảo hiểm xã hội.\" cho biến Conditions."
+  },
+  "elapsed_s": 6.993,
+  "prompt_tokens": 1958,
+  "completion_tokens": 269,
+  "error": null,
+  "gold_answer": null,
+  "gold_citations_raw": null
+}

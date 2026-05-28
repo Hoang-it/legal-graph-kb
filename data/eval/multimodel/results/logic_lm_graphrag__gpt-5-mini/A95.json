@@ -1,0 +1,35 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 95,
+  "question": "Mình dong bao hiểm dc 10 tháng có rút đc 1 lần không?",
+  "answer": "Issue:\nNgười hỏi muốn biết có được rút trợ cấp một lần khi đã đóng bảo hiểm xã hội trong thời gian chưa đủ điều kiện để hưởng lương hưu không.\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), article 76, clause 1: \"Người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng ra nước ngoài để định cư nếu có nguyện vọng thì được giải quyết hưởng trợ cấp một lần.\"\nLuật BHXH 2024 (41/2024/QH15), article 100, clause 1: \"Lao động nam có thời gian đóng bảo hiểm xã hội cao hơn 35 năm, lao động nữ có thời gian đóng bảo hiểm xã hội cao hơn 30 năm thì khi nghỉ hưu, ngoài lương hưu còn được hưởng trợ cấp một lần.\"\n\nApplication:\n- slot_bindings: không có slot input được gán.\n- Prolog đã thực thi truy vấn sử dụng dữ liệu và luật được sinh ra; truy vấn khớp một fact months_contributed(user, ...) từ verify_facts và áp dụng quy tắc tương ứng. Kết quả thực thi (Trace) cho thấy các bước dựa trên nguồn pháp luật: based_on(source_c002) và based_on(source_c001).\n\nConclusion:\nAnswer = \"no\". Prolog trả về kết luận one_time_withdrawal_eligibility(user,no) với Trace gồm step(...,based_on(source_c002)) và step(...,based_on(source_c001)).",
+  "citations": [
+    "[Điều 76 khoản 1]",
+    "[Điều 100 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A76.K1",
+    "L41_2024.A100.K1"
+  ],
+  "citation_indices": [
+    1,
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_withdrawal_eligibility(user,no),based_on(source_c002)),step(conclusion,one_time_withdrawal_eligibility(user,no),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết có được rút trợ cấp một lần khi đã đóng bảo hiểm xã hội trong thời gian chưa đủ điều kiện để hưởng lương hưu không.",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), article 76, clause 1: \"Người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng ra nước ngoài để định cư nếu có nguyện vọng thì được giải quyết hưởng trợ cấp một lần.\"\nLuật BHXH 2024 (41/2024/QH15), article 100, clause 1: \"Lao động nam có thời gian đóng bảo hiểm xã hội cao hơn 35 năm, lao động nữ có thời gian đóng bảo hiểm xã hội cao hơn 30 năm thì khi nghỉ hưu, ngoài lương hưu còn được hưởng trợ cấp một lần.\"",
+    "application": "- slot_bindings: không có slot input được gán.\n- Prolog đã thực thi truy vấn sử dụng dữ liệu và luật được sinh ra; truy vấn khớp một fact months_contributed(user, ...) từ verify_facts và áp dụng quy tắc tương ứng. Kết quả thực thi (Trace) cho thấy các bước dựa trên nguồn pháp luật: based_on(source_c002) và based_on(source_c001).",
+    "conclusion": "Answer = \"no\". Prolog trả về kết luận one_time_withdrawal_eligibility(user,no) với Trace gồm step(...,based_on(source_c002)) và step(...,based_on(source_c001))."
+  },
+  "elapsed_s": 57.515,
+  "prompt_tokens": 2980,
+  "completion_tokens": 6073,
+  "error": null,
+  "gold_answer": "Đóng BHXH 10 tháng chưa có nghĩa là rút được ngay. Trường hợp phổ biến muốn nhận BHXH một lần là bạn phải ngừng tham gia BHXH từ đủ 12 tháng trở lên và thuộc trường hợp luật cho phép. Nếu mới nghỉ hoặc vẫn còn đóng nối tiếp nơi khác thì chưa giải quyết được. Nếu không rút, 10 tháng đó vẫn được bảo lưu để sau này cộng nối.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110"
+}

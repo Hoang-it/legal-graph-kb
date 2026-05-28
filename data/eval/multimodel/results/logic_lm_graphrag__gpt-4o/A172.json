@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 172,
+  "question": "đăng kí bhtn xong tầm bnh ngày là sẽ nhận tiền?",
+  "answer": "Issue: Sau khi đăng ký bảo hiểm thất nghiệp, mất khoảng bao nhiêu ngày để nhận được tiền?\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 76, Khoản 5: \"Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên quy định pháp luật, thời gian xử lý hồ sơ bảo hiểm thất nghiệp là 7 ngày làm việc kể từ khi nhận đủ hồ sơ.\n\nConclusion: Thời gian xử lý hồ sơ bảo hiểm thất nghiệp là 7 ngày làm việc.",
+  "citations": [
+    "[Điều 76 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A76.K5"
+  ],
+  "citation_indices": [
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_processing_time(7),based_on(source_c005))]",
+  "irac_sections": {
+    "issue": "Sau khi đăng ký bảo hiểm thất nghiệp, mất khoảng bao nhiêu ngày để nhận được tiền?",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 76, Khoản 5: \"Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên quy định pháp luật, thời gian xử lý hồ sơ bảo hiểm thất nghiệp là 7 ngày làm việc kể từ khi nhận đủ hồ sơ.",
+    "conclusion": "Thời gian xử lý hồ sơ bảo hiểm thất nghiệp là 7 ngày làm việc."
+  },
+  "elapsed_s": 4.723,
+  "prompt_tokens": 2728,
+  "completion_tokens": 366,
+  "error": null,
+  "gold_answer": "Sau khi bạn nộp đủ hồ sơ BHTN, nếu sau 15 ngày làm việc vẫn chưa có việc làm thì sẽ được giải quyết hưởng. Tiền trợ cấp thường được chi trả sau khi có quyết định hưởng, thực tế nhiều nơi nhận trong vài ngày đến khoảng 1-2 tuần sau quyết định đầu tiên. Bạn nhớ theo dõi lịch thông báo việc làm hằng tháng để không bị tạm dừng hoặc chấm dứt hưởng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_graphrag",
+  "stt": 183,
+  "question": "minh nghi viec da 1 nam co dc huong tro cap ko?",
+  "answer": "Issue: Người lao động đã nghỉ việc được một năm có được hưởng trợ cấp không?\n\nRule: \"Người lao động đóng theo quy định.\" (Luật BHXH 2024 (41/2024/QH15), Điều 117, Khoản 2)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Prolog đã thực hiện truy vấn để kiểm tra các điều kiện hỗ trợ, nhưng không có thông tin cụ thể nào được cung cấp để xác định điều kiện hỗ trợ cho người lao động đã nghỉ việc một năm.\n\nConclusion: Hệ thống không thể tính toán số liệu cuối cùng do không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 117 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A117.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,support_conditions([one_year_contribution]),based_on(source_c006))]",
+  "irac_sections": {
+    "issue": "Người lao động đã nghỉ việc được một năm có được hưởng trợ cấp không?",
+    "rule": "\"Người lao động đóng theo quy định.\" (Luật BHXH 2024 (41/2024/QH15), Điều 117, Khoản 2)",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Prolog đã thực hiện truy vấn để kiểm tra các điều kiện hỗ trợ, nhưng không có thông tin cụ thể nào được cung cấp để xác định điều kiện hỗ trợ cho người lao động đã nghỉ việc một năm.",
+    "conclusion": "Hệ thống không thể tính toán số liệu cuối cùng do không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 7.196,
+  "prompt_tokens": 3645,
+  "completion_tokens": 334,
+  "error": null,
+  "gold_answer": "Nếu bạn hỏi trợ cấp thất nghiệp thì nghỉ việc đã 1 năm thường là quá hạn nộp hồ sơ, vì luật yêu cầu nộp trong 03 tháng kể từ ngày chấm dứt HĐLĐ. Còn nếu hỏi BHXH 1 lần thì nghỉ việc 1 năm mới là một trong các mốc để xem xét điều kiện, nhưng vẫn phải kiểm tra bạn có tiếp tục tham gia BHXH hay không và có thuộc trường hợp luật cho phép hay không.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

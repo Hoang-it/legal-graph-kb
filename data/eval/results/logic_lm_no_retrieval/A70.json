@@ -1,0 +1,29 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 70,
+  "question": "Mình đi làm công ty và có tham gia BHXH, đầu tháng 12-2025 mình nghỉ thai sản, trước khi nghỉ thai sản mình có giấy ốm nghỉ 2 lần là 14 ngày, mình có nộp cho nhân sự, nhưng tới hiện tại mình chưa nhận được tiền hưởng\nĐã nhiều lần mình nhắn hỏi, mấy lần đầu không trả lời, tháng trước mình hỏi tiếp và nói là “ đang gửi hồ sơ lại nhờ BHXH duyệt” tới nay 1 tháng nữa vẫn chưa có, hôm qua mình nhắn hỏi thì không trả lời\nVậy là nhân sự có vấn đề hay hồ sơ của mình có vấn đề?",
+  "answer": "Issue: Bạn đang thắc mắc về việc hồ sơ hưởng chế độ thai sản của mình có thể bị chậm xử lý hoặc có vấn đề gì không.\n\nRule: \"Mức hưởng chế độ ốm đau hàng tháng bằng 75% mức tiền lương đóng BHXH của tháng liền kề trước khi nghỉ việc.\" (document: law_bhxh_2024, article: article_26, clause: clause_1)\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Prolog đã thực hiện truy vấn để kiểm tra vấn đề liên quan đến nhân sự và đã đưa ra kết luận dựa trên thông tin có sẵn.\n\nConclusion: Prolog đã trả về kết luận rằng \"Có thể hồ sơ của bạn đang bị chậm xử lý hoặc có vấn đề, hãy yêu cầu nhân sự cung cấp thông tin cụ thể.\" Tuy nhiên, không có giá trị cụ thể nào được gán từ các slot, vì vậy không thể đưa ra một số liệu cuối cùng.",
+  "citations": [
+    "[Điều 26 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A26.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 2,
+  "prolog_trace": "[step(conclusion,check_human_resources_issue(user,Có thể hồ sơ của bạn đang bị chậm xử lý hoặc có vấn đề, hãy yêu cầu nhân sự cung cấp thông tin cụ thể.),based_on(source_a26_k1))]",
+  "irac_sections": {
+    "issue": "Bạn đang thắc mắc về việc hồ sơ hưởng chế độ thai sản của mình có thể bị chậm xử lý hoặc có vấn đề gì không.",
+    "rule": "\"Mức hưởng chế độ ốm đau hàng tháng bằng 75% mức tiền lương đóng BHXH của tháng liền kề trước khi nghỉ việc.\" (document: law_bhxh_2024, article: article_26, clause: clause_1)",
+    "application": "Không có slot nào được gán giá trị trong trường hợp này. Prolog đã thực hiện truy vấn để kiểm tra vấn đề liên quan đến nhân sự và đã đưa ra kết luận dựa trên thông tin có sẵn.",
+    "conclusion": "Prolog đã trả về kết luận rằng \"Có thể hồ sơ của bạn đang bị chậm xử lý hoặc có vấn đề, hãy yêu cầu nhân sự cung cấp thông tin cụ thể.\" Tuy nhiên, không có giá trị cụ thể nào được gán từ các slot, vì vậy không thể đưa ra một số liệu cuối cùng."
+  },
+  "elapsed_s": 49.456,
+  "prompt_tokens": 5360,
+  "completion_tokens": 739,
+  "error": null,
+  "gold_answer": "Trường hợp này có thể do hồ sơ chưa được doanh nghiệp nộp, nộp thiếu chứng từ, hoặc cơ quan BHXH yêu cầu bổ sung nên chưa giải quyết. Theo luật, doanh nghiệp phải lập hồ sơ và nộp cho cơ quan BHXH trong thời hạn quy định sau khi nhận đủ giấy tờ của NLĐ; cơ quan BHXH cũng phải giải quyết trong thời hạn luật định. Bạn nên yêu cầu nhân sự trả lời bằng văn bản/email về tình trạng hồ sơ; nếu bị chậm không rõ lý do thì liên hệ trực tiếp cơ quan BHXH nơi đơn vị tham gia để kiểm tra.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 53, Điều 54, Điều 116"
+}

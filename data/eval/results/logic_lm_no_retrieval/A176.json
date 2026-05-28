@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 176,
+  "question": "18nam dong bhxh lấy 1 lần được bao nhiêu?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmp0u0qlxgw.pl:2:293: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 26 khoản 1]",
+    "[Điều 64 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A26.K1",
+    "L41_2024.A64.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 19.191,
+  "prompt_tokens": 4056,
+  "completion_tokens": 827,
+  "error": null,
+  "gold_answer": "Nếu 18 năm đóng của bạn đều từ năm 2014 trở đi thì công thức sơ bộ là 18 năm x 2 tháng mức bình quân lương đóng BHXH, tức khoảng 36 tháng bình quân lương. Muốn biết gần đúng bao nhiêu tiền, cần biết mức bình quân tiền lương tháng đóng của toàn bộ quá trình sau điều chỉnh. Từ 01/7/2025, 18 năm đóng cũng là mức nên cân nhắc giữ để hướng tới lương hưu.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

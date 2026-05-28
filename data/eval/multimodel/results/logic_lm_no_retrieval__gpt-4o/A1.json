@@ -1,0 +1,27 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 1,
+  "question": "Vợ của ông Trinh (Hậu Giang) đóng BHXH được 9 năm 6 tháng. Vợ ông sinh con từ ngày 23/12/2014 nhưng chưa nộp hồ sơ hưởng chế độ thai sản.\nVậy nay vợ của ông nộp hồ sơ để hưởng chế độ thai sản thì có được không?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpfyfq_y13.pl:4:336: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 31 khoản 1]",
+    "[Điều 102 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A31.K1",
+    "L41_2024.A102.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 12.594,
+  "prompt_tokens": 5148,
+  "completion_tokens": 1698,
+  "error": null,
+  "gold_answer": "Tại Khoản 4 Điều 28 Nghị định số 115/2015/NĐ-CP ngày 11/11/2015 của Chính phủ quy định: Người lao động đủ điều kiện và hưởng các chế độ BHXH trước ngày 1/1/2016 thì vẫn thực hiện theo quy định của pháp luật trước ngày 1/1/2016.\nTại Khoản 2 Điều 53 Nghị định số 152/2006/NĐ-CP ngày 22/12/2006 của Chính phủ quy định về hồ sơ hưởng chế độ thai sản như sau:\n\"2. Hồ sơ hưởng chế độ thai sản khi sinh con hoặc nhận con nuôi của người lao động không còn quan hệ lao động gồm có:\na) Sổ bảo hiểm xã hội;\nb) Bản sao Giấy chứng sinh hoặc bản sao Giấy khai sinh của con hoặc Giấy chứng tử trong trường hợp sau khi sinh mà con chết; nhận nuôi con nuôi dưới 4 tháng tuổi phải có chứng nhận theo quy định của pháp luật\".\nĐối chiếu quy định nêu trên, qua tra cứu dữ liệu tham gia BHXH đối với mã số BHXH và thông tin ông Trinh cung cấp, vợ của ông sinh con vào ngày 23/12/2014 trong khoảng thời gian 12 tháng trước khi sinh con của vợ của ông được tính từ tháng 12/2013 đến tháng 11/2014, vợ của ông có 9 tháng đóng BHXH (từ tháng 12/2013 đến tháng 8/2014) do đó vợ của ông đủ điều kiện hưởng chế độ thai sản khi sinh con và có thể nộp hồ sơ theo quy định nêu trên đến cơ quan BHXH để được xem xét, giải quyết.",
+  "gold_citations_raw": "Khoản 4 Điều 28 Nghị định số 115/2015/NĐ-CP\nTại Khoản 2 Điều 53 Nghị định số 152/2006/NĐ-CP"
+}

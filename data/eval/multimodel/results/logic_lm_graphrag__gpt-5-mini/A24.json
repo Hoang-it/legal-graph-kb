@@ -1,0 +1,27 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 24,
+  "question": "Chồng của bà Thiên Kim (TPHCM) là thương binh loại A hạng Ba đã được công nhận trước năm 1995, được cấp thẻ BHYT miễn phí và được hưởng 100% chi phí khám, chữa bệnh trong phạm vi chi trả của BHYT.\nBà Kim hỏi, vợ của thương binh (hiện không có nguồn thu nhập) thì có được Nhà nước cấp thẻ BHYT miễn phí không?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=derived_false, repair_rounds=2, error=Prolog produced no solutions]",
+  "citations": [
+    "[Điều 23 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A23.K6"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": false,
+  "prolog_status": "derived_false",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 57.572,
+  "prompt_tokens": 6689,
+  "completion_tokens": 7090,
+  "error": null,
+  "gold_answer": "Theo quy định tại Pháp lệnh Ưu đãi người có công với cách mạng và Nghị định số 146/2018/NĐ-CP, Nhà nước có chính sách cấp thẻ BHYT miễn phí cho thân nhân của thương binh dựa trên tỷ lệ tổn thương cơ thể của thương binh đó.\nCụ thể, đối tượng được cấp thẻ BHYT miễn phí bao gồm: Cha đẻ, mẹ đẻ, vợ hoặc chồng, con từ đủ 6 tuổi đến dưới 18 tuổi hoặc từ đủ 18 tuổi trở lên nếu còn tiếp tục đi học hoặc bị khuyết tật nặng, khuyết tật đặc biệt nặng của: Thương binh, người hưởng chính sách như thương binh có tỷ lệ tổn thương cơ thể từ 61% trở lên.\nDựa trên thông tin bà cung cấp, chồng là thương binh loại A, hạng Ba.\nTheo cách xếp hạng cũ trước năm 1995, thương binh hạng Ba (3/4) có tỷ lệ mất sức lao động từ 41% đến 60%.\nVì tỷ lệ tổn thương cơ thể của chồng bà chưa đạt mức 61% trở lên, nên theo quy định hiện hành, người vợ chưa thuộc diện được Nhà nước cấp thẻ BHYT miễn phí theo diện thân nhân người có công.\nTrong trường hợp này người vợ, chồng thường phải tham gia BHYT theo hộ gia đình và tự đóng phí theo quy định chung, hoặc tham gia theo nhóm đối tượng khác có quyền lợi hỗ trợ.",
+  "gold_citations_raw": "Pháp lệnh Ưu đãi người có công với cách mạng và Nghị định số 146/2018/NĐ-CP,"
+}

@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 108,
+  "question": "E đg làm cty nhưng hết hợp đồng ngày 23/4/2026 \nE đg bầu, e có giấy quyết định nv và chấm dứt hđ .E làm bh thât nghiệp bao nhiêu lâu thì sẽ đc hưởng tiền bhtn?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Sau khi chấm dứt hợp đồng lao động vào ngày 23/4/2026 và đã có quyết định nghỉ việc, người lao động đang mang thai cần làm bảo hiểm thất nghiệp trong bao lâu thì sẽ được hưởng trợ cấp thất nghiệp?\n\nRule:\n\"Đối tượng quy định tại điểm b và điểm c khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của người hành nghề khám bệnh, chữa bệnh thuộc cơ sở khám bệnh, chữa bệnh thì phải đóng bảo hiểm xã hội bắt buộc từ đủ 03 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con.\" (Luật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 3)\n\nApplication:\nCác điều kiện được Prolog truy vấn và trả về bao gồm:\n- phai_cham_dut_hop_dong_laodong\n- da_dong_bao_hiem_that_nghiep_tu_du_12_thang_trong_24_thang_truoc_khi_cham_dut_hop_dong\n- nop_ho_so_huong_tro_cap_that_nghiep_trong_thoi_han_3_thang_ke_tu_ngay_cham_dut_hop_dong\n\nCác điều kiện này được xác định dựa trên quy định tại nguồn luật đã trích dẫn.\n\nConclusion:\nĐể được hưởng trợ cấp thất nghiệp, bạn cần đáp ứng đủ các điều kiện: đã chấm dứt hợp đồng lao động, đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trong 24 tháng trước khi chấm dứt hợp đồng, và nộp hồ sơ hưởng trợ cấp thất nghiệp trong thời hạn 3 tháng kể từ ngày chấm dứt hợp đồng (Conditions = [phai_cham_dut_hop_dong_laodong, da_dong_bao_hiem_that_nghiep_tu_du_12_thang_trong_24_thang_truoc_khi_cham_dut_hop_dong, nop_ho_so_huong_tro_cap_that_nghiep_trong_thoi_han_3_thang_ke_tu_ngay_cham_dut_hop_dong]).",
+  "citations": [
+    "[Điều 50 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A50.K3"
+  ],
+  "citation_indices": [
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_conditions([phai_cham_dut_hop_dong_laodong,da_dong_bao_hiem_that_nghiep_tu_du_12_thang_trong_24_thang_truoc_khi_cham_dut_hop_dong,nop_ho_so_huong_tro_cap_that_nghiep_trong_thoi_han_3_thang_ke_tu_ngay_cham_dut_hop_dong]),based_on(source_c051))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Sau khi chấm dứt hợp đồng lao động vào ngày 23/4/2026 và đã có quyết định nghỉ việc, người lao động đang mang thai cần làm bảo hiểm thất nghiệp trong bao lâu thì sẽ được hưởng trợ cấp thất nghiệp?",
+    "rule": "\"Đối tượng quy định tại điểm b và điểm c khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của người hành nghề khám bệnh, chữa bệnh thuộc cơ sở khám bệnh, chữa bệnh thì phải đóng bảo hiểm xã hội bắt buộc từ đủ 03 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con.\" (Luật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 3)",
+    "application": "Các điều kiện được Prolog truy vấn và trả về bao gồm:\n- phai_cham_dut_hop_dong_laodong\n- da_dong_bao_hiem_that_nghiep_tu_du_12_thang_trong_24_thang_truoc_khi_cham_dut_hop_dong\n- nop_ho_so_huong_tro_cap_that_nghiep_trong_thoi_han_3_thang_ke_tu_ngay_cham_dut_hop_dong\n\nCác điều kiện này được xác định dựa trên quy định tại nguồn luật đã trích dẫn.",
+    "conclusion": "Để được hưởng trợ cấp thất nghiệp, bạn cần đáp ứng đủ các điều kiện: đã chấm dứt hợp đồng lao động, đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trong 24 tháng trước khi chấm dứt hợp đồng, và nộp hồ sơ hưởng trợ cấp thất nghiệp trong thời hạn 3 tháng kể từ ngày chấm dứt hợp đồng (Conditions = [phai_cham_dut_hop_dong_laodong, da_dong_bao_hiem_that_nghiep_tu_du_12_thang_trong_24_thang_truoc_khi_cham_dut_hop_dong, nop_ho_so_huong_tro_cap_that_nghiep_trong_thoi_han_3_thang_ke_tu_ngay_cham_dut_hop_dong])."
+  },
+  "elapsed_s": 12.881,
+  "prompt_tokens": 5811,
+  "completion_tokens": 859,
+  "error": null,
+  "gold_answer": "Nếu chấm dứt hợp đồng ngày 23/4/2026 và đủ điều kiện hưởng BHTN, bạn phải nộp hồ sơ trong 03 tháng kể từ ngày chấm dứt hợp đồng. Sau khi nộp đủ hồ sơ, nếu sau 15 ngày làm việc vẫn chưa có việc làm thì sẽ được giải quyết hưởng. Việc đang mang thai không làm mất quyền hưởng BHTN; chỉ cần đáp ứng điều kiện về thời gian đóng và chấm dứt hợp đồng hợp pháp.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

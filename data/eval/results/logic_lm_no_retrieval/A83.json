@@ -1,0 +1,25 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 83,
+  "question": "Mình đóng bảo hiểm xh từ 2016 tới  2018 rồi ngưng tới nay. Do nghỉ ngang ở cty và k để ý để rút sổ và check thông tin số bh. Coi như k có thông tin gì về nó. Giờ mình phải làm sao để dc cấp lại ?",
+  "answer": "Issue: Người dùng đã đóng bảo hiểm xã hội từ năm 2016 đến 2018 và hiện đang muốn biết cách để được cấp lại sổ bảo hiểm xã hội.\n\nRule: Không có trích dẫn nào được cung cấp trong tài liệu.\n\nApplication: Không có giá trị nào được gán cho các slot. Tuy nhiên, Prolog đã xác định rằng người dùng cần liên hệ với cơ quan bảo hiểm xã hội để được hướng dẫn cấp lại sổ bảo hiểm xã hội.\n\nConclusion: Prolog đã trả về câu trả lời là \"Bạn cần liên hệ với cơ quan bảo hiểm xã hội để được hướng dẫn cấp lại sổ bảo hiểm xã hội.\" Tuy nhiên, không có giá trị nào từ các slot được sử dụng trong quá trình truy vấn.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,Bạn cần liên hệ với cơ quan bảo hiểm xã hội để được hướng dẫn cấp lại sổ bảo hiểm xã hội.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người dùng đã đóng bảo hiểm xã hội từ năm 2016 đến 2018 và hiện đang muốn biết cách để được cấp lại sổ bảo hiểm xã hội.",
+    "rule": "Không có trích dẫn nào được cung cấp trong tài liệu.",
+    "application": "Không có giá trị nào được gán cho các slot. Tuy nhiên, Prolog đã xác định rằng người dùng cần liên hệ với cơ quan bảo hiểm xã hội để được hướng dẫn cấp lại sổ bảo hiểm xã hội.",
+    "conclusion": "Prolog đã trả về câu trả lời là \"Bạn cần liên hệ với cơ quan bảo hiểm xã hội để được hướng dẫn cấp lại sổ bảo hiểm xã hội.\" Tuy nhiên, không có giá trị nào từ các slot được sử dụng trong quá trình truy vấn."
+  },
+  "elapsed_s": 7.166,
+  "prompt_tokens": 2088,
+  "completion_tokens": 320,
+  "error": null,
+  "gold_answer": "Bạn có thể bắt đầu bằng việc tra cứu lại mã số BHXH bằng CCCD/họ tên/ngày sinh trên Cổng BHXH hoặc tại cơ quan BHXH nơi cư trú. Sau khi xác định được mã số, bạn làm thủ tục đề nghị cấp lại sổ/xác nhận lại quá trình tham gia nếu sổ cũ thất lạc. Việc nghỉ ngang trước đây không làm mất thời gian đã đóng hợp pháp; dữ liệu quá trình tham gia vẫn được lưu trong hệ thống BHXH để đối chiếu và cấp lại.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn cấp lại sổ BHXH"
+}

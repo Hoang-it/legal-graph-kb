@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 29,
+  "question": "Bà Nhật Lệ (TPHCM) sinh con thứ hai vào tháng 01/2026. Bà được biết Nhà nước đang xem xét điều chỉnh thời gian nghỉ thai sản lên 7 tháng, tuy nhiên bà chưa rõ thời điểm hiệu lực của quy định này.\nBà Lệ hỏi, bà có thuộc diện được áp dụng chế độ nghỉ thai sản 7 tháng không?",
+  "answer": "Issue:\nBà Nhật Lệ (TPHCM) sinh con thứ hai và hỏi liệu bà có thuộc diện được áp dụng chế độ nghỉ thai sản 7 tháng hay không.\n\nRule:\nLuật BHXH 2024 (41/2024/QH15) Điều 55 khoản 1: \"Được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi. Trường hợp sinh đôi trở lên thì được nghỉ thêm 01 tháng cho mỗi con tính từ con thứ hai trở đi.\nTrường hợp lao động nữ nhờ mang thai hộ không nghỉ việc thì ngoài tiền lương còn được hưởng trợ cấp thai sản theo quy định;\"\n\nApplication:\nCác slot đầu vào: không có slot nào được cung cấp trong truy vấn.\nCách Prolog sử dụng dữ liệu: truy vấn đã không yêu cầu slot đầu vào; thay vào đó Prolog đối chiếu nguồn pháp luật source_c0 (Luật BHXH 2024 Điều 55 khoản 1) như trong dấu vết thực thi (based_on(source_c0)) để xác định tính áp dụng của quy định 7 tháng.\n\nConclusion:\nAnswer = not_applicable(Theo Luật BHXH 2024 (Điều 55 khoản 1) thời gian nghỉ việc hưởng chế độ thai sản khi sinh con là đến khi con đủ 06 tháng tuổi và không có quy định nghỉ 07 tháng; do đó chế độ nghỉ thai sản 7 tháng chưa được áp dụng theo văn bản pháp luật hiện hành.)",
+  "citations": [
+    "[Điều 55 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A55.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,seven_month_maternity_applicability(not_applicable(Theo Luật BHXH 2024 (Điều 55 khoản 1) thời gian nghỉ việc hưởng chế độ thai sản khi sinh con là đến khi con đủ 06 tháng tuổi và không có quy định nghỉ 07 tháng; do đó chế độ nghỉ thai sản 7 tháng chưa được áp dụng theo văn bản pháp luật hiện hành.)),based_on(source_c0))]",
+  "irac_sections": {
+    "issue": "Bà Nhật Lệ (TPHCM) sinh con thứ hai và hỏi liệu bà có thuộc diện được áp dụng chế độ nghỉ thai sản 7 tháng hay không.",
+    "rule": "Luật BHXH 2024 (41/2024/QH15) Điều 55 khoản 1: \"Được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi. Trường hợp sinh đôi trở lên thì được nghỉ thêm 01 tháng cho mỗi con tính từ con thứ hai trở đi.\nTrường hợp lao động nữ nhờ mang thai hộ không nghỉ việc thì ngoài tiền lương còn được hưởng trợ cấp thai sản theo quy định;\"",
+    "application": "Các slot đầu vào: không có slot nào được cung cấp trong truy vấn.\nCách Prolog sử dụng dữ liệu: truy vấn đã không yêu cầu slot đầu vào; thay vào đó Prolog đối chiếu nguồn pháp luật source_c0 (Luật BHXH 2024 Điều 55 khoản 1) như trong dấu vết thực thi (based_on(source_c0)) để xác định tính áp dụng của quy định 7 tháng.",
+    "conclusion": "Answer = not_applicable(Theo Luật BHXH 2024 (Điều 55 khoản 1) thời gian nghỉ việc hưởng chế độ thai sản khi sinh con là đến khi con đủ 06 tháng tuổi và không có quy định nghỉ 07 tháng; do đó chế độ nghỉ thai sản 7 tháng chưa được áp dụng theo văn bản pháp luật hiện hành.)"
+  },
+  "elapsed_s": 47.628,
+  "prompt_tokens": 3579,
+  "completion_tokens": 4991,
+  "error": null,
+  "gold_answer": "Luật Dân số năm 2025 có hiệu lực kể từ ngày 1/7/2026 quy định sửa đổi, bổ sung một số điều của các luật có liên quan đến công tác dân số tại khoản 1 Điều 29 như sau:\n\"Sửa đổi, bổ sung khoản 1 Điều 139 Bộ luật Lao động số 49/2019/QH14 đã được sửa đổi, bố sung theo Luật số 71/2025/QH15 như sau:\n\"1. Lao động nữ được nghỉ thai sản trước và sau khi sinh con là 06 tháng; trường hợp sinh con thứ hai, lao động nữ được nghỉ thai sản trước và sau khi sinh con là 07 tháng; thời gian nghỉ trước khi sinh không quá 02 tháng.\nTrường hợp lao động nữ sinh đôi trở lên thì tính từ con thứ hai trở đi, cứ mỗi con, người mẹ được nghỉ thêm 01 tháng\"\".\nĐối chiếu với quy định nêu trên và theo thông tin bà cung cấp thì bà sinh con thứ hai vào tháng 01/2026 thì bà chưa thuộc trường hợp áp dụng nghỉ chế độ thai sản 7 tháng.",
+  "gold_citations_raw": "Luật Dân số năm 2025"
+}

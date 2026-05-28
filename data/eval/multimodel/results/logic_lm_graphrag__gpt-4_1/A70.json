@@ -1,0 +1,37 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 70,
+  "question": "Mình đi làm công ty và có tham gia BHXH, đầu tháng 12-2025 mình nghỉ thai sản, trước khi nghỉ thai sản mình có giấy ốm nghỉ 2 lần là 14 ngày, mình có nộp cho nhân sự, nhưng tới hiện tại mình chưa nhận được tiền hưởng\nĐã nhiều lần mình nhắn hỏi, mấy lần đầu không trả lời, tháng trước mình hỏi tiếp và nói là “ đang gửi hồ sơ lại nhờ BHXH duyệt” tới nay 1 tháng nữa vẫn chưa có, hôm qua mình nhắn hỏi thì không trả lời\nVậy là nhân sự có vấn đề hay hồ sơ của mình có vấn đề?",
+  "answer": "Issue:\nBạn hỏi về quy trình giải quyết chế độ thai sản khi đã nộp giấy tờ cho nhân sự nhưng chưa nhận được tiền hưởng, đồng thời thắc mắc liệu vấn đề nằm ở nhân sự hay hồ sơ của mình.\n\nRule:\n\"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản. Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ thai sản kèm theo hồ sơ quy định t\" (Luật BHXH 2024 (41/2024/QH15), Điều 62, Khoản 1)\n\"Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động, 05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), Điều 62, Khoản 3)\n\nApplication:\nCác bước trong quy trình được Prolog xác định như sau:\n- QuyTrinh = [nguoi_lao_dong_nop_ho_so_cho_nsdl, nsdl_nop_ho_so_cho_bhxh_trong_7_ngay, bhxh_giai_quyet_trong_7_ngay_hoac_5_ngay]\n- Trace = [step(nguoi_lao_dong_nop_ho_so, nguoi_lao_dong_nop_ho_so_cho_nsdl, based_on(source_c000)), step(nsdl_nop_ho_so, nsdl_nop_ho_so_cho_bhxh_trong_7_ngay, based_on(source_c000)), step(bhxh_giai_quyet, bhxh_giai_quyet_trong_7_ngay_hoac_5_ngay, based_on(source_c004))]\nCác bước này được truy xuất dựa trên các quy định pháp luật đã dẫn.\n\nConclusion:\nTheo Prolog, quy trình giải quyết chế độ thai sản gồm: người lao động nộp hồ sơ cho người sử dụng lao động, người sử dụng lao động nộp hồ sơ cho cơ quan BHXH trong 7 ngày, và cơ quan BHXH giải quyết trong 7 hoặc 5 ngày tùy trường hợp (QuyTrinh). Nếu đã nộp đủ hồ sơ mà vẫn chưa nhận được tiền, có thể vấn đề nằm ở khâu xử lý của nhân sự hoặc cơ quan BHXH.",
+  "citations": [
+    "[Điều 61]",
+    "[Điều 62 khoản 1]",
+    "[Điều 62 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A61",
+    "L41_2024.A62.K1",
+    "L41_2024.A62.K3"
+  ],
+  "citation_indices": [
+    0,
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(nguoi_lao_dong_nop_ho_so,nguoi_lao_dong_nop_ho_so_cho_nsdl,based_on(source_c000)),step(nsdl_nop_ho_so,nsdl_nop_ho_so_cho_bhxh_trong_7_ngay,based_on(source_c000)),step(bhxh_giai_quyet,bhxh_giai_quyet_trong_7_ngay_hoac_5_ngay,based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về quy trình giải quyết chế độ thai sản khi đã nộp giấy tờ cho nhân sự nhưng chưa nhận được tiền hưởng, đồng thời thắc mắc liệu vấn đề nằm ở nhân sự hay hồ sơ của mình.",
+    "rule": "\"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản. Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ thai sản kèm theo hồ sơ quy định t\" (Luật BHXH 2024 (41/2024/QH15), Điều 62, Khoản 1)\n\"Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người sử dụng lao động, 05 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), Điều 62, Khoản 3)",
+    "application": "Các bước trong quy trình được Prolog xác định như sau:\n- QuyTrinh = [nguoi_lao_dong_nop_ho_so_cho_nsdl, nsdl_nop_ho_so_cho_bhxh_trong_7_ngay, bhxh_giai_quyet_trong_7_ngay_hoac_5_ngay]\n- Trace = [step(nguoi_lao_dong_nop_ho_so, nguoi_lao_dong_nop_ho_so_cho_nsdl, based_on(source_c000)), step(nsdl_nop_ho_so, nsdl_nop_ho_so_cho_bhxh_trong_7_ngay, based_on(source_c000)), step(bhxh_giai_quyet, bhxh_giai_quyet_trong_7_ngay_hoac_5_ngay, based_on(source_c004))]\nCác bước này được truy xuất dựa trên các quy định pháp luật đã dẫn.",
+    "conclusion": "Theo Prolog, quy trình giải quyết chế độ thai sản gồm: người lao động nộp hồ sơ cho người sử dụng lao động, người sử dụng lao động nộp hồ sơ cho cơ quan BHXH trong 7 ngày, và cơ quan BHXH giải quyết trong 7 hoặc 5 ngày tùy trường hợp (QuyTrinh). Nếu đã nộp đủ hồ sơ mà vẫn chưa nhận được tiền, có thể vấn đề nằm ở khâu xử lý của nhân sự hoặc cơ quan BHXH."
+  },
+  "elapsed_s": 11.689,
+  "prompt_tokens": 4133,
+  "completion_tokens": 1142,
+  "error": null,
+  "gold_answer": "Trường hợp này có thể do hồ sơ chưa được doanh nghiệp nộp, nộp thiếu chứng từ, hoặc cơ quan BHXH yêu cầu bổ sung nên chưa giải quyết. Theo luật, doanh nghiệp phải lập hồ sơ và nộp cho cơ quan BHXH trong thời hạn quy định sau khi nhận đủ giấy tờ của NLĐ; cơ quan BHXH cũng phải giải quyết trong thời hạn luật định. Bạn nên yêu cầu nhân sự trả lời bằng văn bản/email về tình trạng hồ sơ; nếu bị chậm không rõ lý do thì liên hệ trực tiếp cơ quan BHXH nơi đơn vị tham gia để kiểm tra.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 53, Điều 54, Điều 116"
+}

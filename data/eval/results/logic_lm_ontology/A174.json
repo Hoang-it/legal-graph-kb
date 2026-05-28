@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 174,
+  "question": "Nữ sinh 13/6/1974, e làm công nhân may, đã đóng bảo hiểm được 30 năm, theo quy định thì 6/2026 là e đủ điều kiện được về hưu, tháng 8/2025 e đã làm để hưởng bảo hiểm thất nghiệp và vẫn hưởng đến nay. E muốn hỏi , sau khi hưởng nốt thất nghiệp của tháng 5/2026 thì e đi làm thủ tục cắt hỗ trợ thất nghiệp sau đó e nộp hồ sơ để hưởng lương hưu luôn để được hưởng lương hưu từ tháng 6/2026 thì có được không?",
+  "answer": "Issue: Người hỏi muốn biết liệu sau khi hưởng bảo hiểm thất nghiệp đến tháng 5/2026, họ có thể nộp hồ sơ để hưởng lương hưu từ tháng 6/2026 hay không.\n\nRule: \"5. Tiếp nhận hồ sơ đề nghị hưởng và giải quyết hưởng chế độ bảo hiểm xã hội; tổ chức trả lương hưu, trợ cấp bảo hiểm xã hội, bảo hiểm thất nghiệp đầy đủ, thuận tiện và đúng thời hạn.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 5)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng người hỏi đã đóng bảo hiểm được 30 năm, điều này đủ điều kiện để hưởng lương hưu.\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người hỏi có thể nộp hồ sơ để hưởng lương hưu từ tháng 6/2026.",
+  "citations": [
+    "[Điều 18 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K5"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,pension_application_conditions(yes),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết liệu sau khi hưởng bảo hiểm thất nghiệp đến tháng 5/2026, họ có thể nộp hồ sơ để hưởng lương hưu từ tháng 6/2026 hay không.",
+    "rule": "\"5. Tiếp nhận hồ sơ đề nghị hưởng và giải quyết hưởng chế độ bảo hiểm xã hội; tổ chức trả lương hưu, trợ cấp bảo hiểm xã hội, bảo hiểm thất nghiệp đầy đủ, thuận tiện và đúng thời hạn.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 5)",
+    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng người hỏi đã đóng bảo hiểm được 30 năm, điều này đủ điều kiện để hưởng lương hưu.",
+    "conclusion": "Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người hỏi có thể nộp hồ sơ để hưởng lương hưu từ tháng 6/2026."
+  },
+  "elapsed_s": 8.686,
+  "prompt_tokens": 3075,
+  "completion_tokens": 435,
+  "error": null,
+  "gold_answer": "Bạn cần phân biệt thời điểm đủ điều kiện hưu và thời điểm bắt đầu hưởng hưu. Khi đang hưởng BHTN, nếu đủ điều kiện và làm thủ tục để hưởng lương hưu thì TCTN sẽ bị chấm dứt từ thời điểm hưởng lương hưu. Vì vậy về nguyên tắc có thể làm thủ tục để nối sang chế độ hưu, nhưng cần tính đúng mốc tháng bắt đầu hưởng hưu để không chồng chéo hoặc bị thu hồi.",
+  "gold_citations_raw": "Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

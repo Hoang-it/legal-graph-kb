@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 89,
+  "question": "E đóng BHXH tự nguyện mấy tháng giờ muốn chốt sổ để đóng sang BHXH bắt buộc thì như nào?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Người đã đóng bảo hiểm xã hội (BHXH) tự nguyện một thời gian, nay muốn chốt sổ để chuyển sang đóng BHXH bắt buộc thì thủ tục và quyền lợi như thế nào?\n\nRule:\n\"Người tham gia BHXH tự nguyện được bảo lưu thời gian đã đóng khi chuyển sang BHXH bắt buộc.\" (law_bhxh_2024, article_87, clause_1)\n\"Thủ tục chốt sổ BHXH tự nguyện để chuyển sang BHXH bắt buộc thực hiện theo quy định của cơ quan BHXH.\" (law_bhxh_2024, article_87, clause_2)\n\nApplication:\nKhông có slot_id cụ thể nào được cung cấp trong truy vấn này. Prolog đã sử dụng các quy định tại Điều 87, Khoản 1 và Khoản 2 của Luật BHXH 2024 để xác định rằng người tham gia BHXH tự nguyện có thể chốt sổ để chuyển sang BHXH bắt buộc, thời gian đã đóng được bảo lưu và thủ tục thực hiện tại cơ quan BHXH theo quy định.\n\nConclusion:\nTheo kết quả Prolog, điều kiện để chuyển từ BHXH tự nguyện sang BHXH bắt buộc là: \"Người tham gia BHXH tự nguyện có thể chốt sổ để chuyển sang BHXH bắt buộc, thời gian đã đóng được bảo lưu, thực hiện thủ tục tại cơ quan BHXH theo quy định.\"",
+  "citations": [
+    "[Điều 87 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A87.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,thu_tuc_chuyen_bhxh_tn_sang_bb([Người tham gia BHXH tự nguyện có thể chốt sổ để chuyển sang BHXH bắt buộc, thời gian đã đóng được bảo lưu, thực hiện thủ tục tại cơ quan BHXH theo quy định.]),based_on(source_a87_k1)),step(conclusion,thu_tuc_chuyen_bhxh_tn_sang_bb([Người tham gia BHXH tự nguyện có thể chốt sổ để chuyển sang BHXH bắt buộc, thời gian đã đóng được bảo lưu, thực hiện thủ tục tại cơ quan BHXH theo quy định.]),based_on(source_a87_k2))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Người đã đóng bảo hiểm xã hội (BHXH) tự nguyện một thời gian, nay muốn chốt sổ để chuyển sang đóng BHXH bắt buộc thì thủ tục và quyền lợi như thế nào?",
+    "rule": "\"Người tham gia BHXH tự nguyện được bảo lưu thời gian đã đóng khi chuyển sang BHXH bắt buộc.\" (law_bhxh_2024, article_87, clause_1)\n\"Thủ tục chốt sổ BHXH tự nguyện để chuyển sang BHXH bắt buộc thực hiện theo quy định của cơ quan BHXH.\" (law_bhxh_2024, article_87, clause_2)",
+    "application": "Không có slot_id cụ thể nào được cung cấp trong truy vấn này. Prolog đã sử dụng các quy định tại Điều 87, Khoản 1 và Khoản 2 của Luật BHXH 2024 để xác định rằng người tham gia BHXH tự nguyện có thể chốt sổ để chuyển sang BHXH bắt buộc, thời gian đã đóng được bảo lưu và thủ tục thực hiện tại cơ quan BHXH theo quy định.",
+    "conclusion": "Theo kết quả Prolog, điều kiện để chuyển từ BHXH tự nguyện sang BHXH bắt buộc là: \"Người tham gia BHXH tự nguyện có thể chốt sổ để chuyển sang BHXH bắt buộc, thời gian đã đóng được bảo lưu, thực hiện thủ tục tại cơ quan BHXH theo quy định.\""
+  },
+  "elapsed_s": 5.981,
+  "prompt_tokens": 2410,
+  "completion_tokens": 663,
+  "error": null,
+  "gold_answer": "Bạn không phải 'chốt sổ' BHXH tự nguyện theo cách của doanh nghiệp. Khi chuyển sang BHXH bắt buộc, bạn chỉ cần dùng đúng mã số BHXH hiện có để đơn vị mới đăng ký tham gia bắt buộc; toàn bộ thời gian tự nguyện trước đó sẽ được bảo lưu trên cùng mã số. Nếu có đóng trùng hoặc thông tin cá nhân chưa khớp thì liên hệ cơ quan BHXH để điều chỉnh trước khi đơn vị báo tăng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25, Điều 36"
+}

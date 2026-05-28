@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 156,
+  "question": "E nghỉ ngang cty cũ k chốt tờ rời cho giờ có cách nào chốt được không?",
+  "answer": "Issue: E nghỉ ngang cty cũ không chốt tờ rời, có cách nào để chốt được không?\n\nRule: \"7. Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất.\" (Luật BHXH 2024 (41/2024/QH15), article 33, clause 7)\n\nApplication: Không có slot_bindings nào được cung cấp trong truy vấn. Prolog đã thực hiện truy vấn và trả về kết quả cho thấy có thể tiếp tục đóng bảo hiểm cho các tháng còn thiếu.\n\nConclusion: Prolog đã trả về giá trị \"continue_contributions_for_missing_months\" cho biến Conditions. Tuy nhiên, không có thông tin nào từ slot_bindings để tính toán thêm.",
+  "citations": [
+    "[Điều 33 khoản 7]"
+  ],
+  "citation_ids": [
+    "L41_2024.A33.K7"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,closure_options([continue_contributions_for_missing_months]),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "E nghỉ ngang cty cũ không chốt tờ rời, có cách nào để chốt được không?",
+    "rule": "\"7. Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất.\" (Luật BHXH 2024 (41/2024/QH15), article 33, clause 7)",
+    "application": "Không có slot_bindings nào được cung cấp trong truy vấn. Prolog đã thực hiện truy vấn và trả về kết quả cho thấy có thể tiếp tục đóng bảo hiểm cho các tháng còn thiếu.",
+    "conclusion": "Prolog đã trả về giá trị \"continue_contributions_for_missing_months\" cho biến Conditions. Tuy nhiên, không có thông tin nào từ slot_bindings để tính toán thêm."
+  },
+  "elapsed_s": 10.086,
+  "prompt_tokens": 6010,
+  "completion_tokens": 521,
+  "error": null,
+  "gold_answer": "Nếu công ty cũ chưa chốt tờ rời thì bạn không tự chốt thay hoàn toàn được, vì doanh nghiệp phải báo giảm và hoàn tất nghĩa vụ đóng. Việc bạn cần làm là yêu cầu công ty chốt sổ bằng văn bản; nếu công ty chây ì thì gửi đơn tới cơ quan BHXH quản lý đơn vị, thanh tra lao động hoặc khởi kiện yêu cầu chốt sổ và bồi thường thiệt hại nếu có.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

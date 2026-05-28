@@ -1,0 +1,50 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 64,
+  "question": "Mình ở phường xuân hòa tỉnh phú thọ. Mình đang đóng bảo hiểm tự nguyện, giờ mình  muốn chốt sổ thì làm thế nào?",
+  "answer": "Issue: Mình đang tham gia bảo hiểm xã hội tự nguyện tại phường Xuân Hòa, Phú Thọ và hỏi thủ tục để chốt sổ bảo hiểm xã hội.\n\nRule:\n\"Được cơ quan bảo hiểm xã hội hướng dẫn trình tự, thủ tục thực hiện bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), article 12, clause 3)\n\"Bảo hiểm xã hội tự nguyện là loại hình bảo hiểm xã hội do Nhà nước tổ chức mà công dân Việt Nam tự nguyện tham gia và được lựa chọn mức đóng, phương thức đóng phù hợp với thu nhập của mình.\" (Luật BHXH 2024 (41/2024/QH15), article 3, clause 4)\n\"Cầm cố, mua bán, thế chấp, đặt cọc sổ bảo hiểm xã hội dưới mọi hình thức.\" (Luật BHXH 2024 (41/2024/QH15), article 9, clause 9)\n\"Kiến nghị cơ quan nhà nước có thẩm quyền xử lý hành vi vi phạm pháp luật về bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), article 15, clause 6)\n\"Hỗ trợ người tham gia bảo hiểm xã hội tự nguyện.\" (Luật BHXH 2024 (41/2024/QH15), article 6, clause 5)\n\nApplication: Không có slot nào được gán giá trị trong slot_bindings. Truy vấn Prolog close_voluntary_insurance_procedure(Procedure, Trace) không dùng slot; nó đối chiếu các nguồn pháp luật (ví dụ source_c2, source_c6, source_c1, source_c3, source_c0 trong Trace) để sinh Procedure gồm các bước hướng dẫn liên quan đến chốt sổ.\n\nConclusion: Procedure = [Liên hệ cơ quan bảo hiểm xã hội nơi đang tham gia (ví dụ: BHXH cấp xã/phường hoặc tỉnh) để được hướng dẫn trình tự và thủ tục chốt sổ.,Lưu ý đây là bảo hiểm xã hội tự nguyện; kiểm tra quyền lợi, mức hỗ trợ và phương thức thực hiện theo quy định của BHXH.,Không cầm cố, mua bán, thế chấp hoặc đặt cọc sổ bảo hiểm xã hội dưới mọi hình thức.,Nếu có tranh chấp hoặc hành vi vi phạm liên quan đến sổ BHXH, có thể kiến nghị hoặc phản ánh tới cơ quan nhà nước có thẩm quyền để xử lý.]",
+  "citations": [
+    "[Điều 6 khoản 5]",
+    "[Điều 9 khoản 9]",
+    "[Điều 12 khoản 3]",
+    "[Điều 15 khoản 6]",
+    "[Điều 133 khoản 5]",
+    "[Điều 133 khoản 3]",
+    "[Điều 3 khoản 4]",
+    "[Điều 9 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A6.K5",
+    "L41_2024.A9.K9",
+    "L41_2024.A12.K3",
+    "L41_2024.A15.K6",
+    "L41_2024.A133.K5",
+    "L41_2024.A133.K3",
+    "L41_2024.A3.K4",
+    "L41_2024.A9.K2"
+  ],
+  "citation_indices": [
+    2,
+    6,
+    1,
+    3,
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(guidance,close_voluntary_insurance_procedure([Liên hệ cơ quan bảo hiểm xã hội nơi đang tham gia (ví dụ: BHXH cấp xã/phường hoặc tỉnh) để được hướng dẫn trình tự và thủ tục chốt sổ.,Lưu ý đây là bảo hiểm xã hội tự nguyện; kiểm tra quyền lợi, mức hỗ trợ và phương thức thực hiện theo quy định của BHXH.,Không cầm cố, mua bán, thế chấp hoặc đặt cọc sổ bảo hiểm xã hội dưới mọi hình thức.,Nếu có tranh chấp hoặc hành vi vi phạm liên quan đến sổ BHXH, có thể kiến nghị hoặc phản ánh tới cơ quan nhà nước có thẩm quyền để xử lý.]),based_on(source_c2)),step(definition,close_voluntary_insurance_procedure([Liên hệ cơ quan bảo hiểm xã hội nơi đang tham gia (ví dụ: BHXH cấp xã/phường hoặc tỉnh) để được hướng dẫn trình tự và thủ tục chốt sổ.,Lưu ý đây là bảo hiểm xã hội tự nguyện; kiểm tra quyền lợi, mức hỗ trợ và phương thức thực hiện theo quy định của BHXH.,Không cầm cố, mua bán, thế chấp hoặc đặt cọc sổ bảo hiểm xã hội dưới mọi hình thức.,Nếu có tranh chấp hoặc hành vi vi phạm liên quan đến sổ BHXH, có thể kiến nghị hoặc phản ánh tới cơ quan nhà nước có thẩm quyền để xử lý.]),based_on(source_c6)),step(prohibition,close_voluntary_insurance_procedure([Liên hệ cơ quan bảo hiểm xã hội nơi đang tham gia (ví dụ: BHXH cấp xã/phường hoặc tỉnh) để được hướng dẫn trình tự và thủ tục chốt sổ.,Lưu ý đây là bảo hiểm xã hội tự nguyện; kiểm tra quyền lợi, mức hỗ trợ và phương thức thực hiện theo quy định của BHXH.,Không cầm cố, mua bán, thế chấp hoặc đặt cọc sổ bảo hiểm xã hội dưới mọi hình thức.,Nếu có tranh chấp hoặc hành vi vi phạm liên quan đến sổ BHXH, có thể kiến nghị hoặc phản ánh tới cơ quan nhà nước có thẩm quyền để xử lý.]),based_on(source_c1)),step(complaint,close_voluntary_insurance_procedure([Liên hệ cơ quan bảo hiểm xã hội nơi đang tham gia (ví dụ: BHXH cấp xã/phường hoặc tỉnh) để được hướng dẫn trình tự và thủ tục chốt sổ.,Lưu ý đây là bảo hiểm xã hội tự nguyện; kiểm tra quyền lợi, mức hỗ trợ và phương thức thực hiện theo quy định của BHXH.,Không cầm cố, mua bán, thế chấp hoặc đặt cọc sổ bảo hiểm xã hội dưới mọi hình thức.,Nếu có tranh chấp hoặc hành vi vi phạm liên quan đến sổ BHXH, có thể kiến nghị hoặc phản ánh tới cơ quan nhà nước có thẩm quyền để xử lý.]),based_on(source_c3)),step(support,close_voluntary_insurance_procedure([Liên hệ cơ quan bảo hiểm xã hội nơi đang tham gia (ví dụ: BHXH cấp xã/phường hoặc tỉnh) để được hướng dẫn trình tự và thủ tục chốt sổ.,Lưu ý đây là bảo hiểm xã hội tự nguyện; kiểm tra quyền lợi, mức hỗ trợ và phương thức thực hiện theo quy định của BHXH.,Không cầm cố, mua bán, thế chấp hoặc đặt cọc sổ bảo hiểm xã hội dưới mọi hình thức.,Nếu có tranh chấp hoặc hành vi vi phạm liên quan đến sổ BHXH, có thể kiến nghị hoặc phản ánh tới cơ quan nhà nước có thẩm quyền để xử lý.]),based_on(source_c0))]",
+  "irac_sections": {
+    "issue": "Mình đang tham gia bảo hiểm xã hội tự nguyện tại phường Xuân Hòa, Phú Thọ và hỏi thủ tục để chốt sổ bảo hiểm xã hội.",
+    "rule": "\"Được cơ quan bảo hiểm xã hội hướng dẫn trình tự, thủ tục thực hiện bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), article 12, clause 3)\n\"Bảo hiểm xã hội tự nguyện là loại hình bảo hiểm xã hội do Nhà nước tổ chức mà công dân Việt Nam tự nguyện tham gia và được lựa chọn mức đóng, phương thức đóng phù hợp với thu nhập của mình.\" (Luật BHXH 2024 (41/2024/QH15), article 3, clause 4)\n\"Cầm cố, mua bán, thế chấp, đặt cọc sổ bảo hiểm xã hội dưới mọi hình thức.\" (Luật BHXH 2024 (41/2024/QH15), article 9, clause 9)\n\"Kiến nghị cơ quan nhà nước có thẩm quyền xử lý hành vi vi phạm pháp luật về bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), article 15, clause 6)\n\"Hỗ trợ người tham gia bảo hiểm xã hội tự nguyện.\" (Luật BHXH 2024 (41/2024/QH15), article 6, clause 5)",
+    "application": "Không có slot nào được gán giá trị trong slot_bindings. Truy vấn Prolog close_voluntary_insurance_procedure(Procedure, Trace) không dùng slot; nó đối chiếu các nguồn pháp luật (ví dụ source_c2, source_c6, source_c1, source_c3, source_c0 trong Trace) để sinh Procedure gồm các bước hướng dẫn liên quan đến chốt sổ.",
+    "conclusion": "Procedure = [Liên hệ cơ quan bảo hiểm xã hội nơi đang tham gia (ví dụ: BHXH cấp xã/phường hoặc tỉnh) để được hướng dẫn trình tự và thủ tục chốt sổ.,Lưu ý đây là bảo hiểm xã hội tự nguyện; kiểm tra quyền lợi, mức hỗ trợ và phương thức thực hiện theo quy định của BHXH.,Không cầm cố, mua bán, thế chấp hoặc đặt cọc sổ bảo hiểm xã hội dưới mọi hình thức.,Nếu có tranh chấp hoặc hành vi vi phạm liên quan đến sổ BHXH, có thể kiến nghị hoặc phản ánh tới cơ quan nhà nước có thẩm quyền để xử lý.]"
+  },
+  "elapsed_s": 48.767,
+  "prompt_tokens": 5090,
+  "completion_tokens": 4776,
+  "error": null,
+  "gold_answer": "BHXH tự nguyện không phải 'chốt sổ' theo nghĩa như BHXH bắt buộc. Nếu bạn muốn dừng đóng, bạn chỉ cần ngừng tham gia; thời gian đã đóng sẽ được bảo lưu để sau này đóng tiếp hoặc giải quyết chế độ khi đủ điều kiện. Nếu muốn xác nhận lại quá trình tham gia, cập nhật thông tin hoặc chuyển sang diện khác thì liên hệ cơ quan BHXH nơi cư trú/cơ quan BHXH khu vực để được hướng dẫn trên cùng một mã số BHXH.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 36, Điều 102"
+}

@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 104,
+  "question": "Giờ rút bhxh 1 lần ở đâu cũng được phải không?\nVà có cần giấy quyết định thôi việc không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Người lao động có thể rút bảo hiểm xã hội (BHXH) một lần ở bất kỳ đâu không? Và khi rút BHXH một lần có bắt buộc phải có quyết định thôi việc hay không?\n\nRule:\n\"Người lao động nộp hồ sơ hưởng bảo hiểm xã hội một lần tại cơ quan bảo hiểm xã hội nơi cư trú hoặc nơi làm việc.\" (law_bhxh_2024, article_109, clause_1)\n\"Hồ sơ hưởng bảo hiểm xã hội một lần bao gồm sổ bảo hiểm xã hội và quyết định thôi việc hoặc giấy tờ chứng minh chấm dứt hợp đồng lao động.\" (law_bhxh_2024, article_109, clause_2)\n\nApplication:\nCác điều kiện được Prolog truy vấn và trả về gồm:\n- can_quyet_dinh_thoi_viec: yes (có thể dùng quyết định thôi việc)\n- nop_o_dau: [cơ quan BHXH nơi cư trú, cơ quan BHXH nơi làm việc] (nộp hồ sơ tại cơ quan BHXH nơi cư trú hoặc nơi làm việc)\n- thay_the_quyet_dinh: [giấy tờ chứng minh chấm dứt hợp đồng lao động] (có thể thay thế quyết định thôi việc bằng giấy tờ chứng minh chấm dứt hợp đồng lao động)\nCác giá trị này được truy xuất trực tiếp từ kết quả truy vấn Prolog dựa trên các quy định pháp luật đã dẫn.\n\nConclusion:\nNgười lao động có thể nộp hồ sơ rút BHXH một lần tại cơ quan BHXH nơi cư trú hoặc nơi làm việc. Hồ sơ cần có quyết định thôi việc hoặc giấy tờ chứng minh chấm dứt hợp đồng lao động (can_quyet_dinh_thoi_viec: yes, nop_o_dau: [cơ quan BHXH nơi cư trú, cơ quan BHXH nơi làm việc], thay_the_quyet_dinh: [giấy tờ chứng minh chấm dứt hợp đồng lao động]).",
+  "citations": [
+    "[Điều 109 khoản 1]",
+    "[Điều 109 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A109.K1",
+    "L41_2024.A109.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,bhxh_1lan_dieu_kien_nop(conditions{can_quyet_dinh_thoi_viec:yes,nop_o_dau:[cơ quan BHXH nơi cư trú,cơ quan BHXH nơi làm việc],thay_the_quyet_dinh:[giấy tờ chứng minh chấm dứt hợp đồng lao động]}),based_on(source_a109_k1)),step(conclusion,bhxh_1lan_dieu_kien_nop(conditions{can_quyet_dinh_thoi_viec:yes,nop_o_dau:[cơ quan BHXH nơi cư trú,cơ quan BHXH nơi làm việc],thay_the_quyet_dinh:[giấy tờ chứng minh chấm dứt hợp đồng lao động]}),based_on(source_a109_k2))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Người lao động có thể rút bảo hiểm xã hội (BHXH) một lần ở bất kỳ đâu không? Và khi rút BHXH một lần có bắt buộc phải có quyết định thôi việc hay không?",
+    "rule": "\"Người lao động nộp hồ sơ hưởng bảo hiểm xã hội một lần tại cơ quan bảo hiểm xã hội nơi cư trú hoặc nơi làm việc.\" (law_bhxh_2024, article_109, clause_1)\n\"Hồ sơ hưởng bảo hiểm xã hội một lần bao gồm sổ bảo hiểm xã hội và quyết định thôi việc hoặc giấy tờ chứng minh chấm dứt hợp đồng lao động.\" (law_bhxh_2024, article_109, clause_2)",
+    "application": "Các điều kiện được Prolog truy vấn và trả về gồm:\n- can_quyet_dinh_thoi_viec: yes (có thể dùng quyết định thôi việc)\n- nop_o_dau: [cơ quan BHXH nơi cư trú, cơ quan BHXH nơi làm việc] (nộp hồ sơ tại cơ quan BHXH nơi cư trú hoặc nơi làm việc)\n- thay_the_quyet_dinh: [giấy tờ chứng minh chấm dứt hợp đồng lao động] (có thể thay thế quyết định thôi việc bằng giấy tờ chứng minh chấm dứt hợp đồng lao động)\nCác giá trị này được truy xuất trực tiếp từ kết quả truy vấn Prolog dựa trên các quy định pháp luật đã dẫn.",
+    "conclusion": "Người lao động có thể nộp hồ sơ rút BHXH một lần tại cơ quan BHXH nơi cư trú hoặc nơi làm việc. Hồ sơ cần có quyết định thôi việc hoặc giấy tờ chứng minh chấm dứt hợp đồng lao động (can_quyet_dinh_thoi_viec: yes, nop_o_dau: [cơ quan BHXH nơi cư trú, cơ quan BHXH nơi làm việc], thay_the_quyet_dinh: [giấy tờ chứng minh chấm dứt hợp đồng lao động])."
+  },
+  "elapsed_s": 10.432,
+  "prompt_tokens": 4193,
+  "completion_tokens": 1149,
+  "error": null,
+  "gold_answer": "Hồ sơ BHXH 1 lần nộp tại cơ quan BHXH nơi cư trú (thường trú hoặc tạm trú), không phải nộp ở đâu cũng được. Thông thường không bắt buộc có quyết định thôi việc; giấy tờ chính là đơn đề nghị, CCCD và thông tin tài khoản. Tuy nhiên bạn phải thuộc trường hợp đủ điều kiện hưởng BHXH 1 lần, phổ biến là sau 12 tháng không tiếp tục tham gia mà chưa đủ điều kiện hưởng lương hưu.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

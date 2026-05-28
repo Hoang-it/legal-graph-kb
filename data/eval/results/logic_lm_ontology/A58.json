@@ -1,0 +1,33 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 58,
+  "question": "e là hộ kinh doanh mới , tham gia bhxh cho hkd thì phải làm như thế nào?",
+  "answer": "Issue: Câu hỏi đặt ra là hộ kinh doanh mới cần làm gì để tham gia bảo hiểm xã hội.\n\nRule: \"17. Xác định và theo dõi người lao động, người sử dụng lao động thuộc đối tượng tham gia bảo hiểm xã hội theo quy định tại Điều 30 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 17)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng để tham gia bảo hiểm xã hội, hộ kinh doanh mới cần thực hiện hai điều kiện: đăng ký kinh doanh và nộp hồ sơ bảo hiểm.\n\nConclusion: Prolog đã trả về giá trị cho biến \"Conditions\" với nội dung là \"[register_business,submit_insurance_documents]\". Tuy nhiên, không có giá trị nào được gán cho các slot, do đó không thể đưa ra kết luận cuối cùng về các bước cụ thể cần thực hiện.",
+  "citations": [
+    "[Điều 30]",
+    "[Điều 18 khoản 17]"
+  ],
+  "citation_ids": [
+    "L41_2024.A30",
+    "L41_2024.A18.K17"
+  ],
+  "citation_indices": [
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,business_registration_requirements([register_business,submit_insurance_documents]),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là hộ kinh doanh mới cần làm gì để tham gia bảo hiểm xã hội.",
+    "rule": "\"17. Xác định và theo dõi người lao động, người sử dụng lao động thuộc đối tượng tham gia bảo hiểm xã hội theo quy định tại Điều 30 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 17)",
+    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng để tham gia bảo hiểm xã hội, hộ kinh doanh mới cần thực hiện hai điều kiện: đăng ký kinh doanh và nộp hồ sơ bảo hiểm.",
+    "conclusion": "Prolog đã trả về giá trị cho biến \"Conditions\" với nội dung là \"[register_business,submit_insurance_documents]\". Tuy nhiên, không có giá trị nào được gán cho các slot, do đó không thể đưa ra kết luận cuối cùng về các bước cụ thể cần thực hiện."
+  },
+  "elapsed_s": 7.393,
+  "prompt_tokens": 2701,
+  "completion_tokens": 394,
+  "error": null,
+  "gold_answer": "Nếu bạn là chủ hộ kinh doanh thuộc diện phải tham gia BHXH bắt buộc thì cần liên hệ cơ quan BHXH hoặc tổ chức dịch vụ thu để đăng ký hồ sơ tham gia theo mã số BHXH, kê khai mức tiền lương làm căn cứ đóng và phương thức đóng. Nếu chưa thuộc diện bắt buộc thì có thể tham gia BHXH tự nguyện. Khi đi đăng ký nên mang CCCD, thông tin đăng ký hộ kinh doanh và giấy tờ liên quan đến mã số BHXH nếu đã có.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 25, Điều 31; Nghị định 158/2025/NĐ-CP"
+}

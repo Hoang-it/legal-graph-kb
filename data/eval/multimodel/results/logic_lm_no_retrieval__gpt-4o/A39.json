@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 39,
+  "question": "Mình ngưng đóng bảo hiểm xã hội từ 2017 đến bây giờ là năm 2026 rồi. Liệu mình có đi thanh toán bhxh đc k ạ?",
+  "answer": "Issue: Bạn đã ngừng đóng bảo hiểm xã hội từ năm 2017 và hiện tại là năm 2026. Bạn muốn biết liệu mình có thể nhận thanh toán bảo hiểm xã hội một lần hay không.\n\nRule: Theo luật bảo hiểm xã hội 2024, Điều 60, Khoản 1: \"Người lao động có thể nhận bảo hiểm xã hội một lần nếu đã ngừng đóng bảo hiểm xã hội từ đủ 12 tháng trở lên và không tiếp tục tham gia.\"\n\nApplication: \n- Số năm đã ngừng đóng bảo hiểm xã hội: 9 năm.\n- Theo quy tắc, nếu số năm ngừng đóng bảo hiểm xã hội từ đủ 1 năm trở lên, người lao động có thể nhận bảo hiểm xã hội một lần. Trường hợp của bạn đã ngừng đóng 9 năm, do đó đáp ứng điều kiện này.\n\nConclusion: Bạn đủ điều kiện để nhận bảo hiểm xã hội một lần. Kết quả từ truy vấn Prolog cho thấy \"Eligible\" là \"yes\", dựa trên Điều 60, Khoản 1 của luật bảo hiểm xã hội 2024.",
+  "citations": [
+    "[Điều 60 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,eligible_for_lump_sum_payment(user,yes),based_on(source_a60_k1))]",
+  "irac_sections": {
+    "issue": "Bạn đã ngừng đóng bảo hiểm xã hội từ năm 2017 và hiện tại là năm 2026. Bạn muốn biết liệu mình có thể nhận thanh toán bảo hiểm xã hội một lần hay không.",
+    "rule": "Theo luật bảo hiểm xã hội 2024, Điều 60, Khoản 1: \"Người lao động có thể nhận bảo hiểm xã hội một lần nếu đã ngừng đóng bảo hiểm xã hội từ đủ 12 tháng trở lên và không tiếp tục tham gia.\"",
+    "application": "- Số năm đã ngừng đóng bảo hiểm xã hội: 9 năm.\n- Theo quy tắc, nếu số năm ngừng đóng bảo hiểm xã hội từ đủ 1 năm trở lên, người lao động có thể nhận bảo hiểm xã hội một lần. Trường hợp của bạn đã ngừng đóng 9 năm, do đó đáp ứng điều kiện này.",
+    "conclusion": "Bạn đủ điều kiện để nhận bảo hiểm xã hội một lần. Kết quả từ truy vấn Prolog cho thấy \"Eligible\" là \"yes\", dựa trên Điều 60, Khoản 1 của luật bảo hiểm xã hội 2024."
+  },
+  "elapsed_s": 7.271,
+  "prompt_tokens": 3533,
+  "completion_tokens": 819,
+  "error": null,
+  "gold_answer": "Nếu bạn đã ngừng đóng từ năm 2017 đến nay và không tiếp tục tham gia BHXH, thì thường có thể làm thủ tục hưởng BHXH một lần nếu thuộc trường hợp luật cho phép, nhất là đã ngừng tham gia từ đủ 12 tháng trở lên mà chưa đủ thời gian hưởng lương hưu. Nếu không rút một lần, bạn cũng có thể bảo lưu thời gian đã đóng để sau này tham gia tiếp hoặc chuyển sang BHXH tự nguyện.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110"
+}

@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 14,
+  "question": "Bà Thị Tiếp (Cà Mau) hỏi, xã khu vực III giai đoạn 2016-2020, sang giai đoạn 2021-2025 được xác định là xã khu vực I, đã đạt chuẩn nông thôn mới thì người dân tộc thiểu số tại xã này có thuộc nhóm đối tượng được ngân sách Nhà nước hỗ trợ đóng BHYT không?",
+  "answer": "Issue: Bà Thị Tiếp hỏi về việc người dân tộc thiểu số tại xã khu vực I có được ngân sách Nhà nước hỗ trợ đóng BHYT không. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 16], Nhà nước thực hiện hợp tác quốc tế về bảo hiểm xã hội, bảo hiểm thất nghiệp, bảo hiểm y tế. \nApplication: Không có slot nào được gán giá trị, do đó Prolog không thể xác định điều kiện hỗ trợ cho người dân tộc thiểu số tại xã này. \nConclusion: Hệ thống không thể tính được kết quả cuối cùng do thiếu slot bindings.",
+  "plain_answer": "Hệ thống chưa đủ thông tin để tính chính xác về việc người dân tộc thiểu số tại xã khu vực I có được hỗ trợ đóng BHYT hay không. Bạn có thể cung cấp thêm thông tin về điều kiện cụ thể để mình giúp bạn rõ hơn. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 16], Nhà nước có quy định về bảo hiểm y tế nhưng cần thêm chi tiết để xác định hỗ trợ.",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 16]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K16"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,support_health_insurance_conditions([ethnic_minorities_in_area_1,state_budget_support]),based_on(source_c003))]",
+  "prolog_program": "legal_source(source_c003, law_bhxh_2024, article_18, clause_16, none, 'Thực hiện hợp tác quốc tế về bảo hiểm xã hội, bảo hiểm thất nghiệp, bảo hiểm y tế.').\nsupport_health_insurance_conditions(Conditions, Trace) :- Conditions = [ethnic_minorities_in_area_1, state_budget_support], Trace = [step(conclusion, support_health_insurance_conditions(Conditions), based_on(source_c003))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Bà Thị Tiếp hỏi về việc người dân tộc thiểu số tại xã khu vực I có được ngân sách Nhà nước hỗ trợ đóng BHYT không.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 16], Nhà nước thực hiện hợp tác quốc tế về bảo hiểm xã hội, bảo hiểm thất nghiệp, bảo hiểm y tế.",
+    "application": "Không có slot nào được gán giá trị, do đó Prolog không thể xác định điều kiện hỗ trợ cho người dân tộc thiểu số tại xã này.",
+    "conclusion": "Hệ thống không thể tính được kết quả cuối cùng do thiếu slot bindings."
+  },
+  "elapsed_s": 13.235,
+  "prompt_tokens": 5606,
+  "completion_tokens": 480,
+  "error": null,
+  "gold_answer": "Ngày 23/4/2024, Bộ Y tế ban hành Công văn số 2068/BYT-BH về việc vướng mắc trong triển khai thi hành Nghị định số 75/2023/NĐ-CP thay thế Công văn số 917/BYT-BH, trong đó quy định: Ngày 19/10/2023, Chính phủ ban hành Nghị định số 75/2023/NĐ-CP sửa đổi, bổ sung một số điều của Nghị định số 146/2018/NĐ-CP ngày 17/10/2018 quy định chi tiết và hướng dẫn biện pháp thi hành một số điều của Luật BHYT, trong đó:\n- Tại Điểm c Khoản 2 Điều 1 quy định: Người dân tộc thiểu số đang sinh sống tại địa bàn các xã khu vực II, khu vực III, thôn đặc biệt khó khăn thuộc vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2016-2020 mà các xã này không còn trong danh sách các xã khu vực II, khu vực III, thôn đặc biệt khó khăn thuộc vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2021-2025 theo quyết định của Thủ tướng Chính phủ.\n- Tại Điểm a Khoản 3 Điều 1 quy định ngân sách nhà nước hỗ trợ tối thiểu 70% mức đóng BHYT đối với đối tượng quy định tại Điểm c Khoản 2 Điều 1 Nghị định số 75/2023/NĐ-CP.\n- Tại Khoản 3 Điều 3 quy định ngân sách Nhà nước hỗ trợ cho đối tượng quy định tại Điểm c Khoản 2 Điều 1 Nghị định này trong thời gian 36 (ba mươi sáu) tháng kể từ ngày 1/11/2023.\nVì vậy, người dân tộc thiểu số thuộc đổi tượng nêu trên sẽ được ngân sách nhà nước hỗ trợ tối thiểu 70% mức đóng BHYT trong thời gian 36 tháng kể từ ngày 1/11/2023.",
+  "gold_citations_raw": "[Nghị định 75/2023/NĐ-CP, Điều 1]\n[Nghị định 146/2018/NĐ-CP, Điều 3]"
+}

@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 192,
+  "question": "năm 2011 em có mượn hồ sơ đi làm và đóng bh đc 3th thì cty phát hiện hồ sơ giả nên em nghỉ việc, nhưng đến hôm nay cái chị cho em mượn hồ sơ đi lấy bhxh thì bên bh kiểm tra và bảo còn vướng 3th bảo hiểm của em , giờ phải ra toà để huỷ. Vậy giờ em phải làm như thế nào?",
+  "answer": "Issue:\nVấn đề đặt ra là bạn đã sử dụng hồ sơ giả để tham gia đóng bảo hiểm xã hội (BHXH) trong 3 tháng vào năm 2011, hiện nay cơ quan BHXH phát hiện và yêu cầu phải ra tòa để hủy thời gian đóng BHXH không hợp pháp này. Bạn muốn biết cần phải làm gì trong trường hợp này.\n\nRule:\n\"Người lao động kê khai không đúng sự thật để tham gia BHXH thì cơ quan BHXH có quyền từ chối giải quyết hoặc đề nghị cơ quan có thẩm quyền huỷ bỏ thời gian đóng không hợp pháp.\" (law_bhxh_2024, article_23, clause_1)\n\"Trường hợp phát hiện hồ sơ giả, cơ quan BHXH phối hợp với cơ quan có thẩm quyền để xử lý, bao gồm việc đề nghị Toà án huỷ bỏ thời gian đóng BHXH không hợp pháp.\" (law_bhxh_2024, article_118, clause_2)\n\nApplication:\nKhông có slot_id cụ thể nào được ràng buộc trong trường hợp này. Prolog đã truy vấn và trả về các điều kiện xử lý như sau: \n- Người lao động hoặc người liên quan phải nộp đơn đề nghị huỷ thời gian đóng BHXH không hợp pháp tại Toà án có thẩm quyền.\n- Cơ quan BHXH sẽ phối hợp với Toà án để xử lý và cập nhật lại quá trình đóng BHXH sau khi có quyết định huỷ của Toà án.\n- Người lao động cần chuẩn bị các giấy tờ liên quan và liên hệ cơ quan BHXH để được hướng dẫn cụ thể.\n\nConclusion:\nTheo kết quả Prolog, bạn cần nộp đơn đề nghị huỷ thời gian đóng BHXH không hợp pháp tại Toà án có thẩm quyền, chuẩn bị các giấy tờ liên quan và liên hệ cơ quan BHXH để được hướng dẫn chi tiết. Cơ quan BHXH sẽ phối hợp với Toà án để xử lý và cập nhật lại quá trình đóng BHXH sau khi có quyết định huỷ của Toà án.",
+  "citations": [
+    "[Điều 23 khoản 1]",
+    "[Điều 118 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A23.K1",
+    "L41_2024.A118.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,huong_xu_ly_ho_so_gia([Người lao động hoặc người liên quan phải nộp đơn đề nghị huỷ thời gian đóng BHXH không hợp pháp tại Toà án có thẩm quyền.,Cơ quan BHXH sẽ phối hợp với Toà án để xử lý và cập nhật lại quá trình đóng BHXH sau khi có quyết định huỷ của Toà án.,Người lao động cần chuẩn bị các giấy tờ liên quan và liên hệ cơ quan BHXH để được hướng dẫn cụ thể.]),based_on(source_a23_k1)),step(conclusion,huong_xu_ly_ho_so_gia([Người lao động hoặc người liên quan phải nộp đơn đề nghị huỷ thời gian đóng BHXH không hợp pháp tại Toà án có thẩm quyền.,Cơ quan BHXH sẽ phối hợp với Toà án để xử lý và cập nhật lại quá trình đóng BHXH sau khi có quyết định huỷ của Toà án.,Người lao động cần chuẩn bị các giấy tờ liên quan và liên hệ cơ quan BHXH để được hướng dẫn cụ thể.]),based_on(source_a118_k2))]",
+  "irac_sections": {
+    "issue": "Vấn đề đặt ra là bạn đã sử dụng hồ sơ giả để tham gia đóng bảo hiểm xã hội (BHXH) trong 3 tháng vào năm 2011, hiện nay cơ quan BHXH phát hiện và yêu cầu phải ra tòa để hủy thời gian đóng BHXH không hợp pháp này. Bạn muốn biết cần phải làm gì trong trường hợp này.",
+    "rule": "\"Người lao động kê khai không đúng sự thật để tham gia BHXH thì cơ quan BHXH có quyền từ chối giải quyết hoặc đề nghị cơ quan có thẩm quyền huỷ bỏ thời gian đóng không hợp pháp.\" (law_bhxh_2024, article_23, clause_1)\n\"Trường hợp phát hiện hồ sơ giả, cơ quan BHXH phối hợp với cơ quan có thẩm quyền để xử lý, bao gồm việc đề nghị Toà án huỷ bỏ thời gian đóng BHXH không hợp pháp.\" (law_bhxh_2024, article_118, clause_2)",
+    "application": "Không có slot_id cụ thể nào được ràng buộc trong trường hợp này. Prolog đã truy vấn và trả về các điều kiện xử lý như sau: \n- Người lao động hoặc người liên quan phải nộp đơn đề nghị huỷ thời gian đóng BHXH không hợp pháp tại Toà án có thẩm quyền.\n- Cơ quan BHXH sẽ phối hợp với Toà án để xử lý và cập nhật lại quá trình đóng BHXH sau khi có quyết định huỷ của Toà án.\n- Người lao động cần chuẩn bị các giấy tờ liên quan và liên hệ cơ quan BHXH để được hướng dẫn cụ thể.",
+    "conclusion": "Theo kết quả Prolog, bạn cần nộp đơn đề nghị huỷ thời gian đóng BHXH không hợp pháp tại Toà án có thẩm quyền, chuẩn bị các giấy tờ liên quan và liên hệ cơ quan BHXH để được hướng dẫn chi tiết. Cơ quan BHXH sẽ phối hợp với Toà án để xử lý và cập nhật lại quá trình đóng BHXH sau khi có quyết định huỷ của Toà án."
+  },
+  "elapsed_s": 8.788,
+  "prompt_tokens": 2940,
+  "completion_tokens": 880,
+  "error": null,
+  "gold_answer": "Dùng hồ sơ giả để đi làm và đóng BHXH là việc phải xử lý rất thận trọng. Cơ quan BHXH yêu cầu hủy quá trình sai là có cơ sở; trường hợp hồ sơ giả, người đứng tên thật và người sử dụng hồ sơ nên làm việc trực tiếp với BHXH để xác định hướng xử lý, thậm chí có thể phải qua tòa án/cơ quan công an nếu phát sinh tranh chấp, giả mạo giấy tờ. Bạn không nên tự ý làm thủ tục rút hay gộp sổ trong tình trạng này.",
+  "gold_citations_raw": "Luật BHXH 2024; Bộ luật Dân sự 2015; quy định về giả mạo hồ sơ"
+}

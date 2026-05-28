@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 66,
+  "question": "Có phải Bảo hiểm xã hội mình bắt buộc lãnh sau 1 năm không?. Nếu bận mk làm trễ vài tháng có được không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là liệu người lao động có bắt buộc phải lãnh bảo hiểm xã hội ngay sau 1 năm nghỉ việc hay không, và nếu nộp hồ sơ trễ vài tháng thì có được giải quyết hay không.\n\nRule:\n\"Trường hợp nộp hồ sơ quá thời hạn quy định hoặc giải quyết hưởng chế độ bảo hiểm xã hội bắt buộc chậm so với thời hạn quy định, gây thiệt hại đến quyền, lợi ích hợp pháp của người thụ hưởng thì phải bồi thường theo quy định của pháp luật, trừ trường hợp do lỗi của người thụ hưởng chế độ bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 92, Khoản 2)\n\nApplication:\nKhông có slot nào cần điền trong trường hợp này. Prolog đã sử dụng quy định tại Điều 92, Khoản 2 Luật BHXH 2024 để xác định rằng việc nộp hồ sơ trễ chỉ bị ảnh hưởng nếu gây thiệt hại đến quyền, lợi ích hợp pháp của người thụ hưởng. Nếu không gây thiệt hại thì vẫn được giải quyết.\n\nConclusion:\nProlog trả về: \"Không bắt buộc phải lãnh bảo hiểm xã hội ngay sau 1 năm, nhưng nếu nộp hồ sơ trễ thì chỉ bị ảnh hưởng nếu việc chậm trễ gây thiệt hại đến quyền, lợi ích hợp pháp của người thụ hưởng. Nếu không gây thiệt hại thì vẫn được giải quyết.\"",
+  "citations": [
+    "[Điều 92 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A92.K2"
+  ],
+  "citation_indices": [
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,late_social_insurance_claim_allowed(Không bắt buộc phải lãnh bảo hiểm xã hội ngay sau 1 năm, nhưng nếu nộp hồ sơ trễ thì chỉ bị ảnh hưởng nếu việc chậm trễ gây thiệt hại đến quyền, lợi ích hợp pháp của người thụ hưởng. Nếu không gây thiệt hại thì vẫn được giải quyết.),based_on(source_c006))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là liệu người lao động có bắt buộc phải lãnh bảo hiểm xã hội ngay sau 1 năm nghỉ việc hay không, và nếu nộp hồ sơ trễ vài tháng thì có được giải quyết hay không.",
+    "rule": "\"Trường hợp nộp hồ sơ quá thời hạn quy định hoặc giải quyết hưởng chế độ bảo hiểm xã hội bắt buộc chậm so với thời hạn quy định, gây thiệt hại đến quyền, lợi ích hợp pháp của người thụ hưởng thì phải bồi thường theo quy định của pháp luật, trừ trường hợp do lỗi của người thụ hưởng chế độ bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 92, Khoản 2)",
+    "application": "Không có slot nào cần điền trong trường hợp này. Prolog đã sử dụng quy định tại Điều 92, Khoản 2 Luật BHXH 2024 để xác định rằng việc nộp hồ sơ trễ chỉ bị ảnh hưởng nếu gây thiệt hại đến quyền, lợi ích hợp pháp của người thụ hưởng. Nếu không gây thiệt hại thì vẫn được giải quyết.",
+    "conclusion": "Prolog trả về: \"Không bắt buộc phải lãnh bảo hiểm xã hội ngay sau 1 năm, nhưng nếu nộp hồ sơ trễ thì chỉ bị ảnh hưởng nếu việc chậm trễ gây thiệt hại đến quyền, lợi ích hợp pháp của người thụ hưởng. Nếu không gây thiệt hại thì vẫn được giải quyết.\""
+  },
+  "elapsed_s": 7.574,
+  "prompt_tokens": 3298,
+  "completion_tokens": 619,
+  "error": null,
+  "gold_answer": "Không có quy định bắt buộc phải nhận BHXH một lần ngay đúng sau 1 năm. Mốc 12 tháng chỉ là điều kiện phổ biến để phát sinh quyền yêu cầu trong một số trường hợp. Nếu bạn bận và nộp muộn vài tháng sau khi đã đủ điều kiện thì thông thường vẫn được giải quyết, miễn tại thời điểm nộp hồ sơ bạn vẫn thuộc trường hợp được hưởng theo luật. Nếu không rút, thời gian đóng vẫn được bảo lưu.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102"
+}

@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 132,
+  "question": "Em bị mất giấy quyết định thôi việc thì có rút được thất nghiệp với bhxh hông???",
+  "answer": "Issue: Em bị mất giấy quyết định thôi việc thì có rút được thất nghiệp với bhxh hông???\n\nRule: 1. Tuyên truyền, phổ biến, giải đáp, tư vấn chính sách, pháp luật về bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế; xây dựng chiến lược phát triển ngành bảo hiểm xã hội, chiến lược đầu tư dài hạn trình cơ quan có thẩm quyền phê duyệt; xây dựng phương án đầu tư hằng năm trình Hội đồng quản lý bảo hiểm xã hội quyết định; tổ chức đánh giá và công bố mức độ h (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 1).\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Tuy nhiên, Prolog đã trả về kết quả cho biết rằng có thể rút được bảo hiểm thất nghiệp nếu đáp ứng đủ điều kiện, và giấy quyết định thôi việc không phải là điều kiện bắt buộc.\n\nConclusion: Prolog đã trả về giá trị \"Có thể rút được bảo hiểm thất nghiệp nếu đáp ứng đủ điều kiện, giấy quyết định thôi việc không phải là điều kiện bắt buộc.\" cho biến Answer.",
+  "citations": [
+    "[Điều 18 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_conditions(Có thể rút được bảo hiểm thất nghiệp nếu đáp ứng đủ điều kiện, giấy quyết định thôi việc không phải là điều kiện bắt buộc.),based_on(source_c005))]",
+  "irac_sections": {
+    "issue": "Em bị mất giấy quyết định thôi việc thì có rút được thất nghiệp với bhxh hông???",
+    "rule": "1. Tuyên truyền, phổ biến, giải đáp, tư vấn chính sách, pháp luật về bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế; xây dựng chiến lược phát triển ngành bảo hiểm xã hội, chiến lược đầu tư dài hạn trình cơ quan có thẩm quyền phê duyệt; xây dựng phương án đầu tư hằng năm trình Hội đồng quản lý bảo hiểm xã hội quyết định; tổ chức đánh giá và công bố mức độ h (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 1).",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Tuy nhiên, Prolog đã trả về kết quả cho biết rằng có thể rút được bảo hiểm thất nghiệp nếu đáp ứng đủ điều kiện, và giấy quyết định thôi việc không phải là điều kiện bắt buộc.",
+    "conclusion": "Prolog đã trả về giá trị \"Có thể rút được bảo hiểm thất nghiệp nếu đáp ứng đủ điều kiện, giấy quyết định thôi việc không phải là điều kiện bắt buộc.\" cho biến Answer."
+  },
+  "elapsed_s": 11.419,
+  "prompt_tokens": 4860,
+  "completion_tokens": 527,
+  "error": null,
+  "gold_answer": "Mất quyết định thôi việc không làm mất quyền hưởng BHXH 1 lần, vì hồ sơ BHXH 1 lần thường không bắt buộc tài liệu này. Nhưng với BHTN thì giấy tờ chứng minh chấm dứt HĐLĐ là thành phần hồ sơ rất quan trọng. Bạn nên xin công ty cấp lại hoặc xin bản sao/giấy xác nhận chấm dứt hợp đồng để nộp trong thời hạn luật định.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

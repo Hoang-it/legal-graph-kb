@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 118,
+  "question": "Nếu mà tham gia bảo hiểm được 9 năm rồi giờ rút về thì được bao nhiêu?",
+  "answer": "Issue:\nNgười lao động đã tham gia bảo hiểm xã hội được 9 năm, hiện muốn rút bảo hiểm một lần thì sẽ nhận được bao nhiêu năm tính hưởng?\n\nRule:\n\"Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\" (Luật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 6)\n\nApplication:\nyears_contributed = 9 (theo xác nhận người dùng đã tham gia bảo hiểm xã hội 9 năm). Hệ thống Prolog sử dụng giá trị này để xác định số năm được tính khi rút bảo hiểm xã hội một lần, dựa trên quy định tại Điều 5, Khoản 6 của Luật BHXH 2024.\n\nConclusion:\nTheo kết quả truy vấn Prolog, số năm được tính để hưởng bảo hiểm xã hội một lần là Amount = 9.",
+  "citations": [
+    "[Điều 5 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K6"
+  ],
+  "citation_indices": [
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_social_insurance_amount(user,9),based_on(source_c006))]",
+  "irac_sections": {
+    "issue": "Người lao động đã tham gia bảo hiểm xã hội được 9 năm, hiện muốn rút bảo hiểm một lần thì sẽ nhận được bao nhiêu năm tính hưởng?",
+    "rule": "\"Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\" (Luật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 6)",
+    "application": "years_contributed = 9 (theo xác nhận người dùng đã tham gia bảo hiểm xã hội 9 năm). Hệ thống Prolog sử dụng giá trị này để xác định số năm được tính khi rút bảo hiểm xã hội một lần, dựa trên quy định tại Điều 5, Khoản 6 của Luật BHXH 2024.",
+    "conclusion": "Theo kết quả truy vấn Prolog, số năm được tính để hưởng bảo hiểm xã hội một lần là Amount = 9."
+  },
+  "elapsed_s": 7.773,
+  "prompt_tokens": 3223,
+  "completion_tokens": 551,
+  "error": null,
+  "gold_answer": "Nếu 9 năm đóng của bạn đều sau năm 2014 thì mức BHXH 1 lần thường được tính bằng 2 tháng mức bình quân lương đóng cho mỗi năm. Nghĩa là về công thức sơ bộ sẽ khoảng 18 tháng mức bình quân tiền lương sau điều chỉnh. Muốn ra số gần đúng, bạn cần biết mức bình quân lương đóng của toàn bộ thời gian, không chỉ lương hiện tại.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

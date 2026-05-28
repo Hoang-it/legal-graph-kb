@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 196,
+  "question": "sổ BHXH (sổ xanh) + tờ rời kẹp sổ e bị mất. chỉ còn lại thông tin trên app. \nEm muốn xin cấp lại full sổ cứng thì e cần tới đâu?\nEm có đến BHXH nơi chốt sổ lần cuối cùng ở Nam Từ Liêm,Hà Nội.\nnhưng họ lại bảo em về cơ quan BHXH nơi e sinh sống (e đang trọ ở Thụy Khuê,HN) để làm. 2 bên cứ đẩy qua đẩy lại miết luôn",
+  "answer": "Issue:\nBạn hỏi khi bị mất sổ BHXH (sổ xanh) và tờ rời, chỉ còn thông tin trên app, muốn xin cấp lại sổ cứng thì phải đến cơ quan BHXH nào, trong khi BHXH nơi chốt sổ và nơi cư trú đều từ chối tiếp nhận.\n\nRule:\n\"Người tham gia BHXH bị mất, hỏng sổ BHXH thì được cấp lại sổ BHXH. Hồ sơ nộp tại cơ quan BHXH nơi người lao động đang tham gia hoặc nơi cư trú.\" (law_bhxh_2024, article_19, clause_2)\n\nApplication:\nKhông có slot_id cụ thể nào cần điền vì câu trả lời dựa trên quy định tổng quát. Prolog đã truy xuất quy định tại Điều 19 Khoản 2 Luật BHXH 2024, xác định rõ người lao động bị mất sổ BHXH có thể nộp hồ sơ xin cấp lại tại cơ quan BHXH nơi đang tham gia hoặc nơi cư trú (thường trú hoặc tạm trú).\n\nConclusion:\nTheo Điều 19 Khoản 2 Luật BHXH 2024, bạn có thể nộp hồ sơ xin cấp lại sổ BHXH tại cơ quan BHXH nơi bạn đang tham gia hoặc nơi bạn cư trú (bao gồm cả tạm trú tại Thụy Khuê, Hà Nội).",
+  "citations": [
+    "[Điều 19 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A19.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_conditions([Người lao động bị mất sổ BHXH có thể nộp hồ sơ xin cấp lại tại cơ quan BHXH nơi đang tham gia hoặc nơi cư trú (thường trú/tạm trú).]),based_on(source_a19_k2))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi khi bị mất sổ BHXH (sổ xanh) và tờ rời, chỉ còn thông tin trên app, muốn xin cấp lại sổ cứng thì phải đến cơ quan BHXH nào, trong khi BHXH nơi chốt sổ và nơi cư trú đều từ chối tiếp nhận.",
+    "rule": "\"Người tham gia BHXH bị mất, hỏng sổ BHXH thì được cấp lại sổ BHXH. Hồ sơ nộp tại cơ quan BHXH nơi người lao động đang tham gia hoặc nơi cư trú.\" (law_bhxh_2024, article_19, clause_2)",
+    "application": "Không có slot_id cụ thể nào cần điền vì câu trả lời dựa trên quy định tổng quát. Prolog đã truy xuất quy định tại Điều 19 Khoản 2 Luật BHXH 2024, xác định rõ người lao động bị mất sổ BHXH có thể nộp hồ sơ xin cấp lại tại cơ quan BHXH nơi đang tham gia hoặc nơi cư trú (thường trú hoặc tạm trú).",
+    "conclusion": "Theo Điều 19 Khoản 2 Luật BHXH 2024, bạn có thể nộp hồ sơ xin cấp lại sổ BHXH tại cơ quan BHXH nơi bạn đang tham gia hoặc nơi bạn cư trú (bao gồm cả tạm trú tại Thụy Khuê, Hà Nội)."
+  },
+  "elapsed_s": 5.293,
+  "prompt_tokens": 2391,
+  "completion_tokens": 529,
+  "error": null,
+  "gold_answer": "Bạn có thể nộp thủ tục cấp lại sổ BHXH tại cơ quan BHXH nơi cư trú hợp pháp (thường trú hoặc tạm trú), không nhất thiết đúng nơi chốt cuối cùng. Nếu đang ở Thụy Khuê, Hà Nội và có đăng ký tạm trú/cư trú hợp lệ thì có thể làm tại BHXH nơi cư trú. Trường hợp cơ quan tiếp nhận đùn đẩy, bạn nên yêu cầu họ trả lời bằng văn bản hoặc tiếp nhận hồ sơ theo đúng nơi cư trú.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

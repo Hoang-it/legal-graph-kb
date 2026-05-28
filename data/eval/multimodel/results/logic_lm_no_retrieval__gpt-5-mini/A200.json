@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 200,
+  "question": "E tham gia BHXH được 21 năm và có qđ nghỉ việc cuối tháng 6, tuy nhiên từ lúc nghỉ đến nay e không có làm việc j để tham gia bh tiếp tục (gần 10 tháng) như vậy cho e hỏi e muốn rút BHXH 1 lần có được không, mong được phản hồi ạ",
+  "answer": "Issue:\nNgười hỏi đã đóng BHXH 21 năm, nghỉ việc cuối tháng 6 và gần 10 tháng không đóng tiếp; hỏi có được rút BHXH một lần không.\n\nRule:\nTừ nguồn pháp lý trong chương trình Prolog:\nlegal_source(source_withdrawal, law_bhxh_2024, none, none, none): 'Người lao động đã đóng BHXH dưới 20 năm và đã ngừng đóng BHXH thì được rút BHXH một lần.'\nlegal_source(source_pension, law_bhxh_2024, none, none, none): 'Người lao động đã đóng BHXH đủ 20 năm trở lên không được rút một lần; khi đủ điều kiện tuổi và thời gian đóng thì được hưởng lương hưu hàng tháng.'\n\nApplication:\nKhông có slot_bindings. Các giả thiết/prover facts được dùng:\nyears_contributed(user) = 21\nmonths_since_stop(user) = 10\nProlog đã dùng years_contributed(user)=21 để so khớp với các quy tắc: vì giá trị 21 rơi vào nhánh quy tắc liên quan nguồn source_pension, dẫn tới kết luận không đủ điều kiện rút một lần.\n\nConclusion:\nEligible = \"no\".\nReason = \"Không được rút một lần vì đã đóng đủ 20 năm; hướng tới hưởng lương hưu khi đủ tuổi và điều kiện.\"\nTrace = \"[step(not_eligible_for_one_time_withdrawal(user,21),based_on(source_pension))]\".",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(not_eligible_for_one_time_withdrawal(user,21),based_on(source_pension))]",
+  "irac_sections": {
+    "issue": "Người hỏi đã đóng BHXH 21 năm, nghỉ việc cuối tháng 6 và gần 10 tháng không đóng tiếp; hỏi có được rút BHXH một lần không.",
+    "rule": "Từ nguồn pháp lý trong chương trình Prolog:\nlegal_source(source_withdrawal, law_bhxh_2024, none, none, none): 'Người lao động đã đóng BHXH dưới 20 năm và đã ngừng đóng BHXH thì được rút BHXH một lần.'\nlegal_source(source_pension, law_bhxh_2024, none, none, none): 'Người lao động đã đóng BHXH đủ 20 năm trở lên không được rút một lần; khi đủ điều kiện tuổi và thời gian đóng thì được hưởng lương hưu hàng tháng.'",
+    "application": "Không có slot_bindings. Các giả thiết/prover facts được dùng:\nyears_contributed(user) = 21\nmonths_since_stop(user) = 10\nProlog đã dùng years_contributed(user)=21 để so khớp với các quy tắc: vì giá trị 21 rơi vào nhánh quy tắc liên quan nguồn source_pension, dẫn tới kết luận không đủ điều kiện rút một lần.",
+    "conclusion": "Eligible = \"no\".\nReason = \"Không được rút một lần vì đã đóng đủ 20 năm; hướng tới hưởng lương hưu khi đủ tuổi và điều kiện.\"\nTrace = \"[step(not_eligible_for_one_time_withdrawal(user,21),based_on(source_pension))]\"."
+  },
+  "elapsed_s": 41.265,
+  "prompt_tokens": 2317,
+  "completion_tokens": 5083,
+  "error": null,
+  "gold_answer": "Bạn đã tham gia BHXH 21 năm và mới nghỉ gần 10 tháng thì chưa đủ điều kiện thông thường để xem xét BHXH 1 lần theo mốc 12 tháng không tham gia. Hơn nữa, từ 01/7/2025 nhiều trường hợp có từ đủ 15 năm đóng trở lên sẽ hướng tới chế độ lương hưu khi đủ tuổi, nên càng cần cân nhắc. Sau khi đủ 12 tháng ngừng tham gia, bạn mới nên đối chiếu lại điều kiện cụ thể với cơ quan BHXH.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

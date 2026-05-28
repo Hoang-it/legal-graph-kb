@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_graphrag",
+  "stt": 187,
+  "question": "Em làm đc 2 năm lương cơ bản 5tr2 thì rút bhxh đc bao nhiêu?",
+  "answer": "Issue: Em làm đc 2 năm lương cơ bản 5tr2 thì rút bhxh đc bao nhiêu?\n\nRule: \"Khi chưa bãi bỏ mức lương cơ sở thì mức tham chiếu quy định tại Luật này bằng mức lương cơ sở. Tại thời điểm mức lương cơ sở bị bãi bỏ thì mức tham chiếu không thấp hơn mức lương cơ sở đó.\" (Luật BHXH 2024 (41/2024/QH15), article 141, clause 13)\n\nApplication: \n- years_contributed: 2\n- base_salary: 5200000\n\nProlog đã sử dụng các giá trị này để tính toán số tiền rút bảo hiểm xã hội.\n\nConclusion: Số tiền rút bảo hiểm xã hội là 5200000 (Amount).",
+  "citations": [
+    "[Điều 99 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A99.K3"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,withdrawal_amount(user,5200000.0),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Em làm đc 2 năm lương cơ bản 5tr2 thì rút bhxh đc bao nhiêu?",
+    "rule": "\"Khi chưa bãi bỏ mức lương cơ sở thì mức tham chiếu quy định tại Luật này bằng mức lương cơ sở. Tại thời điểm mức lương cơ sở bị bãi bỏ thì mức tham chiếu không thấp hơn mức lương cơ sở đó.\" (Luật BHXH 2024 (41/2024/QH15), article 141, clause 13)",
+    "application": "- years_contributed: 2\n- base_salary: 5200000\n\nProlog đã sử dụng các giá trị này để tính toán số tiền rút bảo hiểm xã hội.",
+    "conclusion": "Số tiền rút bảo hiểm xã hội là 5200000 (Amount)."
+  },
+  "elapsed_s": 9.762,
+  "prompt_tokens": 3168,
+  "completion_tokens": 525,
+  "error": null,
+  "gold_answer": "Nếu bạn đóng 2 năm, mức bình quân lương khoảng 5,2 triệu và toàn bộ đều từ 2014 trở đi thì BHXH 1 lần ước khoảng khoảng 20,8 triệu. Đây là mức tính sơ bộ theo công thức 2 tháng bình quân lương cho mỗi năm đóng. Số thực nhận có thể chênh nhẹ do điều chỉnh tiền lương.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

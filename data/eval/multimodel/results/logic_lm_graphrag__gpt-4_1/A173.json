@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 173,
+  "question": "Mình giờ thôi việc ở công ty cũ. Nếu lấy BHTN thì mình sẽ được 11 tháng BHTN, nhưng mình nghỉ làm là có công ty hấp dẫn gọi đi làm ngay, lúc đó mình ko làm BHTN nữa mà tiếp tục đóng BHXH luôn.  Nếu mình làm 1 năm thấy không phù hợp với công ty thì lúc đó mình nghỉ thì quyền lợi BHTN mới sẽ như thế nào?",
+  "answer": "Issue:\nCâu hỏi đặt ra là nếu sau khi nghỉ việc ở công ty mới (sau khi đã không nhận trợ cấp thất nghiệp ở công ty cũ và tiếp tục đóng bảo hiểm xã hội), khi nghỉ việc ở công ty mới thì quyền lợi bảo hiểm thất nghiệp sẽ được tính như thế nào.\n\nRule:\n\"Trường hợp trong tháng đầu làm việc hoặc trong tháng đầu trở lại làm việc mà người lao động nghỉ việc hưởng chế độ ốm đau từ 14 ngày làm việc trở lên thì vẫn phải đóng bảo hiểm xã hội của tháng đó.\" (Luật BHXH 2024 (41/2024/QH15), Điều 33, Khoản 6)\n\nApplication:\nKhông có slot_id nào được cung cấp vì câu hỏi mang tính giải thích. Prolog đã sử dụng thông tin về việc cộng dồn thời gian đóng bảo hiểm thất nghiệp trước và sau khi tiếp tục đóng bảo hiểm xã hội để xác định quyền lợi bảo hiểm thất nghiệp khi nghỉ việc ở công ty mới.\n\nConclusion:\nSau khi nghỉ việc ở công ty mới, nếu chưa nhận trợ cấp thất nghiệp trước đó, thời gian đóng bảo hiểm thất nghiệp trước và sau khi tiếp tục đóng bảo hiểm xã hội sẽ được cộng dồn để tính hưởng trợ cấp thất nghiệp khi đủ điều kiện theo quy định pháp luật.",
+  "citations": [
+    "[Điều 33 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A33.K6"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 2,
+  "prolog_trace": "[step(conclusion,bhtn_sau_khi_dong_bhxh(Sau khi nghỉ việc ở công ty mới, nếu chưa nhận trợ cấp thất nghiệp trước đó, thời gian đóng bảo hiểm thất nghiệp trước và sau khi tiếp tục đóng bảo hiểm xã hội sẽ được cộng dồn để tính hưởng trợ cấp thất nghiệp khi đủ điều kiện theo quy định pháp luật.),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là nếu sau khi nghỉ việc ở công ty mới (sau khi đã không nhận trợ cấp thất nghiệp ở công ty cũ và tiếp tục đóng bảo hiểm xã hội), khi nghỉ việc ở công ty mới thì quyền lợi bảo hiểm thất nghiệp sẽ được tính như thế nào.",
+    "rule": "\"Trường hợp trong tháng đầu làm việc hoặc trong tháng đầu trở lại làm việc mà người lao động nghỉ việc hưởng chế độ ốm đau từ 14 ngày làm việc trở lên thì vẫn phải đóng bảo hiểm xã hội của tháng đó.\" (Luật BHXH 2024 (41/2024/QH15), Điều 33, Khoản 6)",
+    "application": "Không có slot_id nào được cung cấp vì câu hỏi mang tính giải thích. Prolog đã sử dụng thông tin về việc cộng dồn thời gian đóng bảo hiểm thất nghiệp trước và sau khi tiếp tục đóng bảo hiểm xã hội để xác định quyền lợi bảo hiểm thất nghiệp khi nghỉ việc ở công ty mới.",
+    "conclusion": "Sau khi nghỉ việc ở công ty mới, nếu chưa nhận trợ cấp thất nghiệp trước đó, thời gian đóng bảo hiểm thất nghiệp trước và sau khi tiếp tục đóng bảo hiểm xã hội sẽ được cộng dồn để tính hưởng trợ cấp thất nghiệp khi đủ điều kiện theo quy định pháp luật."
+  },
+  "elapsed_s": 11.207,
+  "prompt_tokens": 7623,
+  "completion_tokens": 773,
+  "error": null,
+  "gold_answer": "Nếu bạn không làm hồ sơ BHTN lần nghỉ việc này mà đi làm ngay, thời gian BHTN chưa hưởng sẽ được bảo lưu. Sau này nếu làm thêm 1 năm rồi nghỉ, thời gian đóng mới sẽ được cộng với thời gian bảo lưu cũ để tính điều kiện, thời gian hưởng cho lần thất nghiệp tiếp theo; phần đã hưởng rồi thì không tính lại. Vì vậy quyền lợi không mất, chỉ bảo lưu cho lần sau.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

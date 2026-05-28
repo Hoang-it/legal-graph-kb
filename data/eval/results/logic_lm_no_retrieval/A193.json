@@ -1,0 +1,25 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 193,
+  "question": "Em nghỉ cty cách đây 8/9 năm r nhưng m chưa chốt lấy bảo hiểm\nGiờ m muốn lấy bảo hiểm thì đến cty m đã lm để lấy hay lấy ở đâu?",
+  "answer": "Issue: Người dùng muốn biết cách nhận bảo hiểm xã hội sau khi đã nghỉ việc 8/9 năm mà chưa chốt bảo hiểm.\n\nRule: Không có quy định cụ thể nào được trích dẫn trong trường hợp này.\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Prolog đã xử lý câu hỏi và đưa ra kết luận mà không cần thông tin bổ sung.\n\nConclusion: Prolog đã trả về kết luận rằng \"Bạn cần đến cơ quan bảo hiểm xã hội nơi bạn đã làm việc để làm thủ tục nhận bảo hiểm.\" Tuy nhiên, không có thông tin nào từ các slot hoặc quy định pháp lý cụ thể để hỗ trợ cho câu trả lời này.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,insurance_claim_process(user,Bạn cần đến cơ quan bảo hiểm xã hội nơi bạn đã làm việc để làm thủ tục nhận bảo hiểm.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người dùng muốn biết cách nhận bảo hiểm xã hội sau khi đã nghỉ việc 8/9 năm mà chưa chốt bảo hiểm.",
+    "rule": "Không có quy định cụ thể nào được trích dẫn trong trường hợp này.",
+    "application": "Không có slot nào được gán giá trị trong trường hợp này. Prolog đã xử lý câu hỏi và đưa ra kết luận mà không cần thông tin bổ sung.",
+    "conclusion": "Prolog đã trả về kết luận rằng \"Bạn cần đến cơ quan bảo hiểm xã hội nơi bạn đã làm việc để làm thủ tục nhận bảo hiểm.\" Tuy nhiên, không có thông tin nào từ các slot hoặc quy định pháp lý cụ thể để hỗ trợ cho câu trả lời này."
+  },
+  "elapsed_s": 7.62,
+  "prompt_tokens": 3154,
+  "completion_tokens": 331,
+  "error": null,
+  "gold_answer": "Nếu bạn nghỉ công ty 8-9 năm mà chưa chốt/lấy BHXH, trước hết cần xác định công ty khi đó đã báo giảm, chốt sổ hay chưa. Nếu đã chốt, bạn có thể liên hệ trực tiếp cơ quan BHXH nơi quản lý hoặc nơi cư trú để xin xác nhận/cấp lại. Nếu chưa chốt thì vẫn phải yêu cầu công ty cũ hoàn tất thủ tục; BHXH không thể tự chốt toàn bộ nếu đơn vị chưa báo giảm và chưa hoàn thành nghĩa vụ.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

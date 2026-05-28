@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 17,
+  "question": "Bà Hiền Thanh (Tây Ninh) hỏi, từ ngày 1/7/2025 phụ cấp ăn ca và các khoản tiền: xăng xe, điện thoại, nhà ở, hỗ trợ nuôi con nhỏ, trang phục, có ghi mức hưởng cụ thể tại hợp đồng lao động thì có phải tính đóng BHXH không?",
+  "answer": "Issue: Bà Hiền Thanh hỏi về việc phụ cấp ăn ca và các khoản tiền khác có ghi mức hưởng cụ thể tại hợp đồng lao động có phải tính đóng BHXH hay không. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 33 khoản 2], mức đóng hằng tháng bằng 22% tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc. \nApplication: Không có slot nào được gán giá trị. Prolog query social_insurance_contribution_conditions trả về kết quả rằng phụ cấp ăn ca và các khoản tiền khác có ghi mức hưởng cụ thể tại hợp đồng lao động sẽ được tính đóng BHXH. \nConclusion: Theo Prolog, phụ cấp ăn ca và các khoản tiền khác có ghi mức hưởng cụ thể tại hợp đồng lao động sẽ được tính đóng BHXH.",
+  "plain_answer": "Phụ cấp ăn ca và các khoản tiền khác có ghi mức hưởng cụ thể tại hợp đồng lao động sẽ được tính đóng BHXH theo quy định. Bạn có thể tham khảo thêm [Luật BHXH 2024 (41/2024/QH15), Điều 33 khoản 2] để biết thêm chi tiết về mức đóng và phương thức đóng bảo hiểm xã hội.",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 33 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A33.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,social_insurance_contribution_conditions(Phụ cấp ăn ca và các khoản tiền khác có ghi mức hưởng cụ thể tại hợp đồng lao động sẽ được tính đóng BHXH.),based_on(source_c041))]",
+  "prolog_program": "legal_source(source_c041, law_bhxh_2024, article_33, clause_2, none, 'Mức đóng, phương thức và thời hạn đóng của đối tượng quy định tại điểm g khoản 1 Điều 2 của Luật này được quy định như sau: a) Mức đóng hằng tháng bằng 22% tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc vào quỹ hưu trí và tử tuất;').\nsocial_insurance_contribution_conditions(Answer, Trace) :- Answer = 'Phụ cấp ăn ca và các khoản tiền khác có ghi mức hưởng cụ thể tại hợp đồng lao động sẽ được tính đóng BHXH.', Trace = [step(conclusion, social_insurance_contribution_conditions(Answer), based_on(source_c041))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Bà Hiền Thanh hỏi về việc phụ cấp ăn ca và các khoản tiền khác có ghi mức hưởng cụ thể tại hợp đồng lao động có phải tính đóng BHXH hay không.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 33 khoản 2], mức đóng hằng tháng bằng 22% tiền lương làm căn cứ đóng bảo hiểm xã hội bắt buộc.",
+    "application": "Không có slot nào được gán giá trị. Prolog query social_insurance_contribution_conditions trả về kết quả rằng phụ cấp ăn ca và các khoản tiền khác có ghi mức hưởng cụ thể tại hợp đồng lao động sẽ được tính đóng BHXH.",
+    "conclusion": "Theo Prolog, phụ cấp ăn ca và các khoản tiền khác có ghi mức hưởng cụ thể tại hợp đồng lao động sẽ được tính đóng BHXH."
+  },
+  "elapsed_s": 12.912,
+  "prompt_tokens": 4602,
+  "completion_tokens": 522,
+  "error": null,
+  "gold_answer": "Căn cứ quy định của Luật BHXH số 41/2024/QH15, tiền lương làm căn cứ đóng BHXH bắt buộc được quy định như sau:\nNgười lao động thuộc đối tượng thực hiện chế độ tiền lương do người sử dụng lao động quyết định thì tiền lương làm căn cứ đóng BHXH bắt buộc là tiền lương tháng, bao gồm mức lương theo công việc hoặc chức danh, phụ cấp lương và các khoản bổ sung khác được thỏa thuận trả thường xuyên, ổn định trong mỗi kỳ trả lương.\nCăn cứ quy định tại Điều 3 Thông tư số 10/2020/TT-BLĐTBXH ngày 12/11/2020 quy định chi tiết và hướng dẫn thi hành một số điều của Bộ luật Lao động về nội dung của hợp đồng lao động, hội đồng thương lượng tập thể và nghề, công việc có ảnh hưởng xấu tới chức năng sinh sản, nuôi con:\n\"c) Các khoản bổ sung khác theo thỏa thuận của hai bên như sau:\n... c2) Các khoản bổ sung không xác định được mức tiền cụ thể cùng với mức lương thỏa thuận trong hợp đồng lao động, trả thường xuyên hoặc không thường xuyên trong mỗi kỳ trả lương gắn với quá trình làm việc, kết quả thực hiện công việc của người lao động.\nĐối với các chế độ và phúc lợi khác như thưởng theo quy định tại Điều 104 của Bộ luật Lao động, tiền thưởng sáng kiến; tiền ăn giữa ca; các khoản hỗ trợ xăng xe, điện thoại, đi lại, tiền nhà ở, tiền giữ trẻ, nuôi con nhỏ; hỗ trợ khi người lao động có thân nhân bị chết, người lao động có người thân kết hôn, sinh nhật của người lao động, trợ cấp cho người lao động gặp hoàn cảnh khó khăn khi bị tai nạn lao động, bệnh nghề nghiệp và các khoản hỗ trợ, trợ cấp khác thì ghi thành mục riêng trong hợp đồng lao động\".\nNhư vậy, bà có thể đối chiếu với quy định trên để biết các loại phụ cấp phải đóng BHXH.\nĐối với phụ cấp ăn ca, xăng xe, điện thoại, nhà ở, hỗ trợ nuôi con nhỏ, trang phục nếu được ghi thành mục riêng trong hợp đồng lao động thì đây là khoản không tính đóng BHXH.",
+  "gold_citations_raw": "[Thông tư 10/2020/TT-BLĐTBXH, Điều 3]"
+}

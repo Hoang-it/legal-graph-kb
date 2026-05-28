@@ -1,0 +1,25 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 189,
+  "question": "Cty em từ tháng 11/2025 từ Cty cổ phần chuyển đổi thành Cty TNHH 1tv, giám đốc là chủ sở hữu mà bên em đóng bảo hiểm xã hội 32% được không?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'company_limited_liability']",
+  "citations": [
+    "[Điều 85 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A85.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "invalid_query",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 8.976,
+  "prompt_tokens": 3850,
+  "completion_tokens": 565,
+  "error": null,
+  "gold_answer": "Tỷ lệ 32% chỉ có thể là cách cộng gộp nhiều khoản phải đóng của cả doanh nghiệp và người lao động, không phải lúc nào cũng áp dụng đúng cho mọi trường hợp. Với công ty TNHH MTV, giám đốc/chủ sở hữu có thuộc diện đóng BHXH hay không còn phụ thuộc việc hưởng lương, chức danh và hướng dẫn áp dụng cho người quản lý doanh nghiệp. Bạn nên rà lại đối tượng tham gia theo Luật BHXH 2024 và nghị định hướng dẫn.",
+  "gold_citations_raw": "Điều 2, 13, 14 Luật BHXH 2024; Nghị định 158/2025/NĐ-CP"
+}

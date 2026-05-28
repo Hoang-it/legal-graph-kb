@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 143,
+  "question": "Mình xin nghỉ việc\nCông ty nợ bảo hiểm xã hội có làm hưởng bảo hiểm thất nghiệp được không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu người lao động xin nghỉ việc nhưng công ty đang nợ bảo hiểm xã hội, liệu người lao động có được hưởng bảo hiểm thất nghiệp không?\n\nRule:\nĐiều kiện hưởng trợ cấp thất nghiệp: đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên trong 24 tháng trước khi chấm dứt hợp đồng lao động, đã nộp hồ sơ hưởng trợ cấp thất nghiệp trong thời hạn, chưa tìm được việc làm mới. (law_bhxh_2024, article_49, clause_1)\nTrường hợp người sử dụng lao động nợ tiền đóng bảo hiểm thất nghiệp thì người lao động vẫn được giải quyết hưởng trợ cấp thất nghiệp nếu đáp ứng đủ điều kiện, cơ quan bảo hiểm xã hội phối hợp với cơ quan liên quan để thu hồi số tiền nợ. (law_bhxh_2024, article_49, clause_2)\n\nApplication:\nCác điều kiện được Prolog truy vấn và trả về gồm: Đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên trong 24 tháng trước khi nghỉ việc; Đã nộp hồ sơ hưởng trợ cấp thất nghiệp đúng hạn; Chưa có việc làm mới. Truy vấn cũng ghi nhận rằng nếu công ty nợ bảo hiểm xã hội, người lao động vẫn được giải quyết hưởng trợ cấp thất nghiệp nếu đáp ứng đủ các điều kiện trên.\n\nConclusion:\nNgười lao động vẫn có thể được hưởng bảo hiểm thất nghiệp nếu đáp ứng các điều kiện: Đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên trong 24 tháng trước khi nghỉ việc, đã nộp hồ sơ đúng hạn, chưa có việc làm mới, bất kể công ty có nợ bảo hiểm xã hội hay không.",
+  "citations": [
+    "[Điều 49 khoản 1]",
+    "[Điều 49 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A49.K1",
+    "L41_2024.A49.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conditions,unemployment_benefit_eligibility,based_on(source_a49_k1)),step(note,Nếu công ty nợ bảo hiểm xã hội, người lao động vẫn được giải quyết hưởng trợ cấp thất nghiệp nếu đủ điều kiện,based_on(source_a49_k2))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu người lao động xin nghỉ việc nhưng công ty đang nợ bảo hiểm xã hội, liệu người lao động có được hưởng bảo hiểm thất nghiệp không?",
+    "rule": "Điều kiện hưởng trợ cấp thất nghiệp: đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên trong 24 tháng trước khi chấm dứt hợp đồng lao động, đã nộp hồ sơ hưởng trợ cấp thất nghiệp trong thời hạn, chưa tìm được việc làm mới. (law_bhxh_2024, article_49, clause_1)\nTrường hợp người sử dụng lao động nợ tiền đóng bảo hiểm thất nghiệp thì người lao động vẫn được giải quyết hưởng trợ cấp thất nghiệp nếu đáp ứng đủ điều kiện, cơ quan bảo hiểm xã hội phối hợp với cơ quan liên quan để thu hồi số tiền nợ. (law_bhxh_2024, article_49, clause_2)",
+    "application": "Các điều kiện được Prolog truy vấn và trả về gồm: Đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên trong 24 tháng trước khi nghỉ việc; Đã nộp hồ sơ hưởng trợ cấp thất nghiệp đúng hạn; Chưa có việc làm mới. Truy vấn cũng ghi nhận rằng nếu công ty nợ bảo hiểm xã hội, người lao động vẫn được giải quyết hưởng trợ cấp thất nghiệp nếu đáp ứng đủ các điều kiện trên.",
+    "conclusion": "Người lao động vẫn có thể được hưởng bảo hiểm thất nghiệp nếu đáp ứng các điều kiện: Đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên trong 24 tháng trước khi nghỉ việc, đã nộp hồ sơ đúng hạn, chưa có việc làm mới, bất kể công ty có nợ bảo hiểm xã hội hay không."
+  },
+  "elapsed_s": 8.552,
+  "prompt_tokens": 2257,
+  "completion_tokens": 747,
+  "error": null,
+  "gold_answer": "Công ty nợ BHXH không đương nhiên làm bạn mất quyền hưởng BHTN, nhưng trên thực tế sẽ ảnh hưởng hồ sơ nếu dữ liệu đóng BHTN chưa được xác nhận. Bạn cần yêu cầu công ty hoàn tất nghĩa vụ đóng, chốt sổ; nếu không thực hiện thì khiếu nại với cơ quan BHXH và thanh tra lao động. Phần thời gian thực tế đã đóng vào quỹ BHTN vẫn phải được ghi nhận để xét quyền lợi cho bạn.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

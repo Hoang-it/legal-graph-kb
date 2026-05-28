@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 38,
+  "question": "Em mới học xong, lúc mới vào cty, khi đang đào tạo người ta hỏi em có BHXH thì em bảo không có, người ta bảo là có thế là thế màp? Bây giờ em muốn xem mình đóng bảo hiểm được bao nhiêu mà không biết số bảo hiểm thì phải làm sao ?",
+  "answer": "Issue:\nEm hỏi cách tra mã số BHXH và kiểm tra lịch sử đóng khi chưa biết số BHXH.\n\nRule:\nlaw_bhxh_2024, none, none, none: 'Nhà tuyển dụng có nghĩa vụ đăng ký tham gia và đóng bảo hiểm xã hội cho người lao động; phải cung cấp thông tin liên quan khi người lao động yêu cầu.'\nlaw_bhxh_2024, none, none, none: 'Người lao động có quyền tra cứu, đối chiếu thông tin đóng BHXH; có thể sử dụng dịch vụ điện tử (VssID / cổng thông tin BHXH) hoặc liên hệ cơ quan BHXH nơi quản lý để biết mã số và lịch sử đóng.'\n\nApplication:\nCác slot được cung cấp: không có slot nào được gán trong input.\nProlog truy vấn find_bhxh_number(user, Steps, Trace) sử dụng hai nguồn pháp lý (source_emp_obligation, source_access_info) và đã hợp nhất biến Steps/Trace với giá trị:\n[step(ask_employer_provide_bhxh_number,based_on(source_emp_obligation)),step(check_pay_slips_and_contract_for_bhxh_number,based_on(source_emp_obligation)),step(use_vssid_or_online_bhxh_portal_with_CCCD_or_ID,based_on(source_access_info)),step(contact_local_social_insurance_office_with_ID_documents,based_on(source_access_info)),step(request_correction_or_file_complaint_if_employer_failed_to_register,based_on(source_emp_obligation))]\n\nConclusion:\nProlog trả về binding cho biến Steps (cũng là Trace): Steps = \"[step(ask_employer_provide_bhxh_number,based_on(source_emp_obligation)),step(check_pay_slips_and_contract_for_bhxh_number,based_on(source_emp_obligation)),step(use_vssid_or_online_bhxh_portal_with_CCCD_or_ID,based_on(source_access_info)),step(contact_local_social_insurance_office_with_ID_documents,based_on(source_access_info)),step(request_correction_or_file_complaint_if_employer_failed_to_register,based_on(source_emp_obligation))]\". Không có slot thiếu; kết quả là danh sách các bước như trên để bạn tra mã số và kiểm tra đóng BHXH.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(ask_employer_provide_bhxh_number,based_on(source_emp_obligation)),step(check_pay_slips_and_contract_for_bhxh_number,based_on(source_emp_obligation)),step(use_vssid_or_online_bhxh_portal_with_CCCD_or_ID,based_on(source_access_info)),step(contact_local_social_insurance_office_with_ID_documents,based_on(source_access_info)),step(request_correction_or_file_complaint_if_employer_failed_to_register,based_on(source_emp_obligation))]",
+  "irac_sections": {
+    "issue": "Em hỏi cách tra mã số BHXH và kiểm tra lịch sử đóng khi chưa biết số BHXH.",
+    "rule": "law_bhxh_2024, none, none, none: 'Nhà tuyển dụng có nghĩa vụ đăng ký tham gia và đóng bảo hiểm xã hội cho người lao động; phải cung cấp thông tin liên quan khi người lao động yêu cầu.'\nlaw_bhxh_2024, none, none, none: 'Người lao động có quyền tra cứu, đối chiếu thông tin đóng BHXH; có thể sử dụng dịch vụ điện tử (VssID / cổng thông tin BHXH) hoặc liên hệ cơ quan BHXH nơi quản lý để biết mã số và lịch sử đóng.'",
+    "application": "Các slot được cung cấp: không có slot nào được gán trong input.\nProlog truy vấn find_bhxh_number(user, Steps, Trace) sử dụng hai nguồn pháp lý (source_emp_obligation, source_access_info) và đã hợp nhất biến Steps/Trace với giá trị:\n[step(ask_employer_provide_bhxh_number,based_on(source_emp_obligation)),step(check_pay_slips_and_contract_for_bhxh_number,based_on(source_emp_obligation)),step(use_vssid_or_online_bhxh_portal_with_CCCD_or_ID,based_on(source_access_info)),step(contact_local_social_insurance_office_with_ID_documents,based_on(source_access_info)),step(request_correction_or_file_complaint_if_employer_failed_to_register,based_on(source_emp_obligation))]",
+    "conclusion": "Prolog trả về binding cho biến Steps (cũng là Trace): Steps = \"[step(ask_employer_provide_bhxh_number,based_on(source_emp_obligation)),step(check_pay_slips_and_contract_for_bhxh_number,based_on(source_emp_obligation)),step(use_vssid_or_online_bhxh_portal_with_CCCD_or_ID,based_on(source_access_info)),step(contact_local_social_insurance_office_with_ID_documents,based_on(source_access_info)),step(request_correction_or_file_complaint_if_employer_failed_to_register,based_on(source_emp_obligation))]\". Không có slot thiếu; kết quả là danh sách các bước như trên để bạn tra mã số và kiểm tra đóng BHXH."
+  },
+  "elapsed_s": 37.4,
+  "prompt_tokens": 2487,
+  "completion_tokens": 4926,
+  "error": null,
+  "gold_answer": "Bạn có thể tra cứu mã số BHXH bằng CCCD/họ tên/ngày sinh trên Cổng BHXH Việt Nam hoặc ứng dụng VssID. Nếu không tự tra được, mang CCCD đến cơ quan BHXH gần nhất để được hỗ trợ tra cứu, đồng bộ dữ liệu và cấp lại thông tin tài khoản. Khi đã có mã số BHXH, bạn sẽ xem được toàn bộ quá trình tham gia BHXH, BHTN, BHYT trên VssID hoặc cổng tra cứu điện tử.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn tra cứu VssID/BHXH Việt Nam"
+}

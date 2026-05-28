@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 149,
+  "question": "Rút BHXH 1 lần thì bao lâu nhận được? e bắt đầu tham gia từ 2020 đến giờ thì có được rút không? e ở TP.HCM thì ra đâu rút được?",
+  "answer": "Issue: Người dùng hỏi về thời gian nhận BHXH 1 lần và điều kiện rút BHXH sau khi tham gia từ năm 2020.\n\nRule: \"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Prolog không thể thực hiện truy vấn do thiếu thông tin cần thiết.\n\nConclusion: Hệ thống không thể tính toán số liệu cuối cùng do không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 18 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,withdrawal_time(Thời gian nhận BHXH 1 lần thường từ 7 đến 10 ngày làm việc sau khi hồ sơ được tiếp nhận.),based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Người dùng hỏi về thời gian nhận BHXH 1 lần và điều kiện rút BHXH sau khi tham gia từ năm 2020.",
+    "rule": "\"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)",
+    "application": "Không có slot nào được gán giá trị trong trường hợp này. Prolog không thể thực hiện truy vấn do thiếu thông tin cần thiết.",
+    "conclusion": "Hệ thống không thể tính toán số liệu cuối cùng do không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 8.543,
+  "prompt_tokens": 4682,
+  "completion_tokens": 424,
+  "error": null,
+  "gold_answer": "Thời gian giải quyết BHXH 1 lần thường khoảng 05 ngày làm việc kể từ khi cơ quan BHXH nhận đủ hồ sơ hợp lệ. Bạn tham gia từ 2020 đến nay chỉ được rút nếu thuộc trường hợp luật cho phép, phổ biến là đã nghỉ và sau 12 tháng không tiếp tục tham gia BHXH. Ở TP.HCM, bạn nộp tại cơ quan BHXH nơi thường trú hoặc tạm trú.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

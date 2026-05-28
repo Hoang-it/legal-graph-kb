@@ -1,0 +1,21 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 156,
+  "question": "E nghỉ ngang cty cũ k chốt tờ rời cho giờ có cách nào chốt được không?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=unable_to_conclude, repair_rounds=2, error=Connection error.]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "unable_to_conclude",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 4.255,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "error": null,
+  "gold_answer": "Nếu công ty cũ chưa chốt tờ rời thì bạn không tự chốt thay hoàn toàn được, vì doanh nghiệp phải báo giảm và hoàn tất nghĩa vụ đóng. Việc bạn cần làm là yêu cầu công ty chốt sổ bằng văn bản; nếu công ty chây ì thì gửi đơn tới cơ quan BHXH quản lý đơn vị, thanh tra lao động hoặc khởi kiện yêu cầu chốt sổ và bồi thường thiệt hại nếu có.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

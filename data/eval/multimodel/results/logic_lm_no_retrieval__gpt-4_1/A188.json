@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 188,
+  "question": "cho mình hỏi đóng bhxh th 4 2026 về sao có đc rút 1 lần không?",
+  "answer": "Issue:\nBạn hỏi rằng nếu đóng bảo hiểm xã hội đến tháng 4 năm 2026, sau đó nghỉ việc thì có được rút bảo hiểm xã hội một lần hay không.\n\nRule:\n\"Người lao động có thể nhận bảo hiểm xã hội một lần nếu sau một năm nghỉ việc mà chưa đủ điều kiện hưởng lương hưu và không tiếp tục đóng BHXH.\" (law_bhxh_2024, article_60, clause_1)\n\nApplication:\nKhông có slot cụ thể nào được cung cấp trong truy vấn này. Hệ thống đã xác định các điều kiện để được rút bảo hiểm xã hội một lần dựa trên quy định tại law_bhxh_2024, article_60, clause_1. Các điều kiện này là: \"Sau 1 năm nghỉ việc không tiếp tục đóng BHXH\" và \"Chưa đủ điều kiện hưởng lương hưu\".\n\nConclusion:\nTheo quy định, bạn sẽ được rút bảo hiểm xã hội một lần nếu đáp ứng đồng thời hai điều kiện: Sau 1 năm nghỉ việc không tiếp tục đóng BHXH và chưa đủ điều kiện hưởng lương hưu (Conditions = [Sau 1 năm nghỉ việc không tiếp tục đóng BHXH, Chưa đủ điều kiện hưởng lương hưu]).",
+  "citations": [
+    "[Điều 60 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,bhxh_one_time_withdrawal_conditions([Sau 1 năm nghỉ việc không tiếp tục đóng BHXH,Chưa đủ điều kiện hưởng lương hưu]),based_on(source_a60_k1))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi rằng nếu đóng bảo hiểm xã hội đến tháng 4 năm 2026, sau đó nghỉ việc thì có được rút bảo hiểm xã hội một lần hay không.",
+    "rule": "\"Người lao động có thể nhận bảo hiểm xã hội một lần nếu sau một năm nghỉ việc mà chưa đủ điều kiện hưởng lương hưu và không tiếp tục đóng BHXH.\" (law_bhxh_2024, article_60, clause_1)",
+    "application": "Không có slot cụ thể nào được cung cấp trong truy vấn này. Hệ thống đã xác định các điều kiện để được rút bảo hiểm xã hội một lần dựa trên quy định tại law_bhxh_2024, article_60, clause_1. Các điều kiện này là: \"Sau 1 năm nghỉ việc không tiếp tục đóng BHXH\" và \"Chưa đủ điều kiện hưởng lương hưu\".",
+    "conclusion": "Theo quy định, bạn sẽ được rút bảo hiểm xã hội một lần nếu đáp ứng đồng thời hai điều kiện: Sau 1 năm nghỉ việc không tiếp tục đóng BHXH và chưa đủ điều kiện hưởng lương hưu (Conditions = [Sau 1 năm nghỉ việc không tiếp tục đóng BHXH, Chưa đủ điều kiện hưởng lương hưu])."
+  },
+  "elapsed_s": 5.069,
+  "prompt_tokens": 2040,
+  "completion_tokens": 479,
+  "error": null,
+  "gold_answer": "Chỉ đóng BHXH từ tháng 4/2026 thì không thể rút 1 lần ngay. Với trường hợp thông thường, bạn phải thuộc trường hợp luật cho phép và thường phải chờ sau 12 tháng không tiếp tục tham gia BHXH bắt buộc, không tham gia BHXH tự nguyện. Nếu sau đó bạn tiếp tục đi làm ở nơi khác thì thời gian tháng 4/2026 sẽ được cộng nối.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

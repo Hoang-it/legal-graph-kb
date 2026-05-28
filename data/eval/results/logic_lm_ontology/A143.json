@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 143,
+  "question": "Mình xin nghỉ việc\nCông ty nợ bảo hiểm xã hội có làm hưởng bảo hiểm thất nghiệp được không?",
+  "answer": "Issue: Người lao động muốn biết liệu có thể hưởng bảo hiểm thất nghiệp khi công ty nợ bảo hiểm xã hội hay không.\n\nRule: \"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Tuy nhiên, Prolog đã xác định rằng người lao động đủ điều kiện hưởng bảo hiểm thất nghiệp với giá trị \"yes\".\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Eligibility, cho thấy người lao động có thể hưởng bảo hiểm thất nghiệp.",
+  "citations": [
+    "[Điều 18 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_eligibility(yes),based_on(source_c007))]",
+  "irac_sections": {
+    "issue": "Người lao động muốn biết liệu có thể hưởng bảo hiểm thất nghiệp khi công ty nợ bảo hiểm xã hội hay không.",
+    "rule": "\"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Tuy nhiên, Prolog đã xác định rằng người lao động đủ điều kiện hưởng bảo hiểm thất nghiệp với giá trị \"yes\".",
+    "conclusion": "Prolog đã trả về giá trị \"yes\" cho biến Eligibility, cho thấy người lao động có thể hưởng bảo hiểm thất nghiệp."
+  },
+  "elapsed_s": 7.32,
+  "prompt_tokens": 2827,
+  "completion_tokens": 354,
+  "error": null,
+  "gold_answer": "Công ty nợ BHXH không đương nhiên làm bạn mất quyền hưởng BHTN, nhưng trên thực tế sẽ ảnh hưởng hồ sơ nếu dữ liệu đóng BHTN chưa được xác nhận. Bạn cần yêu cầu công ty hoàn tất nghĩa vụ đóng, chốt sổ; nếu không thực hiện thì khiếu nại với cơ quan BHXH và thanh tra lao động. Phần thời gian thực tế đã đóng vào quỹ BHTN vẫn phải được ghi nhận để xét quyền lợi cho bạn.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

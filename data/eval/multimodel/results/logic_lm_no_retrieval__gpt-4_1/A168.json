@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 168,
+  "question": "Cho mình hỏi cuối tháng 4 mình bắt đầu làm công ty mới và đến cuối tháng 6 mình bắt đầu được đóng BHXH. Đầu tháng 5 thì mình mới xin được tờ rời và quyết định nghỉ việc của công ty cũ. Như thế thì mình có xin được trợ cấp thất nghiệp trong tháng 5 hoặc tháng 6 không?",
+  "answer": "Issue:\nBạn hỏi rằng sau khi nghỉ việc ở công ty cũ cuối tháng 4, đến đầu tháng 5 mới có quyết định nghỉ việc và tờ rời, nhưng cuối tháng 4 đã bắt đầu làm công ty mới (đến cuối tháng 6 mới đóng BHXH), thì bạn có thể xin trợ cấp thất nghiệp trong tháng 5 hoặc tháng 6 không.\n\nRule:\n\"Người lao động được hưởng trợ cấp thất nghiệp khi chấm dứt hợp đồng lao động, đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên trong 24 tháng trước khi chấm dứt hợp đồng, và chưa tìm được việc làm mới.\" (law_bhxh_2024, article_74, clause_1)\n\"Người lao động phải nộp hồ sơ hưởng trợ cấp thất nghiệp trong thời hạn 3 tháng kể từ ngày chấm dứt hợp đồng lao động.\" (law_bhxh_2024, article_74, clause_2)\n\"Người lao động không được hưởng trợ cấp thất nghiệp nếu đã có việc làm mới.\" (law_bhxh_2024, article_74, clause_3)\n\nApplication:\nCác điều kiện được Prolog truy vấn gồm: Đã chấm dứt hợp đồng lao động với công ty cũ; Đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên trong 24 tháng trước khi nghỉ việc; Nộp hồ sơ hưởng trợ cấp thất nghiệp trong thời hạn 3 tháng kể từ ngày nghỉ việc; Chưa có việc làm mới tại thời điểm nộp hồ sơ. Truy vấn Prolog kiểm tra các điều kiện này dựa trên các nguồn luật đã trích dẫn.\n\nConclusion:\nProlog trả về các điều kiện cần để được hưởng trợ cấp thất nghiệp: Đã chấm dứt hợp đồng lao động với công ty cũ, Đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên trong 24 tháng trước khi nghỉ việc, Nộp hồ sơ hưởng trợ cấp thất nghiệp trong thời hạn 3 tháng kể từ ngày nghỉ việc, Chưa có việc làm mới tại thời điểm nộp hồ sơ. Nếu bạn đã có việc làm mới tại thời điểm nộp hồ sơ, bạn sẽ không đủ điều kiện hưởng trợ cấp thất nghiệp.",
+  "citations": [
+    "[Điều 74 khoản 1]",
+    "[Điều 74 khoản 2]",
+    "[Điều 74 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A74.K1",
+    "L41_2024.A74.K2",
+    "L41_2024.A74.K3"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conditions,co_duoc_huong_tro_cap_that_nghiep,based_on(source_a74_k1)),step(conditions,co_duoc_huong_tro_cap_that_nghiep,based_on(source_a74_k2)),step(conditions,co_duoc_huong_tro_cap_that_nghiep,based_on(source_a74_k3))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi rằng sau khi nghỉ việc ở công ty cũ cuối tháng 4, đến đầu tháng 5 mới có quyết định nghỉ việc và tờ rời, nhưng cuối tháng 4 đã bắt đầu làm công ty mới (đến cuối tháng 6 mới đóng BHXH), thì bạn có thể xin trợ cấp thất nghiệp trong tháng 5 hoặc tháng 6 không.",
+    "rule": "\"Người lao động được hưởng trợ cấp thất nghiệp khi chấm dứt hợp đồng lao động, đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên trong 24 tháng trước khi chấm dứt hợp đồng, và chưa tìm được việc làm mới.\" (law_bhxh_2024, article_74, clause_1)\n\"Người lao động phải nộp hồ sơ hưởng trợ cấp thất nghiệp trong thời hạn 3 tháng kể từ ngày chấm dứt hợp đồng lao động.\" (law_bhxh_2024, article_74, clause_2)\n\"Người lao động không được hưởng trợ cấp thất nghiệp nếu đã có việc làm mới.\" (law_bhxh_2024, article_74, clause_3)",
+    "application": "Các điều kiện được Prolog truy vấn gồm: Đã chấm dứt hợp đồng lao động với công ty cũ; Đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên trong 24 tháng trước khi nghỉ việc; Nộp hồ sơ hưởng trợ cấp thất nghiệp trong thời hạn 3 tháng kể từ ngày nghỉ việc; Chưa có việc làm mới tại thời điểm nộp hồ sơ. Truy vấn Prolog kiểm tra các điều kiện này dựa trên các nguồn luật đã trích dẫn.",
+    "conclusion": "Prolog trả về các điều kiện cần để được hưởng trợ cấp thất nghiệp: Đã chấm dứt hợp đồng lao động với công ty cũ, Đã đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên trong 24 tháng trước khi nghỉ việc, Nộp hồ sơ hưởng trợ cấp thất nghiệp trong thời hạn 3 tháng kể từ ngày nghỉ việc, Chưa có việc làm mới tại thời điểm nộp hồ sơ. Nếu bạn đã có việc làm mới tại thời điểm nộp hồ sơ, bạn sẽ không đủ điều kiện hưởng trợ cấp thất nghiệp."
+  },
+  "elapsed_s": 8.715,
+  "prompt_tokens": 2585,
+  "completion_tokens": 972,
+  "error": null,
+  "gold_answer": "Bạn chỉ được nộp hồ sơ BHTN trong 03 tháng kể từ ngày chấm dứt HĐLĐ với công ty cũ. Nếu đến tháng 5 hoặc tháng 6 vẫn còn trong hạn 03 tháng và chưa có việc làm thuộc diện phải tham gia BHTN thì có thể nộp. Tuy nhiên nếu cuối tháng 4 đã vào công ty mới và đến thời điểm nộp hồ sơ đã thuộc diện phải tham gia BHTN ở nơi mới thì nguy cơ không đủ điều kiện hưởng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

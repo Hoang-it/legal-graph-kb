@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 84,
+  "question": "Mình muốn đóng bảo hiểm tự nguyện mà bây giờ họ không làm số, vậy có cách nào biết là mình đóng được bao nhiêu thời gian ko?",
+  "answer": "Issue: Bạn muốn biết cách xác định thời gian đã đóng bảo hiểm xã hội tự nguyện khi không có số liệu cụ thể từ cơ quan bảo hiểm.\n\nRule: \"Người tham gia bảo hiểm xã hội tự nguyện có quyền yêu cầu cơ quan bảo hiểm xã hội cung cấp thông tin về thời gian đã đóng bảo hiểm.\" (Luật Bảo hiểm xã hội 2024, Điều 87, Khoản 2)\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong các slot_bindings. Tuy nhiên, theo quy định, người tham gia bảo hiểm xã hội tự nguyện có thể yêu cầu cơ quan bảo hiểm xã hội cung cấp thông tin về thời gian đã đóng bảo hiểm.\n\nConclusion: Người tham gia bảo hiểm xã hội tự nguyện có quyền yêu cầu cơ quan bảo hiểm xã hội cung cấp thông tin về thời gian đã đóng bảo hiểm.",
+  "citations": [
+    "[Điều 87 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A87.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,voluntary_insurance_info(Người tham gia bảo hiểm xã hội tự nguyện có quyền yêu cầu cơ quan bảo hiểm xã hội cung cấp thông tin về thời gian đã đóng bảo hiểm.),based_on(source_a87_k2))]",
+  "irac_sections": {
+    "issue": "Bạn muốn biết cách xác định thời gian đã đóng bảo hiểm xã hội tự nguyện khi không có số liệu cụ thể từ cơ quan bảo hiểm.",
+    "rule": "\"Người tham gia bảo hiểm xã hội tự nguyện có quyền yêu cầu cơ quan bảo hiểm xã hội cung cấp thông tin về thời gian đã đóng bảo hiểm.\" (Luật Bảo hiểm xã hội 2024, Điều 87, Khoản 2)",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong các slot_bindings. Tuy nhiên, theo quy định, người tham gia bảo hiểm xã hội tự nguyện có thể yêu cầu cơ quan bảo hiểm xã hội cung cấp thông tin về thời gian đã đóng bảo hiểm.",
+    "conclusion": "Người tham gia bảo hiểm xã hội tự nguyện có quyền yêu cầu cơ quan bảo hiểm xã hội cung cấp thông tin về thời gian đã đóng bảo hiểm."
+  },
+  "elapsed_s": 7.724,
+  "prompt_tokens": 3225,
+  "completion_tokens": 433,
+  "error": null,
+  "gold_answer": "Hiện việc quản lý BHXH chủ yếu theo mã số và dữ liệu điện tử, nên dù không 'làm số' bằng cách hiểu cũ thì bạn vẫn có thể tra cứu thời gian đã đóng qua VssID, Cổng BHXH Việt Nam hoặc trực tiếp tại cơ quan BHXH. Nếu chưa biết mã số, dùng CCCD/họ tên/ngày sinh để tra cứu. Khi có mã số BHXH, hệ thống sẽ thể hiện thời gian tham gia BHXH tự nguyện đã được ghi nhận.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn tra cứu BHXH điện tử"
+}

@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 46,
+  "question": "Lúc còn huyện cũ thì mình nộp bhxh ở huyện.Còn bây giờ không còn huyện nữa thì mình nộp ở đâu? ở xã hay là hành chính công?",
+  "answer": "Issue: Người hỏi muốn biết nơi nộp bảo hiểm xã hội khi huyện cũ không còn nữa. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 14], cơ quan nhà nước có thẩm quyền sẽ cung cấp thông tin liên quan đến việc thực hiện chính sách bảo hiểm xã hội. \nApplication: Không có slot nào được gán giá trị. Prolog query trả về kết quả là 'nộp tại hành chính công'. \nConclusion: Theo Prolog, bạn nên nộp bảo hiểm xã hội tại hành chính công.",
+  "plain_answer": "Bạn nên nộp bảo hiểm xã hội tại hành chính công. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 14], cơ quan nhà nước có thẩm quyền sẽ hướng dẫn bạn về nơi nộp hồ sơ. Nếu cần thêm thông tin, bạn có thể liên hệ với cơ quan bảo hiểm xã hội địa phương để được hỗ trợ.",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 14]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K14"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,where_to_submit_bhxh(nộp tại hành chính công),based_on(source_c005))]",
+  "prolog_program": "legal_source(source_c005, law_bhxh_2024, article_18, clause_5, none, 'Ứng dụng công nghệ thông tin, thực hiện cải cách thủ tục hành chính bảo đảm công khai, minh bạch, đơn giản, thuận tiện cho người tham gia và người thụ hưởng chế độ bảo hiểm xã hội; lưu trữ hồ sơ của người tham gia và người thụ hưởng chế độ bảo hiểm xã hội, bảo hiểm thất nghiệp theo quy định của pháp luật.').\nwhere_to_submit_bhxh(Answer, Trace) :- Answer = 'nộp tại hành chính công', Trace = [step(conclusion, where_to_submit_bhxh(Answer), based_on(source_c005))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết nơi nộp bảo hiểm xã hội khi huyện cũ không còn nữa.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 14], cơ quan nhà nước có thẩm quyền sẽ cung cấp thông tin liên quan đến việc thực hiện chính sách bảo hiểm xã hội.",
+    "application": "Không có slot nào được gán giá trị. Prolog query trả về kết quả là 'nộp tại hành chính công'.",
+    "conclusion": "Theo Prolog, bạn nên nộp bảo hiểm xã hội tại hành chính công."
+  },
+  "elapsed_s": 19.381,
+  "prompt_tokens": 5122,
+  "completion_tokens": 499,
+  "error": null,
+  "gold_answer": "Sau khi thay đổi mô hình tổ chức hành chính, hồ sơ BHXH thường nộp tại cơ quan BHXH khu vực/cơ quan được phân công tiếp nhận hoặc Trung tâm phục vụ hành chính công, không phải xã nào cũng trực tiếp thu hồ sơ. Bạn nên tra cứu nơi tiếp nhận mới tại địa phương hoặc gọi cơ quan BHXH gần nhất để tránh đi sai nơi. Nguyên tắc là cơ quan BHXH nơi cư trú vẫn có trách nhiệm hướng dẫn, tiếp nhận hoặc chỉ dẫn nơi nộp đúng.",
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 25]"
+}

@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 41,
+  "question": "Em nghỉ việc tại Công ty cũ từ 28/3. Em xin Công ty quyết định nghỉ việc để làm BHTN, nhưng họ báo: \"Chờ tờ rời BHXH từ 45-50 ngày\". Em có hỏi: \"chờ lâu vậy thì sao mà e làm đc BHTN tháng 4,5\" thì họ bảo: \"Thời hạn hưởng BHTN là 3 tháng kể từ ngày nộp đơn\". Em chưa hiểu chỗ này. Vậy là phải sau 3 tháng nghỉ việc e mới đc nộp chứng từ để hưởng BHTN phải ko? Hay là sau nhận và nộp chứng từ em sẽ đc hưởng BHTN từ tháng 4?",
+  "answer": "Issue:\nCâu hỏi đặt ra là người lao động sau khi nghỉ việc có phải chờ đủ 3 tháng mới được nộp hồ sơ hưởng bảo hiểm thất nghiệp (BHTN), hay có thể nộp hồ sơ ngay sau khi nhận đủ giấy tờ hợp lệ và được hưởng BHTN từ thời điểm nào.\n\nRule:\n\"Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng bảo hiểm xã hội một lần, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), Điều 79, Khoản 3)\n\nApplication:\nKhông có slot_id cụ thể nào được ràng buộc trong trường hợp này. Prolog đã sử dụng quy tắc về thời hạn giải quyết hồ sơ bảo hiểm xã hội dựa trên Điều 79, Khoản 3 của Luật BHXH 2024 để xác định thời điểm người lao động được nộp hồ sơ và thời hạn giải quyết.\n\nConclusion:\nNgười lao động được nộp hồ sơ hưởng bảo hiểm thất nghiệp ngay sau khi có đầy đủ giấy tờ hợp lệ, không cần chờ đủ 3 tháng kể từ ngày nghỉ việc. Thời hạn nộp hồ sơ thường là trong vòng 3 tháng kể từ ngày chấm dứt hợp đồng lao động. Khi nộp đủ hồ sơ, cơ quan bảo hiểm xã hội sẽ giải quyết trong thời hạn luật định. (Answer)",
+  "citations": [
+    "[Điều 79 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A79.K3"
+  ],
+  "citation_indices": [
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,bhtn_huong_tu_thoi_diem_nop_ho_so(Người lao động được nộp hồ sơ hưởng bảo hiểm thất nghiệp ngay sau khi có đầy đủ giấy tờ hợp lệ, không cần chờ đủ 3 tháng kể từ ngày nghỉ việc. Thời hạn nộp hồ sơ thường là trong vòng 3 tháng kể từ ngày chấm dứt hợp đồng lao động. Khi nộp đủ hồ sơ, cơ quan bảo hiểm xã hội sẽ giải quyết trong thời hạn luật định.),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là người lao động sau khi nghỉ việc có phải chờ đủ 3 tháng mới được nộp hồ sơ hưởng bảo hiểm thất nghiệp (BHTN), hay có thể nộp hồ sơ ngay sau khi nhận đủ giấy tờ hợp lệ và được hưởng BHTN từ thời điểm nào.",
+    "rule": "\"Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng bảo hiểm xã hội một lần, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), Điều 79, Khoản 3)",
+    "application": "Không có slot_id cụ thể nào được ràng buộc trong trường hợp này. Prolog đã sử dụng quy tắc về thời hạn giải quyết hồ sơ bảo hiểm xã hội dựa trên Điều 79, Khoản 3 của Luật BHXH 2024 để xác định thời điểm người lao động được nộp hồ sơ và thời hạn giải quyết.",
+    "conclusion": "Người lao động được nộp hồ sơ hưởng bảo hiểm thất nghiệp ngay sau khi có đầy đủ giấy tờ hợp lệ, không cần chờ đủ 3 tháng kể từ ngày nghỉ việc. Thời hạn nộp hồ sơ thường là trong vòng 3 tháng kể từ ngày chấm dứt hợp đồng lao động. Khi nộp đủ hồ sơ, cơ quan bảo hiểm xã hội sẽ giải quyết trong thời hạn luật định. (Answer)"
+  },
+  "elapsed_s": 7.691,
+  "prompt_tokens": 3925,
+  "completion_tokens": 739,
+  "error": null,
+  "gold_answer": "Không phải chờ đủ 3 tháng rồi mới nộp hồ sơ BHTN. Đúng luật là bạn phải nộp hồ sơ trong vòng 3 tháng kể từ ngày chấm dứt HĐLĐ. Sau khi nộp đủ hồ sơ, nếu sau 15 ngày chưa có việc làm thì sẽ được giải quyết hưởng trợ cấp thất nghiệp. Vì vậy, bạn nên lấy quyết định nghỉ việc và giấy tờ chốt BHXH sớm để nộp trong hạn, không phải đợi qua 3 tháng.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 49, Điều 50"
+}

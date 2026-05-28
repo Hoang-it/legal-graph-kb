@@ -1,0 +1,35 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 141,
+  "question": "em vừa nghỉ việc tại công ty, mà HR nói là giờ chốt sổ xong ko có tờ rời nữa, h chuyển sang quản lý bằng sổ bhxh điện tử. HR còn cap cho e đoạn trao đổi với bhxh Tây Hồ, cho e hỏi thế h e đi làm bảo hiểm thất nghiệp có đc ko?",
+  "answer": "Issue: Bạn vừa nghỉ việc tại công ty và được thông báo rằng sổ bảo hiểm xã hội (BHXH) sẽ được quản lý bằng sổ điện tử thay vì tờ rời. Bạn muốn biết liệu có thể làm thủ tục bảo hiểm thất nghiệp hay không.\n\nRule: \nLuật BHXH 2024 (41/2024/QH15), Điều 4, Khoản 4 quy định: \"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\"\nLuật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 3 quy định: \"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên các quy định pháp luật được trích dẫn, hệ thống đã xác định rằng bạn đủ điều kiện để hưởng bảo hiểm thất nghiệp. Điều này được xác nhận qua hai bước trong truy vấn Prolog, dựa trên các nguồn luật đã nêu.\n\nConclusion: Bạn đủ điều kiện để làm thủ tục bảo hiểm thất nghiệp, với kết quả truy vấn Prolog cho thấy \"Eligible\" là \"yes\".",
+  "citations": [
+    "[Điều 4 khoản 4]",
+    "[Điều 13 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A4.K4",
+    "L41_2024.A13.K3"
+  ],
+  "citation_indices": [
+    0,
+    7
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_eligibility(yes),based_on(source_c000)),step(conclusion,unemployment_insurance_eligibility(yes),based_on(source_c007))]",
+  "irac_sections": {
+    "issue": "Bạn vừa nghỉ việc tại công ty và được thông báo rằng sổ bảo hiểm xã hội (BHXH) sẽ được quản lý bằng sổ điện tử thay vì tờ rời. Bạn muốn biết liệu có thể làm thủ tục bảo hiểm thất nghiệp hay không.",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), Điều 4, Khoản 4 quy định: \"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\"\nLuật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 3 quy định: \"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên các quy định pháp luật được trích dẫn, hệ thống đã xác định rằng bạn đủ điều kiện để hưởng bảo hiểm thất nghiệp. Điều này được xác nhận qua hai bước trong truy vấn Prolog, dựa trên các nguồn luật đã nêu.",
+    "conclusion": "Bạn đủ điều kiện để làm thủ tục bảo hiểm thất nghiệp, với kết quả truy vấn Prolog cho thấy \"Eligible\" là \"yes\"."
+  },
+  "elapsed_s": 5.926,
+  "prompt_tokens": 2892,
+  "completion_tokens": 546,
+  "error": null,
+  "gold_answer": "Việc HR nói không có tờ rời giấy nữa không đồng nghĩa bạn không làm được BHTN. Nếu dữ liệu BHXH đã chốt trên hệ thống, bạn vẫn có thể làm hồ sơ bằng giấy tờ chấm dứt HĐLĐ và tài liệu/tra cứu thể hiện quá trình đóng theo hướng dẫn của trung tâm dịch vụ việc làm. Tuy nhiên bạn nên xin công ty cung cấp xác nhận chốt sổ hoặc bản in quá trình đóng để tránh bị yêu cầu bổ sung.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

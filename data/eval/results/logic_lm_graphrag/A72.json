@@ -1,0 +1,33 @@
+{
+  "arm": "logic_lm_graphrag",
+  "stt": 72,
+  "question": "Em đóng bảo hiểm trên 12 tháng, nhưng hiện tại đã nghỉ việc. Giờ em dự định có em bé thì có được hưởng thai sản không?",
+  "answer": "Issue: Người dùng đã đóng bảo hiểm trên 12 tháng nhưng hiện tại đã nghỉ việc và muốn biết liệu có được hưởng chế độ thai sản khi có em bé hay không.\n\nRule: \"Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con hoặc nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 06 tháng tuổi thì vẫn được hưởng chế độ thai sản theo quy định tại các điều 53, 54, 55 và 56 và các khoản 1, 2 và 3 Điều 58 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 4)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng người dùng đủ điều kiện hưởng chế độ thai sản dựa trên việc đã đóng bảo hiểm đủ 12 tháng.\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người dùng đủ điều kiện hưởng chế độ thai sản.",
+  "citations": [
+    "[Điều 58]",
+    "[Điều 50 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A58",
+    "L41_2024.A50.K4"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,maternity_leave_eligibility(user,yes),based_on(source_c041))]",
+  "irac_sections": {
+    "issue": "Người dùng đã đóng bảo hiểm trên 12 tháng nhưng hiện tại đã nghỉ việc và muốn biết liệu có được hưởng chế độ thai sản khi có em bé hay không.",
+    "rule": "\"Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con hoặc nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 06 tháng tuổi thì vẫn được hưởng chế độ thai sản theo quy định tại các điều 53, 54, 55 và 56 và các khoản 1, 2 và 3 Điều 58 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 4)",
+    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng người dùng đủ điều kiện hưởng chế độ thai sản dựa trên việc đã đóng bảo hiểm đủ 12 tháng.",
+    "conclusion": "Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người dùng đủ điều kiện hưởng chế độ thai sản."
+  },
+  "elapsed_s": 21.119,
+  "prompt_tokens": 6213,
+  "completion_tokens": 1052,
+  "error": null,
+  "gold_answer": "Nếu hiện tại bạn đã nghỉ việc và sau đó mới mang thai thì thông thường vẫn được hưởng thai sản khi sinh con nếu trong 12 tháng trước sinh bạn đã đóng BHXH bắt buộc đủ số tháng luật yêu cầu. Luật không bắt buộc phải còn làm việc tại thời điểm sinh mới được hưởng, miễn là đã đủ điều kiện trước đó. Vì vậy cần xác định chính xác tháng dự sinh để tính 12 tháng liền kề trước sinh và số tháng đã đóng trong khoảng đó.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50, Điều 53"
+}

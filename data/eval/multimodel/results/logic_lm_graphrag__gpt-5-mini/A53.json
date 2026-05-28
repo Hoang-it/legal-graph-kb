@@ -1,0 +1,45 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 53,
+  "question": "Cty nợ gần 1 năm BH ( mất 6 năm ko chốt) giờ mình đã đi làm cty khác đc 2 năm rồi.\nBây giờ làm thế nào để mình chốt được tờ rời ở công ty cũ?",
+  "answer": "Issue:\nMình muốn biết cách chốt sổ/tờ rời tại công ty cũ khi công ty nợ BH gần 1 năm, mất 6 năm chưa chốt và hiện đã làm công ty khác 2 năm.\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), điều 81 khoản 2: \"Trong thời hạn 10 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15), điều 91 khoản 3: \"Trong thời hạn 10 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15), điều 92 khoản 1: \"Trường hợp nộp hồ sơ quá thời hạn quy định tại khoản 1 và khoản 2 Điều 48, khoản 1 Điều 49, khoản 1 Điều 62, khoản 1 Điều 63, khoản 1 Điều 79, khoản 1 và khoản 2 Điều 91 của Luật này thì phải giải trình bằng văn bản và gửi cho cơ quan bảo hiểm xã hội khi nộp hồ sơ.\"\nLuật BHXH 2024 (41/2024/QH15), điều 141 khoản 12: \"Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30 tháng 6 năm 2025 mà không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.\"\n\nApplication:\nemployer_owed_duration(user) = nearly_one_year (được dùng làm điều kiện đầu vào).\nmissing_years_not_closed(user) = 6 (được dùng làm điều kiện đầu vào).\nemployed_current_company_years(user) = 2 (được dùng làm điều kiện đầu vào).\nCác dữ kiện trên được tiêu thụ bởi quy tắc how_to_close_old_book để tạo danh sách hành động đề xuất.\n\nConclusion:\nActions = \"[Nộp hồ sơ đầy đủ cho cơ quan BHXH nơi công ty cũ để yêu cầu chốt sổ/tờ rời,Yêu cầu cơ quan BHXH giải quyết và trả kết quả theo thời hạn luật định (xem quy định về thời hạn giải quyết),Nếu nộp hồ sơ quá thời hạn, kèm theo văn bản giải trình khi nộp hồ sơ,Trường hợp đơn vị nợ BHXH thì áp dụng quy định xử lý về chậm đóng, trốn đóng; đề nghị cơ quan BHXH/ cơ quan quản lý can thiệp để xử lý khoản nợ của đơn vị]\"",
+  "citations": [
+    "[Điều 48 khoản 1]",
+    "[Điều 49 khoản 1]",
+    "[Điều 62 khoản 1]",
+    "[Điều 63 khoản 1]",
+    "[Điều 79 khoản 1]",
+    "[Điều 91]"
+  ],
+  "citation_ids": [
+    "L41_2024.A48.K1",
+    "L41_2024.A49.K1",
+    "L41_2024.A62.K1",
+    "L41_2024.A63.K1",
+    "L41_2024.A79.K1",
+    "L41_2024.A91"
+  ],
+  "citation_indices": [
+    2,
+    3,
+    6,
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(submit_documents,how_to_close_old_book(user,[Nộp hồ sơ đầy đủ cho cơ quan BHXH nơi công ty cũ để yêu cầu chốt sổ/tờ rời,Yêu cầu cơ quan BHXH giải quyết và trả kết quả theo thời hạn luật định (xem quy định về thời hạn giải quyết),Nếu nộp hồ sơ quá thời hạn, kèm theo văn bản giải trình khi nộp hồ sơ,Trường hợp đơn vị nợ BHXH thì áp dụng quy định xử lý về chậm đóng, trốn đóng; đề nghị cơ quan BHXH/ cơ quan quản lý can thiệp để xử lý khoản nợ của đơn vị]),based_on(source_c002)),step(time_limit_and_reply,how_to_close_old_book(user,[Nộp hồ sơ đầy đủ cho cơ quan BHXH nơi công ty cũ để yêu cầu chốt sổ/tờ rời,Yêu cầu cơ quan BHXH giải quyết và trả kết quả theo thời hạn luật định (xem quy định về thời hạn giải quyết),Nếu nộp hồ sơ quá thời hạn, kèm theo văn bản giải trình khi nộp hồ sơ,Trường hợp đơn vị nợ BHXH thì áp dụng quy định xử lý về chậm đóng, trốn đóng; đề nghị cơ quan BHXH/ cơ quan quản lý can thiệp để xử lý khoản nợ của đơn vị]),based_on(source_c003)),step(late_submission_explanation,how_to_close_old_book(user,[Nộp hồ sơ đầy đủ cho cơ quan BHXH nơi công ty cũ để yêu cầu chốt sổ/tờ rời,Yêu cầu cơ quan BHXH giải quyết và trả kết quả theo thời hạn luật định (xem quy định về thời hạn giải quyết),Nếu nộp hồ sơ quá thời hạn, kèm theo văn bản giải trình khi nộp hồ sơ,Trường hợp đơn vị nợ BHXH thì áp dụng quy định xử lý về chậm đóng, trốn đóng; đề nghị cơ quan BHXH/ cơ quan quản lý can thiệp để xử lý khoản nợ của đơn vị]),based_on(source_c006)),step(employer_obligation_handling,how_to_close_old_book(user,[Nộp hồ sơ đầy đủ cho cơ quan BHXH nơi công ty cũ để yêu cầu chốt sổ/tờ rời,Yêu cầu cơ quan BHXH giải quyết và trả kết quả theo thời hạn luật định (xem quy định về thời hạn giải quyết),Nếu nộp hồ sơ quá thời hạn, kèm theo văn bản giải trình khi nộp hồ sơ,Trường hợp đơn vị nợ BHXH thì áp dụng quy định xử lý về chậm đóng, trốn đóng; đề nghị cơ quan BHXH/ cơ quan quản lý can thiệp để xử lý khoản nợ của đơn vị]),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Mình muốn biết cách chốt sổ/tờ rời tại công ty cũ khi công ty nợ BH gần 1 năm, mất 6 năm chưa chốt và hiện đã làm công ty khác 2 năm.",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), điều 81 khoản 2: \"Trong thời hạn 10 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15), điều 91 khoản 3: \"Trong thời hạn 10 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15), điều 92 khoản 1: \"Trường hợp nộp hồ sơ quá thời hạn quy định tại khoản 1 và khoản 2 Điều 48, khoản 1 Điều 49, khoản 1 Điều 62, khoản 1 Điều 63, khoản 1 Điều 79, khoản 1 và khoản 2 Điều 91 của Luật này thì phải giải trình bằng văn bản và gửi cho cơ quan bảo hiểm xã hội khi nộp hồ sơ.\"\nLuật BHXH 2024 (41/2024/QH15), điều 141 khoản 12: \"Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30 tháng 6 năm 2025 mà không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.\"",
+    "application": "employer_owed_duration(user) = nearly_one_year (được dùng làm điều kiện đầu vào).\nmissing_years_not_closed(user) = 6 (được dùng làm điều kiện đầu vào).\nemployed_current_company_years(user) = 2 (được dùng làm điều kiện đầu vào).\nCác dữ kiện trên được tiêu thụ bởi quy tắc how_to_close_old_book để tạo danh sách hành động đề xuất.",
+    "conclusion": "Actions = \"[Nộp hồ sơ đầy đủ cho cơ quan BHXH nơi công ty cũ để yêu cầu chốt sổ/tờ rời,Yêu cầu cơ quan BHXH giải quyết và trả kết quả theo thời hạn luật định (xem quy định về thời hạn giải quyết),Nếu nộp hồ sơ quá thời hạn, kèm theo văn bản giải trình khi nộp hồ sơ,Trường hợp đơn vị nợ BHXH thì áp dụng quy định xử lý về chậm đóng, trốn đóng; đề nghị cơ quan BHXH/ cơ quan quản lý can thiệp để xử lý khoản nợ của đơn vị]\""
+  },
+  "elapsed_s": 47.737,
+  "prompt_tokens": 5188,
+  "completion_tokens": 5197,
+  "error": null,
+  "gold_answer": "Nếu công ty cũ nợ BHXH gần 1 năm và kéo dài không chốt sổ, bạn cần yêu cầu công ty xác nhận bằng văn bản toàn bộ thời gian đã làm việc, bảng lương, HĐLĐ, quyết định nghỉ việc và chứng cứ bị nợ đóng. Sau đó gửi đơn đến cơ quan BHXH quản lý công ty cũ và Thanh tra có thẩm quyền để yêu cầu truy đóng/chốt sổ đến thời điểm đã đóng thực tế. Thời gian công ty còn nợ sẽ không bị mất nhưng cần xử lý theo thủ tục cưỡng chế hoặc thanh tra.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48; quy định xử lý chậm đóng BHXH"
+}

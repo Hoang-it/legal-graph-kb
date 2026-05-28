@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 71,
+  "question": "Mình đóng bảo hiểm được 20 năm mà chưa tới tuổi lãnh hưu, mình nghỉ làm thì mình có được nhận tiền bảo hiểm thất nghiệp không?",
+  "answer": "Issue: Mình đóng bảo hiểm được 20 năm mà chưa tới tuổi lãnh hưu, mình nghỉ làm thì mình có được nhận tiền bảo hiểm thất nghiệp không?\n\nRule: \"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), article 18, clause 2)\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng người dùng có đủ điều kiện nhận tiền bảo hiểm thất nghiệp dựa trên việc đã đóng bảo hiểm xã hội trong 20 năm.\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người dùng đủ điều kiện nhận tiền bảo hiểm thất nghiệp.",
+  "citations": [
+    "[Điều 18 khoản 7]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K7"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_eligibility(user,yes),based_on(source_c007))]",
+  "irac_sections": {
+    "issue": "Mình đóng bảo hiểm được 20 năm mà chưa tới tuổi lãnh hưu, mình nghỉ làm thì mình có được nhận tiền bảo hiểm thất nghiệp không?",
+    "rule": "\"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), article 18, clause 2)",
+    "application": "Không có slot nào được gán giá trị trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng người dùng có đủ điều kiện nhận tiền bảo hiểm thất nghiệp dựa trên việc đã đóng bảo hiểm xã hội trong 20 năm.",
+    "conclusion": "Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người dùng đủ điều kiện nhận tiền bảo hiểm thất nghiệp."
+  },
+  "elapsed_s": 9.252,
+  "prompt_tokens": 4810,
+  "completion_tokens": 469,
+  "error": null,
+  "gold_answer": "Có. Bảo hiểm thất nghiệp là chế độ riêng, không phụ thuộc việc bạn đã đủ 20 năm BHXH hay chưa. Nếu bạn nghỉ việc đúng quy định, đã đóng BHTN đủ thời gian luật định, nộp hồ sơ trong 3 tháng và sau 15 ngày chưa có việc làm thì vẫn được hưởng trợ cấp thất nghiệp. Bạn chỉ không được hưởng BHXH một lần nếu không thuộc trường hợp luật cho phép, còn BHTN vẫn xem xét riêng theo Luật Việc làm.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 49, Điều 50; Luật BHXH 2024 Điều 70"
+}

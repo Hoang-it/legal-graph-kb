@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 150,
+  "question": "BH thất nghiệp của mình sao lại ít hơn so với BHXH ? Mình làm nhà nước. Đóng BH từ 6/2013 đến 4/2026. Nay mình mở app lên thấy BHTN có 11 năm 9 tháng. Còn BHXH là 12năm 9 tháng ạ",
+  "answer": "Issue: Tại sao thời gian đóng bảo hiểm thất nghiệp (BHTN) của bạn lại ít hơn so với bảo hiểm xã hội (BHXH) mặc dù bạn đã đóng bảo hiểm từ tháng 6/2013 đến tháng 4/2026?\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 6: \"Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\"\n\nApplication: \n- Thời gian đóng BHTN của bạn là 141 tháng.\n- Thời gian đóng BHXH của bạn là 153 tháng.\n- Chương trình Prolog đã tính toán sự khác biệt giữa số năm đóng BHXH và BHTN dựa trên số tháng đóng góp cho mỗi loại bảo hiểm.\n\nConclusion: Sự khác biệt giữa số năm đóng BHXH và BHTN là 1 năm. Điều này có nghĩa là thời gian đóng BHXH của bạn dài hơn thời gian đóng BHTN 1 năm.",
+  "citations": [
+    "[Điều 5 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K6"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,bhtn_vs_bhxh_difference(user,1),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Tại sao thời gian đóng bảo hiểm thất nghiệp (BHTN) của bạn lại ít hơn so với bảo hiểm xã hội (BHXH) mặc dù bạn đã đóng bảo hiểm từ tháng 6/2013 đến tháng 4/2026?",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 6: \"Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\"",
+    "application": "- Thời gian đóng BHTN của bạn là 141 tháng.\n- Thời gian đóng BHXH của bạn là 153 tháng.\n- Chương trình Prolog đã tính toán sự khác biệt giữa số năm đóng BHXH và BHTN dựa trên số tháng đóng góp cho mỗi loại bảo hiểm.",
+    "conclusion": "Sự khác biệt giữa số năm đóng BHXH và BHTN là 1 năm. Điều này có nghĩa là thời gian đóng BHXH của bạn dài hơn thời gian đóng BHTN 1 năm."
+  },
+  "elapsed_s": 6.761,
+  "prompt_tokens": 3280,
+  "completion_tokens": 742,
+  "error": null,
+  "gold_answer": "BHXH và BHTN không phải lúc nào cũng bằng nhau vì có thời gian tham gia BHXH nhưng không thuộc diện đóng BHTN. Ví dụ nhiều lao động khu vực nhà nước, thời gian trước khi thuộc diện BHTN hoặc thời gian không phải đóng BHTN thì chỉ tính BHXH. Do đó BHXH 12 năm 9 tháng nhưng BHTN 11 năm 9 tháng là có thể xảy ra, không phải lỗi nếu có 1 năm không thuộc diện BHTN.",
+  "gold_citations_raw": "Luật BHXH 2024; Luật Việc làm 2013/2025"
+}

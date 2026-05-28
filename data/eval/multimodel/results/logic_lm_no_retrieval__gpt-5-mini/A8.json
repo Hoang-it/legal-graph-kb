@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 8,
+  "question": "Năm 2022, ông Bình Châu (Tây Ninh) có 11 tháng thất nghiệp nhưng chưa hưởng trợ cấp. Tháng 1-7/2024 ông thất nghiệp.\nÔng Châu hỏi, trường hợp của ông có được đăng ký hưởng trợ cấp thất nghiệp không?",
+  "answer": "Issue:\nÔng Bình Châu hỏi liệu trường hợp thất nghiệp nêu (11 tháng năm 2022 chưa hưởng trợ cấp; thất nghiệp tháng 1-7/2024) có được đăng ký hưởng trợ cấp thất nghiệp không.\n\nRule:\n'Quy định chung: để được hưởng trợ cấp thất nghiệp, người lao động phải đóng bảo hiểm thất nghiệp đủ 12 tháng trong 24 tháng trước khi thất nghiệp và đăng ký hưởng trong thời hạn luật định (thường là trong vòng 3 tháng kể từ ngày thất nghiệp).' — law_bhxh_2024, article none, clause none\n\nApplication:\nKhông có slot_bindings. Prolog đã sử dụng các facts kiểm chứng: unemployed_period(user, 2024, 1, 7). và unemployed_months(user, 11, 2022). Các facts này được so khớp với quy tắc unemployment_eligibility(Person, not_eligible_missed_registration, Trace). Kết quả truy vấn tạo Trace: [step(conclusion,unemployment_eligibility(user,not_eligible_missed_registration),based_on(source_unemp_req))].\n\nConclusion:\nAnswer = not_eligible_missed_registration. Prolog trả về nhãn \"not_eligible_missed_registration\" theo biến Answer và trace như trên.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,unemployment_eligibility(user,not_eligible_missed_registration),based_on(source_unemp_req))]",
+  "irac_sections": {
+    "issue": "Ông Bình Châu hỏi liệu trường hợp thất nghiệp nêu (11 tháng năm 2022 chưa hưởng trợ cấp; thất nghiệp tháng 1-7/2024) có được đăng ký hưởng trợ cấp thất nghiệp không.",
+    "rule": "'Quy định chung: để được hưởng trợ cấp thất nghiệp, người lao động phải đóng bảo hiểm thất nghiệp đủ 12 tháng trong 24 tháng trước khi thất nghiệp và đăng ký hưởng trong thời hạn luật định (thường là trong vòng 3 tháng kể từ ngày thất nghiệp).' — law_bhxh_2024, article none, clause none",
+    "application": "Không có slot_bindings. Prolog đã sử dụng các facts kiểm chứng: unemployed_period(user, 2024, 1, 7). và unemployed_months(user, 11, 2022). Các facts này được so khớp với quy tắc unemployment_eligibility(Person, not_eligible_missed_registration, Trace). Kết quả truy vấn tạo Trace: [step(conclusion,unemployment_eligibility(user,not_eligible_missed_registration),based_on(source_unemp_req))].",
+    "conclusion": "Answer = not_eligible_missed_registration. Prolog trả về nhãn \"not_eligible_missed_registration\" theo biến Answer và trace như trên."
+  },
+  "elapsed_s": 127.28,
+  "prompt_tokens": 4015,
+  "completion_tokens": 8523,
+  "error": null,
+  "gold_answer": "Tại Điều 49 Luật Việc làm quy định, người lao động đang đóng bảo hiểm thất nghiệp được hưởng trợ cấp thất nghiệp khi có đủ các điều kiện sau đây:\n- Chấm dứt hợp đồng lao động hoặc hợp đồng làm việc, trừ các trường hợp sau đây:\n+ Người lao động đơn phương chấm dứt hợp đồng lao động, hợp đồng làm việc trái pháp luật;\n+ Hưởng lương hưu, trợ cấp mất sức lao động hằng tháng.\n- Đã đóng bảo hiểm thất nghiệp từ đủ:\n+ 12 tháng trở lên trong thời gian 24 tháng trước khi chấm dứt hợp đồng lao động đối với các trường hợp: hợp đồng lao động có xác định và không xác định thời hạn;\n+ 12 tháng trở lên trong thời gian 36 tháng trước khi chấm dứt hợp đồng lao động đối với các trường hợp: ký hợp đồng lao động theo mùa vụ hoặc theo một công việc nhất định có thời hạn từ đủ 3 tháng đến dưới 12 tháng.\n- Đã nộp hồ sơ hưởng trợ cấp thất nghiệp tại Trung tâm dịch vụ việc làm trong thời hạn 3 tháng kể từ ngày chấm dứt hợp đồng lao động hoặc hợp đồng làm việc.\n- Chưa tìm được việc làm sau 15 ngày, kể từ ngày nộp hồ sơ hưởng bảo hiểm thất nghiệp, trừ các trường hợp sau đây:\n+ Thực hiện nghĩa vụ quân sự, nghĩa vụ công an;\n+ Đi học tập có thời hạn từ đủ 12 tháng trở lên;\n+ Chấp hành quyết định áp dụng biện pháp đưa vào trường giáo dưỡng, cơ sở giáo dục bắt buộc, cơ sở cai nghiện bắt buộc;\n+ Bị tạm giam; chấp hành hình phạt tù;\n+ Ra nước ngoài định cư; đi lao động ở nước ngoài theo hợp đồng;\n+ Chết.\nTại Khoản 1 Điều 45 Luật Việc làm quy định, thời gian đóng bảo hiểm thất nghiệp để xét hưởng bảo hiểm thất nghiệp là tổng các khoảng thời gian đã đóng bảo hiểm thất nghiệp liên tục hoặc không liên tục được cộng dồn từ khi bắt đầu đóng bảo hiểm thất nghiệp cho đến khi người lao động chấm dứt hợp đồng lao động hoặc hợp đồng làm việc theo quy định của pháp luật mà chưa hưởng trợ cấp thất nghiệp.\nBHXH Việt Nam thông tin quy định của chính sách đến ông Châu để ông nắm được và đối chiếu với trường hợp cụ thể của bản thân để xác định quyền lợi về hưởng trợ cấp thất nghiệp của mình.",
+  "gold_citations_raw": "Điều 49 Luật Việc\nKhoản 1 Điều 45 Luật Việc"
+}

@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 15,
+  "question": "Ông Minh Thành (Tuyên Quang) thấy có thông tin, từ ngày 1/7/2025 nếu không đóng BHXH, BHYT sẽ bị truy cứu trách nhiệm hình sự.\nÔng Thành hỏi, thông tin trên có đúng không?",
+  "answer": "Issue: Ông Minh Thành muốn biết liệu thông tin về việc từ ngày 1/7/2025, nếu không đóng bảo hiểm xã hội (BHXH) và bảo hiểm y tế (BHYT) sẽ bị truy cứu trách nhiệm hình sự có đúng không.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 12: \"Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30 tháng 6 năm 2025 mà không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings để áp dụng vào quy tắc này. Tuy nhiên, theo chương trình Prolog được tạo ra, việc không đóng BHXH và BHYT đến ngày 30 tháng 6 năm 2025 sẽ không dẫn đến truy cứu trách nhiệm hình sự mà chỉ bị xử lý theo quy định về chậm đóng, trốn đóng.\n\nConclusion: Theo kết quả từ chương trình Prolog, câu trả lời là \"false\", nghĩa là thông tin về việc bị truy cứu trách nhiệm hình sự nếu không đóng BHXH và BHYT từ ngày 1/7/2025 là không đúng.",
+  "citations": [
+    "[Điều 141 khoản 12]"
+  ],
+  "citation_ids": [
+    "L41_2024.A141.K12"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,criminal_liability_for_non_payment(false),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Ông Minh Thành muốn biết liệu thông tin về việc từ ngày 1/7/2025, nếu không đóng bảo hiểm xã hội (BHXH) và bảo hiểm y tế (BHYT) sẽ bị truy cứu trách nhiệm hình sự có đúng không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 12: \"Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30 tháng 6 năm 2025 mà không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings để áp dụng vào quy tắc này. Tuy nhiên, theo chương trình Prolog được tạo ra, việc không đóng BHXH và BHYT đến ngày 30 tháng 6 năm 2025 sẽ không dẫn đến truy cứu trách nhiệm hình sự mà chỉ bị xử lý theo quy định về chậm đóng, trốn đóng.",
+    "conclusion": "Theo kết quả từ chương trình Prolog, câu trả lời là \"false\", nghĩa là thông tin về việc bị truy cứu trách nhiệm hình sự nếu không đóng BHXH và BHYT từ ngày 1/7/2025 là không đúng."
+  },
+  "elapsed_s": 4.97,
+  "prompt_tokens": 2995,
+  "completion_tokens": 563,
+  "error": null,
+  "gold_answer": "Từ 1/7/2025, theo quy định tại Điều 39 Luật BHXH và Điều 48b Luật BHYT, thực hiện một trong các hành vi sau đây sẽ bị xử phạt vi phạm hành chính về hành vi trốn đóng BHXH, bảo hiểm thất nghiệp (BHTN), BHYT (trừ trường hợp có lý do chính đáng theo quy định của Chính phủ).\n- Không đăng ký hoặc đăng ký không đầy đủ số người phải tham gia BHXH bắt buộc, BHTN sau 60 ngày kể từ ngày hết thời hạn quy định.\n- Không lập danh sách hoặc lập danh sách không đầy đủ số người phải tham gia BHYT sau 60 ngày kể từ ngày hết thời hạn quy định.\n- Đăng ký tiền lương làm căn cứ đóng BHXH bắt buộc, BHTN thấp hơn quy định.\n- Đăng ký tiền lương làm căn cứ đóng BHYT thấp hơn tiền lương quy định.\n- Không đóng hoặc đóng không đầy đủ số tiền đã đăng ký BHXH bắt buộc, BHTN sau 60 ngày kể từ ngày đóng BHXH bắt buộc, BHTN chậm nhất và đã được cơ quan có thẩm quyền đôn đốc.\n- Không đóng hoặc đóng không đầy đủ số tiền đã đăng ký BHYT sau 60 ngày kể từ ngày đóng BHYT chậm nhất và đã được cơ quan có thẩm quyền đôn đốc.\nTheo quy định tại Điều 216 Bộ luật Hình sự:\n\"Điều 216. Tội trốn đóng bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp cho người lao động\n1. Người nào có nghĩa vụ đóng bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp cho người lao động mà gian dối hoặc bằng thủ đoạn khác để không đóng hoặc không đóng đầy đủ theo quy định từ 06 tháng trở lên thuộc một trong những trường hợp sau đây, đã bị xử phạt vi phạm hành chính về hành vi này mà còn vi phạm, thì bị phạt tiền từ 50.000.000 đồng đến 200.000.000 đồng, phạt cải tạo không giam giữ đến 01 năm hoặc phạt tù từ 03 tháng đến 01 năm:\na) Trốn đóng bảo hiểm từ 50.000.000 đồng đến dưới 300.000.000 đồng;\nb) Trốn đóng bảo hiểm cho từ 10 người đến dưới 50 người lao động.\n2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tiền từ 200.000.000 đồng đến 500.000.000 đồng hoặc phạt tù từ 06 tháng đến 03 năm:\na) Phạm tội 02 lần trở lên;\nb) Trốn đóng bảo hiểm từ 300.000.000 đồng đến dưới 1.000.000.000 đồng;\nc) Trốn đóng bảo hiểm cho từ 50 người đến dưới 200 người lao động;\nd) Không đóng số tiền bảo hiểm đã thu hoặc đã khấu trừ của người lao động quy định tại điểm a hoặc điểm b khoản 1 Điều này.\n3. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tiền từ 500.000.000 đồng đến 1.000.000.000 đồng hoặc bị phạt tù từ 02 năm đến 07 năm:\na) Trốn đóng bảo hiểm 1.000.000.000 đồng trở lên;\nb) Trốn đóng bảo hiểm cho 200 người lao động trở lên;\nc) Không đóng số tiền bảo hiểm đã thu hoặc đã khấu trừ của người lao động quy định tại điểm b hoặc điểm c khoản 2 Điều này.\n4. Người phạm tội còn có thể bị phạt tiền từ 20.000.000 đồng đến 100.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm.\n5. Pháp nhân thương mại phạm tội quy định tại Điều này, thì bị phạt như sau:\na) Phạm tội thuộc trường hợp quy định tại khoản 1 Điều này, thì bị phạt tiền từ 200.000.000 đồng đến 500.000.000 đồng;\nb) Phạm tội thuộc trường hợp quy định tại khoản 2 Điều này, thì bị phạt tiền từ 500.000.000 đồng đến 1.000.000.000 đồng;\nc) Phạm tội thuộc trường hợp quy định tại khoản 3 Điều này, thì bị phạt tiền từ 1.000.000.000 đồng đến 3.000.000.000 đồng\".\nNhư vậy, sau khi bị xử phạt vi phạm hành chính về hành vi trốn đóng BHXH, BHTN, BHYT nếu có gian dối hoặc bằng thủ đoạn khác để không đóng hoặc không đóng đầy đủ BHXH, BHTN, BHYT theo quy định từ 06 tháng trở lên sẽ bị xem xét xử lý hình sự.",
+  "gold_citations_raw": "Điều 39 Luật BHXH và Điều 48b Luật BHYT"
+}

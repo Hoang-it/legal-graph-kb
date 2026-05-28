@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 133,
+  "question": "Làm sao để đăng ký Bhxh không hướng lượng cho chủ doanh nghiệp?",
+  "answer": "Issue:\nLàm sao để đăng ký bảo hiểm xã hội (BHXH) không hưởng lương cho chủ doanh nghiệp?\n\nRule:\n\"Hỗ trợ người tham gia bảo hiểm xã hội tự nguyện.\" (Luật BHXH 2024 (41/2024/QH15), Điều 6, Khoản 5)\n\nApplication:\nKhông có slot_id cụ thể nào được cung cấp trong truy vấn này. Theo kết quả Prolog, các điều kiện để chủ doanh nghiệp đăng ký BHXH không hưởng lương (tức là tham gia BHXH tự nguyện) bao gồm: enterprise_owner_can_participate_voluntarily (chủ doanh nghiệp có thể tham gia tự nguyện), must_prepare_application (cần chuẩn bị hồ sơ đăng ký), submit_to_social_insurance_agency (nộp hồ sơ cho cơ quan BHXH), receive_support_as_per_law (được hưởng hỗ trợ theo quy định pháp luật). Các điều kiện này được truy xuất dựa trên nguồn luật đã dẫn.\n\nConclusion:\nCác bước để chủ doanh nghiệp đăng ký BHXH không hưởng lương là: có quyền tham gia tự nguyện, chuẩn bị hồ sơ, nộp cho cơ quan BHXH và được hưởng hỗ trợ theo quy định. (Conditions = [enterprise_owner_can_participate_voluntarily, must_prepare_application, submit_to_social_insurance_agency, receive_support_as_per_law])",
+  "citations": [
+    "[Điều 6 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A6.K5"
+  ],
+  "citation_indices": [
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,register_voluntary_social_insurance_for_enterprise_owner([enterprise_owner_can_participate_voluntarily,must_prepare_application,submit_to_social_insurance_agency,receive_support_as_per_law]),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Làm sao để đăng ký bảo hiểm xã hội (BHXH) không hưởng lương cho chủ doanh nghiệp?",
+    "rule": "\"Hỗ trợ người tham gia bảo hiểm xã hội tự nguyện.\" (Luật BHXH 2024 (41/2024/QH15), Điều 6, Khoản 5)",
+    "application": "Không có slot_id cụ thể nào được cung cấp trong truy vấn này. Theo kết quả Prolog, các điều kiện để chủ doanh nghiệp đăng ký BHXH không hưởng lương (tức là tham gia BHXH tự nguyện) bao gồm: enterprise_owner_can_participate_voluntarily (chủ doanh nghiệp có thể tham gia tự nguyện), must_prepare_application (cần chuẩn bị hồ sơ đăng ký), submit_to_social_insurance_agency (nộp hồ sơ cho cơ quan BHXH), receive_support_as_per_law (được hưởng hỗ trợ theo quy định pháp luật). Các điều kiện này được truy xuất dựa trên nguồn luật đã dẫn.",
+    "conclusion": "Các bước để chủ doanh nghiệp đăng ký BHXH không hưởng lương là: có quyền tham gia tự nguyện, chuẩn bị hồ sơ, nộp cho cơ quan BHXH và được hưởng hỗ trợ theo quy định. (Conditions = [enterprise_owner_can_participate_voluntarily, must_prepare_application, submit_to_social_insurance_agency, receive_support_as_per_law])"
+  },
+  "elapsed_s": 6.548,
+  "prompt_tokens": 2465,
+  "completion_tokens": 493,
+  "error": null,
+  "gold_answer": "Nếu bạn là chủ doanh nghiệp/chủ hộ thuộc diện tham gia BHXH bắt buộc theo quy định mới thì phải đăng ký tham gia tại cơ quan BHXH qua đơn vị hoặc mã đơn vị của doanh nghiệp/hộ kinh doanh. Khái niệm 'không hưởng lương' chỉ ảnh hưởng căn cứ đóng ở từng nhóm đối tượng, không phải ai cũng được tự chọn không tham gia. Bạn nên đối chiếu đúng loại hình doanh nghiệp và chức danh quản lý của mình.",
+  "gold_citations_raw": "Điều 2 Luật BHXH 2024; Nghị định 158/2025/NĐ-CP"
+}

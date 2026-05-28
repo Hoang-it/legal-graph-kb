@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 73,
+  "question": "Mình nghỉ việc mà công ty không in tờ rời bhxh cho mình , giờ mình liên hệ với ai để nhận tờ rời?",
+  "answer": "Issue:\nNgười lao động nghỉ việc nhưng công ty không in tờ rời bảo hiểm xã hội (BHXH), vậy cần liên hệ với ai để nhận tờ rời BHXH?\n\nRule:\n\"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), Điều 28, Khoản 4)\n\nApplication:\nKhông có slot nào được cung cấp từ người dùng. Theo quy định tại Điều 28 Khoản 4 Luật BHXH 2024, Prolog đã xác định cơ quan liên hệ để nhận tờ rời BHXH là \"co_quan_bao_hiem_xa_hoi\" dựa trên nguồn luật đã trích dẫn.\n\nConclusion:\nBạn cần liên hệ với cơ quan bảo hiểm xã hội để nhận tờ rời BHXH (CoQuanLienHe = co_quan_bao_hiem_xa_hoi).",
+  "citations": [
+    "[Điều 28 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A28.K4"
+  ],
+  "citation_indices": [
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,lien_he_nhan_to_roi_bhxh(co_quan_bao_hiem_xa_hoi),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Người lao động nghỉ việc nhưng công ty không in tờ rời bảo hiểm xã hội (BHXH), vậy cần liên hệ với ai để nhận tờ rời BHXH?",
+    "rule": "\"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), Điều 28, Khoản 4)",
+    "application": "Không có slot nào được cung cấp từ người dùng. Theo quy định tại Điều 28 Khoản 4 Luật BHXH 2024, Prolog đã xác định cơ quan liên hệ để nhận tờ rời BHXH là \"co_quan_bao_hiem_xa_hoi\" dựa trên nguồn luật đã trích dẫn.",
+    "conclusion": "Bạn cần liên hệ với cơ quan bảo hiểm xã hội để nhận tờ rời BHXH (CoQuanLienHe = co_quan_bao_hiem_xa_hoi)."
+  },
+  "elapsed_s": 6.399,
+  "prompt_tokens": 2826,
+  "completion_tokens": 482,
+  "error": null,
+  "gold_answer": "Bạn nên liên hệ trước hết với công ty cũ bằng văn bản yêu cầu trả tờ rời/sổ BHXH. Nếu công ty không thực hiện, liên hệ cơ quan BHXH nơi công ty đóng BHXH hoặc cơ quan BHXH nơi bạn cư trú để được hướng dẫn cấp lại/xác nhận quá trình tham gia. Doanh nghiệp có trách nhiệm phối hợp xác nhận thời gian đóng và trả giấy tờ cho người lao động khi chấm dứt HĐLĐ, nên việc giữ hoặc không in trả là không đúng quy định.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48"
+}

@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 122,
+  "question": "E nghỉ từ tháng 6 năm ngoái thì bây giờ có đi làm bảo hiểm thất nghiệp đc không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu nghỉ việc từ tháng 6 năm ngoái thì hiện tại có thể đi làm thủ tục hưởng bảo hiểm thất nghiệp được không?\n\nRule:\n\"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\" (Luật BHXH 2024 (41/2024/QH15), Điều 4, Khoản 4)\n\nApplication:\nKhông có slot_id nào được cung cấp trong truy vấn này. Hệ thống Prolog đã sử dụng quy định tại Điều 4, Khoản 4 của Luật BHXH 2024 để xác định rằng việc hưởng bảo hiểm thất nghiệp phải tuân theo các quy định của Luật Việc làm.\n\nConclusion:\nHệ thống kết luận: \"Bảo hiểm thất nghiệp được thực hiện theo quy định của Luật Việc làm.\" (Regulation). Để biết chính xác bạn còn đủ điều kiện làm thủ tục bảo hiểm thất nghiệp hay không, cần đối chiếu thêm với các điều kiện cụ thể tại Luật Việc làm.",
+  "citations": [
+    "[Điều 4 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A4.K4"
+  ],
+  "citation_indices": [
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_regulation(Bảo hiểm thất nghiệp được thực hiện theo quy định của Luật Việc làm.),based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu nghỉ việc từ tháng 6 năm ngoái thì hiện tại có thể đi làm thủ tục hưởng bảo hiểm thất nghiệp được không?",
+    "rule": "\"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\" (Luật BHXH 2024 (41/2024/QH15), Điều 4, Khoản 4)",
+    "application": "Không có slot_id nào được cung cấp trong truy vấn này. Hệ thống Prolog đã sử dụng quy định tại Điều 4, Khoản 4 của Luật BHXH 2024 để xác định rằng việc hưởng bảo hiểm thất nghiệp phải tuân theo các quy định của Luật Việc làm.",
+    "conclusion": "Hệ thống kết luận: \"Bảo hiểm thất nghiệp được thực hiện theo quy định của Luật Việc làm.\" (Regulation). Để biết chính xác bạn còn đủ điều kiện làm thủ tục bảo hiểm thất nghiệp hay không, cần đối chiếu thêm với các điều kiện cụ thể tại Luật Việc làm."
+  },
+  "elapsed_s": 7.433,
+  "prompt_tokens": 2780,
+  "completion_tokens": 391,
+  "error": null,
+  "gold_answer": "Nếu bạn nghỉ từ tháng 6 năm ngoái mà đến nay mới đi làm BHTN thì thường đã quá thời hạn nộp hồ sơ 03 tháng kể từ ngày chấm dứt HĐLĐ, nên không còn được giải quyết cho đợt nghỉ việc đó. Thời gian đã đóng BHTN nhưng chưa hưởng sẽ được bảo lưu để tính cho lần thất nghiệp sau, nếu sau này bạn đi làm lại và tiếp tục tham gia BHTN.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 41,
+  "question": "Em nghỉ việc tại Công ty cũ từ 28/3. Em xin Công ty quyết định nghỉ việc để làm BHTN, nhưng họ báo: \"Chờ tờ rời BHXH từ 45-50 ngày\". Em có hỏi: \"chờ lâu vậy thì sao mà e làm đc BHTN tháng 4,5\" thì họ bảo: \"Thời hạn hưởng BHTN là 3 tháng kể từ ngày nộp đơn\". Em chưa hiểu chỗ này. Vậy là phải sau 3 tháng nghỉ việc e mới đc nộp chứng từ để hưởng BHTN phải ko? Hay là sau nhận và nộp chứng từ em sẽ đc hưởng BHTN từ tháng 4?",
+  "answer": "Issue: Bạn đã nghỉ việc từ ngày 28/3 và đang thắc mắc về thời hạn nộp hồ sơ để hưởng bảo hiểm thất nghiệp (BHTN). Bạn muốn biết liệu có phải chờ 3 tháng sau khi nghỉ việc mới được nộp hồ sơ hay không, hoặc sau khi nhận và nộp chứng từ thì có thể hưởng BHTN từ tháng 4.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 107, Khoản 3: \"Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng bảo hiểm xã hội một lần, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\n\nApplication: Không có thông tin cụ thể về các giá trị đầu vào như ngày nộp hồ sơ hay ngày nhận chứng từ. Tuy nhiên, theo kết quả từ Prolog, có hai điều kiện cần xem xét: nộp đơn trong vòng 3 tháng kể từ khi mất việc và thời gian xử lý là 7 ngày sau khi nhận đủ hồ sơ.\n\nConclusion: Hệ thống đã xác định rằng bạn cần nộp đơn yêu cầu hưởng BHTN trong vòng 3 tháng kể từ khi mất việc. Sau khi nộp đủ hồ sơ, cơ quan bảo hiểm xã hội sẽ xử lý trong vòng 7 ngày làm việc. Điều này có nghĩa là bạn không cần chờ 3 tháng sau khi nghỉ việc để nộp hồ sơ, mà có thể nộp ngay khi có đủ chứng từ cần thiết.",
+  "citations": [
+    "[Điều 107 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A107.K3"
+  ],
+  "citation_indices": [
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_claim_period([claim_within_3_months_of_job_loss,processing_time_7_days_after_receiving_documents]),based_on(source_c107))]",
+  "irac_sections": {
+    "issue": "Bạn đã nghỉ việc từ ngày 28/3 và đang thắc mắc về thời hạn nộp hồ sơ để hưởng bảo hiểm thất nghiệp (BHTN). Bạn muốn biết liệu có phải chờ 3 tháng sau khi nghỉ việc mới được nộp hồ sơ hay không, hoặc sau khi nhận và nộp chứng từ thì có thể hưởng BHTN từ tháng 4.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 107, Khoản 3: \"Trong thời hạn 20 ngày, không bao gồm ngày nghỉ lễ, tết, kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng lương hưu hoặc trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng bảo hiểm xã hội một lần, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"",
+    "application": "Không có thông tin cụ thể về các giá trị đầu vào như ngày nộp hồ sơ hay ngày nhận chứng từ. Tuy nhiên, theo kết quả từ Prolog, có hai điều kiện cần xem xét: nộp đơn trong vòng 3 tháng kể từ khi mất việc và thời gian xử lý là 7 ngày sau khi nhận đủ hồ sơ.",
+    "conclusion": "Hệ thống đã xác định rằng bạn cần nộp đơn yêu cầu hưởng BHTN trong vòng 3 tháng kể từ khi mất việc. Sau khi nộp đủ hồ sơ, cơ quan bảo hiểm xã hội sẽ xử lý trong vòng 7 ngày làm việc. Điều này có nghĩa là bạn không cần chờ 3 tháng sau khi nghỉ việc để nộp hồ sơ, mà có thể nộp ngay khi có đủ chứng từ cần thiết."
+  },
+  "elapsed_s": 8.341,
+  "prompt_tokens": 3591,
+  "completion_tokens": 647,
+  "error": null,
+  "gold_answer": "Không phải chờ đủ 3 tháng rồi mới nộp hồ sơ BHTN. Đúng luật là bạn phải nộp hồ sơ trong vòng 3 tháng kể từ ngày chấm dứt HĐLĐ. Sau khi nộp đủ hồ sơ, nếu sau 15 ngày chưa có việc làm thì sẽ được giải quyết hưởng trợ cấp thất nghiệp. Vì vậy, bạn nên lấy quyết định nghỉ việc và giấy tờ chốt BHXH sớm để nộp trong hạn, không phải đợi qua 3 tháng.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 49, Điều 50"
+}

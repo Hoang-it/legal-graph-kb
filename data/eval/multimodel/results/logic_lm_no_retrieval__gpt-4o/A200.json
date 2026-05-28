@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 200,
+  "question": "E tham gia BHXH được 21 năm và có qđ nghỉ việc cuối tháng 6, tuy nhiên từ lúc nghỉ đến nay e không có làm việc j để tham gia bh tiếp tục (gần 10 tháng) như vậy cho e hỏi e muốn rút BHXH 1 lần có được không, mong được phản hồi ạ",
+  "answer": "Issue: Bạn đã tham gia bảo hiểm xã hội (BHXH) được 21 năm và đã nghỉ việc từ cuối tháng 6. Từ khi nghỉ việc đến nay, bạn không tham gia BHXH tiếp tục trong khoảng 10 tháng. Bạn muốn biết liệu có thể rút BHXH một lần hay không.\n\nRule: Theo quy định tại Điều 60, Khoản 1 của Luật BHXH 2024: \"Người lao động có thể rút BHXH 1 lần nếu không tiếp tục tham gia BHXH sau 12 tháng nghỉ việc.\"\n\nApplication: \n- Số năm đã đóng BHXH: 21 năm.\n- Số tháng không tham gia BHXH kể từ khi nghỉ việc: 10 tháng.\n- Theo quy định, để đủ điều kiện rút BHXH một lần, người lao động phải không tham gia BHXH trong ít nhất 12 tháng sau khi nghỉ việc. Trong trường hợp này, bạn mới chỉ không tham gia BHXH trong 10 tháng.\n\nConclusion: Theo kết quả từ hệ thống, bạn không đủ điều kiện để rút BHXH một lần tại thời điểm này vì bạn chưa đủ 12 tháng không tham gia BHXH sau khi nghỉ việc.",
+  "citations": [
+    "[Điều 60 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,eligible_for_one_time_withdrawal(user,no),based_on(source_a60_k1))]",
+  "irac_sections": {
+    "issue": "Bạn đã tham gia bảo hiểm xã hội (BHXH) được 21 năm và đã nghỉ việc từ cuối tháng 6. Từ khi nghỉ việc đến nay, bạn không tham gia BHXH tiếp tục trong khoảng 10 tháng. Bạn muốn biết liệu có thể rút BHXH một lần hay không.",
+    "rule": "Theo quy định tại Điều 60, Khoản 1 của Luật BHXH 2024: \"Người lao động có thể rút BHXH 1 lần nếu không tiếp tục tham gia BHXH sau 12 tháng nghỉ việc.\"",
+    "application": "- Số năm đã đóng BHXH: 21 năm.\n- Số tháng không tham gia BHXH kể từ khi nghỉ việc: 10 tháng.\n- Theo quy định, để đủ điều kiện rút BHXH một lần, người lao động phải không tham gia BHXH trong ít nhất 12 tháng sau khi nghỉ việc. Trong trường hợp này, bạn mới chỉ không tham gia BHXH trong 10 tháng.",
+    "conclusion": "Theo kết quả từ hệ thống, bạn không đủ điều kiện để rút BHXH một lần tại thời điểm này vì bạn chưa đủ 12 tháng không tham gia BHXH sau khi nghỉ việc."
+  },
+  "elapsed_s": 5.346,
+  "prompt_tokens": 2185,
+  "completion_tokens": 606,
+  "error": null,
+  "gold_answer": "Bạn đã tham gia BHXH 21 năm và mới nghỉ gần 10 tháng thì chưa đủ điều kiện thông thường để xem xét BHXH 1 lần theo mốc 12 tháng không tham gia. Hơn nữa, từ 01/7/2025 nhiều trường hợp có từ đủ 15 năm đóng trở lên sẽ hướng tới chế độ lương hưu khi đủ tuổi, nên càng cần cân nhắc. Sau khi đủ 12 tháng ngừng tham gia, bạn mới nên đối chiếu lại điều kiện cụ thể với cơ quan BHXH.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

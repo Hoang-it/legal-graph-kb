@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 73,
+  "question": "Mình nghỉ việc mà công ty không in tờ rời bhxh cho mình , giờ mình liên hệ với ai để nhận tờ rời?",
+  "answer": "Issue:\nMình nghỉ việc mà công ty không in tờ rời BHXH cho mình, giờ mình liên hệ với ai để nhận tờ rời?\n\nRule:\nKhông có trích dẫn pháp luật được cung cấp trong dữ liệu truy vấn.\n\nApplication:\nslot_bindings: không có giá trị được cung cấp.\nTruy vấn Prolog who_to_contact_for_toroi(Answer, Trace) không dùng slot ngoài; kết quả trả về như trong execution_result:\nAnswer = \"[Liên hệ công ty (phòng nhân sự/ kế toán) để yêu cầu cấp/tra tờ rời hoặc sổ BHXH,Nếu công ty không hợp tác, liên hệ cơ quan Bảo hiểm Xã hội nơi công ty đóng BHXH để được hỗ trợ và yêu cầu giải quyết,Nếu vẫn không được giải quyết, gửi khiếu nại tới Thanh tra Lao động hoặc Sở Lao động - Thương binh và Xã hội cấp tỉnh/TP để nhờ can thiệp]\"\nTrace = \"[step(contact_company,Yêu cầu trực tiếp công ty (phòng nhân sự/kế toán),based_on(none)),step(contact_bhx,Liên hệ cơ quan BHXH nơi công ty đóng để yêu cầu hỗ trợ,based_on(none)),step(escalate,Khiếu nại tới Thanh tra Lao động / Sở LĐTBXH nếu cần,based_on(none))]\"\n\nConclusion:\nProlog trả Answer (biến answer) với giá trị:\n[Liên hệ công ty (phòng nhân sự/ kế toán) để yêu cầu cấp/tra tờ rời hoặc sổ BHXH,Nếu công ty không hợp tác, liên hệ cơ quan Bảo hiểm Xã hội nơi công ty đóng BHXH để được hỗ trợ và yêu cầu giải quyết,Nếu vẫn không được giải quyết, gửi khiếu nại tới Thanh tra Lao động hoặc Sở Lao động - Thương binh và Xã hội cấp tỉnh/TP để nhờ can thiệp]\n(Trace như trên).",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(contact_company,Yêu cầu trực tiếp công ty (phòng nhân sự/kế toán),based_on(none)),step(contact_bhx,Liên hệ cơ quan BHXH nơi công ty đóng để yêu cầu hỗ trợ,based_on(none)),step(escalate,Khiếu nại tới Thanh tra Lao động / Sở LĐTBXH nếu cần,based_on(none))]",
+  "irac_sections": {
+    "issue": "Mình nghỉ việc mà công ty không in tờ rời BHXH cho mình, giờ mình liên hệ với ai để nhận tờ rời?",
+    "rule": "Không có trích dẫn pháp luật được cung cấp trong dữ liệu truy vấn.",
+    "application": "slot_bindings: không có giá trị được cung cấp.\nTruy vấn Prolog who_to_contact_for_toroi(Answer, Trace) không dùng slot ngoài; kết quả trả về như trong execution_result:\nAnswer = \"[Liên hệ công ty (phòng nhân sự/ kế toán) để yêu cầu cấp/tra tờ rời hoặc sổ BHXH,Nếu công ty không hợp tác, liên hệ cơ quan Bảo hiểm Xã hội nơi công ty đóng BHXH để được hỗ trợ và yêu cầu giải quyết,Nếu vẫn không được giải quyết, gửi khiếu nại tới Thanh tra Lao động hoặc Sở Lao động - Thương binh và Xã hội cấp tỉnh/TP để nhờ can thiệp]\"\nTrace = \"[step(contact_company,Yêu cầu trực tiếp công ty (phòng nhân sự/kế toán),based_on(none)),step(contact_bhx,Liên hệ cơ quan BHXH nơi công ty đóng để yêu cầu hỗ trợ,based_on(none)),step(escalate,Khiếu nại tới Thanh tra Lao động / Sở LĐTBXH nếu cần,based_on(none))]\"",
+    "conclusion": "Prolog trả Answer (biến answer) với giá trị:\n[Liên hệ công ty (phòng nhân sự/ kế toán) để yêu cầu cấp/tra tờ rời hoặc sổ BHXH,Nếu công ty không hợp tác, liên hệ cơ quan Bảo hiểm Xã hội nơi công ty đóng BHXH để được hỗ trợ và yêu cầu giải quyết,Nếu vẫn không được giải quyết, gửi khiếu nại tới Thanh tra Lao động hoặc Sở Lao động - Thương binh và Xã hội cấp tỉnh/TP để nhờ can thiệp]\n(Trace như trên)."
+  },
+  "elapsed_s": 35.962,
+  "prompt_tokens": 2287,
+  "completion_tokens": 3928,
+  "error": null,
+  "gold_answer": "Bạn nên liên hệ trước hết với công ty cũ bằng văn bản yêu cầu trả tờ rời/sổ BHXH. Nếu công ty không thực hiện, liên hệ cơ quan BHXH nơi công ty đóng BHXH hoặc cơ quan BHXH nơi bạn cư trú để được hướng dẫn cấp lại/xác nhận quá trình tham gia. Doanh nghiệp có trách nhiệm phối hợp xác nhận thời gian đóng và trả giấy tờ cho người lao động khi chấm dứt HĐLĐ, nên việc giữ hoặc không in trả là không đúng quy định.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48"
+}

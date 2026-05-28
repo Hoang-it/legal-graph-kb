@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 71,
+  "question": "Mình đóng bảo hiểm được 20 năm mà chưa tới tuổi lãnh hưu, mình nghỉ làm thì mình có được nhận tiền bảo hiểm thất nghiệp không?",
+  "answer": "Issue:\nMình đóng bảo hiểm 20 năm nhưng chưa tới tuổi hưu và đã nghỉ làm; câu hỏi là có được hưởng trợ cấp thất nghiệp hay không.\n\nRule:\n\"Điều kiện hưởng trợ cấp thất nghiệp thường bao gồm: đã đóng đủ thời gian bảo hiểm thất nghiệp (thường là ít nhất 12 tháng trong 24 tháng trước khi thất nghiệp) và đang ở trạng thái thất nghiệp do chấm dứt hợp đồng hoặc bị sa thải; tự ý nghỉ việc thông thường không được hưởng trợ cấp).\" (law_bhxh_2024, article none, clause none)\n\nApplication:\nslot_bindings: none.\nCác fact/biến được Prolog dùng (từ verify_facts): years_contributed(user, 20); resigned(user); not_reached_retirement(user).\nCách Prolog tiêu thụ chúng: Prolog khớp resigned(user) với quy tắc không được hưởng vì tự ý nghỉ việc và chọn nhánh trả lời tương ứng; years_contributed(user, 20) và not_reached_retirement(user) có mặt nhưng quy tắc về \"resigned\" đã cho kết luận trước. Trace trả về: [step(conclusion,not_eligible_voluntary_resignation(user),based_on(source_unemp_conditions))].\n\nConclusion:\nAnswer = no(reason_voluntary_resignation). Prolog đưa ra kết luận cuối cùng là không được hưởng trợ cấp thất nghiệp vì tự ý nghỉ việc (binding Answer = no(reason_voluntary_resignation)).",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,not_eligible_voluntary_resignation(user),based_on(source_unemp_conditions))]",
+  "irac_sections": {
+    "issue": "Mình đóng bảo hiểm 20 năm nhưng chưa tới tuổi hưu và đã nghỉ làm; câu hỏi là có được hưởng trợ cấp thất nghiệp hay không.",
+    "rule": "\"Điều kiện hưởng trợ cấp thất nghiệp thường bao gồm: đã đóng đủ thời gian bảo hiểm thất nghiệp (thường là ít nhất 12 tháng trong 24 tháng trước khi thất nghiệp) và đang ở trạng thái thất nghiệp do chấm dứt hợp đồng hoặc bị sa thải; tự ý nghỉ việc thông thường không được hưởng trợ cấp).\" (law_bhxh_2024, article none, clause none)",
+    "application": "slot_bindings: none.\nCác fact/biến được Prolog dùng (từ verify_facts): years_contributed(user, 20); resigned(user); not_reached_retirement(user).\nCách Prolog tiêu thụ chúng: Prolog khớp resigned(user) với quy tắc không được hưởng vì tự ý nghỉ việc và chọn nhánh trả lời tương ứng; years_contributed(user, 20) và not_reached_retirement(user) có mặt nhưng quy tắc về \"resigned\" đã cho kết luận trước. Trace trả về: [step(conclusion,not_eligible_voluntary_resignation(user),based_on(source_unemp_conditions))].",
+    "conclusion": "Answer = no(reason_voluntary_resignation). Prolog đưa ra kết luận cuối cùng là không được hưởng trợ cấp thất nghiệp vì tự ý nghỉ việc (binding Answer = no(reason_voluntary_resignation))."
+  },
+  "elapsed_s": 54.294,
+  "prompt_tokens": 2162,
+  "completion_tokens": 5664,
+  "error": null,
+  "gold_answer": "Có. Bảo hiểm thất nghiệp là chế độ riêng, không phụ thuộc việc bạn đã đủ 20 năm BHXH hay chưa. Nếu bạn nghỉ việc đúng quy định, đã đóng BHTN đủ thời gian luật định, nộp hồ sơ trong 3 tháng và sau 15 ngày chưa có việc làm thì vẫn được hưởng trợ cấp thất nghiệp. Bạn chỉ không được hưởng BHXH một lần nếu không thuộc trường hợp luật cho phép, còn BHTN vẫn xem xét riêng theo Luật Việc làm.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 49, Điều 50; Luật BHXH 2024 Điều 70"
+}

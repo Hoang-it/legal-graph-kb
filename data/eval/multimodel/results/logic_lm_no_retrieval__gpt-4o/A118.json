@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 118,
+  "question": "Nếu mà tham gia bảo hiểm được 9 năm rồi giờ rút về thì được bao nhiêu?",
+  "answer": "Issue: Người lao động đã tham gia bảo hiểm xã hội được 9 năm và muốn biết số tiền có thể nhận được nếu rút bảo hiểm xã hội một lần.\n\nRule: \nTheo Điều 60, Khoản 1 của Luật Bảo hiểm xã hội 2024: \"Người lao động có thể nhận bảo hiểm xã hội một lần nếu có thời gian đóng BHXH dưới 20 năm và không tiếp tục tham gia.\"\nTheo Điều 60, Khoản 2 của Luật Bảo hiểm xã hội 2024: \"Mức hưởng bảo hiểm xã hội một lần được tính bằng 1,5 tháng mức bình quân tiền lương tháng đóng BHXH cho mỗi năm đóng trước năm 2014 và 2 tháng cho mỗi năm đóng từ năm 2014 trở đi.\"\n\nApplication: \nKhông có giá trị cụ thể nào được cung cấp cho các slot, nhưng hệ thống đã xác định rằng người dùng đã đóng bảo hiểm xã hội được 9 năm. Theo quy tắc được áp dụng, số tiền bảo hiểm xã hội một lần được tính bằng cách nhân số năm đóng bảo hiểm (9 năm) với 2 tháng cho mỗi năm, dựa trên Điều 60, Khoản 2.\n\nConclusion: Số tiền bảo hiểm xã hội một lần mà người lao động có thể nhận được là 18 tháng mức bình quân tiền lương tháng đóng BHXH.",
+  "citations": [
+    "[Điều 60 khoản 1]",
+    "[Điều 60 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1",
+    "L41_2024.A60.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,lump_sum_amount(user,18),based_on(source_a60_k1)),step(calculation,18 is 9*2,based_on(source_a60_k2))]",
+  "irac_sections": {
+    "issue": "Người lao động đã tham gia bảo hiểm xã hội được 9 năm và muốn biết số tiền có thể nhận được nếu rút bảo hiểm xã hội một lần.",
+    "rule": "Theo Điều 60, Khoản 1 của Luật Bảo hiểm xã hội 2024: \"Người lao động có thể nhận bảo hiểm xã hội một lần nếu có thời gian đóng BHXH dưới 20 năm và không tiếp tục tham gia.\"\nTheo Điều 60, Khoản 2 của Luật Bảo hiểm xã hội 2024: \"Mức hưởng bảo hiểm xã hội một lần được tính bằng 1,5 tháng mức bình quân tiền lương tháng đóng BHXH cho mỗi năm đóng trước năm 2014 và 2 tháng cho mỗi năm đóng từ năm 2014 trở đi.\"",
+    "application": "Không có giá trị cụ thể nào được cung cấp cho các slot, nhưng hệ thống đã xác định rằng người dùng đã đóng bảo hiểm xã hội được 9 năm. Theo quy tắc được áp dụng, số tiền bảo hiểm xã hội một lần được tính bằng cách nhân số năm đóng bảo hiểm (9 năm) với 2 tháng cho mỗi năm, dựa trên Điều 60, Khoản 2.",
+    "conclusion": "Số tiền bảo hiểm xã hội một lần mà người lao động có thể nhận được là 18 tháng mức bình quân tiền lương tháng đóng BHXH."
+  },
+  "elapsed_s": 5.402,
+  "prompt_tokens": 2081,
+  "completion_tokens": 622,
+  "error": null,
+  "gold_answer": "Nếu 9 năm đóng của bạn đều sau năm 2014 thì mức BHXH 1 lần thường được tính bằng 2 tháng mức bình quân lương đóng cho mỗi năm. Nghĩa là về công thức sơ bộ sẽ khoảng 18 tháng mức bình quân tiền lương sau điều chỉnh. Muốn ra số gần đúng, bạn cần biết mức bình quân lương đóng của toàn bộ thời gian, không chỉ lương hiện tại.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

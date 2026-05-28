@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 179,
+  "question": "mình nghỉ ngang vậy có đc lãnh bảo hiểm thất nghiệp không?",
+  "answer": "Issue: Bạn muốn biết liệu việc nghỉ ngang có ảnh hưởng đến khả năng nhận bảo hiểm thất nghiệp hay không.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 4, Khoản 4: \"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings để áp dụng vào quy tắc này. Tuy nhiên, Prolog đã xác định rằng điều kiện cần thiết để đủ điều kiện nhận bảo hiểm thất nghiệp là tuân thủ quy định của Luật Việc làm.\n\nConclusion: Hệ thống đã xác định rằng điều kiện để đủ điều kiện nhận bảo hiểm thất nghiệp là \"compliance_with_law_on_employment\". Tuy nhiên, không có thông tin chi tiết nào về việc nghỉ ngang có đáp ứng điều kiện này hay không. Do đó, không thể kết luận chắc chắn về khả năng nhận bảo hiểm thất nghiệp trong trường hợp này.",
+  "citations": [
+    "[Điều 4 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A4.K4"
+  ],
+  "citation_indices": [
+    7
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_eligibility([compliance_with_law_on_employment]),based_on(source_c007))]",
+  "irac_sections": {
+    "issue": "Bạn muốn biết liệu việc nghỉ ngang có ảnh hưởng đến khả năng nhận bảo hiểm thất nghiệp hay không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 4, Khoản 4: \"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings để áp dụng vào quy tắc này. Tuy nhiên, Prolog đã xác định rằng điều kiện cần thiết để đủ điều kiện nhận bảo hiểm thất nghiệp là tuân thủ quy định của Luật Việc làm.",
+    "conclusion": "Hệ thống đã xác định rằng điều kiện để đủ điều kiện nhận bảo hiểm thất nghiệp là \"compliance_with_law_on_employment\". Tuy nhiên, không có thông tin chi tiết nào về việc nghỉ ngang có đáp ứng điều kiện này hay không. Do đó, không thể kết luận chắc chắn về khả năng nhận bảo hiểm thất nghiệp trong trường hợp này."
+  },
+  "elapsed_s": 4.212,
+  "prompt_tokens": 2704,
+  "completion_tokens": 372,
+  "error": null,
+  "gold_answer": "Nghỉ ngang chỉ được hưởng BHTN nếu việc đơn phương chấm dứt hợp đồng của bạn là đúng pháp luật. Nếu nghỉ ngang trái luật thì không đủ điều kiện hưởng BHTN. Vì vậy cần xem hợp đồng, thời hạn báo trước, lý do nghỉ và việc công ty xác nhận chấm dứt ra sao. Nếu bạn nghỉ đúng luật hoặc hai bên thỏa thuận chấm dứt thì vẫn có thể hưởng BHTN khi đủ điều kiện khác.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

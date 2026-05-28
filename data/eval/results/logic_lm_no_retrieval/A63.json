@@ -1,0 +1,25 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 63,
+  "question": "Tôi làm việc tại cty được 18 năm, giờ tôi nghỉ ngang vì ko xin được giấy thôi việc, hiện tại tôi đã đi làm ở 1 công ty khác.vậy bảo hiểm thất nghiệp của tôi cộng dồn vào những năm tiếp theo tôi đóng ở công ty mới hay sẽ bị mất?",
+  "answer": "Issue: Người dùng đã làm việc tại công ty cũ trong 18 năm và hiện đang thắc mắc về việc bảo hiểm thất nghiệp có được cộng dồn khi chuyển sang công ty mới hay không.\n\nRule: Không có trích dẫn nào được cung cấp trong tài liệu.\n\nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng người dùng đã đóng bảo hiểm thất nghiệp đủ 18 năm, và theo quy tắc, nếu số năm đóng bảo hiểm từ 12 năm trở lên, thì bảo hiểm thất nghiệp sẽ được cộng dồn.\n\nConclusion: Prolog đã trả về giá trị \"true\" cho biến Accumulation, cho thấy bảo hiểm thất nghiệp của người dùng sẽ được cộng dồn.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_accumulation(user,true),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người dùng đã làm việc tại công ty cũ trong 18 năm và hiện đang thắc mắc về việc bảo hiểm thất nghiệp có được cộng dồn khi chuyển sang công ty mới hay không.",
+    "rule": "Không có trích dẫn nào được cung cấp trong tài liệu.",
+    "application": "Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng người dùng đã đóng bảo hiểm thất nghiệp đủ 18 năm, và theo quy tắc, nếu số năm đóng bảo hiểm từ 12 năm trở lên, thì bảo hiểm thất nghiệp sẽ được cộng dồn.",
+    "conclusion": "Prolog đã trả về giá trị \"true\" cho biến Accumulation, cho thấy bảo hiểm thất nghiệp của người dùng sẽ được cộng dồn."
+  },
+  "elapsed_s": 6.859,
+  "prompt_tokens": 2013,
+  "completion_tokens": 321,
+  "error": null,
+  "gold_answer": "Thời gian đóng BHTN chưa hưởng sẽ được bảo lưu để cộng dồn với thời gian đóng ở công ty mới, không tự mất chỉ vì bạn nghỉ ngang. Điều quan trọng là lần nghỉ việc trước bạn chưa nhận trợ cấp thất nghiệp cho khoảng thời gian đó. Khi đủ điều kiện hưởng ở lần sau, cơ quan có thẩm quyền sẽ cộng dồn thời gian đóng BHTN chưa hưởng để tính số tháng trợ cấp. Tuy nhiên hồ sơ chấm dứt HĐLĐ của từng giai đoạn vẫn phải hợp lệ.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 49"
+}

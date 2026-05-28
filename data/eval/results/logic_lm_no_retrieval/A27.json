@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 27,
+  "question": "Bà Uyên Phương (TPHCM) hỏi, căn cứ Luật BHXH 2024, người vợ sinh thường ngày 10/9/2025, chồng được nghỉ 5 ngày trong khoảng 10/9-9/11, chồng nghỉ đợt 1 ngày 10-11/9, đợt 2 ngày 9-11/11 thì ngày 10, 11/11/2025 vẫn được thanh toán chế độ thai sản có đúng không?",
+  "answer": "Issue: Bà Uyên Phương hỏi về việc chồng có được thanh toán chế độ thai sản cho ngày 10, 11/11/2025 hay không sau khi đã nghỉ 5 ngày trong khoảng thời gian quy định.\nRule: Theo [Luật BHXH 2024, Điều 28 khoản 1], thời gian nghỉ thai sản của người lao động là 6 tháng đối với sinh thường.\nApplication: Không có slot nào được gán giá trị. Prolog query trả về kết quả là true, cho thấy chồng bà Uyên Phương vẫn được thanh toán chế độ thai sản cho ngày 10, 11/11/2025.\nConclusion: Theo Prolog, chồng bà Uyên Phương ĐƯỢC thanh toán chế độ thai sản cho ngày 10, 11/11/2025.",
+  "plain_answer": "Chồng bà Uyên Phương vẫn được thanh toán chế độ thai sản cho ngày 10, 11/11/2025 theo [Luật BHXH 2024, Điều 28 khoản 1] vì thời gian nghỉ thai sản cho sinh thường là 6 tháng. Do đó, việc nghỉ 5 ngày trong khoảng thời gian quy định không ảnh hưởng đến quyền lợi này.",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 28 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A28.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,true),based_on(source_a28))]",
+  "prolog_program": "legal_source(source_a26_k1, law_bhxh_2024, article_26, clause_1, none, 'Người lao động được hưởng chế độ thai sản khi có đủ điều kiện về thời gian nghỉ và thời gian đóng BHXH.').\nlegal_source(source_a28, law_bhxh_2024, article_28, clause_1, none, 'Thời gian nghỉ thai sản của người lao động là 6 tháng đối với sinh thường.').\nanswer_predicate(Person, Answer, Trace) :- Answer = true, Trace = [step(conclusion, answer_predicate(Person, Answer), based_on(source_a28))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Bà Uyên Phương hỏi về việc chồng có được thanh toán chế độ thai sản cho ngày 10, 11/11/2025 hay không sau khi đã nghỉ 5 ngày trong khoảng thời gian quy định.",
+    "rule": "Theo [Luật BHXH 2024, Điều 28 khoản 1], thời gian nghỉ thai sản của người lao động là 6 tháng đối với sinh thường.",
+    "application": "Không có slot nào được gán giá trị. Prolog query trả về kết quả là true, cho thấy chồng bà Uyên Phương vẫn được thanh toán chế độ thai sản cho ngày 10, 11/11/2025.",
+    "conclusion": "Theo Prolog, chồng bà Uyên Phương ĐƯỢC thanh toán chế độ thai sản cho ngày 10, 11/11/2025."
+  },
+  "elapsed_s": 11.033,
+  "prompt_tokens": 2916,
+  "completion_tokens": 483,
+  "error": null,
+  "gold_answer": "Căn cứ khoản 3 Điều 53 Luật BHXH 2024, thời gian nghỉ hưởng chế độ của trường hợp nam nghỉ việc khi vợ sinh con:\n\"3. Ngày bắt đầu nghỉ việc hưởng chế độ thai sản quy định tại khoản 2 Điều này phải trong khoảng thời gian 60 ngày kể từ ngày vợ sinh con, trường hợp người lao động nghỉ nhiều lần thì ngày bắt đầu nghỉ việc của lần cuối cùng phải trong khoảng thời gian 60 ngày đầu kể từ ngày vợ sinh con và tổng thời gian nghỉ việc hưởng chế độ thai sản không quá thời gian quy định tại khoản 2 Điều này\".\nĐối chiếu với quy định trên, trường hợp lao động nam tại đơn vị có vợ sinh con từ ngày 10/9/2025 thì thời gian 60 ngày kể từ ngày vợ sinh con được tính từ ngày 10/9/2025 đến ngày 8/11/2025.\nTheo đó, nếu lao động nam nghỉ đợt 1 từ ngày 10/9/2025 đến ngày 11/9/2025, đợt 2 từ ngày 9/11/2025 đến ngày 11/11/2025 như đơn vị đã nêu thì từ ngày 9/11/2025 đến ngày 11/11/2025 không được thanh toán chế độ lao động nam nghỉ việc khi vợ sinh vì đã quá 60 ngày kể từ ngày vợ sinh con.",
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 53]"
+}

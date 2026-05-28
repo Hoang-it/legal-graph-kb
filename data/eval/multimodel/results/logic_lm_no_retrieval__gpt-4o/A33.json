@@ -1,0 +1,27 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 33,
+  "question": "Ông H. Quyết (TPHCM) sinh ngày ../2/1968, là giáo viên dạy môn Thể dục, đóng BHXH đến tháng 1/2026 được 17 năm 10 tháng.\nÔng bị suy tim nên suy giảm 71% khả năng lao động, không đủ sức khỏe tiếp tục giảng dạy.\nÔng Quyết hỏi, ông có đủ điều kiện hưởng lương hưu theo chế độ hưu trí không?\nNếu không được thì ông có thể đóng BHXH tự nguyện để đủ điều kiện hưởng lương hưu không?\nĐóng BHXH tự nguyện bao nhiêu năm nữa thì đủ điều kiện?\nNếu không đóng thêm BHXH tự nguyện thì ông có được hưởng BHXH một lần không?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'eligible_for_pension(user']",
+  "citations": [
+    "[Điều 64 khoản 2]",
+    "[Điều 60 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A64.K2",
+    "L41_2024.A60.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "invalid_query",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 9.876,
+  "prompt_tokens": 5264,
+  "completion_tokens": 1464,
+  "error": null,
+  "gold_answer": "Căn cứ điểm b khoản 2 Điều 11 Nghị định số 159/2025/NĐ-CP quy định về điều kiện hưởng lương hưu:\n\"Trường hợp người tham gia bảo hiểm xã hội tự nguyện có từ đủ 20 năm đóng bảo hiểm xã hội bắt buộc trở lên mà bị suy giảm khả năng lao động từ 61% trở lên thì điều kiện về tuổi đời hưởng lương hưu được thực hiện theo quy định tại Điều 65 của Luật Bảo hiểm xã hội\".\nĐối chiếu với quy định trên, ông sinh ngày 25/02/1968, thời gian tham gia BHXH bắt buộc là 17 năm 10 tháng, ông không đủ điều kiện hưởng chế độ hưu trí. Ông có thể tiếp tục tham gia BHXH tự nguyện để hưởng mức lương hưu cao hơn hoặc bảo lưu thời gian tham gia cho đến khi đủ tuổi nghỉ hưu theo quy định tại khoản 1 Điều 64 Luật BHXH 2024.\nTrường hợp ông không còn tham gia BHXH, sau 12 tháng nếu không tiếp tục đóng BHXH bắt buộc hoặc không tham gia BHXH tự nguyện thì ông có thể liên hệ BHXH cơ sở làm thủ tục hưởng BHXH một lần.",
+  "gold_citations_raw": "điểm b khoản 2 Điều 11 Nghị định số 159/2025/NĐ-CP"
+}

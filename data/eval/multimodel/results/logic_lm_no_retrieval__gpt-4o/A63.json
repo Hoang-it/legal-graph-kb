@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 63,
+  "question": "Tôi làm việc tại cty được 18 năm, giờ tôi nghỉ ngang vì ko xin được giấy thôi việc, hiện tại tôi đã đi làm ở 1 công ty khác.vậy bảo hiểm thất nghiệp của tôi cộng dồn vào những năm tiếp theo tôi đóng ở công ty mới hay sẽ bị mất?",
+  "answer": "Issue: Bạn đã làm việc tại công ty cũ được 18 năm và hiện tại đã nghỉ việc mà không có giấy thôi việc. Bạn muốn biết liệu bảo hiểm thất nghiệp của bạn có được cộng dồn vào những năm tiếp theo khi bạn đóng ở công ty mới hay không, hay sẽ bị mất.\n\nRule: Người lao động được bảo lưu thời gian đóng bảo hiểm thất nghiệp khi chuyển sang làm việc tại công ty mới. (Luật BHXH 2024, Điều 49, Khoản 1)\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo quy tắc Prolog, nếu bạn đã đóng bảo hiểm thất nghiệp từ 12 năm trở lên, thời gian đóng bảo hiểm thất nghiệp của bạn sẽ được bảo lưu khi bạn chuyển sang làm việc tại công ty mới.\n\nConclusion: Theo kết quả từ truy vấn Prolog, thời gian đóng bảo hiểm thất nghiệp của bạn sẽ được \"Bảo lưu\". Điều này có nghĩa là bạn sẽ không mất thời gian đóng bảo hiểm thất nghiệp đã tích lũy khi chuyển sang công ty mới.",
+  "citations": [
+    "[Điều 49 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A49.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_continuity(user,Bảo lưu),based_on(source_a49_k1))]",
+  "irac_sections": {
+    "issue": "Bạn đã làm việc tại công ty cũ được 18 năm và hiện tại đã nghỉ việc mà không có giấy thôi việc. Bạn muốn biết liệu bảo hiểm thất nghiệp của bạn có được cộng dồn vào những năm tiếp theo khi bạn đóng ở công ty mới hay không, hay sẽ bị mất.",
+    "rule": "Người lao động được bảo lưu thời gian đóng bảo hiểm thất nghiệp khi chuyển sang làm việc tại công ty mới. (Luật BHXH 2024, Điều 49, Khoản 1)",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo quy tắc Prolog, nếu bạn đã đóng bảo hiểm thất nghiệp từ 12 năm trở lên, thời gian đóng bảo hiểm thất nghiệp của bạn sẽ được bảo lưu khi bạn chuyển sang làm việc tại công ty mới.",
+    "conclusion": "Theo kết quả từ truy vấn Prolog, thời gian đóng bảo hiểm thất nghiệp của bạn sẽ được \"Bảo lưu\". Điều này có nghĩa là bạn sẽ không mất thời gian đóng bảo hiểm thất nghiệp đã tích lũy khi chuyển sang công ty mới."
+  },
+  "elapsed_s": 4.859,
+  "prompt_tokens": 2084,
+  "completion_tokens": 463,
+  "error": null,
+  "gold_answer": "Thời gian đóng BHTN chưa hưởng sẽ được bảo lưu để cộng dồn với thời gian đóng ở công ty mới, không tự mất chỉ vì bạn nghỉ ngang. Điều quan trọng là lần nghỉ việc trước bạn chưa nhận trợ cấp thất nghiệp cho khoảng thời gian đó. Khi đủ điều kiện hưởng ở lần sau, cơ quan có thẩm quyền sẽ cộng dồn thời gian đóng BHTN chưa hưởng để tính số tháng trợ cấp. Tuy nhiên hồ sơ chấm dứt HĐLĐ của từng giai đoạn vẫn phải hợp lệ.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 49"
+}

@@ -1,0 +1,25 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 111,
+  "question": "Nghỉ việc thiếu tờ rơi có lãnh được bảo hiểm thất nghiệp không?",
+  "answer": "Issue: Nghỉ việc thiếu tờ rơi có lãnh được bảo hiểm thất nghiệp không?\n\nRule: Không có quy định nào được trích dẫn.\n\nApplication: Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được sử dụng trong truy vấn Prolog.\n\nConclusion: Hệ thống không thể tính toán số liệu cuối cùng vì không có giá trị nào được gán cho các slot.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_eligibility(user,no),based_on(none))]",
+  "irac_sections": {
+    "issue": "Nghỉ việc thiếu tờ rơi có lãnh được bảo hiểm thất nghiệp không?",
+    "rule": "Không có quy định nào được trích dẫn.",
+    "application": "Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được sử dụng trong truy vấn Prolog.",
+    "conclusion": "Hệ thống không thể tính toán số liệu cuối cùng vì không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 5.104,
+  "prompt_tokens": 1851,
+  "completion_tokens": 200,
+  "error": null,
+  "gold_answer": "Thực tế hồ sơ BHTN cần có tài liệu chứng minh chấm dứt HĐLĐ và dữ liệu quá trình đóng BHTN. Nếu thiếu tờ rời/sổ giấy nhưng dữ liệu trên hệ thống BHXH đã chốt đầy đủ thì trung tâm dịch vụ việc làm vẫn có thể tiếp nhận theo dữ liệu điện tử hoặc yêu cầu bổ sung. Bạn nên xin xác nhận quá trình đóng/chốt sổ trước, tránh nộp sát hạn 03 tháng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 66,
+  "question": "Có phải Bảo hiểm xã hội mình bắt buộc lãnh sau 1 năm không?. Nếu bận mk làm trễ vài tháng có được không?",
+  "answer": "Issue: Người lao động có bắt buộc phải nhận bảo hiểm xã hội sau 1 năm nghỉ việc không? Nếu bận, có thể nhận trễ vài tháng được không?\n\nRule: Không có trích dẫn cụ thể từ văn bản pháp luật trong dữ liệu cung cấp.\n\nApplication: Không có thông tin cụ thể về các điều kiện hoặc giá trị nào được áp dụng trong trường hợp này. Tuy nhiên, theo kết quả từ hệ thống, người lao động có thể nhận bảo hiểm xã hội một lần sau 1 năm nghỉ việc nếu không tiếp tục tham gia bảo hiểm xã hội.\n\nConclusion: Người lao động có thể nhận bảo hiểm xã hội một lần sau 1 năm nghỉ việc nếu không tiếp tục tham gia bảo hiểm xã hội. Kết luận này dựa trên điều kiện được xác định trong hệ thống, nhưng không có trích dẫn cụ thể từ văn bản pháp luật để tham khảo.",
+  "citations": [
+    "[Điều 60 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,answer_conditions(Người lao động có thể nhận bảo hiểm xã hội một lần sau 1 năm nghỉ việc nếu không tiếp tục tham gia bảo hiểm xã hội.),based_on(source_a60_k1))]",
+  "irac_sections": {
+    "issue": "Người lao động có bắt buộc phải nhận bảo hiểm xã hội sau 1 năm nghỉ việc không? Nếu bận, có thể nhận trễ vài tháng được không?",
+    "rule": "Không có trích dẫn cụ thể từ văn bản pháp luật trong dữ liệu cung cấp.",
+    "application": "Không có thông tin cụ thể về các điều kiện hoặc giá trị nào được áp dụng trong trường hợp này. Tuy nhiên, theo kết quả từ hệ thống, người lao động có thể nhận bảo hiểm xã hội một lần sau 1 năm nghỉ việc nếu không tiếp tục tham gia bảo hiểm xã hội.",
+    "conclusion": "Người lao động có thể nhận bảo hiểm xã hội một lần sau 1 năm nghỉ việc nếu không tiếp tục tham gia bảo hiểm xã hội. Kết luận này dựa trên điều kiện được xác định trong hệ thống, nhưng không có trích dẫn cụ thể từ văn bản pháp luật để tham khảo."
+  },
+  "elapsed_s": 5.517,
+  "prompt_tokens": 3191,
+  "completion_tokens": 427,
+  "error": null,
+  "gold_answer": "Không có quy định bắt buộc phải nhận BHXH một lần ngay đúng sau 1 năm. Mốc 12 tháng chỉ là điều kiện phổ biến để phát sinh quyền yêu cầu trong một số trường hợp. Nếu bạn bận và nộp muộn vài tháng sau khi đã đủ điều kiện thì thông thường vẫn được giải quyết, miễn tại thời điểm nộp hồ sơ bạn vẫn thuộc trường hợp được hưởng theo luật. Nếu không rút, thời gian đóng vẫn được bảo lưu.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102"
+}

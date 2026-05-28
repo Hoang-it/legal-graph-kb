@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 161,
+  "question": "e muốn rut tiền sổ bh thì cần những gì? điều kiện gì?",
+  "answer": "Issue:\nBạn hỏi về điều kiện và thủ tục cần thiết để được rút tiền sổ bảo hiểm xã hội (BHXH) một lần.\n\nRule:\nĐiều kiện hưởng bảo hiểm xã hội một lần: người lao động có yêu cầu và thuộc một trong các trường hợp như đủ tuổi mà chưa đủ năm đóng, ra nước ngoài để định cư, hoặc sau một năm nghỉ việc không tiếp tục đóng BHXH mà chưa đủ 20 năm đóng. (law_bhxh_2024, article_60, clause_1)\n\nApplication:\nKhông có slot cụ thể nào được cung cấp từ phía bạn. Hệ thống đã truy vấn và xác định các điều kiện dựa trên quy định tại law_bhxh_2024, article_60, clause_1. Các điều kiện được hệ thống trả về gồm: Sau 1 năm nghỉ việc không tiếp tục đóng BHXH mà chưa đủ 20 năm đóng; Đủ tuổi hưởng lương hưu mà chưa đủ năm đóng; Ra nước ngoài để định cư; Người mắc bệnh nguy hiểm đến tính mạng.\n\nConclusion:\nCác điều kiện để rút tiền sổ BHXH một lần là: Sau 1 năm nghỉ việc không tiếp tục đóng BHXH mà chưa đủ 20 năm đóng; Đủ tuổi hưởng lương hưu mà chưa đủ năm đóng; Ra nước ngoài để định cư; Người mắc bệnh nguy hiểm đến tính mạng.",
+  "citations": [
+    "[Điều 60 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,bhxh_mot_lan_conditions([Sau 1 năm nghỉ việc không tiếp tục đóng BHXH mà chưa đủ 20 năm đóng,Đủ tuổi hưởng lương hưu mà chưa đủ năm đóng,Ra nước ngoài để định cư,Người mắc bệnh nguy hiểm đến tính mạng]),based_on(source_a60_k1))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về điều kiện và thủ tục cần thiết để được rút tiền sổ bảo hiểm xã hội (BHXH) một lần.",
+    "rule": "Điều kiện hưởng bảo hiểm xã hội một lần: người lao động có yêu cầu và thuộc một trong các trường hợp như đủ tuổi mà chưa đủ năm đóng, ra nước ngoài để định cư, hoặc sau một năm nghỉ việc không tiếp tục đóng BHXH mà chưa đủ 20 năm đóng. (law_bhxh_2024, article_60, clause_1)",
+    "application": "Không có slot cụ thể nào được cung cấp từ phía bạn. Hệ thống đã truy vấn và xác định các điều kiện dựa trên quy định tại law_bhxh_2024, article_60, clause_1. Các điều kiện được hệ thống trả về gồm: Sau 1 năm nghỉ việc không tiếp tục đóng BHXH mà chưa đủ 20 năm đóng; Đủ tuổi hưởng lương hưu mà chưa đủ năm đóng; Ra nước ngoài để định cư; Người mắc bệnh nguy hiểm đến tính mạng.",
+    "conclusion": "Các điều kiện để rút tiền sổ BHXH một lần là: Sau 1 năm nghỉ việc không tiếp tục đóng BHXH mà chưa đủ 20 năm đóng; Đủ tuổi hưởng lương hưu mà chưa đủ năm đóng; Ra nước ngoài để định cư; Người mắc bệnh nguy hiểm đến tính mạng."
+  },
+  "elapsed_s": 6.75,
+  "prompt_tokens": 2144,
+  "completion_tokens": 553,
+  "error": null,
+  "gold_answer": "Muốn rút BHXH 1 lần, bạn phải thuộc một trong các trường hợp luật cho phép, phổ biến nhất là sau 12 tháng không còn thuộc diện tham gia BHXH bắt buộc và không tham gia BHXH tự nguyện. Hồ sơ thường gồm đơn đề nghị, CCCD, thông tin tài khoản; một số trường hợp đặc biệt cần thêm giấy tờ định cư nước ngoài hoặc hồ sơ bệnh nặng. Nộp tại BHXH nơi cư trú.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

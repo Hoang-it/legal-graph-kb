@@ -1,0 +1,21 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 143,
+  "question": "Mình xin nghỉ việc\nCông ty nợ bảo hiểm xã hội có làm hưởng bảo hiểm thất nghiệp được không?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=unable_to_conclude, repair_rounds=2, error=Connection error.]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "unable_to_conclude",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 4.417,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "error": null,
+  "gold_answer": "Công ty nợ BHXH không đương nhiên làm bạn mất quyền hưởng BHTN, nhưng trên thực tế sẽ ảnh hưởng hồ sơ nếu dữ liệu đóng BHTN chưa được xác nhận. Bạn cần yêu cầu công ty hoàn tất nghĩa vụ đóng, chốt sổ; nếu không thực hiện thì khiếu nại với cơ quan BHXH và thanh tra lao động. Phần thời gian thực tế đã đóng vào quỹ BHTN vẫn phải được ghi nhận để xét quyền lợi cho bạn.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

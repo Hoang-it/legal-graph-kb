@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 173,
+  "question": "Mình giờ thôi việc ở công ty cũ. Nếu lấy BHTN thì mình sẽ được 11 tháng BHTN, nhưng mình nghỉ làm là có công ty hấp dẫn gọi đi làm ngay, lúc đó mình ko làm BHTN nữa mà tiếp tục đóng BHXH luôn.  Nếu mình làm 1 năm thấy không phù hợp với công ty thì lúc đó mình nghỉ thì quyền lợi BHTN mới sẽ như thế nào?",
+  "answer": "Issue:\nBạn hỏi: nếu nhận trợ cấp thất nghiệp rồi nhận việc mới ngay và tiếp tục đóng bảo hiểm, sau một thời gian làm việc rồi nghỉ tiếp thì quyền lợi trợ cấp thất nghiệp lần sau sẽ ra sao?\n\nRule:\n\"Người lao động được hưởng trợ cấp thất nghiệp nếu đã đóng BHTN đủ 12 tháng trở lên trong 24 tháng trước khi thất nghiệp.\" (law_bhxh_2024, article_78, clause_1)\n\"Trong thời gian đang hưởng trợ cấp thất nghiệp, nếu người lao động quay lại làm việc thì sẽ ngừng hưởng trợ cấp thất nghiệp.\" (law_bhxh_2024, article_81, clause_2)\n\nApplication:\nslot_bindings: Không có slot nào được gán.\nProlog trace sử dụng hai bước xác minh: step(stop_payment, Ngừng hưởng trợ cấp khi có việc làm, based_on(source_bhtn_stop_when_working)) và step(eligibility_12m, Yêu cầu tối thiểu 12 tháng đóng trong 24 tháng trước khi thất nghiệp để được hưởng, based_on(source_bhtn_12m)). Prolog kết hợp quy định về ngừng hưởng khi quay lại làm việc và quy định điều kiện tối thiểu \"12 tháng trong 24 tháng\" để xác định quyền được hưởng lại.\n\nConclusion:\nAnswer = \"Nếu bạn nhận việc ngay và tiếp tục đóng bảo hiểm (gồm BHTN) thì khoản trợ cấp thất nghiệp hiện tại sẽ chấm dứt khi bạn có việc làm. Nếu sau đó bạn làm 1 năm và đóng BHTN ít nhất 12 tháng trong khoảng 24 tháng trước khi bạn lại thất nghiệp, thì bạn có thể đủ điều kiện nhận trợ cấp thất nghiệp lần nữa; thời hạn hưởng và mức hưởng được xác định theo quy định của luật BHXH. Hãy lưu ý phải đăng ký thất nghiệp và nộp hồ sơ theo quy định cơ quan việc làm để được hưởng trợ cấp.\"",
+  "citations": [
+    "[Điều 78 khoản 1]",
+    "[Điều 81 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A78.K1",
+    "L41_2024.A81.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(stop_payment,Ngừng hưởng trợ cấp khi có việc làm,based_on(source_bhtn_stop_when_working)),step(eligibility_12m,Yêu cầu tối thiểu 12 tháng đóng trong 24 tháng trước khi thất nghiệp để được hưởng,based_on(source_bhtn_12m))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi: nếu nhận trợ cấp thất nghiệp rồi nhận việc mới ngay và tiếp tục đóng bảo hiểm, sau một thời gian làm việc rồi nghỉ tiếp thì quyền lợi trợ cấp thất nghiệp lần sau sẽ ra sao?",
+    "rule": "\"Người lao động được hưởng trợ cấp thất nghiệp nếu đã đóng BHTN đủ 12 tháng trở lên trong 24 tháng trước khi thất nghiệp.\" (law_bhxh_2024, article_78, clause_1)\n\"Trong thời gian đang hưởng trợ cấp thất nghiệp, nếu người lao động quay lại làm việc thì sẽ ngừng hưởng trợ cấp thất nghiệp.\" (law_bhxh_2024, article_81, clause_2)",
+    "application": "slot_bindings: Không có slot nào được gán.\nProlog trace sử dụng hai bước xác minh: step(stop_payment, Ngừng hưởng trợ cấp khi có việc làm, based_on(source_bhtn_stop_when_working)) và step(eligibility_12m, Yêu cầu tối thiểu 12 tháng đóng trong 24 tháng trước khi thất nghiệp để được hưởng, based_on(source_bhtn_12m)). Prolog kết hợp quy định về ngừng hưởng khi quay lại làm việc và quy định điều kiện tối thiểu \"12 tháng trong 24 tháng\" để xác định quyền được hưởng lại.",
+    "conclusion": "Answer = \"Nếu bạn nhận việc ngay và tiếp tục đóng bảo hiểm (gồm BHTN) thì khoản trợ cấp thất nghiệp hiện tại sẽ chấm dứt khi bạn có việc làm. Nếu sau đó bạn làm 1 năm và đóng BHTN ít nhất 12 tháng trong khoảng 24 tháng trước khi bạn lại thất nghiệp, thì bạn có thể đủ điều kiện nhận trợ cấp thất nghiệp lần nữa; thời hạn hưởng và mức hưởng được xác định theo quy định của luật BHXH. Hãy lưu ý phải đăng ký thất nghiệp và nộp hồ sơ theo quy định cơ quan việc làm để được hưởng trợ cấp.\""
+  },
+  "elapsed_s": 69.437,
+  "prompt_tokens": 3781,
+  "completion_tokens": 7423,
+  "error": null,
+  "gold_answer": "Nếu bạn không làm hồ sơ BHTN lần nghỉ việc này mà đi làm ngay, thời gian BHTN chưa hưởng sẽ được bảo lưu. Sau này nếu làm thêm 1 năm rồi nghỉ, thời gian đóng mới sẽ được cộng với thời gian bảo lưu cũ để tính điều kiện, thời gian hưởng cho lần thất nghiệp tiếp theo; phần đã hưởng rồi thì không tính lại. Vì vậy quyền lợi không mất, chỉ bảo lưu cho lần sau.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

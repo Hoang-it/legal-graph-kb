@@ -1,0 +1,35 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 76,
+  "question": "bhxh của e theo cty cũ đến 2/2026,\n3/2026 e đóng bhxh tự nguyện đến 5/2026.\nGiờ e đóng bh theo cty mới từ 4/2026 có được không? Và có được hưởng bhxh theo cty mới không khi t9 em sinh ?",
+  "answer": "Issue: Bạn hỏi về việc có thể đóng bảo hiểm xã hội (BHXH) theo công ty mới từ tháng 4/2026 và có được hưởng chế độ thai sản khi sinh vào tháng 9/2026 không.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 3: \"Người vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện được hưởng chế độ trợ cấp hằng tháng, chế độ hưu trí và chế độ tử tuất trên cơ sở thời gian đã đóng bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện.\" Theo Điều 94, Khoản 1: \"Đối tượng có thời gian đóng bảo hiểm xã hội tự nguyện hoặc vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện từ đủ 06 tháng trở lên trong thời gian 12 tháng trước khi sinh con được hưởng trợ cấp thai sản.\"\n\nApplication: Không có thông tin cụ thể về các giá trị đã được cung cấp trong slot_bindings. Tuy nhiên, theo truy vấn Prolog, điều kiện để được hưởng trợ cấp thai sản là phải có ít nhất 6 tháng đóng BHXH trong vòng 12 tháng trước khi sinh.\n\nConclusion: Hệ thống xác định rằng để được hưởng trợ cấp thai sản, bạn cần có ít nhất 6 tháng đóng BHXH trong vòng 12 tháng trước khi sinh. Tuy nhiên, không có thông tin cụ thể về việc bạn có đáp ứng điều kiện này hay không.",
+  "citations": [
+    "[Điều 5 khoản 3]",
+    "[Điều 94 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A5.K3",
+    "L41_2024.A94.K1"
+  ],
+  "citation_indices": [
+    2,
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,can_receive_maternity_benefits([must_have_6_months_contribution_in_last_12_months]),based_on(source_c006))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về việc có thể đóng bảo hiểm xã hội (BHXH) theo công ty mới từ tháng 4/2026 và có được hưởng chế độ thai sản khi sinh vào tháng 9/2026 không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 5, Khoản 3: \"Người vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện được hưởng chế độ trợ cấp hằng tháng, chế độ hưu trí và chế độ tử tuất trên cơ sở thời gian đã đóng bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện.\" Theo Điều 94, Khoản 1: \"Đối tượng có thời gian đóng bảo hiểm xã hội tự nguyện hoặc vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện từ đủ 06 tháng trở lên trong thời gian 12 tháng trước khi sinh con được hưởng trợ cấp thai sản.\"",
+    "application": "Không có thông tin cụ thể về các giá trị đã được cung cấp trong slot_bindings. Tuy nhiên, theo truy vấn Prolog, điều kiện để được hưởng trợ cấp thai sản là phải có ít nhất 6 tháng đóng BHXH trong vòng 12 tháng trước khi sinh.",
+    "conclusion": "Hệ thống xác định rằng để được hưởng trợ cấp thai sản, bạn cần có ít nhất 6 tháng đóng BHXH trong vòng 12 tháng trước khi sinh. Tuy nhiên, không có thông tin cụ thể về việc bạn có đáp ứng điều kiện này hay không."
+  },
+  "elapsed_s": 6.626,
+  "prompt_tokens": 3573,
+  "completion_tokens": 700,
+  "error": null,
+  "gold_answer": "Bạn không thể cùng lúc đóng BHXH tự nguyện và BHXH bắt buộc trùng thời gian cho cùng một người. Nếu từ 4/2026 bạn đã thuộc diện đóng BHXH bắt buộc ở công ty mới thì thời gian 4-5/2026 phải xử lý theo diện bắt buộc; phần tự nguyện bị trùng cần liên hệ cơ quan BHXH để điều chỉnh. Về thai sản tháng 9, cần tính số tháng đóng đủ điều kiện trong 12 tháng trước sinh; thời gian bắt buộc và tự nguyện có thể được xem xét theo từng chế độ tương ứng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 36, Điều 50, Điều 94"
+}

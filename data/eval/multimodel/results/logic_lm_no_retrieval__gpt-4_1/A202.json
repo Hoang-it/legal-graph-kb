@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 202,
+  "question": "Cho mình hỏi trước mình có làm ở fpt telecom khoảng 2 năm sau đó nghỉ có nhận sổ (bị mất) rồi sau mình có xin làm lại được thêm 1 năm . Giờ mình muốn tra thời gian tham gia bhxh thì làm sao ạ . Mình có tra đc mã số rồi . Còn tk Vssid thì mình chưa có",
+  "answer": "Issue:\nBạn hỏi về cách tra cứu thời gian tham gia bảo hiểm xã hội (BHXH) khi đã có mã số BHXH nhưng chưa có tài khoản VssID.\n\nRule:\n\"Người lao động có quyền tra cứu quá trình tham gia BHXH thông qua mã số BHXH hoặc các phương thức điện tử do cơ quan BHXH cung cấp.\" (law_bhxh_2024, article_23, clause_5)\n\nApplication:\nKhông có slot_id nào được gán giá trị cụ thể trong trường hợp này. Prolog đã sử dụng thông tin về quyền tra cứu quá trình tham gia BHXH bằng mã số BHXH hoặc các phương thức điện tử, và truy xuất điều luật liên quan để xác định các phương án tra cứu.\n\nConclusion:\nTheo kết quả Prolog, bạn có thể tra cứu thời gian tham gia BHXH bằng mã số BHXH qua cổng thông tin điện tử của cơ quan BHXH hoặc liên hệ trực tiếp cơ quan BHXH nơi cư trú/làm việc. Nếu chưa có tài khoản VssID, bạn có thể đăng ký tại cơ quan BHXH hoặc qua ứng dụng VssID.",
+  "citations": [
+    "[Điều 23 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A23.K5"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,tra_cuu_thoi_gian_bhxh([Có thể tra cứu thời gian tham gia BHXH bằng mã số BHXH qua cổng thông tin điện tử của cơ quan BHXH hoặc liên hệ trực tiếp cơ quan BHXH nơi cư trú/làm việc. Nếu chưa có tài khoản VssID, có thể đăng ký tại cơ quan BHXH hoặc qua ứng dụng VssID.]),based_on(source_a23_k5))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về cách tra cứu thời gian tham gia bảo hiểm xã hội (BHXH) khi đã có mã số BHXH nhưng chưa có tài khoản VssID.",
+    "rule": "\"Người lao động có quyền tra cứu quá trình tham gia BHXH thông qua mã số BHXH hoặc các phương thức điện tử do cơ quan BHXH cung cấp.\" (law_bhxh_2024, article_23, clause_5)",
+    "application": "Không có slot_id nào được gán giá trị cụ thể trong trường hợp này. Prolog đã sử dụng thông tin về quyền tra cứu quá trình tham gia BHXH bằng mã số BHXH hoặc các phương thức điện tử, và truy xuất điều luật liên quan để xác định các phương án tra cứu.",
+    "conclusion": "Theo kết quả Prolog, bạn có thể tra cứu thời gian tham gia BHXH bằng mã số BHXH qua cổng thông tin điện tử của cơ quan BHXH hoặc liên hệ trực tiếp cơ quan BHXH nơi cư trú/làm việc. Nếu chưa có tài khoản VssID, bạn có thể đăng ký tại cơ quan BHXH hoặc qua ứng dụng VssID."
+  },
+  "elapsed_s": 5.527,
+  "prompt_tokens": 2407,
+  "completion_tokens": 513,
+  "error": null,
+  "gold_answer": null,
+  "gold_citations_raw": null
+}

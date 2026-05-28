@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_graphrag",
+  "stt": 132,
+  "question": "Em bị mất giấy quyết định thôi việc thì có rút được thất nghiệp với bhxh hông???",
+  "answer": "Issue: Em hỏi về việc có thể rút trợ cấp thất nghiệp khi mất giấy quyết định thôi việc hay không.\n\nRule: \"Hồ sơ đề nghị nghỉ việc hưởng chế độ thai sản hoặc hưởng trợ cấp một lần đối với lao động nam khi vợ sinh con là bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con; trường hợp giấy chứng sinh không thể hiện thông tin về việc sinh con phải phẫu thuật hoặc sinh con dưới 32 tuần tuổi thì cần thêm bản chính hoặc bản sao văn bản của cơ sở khám bệnh, chữa bệnh thể hiện\" (Luật BHXH 2024 (41/2024/QH15), Điều 61, Khoản 5).\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Prolog đã xác định rằng để đủ điều kiện nhận trợ cấp thất nghiệp, cần có quyết định thôi việc và có đóng bảo hiểm.\n\nConclusion: Hệ thống không thể tính toán giá trị cuối cùng vì không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 61 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A61.K5"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_conditions([must_have_decision_of_termination,must_have_insurance_contributions]),based_on(source_c007))]",
+  "irac_sections": {
+    "issue": "Em hỏi về việc có thể rút trợ cấp thất nghiệp khi mất giấy quyết định thôi việc hay không.",
+    "rule": "\"Hồ sơ đề nghị nghỉ việc hưởng chế độ thai sản hoặc hưởng trợ cấp một lần đối với lao động nam khi vợ sinh con là bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con; trường hợp giấy chứng sinh không thể hiện thông tin về việc sinh con phải phẫu thuật hoặc sinh con dưới 32 tuần tuổi thì cần thêm bản chính hoặc bản sao văn bản của cơ sở khám bệnh, chữa bệnh thể hiện\" (Luật BHXH 2024 (41/2024/QH15), Điều 61, Khoản 5).",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Prolog đã xác định rằng để đủ điều kiện nhận trợ cấp thất nghiệp, cần có quyết định thôi việc và có đóng bảo hiểm.",
+    "conclusion": "Hệ thống không thể tính toán giá trị cuối cùng vì không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 10.097,
+  "prompt_tokens": 4629,
+  "completion_tokens": 421,
+  "error": null,
+  "gold_answer": "Mất quyết định thôi việc không làm mất quyền hưởng BHXH 1 lần, vì hồ sơ BHXH 1 lần thường không bắt buộc tài liệu này. Nhưng với BHTN thì giấy tờ chứng minh chấm dứt HĐLĐ là thành phần hồ sơ rất quan trọng. Bạn nên xin công ty cấp lại hoặc xin bản sao/giấy xác nhận chấm dứt hợp đồng để nộp trong thời hạn luật định.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

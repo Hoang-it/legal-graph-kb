@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 179,
+  "question": "mình nghỉ ngang vậy có đc lãnh bảo hiểm thất nghiệp không?",
+  "answer": "Issue: Bạn hỏi liệu việc nghỉ ngang có được lãnh bảo hiểm thất nghiệp hay không.\n\nRule: Theo luật bảo hiểm xã hội 2024, điều 49, khoản 1: \"Người lao động được hưởng trợ cấp thất nghiệp nếu đáp ứng đủ điều kiện về thời gian đóng bảo hiểm thất nghiệp và lý do nghỉ việc hợp lệ.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp về lý do nghỉ việc của bạn hoặc thời gian đóng bảo hiểm thất nghiệp. Tuy nhiên, theo quy tắc đã áp dụng, nếu nghỉ việc không có lý do chính đáng, bạn sẽ không đủ điều kiện để nhận trợ cấp thất nghiệp.\n\nConclusion: Kết quả từ hệ thống cho thấy: \"Không đủ điều kiện nếu nghỉ việc không có lý do chính đáng.\" Điều này có nghĩa là nếu bạn nghỉ ngang mà không có lý do chính đáng, bạn sẽ không được lãnh bảo hiểm thất nghiệp.",
+  "citations": [
+    "[Điều 49 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A49.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_eligibility(Không đủ điều kiện nếu nghỉ việc không có lý do chính đáng.),based_on(source_a49_k1))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi liệu việc nghỉ ngang có được lãnh bảo hiểm thất nghiệp hay không.",
+    "rule": "Theo luật bảo hiểm xã hội 2024, điều 49, khoản 1: \"Người lao động được hưởng trợ cấp thất nghiệp nếu đáp ứng đủ điều kiện về thời gian đóng bảo hiểm thất nghiệp và lý do nghỉ việc hợp lệ.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp về lý do nghỉ việc của bạn hoặc thời gian đóng bảo hiểm thất nghiệp. Tuy nhiên, theo quy tắc đã áp dụng, nếu nghỉ việc không có lý do chính đáng, bạn sẽ không đủ điều kiện để nhận trợ cấp thất nghiệp.",
+    "conclusion": "Kết quả từ hệ thống cho thấy: \"Không đủ điều kiện nếu nghỉ việc không có lý do chính đáng.\" Điều này có nghĩa là nếu bạn nghỉ ngang mà không có lý do chính đáng, bạn sẽ không được lãnh bảo hiểm thất nghiệp."
+  },
+  "elapsed_s": 3.851,
+  "prompt_tokens": 1970,
+  "completion_tokens": 387,
+  "error": null,
+  "gold_answer": "Nghỉ ngang chỉ được hưởng BHTN nếu việc đơn phương chấm dứt hợp đồng của bạn là đúng pháp luật. Nếu nghỉ ngang trái luật thì không đủ điều kiện hưởng BHTN. Vì vậy cần xem hợp đồng, thời hạn báo trước, lý do nghỉ và việc công ty xác nhận chấm dứt ra sao. Nếu bạn nghỉ đúng luật hoặc hai bên thỏa thuận chấm dứt thì vẫn có thể hưởng BHTN khi đủ điều kiện khác.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

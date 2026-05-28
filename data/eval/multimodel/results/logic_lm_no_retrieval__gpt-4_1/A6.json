@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 6,
+  "question": "Bà Thảo hỏi, trên giấy ra viện có ghi chú người lao động được nghỉ lao động 10 ngày, vậy, có cần xin thêm Giấy chứng nhận nghỉ việc hưởng BHXH để hưởng 10 ngày đó không?",
+  "answer": "Issue:\nBà Thảo hỏi, trên giấy ra viện có ghi chú người lao động được nghỉ lao động 10 ngày, vậy có cần xin thêm Giấy chứng nhận nghỉ việc hưởng BHXH để được hưởng 10 ngày đó không?\n\nRule:\n\"Giấy ra viện là một trong các giấy tờ hợp lệ để hưởng chế độ ốm đau đối với người lao động điều trị nội trú.\" (law_bhxh_2024, article_25, clause_2)\n\nApplication:\nKhông có slot_id nào cần điền vì câu hỏi chỉ yêu cầu xác định tính hợp lệ của giấy ra viện. Truy vấn Prolog đã sử dụng thông tin từ nguồn source_a25_k2 để xác định rằng giấy ra viện là giấy tờ hợp lệ cho việc hưởng chế độ ốm đau.\n\nConclusion:\nTheo truy vết Prolog [step(conclusion, can_use_discharge_paper_for_sick_leave, based_on(source_a25_k2))], người lao động điều trị nội trú có thể sử dụng giấy ra viện để hưởng chế độ ốm đau mà không cần xin thêm Giấy chứng nhận nghỉ việc hưởng BHXH.",
+  "citations": [
+    "[Điều 25 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A25.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,can_use_discharge_paper_for_sick_leave,based_on(source_a25_k2))]",
+  "irac_sections": {
+    "issue": "Bà Thảo hỏi, trên giấy ra viện có ghi chú người lao động được nghỉ lao động 10 ngày, vậy có cần xin thêm Giấy chứng nhận nghỉ việc hưởng BHXH để được hưởng 10 ngày đó không?",
+    "rule": "\"Giấy ra viện là một trong các giấy tờ hợp lệ để hưởng chế độ ốm đau đối với người lao động điều trị nội trú.\" (law_bhxh_2024, article_25, clause_2)",
+    "application": "Không có slot_id nào cần điền vì câu hỏi chỉ yêu cầu xác định tính hợp lệ của giấy ra viện. Truy vấn Prolog đã sử dụng thông tin từ nguồn source_a25_k2 để xác định rằng giấy ra viện là giấy tờ hợp lệ cho việc hưởng chế độ ốm đau.",
+    "conclusion": "Theo truy vết Prolog [step(conclusion, can_use_discharge_paper_for_sick_leave, based_on(source_a25_k2))], người lao động điều trị nội trú có thể sử dụng giấy ra viện để hưởng chế độ ốm đau mà không cần xin thêm Giấy chứng nhận nghỉ việc hưởng BHXH."
+  },
+  "elapsed_s": 4.813,
+  "prompt_tokens": 2000,
+  "completion_tokens": 416,
+  "error": null,
+  "gold_answer": "Tại Khoản 14 Điều 1 Thông tư số 18/2022/TT-BYT ngày 31/12/2022 của Bộ trưởng Bộ Y tế sửa đổi, bổ sung một số điều của Thông tư số 56/2017/TT-BYT ngày 29/12/2017 của Bộ trưởng Bộ Y tế quy định chi tiết thi hành Luật BHXH và Luật An toàn, vệ sinh lao động thuộc lĩnh y tế quy định như sau:\nTrường hợp người bệnh cần nghỉ để điều trị ngoại trú sau khi ra viện thì cơ quan BHXH căn cứ số ngày nghỉ ghi tại phần ghi chú của giấy ra viện để làm căn cứ thanh toán chế độ BHXH theo quy định.\nĐối chiếu quy định nêu trên, việc cơ sở khám bệnh, chữa bệnh ghi thêm số ngày nghỉ để điều trị ngoại trú tại phần ghi chú trên giấy ra viện là đúng quy định và số ngày nghỉ điều trị ngoại trú đó sẽ được cơ quan BHXH căn cứ để giải quyết chế độ BHXH đối với bà theo quy định.\nDo đó, bà không phải xin cấp thêm Giấy chứng nhận nghỉ việc hưởng BHXH đối với 10 ngày nghỉ việc điều trị ngoại trú nêu trên",
+  "gold_citations_raw": "Khoản 14 Điều 1 Thông tư số 18/2022/TT-BYT\nThông tư số 56/2017/TT-BYT"
+}

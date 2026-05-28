@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 182,
+  "question": "Rút Bhxh là tính từ ngày có giấy quyết định nghỉ việc tròn một năm hay là thời điểm mình đi nộp sổ?",
+  "answer": "Issue: Câu hỏi đặt ra là thời điểm nào được tính để rút bảo hiểm xã hội một lần: từ ngày có giấy quyết định nghỉ việc tròn một năm hay là thời điểm đi nộp sổ bảo hiểm xã hội?\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 107, Khoản 2: \"Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội. Thời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần.\"\n\nApplication: Không có giá trị nào được cung cấp trong slot_bindings, do đó không có thông tin cụ thể nào được áp dụng từ người dùng. Tuy nhiên, theo chương trình Prolog được tạo ra, thời điểm xác định để giải quyết hưởng bảo hiểm xã hội một lần là \"end_of_month_of_last_contribution_or_contract_termination\", dựa trên Điều 107, Khoản 2 của Luật BHXH 2024.\n\nConclusion: Thời điểm xác định để rút bảo hiểm xã hội một lần là \"end_of_month_of_last_contribution_or_contract_termination\". Điều này có nghĩa là thời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động sẽ được sử dụng để xác định điều kiện hưởng bảo hiểm xã hội một lần.",
+  "citations": [
+    "[Điều 107 khoản 2]",
+    "[Điều 106]"
+  ],
+  "citation_ids": [
+    "L41_2024.A107.K2",
+    "L41_2024.A106"
+  ],
+  "citation_indices": [
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,sick_leave_determination_time(end_of_month_of_last_contribution_or_contract_termination),based_on(source_c107))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là thời điểm nào được tính để rút bảo hiểm xã hội một lần: từ ngày có giấy quyết định nghỉ việc tròn một năm hay là thời điểm đi nộp sổ bảo hiểm xã hội?",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 107, Khoản 2: \"Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội. Thời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần.\"",
+    "application": "Không có giá trị nào được cung cấp trong slot_bindings, do đó không có thông tin cụ thể nào được áp dụng từ người dùng. Tuy nhiên, theo chương trình Prolog được tạo ra, thời điểm xác định để giải quyết hưởng bảo hiểm xã hội một lần là \"end_of_month_of_last_contribution_or_contract_termination\", dựa trên Điều 107, Khoản 2 của Luật BHXH 2024.",
+    "conclusion": "Thời điểm xác định để rút bảo hiểm xã hội một lần là \"end_of_month_of_last_contribution_or_contract_termination\". Điều này có nghĩa là thời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động sẽ được sử dụng để xác định điều kiện hưởng bảo hiểm xã hội một lần."
+  },
+  "elapsed_s": 7.481,
+  "prompt_tokens": 3180,
+  "completion_tokens": 555,
+  "error": null,
+  "gold_answer": "Mốc 1 năm để xét BHXH 1 lần thường được hiểu là sau 12 tháng bạn không còn thuộc diện tham gia BHXH bắt buộc và cũng không tham gia BHXH tự nguyện. Vì vậy không chỉ nhìn vào ngày ký quyết định nghỉ việc, mà phải xét thực tế quá trình tham gia sau đó. Khi đủ 12 tháng ngừng tham gia thì bạn mới nộp hồ sơ nếu thuộc trường hợp được hưởng.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

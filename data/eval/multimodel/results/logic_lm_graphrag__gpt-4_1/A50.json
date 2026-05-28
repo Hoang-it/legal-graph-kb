@@ -1,0 +1,37 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 50,
+  "question": "Mình sinh năm 1979. Thì đến năm bao nhiêu mình đủ tuổi về hưu?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu bạn sinh năm 1979 thì đến năm nào bạn đủ tuổi để về hưu theo quy định của pháp luật về bảo hiểm xã hội?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 9: \"Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\"\nLuật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 10: \"Người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên ... thì được hưởng lương hưu khi nam đủ 60 tuổi, nữ đủ 55 tuổi.\"\n\nApplication:\nCác giá trị đầu vào gồm birth_year là 1979. Hệ thống Prolog đã sử dụng năm sinh này cùng với quy định về tuổi nghỉ hưu là 60 tuổi đối với nam để xác định năm đủ tuổi về hưu. Truy vấn đã tham chiếu đến các nguồn luật tại Điều 141, Khoản 9 và Khoản 10 của Luật BHXH 2024.\n\nConclusion:\nTheo kết quả truy vấn Prolog, bạn sinh năm 1979 sẽ đủ tuổi về hưu vào năm RetirementYear = 2039.",
+  "citations": [
+    "[Điều 141 khoản 9]",
+    "[Điều 98]",
+    "[Điều 141 khoản 10]"
+  ],
+  "citation_ids": [
+    "L41_2024.A141.K9",
+    "L41_2024.A98",
+    "L41_2024.A141.K10"
+  ],
+  "citation_indices": [
+    0,
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,retirement_year(user,2039),based_on(source_c041)),step(conclusion,retirement_year(user,2039),based_on(source_c042))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu bạn sinh năm 1979 thì đến năm nào bạn đủ tuổi để về hưu theo quy định của pháp luật về bảo hiểm xã hội?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 9: \"Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\"\nLuật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 10: \"Người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên ... thì được hưởng lương hưu khi nam đủ 60 tuổi, nữ đủ 55 tuổi.\"",
+    "application": "Các giá trị đầu vào gồm birth_year là 1979. Hệ thống Prolog đã sử dụng năm sinh này cùng với quy định về tuổi nghỉ hưu là 60 tuổi đối với nam để xác định năm đủ tuổi về hưu. Truy vấn đã tham chiếu đến các nguồn luật tại Điều 141, Khoản 9 và Khoản 10 của Luật BHXH 2024.",
+    "conclusion": "Theo kết quả truy vấn Prolog, bạn sinh năm 1979 sẽ đủ tuổi về hưu vào năm RetirementYear = 2039."
+  },
+  "elapsed_s": 7.095,
+  "prompt_tokens": 3248,
+  "completion_tokens": 715,
+  "error": null,
+  "gold_answer": "Bạn sinh năm 1979 thì thời điểm đủ tuổi nghỉ hưu còn phụ thuộc giới tính và trường hợp nghỉ hưu bình thường hay sớm. Nếu là nữ, mốc chuẩn hiện hành là đủ 60 tuổi, tương ứng khoảng năm 2039. Nếu là nam, mốc chuẩn là đủ 62 tuổi, tương ứng khoảng năm 2041. Nếu làm nghề, công việc nặng nhọc hoặc thuộc trường hợp đặc biệt thì có thể nghỉ sớm hơn theo luật.",
+  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 169; Nghị định 135/2020/NĐ-CP"
+}

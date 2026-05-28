@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 38,
+  "question": "Em mới học xong, lúc mới vào cty, khi đang đào tạo người ta hỏi em có BHXH thì em bảo không có, người ta bảo là có thế là thế màp? Bây giờ em muốn xem mình đóng bảo hiểm được bao nhiêu mà không biết số bảo hiểm thì phải làm sao ?",
+  "answer": "Issue:\nBạn hỏi về việc làm thế nào để tra cứu số bảo hiểm xã hội (BHXH) của mình khi không nhớ hoặc không biết số BHXH, nhằm kiểm tra quá trình đóng bảo hiểm.\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), Điều 3, Khoản 9 quy định: \"Đăng ký tham gia bảo hiểm xã hội là việc người sử dụng lao động, người lao động nộp hồ sơ kê khai thông tin về người lao động, người sử dụng lao động, tiền lương, thu nhập làm căn cứ đóng bảo hiểm xã hội, phương thức đóng và các nội dung khác có liên quan theo quy định của pháp luật để tham gia bảo hiểm xã hội cho cơ quan bảo hiểm xã hội.\"\n\nApplication:\nKhông có slot_id nào được cung cấp vì câu hỏi của bạn không yêu cầu tính toán số liệu cụ thể. Prolog đã truy xuất hướng dẫn tra cứu số BHXH dựa trên quy định tại Điều 3, Khoản 9 của Luật BHXH 2024. Hệ thống trả về hướng dẫn chi tiết các cách để bạn tra cứu số BHXH của mình.\n\nConclusion:\nTheo kết quả Prolog, bạn có thể tra cứu số bảo hiểm xã hội (BHXH) của mình bằng các cách sau: (1) Liên hệ bộ phận nhân sự của công ty để được cung cấp thông tin số BHXH đã đăng ký; (2) Tra cứu trên Cổng thông tin điện tử của Bảo hiểm xã hội Việt Nam tại địa chỉ https://baohiemxahoi.gov.vn bằng số CMND/CCCD và thông tin cá nhân; (3) Đến trực tiếp cơ quan BHXH địa phương để được hỗ trợ tra cứu.",
+  "citations": [
+    "[Điều 3 khoản 9]"
+  ],
+  "citation_ids": [
+    "L41_2024.A3.K9"
+  ],
+  "citation_indices": [
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,tra_cuu_so_bhxh_huong_dan(Bạn có thể tra cứu số bảo hiểm xã hội (BHXH) của mình bằng các cách sau: (1) Liên hệ bộ phận nhân sự của công ty để được cung cấp thông tin số BHXH đã đăng ký; (2) Tra cứu trên Cổng thông tin điện tử của Bảo hiểm xã hội Việt Nam tại địa chỉ https://baohiemxahoi.gov.vn bằng số CMND/CCCD và thông tin cá nhân; (3) Đến trực tiếp cơ quan BHXH địa phương để được hỗ trợ tra cứu.),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về việc làm thế nào để tra cứu số bảo hiểm xã hội (BHXH) của mình khi không nhớ hoặc không biết số BHXH, nhằm kiểm tra quá trình đóng bảo hiểm.",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), Điều 3, Khoản 9 quy định: \"Đăng ký tham gia bảo hiểm xã hội là việc người sử dụng lao động, người lao động nộp hồ sơ kê khai thông tin về người lao động, người sử dụng lao động, tiền lương, thu nhập làm căn cứ đóng bảo hiểm xã hội, phương thức đóng và các nội dung khác có liên quan theo quy định của pháp luật để tham gia bảo hiểm xã hội cho cơ quan bảo hiểm xã hội.\"",
+    "application": "Không có slot_id nào được cung cấp vì câu hỏi của bạn không yêu cầu tính toán số liệu cụ thể. Prolog đã truy xuất hướng dẫn tra cứu số BHXH dựa trên quy định tại Điều 3, Khoản 9 của Luật BHXH 2024. Hệ thống trả về hướng dẫn chi tiết các cách để bạn tra cứu số BHXH của mình.",
+    "conclusion": "Theo kết quả Prolog, bạn có thể tra cứu số bảo hiểm xã hội (BHXH) của mình bằng các cách sau: (1) Liên hệ bộ phận nhân sự của công ty để được cung cấp thông tin số BHXH đã đăng ký; (2) Tra cứu trên Cổng thông tin điện tử của Bảo hiểm xã hội Việt Nam tại địa chỉ https://baohiemxahoi.gov.vn bằng số CMND/CCCD và thông tin cá nhân; (3) Đến trực tiếp cơ quan BHXH địa phương để được hỗ trợ tra cứu."
+  },
+  "elapsed_s": 15.637,
+  "prompt_tokens": 3640,
+  "completion_tokens": 736,
+  "error": null,
+  "gold_answer": "Bạn có thể tra cứu mã số BHXH bằng CCCD/họ tên/ngày sinh trên Cổng BHXH Việt Nam hoặc ứng dụng VssID. Nếu không tự tra được, mang CCCD đến cơ quan BHXH gần nhất để được hỗ trợ tra cứu, đồng bộ dữ liệu và cấp lại thông tin tài khoản. Khi đã có mã số BHXH, bạn sẽ xem được toàn bộ quá trình tham gia BHXH, BHTN, BHYT trên VssID hoặc cổng tra cứu điện tử.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn tra cứu VssID/BHXH Việt Nam"
+}

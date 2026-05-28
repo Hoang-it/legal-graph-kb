@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 111,
+  "question": "Nghỉ việc thiếu tờ rơi có lãnh được bảo hiểm thất nghiệp không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nghỉ việc nhưng thiếu tờ rơi (một thành phần của hồ sơ) thì có được hưởng bảo hiểm thất nghiệp không?\n\nRule:\n\"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 2)\n\nApplication:\nKhông có slot cụ thể nào được cung cấp trong truy vấn này. Tuy nhiên, Prolog đã xác định điều kiện để được hưởng bảo hiểm thất nghiệp là phải lập đầy đủ hồ sơ theo quy định. Truy vấn đã sử dụng nguồn luật tại Luật BHXH 2024, Điều 13, Khoản 2 để xác định điều kiện này.\n\nConclusion:\nTheo kết quả Prolog, điều kiện để được hưởng bảo hiểm thất nghiệp là \"phai_lap_day_du_ho_so_theo_quy_dinh_de_duoc_huong_bao_hiem_that_nghiep\". Nếu thiếu thành phần trong hồ sơ (ví dụ thiếu tờ rơi), bạn sẽ không đáp ứng đủ điều kiện để được hưởng bảo hiểm thất nghiệp.",
+  "citations": [
+    "[Điều 13 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A13.K2"
+  ],
+  "citation_indices": [
+    7
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_application_conditions([phai_lap_day_du_ho_so_theo_quy_dinh_de_duoc_huong_bao_hiem_that_nghiep]),based_on(source_c007))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nghỉ việc nhưng thiếu tờ rơi (một thành phần của hồ sơ) thì có được hưởng bảo hiểm thất nghiệp không?",
+    "rule": "\"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 2)",
+    "application": "Không có slot cụ thể nào được cung cấp trong truy vấn này. Tuy nhiên, Prolog đã xác định điều kiện để được hưởng bảo hiểm thất nghiệp là phải lập đầy đủ hồ sơ theo quy định. Truy vấn đã sử dụng nguồn luật tại Luật BHXH 2024, Điều 13, Khoản 2 để xác định điều kiện này.",
+    "conclusion": "Theo kết quả Prolog, điều kiện để được hưởng bảo hiểm thất nghiệp là \"phai_lap_day_du_ho_so_theo_quy_dinh_de_duoc_huong_bao_hiem_that_nghiep\". Nếu thiếu thành phần trong hồ sơ (ví dụ thiếu tờ rơi), bạn sẽ không đáp ứng đủ điều kiện để được hưởng bảo hiểm thất nghiệp."
+  },
+  "elapsed_s": 6.204,
+  "prompt_tokens": 4794,
+  "completion_tokens": 476,
+  "error": null,
+  "gold_answer": "Thực tế hồ sơ BHTN cần có tài liệu chứng minh chấm dứt HĐLĐ và dữ liệu quá trình đóng BHTN. Nếu thiếu tờ rời/sổ giấy nhưng dữ liệu trên hệ thống BHXH đã chốt đầy đủ thì trung tâm dịch vụ việc làm vẫn có thể tiếp nhận theo dữ liệu điện tử hoặc yêu cầu bổ sung. Bạn nên xin xác nhận quá trình đóng/chốt sổ trước, tránh nộp sát hạn 03 tháng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

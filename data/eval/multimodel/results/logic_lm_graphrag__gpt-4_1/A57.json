@@ -1,0 +1,35 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 57,
+  "question": "Em muốn làm Bảo hiểm thất nghiệp thì cần giấy tờ gì?\nEm đã có CCCD, giấy chấm dứt HĐLĐ, còn tờ rời thì cty họ bảo là nay quản lý bằng app nên không phát tờ rời nữa\nThì bây giờ lên chỗ Trung Kính có làm được BHTN không?",
+  "answer": "Issue:\nBạn hỏi về các giấy tờ cần thiết để làm hồ sơ hưởng bảo hiểm thất nghiệp, trong trường hợp đã có căn cước công dân, giấy chấm dứt hợp đồng lao động và công ty không phát tờ rời mà quản lý qua ứng dụng điện tử.\n\nRule:\n\"Tiếp nhận hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế và cấp sổ bảo hiểm xã hội, thẻ bảo hiểm y tế cho người lao động.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 4)\n\"Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)\n\nApplication:\nCác giá trị được Prolog truy vấn và xác nhận gồm:\n- Documents: [Căn cước công dân hoặc giấy tờ tùy thân hợp lệ, Giấy tờ chứng minh chấm dứt hợp đồng lao động hoặc hợp đồng làm việc, Hồ sơ theo mẫu do cơ quan bảo hiểm xã hội ban hành (có thể thực hiện qua ứng dụng điện tử nếu được chấp nhận)]\nCác giấy tờ này được xác định dựa trên quy định tiếp nhận hồ sơ và ban hành mẫu hồ sơ của cơ quan bảo hiểm xã hội, có thể thực hiện qua ứng dụng điện tử nếu được chấp nhận.\n\nConclusion:\nTheo kết quả truy vấn, hồ sơ hưởng bảo hiểm thất nghiệp cần: Căn cước công dân hoặc giấy tờ tùy thân hợp lệ, Giấy tờ chứng minh chấm dứt hợp đồng lao động hoặc hợp đồng làm việc, Hồ sơ theo mẫu do cơ quan bảo hiểm xã hội ban hành (có thể thực hiện qua ứng dụng điện tử nếu được chấp nhận).",
+  "citations": [
+    "[Điều 18 khoản 4]",
+    "[Điều 18 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K4",
+    "L41_2024.A18.K2"
+  ],
+  "citation_indices": [
+    2,
+    7
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_application_documents([Căn cước công dân hoặc giấy tờ tùy thân hợp lệ,Giấy tờ chứng minh chấm dứt hợp đồng lao động hoặc hợp đồng làm việc,Hồ sơ theo mẫu do cơ quan bảo hiểm xã hội ban hành (có thể thực hiện qua ứng dụng điện tử nếu được chấp nhận)]),based_on(source_c002)),step(reference,unemployment_insurance_application_documents([Căn cước công dân hoặc giấy tờ tùy thân hợp lệ,Giấy tờ chứng minh chấm dứt hợp đồng lao động hoặc hợp đồng làm việc,Hồ sơ theo mẫu do cơ quan bảo hiểm xã hội ban hành (có thể thực hiện qua ứng dụng điện tử nếu được chấp nhận)]),based_on(source_c007))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về các giấy tờ cần thiết để làm hồ sơ hưởng bảo hiểm thất nghiệp, trong trường hợp đã có căn cước công dân, giấy chấm dứt hợp đồng lao động và công ty không phát tờ rời mà quản lý qua ứng dụng điện tử.",
+    "rule": "\"Tiếp nhận hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế và cấp sổ bảo hiểm xã hội, thẻ bảo hiểm y tế cho người lao động.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 4)\n\"Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)",
+    "application": "Các giá trị được Prolog truy vấn và xác nhận gồm:\n- Documents: [Căn cước công dân hoặc giấy tờ tùy thân hợp lệ, Giấy tờ chứng minh chấm dứt hợp đồng lao động hoặc hợp đồng làm việc, Hồ sơ theo mẫu do cơ quan bảo hiểm xã hội ban hành (có thể thực hiện qua ứng dụng điện tử nếu được chấp nhận)]\nCác giấy tờ này được xác định dựa trên quy định tiếp nhận hồ sơ và ban hành mẫu hồ sơ của cơ quan bảo hiểm xã hội, có thể thực hiện qua ứng dụng điện tử nếu được chấp nhận.",
+    "conclusion": "Theo kết quả truy vấn, hồ sơ hưởng bảo hiểm thất nghiệp cần: Căn cước công dân hoặc giấy tờ tùy thân hợp lệ, Giấy tờ chứng minh chấm dứt hợp đồng lao động hoặc hợp đồng làm việc, Hồ sơ theo mẫu do cơ quan bảo hiểm xã hội ban hành (có thể thực hiện qua ứng dụng điện tử nếu được chấp nhận)."
+  },
+  "elapsed_s": 8.931,
+  "prompt_tokens": 3344,
+  "completion_tokens": 813,
+  "error": null,
+  "gold_answer": "Hồ sơ hưởng BHTN cơ bản gồm: đơn đề nghị hưởng trợ cấp thất nghiệp, CCCD và giấy tờ chứng minh chấm dứt HĐLĐ hợp pháp. Dữ liệu BHXH hiện đã quản lý điện tử, nhưng nếu hồ sơ của bạn trên hệ thống chưa đủ thì trung tâm việc làm có thể yêu cầu bổ sung giấy xác nhận quá trình đóng. Vì vậy bạn vẫn nên đi nộp trong hạn 3 tháng, đồng thời yêu cầu công ty/cơ quan BHXH hỗ trợ xác nhận quá trình đóng. Có thể nộp tại trung tâm dịch vụ việc làm nơi bạn muốn đăng ký nếu đúng thẩm quyền địa phương.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 49; Nghị định 28/2015/NĐ-CP"
+}

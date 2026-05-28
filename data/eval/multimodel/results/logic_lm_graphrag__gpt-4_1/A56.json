@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 56,
+  "question": "Bên em có 1 nhóm cộng tác viên đến làm công việc đóng hàng mà thời gian không cố định. Em có tìm hiểu thì sẽ phải đóng BHXH cho nhóm này với mức đóng là 2.340.000. Nhưng các bạn ấy đi làm có tháng đủ 15 ngày nhưng có tháng chỉ đến 4-5 ngày. Em có 2 câu hỏi \n1. Nên để hợp đồng gì cho nhóm cộng tác viên này? Hiện em đang để là hợp đồng cộng tác viên nhưng do khi tính lương lại tính theo giờ. \n2. Có phải đóng BHXH cho nhóm này ko ạ? Có bạn tháng này đến làm tháng sau lại ko đến thì tăng giảm như thế lại ko hợp lý đúng ko ạ?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Đối với nhóm cộng tác viên làm công việc đóng hàng với thời gian làm việc không cố định, nên ký loại hợp đồng nào và có bắt buộc phải đóng bảo hiểm xã hội (BHXH) cho nhóm này không, đặc biệt khi có tháng làm đủ 15 ngày, có tháng chỉ làm 4-5 ngày?\n\nRule:\n\"Đối tượng quy định tại các điểm a, b, c, d và i khoản 1 và khoản 2 Điều 2 của Luật này mà không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì người lao động không phải đóng bảo hiểm xã hội tháng đó, trừ trường hợp người sử dụng lao động và người lao động có thỏa thuận về việc có đóng bảo hiểm xã hội cho người lao động tháng đó với căn cứ đóng bằng căn cứ đóng bảo hiểm xã hội tháng gần nhất.\" (Luật BHXH 2024 (41/2024/QH15), Điều 33, Khoản 5)\n\nApplication:\nKhông có slot_id cụ thể nào được ràng buộc trong truy vấn này. Prolog đã sử dụng thông tin về điều kiện làm việc của cộng tác viên (số ngày làm việc trong tháng) để xác định nghĩa vụ đóng BHXH, dựa trên quy định tại Điều 33, Khoản 5 Luật BHXH 2024.\n\nConclusion:\nTheo kết quả Prolog: Nếu cộng tác viên ký hợp đồng lao động thuộc đối tượng tham gia BHXH bắt buộc, thì chỉ phải đóng BHXH cho tháng làm việc từ 14 ngày trở lên. Tháng nào làm dưới 14 ngày thì không phải đóng BHXH, trừ khi có thỏa thuận khác giữa người lao động và người sử dụng lao động.",
+  "citations": [
+    "[Điều 2]",
+    "[Điều 33 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2",
+    "L41_2024.A33.K5"
+  ],
+  "citation_indices": [
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,bhxh_dong_cho_cong_tac_vien([Nếu cộng tác viên ký hợp đồng lao động thuộc đối tượng tham gia BHXH bắt buộc, thì chỉ phải đóng BHXH cho tháng làm việc từ 14 ngày trở lên. Tháng nào làm dưới 14 ngày thì không phải đóng BHXH, trừ khi có thỏa thuận khác giữa người lao động và người sử dụng lao động.]),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Đối với nhóm cộng tác viên làm công việc đóng hàng với thời gian làm việc không cố định, nên ký loại hợp đồng nào và có bắt buộc phải đóng bảo hiểm xã hội (BHXH) cho nhóm này không, đặc biệt khi có tháng làm đủ 15 ngày, có tháng chỉ làm 4-5 ngày?",
+    "rule": "\"Đối tượng quy định tại các điểm a, b, c, d và i khoản 1 và khoản 2 Điều 2 của Luật này mà không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì người lao động không phải đóng bảo hiểm xã hội tháng đó, trừ trường hợp người sử dụng lao động và người lao động có thỏa thuận về việc có đóng bảo hiểm xã hội cho người lao động tháng đó với căn cứ đóng bằng căn cứ đóng bảo hiểm xã hội tháng gần nhất.\" (Luật BHXH 2024 (41/2024/QH15), Điều 33, Khoản 5)",
+    "application": "Không có slot_id cụ thể nào được ràng buộc trong truy vấn này. Prolog đã sử dụng thông tin về điều kiện làm việc của cộng tác viên (số ngày làm việc trong tháng) để xác định nghĩa vụ đóng BHXH, dựa trên quy định tại Điều 33, Khoản 5 Luật BHXH 2024.",
+    "conclusion": "Theo kết quả Prolog: Nếu cộng tác viên ký hợp đồng lao động thuộc đối tượng tham gia BHXH bắt buộc, thì chỉ phải đóng BHXH cho tháng làm việc từ 14 ngày trở lên. Tháng nào làm dưới 14 ngày thì không phải đóng BHXH, trừ khi có thỏa thuận khác giữa người lao động và người sử dụng lao động."
+  },
+  "elapsed_s": 9.054,
+  "prompt_tokens": 4115,
+  "completion_tokens": 767,
+  "error": null,
+  "gold_answer": "Tên hợp đồng không quyết định, mà bản chất công việc mới quyết định có phải tham gia BHXH bắt buộc hay không. Nếu nhóm cộng tác viên làm việc thường xuyên, có trả công, chịu sự quản lý, điều hành và hợp đồng từ đủ 1 tháng trở lên thì vẫn có thể thuộc diện BHXH bắt buộc dù gọi là 'CTV' hay tính lương theo giờ. Nếu làm thời vụ, không ổn định, không đủ dấu hiệu quan hệ lao động thì không thuộc diện bắt buộc. Cần rà lại thực tế sử dụng lao động để chọn loại hợp đồng phù hợp.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2 khoản 1 điểm a; Bộ luật Lao động 2019 Điều 13"
+}

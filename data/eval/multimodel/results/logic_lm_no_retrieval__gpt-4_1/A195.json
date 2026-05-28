@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 195,
+  "question": "mik đang đi làm đóng bảo hiển xh mà mik xin nghỉ đội 1-2 tháng đi thụ tinh nhân tạo thì có được hưởng ít bảo hiểm nào không?",
+  "answer": "Issue:\nNgười lao động đang đi làm và đóng bảo hiểm xã hội bắt buộc, nếu xin nghỉ 1-2 tháng để thực hiện thụ tinh nhân tạo thì có được hưởng chế độ bảo hiểm xã hội nào không?\n\nRule:\n\"Người lao động nữ được hưởng chế độ thai sản khi thực hiện biện pháp hỗ trợ sinh sản như thụ tinh nhân tạo, nếu có đóng BHXH bắt buộc.\" (law_bhxh_2024, article_31, clause_1)\n\"Thời gian hưởng chế độ thai sản khi thực hiện biện pháp hỗ trợ sinh sản là tối đa 7 ngày cho mỗi lần thực hiện.\" (law_bhxh_2024, article_32, clause_1)\n\nApplication:\nKhông có slot_id cụ thể nào được cung cấp trong truy vấn này. Tuy nhiên, Prolog đã sử dụng điều kiện là người lao động nữ đang tham gia BHXH bắt buộc và thực hiện thụ tinh nhân tạo để xác định quyền hưởng chế độ thai sản, với thời gian tối đa 7 ngày cho mỗi lần thực hiện.\n\nConclusion:\nTheo kết quả truy vấn Prolog, bạn được hưởng chế độ thai sản khi nghỉ để thực hiện thụ tinh nhân tạo, tối đa 7 ngày cho mỗi lần thực hiện nếu đang tham gia BHXH bắt buộc.",
+  "citations": [
+    "[Điều 31 khoản 1]",
+    "[Điều 32 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A31.K1",
+    "L41_2024.A32.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,che_do_thai_san_ho_tro_sinh_san_duoc_huong(Được hưởng chế độ thai sản khi nghỉ để thực hiện thụ tinh nhân tạo, tối đa 7 ngày cho mỗi lần thực hiện nếu đang tham gia BHXH bắt buộc.),based_on(source_a31_k1)),step(conclusion,che_do_thai_san_ho_tro_sinh_san_duoc_huong(Được hưởng chế độ thai sản khi nghỉ để thực hiện thụ tinh nhân tạo, tối đa 7 ngày cho mỗi lần thực hiện nếu đang tham gia BHXH bắt buộc.),based_on(source_a32_k1))]",
+  "irac_sections": {
+    "issue": "Người lao động đang đi làm và đóng bảo hiểm xã hội bắt buộc, nếu xin nghỉ 1-2 tháng để thực hiện thụ tinh nhân tạo thì có được hưởng chế độ bảo hiểm xã hội nào không?",
+    "rule": "\"Người lao động nữ được hưởng chế độ thai sản khi thực hiện biện pháp hỗ trợ sinh sản như thụ tinh nhân tạo, nếu có đóng BHXH bắt buộc.\" (law_bhxh_2024, article_31, clause_1)\n\"Thời gian hưởng chế độ thai sản khi thực hiện biện pháp hỗ trợ sinh sản là tối đa 7 ngày cho mỗi lần thực hiện.\" (law_bhxh_2024, article_32, clause_1)",
+    "application": "Không có slot_id cụ thể nào được cung cấp trong truy vấn này. Tuy nhiên, Prolog đã sử dụng điều kiện là người lao động nữ đang tham gia BHXH bắt buộc và thực hiện thụ tinh nhân tạo để xác định quyền hưởng chế độ thai sản, với thời gian tối đa 7 ngày cho mỗi lần thực hiện.",
+    "conclusion": "Theo kết quả truy vấn Prolog, bạn được hưởng chế độ thai sản khi nghỉ để thực hiện thụ tinh nhân tạo, tối đa 7 ngày cho mỗi lần thực hiện nếu đang tham gia BHXH bắt buộc."
+  },
+  "elapsed_s": 5.977,
+  "prompt_tokens": 2415,
+  "completion_tokens": 627,
+  "error": null,
+  "gold_answer": "Nếu bạn đang đóng BHXH mà xin nghỉ 1-2 tháng để đi thụ tinh nhân tạo thì quyền lợi phụ thuộc loại nghỉ và giấy tờ y tế. Nếu nghỉ ốm/điều trị theo chỉ định của cơ sở khám chữa bệnh có thẩm quyền thì có thể được xem xét chế độ ốm đau. Nếu chỉ tự nghỉ không lương mà không có hồ sơ y tế phù hợp thì thường không có chế độ BHXH riêng cho việc đó.",
+  "gold_citations_raw": "Điều 42, 43, 47 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,29 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 136,
+  "question": "các bước nhận bhxh thất nghiệp như thế nào?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpxo5jl5gv.pl:1:366: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 46 khoản 1]",
+    "[Điều 47 khoản 1]",
+    "[Điều 49 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A46.K1",
+    "L41_2024.A47.K1",
+    "L41_2024.A49.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 9.896,
+  "prompt_tokens": 4542,
+  "completion_tokens": 1159,
+  "error": null,
+  "gold_answer": "Các bước cơ bản nhận BHTN: (1) chuẩn bị hồ sơ gồm đơn đề nghị, CCCD, tài liệu chấm dứt HĐLĐ; (2) nộp tại trung tâm dịch vụ việc làm trong 03 tháng từ ngày nghỉ việc; (3) chờ 15 ngày làm việc nếu chưa có việc làm; (4) nhận quyết định hưởng và tiền trợ cấp; (5) thực hiện thông báo tìm kiếm việc làm hằng tháng đúng lịch hẹn.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

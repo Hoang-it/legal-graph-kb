@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 198,
+  "question": "Mình đang nộplãnh bhxh 1 lần. Giờ đi làm lại cty mua bh tiếp thì có lãnh đc nữa k ?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Sau khi đã nhận bảo hiểm xã hội (BHXH) một lần, nếu tiếp tục đi làm và tham gia BHXH tại công ty mới thì có được nhận BHXH một lần nữa không?\n\nRule:\n\"Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm ghi trong quyết định của cơ quan bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 102, Khoản 4)\n\nApplication:\nKhông có slot nào cần điền trong trường hợp này. Hệ thống Prolog đã sử dụng quy định tại Điều 102, Khoản 4 của Luật BHXH 2024 để xác định quyền hưởng BHXH một lần sau khi đã nhận trước đó.\n\nConclusion:\nTheo kết quả truy vấn Prolog, câu trả lời là: không (Answer = no). Như vậy, sau khi đã nhận BHXH một lần, nếu tiếp tục đi làm và tham gia BHXH tại công ty mới thì không được nhận BHXH một lần nữa cho thời gian đã nhận trước đó.",
+  "citations": [
+    "[Điều 102 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A102.K4"
+  ],
+  "citation_indices": [
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,can_receive_one_time_bhxh_again(no),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Sau khi đã nhận bảo hiểm xã hội (BHXH) một lần, nếu tiếp tục đi làm và tham gia BHXH tại công ty mới thì có được nhận BHXH một lần nữa không?",
+    "rule": "\"Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm ghi trong quyết định của cơ quan bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 102, Khoản 4)",
+    "application": "Không có slot nào cần điền trong trường hợp này. Hệ thống Prolog đã sử dụng quy định tại Điều 102, Khoản 4 của Luật BHXH 2024 để xác định quyền hưởng BHXH một lần sau khi đã nhận trước đó.",
+    "conclusion": "Theo kết quả truy vấn Prolog, câu trả lời là: không (Answer = no). Như vậy, sau khi đã nhận BHXH một lần, nếu tiếp tục đi làm và tham gia BHXH tại công ty mới thì không được nhận BHXH một lần nữa cho thời gian đã nhận trước đó."
+  },
+  "elapsed_s": 5.596,
+  "prompt_tokens": 2712,
+  "completion_tokens": 410,
+  "error": null,
+  "gold_answer": "Nếu bạn đang nộp hồ sơ hưởng BHXH 1 lần mà đi làm lại và thuộc diện tham gia BHXH bắt buộc trước khi có quyết định hưởng, hồ sơ có thể bị ảnh hưởng vì bạn không còn ở tình trạng ngừng tham gia. Nếu cơ quan BHXH đã ra quyết định và chi trả rồi thì thời gian đã hưởng sẽ không được tính lại; sau này đi làm lại sẽ mở quá trình tham gia mới cho phần thời gian tiếp theo.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 48,
+  "question": "Mình đóng BHXH 21nam,  sinh ngày 02/08/1976, nam, công việc bảo vệ vượn cây cao su, thì khi nào được nghi hưu?",
+  "answer": "Issue: Người hỏi đã đóng BHXH 21 năm và sinh ngày 02/08/1976, hỏi khi nào được nghỉ hưu. \nRule: Theo [Luật BHXH 2024, Điều 64 khoản 1], người lao động được hưởng lương hưu khi có đủ điều kiện về tuổi và thời gian đóng BHXH. \nApplication: Không có slot nào được gán giá trị, nhưng Prolog đã xác định tuổi của người hỏi là 47. Prolog đã sử dụng quy tắc để xác định tuổi nghỉ hưu là 15. \nConclusion: Hệ thống không thể tính được kết quả cuối cùng do thiếu slot bindings.",
+  "plain_answer": "Hệ thống chưa đủ thông tin để tính chính xác khi nào bạn được nghỉ hưu vì không có thông tin về điều kiện tuổi nghỉ hưu cụ thể. Theo [Luật BHXH 2024, Điều 64 khoản 1], bạn cần đủ điều kiện về tuổi và thời gian đóng BHXH. Bạn vui lòng cung cấp thêm thông tin để mình tính giúp.",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 64 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A64.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 2,
+  "prolog_trace": "[step(conclusion,retirement_age(user,15),based_on(source_a64))]",
+  "prolog_program": "years_contributed(user, 21).\nage(user, 47).\nlegal_source(source_a64, law_bhxh_2024, article_64, clause_1, none, 'Người lao động được hưởng lương hưu khi có đủ điều kiện về tuổi và thời gian đóng BHXH.').\nretirement_age(Person, Age, Trace) :- years_contributed(Person, Years), age(Person, Age), Years >= 20, Age >= 62, Age = 62, Trace = [step(conclusion, retirement_age(Person, Age), based_on(source_a64))].\nretirement_age(Person, Age, Trace) :- years_contributed(Person, Years), age(Person, Age), Years >= 20, Age < 62, Age1 is 62 - Age, Trace = [step(conclusion, retirement_age(Person, Age1), based_on(source_a64))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi đã đóng BHXH 21 năm và sinh ngày 02/08/1976, hỏi khi nào được nghỉ hưu.",
+    "rule": "Theo [Luật BHXH 2024, Điều 64 khoản 1], người lao động được hưởng lương hưu khi có đủ điều kiện về tuổi và thời gian đóng BHXH.",
+    "application": "Không có slot nào được gán giá trị, nhưng Prolog đã xác định tuổi của người hỏi là 47. Prolog đã sử dụng quy tắc để xác định tuổi nghỉ hưu là 15.",
+    "conclusion": "Hệ thống không thể tính được kết quả cuối cùng do thiếu slot bindings."
+  },
+  "elapsed_s": 28.135,
+  "prompt_tokens": 5791,
+  "completion_tokens": 1119,
+  "error": null,
+  "gold_answer": "Nếu tính theo tuổi nghỉ hưu thông thường của lao động nam, bạn sinh ngày 02/08/1976 thì đủ 62 tuổi vào ngày 02/08/2038. Hiện thông tin bạn nêu 'bảo vệ vườn cây cao su' chưa đủ căn cứ khẳng định thuộc nghề, công việc nặng nhọc/đặc biệt nặng nhọc để được nghỉ hưu sớm hơn. 21 năm đóng BHXH mới chỉ đáp ứng về thời gian tối thiểu nếu đến tuổi, còn thời điểm nghỉ hưu vẫn phải căn cứ thêm điều kiện tuổi và tính chất công việc.",
+  "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 169]"
+}

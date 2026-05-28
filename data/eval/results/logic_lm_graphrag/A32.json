@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_graphrag",
+  "stt": 32,
+  "question": "Sinh viên TLinh (Hà Nội) đi làm bán thời gian (6 tiếng/ngày) tại siêu thị, ký hợp đồng lao động với siêu thị và được siêu thị hỗ trợ đóng một phần tiền BHXH.\nTuy nhiên, gần lúc nghỉ việc, siêu thị yêu cầu sinh viên đóng thêm tiền BHYT (mặc dù sinh viên đã đóng BHYT tại trường và trong thời gian làm việc không bị trừ tiền BHYT).\nNếu không đóng thì không được trả lương và thẻ BHYT của sinh viên TLinh tại nhà trường sẽ bị khóa lại.\nSinh viên hỏi, việc làm trên của siêu thị là đúng hay sai? Nếu sai thì giải quyết như thế nào?",
+  "answer": "Issue: Sinh viên TLinh hỏi về tính hợp pháp của yêu cầu đóng thêm tiền BHYT từ siêu thị nơi sinh viên làm việc. \nRule: Theo [Bộ luật Lao động 2019 (45/2019/QH14), Điều 41 khoản 1], người sử dụng lao động phải trả tiền lương và đóng bảo hiểm xã hội, bảo hiểm y tế cho người lao động trong thời gian làm việc. \nApplication: Không có slot nào được gán giá trị. Prolog query supermarket_action_validity(Answer, Trace) trả về Answer = sai, cho thấy hành động của siêu thị là không hợp pháp. \nConclusion: Theo Prolog, hành động yêu cầu đóng thêm tiền BHYT của siêu thị là SAI.",
+  "plain_answer": "Hành động yêu cầu sinh viên đóng thêm tiền BHYT của siêu thị là không đúng theo [Bộ luật Lao động 2019 (45/2019/QH14), Điều 41 khoản 1]. Siêu thị phải trả tiền lương và đóng bảo hiểm cho sinh viên trong thời gian làm việc. Bạn có thể yêu cầu siêu thị thực hiện đúng quy định hoặc báo cáo lên cơ quan chức năng nếu cần.",
+  "citations": [
+    "[Bộ luật Lao động 2019 (45/2019/QH14), Điều 41 khoản 1]"
+  ],
+  "citation_ids": [
+    "L45_2019.A41.K1"
+  ],
+  "citation_indices": [
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,supermarket_action_validity(sai),based_on(source_c041))]",
+  "prolog_program": "legal_source(source_c041, law_bhxh_2024, article_41, clause_1, none, 'Phải nhận người lao động trở lại làm việc theo hợp đồng lao động đã giao kết; phải trả tiền lương, đóng bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp trong những ngày người lao động không được làm việc và phải trả thêm cho người lao động một khoản tiền ít nhất bằng 02 tháng tiền lương theo hợp đồng lao động.').\nsupermarket_action_validity(Answer, Trace) :- Answer = 'sai', Trace = [step(conclusion, supermarket_action_validity(Answer), based_on(source_c041))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Sinh viên TLinh hỏi về tính hợp pháp của yêu cầu đóng thêm tiền BHYT từ siêu thị nơi sinh viên làm việc.",
+    "rule": "Theo [Bộ luật Lao động 2019 (45/2019/QH14), Điều 41 khoản 1], người sử dụng lao động phải trả tiền lương và đóng bảo hiểm xã hội, bảo hiểm y tế cho người lao động trong thời gian làm việc.",
+    "application": "Không có slot nào được gán giá trị. Prolog query supermarket_action_validity(Answer, Trace) trả về Answer = sai, cho thấy hành động của siêu thị là không hợp pháp.",
+    "conclusion": "Theo Prolog, hành động yêu cầu đóng thêm tiền BHYT của siêu thị là SAI."
+  },
+  "elapsed_s": 12.232,
+  "prompt_tokens": 4222,
+  "completion_tokens": 479,
+  "error": null,
+  "gold_answer": "Căn cứ theo khoản 10 Điều 1 Luật BHYT sửa đổi 2024, đối tượng tham gia BHYT gồm: Người lao động làm việc theo hợp đồng lao động không xác định thời hạn, hợp đồng lao động xác định thời hạn có thời hạn từ đủ 1 tháng trở lên, kể cả trường hợp người lao động và người sử dụng lao động thỏa thuận bằng tên gọi khác nhưng có nội dung thể hiện về việc làm có trả công, tiền lương và sự quản lý, điều hành, giám sát của một bên, thỏa thuận với người sử dụng lao động làm việc không trọn thời gian, có tiền lương trong tháng bằng hoặc cao hơn tiền lương làm căn cứ đóng BHXH bắt buộc thấp nhất theo quy định của pháp luật về BHXH;\nNhư vậy, nếu sinh viên làm việc không trọn thời gian theo hợp đồng có thời hạn từ 1 tháng trở lên, nếu trong tháng có mức lương bằng hoặc cao hơn mức tiền lương tối thiểu dùng để làm căn cứ đóng BHXH bắt buộc thì thuộc diện tham gia BHYT theo quy định pháp luật.\nTheo khoản 5 Điều 13 Luật BHYT sửa đổi năm 2024, trường hợp một người đồng thời thuộc nhiều đối tượng tham gia BHYT khác nhau thì đóng BHYT theo đối tượng đầu tiên mà người đó được xác định theo thứ tự.\nCăn cứ khoản 5 Điều 12 Luật BHYT sửa đổi năm 2024, thứ tự đối tượng tham gia BHYT như sau: Nhóm do người lao động và người sử dụng lao động đóng; nhóm do tổ chức BHXH đóng; nhóm do ngân sách Nhà nước đóng; nhóm được ngân sách Nhà nước hỗ trợ mức đóng; nhóm tham gia BHYT theo hộ gia đình.\nDo vậy khi sinh viên ký hợp đồng lao động nếu thuộc đối tượng tham gia BHXH bắt buộc, thì cũng thuộc đối tượng tham gia BHYT bắt buộc.\nTrường hợp siêu thị chưa trừ tiền đóng BHYT vào tiền lương của sinh viên thì sinh viên có trách nhiệm đóng phần của mình cho đơn vị, tỷ lệ 1,5% lương/tháng.\nViệc trả lương không thuộc thẩm quyền của cơ quan BHXH.\nTuy nhiên theo Điều 94 Bộ luật Lao động 2019 về nguyên tắc trả lương quy định người sử dụng lao động không được dùng việc trả lương để cưỡng ép người lao động thực hiện các nghĩa vụ khác không có trong hợp đồng hoặc trái luật.\nLương là quyền lợi cho công sức sinh viên đã bỏ ra và phải được thanh toán đầy đủ khi chấm dứt hợp đồng.",
+  "gold_citations_raw": "[Luật BHYT, Điều 1]"
+}

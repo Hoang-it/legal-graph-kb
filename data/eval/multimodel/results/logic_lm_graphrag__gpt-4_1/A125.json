@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 125,
+  "question": "Em nghỉ công ty từ ngày 25/2 công ty cũ đã gửi sổ để  e đi chốt nhưng đã 2 tháng mà bảo hiểm vẫn chưa chốt và chưa trả lại e sổ và tờ rời. vậy giờ e làm như thế nào để hưởng bảo hiểm thất nghiệp? còn 1 tháng nữa là hết hạn rồi ạ mà e vẫn chưa lấy lại được sổ",
+  "answer": "Issue:\nBạn hỏi về việc đã nghỉ việc từ ngày 25/2, công ty cũ đã gửi sổ để chốt nhưng sau 2 tháng vẫn chưa được chốt và chưa nhận lại sổ, tờ rời. Bạn muốn biết phải làm gì để được hưởng bảo hiểm thất nghiệp khi chỉ còn 1 tháng nữa là hết hạn nộp hồ sơ.\n\nRule:\n\"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), Điều 28, Khoản 4)\n\nApplication:\nKhông có slot_id nào được ràng buộc cụ thể trong trường hợp này. Prolog đã sử dụng thông tin về thời hạn 05 ngày làm việc để xác định các bước cần thực hiện khi chưa nhận lại sổ bảo hiểm xã hội, bao gồm: liên hệ cơ quan BHXH để hỏi tiến độ, khiếu nại nếu quá hạn mà không nhận được sổ hoặc văn bản trả lời, và sau khi nhận lại sổ thì nhanh chóng hoàn thiện hồ sơ để nộp đề nghị hưởng bảo hiểm thất nghiệp.\n\nConclusion:\nTheo kết quả Prolog, bạn nên: \n1. Liên hệ cơ quan bảo hiểm xã hội nơi nộp hồ sơ để hỏi về tiến độ chốt sổ và nhận lại sổ bảo hiểm xã hội, tờ rời.\n2. Nếu quá thời hạn 05 ngày làm việc kể từ ngày cơ quan BHXH nhận đủ hồ sơ mà chưa trả sổ hoặc không có văn bản trả lời, bạn có quyền khiếu nại hoặc phản ánh tới cơ quan BHXH hoặc cơ quan quản lý lao động địa phương.\n3. Sau khi nhận lại sổ, nhanh chóng hoàn thiện hồ sơ và nộp đề nghị hưởng bảo hiểm thất nghiệp trước khi hết hạn 3 tháng kể từ ngày nghỉ việc.",
+  "citations": [
+    "[Điều 28 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A28.K4"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,huong_bao_hiem_that_nghiep_khi_chua_nhan_so([Liên hệ cơ quan bảo hiểm xã hội nơi nộp hồ sơ để hỏi về tiến độ chốt sổ và nhận lại sổ bảo hiểm xã hội, tờ rời.,Nếu quá thời hạn 05 ngày làm việc kể từ ngày cơ quan BHXH nhận đủ hồ sơ mà chưa trả sổ hoặc không có văn bản trả lời, bạn có quyền khiếu nại hoặc phản ánh tới cơ quan BHXH hoặc cơ quan quản lý lao động địa phương.,Sau khi nhận lại sổ, nhanh chóng hoàn thiện hồ sơ và nộp đề nghị hưởng bảo hiểm thất nghiệp trước khi hết hạn 3 tháng kể từ ngày nghỉ việc.]),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về việc đã nghỉ việc từ ngày 25/2, công ty cũ đã gửi sổ để chốt nhưng sau 2 tháng vẫn chưa được chốt và chưa nhận lại sổ, tờ rời. Bạn muốn biết phải làm gì để được hưởng bảo hiểm thất nghiệp khi chỉ còn 1 tháng nữa là hết hạn nộp hồ sơ.",
+    "rule": "\"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), Điều 28, Khoản 4)",
+    "application": "Không có slot_id nào được ràng buộc cụ thể trong trường hợp này. Prolog đã sử dụng thông tin về thời hạn 05 ngày làm việc để xác định các bước cần thực hiện khi chưa nhận lại sổ bảo hiểm xã hội, bao gồm: liên hệ cơ quan BHXH để hỏi tiến độ, khiếu nại nếu quá hạn mà không nhận được sổ hoặc văn bản trả lời, và sau khi nhận lại sổ thì nhanh chóng hoàn thiện hồ sơ để nộp đề nghị hưởng bảo hiểm thất nghiệp.",
+    "conclusion": "Theo kết quả Prolog, bạn nên: \n1. Liên hệ cơ quan bảo hiểm xã hội nơi nộp hồ sơ để hỏi về tiến độ chốt sổ và nhận lại sổ bảo hiểm xã hội, tờ rời.\n2. Nếu quá thời hạn 05 ngày làm việc kể từ ngày cơ quan BHXH nhận đủ hồ sơ mà chưa trả sổ hoặc không có văn bản trả lời, bạn có quyền khiếu nại hoặc phản ánh tới cơ quan BHXH hoặc cơ quan quản lý lao động địa phương.\n3. Sau khi nhận lại sổ, nhanh chóng hoàn thiện hồ sơ và nộp đề nghị hưởng bảo hiểm thất nghiệp trước khi hết hạn 3 tháng kể từ ngày nghỉ việc."
+  },
+  "elapsed_s": 8.327,
+  "prompt_tokens": 3666,
+  "completion_tokens": 810,
+  "error": null,
+  "gold_answer": "Bạn cần nộp hồ sơ BHTN trong 03 tháng từ ngày nghỉ việc, nên không nên đợi quá sát hạn. Hãy yêu cầu công ty hoặc cơ quan BHXH cấp xác nhận quá trình đóng/chốt dữ liệu để kịp nộp hồ sơ. Nếu việc chậm chốt do phía công ty/BHXH, bạn nên nộp trước các giấy tờ đang có tại trung tâm dịch vụ việc làm và xin hướng dẫn bổ sung, đồng thời làm đơn khiếu nại về việc chậm chốt.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

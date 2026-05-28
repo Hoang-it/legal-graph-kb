@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 160,
+  "question": "mình nghỉ công ty được 10 tháng rồi 2 tháng nữa là mình rút bhxh , nhưng hiện tại mình đi làm thời vụ mình đóng tiền thuế thu nhập cá nhân , vậy mình có rút đc bhxh nữa không?",
+  "answer": "Issue:\nMình nghỉ công ty được 10 tháng, đang làm thời vụ và đóng thuế TNCN; hỏi có rút BHXH một lần được không?\n\nRule:\nlegal_source(source_withdrawal, law_bhxh_2024, none, none, none, 'Người lao động không đóng BHXH liên tục từ đủ 12 tháng trở lên thì được hưởng BHXH một lần; không được rút nếu đang tham gia BHXH bắt buộc hoặc đã đủ điều kiện hưởng lương hưu.').\n\nApplication:\nmonths_since_left(user) = 10 (theo verify_facts \"months_since_left(user, 10).\").\ntemp_job_pays_pit(user) = true (theo verify_facts \"temp_job_pays_pit(user).\").\nProlog thực thi truy vấn decide_withdraw(user, Answer, Trace). Nó đối chiếu months_since_left(user,10) với quy tắc decide_withdraw(..., no_wait) trong chương trình (quy tắc có điều kiện Months < 12). Ngoài ra chương trình có quy tắc pays_pit_does_not_imply_bhxh nên việc đóng thuế TNCN do làm thời vụ không tự động được coi là đang tham gia BHXH bắt buộc.\n\nConclusion:\nProlog trả Answer = \"no_wait\" với Trace = \"[step(wait,decide_withdraw(user,no_wait),based_on(source_withdrawal))]\". Kết quả này là binding cuối cùng từ Prolog (không có thiếu slot).",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(wait,decide_withdraw(user,no_wait),based_on(source_withdrawal))]",
+  "irac_sections": {
+    "issue": "Mình nghỉ công ty được 10 tháng, đang làm thời vụ và đóng thuế TNCN; hỏi có rút BHXH một lần được không?",
+    "rule": "legal_source(source_withdrawal, law_bhxh_2024, none, none, none, 'Người lao động không đóng BHXH liên tục từ đủ 12 tháng trở lên thì được hưởng BHXH một lần; không được rút nếu đang tham gia BHXH bắt buộc hoặc đã đủ điều kiện hưởng lương hưu.').",
+    "application": "months_since_left(user) = 10 (theo verify_facts \"months_since_left(user, 10).\").\ntemp_job_pays_pit(user) = true (theo verify_facts \"temp_job_pays_pit(user).\").\nProlog thực thi truy vấn decide_withdraw(user, Answer, Trace). Nó đối chiếu months_since_left(user,10) với quy tắc decide_withdraw(..., no_wait) trong chương trình (quy tắc có điều kiện Months < 12). Ngoài ra chương trình có quy tắc pays_pit_does_not_imply_bhxh nên việc đóng thuế TNCN do làm thời vụ không tự động được coi là đang tham gia BHXH bắt buộc.",
+    "conclusion": "Prolog trả Answer = \"no_wait\" với Trace = \"[step(wait,decide_withdraw(user,no_wait),based_on(source_withdrawal))]\". Kết quả này là binding cuối cùng từ Prolog (không có thiếu slot)."
+  },
+  "elapsed_s": 66.26,
+  "prompt_tokens": 4241,
+  "completion_tokens": 8464,
+  "error": null,
+  "gold_answer": "Việc bạn đi làm thời vụ và bị khấu trừ thuế TNCN không tự động làm mất quyền hưởng BHXH 1 lần. Điều quan trọng là tại thời điểm nộp hồ sơ, bạn có còn thuộc đối tượng tham gia BHXH bắt buộc hay đang tham gia BHXH tự nguyện hay không. Nếu công việc thời vụ không thuộc diện đóng BHXH bắt buộc và bạn đã đủ 12 tháng không tham gia thì vẫn có thể làm BHXH 1 lần.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

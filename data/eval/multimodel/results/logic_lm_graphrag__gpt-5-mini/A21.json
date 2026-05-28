@@ -1,0 +1,35 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 21,
+  "question": "Ông Quang Lành (Tây Ninh) hỏi, các đối tượng hưởng trợ cấp BHXH hằng tháng gồm những đối tượng nào để xác định không được hưởng trợ cấp hưu trí xã hội?",
+  "answer": "Issue: Ông Quang Lành hỏi những đối tượng nào đang hưởng trợ cấp BHXH hằng tháng để xác định không được hưởng trợ cấp hưu trí xã hội.\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), Điều 141, khoản 1: \"Người đang hưởng trợ cấp mất sức lao động, trợ cấp tai nạn lao động, bệnh nghề nghiệp, trợ cấp tuất hằng tháng, trợ cấp hằng tháng đối với cán bộ xã, phường, thị trấn đã nghỉ việc, trợ cấp hằng tháng đối với công nhân cao su và người đang hưởng trợ cấp hằng tháng sau khi đã hết thời hạn hưởng trợ cấp mất sức lao động được điều chỉnh mức hưởng theo quy định của Chính phủ.\"\nLuật BHXH 2024 (41/2024/QH15), Điều 86, khoản 3: \"Không áp dụng trợ cấp tuất hằng tháng đối với thân nhân quy định tại các điểm b, c, d và đ khoản 2 Điều này là người đang hưởng tiền lương và tham gia bảo hiểm xã hội bắt buộc hoặc đang hưởng lương hưu, trợ cấp mất sức lao động hằng tháng, trợ cấp hằng tháng mà mức hưởng bằng hoặc cao hơn mức tham chiếu, không bao gồm khoản trợ cấp theo quy định của pháp luật về ưu đãi người có công với cách mạng.\"\n\nApplication:\nCác slot được gán: không có slot nào trong slot_bindings.\nProlog sử dụng biến trả lời Conditions và hai nguồn pháp lý (source_c141, source_c086) như Trace: \"[step(conclusion,monthly_bhxh_beneficiaries(...),based_on(source_c141)),step(conclusion,monthly_bhxh_beneficiaries(...),based_on(source_c086))]\". Truy vấn tổng hợp các điều khoản nêu trên để sinh danh sách Conditions.\n\nConclusion:\nProlog trả về binding cho Conditions: [đang hưởng lương hưu,đang hưởng trợ cấp mất sức lao động hằng tháng,đang hưởng trợ cấp tai nạn lao động, bệnh nghề nghiệp hằng tháng,đang hưởng trợ cấp tuất hằng tháng,đang hưởng trợ cấp hằng tháng đối với cán bộ xã, phường, thị trấn đã nghỉ việc,đang hưởng trợ cấp hằng tháng đối với công nhân cao su,người đang hưởng trợ cấp hằng tháng sau khi đã hết thời hạn hưởng trợ cấp mất sức lao động].",
+  "citations": [
+    "[Điều 141 khoản 1]",
+    "[Điều 86 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A141.K1",
+    "L41_2024.A86.K3"
+  ],
+  "citation_indices": [
+    7,
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,monthly_bhxh_beneficiaries([đang hưởng lương hưu,đang hưởng trợ cấp mất sức lao động hằng tháng,đang hưởng trợ cấp tai nạn lao động, bệnh nghề nghiệp hằng tháng,đang hưởng trợ cấp tuất hằng tháng,đang hưởng trợ cấp hằng tháng đối với cán bộ xã, phường, thị trấn đã nghỉ việc,đang hưởng trợ cấp hằng tháng đối với công nhân cao su,người đang hưởng trợ cấp hằng tháng sau khi đã hết thời hạn hưởng trợ cấp mất sức lao động]),based_on(source_c141)),step(conclusion,monthly_bhxh_beneficiaries([đang hưởng lương hưu,đang hưởng trợ cấp mất sức lao động hằng tháng,đang hưởng trợ cấp tai nạn lao động, bệnh nghề nghiệp hằng tháng,đang hưởng trợ cấp tuất hằng tháng,đang hưởng trợ cấp hằng tháng đối với cán bộ xã, phường, thị trấn đã nghỉ việc,đang hưởng trợ cấp hằng tháng đối với công nhân cao su,người đang hưởng trợ cấp hằng tháng sau khi đã hết thời hạn hưởng trợ cấp mất sức lao động]),based_on(source_c086))]",
+  "irac_sections": {
+    "issue": "Ông Quang Lành hỏi những đối tượng nào đang hưởng trợ cấp BHXH hằng tháng để xác định không được hưởng trợ cấp hưu trí xã hội.",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), Điều 141, khoản 1: \"Người đang hưởng trợ cấp mất sức lao động, trợ cấp tai nạn lao động, bệnh nghề nghiệp, trợ cấp tuất hằng tháng, trợ cấp hằng tháng đối với cán bộ xã, phường, thị trấn đã nghỉ việc, trợ cấp hằng tháng đối với công nhân cao su và người đang hưởng trợ cấp hằng tháng sau khi đã hết thời hạn hưởng trợ cấp mất sức lao động được điều chỉnh mức hưởng theo quy định của Chính phủ.\"\nLuật BHXH 2024 (41/2024/QH15), Điều 86, khoản 3: \"Không áp dụng trợ cấp tuất hằng tháng đối với thân nhân quy định tại các điểm b, c, d và đ khoản 2 Điều này là người đang hưởng tiền lương và tham gia bảo hiểm xã hội bắt buộc hoặc đang hưởng lương hưu, trợ cấp mất sức lao động hằng tháng, trợ cấp hằng tháng mà mức hưởng bằng hoặc cao hơn mức tham chiếu, không bao gồm khoản trợ cấp theo quy định của pháp luật về ưu đãi người có công với cách mạng.\"",
+    "application": "Các slot được gán: không có slot nào trong slot_bindings.\nProlog sử dụng biến trả lời Conditions và hai nguồn pháp lý (source_c141, source_c086) như Trace: \"[step(conclusion,monthly_bhxh_beneficiaries(...),based_on(source_c141)),step(conclusion,monthly_bhxh_beneficiaries(...),based_on(source_c086))]\". Truy vấn tổng hợp các điều khoản nêu trên để sinh danh sách Conditions.",
+    "conclusion": "Prolog trả về binding cho Conditions: [đang hưởng lương hưu,đang hưởng trợ cấp mất sức lao động hằng tháng,đang hưởng trợ cấp tai nạn lao động, bệnh nghề nghiệp hằng tháng,đang hưởng trợ cấp tuất hằng tháng,đang hưởng trợ cấp hằng tháng đối với cán bộ xã, phường, thị trấn đã nghỉ việc,đang hưởng trợ cấp hằng tháng đối với công nhân cao su,người đang hưởng trợ cấp hằng tháng sau khi đã hết thời hạn hưởng trợ cấp mất sức lao động]."
+  },
+  "elapsed_s": 37.111,
+  "prompt_tokens": 4125,
+  "completion_tokens": 4836,
+  "error": null,
+  "gold_answer": "Các đối tượng hưởng trợ cấp BHXH hằng tháng bao gồm:\n- Trợ cấp mất sức lao động;\n- Trợ cấp tai nạn lao động, bệnh nghề nghiệp;\n- Trợ cấp tuất;…\nĐây là những đối tượng không được hưởng trợ cấp hưu trí xã hội.",
+  "gold_citations_raw": null
+}

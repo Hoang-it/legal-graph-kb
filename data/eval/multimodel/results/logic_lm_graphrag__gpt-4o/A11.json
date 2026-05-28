@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 11,
+  "question": "Bà Hòa Điều đóng BHXH từ tháng 1/2020 đến tháng 12/2023.\nBà đã nghỉ việc, dự kiến sinh con vào tháng 8/2024.\nBà Điều hỏi, bà có được hưởng chế độ thai sản không?",
+  "answer": "Issue: Bà Hòa Điều đã đóng bảo hiểm xã hội từ tháng 1/2020 đến tháng 12/2023 và đã nghỉ việc. Bà dự kiến sinh con vào tháng 8/2024 và muốn biết liệu bà có đủ điều kiện để hưởng chế độ thai sản hay không.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 4: \"Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con hoặc nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 06 tháng tuổi thì vẫn được hưởng chế độ thai sản theo quy định tại các điều 53, 54, 55 và 56 và các khoản 1, 2 và 3 Điều 58 của Luật này.\"\n\nApplication: Trong trường hợp này, bà Hòa Điều đã đóng bảo hiểm xã hội trong 48 tháng. Theo quy tắc được áp dụng, điều kiện để hưởng chế độ thai sản là đã đóng bảo hiểm xã hội từ 6 tháng trở lên. Dựa trên thông tin này, Prolog đã xác định rằng bà đủ điều kiện.\n\nConclusion: Kết quả từ Prolog cho thấy bà Hòa Điều đủ điều kiện để hưởng chế độ thai sản, với giá trị biến Eligible là \"yes\".",
+  "citations": [
+    "[Điều 50 khoản 4]",
+    "[Điều 58]"
+  ],
+  "citation_ids": [
+    "L41_2024.A50.K4",
+    "L41_2024.A58"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,maternity_benefit_eligibility(user,yes),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Bà Hòa Điều đã đóng bảo hiểm xã hội từ tháng 1/2020 đến tháng 12/2023 và đã nghỉ việc. Bà dự kiến sinh con vào tháng 8/2024 và muốn biết liệu bà có đủ điều kiện để hưởng chế độ thai sản hay không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 4: \"Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con hoặc nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 06 tháng tuổi thì vẫn được hưởng chế độ thai sản theo quy định tại các điều 53, 54, 55 và 56 và các khoản 1, 2 và 3 Điều 58 của Luật này.\"",
+    "application": "Trong trường hợp này, bà Hòa Điều đã đóng bảo hiểm xã hội trong 48 tháng. Theo quy tắc được áp dụng, điều kiện để hưởng chế độ thai sản là đã đóng bảo hiểm xã hội từ 6 tháng trở lên. Dựa trên thông tin này, Prolog đã xác định rằng bà đủ điều kiện.",
+    "conclusion": "Kết quả từ Prolog cho thấy bà Hòa Điều đủ điều kiện để hưởng chế độ thai sản, với giá trị biến Eligible là \"yes\"."
+  },
+  "elapsed_s": 5.833,
+  "prompt_tokens": 3373,
+  "completion_tokens": 641,
+  "error": null,
+  "gold_answer": "Tại Khoản 2 và Khoản 3 Điều 31 Luật BHXH năm 2014 quy định điều kiện hưởng chế độ thai sản đối với lao động nữ sinh con là: Phải đóng BHXH từ đủ 6 tháng trở lên trong thời gian 12 tháng trước khi sinh con hoặc lao động nữ đã đóng BHXH từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của cơ sở khám bệnh, chữa bệnh có thẩm quyền thì phải đóng BHXH từ đủ 3 tháng trở lên trong thời gian 12 tháng trước khi sinh con.\nTại Khoản 4 Điều 31 Luật BHXH năm 2014 quy định: Người lao động đủ điều kiện quy định tại Khoản 2 và Khoản 3 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con vẫn được hưởng chế độ thai sản theo quy định.\nTại Khoản 1 Điều 9 Thông tư số 59/2015/TT-BLĐTBXH ngày 29/12/2015 của Bộ trưởng Bộ Lao động - Thương binh và Xã hội quy định, thời gian 12 tháng trước khi sinh con được xác định như sau:\n- Trường hợp sinh con trước ngày 15 của tháng, thì tháng sinh con không tính vào thời gian 12 tháng trước khi sinh con;\n- Trường hợp sinh con từ ngày 15 trở đi của tháng và tháng đó có đóng BHXH, thì tháng sinh con được tính vào thời gian 12 tháng trước khi sinh con. Trường hợp tháng đó không đóng BHXH thì thực hiện theo quy định tại Điểm a Khoản này.\nTrường hợp của bà đã nghỉ việc và dự kiến sinh con vào tháng 8/2024, trong thời gian 12 tháng trước khi sinh con (được tính từ tháng 8/2023 đến tháng 7/2024), bà có 5 tháng đóng BHXH (từ tháng 8/2023 đến tháng 12/2023). Do đó, bà không đủ điều kiện hưởng chế độ thai sản khi sinh con theo quy định tại Khoản 2 Điều 31 Luật BHXH. Trường hợp bà trong thời gian mang thai phải nghỉ việc để dưỡng thai theo chỉ định của cơ sở khám bệnh, chữa bệnh có thẩm quyền thì bà đủ điều kiện hưởng chế độ thai sản khi sinh con theo quy định tại Khoản 3 Điều 31 Luật BHXH nêu trên.",
+  "gold_citations_raw": "Khoản 2 và Khoản 3 Điều 31 Luật BHXH năm 2014\nKhoản 4 Điều 31 Luật BHXH năm 2014\nKhoản 1 Điều 9 Thông tư số 59/2015/TT-BLĐTBXH"
+}

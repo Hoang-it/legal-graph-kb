@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 63,
+  "question": "Tôi làm việc tại cty được 18 năm, giờ tôi nghỉ ngang vì ko xin được giấy thôi việc, hiện tại tôi đã đi làm ở 1 công ty khác.vậy bảo hiểm thất nghiệp của tôi cộng dồn vào những năm tiếp theo tôi đóng ở công ty mới hay sẽ bị mất?",
+  "answer": "Issue:\nTôi đã đóng BHXH 18 năm, nghỉ ngang không có giấy thôi việc và đang làm công ty mới; câu hỏi là thời gian đóng BHXH/ bảo hiểm thất nghiệp có được cộng dồn hay không.\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), Điều 13, khoản 3: \"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\"\n\nApplication:\nslot_bindings: Không có slot_bindings được cung cấp.\nCác thực thể/fact đã xác nhận và chương trình Prolog sử dụng:\nyears_contributed(user, 18).\ncurrently_employed(user).\nleft_without_termination(user).\nChương trình Prolog khớp fact years_contributed(user, 18) với biến Years, kiểm tra điều kiện Years > 0, và dùng nguồn pháp lý source_c005 (luật trích dẫn ở trên) để tạo trace kết luận.\n\nConclusion:\nProlog trả về Answer = \"accumulates\" với trace [step(conclusion,unemployment_insurance_accumulates(user,accumulates),based_on(source_c005))]. Kết quả này là binding cuối cùng từ truy vấn Prolog (biến Answer = \"accumulates\").",
+  "citations": [
+    "[Điều 13 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A13.K3"
+  ],
+  "citation_indices": [
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_accumulates(user,accumulates),based_on(source_c005))]",
+  "irac_sections": {
+    "issue": "Tôi đã đóng BHXH 18 năm, nghỉ ngang không có giấy thôi việc và đang làm công ty mới; câu hỏi là thời gian đóng BHXH/ bảo hiểm thất nghiệp có được cộng dồn hay không.",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), Điều 13, khoản 3: \"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\"",
+    "application": "slot_bindings: Không có slot_bindings được cung cấp.\nCác thực thể/fact đã xác nhận và chương trình Prolog sử dụng:\nyears_contributed(user, 18).\ncurrently_employed(user).\nleft_without_termination(user).\nChương trình Prolog khớp fact years_contributed(user, 18) với biến Years, kiểm tra điều kiện Years > 0, và dùng nguồn pháp lý source_c005 (luật trích dẫn ở trên) để tạo trace kết luận.",
+    "conclusion": "Prolog trả về Answer = \"accumulates\" với trace [step(conclusion,unemployment_insurance_accumulates(user,accumulates),based_on(source_c005))]. Kết quả này là binding cuối cùng từ truy vấn Prolog (biến Answer = \"accumulates\")."
+  },
+  "elapsed_s": 42.578,
+  "prompt_tokens": 2910,
+  "completion_tokens": 4549,
+  "error": null,
+  "gold_answer": "Thời gian đóng BHTN chưa hưởng sẽ được bảo lưu để cộng dồn với thời gian đóng ở công ty mới, không tự mất chỉ vì bạn nghỉ ngang. Điều quan trọng là lần nghỉ việc trước bạn chưa nhận trợ cấp thất nghiệp cho khoảng thời gian đó. Khi đủ điều kiện hưởng ở lần sau, cơ quan có thẩm quyền sẽ cộng dồn thời gian đóng BHTN chưa hưởng để tính số tháng trợ cấp. Tuy nhiên hồ sơ chấm dứt HĐLĐ của từng giai đoạn vẫn phải hợp lệ.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 49"
+}

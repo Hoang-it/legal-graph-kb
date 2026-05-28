@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_graphrag",
+  "stt": 145,
+  "question": "đóng bảo hiểm xã hội tự nguyện thì có dc rút 1 lần k?",
+  "answer": "Issue: Đóng bảo hiểm xã hội tự nguyện thì có được rút một lần không?\n\nRule: \"Người tham gia bảo hiểm xã hội tự nguyện đang hưởng lương hưu ra nước ngoài để định cư nếu có nguyện vọng thì được giải quyết hưởng trợ cấp một lần và việc giải quyết hưởng trợ cấp một lần thực hiện như sau:\" (Luật BHXH 2024 (41/2024/QH15), Điều 115, Khoản 1)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để xác định điều kiện rút trợ cấp một lần.\n\nConclusion: Hệ thống không thể tính toán số liệu cuối cùng do không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 115 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A115.K1"
+  ],
+  "citation_indices": [
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_withdrawal_conditions([allowed_for_retirement,conditions_apply]),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Đóng bảo hiểm xã hội tự nguyện thì có được rút một lần không?",
+    "rule": "\"Người tham gia bảo hiểm xã hội tự nguyện đang hưởng lương hưu ra nước ngoài để định cư nếu có nguyện vọng thì được giải quyết hưởng trợ cấp một lần và việc giải quyết hưởng trợ cấp một lần thực hiện như sau:\" (Luật BHXH 2024 (41/2024/QH15), Điều 115, Khoản 1)",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để xác định điều kiện rút trợ cấp một lần.",
+    "conclusion": "Hệ thống không thể tính toán số liệu cuối cùng do không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 6.885,
+  "prompt_tokens": 2805,
+  "completion_tokens": 369,
+  "error": null,
+  "gold_answer": "BHXH tự nguyện vẫn có thể được hưởng BHXH 1 lần, nhưng chỉ khi thuộc trường hợp luật cho phép. Mức hưởng tính theo số năm đã đóng và căn cứ đóng BHXH tự nguyện, bao gồm cả phần Nhà nước hỗ trợ nếu có. Tuy nhiên cần cân nhắc kỹ vì BHXH tự nguyện nhằm tích lũy cho hưu trí, tử tuất; rút 1 lần sẽ mất lợi ích lâu dài.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,25 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 116,
+  "question": "Đi làm công ty mức lương: 5tr5 mà cty bắt đóng bảo hiểm 1tr700 là sao?",
+  "answer": "Issue: Người lao động có mức lương 5 triệu 500 nghìn đồng nhưng công ty yêu cầu đóng bảo hiểm 1 triệu 700 nghìn đồng, điều này có hợp lý không?\n\nRule: \n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để tính toán.\n\nConclusion: Hệ thống không thể tính toán được số liệu cuối cùng do không có giá trị nào được gán cho các slot.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,explain_insurance_contribution(Mức đóng bảo hiểm xã hội thường được tính dựa trên mức lương thực tế của người lao động, và có thể bao gồm các khoản đóng góp khác nhau. Theo quy định, mức đóng bảo hiểm xã hội tối thiểu và tối đa sẽ được xác định bởi nhà nước.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người lao động có mức lương 5 triệu 500 nghìn đồng nhưng công ty yêu cầu đóng bảo hiểm 1 triệu 700 nghìn đồng, điều này có hợp lý không?",
+    "rule": "",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để tính toán.",
+    "conclusion": "Hệ thống không thể tính toán được số liệu cuối cùng do không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 11.334,
+  "prompt_tokens": 3242,
+  "completion_tokens": 334,
+  "error": null,
+  "gold_answer": "Nếu lương đóng BHXH là 5,5 triệu thì phần người lao động phải đóng BHXH, BHYT, BHTN thông thường khoảng 10,5%, tức khoảng 577.500 đồng/tháng; doanh nghiệp đóng thêm phần của họ. Nếu công ty đang trừ bạn 1,7 triệu thì cần yêu cầu bảng tính cụ thể vì có thể đang trừ cả phần doanh nghiệp, truy thu tháng cũ hoặc trừ sai. Công ty không được bắt NLĐ gánh phần nghĩa vụ của NSDLĐ.",
+  "gold_citations_raw": "Điều 13, 14 Luật BHXH 2024; Luật BHYT; Luật Việc làm 2013/2025"
+}

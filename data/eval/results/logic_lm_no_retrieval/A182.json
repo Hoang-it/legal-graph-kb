@@ -1,0 +1,25 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 182,
+  "question": "Rút Bhxh là tính từ ngày có giấy quyết định nghỉ việc tròn một năm hay là thời điểm mình đi nộp sổ?",
+  "answer": "Issue: Rút BHXH được tính từ ngày có giấy quyết định nghỉ việc tròn một năm hay là thời điểm nộp sổ?\n\nRule: Rút BHXH được tính từ thời điểm nộp hồ sơ, không phải từ ngày có giấy quyết định nghỉ việc.\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Prolog đã trả về kết quả mà không cần sử dụng bất kỳ thông tin nào từ các slot.\n\nConclusion: Prolog đã trả về giá trị \"Rút BHXH được tính từ thời điểm nộp hồ sơ, không phải từ ngày có giấy quyết định nghỉ việc.\" cho biến Conditions.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(Rút BHXH được tính từ thời điểm nộp hồ sơ, không phải từ ngày có giấy quyết định nghỉ việc.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Rút BHXH được tính từ ngày có giấy quyết định nghỉ việc tròn một năm hay là thời điểm nộp sổ?",
+    "rule": "Rút BHXH được tính từ thời điểm nộp hồ sơ, không phải từ ngày có giấy quyết định nghỉ việc.",
+    "application": "Không có slot nào được gán giá trị trong trường hợp này. Prolog đã trả về kết quả mà không cần sử dụng bất kỳ thông tin nào từ các slot.",
+    "conclusion": "Prolog đã trả về giá trị \"Rút BHXH được tính từ thời điểm nộp hồ sơ, không phải từ ngày có giấy quyết định nghỉ việc.\" cho biến Conditions."
+  },
+  "elapsed_s": 8.325,
+  "prompt_tokens": 1958,
+  "completion_tokens": 260,
+  "error": null,
+  "gold_answer": "Mốc 1 năm để xét BHXH 1 lần thường được hiểu là sau 12 tháng bạn không còn thuộc diện tham gia BHXH bắt buộc và cũng không tham gia BHXH tự nguyện. Vì vậy không chỉ nhìn vào ngày ký quyết định nghỉ việc, mà phải xét thực tế quá trình tham gia sau đó. Khi đủ 12 tháng ngừng tham gia thì bạn mới nộp hồ sơ nếu thuộc trường hợp được hưởng.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

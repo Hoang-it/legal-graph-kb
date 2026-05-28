@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 137,
+  "question": "Hiện tại bên Bảo hiểm có cấp lại sổ và tờ rời bị mất không?\nEm bị mất sổ và tờ rời đóng từ năm 2018 tới 2020. Do bị trộm vào nhà .\nHiện tại e vẫn còn tờ rời từ 2021 cho đến nay.",
+  "answer": "Issue: Hiện tại, người lao động có thể yêu cầu cấp lại sổ bảo hiểm xã hội (BHXH) và tờ rời bị mất hay không?\n\nRule: Theo quy định tại Luật Bảo hiểm xã hội 2024, Điều 46, Khoản 2: \"Người lao động có quyền yêu cầu cấp lại sổ BHXH và tờ rời trong trường hợp bị mất.\"\n\nApplication: Trong trường hợp này, không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên quy định pháp luật, người lao động có quyền yêu cầu cấp lại sổ BHXH và tờ rời nếu bị mất.\n\nConclusion: Theo kết quả từ chương trình Prolog, câu trả lời là \"yes\", nghĩa là người lao động có thể yêu cầu cấp lại sổ BHXH và tờ rời bị mất.",
+  "citations": [
+    "[Điều 46 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A46.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,can_request_replacement(yes),based_on(source_a46_k2))]",
+  "irac_sections": {
+    "issue": "Hiện tại, người lao động có thể yêu cầu cấp lại sổ bảo hiểm xã hội (BHXH) và tờ rời bị mất hay không?",
+    "rule": "Theo quy định tại Luật Bảo hiểm xã hội 2024, Điều 46, Khoản 2: \"Người lao động có quyền yêu cầu cấp lại sổ BHXH và tờ rời trong trường hợp bị mất.\"",
+    "application": "Trong trường hợp này, không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên quy định pháp luật, người lao động có quyền yêu cầu cấp lại sổ BHXH và tờ rời nếu bị mất.",
+    "conclusion": "Theo kết quả từ chương trình Prolog, câu trả lời là \"yes\", nghĩa là người lao động có thể yêu cầu cấp lại sổ BHXH và tờ rời bị mất."
+  },
+  "elapsed_s": 5.06,
+  "prompt_tokens": 2052,
+  "completion_tokens": 352,
+  "error": null,
+  "gold_answer": "Có thể làm thủ tục cấp lại sổ/tờ rời bị mất. Việc bị trộm, thất lạc không làm mất quá trình đóng nếu dữ liệu đã có trên hệ thống BHXH. Bạn mang CCCD và làm hồ sơ cấp lại tại cơ quan BHXH nơi cư trú hoặc nơi đang quản lý hồ sơ; trường hợp cần, BHXH sẽ in lại quá trình đóng tương ứng. Nên giữ lại tờ rời 2021 đến nay để đối chiếu thông tin.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

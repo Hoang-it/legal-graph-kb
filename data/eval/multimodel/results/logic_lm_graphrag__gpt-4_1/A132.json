@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 132,
+  "question": "Em bị mất giấy quyết định thôi việc thì có rút được thất nghiệp với bhxh hông???",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu bị mất giấy quyết định thôi việc thì có thể rút được bảo hiểm thất nghiệp và bảo hiểm xã hội hay không?\n\nRule:\n\"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\" (Luật BHXH 2024 (41/2024/QH15), Điều 4, Khoản 4)\n\nApplication:\nKhông có slot_id nào được cung cấp trong truy vấn này. Prolog đã sử dụng quy định tại Điều 4, Khoản 4 Luật BHXH 2024 để xác định rằng việc rút bảo hiểm thất nghiệp và bảo hiểm xã hội cần đáp ứng điều kiện về hồ sơ theo quy định pháp luật. Việc mất giấy quyết định thôi việc có thể ảnh hưởng đến việc hoàn thiện hồ sơ, vì đây thường là giấy tờ bắt buộc khi làm thủ tục hưởng bảo hiểm thất nghiệp theo Luật Việc làm. Hệ thống khuyến nghị liên hệ cơ quan bảo hiểm xã hội hoặc trung tâm dịch vụ việc làm để được hướng dẫn bổ sung hoặc thay thế giấy tờ phù hợp.\n\nConclusion:\nProlog trả về: \"Việc rút bảo hiểm thất nghiệp và bảo hiểm xã hội cần đáp ứng điều kiện về hồ sơ theo quy định của pháp luật về bảo hiểm xã hội và bảo hiểm thất nghiệp. Việc mất giấy quyết định thôi việc có thể ảnh hưởng đến việc hoàn thiện hồ sơ, do đây thường là giấy tờ bắt buộc khi làm thủ tục hưởng bảo hiểm thất nghiệp theo Luật Việc làm. Bạn nên liên hệ cơ quan bảo hiểm xã hội hoặc trung tâm dịch vụ việc làm để được hướng dẫn bổ sung hoặc thay thế giấy tờ phù hợp.\"",
+  "citations": [
+    "[Điều 4 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A4.K4"
+  ],
+  "citation_indices": [
+    7
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,can_claim_unemployment_and_bhxh_without_termination_decision(Việc rút bảo hiểm thất nghiệp và bảo hiểm xã hội cần đáp ứng điều kiện về hồ sơ theo quy định của pháp luật về bảo hiểm xã hội và bảo hiểm thất nghiệp. Việc mất giấy quyết định thôi việc có thể ảnh hưởng đến việc hoàn thiện hồ sơ, do đây thường là giấy tờ bắt buộc khi làm thủ tục hưởng bảo hiểm thất nghiệp theo Luật Việc làm. Bạn nên liên hệ cơ quan bảo hiểm xã hội hoặc trung tâm dịch vụ việc làm để được hướng dẫn bổ sung hoặc thay thế giấy tờ phù hợp.),based_on(source_c007))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu bị mất giấy quyết định thôi việc thì có thể rút được bảo hiểm thất nghiệp và bảo hiểm xã hội hay không?",
+    "rule": "\"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\" (Luật BHXH 2024 (41/2024/QH15), Điều 4, Khoản 4)",
+    "application": "Không có slot_id nào được cung cấp trong truy vấn này. Prolog đã sử dụng quy định tại Điều 4, Khoản 4 Luật BHXH 2024 để xác định rằng việc rút bảo hiểm thất nghiệp và bảo hiểm xã hội cần đáp ứng điều kiện về hồ sơ theo quy định pháp luật. Việc mất giấy quyết định thôi việc có thể ảnh hưởng đến việc hoàn thiện hồ sơ, vì đây thường là giấy tờ bắt buộc khi làm thủ tục hưởng bảo hiểm thất nghiệp theo Luật Việc làm. Hệ thống khuyến nghị liên hệ cơ quan bảo hiểm xã hội hoặc trung tâm dịch vụ việc làm để được hướng dẫn bổ sung hoặc thay thế giấy tờ phù hợp.",
+    "conclusion": "Prolog trả về: \"Việc rút bảo hiểm thất nghiệp và bảo hiểm xã hội cần đáp ứng điều kiện về hồ sơ theo quy định của pháp luật về bảo hiểm xã hội và bảo hiểm thất nghiệp. Việc mất giấy quyết định thôi việc có thể ảnh hưởng đến việc hoàn thiện hồ sơ, do đây thường là giấy tờ bắt buộc khi làm thủ tục hưởng bảo hiểm thất nghiệp theo Luật Việc làm. Bạn nên liên hệ cơ quan bảo hiểm xã hội hoặc trung tâm dịch vụ việc làm để được hướng dẫn bổ sung hoặc thay thế giấy tờ phù hợp.\""
+  },
+  "elapsed_s": 11.385,
+  "prompt_tokens": 4997,
+  "completion_tokens": 695,
+  "error": null,
+  "gold_answer": "Mất quyết định thôi việc không làm mất quyền hưởng BHXH 1 lần, vì hồ sơ BHXH 1 lần thường không bắt buộc tài liệu này. Nhưng với BHTN thì giấy tờ chứng minh chấm dứt HĐLĐ là thành phần hồ sơ rất quan trọng. Bạn nên xin công ty cấp lại hoặc xin bản sao/giấy xác nhận chấm dứt hợp đồng để nộp trong thời hạn luật định.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

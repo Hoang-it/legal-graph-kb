@@ -1,0 +1,33 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 112,
+  "question": "Trước mình nghỉ ngang công ty cũ chưa chốt và lấy bìa xanh bây giờ ra bhxh huyện làm lại được không?",
+  "answer": "Issue: Trước bạn nghỉ ngang công ty cũ chưa chốt và lấy bìa xanh, hỏi liệu giờ ra BHXH huyện làm lại được không.\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), article 13, clause 2: \"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\"\nLuật BHXH 2024 (41/2024/QH15), article 48, clause 1: \"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 47 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày trở lại làm việc.\"\n\nApplication:\nSlots nộp vào truy vấn: (không có slot_bindings được cung cấp).\nProlog đã chạy truy vấn reissue_social_insurance_conditions và tiêu thụ các nguồn luật trên. Kết quả Conditions được suy luận dựa trên bước trace: [step(conclusion,reissue_social_insurance_conditions([establish_dossier_to_claim_social_insurance_benefits,employee_responsible_to_submit_documents_to_employer,submission_deadline_45_days_from_return_to_work]),based_on(source_c013)), step(basis_article_13_clause_2,law_bhxh_2024_article_13_clause_2,based_on(source_c013)), step(basis_article_48_clause_1,law_bhxh_2024_article_48_clause_1,based_on(source_c048))].\n\nConclusion:\nProlog trả về biến Conditions = [establish_dossier_to_claim_social_insurance_benefits,employee_responsible_to_submit_documents_to_employer,submission_deadline_45_days_from_return_to_work]. Đây là binding mà hệ thống suy luận được từ các điều luật trích dẫn.",
+  "citations": [
+    "[Điều 47]"
+  ],
+  "citation_ids": [
+    "L41_2024.A47"
+  ],
+  "citation_indices": [
+    0,
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,reissue_social_insurance_conditions([establish_dossier_to_claim_social_insurance_benefits,employee_responsible_to_submit_documents_to_employer,submission_deadline_45_days_from_return_to_work]),based_on(source_c013)),step(basis_article_13_clause_2,law_bhxh_2024_article_13_clause_2,based_on(source_c013)),step(basis_article_48_clause_1,law_bhxh_2024_article_48_clause_1,based_on(source_c048))]",
+  "irac_sections": {
+    "issue": "Trước bạn nghỉ ngang công ty cũ chưa chốt và lấy bìa xanh, hỏi liệu giờ ra BHXH huyện làm lại được không.",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), article 13, clause 2: \"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\"\nLuật BHXH 2024 (41/2024/QH15), article 48, clause 1: \"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 47 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày trở lại làm việc.\"",
+    "application": "Slots nộp vào truy vấn: (không có slot_bindings được cung cấp).\nProlog đã chạy truy vấn reissue_social_insurance_conditions và tiêu thụ các nguồn luật trên. Kết quả Conditions được suy luận dựa trên bước trace: [step(conclusion,reissue_social_insurance_conditions([establish_dossier_to_claim_social_insurance_benefits,employee_responsible_to_submit_documents_to_employer,submission_deadline_45_days_from_return_to_work]),based_on(source_c013)), step(basis_article_13_clause_2,law_bhxh_2024_article_13_clause_2,based_on(source_c013)), step(basis_article_48_clause_1,law_bhxh_2024_article_48_clause_1,based_on(source_c048))].",
+    "conclusion": "Prolog trả về biến Conditions = [establish_dossier_to_claim_social_insurance_benefits,employee_responsible_to_submit_documents_to_employer,submission_deadline_45_days_from_return_to_work]. Đây là binding mà hệ thống suy luận được từ các điều luật trích dẫn."
+  },
+  "elapsed_s": 38.352,
+  "prompt_tokens": 3221,
+  "completion_tokens": 3245,
+  "error": null,
+  "gold_answer": "Bạn có thể đến cơ quan BHXH nơi quản lý quá trình tham gia để kiểm tra tình trạng sổ. Nếu công ty cũ chưa chốt thì BHXH huyện không thể tự chốt thay công ty, trừ khi có hồ sơ truy đóng/xác nhận quá trình. Việc cần làm là yêu cầu công ty làm thủ tục báo giảm, chốt sổ; nếu công ty không thực hiện thì khiếu nại tới cơ quan BHXH quản lý đơn vị.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

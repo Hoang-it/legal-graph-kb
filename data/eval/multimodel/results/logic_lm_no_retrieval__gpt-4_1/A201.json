@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 201,
+  "question": "Giờ muốn lãnh bảo hiểm thất nghiệp phải làm qua dịch vụ công hả mọi người.",
+  "answer": "Issue:\nCâu hỏi đặt ra là hiện nay, để nhận bảo hiểm thất nghiệp thì người lao động có bắt buộc phải nộp hồ sơ qua dịch vụ công hay không, hay còn phương thức nào khác.\n\nRule:\n\"Người lao động nộp hồ sơ hưởng trợ cấp thất nghiệp tại trung tâm dịch vụ việc làm hoặc qua cổng dịch vụ công quốc gia.\" (law_bhxh_2024, article_46, clause_1)\n\nApplication:\nKhông có slot nào cần điền giá trị cụ thể từ người hỏi. Theo kết quả truy vấn Prolog, hai phương thức nộp hồ sơ hưởng trợ cấp thất nghiệp được xác định là: nộp tại trung tâm dịch vụ việc làm (noptai_trungtam_dichvu_vieclam) và nộp qua cổng dịch vụ công quốc gia (nop_qua_dichvu_cong_quoc_gia). Các phương thức này được xác định dựa trên nguồn luật đã trích dẫn.\n\nConclusion:\nNgười lao động có thể nộp hồ sơ hưởng bảo hiểm thất nghiệp bằng hai cách: nộp trực tiếp tại trung tâm dịch vụ việc làm hoặc nộp qua cổng dịch vụ công quốc gia. Không bắt buộc chỉ nộp qua dịch vụ công. (Methods = [noptai_trungtam_dichvu_vieclam, nop_qua_dichvu_cong_quoc_gia])",
+  "citations": [
+    "[Điều 46 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A46.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_application_methods([noptai_trungtam_dichvu_vieclam,nop_qua_dichvu_cong_quoc_gia]),based_on(source_a46_k1))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là hiện nay, để nhận bảo hiểm thất nghiệp thì người lao động có bắt buộc phải nộp hồ sơ qua dịch vụ công hay không, hay còn phương thức nào khác.",
+    "rule": "\"Người lao động nộp hồ sơ hưởng trợ cấp thất nghiệp tại trung tâm dịch vụ việc làm hoặc qua cổng dịch vụ công quốc gia.\" (law_bhxh_2024, article_46, clause_1)",
+    "application": "Không có slot nào cần điền giá trị cụ thể từ người hỏi. Theo kết quả truy vấn Prolog, hai phương thức nộp hồ sơ hưởng trợ cấp thất nghiệp được xác định là: nộp tại trung tâm dịch vụ việc làm (noptai_trungtam_dichvu_vieclam) và nộp qua cổng dịch vụ công quốc gia (nop_qua_dichvu_cong_quoc_gia). Các phương thức này được xác định dựa trên nguồn luật đã trích dẫn.",
+    "conclusion": "Người lao động có thể nộp hồ sơ hưởng bảo hiểm thất nghiệp bằng hai cách: nộp trực tiếp tại trung tâm dịch vụ việc làm hoặc nộp qua cổng dịch vụ công quốc gia. Không bắt buộc chỉ nộp qua dịch vụ công. (Methods = [noptai_trungtam_dichvu_vieclam, nop_qua_dichvu_cong_quoc_gia])"
+  },
+  "elapsed_s": 5.85,
+  "prompt_tokens": 2017,
+  "completion_tokens": 498,
+  "error": null,
+  "gold_answer": null,
+  "gold_citations_raw": null
+}

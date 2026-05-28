@@ -1,0 +1,33 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 191,
+  "question": "Anh chị cho em hỏi trong trường hợp em sinh trước so với ngày ký quyết định nghỉ việc 3 ngày thì hồ sơ thai sản em tự làm hay phải qua công ty?",
+  "answer": "Issue: Anh chị cho em hỏi trong trường hợp em sinh trước so với ngày ký quyết định nghỉ việc 3 ngày thì hồ sơ thai sản em tự làm hay phải qua công ty?  \nRule: 1. Hồ sơ đề nghị hưởng chế độ thai sản đối với lao động nữ sinh con hoặc lao động nữ mang thai hộ sinh con hoặc lao động nữ nhờ mang thai hộ là bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con và giấy tờ khác trong các trường hợp sau đây:  \na) Giấy tờ chứng minh quá trình điều trị vô sinh của lao động nữ trong trường hợp quy định tại khoản 5 Điều 50 của Luật này; (Luật BHXH 2024 (41/2024/QH15), Điều 61, Khoản 1)  \nApplication: Không có slot nào được gán giá trị trong truy vấn. Tuy nhiên, Prolog đã trả về kết quả rằng hồ sơ thai sản cần được nộp qua công ty.  \nConclusion: Prolog đã trả về kết quả là \"Hồ sơ thai sản cần được nộp qua công ty.\" và không có slot nào bị thiếu.",
+  "citations": [
+    "[Điều 50]",
+    "[Điều 61 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A50",
+    "L41_2024.A61.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,maternity_leave_application_process(Hồ sơ thai sản cần được nộp qua công ty.),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Anh chị cho em hỏi trong trường hợp em sinh trước so với ngày ký quyết định nghỉ việc 3 ngày thì hồ sơ thai sản em tự làm hay phải qua công ty?",
+    "rule": "1. Hồ sơ đề nghị hưởng chế độ thai sản đối với lao động nữ sinh con hoặc lao động nữ mang thai hộ sinh con hoặc lao động nữ nhờ mang thai hộ là bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con và giấy tờ khác trong các trường hợp sau đây:  \na) Giấy tờ chứng minh quá trình điều trị vô sinh của lao động nữ trong trường hợp quy định tại khoản 5 Điều 50 của Luật này; (Luật BHXH 2024 (41/2024/QH15), Điều 61, Khoản 1)",
+    "application": "Không có slot nào được gán giá trị trong truy vấn. Tuy nhiên, Prolog đã trả về kết quả rằng hồ sơ thai sản cần được nộp qua công ty.",
+    "conclusion": "Prolog đã trả về kết quả là \"Hồ sơ thai sản cần được nộp qua công ty.\" và không có slot nào bị thiếu."
+  },
+  "elapsed_s": 8.973,
+  "prompt_tokens": 3421,
+  "completion_tokens": 467,
+  "error": null,
+  "gold_answer": "Nếu bạn sinh trước ngày ký quyết định nghỉ việc 3 ngày, tức thời điểm sinh con vẫn đang trong quan hệ lao động, thì về nguyên tắc hồ sơ thai sản nên do công ty lập và nộp cho cơ quan BHXH. Chỉ khi bạn đã nghỉ việc trước sinh hoặc công ty không còn hoạt động/không nộp hồ sơ thì mới chuyển sang hướng tự nộp trực tiếp.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

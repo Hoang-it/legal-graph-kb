@@ -1,0 +1,27 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 150,
+  "question": "BH thất nghiệp của mình sao lại ít hơn so với BHXH ? Mình làm nhà nước. Đóng BH từ 6/2013 đến 4/2026. Nay mình mở app lên thấy BHTN có 11 năm 9 tháng. Còn BHXH là 12năm 9 tháng ạ",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpjf17ufh8.pl:5:460: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 43 khoản 1]",
+    "[Điều 85 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A43.K1",
+    "L41_2024.A85.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 14.318,
+  "prompt_tokens": 5544,
+  "completion_tokens": 2031,
+  "error": null,
+  "gold_answer": "BHXH và BHTN không phải lúc nào cũng bằng nhau vì có thời gian tham gia BHXH nhưng không thuộc diện đóng BHTN. Ví dụ nhiều lao động khu vực nhà nước, thời gian trước khi thuộc diện BHTN hoặc thời gian không phải đóng BHTN thì chỉ tính BHXH. Do đó BHXH 12 năm 9 tháng nhưng BHTN 11 năm 9 tháng là có thể xảy ra, không phải lỗi nếu có 1 năm không thuộc diện BHTN.",
+  "gold_citations_raw": "Luật BHXH 2024; Luật Việc làm 2013/2025"
+}

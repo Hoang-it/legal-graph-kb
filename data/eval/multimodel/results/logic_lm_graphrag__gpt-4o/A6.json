@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 6,
+  "question": "Bà Thảo hỏi, trên giấy ra viện có ghi chú người lao động được nghỉ lao động 10 ngày, vậy, có cần xin thêm Giấy chứng nhận nghỉ việc hưởng BHXH để hưởng 10 ngày đó không?",
+  "answer": "Issue: Bà Thảo muốn biết liệu có cần xin thêm Giấy chứng nhận nghỉ việc hưởng BHXH để được hưởng 10 ngày nghỉ lao động ghi trên giấy ra viện hay không.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 43, Khoản 2: \"Hết thời hạn hưởng chế độ ốm đau quy định tại khoản 1 Điều này mà vẫn tiếp tục điều trị thì người lao động nghỉ việc do mắc bệnh thuộc danh mục bệnh cần chữa trị dài ngày do Bộ trưởng Bộ Y tế ban hành được hưởng tiếp chế độ ốm đau với mức theo quy định tại khoản 3 Điều 45 của Luật này. Thời gian nghỉ hưởng chế độ ốm đau theo quy định tại khoản này tính theo ngày làm việc không kể ngày nghỉ lễ, tết.\"\n\nApplication: Không có thông tin cụ thể về các giá trị đầu vào trong slot_bindings. Tuy nhiên, chương trình Prolog đã sử dụng nguồn luật từ Điều 43, Khoản 2 của Luật BHXH 2024 để xác định yêu cầu về Giấy chứng nhận nghỉ việc hưởng BHXH.\n\nConclusion: Theo kết quả từ chương trình Prolog, cần phải có Giấy chứng nhận nghỉ việc hưởng BHXH để được hưởng 10 ngày nghỉ lao động. Kết quả này được xác định với giá trị \"yes\" cho biến Required.",
+  "citations": [
+    "[Điều 43 khoản 2]",
+    "[Điều 45]"
+  ],
+  "citation_ids": [
+    "L41_2024.A43.K2",
+    "L41_2024.A45"
+  ],
+  "citation_indices": [
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,sick_leave_certificate_required(yes),based_on(source_c005))]",
+  "irac_sections": {
+    "issue": "Bà Thảo muốn biết liệu có cần xin thêm Giấy chứng nhận nghỉ việc hưởng BHXH để được hưởng 10 ngày nghỉ lao động ghi trên giấy ra viện hay không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 43, Khoản 2: \"Hết thời hạn hưởng chế độ ốm đau quy định tại khoản 1 Điều này mà vẫn tiếp tục điều trị thì người lao động nghỉ việc do mắc bệnh thuộc danh mục bệnh cần chữa trị dài ngày do Bộ trưởng Bộ Y tế ban hành được hưởng tiếp chế độ ốm đau với mức theo quy định tại khoản 3 Điều 45 của Luật này. Thời gian nghỉ hưởng chế độ ốm đau theo quy định tại khoản này tính theo ngày làm việc không kể ngày nghỉ lễ, tết.\"",
+    "application": "Không có thông tin cụ thể về các giá trị đầu vào trong slot_bindings. Tuy nhiên, chương trình Prolog đã sử dụng nguồn luật từ Điều 43, Khoản 2 của Luật BHXH 2024 để xác định yêu cầu về Giấy chứng nhận nghỉ việc hưởng BHXH.",
+    "conclusion": "Theo kết quả từ chương trình Prolog, cần phải có Giấy chứng nhận nghỉ việc hưởng BHXH để được hưởng 10 ngày nghỉ lao động. Kết quả này được xác định với giá trị \"yes\" cho biến Required."
+  },
+  "elapsed_s": 4.683,
+  "prompt_tokens": 3133,
+  "completion_tokens": 547,
+  "error": null,
+  "gold_answer": "Tại Khoản 14 Điều 1 Thông tư số 18/2022/TT-BYT ngày 31/12/2022 của Bộ trưởng Bộ Y tế sửa đổi, bổ sung một số điều của Thông tư số 56/2017/TT-BYT ngày 29/12/2017 của Bộ trưởng Bộ Y tế quy định chi tiết thi hành Luật BHXH và Luật An toàn, vệ sinh lao động thuộc lĩnh y tế quy định như sau:\nTrường hợp người bệnh cần nghỉ để điều trị ngoại trú sau khi ra viện thì cơ quan BHXH căn cứ số ngày nghỉ ghi tại phần ghi chú của giấy ra viện để làm căn cứ thanh toán chế độ BHXH theo quy định.\nĐối chiếu quy định nêu trên, việc cơ sở khám bệnh, chữa bệnh ghi thêm số ngày nghỉ để điều trị ngoại trú tại phần ghi chú trên giấy ra viện là đúng quy định và số ngày nghỉ điều trị ngoại trú đó sẽ được cơ quan BHXH căn cứ để giải quyết chế độ BHXH đối với bà theo quy định.\nDo đó, bà không phải xin cấp thêm Giấy chứng nhận nghỉ việc hưởng BHXH đối với 10 ngày nghỉ việc điều trị ngoại trú nêu trên",
+  "gold_citations_raw": "Khoản 14 Điều 1 Thông tư số 18/2022/TT-BYT\nThông tư số 56/2017/TT-BYT"
+}

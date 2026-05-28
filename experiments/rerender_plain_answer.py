@@ -1,4 +1,4 @@
-"""rerender_plain_answer.py — Backfill plain_answer field cho elite records cũ.
+"""rerender_plain_answer.py — Backfill plain_answer field cho logic-lm records cũ.
 
 Re-render IRAC using new prompt (experiments/prompts/irac_with_plain.md) which
 outputs JSON with BOTH `irac` (preserves analysis) AND `plain_answer` (prose form
@@ -16,7 +16,7 @@ Usage:
     python -m experiments.rerender_plain_answer --combos all  # full
 
 Cost (gpt-4o-mini backfill model, không phải original inference model):
-    ~$0.002 per record × ~1700 elite records ≈ $3.4
+    ~$0.002 per record × ~1700 logic-lm records ≈ $3.4
 """
 
 from __future__ import annotations
@@ -38,17 +38,17 @@ if not (os.environ.get("OPENAI_BASE_URL") or "").strip():
 
 # Map of combos → result directory
 R1_COMBOS = {
-    "elite_no_retrieval": Path("data/eval/results/elite_no_retrieval"),
-    "elite_ontology":     Path("data/eval/results/elite_ontology"),
-    "elite_graphrag":     Path("data/eval/results/elite_graphrag"),
+    "logic_lm_no_retrieval": Path("data/eval/results/logic_lm_no_retrieval"),
+    "logic_lm_ontology":     Path("data/eval/results/logic_lm_ontology"),
+    "logic_lm_graphrag":     Path("data/eval/results/logic_lm_graphrag"),
 }
 R2_COMBOS = {
-    "elite_no_retrieval__gpt-4_1":    Path("data/eval/multimodel/results/elite_no_retrieval__gpt-4_1"),
-    "elite_no_retrieval__gpt-4o":     Path("data/eval/multimodel/results/elite_no_retrieval__gpt-4o"),
-    "elite_no_retrieval__gpt-5-mini": Path("data/eval/multimodel/results/elite_no_retrieval__gpt-5-mini"),
-    "elite_graphrag__gpt-4_1":        Path("data/eval/multimodel/results/elite_graphrag__gpt-4_1"),
-    "elite_graphrag__gpt-4o":         Path("data/eval/multimodel/results/elite_graphrag__gpt-4o"),
-    "elite_graphrag__gpt-5-mini":     Path("data/eval/multimodel/results/elite_graphrag__gpt-5-mini"),
+    "elite_no_retrieval__gpt-4_1":    Path("data/eval/multimodel/results/logic_lm_no_retrieval__gpt-4_1"),
+    "elite_no_retrieval__gpt-4o":     Path("data/eval/multimodel/results/logic_lm_no_retrieval__gpt-4o"),
+    "elite_no_retrieval__gpt-5-mini": Path("data/eval/multimodel/results/logic_lm_no_retrieval__gpt-5-mini"),
+    "elite_graphrag__gpt-4_1":        Path("data/eval/multimodel/results/logic_lm_graphrag__gpt-4_1"),
+    "elite_graphrag__gpt-4o":         Path("data/eval/multimodel/results/logic_lm_graphrag__gpt-4o"),
+    "elite_graphrag__gpt-5-mini":     Path("data/eval/multimodel/results/logic_lm_graphrag__gpt-5-mini"),
 }
 ALL_COMBOS = {**R1_COMBOS, **R2_COMBOS}
 
@@ -228,7 +228,7 @@ def process_combo(combo: str, results_dir: Path, prompt: str, model: str,
 
 
 def main() -> int:
-    p = argparse.ArgumentParser(description="Backfill plain_answer cho elite records.")
+    p = argparse.ArgumentParser(description="Backfill plain_answer cho logic-lm records.")
     p.add_argument("--combos", type=str, default="all",
                    help=f"Comma-separated combo names hoặc 'all'. Available: {list(ALL_COMBOS)}")
     p.add_argument("--pilot", type=int, default=0, help="Chỉ chạy N records đầu (debug)")

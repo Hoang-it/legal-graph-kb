@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 8,
+  "question": "Năm 2022, ông Bình Châu (Tây Ninh) có 11 tháng thất nghiệp nhưng chưa hưởng trợ cấp. Tháng 1-7/2024 ông thất nghiệp.\nÔng Châu hỏi, trường hợp của ông có được đăng ký hưởng trợ cấp thất nghiệp không?",
+  "answer": "Issue: Ông Bình Châu hỏi liệu ông có đủ điều kiện để đăng ký hưởng trợ cấp thất nghiệp không, khi ông đã thất nghiệp 11 tháng trong năm 2022 và 7 tháng từ tháng 1 đến tháng 7 năm 2024.\n\nRule: Điều kiện hưởng trợ cấp thất nghiệp bao gồm có thời gian đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên trong vòng 24 tháng trước khi thất nghiệp. (Nguồn: Luật BHXH 2024, Điều 49, Khoản 1)\n\nApplication: \n- Tháng thất nghiệp năm 2022: 11 tháng.\n- Tháng thất nghiệp năm 2024: 7 tháng.\n- Tổng số tháng thất nghiệp: 11 + 7.\n- Theo quy tắc Prolog, tổng số tháng thất nghiệp được tính và so sánh với điều kiện tối thiểu 12 tháng để xác định tính đủ điều kiện.\n\nConclusion: Ông Bình Châu đủ điều kiện để hưởng trợ cấp thất nghiệp. Kết quả này dựa trên việc ông đã có tổng cộng 18 tháng thất nghiệp trong khoảng thời gian yêu cầu, vượt qua điều kiện tối thiểu 12 tháng.",
+  "citations": [
+    "[Điều 49 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A49.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,eligible_for_unemployment_benefits(user,yes),based_on(source_a49))]",
+  "irac_sections": {
+    "issue": "Ông Bình Châu hỏi liệu ông có đủ điều kiện để đăng ký hưởng trợ cấp thất nghiệp không, khi ông đã thất nghiệp 11 tháng trong năm 2022 và 7 tháng từ tháng 1 đến tháng 7 năm 2024.",
+    "rule": "Điều kiện hưởng trợ cấp thất nghiệp bao gồm có thời gian đóng bảo hiểm thất nghiệp từ đủ 12 tháng trở lên trong vòng 24 tháng trước khi thất nghiệp. (Nguồn: Luật BHXH 2024, Điều 49, Khoản 1)",
+    "application": "- Tháng thất nghiệp năm 2022: 11 tháng.\n- Tháng thất nghiệp năm 2024: 7 tháng.\n- Tổng số tháng thất nghiệp: 11 + 7.\n- Theo quy tắc Prolog, tổng số tháng thất nghiệp được tính và so sánh với điều kiện tối thiểu 12 tháng để xác định tính đủ điều kiện.",
+    "conclusion": "Ông Bình Châu đủ điều kiện để hưởng trợ cấp thất nghiệp. Kết quả này dựa trên việc ông đã có tổng cộng 18 tháng thất nghiệp trong khoảng thời gian yêu cầu, vượt qua điều kiện tối thiểu 12 tháng."
+  },
+  "elapsed_s": 5.417,
+  "prompt_tokens": 2251,
+  "completion_tokens": 700,
+  "error": null,
+  "gold_answer": "Tại Điều 49 Luật Việc làm quy định, người lao động đang đóng bảo hiểm thất nghiệp được hưởng trợ cấp thất nghiệp khi có đủ các điều kiện sau đây:\n- Chấm dứt hợp đồng lao động hoặc hợp đồng làm việc, trừ các trường hợp sau đây:\n+ Người lao động đơn phương chấm dứt hợp đồng lao động, hợp đồng làm việc trái pháp luật;\n+ Hưởng lương hưu, trợ cấp mất sức lao động hằng tháng.\n- Đã đóng bảo hiểm thất nghiệp từ đủ:\n+ 12 tháng trở lên trong thời gian 24 tháng trước khi chấm dứt hợp đồng lao động đối với các trường hợp: hợp đồng lao động có xác định và không xác định thời hạn;\n+ 12 tháng trở lên trong thời gian 36 tháng trước khi chấm dứt hợp đồng lao động đối với các trường hợp: ký hợp đồng lao động theo mùa vụ hoặc theo một công việc nhất định có thời hạn từ đủ 3 tháng đến dưới 12 tháng.\n- Đã nộp hồ sơ hưởng trợ cấp thất nghiệp tại Trung tâm dịch vụ việc làm trong thời hạn 3 tháng kể từ ngày chấm dứt hợp đồng lao động hoặc hợp đồng làm việc.\n- Chưa tìm được việc làm sau 15 ngày, kể từ ngày nộp hồ sơ hưởng bảo hiểm thất nghiệp, trừ các trường hợp sau đây:\n+ Thực hiện nghĩa vụ quân sự, nghĩa vụ công an;\n+ Đi học tập có thời hạn từ đủ 12 tháng trở lên;\n+ Chấp hành quyết định áp dụng biện pháp đưa vào trường giáo dưỡng, cơ sở giáo dục bắt buộc, cơ sở cai nghiện bắt buộc;\n+ Bị tạm giam; chấp hành hình phạt tù;\n+ Ra nước ngoài định cư; đi lao động ở nước ngoài theo hợp đồng;\n+ Chết.\nTại Khoản 1 Điều 45 Luật Việc làm quy định, thời gian đóng bảo hiểm thất nghiệp để xét hưởng bảo hiểm thất nghiệp là tổng các khoảng thời gian đã đóng bảo hiểm thất nghiệp liên tục hoặc không liên tục được cộng dồn từ khi bắt đầu đóng bảo hiểm thất nghiệp cho đến khi người lao động chấm dứt hợp đồng lao động hoặc hợp đồng làm việc theo quy định của pháp luật mà chưa hưởng trợ cấp thất nghiệp.\nBHXH Việt Nam thông tin quy định của chính sách đến ông Châu để ông nắm được và đối chiếu với trường hợp cụ thể của bản thân để xác định quyền lợi về hưởng trợ cấp thất nghiệp của mình.",
+  "gold_citations_raw": "Điều 49 Luật Việc\nKhoản 1 Điều 45 Luật Việc"
+}

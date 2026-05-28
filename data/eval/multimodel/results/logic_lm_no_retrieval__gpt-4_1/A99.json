@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 99,
+  "question": "Mình bầu hơn 5 tháng, đã đóng bhxh 8/12 tháng trong thời gian hưởng thai sản thì có dễ bị thanh tra không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu đã đóng bảo hiểm xã hội 8/12 tháng trong thời gian 12 tháng trước khi sinh con, liệu có dễ bị thanh tra khi hưởng chế độ thai sản không?\n\nRule:\n\"Điều kiện hưởng chế độ thai sản: Người lao động phải đóng BHXH từ đủ 6 tháng trở lên trong thời gian 12 tháng trước khi sinh con hoặc nhận nuôi con nuôi dưới 6 tháng tuổi.\" (law_bhxh_2024, article_81, clause_1)\n\nApplication:\n- months_contributed_last_12: 8\nHệ thống đã xác nhận rằng bạn đã đóng bảo hiểm xã hội 8 tháng trong 12 tháng trước khi sinh. Theo quy định, chỉ cần đóng từ đủ 6 tháng trở lên trong 12 tháng trước khi sinh là đủ điều kiện hưởng chế độ thai sản. Truy vấn Prolog đã sử dụng giá trị này để xác định tính đủ điều kiện.\n\nConclusion:\nTheo kết quả truy vấn Prolog, bạn đủ điều kiện hưởng chế độ thai sản (Eligible = yes). Hệ thống không đưa ra kết luận về khả năng bị thanh tra, nhưng về mặt điều kiện đóng BHXH, bạn đã đáp ứng đúng quy định.",
+  "citations": [
+    "[Điều 81 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A81.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,maternity_eligibility(user,yes),based_on(source_a81_k1))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu đã đóng bảo hiểm xã hội 8/12 tháng trong thời gian 12 tháng trước khi sinh con, liệu có dễ bị thanh tra khi hưởng chế độ thai sản không?",
+    "rule": "\"Điều kiện hưởng chế độ thai sản: Người lao động phải đóng BHXH từ đủ 6 tháng trở lên trong thời gian 12 tháng trước khi sinh con hoặc nhận nuôi con nuôi dưới 6 tháng tuổi.\" (law_bhxh_2024, article_81, clause_1)",
+    "application": "- months_contributed_last_12: 8\nHệ thống đã xác nhận rằng bạn đã đóng bảo hiểm xã hội 8 tháng trong 12 tháng trước khi sinh. Theo quy định, chỉ cần đóng từ đủ 6 tháng trở lên trong 12 tháng trước khi sinh là đủ điều kiện hưởng chế độ thai sản. Truy vấn Prolog đã sử dụng giá trị này để xác định tính đủ điều kiện.",
+    "conclusion": "Theo kết quả truy vấn Prolog, bạn đủ điều kiện hưởng chế độ thai sản (Eligible = yes). Hệ thống không đưa ra kết luận về khả năng bị thanh tra, nhưng về mặt điều kiện đóng BHXH, bạn đã đáp ứng đúng quy định."
+  },
+  "elapsed_s": 5.425,
+  "prompt_tokens": 2001,
+  "completion_tokens": 520,
+  "error": null,
+  "gold_answer": "Việc bạn đã đóng BHXH 8/12 tháng trước sinh không đồng nghĩa là dễ bị thanh tra. Cơ quan BHXH thường chỉ kiểm tra khi có dấu hiệu bất thường như tăng lương đột biến không có căn cứ, ký hợp đồng khống, đóng nhờ, hoặc hồ sơ thai sản không phù hợp. Nếu bạn có quan hệ lao động thật, đóng BHXH đúng mức, hồ sơ khám thai/sinh con hợp lệ thì không phải cứ mang bầu và đủ điều kiện hưởng là sẽ bị thanh tra.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50, Điều 53; quy định thanh tra chuyên ngành BHXH"
+}

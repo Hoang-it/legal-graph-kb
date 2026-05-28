@@ -1,0 +1,36 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 13,
+  "question": "Ông Nguyễn Thành Luân (Đồng Tháp) là chủ hộ kinh doanh. Ông hỏi, thủ tục tham gia BHXH bắt buộc như thế nào, nộp hồ sơ ở đâu?",
+  "answer": "Issue: Ông Nguyễn Thành Luân hỏi về thủ tục tham gia BHXH bắt buộc và nơi nộp hồ sơ. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 2], cần ban hành mẫu hồ sơ bảo hiểm xã hội bắt buộc. Khoản 4 quy định tiếp nhận hồ sơ tham gia bảo hiểm xã hội bắt buộc và cấp sổ bảo hiểm xã hội cho người lao động. \nApplication: Không có slot nào được gán giá trị. Prolog không thể thực hiện truy vấn để xác định thủ tục tham gia BHXH bắt buộc. \nConclusion: Hệ thống không thể tính được kết quả cuối cùng do thiếu slot bindings.",
+  "plain_answer": "Hệ thống chưa đủ thông tin để tính chính xác về thủ tục tham gia BHXH bắt buộc và nơi nộp hồ sơ. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 2 và khoản 4], bạn cần chuẩn bị mẫu hồ sơ bảo hiểm xã hội bắt buộc và nộp hồ sơ tại cơ quan tiếp nhận. Bạn vui lòng cung cấp thêm thông tin để mình hỗ trợ tốt hơn.",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K2"
+  ],
+  "citation_indices": [
+    0,
+    1,
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,participation_procedure([mau_so_bao_hiem,ho_so_bao_hiem_bat_buoc]),based_on(source_c001)),step(conclusion,participation_procedure([mau_so_bao_hiem,ho_so_bao_hiem_bat_buoc]),based_on(source_c002)),step(conclusion,participation_procedure([mau_so_bao_hiem,ho_so_bao_hiem_bat_buoc]),based_on(source_c003))]",
+  "prolog_program": "legal_source(source_c001, law_bhxh_2024, article_18, clause_1, none, 'Tuyên truyền, phổ biến, giải đáp, tư vấn chính sách, pháp luật về bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế; xây dựng chiến lược phát triển ngành bảo hiểm xã hội, chiến lược đầu tư dài hạn trình cơ quan có thẩm quyền phê duyệt; xây dựng phương án đầu tư hằng năm trình Hội đồng quản lý bảo hiểm xã hội quyết định; tổ chức đánh giá và công bố mức độ hài lòng của tổ chức, cá nhân đối với việc thực hiện chính sách, pháp luật về bảo hiểm xã hội, bảo hiểm thất nghiệp, bảo hiểm y tế.').\nlegal_source(source_c002, law_bhxh_2024, article_18, clause_4, none, 'Tiếp nhận hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế và cấp sổ bảo hiểm xã hội, thẻ bảo hiểm y tế cho người lao động.').\nlegal_source(source_c003, law_bhxh_2024, article_18, clause_3, none, 'Tổ chức thực hiện thu, chi bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế theo quy định của pháp luật.').\nparticipation_procedure(Procedure, Trace) :- Procedure = [mau_so_bao_hiem, ho_so_bao_hiem_bat_buoc], Trace = [step(conclusion, participation_procedure(Procedure), based_on(source_c001)), step(conclusion, participation_procedure(Procedure), based_on(source_c002)), step(conclusion, participation_procedure(Procedure), based_on(source_c003))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Ông Nguyễn Thành Luân hỏi về thủ tục tham gia BHXH bắt buộc và nơi nộp hồ sơ.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 2], cần ban hành mẫu hồ sơ bảo hiểm xã hội bắt buộc. Khoản 4 quy định tiếp nhận hồ sơ tham gia bảo hiểm xã hội bắt buộc và cấp sổ bảo hiểm xã hội cho người lao động.",
+    "application": "Không có slot nào được gán giá trị. Prolog không thể thực hiện truy vấn để xác định thủ tục tham gia BHXH bắt buộc.",
+    "conclusion": "Hệ thống không thể tính được kết quả cuối cùng do thiếu slot bindings."
+  },
+  "elapsed_s": 17.096,
+  "prompt_tokens": 4425,
+  "completion_tokens": 756,
+  "error": null,
+  "gold_answer": "Căn cứ theo các quy định hiện hành về việc đóng BHXH bắt buộc cho chủ hộ kinh doanh: Luật BHXH 2024; Nghị định số 158/2025/NĐ-CP ngày 25/06/2025 của Chính phủ quy định chi tiết và hướng dẫn một số điều của Luật BHXH về BHXH bắt buộc; chủ hộ kinh doanh của hộ kinh doanh có đăng ký kinh doanh quy định tham gia BHXH bắt buộc bao gồm: Chủ hộ kinh doanh của hộ kinh doanh có đăng ký kinh doanh nộp thuế theo phương pháp kê khai tham gia từ ngày 1/7/2025; chủ hộ kinh doanh của hộ kinh doanh khác thuộc đối tượng tham gia BHXH bắt buộc từ ngày 1/7/2029.\nChủ hộ kinh doanh không thuộc đối tượng tham gia BHXH, BHYT bắt buộc nếu đã đủ tuổi nghỉ hưu theo quy định tại khoản 2 Điều 169 của Bộ luật Lao động (năm 2025: 61 tuổi 3 tháng đối với nam, 56 tuổi 8 tháng đối với nữ), trừ trường hợp thời gian đóng BHXH bắt buộc còn thiếu tối đa 6 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng.\nTrường hợp chủ hộ kinh doanh đồng thời thuộc nhiều đối tượng tham gia khác nhau thì thực hiện thì tham gia BHXH bắt buộc theo đối tượng tương ứng quy định tại điểm b, c, d, đ, e, i, a, 1, k, n, h hoặc g khoản 1 Điều 2 Luật BHXH 2024.\nVề hồ sơ, thủ tục đăng ký tham gia:\nLập hồ sơ đăng ký tham gia BHXH, BHYT, BHTN, BHTNLĐ-BNN lần đầu (đối với đơn vị mới, theo Mẫu TK3-TS kèm bản sao các văn bản pháp lý liên quan đến việc thành lập, điều chỉnh thông tin của đơn vị);\nTờ khai tham gia điều chỉnh thông tin BHXH, BHYT (Mẫu TK1-TS) nếu đăng ký trực tiếp tại cơ quan BHXH.\nBáo tăng lao động (Mẫu D02-LT) nếu đăng ký thông qua đơn vị.\nVề nơi tiếp nhận hồ sơ tham gia:\nSau khi chuẩn bị đầy đủ các hồ sơ trên, hộ kinh doanh nộp hồ sơ tại cơ quan BHXH cơ sở trực thuộc BHXH nơi cư trú bằng một trong các hình thức sau:\n- Trực tiếp tại cơ quan BHXH hoặc Trung tâm phục vụ Hành chính công.\n- Trực tuyến qua Cổng Dịch vụ công Quốc gia hoặc Cổng BHXH điện tử (lưu ý cần có chữ ký số để xác nhận khi nộp hồ sơ theo phương thức này).\n- Gửi qua dịch vụ bưu điện.\nHiện nay, cơ quan BHXH ưu tiên thực hiện các thủ tục liên quan thông qua Cổng dịch vụ công trực tuyến hoặc qua các phần mềm kê khai bảo hiểm trực tuyến.\nNếu hộ kinh doanh có chữ ký số thì có thể đăng ký tài khoản trên Cổng dịch vụ công trực tuyến hoặc phần mềm để sử dụng.",
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]\n[Luật BHXH 2024 (41/2024/QH15), Điều 27]\n[Nghị định 158/2025/NĐ-CP, Điều 7]"
+}

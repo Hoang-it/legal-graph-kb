@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 41,
+  "question": "Em nghỉ việc tại Công ty cũ từ 28/3. Em xin Công ty quyết định nghỉ việc để làm BHTN, nhưng họ báo: \"Chờ tờ rời BHXH từ 45-50 ngày\". Em có hỏi: \"chờ lâu vậy thì sao mà e làm đc BHTN tháng 4,5\" thì họ bảo: \"Thời hạn hưởng BHTN là 3 tháng kể từ ngày nộp đơn\". Em chưa hiểu chỗ này. Vậy là phải sau 3 tháng nghỉ việc e mới đc nộp chứng từ để hưởng BHTN phải ko? Hay là sau nhận và nộp chứng từ em sẽ đc hưởng BHTN từ tháng 4?",
+  "answer": "Issue: Người hỏi không rõ về thời gian nộp đơn và nhận trợ cấp thất nghiệp sau khi nghỉ việc. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 6], người lao động có quyền được hưởng chế độ bảo hiểm thất nghiệp và phải cung cấp đầy đủ thông tin về việc đóng bảo hiểm. \nApplication: Không có slot nào được gán giá trị. Prolog đã xác định điều kiện hưởng trợ cấp thất nghiệp là cần nộp đơn trong vòng 3 tháng và nhận trợ cấp sau khi nộp chứng từ. \nConclusion: Hệ thống không thể tính được kết quả cuối cùng do thiếu slot nào đó.",
+  "plain_answer": "Hệ thống chưa đủ thông tin để tính chính xác vì không có thông tin về thời gian nộp đơn và nhận chứng từ. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 6], bạn cần nộp đơn trong vòng 3 tháng sau khi nghỉ việc để được hưởng trợ cấp thất nghiệp. Bạn nên hỏi thêm công ty về thời gian nhận chứng từ để biết rõ hơn.",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K6"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_conditions([benefit_application_within_3_months,benefit_received_after_document_submission]),based_on(source_c005))]",
+  "prolog_program": "legal_source(source_c005, law_bhxh_2024, article_18, clause_6, none, 'Xác nhận thời gian đóng bảo hiểm xã hội, bảo hiểm thất nghiệp cho từng người lao động; cung cấp đầy đủ và kịp thời thông tin về việc đóng, quyền được hưởng chế độ, thủ tục thực hiện bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện khi người lao động, người sử dụng lao động hoặc tổ chức công đoàn yêu cầu.').\nunemployment_benefit_conditions(Conditions, Trace) :- Conditions = [benefit_application_within_3_months, benefit_received_after_document_submission], Trace = [step(conclusion, unemployment_benefit_conditions(Conditions), based_on(source_c005))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi không rõ về thời gian nộp đơn và nhận trợ cấp thất nghiệp sau khi nghỉ việc.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 6], người lao động có quyền được hưởng chế độ bảo hiểm thất nghiệp và phải cung cấp đầy đủ thông tin về việc đóng bảo hiểm.",
+    "application": "Không có slot nào được gán giá trị. Prolog đã xác định điều kiện hưởng trợ cấp thất nghiệp là cần nộp đơn trong vòng 3 tháng và nhận trợ cấp sau khi nộp chứng từ.",
+    "conclusion": "Hệ thống không thể tính được kết quả cuối cùng do thiếu slot nào đó."
+  },
+  "elapsed_s": 15.151,
+  "prompt_tokens": 5755,
+  "completion_tokens": 536,
+  "error": null,
+  "gold_answer": "Không phải chờ đủ 3 tháng rồi mới nộp hồ sơ BHTN. Đúng luật là bạn phải nộp hồ sơ trong vòng 3 tháng kể từ ngày chấm dứt HĐLĐ. Sau khi nộp đủ hồ sơ, nếu sau 15 ngày chưa có việc làm thì sẽ được giải quyết hưởng trợ cấp thất nghiệp. Vì vậy, bạn nên lấy quyết định nghỉ việc và giấy tờ chốt BHXH sớm để nộp trong hạn, không phải đợi qua 3 tháng.",
+  "gold_citations_raw": "[Luật Việc làm 2013, Điều 46]\n[Luật Việc làm 2013, Điều 49]\n[Luật Việc làm 2013, Điều 50]"
+}

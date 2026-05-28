@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 169,
+  "question": "Em đã đóng bhxh đc 8 năm. Em định làm đến khi đóng đc 19 năm thì nghỉ hẳn và nhận 1 cục kèm theo bh thất nghiệp thì theo luật có được ko?",
+  "answer": "Issue:\nEm hỏi nếu đã đóng BHXH được 8 năm và dự định đóng đến 19 năm rồi nghỉ hẳn để nhận \"một cục\" kèm BH thất nghiệp thì theo luật có được không?\n\nRule:\nKhông có trích dẫn pháp lý được cung cấp trong dữ liệu đầu vào.\n\nApplication:\nCác dữ liệu đầu vào được dùng (verify_facts):\nyears_contributed(user, 8).\nplanned_years_to_contribute(user, 19).\nKhông có slot_bindings khác.\nCách Prolog tiêu thụ chúng: truy vấn combined_advice(user, Answer, Trace) khớp planned_years_to_contribute(user, 19) vào quy tắc kiểm tra Years < 20 để xác định one_time_possible(user, yes) và pension_not_available(user,...). Đồng thời quy tắc unemployment_conditions trả về các điều kiện hưởng trợ cấp thất nghiệp.\n\nConclusion:\nAnswer = \"[Kết luận: Với kế hoạch đóng 19 năm, bạn chưa đạt ngưỡng (20 năm) để hưởng lương hưu và có thể lựa chọn nhận trợ cấp BHXH một lần.,Điều kiện hưởng trợ cấp thất nghiệp: ,Đã đóng BH thất nghiệp >= 12 tháng trong 24 tháng trước khi thất nghiệp,Đã đăng ký thất nghiệp tại trung tâm dịch vụ việc làm]\"",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(combined_advice(user),based_on(source_one_time)),step(combined_advice_person_unemployment(user),based_on(source_unemployment))]",
+  "irac_sections": {
+    "issue": "Em hỏi nếu đã đóng BHXH được 8 năm và dự định đóng đến 19 năm rồi nghỉ hẳn để nhận \"một cục\" kèm BH thất nghiệp thì theo luật có được không?",
+    "rule": "Không có trích dẫn pháp lý được cung cấp trong dữ liệu đầu vào.",
+    "application": "Các dữ liệu đầu vào được dùng (verify_facts):\nyears_contributed(user, 8).\nplanned_years_to_contribute(user, 19).\nKhông có slot_bindings khác.\nCách Prolog tiêu thụ chúng: truy vấn combined_advice(user, Answer, Trace) khớp planned_years_to_contribute(user, 19) vào quy tắc kiểm tra Years < 20 để xác định one_time_possible(user, yes) và pension_not_available(user,...). Đồng thời quy tắc unemployment_conditions trả về các điều kiện hưởng trợ cấp thất nghiệp.",
+    "conclusion": "Answer = \"[Kết luận: Với kế hoạch đóng 19 năm, bạn chưa đạt ngưỡng (20 năm) để hưởng lương hưu và có thể lựa chọn nhận trợ cấp BHXH một lần.,Điều kiện hưởng trợ cấp thất nghiệp: ,Đã đóng BH thất nghiệp >= 12 tháng trong 24 tháng trước khi thất nghiệp,Đã đăng ký thất nghiệp tại trung tâm dịch vụ việc làm]\""
+  },
+  "elapsed_s": 49.833,
+  "prompt_tokens": 2515,
+  "completion_tokens": 5637,
+  "error": null,
+  "gold_answer": "Bạn đóng đến 19 năm rồi nghỉ để 'nhận 1 cục' không phải lúc nào cũng được. Từ 01/7/2025, nhiều trường hợp có từ đủ 15 năm đóng và đủ tuổi nghỉ hưu sẽ thuộc diện hưởng lương hưu, không mặc nhiên được rút 1 lần theo ý muốn. BHTN thì là chế độ riêng: nếu chấm dứt HĐLĐ hợp pháp, đủ thời gian đóng và nộp đúng hạn, bạn vẫn có thể hưởng BHTN.",
+  "gold_citations_raw": "Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

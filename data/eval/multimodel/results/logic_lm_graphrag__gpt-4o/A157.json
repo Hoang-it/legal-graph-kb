@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 157,
+  "question": "M tham gia BHXH từ đầu tháng 11/2025 đến cuối tháng 4/2026 vừa đủ 6 tháng thì có được nhận thai sản không?",
+  "answer": "Issue: Người lao động M tham gia bảo hiểm xã hội từ đầu tháng 11/2025 đến cuối tháng 4/2026, vừa đủ 6 tháng, có đủ điều kiện nhận chế độ thai sản hay không?\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 2: \"Đối tượng quy định tại các điểm b, c, d và đ khoản 1 Điều này phải đóng bảo hiểm xã hội bắt buộc từ đủ 06 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con hoặc nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 06 tháng tuổi.\"\n\nApplication: Không có thông tin cụ thể về các giá trị đầu vào khác ngoài việc người dùng đã đóng bảo hiểm xã hội đủ 6 tháng. Dựa trên quy tắc đã được định nghĩa, nếu số tháng đóng bảo hiểm xã hội là 6 hoặc nhiều hơn, người lao động sẽ đủ điều kiện nhận chế độ thai sản.\n\nConclusion: Người lao động M đủ điều kiện nhận chế độ thai sản. Kết quả này được xác định với giá trị \"Eligible\" là \"yes\" dựa trên nguồn luật đã trích dẫn.",
+  "citations": [
+    "[Điều 50 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A50.K2"
+  ],
+  "citation_indices": [
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,maternity_eligibility(user,yes),based_on(source_c005))]",
+  "irac_sections": {
+    "issue": "Người lao động M tham gia bảo hiểm xã hội từ đầu tháng 11/2025 đến cuối tháng 4/2026, vừa đủ 6 tháng, có đủ điều kiện nhận chế độ thai sản hay không?",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 2: \"Đối tượng quy định tại các điểm b, c, d và đ khoản 1 Điều này phải đóng bảo hiểm xã hội bắt buộc từ đủ 06 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con hoặc nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 06 tháng tuổi.\"",
+    "application": "Không có thông tin cụ thể về các giá trị đầu vào khác ngoài việc người dùng đã đóng bảo hiểm xã hội đủ 6 tháng. Dựa trên quy tắc đã được định nghĩa, nếu số tháng đóng bảo hiểm xã hội là 6 hoặc nhiều hơn, người lao động sẽ đủ điều kiện nhận chế độ thai sản.",
+    "conclusion": "Người lao động M đủ điều kiện nhận chế độ thai sản. Kết quả này được xác định với giá trị \"Eligible\" là \"yes\" dựa trên nguồn luật đã trích dẫn."
+  },
+  "elapsed_s": 6.549,
+  "prompt_tokens": 3244,
+  "completion_tokens": 581,
+  "error": null,
+  "gold_answer": "Nếu bạn tham gia từ đầu 11/2025 đến cuối 4/2026, tức đủ 6 tháng, thì về điều kiện thời gian đóng thai sản là có khả năng đạt, miễn các tháng đó nằm trong 12 tháng liền kề trước sinh và bạn thuộc diện tham gia BHXH bắt buộc. Nếu sau đó nghỉ việc trước sinh thì vẫn có thể được hưởng thai sản nếu đủ điều kiện và nộp hồ sơ đúng.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

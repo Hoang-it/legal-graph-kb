@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 25,
+  "question": "Bà Nguyễn Anh (Vĩnh Long) đóng BHXH được 10 năm, nghỉ việc tháng 9/2025.\nTháng 11/2025, bà sinh con, vậy bà có được hưởng chế độ thai sản hay không? Tại địa bàn tỉnh Vĩnh Long, sinh con trước 35 tuổi có được hưởng chế độ gì không?",
+  "answer": "Issue:\nBà Nguyễn Anh đã đóng bảo hiểm xã hội được 10 năm, nghỉ việc vào tháng 9/2025 và sinh con vào tháng 11/2025. Câu hỏi đặt ra là bà có được hưởng chế độ thai sản không và sinh con trước 35 tuổi tại Vĩnh Long có được hưởng chế độ gì đặc biệt không?\n\nRule:\n\"Người lao động nữ sinh con được hưởng chế độ thai sản nếu đã đóng BHXH từ đủ 6 tháng trở lên trong thời gian 12 tháng trước khi sinh con.\" (Luật BHXH 2024, Điều 81, Khoản 1)\n\nApplication:\nyears_contributed(user, 10): Bà Nguyễn Anh đã đóng BHXH được 10 năm. Prolog xác định rằng điều kiện đóng BHXH từ đủ 6 tháng trở lên trong 12 tháng trước khi sinh con đã được đáp ứng. Truy vấn cũng kiểm tra về chế độ đặc biệt cho người sinh con trước 35 tuổi nhưng không có quy định nào áp dụng.\n\nConclusion:\nKết quả Prolog trả về: Được hưởng chế độ thai sản theo quy định tại Điều 81 Luật BHXH 2024. Không có chế độ đặc biệt nào dành riêng cho người sinh con trước 35 tuổi tại Vĩnh Long.",
+  "citations": [
+    "[Điều 81 khoản 1]",
+    "[Điều 81]"
+  ],
+  "citation_ids": [
+    "L41_2024.A81.K1",
+    "L41_2024.A81"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,eligible_maternity(user),based_on(source_a81_k1))]",
+  "irac_sections": {
+    "issue": "Bà Nguyễn Anh đã đóng bảo hiểm xã hội được 10 năm, nghỉ việc vào tháng 9/2025 và sinh con vào tháng 11/2025. Câu hỏi đặt ra là bà có được hưởng chế độ thai sản không và sinh con trước 35 tuổi tại Vĩnh Long có được hưởng chế độ gì đặc biệt không?",
+    "rule": "\"Người lao động nữ sinh con được hưởng chế độ thai sản nếu đã đóng BHXH từ đủ 6 tháng trở lên trong thời gian 12 tháng trước khi sinh con.\" (Luật BHXH 2024, Điều 81, Khoản 1)",
+    "application": "years_contributed(user, 10): Bà Nguyễn Anh đã đóng BHXH được 10 năm. Prolog xác định rằng điều kiện đóng BHXH từ đủ 6 tháng trở lên trong 12 tháng trước khi sinh con đã được đáp ứng. Truy vấn cũng kiểm tra về chế độ đặc biệt cho người sinh con trước 35 tuổi nhưng không có quy định nào áp dụng.",
+    "conclusion": "Kết quả Prolog trả về: Được hưởng chế độ thai sản theo quy định tại Điều 81 Luật BHXH 2024. Không có chế độ đặc biệt nào dành riêng cho người sinh con trước 35 tuổi tại Vĩnh Long."
+  },
+  "elapsed_s": 6.938,
+  "prompt_tokens": 2192,
+  "completion_tokens": 574,
+  "error": null,
+  "gold_answer": "Căn cứ khoản 2, 3, 5 Điều 50 Luật BHXH năm 2024:\n\"Điều 50. Đối tượng và điều kiện hưởng chế độ thai sản\n… 2. Đối tượng quy định tại các điểm b, c, d và đ khoản 1 Điều này phải đóng bảo hiểm xã hội bắt buộc từ đủ 06 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con hoặc nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 06 tháng tuổi.\n3. Đối tượng quy định tại điểm b và điểm c khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của người hành nghề khám bệnh, chữa bệnh thuộc cơ sở khám bệnh, chữa bệnh thì phải đóng bảo hiểm xã hội bắt buộc từ đủ 03 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con.\n… 5. Đối tượng quy định tại điểm b khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 06 tháng trở lên trong thời gian 24 tháng liền kề trước khi sinh con đối với trường hợp phải nghỉ việc để điều trị vô sinh\".\nNhư vậy, căn cứ quy định trên trong trường hợp bình thường thì bà Nguyễn Anh nếu đã đóng BHXH từ đủ 6 tháng trở lên trong thời hạn 12 tháng liền kề trước khi sinh là đủ điều kiện hưởng thai sản.\nTrường hợp phải nghỉ việc dưỡng thai theo chỉ định của người hành nghề khám bệnh, chữa bệnh thì đóng BHXH từ đủ 3 tháng trong thời hạn 12 tháng liền kề trước khi sinh là đủ điều kiện.\nTrường hợp phải nghỉ việc điều trị vô sinh thì đóng BHXH từ đủ 6 tháng trở lên trong thời hạn 24 tháng liền kề trước khi sinh là đủ điều kiện.\nVề chế độ sinh con trước 35 tuổi trên địa bàn tỉnh Vĩnh Long, đề nghị bà liên hệ với UBND xã, phường nơi cư trú để được hướng dẫn cụ thể.",
+  "gold_citations_raw": "khoản 2, 3, 5 Điều 50 Luật BHXH năm 2024"
+}

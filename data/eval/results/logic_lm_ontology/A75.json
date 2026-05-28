@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 75,
+  "question": "Tổng thời gian e đóng bh là 17 tháng trong đó bao gồm tổng 3 công ty . vậy tính thất nghiệp thế nào? chỉ lấy đúng 6th cuối gần nhất là cty e làm của năm 2025 vừa rồi để tính hay sao?",
+  "answer": "Issue: Người lao động có tổng thời gian đóng bảo hiểm xã hội là 17 tháng và đang thắc mắc về cách tính thất nghiệp, đặc biệt là việc có cần lấy 6 tháng cuối cùng gần nhất để tính hay không.\n\nRule: \"1. Người lao động thuộc đối tượng thực hiện chế độ tiền lương do Nhà nước quy định có toàn bộ thời gian đóng bảo hiểm xã hội theo chế độ tiền lương này thì tính bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội của số năm đóng bảo hiểm xã hội trước khi nghỉ hưu như sau: a) Bắt đầu tham gia bảo hiểm xã hội trước ngày 01 tháng 01 năm 1995 thì tính bình quân tiền lương làm căn cứ đóng bảo hiểm xã\" (Luật BHXH 2024 (41/2024/QH15), Điều 72, Khoản 1).\n\nApplication: Không có slot_bindings nào được cung cấp trong truy vấn. Tuy nhiên, Prolog đã xác định rằng người lao động đủ điều kiện nhận trợ cấp thất nghiệp dựa trên thời gian đóng bảo hiểm xã hội.\n\nConclusion: Prolog đã trả về giá trị \"Eligible for unemployment benefits\" cho biến Benefit. Không có slot nào bị thiếu, và hệ thống đã tính toán thành công.",
+  "citations": [
+    "[Điều 72 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A72.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_calculation(user,Eligible for unemployment benefits),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Người lao động có tổng thời gian đóng bảo hiểm xã hội là 17 tháng và đang thắc mắc về cách tính thất nghiệp, đặc biệt là việc có cần lấy 6 tháng cuối cùng gần nhất để tính hay không.",
+    "rule": "\"1. Người lao động thuộc đối tượng thực hiện chế độ tiền lương do Nhà nước quy định có toàn bộ thời gian đóng bảo hiểm xã hội theo chế độ tiền lương này thì tính bình quân tiền lương làm căn cứ đóng bảo hiểm xã hội của số năm đóng bảo hiểm xã hội trước khi nghỉ hưu như sau: a) Bắt đầu tham gia bảo hiểm xã hội trước ngày 01 tháng 01 năm 1995 thì tính bình quân tiền lương làm căn cứ đóng bảo hiểm xã\" (Luật BHXH 2024 (41/2024/QH15), Điều 72, Khoản 1).",
+    "application": "Không có slot_bindings nào được cung cấp trong truy vấn. Tuy nhiên, Prolog đã xác định rằng người lao động đủ điều kiện nhận trợ cấp thất nghiệp dựa trên thời gian đóng bảo hiểm xã hội.",
+    "conclusion": "Prolog đã trả về giá trị \"Eligible for unemployment benefits\" cho biến Benefit. Không có slot nào bị thiếu, và hệ thống đã tính toán thành công."
+  },
+  "elapsed_s": 10.295,
+  "prompt_tokens": 3598,
+  "completion_tokens": 613,
+  "error": null,
+  "gold_answer": "Thời gian đóng BHTN của 3 công ty được cộng dồn để xác định bạn được hưởng mấy tháng trợ cấp. Còn mức tiền trợ cấp thất nghiệp hằng tháng lại được tính theo 60% mức bình quân tiền lương tháng đóng BHTN của 6 tháng liền kề trước khi thất nghiệp, tức là chủ yếu nhìn 6 tháng cuối cùng trước khi nghỉ. Vì vậy số tháng hưởng và mức hưởng là hai cách tính khác nhau.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 50"
+}

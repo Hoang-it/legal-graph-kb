@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 190,
+  "question": "Lam cty luong cơ bản 3tr9 tháng mình đóng 415k bhxh và cty đóng cho 800k thì sau rút ra có rút dc cả phần 800k công ty đóng cho ko?",
+  "answer": "Issue:\nCâu hỏi đặt ra là khi người lao động nghỉ việc, đã đóng bảo hiểm xã hội với mức lương cơ bản 3tr9, bản thân đóng 415k và công ty đóng 800k mỗi tháng, thì khi rút bảo hiểm xã hội một lần có được nhận cả phần công ty đã đóng (800k) hay không.\n\nRule:\n\"Người lao động khi nghỉ việc mà chưa đủ điều kiện hưởng lương hưu thì được nhận bảo hiểm xã hội một lần, bao gồm cả phần người lao động và người sử dụng lao động đã đóng vào quỹ hưu trí và tử tuất.\" (law_bhxh_2024, article_60, clause_1)\n\nApplication:\nKhông có slot_id cụ thể nào được ràng buộc trong truy vấn này. Prolog đã sử dụng quy tắc từ nguồn luật để xác định rằng bảo hiểm xã hội một lần bao gồm cả phần người sử dụng lao động (công ty) đã đóng.\n\nConclusion:\nTheo kết quả truy vấn Prolog, khi nhận bảo hiểm xã hội một lần, người lao động sẽ được nhận cả phần công ty đã đóng vào quỹ (bao_hiem_xa_hoi_mot_lan_gom_ca_phan_cty).",
+  "citations": [
+    "[Điều 60 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,bao_hiem_xa_hoi_mot_lan_gom_ca_phan_cty,based_on(source_a60_k1))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là khi người lao động nghỉ việc, đã đóng bảo hiểm xã hội với mức lương cơ bản 3tr9, bản thân đóng 415k và công ty đóng 800k mỗi tháng, thì khi rút bảo hiểm xã hội một lần có được nhận cả phần công ty đã đóng (800k) hay không.",
+    "rule": "\"Người lao động khi nghỉ việc mà chưa đủ điều kiện hưởng lương hưu thì được nhận bảo hiểm xã hội một lần, bao gồm cả phần người lao động và người sử dụng lao động đã đóng vào quỹ hưu trí và tử tuất.\" (law_bhxh_2024, article_60, clause_1)",
+    "application": "Không có slot_id cụ thể nào được ràng buộc trong truy vấn này. Prolog đã sử dụng quy tắc từ nguồn luật để xác định rằng bảo hiểm xã hội một lần bao gồm cả phần người sử dụng lao động (công ty) đã đóng.",
+    "conclusion": "Theo kết quả truy vấn Prolog, khi nhận bảo hiểm xã hội một lần, người lao động sẽ được nhận cả phần công ty đã đóng vào quỹ (bao_hiem_xa_hoi_mot_lan_gom_ca_phan_cty)."
+  },
+  "elapsed_s": 5.651,
+  "prompt_tokens": 2059,
+  "completion_tokens": 482,
+  "error": null,
+  "gold_answer": "Khi hưởng BHXH 1 lần, mức hưởng được tính trên toàn bộ quá trình đóng vào quỹ hưu trí, tử tuất theo mức bình quân lương tháng đóng BHXH, không chỉ phần bạn tự đóng. Nói dễ hiểu, số tiền hưởng không tách riêng 'phần công ty đóng' hay 'phần mình đóng' để hoàn lại từng khoản, mà tính theo công thức luật định trên toàn bộ thời gian và mức đóng hợp lệ.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

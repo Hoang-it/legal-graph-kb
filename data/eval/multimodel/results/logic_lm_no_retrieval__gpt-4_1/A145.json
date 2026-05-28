@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 145,
+  "question": "đóng bảo hiểm xã hội tự nguyện thì có dc rút 1 lần k?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Người tham gia bảo hiểm xã hội tự nguyện có được rút bảo hiểm xã hội một lần hay không?\n\nRule:\n\"Người tham gia bảo hiểm xã hội tự nguyện được hưởng bảo hiểm xã hội một lần khi có yêu cầu nếu chưa đủ điều kiện hưởng lương hưu.\" (law_bhxh_2024, article_77, clause_1)\n\nApplication:\nKhông có slot_id nào cần điền giá trị trong trường hợp này. Hệ thống đã sử dụng quy định tại Điều 77, Khoản 1 của Luật Bảo hiểm xã hội 2024 để xác định quyền rút bảo hiểm xã hội một lần đối với người tham gia bảo hiểm xã hội tự nguyện.\n\nConclusion:\nTheo kết quả truy vấn Prolog, Answer = yes. Như vậy, người tham gia bảo hiểm xã hội tự nguyện có thể rút bảo hiểm xã hội một lần nếu chưa đủ điều kiện hưởng lương hưu.",
+  "citations": [
+    "[Điều 77 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A77.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,co_the_rut_1_lan_bhxh_tn,based_on(source_a77_k1))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Người tham gia bảo hiểm xã hội tự nguyện có được rút bảo hiểm xã hội một lần hay không?",
+    "rule": "\"Người tham gia bảo hiểm xã hội tự nguyện được hưởng bảo hiểm xã hội một lần khi có yêu cầu nếu chưa đủ điều kiện hưởng lương hưu.\" (law_bhxh_2024, article_77, clause_1)",
+    "application": "Không có slot_id nào cần điền giá trị trong trường hợp này. Hệ thống đã sử dụng quy định tại Điều 77, Khoản 1 của Luật Bảo hiểm xã hội 2024 để xác định quyền rút bảo hiểm xã hội một lần đối với người tham gia bảo hiểm xã hội tự nguyện.",
+    "conclusion": "Theo kết quả truy vấn Prolog, Answer = yes. Như vậy, người tham gia bảo hiểm xã hội tự nguyện có thể rút bảo hiểm xã hội một lần nếu chưa đủ điều kiện hưởng lương hưu."
+  },
+  "elapsed_s": 5.543,
+  "prompt_tokens": 1945,
+  "completion_tokens": 403,
+  "error": null,
+  "gold_answer": "BHXH tự nguyện vẫn có thể được hưởng BHXH 1 lần, nhưng chỉ khi thuộc trường hợp luật cho phép. Mức hưởng tính theo số năm đã đóng và căn cứ đóng BHXH tự nguyện, bao gồm cả phần Nhà nước hỗ trợ nếu có. Tuy nhiên cần cân nhắc kỹ vì BHXH tự nguyện nhằm tích lũy cho hưu trí, tử tuất; rút 1 lần sẽ mất lợi ích lâu dài.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

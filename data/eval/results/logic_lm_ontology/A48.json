@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 48,
+  "question": "Mình đóng BHXH 21nam,  sinh ngày 02/08/1976, nam, công việc bảo vệ vượn cây cao su, thì khi nào được nghi hưu?",
+  "answer": "Issue: Người hỏi đã đóng BHXH 21 năm và muốn biết khi nào được nghỉ hưu. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 3], người lao động nam đủ 60 tuổi và có từ đủ 15 năm đóng bảo hiểm xã hội thì được hưởng lương hưu. \nApplication: Không có slot nào được gán giá trị, nhưng Prolog đã xác định tuổi nghỉ hưu là 60. Prolog query trả về RetirementAge = 60. \nConclusion: Theo Prolog, người dùng có thể nghỉ hưu khi đủ 60 tuổi.",
+  "plain_answer": "Bạn sẽ được nghỉ hưu khi đủ 60 tuổi, theo quy định tại [Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 3]. Hiện tại bạn đã đóng BHXH 21 năm, vì vậy bạn chỉ cần chờ đến khi đủ tuổi để nhận lương hưu.",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A141.K3"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,retirement_age(user,60),based_on(source_c001))]",
+  "prolog_program": "years_contributed(user, 21).\nlegal_source(source_c001, law_bhxh_2024, article_141, clause_10, none, 'Người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên và có văn bản của cơ quan bảo hiểm xã hội xác nhận về việc chờ đủ điều kiện về tuổi đời để hưởng lương hưu được quy định tại Nghị định số 12/CP ngày 26 tháng 01 năm 1995 được sửa đổi, bổ sung một số điều theo Nghị định số 01/2003/NĐ-CP ngày 09 tháng 01 năm 2003 của Chính phủ thì được hưởng lương hưu khi nam đủ 60 tuổi, nữ đủ 55 tuổi.').\nretirement_age(user, RetirementAge, Trace) :- years_contributed(user, Years), Years >= 15, RetirementAge = 60, Trace = [step(conclusion, retirement_age(user, RetirementAge), based_on(source_c001))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi đã đóng BHXH 21 năm và muốn biết khi nào được nghỉ hưu.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 3], người lao động nam đủ 60 tuổi và có từ đủ 15 năm đóng bảo hiểm xã hội thì được hưởng lương hưu.",
+    "application": "Không có slot nào được gán giá trị, nhưng Prolog đã xác định tuổi nghỉ hưu là 60. Prolog query trả về RetirementAge = 60.",
+    "conclusion": "Theo Prolog, người dùng có thể nghỉ hưu khi đủ 60 tuổi."
+  },
+  "elapsed_s": 12.757,
+  "prompt_tokens": 4270,
+  "completion_tokens": 546,
+  "error": null,
+  "gold_answer": "Nếu tính theo tuổi nghỉ hưu thông thường của lao động nam, bạn sinh ngày 02/08/1976 thì đủ 62 tuổi vào ngày 02/08/2038. Hiện thông tin bạn nêu 'bảo vệ vườn cây cao su' chưa đủ căn cứ khẳng định thuộc nghề, công việc nặng nhọc/đặc biệt nặng nhọc để được nghỉ hưu sớm hơn. 21 năm đóng BHXH mới chỉ đáp ứng về thời gian tối thiểu nếu đến tuổi, còn thời điểm nghỉ hưu vẫn phải căn cứ thêm điều kiện tuổi và tính chất công việc.",
+  "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 169]"
+}

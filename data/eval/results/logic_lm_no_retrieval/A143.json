@@ -1,0 +1,25 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 143,
+  "question": "Mình xin nghỉ việc\nCông ty nợ bảo hiểm xã hội có làm hưởng bảo hiểm thất nghiệp được không?",
+  "answer": "Issue: Người lao động muốn biết liệu có thể hưởng bảo hiểm thất nghiệp khi công ty nợ bảo hiểm xã hội hay không.\n\nRule: Không có quy định cụ thể nào được trích dẫn trong trường hợp này.\n\nApplication: Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được sử dụng trong truy vấn Prolog.\n\nConclusion: Hệ thống không thể tính toán được số liệu cuối cùng vì không có giá trị nào được gán cho các slot. Prolog đã trả về kết quả rằng không đủ điều kiện hưởng bảo hiểm thất nghiệp (Eligibility = no).",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_eligibility(no),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người lao động muốn biết liệu có thể hưởng bảo hiểm thất nghiệp khi công ty nợ bảo hiểm xã hội hay không.",
+    "rule": "Không có quy định cụ thể nào được trích dẫn trong trường hợp này.",
+    "application": "Không có giá trị nào được gán cho các slot, do đó không có thông tin nào được sử dụng trong truy vấn Prolog.",
+    "conclusion": "Hệ thống không thể tính toán được số liệu cuối cùng vì không có giá trị nào được gán cho các slot. Prolog đã trả về kết quả rằng không đủ điều kiện hưởng bảo hiểm thất nghiệp (Eligibility = no)."
+  },
+  "elapsed_s": 9.595,
+  "prompt_tokens": 3138,
+  "completion_tokens": 363,
+  "error": null,
+  "gold_answer": "Công ty nợ BHXH không đương nhiên làm bạn mất quyền hưởng BHTN, nhưng trên thực tế sẽ ảnh hưởng hồ sơ nếu dữ liệu đóng BHTN chưa được xác nhận. Bạn cần yêu cầu công ty hoàn tất nghĩa vụ đóng, chốt sổ; nếu không thực hiện thì khiếu nại với cơ quan BHXH và thanh tra lao động. Phần thời gian thực tế đã đóng vào quỹ BHTN vẫn phải được ghi nhận để xét quyền lợi cho bạn.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

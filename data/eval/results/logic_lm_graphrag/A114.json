@@ -1,0 +1,33 @@
+{
+  "arm": "logic_lm_graphrag",
+  "stt": 114,
+  "question": "E tham gia bảo hiểm xã hội được 5 năm rồi nghĩ làm từ 2022 ( e vẫn chưa rút hết bảo hiểm thất nghiệp và bảo hiểm 1 lần ) . Nếu giờ e đóng bảo hiểm 7_  8 tháng rồi sinh bé thì có bị thanh tra không?",
+  "answer": "Issue: E tham gia bảo hiểm xã hội được 5 năm và đang thắc mắc về việc có bị thanh tra khi đóng bảo hiểm 7-8 tháng trước khi sinh bé hay không.\n\nRule: \"Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con hoặc nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 06 tháng tuổi thì vẫn được hưởng chế độ thai sản theo quy định tại các điều 53, 54, 55 và 56 và các khoản 1, 2 và 3 Điều 58 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 4)\n\nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Prolog đã sử dụng quy tắc để xác định tính đủ điều kiện cho chế độ thai sản dựa trên số năm tham gia bảo hiểm xã hội của người dùng, nhưng không có thông tin cụ thể nào để tính toán.\n\nConclusion: Hệ thống không thể tính toán được giá trị cuối cùng do không có thông tin trong slot_bindings.",
+  "citations": [
+    "[Điều 58]",
+    "[Điều 50 khoản 4]"
+  ],
+  "citation_ids": [
+    "L41_2024.A58",
+    "L41_2024.A50.K4"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,eligibility_for_maternity_leave(user),based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "E tham gia bảo hiểm xã hội được 5 năm và đang thắc mắc về việc có bị thanh tra khi đóng bảo hiểm 7-8 tháng trước khi sinh bé hay không.",
+    "rule": "\"Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này mà chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc trước thời điểm sinh con hoặc nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 06 tháng tuổi thì vẫn được hưởng chế độ thai sản theo quy định tại các điều 53, 54, 55 và 56 và các khoản 1, 2 và 3 Điều 58 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 4)",
+    "application": "Không có giá trị nào được gán cho các slot trong slot_bindings. Prolog đã sử dụng quy tắc để xác định tính đủ điều kiện cho chế độ thai sản dựa trên số năm tham gia bảo hiểm xã hội của người dùng, nhưng không có thông tin cụ thể nào để tính toán.",
+    "conclusion": "Hệ thống không thể tính toán được giá trị cuối cùng do không có thông tin trong slot_bindings."
+  },
+  "elapsed_s": 9.781,
+  "prompt_tokens": 3298,
+  "completion_tokens": 530,
+  "error": null,
+  "gold_answer": "Việc đóng lại 7-8 tháng rồi sinh con không tự động bị thanh tra. Quan trọng là bạn có đủ điều kiện thai sản hay không: thường phải đóng từ đủ 06 tháng trong 12 tháng trước sinh; nếu nghỉ dưỡng thai theo chỉ định và đã có đủ 12 tháng tham gia trước đó thì có trường hợp chỉ cần đủ 03 tháng. Nếu hồ sơ, hợp đồng, bảng lương thật và đóng đúng thực tế thì không phải sợ.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

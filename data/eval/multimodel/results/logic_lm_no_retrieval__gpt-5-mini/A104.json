@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 104,
+  "question": "Giờ rút bhxh 1 lần ở đâu cũng được phải không?\nVà có cần giấy quyết định thôi việc không?",
+  "answer": "Issue:\nGiờ rút BHXH một lần ở đâu cũng được phải không? Và có cần giấy quyết định thôi việc không?\n\nRule:\nKhông có trích dẫn pháp luật đính kèm trong đầu vào.\n\nApplication:\nCác slot đã gán: không có slot_bindings.  \nProlog không sử dụng bất kỳ slot nào; truy vấn withdraw_one_time_info/2 được chạy và sinh ra một kết quả cấu trúc cùng với trace thực thi: [step(conclusion,withdraw_one_time_info,based_on(none))].\n\nConclusion:\nAnswer = conditions(Rút BHXH một lần,[location(Nộp hồ sơ tại cơ quan Bảo hiểm xã hội nơi đang quản lý sổ BHXH hoặc theo hướng dẫn của cơ quan BHXH địa phương),required_documents([Sổ BHXH (sổ hoặc thông tin hồ sơ),Giấy tờ cá nhân (CMND/CCCD/hộ chiếu),Giấy tờ chứng minh chấm dứt quan hệ lao động (ví dụ: quyết định thôi việc, biên bản thỏa thuận chấm dứt hợp đồng hoặc văn bản liên quan) khi cơ quan BHXH yêu cầu,Đơn đề nghị hưởng BHXH một lần theo mẫu của cơ quan BHXH])])",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,withdraw_one_time_info,based_on(none))]",
+  "irac_sections": {
+    "issue": "Giờ rút BHXH một lần ở đâu cũng được phải không? Và có cần giấy quyết định thôi việc không?",
+    "rule": "Không có trích dẫn pháp luật đính kèm trong đầu vào.",
+    "application": "Các slot đã gán: không có slot_bindings.  \nProlog không sử dụng bất kỳ slot nào; truy vấn withdraw_one_time_info/2 được chạy và sinh ra một kết quả cấu trúc cùng với trace thực thi: [step(conclusion,withdraw_one_time_info,based_on(none))].",
+    "conclusion": "Answer = conditions(Rút BHXH một lần,[location(Nộp hồ sơ tại cơ quan Bảo hiểm xã hội nơi đang quản lý sổ BHXH hoặc theo hướng dẫn của cơ quan BHXH địa phương),required_documents([Sổ BHXH (sổ hoặc thông tin hồ sơ),Giấy tờ cá nhân (CMND/CCCD/hộ chiếu),Giấy tờ chứng minh chấm dứt quan hệ lao động (ví dụ: quyết định thôi việc, biên bản thỏa thuận chấm dứt hợp đồng hoặc văn bản liên quan) khi cơ quan BHXH yêu cầu,Đơn đề nghị hưởng BHXH một lần theo mẫu của cơ quan BHXH])])"
+  },
+  "elapsed_s": 68.093,
+  "prompt_tokens": 3292,
+  "completion_tokens": 5206,
+  "error": null,
+  "gold_answer": "Hồ sơ BHXH 1 lần nộp tại cơ quan BHXH nơi cư trú (thường trú hoặc tạm trú), không phải nộp ở đâu cũng được. Thông thường không bắt buộc có quyết định thôi việc; giấy tờ chính là đơn đề nghị, CCCD và thông tin tài khoản. Tuy nhiên bạn phải thuộc trường hợp đủ điều kiện hưởng BHXH 1 lần, phổ biến là sau 12 tháng không tiếp tục tham gia mà chưa đủ điều kiện hưởng lương hưu.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

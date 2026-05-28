@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 39,
+  "question": "Mình ngưng đóng bảo hiểm xã hội từ 2017 đến bây giờ là năm 2026 rồi. Liệu mình có đi thanh toán bhxh đc k ạ?",
+  "answer": "Issue:\nBạn hỏi rằng nếu đã ngừng đóng bảo hiểm xã hội từ năm 2017 đến năm 2026 thì hiện tại có thể đi thanh toán (hưởng bảo hiểm xã hội một lần) được không.\n\nRule:\nTheo Luật BHXH 2024 (41/2024/QH15), Điều 107, Khoản 2: \"Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội. Thời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần đối với trường hợp người hưởng bảo hiểm xã hội theo quy...\"\n\nApplication:\nKhông có slot_id cụ thể nào được ràng buộc trong truy vấn này. Prolog đã sử dụng thông tin về việc bạn ngừng đóng bảo hiểm xã hội từ năm 2017 đến 2026 để xác định khả năng nộp hồ sơ hưởng bảo hiểm xã hội một lần, dựa trên quy định tại Điều 107, Khoản 2 của Luật BHXH 2024.\n\nConclusion:\nTheo kết quả truy vấn Prolog, bạn đã ngừng đóng bảo hiểm xã hội từ năm 2017 đến 2026 có thể nộp hồ sơ để hưởng bảo hiểm xã hội một lần nếu đáp ứng các điều kiện theo quy định của pháp luật.",
+  "citations": [
+    "[Điều 107 khoản 2]",
+    "[Điều 106]"
+  ],
+  "citation_ids": [
+    "L41_2024.A107.K2",
+    "L41_2024.A106"
+  ],
+  "citation_indices": [
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,co_duoc_thanh_toan_bhxh_khong(Người lao động đã ngừng đóng bảo hiểm xã hội từ năm 2017 đến 2026 có thể nộp hồ sơ để hưởng bảo hiểm xã hội một lần nếu đáp ứng các điều kiện theo quy định của pháp luật.),based_on(source_c002))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi rằng nếu đã ngừng đóng bảo hiểm xã hội từ năm 2017 đến năm 2026 thì hiện tại có thể đi thanh toán (hưởng bảo hiểm xã hội một lần) được không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 107, Khoản 2: \"Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội. Thời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần đối với trường hợp người hưởng bảo hiểm xã hội theo quy...\"",
+    "application": "Không có slot_id cụ thể nào được ràng buộc trong truy vấn này. Prolog đã sử dụng thông tin về việc bạn ngừng đóng bảo hiểm xã hội từ năm 2017 đến 2026 để xác định khả năng nộp hồ sơ hưởng bảo hiểm xã hội một lần, dựa trên quy định tại Điều 107, Khoản 2 của Luật BHXH 2024.",
+    "conclusion": "Theo kết quả truy vấn Prolog, bạn đã ngừng đóng bảo hiểm xã hội từ năm 2017 đến 2026 có thể nộp hồ sơ để hưởng bảo hiểm xã hội một lần nếu đáp ứng các điều kiện theo quy định của pháp luật."
+  },
+  "elapsed_s": 6.199,
+  "prompt_tokens": 3346,
+  "completion_tokens": 648,
+  "error": null,
+  "gold_answer": "Nếu bạn đã ngừng đóng từ năm 2017 đến nay và không tiếp tục tham gia BHXH, thì thường có thể làm thủ tục hưởng BHXH một lần nếu thuộc trường hợp luật cho phép, nhất là đã ngừng tham gia từ đủ 12 tháng trở lên mà chưa đủ thời gian hưởng lương hưu. Nếu không rút một lần, bạn cũng có thể bảo lưu thời gian đã đóng để sau này tham gia tiếp hoặc chuyển sang BHXH tự nguyện.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110"
+}

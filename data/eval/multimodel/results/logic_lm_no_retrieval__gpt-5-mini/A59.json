@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 59,
+  "question": "Em làm nhân viên parttime được 1,5 năm nhưng đến tháng 1/2026 bắt đầu kí hợp đồng lao động 6 tháng và đóng bhxh. Tháng 3 e có bầu, dự sinh ngày 22/11, nếu chỉ đóng đủ 6 tháng theo hợp đồng thì có được hưởng bảo hiểm thai sản không?",
+  "answer": "Issue:\nEm hỏi: nếu trước đó làm part-time 1,5 năm nhưng từ 1/2026 ký HĐLĐ 6 tháng và đóng BHXH, dự sinh 22/11/2026, nếu chỉ đóng đủ 6 tháng theo hợp đồng có được hưởng chế độ thai sản không?\n\nRule:\nlaw_bhxh_2024, article_44, clause_1: 'Người lao động nữ đóng BHXH ít nhất 6 tháng trong 12 tháng trước khi sinh thì được hưởng chế độ thai sản.'\n\nApplication:\nKhông có slot_bindings được cung cấp. Các fact do hệ thống xác minh và Prolog sử dụng (giữ nguyên văn):\nparttime_duration_months(user, 18).\ncontract_start(user, 2026, 1).\ncontract_duration_months(user, 6).\nexpected_birth(user, 2026, 11, 22).\ncontributed_months_under_contract(user, 6).\nProlog đã dùng các fact contract_start, contract_duration_months, expected_birth để tính contributed_months_in_12_before_birth(user, 6) và sau đó áp dụng quy tắc điều kiện 'ít nhất 6 tháng' để quyết định tính đủ điều kiện.\n\nConclusion:\nProlog trả biến Answer = \"yes\". Trung gian Prolog cũng cho contributed_months_in_12_before_birth(user, 6). Vì vậy Prolog kết luận maternity_eligible(user, yes).",
+  "citations": [
+    "[Điều 44 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A44.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(decision_eligible,maternity_eligible(user,yes),based_on(source_maternity_6m)),step(compute_overlap,contributed_months_in_12_before_birth(user,6),based_on(source_maternity_6m))]",
+  "irac_sections": {
+    "issue": "Em hỏi: nếu trước đó làm part-time 1,5 năm nhưng từ 1/2026 ký HĐLĐ 6 tháng và đóng BHXH, dự sinh 22/11/2026, nếu chỉ đóng đủ 6 tháng theo hợp đồng có được hưởng chế độ thai sản không?",
+    "rule": "law_bhxh_2024, article_44, clause_1: 'Người lao động nữ đóng BHXH ít nhất 6 tháng trong 12 tháng trước khi sinh thì được hưởng chế độ thai sản.'",
+    "application": "Không có slot_bindings được cung cấp. Các fact do hệ thống xác minh và Prolog sử dụng (giữ nguyên văn):\nparttime_duration_months(user, 18).\ncontract_start(user, 2026, 1).\ncontract_duration_months(user, 6).\nexpected_birth(user, 2026, 11, 22).\ncontributed_months_under_contract(user, 6).\nProlog đã dùng các fact contract_start, contract_duration_months, expected_birth để tính contributed_months_in_12_before_birth(user, 6) và sau đó áp dụng quy tắc điều kiện 'ít nhất 6 tháng' để quyết định tính đủ điều kiện.",
+    "conclusion": "Prolog trả biến Answer = \"yes\". Trung gian Prolog cũng cho contributed_months_in_12_before_birth(user, 6). Vì vậy Prolog kết luận maternity_eligible(user, yes)."
+  },
+  "elapsed_s": 64.011,
+  "prompt_tokens": 2554,
+  "completion_tokens": 7761,
+  "error": null,
+  "gold_answer": "Nếu bạn ký HĐLĐ từ 1/2026 và đóng BHXH bắt buộc đủ 6 tháng trong 12 tháng trước khi sinh vào 22/11/2026 thì về nguyên tắc đủ điều kiện hưởng thai sản. Thời gian làm part-time trước đó chỉ được tính nếu thuộc diện có đóng BHXH bắt buộc hợp pháp. Vì vậy, mốc quan trọng là số tháng đóng vào quỹ ốm đau - thai sản trong 12 tháng liền kề trước sinh, không phải số năm làm việc part-time.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50"
+}

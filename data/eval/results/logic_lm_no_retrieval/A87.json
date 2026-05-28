@@ -1,0 +1,29 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 87,
+  "question": "Lúc trước mình có lm CTY cũ đc 4 tháng. Có đóng BH từ 7 đến 10 . Năm 2025 lúc đó mình bầu đc 1 tháng qua rồi qua CTY mới làm từ 11 năm 2025 đến giờ gần 6 tháng. Cũng đóng BH . Như vậy thì nếu mình đóng đủ 6 tháng có nhận đc tiền thai sản ko?",
+  "answer": "Issue: Người lao động có đủ 6 tháng đóng bảo hiểm xã hội có được nhận tiền thai sản không?\n\nRule: \"Người lao động được hưởng chế độ thai sản khi có đủ 6 tháng đóng BHXH trong vòng 12 tháng trước khi sinh.\" (law_bhxh_2024, article_26, clause_1)\n\nApplication: Không có giá trị nào được gán cho các slot trong quá trình truy vấn. Tuy nhiên, Prolog đã xác định rằng người lao động đã đóng đủ 6 tháng bảo hiểm xã hội.\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người lao động đủ điều kiện nhận tiền thai sản.",
+  "citations": [
+    "[Điều 26 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A26.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,yes),based_on(source_a26_k1))]",
+  "irac_sections": {
+    "issue": "Người lao động có đủ 6 tháng đóng bảo hiểm xã hội có được nhận tiền thai sản không?",
+    "rule": "\"Người lao động được hưởng chế độ thai sản khi có đủ 6 tháng đóng BHXH trong vòng 12 tháng trước khi sinh.\" (law_bhxh_2024, article_26, clause_1)",
+    "application": "Không có giá trị nào được gán cho các slot trong quá trình truy vấn. Tuy nhiên, Prolog đã xác định rằng người lao động đã đóng đủ 6 tháng bảo hiểm xã hội.",
+    "conclusion": "Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người lao động đủ điều kiện nhận tiền thai sản."
+  },
+  "elapsed_s": 13.411,
+  "prompt_tokens": 3773,
+  "completion_tokens": 702,
+  "error": null,
+  "gold_answer": "Nếu trong 12 tháng trước khi sinh bạn đã đóng BHXH bắt buộc đủ từ 6 tháng trở lên thì được hưởng thai sản. Thời gian 4 tháng ở công ty cũ và gần 6 tháng ở công ty mới có thể cộng lại nếu đều là thời gian đóng BHXH bắt buộc hợp pháp trong khoảng 12 tháng trước sinh. Vì vậy, nếu tổng đủ 6 tháng trong khoảng tính luật định thì bạn có thể được hưởng thai sản, kể cả đã chuyển công ty.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50"
+}

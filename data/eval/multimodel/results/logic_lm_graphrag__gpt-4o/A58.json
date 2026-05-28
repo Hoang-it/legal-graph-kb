@@ -1,0 +1,40 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 58,
+  "question": "e là hộ kinh doanh mới , tham gia bhxh cho hkd thì phải làm như thế nào?",
+  "answer": "Issue: Bạn là hộ kinh doanh mới và muốn biết cách tham gia bảo hiểm xã hội cho hộ kinh doanh.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 3, Khoản 9: \"Đăng ký tham gia bảo hiểm xã hội là việc người sử dụng lao động, người lao động nộp hồ sơ kê khai thông tin về người lao động, người sử dụng lao động, tiền lương, thu nhập làm căn cứ đóng bảo hiểm xã hội, phương thức đóng và các nội dung khác có liên quan theo quy định của pháp luật để tham gia bảo hiểm xã hội cho cơ quan bảo hiểm xã hội.\" Điều 28, Khoản 1: \"Người sử dụng lao động có trách nhiệm kê khai và nộp hồ sơ tham gia bảo hiểm xã hội bắt buộc của người lao động theo quy định tại khoản 1 và khoản 2 Điều 27 của Luật này cho cơ quan bảo hiểm xã hội trong thời hạn 30 ngày kể từ ngày người lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc, trừ trường hợp quy định tại khoản 2 Điều này.\" Điều 12, Khoản 3: \"Được cơ quan bảo hiểm xã hội hướng dẫn trình tự, thủ tục thực hiện bảo hiểm xã hội.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên các quy định pháp luật, quy trình tham gia bảo hiểm xã hội bao gồm việc nộp hồ sơ kê khai thông tin và tuân theo hướng dẫn từ cơ quan bảo hiểm xã hội.\n\nConclusion: Để tham gia bảo hiểm xã hội cho hộ kinh doanh, bạn cần thực hiện các bước sau: [submit_declaration_form, follow_guidance_from_social_insurance_agency]. Điều này có nghĩa là bạn cần nộp hồ sơ kê khai và tuân theo hướng dẫn từ cơ quan bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 3 khoản 9]",
+    "[Điều 28 khoản 1]",
+    "[Điều 27]",
+    "[Điều 12 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A3.K9",
+    "L41_2024.A28.K1",
+    "L41_2024.A27",
+    "L41_2024.A12.K3"
+  ],
+  "citation_indices": [
+    4,
+    6,
+    7
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,register_social_insurance_procedure([submit_declaration_form,follow_guidance_from_social_insurance_agency]),based_on(source_c004)),step(conclusion,register_social_insurance_procedure([submit_declaration_form,follow_guidance_from_social_insurance_agency]),based_on(source_c006)),step(conclusion,register_social_insurance_procedure([submit_declaration_form,follow_guidance_from_social_insurance_agency]),based_on(source_c007))]",
+  "irac_sections": {
+    "issue": "Bạn là hộ kinh doanh mới và muốn biết cách tham gia bảo hiểm xã hội cho hộ kinh doanh.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 3, Khoản 9: \"Đăng ký tham gia bảo hiểm xã hội là việc người sử dụng lao động, người lao động nộp hồ sơ kê khai thông tin về người lao động, người sử dụng lao động, tiền lương, thu nhập làm căn cứ đóng bảo hiểm xã hội, phương thức đóng và các nội dung khác có liên quan theo quy định của pháp luật để tham gia bảo hiểm xã hội cho cơ quan bảo hiểm xã hội.\" Điều 28, Khoản 1: \"Người sử dụng lao động có trách nhiệm kê khai và nộp hồ sơ tham gia bảo hiểm xã hội bắt buộc của người lao động theo quy định tại khoản 1 và khoản 2 Điều 27 của Luật này cho cơ quan bảo hiểm xã hội trong thời hạn 30 ngày kể từ ngày người lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc, trừ trường hợp quy định tại khoản 2 Điều này.\" Điều 12, Khoản 3: \"Được cơ quan bảo hiểm xã hội hướng dẫn trình tự, thủ tục thực hiện bảo hiểm xã hội.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên các quy định pháp luật, quy trình tham gia bảo hiểm xã hội bao gồm việc nộp hồ sơ kê khai thông tin và tuân theo hướng dẫn từ cơ quan bảo hiểm xã hội.",
+    "conclusion": "Để tham gia bảo hiểm xã hội cho hộ kinh doanh, bạn cần thực hiện các bước sau: [submit_declaration_form, follow_guidance_from_social_insurance_agency]. Điều này có nghĩa là bạn cần nộp hồ sơ kê khai và tuân theo hướng dẫn từ cơ quan bảo hiểm xã hội."
+  },
+  "elapsed_s": 5.857,
+  "prompt_tokens": 3412,
+  "completion_tokens": 867,
+  "error": null,
+  "gold_answer": "Nếu bạn là chủ hộ kinh doanh thuộc diện phải tham gia BHXH bắt buộc thì cần liên hệ cơ quan BHXH hoặc tổ chức dịch vụ thu để đăng ký hồ sơ tham gia theo mã số BHXH, kê khai mức tiền lương làm căn cứ đóng và phương thức đóng. Nếu chưa thuộc diện bắt buộc thì có thể tham gia BHXH tự nguyện. Khi đi đăng ký nên mang CCCD, thông tin đăng ký hộ kinh doanh và giấy tờ liên quan đến mã số BHXH nếu đã có.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 25, Điều 31; Nghị định 158/2025/NĐ-CP"
+}

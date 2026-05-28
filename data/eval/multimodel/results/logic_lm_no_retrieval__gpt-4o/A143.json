@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 143,
+  "question": "Mình xin nghỉ việc\nCông ty nợ bảo hiểm xã hội có làm hưởng bảo hiểm thất nghiệp được không?",
+  "answer": "Issue: Bạn muốn biết liệu có thể hưởng bảo hiểm thất nghiệp khi công ty đang nợ bảo hiểm xã hội hay không.\n\nRule: Điều kiện hưởng bảo hiểm thất nghiệp bao gồm việc đã đóng bảo hiểm thất nghiệp đủ thời gian theo quy định và không bị công ty nợ bảo hiểm xã hội. (Nguồn: Luật BHXH 2024, Điều 49, Khoản 1)\n\nApplication: Không có thông tin cụ thể nào được cung cấp về việc bạn đã đóng bảo hiểm thất nghiệp đủ thời gian hay tình trạng nợ bảo hiểm xã hội của công ty. Tuy nhiên, theo quy định, nếu công ty nợ bảo hiểm xã hội, bạn sẽ không đủ điều kiện hưởng bảo hiểm thất nghiệp.\n\nConclusion: Không đủ điều kiện hưởng bảo hiểm thất nghiệp nếu công ty nợ bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 49 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A49.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_eligibility(Không đủ điều kiện hưởng bảo hiểm thất nghiệp nếu công ty nợ bảo hiểm xã hội.),based_on(source_a49_k1))]",
+  "irac_sections": {
+    "issue": "Bạn muốn biết liệu có thể hưởng bảo hiểm thất nghiệp khi công ty đang nợ bảo hiểm xã hội hay không.",
+    "rule": "Điều kiện hưởng bảo hiểm thất nghiệp bao gồm việc đã đóng bảo hiểm thất nghiệp đủ thời gian theo quy định và không bị công ty nợ bảo hiểm xã hội. (Nguồn: Luật BHXH 2024, Điều 49, Khoản 1)",
+    "application": "Không có thông tin cụ thể nào được cung cấp về việc bạn đã đóng bảo hiểm thất nghiệp đủ thời gian hay tình trạng nợ bảo hiểm xã hội của công ty. Tuy nhiên, theo quy định, nếu công ty nợ bảo hiểm xã hội, bạn sẽ không đủ điều kiện hưởng bảo hiểm thất nghiệp.",
+    "conclusion": "Không đủ điều kiện hưởng bảo hiểm thất nghiệp nếu công ty nợ bảo hiểm xã hội."
+  },
+  "elapsed_s": 4.819,
+  "prompt_tokens": 2016,
+  "completion_tokens": 376,
+  "error": null,
+  "gold_answer": "Công ty nợ BHXH không đương nhiên làm bạn mất quyền hưởng BHTN, nhưng trên thực tế sẽ ảnh hưởng hồ sơ nếu dữ liệu đóng BHTN chưa được xác nhận. Bạn cần yêu cầu công ty hoàn tất nghĩa vụ đóng, chốt sổ; nếu không thực hiện thì khiếu nại với cơ quan BHXH và thanh tra lao động. Phần thời gian thực tế đã đóng vào quỹ BHTN vẫn phải được ghi nhận để xét quyền lợi cho bạn.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

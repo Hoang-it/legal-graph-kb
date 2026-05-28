@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 185,
+  "question": "minh tham gia bh từ 2021 đến nay đóng phí đều hàng tháng.nhưng mở  định danh kiểm tra thì 21 23 24 25 đều có phí còn 22 trống không thấy có phí mình cảm thấy chưa hiểu, tại sao mình bị thiếu tháng này?",
+  "answer": "Issue:\nBạn thắc mắc vì sao trong quá trình tham gia bảo hiểm xã hội từ năm 2021 đến nay, dù đã đóng phí đều hàng tháng nhưng khi kiểm tra định danh lại thấy năm 2022 không có phí, trong khi các năm 2021, 2023, 2024, 2025 đều có.\n\nRule:\n\"Người sử dụng lao động có trách nhiệm đóng đầy đủ, đúng thời hạn tiền bảo hiểm xã hội cho người lao động.\" (law_bhxh_2024, article_23, clause_1)\n\"Nếu phát hiện chưa đóng hoặc đóng thiếu, người lao động có quyền yêu cầu cơ quan BHXH kiểm tra, xử lý.\" (law_bhxh_2024, article_23, clause_2)\n\nApplication:\nKhông có slot_id nào được cung cấp cụ thể trong trường hợp này. Hệ thống Prolog đã truy xuất hai điều kiện: (1) trách nhiệm đóng đầy đủ BHXH thuộc về người sử dụng lao động, và (2) nếu phát hiện thiếu tháng đóng, người lao động có quyền yêu cầu cơ quan BHXH kiểm tra, xử lý. Các điều kiện này được xác định dựa trên các nguồn luật đã trích dẫn.\n\nConclusion:\nCác điều kiện pháp lý áp dụng là: \"Người sử dụng lao động phải đóng đầy đủ, đúng thời hạn tiền BHXH cho người lao động.\" và \"Nếu phát hiện thiếu tháng đóng, người lao động có quyền yêu cầu cơ quan BHXH kiểm tra, xử lý.\" Nếu bạn phát hiện thiếu tháng đóng, bạn có quyền yêu cầu cơ quan BHXH kiểm tra và xử lý theo quy định.",
+  "citations": [
+    "[Điều 23 khoản 1]",
+    "[Điều 23 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A23.K1",
+    "L41_2024.A23.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(obligation,Trách nhiệm đóng đầy đủ BHXH thuộc về người sử dụng lao động.,based_on(source_a23_k1)),step(remedy,Người lao động có quyền yêu cầu kiểm tra, xử lý nếu thiếu tháng đóng.,based_on(source_a23_k2))]",
+  "irac_sections": {
+    "issue": "Bạn thắc mắc vì sao trong quá trình tham gia bảo hiểm xã hội từ năm 2021 đến nay, dù đã đóng phí đều hàng tháng nhưng khi kiểm tra định danh lại thấy năm 2022 không có phí, trong khi các năm 2021, 2023, 2024, 2025 đều có.",
+    "rule": "\"Người sử dụng lao động có trách nhiệm đóng đầy đủ, đúng thời hạn tiền bảo hiểm xã hội cho người lao động.\" (law_bhxh_2024, article_23, clause_1)\n\"Nếu phát hiện chưa đóng hoặc đóng thiếu, người lao động có quyền yêu cầu cơ quan BHXH kiểm tra, xử lý.\" (law_bhxh_2024, article_23, clause_2)",
+    "application": "Không có slot_id nào được cung cấp cụ thể trong trường hợp này. Hệ thống Prolog đã truy xuất hai điều kiện: (1) trách nhiệm đóng đầy đủ BHXH thuộc về người sử dụng lao động, và (2) nếu phát hiện thiếu tháng đóng, người lao động có quyền yêu cầu cơ quan BHXH kiểm tra, xử lý. Các điều kiện này được xác định dựa trên các nguồn luật đã trích dẫn.",
+    "conclusion": "Các điều kiện pháp lý áp dụng là: \"Người sử dụng lao động phải đóng đầy đủ, đúng thời hạn tiền BHXH cho người lao động.\" và \"Nếu phát hiện thiếu tháng đóng, người lao động có quyền yêu cầu cơ quan BHXH kiểm tra, xử lý.\" Nếu bạn phát hiện thiếu tháng đóng, bạn có quyền yêu cầu cơ quan BHXH kiểm tra và xử lý theo quy định."
+  },
+  "elapsed_s": 7.96,
+  "prompt_tokens": 3889,
+  "completion_tokens": 931,
+  "error": null,
+  "gold_answer": "Nếu app không hiển thị năm 2022 nhưng các năm khác vẫn có, có thể do lỗi đồng bộ dữ liệu, gộp mã số hoặc đơn vị chưa hoàn tất hạch toán năm đó. Thời gian đóng hợp lệ không tự nhiên bị mất, nhưng bạn nên đề nghị BHXH in chi tiết quá trình đóng để kiểm tra. Nếu thật sự thiếu dữ liệu, có thể yêu cầu đơn vị cũ đối chiếu chứng từ đóng và cơ quan BHXH cập nhật lại.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_graphrag",
+  "stt": 149,
+  "question": "Rút BHXH 1 lần thì bao lâu nhận được? e bắt đầu tham gia từ 2020 đến giờ thì có được rút không? e ở TP.HCM thì ra đâu rút được?",
+  "answer": "Issue: Người dùng hỏi về thời gian nhận tiền khi rút bảo hiểm xã hội một lần và điều kiện rút tiền sau khi tham gia từ năm 2020.\n\nRule: \"Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng bảo hiểm xã hội một lần, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết.\" (Luật BHXH 2024 (41/2024/QH15), Điều 79, Khoản 3)\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Tuy nhiên, Prolog đã trả về kết quả cho thời gian giải quyết là 7 ngày làm việc.\n\nConclusion: Prolog đã trả về giá trị 7 cho biến Answer, cho biết thời gian nhận tiền khi rút bảo hiểm xã hội một lần là 7 ngày làm việc.",
+  "citations": [
+    "[Điều 79 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A79.K3"
+  ],
+  "citation_indices": [
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,withdrawal_time(7),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Người dùng hỏi về thời gian nhận tiền khi rút bảo hiểm xã hội một lần và điều kiện rút tiền sau khi tham gia từ năm 2020.",
+    "rule": "\"Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng bảo hiểm xã hội một lần, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết.\" (Luật BHXH 2024 (41/2024/QH15), Điều 79, Khoản 3)",
+    "application": "Không có slot nào được gán giá trị trong trường hợp này. Tuy nhiên, Prolog đã trả về kết quả cho thời gian giải quyết là 7 ngày làm việc.",
+    "conclusion": "Prolog đã trả về giá trị 7 cho biến Answer, cho biết thời gian nhận tiền khi rút bảo hiểm xã hội một lần là 7 ngày làm việc."
+  },
+  "elapsed_s": 7.764,
+  "prompt_tokens": 3026,
+  "completion_tokens": 358,
+  "error": null,
+  "gold_answer": "Thời gian giải quyết BHXH 1 lần thường khoảng 05 ngày làm việc kể từ khi cơ quan BHXH nhận đủ hồ sơ hợp lệ. Bạn tham gia từ 2020 đến nay chỉ được rút nếu thuộc trường hợp luật cho phép, phổ biến là đã nghỉ và sau 12 tháng không tiếp tục tham gia BHXH. Ở TP.HCM, bạn nộp tại cơ quan BHXH nơi thường trú hoặc tạm trú.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,37 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 104,
+  "question": "Giờ rút bhxh 1 lần ở đâu cũng được phải không?\nVà có cần giấy quyết định thôi việc không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là người lao động có thể rút bảo hiểm xã hội (BHXH) một lần ở bất kỳ cơ quan BHXH nào hay không, và có cần giấy quyết định thôi việc khi làm thủ tục rút BHXH một lần không.\n\nRule:\nTheo Luật BHXH 2024 (41/2024/QH15), Điều 107, Khoản 2: \"Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội...\".\nVà Điều 13, Khoản 3: \"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\"\n\nApplication:\nCác slot được Prolog truy vấn gồm: withdrawal_at_any_social_insurance_agency (rút tại bất kỳ cơ quan BHXH nào) và need_employment_termination_confirmation (cần xác nhận thôi việc). Truy vấn đã sử dụng nội dung từ Điều 107, Khoản 2 và Điều 13, Khoản 3 của Luật BHXH 2024 để xác định rằng người lao động có thể nộp hồ sơ tại bất kỳ cơ quan BHXH nào và cần có xác nhận thôi việc (giấy quyết định thôi việc hoặc xác nhận chấm dứt hợp đồng).\n\nConclusion:\nKết quả Prolog trả về: Answer = [withdrawal_at_any_social_insurance_agency, need_employment_termination_confirmation]. Như vậy, bạn có thể rút BHXH một lần ở bất kỳ cơ quan BHXH nào và cần có giấy xác nhận thôi việc (giấy quyết định thôi việc hoặc xác nhận chấm dứt hợp đồng lao động).",
+  "citations": [
+    "[Điều 107 khoản 2]",
+    "[Điều 106]",
+    "[Điều 13 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A107.K2",
+    "L41_2024.A106",
+    "L41_2024.A13.K3"
+  ],
+  "citation_indices": [
+    2,
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,bhxh_one_time_withdrawal_location_and_documents([withdrawal_at_any_social_insurance_agency,need_employment_termination_confirmation]),based_on(source_c002)),step(conclusion,bhxh_one_time_withdrawal_location_and_documents([withdrawal_at_any_social_insurance_agency,need_employment_termination_confirmation]),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là người lao động có thể rút bảo hiểm xã hội (BHXH) một lần ở bất kỳ cơ quan BHXH nào hay không, và có cần giấy quyết định thôi việc khi làm thủ tục rút BHXH một lần không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 107, Khoản 2: \"Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội...\".\nVà Điều 13, Khoản 3: \"Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm xã hội khi người lao động chấm dứt hợp đồng lao động, hợp đồng làm việc hoặc thôi việc theo quy định của pháp luật.\"",
+    "application": "Các slot được Prolog truy vấn gồm: withdrawal_at_any_social_insurance_agency (rút tại bất kỳ cơ quan BHXH nào) và need_employment_termination_confirmation (cần xác nhận thôi việc). Truy vấn đã sử dụng nội dung từ Điều 107, Khoản 2 và Điều 13, Khoản 3 của Luật BHXH 2024 để xác định rằng người lao động có thể nộp hồ sơ tại bất kỳ cơ quan BHXH nào và cần có xác nhận thôi việc (giấy quyết định thôi việc hoặc xác nhận chấm dứt hợp đồng).",
+    "conclusion": "Kết quả Prolog trả về: Answer = [withdrawal_at_any_social_insurance_agency, need_employment_termination_confirmation]. Như vậy, bạn có thể rút BHXH một lần ở bất kỳ cơ quan BHXH nào và cần có giấy xác nhận thôi việc (giấy quyết định thôi việc hoặc xác nhận chấm dứt hợp đồng lao động)."
+  },
+  "elapsed_s": 7.855,
+  "prompt_tokens": 3459,
+  "completion_tokens": 797,
+  "error": null,
+  "gold_answer": "Hồ sơ BHXH 1 lần nộp tại cơ quan BHXH nơi cư trú (thường trú hoặc tạm trú), không phải nộp ở đâu cũng được. Thông thường không bắt buộc có quyết định thôi việc; giấy tờ chính là đơn đề nghị, CCCD và thông tin tài khoản. Tuy nhiên bạn phải thuộc trường hợp đủ điều kiện hưởng BHXH 1 lần, phổ biến là sau 12 tháng không tiếp tục tham gia mà chưa đủ điều kiện hưởng lương hưu.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

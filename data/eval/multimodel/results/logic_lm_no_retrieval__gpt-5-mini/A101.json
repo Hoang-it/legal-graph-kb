@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 101,
+  "question": "e làm cty này từ năm 2012 đến 2025 thì e nghỉ và hiện e đang làm cty khác .cty đã trả sổ bh ,cùng các tờ rồi từ năm 2012 đến hết 2018 ,khi e xin nghỉ thì cty cũng đã chốt và trả các tờ rời từ năm 2019 đến đến 2025 ,nhưng e lại làm mất sổ cùng các tờ rời từ năm 2012 đến năm 2019 .vậy e hỏi là e muốn làm lại sổ bh cùng các tờ rời đó thì đến đâu làm?",
+  "answer": "Issue: Người hỏi làm tại công ty từ năm 2012 đến 2025, đã rời và hiện làm công ty khác; đã bị mất sổ bảo hiểm xã hội và các tờ rời giai đoạn 2012–2019. Người hỏi hỏi nơi nộp hồ sơ để cấp lại sổ và các tờ rời đó.\n\nRule: Không có trích dẫn pháp luật nào được cung cấp trong dữ liệu đầu vào.\n\nApplication: Không có slot nào được gán trong slot_bindings. Prolog không sử dụng dữ liệu đầu vào bổ sung; truy vấn đã chạy và trả về một biến Answer chứa hướng dẫn thủ tục cấp lại như kết quả xử lý nội bộ.\n\nConclusion: Answer = \"Người lao động nộp hồ sơ đề nghị cấp lại sổ bảo hiểm xã hội (và các tờ rời) tại cơ quan Bảo hiểm xã hội (BHXH) tỉnh/ thành phố trực thuộc trung ương nơi người lao động có hộ khẩu thường trú hoặc nơi đang tạm trú; nếu đang làm việc tại doanh nghiệp mới, doanh nghiệp có thể hỗ trợ liên hệ với cơ quan BHXH để làm thủ tục cấp lại. Hồ sơ thường bao gồm: tờ khai cấp lại, giấy tờ tùy thân, đơn khai mất và giấy tờ liên quan do BHXH yêu cầu.\"",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,where_to_reissue(Người lao động nộp hồ sơ đề nghị cấp lại sổ bảo hiểm xã hội (và các tờ rời) tại cơ quan Bảo hiểm xã hội (BHXH) tỉnh/ thành phố trực thuộc trung ương nơi người lao động có hộ khẩu thường trú hoặc nơi đang tạm trú; nếu đang làm việc tại doanh nghiệp mới, doanh nghiệp có thể hỗ trợ liên hệ với cơ quan BHXH để làm thủ tục cấp lại. Hồ sơ thường bao gồm: tờ khai cấp lại, giấy tờ tùy thân, đơn khai mất và giấy tờ liên quan do BHXH yêu cầu.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người hỏi làm tại công ty từ năm 2012 đến 2025, đã rời và hiện làm công ty khác; đã bị mất sổ bảo hiểm xã hội và các tờ rời giai đoạn 2012–2019. Người hỏi hỏi nơi nộp hồ sơ để cấp lại sổ và các tờ rời đó.",
+    "rule": "Không có trích dẫn pháp luật nào được cung cấp trong dữ liệu đầu vào.",
+    "application": "Không có slot nào được gán trong slot_bindings. Prolog không sử dụng dữ liệu đầu vào bổ sung; truy vấn đã chạy và trả về một biến Answer chứa hướng dẫn thủ tục cấp lại như kết quả xử lý nội bộ.",
+    "conclusion": "Answer = \"Người lao động nộp hồ sơ đề nghị cấp lại sổ bảo hiểm xã hội (và các tờ rời) tại cơ quan Bảo hiểm xã hội (BHXH) tỉnh/ thành phố trực thuộc trung ương nơi người lao động có hộ khẩu thường trú hoặc nơi đang tạm trú; nếu đang làm việc tại doanh nghiệp mới, doanh nghiệp có thể hỗ trợ liên hệ với cơ quan BHXH để làm thủ tục cấp lại. Hồ sơ thường bao gồm: tờ khai cấp lại, giấy tờ tùy thân, đơn khai mất và giấy tờ liên quan do BHXH yêu cầu.\""
+  },
+  "elapsed_s": 39.262,
+  "prompt_tokens": 2679,
+  "completion_tokens": 3092,
+  "error": null,
+  "gold_answer": "Bạn có thể làm thủ tục cấp lại sổ BHXH/tờ rời tại cơ quan BHXH nơi cư trú hoặc nơi đang tham gia BHXH hiện nay; không bắt buộc quay lại công ty cũ. Hồ sơ thường gồm tờ khai thay đổi thông tin, CCCD và nêu rõ phần sổ, tờ rời bị mất. Quá trình đã đóng vẫn được quản lý trên dữ liệu BHXH nên việc mất sổ giấy không làm mất thời gian tham gia.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

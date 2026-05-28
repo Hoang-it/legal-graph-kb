@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 118,
+  "question": "Nếu mà tham gia bảo hiểm được 9 năm rồi giờ rút về thì được bao nhiêu?",
+  "answer": "Issue:\nNếu người hỏi đã đóng bảo hiểm được 9 năm và muốn rút tiền, khoản được nhận là bao nhiêu?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), article 141, clause 9: \"Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\"\n\nApplication:\nslot_bindings: không có slot nào được gán.\nSự kiện đầu vào dùng cho truy vấn Prolog: years_contributed(user, 9) (theo source_user).\nProlog trace: step(fact, years_contributed(user,9), based_on(source_user)) được dùng, sau đó áp dụng nguồn pháp luật source_c141 để suy luận step(conclusion, withdrawal_amount(user,cannot_determine_amount), based_on(source_c141)).\n\nConclusion:\nProlog trả biến Amount = cannot_determine_amount. Hệ thống không tính được số tiền rút; kết quả trả về là cannot_determine_amount theo truy vấn Prolog.",
+  "citations": [
+    "[Điều 98]"
+  ],
+  "citation_ids": [
+    "L41_2024.A98"
+  ],
+  "citation_indices": [
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(fact,years_contributed(user,9),based_on(source_user)),step(conclusion,withdrawal_amount(user,cannot_determine_amount),based_on(source_c141))]",
+  "irac_sections": {
+    "issue": "Nếu người hỏi đã đóng bảo hiểm được 9 năm và muốn rút tiền, khoản được nhận là bao nhiêu?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), article 141, clause 9: \"Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\"",
+    "application": "slot_bindings: không có slot nào được gán.\nSự kiện đầu vào dùng cho truy vấn Prolog: years_contributed(user, 9) (theo source_user).\nProlog trace: step(fact, years_contributed(user,9), based_on(source_user)) được dùng, sau đó áp dụng nguồn pháp luật source_c141 để suy luận step(conclusion, withdrawal_amount(user,cannot_determine_amount), based_on(source_c141)).",
+    "conclusion": "Prolog trả biến Amount = cannot_determine_amount. Hệ thống không tính được số tiền rút; kết quả trả về là cannot_determine_amount theo truy vấn Prolog."
+  },
+  "elapsed_s": 52.52,
+  "prompt_tokens": 5476,
+  "completion_tokens": 4846,
+  "error": null,
+  "gold_answer": "Nếu 9 năm đóng của bạn đều sau năm 2014 thì mức BHXH 1 lần thường được tính bằng 2 tháng mức bình quân lương đóng cho mỗi năm. Nghĩa là về công thức sơ bộ sẽ khoảng 18 tháng mức bình quân tiền lương sau điều chỉnh. Muốn ra số gần đúng, bạn cần biết mức bình quân lương đóng của toàn bộ thời gian, không chỉ lương hiện tại.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

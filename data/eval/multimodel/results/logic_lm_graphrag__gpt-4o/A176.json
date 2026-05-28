@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 176,
+  "question": "18nam dong bhxh lấy 1 lần được bao nhiêu?",
+  "answer": "Issue: Người dùng muốn biết số tiền bảo hiểm xã hội (BHXH) một lần mà họ có thể nhận được sau khi đã đóng BHXH trong 18 năm.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 76, Khoản 2: \"Mức trợ cấp một lần đối với người đang hưởng lương hưu được tính theo thời gian đã đóng bảo hiểm xã hội trong đó mỗi năm đóng bảo hiểm xã hội trước năm 2014 được tính bằng 1,5 tháng lương hưu đang hưởng, mỗi năm đóng bảo hiểm xã hội từ năm 2014 trở đi được tính bằng 02 tháng lương hưu đang hưởng; sau đó mỗi tháng đã hưởng lương hưu thì mức trợ cấp một lần trừ 0,5 tháng lương hưu. Mức thấp nhất bằng 03 tháng lương hưu đang hưởng.\"\n\nApplication: Không có thông tin cụ thể về số năm đóng BHXH trước và sau năm 2014, nhưng theo quy tắc đã áp dụng, số năm đóng BHXH là 18. Quy tắc Prolog đã sử dụng thông tin này để tính toán số tiền trợ cấp một lần.\n\nConclusion: Số tiền trợ cấp một lần mà người dùng có thể nhận được là 36 tháng lương hưu.",
+  "citations": [
+    "[Điều 76 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A76.K2"
+  ],
+  "citation_indices": [
+    7
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_social_insurance_amount(user,36),based_on(source_c007))]",
+  "irac_sections": {
+    "issue": "Người dùng muốn biết số tiền bảo hiểm xã hội (BHXH) một lần mà họ có thể nhận được sau khi đã đóng BHXH trong 18 năm.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 76, Khoản 2: \"Mức trợ cấp một lần đối với người đang hưởng lương hưu được tính theo thời gian đã đóng bảo hiểm xã hội trong đó mỗi năm đóng bảo hiểm xã hội trước năm 2014 được tính bằng 1,5 tháng lương hưu đang hưởng, mỗi năm đóng bảo hiểm xã hội từ năm 2014 trở đi được tính bằng 02 tháng lương hưu đang hưởng; sau đó mỗi tháng đã hưởng lương hưu thì mức trợ cấp một lần trừ 0,5 tháng lương hưu. Mức thấp nhất bằng 03 tháng lương hưu đang hưởng.\"",
+    "application": "Không có thông tin cụ thể về số năm đóng BHXH trước và sau năm 2014, nhưng theo quy tắc đã áp dụng, số năm đóng BHXH là 18. Quy tắc Prolog đã sử dụng thông tin này để tính toán số tiền trợ cấp một lần.",
+    "conclusion": "Số tiền trợ cấp một lần mà người dùng có thể nhận được là 36 tháng lương hưu."
+  },
+  "elapsed_s": 5.458,
+  "prompt_tokens": 3119,
+  "completion_tokens": 621,
+  "error": null,
+  "gold_answer": "Nếu 18 năm đóng của bạn đều từ năm 2014 trở đi thì công thức sơ bộ là 18 năm x 2 tháng mức bình quân lương đóng BHXH, tức khoảng 36 tháng bình quân lương. Muốn biết gần đúng bao nhiêu tiền, cần biết mức bình quân tiền lương tháng đóng của toàn bộ quá trình sau điều chỉnh. Từ 01/7/2025, 18 năm đóng cũng là mức nên cân nhắc giữ để hướng tới lương hưu.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+}

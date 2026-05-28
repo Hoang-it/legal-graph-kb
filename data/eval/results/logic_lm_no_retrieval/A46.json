@@ -1,0 +1,23 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 46,
+  "question": "Lúc còn huyện cũ thì mình nộp bhxh ở huyện.Còn bây giờ không còn huyện nữa thì mình nộp ở đâu? ở xã hay là hành chính công?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmptzlfc1oj.pl:1:335: Syntax error: Illegal start of term]",
+  "plain_answer": "",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "prolog_program": "answer_predicate(Answer, Trace) :- Answer = 'Bạn có thể nộp bảo hiểm xã hội tại cơ quan hành chính công hoặc tại xã, tùy thuộc vào quy định của địa phương.', Trace = [step(conclusion, answer_predicate(Answer), based_on(none)]).",
+  "prolog_error": "ERROR: c:/users/admin/appdata/local/temp/tmptzlfc1oj.pl:1:335: Syntax error: Illegal start of term",
+  "irac_sections": {},
+  "elapsed_s": 8.094,
+  "prompt_tokens": 3509,
+  "completion_tokens": 314,
+  "error": null,
+  "gold_answer": "Sau khi thay đổi mô hình tổ chức hành chính, hồ sơ BHXH thường nộp tại cơ quan BHXH khu vực/cơ quan được phân công tiếp nhận hoặc Trung tâm phục vụ hành chính công, không phải xã nào cũng trực tiếp thu hồ sơ. Bạn nên tra cứu nơi tiếp nhận mới tại địa phương hoặc gọi cơ quan BHXH gần nhất để tránh đi sai nơi. Nguyên tắc là cơ quan BHXH nơi cư trú vẫn có trách nhiệm hướng dẫn, tiếp nhận hoặc chỉ dẫn nơi nộp đúng.",
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 25]"
+}

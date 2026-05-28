@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 194,
+  "question": "Mình lãnh bảo hiểm thất nghiệp xong r thì khi nào mình vô cty làm đóng lại dc hả",
+  "answer": "Issue: Người lao động muốn biết sau khi nhận bảo hiểm thất nghiệp thì khi nào có thể trở lại làm việc và đóng bảo hiểm xã hội.\n\nRule: \"6. Xác nhận thời gian đóng bảo hiểm xã hội, bảo hiểm thất nghiệp cho từng người lao động; cung cấp đầy đủ và kịp thời thông tin về việc đóng, quyền được hưởng chế độ, thủ tục thực hiện bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện khi người lao động, người sử dụng lao động hoặc tổ chức công đoàn yêu cầu.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 6)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog đã thực hiện truy vấn để xác định các điều kiện cần thiết để người lao động có thể trở lại làm việc và đóng bảo hiểm xã hội, nhưng không có thông tin cụ thể nào được cung cấp.\n\nConclusion: Hệ thống không thể tính toán được giá trị cuối cùng vì không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 18 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K6"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,rejoin_company_conditions([must_complete_unemployment_benefits,must_have_new_employer]),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Người lao động muốn biết sau khi nhận bảo hiểm thất nghiệp thì khi nào có thể trở lại làm việc và đóng bảo hiểm xã hội.",
+    "rule": "\"6. Xác nhận thời gian đóng bảo hiểm xã hội, bảo hiểm thất nghiệp cho từng người lao động; cung cấp đầy đủ và kịp thời thông tin về việc đóng, quyền được hưởng chế độ, thủ tục thực hiện bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện khi người lao động, người sử dụng lao động hoặc tổ chức công đoàn yêu cầu.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 6)",
+    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog đã thực hiện truy vấn để xác định các điều kiện cần thiết để người lao động có thể trở lại làm việc và đóng bảo hiểm xã hội, nhưng không có thông tin cụ thể nào được cung cấp.",
+    "conclusion": "Hệ thống không thể tính toán được giá trị cuối cùng vì không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 9.858,
+  "prompt_tokens": 4898,
+  "completion_tokens": 501,
+  "error": null,
+  "gold_answer": "Sau khi hưởng xong BHTN, bạn có thể vào công ty mới và tham gia đóng lại ngay khi đủ điều kiện theo HĐLĐ; không phải chờ thêm thời gian nào. Việc đã hưởng BHTN trước đó không cấm bạn tham gia lại. Thời gian đóng mới sẽ được tính cho quyền lợi BHTN ở lần thất nghiệp sau, còn thời gian đã dùng để hưởng rồi thì không tính lại.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

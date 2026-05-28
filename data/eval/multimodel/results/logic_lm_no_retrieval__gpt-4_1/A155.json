@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 155,
+  "question": "Minh mat so bhxh , còn nhớ số sổ , làm sao tra được quá trình đóng bhxh?",
+  "answer": "Issue:\nBạn hỏi về cách tra cứu quá trình đóng bảo hiểm xã hội (BHXH) khi đã mất sổ BHXH nhưng vẫn còn nhớ số sổ.\n\nRule:\n\"Người lao động có quyền tra cứu thông tin về quá trình đóng BHXH của mình thông qua Cổng dịch vụ công hoặc cơ quan BHXH khi cung cấp thông tin định danh.\" (law_bhxh_2024, article_23, clause_5)\n\nApplication:\nKhông có slot_id cụ thể nào được cung cấp trong truy vấn này. Theo kết quả Prolog, hệ thống đã sử dụng thông tin về quyền tra cứu của người lao động để xác định hướng dẫn: người lao động có thể sử dụng số sổ BHXH để tra cứu quá trình đóng BHXH qua Cổng dịch vụ công quốc gia hoặc liên hệ cơ quan BHXH, đồng thời cần cung cấp số sổ và thông tin cá nhân để xác thực.\n\nConclusion:\nTheo binding Conditions, người lao động có thể tra cứu quá trình đóng BHXH bằng số sổ BHXH qua Cổng dịch vụ công quốc gia hoặc liên hệ cơ quan BHXH, cung cấp số sổ và thông tin cá nhân để xác thực.",
+  "citations": [
+    "[Điều 23 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A23.K5"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,tra_cuu_qua_trinh_bhxh_huong_dan([Người lao động có thể tra cứu quá trình đóng BHXH bằng số sổ BHXH qua Cổng dịch vụ công quốc gia hoặc liên hệ cơ quan BHXH, cung cấp số sổ và thông tin cá nhân để xác thực.]),based_on(source_a23_k5))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về cách tra cứu quá trình đóng bảo hiểm xã hội (BHXH) khi đã mất sổ BHXH nhưng vẫn còn nhớ số sổ.",
+    "rule": "\"Người lao động có quyền tra cứu thông tin về quá trình đóng BHXH của mình thông qua Cổng dịch vụ công hoặc cơ quan BHXH khi cung cấp thông tin định danh.\" (law_bhxh_2024, article_23, clause_5)",
+    "application": "Không có slot_id cụ thể nào được cung cấp trong truy vấn này. Theo kết quả Prolog, hệ thống đã sử dụng thông tin về quyền tra cứu của người lao động để xác định hướng dẫn: người lao động có thể sử dụng số sổ BHXH để tra cứu quá trình đóng BHXH qua Cổng dịch vụ công quốc gia hoặc liên hệ cơ quan BHXH, đồng thời cần cung cấp số sổ và thông tin cá nhân để xác thực.",
+    "conclusion": "Theo binding Conditions, người lao động có thể tra cứu quá trình đóng BHXH bằng số sổ BHXH qua Cổng dịch vụ công quốc gia hoặc liên hệ cơ quan BHXH, cung cấp số sổ và thông tin cá nhân để xác thực."
+  },
+  "elapsed_s": 6.404,
+  "prompt_tokens": 2179,
+  "completion_tokens": 514,
+  "error": null,
+  "gold_answer": "Nếu nhớ số sổ/mã số BHXH, bạn có thể tra quá trình đóng trên VssID, VNeID, cổng thông tin BHXH Việt Nam hoặc đến cơ quan BHXH để xin xác nhận quá trình đóng. Trường hợp mất sổ giấy, bạn vẫn làm thủ tục cấp lại được. Nên mang CCCD để cơ quan BHXH đối chiếu nhanh hơn.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

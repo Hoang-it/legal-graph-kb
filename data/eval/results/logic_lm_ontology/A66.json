@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 66,
+  "question": "Có phải Bảo hiểm xã hội mình bắt buộc lãnh sau 1 năm không?. Nếu bận mk làm trễ vài tháng có được không?",
+  "answer": "Issue: Có phải Bảo hiểm xã hội mình bắt buộc lãnh sau 1 năm không? Nếu bận mk làm trễ vài tháng có được không?\n\nRule: 2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội. (Luật BHXH 2024 (41/2024/QH15), article 18, clause 2)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog không thể thực hiện truy vấn do không có dữ liệu đầu vào.\n\nConclusion: Hệ thống không thể tính toán giá trị cuối cùng do không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 18 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K5"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,mandatory_social_insurance_conditions(Bảo hiểm xã hội bắt buộc phải lãnh sau 1 năm, không được làm trễ quá thời hạn quy định.),based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Có phải Bảo hiểm xã hội mình bắt buộc lãnh sau 1 năm không? Nếu bận mk làm trễ vài tháng có được không?",
+    "rule": "2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội. (Luật BHXH 2024 (41/2024/QH15), article 18, clause 2)",
+    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog không thể thực hiện truy vấn do không có dữ liệu đầu vào.",
+    "conclusion": "Hệ thống không thể tính toán giá trị cuối cùng do không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 7.511,
+  "prompt_tokens": 4641,
+  "completion_tokens": 435,
+  "error": null,
+  "gold_answer": "Không có quy định bắt buộc phải nhận BHXH một lần ngay đúng sau 1 năm. Mốc 12 tháng chỉ là điều kiện phổ biến để phát sinh quyền yêu cầu trong một số trường hợp. Nếu bạn bận và nộp muộn vài tháng sau khi đã đủ điều kiện thì thông thường vẫn được giải quyết, miễn tại thời điểm nộp hồ sơ bạn vẫn thuộc trường hợp được hưởng theo luật. Nếu không rút, thời gian đóng vẫn được bảo lưu.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102"
+}

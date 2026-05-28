@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_graphrag",
+  "stt": 172,
+  "question": "đăng kí bhtn xong tầm bnh ngày là sẽ nhận tiền?",
+  "answer": "Issue: Người đăng ký bảo hiểm thất nghiệp sẽ nhận tiền sau bao nhiêu ngày kể từ khi hoàn tất thủ tục?\n\nRule: \"Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng bảo hiểm xã hội một lần, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), article 107, clause 3)\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Tuy nhiên, Prolog đã trả về kết quả cho biết rằng thời gian nhận tiền là 7 ngày làm việc.\n\nConclusion: Prolog đã trả về giá trị 7 cho biến Answer, cho biết thời gian nhận tiền là 7 ngày làm việc.",
+  "citations": [
+    "[Điều 107 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A107.K3"
+  ],
+  "citation_indices": [
+    3
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,payment_timeline(7),based_on(source_c003))]",
+  "irac_sections": {
+    "issue": "Người đăng ký bảo hiểm thất nghiệp sẽ nhận tiền sau bao nhiêu ngày kể từ khi hoàn tất thủ tục?",
+    "rule": "\"Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định đối với người đề nghị hưởng bảo hiểm xã hội một lần, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), article 107, clause 3)",
+    "application": "Không có slot nào được gán giá trị trong trường hợp này. Tuy nhiên, Prolog đã trả về kết quả cho biết rằng thời gian nhận tiền là 7 ngày làm việc.",
+    "conclusion": "Prolog đã trả về giá trị 7 cho biến Answer, cho biết thời gian nhận tiền là 7 ngày làm việc."
+  },
+  "elapsed_s": 6.277,
+  "prompt_tokens": 2777,
+  "completion_tokens": 380,
+  "error": null,
+  "gold_answer": "Sau khi bạn nộp đủ hồ sơ BHTN, nếu sau 15 ngày làm việc vẫn chưa có việc làm thì sẽ được giải quyết hưởng. Tiền trợ cấp thường được chi trả sau khi có quyết định hưởng, thực tế nhiều nơi nhận trong vài ngày đến khoảng 1-2 tuần sau quyết định đầu tiên. Bạn nhớ theo dõi lịch thông báo việc làm hằng tháng để không bị tạm dừng hoặc chấm dứt hưởng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

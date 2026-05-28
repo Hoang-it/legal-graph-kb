@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 175,
+  "question": "Mình đóng bảo hiểm đc 6 năm, lương trung bình 20tr/ tháng ,giờ cần tiền muốn rút thì được tầm bao nhiêu?",
+  "answer": "Issue: Bạn đã đóng bảo hiểm xã hội được 6 năm với mức lương trung bình là 20 triệu đồng mỗi tháng và muốn biết số tiền có thể rút được là bao nhiêu.\n\nRule: Theo Điều 60, Khoản 2 của Luật Bảo hiểm xã hội 2024: \"Mức hưởng bảo hiểm xã hội một lần được tính dựa trên số năm đã đóng bảo hiểm và mức lương trung bình.\"\n\nApplication: \n- Số năm đã đóng bảo hiểm: 6 năm.\n- Mức lương trung bình: 20,000,000 đồng/tháng.\n- Dựa trên các thông tin này, chương trình Prolog đã tính toán số tiền bảo hiểm xã hội một lần dựa trên công thức từ nguồn luật đã trích dẫn.\n\nConclusion: Số tiền bảo hiểm xã hội một lần mà bạn có thể nhận được là 60,000,000 đồng.",
+  "citations": [
+    "[Điều 60 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,lump_sum_amount(user,60000000.0),based_on(source_a60_k2))]",
+  "irac_sections": {
+    "issue": "Bạn đã đóng bảo hiểm xã hội được 6 năm với mức lương trung bình là 20 triệu đồng mỗi tháng và muốn biết số tiền có thể rút được là bao nhiêu.",
+    "rule": "Theo Điều 60, Khoản 2 của Luật Bảo hiểm xã hội 2024: \"Mức hưởng bảo hiểm xã hội một lần được tính dựa trên số năm đã đóng bảo hiểm và mức lương trung bình.\"",
+    "application": "- Số năm đã đóng bảo hiểm: 6 năm.\n- Mức lương trung bình: 20,000,000 đồng/tháng.\n- Dựa trên các thông tin này, chương trình Prolog đã tính toán số tiền bảo hiểm xã hội một lần dựa trên công thức từ nguồn luật đã trích dẫn.",
+    "conclusion": "Số tiền bảo hiểm xã hội một lần mà bạn có thể nhận được là 60,000,000 đồng."
+  },
+  "elapsed_s": 5.851,
+  "prompt_tokens": 2071,
+  "completion_tokens": 519,
+  "error": null,
+  "gold_answer": "Nếu 6 năm đóng BHXH của bạn đều từ 2014 trở đi, lương bình quân khoảng 20 triệu/tháng thì BHXH 1 lần ước khoảng khoảng 240,0 triệu. Số thực nhận có thể chênh do hệ số điều chỉnh tiền lương từng năm. Trước khi rút, bạn nên cân nhắc vì thời gian 6 năm đó có thể tiếp tục bảo lưu để hưởng hưu sau này.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

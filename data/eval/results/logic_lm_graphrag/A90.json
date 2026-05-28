@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "stt": 90,
+  "question": "BHXH tự nguyện thì chuyển sang BHXH bắt buộc như thế nào cho hộ kinh doanh mới thành lập?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpwk9ro2cb.pl:1:443: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 3 khoản 3]",
+    "[Điều 5 khoản 2]",
+    "[Điều 27 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A3.K3",
+    "L41_2024.A5.K2",
+    "L41_2024.A27.K2"
+  ],
+  "citation_indices": [
+    0,
+    1,
+    2
+  ],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 18.0,
+  "prompt_tokens": 6882,
+  "completion_tokens": 1230,
+  "error": null,
+  "gold_answer": "Khi hộ kinh doanh mới thành lập và chủ hộ thuộc diện tham gia BHXH bắt buộc, bạn cần đăng ký tham gia bắt buộc theo mã số BHXH đang có; không phải tạo mã mới. Nếu trước đó bạn đang đóng tự nguyện, thời gian đã đóng sẽ được bảo lưu và nối tiếp trên cùng mã số. Bạn chỉ cần liên hệ cơ quan BHXH để chuyển phương thức tham gia và tránh đóng trùng cùng thời gian ở cả 2 diện.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 25, Điều 36; Nghị định 158/2025/NĐ-CP"
+}

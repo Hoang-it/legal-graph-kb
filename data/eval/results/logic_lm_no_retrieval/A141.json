@@ -1,0 +1,29 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 141,
+  "question": "em vừa nghỉ việc tại công ty, mà HR nói là giờ chốt sổ xong ko có tờ rời nữa, h chuyển sang quản lý bằng sổ bhxh điện tử. HR còn cap cho e đoạn trao đổi với bhxh Tây Hồ, cho e hỏi thế h e đi làm bảo hiểm thất nghiệp có đc ko?",
+  "answer": "Issue: Người lao động vừa nghỉ việc tại công ty và muốn biết liệu có đủ điều kiện để hưởng bảo hiểm thất nghiệp hay không.\n\nRule: \"Người lao động có quyền hưởng trợ cấp thất nghiệp khi chấm dứt hợp đồng lao động theo quy định của pháp luật.\" (law_bhxh_2024, article_49, clause_1)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog đã thực hiện truy vấn để xác định khả năng hưởng trợ cấp thất nghiệp nhưng không có thông tin cụ thể nào được cung cấp.\n\nConclusion: Prolog đã trả về giá trị cho biến Eligibility là \"_4596\". Tuy nhiên, không có thông tin nào về các slot cụ thể, do đó không thể kết luận rõ ràng về khả năng hưởng bảo hiểm thất nghiệp.",
+  "citations": [
+    "[Điều 49 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A49.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,unemployment_insurance_eligibility(user,_4596),based_on(source_a49))]",
+  "irac_sections": {
+    "issue": "Người lao động vừa nghỉ việc tại công ty và muốn biết liệu có đủ điều kiện để hưởng bảo hiểm thất nghiệp hay không.",
+    "rule": "\"Người lao động có quyền hưởng trợ cấp thất nghiệp khi chấm dứt hợp đồng lao động theo quy định của pháp luật.\" (law_bhxh_2024, article_49, clause_1)",
+    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog đã thực hiện truy vấn để xác định khả năng hưởng trợ cấp thất nghiệp nhưng không có thông tin cụ thể nào được cung cấp.",
+    "conclusion": "Prolog đã trả về giá trị cho biến Eligibility là \"_4596\". Tuy nhiên, không có thông tin nào về các slot cụ thể, do đó không thể kết luận rõ ràng về khả năng hưởng bảo hiểm thất nghiệp."
+  },
+  "elapsed_s": 11.913,
+  "prompt_tokens": 3288,
+  "completion_tokens": 420,
+  "error": null,
+  "gold_answer": "Việc HR nói không có tờ rời giấy nữa không đồng nghĩa bạn không làm được BHTN. Nếu dữ liệu BHXH đã chốt trên hệ thống, bạn vẫn có thể làm hồ sơ bằng giấy tờ chấm dứt HĐLĐ và tài liệu/tra cứu thể hiện quá trình đóng theo hướng dẫn của trung tâm dịch vụ việc làm. Tuy nhiên bạn nên xin công ty cung cấp xác nhận chốt sổ hoặc bản in quá trình đóng để tránh bị yêu cầu bổ sung.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

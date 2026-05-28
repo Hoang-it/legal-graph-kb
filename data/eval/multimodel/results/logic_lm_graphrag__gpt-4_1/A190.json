@@ -1,0 +1,35 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 190,
+  "question": "Lam cty luong cơ bản 3tr9 tháng mình đóng 415k bhxh và cty đóng cho 800k thì sau rút ra có rút dc cả phần 800k công ty đóng cho ko?",
+  "answer": "Issue:\nCâu hỏi đặt ra là khi người lao động đóng 415k BHXH/tháng và công ty đóng 800k/tháng trên mức lương cơ bản 3tr9, khi rút BHXH một lần thì có được rút cả phần 800k do công ty đóng không.\n\nRule:\n\"Người sử dụng lao động đóng theo quy định.\" (Luật BHXH 2024 (41/2024/QH15), Điều 117, Khoản 1)\n\"Người lao động đóng theo quy định.\" (Luật BHXH 2024 (41/2024/QH15), Điều 117, Khoản 2)\n\nApplication:\nKhông có slot_id cụ thể nào được cung cấp trong truy vấn này. Prolog đã sử dụng các quy định tại Điều 117, Khoản 1 và Khoản 2 của Luật BHXH 2024 để xác định quyền lợi khi rút BHXH một lần, bao gồm cả phần đóng của người sử dụng lao động (công ty) và người lao động.\n\nConclusion:\nTheo kết quả truy vấn Prolog, khi rút BHXH một lần, người lao động được rút cả phần do công ty đóng (Answer = yes).",
+  "citations": [
+    "[Điều 117 khoản 1]",
+    "[Điều 117 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A117.K1",
+    "L41_2024.A117.K2"
+  ],
+  "citation_indices": [
+    1,
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_withdrawal_includes_employer_contribution(yes),based_on(source_c001)),step(conclusion,one_time_withdrawal_includes_employer_contribution(yes),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là khi người lao động đóng 415k BHXH/tháng và công ty đóng 800k/tháng trên mức lương cơ bản 3tr9, khi rút BHXH một lần thì có được rút cả phần 800k do công ty đóng không.",
+    "rule": "\"Người sử dụng lao động đóng theo quy định.\" (Luật BHXH 2024 (41/2024/QH15), Điều 117, Khoản 1)\n\"Người lao động đóng theo quy định.\" (Luật BHXH 2024 (41/2024/QH15), Điều 117, Khoản 2)",
+    "application": "Không có slot_id cụ thể nào được cung cấp trong truy vấn này. Prolog đã sử dụng các quy định tại Điều 117, Khoản 1 và Khoản 2 của Luật BHXH 2024 để xác định quyền lợi khi rút BHXH một lần, bao gồm cả phần đóng của người sử dụng lao động (công ty) và người lao động.",
+    "conclusion": "Theo kết quả truy vấn Prolog, khi rút BHXH một lần, người lao động được rút cả phần do công ty đóng (Answer = yes)."
+  },
+  "elapsed_s": 6.927,
+  "prompt_tokens": 2949,
+  "completion_tokens": 497,
+  "error": null,
+  "gold_answer": "Khi hưởng BHXH 1 lần, mức hưởng được tính trên toàn bộ quá trình đóng vào quỹ hưu trí, tử tuất theo mức bình quân lương tháng đóng BHXH, không chỉ phần bạn tự đóng. Nói dễ hiểu, số tiền hưởng không tách riêng 'phần công ty đóng' hay 'phần mình đóng' để hoàn lại từng khoản, mà tính theo công thức luật định trên toàn bộ thời gian và mức đóng hợp lệ.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

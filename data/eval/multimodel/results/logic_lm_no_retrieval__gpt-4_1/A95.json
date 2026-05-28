@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 95,
+  "question": "Mình dong bao hiểm dc 10 tháng có rút đc 1 lần không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu đã đóng bảo hiểm xã hội được 10 tháng thì có được rút bảo hiểm xã hội một lần hay không?\n\nRule:\n\"Người lao động được hưởng bảo hiểm xã hội một lần nếu sau một năm nghỉ việc mà chưa đủ 20 năm đóng bảo hiểm xã hội và không tiếp tục tham gia.\" (law_bhxh_2024, article_60, clause_1)\n\nApplication:\nHệ thống ghi nhận months_contributed là 10. Theo quy tắc, điều kiện để được hưởng bảo hiểm xã hội một lần là chưa đủ 240 tháng đóng bảo hiểm xã hội. Truy vấn Prolog đã sử dụng giá trị này để xác định quyền lợi.\n\nConclusion:\nTheo kết quả truy vấn, người lao động với 10 tháng đóng bảo hiểm xã hội thuộc diện eligible_for_lump_sum. Như vậy, bạn có thể rút bảo hiểm xã hội một lần nếu đáp ứng thêm điều kiện về thời gian nghỉ việc và không tiếp tục tham gia.",
+  "citations": [
+    "[Điều 60 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,eligible_for_lump_sum(user),based_on(source_a60_k1))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu đã đóng bảo hiểm xã hội được 10 tháng thì có được rút bảo hiểm xã hội một lần hay không?",
+    "rule": "\"Người lao động được hưởng bảo hiểm xã hội một lần nếu sau một năm nghỉ việc mà chưa đủ 20 năm đóng bảo hiểm xã hội và không tiếp tục tham gia.\" (law_bhxh_2024, article_60, clause_1)",
+    "application": "Hệ thống ghi nhận months_contributed là 10. Theo quy tắc, điều kiện để được hưởng bảo hiểm xã hội một lần là chưa đủ 240 tháng đóng bảo hiểm xã hội. Truy vấn Prolog đã sử dụng giá trị này để xác định quyền lợi.",
+    "conclusion": "Theo kết quả truy vấn, người lao động với 10 tháng đóng bảo hiểm xã hội thuộc diện eligible_for_lump_sum. Như vậy, bạn có thể rút bảo hiểm xã hội một lần nếu đáp ứng thêm điều kiện về thời gian nghỉ việc và không tiếp tục tham gia."
+  },
+  "elapsed_s": 4.218,
+  "prompt_tokens": 1923,
+  "completion_tokens": 436,
+  "error": null,
+  "gold_answer": "Đóng BHXH 10 tháng chưa có nghĩa là rút được ngay. Trường hợp phổ biến muốn nhận BHXH một lần là bạn phải ngừng tham gia BHXH từ đủ 12 tháng trở lên và thuộc trường hợp luật cho phép. Nếu mới nghỉ hoặc vẫn còn đóng nối tiếp nơi khác thì chưa giải quyết được. Nếu không rút, 10 tháng đó vẫn được bảo lưu để sau này cộng nối.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 102, Điều 110"
+}

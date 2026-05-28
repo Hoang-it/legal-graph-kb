@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 77,
+  "question": "Các bạn ơi, mình đóng BHXH tự nguyện được 3 năm. Mình thường đóng theo năm.\nNHưng hiện tại mình ở nước ngoài, số đt cũ đã bỏ, vậy có cách nào tìm được thông tin số tiền cần đóng qua web hay gì ko?\nTrước mình đóng ở BHXH ở huyện",
+  "answer": "Issue:\nBạn hỏi cách tra cứu thông tin số tiền phải đóng BHXH tự nguyện khi đang ở nước ngoài, điện thoại cũ không còn, và trước đây đăng ký đóng tại BHXH huyện.\n\nRule:\n\"Bảo hiểm xã hội có trách nhiệm cung cấp thông tin về quá trình đóng BHXH và hỗ trợ tra cứu qua cổng thông tin điện tử hoặc trực tiếp tại cơ quan BHXH.\" (source_bhxh_info, law_bhxh_2024, none)\n\nApplication:\nKhông có slot_bindings được cung cấp. Prolog đã dùng các fact xác thực sau từ truyace:\nyears_contributed(user, 3).\npayment_frequency(user, yearly).\ncurrently_abroad(user).\nold_phone_disconnected(user).\nregistered_at(user, district).\nQuery advice_for_payment(user, Answer, Trace) đã khớp với các fact này và gọi quy tắc advice_for_payment để sinh lời khuyên và trace các bước tra cứu.\n\nConclusion:\nAnswer = \"[Thử tra cứu trên Cổng dịch vụ công quốc gia hoặc Cổng thông tin điện tử của BHXH bằng CCCD/CMND để xem quá trình đóng và (nếu có) thông tin số tiền phải nộp.,Liên hệ trực tiếp BHXH huyện nơi đăng ký (qua email hoặc số điện thoại của cơ quan BHXH tỉnh/huyện) để yêu cầu cung cấp sao kê số tiền phải đóng; gửi bản scan CCCD/CMND để họ tra cứu.,Nếu không thể tự tra cứu, ủy quyền cho người thân tại Việt Nam đến BHXH huyện để tra cứu và nộp thay (cần giấy ủy quyền theo yêu cầu của BHXH).,Kiểm tra cổng thanh toán/ứng dụng ngân hàng hoặc dịch vụ của BHXH để biết phương thức nộp tiền từ nước ngoài hoặc nhờ người thân nộp tại Việt Nam.]\"",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(lookup_portal,Khuyến nghị tra cứu qua cổng thông tin điện tử BHXH hoặc Cổng dịch vụ công quốc gia,based_on(source_bhxh_info)),step(contact_bhxh,Liên hệ BHXH huyện để được cung cấp thông tin chi tiết và sao kê,based_on(source_bhxh_info))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi cách tra cứu thông tin số tiền phải đóng BHXH tự nguyện khi đang ở nước ngoài, điện thoại cũ không còn, và trước đây đăng ký đóng tại BHXH huyện.",
+    "rule": "\"Bảo hiểm xã hội có trách nhiệm cung cấp thông tin về quá trình đóng BHXH và hỗ trợ tra cứu qua cổng thông tin điện tử hoặc trực tiếp tại cơ quan BHXH.\" (source_bhxh_info, law_bhxh_2024, none)",
+    "application": "Không có slot_bindings được cung cấp. Prolog đã dùng các fact xác thực sau từ truyace:\nyears_contributed(user, 3).\npayment_frequency(user, yearly).\ncurrently_abroad(user).\nold_phone_disconnected(user).\nregistered_at(user, district).\nQuery advice_for_payment(user, Answer, Trace) đã khớp với các fact này và gọi quy tắc advice_for_payment để sinh lời khuyên và trace các bước tra cứu.",
+    "conclusion": "Answer = \"[Thử tra cứu trên Cổng dịch vụ công quốc gia hoặc Cổng thông tin điện tử của BHXH bằng CCCD/CMND để xem quá trình đóng và (nếu có) thông tin số tiền phải nộp.,Liên hệ trực tiếp BHXH huyện nơi đăng ký (qua email hoặc số điện thoại của cơ quan BHXH tỉnh/huyện) để yêu cầu cung cấp sao kê số tiền phải đóng; gửi bản scan CCCD/CMND để họ tra cứu.,Nếu không thể tự tra cứu, ủy quyền cho người thân tại Việt Nam đến BHXH huyện để tra cứu và nộp thay (cần giấy ủy quyền theo yêu cầu của BHXH).,Kiểm tra cổng thanh toán/ứng dụng ngân hàng hoặc dịch vụ của BHXH để biết phương thức nộp tiền từ nước ngoài hoặc nhờ người thân nộp tại Việt Nam.]\""
+  },
+  "elapsed_s": 72.469,
+  "prompt_tokens": 2691,
+  "completion_tokens": 5490,
+  "error": null,
+  "gold_answer": "Bạn có thể tra cứu quá trình tham gia và mức đóng BHXH tự nguyện qua ứng dụng VssID hoặc Cổng BHXH Việt Nam nếu còn nhớ mã số BHXH/tài khoản. Nếu mất số điện thoại cũ, bạn có thể liên hệ cơ quan BHXH nơi cư trú hoặc tổng đài hỗ trợ để cập nhật lại thông tin tài khoản, email, số điện thoại. Khi đã đăng nhập được, bạn sẽ xem được quá trình đóng và số tiền cần đóng kỳ tiếp theo theo phương thức đã chọn.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25, Điều 36; hướng dẫn VssID/BHXH Việt Nam"
+}

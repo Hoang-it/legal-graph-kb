@@ -1,0 +1,25 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 146,
+  "question": "MÌNH ĐÓNG BHXH ở công ty cũ nhưng chưa rút về, hiện tại mình vào công ty mới, côngty mới đóng cho mình nhưng mình xem trên app BHXH thì những tháng công ty cũ mất không hiển thị nữa. cho mình hỏi những tháng đấy như thế nào?",
+  "answer": "Issue: Bạn đã đóng bảo hiểm xã hội (BHXH) ở công ty cũ nhưng không thấy hiển thị trên ứng dụng BHXH hiện tại. Bạn muốn biết tình trạng của những tháng đóng BHXH đó.\n\nRule: Không có quy định cụ thể nào được trích dẫn trong trường hợp này.\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Prolog đã trả về một giải thích cho tình huống của bạn mà không cần sử dụng các slot.\n\nConclusion: Prolog đã cung cấp một giải thích rằng các tháng đóng BHXH ở công ty cũ vẫn được ghi nhận, nhưng có thể không hiển thị do lỗi hệ thống hoặc chưa được cập nhật. Bạn nên liên hệ với cơ quan BHXH để xác minh.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,explain_missing_months(Các tháng đóng BHXH ở công ty cũ vẫn được ghi nhận, nhưng có thể không hiển thị do lỗi hệ thống hoặc chưa được cập nhật. Bạn nên liên hệ với cơ quan BHXH để xác minh.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Bạn đã đóng bảo hiểm xã hội (BHXH) ở công ty cũ nhưng không thấy hiển thị trên ứng dụng BHXH hiện tại. Bạn muốn biết tình trạng của những tháng đóng BHXH đó.",
+    "rule": "Không có quy định cụ thể nào được trích dẫn trong trường hợp này.",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Prolog đã trả về một giải thích cho tình huống của bạn mà không cần sử dụng các slot.",
+    "conclusion": "Prolog đã cung cấp một giải thích rằng các tháng đóng BHXH ở công ty cũ vẫn được ghi nhận, nhưng có thể không hiển thị do lỗi hệ thống hoặc chưa được cập nhật. Bạn nên liên hệ với cơ quan BHXH để xác minh."
+  },
+  "elapsed_s": 9.544,
+  "prompt_tokens": 3354,
+  "completion_tokens": 374,
+  "error": null,
+  "gold_answer": "Nếu tháng đóng ở công ty cũ không còn hiển thị trên app, trước hết bạn cần kiểm tra xem có bị gộp mã số, điều chỉnh quá trình hay lỗi đồng bộ dữ liệu hay không. Thời gian đã đóng hợp pháp sẽ không tự mất; BHXH có trách nhiệm cập nhật lại nếu dữ liệu sai. Bạn nên đề nghị BHXH in quá trình đóng chi tiết và đối chiếu với quyết định thôi việc, bảng lương, sổ/tờ rời cũ.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

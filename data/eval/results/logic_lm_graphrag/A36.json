@@ -1,0 +1,33 @@
+{
+  "arm": "logic_lm_graphrag",
+  "stt": 36,
+  "question": "Bà T.H sinh con vào ngày mùng 1 Tết Nguyên đán.\nBà hỏi, khi tính thời gian nghỉ thai sản bà được tính bắt đầu từ ngày làm việc sau kỳ nghỉ lễ hay tính từ ngày sinh con?",
+  "answer": "Issue: Bà T.H hỏi về thời gian bắt đầu nghỉ thai sản khi sinh con vào ngày mùng 1 Tết Nguyên đán. Rule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 3], ngày bắt đầu nghỉ việc hưởng chế độ thai sản phải trong khoảng thời gian 60 ngày kể từ ngày vợ sinh con. Application: Không có slot nào được gán giá trị. Prolog query trả về StartDate = 'ngày sinh con'. Conclusion: Theo Prolog, ngày bắt đầu nghỉ thai sản của bà T.H là 'ngày sinh con'.",
+  "plain_answer": "Theo quy định, thời gian nghỉ thai sản của bà T.H sẽ bắt đầu từ 'ngày sinh con' chứ không phải từ ngày làm việc sau kỳ nghỉ lễ. Điều này được quy định trong [Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 3]. Bà có thể nghỉ trong khoảng thời gian 60 ngày kể từ ngày sinh con.",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A53.K3"
+  ],
+  "citation_indices": [
+    0,
+    1,
+    2
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,maternity_leave_start_date(ngày sinh con),based_on(source_c000))]",
+  "prolog_program": "legal_source(source_c000, law_bhxh_2024, article_53, clause_3, none, 'Ngày bắt đầu nghỉ việc hưởng chế độ thai sản quy định tại khoản 2 Điều này phải trong khoảng thời gian 60 ngày kể từ ngày vợ sinh con, trường hợp người lao động nghỉ nhiều lần thì ngày bắt đầu nghỉ việc của lần cuối cùng phải trong khoảng thời gian 60 ngày đầu kể từ ngày vợ sinh con và tổng thời gian nghỉ việc hưởng chế độ thai sản không quá thời gian quy định tại khoản 2 Điều này.').\nlegal_source(source_c001, law_bhxh_2024, article_32, clause_2, none, 'Thời gian nghỉ việc hưởng chế độ thai sản quy định tại Điều này tính theo ngày làm việc không kể ngày nghỉ lễ, nghỉ Tết, ngày nghỉ hằng tuần.').\nlegal_source(source_c002, law_bhxh_2024, article_33, clause_2, none, 'Thời gian nghỉ việc hưởng chế độ thai sản quy định tại khoản 1 Điều này tính cả ngày nghỉ lễ, nghỉ Tết, ngày nghỉ hằng tuần.').\nmaternity_leave_start_date(StartDate, Trace) :- StartDate = 'ngày sinh con', Trace = [step(conclusion, maternity_leave_start_date(StartDate), based_on(source_c000))].\nmaternity_leave_start_date(StartDate, Trace) :- StartDate = 'ngày làm việc sau kỳ nghỉ lễ', Trace = [step(conclusion, maternity_leave_start_date(StartDate), based_on(source_c001))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Bà T.H hỏi về thời gian bắt đầu nghỉ thai sản khi sinh con vào ngày mùng 1 Tết Nguyên đán. Rule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 3], ngày bắt đầu nghỉ việc hưởng chế độ thai sản phải trong khoảng thời gian 60 ngày kể từ ngày vợ sinh con. Application: Không có slot nào được gán giá trị. Prolog query trả về StartDate = 'ngày sinh con'. Conclusion: Theo Prolog, ngày bắt đầu nghỉ thai sản của bà T.H là 'ngày sinh con'."
+  },
+  "elapsed_s": 27.785,
+  "prompt_tokens": 4009,
+  "completion_tokens": 652,
+  "error": null,
+  "gold_answer": "Căn cứ khoản 9 Điều 53 Luật BHXH 2024, thời gian nghỉ việc hưởng chế độ thai sản tính cả ngày nghỉ lễ, tết, ngày nghỉ hằng tuần.\nĐối chiếu quy định nêu trên, trường hợp bà T.H sinh con vào ngày mùng 1 Tết Nguyên đán thì thời gian nghỉ hưởng chế độ thai sản 6 tháng được tính từ ngày sinh con, kể cả thời gian trùng với kỳ nghỉ Tết.",
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 53]"
+}

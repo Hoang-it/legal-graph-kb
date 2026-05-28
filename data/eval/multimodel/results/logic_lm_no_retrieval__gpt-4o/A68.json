@@ -1,0 +1,27 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 68,
+  "question": "Nld làm việc bên em từ 2025 đến giờ vẫn làm, vẫn đóng bhxh bình thường. Tự nhiên nay nld báo là trên app hiện 1 bên cty khác từ t2/2026-t4/2026. Em gọi lên bhxh thì họ bảo nld này đóng ở cty em từ 2025 đến t1/2026. Còn từ t2/2026 đóng ở cty khác. E có hỏi là nld có nghỉ bên em đâu, từ tháng 2 đến tháng 4 này bên em vẫn đang đóng bhxh cho c ấy bình thường. Bên em chưa báo giảm thì sao bên kia báo tăng dc. Bảo hiểm báo hỏi lại nld.\nEm hỏi nld thì họ báo là có làm thêm bên kia nhưng kb sao họ lại báo tăng bhxh.\nTrường hợp này bên em xử lý ntn?",
+  "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmphgkg0teu.pl:1:330: Syntax error: Operator expected]",
+  "citations": [
+    "[Điều 98 khoản 1]",
+    "[Điều 99 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A98.K1",
+    "L41_2024.A99.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": false,
+  "prolog_status": "syntax_error",
+  "n_repair_rounds": 2,
+  "prolog_trace": "",
+  "irac_sections": {},
+  "elapsed_s": 12.323,
+  "prompt_tokens": 4508,
+  "completion_tokens": 759,
+  "error": null,
+  "gold_answer": "Một người có nhiều nơi làm việc nhưng BHXH bắt buộc chỉ đóng theo một quan hệ lao động thuộc diện luật định, không được để 2 đơn vị cùng đóng trùng cùng thời gian. Bạn cần yêu cầu NLĐ giải trình, cung cấp HĐLĐ bên kia; đồng thời làm việc với cơ quan BHXH để xác định đơn vị nào đóng đúng, đơn vị nào đóng trùng. Phần đóng trùng sẽ phải điều chỉnh/hoàn trả theo thủ tục, tránh để dữ liệu sai kéo dài ảnh hưởng chế độ của NLĐ.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 33; Bộ luật Lao động 2019 Điều 13"
+}

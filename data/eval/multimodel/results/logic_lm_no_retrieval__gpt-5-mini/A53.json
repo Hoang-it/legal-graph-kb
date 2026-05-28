@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 53,
+  "question": "Cty nợ gần 1 năm BH ( mất 6 năm ko chốt) giờ mình đã đi làm cty khác đc 2 năm rồi.\nBây giờ làm thế nào để mình chốt được tờ rời ở công ty cũ?",
+  "answer": "Issue:\nCông ty nợ, chưa chốt sổ BHXH từ lâu và bạn đã chuyển việc; làm thế nào để chốt tờ rời tại công ty cũ?\n\nRule:\nKhông có trích dẫn pháp lý được cung cấp trong dữ liệu đầu vào.\n\nApplication:\nCác slot được gán: không có slot nào được gán trong slot_bindings.\nKết quả thực thi Prolog (bản sao nguyên văn) mà chương trình trả về:\nAnswer = conditions([Bước 1: Yêu cầu công ty cũ bằng văn bản (đơn đề nghị) để công ty chốt sổ và cấp tờ rời; giữ bản sao và bằng chứng giao nhận.,Bước 2: Nếu công ty không trả lời hoặc từ chối, nộp hồ sơ tố cáo/khởi kiện: (a) gửi khiếu nại tới cơ quan BHXH nơi công ty đóng BHXH yêu cầu can thiệp xử lý và xác nhận thời gian đóng để chốt sổ; (b) hoặc báo Thanh tra lao động để xử phạt hành chính và buộc công ty thực hiện nghĩa vụ.,Bước 3: Nếu cần, khởi kiện dân sự ra Tòa án lao động để yêu cầu buộc công ty thực hiện nghĩa vụ đóng BHXH và cấp tờ rời; đồng thời yêu cầu bồi thường thiệt hại nếu có.,Bước 4: Trong khi chờ xử lý, cung cấp cho công ty mới: (a) bản sao hợp đồng lao động, quyết định nghỉ việc, các chứng từ liên quan để công ty mới làm căn cứ đóng tiếp; (b) nếu cần, đề nghị cơ quan BHXH xác nhận thời gian đóng trước đó để ghép sổ/ghi nhận vào hồ sơ.])\nTrace = [step(request_employer,based_on(source_obligation_employer)),step(report_bhxh_or_inspection,based_on(source_obligation_employer)),step(litigation_option,based_on(source_obligation_employer))].\nMô tả tiêu thụ: Prolog không cần slot đầu vào; nó áp dụng nguồn nghĩa vụ người sử dụng lao động và sinh ra các bước (request_employer, report_bhxh_or_inspection, litigation_option) như trong Trace.\n\nConclusion:\nProlog trả về biến Answer với giá trị nguyên văn: Answer = conditions([...]) (đã trích nguyên văn ở trên). Trace cũng được trả: Trace = [step(request_employer,based_on(source_obligation_employer)),step(report_bhxh_or_inspection,based_on(source_obligation_employer)),step(litigation_option,based_on(source_obligation_employer))].",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(request_employer,based_on(source_obligation_employer)),step(report_bhxh_or_inspection,based_on(source_obligation_employer)),step(litigation_option,based_on(source_obligation_employer))]",
+  "irac_sections": {
+    "issue": "Công ty nợ, chưa chốt sổ BHXH từ lâu và bạn đã chuyển việc; làm thế nào để chốt tờ rời tại công ty cũ?",
+    "rule": "Không có trích dẫn pháp lý được cung cấp trong dữ liệu đầu vào.",
+    "application": "Các slot được gán: không có slot nào được gán trong slot_bindings.\nKết quả thực thi Prolog (bản sao nguyên văn) mà chương trình trả về:\nAnswer = conditions([Bước 1: Yêu cầu công ty cũ bằng văn bản (đơn đề nghị) để công ty chốt sổ và cấp tờ rời; giữ bản sao và bằng chứng giao nhận.,Bước 2: Nếu công ty không trả lời hoặc từ chối, nộp hồ sơ tố cáo/khởi kiện: (a) gửi khiếu nại tới cơ quan BHXH nơi công ty đóng BHXH yêu cầu can thiệp xử lý và xác nhận thời gian đóng để chốt sổ; (b) hoặc báo Thanh tra lao động để xử phạt hành chính và buộc công ty thực hiện nghĩa vụ.,Bước 3: Nếu cần, khởi kiện dân sự ra Tòa án lao động để yêu cầu buộc công ty thực hiện nghĩa vụ đóng BHXH và cấp tờ rời; đồng thời yêu cầu bồi thường thiệt hại nếu có.,Bước 4: Trong khi chờ xử lý, cung cấp cho công ty mới: (a) bản sao hợp đồng lao động, quyết định nghỉ việc, các chứng từ liên quan để công ty mới làm căn cứ đóng tiếp; (b) nếu cần, đề nghị cơ quan BHXH xác nhận thời gian đóng trước đó để ghép sổ/ghi nhận vào hồ sơ.])\nTrace = [step(request_employer,based_on(source_obligation_employer)),step(report_bhxh_or_inspection,based_on(source_obligation_employer)),step(litigation_option,based_on(source_obligation_employer))].\nMô tả tiêu thụ: Prolog không cần slot đầu vào; nó áp dụng nguồn nghĩa vụ người sử dụng lao động và sinh ra các bước (request_employer, report_bhxh_or_inspection, litigation_option) như trong Trace.",
+    "conclusion": "Prolog trả về biến Answer với giá trị nguyên văn: Answer = conditions([...]) (đã trích nguyên văn ở trên). Trace cũng được trả: Trace = [step(request_employer,based_on(source_obligation_employer)),step(report_bhxh_or_inspection,based_on(source_obligation_employer)),step(litigation_option,based_on(source_obligation_employer))]."
+  },
+  "elapsed_s": 59.713,
+  "prompt_tokens": 3836,
+  "completion_tokens": 6075,
+  "error": null,
+  "gold_answer": "Nếu công ty cũ nợ BHXH gần 1 năm và kéo dài không chốt sổ, bạn cần yêu cầu công ty xác nhận bằng văn bản toàn bộ thời gian đã làm việc, bảng lương, HĐLĐ, quyết định nghỉ việc và chứng cứ bị nợ đóng. Sau đó gửi đơn đến cơ quan BHXH quản lý công ty cũ và Thanh tra có thẩm quyền để yêu cầu truy đóng/chốt sổ đến thời điểm đã đóng thực tế. Thời gian công ty còn nợ sẽ không bị mất nhưng cần xử lý theo thủ tục cưỡng chế hoặc thanh tra.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48; quy định xử lý chậm đóng BHXH"
+}

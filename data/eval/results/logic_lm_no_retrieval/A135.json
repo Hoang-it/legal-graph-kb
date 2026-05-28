@@ -1,0 +1,29 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 135,
+  "question": "Người được hưởng trợ cấp hàng tháng mất sức lao động khi nghĩ việc được hưởng quyền loi gì?",
+  "answer": "Issue: Người được hưởng trợ cấp hàng tháng mất sức lao động khi nghĩ việc được hưởng quyền loi gì?\n\nRule: \"Mức hưởng trợ cấp hàng tháng do mất sức lao động được tính dựa trên mức tiền lương đóng BHXH của tháng trước khi nghỉ việc.\" (Luật Bảo hiểm xã hội, điều 26, khoản 1)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Tuy nhiên, Prolog đã trả về kết quả cho biết rằng người lao động được hưởng trợ cấp hàng tháng khi mất sức lao động theo quy định của Luật Bảo hiểm xã hội.\n\nConclusion: Prolog đã trả về giá trị \"Người lao động được hưởng trợ cấp hàng tháng khi mất sức lao động theo quy định của Luật Bảo hiểm xã hội.\" cho biến Answer.",
+  "citations": [
+    "[Điều 26 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A26.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,Người lao động được hưởng trợ cấp hàng tháng khi mất sức lao động theo quy định của Luật Bảo hiểm xã hội.),based_on(source_a26_k1))]",
+  "irac_sections": {
+    "issue": "Người được hưởng trợ cấp hàng tháng mất sức lao động khi nghĩ việc được hưởng quyền loi gì?",
+    "rule": "\"Mức hưởng trợ cấp hàng tháng do mất sức lao động được tính dựa trên mức tiền lương đóng BHXH của tháng trước khi nghỉ việc.\" (Luật Bảo hiểm xã hội, điều 26, khoản 1)",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Tuy nhiên, Prolog đã trả về kết quả cho biết rằng người lao động được hưởng trợ cấp hàng tháng khi mất sức lao động theo quy định của Luật Bảo hiểm xã hội.",
+    "conclusion": "Prolog đã trả về giá trị \"Người lao động được hưởng trợ cấp hàng tháng khi mất sức lao động theo quy định của Luật Bảo hiểm xã hội.\" cho biến Answer."
+  },
+  "elapsed_s": 7.984,
+  "prompt_tokens": 2011,
+  "completion_tokens": 359,
+  "error": null,
+  "gold_answer": "Người đang hưởng trợ cấp mất sức lao động hằng tháng vẫn có các quyền lợi theo chế độ đang hưởng và có thể được điều chỉnh mức trợ cấp khi Nhà nước điều chỉnh chính sách. Khi qua đời thì thân nhân có thể được xem xét chế độ tử tuất theo điều kiện luật định. Cần xem rõ bạn thuộc diện trợ cấp mất sức lao động theo văn bản nào để xác định chính xác quyền lợi hiện còn.",
+  "gold_citations_raw": "Điều 141 Luật BHXH 2024; quy định chuyển tiếp về trợ cấp hằng tháng"
+}

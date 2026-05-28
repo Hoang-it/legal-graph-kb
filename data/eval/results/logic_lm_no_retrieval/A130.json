@@ -1,0 +1,25 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 130,
+  "question": "Đóng bhxh đc 4 tháng lcb 4tr900 thì lãnh đc bao nhiêu?",
+  "answer": "Issue: Đóng bhxh đc 4 tháng lcb 4tr900 thì lãnh đc bao nhiêu?\n\nRule: \n\nApplication: \n- Slot `months_contributed` có giá trị là 4, cho biết số tháng đã đóng bảo hiểm xã hội.\n- Slot `average_salary` có giá trị là 4900000, cho biết mức lương trung bình.\nProlog đã sử dụng các giá trị này để tính toán số tiền lãnh được.\n\nConclusion: Prolog đã trả về giá trị 3675000 cho biến `Amount`.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(calculation,monthly_amount(user,3675000.0),based_on(none))]",
+  "irac_sections": {
+    "issue": "Đóng bhxh đc 4 tháng lcb 4tr900 thì lãnh đc bao nhiêu?",
+    "rule": "",
+    "application": "- Slot `months_contributed` có giá trị là 4, cho biết số tháng đã đóng bảo hiểm xã hội.\n- Slot `average_salary` có giá trị là 4900000, cho biết mức lương trung bình.\nProlog đã sử dụng các giá trị này để tính toán số tiền lãnh được.",
+    "conclusion": "Prolog đã trả về giá trị 3675000 cho biến `Amount`."
+  },
+  "elapsed_s": 7.506,
+  "prompt_tokens": 1896,
+  "completion_tokens": 297,
+  "error": null,
+  "gold_answer": "Với 4 tháng đóng BHXH, mức hưởng BHXH 1 lần không tính như nhiều năm tròn mà theo trường hợp thời gian đóng chưa đủ 1 năm. Khi đủ điều kiện rút, mức hưởng bằng số tiền đã đóng nhưng tối đa không quá 2 tháng mức bình quân lương đóng BHXH. Với lương 4,9 triệu/tháng, số hưởng thường chỉ ở mức vài triệu đồng, không phải 8-10 triệu.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

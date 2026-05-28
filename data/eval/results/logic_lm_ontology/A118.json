@@ -1,0 +1,33 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 118,
+  "question": "Nếu mà tham gia bảo hiểm được 9 năm rồi giờ rút về thì được bao nhiêu?",
+  "answer": "Issue: Nếu mà tham gia bảo hiểm được 9 năm rồi giờ rút về thì được bao nhiêu?\n\nRule: \"1. Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm xã hội mà có đề nghị thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây: a) Đủ tuổi hưởng lương hưu mà chưa đủ 15 năm đóng bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 70, Khoản 1)\n\nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã sử dụng quy tắc để xác định số tiền bảo hiểm xã hội một lần dựa trên số năm tham gia bảo hiểm là 9 năm.\n\nConclusion: Số tiền bảo hiểm xã hội một lần được xác định là 30 (Amount).",
+  "citations": [
+    "[Điều 2]",
+    "[Điều 70 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2",
+    "L41_2024.A70.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,one_time_social_insurance_amount(30),based_on(source_c070))]",
+  "irac_sections": {
+    "issue": "Nếu mà tham gia bảo hiểm được 9 năm rồi giờ rút về thì được bao nhiêu?",
+    "rule": "\"1. Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm xã hội mà có đề nghị thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây: a) Đủ tuổi hưởng lương hưu mà chưa đủ 15 năm đóng bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 70, Khoản 1)",
+    "application": "Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã sử dụng quy tắc để xác định số tiền bảo hiểm xã hội một lần dựa trên số năm tham gia bảo hiểm là 9 năm.",
+    "conclusion": "Số tiền bảo hiểm xã hội một lần được xác định là 30 (Amount)."
+  },
+  "elapsed_s": 9.81,
+  "prompt_tokens": 3531,
+  "completion_tokens": 473,
+  "error": null,
+  "gold_answer": "Nếu 9 năm đóng của bạn đều sau năm 2014 thì mức BHXH 1 lần thường được tính bằng 2 tháng mức bình quân lương đóng cho mỗi năm. Nghĩa là về công thức sơ bộ sẽ khoảng 18 tháng mức bình quân tiền lương sau điều chỉnh. Muốn ra số gần đúng, bạn cần biết mức bình quân lương đóng của toàn bộ thời gian, không chỉ lương hiện tại.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

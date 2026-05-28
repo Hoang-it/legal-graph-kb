@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 193,
+  "question": "Em nghỉ cty cách đây 8/9 năm r nhưng m chưa chốt lấy bảo hiểm\nGiờ m muốn lấy bảo hiểm thì đến cty m đã lm để lấy hay lấy ở đâu?",
+  "answer": "Issue: Bạn đã nghỉ việc tại công ty cách đây 8/9 năm nhưng chưa chốt sổ bảo hiểm xã hội. Bạn muốn biết cần đến đâu để thực hiện việc này.\n\nRule: \"Người lao động có quyền yêu cầu công ty nơi đã làm việc chốt sổ bảo hiểm xã hội khi nghỉ việc.\" (Luật Bảo hiểm xã hội 2024, Điều 47, Khoản 1)\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo quy định pháp luật, người lao động có quyền yêu cầu công ty nơi đã làm việc để chốt sổ bảo hiểm xã hội.\n\nConclusion: Bạn cần đến công ty nơi bạn đã làm việc để yêu cầu chốt sổ bảo hiểm xã hội.",
+  "citations": [
+    "[Điều 47 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A47.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,insurance_claim_location(Bạn cần đến công ty nơi bạn đã làm việc để yêu cầu chốt sổ bảo hiểm xã hội.),based_on(source_a47_k1))]",
+  "irac_sections": {
+    "issue": "Bạn đã nghỉ việc tại công ty cách đây 8/9 năm nhưng chưa chốt sổ bảo hiểm xã hội. Bạn muốn biết cần đến đâu để thực hiện việc này.",
+    "rule": "\"Người lao động có quyền yêu cầu công ty nơi đã làm việc chốt sổ bảo hiểm xã hội khi nghỉ việc.\" (Luật Bảo hiểm xã hội 2024, Điều 47, Khoản 1)",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo quy định pháp luật, người lao động có quyền yêu cầu công ty nơi đã làm việc để chốt sổ bảo hiểm xã hội.",
+    "conclusion": "Bạn cần đến công ty nơi bạn đã làm việc để yêu cầu chốt sổ bảo hiểm xã hội."
+  },
+  "elapsed_s": 4.249,
+  "prompt_tokens": 3198,
+  "completion_tokens": 394,
+  "error": null,
+  "gold_answer": "Nếu bạn nghỉ công ty 8-9 năm mà chưa chốt/lấy BHXH, trước hết cần xác định công ty khi đó đã báo giảm, chốt sổ hay chưa. Nếu đã chốt, bạn có thể liên hệ trực tiếp cơ quan BHXH nơi quản lý hoặc nơi cư trú để xin xác nhận/cấp lại. Nếu chưa chốt thì vẫn phải yêu cầu công ty cũ hoàn tất thủ tục; BHXH không thể tự chốt toàn bộ nếu đơn vị chưa báo giảm và chưa hoàn thành nghĩa vụ.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

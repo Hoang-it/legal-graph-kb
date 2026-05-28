@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_graphrag",
+  "stt": 48,
+  "question": "Mình đóng BHXH 21nam,  sinh ngày 02/08/1976, nam, công việc bảo vệ vượn cây cao su, thì khi nào được nghi hưu?",
+  "answer": "Issue: Người hỏi đã đóng BHXH 21 năm và muốn biết khi nào được nghỉ hưu. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 9], nam đủ 60 tuổi và có tối thiểu 20 năm đóng BHXH sẽ được hưởng lương hưu. \nApplication: Không có slot nào được gán giá trị, nhưng Prolog đã xác định tuổi nghỉ hưu là 62. Prolog query trả về RetirementAge = 62. \nConclusion: Theo Prolog, người dùng sẽ được nghỉ hưu khi đủ 62 tuổi.",
+  "plain_answer": "Bạn sẽ được nghỉ hưu khi đủ 62 tuổi, vì bạn đã đóng BHXH 21 năm, theo quy định tại [Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 9]. Bạn sinh ngày 02/08/1976, nên bạn sẽ đủ tuổi nghỉ hưu vào năm 2038.",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 9]"
+  ],
+  "citation_ids": [
+    "L41_2024.A141.K9"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,retirement_age(user,62),based_on(source_c003))]",
+  "prolog_program": "years_contributed(user, 21).\nlegal_source(source_c003, law_bhxh_2024, article_169, clause_2, none, 'Tuổi nghỉ hưu của người lao động trong điều kiện lao động bình thường được điều chỉnh theo lộ trình cho đến khi đủ 62 tuổi đối với lao động nam vào năm 2028 và đủ 60 tuổi đối với lao động nữ vào năm 2035.').\nretirement_age(user, RetirementAge, Trace) :- years_contributed(user, Years), Years >= 20, RetirementAge = 62, Trace = [step(conclusion, retirement_age(user, RetirementAge), based_on(source_c003))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Người hỏi đã đóng BHXH 21 năm và muốn biết khi nào được nghỉ hưu.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 9], nam đủ 60 tuổi và có tối thiểu 20 năm đóng BHXH sẽ được hưởng lương hưu.",
+    "application": "Không có slot nào được gán giá trị, nhưng Prolog đã xác định tuổi nghỉ hưu là 62. Prolog query trả về RetirementAge = 62.",
+    "conclusion": "Theo Prolog, người dùng sẽ được nghỉ hưu khi đủ 62 tuổi."
+  },
+  "elapsed_s": 16.671,
+  "prompt_tokens": 3949,
+  "completion_tokens": 480,
+  "error": null,
+  "gold_answer": "Nếu tính theo tuổi nghỉ hưu thông thường của lao động nam, bạn sinh ngày 02/08/1976 thì đủ 62 tuổi vào ngày 02/08/2038. Hiện thông tin bạn nêu 'bảo vệ vườn cây cao su' chưa đủ căn cứ khẳng định thuộc nghề, công việc nặng nhọc/đặc biệt nặng nhọc để được nghỉ hưu sớm hơn. 21 năm đóng BHXH mới chỉ đáp ứng về thời gian tối thiểu nếu đến tuổi, còn thời điểm nghỉ hưu vẫn phải căn cứ thêm điều kiện tuổi và tính chất công việc.",
+  "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 169]"
+}

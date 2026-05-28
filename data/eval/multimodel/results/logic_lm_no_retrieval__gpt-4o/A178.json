@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 178,
+  "question": "em làm mất bìa và sổ BHXH . trên app thì cái sdt và gmail đăng ký thì e mất lâu rồi . bây giờ em phải làm sao?",
+  "answer": "Issue: Bạn đã làm mất bìa và sổ bảo hiểm xã hội (BHXH) và không còn sử dụng được số điện thoại và email đã đăng ký. Bạn muốn biết cần phải làm gì trong trường hợp này.\n\nRule: Theo Điều 27, Khoản 2 của Luật Bảo hiểm xã hội 2024: \"Người lao động có quyền yêu cầu cấp lại sổ BHXH trong trường hợp bị mất.\"\n\nApplication: Trong trường hợp này, không có thông tin cụ thể nào được cung cấp qua các slot bindings. Tuy nhiên, theo quy định pháp luật, bạn cần liên hệ với cơ quan BHXH nơi bạn đã đăng ký để yêu cầu cấp lại sổ BHXH. Bạn có thể cần cung cấp giấy tờ tùy thân và thông tin cá nhân để xác minh.\n\nConclusion: Bạn cần liên hệ với cơ quan BHXH nơi bạn đã đăng ký để yêu cầu cấp lại sổ BHXH. Bạn có thể cần cung cấp giấy tờ tùy thân và thông tin cá nhân để xác minh.",
+  "citations": [
+    "[Điều 27 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A27.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,lost_bhxh_procedure(Bạn cần liên hệ với cơ quan BHXH nơi bạn đã đăng ký để yêu cầu cấp lại sổ BHXH. Bạn có thể cần cung cấp giấy tờ tùy thân và thông tin cá nhân để xác minh.),based_on(source_a27_k2))]",
+  "irac_sections": {
+    "issue": "Bạn đã làm mất bìa và sổ bảo hiểm xã hội (BHXH) và không còn sử dụng được số điện thoại và email đã đăng ký. Bạn muốn biết cần phải làm gì trong trường hợp này.",
+    "rule": "Theo Điều 27, Khoản 2 của Luật Bảo hiểm xã hội 2024: \"Người lao động có quyền yêu cầu cấp lại sổ BHXH trong trường hợp bị mất.\"",
+    "application": "Trong trường hợp này, không có thông tin cụ thể nào được cung cấp qua các slot bindings. Tuy nhiên, theo quy định pháp luật, bạn cần liên hệ với cơ quan BHXH nơi bạn đã đăng ký để yêu cầu cấp lại sổ BHXH. Bạn có thể cần cung cấp giấy tờ tùy thân và thông tin cá nhân để xác minh.",
+    "conclusion": "Bạn cần liên hệ với cơ quan BHXH nơi bạn đã đăng ký để yêu cầu cấp lại sổ BHXH. Bạn có thể cần cung cấp giấy tờ tùy thân và thông tin cá nhân để xác minh."
+  },
+  "elapsed_s": 5.721,
+  "prompt_tokens": 3288,
+  "completion_tokens": 481,
+  "error": null,
+  "gold_answer": "Bạn bị mất bìa sổ BHXH và mất cả số điện thoại/gmail đăng ký thì vẫn xử lý được. Trước hết mang CCCD tới cơ quan BHXH để cập nhật lại thông tin liên hệ, cấp lại tài khoản/đổi thông tin trên VssID nếu cần, đồng thời làm thủ tục cấp lại sổ BHXH. Dữ liệu tham gia BHXH vẫn nằm trên hệ thống nên không mất quá trình đóng.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

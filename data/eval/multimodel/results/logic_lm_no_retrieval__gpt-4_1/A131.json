@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 131,
+  "question": "Em bị mất sổ BHXH, chỉ còn thông tin, thời gian đóng tích hợp trên VNEID thì có rút BH 1 lần được không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là: Nếu bị mất sổ bảo hiểm xã hội (BHXH) giấy, chỉ còn thông tin và thời gian đóng BHXH tích hợp trên VNEID thì có được rút BHXH một lần hay không?\n\nRule:\nĐiều kiện hưởng bảo hiểm xã hội một lần: người lao động có yêu cầu và đáp ứng các điều kiện theo quy định, không phụ thuộc vào việc còn giữ sổ giấy hay không, miễn là có đủ thông tin xác nhận thời gian đóng. (law_bhxh_2024, article_60, clause_1)\n\nApplication:\nKhông có slot_id nào được cung cấp vì câu hỏi chỉ yêu cầu xác định điều kiện rút BHXH một lần khi mất sổ giấy. Prolog đã sử dụng thông tin về quy định tại Điều 60, Khoản 1 để xác định rằng việc mất sổ giấy không ảnh hưởng nếu có đủ thông tin xác nhận thời gian đóng BHXH.\n\nConclusion:\nTheo truy vết Prolog, kết luận là: co_the_rut_bhxh_1_lan. Như vậy, bạn vẫn có thể rút BHXH một lần nếu có đủ thông tin xác nhận thời gian đóng, dù đã mất sổ BHXH giấy.",
+  "citations": [
+    "[Điều 60 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,co_the_rut_bhxh_1_lan,based_on(source_a60_k1))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là: Nếu bị mất sổ bảo hiểm xã hội (BHXH) giấy, chỉ còn thông tin và thời gian đóng BHXH tích hợp trên VNEID thì có được rút BHXH một lần hay không?",
+    "rule": "Điều kiện hưởng bảo hiểm xã hội một lần: người lao động có yêu cầu và đáp ứng các điều kiện theo quy định, không phụ thuộc vào việc còn giữ sổ giấy hay không, miễn là có đủ thông tin xác nhận thời gian đóng. (law_bhxh_2024, article_60, clause_1)",
+    "application": "Không có slot_id nào được cung cấp vì câu hỏi chỉ yêu cầu xác định điều kiện rút BHXH một lần khi mất sổ giấy. Prolog đã sử dụng thông tin về quy định tại Điều 60, Khoản 1 để xác định rằng việc mất sổ giấy không ảnh hưởng nếu có đủ thông tin xác nhận thời gian đóng BHXH.",
+    "conclusion": "Theo truy vết Prolog, kết luận là: co_the_rut_bhxh_1_lan. Như vậy, bạn vẫn có thể rút BHXH một lần nếu có đủ thông tin xác nhận thời gian đóng, dù đã mất sổ BHXH giấy."
+  },
+  "elapsed_s": 7.541,
+  "prompt_tokens": 1984,
+  "completion_tokens": 467,
+  "error": null,
+  "gold_answer": "Nếu bạn bị mất sổ BHXH nhưng dữ liệu quá trình đóng đã tích hợp trên VNeID thì vẫn có thể làm hồ sơ hưởng BHXH 1 lần. Cơ quan BHXH hiện đối chiếu dữ liệu điện tử là chính; khi cần, bạn làm thêm thủ tục cấp lại sổ hoặc xác nhận quá trình đóng. Quan trọng là bạn phải đủ điều kiện hưởng BHXH 1 lần theo luật và hồ sơ định danh phải trùng khớp.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 9,
+  "question": "Người lao động sinh con ngày 18/12/2023, trong tháng 12 có 12 ngày nghỉ thai sản sinh con và 2 ngày nghỉ thai sản khám thai. Công ty đã báo giảm thai sản từ tháng 12/2023 đến tháng 5/2024.\nNgày 18/6/2024, người lao động đi làm lại và nghỉ tiếp 5 ngày dưỡng sức sau sinh. Trong tháng 6/2024, có 14 ngày nghỉ thai sản sinh con và 5 ngày nghỉ dưỡng sức sau sinh.\nBà Kim Ngân hỏi, đối với trường hợp trên, tháng 6/2024, công ty báo giảm không lương, giảm thai sản hay đóng BHXH bình thường?",
+  "answer": "Issue:\nCâu hỏi đặt ra là trong tháng 6/2024, khi người lao động có 14 ngày nghỉ thai sản sinh con và 5 ngày nghỉ dưỡng sức sau sinh, công ty nên báo giảm không lương, giảm thai sản hay đóng BHXH bình thường?\n\nRule:\n\"Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ thai sản được tính là thời gian đóng bảo hiểm xã hội bắt buộc, người lao động và người sử dụng lao động không phải đóng bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 53, Khoản 8)\n\nApplication:\nCác dữ kiện được xác nhận gồm: nghi_thai_san_sinh_con_thang = 14 (người lao động nghỉ thai sản sinh con trong tháng 6/2024 là 14 ngày), nghi_duong_suc_thang = 5 (nghỉ dưỡng sức sau sinh trong tháng 6/2024 là 5 ngày). Theo quy tắc Prolog, nếu số ngày nghỉ thai sản sinh con trong tháng từ 14 ngày trở lên thì hình thức báo giảm BHXH là \"giảm thai sản\".\n\nConclusion:\nKết quả truy vấn Prolog trả về: HinhThuc = giam_thai_san. Như vậy, trong tháng 6/2024, công ty thực hiện báo giảm thai sản cho người lao động.",
+  "citations": [
+    "[Điều 53 khoản 8]"
+  ],
+  "citation_ids": [
+    "L41_2024.A53.K8"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 2,
+  "prolog_trace": "[step(conclusion,bao_giam_bhxh_thang(user,thang_6_2024,giam_thai_san),based_on(source_c0))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là trong tháng 6/2024, khi người lao động có 14 ngày nghỉ thai sản sinh con và 5 ngày nghỉ dưỡng sức sau sinh, công ty nên báo giảm không lương, giảm thai sản hay đóng BHXH bình thường?",
+    "rule": "\"Đối với trường hợp lao động nữ sinh con, người lao động nhận nuôi con nuôi dưới 06 tháng tuổi, lao động nữ mang thai hộ khi sinh con, lao động nữ nhờ mang thai hộ thì thời gian nghỉ việc hưởng chế độ thai sản được tính là thời gian đóng bảo hiểm xã hội bắt buộc, người lao động và người sử dụng lao động không phải đóng bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 53, Khoản 8)",
+    "application": "Các dữ kiện được xác nhận gồm: nghi_thai_san_sinh_con_thang = 14 (người lao động nghỉ thai sản sinh con trong tháng 6/2024 là 14 ngày), nghi_duong_suc_thang = 5 (nghỉ dưỡng sức sau sinh trong tháng 6/2024 là 5 ngày). Theo quy tắc Prolog, nếu số ngày nghỉ thai sản sinh con trong tháng từ 14 ngày trở lên thì hình thức báo giảm BHXH là \"giảm thai sản\".",
+    "conclusion": "Kết quả truy vấn Prolog trả về: HinhThuc = giam_thai_san. Như vậy, trong tháng 6/2024, công ty thực hiện báo giảm thai sản cho người lao động."
+  },
+  "elapsed_s": 16.27,
+  "prompt_tokens": 10195,
+  "completion_tokens": 1855,
+  "error": null,
+  "gold_answer": "Căn cứ quy định tại Khoản 1, Khoản 7 Điều 34, Khoản 2 Điều 39, Khoản 3 Điều 85 và Khoản 4 Điều 86 Luật BHXH năm 2014:\nLao động nữ sinh con được nghỉ việc hưởng chế độ thai sản trước và sau khi sinh con là 6 tháng. Trường hợp lao động nữ sinh đôi trở lên thì tính từ con thứ 2 trở đi, cứ mỗi con, người mẹ được nghỉ thêm một tháng. Thời gian hưởng chế độ thai sản tính cả ngày nghỉ lễ, nghỉ Tết, ngày nghỉ hàng tuần.\nThời gian nghỉ việc hưởng chế độ thai sản từ 14 ngày làm việc trở lên trong tháng được tính là thời gian đóng BHXH, người lao động và người sử dụng lao động không phải đóng BHXH.\nNgười lao động không làm việc và không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì cả người lao động và người sử dụng lao động không đóng BHXH tháng đó. Thời gian này không được tính để hưởng BHXH trừ trường hợp nghỉ việc hưởng chế độ thai sản.\nVì vậy, trường hợp người lao động sinh con ngày 18/12/2023, công ty đã báo giảm thai sản từ tháng 12/2023 đến tháng 5/2024. Tháng 6/2024 chỉ được tính 5 ngày dưỡng sức sau sinh là số ngày không làm việc, không hưởng tiền lương. Do đó, tháng 6/2024 người lao động và công ty vẫn phải tham gia, đóng BHXH bắt buộc theo đúng quy định của pháp luật.",
+  "gold_citations_raw": "Khoản 7 Điều 34, Khoản 2 Điều 39, Khoản 3 Điều 85 và Khoản 4 Điều 86 Luật BHXH năm 2014"
+}

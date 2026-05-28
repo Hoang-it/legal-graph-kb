@@ -1,0 +1,33 @@
+{
+  "arm": "logic_lm_graphrag",
+  "stt": 113,
+  "question": "E đã nghỉ cty ngày 31/3. Tính đến nay chưa đi làm chính thức ở cty nào cũng chưa xin được việc làm ( tức ko có HĐLĐ VÀ đóng BHXH) . Nhưng e có làm 1 job online ( làm remote)  để kiếm thêm, làm job này có ký HĐ DỊCH VỤ -k đóng BHXH, K trừ gia cảnh. \nLiệu nếu hết tháng 4 hoặc tháng 5 mà vẫn chưa tìm đc việc chính thức thì e có được làm đơn lãnh BHTN ko? Và có được hưởng ko?",
+  "answer": "Issue: Người hỏi muốn biết liệu họ có đủ điều kiện để làm đơn lãnh bảo hiểm thất nghiệp (BHTN) sau khi nghỉ việc và không có hợp đồng lao động chính thức.\n\nRule: \"Đối tượng quy định tại các điểm a, b, c, d và i khoản 1 và khoản 2 Điều 2 của Luật này mà không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì người lao động không phải đóng bảo hiểm xã hội tháng đó, trừ trường hợp người sử dụng lao động và người lao động có thỏa thuận về việc có đóng bảo hiểm xã hội cho người lao động tháng đó với căn cứ đóng bằng căn cứ đóng bảo hiểm xã hội tháng gần nhất.\" (Luật BHXH 2024 (41/2024/QH15), Điều 33, khoản 5)\n\nApplication: Không có slot_bindings nào được cung cấp trong truy vấn. Tuy nhiên, Prolog đã xác định rằng người hỏi đủ điều kiện để nhận BHTN với giá trị \"yes\" cho biến Eligibility.\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho Eligibility, cho thấy người hỏi đủ điều kiện để làm đơn lãnh BHTN.",
+  "citations": [
+    "[Điều 2]",
+    "[Điều 33 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2",
+    "L41_2024.A33.K5"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_eligibility(yes),based_on(source_c033))]",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết liệu họ có đủ điều kiện để làm đơn lãnh bảo hiểm thất nghiệp (BHTN) sau khi nghỉ việc và không có hợp đồng lao động chính thức.",
+    "rule": "\"Đối tượng quy định tại các điểm a, b, c, d và i khoản 1 và khoản 2 Điều 2 của Luật này mà không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì người lao động không phải đóng bảo hiểm xã hội tháng đó, trừ trường hợp người sử dụng lao động và người lao động có thỏa thuận về việc có đóng bảo hiểm xã hội cho người lao động tháng đó với căn cứ đóng bằng căn cứ đóng bảo hiểm xã hội tháng gần nhất.\" (Luật BHXH 2024 (41/2024/QH15), Điều 33, khoản 5)",
+    "application": "Không có slot_bindings nào được cung cấp trong truy vấn. Tuy nhiên, Prolog đã xác định rằng người hỏi đủ điều kiện để nhận BHTN với giá trị \"yes\" cho biến Eligibility.",
+    "conclusion": "Prolog đã trả về giá trị \"yes\" cho Eligibility, cho thấy người hỏi đủ điều kiện để làm đơn lãnh BHTN."
+  },
+  "elapsed_s": 17.547,
+  "prompt_tokens": 3504,
+  "completion_tokens": 506,
+  "error": null,
+  "gold_answer": "Nếu bạn chỉ làm job online theo hợp đồng dịch vụ, không phải HĐLĐ thuộc diện tham gia BHTN, thì về nguyên tắc vẫn có thể nộp hồ sơ hưởng BHTN nếu đáp ứng điều kiện luật định. Bạn phải nộp trong 03 tháng kể từ ngày chấm dứt HĐLĐ cũ và sau khi nộp, nếu sau 15 ngày vẫn chưa có việc làm thuộc diện phải tham gia BHTN thì được hưởng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

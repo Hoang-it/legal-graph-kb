@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 82,
+  "question": "bhxh e đc 6 tháng có được rút không? E nghĩ cty cũng 2 năm hơn rồi",
+  "answer": "Issue:\nbhxh e đc 6 tháng có được rút không? E nghĩ cty cũng 2 năm hơn rồi\n\nRule:\nRút một lần BHXH (rút 1 lần) chỉ áp dụng khi người lao động đã ngừng đóng BHXH (ngừng làm việc hoặc chấm dứt quan hệ lao động).\nNgười yêu cầu rút một lần không thuộc đối tượng được hưởng lương hưu (tức là chưa đủ điều kiện hưởng lương hưu theo quy định).\nThủ tục rút 1 lần phải thực hiện tại cơ quan BHXH nơi người lao động đang tham gia hoặc nơi cư trú, kèm theo hồ sơ do pháp luật quy định.\n\nApplication:\nslot_bindings: không có (rỗng).\nProlog query đã không cần tham chiếu tới các slot vì không có giá trị đầu vào; truy vấn trả về biến Conditions chứa danh sách điều kiện rút một lần BHXH như trên. Trace Prolog: [step(provision_summary,withdrawal_conditions([Rút một lần BHXH (rút 1 lần) chỉ áp dụng khi người lao động đã ngừng đóng BHXH (ngừng làm việc hoặc chấm dứt quan hệ lao động).,Người yêu cầu rút một lần không thuộc đối tượng được hưởng lương hưu (tức là chưa đủ điều kiện hưởng lương hưu theo quy định).,Thủ tục rút 1 lần phải thực hiện tại cơ quan BHXH nơi người lao động đang tham gia hoặc nơi cư trú, kèm theo hồ sơ do pháp luật quy định.]),based_on(none))]\n\nConclusion:\nProlog binding: Conditions = ['Rút một lần BHXH (rút 1 lần) chỉ áp dụng khi người lao động đã ngừng đóng BHXH (ngừng làm việc hoặc chấm dứt quan hệ lao động).','Người yêu cầu rút một lần không thuộc đối tượng được hưởng lương hưu (tức là chưa đủ điều kiện hưởng lương hưu theo quy định).','Thủ tục rút 1 lần phải thực hiện tại cơ quan BHXH nơi người lao động đang tham gia hoặc nơi cư trú, kèm theo hồ sơ do pháp luật quy định.']",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(provision_summary,withdrawal_conditions([Rút một lần BHXH (rút 1 lần) chỉ áp dụng khi người lao động đã ngừng đóng BHXH (ngừng làm việc hoặc chấm dứt quan hệ lao động).,Người yêu cầu rút một lần không thuộc đối tượng được hưởng lương hưu (tức là chưa đủ điều kiện hưởng lương hưu theo quy định).,Thủ tục rút 1 lần phải thực hiện tại cơ quan BHXH nơi người lao động đang tham gia hoặc nơi cư trú, kèm theo hồ sơ do pháp luật quy định.]),based_on(none))]",
+  "irac_sections": {
+    "issue": "bhxh e đc 6 tháng có được rút không? E nghĩ cty cũng 2 năm hơn rồi",
+    "rule": "Rút một lần BHXH (rút 1 lần) chỉ áp dụng khi người lao động đã ngừng đóng BHXH (ngừng làm việc hoặc chấm dứt quan hệ lao động).\nNgười yêu cầu rút một lần không thuộc đối tượng được hưởng lương hưu (tức là chưa đủ điều kiện hưởng lương hưu theo quy định).\nThủ tục rút 1 lần phải thực hiện tại cơ quan BHXH nơi người lao động đang tham gia hoặc nơi cư trú, kèm theo hồ sơ do pháp luật quy định.",
+    "application": "slot_bindings: không có (rỗng).\nProlog query đã không cần tham chiếu tới các slot vì không có giá trị đầu vào; truy vấn trả về biến Conditions chứa danh sách điều kiện rút một lần BHXH như trên. Trace Prolog: [step(provision_summary,withdrawal_conditions([Rút một lần BHXH (rút 1 lần) chỉ áp dụng khi người lao động đã ngừng đóng BHXH (ngừng làm việc hoặc chấm dứt quan hệ lao động).,Người yêu cầu rút một lần không thuộc đối tượng được hưởng lương hưu (tức là chưa đủ điều kiện hưởng lương hưu theo quy định).,Thủ tục rút 1 lần phải thực hiện tại cơ quan BHXH nơi người lao động đang tham gia hoặc nơi cư trú, kèm theo hồ sơ do pháp luật quy định.]),based_on(none))]",
+    "conclusion": "Prolog binding: Conditions = ['Rút một lần BHXH (rút 1 lần) chỉ áp dụng khi người lao động đã ngừng đóng BHXH (ngừng làm việc hoặc chấm dứt quan hệ lao động).','Người yêu cầu rút một lần không thuộc đối tượng được hưởng lương hưu (tức là chưa đủ điều kiện hưởng lương hưu theo quy định).','Thủ tục rút 1 lần phải thực hiện tại cơ quan BHXH nơi người lao động đang tham gia hoặc nơi cư trú, kèm theo hồ sơ do pháp luật quy định.']"
+  },
+  "elapsed_s": 71.443,
+  "prompt_tokens": 3462,
+  "completion_tokens": 5316,
+  "error": null,
+  "gold_answer": "Thông thường đóng BHXH mới 6 tháng thì chưa thể rút ngay nếu bạn chưa thuộc trường hợp luật cho phép. Trường hợp phổ biến nhất là phải sau 12 tháng không tiếp tục tham gia BHXH mà vẫn chưa đủ điều kiện hưởng lương hưu thì mới đề nghị hưởng BHXH một lần. Vì vậy nếu bạn mới đóng 6 tháng và nghỉ đã hơn 2 năm thì cần kiểm tra hiện tại có còn tham gia nơi nào khác không; nếu không, thường có thể nộp hồ sơ theo diện BHXH một lần.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 110"
+}

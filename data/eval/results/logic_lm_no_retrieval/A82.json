@@ -1,0 +1,25 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 82,
+  "question": "bhxh e đc 6 tháng có được rút không? E nghĩ cty cũng 2 năm hơn rồi",
+  "answer": "Issue: Câu hỏi đặt ra là liệu người dùng có thể rút bảo hiểm xã hội sau 6 tháng đóng góp hay không, với thông tin rằng công ty đã hoạt động hơn 2 năm.\n\nRule: Không có tài liệu hoặc điều khoản nào được trích dẫn.\n\nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng người dùng đã đóng góp 2 năm và 6 tháng. Dựa trên các quy tắc đã được định nghĩa, Prolog đã kết luận rằng người dùng có thể rút bảo hiểm xã hội.\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,yes),based_on(none))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là liệu người dùng có thể rút bảo hiểm xã hội sau 6 tháng đóng góp hay không, với thông tin rằng công ty đã hoạt động hơn 2 năm.",
+    "rule": "Không có tài liệu hoặc điều khoản nào được trích dẫn.",
+    "application": "Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng người dùng đã đóng góp 2 năm và 6 tháng. Dựa trên các quy tắc đã được định nghĩa, Prolog đã kết luận rằng người dùng có thể rút bảo hiểm xã hội.",
+    "conclusion": "Prolog đã trả về giá trị \"yes\" cho biến Answer."
+  },
+  "elapsed_s": 9.554,
+  "prompt_tokens": 1959,
+  "completion_tokens": 403,
+  "error": null,
+  "gold_answer": "Thông thường đóng BHXH mới 6 tháng thì chưa thể rút ngay nếu bạn chưa thuộc trường hợp luật cho phép. Trường hợp phổ biến nhất là phải sau 12 tháng không tiếp tục tham gia BHXH mà vẫn chưa đủ điều kiện hưởng lương hưu thì mới đề nghị hưởng BHXH một lần. Vì vậy nếu bạn mới đóng 6 tháng và nghỉ đã hơn 2 năm thì cần kiểm tra hiện tại có còn tham gia nơi nào khác không; nếu không, thường có thể nộp hồ sơ theo diện BHXH một lần.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 110"
+}

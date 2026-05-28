@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 60,
+  "question": "Sếp em có Công ty A và B, Giờ sếp em muốn giải thể cty A (đã có qđ giải thể rồi), và chuyển hết công nhân từ cty A sang B\nỞ cty A có 1 bạn nữ đang nghỉ thai sản đến hết Tháng 04/2026, và sẽ báo On từ Tháng 05 tại cty B (trước đó em sẽ báo giảm cho bạn nữ tại cty A )\nVậy Trong Tháng 05/2026, bạn nữ đang làm tại cty B thì có được nghỉ hưởng chế độ dưỡng sức không?",
+  "answer": "Issue: Trong tháng 05/2026, khi bạn nữ đang làm việc tại Công ty B, liệu cô ấy có được nghỉ hưởng chế độ dưỡng sức sau khi nghỉ thai sản không?\n\nRule: Theo Điều 41, Khoản 1 của Luật Bảo hiểm xã hội 2024: \"Người lao động nữ sau thời gian nghỉ thai sản được nghỉ dưỡng sức, phục hồi sức khỏe từ 5 đến 10 ngày.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên quy định pháp luật, người lao động nữ sau khi nghỉ thai sản có quyền nghỉ dưỡng sức và phục hồi sức khỏe.\n\nConclusion: Theo kết quả từ chương trình Prolog, câu trả lời là \"Có\". Người lao động nữ sẽ được nghỉ hưởng chế độ dưỡng sức sau khi nghỉ thai sản, dựa trên Điều 41, Khoản 1 của Luật Bảo hiểm xã hội 2024.",
+  "citations": [
+    "[Điều 41 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A41.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,duong_suc_che_do(Có),based_on(source_a41_k1))]",
+  "irac_sections": {
+    "issue": "Trong tháng 05/2026, khi bạn nữ đang làm việc tại Công ty B, liệu cô ấy có được nghỉ hưởng chế độ dưỡng sức sau khi nghỉ thai sản không?",
+    "rule": "Theo Điều 41, Khoản 1 của Luật Bảo hiểm xã hội 2024: \"Người lao động nữ sau thời gian nghỉ thai sản được nghỉ dưỡng sức, phục hồi sức khỏe từ 5 đến 10 ngày.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, dựa trên quy định pháp luật, người lao động nữ sau khi nghỉ thai sản có quyền nghỉ dưỡng sức và phục hồi sức khỏe.",
+    "conclusion": "Theo kết quả từ chương trình Prolog, câu trả lời là \"Có\". Người lao động nữ sẽ được nghỉ hưởng chế độ dưỡng sức sau khi nghỉ thai sản, dựa trên Điều 41, Khoản 1 của Luật Bảo hiểm xã hội 2024."
+  },
+  "elapsed_s": 4.516,
+  "prompt_tokens": 2234,
+  "completion_tokens": 372,
+  "error": null,
+  "gold_answer": "Dưỡng sức, phục hồi sức khỏe sau thai sản chỉ đặt ra khi trong 30 ngày đầu trở lại làm việc mà sức khỏe chưa phục hồi. Nếu bạn lao động nữ kết thúc thai sản tháng 4/2026, sang tháng 5/2026 làm việc tại công ty B thì vẫn có thể được xem xét nghỉ dưỡng sức nếu đủ điều kiện và có xác nhận theo quy định. Việc chuyển từ công ty A sang B không tự làm mất quyền này, nhưng hồ sơ phải thể hiện rõ thời điểm trở lại làm việc và tình trạng sức khỏe.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 61"
+}

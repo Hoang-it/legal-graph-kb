@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 175,
+  "question": "Mình đóng bảo hiểm đc 6 năm, lương trung bình 20tr/ tháng ,giờ cần tiền muốn rút thì được tầm bao nhiêu?",
+  "answer": "Issue:\nBạn hỏi với 6 năm đóng bảo hiểm xã hội và mức lương trung bình 20000000 mỗi tháng, nếu rút bảo hiểm xã hội một lần thì sẽ nhận được khoảng bao nhiêu tiền.\n\nRule:\n\"Mức hưởng BHXH một lần được tính theo số năm đã đóng, mỗi năm bằng 1,5 tháng mức bình quân tiền lương đóng BHXH cho những năm đóng trước 2014 và 2 tháng cho những năm đóng từ 2014 trở đi.\" (law_bhxh_2024, article_61, clause_2)\n\nApplication:\nCác thông tin đã xác định gồm: years_contributed = 6, average_salary = 20000000. Truy vấn Prolog đã sử dụng các giá trị này để tính toán mức hưởng bảo hiểm xã hội một lần dựa trên quy định tại law_bhxh_2024, article_61, clause_2.\n\nConclusion:\nTheo kết quả truy vấn, số tiền bạn có thể nhận được khi rút bảo hiểm xã hội một lần là Amount = 240000000.",
+  "citations": [
+    "[Điều 60 khoản 1]",
+    "[Điều 61 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1",
+    "L41_2024.A61.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(calculation,bhxh_one_time_amount(user,240000000),based_on(source_a61_k2))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi với 6 năm đóng bảo hiểm xã hội và mức lương trung bình 20000000 mỗi tháng, nếu rút bảo hiểm xã hội một lần thì sẽ nhận được khoảng bao nhiêu tiền.",
+    "rule": "\"Mức hưởng BHXH một lần được tính theo số năm đã đóng, mỗi năm bằng 1,5 tháng mức bình quân tiền lương đóng BHXH cho những năm đóng trước 2014 và 2 tháng cho những năm đóng từ 2014 trở đi.\" (law_bhxh_2024, article_61, clause_2)",
+    "application": "Các thông tin đã xác định gồm: years_contributed = 6, average_salary = 20000000. Truy vấn Prolog đã sử dụng các giá trị này để tính toán mức hưởng bảo hiểm xã hội một lần dựa trên quy định tại law_bhxh_2024, article_61, clause_2.",
+    "conclusion": "Theo kết quả truy vấn, số tiền bạn có thể nhận được khi rút bảo hiểm xã hội một lần là Amount = 240000000."
+  },
+  "elapsed_s": 8.221,
+  "prompt_tokens": 2109,
+  "completion_tokens": 584,
+  "error": null,
+  "gold_answer": "Nếu 6 năm đóng BHXH của bạn đều từ 2014 trở đi, lương bình quân khoảng 20 triệu/tháng thì BHXH 1 lần ước khoảng khoảng 240,0 triệu. Số thực nhận có thể chênh do hệ số điều chỉnh tiền lương từng năm. Trước khi rút, bạn nên cân nhắc vì thời gian 6 năm đó có thể tiếp tục bảo lưu để hưởng hưu sau này.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 104,
+  "question": "Giờ rút bhxh 1 lần ở đâu cũng được phải không?\nVà có cần giấy quyết định thôi việc không?",
+  "answer": "Issue: Người lao động muốn biết liệu có thể rút bảo hiểm xã hội (BHXH) 1 lần ở bất kỳ địa điểm nào và có cần giấy quyết định thôi việc hay không.\n\nRule: Theo quy định tại Luật BHXH 2024, Điều 60, Khoản 1: \"Người lao động có thể rút BHXH 1 lần khi đủ điều kiện theo quy định.\" Và Điều 60, Khoản 2: \"Cần có giấy quyết định thôi việc để rút BHXH 1 lần.\"\n\nApplication: Không có giá trị cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, từ kết quả truy vấn Prolog, điều kiện để rút BHXH 1 lần bao gồm việc có thể thực hiện ở bất kỳ địa điểm nào và cần có giấy quyết định thôi việc.\n\nConclusion: Hệ thống xác định rằng điều kiện để rút BHXH 1 lần là [location_anywhere, decision_required]. Điều này có nghĩa là người lao động có thể rút BHXH 1 lần ở bất kỳ địa điểm nào, nhưng cần có giấy quyết định thôi việc.",
+  "citations": [
+    "[Điều 60 khoản 1]",
+    "[Điều 60 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1",
+    "L41_2024.A60.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,withdrawal_conditions([location_anywhere,decision_required]),based_on(source_a60_k1)),step(conclusion,withdrawal_conditions([location_anywhere,decision_required]),based_on(source_a60_k2))]",
+  "irac_sections": {
+    "issue": "Người lao động muốn biết liệu có thể rút bảo hiểm xã hội (BHXH) 1 lần ở bất kỳ địa điểm nào và có cần giấy quyết định thôi việc hay không.",
+    "rule": "Theo quy định tại Luật BHXH 2024, Điều 60, Khoản 1: \"Người lao động có thể rút BHXH 1 lần khi đủ điều kiện theo quy định.\" Và Điều 60, Khoản 2: \"Cần có giấy quyết định thôi việc để rút BHXH 1 lần.\"",
+    "application": "Không có giá trị cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, từ kết quả truy vấn Prolog, điều kiện để rút BHXH 1 lần bao gồm việc có thể thực hiện ở bất kỳ địa điểm nào và cần có giấy quyết định thôi việc.",
+    "conclusion": "Hệ thống xác định rằng điều kiện để rút BHXH 1 lần là [location_anywhere, decision_required]. Điều này có nghĩa là người lao động có thể rút BHXH 1 lần ở bất kỳ địa điểm nào, nhưng cần có giấy quyết định thôi việc."
+  },
+  "elapsed_s": 4.777,
+  "prompt_tokens": 2047,
+  "completion_tokens": 468,
+  "error": null,
+  "gold_answer": "Hồ sơ BHXH 1 lần nộp tại cơ quan BHXH nơi cư trú (thường trú hoặc tạm trú), không phải nộp ở đâu cũng được. Thông thường không bắt buộc có quyết định thôi việc; giấy tờ chính là đơn đề nghị, CCCD và thông tin tài khoản. Tuy nhiên bạn phải thuộc trường hợp đủ điều kiện hưởng BHXH 1 lần, phổ biến là sau 12 tháng không tiếp tục tham gia mà chưa đủ điều kiện hưởng lương hưu.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

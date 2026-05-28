@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 127,
+  "question": "nếu đóng BHXH tự nguyện thì có được BHYT hay bảo hiểm thai sản không?",
+  "answer": "Issue:\nCâu hỏi đặt ra là nếu người lao động tham gia bảo hiểm xã hội tự nguyện thì có được hưởng bảo hiểm y tế hoặc bảo hiểm thai sản hay không?\n\nRule:\n\"Đối tượng có thời gian đóng bảo hiểm xã hội tự nguyện hoặc vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện từ đủ 06 tháng trở lên trong thời gian 12 tháng trước khi sinh con được hưởng trợ cấp thai sản khi thuộc một trong các trường hợp sau đây:\" (Luật BHXH 2024 (41/2024/QH15), Điều 94, Khoản 1)\n\nApplication:\nKhông có slot_id cụ thể nào được cung cấp trong truy vấn này. Prolog đã sử dụng quy định tại Điều 94, Khoản 1 của Luật BHXH 2024 để xác định chế độ áp dụng cho người tham gia bảo hiểm xã hội tự nguyện, bao gồm quyền lợi về bảo hiểm y tế và trợ cấp thai sản nếu đáp ứng điều kiện.\n\nConclusion:\nTheo kết quả truy vấn Prolog, người tham gia bảo hiểm xã hội tự nguyện không được hưởng bảo hiểm y tế (khong_duoc_bao_hiem_y_te), nhưng có thể được hưởng trợ cấp thai sản nếu đáp ứng đủ điều kiện (duoc_tro_cap_thai_san_neu_du_dieu_kien).",
+  "citations": [
+    "[Điều 94 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A94.K1"
+  ],
+  "citation_indices": [
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,bhxh_tu_nguyen_che_do([khong_duoc_bao_hiem_y_te,duoc_tro_cap_thai_san_neu_du_dieu_kien]),based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Câu hỏi đặt ra là nếu người lao động tham gia bảo hiểm xã hội tự nguyện thì có được hưởng bảo hiểm y tế hoặc bảo hiểm thai sản hay không?",
+    "rule": "\"Đối tượng có thời gian đóng bảo hiểm xã hội tự nguyện hoặc vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện từ đủ 06 tháng trở lên trong thời gian 12 tháng trước khi sinh con được hưởng trợ cấp thai sản khi thuộc một trong các trường hợp sau đây:\" (Luật BHXH 2024 (41/2024/QH15), Điều 94, Khoản 1)",
+    "application": "Không có slot_id cụ thể nào được cung cấp trong truy vấn này. Prolog đã sử dụng quy định tại Điều 94, Khoản 1 của Luật BHXH 2024 để xác định chế độ áp dụng cho người tham gia bảo hiểm xã hội tự nguyện, bao gồm quyền lợi về bảo hiểm y tế và trợ cấp thai sản nếu đáp ứng điều kiện.",
+    "conclusion": "Theo kết quả truy vấn Prolog, người tham gia bảo hiểm xã hội tự nguyện không được hưởng bảo hiểm y tế (khong_duoc_bao_hiem_y_te), nhưng có thể được hưởng trợ cấp thai sản nếu đáp ứng đủ điều kiện (duoc_tro_cap_thai_san_neu_du_dieu_kien)."
+  },
+  "elapsed_s": 6.802,
+  "prompt_tokens": 2900,
+  "completion_tokens": 541,
+  "error": null,
+  "gold_answer": "BHXH tự nguyện không bao gồm BHYT đi kèm và không có chế độ thai sản. Hiện BHXH tự nguyện chủ yếu có chế độ hưu trí và tử tuất. Nếu muốn có BHYT, bạn phải tham gia BHYT theo nhóm phù hợp riêng. Nếu muốn hưởng thai sản, phải tham gia BHXH bắt buộc và đáp ứng điều kiện về thời gian đóng theo luật.",
+  "gold_citations_raw": "Điều 4, 5, 36 Luật BHXH 2024; Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

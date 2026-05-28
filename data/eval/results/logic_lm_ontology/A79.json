@@ -1,0 +1,35 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 79,
+  "question": "Anh chị cho em hỏi, mấy năm trước e có đi làm ở công ty cũ và đóng bảo hiểm đầy đủ, công ty cũng không nợ tiền BH. Do dịch covid công ty không trụ được nên đã giải thể, cũng đã báo giảm cho em nhưng năm ấy các nhân viên lại chẳng ai lấy tờ rời về . Sau đó e cũng có đi làm cty khác và đóng BH nối tiếp cho tới hiện tại . \nVậy mấy năm đóng ở cty cũ kia em chưa lấy tờ rời thì sau này em có thể tự lên cơ quan bảo hiểm xin lấy tờ rời được không?",
+  "answer": "Issue: Người dùng hỏi về khả năng xin lấy tờ rời bảo hiểm xã hội sau khi công ty cũ đã giải thể và không có ai lấy tờ rời.\n\nRule: \"1. Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm xã hội mà có đề nghị thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây: a) Đủ tuổi hưởng lương hưu mà chưa đủ 15 năm đóng bảo hiểm xã hội. Trường hợp người lao động không hưởng bảo hiểm xã hội một lần thì có thể lựa chọn hưởng trợ cấp hằng tháng theo quy định tại Điều 23 của Luật này\" (Luật BHXH 2024 (41/2024/QH15), Điều 70, Khoản 1).\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để xác định khả năng xin tờ rời bảo hiểm xã hội.\n\nConclusion: Hệ thống không thể tính toán được kết quả cuối cùng do không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 2]",
+    "[Điều 23]",
+    "[Điều 70 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A2",
+    "L41_2024.A23",
+    "L41_2024.A70.K1"
+  ],
+  "citation_indices": [
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,can_request_certificate(user),based_on(source_c005))]",
+  "irac_sections": {
+    "issue": "Người dùng hỏi về khả năng xin lấy tờ rời bảo hiểm xã hội sau khi công ty cũ đã giải thể và không có ai lấy tờ rời.",
+    "rule": "\"1. Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm xã hội mà có đề nghị thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây: a) Đủ tuổi hưởng lương hưu mà chưa đủ 15 năm đóng bảo hiểm xã hội. Trường hợp người lao động không hưởng bảo hiểm xã hội một lần thì có thể lựa chọn hưởng trợ cấp hằng tháng theo quy định tại Điều 23 của Luật này\" (Luật BHXH 2024 (41/2024/QH15), Điều 70, Khoản 1).",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để xác định khả năng xin tờ rời bảo hiểm xã hội.",
+    "conclusion": "Hệ thống không thể tính toán được kết quả cuối cùng do không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 8.997,
+  "prompt_tokens": 3932,
+  "completion_tokens": 547,
+  "error": null,
+  "gold_answer": "Có. Nếu công ty cũ đã giải thể, đã báo giảm và không nợ BHXH, bạn vẫn có thể liên hệ cơ quan BHXH để đề nghị xác nhận/cấp lại tờ rời hoặc cập nhật dữ liệu quá trình đóng. Việc chưa lấy tờ rời trước đây không làm mất thời gian đã đóng hợp pháp, nhất là khi sau đó bạn tiếp tục đóng nối tiếp ở công ty khác trên cùng mã số BHXH. Nên mang CCCD và thông tin đơn vị cũ để cơ quan BHXH tra cứu nhanh hơn.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn cấp lại/xác nhận sổ BHXH của BHXH Việt Nam"
+}

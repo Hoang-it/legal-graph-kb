@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 21,
+  "question": "Ông Quang Lành (Tây Ninh) hỏi, các đối tượng hưởng trợ cấp BHXH hằng tháng gồm những đối tượng nào để xác định không được hưởng trợ cấp hưu trí xã hội?",
+  "answer": "Issue: Ông Quang Lành (Tây Ninh) hỏi về các đối tượng hưởng trợ cấp BHXH hằng tháng để xác định những ai không được hưởng trợ cấp hưu trí xã hội.\n\nRule: Theo nguồn luật BHXH 2024, Điều 65, Khoản 1: \"Các đối tượng hưởng trợ cấp BHXH hằng tháng bao gồm người lao động đủ điều kiện hưởng lương hưu, người hưởng trợ cấp mất sức lao động, và các trường hợp khác theo quy định.\"\n\nApplication: Không có giá trị cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, chương trình Prolog đã xác định rằng các đối tượng hưởng trợ cấp BHXH hằng tháng bao gồm: retirement_pension (người hưởng lương hưu), disability_allowance (người hưởng trợ cấp mất sức lao động), và other_cases (các trường hợp khác).\n\nConclusion: Các đối tượng hưởng trợ cấp BHXH hằng tháng được xác định là retirement_pension, disability_allowance, và other_cases. Điều này dựa trên nguồn luật BHXH 2024, Điều 65.",
+  "citations": [
+    "[Điều 65 khoản 1]",
+    "[Điều 65]"
+  ],
+  "citation_ids": [
+    "L41_2024.A65.K1",
+    "L41_2024.A65"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,eligible_for_monthly_bhxh_allowance([retirement_pension,disability_allowance,other_cases]),based_on(source_a65))]",
+  "irac_sections": {
+    "issue": "Ông Quang Lành (Tây Ninh) hỏi về các đối tượng hưởng trợ cấp BHXH hằng tháng để xác định những ai không được hưởng trợ cấp hưu trí xã hội.",
+    "rule": "Theo nguồn luật BHXH 2024, Điều 65, Khoản 1: \"Các đối tượng hưởng trợ cấp BHXH hằng tháng bao gồm người lao động đủ điều kiện hưởng lương hưu, người hưởng trợ cấp mất sức lao động, và các trường hợp khác theo quy định.\"",
+    "application": "Không có giá trị cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, chương trình Prolog đã xác định rằng các đối tượng hưởng trợ cấp BHXH hằng tháng bao gồm: retirement_pension (người hưởng lương hưu), disability_allowance (người hưởng trợ cấp mất sức lao động), và other_cases (các trường hợp khác).",
+    "conclusion": "Các đối tượng hưởng trợ cấp BHXH hằng tháng được xác định là retirement_pension, disability_allowance, và other_cases. Điều này dựa trên nguồn luật BHXH 2024, Điều 65."
+  },
+  "elapsed_s": 6.888,
+  "prompt_tokens": 3612,
+  "completion_tokens": 698,
+  "error": null,
+  "gold_answer": "Các đối tượng hưởng trợ cấp BHXH hằng tháng bao gồm:\n- Trợ cấp mất sức lao động;\n- Trợ cấp tai nạn lao động, bệnh nghề nghiệp;\n- Trợ cấp tuất;…\nĐây là những đối tượng không được hưởng trợ cấp hưu trí xã hội.",
+  "gold_citations_raw": null
+}

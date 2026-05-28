@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 37,
+  "question": "Mình nghỉ cty cũ từ tháng 1/2026. (nghỉ ngang) nhưng cty vẫn chốt sổ cho Mình. Nhưng nay mình muốn ra lấy tờ rời BHXH, giờ mình phải làm sao?",
+  "answer": "Issue:\nBạn hỏi về thủ tục lấy tờ rời BHXH sau khi đã nghỉ việc tại công ty cũ từ tháng 1/2026 (nghỉ ngang), công ty đã chốt sổ nhưng bạn chưa nhận được tờ rời BHXH và muốn biết cần làm gì để lấy.\n\nRule:\n\"Người sử dụng lao động có trách nhiệm trả sổ BHXH và các giấy tờ liên quan cho người lao động khi chấm dứt hợp đồng lao động.\" (law_bhxh_2024, article_21, clause_5)\n\nApplication:\nKhông có slot nào cần điền vì câu hỏi chỉ yêu cầu hướng dẫn thủ tục. Theo quy định tại law_bhxh_2024, article_21, clause_5, người sử dụng lao động phải trả sổ BHXH và các giấy tờ liên quan khi người lao động nghỉ việc. Prolog đã truy vấn và trả về hướng dẫn cụ thể dựa trên nguồn này.\n\nConclusion:\nBạn cần liên hệ công ty cũ để nhận tờ rời BHXH hoặc sổ BHXH đã chốt. Nếu công ty không trả, bạn có thể liên hệ cơ quan BHXH nơi công ty đóng để được hỗ trợ giải quyết (Conditions = [Liên hệ công ty cũ để nhận tờ rời BHXH hoặc sổ BHXH đã chốt; nếu công ty không trả, có thể liên hệ cơ quan BHXH nơi công ty đóng để được hỗ trợ giải quyết]).",
+  "citations": [
+    "[Điều 21 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A21.K5"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,thu_tuc_nhan_to_roi_bhxh([Liên hệ công ty cũ để nhận tờ rời BHXH hoặc sổ BHXH đã chốt; nếu công ty không trả, có thể liên hệ cơ quan BHXH nơi công ty đóng để được hỗ trợ giải quyết]),based_on(source_a21_k5))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về thủ tục lấy tờ rời BHXH sau khi đã nghỉ việc tại công ty cũ từ tháng 1/2026 (nghỉ ngang), công ty đã chốt sổ nhưng bạn chưa nhận được tờ rời BHXH và muốn biết cần làm gì để lấy.",
+    "rule": "\"Người sử dụng lao động có trách nhiệm trả sổ BHXH và các giấy tờ liên quan cho người lao động khi chấm dứt hợp đồng lao động.\" (law_bhxh_2024, article_21, clause_5)",
+    "application": "Không có slot nào cần điền vì câu hỏi chỉ yêu cầu hướng dẫn thủ tục. Theo quy định tại law_bhxh_2024, article_21, clause_5, người sử dụng lao động phải trả sổ BHXH và các giấy tờ liên quan khi người lao động nghỉ việc. Prolog đã truy vấn và trả về hướng dẫn cụ thể dựa trên nguồn này.",
+    "conclusion": "Bạn cần liên hệ công ty cũ để nhận tờ rời BHXH hoặc sổ BHXH đã chốt. Nếu công ty không trả, bạn có thể liên hệ cơ quan BHXH nơi công ty đóng để được hỗ trợ giải quyết (Conditions = [Liên hệ công ty cũ để nhận tờ rời BHXH hoặc sổ BHXH đã chốt; nếu công ty không trả, có thể liên hệ cơ quan BHXH nơi công ty đóng để được hỗ trợ giải quyết])."
+  },
+  "elapsed_s": 6.438,
+  "prompt_tokens": 2243,
+  "completion_tokens": 563,
+  "error": null,
+  "gold_answer": "Nếu công ty đã chốt sổ nhưng chưa trả tờ rời cho bạn thì trước hết yêu cầu công ty bàn giao lại sổ/tờ rời bằng văn bản hoặc email. Khi chấm dứt HĐLĐ, người sử dụng lao động phải phối hợp xác nhận thời gian đóng BHXH và trả lại giấy tờ liên quan cho người lao động. Nếu công ty chây ì, bạn có thể khiếu nại đến Thanh tra Sở Nội vụ/LĐTBXH hoặc cơ quan BHXH nơi đơn vị đang tham gia để được hỗ trợ cấp lại, xác nhận quá trình đóng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48"
+}

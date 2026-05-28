@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 120,
+  "question": "E mới đóng bảo hiểm tại công ty 8 tháng thì sinh em bé và đang bị thanh tra. Cty từ chối nộp giấy tờ liên quan. Giờ e phải làm sao để được nhận bh thai sản?",
+  "answer": "Issue:\nE mới đóng bảo hiểm tại công ty 8 tháng thì sinh em bé và công ty từ chối nộp hồ sơ; hỏi phải làm sao để được nhận bảo hiểm thai sản.\n\nRule:\nlaw_bhxh_2024, none, none, none: 'Nữ lao động sinh con được hưởng chế độ thai sản nếu đã đóng BHXH đủ 6 tháng trở lên trong 12 tháng trước khi sinh; được hưởng trợ cấp và các quyền liên quan.'\nlaw_bhxh_2024, none, none, none: 'Người sử dụng lao động có trách nhiệm lập và nộp hồ sơ liên quan đến BHXH cho người lao động; nếu người sử dụng lao động không thực hiện, người lao động có thể nộp hồ sơ trực tiếp cho cơ quan BHXH và cơ quan có thẩm quyền có thể thu hồi từ người sử dụng lao động hoặc giải quyết khiếu nại.'\n\nApplication:\nKhông có slot_bindings. Prolog đã dùng các dữ kiện đầu vào (verify_facts): months_contributed(user,_), gave_birth(user), employer_refuses_submit(user), under_inspection(user). Những facts này được tiêu thụ để chứng minh maternity_eligible(user,true) theo nguồn quy định về 6 tháng và sau đó kích hoạt quy tắc maternity_advice để đưa ra khuyến nghị hành động.\n\nConclusion:\nAdvice = 'Bạn đủ điều kiện hưởng chế độ thai sản (>=6 tháng đóng BHXH). Hành động: nộp hồ sơ trực tiếp cho cơ quan BHXH ngay; lưu giữ mọi bằng chứng; nộp đơn khiếu nại tới Thanh tra lao động nếu công ty cố tình không phối hợp; nhờ cơ quan BHXH thu hồi từ công ty.' \nProlog cũng trả về binding trung gian maternity_eligible(user,true).",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(action_submit_direct,Nộp hồ sơ trực tiếp cho cơ quan BHXH; lưu giữ chứng cứ (biên lai, email, giấy tờ); yêu cầu cơ quan BHXH xác minh và thu hồi từ công ty nếu cần,based_on(source_employer_obligation)),step(eligibility_note,maternity_eligible(user,true),based_on(source_maternity_6m))]",
+  "irac_sections": {
+    "issue": "E mới đóng bảo hiểm tại công ty 8 tháng thì sinh em bé và công ty từ chối nộp hồ sơ; hỏi phải làm sao để được nhận bảo hiểm thai sản.",
+    "rule": "law_bhxh_2024, none, none, none: 'Nữ lao động sinh con được hưởng chế độ thai sản nếu đã đóng BHXH đủ 6 tháng trở lên trong 12 tháng trước khi sinh; được hưởng trợ cấp và các quyền liên quan.'\nlaw_bhxh_2024, none, none, none: 'Người sử dụng lao động có trách nhiệm lập và nộp hồ sơ liên quan đến BHXH cho người lao động; nếu người sử dụng lao động không thực hiện, người lao động có thể nộp hồ sơ trực tiếp cho cơ quan BHXH và cơ quan có thẩm quyền có thể thu hồi từ người sử dụng lao động hoặc giải quyết khiếu nại.'",
+    "application": "Không có slot_bindings. Prolog đã dùng các dữ kiện đầu vào (verify_facts): months_contributed(user,_), gave_birth(user), employer_refuses_submit(user), under_inspection(user). Những facts này được tiêu thụ để chứng minh maternity_eligible(user,true) theo nguồn quy định về 6 tháng và sau đó kích hoạt quy tắc maternity_advice để đưa ra khuyến nghị hành động.",
+    "conclusion": "Advice = 'Bạn đủ điều kiện hưởng chế độ thai sản (>=6 tháng đóng BHXH). Hành động: nộp hồ sơ trực tiếp cho cơ quan BHXH ngay; lưu giữ mọi bằng chứng; nộp đơn khiếu nại tới Thanh tra lao động nếu công ty cố tình không phối hợp; nhờ cơ quan BHXH thu hồi từ công ty.' \nProlog cũng trả về binding trung gian maternity_eligible(user,true)."
+  },
+  "elapsed_s": 57.875,
+  "prompt_tokens": 2816,
+  "completion_tokens": 7466,
+  "error": null,
+  "gold_answer": "Nếu bạn đủ điều kiện thai sản mà công ty không nộp hồ sơ, bạn nên lập văn bản yêu cầu công ty thực hiện ngay; đồng thời phản ánh tới cơ quan BHXH quản lý đơn vị hoặc thanh tra lao động. Luật quy định doanh nghiệp phải lập hồ sơ gửi cơ quan BHXH cho NLĐ đang tham gia. Hãy giữ hợp đồng, bảng lương, phiếu lương, sổ khám thai, giấy khai sinh/chứng sinh để bảo vệ quyền lợi.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

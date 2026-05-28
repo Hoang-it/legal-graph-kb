@@ -39,7 +39,7 @@ DEFAULT_RESULTS_ROOT = Path("data/eval/results")
 METRICS_OUT = Path("data/eval/academic_metrics.json")
 CSV_OUT = Path("data/eval/academic_metrics.csv")
 REPORT_OUT = Path("reports/academic_report.md")
-ELITE_ARMS = {"elite_no_retrieval", "elite_ontology", "elite_graphrag", "elite_graphrag_logic"}
+LOGIC_LM_ARMS = {"logic_lm_no_retrieval", "logic_lm_ontology", "logic_lm_graphrag"}
 METRIC_VERSION = "academic_v1"
 
 
@@ -188,7 +188,7 @@ def compute_citation_display(
 def _is_elite_record(record: dict[str, Any]) -> bool:
     arm = str(record.get("arm") or "")
     base_arm = str(record.get("base_arm") or "")
-    return arm in ELITE_ARMS or base_arm in ELITE_ARMS
+    return arm in LOGIC_LM_ARMS or base_arm in LOGIC_LM_ARMS
 
 
 def compute_prolog_fields(record: dict[str, Any]) -> dict[str, Any]:

@@ -8,7 +8,7 @@ Idempotent — skip nếu file đã tồn tại (dùng --force để chạy lạ
 CLI:
     python -m experiments.run_inference --arms graphrag,llm_only --n 200
     python -m experiments.run_inference --arms main --n 10
-    python -m experiments.run_inference --arms elite_ontology,elite_graphrag --n 200
+    python -m experiments.run_inference --arms logic_lm_ontology,logic_lm_graphrag --n 200
 """
 
 from __future__ import annotations
@@ -167,14 +167,14 @@ def run_llm_only(questions: list[dict], force: bool, verbose: bool) -> None:
           f"({time.time() - t_total:.1f}s)")
 
 
-def _run_elite(
+def _run_logic_lm(
     arm: str,
     pipeline,
     questions: list[dict],
     force: bool,
     verbose: bool,
 ) -> None:
-    """Generic runner cho 3 elite arms (cùng EliteAnswer dataclass)."""
+    """Generic runner cho 3 logic-lm arms (cùng LogicLMAnswer dataclass)."""
     out_dir = OUT_ROOT / arm
     n_done, n_skipped, n_failed = 0, 0, 0
     t_total = time.time()
@@ -196,7 +196,7 @@ def _run_elite(
                     "citations": ans.citations,
                     "citation_ids": ans.citation_ids,
                     "citation_indices": ans.citation_indices,
-                    # ---- Elite-specific metadata ----
+                    # ---- Logic-LM-specific metadata ----
                     "prolog_success": ans.prolog_success,
                     "prolog_status": ans.prolog_status,
                     "n_repair_rounds": ans.n_repair_rounds,
@@ -234,37 +234,30 @@ def _run_elite(
           f"({time.time() - t_total:.1f}s)")
 
 
-def run_elite_no_retrieval(questions, force, verbose):
-    from experiments.elite_pipelines import EliteNoRetrievalPipeline
-    p = EliteNoRetrievalPipeline()
-    _run_elite("elite_no_retrieval", p, questions, force, verbose)
+def run_logic_lm_no_retrieval(questions, force, verbose):
+    from experiments.logic_lm_pipelines import LogicLMNoRetrievalPipeline
+    p = LogicLMNoRetrievalPipeline()
+    _run_logic_lm("logic_lm_no_retrieval", p, questions, force, verbose)
 
 
-def run_elite_ontology(questions, force, verbose):
-    from experiments.elite_pipelines import EliteOntologyPipeline
-    p = EliteOntologyPipeline()
-    _run_elite("elite_ontology", p, questions, force, verbose)
+def run_logic_lm_ontology(questions, force, verbose):
+    from experiments.logic_lm_pipelines import LogicLMOntologyPipeline
+    p = LogicLMOntologyPipeline()
+    _run_logic_lm("logic_lm_ontology", p, questions, force, verbose)
 
 
-def run_elite_graphrag(questions, force, verbose):
-    from experiments.elite_pipelines import EliteGraphRAGPipeline
-    p = EliteGraphRAGPipeline()  # tự tạo + warm up RagPipeline bên trong
-    _run_elite("elite_graphrag", p, questions, force, verbose)
-
-
-def run_elite_graphrag_logic(questions, force, verbose):
-    from experiments.elite_pipelines import EliteGraphRAGLogicPipeline
-    p = EliteGraphRAGLogicPipeline()
-    _run_elite("elite_graphrag_logic", p, questions, force, verbose)
+def run_logic_lm_graphrag(questions, force, verbose):
+    from experiments.logic_lm_pipelines import LogicLMGraphRAGPipeline
+    p = LogicLMGraphRAGPipeline()  # tự tạo + warm up RagPipeline bên trong
+    _run_logic_lm("logic_lm_graphrag", p, questions, force, verbose)
 
 
 ARM_RUNNERS = {
     "graphrag": run_graphrag,
     "llm_only": run_llm_only,
-    "elite_no_retrieval": run_elite_no_retrieval,
-    "elite_ontology": run_elite_ontology,
-    "elite_graphrag": run_elite_graphrag,
-    "elite_graphrag_logic": run_elite_graphrag_logic,
+    "logic_lm_no_retrieval": run_logic_lm_no_retrieval,
+    "logic_lm_ontology": run_logic_lm_ontology,
+    "logic_lm_graphrag": run_logic_lm_graphrag,
 }
 
 

@@ -1,0 +1,25 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 147,
+  "question": "Em ngưng đóng bhxh tháng cuối chốt là 4/2025 tới nay là được 1 năm thì em làm giấy rút bhxh 1 lần được chưa? Và cần chuẩn bị những gì? Có cần phải đăng kí trên dịch vụ công trước không? Em ở buôn ma thuột daklak.",
+  "answer": "Issue: Bạn có thể làm giấy rút BHXH 1 lần sau khi ngưng đóng BHXH từ tháng 4/2025 và đã đủ 1 năm chưa? Cần chuẩn bị những gì và có cần đăng ký trên dịch vụ công không?\n\nRule: Không có quy định cụ thể nào được trích dẫn trong trường hợp này.\n\nApplication: Không có slot nào được gán giá trị trong trace. Tuy nhiên, Prolog đã xác định rằng người dùng đã có 1 năm đóng BHXH, dẫn đến kết luận rằng người dùng có thể làm giấy rút BHXH 1 lần và không cần đăng ký trên dịch vụ công trước.\n\nConclusion: Prolog đã trả về kết quả là \"Bạn có thể làm giấy rút BHXH 1 lần. Bạn cần chuẩn bị hồ sơ và không cần đăng ký trên dịch vụ công trước.\" Không có slot nào bị thiếu hoặc lỗi trong quá trình thực hiện.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,answer_predicate(user,Bạn có thể làm giấy rút BHXH 1 lần. Bạn cần chuẩn bị hồ sơ và không cần đăng ký trên dịch vụ công trước.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Bạn có thể làm giấy rút BHXH 1 lần sau khi ngưng đóng BHXH từ tháng 4/2025 và đã đủ 1 năm chưa? Cần chuẩn bị những gì và có cần đăng ký trên dịch vụ công không?",
+    "rule": "Không có quy định cụ thể nào được trích dẫn trong trường hợp này.",
+    "application": "Không có slot nào được gán giá trị trong trace. Tuy nhiên, Prolog đã xác định rằng người dùng đã có 1 năm đóng BHXH, dẫn đến kết luận rằng người dùng có thể làm giấy rút BHXH 1 lần và không cần đăng ký trên dịch vụ công trước.",
+    "conclusion": "Prolog đã trả về kết quả là \"Bạn có thể làm giấy rút BHXH 1 lần. Bạn cần chuẩn bị hồ sơ và không cần đăng ký trên dịch vụ công trước.\" Không có slot nào bị thiếu hoặc lỗi trong quá trình thực hiện."
+  },
+  "elapsed_s": 8.253,
+  "prompt_tokens": 2114,
+  "completion_tokens": 366,
+  "error": null,
+  "gold_answer": "Nếu tháng cuối chốt là 4/2025 thì đến khoảng sau 4/2026, khi bạn đã đủ 12 tháng không tham gia BHXH và thuộc trường hợp luật cho phép, có thể nộp hồ sơ BHXH 1 lần. Hồ sơ cơ bản gồm đơn đề nghị, CCCD, thông tin tài khoản; không bắt buộc phải đăng ký trên dịch vụ công trước, nhưng có thể nộp trực tuyến nếu địa phương hỗ trợ. Nộp tại BHXH nơi cư trú ở Buôn Ma Thuột.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 128,
+  "question": "mình đi làm hồ sơ lãnh lương hưu thì bên bhxh tra trên hệ thống và báo rằng tên mình có 2 số sổ, và số sổ kia đã chốt và nhận tiền rồi, mà mình chưa từng làm ở công ty đó, bây giờ mình phải làm sao?",
+  "answer": "Issue: Người dùng hỏi về việc xử lý khi có hai số sổ bảo hiểm xã hội và một số đã được chốt nhận tiền, trong khi họ chưa từng làm việc tại công ty đó.\n\nRule: \"5. Tiếp nhận hồ sơ đề nghị hưởng và giải quyết hưởng chế độ bảo hiểm xã hội; tổ chức trả lương hưu, trợ cấp bảo hiểm xã hội, bảo hiểm thất nghiệp đầy đủ, thuận tiện và đúng thời hạn.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 5)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã trả về một lời khuyên cho người dùng về việc liên hệ với cơ quan bảo hiểm xã hội để làm rõ tình hình và kiểm tra thông tin về số sổ bảo hiểm xã hội của họ.\n\nConclusion: Prolog đã trả về lời khuyên: \"Bạn nên liên hệ với cơ quan bảo hiểm xã hội để làm rõ tình hình và yêu cầu kiểm tra thông tin về số sổ bảo hiểm xã hội của bạn.\" Tuy nhiên, không có giá trị số nào được tính toán từ các slot.",
+  "citations": [
+    "[Điều 18 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K5"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,advice_on_duplicate_account(Bạn nên liên hệ với cơ quan bảo hiểm xã hội để làm rõ tình hình và yêu cầu kiểm tra thông tin về số sổ bảo hiểm xã hội của bạn.),based_on(source_c005))]",
+  "irac_sections": {
+    "issue": "Người dùng hỏi về việc xử lý khi có hai số sổ bảo hiểm xã hội và một số đã được chốt nhận tiền, trong khi họ chưa từng làm việc tại công ty đó.",
+    "rule": "\"5. Tiếp nhận hồ sơ đề nghị hưởng và giải quyết hưởng chế độ bảo hiểm xã hội; tổ chức trả lương hưu, trợ cấp bảo hiểm xã hội, bảo hiểm thất nghiệp đầy đủ, thuận tiện và đúng thời hạn.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 5)",
+    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã trả về một lời khuyên cho người dùng về việc liên hệ với cơ quan bảo hiểm xã hội để làm rõ tình hình và kiểm tra thông tin về số sổ bảo hiểm xã hội của họ.",
+    "conclusion": "Prolog đã trả về lời khuyên: \"Bạn nên liên hệ với cơ quan bảo hiểm xã hội để làm rõ tình hình và yêu cầu kiểm tra thông tin về số sổ bảo hiểm xã hội của bạn.\" Tuy nhiên, không có giá trị số nào được tính toán từ các slot."
+  },
+  "elapsed_s": 11.877,
+  "prompt_tokens": 5107,
+  "completion_tokens": 516,
+  "error": null,
+  "gold_answer": "Đây là dấu hiệu có thể bị trùng/nhầm mã số BHXH hoặc có người dùng thông tin của bạn. Bạn cần đề nghị BHXH kiểm tra, đối chiếu CCCD, quá trình đóng, hồ sơ gốc của 2 số sổ và yêu cầu tạm dừng giải quyết cho số bất thường nếu có dấu hiệu giả mạo. Nếu đúng có việc sử dụng thông tin trái phép, bạn có quyền khiếu nại và đề nghị chuyển cơ quan công an xử lý.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

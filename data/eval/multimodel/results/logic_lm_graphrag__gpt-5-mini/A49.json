@@ -1,0 +1,37 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 49,
+  "question": "Cty em có NLĐ ngày 20/4 là hết thời gian nghỉ thai sản và cũng xin nghỉ hẳn luôn. Vậy ngày 21/4 em làm hồ sơ báo giảm hẳn từ tháng 4 có đc ko? \nPhải như làm thế nào mới đúng?",
+  "answer": "Issue:\nCông ty hỏi: người lao động hết thời gian nghỉ thai sản ngày 20/4 và nghỉ việc luôn; công ty báo giảm ngày 21/4 có được không và thủ tục đúng là gì?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15) Điều 62 khoản 1: \"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản. Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ thai sản kèm theo hồ sơ quy định t\"\nLuật BHXH 2024 (41/2024/QH15) Điều 61 khoản 5: \"Hồ sơ đề nghị nghỉ việc hưởng chế độ thai sản hoặc hưởng trợ cấp một lần đối với lao động nam khi vợ sinh con là bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con; trường hợp giấy chứng sinh không thể hiện thông tin về việc sinh con phải phẫu thuật hoặc sinh con dưới 32 tuần tuổi thì cần thêm bản chính hoặc bản sao văn bản của cơ sở khám bệnh, chữa bệnh thể hiện \"\n\nApplication:\nend_maternity_date(user, date(20,4)).  \nreport_date(user, date(21,4)).  \nrequested_effective_month(user, 4).  \nresigned_date(user, date(20,4)).  \nProlog dùng end_maternity_date(user, date(20,4)) và report_date(user, date(21,4)) để gọi quy tắc diff_days và so sánh với doc_submission_deadline (Days = 45) theo Điều 62 khoản 1; đồng thời tham chiếu hồ sơ theo Điều 61 khoản 5. Kết quả truy vấn can_file_report(user, Answer) được suy luận dựa trên các bước nêu trong Trace.\n\nConclusion:\nProlog trả về Answer = \"yes\" cho can_file_report(user, yes). Trace cũng ghi step(fact, reported_on(date(21,4))). Không có missing_slots hay execution_error trong kết quả.",
+  "citations": [
+    "[Điều 62 khoản 1]",
+    "[Điều 61]",
+    "[Điều 61 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A62.K1",
+    "L41_2024.A61",
+    "L41_2024.A61.K5"
+  ],
+  "citation_indices": [
+    0,
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,can_file_report(user,yes),based_on(source_c000)),step(fact,reported_on(date(21,4)),based_on(source_c000))]",
+  "irac_sections": {
+    "issue": "Công ty hỏi: người lao động hết thời gian nghỉ thai sản ngày 20/4 và nghỉ việc luôn; công ty báo giảm ngày 21/4 có được không và thủ tục đúng là gì?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15) Điều 62 khoản 1: \"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản. Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ từ người lao động, người sử dụng lao động có trách nhiệm lập danh sách người lao động nghỉ việc hưởng chế độ thai sản kèm theo hồ sơ quy định t\"\nLuật BHXH 2024 (41/2024/QH15) Điều 61 khoản 5: \"Hồ sơ đề nghị nghỉ việc hưởng chế độ thai sản hoặc hưởng trợ cấp một lần đối với lao động nam khi vợ sinh con là bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con; trường hợp giấy chứng sinh không thể hiện thông tin về việc sinh con phải phẫu thuật hoặc sinh con dưới 32 tuần tuổi thì cần thêm bản chính hoặc bản sao văn bản của cơ sở khám bệnh, chữa bệnh thể hiện \"",
+    "application": "end_maternity_date(user, date(20,4)).  \nreport_date(user, date(21,4)).  \nrequested_effective_month(user, 4).  \nresigned_date(user, date(20,4)).  \nProlog dùng end_maternity_date(user, date(20,4)) và report_date(user, date(21,4)) để gọi quy tắc diff_days và so sánh với doc_submission_deadline (Days = 45) theo Điều 62 khoản 1; đồng thời tham chiếu hồ sơ theo Điều 61 khoản 5. Kết quả truy vấn can_file_report(user, Answer) được suy luận dựa trên các bước nêu trong Trace.",
+    "conclusion": "Prolog trả về Answer = \"yes\" cho can_file_report(user, yes). Trace cũng ghi step(fact, reported_on(date(21,4))). Không có missing_slots hay execution_error trong kết quả."
+  },
+  "elapsed_s": 59.235,
+  "prompt_tokens": 4367,
+  "completion_tokens": 6906,
+  "error": null,
+  "gold_answer": "Bạn không nên báo giảm sai tháng. Nếu NLĐ hết nghỉ thai sản ngày 20/4 và chấm dứt HĐLĐ từ 21/4 thì phải lập quyết định chấm dứt đúng ngày đó và làm hồ sơ báo giảm/chốt quá trình theo đúng thời điểm chấm dứt. Việc ghi giảm lùi hoặc tăng - giảm lại sai bản chất rất dễ bị cơ quan BHXH từ chối. Cách đúng là bám theo quyết định chấm dứt HĐLĐ và dữ liệu nghỉ thai sản thực tế.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 34, Điều 48"
+}

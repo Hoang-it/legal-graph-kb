@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 106,
+  "question": "Em đóng bảo hiểm được 11 năm 8 tháng mức đóng 6025 giờ rút được tầm bao nhiêu?",
+  "answer": "Issue: Bạn đã đóng bảo hiểm xã hội được 11 năm 8 tháng với mức đóng trung bình là 6025 và muốn biết số tiền có thể rút được là bao nhiêu.\n\nRule: Theo Điều 60, Khoản 2 của Luật Bảo hiểm xã hội 2024: \"Mức hưởng bảo hiểm xã hội một lần được tính dựa trên số năm đã đóng bảo hiểm và mức đóng.\"\n\nApplication: \n- Số năm đã đóng bảo hiểm: 11 năm.\n- Số tháng đã đóng bảo hiểm: 8 tháng.\n- Mức đóng trung bình: 6025.\nProlog đã sử dụng các thông tin này để tính tổng số tháng đóng bảo hiểm và áp dụng công thức tính mức hưởng bảo hiểm xã hội một lần.\n\nConclusion: Số tiền bảo hiểm xã hội một lần mà bạn có thể nhận được là 18557.0.",
+  "citations": [
+    "[Điều 60 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,lump_sum_amount(user,18557.0),based_on(source_a60_k2))]",
+  "irac_sections": {
+    "issue": "Bạn đã đóng bảo hiểm xã hội được 11 năm 8 tháng với mức đóng trung bình là 6025 và muốn biết số tiền có thể rút được là bao nhiêu.",
+    "rule": "Theo Điều 60, Khoản 2 của Luật Bảo hiểm xã hội 2024: \"Mức hưởng bảo hiểm xã hội một lần được tính dựa trên số năm đã đóng bảo hiểm và mức đóng.\"",
+    "application": "- Số năm đã đóng bảo hiểm: 11 năm.\n- Số tháng đã đóng bảo hiểm: 8 tháng.\n- Mức đóng trung bình: 6025.\nProlog đã sử dụng các thông tin này để tính tổng số tháng đóng bảo hiểm và áp dụng công thức tính mức hưởng bảo hiểm xã hội một lần.",
+    "conclusion": "Số tiền bảo hiểm xã hội một lần mà bạn có thể nhận được là 18557.0."
+  },
+  "elapsed_s": 5.248,
+  "prompt_tokens": 2056,
+  "completion_tokens": 560,
+  "error": null,
+  "gold_answer": "Nếu toàn bộ thời gian đóng đều từ năm 2014 trở đi thì BHXH 1 lần của bạn ước khoảng khoảng 144,6 triệu; đây chỉ là con số gần đúng, chưa tính hệ số điều chỉnh tiền lương và cách làm tròn của cơ quan BHXH. Điều kiện nhận vẫn phải thỏa quy định về BHXH 1 lần, ví dụ sau 12 tháng không còn thuộc diện tham gia và không tham gia BHXH tự nguyện.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

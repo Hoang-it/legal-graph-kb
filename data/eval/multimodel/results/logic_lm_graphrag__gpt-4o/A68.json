@@ -1,0 +1,36 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 68,
+  "question": "Nld làm việc bên em từ 2025 đến giờ vẫn làm, vẫn đóng bhxh bình thường. Tự nhiên nay nld báo là trên app hiện 1 bên cty khác từ t2/2026-t4/2026. Em gọi lên bhxh thì họ bảo nld này đóng ở cty em từ 2025 đến t1/2026. Còn từ t2/2026 đóng ở cty khác. E có hỏi là nld có nghỉ bên em đâu, từ tháng 2 đến tháng 4 này bên em vẫn đang đóng bhxh cho c ấy bình thường. Bên em chưa báo giảm thì sao bên kia báo tăng dc. Bảo hiểm báo hỏi lại nld.\nEm hỏi nld thì họ báo là có làm thêm bên kia nhưng kb sao họ lại báo tăng bhxh.\nTrường hợp này bên em xử lý ntn?",
+  "answer": "Issue: Người lao động (NLĐ) làm việc tại công ty từ năm 2025 và đóng bảo hiểm xã hội (BHXH) bình thường. Tuy nhiên, trên ứng dụng BHXH, xuất hiện thông tin NLĐ đóng BHXH tại một công ty khác từ tháng 2/2026 đến tháng 4/2026. Công ty cần biết cách xử lý tình huống này.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 38, Khoản 1: \"Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều 34 của Luật này hoặc kể từ sau ngày đóng bảo hiểm thất nghiệp chậm nhất theo quy định của pháp luật về bảo hiểm thất nghiệp, trừ trường hợp quy định tại điểm đ và điểm e khoản 1 Điều 39 của Luật này.\"\n\nApplication: Không có thông tin cụ thể về các giá trị được gán cho các biến trong truy vấn Prolog. Tuy nhiên, truy vấn đã xác định các điều kiện cần thiết để xử lý tình huống đóng BHXH trùng lặp, bao gồm: công ty phải xác minh các khoản đóng góp, NLĐ cần làm rõ với cả hai công ty, và cơ quan BHXH phải giải quyết các sai lệch.\n\nConclusion: Hệ thống đã xác định các điều kiện cần thiết để xử lý tình huống đóng BHXH trùng lặp: [employer_must_verify_contributions, employee_should_clarify_with_both_employers, social_insurance_agency_must_resolve_discrepancies]. Công ty cần thực hiện các bước này để giải quyết vấn đề.",
+  "citations": [
+    "[Điều 38 khoản 1]",
+    "[Điều 34]",
+    "[Điều 39]"
+  ],
+  "citation_ids": [
+    "L41_2024.A38.K1",
+    "L41_2024.A34",
+    "L41_2024.A39"
+  ],
+  "citation_indices": [
+    7
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,handle_duplicate_contributions([employer_must_verify_contributions,employee_should_clarify_with_both_employers,social_insurance_agency_must_resolve_discrepancies]),based_on(source_c007))]",
+  "irac_sections": {
+    "issue": "Người lao động (NLĐ) làm việc tại công ty từ năm 2025 và đóng bảo hiểm xã hội (BHXH) bình thường. Tuy nhiên, trên ứng dụng BHXH, xuất hiện thông tin NLĐ đóng BHXH tại một công ty khác từ tháng 2/2026 đến tháng 4/2026. Công ty cần biết cách xử lý tình huống này.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 38, Khoản 1: \"Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều 34 của Luật này hoặc kể từ sau ngày đóng bảo hiểm thất nghiệp chậm nhất theo quy định của pháp luật về bảo hiểm thất nghiệp, trừ trường hợp quy định tại điểm đ và điểm e khoản 1 Điều 39 của Luật này.\"",
+    "application": "Không có thông tin cụ thể về các giá trị được gán cho các biến trong truy vấn Prolog. Tuy nhiên, truy vấn đã xác định các điều kiện cần thiết để xử lý tình huống đóng BHXH trùng lặp, bao gồm: công ty phải xác minh các khoản đóng góp, NLĐ cần làm rõ với cả hai công ty, và cơ quan BHXH phải giải quyết các sai lệch.",
+    "conclusion": "Hệ thống đã xác định các điều kiện cần thiết để xử lý tình huống đóng BHXH trùng lặp: [employer_must_verify_contributions, employee_should_clarify_with_both_employers, social_insurance_agency_must_resolve_discrepancies]. Công ty cần thực hiện các bước này để giải quyết vấn đề."
+  },
+  "elapsed_s": 6.633,
+  "prompt_tokens": 3589,
+  "completion_tokens": 663,
+  "error": null,
+  "gold_answer": "Một người có nhiều nơi làm việc nhưng BHXH bắt buộc chỉ đóng theo một quan hệ lao động thuộc diện luật định, không được để 2 đơn vị cùng đóng trùng cùng thời gian. Bạn cần yêu cầu NLĐ giải trình, cung cấp HĐLĐ bên kia; đồng thời làm việc với cơ quan BHXH để xác định đơn vị nào đóng đúng, đơn vị nào đóng trùng. Phần đóng trùng sẽ phải điều chỉnh/hoàn trả theo thủ tục, tránh để dữ liệu sai kéo dài ảnh hưởng chế độ của NLĐ.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 33; Bộ luật Lao động 2019 Điều 13"
+}

@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 198,
+  "question": "Mình đang nộplãnh bhxh 1 lần. Giờ đi làm lại cty mua bh tiếp thì có lãnh đc nữa k ?",
+  "answer": "Issue:\nMình đã nhận trợ cấp BHXH một lần rồi; hỏi nếu đi làm lại và tiếp tục đóng BHXH thì có được nhận trợ cấp một lần nữa không?\n\nRule:\n'Người lao động đã nhận trợ cấp BHXH một lần thì không được hưởng trợ cấp một lần lần nữa; nếu tiếp tục tham gia và đóng BHXH sau khi đã nhận một lần, những lần đóng sau được tính cho các chế độ khác theo quy định khi đủ điều kiện.' (law_bhxh_2024, none, none, none)\n\nApplication:\n- slot_bindings: không có slot được gán giá trị.\n- Các thực thể kiểm chứng có trong truy vết: previously_received_one_time(user) và resumed_contribution(user).\n- Prolog đã dùng quy tắc can_receive_one_time_again(Person, no) kích hoạt bởi previously_received_one_time(user). Truy vết Prolog: [step(conclusion,can_receive_one_time_again(user,no),based_on(source_one_time))]. Quy tắc giải thích sau khi quay lại đóng (explanation_after_resuming) tồn tại nhưng trong truy vết trả lời chỉ thấy bước kết luận ở trên.\n\nConclusion:\nProlog trả về Answer = \"no\" (theo biến Answer trong kết quả). Truy vết: [step(conclusion,can_receive_one_time_again(user,no),based_on(source_one_time))].",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,can_receive_one_time_again(user,no),based_on(source_one_time))]",
+  "irac_sections": {
+    "issue": "Mình đã nhận trợ cấp BHXH một lần rồi; hỏi nếu đi làm lại và tiếp tục đóng BHXH thì có được nhận trợ cấp một lần nữa không?",
+    "rule": "'Người lao động đã nhận trợ cấp BHXH một lần thì không được hưởng trợ cấp một lần lần nữa; nếu tiếp tục tham gia và đóng BHXH sau khi đã nhận một lần, những lần đóng sau được tính cho các chế độ khác theo quy định khi đủ điều kiện.' (law_bhxh_2024, none, none, none)",
+    "application": "- slot_bindings: không có slot được gán giá trị.\n- Các thực thể kiểm chứng có trong truy vết: previously_received_one_time(user) và resumed_contribution(user).\n- Prolog đã dùng quy tắc can_receive_one_time_again(Person, no) kích hoạt bởi previously_received_one_time(user). Truy vết Prolog: [step(conclusion,can_receive_one_time_again(user,no),based_on(source_one_time))]. Quy tắc giải thích sau khi quay lại đóng (explanation_after_resuming) tồn tại nhưng trong truy vết trả lời chỉ thấy bước kết luận ở trên.",
+    "conclusion": "Prolog trả về Answer = \"no\" (theo biến Answer trong kết quả). Truy vết: [step(conclusion,can_receive_one_time_again(user,no),based_on(source_one_time))]."
+  },
+  "elapsed_s": 51.701,
+  "prompt_tokens": 2131,
+  "completion_tokens": 5273,
+  "error": null,
+  "gold_answer": "Nếu bạn đang nộp hồ sơ hưởng BHXH 1 lần mà đi làm lại và thuộc diện tham gia BHXH bắt buộc trước khi có quyết định hưởng, hồ sơ có thể bị ảnh hưởng vì bạn không còn ở tình trạng ngừng tham gia. Nếu cơ quan BHXH đã ra quyết định và chi trả rồi thì thời gian đã hưởng sẽ không được tính lại; sau này đi làm lại sẽ mở quá trình tham gia mới cho phần thời gian tiếp theo.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

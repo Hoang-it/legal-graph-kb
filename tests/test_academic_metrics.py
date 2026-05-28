@@ -18,10 +18,9 @@ def test_main_arm_preset_is_shared_between_runner_and_metrics():
     expected = [
         "graphrag",
         "llm_only",
-        "elite_no_retrieval",
-        "elite_ontology",
-        "elite_graphrag",
-        "elite_graphrag_logic_pl",
+        "logic_lm_no_retrieval",
+        "logic_lm_ontology",
+        "logic_lm_graphrag",
     ]
 
     assert list(MAIN_EXPERIMENT_ARMS) == expected
@@ -121,9 +120,9 @@ def test_clean_answer_for_semantic_prefers_plain_answer():
 def test_prolog_aggregate_formulas_count_failures():
     records = []
     for rec in [
-        {"arm": "elite_graphrag", "prolog_success": True, "n_repair_rounds": 0},
-        {"arm": "elite_graphrag", "prolog_success": True, "n_repair_rounds": 1},
-        {"arm": "elite_graphrag", "prolog_success": False, "n_repair_rounds": 2},
+        {"arm": "logic_lm_graphrag", "prolog_success": True, "n_repair_rounds": 0},
+        {"arm": "logic_lm_graphrag", "prolog_success": True, "n_repair_rounds": 1},
+        {"arm": "logic_lm_graphrag", "prolog_success": False, "n_repair_rounds": 2},
     ]:
         records.append(
             {
@@ -165,7 +164,7 @@ def test_experiment_parsers_use_strict_displayed_citations():
 
 
 def test_elite_parser_uses_registry_and_legal_source_law_id():
-    from experiments.elite_pipelines import (
+    from experiments.logic_lm_pipelines import (
         _parse_citations_from_irac,
         _parse_citations_from_legal_sources,
     )

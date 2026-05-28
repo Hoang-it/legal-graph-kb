@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 60,
+  "question": "Sếp em có Công ty A và B, Giờ sếp em muốn giải thể cty A (đã có qđ giải thể rồi), và chuyển hết công nhân từ cty A sang B\nỞ cty A có 1 bạn nữ đang nghỉ thai sản đến hết Tháng 04/2026, và sẽ báo On từ Tháng 05 tại cty B (trước đó em sẽ báo giảm cho bạn nữ tại cty A )\nVậy Trong Tháng 05/2026, bạn nữ đang làm tại cty B thì có được nghỉ hưởng chế độ dưỡng sức không?",
+  "answer": "Issue: Trong tháng 05/2026, bạn nữ đang làm tại công ty B có được nghỉ hưởng chế độ dưỡng sức không?\n\nRule: \"2. Lao động nam đang tham gia bảo hiểm xã hội bắt buộc khi vợ sinh con được nghỉ việc hưởng chế độ thai sản với thời gian như sau: a) 05 ngày làm việc; b) 07 ngày làm việc khi vợ sinh con phải phẫu thuật hoặc sinh con dưới 32 tuần tuổi; c) Trường hợp vợ sinh đôi thì được nghỉ 10 ngày làm việc. Trường hợp sinh ba trở lên thì được nghỉ thêm 03 ngày làm việc cho mỗi con tính từ con thứ ba trở đi;\" (Luật BHXH 2024 (41/2024/QH15), Điều 53, Khoản 2).\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để xác định quyền lợi nghỉ dưỡng sức của bạn nữ.\n\nConclusion: Hệ thống không thể tính toán được số liệu cuối cùng do không có giá trị nào được gán cho các slot.",
+  "citations": [
+    "[Điều 53 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A53.K2"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,maternity_leave_entitlement(yes),based_on(source_c053))]",
+  "irac_sections": {
+    "issue": "Trong tháng 05/2026, bạn nữ đang làm tại công ty B có được nghỉ hưởng chế độ dưỡng sức không?",
+    "rule": "\"2. Lao động nam đang tham gia bảo hiểm xã hội bắt buộc khi vợ sinh con được nghỉ việc hưởng chế độ thai sản với thời gian như sau: a) 05 ngày làm việc; b) 07 ngày làm việc khi vợ sinh con phải phẫu thuật hoặc sinh con dưới 32 tuần tuổi; c) Trường hợp vợ sinh đôi thì được nghỉ 10 ngày làm việc. Trường hợp sinh ba trở lên thì được nghỉ thêm 03 ngày làm việc cho mỗi con tính từ con thứ ba trở đi;\" (Luật BHXH 2024 (41/2024/QH15), Điều 53, Khoản 2).",
+    "application": "Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để xác định quyền lợi nghỉ dưỡng sức của bạn nữ.",
+    "conclusion": "Hệ thống không thể tính toán được số liệu cuối cùng do không có giá trị nào được gán cho các slot."
+  },
+  "elapsed_s": 9.017,
+  "prompt_tokens": 3490,
+  "completion_tokens": 410,
+  "error": null,
+  "gold_answer": "Dưỡng sức, phục hồi sức khỏe sau thai sản chỉ đặt ra khi trong 30 ngày đầu trở lại làm việc mà sức khỏe chưa phục hồi. Nếu bạn lao động nữ kết thúc thai sản tháng 4/2026, sang tháng 5/2026 làm việc tại công ty B thì vẫn có thể được xem xét nghỉ dưỡng sức nếu đủ điều kiện và có xác nhận theo quy định. Việc chuyển từ công ty A sang B không tự làm mất quyền này, nhưng hồ sơ phải thể hiện rõ thời điểm trở lại làm việc và tình trạng sức khỏe.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 61"
+}

@@ -1,0 +1,31 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 175,
+  "question": "Mình đóng bảo hiểm đc 6 năm, lương trung bình 20tr/ tháng ,giờ cần tiền muốn rút thì được tầm bao nhiêu?",
+  "answer": "Issue: Người dùng đã đóng bảo hiểm xã hội được 6 năm với lương trung bình 20 triệu đồng mỗi tháng và muốn biết số tiền có thể rút ra.\n\nRule: \"12. Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30 tháng 6 năm 2025 mà không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 12)\n\nApplication: \n- years_contributed: 6\n- average_salary: 20000000\n\nProlog đã sử dụng các giá trị này để tính toán số tiền có thể rút ra dựa trên quy định về bảo hiểm xã hội.\n\nConclusion: Số tiền có thể rút ra là 60000000.0 (Amount).",
+  "citations": [
+    "[Điều 141 khoản 12]"
+  ],
+  "citation_ids": [
+    "L41_2024.A141.K12"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,withdrawal_amount(user,60000000.0),based_on(source_c072))]",
+  "irac_sections": {
+    "issue": "Người dùng đã đóng bảo hiểm xã hội được 6 năm với lương trung bình 20 triệu đồng mỗi tháng và muốn biết số tiền có thể rút ra.",
+    "rule": "\"12. Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30 tháng 6 năm 2025 mà không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 12)",
+    "application": "- years_contributed: 6\n- average_salary: 20000000\n\nProlog đã sử dụng các giá trị này để tính toán số tiền có thể rút ra dựa trên quy định về bảo hiểm xã hội.",
+    "conclusion": "Số tiền có thể rút ra là 60000000.0 (Amount)."
+  },
+  "elapsed_s": 11.571,
+  "prompt_tokens": 3417,
+  "completion_tokens": 593,
+  "error": null,
+  "gold_answer": "Nếu 6 năm đóng BHXH của bạn đều từ 2014 trở đi, lương bình quân khoảng 20 triệu/tháng thì BHXH 1 lần ước khoảng khoảng 240,0 triệu. Số thực nhận có thể chênh do hệ số điều chỉnh tiền lương từng năm. Trước khi rút, bạn nên cân nhắc vì thời gian 6 năm đó có thể tiếp tục bảo lưu để hưởng hưu sau này.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

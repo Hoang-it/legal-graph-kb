@@ -1,0 +1,38 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 81,
+  "question": "Mình vừa lập hộ kinh doanh là chủ hộ, ko có thuê lao động. Theo quy định phải đăng ký và đóng BHXH cho chủ hộ. Mình ở Tp.HCM tính theo Vùng I.\nMình muốn hỏi là có thể đóng theo diện cá nhân tự nguyện được hay ko? do mình muốn đóng BHXH lâu dài.\nTrường hợp đăng ký và đóng theo diện chủ hộ thì sau này khi ngừng kinh doanh phải chuyển đổi BHXH về cá nhân tự nguyện hay ko?\nMình là nam 35t và độc thân. Mình đọc thông tin có chế độ tử tuất các thứ thì ai sẽ là người thụ hưởng nếu mình ko còn. (mình còn em trai và Mẹ lớn tuổi (67t) ).\nNên đóng BHXH bao nhiêu 1 tháng thì hợp lý? Tài chính của mình nếu đóng tự nguyện ~10tr/tháng vẫn nằm ở mức cho phép",
+  "answer": "Issue: Bạn muốn biết liệu có thể tham gia bảo hiểm xã hội (BHXH) tự nguyện khi là chủ hộ kinh doanh không có lao động thuê mướn hay không, và nếu sau này ngừng kinh doanh thì có cần chuyển đổi BHXH sang diện cá nhân tự nguyện không.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 36, Khoản 1: \"Đối tượng quy định tại khoản 4 Điều 2 của Luật này, hằng tháng đóng bằng 22% mức thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện vào quỹ hưu trí và tử tuất.\" Ngoài ra, Điều 5, Khoản 3 quy định: \"Người vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện được hưởng chế độ trợ cấp hằng tháng, chế độ hưu trí và chế độ tử tuất trên cơ sở thời gian đã đóng bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings để áp dụng vào truy vấn Prolog. Tuy nhiên, dựa trên các quy định pháp luật, bạn có thể tham gia BHXH tự nguyện với mức đóng 22% thu nhập làm căn cứ.\n\nConclusion: Hệ thống đã xác định rằng bạn có thể tham gia bảo hiểm xã hội tự nguyện dựa trên nguồn thông tin từ luật BHXH 2024. Tuy nhiên, không có thông tin cụ thể về việc chuyển đổi từ BHXH bắt buộc sang tự nguyện khi ngừng kinh doanh.",
+  "citations": [
+    "[Điều 36 khoản 1]",
+    "[Điều 2]",
+    "[Điều 5 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A36.K1",
+    "L41_2024.A2",
+    "L41_2024.A5.K3"
+  ],
+  "citation_indices": [
+    0,
+    2,
+    5
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,can_participate_voluntary_social_insurance,based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Bạn muốn biết liệu có thể tham gia bảo hiểm xã hội (BHXH) tự nguyện khi là chủ hộ kinh doanh không có lao động thuê mướn hay không, và nếu sau này ngừng kinh doanh thì có cần chuyển đổi BHXH sang diện cá nhân tự nguyện không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 36, Khoản 1: \"Đối tượng quy định tại khoản 4 Điều 2 của Luật này, hằng tháng đóng bằng 22% mức thu nhập làm căn cứ đóng bảo hiểm xã hội tự nguyện vào quỹ hưu trí và tử tuất.\" Ngoài ra, Điều 5, Khoản 3 quy định: \"Người vừa có thời gian đóng bảo hiểm xã hội bắt buộc vừa có thời gian đóng bảo hiểm xã hội tự nguyện được hưởng chế độ trợ cấp hằng tháng, chế độ hưu trí và chế độ tử tuất trên cơ sở thời gian đã đóng bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings để áp dụng vào truy vấn Prolog. Tuy nhiên, dựa trên các quy định pháp luật, bạn có thể tham gia BHXH tự nguyện với mức đóng 22% thu nhập làm căn cứ.",
+    "conclusion": "Hệ thống đã xác định rằng bạn có thể tham gia bảo hiểm xã hội tự nguyện dựa trên nguồn thông tin từ luật BHXH 2024. Tuy nhiên, không có thông tin cụ thể về việc chuyển đổi từ BHXH bắt buộc sang tự nguyện khi ngừng kinh doanh."
+  },
+  "elapsed_s": 12.632,
+  "prompt_tokens": 4049,
+  "completion_tokens": 827,
+  "error": null,
+  "gold_answer": "Nếu bạn là chủ hộ kinh doanh thuộc diện BHXH bắt buộc thì không được tự chọn đóng theo diện BHXH tự nguyện cho cùng thời gian thuộc diện bắt buộc. Khi ngừng kinh doanh và không còn thuộc diện bắt buộc, bạn có thể chuyển sang BHXH tự nguyện để đóng tiếp trên cùng mã số. Về tử tuất, thân nhân đủ điều kiện theo luật như mẹ già phụ thuộc có thể là người thụ hưởng; em trai chỉ được hưởng nếu thuộc diện thân nhân đủ điều kiện. Mức đóng nên cân đối khả năng dài hạn; đóng cao giúp tăng nền tính chế độ nhưng phải duy trì bền vững.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 36, Điều 85, Điều 111; Nghị định 158/2025/NĐ-CP"
+}

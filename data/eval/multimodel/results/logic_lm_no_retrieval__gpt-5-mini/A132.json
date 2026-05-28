@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 132,
+  "question": "Em bị mất giấy quyết định thôi việc thì có rút được thất nghiệp với bhxh hông???",
+  "answer": "Issue:\nNgười lao động mất giấy quyết định thôi việc có thể nộp hồ sơ hưởng trợ cấp thất nghiệp hay không?\n\nRule:\nlaw_bhxh_2024, none, none: \"Hồ sơ hưởng trợ cấp thất nghiệp thường gồm sổ BHXH, giấy tờ chứng minh đã chấm dứt quan hệ lao động (quyết định thôi việc hoặc hợp đồng lao động chấm dứt) và giấy tờ tùy thân; trong thực tiễn có thể nộp xác nhận của người sử dụng lao động hoặc bản sao chứng thực nếu quyết định gốc bị mất.\"\nlaw_bhxh_2024, none, none: \"Người lao động phải đăng ký hưởng trợ cấp thất nghiệp tại trung tâm dịch vụ việc làm trong thời hạn quy định kể từ ngày chấm dứt hợp đồng lao động (thường là trong vòng 3 tháng) để được giải quyết quyền lợi.\"\n\nApplication:\nKhông có slot_bindings. Prolog sử dụng fact verify_facts: lost_quyetdinh(user) để khớp quy tắc can_claim_unemployment. Quy tắc trả về Answer và Trace; Trace gồm các bước: step(found_lost_decision, lost_quyetdinh(user), based_on(source_unemploy_docs)) và step(require_registration, Answer, based_on(source_register_time)).\n\nConclusion:\nAnswer = \"Có thể nộp hồ sơ để hưởng trợ cấp thất nghiệp bằng cách nộp giấy tờ thay thế (xác nhận của người sử dụng lao động hoặc bản sao chứng thực quyết định) và đăng ký tại trung tâm dịch vụ việc làm trong thời hạn; cơ quan có thẩm quyền sẽ xem xét hồ sơ.\"",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(found_lost_decision,lost_quyetdinh(user),based_on(source_unemploy_docs)),step(require_registration,Có thể nộp hồ sơ để hưởng trợ cấp thất nghiệp bằng cách nộp giấy tờ thay thế (xác nhận của người sử dụng lao động hoặc bản sao chứng thực quyết định) và đăng ký tại trung tâm dịch vụ việc làm trong thời hạn; cơ quan có thẩm quyền sẽ xem xét hồ sơ.,based_on(source_register_time))]",
+  "irac_sections": {
+    "issue": "Người lao động mất giấy quyết định thôi việc có thể nộp hồ sơ hưởng trợ cấp thất nghiệp hay không?",
+    "rule": "law_bhxh_2024, none, none: \"Hồ sơ hưởng trợ cấp thất nghiệp thường gồm sổ BHXH, giấy tờ chứng minh đã chấm dứt quan hệ lao động (quyết định thôi việc hoặc hợp đồng lao động chấm dứt) và giấy tờ tùy thân; trong thực tiễn có thể nộp xác nhận của người sử dụng lao động hoặc bản sao chứng thực nếu quyết định gốc bị mất.\"\nlaw_bhxh_2024, none, none: \"Người lao động phải đăng ký hưởng trợ cấp thất nghiệp tại trung tâm dịch vụ việc làm trong thời hạn quy định kể từ ngày chấm dứt hợp đồng lao động (thường là trong vòng 3 tháng) để được giải quyết quyền lợi.\"",
+    "application": "Không có slot_bindings. Prolog sử dụng fact verify_facts: lost_quyetdinh(user) để khớp quy tắc can_claim_unemployment. Quy tắc trả về Answer và Trace; Trace gồm các bước: step(found_lost_decision, lost_quyetdinh(user), based_on(source_unemploy_docs)) và step(require_registration, Answer, based_on(source_register_time)).",
+    "conclusion": "Answer = \"Có thể nộp hồ sơ để hưởng trợ cấp thất nghiệp bằng cách nộp giấy tờ thay thế (xác nhận của người sử dụng lao động hoặc bản sao chứng thực quyết định) và đăng ký tại trung tâm dịch vụ việc làm trong thời hạn; cơ quan có thẩm quyền sẽ xem xét hồ sơ.\""
+  },
+  "elapsed_s": 37.027,
+  "prompt_tokens": 2367,
+  "completion_tokens": 4652,
+  "error": null,
+  "gold_answer": "Mất quyết định thôi việc không làm mất quyền hưởng BHXH 1 lần, vì hồ sơ BHXH 1 lần thường không bắt buộc tài liệu này. Nhưng với BHTN thì giấy tờ chứng minh chấm dứt HĐLĐ là thành phần hồ sơ rất quan trọng. Bạn nên xin công ty cấp lại hoặc xin bản sao/giấy xác nhận chấm dứt hợp đồng để nộp trong thời hạn luật định.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

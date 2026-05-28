@@ -1,0 +1,30 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4o",
+  "stt": 155,
+  "question": "Minh mat so bhxh , còn nhớ số sổ , làm sao tra được quá trình đóng bhxh?",
+  "answer": "Issue: Minh đã mất sổ bảo hiểm xã hội (BHXH) nhưng vẫn nhớ số sổ và muốn biết cách tra cứu quá trình đóng BHXH.\n\nRule: \"Người lao động có quyền tra cứu thông tin về quá trình đóng BHXH thông qua cổng thông tin điện tử của cơ quan BHXH.\" (Luật BHXH 2024, Điều 33, Khoản 2)\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo quy định, người lao động có thể sử dụng cổng thông tin điện tử của cơ quan BHXH để tra cứu thông tin về quá trình đóng BHXH.\n\nConclusion: Người lao động có thể tra cứu quá trình đóng BHXH thông qua cổng thông tin điện tử của cơ quan BHXH.",
+  "citations": [
+    "[Điều 33 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A33.K2"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,how_to_check_contribution_process(Người lao động có thể tra cứu quá trình đóng BHXH thông qua cổng thông tin điện tử của cơ quan BHXH.),based_on(source_a33_k2))]",
+  "irac_sections": {
+    "issue": "Minh đã mất sổ bảo hiểm xã hội (BHXH) nhưng vẫn nhớ số sổ và muốn biết cách tra cứu quá trình đóng BHXH.",
+    "rule": "\"Người lao động có quyền tra cứu thông tin về quá trình đóng BHXH thông qua cổng thông tin điện tử của cơ quan BHXH.\" (Luật BHXH 2024, Điều 33, Khoản 2)",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo quy định, người lao động có thể sử dụng cổng thông tin điện tử của cơ quan BHXH để tra cứu thông tin về quá trình đóng BHXH.",
+    "conclusion": "Người lao động có thể tra cứu quá trình đóng BHXH thông qua cổng thông tin điện tử của cơ quan BHXH."
+  },
+  "elapsed_s": 7.67,
+  "prompt_tokens": 3169,
+  "completion_tokens": 429,
+  "error": null,
+  "gold_answer": "Nếu nhớ số sổ/mã số BHXH, bạn có thể tra quá trình đóng trên VssID, VNeID, cổng thông tin BHXH Việt Nam hoặc đến cơ quan BHXH để xin xác nhận quá trình đóng. Trường hợp mất sổ giấy, bạn vẫn làm thủ tục cấp lại được. Nên mang CCCD để cơ quan BHXH đối chiếu nhanh hơn.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

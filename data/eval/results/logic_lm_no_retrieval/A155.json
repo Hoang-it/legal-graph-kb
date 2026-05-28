@@ -1,0 +1,25 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 155,
+  "question": "Minh mat so bhxh , còn nhớ số sổ , làm sao tra được quá trình đóng bhxh?",
+  "answer": "Issue: Người dùng muốn biết cách tra cứu quá trình đóng bảo hiểm xã hội khi đã mất số bảo hiểm xã hội nhưng còn nhớ số sổ.\n\nRule: \"Tra cứu quá trình đóng BHXH có thể thực hiện qua cổng thông tin điện tử của BHXH Việt Nam hoặc liên hệ với cơ quan BHXH địa phương.\"\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Tuy nhiên, Prolog đã trả về thông tin về cách tra cứu quá trình đóng bảo hiểm xã hội dựa trên số bảo hiểm xã hội là \"_4032\".\n\nConclusion: Prolog đã trả về thông tin về cách tra cứu quá trình đóng bảo hiểm xã hội, nhưng không có giá trị số nào được tính toán từ các slot.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(information,retrieve_contribution_history(_4032,Tra cứu quá trình đóng BHXH có thể thực hiện qua cổng thông tin điện tử của BHXH Việt Nam hoặc liên hệ với cơ quan BHXH địa phương.),based_on(none))]",
+  "irac_sections": {
+    "issue": "Người dùng muốn biết cách tra cứu quá trình đóng bảo hiểm xã hội khi đã mất số bảo hiểm xã hội nhưng còn nhớ số sổ.",
+    "rule": "\"Tra cứu quá trình đóng BHXH có thể thực hiện qua cổng thông tin điện tử của BHXH Việt Nam hoặc liên hệ với cơ quan BHXH địa phương.\"",
+    "application": "Không có slot nào được gán giá trị trong trường hợp này. Tuy nhiên, Prolog đã trả về thông tin về cách tra cứu quá trình đóng bảo hiểm xã hội dựa trên số bảo hiểm xã hội là \"_4032\".",
+    "conclusion": "Prolog đã trả về thông tin về cách tra cứu quá trình đóng bảo hiểm xã hội, nhưng không có giá trị số nào được tính toán từ các slot."
+  },
+  "elapsed_s": 17.611,
+  "prompt_tokens": 3339,
+  "completion_tokens": 448,
+  "error": null,
+  "gold_answer": "Nếu nhớ số sổ/mã số BHXH, bạn có thể tra quá trình đóng trên VssID, VNeID, cổng thông tin BHXH Việt Nam hoặc đến cơ quan BHXH để xin xác nhận quá trình đóng. Trường hợp mất sổ giấy, bạn vẫn làm thủ tục cấp lại được. Nên mang CCCD để cơ quan BHXH đối chiếu nhanh hơn.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+}

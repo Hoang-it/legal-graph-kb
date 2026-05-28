@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 127,
+  "question": "nếu đóng BHXH tự nguyện thì có được BHYT hay bảo hiểm thai sản không?",
+  "answer": "Issue:\nNếu đóng BHXH tự nguyện thì có được BHYT hay bảo hiểm thai sản không?\n\nRule:\n'BHXH tu nguyen chu yeu huong cac che do huu tri va tu tuat; che do om dau va thai san thuoc pham vi BHXH bat buoc; BHYT la che do rieng theo Luat BHYT.' (law_bhxh_2024, article_none, clause_none)\n\nApplication:\nslot_bindings: none.\nProlog truy vấn đã áp dụng quy tắc is_voluntary_bhxh_effects (dựa trên source_voluntary_scope) và trả về các ràng buộc sau:\nConditions = conditions([covers(huu_tri,yes),covers(tu_tuat,yes),covers(om_dau,no),covers(thai_san,no),note(BHYT la che do khac, co the tham gia rieng theo Luat BHYT)])\nTrace = [step(conclusion,is_voluntary_bhxh_effects(conditions([covers(huu_tri,yes),covers(tu_tuat,yes),covers(om_dau,no),covers(thai_san,no),note(BHYT la che do khac, co the tham gia rieng theo Luat BHYT)])),based_on(source_voluntary_scope))]\n\nConclusion:\nProlog binding: Conditions = conditions([covers(huu_tri,yes),covers(tu_tuat,yes),covers(om_dau,no),covers(thai_san,no),note(BHYT la che do khac, co the tham gia rieng theo Luat BHYT)]). Trace như trên.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,is_voluntary_bhxh_effects(conditions([covers(huu_tri,yes),covers(tu_tuat,yes),covers(om_dau,no),covers(thai_san,no),note(BHYT la che do khac, co the tham gia rieng theo Luat BHYT)])),based_on(source_voluntary_scope))]",
+  "irac_sections": {
+    "issue": "Nếu đóng BHXH tự nguyện thì có được BHYT hay bảo hiểm thai sản không?",
+    "rule": "'BHXH tu nguyen chu yeu huong cac che do huu tri va tu tuat; che do om dau va thai san thuoc pham vi BHXH bat buoc; BHYT la che do rieng theo Luat BHYT.' (law_bhxh_2024, article_none, clause_none)",
+    "application": "slot_bindings: none.\nProlog truy vấn đã áp dụng quy tắc is_voluntary_bhxh_effects (dựa trên source_voluntary_scope) và trả về các ràng buộc sau:\nConditions = conditions([covers(huu_tri,yes),covers(tu_tuat,yes),covers(om_dau,no),covers(thai_san,no),note(BHYT la che do khac, co the tham gia rieng theo Luat BHYT)])\nTrace = [step(conclusion,is_voluntary_bhxh_effects(conditions([covers(huu_tri,yes),covers(tu_tuat,yes),covers(om_dau,no),covers(thai_san,no),note(BHYT la che do khac, co the tham gia rieng theo Luat BHYT)])),based_on(source_voluntary_scope))]",
+    "conclusion": "Prolog binding: Conditions = conditions([covers(huu_tri,yes),covers(tu_tuat,yes),covers(om_dau,no),covers(thai_san,no),note(BHYT la che do khac, co the tham gia rieng theo Luat BHYT)]). Trace như trên."
+  },
+  "elapsed_s": 39.095,
+  "prompt_tokens": 2156,
+  "completion_tokens": 4452,
+  "error": null,
+  "gold_answer": "BHXH tự nguyện không bao gồm BHYT đi kèm và không có chế độ thai sản. Hiện BHXH tự nguyện chủ yếu có chế độ hưu trí và tử tuất. Nếu muốn có BHYT, bạn phải tham gia BHYT theo nhóm phù hợp riêng. Nếu muốn hưởng thai sản, phải tham gia BHXH bắt buộc và đáp ứng điều kiện về thời gian đóng theo luật.",
+  "gold_citations_raw": "Điều 4, 5, 36 Luật BHXH 2024; Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

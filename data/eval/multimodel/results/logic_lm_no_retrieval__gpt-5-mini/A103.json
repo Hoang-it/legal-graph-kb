@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 103,
+  "question": "Bhxh của em tầm 9 năm 2 tháng mức đóng tầm 4tr3, cho em hỏi bh thất nghiệp nhận được bao nhiêu và bhxh nhận được bao nhiêu?",
+  "answer": "Issue:\nBhxh của người hỏi: đã đóng khoảng 9 năm 2 tháng, mức đóng khoảng 4tr3; hỏi sẽ nhận được trợ cấp thất nghiệp bao nhiêu và BHXH (lương hưu hoặc trợ cấp một lần) sẽ ra sao.\n\nRule:\n'Người lao động được hưởng lương hưu khi đủ điều kiện về tuổi và có đủ thời gian đóng BHXH (thường là tối thiểu 20 năm đóng BHXH).' (document: law_bhxh_2024, article: none, clause: none)\n'Trường hợp chưa đủ điều kiện hưởng lương hưu, người lao động được hưởng trợ cấp một lần theo quy định của pháp luật BHXH.' (document: law_bhxh_2024, article: none, clause: none)\n'Quyền lợi bảo hiểm thất nghiệp: điều kiện tối thiểu (ví dụ: đã đóng ít nhất 12 tháng trong 24 tháng trước khi thất nghiệp) và mức trợ cấp tính theo tỉ lệ phần trăm của mức tiền lương đóng bảo hiểm thất nghiệp.' (document: law_bhxh_2024, article: none, clause: none)\n\nApplication:\nslot_bindings: (không có)\nSử dụng các dữ kiện đầu vào (từ trace): months_contributed(user) = 110; base_salary(user) = 4300000.\nProlog đã dùng months_contributed và base_salary trong quy tắc benefits_summary để ước tính trợ cấp thất nghiệp và xác định trường hợp BHXH xã hội; theo trace: bước unemployment_estimate(user,2580000) và step(social_one_time(user)).\n\nConclusion:\nAnswer = summary(unemployment(possible,2580000,Ước tính: mức trợ cấp hàng tháng ~60% mức lương đóng; cần xác nhận đã đóng ít nhất 12 tháng trong 24 tháng trước khi thất nghiệp.),social(lump_sum,Đã đóng 9 năm 2 tháng (<20 năm): không đủ điều kiện lương hưu; được hưởng trợ cấp một lần theo quy định; số tiền phụ thuộc tổng số tiền đóng và lãi.))",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(unemployment_estimate(user,2580000),based_on(source_unemployment)),step(social_one_time(user),based_on(source_lumpsum))]",
+  "irac_sections": {
+    "issue": "Bhxh của người hỏi: đã đóng khoảng 9 năm 2 tháng, mức đóng khoảng 4tr3; hỏi sẽ nhận được trợ cấp thất nghiệp bao nhiêu và BHXH (lương hưu hoặc trợ cấp một lần) sẽ ra sao.",
+    "rule": "'Người lao động được hưởng lương hưu khi đủ điều kiện về tuổi và có đủ thời gian đóng BHXH (thường là tối thiểu 20 năm đóng BHXH).' (document: law_bhxh_2024, article: none, clause: none)\n'Trường hợp chưa đủ điều kiện hưởng lương hưu, người lao động được hưởng trợ cấp một lần theo quy định của pháp luật BHXH.' (document: law_bhxh_2024, article: none, clause: none)\n'Quyền lợi bảo hiểm thất nghiệp: điều kiện tối thiểu (ví dụ: đã đóng ít nhất 12 tháng trong 24 tháng trước khi thất nghiệp) và mức trợ cấp tính theo tỉ lệ phần trăm của mức tiền lương đóng bảo hiểm thất nghiệp.' (document: law_bhxh_2024, article: none, clause: none)",
+    "application": "slot_bindings: (không có)\nSử dụng các dữ kiện đầu vào (từ trace): months_contributed(user) = 110; base_salary(user) = 4300000.\nProlog đã dùng months_contributed và base_salary trong quy tắc benefits_summary để ước tính trợ cấp thất nghiệp và xác định trường hợp BHXH xã hội; theo trace: bước unemployment_estimate(user,2580000) và step(social_one_time(user)).",
+    "conclusion": "Answer = summary(unemployment(possible,2580000,Ước tính: mức trợ cấp hàng tháng ~60% mức lương đóng; cần xác nhận đã đóng ít nhất 12 tháng trong 24 tháng trước khi thất nghiệp.),social(lump_sum,Đã đóng 9 năm 2 tháng (<20 năm): không đủ điều kiện lương hưu; được hưởng trợ cấp một lần theo quy định; số tiền phụ thuộc tổng số tiền đóng và lãi.))"
+  },
+  "elapsed_s": 100.947,
+  "prompt_tokens": 2542,
+  "completion_tokens": 7172,
+  "error": null,
+  "gold_answer": "Nếu toàn bộ thời gian đóng của bạn là từ 2014 trở đi, BHXH 1 lần ước khoảng khoảng 81,7 triệu; đây chỉ là ước tính thô, chưa tính hệ số điều chỉnh tiền lương. Với BHTN, nếu đủ điều kiện hưởng thì mức trợ cấp hằng tháng bằng 60% bình quân lương đóng BHTN của 6 tháng cuối, tức khoảng 2,58 triệu/tháng; thời gian hưởng khoảng 9 tháng nếu thời gian đóng BHTN là 9 năm 2 tháng.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

@@ -1,0 +1,35 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 82,
+  "question": "bhxh e đc 6 tháng có được rút không? E nghĩ cty cũng 2 năm hơn rồi",
+  "answer": "Issue:\nNgười hỏi muốn biết liệu có được rút một lần tiền đóng bảo hiểm xã hội khi chỉ đóng một thời gian ngắn, và nêu rằng đã làm việc tại công ty trước đó trong một khoảng thời gian dài.\n\nRule:\nLuật BHXH 2024 (41/2024/QH15), Điều 33 khoản 7: \"Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất. Th\"\nLuật BHXH 2024 (41/2024/QH15), Điều 5 khoản 6: \"Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\"\n\nApplication:\nSlot bindings: không có (slot_bindings rỗng).\nCách Prolog tiêu thụ: Chương trình Prolog dùng hai nguồn pháp luật là source_c033 (Điều 33 khoản 7) và source_c005 (Điều 5 khoản 6) theo quy tắc withdrawal_basis; không có tham số đầu vào cần gán; quy tắc này tổng hợp đoạn trích và sinh ra lời giải giải thích.\n\nConclusion:\nAnswer = \"Không có quy định rút một lần trong các đoạn trích được cung cấp. Đoạn trích nêu về việc được đóng tiếp một lần khi còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu và cách tính tháng lẻ khi xác định thời gian đóng để hưởng lương hưu.\"",
+  "citations": [
+    "[Điều 33 khoản 7]",
+    "[Điều 5 khoản 6]"
+  ],
+  "citation_ids": [
+    "L41_2024.A33.K7",
+    "L41_2024.A5.K6"
+  ],
+  "citation_indices": [
+    0,
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,withdrawal_basis(Không có quy định rút một lần trong các đoạn trích được cung cấp. Đoạn trích nêu về việc được đóng tiếp một lần khi còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu và cách tính tháng lẻ khi xác định thời gian đóng để hưởng lương hưu.),based_on(source_c033)),step(conclusion,withdrawal_basis(Không có quy định rút một lần trong các đoạn trích được cung cấp. Đoạn trích nêu về việc được đóng tiếp một lần khi còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu và cách tính tháng lẻ khi xác định thời gian đóng để hưởng lương hưu.),based_on(source_c005))]",
+  "irac_sections": {
+    "issue": "Người hỏi muốn biết liệu có được rút một lần tiền đóng bảo hiểm xã hội khi chỉ đóng một thời gian ngắn, và nêu rằng đã làm việc tại công ty trước đó trong một khoảng thời gian dài.",
+    "rule": "Luật BHXH 2024 (41/2024/QH15), Điều 33 khoản 7: \"Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất. Th\"\nLuật BHXH 2024 (41/2024/QH15), Điều 5 khoản 6: \"Thời gian đóng bảo hiểm xã hội tối thiểu để xác định điều kiện hưởng lương hưu và trợ cấp tuất hằng tháng tính theo năm, một năm phải tính đủ 12 tháng. Trường hợp tính mức hưởng, thời gian đóng bảo hiểm xã hội có tháng lẻ từ 01 tháng đến 06 tháng được tính là nửa năm, từ 07 tháng đến 11 tháng được tính là một năm.\"",
+    "application": "Slot bindings: không có (slot_bindings rỗng).\nCách Prolog tiêu thụ: Chương trình Prolog dùng hai nguồn pháp luật là source_c033 (Điều 33 khoản 7) và source_c005 (Điều 5 khoản 6) theo quy tắc withdrawal_basis; không có tham số đầu vào cần gán; quy tắc này tổng hợp đoạn trích và sinh ra lời giải giải thích.",
+    "conclusion": "Answer = \"Không có quy định rút một lần trong các đoạn trích được cung cấp. Đoạn trích nêu về việc được đóng tiếp một lần khi còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu và cách tính tháng lẻ khi xác định thời gian đóng để hưởng lương hưu.\""
+  },
+  "elapsed_s": 46.322,
+  "prompt_tokens": 5964,
+  "completion_tokens": 4786,
+  "error": null,
+  "gold_answer": "Thông thường đóng BHXH mới 6 tháng thì chưa thể rút ngay nếu bạn chưa thuộc trường hợp luật cho phép. Trường hợp phổ biến nhất là phải sau 12 tháng không tiếp tục tham gia BHXH mà vẫn chưa đủ điều kiện hưởng lương hưu thì mới đề nghị hưởng BHXH một lần. Vì vậy nếu bạn mới đóng 6 tháng và nghỉ đã hơn 2 năm thì cần kiểm tra hiện tại có còn tham gia nơi nào khác không; nếu không, thường có thể nộp hồ sơ theo diện BHXH một lần.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 110"
+}

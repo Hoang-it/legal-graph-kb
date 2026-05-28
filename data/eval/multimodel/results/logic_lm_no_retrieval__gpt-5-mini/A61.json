@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 61,
+  "question": "Nếu mình cứ vẫn đóng bhxh đến 20 năm thì sau mình hưởng bao hiểm thất nghiệp theo bao nhiêu năm? Các tính như thế nào?",
+  "answer": "Issue:\nNếu bạn tiếp tục đóng bảo hiểm xã hội đến 20 năm, bạn sẽ được hưởng trợ cấp thất nghiệp bao nhiêu tháng và cách tính như thế nào?\n\nRule:\n\"Thời gian hưởng trợ cấp thất nghiệp theo quy định: đóng từ 12 tháng đến dưới 36 tháng được hưởng 3 tháng; từ 36 tháng đến dưới 60 tháng được hưởng 6 tháng; từ 60 tháng đến dưới 84 tháng được hưởng 9 tháng; từ 84 tháng trở lên được hưởng 12 tháng.\" (legal_source: source_unemp_duration, document: law_bhxh_2024, article: none, clause: none)\n\"Mức trợ cấp thất nghiệp hàng tháng bằng 60% mức bình quân tiền lương, tiền công đóng bảo hiểm thất nghiệp của 6 tháng trước khi thất nghiệp.\" (legal_source: source_unemp_rate, document: law_bhxh_2024, article: none, clause: none)\n\nApplication:\nslot_bindings: không có slot được gán.\nProlog đã sử dụng fact từ verify_facts (years_contributed(user, ...) như đầu vào) cùng với quy tắc nguồn \"source_unemp_duration\" để xác định biến Months; trace thực thi cho biết bước calculation dựa trên source_unemp_duration.\n\nConclusion:\nProlog trả về Months = 12 (biến Months). Trace thực thi: [step(calculation,unemployment_benefit_months(user,12),based_on(source_unemp_duration))].",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(calculation,unemployment_benefit_months(user,12),based_on(source_unemp_duration))]",
+  "irac_sections": {
+    "issue": "Nếu bạn tiếp tục đóng bảo hiểm xã hội đến 20 năm, bạn sẽ được hưởng trợ cấp thất nghiệp bao nhiêu tháng và cách tính như thế nào?",
+    "rule": "\"Thời gian hưởng trợ cấp thất nghiệp theo quy định: đóng từ 12 tháng đến dưới 36 tháng được hưởng 3 tháng; từ 36 tháng đến dưới 60 tháng được hưởng 6 tháng; từ 60 tháng đến dưới 84 tháng được hưởng 9 tháng; từ 84 tháng trở lên được hưởng 12 tháng.\" (legal_source: source_unemp_duration, document: law_bhxh_2024, article: none, clause: none)\n\"Mức trợ cấp thất nghiệp hàng tháng bằng 60% mức bình quân tiền lương, tiền công đóng bảo hiểm thất nghiệp của 6 tháng trước khi thất nghiệp.\" (legal_source: source_unemp_rate, document: law_bhxh_2024, article: none, clause: none)",
+    "application": "slot_bindings: không có slot được gán.\nProlog đã sử dụng fact từ verify_facts (years_contributed(user, ...) như đầu vào) cùng với quy tắc nguồn \"source_unemp_duration\" để xác định biến Months; trace thực thi cho biết bước calculation dựa trên source_unemp_duration.",
+    "conclusion": "Prolog trả về Months = 12 (biến Months). Trace thực thi: [step(calculation,unemployment_benefit_months(user,12),based_on(source_unemp_duration))]."
+  },
+  "elapsed_s": 51.429,
+  "prompt_tokens": 2270,
+  "completion_tokens": 6424,
+  "error": null,
+  "gold_answer": "Bảo hiểm thất nghiệp không tính theo 'đóng BHXH 20 năm' mà tính theo thời gian đóng BHTN. Cứ đủ 12 tháng đến đủ 36 tháng đóng BHTN thì được 3 tháng trợ cấp; sau đó mỗi thêm đủ 12 tháng được thêm 1 tháng, tối đa 12 tháng trợ cấp. Mức hưởng hằng tháng bằng 60% mức bình quân tiền lương tháng đóng BHTN của 6 tháng liền kề trước khi thất nghiệp. Vì vậy phải tách thời gian BHTN riêng, không lấy tổng BHXH để tính.",
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 50"
+}

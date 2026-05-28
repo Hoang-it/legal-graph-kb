@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 68,
+  "question": "Nld làm việc bên em từ 2025 đến giờ vẫn làm, vẫn đóng bhxh bình thường. Tự nhiên nay nld báo là trên app hiện 1 bên cty khác từ t2/2026-t4/2026. Em gọi lên bhxh thì họ bảo nld này đóng ở cty em từ 2025 đến t1/2026. Còn từ t2/2026 đóng ở cty khác. E có hỏi là nld có nghỉ bên em đâu, từ tháng 2 đến tháng 4 này bên em vẫn đang đóng bhxh cho c ấy bình thường. Bên em chưa báo giảm thì sao bên kia báo tăng dc. Bảo hiểm báo hỏi lại nld.\nEm hỏi nld thì họ báo là có làm thêm bên kia nhưng kb sao họ lại báo tăng bhxh.\nTrường hợp này bên em xử lý ntn?",
+  "answer": "Issue: Người sử dụng lao động hỏi cách xử lý khi hồ sơ BHXH trên hệ thống cho thấy người lao động được đóng ở đơn vị khác trong một số tháng, trong khi đơn vị khẳng định vẫn đang đóng BHXH cho họ.\n\nRule: Không có trích dẫn pháp luật trong dữ liệu đầu vào để trích dẫn nguyên văn.\n\nApplication:\n- slot_bindings: không có slot nào được cung cấp.\n- Prolog đã dùng các dữ liệu xác minh đầu vào (về tình trạng việc làm và mâu thuẫn kỳ đóng) để đánh giá là tồn tại mâu thuẫn ghi nhận và gọi quy tắc thích hợp. Kết quả là Prolog chọn nhánh khuyến nghị gồm các bước xử lý: yêu cầu chứng từ từ NLĐ, đối chiếu báo cáo giữa các đơn vị, và nếu phát hiện đóng sai/đóng kép thì nộp hồ sơ đề nghị BHXH điều chỉnh.\n\nConclusion: Steps = ['Yêu cầu NLĐ cung cấp hợp đồng/giấy tờ làm thêm và bảng lương/phiếu lĩnh lương cho các tháng liên quan','Đối chiếu báo cáo tiền lương và tờ khai BHXH giữa hai đơn vị cho các tháng mâu thuẫn','Nếu xác định ghi nhận sai/đóng kép: đơn vị phối hợp với NLĐ để lập hồ sơ, gửi BHXH đề nghị chỉnh sửa/điều chỉnh dữ liệu và nộp chứng từ giải trình']. Prolog trả về đầy đủ biến Steps như trên.",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(request_employee_documents,Yêu cầu NLĐ cung cấp chứng từ làm thêm và chứng nhận lương,based_on(ls_bhxh_correction)),step(reconcile_employer_reports,Đối chiếu báo cáo đóng BHXH và bảng lương giữa hai đơn vị,based_on(ls_employer_reporting)),step(submit_correction_to_bhxh,Nếu có sai sót: đơn vị/đại diện NLĐ nộp hồ sơ chỉnh sửa cho BHXH theo hướng dẫn,based_on(ls_employer_reporting))]",
+  "irac_sections": {
+    "issue": "Người sử dụng lao động hỏi cách xử lý khi hồ sơ BHXH trên hệ thống cho thấy người lao động được đóng ở đơn vị khác trong một số tháng, trong khi đơn vị khẳng định vẫn đang đóng BHXH cho họ.",
+    "rule": "Không có trích dẫn pháp luật trong dữ liệu đầu vào để trích dẫn nguyên văn.",
+    "application": "- slot_bindings: không có slot nào được cung cấp.\n- Prolog đã dùng các dữ liệu xác minh đầu vào (về tình trạng việc làm và mâu thuẫn kỳ đóng) để đánh giá là tồn tại mâu thuẫn ghi nhận và gọi quy tắc thích hợp. Kết quả là Prolog chọn nhánh khuyến nghị gồm các bước xử lý: yêu cầu chứng từ từ NLĐ, đối chiếu báo cáo giữa các đơn vị, và nếu phát hiện đóng sai/đóng kép thì nộp hồ sơ đề nghị BHXH điều chỉnh.",
+    "conclusion": "Steps = ['Yêu cầu NLĐ cung cấp hợp đồng/giấy tờ làm thêm và bảng lương/phiếu lĩnh lương cho các tháng liên quan','Đối chiếu báo cáo tiền lương và tờ khai BHXH giữa hai đơn vị cho các tháng mâu thuẫn','Nếu xác định ghi nhận sai/đóng kép: đơn vị phối hợp với NLĐ để lập hồ sơ, gửi BHXH đề nghị chỉnh sửa/điều chỉnh dữ liệu và nộp chứng từ giải trình']. Prolog trả về đầy đủ biến Steps như trên."
+  },
+  "elapsed_s": 56.536,
+  "prompt_tokens": 3240,
+  "completion_tokens": 6464,
+  "error": null,
+  "gold_answer": "Một người có nhiều nơi làm việc nhưng BHXH bắt buộc chỉ đóng theo một quan hệ lao động thuộc diện luật định, không được để 2 đơn vị cùng đóng trùng cùng thời gian. Bạn cần yêu cầu NLĐ giải trình, cung cấp HĐLĐ bên kia; đồng thời làm việc với cơ quan BHXH để xác định đơn vị nào đóng đúng, đơn vị nào đóng trùng. Phần đóng trùng sẽ phải điều chỉnh/hoàn trả theo thủ tục, tránh để dữ liệu sai kéo dài ảnh hưởng chế độ của NLĐ.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 33; Bộ luật Lao động 2019 Điều 13"
+}

@@ -1,4 +1,4 @@
-"""Multi-model inference: chạy 2 elite arms × N OpenAI models trên dataset 200 câu.
+"""Multi-model inference: chạy 2 logic-lm arms × N OpenAI models trên dataset 200 câu.
 
 Output mỗi (arm, model) 1 thư mục:
     data/eval/multimodel/results/{arm}__{model_safe}/A{stt}.json
@@ -12,7 +12,7 @@ elite_pipelines tự fallback (xem `_TokenTrackingLLMClient._chat_with_fallback`
 CLI:
     python -m experiments.run_multimodel_inference \\
         --models gpt-4.1,gpt-4o,gpt-5,gpt-5-mini \\
-        --arms elite_no_retrieval,elite_graphrag \\
+        --arms logic_lm_no_retrieval,logic_lm_graphrag \\
         --n 1            # smoke
     python -m experiments.run_multimodel_inference --n 10  # pilot
     python -m experiments.run_multimodel_inference --n 200 # full
@@ -39,8 +39,8 @@ QUESTIONS_PATH = Path("data/eval/questions_200.json")
 OUT_ROOT = Path("data/eval/multimodel/results")
 
 DEFAULT_MODELS = ("gpt-4.1", "gpt-4o", "gpt-5", "gpt-5-mini")
-DEFAULT_ARMS = ("elite_no_retrieval", "elite_graphrag")
-ALL_ARMS = ("elite_no_retrieval", "elite_ontology", "elite_graphrag")
+DEFAULT_ARMS = ("logic_lm_no_retrieval", "logic_lm_graphrag")
+ALL_ARMS = ("logic_lm_no_retrieval", "logic_lm_ontology", "logic_lm_graphrag")
 
 
 def model_safe(model: str) -> str:
@@ -70,18 +70,18 @@ def _save(path: Path, data: dict) -> None:
 
 def _make_pipeline(arm: str, model: str, shared_rag=None):
     """Khởi tạo pipeline cho 1 (arm, model). shared_rag chỉ dùng cho elite_graphrag."""
-    from experiments.elite_pipelines import (
-        EliteNoRetrievalPipeline,
-        EliteOntologyPipeline,
-        EliteGraphRAGPipeline,
+    from experiments.logic_lm_pipelines import (
+        LogicLMNoRetrievalPipeline,
+        LogicLMOntologyPipeline,
+        LogicLMGraphRAGPipeline,
     )
 
-    if arm == "elite_no_retrieval":
-        return EliteNoRetrievalPipeline(model=model)
-    if arm == "elite_ontology":
-        return EliteOntologyPipeline(model=model)
-    if arm == "elite_graphrag":
-        return EliteGraphRAGPipeline(model=model, rag_pipeline=shared_rag)
+    if arm == "logic_lm_no_retrieval":
+        return LogicLMNoRetrievalPipeline(model=model)
+    if arm == "logic_lm_ontology":
+        return LogicLMOntologyPipeline(model=model)
+    if arm == "logic_lm_graphrag":
+        return LogicLMGraphRAGPipeline(model=model, rag_pipeline=shared_rag)
     raise ValueError(f"Unknown arm: {arm}")
 
 
@@ -169,7 +169,7 @@ def _run_combo(
 
 def main() -> int:
     p = argparse.ArgumentParser(
-        description="Chạy elite arms × multiple OpenAI models trên N câu hỏi."
+        description="Chạy logic-lm arms × multiple OpenAI models trên N câu hỏi."
     )
     p.add_argument("--n", type=int, default=200, help="Số câu đầu tiên (default 200).")
     p.add_argument("--models", type=str,
@@ -198,7 +198,7 @@ def main() -> int:
 
     # Share RagPipeline across all elite_graphrag combos to amortize warm-up
     shared_rag = None
-    if "elite_graphrag" in arms:
+    if "logic_lm_graphrag" in arms:
         from src.rag_query import RagPipeline
         shared_rag = RagPipeline()
         _ = shared_rag.embed_model  # warm up
@@ -211,7 +211,7 @@ def main() -> int:
             print(f"\n=== COMBO: arm={arm}  model={model} ===")
             try:
                 s = _run_combo(arm, model, questions, args.force, args.verbose,
-                               shared_rag=shared_rag if arm == "elite_graphrag" else None)
+                               shared_rag=shared_rag if arm == "logic_lm_graphrag" else None)
                 summaries.append(s)
             except Exception as e:
                 print(f"!! COMBO {arm}/{model} crashed: {type(e).__name__}: {e}",

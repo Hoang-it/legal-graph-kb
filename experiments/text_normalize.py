@@ -2,7 +2,7 @@
 
 Mode "app_conclusion" (recommended): Strip IRAC headers, drop Issue & Rule
 sections (Issue = question paraphrase → AR bias; Rule = quoted law text →
-BERTScore bias). Keep Application + Conclusion = elite's actual reasoning
+BERTScore bias). Keep Application + Conclusion = logic-lm's actual reasoning
 + final answer, comparable to prose.
 
 Usage:
@@ -61,6 +61,6 @@ def normalize_for_prose_metric(
 
 
 def is_irac(record: dict) -> bool:
-    """True nếu record là từ elite arm (có irac_sections non-empty)."""
+    """True nếu record là từ logic-lm arm (có irac_sections non-empty)."""
     sec = record.get("irac_sections") or {}
     return bool(sec) and any(sec.values())

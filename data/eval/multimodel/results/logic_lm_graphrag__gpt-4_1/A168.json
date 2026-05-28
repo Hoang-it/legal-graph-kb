@@ -1,0 +1,36 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4.1",
+  "stt": 168,
+  "question": "Cho mình hỏi cuối tháng 4 mình bắt đầu làm công ty mới và đến cuối tháng 6 mình bắt đầu được đóng BHXH. Đầu tháng 5 thì mình mới xin được tờ rời và quyết định nghỉ việc của công ty cũ. Như thế thì mình có xin được trợ cấp thất nghiệp trong tháng 5 hoặc tháng 6 không?",
+  "answer": "Issue:\nBạn hỏi rằng với trường hợp cuối tháng 4 bắt đầu làm công ty mới, cuối tháng 6 mới được đóng BHXH, đầu tháng 5 mới có tờ rời và quyết định nghỉ việc công ty cũ, thì bạn có thể xin trợ cấp thất nghiệp trong tháng 5 hoặc tháng 6 không.\n\nRule:\n\"Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều 34 của Luật này hoặc kể từ sau ngày đóng bảo hiểm thất nghiệp chậm nhất theo quy định của pháp luật về bảo hiểm thất nghiệp, trừ trường hợp quy định tại điểm đ và điểm e khoản 1 Điều 39 của Luật này;\" (Luật BHXH 2024 (41/2024/QH15), Điều 38, Khoản 1)\n\nApplication:\nCác điều kiện được Prolog xác định gồm: cham_dut_hop_dong_lao_dong (chấm dứt hợp đồng lao động), da_nop_ho_so_day_du (đã nộp hồ sơ đầy đủ), chua_tim_duoc_viec_lam_moi (chưa tìm được việc làm mới), nop_ho_so_trong_thoi_han_quy_dinh (nộp hồ sơ trong thời hạn quy định). Các điều kiện này được truy xuất từ nguồn Luật BHXH 2024, Điều 38, Khoản 1.\n\nConclusion:\nProlog trả về các điều kiện cần thiết để hưởng trợ cấp thất nghiệp là: cham_dut_hop_dong_lao_dong, da_nop_ho_so_day_du, chua_tim_duoc_viec_lam_moi, nop_ho_so_trong_thoi_han_quy_dinh (Conditions). Nếu bạn đáp ứng đầy đủ các điều kiện này, bạn có thể được hưởng trợ cấp thất nghiệp. Nếu thiếu bất kỳ điều kiện nào, bạn sẽ không đủ điều kiện nhận trợ cấp.",
+  "citations": [
+    "[Điều 34]",
+    "[Điều 39]",
+    "[Điều 38 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A34",
+    "L41_2024.A39",
+    "L41_2024.A38.K1"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,unemployment_benefit_conditions([cham_dut_hop_dong_lao_dong,da_nop_ho_so_day_du,chua_tim_duoc_viec_lam_moi,nop_ho_so_trong_thoi_han_quy_dinh]),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi rằng với trường hợp cuối tháng 4 bắt đầu làm công ty mới, cuối tháng 6 mới được đóng BHXH, đầu tháng 5 mới có tờ rời và quyết định nghỉ việc công ty cũ, thì bạn có thể xin trợ cấp thất nghiệp trong tháng 5 hoặc tháng 6 không.",
+    "rule": "\"Chưa đóng hoặc đóng chưa đầy đủ số tiền phải đóng theo hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp đã đăng ký kể từ sau ngày đóng bảo hiểm xã hội chậm nhất quy định tại khoản 4 Điều 34 của Luật này hoặc kể từ sau ngày đóng bảo hiểm thất nghiệp chậm nhất theo quy định của pháp luật về bảo hiểm thất nghiệp, trừ trường hợp quy định tại điểm đ và điểm e khoản 1 Điều 39 của Luật này;\" (Luật BHXH 2024 (41/2024/QH15), Điều 38, Khoản 1)",
+    "application": "Các điều kiện được Prolog xác định gồm: cham_dut_hop_dong_lao_dong (chấm dứt hợp đồng lao động), da_nop_ho_so_day_du (đã nộp hồ sơ đầy đủ), chua_tim_duoc_viec_lam_moi (chưa tìm được việc làm mới), nop_ho_so_trong_thoi_han_quy_dinh (nộp hồ sơ trong thời hạn quy định). Các điều kiện này được truy xuất từ nguồn Luật BHXH 2024, Điều 38, Khoản 1.",
+    "conclusion": "Prolog trả về các điều kiện cần thiết để hưởng trợ cấp thất nghiệp là: cham_dut_hop_dong_lao_dong, da_nop_ho_so_day_du, chua_tim_duoc_viec_lam_moi, nop_ho_so_trong_thoi_han_quy_dinh (Conditions). Nếu bạn đáp ứng đầy đủ các điều kiện này, bạn có thể được hưởng trợ cấp thất nghiệp. Nếu thiếu bất kỳ điều kiện nào, bạn sẽ không đủ điều kiện nhận trợ cấp."
+  },
+  "elapsed_s": 9.18,
+  "prompt_tokens": 5844,
+  "completion_tokens": 782,
+  "error": null,
+  "gold_answer": "Bạn chỉ được nộp hồ sơ BHTN trong 03 tháng kể từ ngày chấm dứt HĐLĐ với công ty cũ. Nếu đến tháng 5 hoặc tháng 6 vẫn còn trong hạn 03 tháng và chưa có việc làm thuộc diện phải tham gia BHTN thì có thể nộp. Tuy nhiên nếu cuối tháng 4 đã vào công ty mới và đến thời điểm nộp hồ sơ đã thuộc diện phải tham gia BHTN ở nơi mới thì nguy cơ không đủ điều kiện hưởng.",
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+}

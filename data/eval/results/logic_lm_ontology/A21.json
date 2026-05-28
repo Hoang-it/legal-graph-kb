@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_ontology",
+  "stt": 21,
+  "question": "Ông Quang Lành (Tây Ninh) hỏi, các đối tượng hưởng trợ cấp BHXH hằng tháng gồm những đối tượng nào để xác định không được hưởng trợ cấp hưu trí xã hội?",
+  "answer": "Issue: Ông Quang Lành hỏi về các đối tượng hưởng trợ cấp BHXH hằng tháng để xác định không được hưởng trợ cấp hưu trí xã hội. \nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 10], người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên và có văn bản của cơ quan bảo hiểm xã hội xác nhận về việc chờ đủ điều kiện về tuổi đời để hưởng lương hưu thì được hưởng lương hưu. \nApplication: Không có slot nào được gán giá trị. Prolog query monthly_social_insurance_beneficiaries(Conditions, Trace) trả về Conditions = [workers_with_15_years_contribution, social_insurance_waiting_for_retirement_age]. \nConclusion: Theo Prolog, các đối tượng hưởng trợ cấp BHXH hằng tháng bao gồm những người lao động có từ đủ 15 năm đóng bảo hiểm xã hội và đang chờ đủ tuổi để hưởng lương hưu.",
+  "plain_answer": "Các đối tượng hưởng trợ cấp BHXH hằng tháng bao gồm những người lao động có từ đủ 15 năm đóng bảo hiểm xã hội và có văn bản xác nhận chờ đủ tuổi để hưởng lương hưu theo [Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 10]. Nếu bạn cần thêm thông tin cụ thể hơn, hãy cho mình biết nhé!",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 10]"
+  ],
+  "citation_ids": [
+    "L41_2024.A141.K10"
+  ],
+  "citation_indices": [
+    0
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,monthly_social_insurance_beneficiaries([workers_with_15_years_contribution,social_insurance_waiting_for_retirement_age]),based_on(source_c000))]",
+  "prolog_program": "legal_source(source_c000, law_bhxh_2024, article_10, clause_1, none, 'Người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên và có văn bản của cơ quan bảo hiểm xã hội xác nhận về việc chờ đủ điều kiện về tuổi đời để hưởng lương hưu được quy định tại Nghị định số 12/CP ngày 26 tháng 01 năm 1995 được sửa đổi, bổ sung một số điều theo Nghị định số 01/2003/NĐ-CP ngày 09 tháng 01 năm 2003 của Chính phủ thì được hưởng lương hưu khi nam đủ 60 tuổi, nữ đủ 55 tuổi.').\nmonthly_social_insurance_beneficiaries(Conditions, Trace) :- Conditions = [workers_with_15_years_contribution, social_insurance_waiting_for_retirement_age], Trace = [step(conclusion, monthly_social_insurance_beneficiaries(Conditions), based_on(source_c000))].",
+  "prolog_error": "",
+  "irac_sections": {
+    "issue": "Ông Quang Lành hỏi về các đối tượng hưởng trợ cấp BHXH hằng tháng để xác định không được hưởng trợ cấp hưu trí xã hội.",
+    "rule": "Theo [Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 10], người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên và có văn bản của cơ quan bảo hiểm xã hội xác nhận về việc chờ đủ điều kiện về tuổi đời để hưởng lương hưu thì được hưởng lương hưu.",
+    "application": "Không có slot nào được gán giá trị. Prolog query monthly_social_insurance_beneficiaries(Conditions, Trace) trả về Conditions = [workers_with_15_years_contribution, social_insurance_waiting_for_retirement_age].",
+    "conclusion": "Theo Prolog, các đối tượng hưởng trợ cấp BHXH hằng tháng bao gồm những người lao động có từ đủ 15 năm đóng bảo hiểm xã hội và đang chờ đủ tuổi để hưởng lương hưu."
+  },
+  "elapsed_s": 15.962,
+  "prompt_tokens": 4030,
+  "completion_tokens": 615,
+  "error": null,
+  "gold_answer": "Các đối tượng hưởng trợ cấp BHXH hằng tháng bao gồm:\n- Trợ cấp mất sức lao động;\n- Trợ cấp tai nạn lao động, bệnh nghề nghiệp;\n- Trợ cấp tuất;…\nĐây là những đối tượng không được hưởng trợ cấp hưu trí xã hội.",
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 21]"
+}

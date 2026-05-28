@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 154,
+  "question": "Anh chị cho em hỏi là em sinh xong 1 tháng sau em mới đi nộp giấy hưởng chế độ thai sản có được không?",
+  "answer": "Issue: Bạn hỏi về việc nộp giấy tờ hưởng chế độ thai sản sau khi sinh 1 tháng có được không.\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 62, Khoản 1: \"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản.\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong câu hỏi của bạn, nhưng theo quy định, thời hạn nộp hồ sơ là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản. Hệ thống đã xác định thời hạn này dựa trên nguồn luật đã trích dẫn.\n\nConclusion: Thời hạn nộp hồ sơ hưởng chế độ thai sản là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản. Bạn có thể nộp hồ sơ trong khoảng thời gian này.",
+  "citations": [
+    "[Điều 62 khoản 1]",
+    "[Điều 61]"
+  ],
+  "citation_ids": [
+    "L41_2024.A62.K1",
+    "L41_2024.A61"
+  ],
+  "citation_indices": [
+    4
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,maternity_leave_submission_deadline(45),based_on(source_c004))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về việc nộp giấy tờ hưởng chế độ thai sản sau khi sinh 1 tháng có được không.",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 62, Khoản 1: \"Người lao động có trách nhiệm nộp hồ sơ quy định tại Điều 61 của Luật này cho người sử dụng lao động. Thời hạn nộp hồ sơ chậm nhất là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản.\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong câu hỏi của bạn, nhưng theo quy định, thời hạn nộp hồ sơ là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản. Hệ thống đã xác định thời hạn này dựa trên nguồn luật đã trích dẫn.",
+    "conclusion": "Thời hạn nộp hồ sơ hưởng chế độ thai sản là 45 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản. Bạn có thể nộp hồ sơ trong khoảng thời gian này."
+  },
+  "elapsed_s": 9.463,
+  "prompt_tokens": 5730,
+  "completion_tokens": 649,
+  "error": null,
+  "gold_answer": "Được. Bạn sinh xong 1 tháng mới nộp hồ sơ thai sản thường vẫn không vấn đề, miễn hồ sơ đầy đủ và còn trong thời hạn giải quyết theo quy định. Nếu đang làm việc thì nộp cho công ty để công ty lập hồ sơ gửi BHXH; nếu đã nghỉ việc trước sinh mà đủ điều kiện hưởng, bạn nộp trực tiếp cho cơ quan BHXH.",
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

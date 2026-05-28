@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-4o",
+  "stt": 145,
+  "question": "đóng bảo hiểm xã hội tự nguyện thì có dc rút 1 lần k?",
+  "answer": "Issue: Người tham gia bảo hiểm xã hội tự nguyện có thể rút một lần không?\n\nRule: Theo Luật BHXH 2024 (41/2024/QH15), Điều 115, Khoản 1: \"Người tham gia bảo hiểm xã hội tự nguyện đang hưởng lương hưu ra nước ngoài để định cư nếu có nguyện vọng thì được giải quyết hưởng trợ cấp một lần và việc giải quyết hưởng trợ cấp một lần thực hiện như sau:\"\n\nApplication: Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo kết quả truy vấn Prolog, điều kiện để được rút bảo hiểm xã hội tự nguyện một lần là người tham gia phải đang hưởng lương hưu và ra nước ngoài để định cư.\n\nConclusion: Điều kiện để rút bảo hiểm xã hội tự nguyện một lần là \"emigration_for_retirement\" (ra nước ngoài để định cư khi đang hưởng lương hưu).",
+  "citations": [
+    "[Điều 115 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A115.K1"
+  ],
+  "citation_indices": [
+    1
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(conclusion,voluntary_social_insurance_one_time_withdrawal([emigration_for_retirement]),based_on(source_c001))]",
+  "irac_sections": {
+    "issue": "Người tham gia bảo hiểm xã hội tự nguyện có thể rút một lần không?",
+    "rule": "Theo Luật BHXH 2024 (41/2024/QH15), Điều 115, Khoản 1: \"Người tham gia bảo hiểm xã hội tự nguyện đang hưởng lương hưu ra nước ngoài để định cư nếu có nguyện vọng thì được giải quyết hưởng trợ cấp một lần và việc giải quyết hưởng trợ cấp một lần thực hiện như sau:\"",
+    "application": "Không có thông tin cụ thể nào được cung cấp trong slot_bindings. Tuy nhiên, theo kết quả truy vấn Prolog, điều kiện để được rút bảo hiểm xã hội tự nguyện một lần là người tham gia phải đang hưởng lương hưu và ra nước ngoài để định cư.",
+    "conclusion": "Điều kiện để rút bảo hiểm xã hội tự nguyện một lần là \"emigration_for_retirement\" (ra nước ngoài để định cư khi đang hưởng lương hưu)."
+  },
+  "elapsed_s": 4.589,
+  "prompt_tokens": 2815,
+  "completion_tokens": 413,
+  "error": null,
+  "gold_answer": "BHXH tự nguyện vẫn có thể được hưởng BHXH 1 lần, nhưng chỉ khi thuộc trường hợp luật cho phép. Mức hưởng tính theo số năm đã đóng và căn cứ đóng BHXH tự nguyện, bao gồm cả phần Nhà nước hỗ trợ nếu có. Tuy nhiên cần cân nhắc kỹ vì BHXH tự nguyện nhằm tích lũy cho hưu trí, tử tuất; rút 1 lần sẽ mất lợi ích lâu dài.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

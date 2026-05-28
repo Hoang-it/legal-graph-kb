@@ -1,0 +1,26 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 163,
+  "question": "cty em trả tờ rời chứ k thấy trả sổ. Nếu em rút 1 lần có cần đi làm lại sổ không?",
+  "answer": "Issue:\ncty em trả tờ rời chứ không thấy trả sổ. Nếu em rút BHXH một lần có cần đi làm lại sổ không?\n\nRule:\n\"Sổ bảo hiểm xã hội do cơ quan BHXH quản lý; người lao động được cấp lại khi sổ bị mất hoặc hồ sơ cần điều chỉnh.\" Trích: law_bhxh_2024 (article: none, clause: none)\n\nApplication:\n- slot_bindings: không có slot nào được gán giá trị trong truy vấn.\n- Cách Prolog tiêu thụ dữ liệu: truy vấn \"?- answer_conditions(Answer, Trace).\" gọi rule answer_conditions dựa trên nguồn source_sbook_issue (theo prolog_trace) và tạo ra biến Answer chứa các điều kiện/giải thích trả lời; không có tham số đầu vào khác được sử dụng.\n\nConclusion:\nProlog trả biến Answer với giá trị:\n[Thông thường việc rút BHXH một lần không bắt buộc phải \"làm lại sổ\" nếu người lao động đã nhận đủ tiền và có giấy tờ/biên lai thanh toán; cần làm lại sổ khi sổ bị mất, bị hư hỏng nặng hoặc khi cần hoàn thiện hồ sơ để ghi nhận quá trình tham gia.,Nếu công ty chỉ trả tờ rời mà không giao sổ, bạn nên kiểm tra xem sổ đang ở đâu (công ty giữ hay nộp cho cơ quan BHXH). Nếu sổ thực sự bị thất lạc thì người lao động cần làm thủ tục cấp lại sổ tại cơ quan BHXH.,Để chắc chắn, mang giấy tờ thanh toán, biên lai, và các chứng từ liên quan đến cơ quan BHXH hoặc điểm giao dịch để được hướng dẫn thủ tục cấp lại (nếu cần).]",
+  "citations": [],
+  "citation_ids": [],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(explanation,answer_conditions([Thông thường việc rút BHXH một lần không bắt buộc phải \"làm lại sổ\" nếu người lao động đã nhận đủ tiền và có giấy tờ/biên lai thanh toán; cần làm lại sổ khi sổ bị mất, bị hư hỏng nặng hoặc khi cần hoàn thiện hồ sơ để ghi nhận quá trình tham gia.,Nếu công ty chỉ trả tờ rời mà không giao sổ, bạn nên kiểm tra xem sổ đang ở đâu (công ty giữ hay nộp cho cơ quan BHXH). Nếu sổ thực sự bị thất lạc thì người lao động cần làm thủ tục cấp lại sổ tại cơ quan BHXH.,Để chắc chắn, mang giấy tờ thanh toán, biên lai, và các chứng từ liên quan đến cơ quan BHXH hoặc điểm giao dịch để được hướng dẫn thủ tục cấp lại (nếu cần).]),based_on(source_sbook_issue))]",
+  "irac_sections": {
+    "issue": "cty em trả tờ rời chứ không thấy trả sổ. Nếu em rút BHXH một lần có cần đi làm lại sổ không?",
+    "rule": "\"Sổ bảo hiểm xã hội do cơ quan BHXH quản lý; người lao động được cấp lại khi sổ bị mất hoặc hồ sơ cần điều chỉnh.\" Trích: law_bhxh_2024 (article: none, clause: none)",
+    "application": "- slot_bindings: không có slot nào được gán giá trị trong truy vấn.\n- Cách Prolog tiêu thụ dữ liệu: truy vấn \"?- answer_conditions(Answer, Trace).\" gọi rule answer_conditions dựa trên nguồn source_sbook_issue (theo prolog_trace) và tạo ra biến Answer chứa các điều kiện/giải thích trả lời; không có tham số đầu vào khác được sử dụng.",
+    "conclusion": "Prolog trả biến Answer với giá trị:\n[Thông thường việc rút BHXH một lần không bắt buộc phải \"làm lại sổ\" nếu người lao động đã nhận đủ tiền và có giấy tờ/biên lai thanh toán; cần làm lại sổ khi sổ bị mất, bị hư hỏng nặng hoặc khi cần hoàn thiện hồ sơ để ghi nhận quá trình tham gia.,Nếu công ty chỉ trả tờ rời mà không giao sổ, bạn nên kiểm tra xem sổ đang ở đâu (công ty giữ hay nộp cho cơ quan BHXH). Nếu sổ thực sự bị thất lạc thì người lao động cần làm thủ tục cấp lại sổ tại cơ quan BHXH.,Để chắc chắn, mang giấy tờ thanh toán, biên lai, và các chứng từ liên quan đến cơ quan BHXH hoặc điểm giao dịch để được hướng dẫn thủ tục cấp lại (nếu cần).]"
+  },
+  "elapsed_s": 47.11,
+  "prompt_tokens": 3825,
+  "completion_tokens": 5673,
+  "error": null,
+  "gold_answer": "Nếu công ty chỉ trả tờ rời mà không trả bìa sổ, bạn vẫn nên làm rõ tình trạng sổ BHXH. Khi giải quyết BHXH 1 lần hiện nay cơ quan BHXH đối chiếu dữ liệu điện tử là chính, nhưng nếu hồ sơ giấy thiếu, bạn có thể làm thủ tục cấp lại sổ. Vì vậy không nhất thiết phải có bìa cũ mới rút được, nhưng nên chuẩn hóa hồ sơ trước để tránh bị yêu cầu bổ sung.",
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

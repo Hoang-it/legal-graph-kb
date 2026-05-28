@@ -1,0 +1,32 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-5-mini",
+  "stt": 187,
+  "question": "Em làm đc 2 năm lương cơ bản 5tr2 thì rút bhxh đc bao nhiêu?",
+  "answer": "Issue:\nEm làm được 2 năm, lương cơ bản 5tr2, hỏi được rút BHXH một lần được bao nhiêu?\n\nRule:\nKhông có trích dẫn pháp lý trong dữ liệu (citations trống).\n\nApplication:\nyears_contributed(user) = 2 (từ verify_facts).\nbase_salary(user) = 5200000 (từ verify_facts).\nProlog đã sử dụng các bước trong Trace: step(months_computed, 24, based_on(source_rut_mot_lan)); step(employee_rate_assumed, 0.08, based_on(source_employee_rate)); step(calculation_result, 9984000, based_on(source_rut_mot_lan)). Các giá trị 24, 0.08, 9984000 là các biến/giá trị mà chương trình Prolog trả về trong Trace.\n\nConclusion:\nAmount = 9984000. (Biến Trace cũng được trả về: \"[step(months_computed,24,based_on(source_rut_mot_lan)),step(employee_rate_assumed,0.08,based_on(source_employee_rate)),step(calculation_result,9984000,based_on(source_rut_mot_lan))]\".)",
+  "citations": [
+    "[Điều 69 khoản 1]",
+    "[Điều 75 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A69.K1",
+    "L41_2024.A75.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(months_computed,24,based_on(source_rut_mot_lan)),step(employee_rate_assumed,0.08,based_on(source_employee_rate)),step(calculation_result,9984000,based_on(source_rut_mot_lan))]",
+  "irac_sections": {
+    "issue": "Em làm được 2 năm, lương cơ bản 5tr2, hỏi được rút BHXH một lần được bao nhiêu?",
+    "rule": "Không có trích dẫn pháp lý trong dữ liệu (citations trống).",
+    "application": "years_contributed(user) = 2 (từ verify_facts).\nbase_salary(user) = 5200000 (từ verify_facts).\nProlog đã sử dụng các bước trong Trace: step(months_computed, 24, based_on(source_rut_mot_lan)); step(employee_rate_assumed, 0.08, based_on(source_employee_rate)); step(calculation_result, 9984000, based_on(source_rut_mot_lan)). Các giá trị 24, 0.08, 9984000 là các biến/giá trị mà chương trình Prolog trả về trong Trace.",
+    "conclusion": "Amount = 9984000. (Biến Trace cũng được trả về: \"[step(months_computed,24,based_on(source_rut_mot_lan)),step(employee_rate_assumed,0.08,based_on(source_employee_rate)),step(calculation_result,9984000,based_on(source_rut_mot_lan))]\".)"
+  },
+  "elapsed_s": 40.45,
+  "prompt_tokens": 2184,
+  "completion_tokens": 4349,
+  "error": null,
+  "gold_answer": "Nếu bạn đóng 2 năm, mức bình quân lương khoảng 5,2 triệu và toàn bộ đều từ 2014 trở đi thì BHXH 1 lần ước khoảng khoảng 20,8 triệu. Đây là mức tính sơ bộ theo công thức 2 tháng bình quân lương cho mỗi năm đóng. Số thực nhận có thể chênh nhẹ do điều chỉnh tiền lương.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}

@@ -1,0 +1,34 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "model": "gpt-4.1",
+  "stt": 51,
+  "question": "Mình đóng bảo hiểm được 5 năm, mỗi năm một mức lương cơ bản khác nhau, hiện tại 1 năm nay lương cơ bản đang là 6tr. cho mình hỏi rút BH 1 lần thì được bao nhiêu và tính mức lương cơ bản trung bình như thế nào?",
+  "answer": "Issue:\nBạn hỏi về cách tính mức hưởng bảo hiểm xã hội (BHXH) một lần sau khi đã đóng BHXH được 5 năm với mức lương cơ bản mỗi năm khác nhau, trong đó năm gần nhất là 6.000.000 đồng, và cách xác định mức lương cơ bản trung bình.\n\nRule:\n\"Mức hưởng BHXH một lần được tính bằng 1,5 tháng mức bình quân tiền lương tháng đóng BHXH cho mỗi năm đóng trước năm 2014 và 2 tháng cho mỗi năm đóng từ năm 2014 trở đi.\" (law_bhxh_2024, article_61, clause_2)\n\"Mức bình quân tiền lương tháng đóng BHXH là tổng tiền lương tháng đóng BHXH chia cho tổng số tháng đóng.\" (law_bhxh_2024, article_63, clause_1)\n\nApplication:\nCác giá trị đã xác định:\n- years_contributed: 5\n- salary_last_year: 6000000\nHệ thống đã sử dụng các thông tin này để tính mức bình quân tiền lương tháng đóng BHXH (average_salary) và mức hưởng BHXH một lần (bhxh_one_time_amount) dựa trên các quy định pháp luật nêu trên.\n\nConclusion:\nTheo kết quả truy vấn Prolog, mức hưởng BHXH một lần là Amount = 12000000 và mức lương cơ bản trung bình là average_salary = 1200000.",
+  "citations": [
+    "[Điều 60 khoản 1]",
+    "[Điều 61 khoản 2]",
+    "[Điều 63 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A60.K1",
+    "L41_2024.A61.K2",
+    "L41_2024.A63.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(bhxh_one_time_amount,bhxh_one_time_amount(user,12000000),based_on(source_a61_k2)),step(average_salary,average_salary(user,1200000),based_on(source_a63_k1))]",
+  "irac_sections": {
+    "issue": "Bạn hỏi về cách tính mức hưởng bảo hiểm xã hội (BHXH) một lần sau khi đã đóng BHXH được 5 năm với mức lương cơ bản mỗi năm khác nhau, trong đó năm gần nhất là 6.000.000 đồng, và cách xác định mức lương cơ bản trung bình.",
+    "rule": "\"Mức hưởng BHXH một lần được tính bằng 1,5 tháng mức bình quân tiền lương tháng đóng BHXH cho mỗi năm đóng trước năm 2014 và 2 tháng cho mỗi năm đóng từ năm 2014 trở đi.\" (law_bhxh_2024, article_61, clause_2)\n\"Mức bình quân tiền lương tháng đóng BHXH là tổng tiền lương tháng đóng BHXH chia cho tổng số tháng đóng.\" (law_bhxh_2024, article_63, clause_1)",
+    "application": "Các giá trị đã xác định:\n- years_contributed: 5\n- salary_last_year: 6000000\nHệ thống đã sử dụng các thông tin này để tính mức bình quân tiền lương tháng đóng BHXH (average_salary) và mức hưởng BHXH một lần (bhxh_one_time_amount) dựa trên các quy định pháp luật nêu trên.",
+    "conclusion": "Theo kết quả truy vấn Prolog, mức hưởng BHXH một lần là Amount = 12000000 và mức lương cơ bản trung bình là average_salary = 1200000."
+  },
+  "elapsed_s": 7.796,
+  "prompt_tokens": 2411,
+  "completion_tokens": 847,
+  "error": null,
+  "gold_answer": "Không thể tính chính xác số tiền BHXH một lần chỉ dựa vào mức lương 1 năm gần nhất là 6 triệu, vì phải có toàn bộ tiền lương đóng của từng thời kỳ để tính mức bình quân. Nguyên tắc chung: mỗi năm đóng trước 2014 được tính 1,5 tháng mức bình quân; từ 2014 trở đi tính 2 tháng mức bình quân; tháng lẻ được quy đổi theo luật. Mức bình quân là tiền lương đóng BHXH sau điều chỉnh chia cho tổng số tháng đóng.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 104, Điều 109"
+}

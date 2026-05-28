@@ -1,0 +1,29 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 59,
+  "question": "Em làm nhân viên parttime được 1,5 năm nhưng đến tháng 1/2026 bắt đầu kí hợp đồng lao động 6 tháng và đóng bhxh. Tháng 3 e có bầu, dự sinh ngày 22/11, nếu chỉ đóng đủ 6 tháng theo hợp đồng thì có được hưởng bảo hiểm thai sản không?",
+  "answer": "Issue: Người lao động có đủ 6 tháng đóng bảo hiểm xã hội có được hưởng chế độ thai sản không?\n\nRule: \"Người lao động được hưởng chế độ thai sản khi có đủ 6 tháng đóng BHXH trong vòng 12 tháng trước khi sinh.\" (law_bhxh_2024, article_31, clause_1)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng người lao động đủ điều kiện hưởng chế độ thai sản dựa trên quy tắc đã được nêu.\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người lao động sẽ được hưởng bảo hiểm thai sản.",
+  "citations": [
+    "[Điều 31 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A31.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,maternity_benefit_eligibility(user,yes),based_on(source_a31_k1))]",
+  "irac_sections": {
+    "issue": "Người lao động có đủ 6 tháng đóng bảo hiểm xã hội có được hưởng chế độ thai sản không?",
+    "rule": "\"Người lao động được hưởng chế độ thai sản khi có đủ 6 tháng đóng BHXH trong vòng 12 tháng trước khi sinh.\" (law_bhxh_2024, article_31, clause_1)",
+    "application": "Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng người lao động đủ điều kiện hưởng chế độ thai sản dựa trên quy tắc đã được nêu.",
+    "conclusion": "Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người lao động sẽ được hưởng bảo hiểm thai sản."
+  },
+  "elapsed_s": 14.894,
+  "prompt_tokens": 3787,
+  "completion_tokens": 756,
+  "error": null,
+  "gold_answer": "Nếu bạn ký HĐLĐ từ 1/2026 và đóng BHXH bắt buộc đủ 6 tháng trong 12 tháng trước khi sinh vào 22/11/2026 thì về nguyên tắc đủ điều kiện hưởng thai sản. Thời gian làm part-time trước đó chỉ được tính nếu thuộc diện có đóng BHXH bắt buộc hợp pháp. Vì vậy, mốc quan trọng là số tháng đóng vào quỹ ốm đau - thai sản trong 12 tháng liền kề trước sinh, không phải số năm làm việc part-time.",
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50"
+}

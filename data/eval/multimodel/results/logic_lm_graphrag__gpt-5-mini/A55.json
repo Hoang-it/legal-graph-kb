@@ -1,0 +1,38 @@
+{
+  "arm": "logic_lm_graphrag",
+  "model": "gpt-5-mini",
+  "stt": 55,
+  "question": "Thời điểm năm 5/2016-5/2017 em có làm việc tại công ty cổ phần nam an. Khi em nghỉ chưa lấy tờ rời quá trình tại công ty này. Nay tôi quay lại công ty họ nói tôi nghỉ ngang và phạt 7-8tr. Giờ em phải làm sao?",
+  "answer": "Issue: Người hỏi làm tại Công ty Cổ phần Nam An từ 5/2016 đến 5/2017, khi nghỉ chưa lấy tờ rời quá trình; công ty nói nghỉ ngang và yêu cầu phạt \"7-8tr\". Hỏi cần làm gì?\n\nRule:\nLuật BHXH 2024 (41/2024/QH15) - Article 48 clause 3: \"Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định từ người sử dụng lao động, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 76 clause 5: \"Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 132 clause 2: \"Cá nhân có hành vi vi phạm quy định của Luật này, tùy theo tính chất, mức độ vi phạm mà bị xử phạt vi phạm hành chính, xử lý kỷ luật hoặc bị truy cứu trách nhiệm hình sự; nếu gây thiệt hại thì phải bồi thường theo quy định của pháp luật.\"\n\nApplication:\nKhông có slot_bindings được cung cấp. Các fact đầu vào được Prolog sử dụng: employed_from(user, date(2016,5)), employed_to(user, date(2017,5)), company_name(user, nam_an), did_not_receive_separation_document(user), employer_claims_quit_without_notice(user), employer_demands_fine_range(user,7000000,8000000). Luật sư tự động (Prolog) khớp did_not_receive_separation_document(user) và điều kiện (employer_claims_quit_without_notice(user) ; employer_demands_fine_range(...)) để sinh danh sách hành động đề nghị và trace các bước dựa trên nguồn luật đã trích dẫn.\n\nConclusion:\nProlog trả về binding cho Actions:\n\"[Yêu cầu công ty cấp tờ rời quá trình lao động và các chứng từ liên quan,Gửi yêu cầu bằng văn bản tới công ty, giữ lại bản sao và chứng cứ (email, tin nhắn, biên lai); nếu công ty không trả lời, liên hệ cơ quan bảo hiểm xã hội để được hướng dẫn và giải quyết trong thời hạn 07 ngày làm việc,Nếu công ty áp đặt khoản phạt trái pháp luật, người lao động có thể khiếu nại tới cơ quan quản lý lao động, cơ quan bảo hiểm xã hội hoặc khởi kiện; hành vi vi phạm có thể bị xử phạt hành chính theo quy định]\"",
+  "citations": [
+    "[Điều 48 khoản 3]",
+    "[Điều 76 khoản 5]",
+    "[Điều 132 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A48.K3",
+    "L41_2024.A76.K5",
+    "L41_2024.A132.K2"
+  ],
+  "citation_indices": [
+    3,
+    5,
+    6
+  ],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 0,
+  "prolog_trace": "[step(request_document,recommended_actions(user,[Yêu cầu công ty cấp tờ rời quá trình lao động và các chứng từ liên quan,Gửi yêu cầu bằng văn bản tới công ty, giữ lại bản sao và chứng cứ (email, tin nhắn, biên lai); nếu công ty không trả lời, liên hệ cơ quan bảo hiểm xã hội để được hướng dẫn và giải quyết trong thời hạn 07 ngày làm việc,Nếu công ty áp đặt khoản phạt trái pháp luật, người lao động có thể khiếu nại tới cơ quan quản lý lao động, cơ quan bảo hiểm xã hội hoặc khởi kiện; hành vi vi phạm có thể bị xử phạt hành chính theo quy định]),based_on(source_c003)),step(contact_social_insurance,recommended_actions(user,[Yêu cầu công ty cấp tờ rời quá trình lao động và các chứng từ liên quan,Gửi yêu cầu bằng văn bản tới công ty, giữ lại bản sao và chứng cứ (email, tin nhắn, biên lai); nếu công ty không trả lời, liên hệ cơ quan bảo hiểm xã hội để được hướng dẫn và giải quyết trong thời hạn 07 ngày làm việc,Nếu công ty áp đặt khoản phạt trái pháp luật, người lao động có thể khiếu nại tới cơ quan quản lý lao động, cơ quan bảo hiểm xã hội hoặc khởi kiện; hành vi vi phạm có thể bị xử phạt hành chính theo quy định]),based_on(source_c005)),step(potential_admin_sanction,recommended_actions(user,[Yêu cầu công ty cấp tờ rời quá trình lao động và các chứng từ liên quan,Gửi yêu cầu bằng văn bản tới công ty, giữ lại bản sao và chứng cứ (email, tin nhắn, biên lai); nếu công ty không trả lời, liên hệ cơ quan bảo hiểm xã hội để được hướng dẫn và giải quyết trong thời hạn 07 ngày làm việc,Nếu công ty áp đặt khoản phạt trái pháp luật, người lao động có thể khiếu nại tới cơ quan quản lý lao động, cơ quan bảo hiểm xã hội hoặc khởi kiện; hành vi vi phạm có thể bị xử phạt hành chính theo quy định]),based_on(source_c006))]",
+  "irac_sections": {
+    "issue": "Người hỏi làm tại Công ty Cổ phần Nam An từ 5/2016 đến 5/2017, khi nghỉ chưa lấy tờ rời quá trình; công ty nói nghỉ ngang và yêu cầu phạt \"7-8tr\". Hỏi cần làm gì?",
+    "rule": "Luật BHXH 2024 (41/2024/QH15) - Article 48 clause 3: \"Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định từ người sử dụng lao động, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 76 clause 5: \"Trong thời hạn 07 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết; trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.\"\nLuật BHXH 2024 (41/2024/QH15) - Article 132 clause 2: \"Cá nhân có hành vi vi phạm quy định của Luật này, tùy theo tính chất, mức độ vi phạm mà bị xử phạt vi phạm hành chính, xử lý kỷ luật hoặc bị truy cứu trách nhiệm hình sự; nếu gây thiệt hại thì phải bồi thường theo quy định của pháp luật.\"",
+    "application": "Không có slot_bindings được cung cấp. Các fact đầu vào được Prolog sử dụng: employed_from(user, date(2016,5)), employed_to(user, date(2017,5)), company_name(user, nam_an), did_not_receive_separation_document(user), employer_claims_quit_without_notice(user), employer_demands_fine_range(user,7000000,8000000). Luật sư tự động (Prolog) khớp did_not_receive_separation_document(user) và điều kiện (employer_claims_quit_without_notice(user) ; employer_demands_fine_range(...)) để sinh danh sách hành động đề nghị và trace các bước dựa trên nguồn luật đã trích dẫn.",
+    "conclusion": "Prolog trả về binding cho Actions:\n\"[Yêu cầu công ty cấp tờ rời quá trình lao động và các chứng từ liên quan,Gửi yêu cầu bằng văn bản tới công ty, giữ lại bản sao và chứng cứ (email, tin nhắn, biên lai); nếu công ty không trả lời, liên hệ cơ quan bảo hiểm xã hội để được hướng dẫn và giải quyết trong thời hạn 07 ngày làm việc,Nếu công ty áp đặt khoản phạt trái pháp luật, người lao động có thể khiếu nại tới cơ quan quản lý lao động, cơ quan bảo hiểm xã hội hoặc khởi kiện; hành vi vi phạm có thể bị xử phạt hành chính theo quy định]\""
+  },
+  "elapsed_s": 49.052,
+  "prompt_tokens": 4438,
+  "completion_tokens": 5932,
+  "error": null,
+  "gold_answer": "Công ty không được tự ý phạt bạn 7-8 triệu chỉ vì 'nghỉ ngang' nếu không có căn cứ pháp luật rõ ràng. Trường hợp đơn phương chấm dứt HĐLĐ trái luật thì nghĩa vụ bồi thường cũng phải theo Bộ luật Lao động, không phải doanh nghiệp muốn ấn định bao nhiêu cũng được. Việc chưa lấy tờ rời BHXH không làm mất quyền được nhận quá trình đóng. Bạn nên yêu cầu công ty trả sổ/tờ rời; nếu bị giữ trái luật thì khiếu nại đến cơ quan lao động hoặc BHXH.",
+  "gold_citations_raw": "Bộ luật Lao động 2019 Điều 35, Điều 40, Điều 48; Luật BHXH 2024 Điều 13"
+}

@@ -1,0 +1,29 @@
+{
+  "arm": "logic_lm_no_retrieval",
+  "stt": 190,
+  "question": "Lam cty luong cơ bản 3tr9 tháng mình đóng 415k bhxh và cty đóng cho 800k thì sau rút ra có rút dc cả phần 800k công ty đóng cho ko?",
+  "answer": "Issue: Người lao động có quyền rút phần tiền BHXH mà công ty đã đóng hay không?\n\nRule: \"Người lao động có quyền rút một phần hoặc toàn bộ số tiền BHXH đã đóng khi đủ điều kiện theo quy định.\" (law_bhxh_2024, article_38, clause_1)\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng người lao động có thể rút số tiền 800000 từ phần đóng góp của công ty.\n\nConclusion: Prolog đã trả về giá trị 800000 cho biến Amount, cho thấy người lao động có thể rút toàn bộ phần tiền mà công ty đã đóng.",
+  "citations": [
+    "[Điều 38 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A38.K1"
+  ],
+  "citation_indices": [],
+  "prolog_success": true,
+  "prolog_status": "success",
+  "n_repair_rounds": 1,
+  "prolog_trace": "[step(conclusion,withdraw_company_contribution(user,800000),based_on(source_a38))]",
+  "irac_sections": {
+    "issue": "Người lao động có quyền rút phần tiền BHXH mà công ty đã đóng hay không?",
+    "rule": "\"Người lao động có quyền rút một phần hoặc toàn bộ số tiền BHXH đã đóng khi đủ điều kiện theo quy định.\" (law_bhxh_2024, article_38, clause_1)",
+    "application": "Không có slot nào được gán giá trị trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng người lao động có thể rút số tiền 800000 từ phần đóng góp của công ty.",
+    "conclusion": "Prolog đã trả về giá trị 800000 cho biến Amount, cho thấy người lao động có thể rút toàn bộ phần tiền mà công ty đã đóng."
+  },
+  "elapsed_s": 10.238,
+  "prompt_tokens": 3162,
+  "completion_tokens": 382,
+  "error": null,
+  "gold_answer": "Khi hưởng BHXH 1 lần, mức hưởng được tính trên toàn bộ quá trình đóng vào quỹ hưu trí, tử tuất theo mức bình quân lương tháng đóng BHXH, không chỉ phần bạn tự đóng. Nói dễ hiểu, số tiền hưởng không tách riêng 'phần công ty đóng' hay 'phần mình đóng' để hoàn lại từng khoản, mà tính theo công thức luật định trên toàn bộ thời gian và mức đóng hợp lệ.",
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+}
