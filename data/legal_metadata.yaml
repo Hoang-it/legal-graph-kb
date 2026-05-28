@@ -1,0 +1,91 @@
+laws:
+  L45_2019:
+    id: L45_2019
+    code: L45_2019
+    full_id: 45/2019/QH14
+    title: "Bộ luật Lao động"
+    canonical_title: "Bộ luật Lao động 2019 (45/2019/QH14)"
+    type: code
+    hierarchy_level: "luật"
+    priority: 100
+    issuer: "Quốc hội"
+    issued_date: 2019-11-20
+    effective_date: 2021-01-01
+    repealed_date:
+    source_file: "data/raw/Bộ-luật-45-2019-QH14.docx"
+    expected:
+      chapters: 17
+      sections: 24
+      articles: 220
+    aliases:
+      - BLLD_2019
+      - "Bộ luật Lao động"
+      - "Bộ luật Lao động 2019"
+      - "Bộ luật lao động năm 2019"
+      - "Bộ luật số 45/2019/QH14"
+      - "45/2019/QH14"
+    prolog_law_ids:
+      - law_blld_2019
+      - law_lao_dong_2019
+
+  L58_2014:
+    id: L58_2014
+    code: L58_2014
+    full_id: 58/2014/QH13
+    title: "Luật Bảo hiểm xã hội"
+    canonical_title: "Luật BHXH 2014 (58/2014/QH13)"
+    type: law
+    hierarchy_level: "luật"
+    priority: 100
+    issuer: "Quốc hội"
+    issued_date: 2014-11-20
+    effective_date: 2016-01-01
+    repealed_date: 2025-07-01
+    source_file: "data/raw/Luật-58-2014-QH13.doc"
+    expected:
+      chapters: 9
+      sections: 9
+      articles: 125
+    aliases:
+      - "Luật BHXH 2014"
+      - "Luật BHXH năm 2014"
+      - "Luật Bảo hiểm xã hội 2014"
+      - "Luật số 58/2014/QH13"
+      - "58/2014/QH13"
+    prolog_law_ids:
+      - law_bhxh_2014
+
+  L41_2024:
+    id: L41_2024
+    code: L41_2024
+    full_id: 41/2024/QH15
+    title: "Luật Bảo hiểm xã hội"
+    canonical_title: "Luật BHXH 2024 (41/2024/QH15)"
+    type: law
+    hierarchy_level: "luật"
+    priority: 100
+    issuer: "Quốc hội"
+    issued_date: 2024-06-29
+    effective_date: 2025-07-01
+    repealed_date:
+    source_file: "data/raw/Luật-41-2024-QH15.docx"
+    expected:
+      chapters: 11
+      sections: 13
+      articles: 141
+    repeals:
+      - L58_2014
+    aliases:
+      - "Luật BHXH 2024"
+      - "Luật BHXH năm 2024"
+      - "Luật Bảo hiểm xã hội 2024"
+      - "Luật số 41/2024/QH15"
+      - "Luật BHXH số 41/2024/QH15"
+      - "41/2024/QH15"
+    prolog_law_ids:
+      - law_bhxh_2024
+
+load_order:
+  - L45_2019
+  - L58_2014
+  - L41_2024
