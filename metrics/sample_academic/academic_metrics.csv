@@ -1,5 +1,0 @@
-record_index,record_id,citation_recall,citation_precision,citation_f1,citation_display_rate,bertscore_p,bertscore_r,bertscore_f1,latency_s,prolog_first_try_solution,repair_invoked,repair_success,pred_citation_parse_errors,record_path
-1,,1.0,1.0,1.0,1.0,,,,1.0,,,,,
-2,,0.0,0.0,0.0,0.5,,,,3.0,,,,BAD_ID,
-3,,1.0,1.0,1.0,1.0,,,,2.0,True,False,,,
-4,,0.0,0.0,0.0,,,,,4.0,False,True,False,,
