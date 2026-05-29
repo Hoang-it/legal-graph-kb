@@ -215,6 +215,86 @@ In this order:
 
 ## Recommended workflow
 
+### Working with experiments — DO and DON'T
+
+Every empirical change to the system is an *experiment*. Treat the
+`experiments/` tree as append-only history.
+
+**DO**
+
+1. **One folder per experiment.** Copy `experiments/_template/` and
+   rename it to `NN_short_name/` where `NN` is the next sequential
+   number (look at `ls experiments/` for the current max). The number
+   prefix is what later experiments will reference with `parent:`.
+2. **Write WHAT and WHY before running.** Fill the experiment's
+   `README.md` with:
+   - one sentence on the question this experiment answers,
+   - the prior experiment whose result motivates it (link by folder name),
+   - what you'd predict and what threshold would change your mind.
+   This pre-commitment is what protects against post-hoc rationalization
+   when the numbers come in.
+3. **Inherit instead of re-running.** If an arm's behaviour hasn't
+   changed since a previous experiment, set `mode: inherit` and let the
+   metric pipeline pull its records from the parent. This saves API
+   spend AND keeps reported baselines literally identical across
+   experiments. Cycle and depth guards are in `eval_core.experiment`.
+4. **Override prompts per experiment via `prompts_override_dir`.** Put
+   the modified `.md` under `experiments/<NN>/prompts_override/`
+   mirroring the canonical `prompts/` tree. The CLI exports
+   `LEGAL_KG_PROMPTS_DIR` automatically. Canonical prompts in
+   `prompts/` stay untouched.
+5. **Pilot before full.** Set `dataset.n` to a small integer (5–10) in
+   `config.yaml`, run `python -m eval_core all experiments/<NN>`,
+   eyeball the output, then bump `n` back to 200 and rerun. Inference
+   is idempotent — already-written records get skipped on the full pass.
+6. **Drive everything through the CLI.**
+   - `run` — inference for arms with `mode: run`.
+   - `multimodel` — arm × model matrix declared in config.
+   - `metrics` — gold validate + compute + report.
+   - `all` — run + multimodel (if configured) + metrics.
+7. **Commit metrics and report, ignore results by default.** The root
+   `.gitignore` ignores `experiments/*/results/` so disk-heavy artifacts
+   don't bloat the repo. If your experiment becomes a baseline that
+   future experiments will inherit from, add a local `.gitignore`
+   un-ignoring `results/` (see `experiments/01_initial_eval/.gitignore`
+   for the pattern). Metrics and report are always tracked.
+8. **Write the result summary back into the experiment README** after
+   the full run lands. State which arm won by what margin, p-value if
+   applicable, and link `metrics/academic_metrics.json` and
+   `report/academic_report.md`.
+
+**DON'T**
+
+1. **Don't edit an existing experiment after it's been reported.**
+   Treat finished experiments as immutable history. New idea = new
+   folder.
+2. **Don't write outputs anywhere outside the experiment folder.**
+   `data/eval/results/`, `metrics/`, `reports/` at the repo root —
+   none of those exist anymore. Everything goes into
+   `experiments/<NN>/{results,metrics,report}/`.
+3. **Don't bypass `Experiment.records_for_arm`** to read records by
+   walking paths directly. The class is what enforces inheritance and
+   cycle safety; ad-hoc `Path("...").glob(...)` regresses to the old
+   model.
+4. **Don't hardcode an experiment name in code.** If a runner or
+   evaluator needs to know which experiment it's running, it should
+   receive an `Experiment` instance (or its path) as an argument.
+5. **Don't reintroduce `data/eval/results` / `data/eval/multimodel`
+   / `metrics/academic_metrics.*` / `reports/academic_report.md`**
+   anywhere in the repo. Those paths are dead. If you find one in code
+   or docs, it's a bug from before the refactor — delete or update it.
+6. **Don't edit a prompt under `prompts/` to test a hypothesis.** That
+   mutates the global default and affects every experiment. Use
+   `experiments/<NN>/prompts_override/` for the variant; canonical
+   prompts only change when the variant graduates.
+7. **Don't skip `Experiment.validate()`** in a new code path. It's the
+   cheap check that catches missing dataset files, missing parent
+   records, and broken inheritance before the OpenAI invoice does.
+8. **Don't add a new arm without registering it in `eval_core/arms.py`**
+   AND adding a runner in `eval_core/inference.py:ARM_RUNNERS`. The
+   CLI dispatches by name; an arm that isn't in both places silently
+   doesn't run.
+
 ### Adding a new inference arm
 1. Decide the arm name (e.g. `logic_lm_decomposed`). Add it to `ALL_ARMS` (and `MAIN_EXPERIMENT_ARMS` if it belongs to the headline set) in `eval_core/arms.py`.
 2. Build the pipeline class in `runtime/<your_arm>.py` returning `LogicLMAnswer` (or `RagAnswer` shape).
