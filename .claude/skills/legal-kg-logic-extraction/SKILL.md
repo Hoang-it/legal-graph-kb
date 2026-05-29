@@ -24,7 +24,7 @@ Read them before touching `experiments/` or `eval_core`.
 
 ### Rule 1 — `data/` is the read-only source of truth
 
-- `data/raw/`, `data/interim/`, `data/processed/`, `data/ontology/`,
+- `data/graph/` (raw/interim/processed), `data/ontology/`,
   `data/eval/questions_*.json`, `data/legal_*.yaml` are project input
   data + KG artifacts. Treat them as the input side of the pipeline.
 - Runtime-generated artifacts (e.g. Prolog programs from the logic-LM
@@ -34,7 +34,7 @@ Read them before touching `experiments/` or `eval_core`.
   ablation variants, regenerated artifacts) into `data/`. Every output
   of an experiment lands in that experiment's own folder via
   `experiment.results_dir` / `metrics_dir` / `report_dir`.
-- The only exception is `data/processed/extraction_summary.md`, which
+- The only exception is `data/graph/processed/extraction_summary.md`, which
   `offline/merge_normalize.py` writes as a B4 build artifact — it
   describes the KG, not any experiment.
 - When tempted to drop a new file into `data/`, ask: is this
@@ -198,11 +198,12 @@ legal-graph-kb/
 │       └── report/academic_report.md
 │
 ├── data/                             # KG + raw law + ontology (NO experiment output here)
-│   ├── legal_metadata.yaml           # Multi-law metadata source of truth
-│   ├── legal_sources.yaml            # Citation authority registry
-│   ├── raw/                          # Source .docx files
-│   ├── interim/                      # B1–B3 intermediate JSON (gitignored)
-│   ├── processed/                    # merged_graph.json + embeddings.parquet (committed)
+│   ├── legal_metadata.yaml           # Multi-law metadata source of truth (shared)
+│   ├── legal_sources.yaml            # Citation authority registry (shared)
+│   ├── graph/                        # Graph KG inputs/outputs for Neo4j-backed RAG arm
+│   │   ├── raw/                      #   Source .docx files
+│   │   ├── interim/                  #   B1–B3 intermediate JSON (gitignored except structured_law.json)
+│   │   └── processed/                #   merged_graph.json + embeddings.parquet (committed)
 │   ├── ontology/                     # Logic-LM knowledge base (corpus_2024.jsonl, ontology_2024.json) — input to runtime/logic_lm
 │   └── eval/questions_200.json       # 200 BHXH questions (input only — NOT output)
 │
@@ -266,7 +267,7 @@ In this order:
 |---|---|---|
 | Neo4j Cypher | Schema, multi-hop, vector index | `offline/load_neo4j.py`, `schema/schema.cypher` |
 | Prolog (SWI 9.x) | Logic-LM rule generation + repair loop | `runtime/logic_lm/pipelines/program_pipeline.py`, `runtime/logic_lm/solvers/prolog_solver.py` |
-| Vietnamese legal terminology | "Mức bình quân tiền lương", "BHXH", "NLĐ/NSDLĐ", IRAC | Prompts in `prompts/`; `data/interim/structured_law.json` |
+| Vietnamese legal terminology | "Mức bình quân tiền lương", "BHXH", "NLĐ/NSDLĐ", IRAC | Prompts in `prompts/`; `data/graph/interim/structured_law.json` |
 | OpenAI SDK | Generator + structured output + retries | `runtime/logic_lm/llm/client.py`, `offline/llm_extract.py` |
 | BGE-M3 embedding | 1024-d Vietnamese-aware vectors, cosine = dot product (normalized) | `offline/embed.py` |
 | Prompt engineering for structured JSON | Logic-LM emits parseable JSON envelopes | `prompts/runtime/logic_lm/rule_gen.md`, `irac_with_plain.md` |
@@ -402,7 +403,7 @@ Every empirical change to the system is an *experiment*. Treat the
 
 ### Running the full pipeline end-to-end
 ```powershell
-# Build the KG once (writes to data/processed/ + Neo4j)
+# Build the KG once (writes to data/graph/processed/ + Neo4j)
 python -m offline.parse_docx
 python -m offline.rule_extract
 python -m offline.llm_extract
@@ -438,7 +439,7 @@ Only files that *must* sit at the root for tooling reasons live there:
 - `eval_core/samples/README.md` — describes a specific test fixture.
 - `prompts/**/*.md` — functional prompts, not documentation.
 
-**Build artifact, not a doc**: `data/processed/extraction_summary.md` is
+**Build artifact, not a doc**: `data/graph/processed/extraction_summary.md` is
 written by `offline.merge_normalize` (B4). Don't edit it by hand and
 don't move it back into `docs/`.
 

@@ -35,11 +35,11 @@ Copy-Item .env.example .env
 
 | # | Command | Output |
 |---|---|---|
-| B1 | `python -m offline.parse_docx` | `data/interim/structured_law.json` |
-| B2 | `python -m offline.rule_extract` | `data/interim/{internal,external}_refs.json`, `definitions.json`, `amendments.json` |
-| B3 | `python -m offline.llm_extract` | `data/interim/llm_extractions/A*.json` |
-| B4 | `python -m offline.merge_normalize` | `data/processed/merged_graph.json` + `data/processed/extraction_summary.md` |
-| B5 | `python -m offline.embed` | `data/processed/embeddings.parquet` |
+| B1 | `python -m offline.parse_docx` | `data/graph/interim/structured_law.json` |
+| B2 | `python -m offline.rule_extract` | `data/graph/interim/{internal,external}_refs.json`, `definitions.json`, `amendments.json` |
+| B3 | `python -m offline.llm_extract` | `data/graph/interim/llm_extractions/A*.json` |
+| B4 | `python -m offline.merge_normalize` | `data/graph/processed/merged_graph.json` + `data/graph/processed/extraction_summary.md` |
+| B5 | `python -m offline.embed` | `data/graph/processed/embeddings.parquet` |
 | B6 | `python -m offline.load_neo4j` | Nodes + edges + embeddings nạp vào Neo4j |
 
 Each step is idempotent: re-runs skip existing outputs (override with `--force`).

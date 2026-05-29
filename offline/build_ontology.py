@@ -1,6 +1,6 @@
 """Build logic-lm-compatible corpus + ontology from Luật BHXH 41/2024/QH15.
 
-Convert `data/interim/structured_law.json` (B1 parse output) thành JSONL
+Convert `data/graph/interim/structured_law.json` (B1 parse output) thành JSONL
 format mà `runtime/logic_lm/knowledge/bhxh_ontology.py:build_bhxh_ontology` expect:
 
     {"id": "c<seq>", "text": "<clause text>",
@@ -31,7 +31,7 @@ if str(_REPO_ROOT) not in sys.path:
 from runtime.logic_lm.config import settings as logic_lm_settings
 
 
-STRUCTURED_PATH = Path("data/interim/structured_law.json")
+STRUCTURED_PATH = Path("data/graph/interim/structured_law.json")
 _ONTOLOGY_DIR = (
     Path(logic_lm_settings.DATA_DIR_NAME) / logic_lm_settings.ONTOLOGY_DIR_NAME
 )

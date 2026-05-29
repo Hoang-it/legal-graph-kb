@@ -15,7 +15,7 @@ from offline import rule_extract
 
 @pytest.fixture(scope="module")
 def structured() -> dict:
-    with open("data/interim/structured_law.json", encoding="utf-8") as f:
+    with open("data/graph/interim/structured_law.json", encoding="utf-8") as f:
         return json.load(f)
 
 

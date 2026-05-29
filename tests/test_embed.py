@@ -7,8 +7,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-EMBED_PATH = Path("data/processed/embeddings.parquet")
-GRAPH_PATH = Path("data/processed/merged_graph.json")
+EMBED_PATH = Path("data/graph/processed/embeddings.parquet")
+GRAPH_PATH = Path("data/graph/processed/merged_graph.json")
 EMBED_DIM = 1024
 
 

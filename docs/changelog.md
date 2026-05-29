@@ -50,7 +50,7 @@ Initial public release.
 - **Docs**: `README.md`, `docs/neo4j-setup.md`,
   `prompts/offline/llm_extract.md` (was `prompts/extract_v1.md` pre-refactor),
   `docs/experiments.md` (was `experiments/README.md` pre-refactor),
-  `data/processed/extraction_summary.md` (was `reports/extraction_summary.md` pre-refactor).
+  `data/graph/processed/extraction_summary.md` (was `reports/extraction_summary.md` pre-refactor).
 
 ### Security
 - `.env` excluded via `.gitignore` since first commit; `.env.example`

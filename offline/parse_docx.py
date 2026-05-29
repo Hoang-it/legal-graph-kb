@@ -118,7 +118,7 @@ try {{
     return None
 
 
-def ensure_docx(source: Path, out_dir: Path = Path("data/interim/converted_sources")) -> Path:
+def ensure_docx(source: Path, out_dir: Path = Path("data/graph/interim/converted_sources")) -> Path:
     """Return a `.docx` path for a `.docx` or `.doc` source.
 
     `.doc` conversion is a real conversion step. If no document engine can
@@ -644,7 +644,7 @@ def _write_result(result: dict, out: Path) -> None:
 
 def parse_one(meta: LawMetadata, source: Path | None = None, out: Path | None = None) -> Path:
     source = source or meta.source_file
-    out = out or Path(f"data/interim/structured_law_{meta.id}.json")
+    out = out or Path(f"data/graph/interim/structured_law_{meta.id}.json")
     print(f"Đọc {source} cho {meta.id} ...")
     result = parse_docx(source, metadata=meta)
     validate_against_metadata(result, meta)
@@ -669,7 +669,7 @@ def main() -> int:
     parser.add_argument(
         "--write-legacy-l41",
         action="store_true",
-        help="Also write data/interim/structured_law.json when parsing L41_2024.",
+        help="Also write data/graph/interim/structured_law.json when parsing L41_2024.",
     )
     args = parser.parse_args()
 
@@ -687,7 +687,7 @@ def main() -> int:
         try:
             written = parse_one(meta, source=source, out=out)
             if args.write_legacy_l41 and meta.id == "L41_2024":
-                legacy_out = Path("data/interim/structured_law.json")
+                legacy_out = Path("data/graph/interim/structured_law.json")
                 shutil.copyfile(written, legacy_out)
                 print(f"  Legacy copy: {legacy_out}")
         except Exception as exc:

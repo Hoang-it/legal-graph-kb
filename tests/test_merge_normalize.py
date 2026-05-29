@@ -9,10 +9,10 @@ import pytest
 @pytest.fixture(scope="module")
 def graph() -> dict:
     """Đọc lại merged_graph.json (chạy merge_normalize trước)."""
-    path = Path("data/processed/merged_graph.json")
+    path = Path("data/graph/processed/merged_graph.json")
     if not path.exists():
         pytest.skip(
-            "data/processed/merged_graph.json không tồn tại. Chạy `python -m offline.merge_normalize` trước."
+            "data/graph/processed/merged_graph.json không tồn tại. Chạy `python -m offline.merge_normalize` trước."
         )
     with path.open(encoding="utf-8") as f:
         return json.load(f)

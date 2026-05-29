@@ -1,7 +1,7 @@
 """B5 — Sinh embeddings cho Article / Clause / Point bằng BGE-M3 (1024-d).
 
-Đầu vào : data/processed/merged_graph.json  (output của B4)
-Đầu ra  : data/processed/embeddings.parquet
+Đầu vào : data/graph/processed/merged_graph.json  (output của B4)
+Đầu ra  : data/graph/processed/embeddings.parquet
 
 Schema parquet:
     id            : str    — node ID (vd 'L41_2024.A64.K1.a')
@@ -42,8 +42,8 @@ EMBED_DIM = int(os.getenv("EMBED_DIM", "1024"))
 DEVICE = os.getenv("EMBED_DEVICE", "cuda")
 BATCH_SIZE = int(os.getenv("EMBED_BATCH_SIZE", "16"))  # 16 an toàn cho RTX 3050 4GB
 
-GRAPH_PATH = Path("data/processed/merged_graph.json")
-OUT_PATH = Path("data/processed/embeddings.parquet")
+GRAPH_PATH = Path("data/graph/processed/merged_graph.json")
+OUT_PATH = Path("data/graph/processed/embeddings.parquet")
 
 # Labels có embedding (units văn bản)
 EMBED_LABELS = ("Article", "Clause", "Point")

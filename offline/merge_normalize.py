@@ -1,16 +1,16 @@
 """B4 — Hợp nhất 5 nguồn (B1 + B2 + B3) → merged_graph.json + report.
 
 Đầu vào:
-    data/interim/structured_law.json
-    data/interim/internal_refs.json
-    data/interim/external_refs.json
-    data/interim/definitions.json
-    data/interim/amendments.json
-    data/interim/llm_extractions/A*.json
+    data/graph/interim/structured_law.json
+    data/graph/interim/internal_refs.json
+    data/graph/interim/external_refs.json
+    data/graph/interim/definitions.json
+    data/graph/interim/amendments.json
+    data/graph/interim/llm_extractions/A*.json
 
 Đầu ra:
-    data/processed/merged_graph.json        — cấu trúc {nodes: {label: [...]}, edges: {type: [...]}}
-    data/processed/extraction_summary.md    — báo cáo cho con người
+    data/graph/processed/merged_graph.json        — cấu trúc {nodes: {label: [...]}, edges: {type: [...]}}
+    data/graph/processed/extraction_summary.md    — báo cáo cho con người
 
 NGUYÊN TẮC:
 - Dedup semantic node theo canonical ID; gộp `mentioned_in` (union).
@@ -31,10 +31,10 @@ from pathlib import Path
 
 from src.legal_metadata import load_law_metadata, load_order
 
-INTERIM = Path("data/interim")
+INTERIM = Path("data/graph/interim")
 LLM_DIR = INTERIM / "llm_extractions"
-OUT = Path("data/processed/merged_graph.json")
-REPORT = Path("data/processed/extraction_summary.md")
+OUT = Path("data/graph/processed/merged_graph.json")
+REPORT = Path("data/graph/processed/extraction_summary.md")
 
 
 # ---------------------------------------------------------------------------

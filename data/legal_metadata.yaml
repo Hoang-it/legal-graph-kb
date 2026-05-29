@@ -12,7 +12,7 @@ laws:
     issued_date: 2019-11-20
     effective_date: 2021-01-01
     repealed_date:
-    source_file: "data/raw/Bộ-luật-45-2019-QH14.docx"
+    source_file: "data/graph/raw/Bộ-luật-45-2019-QH14.docx"
     expected:
       chapters: 17
       sections: 24
@@ -41,7 +41,7 @@ laws:
     issued_date: 2014-11-20
     effective_date: 2016-01-01
     repealed_date: 2025-07-01
-    source_file: "data/raw/Luật-58-2014-QH13.doc"
+    source_file: "data/graph/raw/Luật-58-2014-QH13.doc"
     expected:
       chapters: 9
       sections: 9
@@ -68,7 +68,7 @@ laws:
     issued_date: 2024-06-29
     effective_date: 2025-07-01
     repealed_date:
-    source_file: "data/raw/Luật-41-2024-QH15.docx"
+    source_file: "data/graph/raw/Luật-41-2024-QH15.docx"
     expected:
       chapters: 11
       sections: 13

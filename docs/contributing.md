@@ -119,7 +119,7 @@ Khi báo bug, cung cấp:
 reject**:
 
 > Mọi node và relationship trong knowledge graph PHẢI có thể truy ngược về
-> điều luật gốc trong `data/raw/Luật-41-2024-QH15.docx`. Cụ thể:
+> điều luật gốc trong `data/graph/raw/Luật-41-2024-QH15.docx`. Cụ thể:
 >
 > - Structural nodes (`Article`/`Clause`/`Point`) lưu nguyên văn trong field
 >   `text` (verified byte-for-byte trong test).

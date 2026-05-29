@@ -186,17 +186,17 @@ cython_debug/
 
 # Generated pipeline data (regenerable; do NOT commit ALL EXCEPT explicit
 # whitelist below). Use `dir/*` form so we CAN re-include specific files.
-data/interim/*
-data/processed/*
+data/graph/interim/*
+data/graph/processed/*
 
 # User-provided evaluation data — except 200-question benchmark
 data/eval/questions_*.json
 
 # ─── EXCEPTIONS: KG artifacts needed to reproduce inference ───
 !data/eval/questions_200.json
-!data/interim/structured_law.json
-!data/processed/merged_graph.json
-!data/processed/embeddings.parquet
+!data/graph/interim/structured_law.json
+!data/graph/processed/merged_graph.json
+!data/graph/processed/embeddings.parquet
 
 # Backup snapshots from audit fixes
 *.bak
@@ -207,7 +207,7 @@ logs/
 
 # Allow placeholder files so empty dirs are kept
 !data/**/.gitkeep
-!data/raw/.gitkeep
+!data/graph/raw/.gitkeep
 
 # ─── Experiment results — ignored by default, per-experiment opt-in ───
 # Each experiment can override this in its own .gitignore (see e.g.

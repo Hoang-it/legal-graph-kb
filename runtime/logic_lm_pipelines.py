@@ -286,7 +286,7 @@ class _TokenTrackingLLMClient(LLMClient):
         feedback = str(payload.get(logic_lm_settings.PAYLOAD_FEEDBACK_KEY) or "")
 
         # Reuse base's chunk formatter via import
-        from llm.client import _chunk_lines  # type: ignore
+        from runtime.logic_lm.llm.client import _chunk_lines
 
         user_parts = [
             logic_lm_settings.LLM_TRAINING_QUESTION_LINE_TEMPLATE.format(

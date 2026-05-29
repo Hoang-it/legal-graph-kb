@@ -1,11 +1,11 @@
 """B2 — Trích viện dẫn / sửa đổi / định nghĩa bằng RULE (regex deterministic).
 
-Đầu vào : data/interim/structured_law.json  (output của B1)
+Đầu vào : data/graph/interim/structured_law.json  (output của B1)
 Đầu ra  :
-    data/interim/internal_refs.json
-    data/interim/external_refs.json
-    data/interim/definitions.json
-    data/interim/amendments.json
+    data/graph/interim/internal_refs.json
+    data/graph/interim/external_refs.json
+    data/graph/interim/definitions.json
+    data/graph/interim/amendments.json
 
 NGUYÊN TẮC PROVENANCE:
     Mọi extraction PHẢI có (source_clause, char_offset, span). Việc xác
@@ -598,8 +598,8 @@ def main() -> int:
     import argparse
 
     p = argparse.ArgumentParser()
-    p.add_argument("--input", default="data/interim/structured_law.json")
-    p.add_argument("--out-dir", default="data/interim")
+    p.add_argument("--input", default="data/graph/interim/structured_law.json")
+    p.add_argument("--out-dir", default="data/graph/interim")
     p.add_argument("--law", default=None)
     p.add_argument("--all", action="store_true")
     args = p.parse_args()
@@ -607,7 +607,7 @@ def main() -> int:
     if args.all:
         status = 0
         for law_id in load_order():
-            path = Path(f"data/interim/structured_law_{law_id}.json")
+            path = Path(f"data/graph/interim/structured_law_{law_id}.json")
             if not path.exists():
                 print(f"FAIL: không tìm thấy {path}. Chạy B1 trước.", file=sys.stderr)
                 return 1
@@ -615,7 +615,7 @@ def main() -> int:
         return status
 
     src = Path(args.input)
-    out_dir = Path("data/interim")
+    out_dir = Path("data/graph/interim")
     if args.out_dir:
         out_dir = Path(args.out_dir)
     if not src.exists():

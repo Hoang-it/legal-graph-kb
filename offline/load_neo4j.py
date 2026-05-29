@@ -1,8 +1,8 @@
 """B6 — Nạp merged graph + embeddings vào Neo4j 5.x.
 
 Đầu vào:
-    data/processed/merged_graph.json    (output B4)
-    data/processed/embeddings.parquet   (output B5)
+    data/graph/processed/merged_graph.json    (output B4)
+    data/graph/processed/embeddings.parquet   (output B5)
     schema/schema.cypher                (constraints + vector indexes)
 
 Hoạt động:
@@ -40,8 +40,8 @@ USER = os.getenv("NEO4J_USER")
 PWD = os.getenv("NEO4J_PASSWORD")
 DB = os.getenv("NEO4J_DATABASE", "neo4j")
 
-GRAPH_PATH = Path("data/processed/merged_graph.json")
-EMBED_PATH = Path("data/processed/embeddings.parquet")
+GRAPH_PATH = Path("data/graph/processed/merged_graph.json")
+EMBED_PATH = Path("data/graph/processed/embeddings.parquet")
 SCHEMA_PATH = Path("schema/schema.cypher")
 
 STRUCTURAL_EDGE_TYPES = {

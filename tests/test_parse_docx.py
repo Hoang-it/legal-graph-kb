@@ -10,7 +10,7 @@ from docx import Document
 from offline import parse_docx
 from src import ids
 
-DOCX_PATH = Path("data/raw/Luật-41-2024-QH15.docx")
+DOCX_PATH = Path("data/graph/raw/Luật-41-2024-QH15.docx")
 
 
 @pytest.fixture(scope="module")

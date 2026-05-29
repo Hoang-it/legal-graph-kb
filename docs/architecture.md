@@ -19,7 +19,7 @@
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│                   data/raw/Luật-...docx                      │
+│              data/graph/raw/Luật-...docx                     │
 └─────────────────────────────┬────────────────────────────────┘
                               │
             ┌─────────────────▼─────────────────┐
@@ -109,11 +109,14 @@ legal-graph-kb/
 │   └── chat.ps1                 #   chat REPL with UTF-8 console
 ├── tests/                       # 110+ pytest cases (provenance focus)
 ├── data/                        # KG + raw law + ontology (NOT experiment output)
-│   ├── raw/                     #   Source law .docx
-│   ├── interim/                 #   (ignored) B1-B3 intermediate JSON
-│   ├── processed/               #   (ignored) B4-B5 final artifacts + extraction_summary
+│   ├── graph/                   #   Graph KG inputs/outputs for Neo4j-backed RAG
+│   │   ├── raw/                 #     Source law .docx
+│   │   ├── interim/             #     (ignored) B1-B3 intermediate JSON
+│   │   └── processed/           #     (ignored) B4-B5 final artifacts + extraction_summary
 │   ├── ontology/                #   Logic-LM knowledge base (corpus_2024.jsonl + ontology_2024.json)
-│   └── eval/questions_200.json  #   200-question benchmark (input only)
+│   ├── eval/questions_200.json  #   200-question benchmark (input only)
+│   ├── legal_metadata.yaml      #   Multi-law metadata (shared by graph + ontology pipelines)
+│   └── legal_sources.yaml       #   Citation authority registry (shared)
 ├── artifacts/                   # (gitignored) Runtime-generated artifacts — peer of source dirs
 │   └── logic_lm/programs/       #   Prolog programs from logic_lm CLI (.pl + .json)
 ├── pyproject.toml               # Build, deps, ruff, pytest, coverage, mypy

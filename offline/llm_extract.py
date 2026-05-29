@@ -1,7 +1,7 @@
 """B3 — LLM extraction (OpenAI GPT-4o-mini).
 
-Đọc data/interim/structured_law.json, gọi OpenAI per-Article để trích thực
-thể và quan hệ ngữ nghĩa. Output: data/interim/llm_extractions/A{n}.json
+Đọc data/graph/interim/structured_law.json, gọi OpenAI per-Article để trích thực
+thể và quan hệ ngữ nghĩa. Output: data/graph/interim/llm_extractions/A{n}.json
 (1 file/Article, idempotent — skip nếu đã có).
 
 NGUYÊN TẮC PROVENANCE (không bịa):
@@ -45,8 +45,8 @@ MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 CONCURRENCY = int(os.getenv("OPENAI_CONCURRENCY", "5"))
 BASE_URL = os.getenv("OPENAI_BASE_URL") or None
 
-STRUCTURED_PATH = Path("data/interim/structured_law.json")
-OUT_DIR = Path("data/interim/llm_extractions")
+STRUCTURED_PATH = Path("data/graph/interim/structured_law.json")
+OUT_DIR = Path("data/graph/interim/llm_extractions")
 
 
 # ---------------------------------------------------------------------------

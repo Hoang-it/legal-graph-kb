@@ -41,5 +41,5 @@ project-level docs.
 - Cross-link with relative paths (e.g. `[eval_core](eval_core.md)`).
 - Per-experiment READMEs and the prompt files under `prompts/` are not
   docs — leave them where they are.
-- The auto-generated `data/processed/extraction_summary.md` is a build
+- The auto-generated `data/graph/processed/extraction_summary.md` is a build
   artifact of `offline.merge_normalize`, not a doc.
