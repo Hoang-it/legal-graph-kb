@@ -3,12 +3,8 @@
   "stt": 177,
   "question": "Em làm samsung Bắc Ninh từ năm 2017, e nghỉ ngang chưa chốt bảo hiểm và chưa có sổ. Giờ e làm công ty mới vẫn đóng bảo hiểm nhưng nếu nghỉ thì chưa chốt đc. Giờ e phải làm sao?",
   "answer": "Issue: Người dùng đã làm việc tại Samsung Bắc Ninh từ năm 2017 nhưng nghỉ ngang mà chưa chốt bảo hiểm, và hiện đang làm việc tại công ty mới. Họ cần biết phải làm gì trong tình huống này.\n\nRule: \"Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30 tháng 6 năm 2025 mà không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), article 141, clause 12)\n\nApplication: Không có slot_bindings nào được cung cấp trong truy vấn. Tuy nhiên, Prolog đã sử dụng thông tin về số năm đóng bảo hiểm của người dùng, cụ thể là 6 năm, để đưa ra lời khuyên.\n\nConclusion: Prolog đã trả về lời khuyên rằng \"Bạn cần chốt bảo hiểm xã hội với công ty cũ để đảm bảo quyền lợi, và tiếp tục đóng bảo hiểm tại công ty mới.\" Tuy nhiên, không có giá trị số nào được tính toán từ các slot, vì vậy không thể đưa ra một số liệu cụ thể.",
-  "citations": [
-    "[Điều 41 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A41.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 632,
   "error": null,
   "gold_answer": "Công ty mới vẫn có thể đóng BHXH cho bạn, nhưng hồ sơ cũ chưa chốt sẽ gây vướng khi gộp quá trình và giải quyết chế độ sau này. Bạn cần yêu cầu Samsung Bắc Ninh chốt sổ bằng văn bản; nếu họ không làm thì khiếu nại tới cơ quan BHXH quản lý đơn vị hoặc thanh tra lao động. Không nên để kéo dài vì càng lâu càng khó đối chiếu hồ sơ cũ.",
-  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A41.K1"
+  ]
 }

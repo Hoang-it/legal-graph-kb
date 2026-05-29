@@ -3,12 +3,8 @@
   "stt": 201,
   "question": "Giờ muốn lãnh bảo hiểm thất nghiệp phải làm qua dịch vụ công hả mọi người.",
   "answer": "Issue: Giờ muốn lãnh bảo hiểm thất nghiệp phải làm qua dịch vụ công hả mọi người.\n\nRule: \"6. Xác nhận thời gian đóng bảo hiểm xã hội, bảo hiểm thất nghiệp cho từng người lao động; cung cấp đầy đủ và kịp thời thông tin về việc đóng, quyền được hưởng chế độ, thủ tục thực hiện bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện khi người lao động, người sử dụng lao động hoặc tổ chức công đoàn yêu cầu.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 6)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng điều kiện để lãnh bảo hiểm thất nghiệp là phải sử dụng dịch vụ công.\n\nConclusion: Prolog đã trả về giá trị \"must_use_public_service\" cho biến Conditions.",
-  "citations": [
-    "[Điều 18 khoản 6]"
-  ],
-  "citation_ids": [
-    "L41_2024.A18.K6"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 393,
   "error": null,
   "gold_answer": null,
-  "gold_citations_raw": null
+  "gold_citations_raw": null,
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A18.K6"
+  ]
 }

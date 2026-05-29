@@ -3,12 +3,8 @@
   "stt": 112,
   "question": "Trước mình nghỉ ngang công ty cũ chưa chốt và lấy bìa xanh bây giờ ra bhxh huyện làm lại được không?",
   "answer": "Issue: Người lao động nghỉ ngang công ty cũ chưa chốt và muốn biết có thể làm lại bảo hiểm xã hội tại huyện hay không.\n\nRule: \"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 13, Khoản 2)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã trả về kết quả cho biết rằng người lao động có thể nộp hồ sơ để được hưởng chế độ bảo hiểm xã hội.\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy rằng người lao động có thể làm lại bảo hiểm xã hội.",
-  "citations": [
-    "[Điều 13 khoản 2]"
-  ],
-  "citation_ids": [
-    "L41_2024.A13.K2"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 398,
   "error": null,
   "gold_answer": "Bạn có thể đến cơ quan BHXH nơi quản lý quá trình tham gia để kiểm tra tình trạng sổ. Nếu công ty cũ chưa chốt thì BHXH huyện không thể tự chốt thay công ty, trừ khi có hồ sơ truy đóng/xác nhận quá trình. Việc cần làm là yêu cầu công ty làm thủ tục báo giảm, chốt sổ; nếu công ty không thực hiện thì khiếu nại tới cơ quan BHXH quản lý đơn vị.",
-  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A13.K2"
+  ]
 }

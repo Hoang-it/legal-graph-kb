@@ -3,17 +3,15 @@
   "stt": 56,
   "question": "Bên em có 1 nhóm cộng tác viên đến làm công việc đóng hàng mà thời gian không cố định. Em có tìm hiểu thì sẽ phải đóng BHXH cho nhóm này với mức đóng là 2.340.000. Nhưng các bạn ấy đi làm có tháng đủ 15 ngày nhưng có tháng chỉ đến 4-5 ngày. Em có 2 câu hỏi \n1. Nên để hợp đồng gì cho nhóm cộng tác viên này? Hiện em đang để là hợp đồng cộng tác viên nhưng do khi tính lương lại tính theo giờ. \n2. Có phải đóng BHXH cho nhóm này ko ạ? Có bạn tháng này đến làm tháng sau lại ko đến thì tăng giảm như thế lại ko hợp lý đúng ko ạ?",
   "answer": "1. Đối với nhóm cộng tác viên làm việc không cố định, bạn có thể sử dụng hợp đồng lao động theo mùa vụ hoặc hợp đồng lao động thời vụ. Hợp đồng này sẽ phù hợp hơn với tính chất công việc không ổn định và thời gian làm việc không cố định của họ. Tuy nhiên, nếu bạn đã ký hợp đồng cộng tác viên, bạn cần xem xét lại các điều khoản để đảm bảo phù hợp với quy định pháp luật.\n\n2. Theo quy định tại Luật Bảo hiểm xã hội, việc đóng BHXH cho nhóm cộng tác viên phụ thuộc vào hình thức hợp đồng và thời gian làm việc. Nếu các cộng tác viên này làm việc theo hợp đồng lao động (dù là thời vụ hay mùa vụ) và có thời gian làm việc từ 14 ngày trở lên trong tháng, bạn có trách nhiệm đóng BHXH cho họ. Tuy nhiên, nếu họ chỉ làm việc không thường xuyên và không đủ thời gian quy định, việc đóng BHXH có thể không bắt buộc. Bạn cần cân nhắc kỹ lưỡng để đảm bảo tuân thủ quy định pháp luật và quyền lợi của người lao động. \n\nCụ thể, bạn cần tham khảo thêm các quy định tại [Điều 2 khoản 1] và [Điều 4 khoản 1] của Luật Bảo hiểm xã hội số 41/2024/QH15 để có thông tin chi tiết hơn.",
-  "citations": [
-    "[Điều 2 khoản 1]",
-    "[Điều 4 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A2.K1",
-    "L41_2024.A4.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "elapsed_s": 5.826,
   "prompt_tokens": 313,
   "completion_tokens": 297,
   "gold_answer": "Tên hợp đồng không quyết định, mà bản chất công việc mới quyết định có phải tham gia BHXH bắt buộc hay không. Nếu nhóm cộng tác viên làm việc thường xuyên, có trả công, chịu sự quản lý, điều hành và hợp đồng từ đủ 1 tháng trở lên thì vẫn có thể thuộc diện BHXH bắt buộc dù gọi là 'CTV' hay tính lương theo giờ. Nếu làm thời vụ, không ổn định, không đủ dấu hiệu quan hệ lao động thì không thuộc diện bắt buộc. Cần rà lại thực tế sử dụng lao động để chọn loại hợp đồng phù hợp.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 2 khoản 1 điểm a; Bộ luật Lao động 2019 Điều 13"
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2 khoản 1 điểm a; Bộ luật Lao động 2019 Điều 13",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A2.K1",
+    "L41_2024.A4.K1"
+  ]
 }

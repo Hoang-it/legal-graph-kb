@@ -3,12 +3,8 @@
   "stt": 85,
   "question": "Em đóng BH từ tháng 8/2023 đến 2/2025, dừng t3,t4/2025. Sau đó đóng tiếp từ 5/2025 đến 5/2026. E dks cuối t10/2026. Nếu e nghỉ hẳn CTY e có đc hưởng bảo hiểm thất nghiệp không?",
   "answer": "Issue: Người hỏi muốn biết liệu họ có đủ điều kiện hưởng bảo hiểm thất nghiệp sau khi ngừng đóng bảo hiểm xã hội từ tháng 3, tháng 4 năm 2025 và tiếp tục từ tháng 5 năm 2025 đến tháng 5 năm 2026 hay không.\n\nRule: \"Bảo hiểm thất nghiệp theo quy định của Luật Việc làm.\" (Luật BHXH 2024 (41/2024/QH15), Điều 4, Khoản 4)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng người hỏi đủ điều kiện hưởng bảo hiểm thất nghiệp dựa trên số tháng đã đóng bảo hiểm.\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người hỏi đủ điều kiện hưởng bảo hiểm thất nghiệp.",
-  "citations": [
-    "[Điều 4 khoản 4]"
-  ],
-  "citation_ids": [
-    "L41_2024.A4.K4"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     3
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 397,
   "error": null,
   "gold_answer": "Bạn đóng BHTN từ 8/2023 đến 2/2025, nghỉ 2 tháng rồi đóng tiếp 5/2025 đến 5/2026 thì thời gian BHTN đủ dài để xét trợ cấp thất nghiệp nếu bạn nghỉ việc và đáp ứng điều kiện khác. Việc dự sinh cuối 10/2026 không ảnh hưởng trực tiếp đến quyền hưởng BHTN, miễn khi nộp hồ sơ bạn đã chấm dứt HĐLĐ hợp pháp, nộp trong 3 tháng và sau 15 ngày chưa có việc làm. Số tháng hưởng và mức hưởng sẽ tính riêng theo Luật Việc làm.",
-  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 49, Điều 50"
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 49, Điều 50",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A4.K4"
+  ]
 }

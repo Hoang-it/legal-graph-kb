@@ -1,0 +1,182 @@
+{
+  "arm": "graphrag_v5",
+  "stt": 16,
+  "question": "Ông Nam Hoàng (Huế) là viên chức, đóng BHXH được 20 năm nhưng chưa đến tuổi nghỉ hưu.\nÔng Hoàng hỏi, nếu ông nghỉ hưu thì có được hưởng chế độ hưu trí không? Hay hưởng trợ cấp một lần?",
+  "answer": "Ông Nam Hoàng không đủ điều kiện hưởng chế độ hưu trí vì ông đã đóng bảo hiểm xã hội được 20 năm nhưng chưa đến tuổi nghỉ hưu. Theo quy định, công dân đủ tuổi nghỉ hưu và có thời gian đóng bảo hiểm xã hội mới được hưởng lương hưu. \n\nTuy nhiên, nếu ông không đủ điều kiện hưởng lương hưu và chưa đủ tuổi hưởng trợ cấp hưu trí xã hội, ông có thể được hưởng trợ cấp hằng tháng từ chính khoản đóng của mình theo quy định tại Điều 23. \n\nDo đó, ông Hoàng sẽ không được hưởng chế độ hưu trí mà có thể nhận trợ cấp hằng tháng nếu đáp ứng các điều kiện quy định.\n\nCác điều luật liên quan:\n- `[Luật BHXH 2024 (41/2024/QH15), Điều 23 khoản 1]`",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 23 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A23.K1"
+  ],
+  "citation_verified": {
+    "L41_2024.A23.K1": true
+  },
+  "n_final_hits": 12,
+  "n_seeds": 15,
+  "n_neighbors_added": 8,
+  "retrieval_audit": {
+    "event_date": "2026-05-29",
+    "n_dense": 30,
+    "n_sparse": 30,
+    "n_after_temporal": 27,
+    "n_after_fusion": 27,
+    "n_dropped_by_temporal": 19
+  },
+  "hits": [
+    {
+      "rank": 1,
+      "rerank2_score": 0.9266,
+      "kind": "seed",
+      "clause_id": "L41_2024.A100.K1",
+      "article_id": "L41_2024.A100",
+      "law_id": "L41_2024",
+      "article_n": 100,
+      "article_title": "Trợ cấp một lần khi nghỉ hưu",
+      "clause_n": 1,
+      "rerank1_score": 0.9266355037689209
+    },
+    {
+      "rank": 2,
+      "rerank2_score": 0.9266,
+      "kind": "seed",
+      "clause_id": "L41_2024.A68.K1",
+      "article_id": "L41_2024.A68",
+      "law_id": "L41_2024",
+      "article_n": 68,
+      "article_title": "Trợ cấp một lần khi nghỉ hưu",
+      "clause_n": 1,
+      "rerank1_score": 0.9266355037689209
+    },
+    {
+      "rank": 3,
+      "rerank2_score": 0.9164,
+      "kind": "seed",
+      "clause_id": "L41_2024.A23.K1",
+      "article_id": "L41_2024.A23",
+      "law_id": "L41_2024",
+      "article_n": 23,
+      "article_title": "Chế độ đối với người lao động không đủ điều kiện hưởng lương hưu và chưa đủ tuổi hưởng trợ cấp hưu trí xã hội",
+      "clause_n": 1,
+      "rerank1_score": 0.9164180159568787
+    },
+    {
+      "rank": 4,
+      "rerank2_score": 0.7479,
+      "kind": "seed",
+      "clause_id": "L41_2024.A76.K2",
+      "article_id": "L41_2024.A76",
+      "law_id": "L41_2024",
+      "article_n": 76,
+      "article_title": "Trợ cấp một lần đối với người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng ra nước ngoài để định cư",
+      "clause_n": 2,
+      "rerank1_score": 0.7479360103607178
+    },
+    {
+      "rank": 5,
+      "rerank2_score": 0.6688,
+      "kind": "seed",
+      "clause_id": "L41_2024.A68.K2",
+      "article_id": "L41_2024.A68",
+      "law_id": "L41_2024",
+      "article_n": 68,
+      "article_title": "Trợ cấp một lần khi nghỉ hưu",
+      "clause_n": 2,
+      "rerank1_score": 0.6687652468681335
+    },
+    {
+      "rank": 6,
+      "rerank2_score": 0.6593,
+      "kind": "seed",
+      "clause_id": "L41_2024.A5.K3",
+      "article_id": "L41_2024.A5",
+      "law_id": "L41_2024",
+      "article_n": 5,
+      "article_title": "Nguyên tắc bảo hiểm xã hội",
+      "clause_n": 3,
+      "rerank1_score": 0.659273087978363
+    },
+    {
+      "rank": 7,
+      "rerank2_score": 0.6526,
+      "kind": "seed",
+      "clause_id": "L41_2024.A100.K2",
+      "article_id": "L41_2024.A100",
+      "law_id": "L41_2024",
+      "article_n": 100,
+      "article_title": "Trợ cấp một lần khi nghỉ hưu",
+      "clause_n": 2,
+      "rerank1_score": 0.6525927782058716
+    },
+    {
+      "rank": 8,
+      "rerank2_score": 0.5799,
+      "kind": "seed",
+      "clause_id": "L41_2024.A76.K1",
+      "article_id": "L41_2024.A76",
+      "law_id": "L41_2024",
+      "article_n": 76,
+      "article_title": "Trợ cấp một lần đối với người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng ra nước ngoài để định cư",
+      "clause_n": 1,
+      "rerank1_score": 0.5799283385276794
+    },
+    {
+      "rank": 9,
+      "rerank2_score": 0.5533,
+      "kind": "seed",
+      "clause_id": "L41_2024.A23.K3",
+      "article_id": "L41_2024.A23",
+      "law_id": "L41_2024",
+      "article_n": 23,
+      "article_title": "Chế độ đối với người lao động không đủ điều kiện hưởng lương hưu và chưa đủ tuổi hưởng trợ cấp hưu trí xã hội",
+      "clause_n": 3,
+      "rerank1_score": 0.5533061623573303
+    },
+    {
+      "rank": 10,
+      "rerank2_score": 0.5033,
+      "kind": "seed",
+      "clause_id": "L41_2024.A141.K3",
+      "article_id": "L41_2024.A141",
+      "law_id": "L41_2024",
+      "article_n": 141,
+      "article_title": "Quy định chuyển tiếp",
+      "clause_n": 3,
+      "rerank1_score": 0.5033127069473267
+    },
+    {
+      "rank": 11,
+      "rerank2_score": 0.2708,
+      "kind": "seed",
+      "clause_id": "L41_2024.A102.K5",
+      "article_id": "L41_2024.A102",
+      "law_id": "L41_2024",
+      "article_n": 102,
+      "article_title": "Hưởng bảo hiểm xã hội một lần",
+      "clause_n": 5,
+      "rerank1_score": 0.2707555592060089
+    },
+    {
+      "rank": 12,
+      "rerank2_score": 0.2464,
+      "kind": "seed",
+      "clause_id": "L41_2024.A65.K1",
+      "article_id": "L41_2024.A65",
+      "law_id": "L41_2024",
+      "article_n": 65,
+      "article_title": "Đối tượng và điều kiện hưởng lương hưu khi suy giảm khả năng lao động",
+      "clause_n": 1,
+      "rerank1_score": 0.2463783472776413
+    }
+  ],
+  "elapsed_s": 48.008,
+  "elapsed_breakdown": {
+    "retrieve": 0.509,
+    "rerank1": 12.276,
+    "expand": 0.005,
+    "rerank2": 29.51,
+    "llm": 5.686
+  },
+  "gold_answer": "Luật BHXH năm 2024 có hiệu lực thi hành từ ngày 01/7/2025 quy định về điều kiện nghỉ hưu và điều kiện hưởng BHXH một lần như sau:\nKhoản 1 Điều 64 quy định: \"Đối tượng quy định tại các điểm a, b, c, g, h, i, k, l, m và n khoản 1 và khoản 2 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 15 năm trở lên thì được hưởng lương hưu nếu thuộc một trong các trường hợp sau đây:\na) Đủ tuổi nghỉ hưu theo quy định tại khoản 2 Điều 169 của Bộ luật Lao động;\nb) Đủ tuổi nghỉ hưu theo quy định tại khoản 3 Điều 169 của Bộ luật Lao động và có tổng thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 15 năm trở lên khi làm nghề, công việc nặng nhọc, độc hại, nguy hiểm hoặc đặc biệt nặng nhọc, độc hại, nguy hiểm thuộc danh mục nghề, công việc nặng nhọc, độc hại, nguy hiếm hoặc đặc biệt nặng nhọc, độc hại, nguy hiểm do Bộ trưởng Bộ Lao động - Thương binh và Xã hội ban hành hoặc làm việc ở vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn bao gồm cả thời gian làm việc ở nơi có phụ cấp khu vực hệ số 0,7 trở lên trước ngày 01 tháng 01 năm 2021;\nc) Có tuổi thấp hơn tối đa 10 tuổi so với tuổi quy định tại khoản 2 Điều 169 của Bộ luật Lao động và có từ đủ 15 năm trở lên làm công việc khai thác than trong hầm lò theo quy định của Chính phủ;\nd) Người bị nhiễm HIV/AIDS do tai nạn rủi ro nghề nghiệp trong khi thực hiện nhiệm vụ được giao\".\nTại Khoản 1 Điều 65 quy định: \"Đối tượng quy định tại các điểm a, b, c, g, h, i, k, l, m và n khoản 1 và khoản 2 Điều 2 của Luật này khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 20 năm trở lên thì được hưởng lương hưu với mức thấp hơn so với người đủ điều kiện hưởng lương hưu quy định tại các điểm a, b và c khoản 1 Điều 64 của Luật này nếu thuộc một trong các trường hợp sau đây:\na) Có tuổi thấp hơn tối đa 05 tuổi so với tuổi quy định tại điểm a khoản 1 Điều 64 của Luật này và bị suy giảm khả năng lao động từ 61% đến dưới 81%;\nb) Có tuổi thấp hơn tối đa 10 tuổi so với tuổi quy định tại điểm a khoản 1 Điều 64 của Luật này và bị suy giảm khả năng lao động từ 81% trở lên;\nc) Có từ đủ 15 năm trở lên làm nghề, công việc đặc biệt nặng nhọc, độc hại, nguy hiểm thuộc danh mục nghề, công việc đặc biệt nặng nhọc, độc hại, nguy hiểm do Bộ trưởng Bộ Lao động - Thương binh và Xã hội ban hành và bị suy giảm khả năng lao động từ 61% trở lên\".\nTrường hợp ông Lê Nam Hoàng là viên chức đã đóng BHXH được 20 năm thì hưởng BHXH một lần theo quy định tại khoản 1 Điều 70 Luật BHXH năm 2024 như sau:\n\"Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm xã hội mà có đề nghị thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây:\n... b) Ra nước ngoài để định cư;\nc) Người đang mắc một trong những bệnh ung thư, bại liệt, xơ gan mất bù, lao nặng, AIDS;\nd) Người có mức suy giảm khả năng lao động từ 81% trở lên; người khuyết tật đặc biệt nặng...\".\nKhoản 6 Điều 70 Luật BHXH năm 2024 quy định: \"Trường hợp người lao động quy định tại các điểm b, c và d khoản 1... Điều này vừa đủ điều kiện hưởng lương hưu vừa đủ điều kiện hưởng bảo hiểm xã hội một lần thì người lao động được lựa chọn hưởng lương hưu hằng tháng hoặc hưởng bảo hiểm xã hội một lần\".\nBHXH Việt Nam cung cấp quy định của Luật BHXH năm 2024 về điều kiện hưởng lương hưu, điều kiện hưởng BHXH một lần để ông đối chiếu với điều kiện của bản thân (tuổi đời, tình trạng sức khỏe, diễn biến quá trình đóng BHXH, chức danh nghề, địa điểm đơn vị làm việc...) hoặc liên hệ với cơ quan BHXH nơi đang đóng BHXH để được hướng dẫn, tư vấn cụ thể.",
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 64]\n[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Bộ luật Lao động 2019, Điều 169]"
+}

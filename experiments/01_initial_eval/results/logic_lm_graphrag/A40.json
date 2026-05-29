@@ -4,14 +4,8 @@
   "question": "Em đóng bhxh t8/2025 đến t4/2026, ngày dự sinh của em là19/8. Vậy em có đủ đk để nhận trợ cấp không? Làm hểt tháng 4 là em nghỉ cty luôn. Em có đủ đk để nhận bhts k?",
   "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'maternity_benefit_eligibility(Benefit']",
   "plain_answer": "",
-  "citations": [
-    "[Luật BHXH 2024 (41/2024/QH15), Điều 55 khoản 1]",
-    "[Luật BHXH 2024 (41/2024/QH15), Điều 59 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A55.K1",
-    "L41_2024.A59.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     4,
     6
@@ -28,5 +22,9 @@
   "completion_tokens": 1214,
   "error": null,
   "gold_answer": "Nếu bạn đóng BHXH bắt buộc từ 8/2025 đến hết 4/2026 thì có 9 tháng đóng trong 12 tháng trước khi sinh 8/2026, nên về nguyên tắc đủ điều kiện hưởng thai sản khi sinh con. Việc nghỉ việc sau tháng 4/2026 không làm mất quyền hưởng nếu bạn đã đủ điều kiện trước khi sinh. Bạn vẫn được nộp hồ sơ hưởng thai sản qua cơ quan BHXH theo nơi cư trú hoặc qua đơn vị nếu còn quan hệ lao động.",
-  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]\n[Luật BHXH 2024 (41/2024/QH15), Điều 53]"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]\n[Luật BHXH 2024 (41/2024/QH15), Điều 53]",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A55.K1",
+    "L41_2024.A59.K1"
+  ]
 }

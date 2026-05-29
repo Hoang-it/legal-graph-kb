@@ -3,16 +3,8 @@
   "stt": 155,
   "question": "Minh mat so bhxh , còn nhớ số sổ , làm sao tra được quá trình đóng bhxh?",
   "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpffhsodhc.pl:1:448: Syntax error: Operator expected]",
-  "citations": [
-    "[Điều 18 khoản 2]",
-    "[Điều 18 khoản 4]",
-    "[Điều 18 khoản 6]"
-  ],
-  "citation_ids": [
-    "L41_2024.A18.K2",
-    "L41_2024.A18.K4",
-    "L41_2024.A18.K6"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0,
     1,
@@ -28,5 +20,10 @@
   "completion_tokens": 1146,
   "error": null,
   "gold_answer": "Nếu nhớ số sổ/mã số BHXH, bạn có thể tra quá trình đóng trên VssID, VNeID, cổng thông tin BHXH Việt Nam hoặc đến cơ quan BHXH để xin xác nhận quá trình đóng. Trường hợp mất sổ giấy, bạn vẫn làm thủ tục cấp lại được. Nên mang CCCD để cơ quan BHXH đối chiếu nhanh hơn.",
-  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A18.K2",
+    "L41_2024.A18.K4",
+    "L41_2024.A18.K6"
+  ]
 }

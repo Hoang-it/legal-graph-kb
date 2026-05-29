@@ -3,17 +3,15 @@
   "stt": 107,
   "question": "Bảo hiểm của e đóng từ 2015, đóng gián đoạn. Đến năm 2021 thì nghỉ đóng, vậy e có được rút không? và rút được bao nhiêu?",
   "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, bạn có quyền rút bảo hiểm xã hội một lần nếu bạn không tiếp tục tham gia bảo hiểm xã hội và đã đủ điều kiện. Cụ thể, bạn có thể rút bảo hiểm xã hội một lần khi:\n\n1. Đủ 1 năm không tham gia bảo hiểm xã hội.\n2. Đã đủ tuổi nghỉ hưu nhưng không đủ điều kiện hưởng lương hưu.\n\nVề số tiền rút, bạn sẽ được nhận một khoản tiền tương ứng với số năm bạn đã tham gia bảo hiểm xã hội, cụ thể là tổng số tiền đã đóng và lãi suất theo quy định.\n\nTuy nhiên, để biết chính xác số tiền bạn có thể rút, bạn cần liên hệ với cơ quan bảo hiểm xã hội nơi bạn tham gia để được tư vấn cụ thể hơn. \n\nBạn có thể tham khảo thêm tại [Điều 60 khoản 1] và [Điều 62 khoản 1].",
-  "citations": [
-    "[Điều 60 khoản 1]",
-    "[Điều 62 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A60.K1",
-    "L41_2024.A62.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "elapsed_s": 5.102,
   "prompt_tokens": 199,
   "completion_tokens": 211,
   "gold_answer": "Nếu bạn đã ngừng đóng từ năm 2021 đến nay và không thuộc diện tiếp tục tham gia, về nguyên tắc bạn có thể đề nghị hưởng BHXH 1 lần nếu thuộc trường hợp luật cho phép. Mức hưởng tính theo số năm đã đóng và mức bình quân tiền lương tháng đóng BHXH sau điều chỉnh; mỗi năm từ 2014 trở đi tính 2 tháng bình quân lương, trước 2014 tính 1,5 tháng/năm.",
-  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A60.K1",
+    "L41_2024.A62.K1"
+  ]
 }

@@ -3,15 +3,14 @@
   "stt": 172,
   "question": "đăng kí bhtn xong tầm bnh ngày là sẽ nhận tiền?",
   "answer": "Theo quy định tại Luật Bảo hiểm xã hội, sau khi người lao động đăng ký hưởng trợ cấp thất nghiệp, thời gian giải quyết hồ sơ và chi trả trợ cấp thất nghiệp là không quá 5 ngày làm việc kể từ ngày nhận đủ hồ sơ hợp lệ. Cụ thể, nếu hồ sơ của bạn được chấp nhận, bạn sẽ nhận tiền trợ cấp thất nghiệp trong khoảng thời gian này. \n\nBạn có thể tham khảo thêm tại [Điều 50 khoản 1].",
-  "citations": [
-    "[Điều 50 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A50.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "elapsed_s": 3.214,
   "prompt_tokens": 175,
   "completion_tokens": 101,
   "gold_answer": "Sau khi bạn nộp đủ hồ sơ BHTN, nếu sau 15 ngày làm việc vẫn chưa có việc làm thì sẽ được giải quyết hưởng. Tiền trợ cấp thường được chi trả sau khi có quyết định hưởng, thực tế nhiều nơi nhận trong vài ngày đến khoảng 1-2 tuần sau quyết định đầu tiên. Bạn nhớ theo dõi lịch thông báo việc làm hằng tháng để không bị tạm dừng hoặc chấm dứt hưởng.",
-  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A50.K1"
+  ]
 }

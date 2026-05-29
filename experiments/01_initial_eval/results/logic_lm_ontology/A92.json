@@ -3,12 +3,8 @@
   "stt": 92,
   "question": "E đóng bảo hiểm hiểm được 14 năm 5 tháng \nT9 2011 e đóng 1•500•000k\nĐến nay e đóng 6,837.000k\nVậy e sẽ lãnh được bao nhiêu tiền bảo hiểm xã hội?",
   "answer": "Issue: E hỏi về số tiền bảo hiểm xã hội mà mình sẽ lãnh được sau khi đã đóng bảo hiểm trong 14 năm 5 tháng.\n\nRule: \"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)\n\nApplication: \n- years_contributed: 14\n- months_contributed: 5\n- average_salary: 1500000\n- monthly_amount: 6837000\n\nProlog đã sử dụng các giá trị này để tính toán số tiền bảo hiểm xã hội mà E sẽ nhận được.\n\nConclusion: Số tiền bảo hiểm xã hội mà E sẽ lãnh được là 129750000.0 (Payout).",
-  "citations": [
-    "[Điều 18 khoản 2]"
-  ],
-  "citation_ids": [
-    "L41_2024.A18.K2"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 916,
   "error": null,
   "gold_answer": "Với 14 năm 5 tháng đóng BHXH, không thể tính chính xác số tiền BHXH một lần chỉ từ mức lương đầu kỳ 1,5 triệu và hiện tại 6.837.000 đồng. Luật tính theo mức bình quân tiền lương tháng đóng BHXH sau điều chỉnh của toàn bộ quá trình, rồi nhân với số năm tương ứng: trước 2014 tính 1,5 tháng bình quân/năm, từ 2014 trở đi tính 2 tháng bình quân/năm, tháng lẻ quy đổi theo luật. Bạn cần bảng quá trình đóng chi tiết mới tính ra số cụ thể.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 104, Điều 109"
+  "gold_citations_raw": "Luật BHXH 2024 Điều 70, Điều 104, Điều 109",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A18.K2"
+  ]
 }

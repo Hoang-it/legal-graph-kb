@@ -3,12 +3,8 @@
   "stt": 126,
   "question": "Trên app hiện ngày QĐ hưởng là 16/4, giấy hẹn kết quả 20/4 thì ngày nào em sẽ nhận được tiền BHXH 1 lần? Với mình có cần đến để nhận quyết định thì mới nhận được tiền không?",
   "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'need_decision_to_receive(Decision']",
-  "citations": [
-    "[Điều 79 khoản 3]"
-  ],
-  "citation_ids": [
-    "L41_2024.A79.K3"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -22,5 +18,8 @@
   "completion_tokens": 735,
   "error": null,
   "gold_answer": "Thông thường, tiền BHXH 1 lần được chuyển sau khi có quyết định giải quyết, nếu bạn đã đăng ký nhận qua tài khoản thì không nhất thiết phải đến nhận quyết định mới được trả tiền. Ngày app hiện QĐ hưởng 16/4 nghĩa là hồ sơ đã được phê duyệt; giấy hẹn 20/4 là ngày trả kết quả. Thực tế tiền thường về gần thời điểm trả kết quả hoặc vài ngày làm việc sau đó.",
-  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A79.K3"
+  ]
 }

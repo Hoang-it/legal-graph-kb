@@ -3,12 +3,8 @@
   "stt": 108,
   "question": "E đg làm cty nhưng hết hợp đồng ngày 23/4/2026 \nE đg bầu, e có giấy quyết định nv và chấm dứt hđ .E làm bh thât nghiệp bao nhiêu lâu thì sẽ đc hưởng tiền bhtn?",
   "answer": "Issue: E đang làm công ty nhưng hợp đồng sẽ hết vào ngày 23/4/2026. E muốn biết thời gian làm bảo hiểm thất nghiệp bao lâu thì sẽ được hưởng tiền bảo hiểm thất nghiệp.\n\nRule: \"Đối tượng quy định tại điểm b và điểm c khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của người hành nghề khám bệnh, chữa bệnh thuộc cơ sở khám bệnh, chữa bệnh thì phải đóng bảo hiểm xã hội bắt buộc từ đủ 03 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con.\" (Luật BHXH 2024 (41/2024/QH15), Điều 50, Khoản 3)\n\nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng người dùng đủ điều kiện hưởng bảo hiểm thất nghiệp dựa trên việc đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên.\n\nConclusion: Prolog đã trả về giá trị \"eligible\" cho biến Eligibility, cho thấy người dùng đủ điều kiện hưởng bảo hiểm thất nghiệp.",
-  "citations": [
-    "[Điều 50 khoản 3]"
-  ],
-  "citation_ids": [
-    "L41_2024.A50.K3"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 549,
   "error": null,
   "gold_answer": "Nếu chấm dứt hợp đồng ngày 23/4/2026 và đủ điều kiện hưởng BHTN, bạn phải nộp hồ sơ trong 03 tháng kể từ ngày chấm dứt hợp đồng. Sau khi nộp đủ hồ sơ, nếu sau 15 ngày làm việc vẫn chưa có việc làm thì sẽ được giải quyết hưởng. Việc đang mang thai không làm mất quyền hưởng BHTN; chỉ cần đáp ứng điều kiện về thời gian đóng và chấm dứt hợp đồng hợp pháp.",
-  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A50.K3"
+  ]
 }

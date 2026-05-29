@@ -3,14 +3,8 @@
   "stt": 109,
   "question": "Đóng bảo hiểm xã hội bao nhiêu năm là được về hưu vậy?",
   "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpypsu6lyf.pl:1:693: Syntax error: Operator expected]",
-  "citations": [
-    "[Điều 141 khoản 9]",
-    "[Điều 141 khoản 10]"
-  ],
-  "citation_ids": [
-    "L41_2024.A141.K9",
-    "L41_2024.A141.K10"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0,
     3
@@ -25,5 +19,9 @@
   "completion_tokens": 1218,
   "error": null,
   "gold_answer": "Từ 01/7/2025, điều kiện về thời gian đóng để hưởng lương hưu với nhiều nhóm lao động là từ đủ 15 năm BHXH, nhưng vẫn phải đủ tuổi nghỉ hưu theo luật. Năm 2026, tuổi nghỉ hưu trong điều kiện bình thường là 61 tuổi 6 tháng đối với nam và 57 tuổi đối với nữ, trừ trường hợp làm nghề nặng nhọc, suy giảm khả năng lao động hoặc có điều kiện đặc thù.",
-  "gold_citations_raw": "Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+  "gold_citations_raw": "Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A141.K9",
+    "L41_2024.A141.K10"
+  ]
 }

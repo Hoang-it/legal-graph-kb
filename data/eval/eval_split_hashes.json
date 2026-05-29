@@ -1,0 +1,28 @@
+{
+  "script_version": "v5-sprint2-phase0b-1",
+  "seed": 42,
+  "source_sha256": "6b17fbcb6bf9733be8ab269c70919b23502f1a4a34b1bbd3dffd0d2cd0f07ec9",
+  "test_path": "data\\eval\\questions_150_test.json",
+  "test_sha256": "14ced6220d06fefba3683b13cb0d70facd428a5146745d7c6b1bc6c3b492a3ed",
+  "test_n": 150,
+  "dev_path": "data\\eval\\questions_50_dev.json",
+  "dev_sha256": "252899d93afec7675e557c875f9b866019326706650ff3b464b5311996738f21",
+  "dev_n": 50,
+  "categories_in_test": {
+    "in_corpus": 113,
+    "mixed": 4,
+    "ooc": 7,
+    "unparseable": 26
+  },
+  "categories_in_dev": {
+    "in_corpus": 38,
+    "mixed": 1,
+    "ooc": 2,
+    "unparseable": 9
+  },
+  "in_corpus_codes": [
+    "41/2024/QH15",
+    "45/2019/QH14",
+    "58/2014/QH13"
+  ]
+}

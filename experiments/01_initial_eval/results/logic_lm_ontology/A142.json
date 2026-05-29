@@ -3,12 +3,8 @@
   "stt": 142,
   "question": "Mình nghĩ công ty được khoảng hơn 2 năm rồi, mà chưa vào lấy được số bảo hiểm, nhưng có tờ rời, giờ vào có lấy được số bảo hiểm, hay ở nhà vẫn lấy được?",
   "answer": "Issue: Người dùng thắc mắc về khả năng lấy số bảo hiểm xã hội sau khi đã làm việc hơn 2 năm nhưng chưa nhận được số bảo hiểm.\n\nRule: \"7. Trường hợp thời gian đóng bảo hiểm xã hội bắt buộc còn thiếu tối đa 06 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng thì người lao động hoặc thân nhân của người lao động được đóng tiếp một lần cho số tháng còn thiếu với mức đóng hằng tháng bằng tổng mức đóng của người lao động và người sử dụng lao động trước khi người lao động nghỉ việc hoặc chết vào quỹ hưu trí và tử tuất.\" (Luật BHXH 2024 (41/2024/QH15), article 33, clause 7)\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Tuy nhiên, Prolog đã sử dụng quy tắc để xác định rằng người dùng đã đóng bảo hiểm xã hội trong hơn 2 năm, dẫn đến kết luận rằng họ có thể lấy số bảo hiểm.\n\nConclusion: Prolog đã trả về kết quả rằng \"Có thể lấy số bảo hiểm\".",
-  "citations": [
-    "[Điều 33 khoản 7]"
-  ],
-  "citation_ids": [
-    "L41_2024.A33.K7"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 593,
   "error": null,
   "gold_answer": "Số BHXH là mã số cá nhân quản lý trên hệ thống, không phụ thuộc việc bạn có cầm sổ giấy hay không. Bạn có thể tra cứu trên ứng dụng VssID, VNeID, cổng BHXH Việt Nam hoặc tới cơ quan BHXH để xin xác nhận. Nếu đã có tờ rời thì thường vẫn đối chiếu được số sổ. Không nhất thiết phải về công ty mới biết số BHXH.",
-  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A33.K7"
+  ]
 }

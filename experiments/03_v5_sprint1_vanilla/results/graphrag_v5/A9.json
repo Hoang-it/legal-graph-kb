@@ -1,0 +1,197 @@
+{
+  "arm": "graphrag_v5",
+  "stt": 9,
+  "question": "Người lao động sinh con ngày 18/12/2023, trong tháng 12 có 12 ngày nghỉ thai sản sinh con và 2 ngày nghỉ thai sản khám thai. Công ty đã báo giảm thai sản từ tháng 12/2023 đến tháng 5/2024.\nNgày 18/6/2024, người lao động đi làm lại và nghỉ tiếp 5 ngày dưỡng sức sau sinh. Trong tháng 6/2024, có 14 ngày nghỉ thai sản sinh con và 5 ngày nghỉ dưỡng sức sau sinh.\nBà Kim Ngân hỏi, đối với trường hợp trên, tháng 6/2024, công ty báo giảm không lương, giảm thai sản hay đóng BHXH bình thường?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Bộ luật Lao động 2019 (45/2019/QH14), Điều 139]\n- [Luật BHXH 2014 (58/2014/QH13), Điều 34]\n- [Luật BHXH 2014 (58/2014/QH13), Điều 85]",
+  "citations": [
+    "[Bộ luật Lao động 2019 (45/2019/QH14), Điều 139]",
+    "[Luật BHXH 2014 (58/2014/QH13), Điều 34]",
+    "[Luật BHXH 2014 (58/2014/QH13), Điều 85]"
+  ],
+  "citation_ids": [
+    "L45_2019.A139",
+    "L58_2014.A34",
+    "L58_2014.A85"
+  ],
+  "citation_verified": {
+    "L45_2019.A139": true,
+    "L45_2019.A34": true,
+    "L45_2019.A85": true,
+    "L58_2014.A34": true,
+    "L58_2014.A85": true
+  },
+  "n_final_hits": 12,
+  "n_seeds": 15,
+  "n_neighbors_added": 1,
+  "retrieval_audit": {
+    "event_date": "2024-12-31",
+    "n_dense": 30,
+    "n_sparse": 30,
+    "n_after_temporal": 20,
+    "n_after_fusion": 20,
+    "n_dropped_by_temporal": 23
+  },
+  "hits": [
+    {
+      "rank": 1,
+      "rerank2_score": 0.9462,
+      "kind": "seed",
+      "clause_id": "L45_2019.A139.K2",
+      "article_id": "L45_2019.A139",
+      "law_id": "L45_2019",
+      "article_n": 139,
+      "article_title": "Nghỉ thai sản",
+      "clause_n": 2,
+      "rerank1_score": 0.9461838006973267
+    },
+    {
+      "rank": 2,
+      "rerank2_score": 0.9416,
+      "kind": "seed",
+      "clause_id": "L45_2019.A139.K1",
+      "article_id": "L45_2019.A139",
+      "law_id": "L45_2019",
+      "article_n": 139,
+      "article_title": "Nghỉ thai sản",
+      "clause_n": 1,
+      "rerank1_score": 0.9415580630302429
+    },
+    {
+      "rank": 3,
+      "rerank2_score": 0.9173,
+      "kind": "seed",
+      "clause_id": "L45_2019.A37.K3",
+      "article_id": "L45_2019.A37",
+      "law_id": "L45_2019",
+      "article_n": 37,
+      "article_title": "Trường hợp người sử dụng lao động không được thực hiện quyền đơn phương chấm dứt hợp đồng lao động",
+      "clause_n": 3,
+      "rerank1_score": 0.917275071144104
+    },
+    {
+      "rank": 4,
+      "rerank2_score": 0.8947,
+      "kind": "seed",
+      "clause_id": "L58_2014.A34.K1",
+      "article_id": "L58_2014.A34",
+      "law_id": "L58_2014",
+      "article_n": 34,
+      "article_title": "Thời gian hưởng chế độ khi sinh con",
+      "clause_n": 1,
+      "rerank1_score": 0.894727885723114
+    },
+    {
+      "rank": 5,
+      "rerank2_score": 0.8883,
+      "kind": "seed",
+      "clause_id": "L58_2014.A32.K1",
+      "article_id": "L58_2014.A32",
+      "law_id": "L58_2014",
+      "article_n": 32,
+      "article_title": "Thời gian hưởng chế độ khi khám thai",
+      "clause_n": 1,
+      "rerank1_score": 0.8882907032966614
+    },
+    {
+      "rank": 6,
+      "rerank2_score": 0.8683,
+      "kind": "seed",
+      "clause_id": "L58_2014.A39.K2",
+      "article_id": "L58_2014.A39",
+      "law_id": "L58_2014",
+      "article_n": 39,
+      "article_title": "Mức hưởng chế độ thai sản",
+      "clause_n": 2,
+      "rerank1_score": 0.8683049082756042
+    },
+    {
+      "rank": 7,
+      "rerank2_score": 0.846,
+      "kind": "seed",
+      "clause_id": "L45_2019.A139.K5",
+      "article_id": "L45_2019.A139",
+      "law_id": "L45_2019",
+      "article_n": 139,
+      "article_title": "Nghỉ thai sản",
+      "clause_n": 5,
+      "rerank1_score": 0.8459900617599487
+    },
+    {
+      "rank": 8,
+      "rerank2_score": 0.8268,
+      "kind": "seed",
+      "clause_id": "L45_2019.A137.K4",
+      "article_id": "L45_2019.A137",
+      "law_id": "L45_2019",
+      "article_n": 137,
+      "article_title": "Bảo vệ thai sản",
+      "clause_n": 4,
+      "rerank1_score": 0.8267735242843628
+    },
+    {
+      "rank": 9,
+      "rerank2_score": 0.7555,
+      "kind": "seed",
+      "clause_id": "L45_2019.A139.K4",
+      "article_id": "L45_2019.A139",
+      "law_id": "L45_2019",
+      "article_n": 139,
+      "article_title": "Nghỉ thai sản",
+      "clause_n": 4,
+      "rerank1_score": 0.7555243968963623
+    },
+    {
+      "rank": 10,
+      "rerank2_score": 0.6176,
+      "kind": "seed",
+      "clause_id": "L58_2014.A34.K2",
+      "article_id": "L58_2014.A34",
+      "law_id": "L58_2014",
+      "article_n": 34,
+      "article_title": "Thời gian hưởng chế độ khi sinh con",
+      "clause_n": 2,
+      "rerank1_score": 0.6176337599754333
+    },
+    {
+      "rank": 11,
+      "rerank2_score": 0.5737,
+      "kind": "seed",
+      "clause_id": "L58_2014.A85.K3",
+      "article_id": "L58_2014.A85",
+      "law_id": "L58_2014",
+      "article_n": 85,
+      "article_title": "Mức đóng và phương thức đóng của người lao động tham gia bảo hiểm xã hội bắt buộc",
+      "clause_n": 3,
+      "rerank1_score": 0.573745846748352
+    },
+    {
+      "rank": 12,
+      "rerank2_score": 0.5701,
+      "kind": "seed",
+      "clause_id": "L58_2014.A32.K2",
+      "article_id": "L58_2014.A32",
+      "law_id": "L58_2014",
+      "article_n": 32,
+      "article_title": "Thời gian hưởng chế độ khi khám thai",
+      "clause_n": 2,
+      "rerank1_score": 0.5700839757919312
+    }
+  ],
+  "elapsed_s": 25.407,
+  "elapsed_breakdown": {
+    "retrieve": 0.677,
+    "rerank1": 11.914,
+    "expand": 0.0,
+    "rerank2": 8.592,
+    "llm": 4.221
+  },
+  "gold_answer": "Căn cứ quy định tại Khoản 1, Khoản 7 Điều 34, Khoản 2 Điều 39, Khoản 3 Điều 85 và Khoản 4 Điều 86 Luật BHXH năm 2014:\nLao động nữ sinh con được nghỉ việc hưởng chế độ thai sản trước và sau khi sinh con là 6 tháng. Trường hợp lao động nữ sinh đôi trở lên thì tính từ con thứ 2 trở đi, cứ mỗi con, người mẹ được nghỉ thêm một tháng. Thời gian hưởng chế độ thai sản tính cả ngày nghỉ lễ, nghỉ Tết, ngày nghỉ hàng tuần.\nThời gian nghỉ việc hưởng chế độ thai sản từ 14 ngày làm việc trở lên trong tháng được tính là thời gian đóng BHXH, người lao động và người sử dụng lao động không phải đóng BHXH.\nNgười lao động không làm việc và không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì cả người lao động và người sử dụng lao động không đóng BHXH tháng đó. Thời gian này không được tính để hưởng BHXH trừ trường hợp nghỉ việc hưởng chế độ thai sản.\nVì vậy, trường hợp người lao động sinh con ngày 18/12/2023, công ty đã báo giảm thai sản từ tháng 12/2023 đến tháng 5/2024. Tháng 6/2024 chỉ được tính 5 ngày dưỡng sức sau sinh là số ngày không làm việc, không hưởng tiền lương. Do đó, tháng 6/2024 người lao động và công ty vẫn phải tham gia, đóng BHXH bắt buộc theo đúng quy định của pháp luật.",
+  "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 34]\n[Luật BHXH 2014 (58/2014/QH13), Điều 39]\n[Luật BHXH 2014 (58/2014/QH13), Điều 85]\n[Luật BHXH 2014 (58/2014/QH13), Điều 86]",
+  "citation_ids_pre_strict_parser": [
+    "L45_2019.A139",
+    "L45_2019.A34",
+    "L45_2019.A85",
+    "L58_2014.A34",
+    "L58_2014.A85"
+  ]
+}

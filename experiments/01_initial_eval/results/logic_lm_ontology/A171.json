@@ -3,12 +3,8 @@
   "stt": 171,
   "question": "Mọi người ơi cho e hỏi nhận tiền trợ cấp thất nghiệp cần những giấy tờ gì vậy?",
   "answer": "Issue: Mọi người ơi cho e hỏi nhận tiền trợ cấp thất nghiệp cần những giấy tờ gì vậy?\n\nRule: \"4. Tiếp nhận hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế và cấp sổ bảo hiểm xã hội, thẻ bảo hiểm y tế cho người lao động.\" (Luật BHXH 2024 (41/2024/QH15), article 18, clause 4)\n\nApplication: Các slot_id không có giá trị nào được gán. Tuy nhiên, Prolog đã trả về kết quả cho biết các giấy tờ cần thiết để nhận trợ cấp thất nghiệp bao gồm: đơn xin trợ cấp, chứng minh nhân dân, và giấy tờ chứng minh thất nghiệp.\n\nConclusion: Prolog đã trả về giá trị cho biến Documents, với các giấy tờ là [application_form, identity_card, proof_of_unemployment].",
-  "citations": [
-    "[Điều 18 khoản 5]"
-  ],
-  "citation_ids": [
-    "L41_2024.A18.K5"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 400,
   "error": null,
   "gold_answer": "Hồ sơ nhận trợ cấp thất nghiệp thường gồm: đơn đề nghị hưởng trợ cấp thất nghiệp, CCCD và giấy tờ chứng minh chấm dứt HĐLĐ/hợp đồng làm việc. Bạn nộp tại trung tâm dịch vụ việc làm trong 03 tháng kể từ ngày nghỉ việc. Sau đó phải theo lịch hẹn để nhận quyết định và thông báo tìm kiếm việc làm hằng tháng.",
-  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A18.K5"
+  ]
 }

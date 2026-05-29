@@ -3,14 +3,8 @@
   "stt": 136,
   "question": "các bước nhận bhxh thất nghiệp như thế nào?",
   "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmp_6c_f5ni.pl:1:473: Syntax error: Operator expected]",
-  "citations": [
-    "[Điều 18 khoản 4]",
-    "[Điều 18 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A18.K4",
-    "L41_2024.A18.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     4,
     0
@@ -25,5 +19,9 @@
   "completion_tokens": 870,
   "error": null,
   "gold_answer": "Các bước cơ bản nhận BHTN: (1) chuẩn bị hồ sơ gồm đơn đề nghị, CCCD, tài liệu chấm dứt HĐLĐ; (2) nộp tại trung tâm dịch vụ việc làm trong 03 tháng từ ngày nghỉ việc; (3) chờ 15 ngày làm việc nếu chưa có việc làm; (4) nhận quyết định hưởng và tiền trợ cấp; (5) thực hiện thông báo tìm kiếm việc làm hằng tháng đúng lịch hẹn.",
-  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A18.K4",
+    "L41_2024.A18.K1"
+  ]
 }

@@ -1,0 +1,2830 @@
+{
+  "results_source": "E:\\legal-graph-kb\\data\\retrieval_probe\\results\\results_20260529_182351.json",
+  "n_zero_recall": 71,
+  "failure_mode_counts": {
+    "A_embedding_far": 44,
+    "B_ranking_issue": 27,
+    "C_corpus_crowding": 0,
+    "D_gold_clause_missing": 0
+  },
+  "query_gold_cosine_stats": {
+    "mean": 0.5212,
+    "min": 0.3414,
+    "max": 0.6446,
+    "median": 0.5165,
+    "pct_above_055": 0.38,
+    "pct_above_070": 0.0
+  },
+  "score_delta_stats": {
+    "mean": -0.2821,
+    "pct_negative": 1.0
+  },
+  "records": [
+    {
+      "stt": 2,
+      "question": "Bà Minh Châu (Long An) ký hợp đồng lao động theo diện làm việc bán thời gian.\nBà Châu hỏi, bà có được mua BHXH bắt buộc ",
+      "gold_articles": [
+        "L58_2014.A2"
+      ],
+      "best_gold_clause": "L58_2014.A2.K3",
+      "best_gold_clause_text": "Người sử dụng lao động tham gia bảo hiểm xã hội bắt buộc bao gồm cơ quan nhà nướ",
+      "query_gold_cosine": 0.6123,
+      "top1_retrieved_article": "L58_2014.A85",
+      "top1_retrieved_score": 0.8429,
+      "score_delta_gold_minus_top1": -0.2305,
+      "n_gold_clauses_found": 5,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L58_2014.A2.K3",
+          "cosine": 0.6123,
+          "text_preview": "Người sử dụng lao động tham gia bảo hiểm xã hội bắt buộc bao gồm cơ quan nhà nướ"
+        },
+        {
+          "clause_id": "L58_2014.A2.K1",
+          "cosine": 0.6048,
+          "text_preview": "Người lao động là công dân Việt Nam thuộc đối tượng tham gia bảo hiểm xã hội bắt"
+        },
+        {
+          "clause_id": "L58_2014.A2.K2",
+          "cosine": 0.5889,
+          "text_preview": "Người lao động là công dân nước ngoài vào làm việc tại Việt Nam có giấy phép lao"
+        },
+        {
+          "clause_id": "L58_2014.A2.K4",
+          "cosine": 0.5529,
+          "text_preview": "Người tham gia bảo hiểm xã hội tự nguyện là công dân Việt Nam từ đủ 15 tuổi trở "
+        },
+        {
+          "clause_id": "L58_2014.A2.K5",
+          "cosine": 0.5521,
+          "text_preview": "Cơ quan, tổ chức, cá nhân có liên quan đến bảo hiểm xã hội.\nCác đối tượng quy đị"
+        }
+      ]
+    },
+    {
+      "stt": 30,
+      "question": "Người lao động sinh con tháng 01/2026, đã nghỉ việc hưởng chế độ thai sản từ thời điểm sinh con.\nKhi thực hiện thủ tục b",
+      "gold_articles": [
+        "L41_2024.A13"
+      ],
+      "best_gold_clause": "L41_2024.A13.K3",
+      "best_gold_clause_text": "Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm",
+      "query_gold_cosine": 0.5895,
+      "top1_retrieved_article": "L41_2024.A62",
+      "top1_retrieved_score": 0.8623,
+      "score_delta_gold_minus_top1": -0.2728,
+      "n_gold_clauses_found": 9,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A13.K3",
+          "cosine": 0.5895,
+          "text_preview": "Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A13.K2",
+          "cosine": 0.5528,
+          "text_preview": "Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội."
+        },
+        {
+          "clause_id": "L41_2024.A13.K6",
+          "cosine": 0.552,
+          "text_preview": "Phối hợp với cơ quan bảo hiểm xã hội trả trợ cấp bảo hiểm xã hội cho người lao đ"
+        },
+        {
+          "clause_id": "L41_2024.A13.K9",
+          "cosine": 0.5379,
+          "text_preview": "Phối hợp, tạo điều kiện để cơ quan bảo hiểm xã hội thực hiện thu hồi số tiền bảo"
+        },
+        {
+          "clause_id": "L41_2024.A13.K7",
+          "cosine": 0.5364,
+          "text_preview": "Xuất trình, cung cấp đầy đủ, chính xác, kịp thời thông tin, tài liệu liên quan đ"
+        }
+      ]
+    },
+    {
+      "stt": 37,
+      "question": "Mình nghỉ cty cũ từ tháng 1/2026. (nghỉ ngang) nhưng cty vẫn chốt sổ cho Mình. Nhưng nay mình muốn ra lấy tờ rời BHXH, g",
+      "gold_articles": [
+        "L41_2024.A13",
+        "L45_2019.A48"
+      ],
+      "best_gold_clause": "L41_2024.A13.K3",
+      "best_gold_clause_text": "Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm",
+      "query_gold_cosine": 0.5433,
+      "top1_retrieved_article": "L41_2024.A106",
+      "top1_retrieved_score": 0.7917,
+      "score_delta_gold_minus_top1": -0.2483,
+      "n_gold_clauses_found": 12,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A13.K3",
+          "cosine": 0.5433,
+          "text_preview": "Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A13.K1",
+          "cosine": 0.5087,
+          "text_preview": "Đăng ký tham gia bảo hiểm xã hội bắt buộc cho người lao động theo quy định của L"
+        },
+        {
+          "clause_id": "L41_2024.A13.K9",
+          "cosine": 0.5027,
+          "text_preview": "Phối hợp, tạo điều kiện để cơ quan bảo hiểm xã hội thực hiện thu hồi số tiền bảo"
+        },
+        {
+          "clause_id": "L45_2019.A48.K2",
+          "cosine": 0.5024,
+          "text_preview": "Tiền lương, bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp, trợ cấp thôi v"
+        },
+        {
+          "clause_id": "L45_2019.A48.K1",
+          "cosine": 0.5001,
+          "text_preview": "Trong thời hạn 14 ngày làm việc kể từ ngày chấm dứt hợp đồng lao động, hai bên c"
+        }
+      ]
+    },
+    {
+      "stt": 38,
+      "question": "Em mới học xong, lúc mới vào cty, khi đang đào tạo người ta hỏi em có BHXH thì em bảo không có, người ta bảo là có thế l",
+      "gold_articles": [
+        "L41_2024.A25"
+      ],
+      "best_gold_clause": "L41_2024.A25.K1",
+      "best_gold_clause_text": "Sổ bảo hiểm xã hội được cấp cho từng người lao động, trong đó chứa đựng thông ti",
+      "query_gold_cosine": 0.535,
+      "top1_retrieved_article": "L58_2014.A89",
+      "top1_retrieved_score": 0.8145,
+      "score_delta_gold_minus_top1": -0.2796,
+      "n_gold_clauses_found": 4,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A25.K1",
+          "cosine": 0.535,
+          "text_preview": "Sổ bảo hiểm xã hội được cấp cho từng người lao động, trong đó chứa đựng thông ti"
+        },
+        {
+          "clause_id": "L41_2024.A25.K2",
+          "cosine": 0.5079,
+          "text_preview": "Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như"
+        },
+        {
+          "clause_id": "L41_2024.A25.K3",
+          "cosine": 0.5027,
+          "text_preview": "Dữ liệu về sổ bảo hiểm xã hội được cập nhật chính xác, kịp thời, đối chiếu thông"
+        },
+        {
+          "clause_id": "L41_2024.A25.K4",
+          "cosine": 0.433,
+          "text_preview": "Chính phủ quy định chi tiết Điều này."
+        }
+      ]
+    },
+    {
+      "stt": 42,
+      "question": "Trường hợp chủ hộ kinh doanh, đăng ký kinh doanh từ t12/2025 nhưng bắt đầu kinh doanh và kê khai thuế là t1/2026. \nHiện ",
+      "gold_articles": [
+        "L41_2024.A2"
+      ],
+      "best_gold_clause": "L41_2024.A2.K2",
+      "best_gold_clause_text": "Người lao động là công dân nước ngoài làm việc tại Việt Nam thuộc đối tượng tham",
+      "query_gold_cosine": 0.4462,
+      "top1_retrieved_article": "L41_2024.A38",
+      "top1_retrieved_score": 0.7776,
+      "score_delta_gold_minus_top1": -0.3314,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A2.K2",
+          "cosine": 0.4462,
+          "text_preview": "Người lao động là công dân nước ngoài làm việc tại Việt Nam thuộc đối tượng tham"
+        },
+        {
+          "clause_id": "L41_2024.A2.K3",
+          "cosine": 0.4383,
+          "text_preview": "Người sử dụng lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc bao gồm"
+        },
+        {
+          "clause_id": "L41_2024.A2.K1",
+          "cosine": 0.42,
+          "text_preview": "Người lao động là công dân Việt Nam thuộc đối tượng tham gia bảo hiểm xã hội bắt"
+        },
+        {
+          "clause_id": "L41_2024.A2.K6",
+          "cosine": 0.4119,
+          "text_preview": "Ủy ban Thường vụ Quốc hội quyết định việc tham gia bảo hiểm xã hội bắt buộc đối "
+        },
+        {
+          "clause_id": "L41_2024.A2.K5",
+          "cosine": 0.4104,
+          "text_preview": "Người đồng thời thuộc nhiều đối tượng tham gia bảo hiểm xã hội bắt buộc khác nha"
+        }
+      ]
+    },
+    {
+      "stt": 45,
+      "question": "Em có quyết định nghỉ việc từ tháng 3/2025, giờ em muốn rút bảo hiểm xã hội đã làm thủ tục đuợc chưa ạ? em ở Phú xuyên H",
+      "gold_articles": [
+        "L41_2024.A104",
+        "L41_2024.A110",
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A104.K2",
+      "best_gold_clause_text": "Thu nhập tháng đã đóng bảo hiểm xã hội để làm căn cứ tính mức bình quân thu nhập",
+      "query_gold_cosine": 0.5612,
+      "top1_retrieved_article": "L58_2014.A85",
+      "top1_retrieved_score": 0.8332,
+      "score_delta_gold_minus_top1": -0.272,
+      "n_gold_clauses_found": 13,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A104.K2",
+          "cosine": 0.5612,
+          "text_preview": "Thu nhập tháng đã đóng bảo hiểm xã hội để làm căn cứ tính mức bình quân thu nhập"
+        },
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.5565,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K2",
+          "cosine": 0.5517,
+          "text_preview": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K5",
+          "cosine": 0.5469,
+          "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hộ"
+        },
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.5354,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        }
+      ]
+    },
+    {
+      "stt": 49,
+      "question": "Cty em có NLĐ ngày 20/4 là hết thời gian nghỉ thai sản và cũng xin nghỉ hẳn luôn. Vậy ngày 21/4 em làm hồ sơ báo giảm hẳ",
+      "gold_articles": [
+        "L41_2024.A13",
+        "L45_2019.A34",
+        "L45_2019.A48"
+      ],
+      "best_gold_clause": "L45_2019.A48.K1",
+      "best_gold_clause_text": "Trong thời hạn 14 ngày làm việc kể từ ngày chấm dứt hợp đồng lao động, hai bên c",
+      "query_gold_cosine": 0.5605,
+      "top1_retrieved_article": "L45_2019.A139",
+      "top1_retrieved_score": 0.8394,
+      "score_delta_gold_minus_top1": -0.2788,
+      "n_gold_clauses_found": 25,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L45_2019.A48.K1",
+          "cosine": 0.5605,
+          "text_preview": "Trong thời hạn 14 ngày làm việc kể từ ngày chấm dứt hợp đồng lao động, hai bên c"
+        },
+        {
+          "clause_id": "L45_2019.A34.K7",
+          "cosine": 0.5346,
+          "text_preview": "Người sử dụng lao động là cá nhân chết; bị Tòa án tuyên bố mất năng lực hành vi "
+        },
+        {
+          "clause_id": "L45_2019.A34.K11",
+          "cosine": 0.5323,
+          "text_preview": "Người sử dụng lao động cho người lao động thôi việc theo quy định tại Điều 42 và"
+        },
+        {
+          "clause_id": "L45_2019.A34.K1",
+          "cosine": 0.5215,
+          "text_preview": "Hết hạn hợp đồng lao động, trừ trường hợp quy định tại khoản 4 Điều 177 của Bộ l"
+        },
+        {
+          "clause_id": "L41_2024.A13.K3",
+          "cosine": 0.5171,
+          "text_preview": "Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm"
+        }
+      ]
+    },
+    {
+      "stt": 52,
+      "question": "Mình làm cty gia đìn, khi nghỉ việc giám đốc cho mình nghỉ việc bằng miệng không có giấy nghỉ việc.\nĐến nay mình đã nghỉ",
+      "gold_articles": [
+        "L41_2024.A13",
+        "L45_2019.A48"
+      ],
+      "best_gold_clause": "L45_2019.A48.K1",
+      "best_gold_clause_text": "Trong thời hạn 14 ngày làm việc kể từ ngày chấm dứt hợp đồng lao động, hai bên c",
+      "query_gold_cosine": 0.4736,
+      "top1_retrieved_article": "L58_2014.A100",
+      "top1_retrieved_score": 0.7909,
+      "score_delta_gold_minus_top1": -0.3174,
+      "n_gold_clauses_found": 12,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L45_2019.A48.K1",
+          "cosine": 0.4736,
+          "text_preview": "Trong thời hạn 14 ngày làm việc kể từ ngày chấm dứt hợp đồng lao động, hai bên c"
+        },
+        {
+          "clause_id": "L41_2024.A13.K3",
+          "cosine": 0.4496,
+          "text_preview": "Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm"
+        },
+        {
+          "clause_id": "L45_2019.A48.K2",
+          "cosine": 0.4333,
+          "text_preview": "Tiền lương, bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp, trợ cấp thôi v"
+        },
+        {
+          "clause_id": "L41_2024.A13.K8",
+          "cosine": 0.4267,
+          "text_preview": "Bồi thường cho người lao động theo quy định của pháp luật nếu không thực hiện ho"
+        },
+        {
+          "clause_id": "L41_2024.A13.K7",
+          "cosine": 0.4227,
+          "text_preview": "Xuất trình, cung cấp đầy đủ, chính xác, kịp thời thông tin, tài liệu liên quan đ"
+        }
+      ]
+    },
+    {
+      "stt": 56,
+      "question": "Bên em có 1 nhóm cộng tác viên đến làm công việc đóng hàng mà thời gian không cố định. Em có tìm hiểu thì sẽ phải đóng B",
+      "gold_articles": [
+        "L41_2024.A2",
+        "L45_2019.A13"
+      ],
+      "best_gold_clause": "L41_2024.A2.K2",
+      "best_gold_clause_text": "Người lao động là công dân nước ngoài làm việc tại Việt Nam thuộc đối tượng tham",
+      "query_gold_cosine": 0.6073,
+      "top1_retrieved_article": "L41_2024.A33",
+      "top1_retrieved_score": 0.8321,
+      "score_delta_gold_minus_top1": -0.2248,
+      "n_gold_clauses_found": 9,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A2.K2",
+          "cosine": 0.6073,
+          "text_preview": "Người lao động là công dân nước ngoài làm việc tại Việt Nam thuộc đối tượng tham"
+        },
+        {
+          "clause_id": "L41_2024.A2.K6",
+          "cosine": 0.5979,
+          "text_preview": "Ủy ban Thường vụ Quốc hội quyết định việc tham gia bảo hiểm xã hội bắt buộc đối "
+        },
+        {
+          "clause_id": "L41_2024.A2.K1",
+          "cosine": 0.5722,
+          "text_preview": "Người lao động là công dân Việt Nam thuộc đối tượng tham gia bảo hiểm xã hội bắt"
+        },
+        {
+          "clause_id": "L41_2024.A2.K3",
+          "cosine": 0.5676,
+          "text_preview": "Người sử dụng lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc bao gồm"
+        },
+        {
+          "clause_id": "L41_2024.A2.K5",
+          "cosine": 0.5642,
+          "text_preview": "Người đồng thời thuộc nhiều đối tượng tham gia bảo hiểm xã hội bắt buộc khác nha"
+        }
+      ]
+    },
+    {
+      "stt": 58,
+      "question": "e là hộ kinh doanh mới , tham gia bhxh cho hkd thì phải làm như thế nào?",
+      "gold_articles": [
+        "L41_2024.A2",
+        "L41_2024.A25",
+        "L41_2024.A31"
+      ],
+      "best_gold_clause": "L41_2024.A2.K6",
+      "best_gold_clause_text": "Ủy ban Thường vụ Quốc hội quyết định việc tham gia bảo hiểm xã hội bắt buộc đối ",
+      "query_gold_cosine": 0.4672,
+      "top1_retrieved_article": "L41_2024.A17",
+      "top1_retrieved_score": 0.7596,
+      "score_delta_gold_minus_top1": -0.2924,
+      "n_gold_clauses_found": 14,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A2.K6",
+          "cosine": 0.4672,
+          "text_preview": "Ủy ban Thường vụ Quốc hội quyết định việc tham gia bảo hiểm xã hội bắt buộc đối "
+        },
+        {
+          "clause_id": "L41_2024.A2.K3",
+          "cosine": 0.4626,
+          "text_preview": "Người sử dụng lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc bao gồm"
+        },
+        {
+          "clause_id": "L41_2024.A2.K1",
+          "cosine": 0.457,
+          "text_preview": "Người lao động là công dân Việt Nam thuộc đối tượng tham gia bảo hiểm xã hội bắt"
+        },
+        {
+          "clause_id": "L41_2024.A2.K5",
+          "cosine": 0.4542,
+          "text_preview": "Người đồng thời thuộc nhiều đối tượng tham gia bảo hiểm xã hội bắt buộc khác nha"
+        },
+        {
+          "clause_id": "L41_2024.A2.K2",
+          "cosine": 0.4512,
+          "text_preview": "Người lao động là công dân nước ngoài làm việc tại Việt Nam thuộc đối tượng tham"
+        }
+      ]
+    },
+    {
+      "stt": 60,
+      "question": "Sếp em có Công ty A và B, Giờ sếp em muốn giải thể cty A (đã có qđ giải thể rồi), và chuyển hết công nhân từ cty A sang ",
+      "gold_articles": [
+        "L41_2024.A61"
+      ],
+      "best_gold_clause": "L41_2024.A61.K5",
+      "best_gold_clause_text": "Hồ sơ đề nghị nghỉ việc hưởng chế độ thai sản hoặc hưởng trợ cấp một lần đối với",
+      "query_gold_cosine": 0.4415,
+      "top1_retrieved_article": "L41_2024.A60",
+      "top1_retrieved_score": 0.8371,
+      "score_delta_gold_minus_top1": -0.3956,
+      "n_gold_clauses_found": 9,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A61.K5",
+          "cosine": 0.4415,
+          "text_preview": "Hồ sơ đề nghị nghỉ việc hưởng chế độ thai sản hoặc hưởng trợ cấp một lần đối với"
+        },
+        {
+          "clause_id": "L41_2024.A61.K7",
+          "cosine": 0.4274,
+          "text_preview": "Hồ sơ đề nghị nghỉ việc hưởng chế độ thai sản hoặc hưởng trợ cấp một lần đối với"
+        },
+        {
+          "clause_id": "L41_2024.A61.K3",
+          "cosine": 0.4237,
+          "text_preview": "Hồ sơ đề nghị hưởng chế độ thai sản đối với lao động nữ khi khám thai theo quy đ"
+        },
+        {
+          "clause_id": "L41_2024.A61.K6",
+          "cosine": 0.4113,
+          "text_preview": "Hồ sơ đề nghị hưởng chế độ thai sản đối với người chồng của lao động nữ nhờ mang"
+        },
+        {
+          "clause_id": "L41_2024.A61.K9",
+          "cosine": 0.4097,
+          "text_preview": "Bộ trưởng Bộ Y tế quy định mẫu, trình tự, thẩm quyền cấp các giấy tờ trong hồ sơ"
+        }
+      ]
+    },
+    {
+      "stt": 62,
+      "question": "Bh em đã đóng bhxh được 19 năm nhưng cty chậm đóng hơn 2 năm,giờ em nghỉ thì cần lấy những giấy tờ gì để sau này không b",
+      "gold_articles": [
+        "L41_2024.A13",
+        "L45_2019.A48"
+      ],
+      "best_gold_clause": "L41_2024.A13.K2",
+      "best_gold_clause_text": "Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội.",
+      "query_gold_cosine": 0.5825,
+      "top1_retrieved_article": "L41_2024.A92",
+      "top1_retrieved_score": 0.8246,
+      "score_delta_gold_minus_top1": -0.2422,
+      "n_gold_clauses_found": 12,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A13.K2",
+          "cosine": 0.5825,
+          "text_preview": "Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội."
+        },
+        {
+          "clause_id": "L41_2024.A13.K3",
+          "cosine": 0.572,
+          "text_preview": "Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A13.K7",
+          "cosine": 0.5556,
+          "text_preview": "Xuất trình, cung cấp đầy đủ, chính xác, kịp thời thông tin, tài liệu liên quan đ"
+        },
+        {
+          "clause_id": "L41_2024.A13.K1",
+          "cosine": 0.546,
+          "text_preview": "Đăng ký tham gia bảo hiểm xã hội bắt buộc cho người lao động theo quy định của L"
+        },
+        {
+          "clause_id": "L45_2019.A48.K1",
+          "cosine": 0.5303,
+          "text_preview": "Trong thời hạn 14 ngày làm việc kể từ ngày chấm dứt hợp đồng lao động, hai bên c"
+        }
+      ]
+    },
+    {
+      "stt": 66,
+      "question": "Có phải Bảo hiểm xã hội mình bắt buộc lãnh sau 1 năm không?. Nếu bận mk làm trễ vài tháng có được không?",
+      "gold_articles": [
+        "L41_2024.A102",
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K3",
+      "best_gold_clause_text": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn ",
+      "query_gold_cosine": 0.6149,
+      "top1_retrieved_article": "L41_2024.A33",
+      "top1_retrieved_score": 0.8477,
+      "score_delta_gold_minus_top1": -0.2328,
+      "n_gold_clauses_found": 13,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.6149,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A102.K2",
+          "cosine": 0.6129,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A70.K4",
+          "cosine": 0.5962,
+          "text_preview": "Trường hợp quy định tại điểm c và điểm d khoản 1 Điều này thì mức hưởng bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.5922,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.5912,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        }
+      ]
+    },
+    {
+      "stt": 71,
+      "question": "Mình đóng bảo hiểm được 20 năm mà chưa tới tuổi lãnh hưu, mình nghỉ làm thì mình có được nhận tiền bảo hiểm thất nghiệp ",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K6",
+      "best_gold_clause_text": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,",
+      "query_gold_cosine": 0.5916,
+      "top1_retrieved_article": "L58_2014.A54",
+      "top1_retrieved_score": 0.853,
+      "score_delta_gold_minus_top1": -0.2614,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.5916,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.5877,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K2",
+          "cosine": 0.5843,
+          "text_preview": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.5645,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A70.K5",
+          "cosine": 0.5483,
+          "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hộ"
+        }
+      ]
+    },
+    {
+      "stt": 73,
+      "question": "Mình nghỉ việc mà công ty không in tờ rời bhxh cho mình , giờ mình liên hệ với ai để nhận tờ rời?",
+      "gold_articles": [
+        "L41_2024.A13",
+        "L45_2019.A48"
+      ],
+      "best_gold_clause": "L41_2024.A13.K3",
+      "best_gold_clause_text": "Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm",
+      "query_gold_cosine": 0.4765,
+      "top1_retrieved_article": "L58_2014.A100",
+      "top1_retrieved_score": 0.7813,
+      "score_delta_gold_minus_top1": -0.3048,
+      "n_gold_clauses_found": 12,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A13.K3",
+          "cosine": 0.4765,
+          "text_preview": "Phối hợp với cơ quan bảo hiểm xã hội trong việc xác nhận thời gian đóng bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A13.K2",
+          "cosine": 0.4711,
+          "text_preview": "Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội."
+        },
+        {
+          "clause_id": "L45_2019.A48.K1",
+          "cosine": 0.4655,
+          "text_preview": "Trong thời hạn 14 ngày làm việc kể từ ngày chấm dứt hợp đồng lao động, hai bên c"
+        },
+        {
+          "clause_id": "L41_2024.A13.K1",
+          "cosine": 0.4624,
+          "text_preview": "Đăng ký tham gia bảo hiểm xã hội bắt buộc cho người lao động theo quy định của L"
+        },
+        {
+          "clause_id": "L41_2024.A13.K6",
+          "cosine": 0.4593,
+          "text_preview": "Phối hợp với cơ quan bảo hiểm xã hội trả trợ cấp bảo hiểm xã hội cho người lao đ"
+        }
+      ]
+    },
+    {
+      "stt": 80,
+      "question": "E đóng bảo hiểm sớm hơn 1 tháng trước khi đủ 18 tuổi thì sau có chốt sổ được không?",
+      "gold_articles": [
+        "L41_2024.A2"
+      ],
+      "best_gold_clause": "L41_2024.A2.K6",
+      "best_gold_clause_text": "Ủy ban Thường vụ Quốc hội quyết định việc tham gia bảo hiểm xã hội bắt buộc đối ",
+      "query_gold_cosine": 0.5015,
+      "top1_retrieved_article": "L41_2024.A38",
+      "top1_retrieved_score": 0.8032,
+      "score_delta_gold_minus_top1": -0.3017,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A2.K6",
+          "cosine": 0.5015,
+          "text_preview": "Ủy ban Thường vụ Quốc hội quyết định việc tham gia bảo hiểm xã hội bắt buộc đối "
+        },
+        {
+          "clause_id": "L41_2024.A2.K2",
+          "cosine": 0.4886,
+          "text_preview": "Người lao động là công dân nước ngoài làm việc tại Việt Nam thuộc đối tượng tham"
+        },
+        {
+          "clause_id": "L41_2024.A2.K5",
+          "cosine": 0.4833,
+          "text_preview": "Người đồng thời thuộc nhiều đối tượng tham gia bảo hiểm xã hội bắt buộc khác nha"
+        },
+        {
+          "clause_id": "L41_2024.A2.K7",
+          "cosine": 0.4683,
+          "text_preview": "Trường hợp không thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc bao gồm:"
+        },
+        {
+          "clause_id": "L41_2024.A2.K1",
+          "cosine": 0.4626,
+          "text_preview": "Người lao động là công dân Việt Nam thuộc đối tượng tham gia bảo hiểm xã hội bắt"
+        }
+      ]
+    },
+    {
+      "stt": 82,
+      "question": "bhxh e đc 6 tháng có được rút không? E nghĩ cty cũng 2 năm hơn rồi",
+      "gold_articles": [
+        "L41_2024.A110",
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K6",
+      "best_gold_clause_text": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,",
+      "query_gold_cosine": 0.5027,
+      "top1_retrieved_article": "L45_2019.A124",
+      "top1_retrieved_score": 0.7895,
+      "score_delta_gold_minus_top1": -0.2868,
+      "n_gold_clauses_found": 11,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.5027,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.4952,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A110.K2",
+          "cosine": 0.4881,
+          "text_preview": "Mức trợ cấp tuất một lần đối với thân nhân của người đang tham gia bảo hiểm xã h"
+        },
+        {
+          "clause_id": "L41_2024.A70.K2",
+          "cosine": 0.4787,
+          "text_preview": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K5",
+          "cosine": 0.4784,
+          "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hộ"
+        }
+      ]
+    },
+    {
+      "stt": 83,
+      "question": "Mình đóng bảo hiểm xh từ 2016 tới  2018 rồi ngưng tới nay. Do nghỉ ngang ở cty và k để ý để rút sổ và check thông tin số",
+      "gold_articles": [
+        "L41_2024.A25"
+      ],
+      "best_gold_clause": "L41_2024.A25.K1",
+      "best_gold_clause_text": "Sổ bảo hiểm xã hội được cấp cho từng người lao động, trong đó chứa đựng thông ti",
+      "query_gold_cosine": 0.571,
+      "top1_retrieved_article": "L58_2014.A78",
+      "top1_retrieved_score": 0.8142,
+      "score_delta_gold_minus_top1": -0.2432,
+      "n_gold_clauses_found": 4,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A25.K1",
+          "cosine": 0.571,
+          "text_preview": "Sổ bảo hiểm xã hội được cấp cho từng người lao động, trong đó chứa đựng thông ti"
+        },
+        {
+          "clause_id": "L41_2024.A25.K3",
+          "cosine": 0.5681,
+          "text_preview": "Dữ liệu về sổ bảo hiểm xã hội được cập nhật chính xác, kịp thời, đối chiếu thông"
+        },
+        {
+          "clause_id": "L41_2024.A25.K2",
+          "cosine": 0.5678,
+          "text_preview": "Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như"
+        },
+        {
+          "clause_id": "L41_2024.A25.K4",
+          "cosine": 0.4533,
+          "text_preview": "Chính phủ quy định chi tiết Điều này."
+        }
+      ]
+    },
+    {
+      "stt": 84,
+      "question": "Mình muốn đóng bảo hiểm tự nguyện mà bây giờ họ không làm số, vậy có cách nào biết là mình đóng được bao nhiêu thời gian",
+      "gold_articles": [
+        "L41_2024.A25"
+      ],
+      "best_gold_clause": "L41_2024.A25.K2",
+      "best_gold_clause_text": "Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như",
+      "query_gold_cosine": 0.5671,
+      "top1_retrieved_article": "L41_2024.A33",
+      "top1_retrieved_score": 0.8178,
+      "score_delta_gold_minus_top1": -0.2507,
+      "n_gold_clauses_found": 4,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A25.K2",
+          "cosine": 0.5671,
+          "text_preview": "Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như"
+        },
+        {
+          "clause_id": "L41_2024.A25.K1",
+          "cosine": 0.5381,
+          "text_preview": "Sổ bảo hiểm xã hội được cấp cho từng người lao động, trong đó chứa đựng thông ti"
+        },
+        {
+          "clause_id": "L41_2024.A25.K3",
+          "cosine": 0.5276,
+          "text_preview": "Dữ liệu về sổ bảo hiểm xã hội được cập nhật chính xác, kịp thời, đối chiếu thông"
+        },
+        {
+          "clause_id": "L41_2024.A25.K4",
+          "cosine": 0.4759,
+          "text_preview": "Chính phủ quy định chi tiết Điều này."
+        }
+      ]
+    },
+    {
+      "stt": 91,
+      "question": "trường hợp nghỉ bệnh hưởng BHXH thì nộp hồ sơ trong vòng bao lâu sẽ được chi trả vậy?",
+      "gold_articles": [
+        "L41_2024.A116",
+        "L41_2024.A46"
+      ],
+      "best_gold_clause": "L41_2024.A46.K1",
+      "best_gold_clause_text": "Người lao động đã nghỉ việc hưởng chế độ ốm đau từ đủ 30 ngày trở lên trong một ",
+      "query_gold_cosine": 0.6446,
+      "top1_retrieved_article": "L41_2024.A48",
+      "top1_retrieved_score": 0.8396,
+      "score_delta_gold_minus_top1": -0.1949,
+      "n_gold_clauses_found": 6,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A46.K1",
+          "cosine": 0.6446,
+          "text_preview": "Người lao động đã nghỉ việc hưởng chế độ ốm đau từ đủ 30 ngày trở lên trong một "
+        },
+        {
+          "clause_id": "L41_2024.A46.K2",
+          "cosine": 0.5985,
+          "text_preview": "Thời gian nghỉ dưỡng sức, phục hồi sức khỏe do người sử dụng lao động và Ban Chấ"
+        },
+        {
+          "clause_id": "L41_2024.A46.K4",
+          "cosine": 0.5785,
+          "text_preview": "Bộ trưởng Bộ Lao động - Thương binh và Xã hội quy định về việc tính, việc xác đị"
+        },
+        {
+          "clause_id": "L41_2024.A46.K3",
+          "cosine": 0.5735,
+          "text_preview": "Mức hưởng cho một ngày nghỉ dưỡng sức, phục hồi sức khỏe sau khi ốm đau bằng 30%"
+        },
+        {
+          "clause_id": "L41_2024.A116.K2",
+          "cosine": 0.5384,
+          "text_preview": "Định kỳ 03 năm, Kiểm toán nhà nước thực hiện kiểm toán quỹ bảo hiểm xã hội, hoạt"
+        }
+      ]
+    },
+    {
+      "stt": 93,
+      "question": "Chồng mình bộ đội 19 năm ra quân 31/3/2025 thì khi nào đc lãnh BHXH 1 lần của Bộ quốc phòng?",
+      "gold_articles": [
+        "L41_2024.A110",
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K5",
+      "best_gold_clause_text": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hộ",
+      "query_gold_cosine": 0.5351,
+      "top1_retrieved_article": "L58_2014.A123",
+      "top1_retrieved_score": 0.7991,
+      "score_delta_gold_minus_top1": -0.264,
+      "n_gold_clauses_found": 11,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K5",
+          "cosine": 0.5351,
+          "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hộ"
+        },
+        {
+          "clause_id": "L41_2024.A110.K3",
+          "cosine": 0.5175,
+          "text_preview": "Trường hợp người có cả thời gian đóng bảo hiểm xã hội bắt buộc và bảo hiểm xã hộ"
+        },
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.5128,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A110.K2",
+          "cosine": 0.5105,
+          "text_preview": "Mức trợ cấp tuất một lần đối với thân nhân của người đang tham gia bảo hiểm xã h"
+        },
+        {
+          "clause_id": "L41_2024.A70.K4",
+          "cosine": 0.5045,
+          "text_preview": "Trường hợp quy định tại điểm c và điểm d khoản 1 Điều này thì mức hưởng bảo hiểm"
+        }
+      ]
+    },
+    {
+      "stt": 94,
+      "question": "e mơi đóng bhxh hộ kinh doanh được 2 tháng giờ e ở nhóm 1 không phải đóng thì đi huỷ được khômg?",
+      "gold_articles": [
+        "L41_2024.A2"
+      ],
+      "best_gold_clause": "L41_2024.A2.K7",
+      "best_gold_clause_text": "Trường hợp không thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc bao gồm:",
+      "query_gold_cosine": 0.5121,
+      "top1_retrieved_article": "L41_2024.A70",
+      "top1_retrieved_score": 0.7792,
+      "score_delta_gold_minus_top1": -0.267,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A2.K7",
+          "cosine": 0.5121,
+          "text_preview": "Trường hợp không thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc bao gồm:"
+        },
+        {
+          "clause_id": "L41_2024.A2.K6",
+          "cosine": 0.4927,
+          "text_preview": "Ủy ban Thường vụ Quốc hội quyết định việc tham gia bảo hiểm xã hội bắt buộc đối "
+        },
+        {
+          "clause_id": "L41_2024.A2.K2",
+          "cosine": 0.4817,
+          "text_preview": "Người lao động là công dân nước ngoài làm việc tại Việt Nam thuộc đối tượng tham"
+        },
+        {
+          "clause_id": "L41_2024.A2.K3",
+          "cosine": 0.4654,
+          "text_preview": "Người sử dụng lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc bao gồm"
+        },
+        {
+          "clause_id": "L41_2024.A2.K5",
+          "cosine": 0.4572,
+          "text_preview": "Người đồng thời thuộc nhiều đối tượng tham gia bảo hiểm xã hội bắt buộc khác nha"
+        }
+      ]
+    },
+    {
+      "stt": 101,
+      "question": "e làm cty này từ năm 2012 đến 2025 thì e nghỉ và hiện e đang làm cty khác .cty đã trả sổ bh ,cùng các tờ rồi từ năm 2012",
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "best_gold_clause": "L41_2024.A27.K2",
+      "best_gold_clause_text": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm ",
+      "query_gold_cosine": 0.4565,
+      "top1_retrieved_article": "L41_2024.A25",
+      "top1_retrieved_score": 0.7853,
+      "score_delta_gold_minus_top1": -0.3288,
+      "n_gold_clauses_found": 3,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A27.K2",
+          "cosine": 0.4565,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K1",
+          "cosine": 0.4178,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng tham gia bảo hiểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K3",
+          "cosine": 0.4167,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội tự nguyện là tờ khai đăng ký tham gia bảo"
+        }
+      ]
+    },
+    {
+      "stt": 103,
+      "question": "Bhxh của em tầm 9 năm 2 tháng mức đóng tầm 4tr3, cho em hỏi bh thất nghiệp nhận được bao nhiêu và bhxh nhận được bao nhi",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K3",
+      "best_gold_clause_text": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn ",
+      "query_gold_cosine": 0.5616,
+      "top1_retrieved_article": "L45_2019.A46",
+      "top1_retrieved_score": 0.8099,
+      "score_delta_gold_minus_top1": -0.2484,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.5616,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A70.K4",
+          "cosine": 0.5444,
+          "text_preview": "Trường hợp quy định tại điểm c và điểm d khoản 1 Điều này thì mức hưởng bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.5366,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K2",
+          "cosine": 0.516,
+          "text_preview": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.5116,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        }
+      ]
+    },
+    {
+      "stt": 104,
+      "question": "Giờ rút bhxh 1 lần ở đâu cũng được phải không?\nVà có cần giấy quyết định thôi việc không?",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K6",
+      "best_gold_clause_text": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,",
+      "query_gold_cosine": 0.5165,
+      "top1_retrieved_article": "L45_2019.A42",
+      "top1_retrieved_score": 0.7871,
+      "score_delta_gold_minus_top1": -0.2705,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.5165,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K5",
+          "cosine": 0.4995,
+          "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hộ"
+        },
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.4935,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K2",
+          "cosine": 0.4832,
+          "text_preview": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.4696,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        }
+      ]
+    },
+    {
+      "stt": 105,
+      "question": "Chốt sổ em lãnh Bh thât nghiệp đến tháng 3/2025 nhưng giờ trên hệ thống chỉ đến tháng 2/2025, em không lãnh được tiền bh",
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "best_gold_clause": "L41_2024.A27.K2",
+      "best_gold_clause_text": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm ",
+      "query_gold_cosine": 0.4288,
+      "top1_retrieved_article": "L41_2024.A25",
+      "top1_retrieved_score": 0.8184,
+      "score_delta_gold_minus_top1": -0.3897,
+      "n_gold_clauses_found": 3,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A27.K2",
+          "cosine": 0.4288,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K1",
+          "cosine": 0.4089,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng tham gia bảo hiểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K3",
+          "cosine": 0.3764,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội tự nguyện là tờ khai đăng ký tham gia bảo"
+        }
+      ]
+    },
+    {
+      "stt": 106,
+      "question": "Em đóng bảo hiểm được 11 năm 8 tháng mức đóng 6025 giờ rút được tầm bao nhiêu?",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K3",
+      "best_gold_clause_text": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn ",
+      "query_gold_cosine": 0.4967,
+      "top1_retrieved_article": "L58_2014.A58",
+      "top1_retrieved_score": 0.7786,
+      "score_delta_gold_minus_top1": -0.282,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.4967,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A70.K4",
+          "cosine": 0.4892,
+          "text_preview": "Trường hợp quy định tại điểm c và điểm d khoản 1 Điều này thì mức hưởng bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.4783,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.4737,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K2",
+          "cosine": 0.4685,
+          "text_preview": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        }
+      ]
+    },
+    {
+      "stt": 107,
+      "question": "Bảo hiểm của e đóng từ 2015, đóng gián đoạn. Đến năm 2021 thì nghỉ đóng, vậy e có được rút không? và rút được bao nhiêu?",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K1",
+      "best_gold_clause_text": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm",
+      "query_gold_cosine": 0.5507,
+      "top1_retrieved_article": "L58_2014.A78",
+      "top1_retrieved_score": 0.8082,
+      "score_delta_gold_minus_top1": -0.2575,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.5507,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.5458,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A70.K4",
+          "cosine": 0.5447,
+          "text_preview": "Trường hợp quy định tại điểm c và điểm d khoản 1 Điều này thì mức hưởng bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K2",
+          "cosine": 0.5393,
+          "text_preview": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.5327,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        }
+      ]
+    },
+    {
+      "stt": 112,
+      "question": "Trước mình nghỉ ngang công ty cũ chưa chốt và lấy bìa xanh bây giờ ra bhxh huyện làm lại được không?",
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "best_gold_clause": "L41_2024.A27.K2",
+      "best_gold_clause_text": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm ",
+      "query_gold_cosine": 0.3945,
+      "top1_retrieved_article": "L45_2019.A54",
+      "top1_retrieved_score": 0.7576,
+      "score_delta_gold_minus_top1": -0.3631,
+      "n_gold_clauses_found": 3,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A27.K2",
+          "cosine": 0.3945,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K3",
+          "cosine": 0.3532,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội tự nguyện là tờ khai đăng ký tham gia bảo"
+        },
+        {
+          "clause_id": "L41_2024.A27.K1",
+          "cosine": 0.3521,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng tham gia bảo hiểm "
+        }
+      ]
+    },
+    {
+      "stt": 115,
+      "question": "Mình đóng được bảo hiểm 8 tháng thì có rút được tiền trong bảo hiểu đc không?",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K3",
+      "best_gold_clause_text": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn ",
+      "query_gold_cosine": 0.5564,
+      "top1_retrieved_article": "L41_2024.A33",
+      "top1_retrieved_score": 0.8013,
+      "score_delta_gold_minus_top1": -0.2449,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.5564,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.547,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K4",
+          "cosine": 0.5453,
+          "text_preview": "Trường hợp quy định tại điểm c và điểm d khoản 1 Điều này thì mức hưởng bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.5312,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K5",
+          "cosine": 0.5248,
+          "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hộ"
+        }
+      ]
+    },
+    {
+      "stt": 116,
+      "question": "Đi làm công ty mức lương: 5tr5 mà cty bắt đóng bảo hiểm 1tr700 là sao?",
+      "gold_articles": [
+        "L41_2024.A13"
+      ],
+      "best_gold_clause": "L41_2024.A13.K4",
+      "best_gold_clause_text": "Đóng bảo hiểm xã hội bắt buộc cho người lao động theo quy định tại Điều 34 của L",
+      "query_gold_cosine": 0.58,
+      "top1_retrieved_article": "L58_2014.A5",
+      "top1_retrieved_score": 0.8139,
+      "score_delta_gold_minus_top1": -0.2339,
+      "n_gold_clauses_found": 9,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A13.K4",
+          "cosine": 0.58,
+          "text_preview": "Đóng bảo hiểm xã hội bắt buộc cho người lao động theo quy định tại Điều 34 của L"
+        },
+        {
+          "clause_id": "L41_2024.A13.K1",
+          "cosine": 0.5639,
+          "text_preview": "Đăng ký tham gia bảo hiểm xã hội bắt buộc cho người lao động theo quy định của L"
+        },
+        {
+          "clause_id": "L41_2024.A13.K8",
+          "cosine": 0.5577,
+          "text_preview": "Bồi thường cho người lao động theo quy định của pháp luật nếu không thực hiện ho"
+        },
+        {
+          "clause_id": "L41_2024.A13.K7",
+          "cosine": 0.54,
+          "text_preview": "Xuất trình, cung cấp đầy đủ, chính xác, kịp thời thông tin, tài liệu liên quan đ"
+        },
+        {
+          "clause_id": "L41_2024.A13.K9",
+          "cosine": 0.5356,
+          "text_preview": "Phối hợp, tạo điều kiện để cơ quan bảo hiểm xã hội thực hiện thu hồi số tiền bảo"
+        }
+      ]
+    },
+    {
+      "stt": 118,
+      "question": "Nếu mà tham gia bảo hiểm được 9 năm rồi giờ rút về thì được bao nhiêu?",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K3",
+      "best_gold_clause_text": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn ",
+      "query_gold_cosine": 0.5507,
+      "top1_retrieved_article": "L41_2024.A141",
+      "top1_retrieved_score": 0.8081,
+      "score_delta_gold_minus_top1": -0.2574,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.5507,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A70.K4",
+          "cosine": 0.5362,
+          "text_preview": "Trường hợp quy định tại điểm c và điểm d khoản 1 Điều này thì mức hưởng bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.5286,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K2",
+          "cosine": 0.5227,
+          "text_preview": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.5015,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        }
+      ]
+    },
+    {
+      "stt": 119,
+      "question": "Có phải cơ quan BHXH giờ không cấp lại bìa và tờ rời nữa không? Mình nộp đủ sổ cho công ty cũ chốt bhxh mà công ty báo l",
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "best_gold_clause": "L41_2024.A27.K2",
+      "best_gold_clause_text": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm ",
+      "query_gold_cosine": 0.5094,
+      "top1_retrieved_article": "L41_2024.A25",
+      "top1_retrieved_score": 0.8006,
+      "score_delta_gold_minus_top1": -0.2912,
+      "n_gold_clauses_found": 3,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A27.K2",
+          "cosine": 0.5094,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K3",
+          "cosine": 0.484,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội tự nguyện là tờ khai đăng ký tham gia bảo"
+        },
+        {
+          "clause_id": "L41_2024.A27.K1",
+          "cosine": 0.471,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng tham gia bảo hiểm "
+        }
+      ]
+    },
+    {
+      "stt": 128,
+      "question": "mình đi làm hồ sơ lãnh lương hưu thì bên bhxh tra trên hệ thống và báo rằng tên mình có 2 số sổ, và số sổ kia đã chốt và",
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "best_gold_clause": "L41_2024.A27.K2",
+      "best_gold_clause_text": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm ",
+      "query_gold_cosine": 0.4866,
+      "top1_retrieved_article": "L58_2014.A18",
+      "top1_retrieved_score": 0.7976,
+      "score_delta_gold_minus_top1": -0.311,
+      "n_gold_clauses_found": 3,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A27.K2",
+          "cosine": 0.4866,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K3",
+          "cosine": 0.445,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội tự nguyện là tờ khai đăng ký tham gia bảo"
+        },
+        {
+          "clause_id": "L41_2024.A27.K1",
+          "cosine": 0.4318,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng tham gia bảo hiểm "
+        }
+      ]
+    },
+    {
+      "stt": 132,
+      "question": "Em bị mất giấy quyết định thôi việc thì có rút được thất nghiệp với bhxh hông???",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K1",
+      "best_gold_clause_text": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm",
+      "query_gold_cosine": 0.4891,
+      "top1_retrieved_article": "L45_2019.A43",
+      "top1_retrieved_score": 0.7972,
+      "score_delta_gold_minus_top1": -0.3081,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.4891,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K2",
+          "cosine": 0.4863,
+          "text_preview": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.4661,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K5",
+          "cosine": 0.444,
+          "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hộ"
+        },
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.4401,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        }
+      ]
+    },
+    {
+      "stt": 133,
+      "question": "Làm sao để đăng ký Bhxh không hướng lượng cho chủ doanh nghiệp?",
+      "gold_articles": [
+        "L41_2024.A2"
+      ],
+      "best_gold_clause": "L41_2024.A2.K7",
+      "best_gold_clause_text": "Trường hợp không thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc bao gồm:",
+      "query_gold_cosine": 0.4307,
+      "top1_retrieved_article": "L58_2014.A22",
+      "top1_retrieved_score": 0.7463,
+      "score_delta_gold_minus_top1": -0.3155,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A2.K7",
+          "cosine": 0.4307,
+          "text_preview": "Trường hợp không thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc bao gồm:"
+        },
+        {
+          "clause_id": "L41_2024.A2.K6",
+          "cosine": 0.4126,
+          "text_preview": "Ủy ban Thường vụ Quốc hội quyết định việc tham gia bảo hiểm xã hội bắt buộc đối "
+        },
+        {
+          "clause_id": "L41_2024.A2.K3",
+          "cosine": 0.4063,
+          "text_preview": "Người sử dụng lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc bao gồm"
+        },
+        {
+          "clause_id": "L41_2024.A2.K1",
+          "cosine": 0.3797,
+          "text_preview": "Người lao động là công dân Việt Nam thuộc đối tượng tham gia bảo hiểm xã hội bắt"
+        },
+        {
+          "clause_id": "L41_2024.A2.K2",
+          "cosine": 0.3754,
+          "text_preview": "Người lao động là công dân nước ngoài làm việc tại Việt Nam thuộc đối tượng tham"
+        }
+      ]
+    },
+    {
+      "stt": 137,
+      "question": "Hiện tại bên Bảo hiểm có cấp lại sổ và tờ rời bị mất không?\nEm bị mất sổ và tờ rời đóng từ năm 2018 tới 2020. Do bị trộm",
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "best_gold_clause": "L41_2024.A27.K2",
+      "best_gold_clause_text": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm ",
+      "query_gold_cosine": 0.5011,
+      "top1_retrieved_article": "L41_2024.A25",
+      "top1_retrieved_score": 0.837,
+      "score_delta_gold_minus_top1": -0.3359,
+      "n_gold_clauses_found": 3,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A27.K2",
+          "cosine": 0.5011,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K1",
+          "cosine": 0.4964,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng tham gia bảo hiểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K3",
+          "cosine": 0.4805,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội tự nguyện là tờ khai đăng ký tham gia bảo"
+        }
+      ]
+    },
+    {
+      "stt": 139,
+      "question": "E đóng BH từ tháng 8 năm 2023 thì bây giờ có thể rút BHXH đc không?\nVà BH thất nghiệp có rút đc không? Quy trình rút BHT",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K6",
+      "best_gold_clause_text": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,",
+      "query_gold_cosine": 0.5674,
+      "top1_retrieved_article": "L41_2024.A38",
+      "top1_retrieved_score": 0.8331,
+      "score_delta_gold_minus_top1": -0.2657,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.5674,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.5505,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.5457,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A70.K2",
+          "cosine": 0.5419,
+          "text_preview": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K5",
+          "cosine": 0.5179,
+          "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hộ"
+        }
+      ]
+    },
+    {
+      "stt": 140,
+      "question": "E mới sanh bé, giờ e chuẩn bi làm Hồ sơ thai sản, thì thường hồ sơ thai sản gồm những gì ? E nghe nói giấy chứng sinh Và",
+      "gold_articles": [
+        "L41_2024.A50"
+      ],
+      "best_gold_clause": "L41_2024.A50.K4",
+      "best_gold_clause_text": "Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này m",
+      "query_gold_cosine": 0.5724,
+      "top1_retrieved_article": "L41_2024.A96",
+      "top1_retrieved_score": 0.8563,
+      "score_delta_gold_minus_top1": -0.2839,
+      "n_gold_clauses_found": 5,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A50.K4",
+          "cosine": 0.5724,
+          "text_preview": "Đối tượng đủ điều kiện quy định tại khoản 2 hoặc khoản 3 hoặc khoản 5 Điều này m"
+        },
+        {
+          "clause_id": "L41_2024.A50.K1",
+          "cosine": 0.5601,
+          "text_preview": "Đối tượng quy định tại các điểm a, b, c, d, i, k, l, m và n khoản 1 và khoản 2 Đ"
+        },
+        {
+          "clause_id": "L41_2024.A50.K3",
+          "cosine": 0.5424,
+          "text_preview": "Đối tượng quy định tại điểm b và điểm c khoản 1 Điều này đã đóng bảo hiểm xã hội"
+        },
+        {
+          "clause_id": "L41_2024.A50.K2",
+          "cosine": 0.5411,
+          "text_preview": "Đối tượng quy định tại các điểm b, c, d và đ khoản 1 Điều này phải đóng bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A50.K5",
+          "cosine": 0.5241,
+          "text_preview": "Đối tượng quy định tại điểm b khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc "
+        }
+      ]
+    },
+    {
+      "stt": 142,
+      "question": "Mình nghĩ công ty được khoảng hơn 2 năm rồi, mà chưa vào lấy được số bảo hiểm, nhưng có tờ rời, giờ vào có lấy được số b",
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "best_gold_clause": "L41_2024.A27.K2",
+      "best_gold_clause_text": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm ",
+      "query_gold_cosine": 0.5459,
+      "top1_retrieved_article": "L41_2024.A25",
+      "top1_retrieved_score": 0.8252,
+      "score_delta_gold_minus_top1": -0.2793,
+      "n_gold_clauses_found": 3,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A27.K2",
+          "cosine": 0.5459,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K1",
+          "cosine": 0.4988,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng tham gia bảo hiểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K3",
+          "cosine": 0.4972,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội tự nguyện là tờ khai đăng ký tham gia bảo"
+        }
+      ]
+    },
+    {
+      "stt": 146,
+      "question": "MÌNH ĐÓNG BHXH ở công ty cũ nhưng chưa rút về, hiện tại mình vào công ty mới, côngty mới đóng cho mình nhưng mình xem tr",
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "best_gold_clause": "L41_2024.A27.K2",
+      "best_gold_clause_text": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm ",
+      "query_gold_cosine": 0.5105,
+      "top1_retrieved_article": "L58_2014.A85",
+      "top1_retrieved_score": 0.7977,
+      "score_delta_gold_minus_top1": -0.2872,
+      "n_gold_clauses_found": 3,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A27.K2",
+          "cosine": 0.5105,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K3",
+          "cosine": 0.4766,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội tự nguyện là tờ khai đăng ký tham gia bảo"
+        },
+        {
+          "clause_id": "L41_2024.A27.K1",
+          "cosine": 0.4758,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng tham gia bảo hiểm "
+        }
+      ]
+    },
+    {
+      "stt": 147,
+      "question": "Em ngưng đóng bhxh tháng cuối chốt là 4/2025 tới nay là được 1 năm thì em làm giấy rút bhxh 1 lần được chưa? Và cần chuẩ",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K1",
+      "best_gold_clause_text": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm",
+      "query_gold_cosine": 0.558,
+      "top1_retrieved_article": "L41_2024.A107",
+      "top1_retrieved_score": 0.7954,
+      "score_delta_gold_minus_top1": -0.2374,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.558,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K2",
+          "cosine": 0.5465,
+          "text_preview": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K5",
+          "cosine": 0.5372,
+          "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hộ"
+        },
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.535,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K4",
+          "cosine": 0.5272,
+          "text_preview": "Trường hợp quy định tại điểm c và điểm d khoản 1 Điều này thì mức hưởng bảo hiểm"
+        }
+      ]
+    },
+    {
+      "stt": 149,
+      "question": "Rút BHXH 1 lần thì bao lâu nhận được? e bắt đầu tham gia từ 2020 đến giờ thì có được rút không? e ở TP.HCM thì ra đâu rú",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K5",
+      "best_gold_clause_text": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hộ",
+      "query_gold_cosine": 0.5998,
+      "top1_retrieved_article": "L58_2014.A110",
+      "top1_retrieved_score": 0.8187,
+      "score_delta_gold_minus_top1": -0.2189,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K5",
+          "cosine": 0.5998,
+          "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hộ"
+        },
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.5866,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.5821,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.5808,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K2",
+          "cosine": 0.576,
+          "text_preview": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        }
+      ]
+    },
+    {
+      "stt": 150,
+      "question": "BH thất nghiệp của mình sao lại ít hơn so với BHXH ? Mình làm nhà nước. Đóng BH từ 6/2013 đến 4/2026. Nay mình mở app lê",
+      "gold_articles": [
+        "L41_2024.A2"
+      ],
+      "best_gold_clause": "L41_2024.A2.K2",
+      "best_gold_clause_text": "Người lao động là công dân nước ngoài làm việc tại Việt Nam thuộc đối tượng tham",
+      "query_gold_cosine": 0.5647,
+      "top1_retrieved_article": "L41_2024.A38",
+      "top1_retrieved_score": 0.8338,
+      "score_delta_gold_minus_top1": -0.2691,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A2.K2",
+          "cosine": 0.5647,
+          "text_preview": "Người lao động là công dân nước ngoài làm việc tại Việt Nam thuộc đối tượng tham"
+        },
+        {
+          "clause_id": "L41_2024.A2.K5",
+          "cosine": 0.5237,
+          "text_preview": "Người đồng thời thuộc nhiều đối tượng tham gia bảo hiểm xã hội bắt buộc khác nha"
+        },
+        {
+          "clause_id": "L41_2024.A2.K3",
+          "cosine": 0.5147,
+          "text_preview": "Người sử dụng lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc bao gồm"
+        },
+        {
+          "clause_id": "L41_2024.A2.K1",
+          "cosine": 0.511,
+          "text_preview": "Người lao động là công dân Việt Nam thuộc đối tượng tham gia bảo hiểm xã hội bắt"
+        },
+        {
+          "clause_id": "L41_2024.A2.K6",
+          "cosine": 0.5087,
+          "text_preview": "Ủy ban Thường vụ Quốc hội quyết định việc tham gia bảo hiểm xã hội bắt buộc đối "
+        }
+      ]
+    },
+    {
+      "stt": 151,
+      "question": "11 năm lương 9trieu 8 trăm rút xã hội đc bao nhiêu ạ",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K3",
+      "best_gold_clause_text": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn ",
+      "query_gold_cosine": 0.486,
+      "top1_retrieved_article": "L41_2024.A100",
+      "top1_retrieved_score": 0.7698,
+      "score_delta_gold_minus_top1": -0.2837,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.486,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A70.K4",
+          "cosine": 0.4721,
+          "text_preview": "Trường hợp quy định tại điểm c và điểm d khoản 1 Điều này thì mức hưởng bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.4374,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K5",
+          "cosine": 0.4231,
+          "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hộ"
+        },
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.4195,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        }
+      ]
+    },
+    {
+      "stt": 153,
+      "question": "Minh  đóng bảo hiểm 4nam 5 tháng. Lương cơ bản 25 tr nếu rút 1 lần được tầm bao nhiêu?",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K4",
+      "best_gold_clause_text": "Trường hợp quy định tại điểm c và điểm d khoản 1 Điều này thì mức hưởng bảo hiểm",
+      "query_gold_cosine": 0.5329,
+      "top1_retrieved_article": "L58_2014.A62",
+      "top1_retrieved_score": 0.793,
+      "score_delta_gold_minus_top1": -0.2601,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K4",
+          "cosine": 0.5329,
+          "text_preview": "Trường hợp quy định tại điểm c và điểm d khoản 1 Điều này thì mức hưởng bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.5058,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.5055,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A70.K5",
+          "cosine": 0.4924,
+          "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hộ"
+        },
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.4732,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        }
+      ]
+    },
+    {
+      "stt": 155,
+      "question": "Minh mat so bhxh , còn nhớ số sổ , làm sao tra được quá trình đóng bhxh?",
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "best_gold_clause": "L41_2024.A27.K2",
+      "best_gold_clause_text": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm ",
+      "query_gold_cosine": 0.4705,
+      "top1_retrieved_article": "L41_2024.A25",
+      "top1_retrieved_score": 0.7731,
+      "score_delta_gold_minus_top1": -0.3026,
+      "n_gold_clauses_found": 3,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A27.K2",
+          "cosine": 0.4705,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K1",
+          "cosine": 0.4493,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng tham gia bảo hiểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K3",
+          "cosine": 0.4228,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội tự nguyện là tờ khai đăng ký tham gia bảo"
+        }
+      ]
+    },
+    {
+      "stt": 156,
+      "question": "E nghỉ ngang cty cũ k chốt tờ rời cho giờ có cách nào chốt được không?",
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "best_gold_clause": "L41_2024.A27.K2",
+      "best_gold_clause_text": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm ",
+      "query_gold_cosine": 0.4023,
+      "top1_retrieved_article": "L45_2019.A113",
+      "top1_retrieved_score": 0.7718,
+      "score_delta_gold_minus_top1": -0.3695,
+      "n_gold_clauses_found": 3,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A27.K2",
+          "cosine": 0.4023,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K3",
+          "cosine": 0.3497,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội tự nguyện là tờ khai đăng ký tham gia bảo"
+        },
+        {
+          "clause_id": "L41_2024.A27.K1",
+          "cosine": 0.3462,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng tham gia bảo hiểm "
+        }
+      ]
+    },
+    {
+      "stt": 158,
+      "question": "mình đóng bhxh dk 6 năm mức lương CB 5300 thì giờ mk muốn rút một lần là dk khoảng bao nhiêu?",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K3",
+      "best_gold_clause_text": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn ",
+      "query_gold_cosine": 0.445,
+      "top1_retrieved_article": "L45_2019.A102",
+      "top1_retrieved_score": 0.7481,
+      "score_delta_gold_minus_top1": -0.3031,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.445,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.4254,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K4",
+          "cosine": 0.4119,
+          "text_preview": "Trường hợp quy định tại điểm c và điểm d khoản 1 Điều này thì mức hưởng bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.4,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K2",
+          "cosine": 0.3939,
+          "text_preview": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        }
+      ]
+    },
+    {
+      "stt": 159,
+      "question": "tiền dưỡng sức sau sinh bao lâu thì mình nhận được?",
+      "gold_articles": [
+        "L41_2024.A59"
+      ],
+      "best_gold_clause": "L41_2024.A59.K3",
+      "best_gold_clause_text": "Trợ cấp thai sản khi sinh con, nhận con khi nhờ mang thai hộ hoặc nhận nuôi con ",
+      "query_gold_cosine": 0.6191,
+      "top1_retrieved_article": "L58_2014.A103",
+      "top1_retrieved_score": 0.855,
+      "score_delta_gold_minus_top1": -0.2359,
+      "n_gold_clauses_found": 5,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A59.K3",
+          "cosine": 0.6191,
+          "text_preview": "Trợ cấp thai sản khi sinh con, nhận con khi nhờ mang thai hộ hoặc nhận nuôi con "
+        },
+        {
+          "clause_id": "L41_2024.A59.K1",
+          "cosine": 0.6071,
+          "text_preview": "Trợ cấp thai sản một tháng của người lao động quy định tại các điều 51, 52, 53, "
+        },
+        {
+          "clause_id": "L41_2024.A59.K2",
+          "cosine": 0.5961,
+          "text_preview": "Trợ cấp thai sản một ngày đối với trường hợp quy định tại Điều 51 và khoản 2 Điề"
+        },
+        {
+          "clause_id": "L41_2024.A59.K4",
+          "cosine": 0.5675,
+          "text_preview": "Trợ cấp thai sản của lao động nữ mang thai hộ, lao động nữ nhờ mang thai hộ được"
+        },
+        {
+          "clause_id": "L41_2024.A59.K5",
+          "cosine": 0.516,
+          "text_preview": "Bộ trưởng Bộ Lao động - Thương binh và Xã hội quy định việc tính, việc xác định "
+        }
+      ]
+    },
+    {
+      "stt": 160,
+      "question": "mình nghỉ công ty được 10 tháng rồi 2 tháng nữa là mình rút bhxh , nhưng hiện tại mình đi làm thời vụ mình đóng tiền thu",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K2",
+      "best_gold_clause_text": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm",
+      "query_gold_cosine": 0.5536,
+      "top1_retrieved_article": "L41_2024.A33",
+      "top1_retrieved_score": 0.8013,
+      "score_delta_gold_minus_top1": -0.2477,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K2",
+          "cosine": 0.5536,
+          "text_preview": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.5529,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.5383,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.5366,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A70.K5",
+          "cosine": 0.5239,
+          "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hộ"
+        }
+      ]
+    },
+    {
+      "stt": 161,
+      "question": "e muốn rut tiền sổ bh thì cần những gì? điều kiện gì?",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K6",
+      "best_gold_clause_text": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,",
+      "query_gold_cosine": 0.4957,
+      "top1_retrieved_article": "L41_2024.A17",
+      "top1_retrieved_score": 0.7719,
+      "score_delta_gold_minus_top1": -0.2762,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.4957,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.483,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.4722,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K2",
+          "cosine": 0.4683,
+          "text_preview": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K4",
+          "cosine": 0.4598,
+          "text_preview": "Trường hợp quy định tại điểm c và điểm d khoản 1 Điều này thì mức hưởng bảo hiểm"
+        }
+      ]
+    },
+    {
+      "stt": 163,
+      "question": "cty em trả tờ rời chứ k thấy trả sổ. Nếu em rút 1 lần có cần đi làm lại sổ không?",
+      "gold_articles": [
+        "L41_2024.A27",
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K6",
+      "best_gold_clause_text": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,",
+      "query_gold_cosine": 0.4565,
+      "top1_retrieved_article": "L45_2019.A96",
+      "top1_retrieved_score": 0.7823,
+      "score_delta_gold_minus_top1": -0.3257,
+      "n_gold_clauses_found": 10,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.4565,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.4444,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K2",
+          "cosine": 0.4419,
+          "text_preview": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A27.K2",
+          "cosine": 0.4374,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm "
+        },
+        {
+          "clause_id": "L41_2024.A70.K5",
+          "cosine": 0.4302,
+          "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hộ"
+        }
+      ]
+    },
+    {
+      "stt": 175,
+      "question": "Mình đóng bảo hiểm đc 6 năm, lương trung bình 20tr/ tháng ,giờ cần tiền muốn rút thì được tầm bao nhiêu?",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K6",
+      "best_gold_clause_text": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,",
+      "query_gold_cosine": 0.5888,
+      "top1_retrieved_article": "L58_2014.A89",
+      "top1_retrieved_score": 0.8115,
+      "score_delta_gold_minus_top1": -0.2227,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.5888,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.5715,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A70.K4",
+          "cosine": 0.564,
+          "text_preview": "Trường hợp quy định tại điểm c và điểm d khoản 1 Điều này thì mức hưởng bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.5462,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K2",
+          "cosine": 0.542,
+          "text_preview": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        }
+      ]
+    },
+    {
+      "stt": 177,
+      "question": "Em làm samsung Bắc Ninh từ năm 2017, e nghỉ ngang chưa chốt bảo hiểm và chưa có sổ. Giờ e làm công ty mới vẫn đóng bảo h",
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "best_gold_clause": "L41_2024.A27.K2",
+      "best_gold_clause_text": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm ",
+      "query_gold_cosine": 0.4985,
+      "top1_retrieved_article": "L41_2024.A141",
+      "top1_retrieved_score": 0.8056,
+      "score_delta_gold_minus_top1": -0.3071,
+      "n_gold_clauses_found": 3,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A27.K2",
+          "cosine": 0.4985,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K1",
+          "cosine": 0.4744,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng tham gia bảo hiểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K3",
+          "cosine": 0.4495,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội tự nguyện là tờ khai đăng ký tham gia bảo"
+        }
+      ]
+    },
+    {
+      "stt": 178,
+      "question": "em làm mất bìa và sổ BHXH . trên app thì cái sdt và gmail đăng ký thì e mất lâu rồi . bây giờ em phải làm sao?",
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "best_gold_clause": "L41_2024.A27.K2",
+      "best_gold_clause_text": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm ",
+      "query_gold_cosine": 0.498,
+      "top1_retrieved_article": "L58_2014.A97",
+      "top1_retrieved_score": 0.7969,
+      "score_delta_gold_minus_top1": -0.2989,
+      "n_gold_clauses_found": 3,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A27.K2",
+          "cosine": 0.498,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K3",
+          "cosine": 0.4809,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội tự nguyện là tờ khai đăng ký tham gia bảo"
+        },
+        {
+          "clause_id": "L41_2024.A27.K1",
+          "cosine": 0.4649,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng tham gia bảo hiểm "
+        }
+      ]
+    },
+    {
+      "stt": 181,
+      "question": "Không có sổ bảo hiểm chỉ có tờ rời thì có đi rút bảo hiểm được không?",
+      "gold_articles": [
+        "L41_2024.A27",
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K1",
+      "best_gold_clause_text": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm",
+      "query_gold_cosine": 0.5259,
+      "top1_retrieved_article": "L58_2014.A105",
+      "top1_retrieved_score": 0.781,
+      "score_delta_gold_minus_top1": -0.2551,
+      "n_gold_clauses_found": 10,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.5259,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K2",
+          "cosine": 0.52,
+          "text_preview": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.5053,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.5034,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A27.K2",
+          "cosine": 0.5017,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm "
+        }
+      ]
+    },
+    {
+      "stt": 182,
+      "question": "Rút Bhxh là tính từ ngày có giấy quyết định nghỉ việc tròn một năm hay là thời điểm mình đi nộp sổ?",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K5",
+      "best_gold_clause_text": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hộ",
+      "query_gold_cosine": 0.4955,
+      "top1_retrieved_article": "L58_2014.A123",
+      "top1_retrieved_score": 0.777,
+      "score_delta_gold_minus_top1": -0.2815,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K5",
+          "cosine": 0.4955,
+          "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hộ"
+        },
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.4687,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.4653,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K4",
+          "cosine": 0.4574,
+          "text_preview": "Trường hợp quy định tại điểm c và điểm d khoản 1 Điều này thì mức hưởng bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.4553,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        }
+      ]
+    },
+    {
+      "stt": 183,
+      "question": "minh nghi viec da 1 nam co dc huong tro cap ko?",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K3",
+      "best_gold_clause_text": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn ",
+      "query_gold_cosine": 0.3414,
+      "top1_retrieved_article": "L45_2019.A24",
+      "top1_retrieved_score": 0.7066,
+      "score_delta_gold_minus_top1": -0.3652,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.3414,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.3319,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K7",
+          "cosine": 0.3306,
+          "text_preview": "Chính phủ quy định chi tiết Điều này."
+        },
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.3252,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K5",
+          "cosine": 0.3193,
+          "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hộ"
+        }
+      ]
+    },
+    {
+      "stt": 184,
+      "question": "Em làm công ty.vừa rồi 17/4 e hết thời gian nghỉ thai sản và e ra để viết đơn nghỉ dưỡng sức sau đó viết đơn nghỉ việc. ",
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "best_gold_clause": "L41_2024.A27.K3",
+      "best_gold_clause_text": "Hồ sơ đăng ký tham gia bảo hiểm xã hội tự nguyện là tờ khai đăng ký tham gia bảo",
+      "query_gold_cosine": 0.4565,
+      "top1_retrieved_article": "L58_2014.A39",
+      "top1_retrieved_score": 0.8491,
+      "score_delta_gold_minus_top1": -0.3926,
+      "n_gold_clauses_found": 3,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A27.K3",
+          "cosine": 0.4565,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội tự nguyện là tờ khai đăng ký tham gia bảo"
+        },
+        {
+          "clause_id": "L41_2024.A27.K2",
+          "cosine": 0.4497,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K1",
+          "cosine": 0.4235,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng tham gia bảo hiểm "
+        }
+      ]
+    },
+    {
+      "stt": 185,
+      "question": "minh tham gia bh từ 2021 đến nay đóng phí đều hàng tháng.nhưng mở  định danh kiểm tra thì 21 23 24 25 đều có phí còn 22 ",
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "best_gold_clause": "L41_2024.A27.K1",
+      "best_gold_clause_text": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng tham gia bảo hiểm ",
+      "query_gold_cosine": 0.5126,
+      "top1_retrieved_article": "L41_2024.A38",
+      "top1_retrieved_score": 0.7677,
+      "score_delta_gold_minus_top1": -0.2551,
+      "n_gold_clauses_found": 3,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A27.K1",
+          "cosine": 0.5126,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng tham gia bảo hiểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K2",
+          "cosine": 0.5017,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K3",
+          "cosine": 0.4854,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội tự nguyện là tờ khai đăng ký tham gia bảo"
+        }
+      ]
+    },
+    {
+      "stt": 186,
+      "question": "Mình nghỉ thai sản\nTính ra 25 tháng 3 vừa rồi là mình quay lại làm việc sau 6 tháng nghỉ thai sản\nNgày 23 tháng 3 mình v",
+      "gold_articles": [
+        "L41_2024.A27",
+        "L45_2019.A48"
+      ],
+      "best_gold_clause": "L45_2019.A48.K1",
+      "best_gold_clause_text": "Trong thời hạn 14 ngày làm việc kể từ ngày chấm dứt hợp đồng lao động, hai bên c",
+      "query_gold_cosine": 0.5973,
+      "top1_retrieved_article": "L45_2019.A139",
+      "top1_retrieved_score": 0.8522,
+      "score_delta_gold_minus_top1": -0.255,
+      "n_gold_clauses_found": 6,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L45_2019.A48.K1",
+          "cosine": 0.5973,
+          "text_preview": "Trong thời hạn 14 ngày làm việc kể từ ngày chấm dứt hợp đồng lao động, hai bên c"
+        },
+        {
+          "clause_id": "L45_2019.A48.K3",
+          "cosine": 0.4946,
+          "text_preview": "Người sử dụng lao động có trách nhiệm sau đây:"
+        },
+        {
+          "clause_id": "L45_2019.A48.K2",
+          "cosine": 0.4544,
+          "text_preview": "Tiền lương, bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp, trợ cấp thôi v"
+        },
+        {
+          "clause_id": "L41_2024.A27.K3",
+          "cosine": 0.4417,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội tự nguyện là tờ khai đăng ký tham gia bảo"
+        },
+        {
+          "clause_id": "L41_2024.A27.K2",
+          "cosine": 0.4282,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm "
+        }
+      ]
+    },
+    {
+      "stt": 187,
+      "question": "Em làm đc 2 năm lương cơ bản 5tr2 thì rút bhxh đc bao nhiêu?",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K3",
+      "best_gold_clause_text": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn ",
+      "query_gold_cosine": 0.4918,
+      "top1_retrieved_article": "L58_2014.A52",
+      "top1_retrieved_score": 0.7868,
+      "score_delta_gold_minus_top1": -0.295,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.4918,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A70.K4",
+          "cosine": 0.4528,
+          "text_preview": "Trường hợp quy định tại điểm c và điểm d khoản 1 Điều này thì mức hưởng bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K2",
+          "cosine": 0.4521,
+          "text_preview": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K5",
+          "cosine": 0.4479,
+          "text_preview": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm cơ quan bảo hiểm xã hộ"
+        },
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.4421,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        }
+      ]
+    },
+    {
+      "stt": 189,
+      "question": "Cty em từ tháng 11/2025 từ Cty cổ phần chuyển đổi thành Cty TNHH 1tv, giám đốc là chủ sở hữu mà bên em đóng bảo hiểm xã ",
+      "gold_articles": [
+        "L41_2024.A2"
+      ],
+      "best_gold_clause": "L41_2024.A2.K3",
+      "best_gold_clause_text": "Người sử dụng lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc bao gồm",
+      "query_gold_cosine": 0.5082,
+      "top1_retrieved_article": "L41_2024.A32",
+      "top1_retrieved_score": 0.7751,
+      "score_delta_gold_minus_top1": -0.2669,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A2.K3",
+          "cosine": 0.5082,
+          "text_preview": "Người sử dụng lao động thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc bao gồm"
+        },
+        {
+          "clause_id": "L41_2024.A2.K6",
+          "cosine": 0.5031,
+          "text_preview": "Ủy ban Thường vụ Quốc hội quyết định việc tham gia bảo hiểm xã hội bắt buộc đối "
+        },
+        {
+          "clause_id": "L41_2024.A2.K1",
+          "cosine": 0.4994,
+          "text_preview": "Người lao động là công dân Việt Nam thuộc đối tượng tham gia bảo hiểm xã hội bắt"
+        },
+        {
+          "clause_id": "L41_2024.A2.K2",
+          "cosine": 0.4737,
+          "text_preview": "Người lao động là công dân nước ngoài làm việc tại Việt Nam thuộc đối tượng tham"
+        },
+        {
+          "clause_id": "L41_2024.A2.K5",
+          "cosine": 0.4709,
+          "text_preview": "Người đồng thời thuộc nhiều đối tượng tham gia bảo hiểm xã hội bắt buộc khác nha"
+        }
+      ]
+    },
+    {
+      "stt": 190,
+      "question": "Lam cty luong cơ bản 3tr9 tháng mình đóng 415k bhxh và cty đóng cho 800k thì sau rút ra có rút dc cả phần 800k công ty đ",
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "best_gold_clause": "L41_2024.A70.K3",
+      "best_gold_clause_text": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn ",
+      "query_gold_cosine": 0.5348,
+      "top1_retrieved_article": "L58_2014.A86",
+      "top1_retrieved_score": 0.7903,
+      "score_delta_gold_minus_top1": -0.2554,
+      "n_gold_clauses_found": 7,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A70.K3",
+          "cosine": 0.5348,
+          "text_preview": "Mức hưởng bảo hiểm xã hội một lần được tính theo số năm đã đóng và căn "
+        },
+        {
+          "clause_id": "L41_2024.A70.K6",
+          "cosine": 0.5115,
+          "text_preview": "Trường hợp người lao động quy định tại các điểm b, c và d khoản 1 và các điểm b,"
+        },
+        {
+          "clause_id": "L41_2024.A70.K4",
+          "cosine": 0.5092,
+          "text_preview": "Trường hợp quy định tại điểm c và điểm d khoản 1 Điều này thì mức hưởng bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K1",
+          "cosine": 0.4673,
+          "text_preview": "Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        },
+        {
+          "clause_id": "L41_2024.A70.K2",
+          "cosine": 0.463,
+          "text_preview": "Đối tượng quy định tại khoản 2 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm"
+        }
+      ]
+    },
+    {
+      "stt": 192,
+      "question": "năm 2011 em có mượn hồ sơ đi làm và đóng bh đc 3th thì cty phát hiện hồ sơ giả nên em nghỉ việc, nhưng đến hôm nay cái c",
+      "gold_articles": [
+        "L41_2024.A9"
+      ],
+      "best_gold_clause": "L41_2024.A9.K4",
+      "best_gold_clause_text": "Gian lận, giả mạo hồ sơ trong việc thực hiện bảo hiểm xã hội, bảo hiểm thất nghi",
+      "query_gold_cosine": 0.5033,
+      "top1_retrieved_article": "L41_2024.A106",
+      "top1_retrieved_score": 0.8069,
+      "score_delta_gold_minus_top1": -0.3036,
+      "n_gold_clauses_found": 10,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A9.K4",
+          "cosine": 0.5033,
+          "text_preview": "Gian lận, giả mạo hồ sơ trong việc thực hiện bảo hiểm xã hội, bảo hiểm thất nghi"
+        },
+        {
+          "clause_id": "L41_2024.A9.K6",
+          "cosine": 0.4989,
+          "text_preview": "Truy cập, khai thác, cung cấp cơ sở dữ liệu về bảo hiểm xã hội, bảo hiểm thất ng"
+        },
+        {
+          "clause_id": "L41_2024.A9.K7",
+          "cosine": 0.4913,
+          "text_preview": "Đăng ký, báo cáo sai sự thật; cung cấp thông tin không chính xác về bảo hiểm xã "
+        },
+        {
+          "clause_id": "L41_2024.A9.K2",
+          "cosine": 0.4842,
+          "text_preview": "Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp."
+        },
+        {
+          "clause_id": "L41_2024.A9.K3",
+          "cosine": 0.4714,
+          "text_preview": "Cản trở, gây khó khăn hoặc làm thiệt hại đến quyền, lợi ích hợp pháp của đối tượ"
+        }
+      ]
+    },
+    {
+      "stt": 193,
+      "question": "Em nghỉ cty cách đây 8/9 năm r nhưng m chưa chốt lấy bảo hiểm\nGiờ m muốn lấy bảo hiểm thì đến cty m đã lm để lấy hay lấy",
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "best_gold_clause": "L41_2024.A27.K2",
+      "best_gold_clause_text": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm ",
+      "query_gold_cosine": 0.475,
+      "top1_retrieved_article": "L58_2014.A123",
+      "top1_retrieved_score": 0.8007,
+      "score_delta_gold_minus_top1": -0.3257,
+      "n_gold_clauses_found": 3,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A27.K2",
+          "cosine": 0.475,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K1",
+          "cosine": 0.4326,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng tham gia bảo hiểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K3",
+          "cosine": 0.4276,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội tự nguyện là tờ khai đăng ký tham gia bảo"
+        }
+      ]
+    },
+    {
+      "stt": 195,
+      "question": "mik đang đi làm đóng bảo hiển xh mà mik xin nghỉ đội 1-2 tháng đi thụ tinh nhân tạo thì có được hưởng ít bảo hiểm nào kh",
+      "gold_articles": [
+        "L41_2024.A42"
+      ],
+      "best_gold_clause": "L41_2024.A42.K1",
+      "best_gold_clause_text": "Đối tượng quy định tại các điểm a, b, c, d, i, k, l, m và n khoản 1 và khoản 2 Đ",
+      "query_gold_cosine": 0.4514,
+      "top1_retrieved_article": "L58_2014.A34",
+      "top1_retrieved_score": 0.7839,
+      "score_delta_gold_minus_top1": -0.3324,
+      "n_gold_clauses_found": 2,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A42.K1",
+          "cosine": 0.4514,
+          "text_preview": "Đối tượng quy định tại các điểm a, b, c, d, i, k, l, m và n khoản 1 và khoản 2 Đ"
+        },
+        {
+          "clause_id": "L41_2024.A42.K2",
+          "cosine": 0.4344,
+          "text_preview": "Người lao động không được hưởng chế độ ốm đau trong các trường hợp sau đây:"
+        }
+      ]
+    },
+    {
+      "stt": 196,
+      "question": "sổ BHXH (sổ xanh) + tờ rời kẹp sổ e bị mất. chỉ còn lại thông tin trên app. \nEm muốn xin cấp lại full sổ cứng thì e cần ",
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "best_gold_clause": "L41_2024.A27.K2",
+      "best_gold_clause_text": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm ",
+      "query_gold_cosine": 0.5703,
+      "top1_retrieved_article": "L41_2024.A25",
+      "top1_retrieved_score": 0.8085,
+      "score_delta_gold_minus_top1": -0.2382,
+      "n_gold_clauses_found": 3,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A27.K2",
+          "cosine": 0.5703,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng quy định tại điểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K1",
+          "cosine": 0.5579,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc của đối tượng tham gia bảo hiểm "
+        },
+        {
+          "clause_id": "L41_2024.A27.K3",
+          "cosine": 0.5493,
+          "text_preview": "Hồ sơ đăng ký tham gia bảo hiểm xã hội tự nguyện là tờ khai đăng ký tham gia bảo"
+        }
+      ]
+    },
+    {
+      "stt": 197,
+      "question": "công ty em có trường hợp NLĐ nghỉ hưu và được lãnh từ tháng 5 nhưng do làm lần đầu tiên em không rõ hồ sơ chuẩn bị như t",
+      "gold_articles": [
+        "L41_2024.A64",
+        "L45_2019.A169"
+      ],
+      "best_gold_clause": "L41_2024.A64.K3",
+      "best_gold_clause_text": "Chính phủ quy định việc hưởng lương hưu đối với trường hợp không xác định được n",
+      "query_gold_cosine": 0.6058,
+      "top1_retrieved_article": "L41_2024.A79",
+      "top1_retrieved_score": 0.8405,
+      "score_delta_gold_minus_top1": -0.2347,
+      "n_gold_clauses_found": 8,
+      "failure_mode": "B_ranking_issue",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A64.K3",
+          "cosine": 0.6058,
+          "text_preview": "Chính phủ quy định việc hưởng lương hưu đối với trường hợp không xác định được n"
+        },
+        {
+          "clause_id": "L41_2024.A64.K1",
+          "cosine": 0.601,
+          "text_preview": "Đối tượng quy định tại các điểm a, b, c, g, h, i, k, l, m và n khoản 1 và khoản "
+        },
+        {
+          "clause_id": "L41_2024.A64.K2",
+          "cosine": 0.5909,
+          "text_preview": "Đối tượng quy định tại các điểm d, đ và e khoản 1 Điều 2 của Luật này khi nghỉ v"
+        },
+        {
+          "clause_id": "L45_2019.A169.K1",
+          "cosine": 0.5762,
+          "text_preview": "Người lao động bảo đảm điều kiện về thời gian đóng bảo hiểm xã hội theo quy định"
+        },
+        {
+          "clause_id": "L45_2019.A169.K4",
+          "cosine": 0.5603,
+          "text_preview": "Người lao động có trình độ chuyên môn, kỹ thuật cao và một số trường hợp đặc biệ"
+        }
+      ]
+    },
+    {
+      "stt": 202,
+      "question": "Cho mình hỏi trước mình có làm ở fpt telecom khoảng 2 năm sau đó nghỉ có nhận sổ (bị mất) rồi sau mình có xin làm lại đư",
+      "gold_articles": [
+        "L41_2024.A25"
+      ],
+      "best_gold_clause": "L41_2024.A25.K2",
+      "best_gold_clause_text": "Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như",
+      "query_gold_cosine": 0.5216,
+      "top1_retrieved_article": "L41_2024.A28",
+      "top1_retrieved_score": 0.7884,
+      "score_delta_gold_minus_top1": -0.2668,
+      "n_gold_clauses_found": 4,
+      "failure_mode": "A_embedding_far",
+      "all_gold_clause_sims": [
+        {
+          "clause_id": "L41_2024.A25.K2",
+          "cosine": 0.5216,
+          "text_preview": "Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như"
+        },
+        {
+          "clause_id": "L41_2024.A25.K1",
+          "cosine": 0.4991,
+          "text_preview": "Sổ bảo hiểm xã hội được cấp cho từng người lao động, trong đó chứa đựng thông ti"
+        },
+        {
+          "clause_id": "L41_2024.A25.K3",
+          "cosine": 0.471,
+          "text_preview": "Dữ liệu về sổ bảo hiểm xã hội được cập nhật chính xác, kịp thời, đối chiếu thông"
+        },
+        {
+          "clause_id": "L41_2024.A25.K4",
+          "cosine": 0.42,
+          "text_preview": "Chính phủ quy định chi tiết Điều này."
+        }
+      ]
+    }
+  ]
+}

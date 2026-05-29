@@ -3,15 +3,14 @@
   "stt": 99,
   "question": "Mình bầu hơn 5 tháng, đã đóng bhxh 8/12 tháng trong thời gian hưởng thai sản thì có dễ bị thanh tra không?",
   "answer": "Theo quy định tại Luật Bảo hiểm xã hội, việc thanh tra có thể xảy ra nếu có dấu hiệu vi phạm trong việc đóng bảo hiểm xã hội. Tuy nhiên, nếu bạn đã đóng bảo hiểm xã hội đầy đủ trong thời gian quy định và đủ điều kiện hưởng chế độ thai sản, thì việc thanh tra không phải là điều dễ xảy ra.\n\nCụ thể, để được hưởng chế độ thai sản, bạn cần phải đóng bảo hiểm xã hội từ đủ 6 tháng trở lên trong 12 tháng trước khi sinh con. Nếu bạn đã đóng 8 tháng trong thời gian này, bạn đủ điều kiện hưởng chế độ thai sản theo quy định tại [Điều 31 khoản 1]. \n\nTuy nhiên, nếu có bất kỳ nghi ngờ nào về việc đóng bảo hiểm xã hội, cơ quan có thẩm quyền có thể tiến hành thanh tra. Bạn nên đảm bảo rằng tất cả các thông tin và hồ sơ của mình đều chính xác và đầy đủ để tránh rắc rối.",
-  "citations": [
-    "[Điều 31 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A31.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "elapsed_s": 4.049,
   "prompt_tokens": 189,
   "completion_tokens": 205,
   "gold_answer": "Việc bạn đã đóng BHXH 8/12 tháng trước sinh không đồng nghĩa là dễ bị thanh tra. Cơ quan BHXH thường chỉ kiểm tra khi có dấu hiệu bất thường như tăng lương đột biến không có căn cứ, ký hợp đồng khống, đóng nhờ, hoặc hồ sơ thai sản không phù hợp. Nếu bạn có quan hệ lao động thật, đóng BHXH đúng mức, hồ sơ khám thai/sinh con hợp lệ thì không phải cứ mang bầu và đủ điều kiện hưởng là sẽ bị thanh tra.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 50, Điều 53; quy định thanh tra chuyên ngành BHXH"
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50, Điều 53; quy định thanh tra chuyên ngành BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A31.K1"
+  ]
 }

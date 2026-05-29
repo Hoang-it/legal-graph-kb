@@ -3,15 +3,14 @@
   "stt": 156,
   "question": "E nghỉ ngang cty cũ k chốt tờ rời cho giờ có cách nào chốt được không?",
   "answer": "Theo quy định tại Luật Bảo hiểm xã hội, khi người lao động nghỉ việc, người sử dụng lao động có trách nhiệm chốt sổ bảo hiểm xã hội cho người lao động. Nếu bạn đã nghỉ việc mà không được chốt sổ, bạn có thể yêu cầu công ty cũ thực hiện việc này. \n\nNếu công ty cũ không hợp tác, bạn có thể làm đơn gửi đến cơ quan bảo hiểm xã hội nơi bạn cư trú để được hướng dẫn và hỗ trợ. Cơ quan bảo hiểm xã hội sẽ có trách nhiệm giải quyết vấn đề này theo quy định của pháp luật. \n\nTuy nhiên, bạn cần lưu ý rằng việc chốt sổ bảo hiểm xã hội là quyền lợi của bạn, và bạn có thể yêu cầu công ty thực hiện nghĩa vụ này theo quy định tại [Điều 21 khoản 1].",
-  "citations": [
-    "[Điều 21 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A21.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "elapsed_s": 3.407,
   "prompt_tokens": 181,
   "completion_tokens": 176,
   "gold_answer": "Nếu công ty cũ chưa chốt tờ rời thì bạn không tự chốt thay hoàn toàn được, vì doanh nghiệp phải báo giảm và hoàn tất nghĩa vụ đóng. Việc bạn cần làm là yêu cầu công ty chốt sổ bằng văn bản; nếu công ty chây ì thì gửi đơn tới cơ quan BHXH quản lý đơn vị, thanh tra lao động hoặc khởi kiện yêu cầu chốt sổ và bồi thường thiệt hại nếu có.",
-  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A21.K1"
+  ]
 }

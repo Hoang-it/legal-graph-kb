@@ -3,12 +3,8 @@
   "stt": 181,
   "question": "Không có sổ bảo hiểm chỉ có tờ rời thì có đi rút bảo hiểm được không?",
   "answer": "Issue: Không có sổ bảo hiểm chỉ có tờ rời thì có đi rút bảo hiểm được không?\n\nRule: \"Cầm cố, mua bán, thế chấp, đặt cọc sổ bảo hiểm xã hội dưới mọi hình thức.\" (Luật BHXH 2024 (41/2024/QH15), Điều 9, Khoản 9)\n\nApplication: Không có slot nào được gán giá trị trong quá trình truy vấn. Tuy nhiên, Prolog đã trả về kết quả rằng \"Không thể rút bảo hiểm nếu không có sổ bảo hiểm.\" thông qua quy tắc đã được xác định.\n\nConclusion: Prolog đã trả về giá trị \"Không thể rút bảo hiểm nếu không có sổ bảo hiểm.\" cho biến Answer. Không có slot nào bị thiếu, nhưng không có giá trị cụ thể nào được gán từ các slot.",
-  "citations": [
-    "[Điều 9 khoản 9]"
-  ],
-  "citation_ids": [
-    "L41_2024.A9.K9"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 429,
   "error": null,
   "gold_answer": "Không có sổ giấy mà chỉ có tờ rời thì vẫn không phải là trở ngại tuyệt đối. Cơ quan BHXH hiện dựa chủ yếu vào dữ liệu điện tử; nếu hồ sơ giấy thiếu bạn có thể làm thủ tục cấp lại sổ hoặc xác nhận quá trình đóng rồi nộp hồ sơ BHXH 1 lần. Quan trọng là bạn đủ điều kiện hưởng và thông tin định danh thống nhất.",
-  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH; Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A9.K9"
+  ]
 }

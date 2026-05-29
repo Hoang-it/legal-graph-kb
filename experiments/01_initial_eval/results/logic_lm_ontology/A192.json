@@ -3,12 +3,8 @@
   "stt": 192,
   "question": "năm 2011 em có mượn hồ sơ đi làm và đóng bh đc 3th thì cty phát hiện hồ sơ giả nên em nghỉ việc, nhưng đến hôm nay cái chị cho em mượn hồ sơ đi lấy bhxh thì bên bh kiểm tra và bảo còn vướng 3th bảo hiểm của em , giờ phải ra toà để huỷ. Vậy giờ em phải làm như thế nào?",
   "answer": "Issue: Người hỏi muốn biết cách giải quyết vấn đề liên quan đến hồ sơ bảo hiểm xã hội giả mạo mà họ đã sử dụng trong quá khứ.\n\nRule: \"4. Tiếp nhận hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế và cấp sổ bảo hiểm xã hội, thẻ bảo hiểm y tế cho người lao động.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 4)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã cung cấp một lời khuyên rằng người hỏi cần liên hệ với cơ quan bảo hiểm xã hội để làm thủ tục hủy hồ sơ và giải quyết vấn đề pháp lý liên quan.\n\nConclusion: Prolog đã trả về lời khuyên là \"Bạn cần liên hệ với cơ quan bảo hiểm xã hội để làm thủ tục hủy hồ sơ và giải quyết vấn đề pháp lý liên quan.\" Tuy nhiên, không có giá trị nào được gán cho các slot, do đó không thể tính toán một số liệu cụ thể.",
-  "citations": [
-    "[Điều 18 khoản 4]"
-  ],
-  "citation_ids": [
-    "L41_2024.A18.K4"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 501,
   "error": null,
   "gold_answer": "Dùng hồ sơ giả để đi làm và đóng BHXH là việc phải xử lý rất thận trọng. Cơ quan BHXH yêu cầu hủy quá trình sai là có cơ sở; trường hợp hồ sơ giả, người đứng tên thật và người sử dụng hồ sơ nên làm việc trực tiếp với BHXH để xác định hướng xử lý, thậm chí có thể phải qua tòa án/cơ quan công an nếu phát sinh tranh chấp, giả mạo giấy tờ. Bạn không nên tự ý làm thủ tục rút hay gộp sổ trong tình trạng này.",
-  "gold_citations_raw": "Luật BHXH 2024; Bộ luật Dân sự 2015; quy định về giả mạo hồ sơ"
+  "gold_citations_raw": "Luật BHXH 2024; Bộ luật Dân sự 2015; quy định về giả mạo hồ sơ",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A18.K4"
+  ]
 }

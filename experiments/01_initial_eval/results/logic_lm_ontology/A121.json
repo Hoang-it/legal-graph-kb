@@ -3,12 +3,8 @@
   "stt": 121,
   "question": "Nộp sổ lm bh 1 lần xong có hẹn ngày lấy quyết định. Trong tờ quyết định đó nó có ghi số tiền mình được hưởng là bao nhiêu ko?",
   "answer": "Issue: Người lao động nộp sổ bảo hiểm xã hội một lần và muốn biết số tiền được ghi trong quyết định là bao nhiêu.\n\nRule: \"2. Người lao động khi đủ điều kiện và có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ quy định tại Điều 106 của Luật này cho cơ quan bảo hiểm xã hội.\"\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Tuy nhiên, Prolog đã trả về kết quả với giá trị \"số tiền được ghi trong quyết định\" cho biến Amount, cho thấy rằng số tiền này sẽ được ghi trong quyết định.\n\nConclusion: Prolog đã trả về giá trị \"số tiền được ghi trong quyết định\" cho biến Amount.",
-  "citations": [
-    "[Điều 106]"
-  ],
-  "citation_ids": [
-    "L41_2024.A106"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 337,
   "error": null,
   "gold_answer": "Có. Quyết định hưởng BHXH 1 lần thường thể hiện rõ căn cứ giải quyết, thời gian đóng được tính hưởng và số tiền được chi trả. Bạn nên kiểm tra kỹ họ tên, số sổ, số tài khoản, thời gian đóng và số tiền trong quyết định. Nếu sai thì khiếu nại ngay trước khi nhận tiền để tránh phải điều chỉnh lại sau.",
-  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A106"
+  ]
 }

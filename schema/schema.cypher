@@ -116,3 +116,30 @@ CREATE VECTOR INDEX point_vec IF NOT EXISTS
     `vector.dimensions`: 1024,
     `vector.similarity_function`: 'cosine'
   }};
+
+// ---------- 6. SPRINT 2 TUNED INDEXES (additive, BGE-M3 + LoRA adapter) ----------
+// Created when offline.load_neo4j runs with --embed-prop embedding_tuned after
+// Phase 3 of the v5 Sprint 2 plan. They live next to the vanilla indexes so
+// experiments can A/B between vanilla (clause_vec) and tuned (clause_vec_tuned)
+// dense retrieval without re-encoding the whole corpus each switch.
+
+CREATE VECTOR INDEX article_vec_tuned IF NOT EXISTS
+  FOR (n:Article) ON n.embedding_tuned
+  OPTIONS {indexConfig: {
+    `vector.dimensions`: 1024,
+    `vector.similarity_function`: 'cosine'
+  }};
+
+CREATE VECTOR INDEX clause_vec_tuned IF NOT EXISTS
+  FOR (n:Clause) ON n.embedding_tuned
+  OPTIONS {indexConfig: {
+    `vector.dimensions`: 1024,
+    `vector.similarity_function`: 'cosine'
+  }};
+
+CREATE VECTOR INDEX point_vec_tuned IF NOT EXISTS
+  FOR (n:Point) ON n.embedding_tuned
+  OPTIONS {indexConfig: {
+    `vector.dimensions`: 1024,
+    `vector.similarity_function`: 'cosine'
+  }};

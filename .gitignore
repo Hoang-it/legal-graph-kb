@@ -194,9 +194,19 @@ data/eval/questions_*.json
 
 # ─── EXCEPTIONS: KG artifacts needed to reproduce inference ───
 !data/eval/questions_200.json
+# v5 Sprint 2 Phase 0b — hash-sealed split (committed, must stay bit-identical)
+!data/eval/questions_150_test.json
+!data/eval/questions_50_dev.json
+!data/eval/eval_split_hashes.json
 !data/graph/interim/structured_law.json
 !data/graph/processed/merged_graph.json
 !data/graph/processed/embeddings.parquet
+# v5 Sprint 2 Phase 3 — tuned embeddings are large + reproducible from the
+# adapter, so they remain gitignored.
+data/graph/processed/embeddings_tuned.parquet
+# v5 Sprint 2 Phase 1 — synthetic training data + audit artifacts (committed)
+!data/finetune-bge/
+!data/finetune-bge/**
 
 # Backup snapshots from audit fixes
 *.bak
@@ -224,6 +234,9 @@ artifacts/
 *.safetensors
 *.bin
 *.onnx
+
+# Sprint 2 LoRA adapter — produced on Colab, uploaded by user (not committed by size)
+models/
 
 # Neo4j dumps
 *.dump

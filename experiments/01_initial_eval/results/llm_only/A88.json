@@ -3,17 +3,15 @@
   "stt": 88,
   "question": "Em nghỉ việc ở công ty cũ đc gần 6 tháng , thì bây h em có thể rút BHXH hay BHTN đc không?",
   "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, bạn có thể rút bảo hiểm xã hội (BHXH) một lần nếu bạn đã nghỉ việc và không tiếp tục tham gia BHXH trong thời gian 6 tháng liên tục. Cụ thể, bạn có quyền rút BHXH một lần khi đã đủ điều kiện theo quy định tại [Điều 60 khoản 1].\n\nCòn về bảo hiểm thất nghiệp (BHTN), bạn có thể nhận trợ cấp thất nghiệp nếu đã đăng ký thất nghiệp và đáp ứng đủ điều kiện theo quy định tại [Điều 49 khoản 1]. Tuy nhiên, bạn cần phải nộp hồ sơ đăng ký nhận trợ cấp thất nghiệp trong thời hạn 3 tháng kể từ ngày nghỉ việc.\n\nVì vậy, bạn có thể rút BHXH một lần và cũng có thể đăng ký nhận BHTN nếu đủ điều kiện.",
-  "citations": [
-    "[Điều 60 khoản 1]",
-    "[Điều 49 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A60.K1",
-    "L41_2024.A49.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "elapsed_s": 4.18,
   "prompt_tokens": 192,
   "completion_tokens": 196,
   "gold_answer": "Với BHTN, nếu bạn nghỉ gần 6 tháng rồi thì vẫn phải kiểm tra còn trong hạn 3 tháng nộp hồ sơ hay đã quá hạn. Nếu đã quá 3 tháng kể từ ngày chấm dứt HĐLĐ thì đợt này bạn không nộp hưởng BHTN được, nhưng thời gian đóng chưa hưởng vẫn được bảo lưu. Với BHXH một lần, thường phải chờ đủ điều kiện luật định, phổ biến là đã ngừng tham gia từ 12 tháng trở lên và thuộc trường hợp được hưởng.",
-  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 45; Luật BHXH 2024 Điều 70"
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 46, Điều 45; Luật BHXH 2024 Điều 70",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A60.K1",
+    "L41_2024.A49.K1"
+  ]
 }

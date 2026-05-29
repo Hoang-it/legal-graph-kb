@@ -3,12 +3,8 @@
   "stt": 119,
   "question": "Có phải cơ quan BHXH giờ không cấp lại bìa và tờ rời nữa không? Mình nộp đủ sổ cho công ty cũ chốt bhxh mà công ty báo lại là giờ cơ quan bhxh ko cấp lại sổ giấy nữa.",
   "answer": "Issue: Có phải cơ quan BHXH giờ không cấp lại bìa và tờ rời nữa không? \n\nRule: \"Sổ bảo hiểm xã hội được cấp bằng bản điện tử, bản giấy và có giá trị pháp lý như nhau. Chậm nhất là ngày 01 tháng 01 năm 2026, thực hiện cấp sổ bảo hiểm xã hội bằng bản điện tử; sổ bảo hiểm xã hội bằng bản giấy được cấp khi người tham gia bảo hiểm xã hội yêu cầu.\" (Luật BHXH 2024 (41/2024/QH15), Điều 25, Khoản 2)\n\nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã trả về kết quả cho câu hỏi, cho thấy rằng cơ quan BHXH vẫn cấp sổ bảo hiểm xã hội bản giấy khi người tham gia yêu cầu.\n\nConclusion: Cơ quan BHXH vẫn cấp sổ bảo hiểm xã hội bản giấy khi người tham gia yêu cầu (Answer).",
-  "citations": [
-    "[Điều 25 khoản 2]"
-  ],
-  "citation_ids": [
-    "L41_2024.A25.K2"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 450,
   "error": null,
   "gold_answer": "Không phải là cơ quan BHXH 'không cấp lại nữa'. Hiện quản lý điện tử là chính, nhưng khi cần vẫn có thể thực hiện thủ tục cấp lại/cấp quá trình đóng theo quy định. Nếu công ty nói không có sổ giấy nên không trả được thì bạn nên yêu cầu họ cung cấp xác nhận đã chốt và dữ liệu quá trình đóng; trường hợp mất sổ, bạn có thể trực tiếp làm thủ tục cấp lại tại BHXH.",
-  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A25.K2"
+  ]
 }

@@ -3,12 +3,8 @@
   "stt": 175,
   "question": "Mình đóng bảo hiểm đc 6 năm, lương trung bình 20tr/ tháng ,giờ cần tiền muốn rút thì được tầm bao nhiêu?",
   "answer": "Issue: Người dùng đã đóng bảo hiểm được 6 năm với lương trung bình 20 triệu đồng mỗi tháng và muốn biết số tiền có thể rút ra.\n\nRule: \"Mức hưởng chế độ ốm đau hàng tháng bằng 75% mức tiền lương đóng BHXH của tháng liền kề trước khi nghỉ việc.\" (law_bhxh_2024, article_26, clause_1)\n\nApplication: \n- years_contributed: 6\n- average_salary: 20000000\n\nProlog đã sử dụng các giá trị này để tính toán số tiền có thể rút ra, với điều kiện người dùng đã đóng bảo hiểm ít nhất 6 năm.\n\nConclusion: Prolog đã trả về giá trị 15000000.0 cho biến Answer.",
-  "citations": [
-    "[Điều 26 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A26.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [],
   "prolog_success": true,
   "prolog_status": "success",
@@ -25,5 +21,8 @@
   "completion_tokens": 417,
   "error": null,
   "gold_answer": "Nếu 6 năm đóng BHXH của bạn đều từ 2014 trở đi, lương bình quân khoảng 20 triệu/tháng thì BHXH 1 lần ước khoảng khoảng 240,0 triệu. Số thực nhận có thể chênh do hệ số điều chỉnh tiền lương từng năm. Trước khi rút, bạn nên cân nhắc vì thời gian 6 năm đó có thể tiếp tục bảo lưu để hưởng hưu sau này.",
-  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A26.K1"
+  ]
 }

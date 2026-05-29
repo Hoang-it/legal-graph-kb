@@ -3,14 +3,8 @@
   "stt": 102,
   "question": "Mình bị đóng trùng bảo hiểm 2cty cùng 1 tháng giờ phải làm sao?",
   "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpbnvrew78.pl:1:195: Syntax error: Operator expected]",
-  "citations": [
-    "[Điều 9 khoản 2]",
-    "[Điều 15 khoản 6]"
-  ],
-  "citation_ids": [
-    "L41_2024.A9.K2",
-    "L41_2024.A15.K6"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0,
     1
@@ -25,5 +19,9 @@
   "completion_tokens": 509,
   "error": null,
   "gold_answer": "Trường hợp đóng trùng 2 công ty cùng 1 tháng, bạn cần đề nghị cơ quan BHXH điều chỉnh, hoàn trả phần đóng trùng và thống nhất 1 nơi tham gia đúng quy định. Thường doanh nghiệp đóng trùng sẽ lập hồ sơ giảm trùng/thoái thu. Bạn nên giữ HĐLĐ, bảng lương, thông báo đóng BH để đối chiếu. Không nên để kéo dài vì sẽ ảnh hưởng chốt sổ và giải quyết chế độ.",
-  "gold_citations_raw": "Điều 33, 34 Luật BHXH 2024; Quyết định 595/QĐ-BHXH"
+  "gold_citations_raw": "Điều 33, 34 Luật BHXH 2024; Quyết định 595/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A9.K2",
+    "L41_2024.A15.K6"
+  ]
 }

@@ -3,17 +3,15 @@
   "stt": 63,
   "question": "Tôi làm việc tại cty được 18 năm, giờ tôi nghỉ ngang vì ko xin được giấy thôi việc, hiện tại tôi đã đi làm ở 1 công ty khác.vậy bảo hiểm thất nghiệp của tôi cộng dồn vào những năm tiếp theo tôi đóng ở công ty mới hay sẽ bị mất?",
   "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, nếu bạn đã tham gia bảo hiểm thất nghiệp trong thời gian làm việc tại công ty cũ, thời gian này sẽ được cộng dồn vào thời gian tham gia bảo hiểm thất nghiệp khi bạn tiếp tục làm việc và tham gia bảo hiểm tại công ty mới. \n\nCụ thể, thời gian tham gia bảo hiểm thất nghiệp trước đó sẽ không bị mất và sẽ được tính vào thời gian tham gia bảo hiểm thất nghiệp của bạn tại công ty mới, miễn là bạn tiếp tục tham gia bảo hiểm thất nghiệp theo quy định của pháp luật. \n\nBạn cần lưu ý rằng để được hưởng chế độ bảo hiểm thất nghiệp, bạn phải đáp ứng các điều kiện theo quy định tại [Điều 49 khoản 1] và [Điều 50 khoản 1].",
-  "citations": [
-    "[Điều 49 khoản 1]",
-    "[Điều 50 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A49.K1",
-    "L41_2024.A50.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "elapsed_s": 4.167,
   "prompt_tokens": 220,
   "completion_tokens": 177,
   "gold_answer": "Thời gian đóng BHTN chưa hưởng sẽ được bảo lưu để cộng dồn với thời gian đóng ở công ty mới, không tự mất chỉ vì bạn nghỉ ngang. Điều quan trọng là lần nghỉ việc trước bạn chưa nhận trợ cấp thất nghiệp cho khoảng thời gian đó. Khi đủ điều kiện hưởng ở lần sau, cơ quan có thẩm quyền sẽ cộng dồn thời gian đóng BHTN chưa hưởng để tính số tháng trợ cấp. Tuy nhiên hồ sơ chấm dứt HĐLĐ của từng giai đoạn vẫn phải hợp lệ.",
-  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 49"
+  "gold_citations_raw": "Luật Việc làm 2013 Điều 45, Điều 49",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A49.K1",
+    "L41_2024.A50.K1"
+  ]
 }

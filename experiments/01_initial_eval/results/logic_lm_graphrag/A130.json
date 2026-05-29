@@ -3,12 +3,8 @@
   "stt": 130,
   "question": "Đóng bhxh đc 4 tháng lcb 4tr900 thì lãnh đc bao nhiêu?",
   "answer": "Issue: Đóng bảo hiểm xã hội được 4 tháng với lương cơ bản 4 triệu 900 thì lãnh được bao nhiêu?\n\nRule: \"Mức trợ cấp một lần đối với người đang hưởng lương hưu được tính theo thời gian đã đóng bảo hiểm xã hội trong đó mỗi năm đóng bảo hiểm xã hội trước năm 2014 được tính bằng 1,5 tháng lương hưu đang hưởng, mỗi năm đóng bảo hiểm xã hội từ năm 2014 trở đi được tính bằng 02 tháng lương hưu đang hưởng; sau đó mỗi tháng đã hưởng lương hưu thì mức trợ cấp một lần trừ 0,5 tháng lương hưu. Mức thấp nhất bằng 03 tháng lương hưu đang hưởng.\" (Luật BHXH 2024 (41/2024/QH15), article 76, clause 2)\n\nApplication: \n- Slot months_contributed có giá trị là 4, cho biết số tháng đã đóng bảo hiểm xã hội.\n- Slot average_salary có giá trị là 4900000, cho biết mức lương cơ bản.\nProlog đã sử dụng các giá trị này để tính toán mức trợ cấp một lần.\n\nConclusion: Prolog đã trả về giá trị 2450000 cho biến Amount.",
-  "citations": [
-    "[Điều 76 khoản 2]"
-  ],
-  "citation_ids": [
-    "L41_2024.A76.K2"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 634,
   "error": null,
   "gold_answer": "Với 4 tháng đóng BHXH, mức hưởng BHXH 1 lần không tính như nhiều năm tròn mà theo trường hợp thời gian đóng chưa đủ 1 năm. Khi đủ điều kiện rút, mức hưởng bằng số tiền đã đóng nhưng tối đa không quá 2 tháng mức bình quân lương đóng BHXH. Với lương 4,9 triệu/tháng, số hưởng thường chỉ ở mức vài triệu đồng, không phải 8-10 triệu.",
-  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A76.K2"
+  ]
 }

@@ -1,0 +1,181 @@
+{
+  "arm": "graphrag_v5",
+  "stt": 4,
+  "question": "Ông Long (Hà Nội) đóng BHXH được 15 năm, vợ ông mới sinh con, theo quy định, ông được nghỉ 5 ngày.\nÔng Long hỏi, ông cần nộp giấy tờ gì để hưởng quyền lợi này?",
+  "answer": "Ông Long cần nộp hồ sơ đề nghị hưởng chế độ thai sản, bao gồm bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con. Nếu vợ ông sinh con phải phẫu thuật hoặc sinh con dưới 32 tuần tuổi, ông cần thêm bản chính hoặc bản sao văn bản của cơ sở khám bệnh, chữa bệnh thể hiện thông tin này. \n\nNgoài ra, nếu con chết sau khi sinh mà chưa được cấp giấy chứng sinh, hồ sơ sẽ bao gồm bản chính hoặc bản sao bản tóm tắt hồ sơ bệnh án hoặc giấy ra viện của người mẹ có thể hiện thông tin về con chết.\n\nCụ thể, ông Long cần chuẩn bị các giấy tờ sau:\n1. Bản sao giấy khai sinh hoặc trích lục khai sinh hoặc bản sao giấy chứng sinh của con.\n2. Nếu có trường hợp đặc biệt (sinh con phải phẫu thuật hoặc sinh con dưới 32 tuần tuổi), cần thêm văn bản của cơ sở khám bệnh, chữa bệnh.\n\nCác quy định liên quan:\n- [Luật BHXH 2024 (41/2024/QH15), Điều 61 khoản 1]\n- [Luật BHXH 2024 (41/2024/QH15), Điều 61 khoản 5]",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 61 khoản 1]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 61 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A61.K1",
+    "L41_2024.A61.K5"
+  ],
+  "citation_verified": {
+    "L41_2024.A61.K1": true,
+    "L41_2024.A61.K5": true
+  },
+  "n_final_hits": 12,
+  "n_seeds": 15,
+  "n_neighbors_added": 8,
+  "retrieval_audit": {
+    "event_date": "2026-05-29",
+    "n_dense": 30,
+    "n_sparse": 30,
+    "n_after_temporal": 34,
+    "n_after_fusion": 34,
+    "n_dropped_by_temporal": 20
+  },
+  "hits": [
+    {
+      "rank": 1,
+      "rerank2_score": 0.8231,
+      "kind": "seed",
+      "clause_id": "L41_2024.A61.K5",
+      "article_id": "L41_2024.A61",
+      "law_id": "L41_2024",
+      "article_n": 61,
+      "article_title": "Hồ sơ đề nghị hưởng chế độ thai sản",
+      "clause_n": 5,
+      "rerank1_score": 0.8230656981468201
+    },
+    {
+      "rank": 2,
+      "rerank2_score": 0.7658,
+      "kind": "seed",
+      "clause_id": "L41_2024.A61.K7",
+      "article_id": "L41_2024.A61",
+      "law_id": "L41_2024",
+      "article_n": 61,
+      "article_title": "Hồ sơ đề nghị hưởng chế độ thai sản",
+      "clause_n": 7,
+      "rerank1_score": 0.7657626867294312
+    },
+    {
+      "rank": 3,
+      "rerank2_score": 0.6097,
+      "kind": "seed",
+      "clause_id": "L41_2024.A97.K1",
+      "article_id": "L41_2024.A97",
+      "law_id": "L41_2024",
+      "article_n": 97,
+      "article_title": "Giải quyết hưởng trợ cấp thai sản",
+      "clause_n": 1,
+      "rerank1_score": 0.6096915602684021
+    },
+    {
+      "rank": 4,
+      "rerank2_score": 0.4692,
+      "kind": "seed",
+      "clause_id": "L41_2024.A28.K2",
+      "article_id": "L41_2024.A28",
+      "law_id": "L41_2024",
+      "article_n": 28,
+      "article_title": "Đăng ký tham gia bảo hiểm xã hội và cấp sổ bảo hiểm xã hội",
+      "clause_n": 2,
+      "rerank1_score": 0.46920278668403625
+    },
+    {
+      "rank": 5,
+      "rerank2_score": 0.3911,
+      "kind": "seed",
+      "clause_id": "L41_2024.A61.K1",
+      "article_id": "L41_2024.A61",
+      "law_id": "L41_2024",
+      "article_n": 61,
+      "article_title": "Hồ sơ đề nghị hưởng chế độ thai sản",
+      "clause_n": 1,
+      "rerank1_score": 0.3911241292953491
+    },
+    {
+      "rank": 6,
+      "rerank2_score": 0.3434,
+      "kind": "neighbor",
+      "target_id": "L41_2024.A96",
+      "target_label": "Article",
+      "target_title": "Hồ sơ đề nghị hưởng trợ cấp thai sản",
+      "seed_clause_id": "L41_2024.A97.K1",
+      "hop_distance": 1
+    },
+    {
+      "rank": 7,
+      "rerank2_score": 0.3062,
+      "kind": "seed",
+      "clause_id": "L41_2024.A53.K2",
+      "article_id": "L41_2024.A53",
+      "law_id": "L41_2024",
+      "article_n": 53,
+      "article_title": "Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con",
+      "clause_n": 2,
+      "rerank1_score": 0.3062295913696289
+    },
+    {
+      "rank": 8,
+      "rerank2_score": 0.2672,
+      "kind": "seed",
+      "clause_id": "L41_2024.A62.K2",
+      "article_id": "L41_2024.A62",
+      "law_id": "L41_2024",
+      "article_n": 62,
+      "article_title": "Giải quyết hưởng chế độ thai sản đối với người tham gia bảo hiểm xã hội bắt buộc",
+      "clause_n": 2,
+      "rerank1_score": 0.2671584188938141
+    },
+    {
+      "rank": 9,
+      "rerank2_score": 0.2117,
+      "kind": "neighbor",
+      "target_id": "L41_2024.A106",
+      "target_label": "Article",
+      "target_title": "Hồ sơ đề nghị hưởng bảo hiểm xã hội một lần",
+      "seed_clause_id": "L41_2024.A107.K2",
+      "hop_distance": 1
+    },
+    {
+      "rank": 10,
+      "rerank2_score": 0.1946,
+      "kind": "seed",
+      "clause_id": "L41_2024.A141.K10",
+      "article_id": "L41_2024.A141",
+      "law_id": "L41_2024",
+      "article_n": 141,
+      "article_title": "Quy định chuyển tiếp",
+      "clause_n": 10,
+      "rerank1_score": 0.19464576244354248
+    },
+    {
+      "rank": 11,
+      "rerank2_score": 0.1831,
+      "kind": "seed",
+      "clause_id": "L41_2024.A107.K1",
+      "article_id": "L41_2024.A107",
+      "law_id": "L41_2024",
+      "article_n": 107,
+      "article_title": "Giải quyết hưởng lương hưu, bảo hiểm xã hội một lần đối với người đang bảo lưu thời gian đóng bảo hiểm xã hội, người tham gia bảo hiểm xã hội tự nguyện",
+      "clause_n": 1,
+      "rerank1_score": 0.18312492966651917
+    },
+    {
+      "rank": 12,
+      "rerank2_score": 0.1804,
+      "kind": "seed",
+      "clause_id": "L41_2024.A62.K1",
+      "article_id": "L41_2024.A62",
+      "law_id": "L41_2024",
+      "article_n": 62,
+      "article_title": "Giải quyết hưởng chế độ thai sản đối với người tham gia bảo hiểm xã hội bắt buộc",
+      "clause_n": 1,
+      "rerank1_score": 0.18036100268363953
+    }
+  ],
+  "elapsed_s": 79.529,
+  "elapsed_breakdown": {
+    "retrieve": 1.241,
+    "rerank1": 37.376,
+    "expand": 0.198,
+    "rerank2": 28.496,
+    "llm": 12.152
+  },
+  "gold_answer": "Theo thư ông trình bày, chưa có thông tin về việc tại thời điểm vợ của ông sinh con thì ông có đang đóng BHXH hay không? Do đó, BHXH Việt Nam chưa có căn cứ trả lời ông có thuộc trường hợp được hưởng chế độ thai sản khi vợ sinh con hay không. BHXH Việt Nam cung cấp các quy định chung để ông tham khảo, đối chiếu với trường hợp của mình:\nTại Khoản 1 Điều 31 Luật BHXH năm 2014 quy định, người lao động được hưởng chế độ thai sản khi thuộc một trong các trường hợp sau đây:\n\"e) Lao động nam đang đóng BHXH có vợ sinh con\".\nTại Khoản 2 Điều 34 Luật BHXH năm 2014 quy định, lao động nam đang đóng BHXH khi vợ sinh con được nghỉ việc hưởng chế độ thai sản như sau:\n\"a) 05 ngày làm việc;\nb) 07 ngày làm việc khi vợ sinh con phải phẫu thuật, sinh con dưới 32 tuần tuổi;\nc) Trường hợp vợ sinh đôi thì được nghỉ 10 ngày làm việc, từ sinh ba trở lên thì cứ thêm mỗi con được nghỉ thêm 3 ngày làm việc;\nd) Trường hợp vợ sinh đôi trở lên mà phải phẫu thuật thì được nghỉ 14 ngày làm việc.\nThời gian nghỉ việc hưởng chế độ thai sản quy định tại Khoản này được tính trong khoảng thời gian 30 ngày đầu kể từ ngày vợ sinh con\".\nHồ sơ hưởng chế độ thai sản tại Khoản 4, Khoản 5 Điều 101 Luật BHXH năm 2014 quy định:\n\"4. Trường hợp lao động nam nghỉ việc khi vợ sinh con phải có bản sao giấy chứng sinh hoặc bản sao giấy khai sinh của con và giấy xác nhận của cơ sở y tế đối với trường hợp sinh con phải phẫu thuật, sinh con dưới 32 tuần tuổi.\n5. Danh sách người lao động nghỉ việc hưởng chế độ thai sản do người sử dụng lao động lập\".",
+  "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 34]\n[Luật BHXH 2014 (58/2014/QH13), Điều 31]"
+}

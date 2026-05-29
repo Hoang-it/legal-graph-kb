@@ -1,0 +1,22 @@
+{
+  "n_clauses_total": 1585,
+  "n_clauses_processed": 1579,
+  "n_clauses_skipped_empty": 0,
+  "n_queries_emitted": 3158,
+  "n_candidates_total": 25168,
+  "n_dropped_by_distance": 151,
+  "n_dropped_partial": 6947,
+  "n_kept_yes": 777,
+  "n_kept_no": 17293,
+  "n_rows_written": 3158,
+  "n_multi_positive_rows": 573,
+  "sum_pos_per_row": 3935,
+  "sum_neg_per_row": 26767,
+  "api_calls_query_gen": 1579,
+  "api_calls_verifier": 25017,
+  "elapsed_s": 2751.9,
+  "errors": [],
+  "mean_pos_per_row": 1.246,
+  "mean_neg_per_row": 8.476,
+  "pct_multi_positive": 18.1
+}

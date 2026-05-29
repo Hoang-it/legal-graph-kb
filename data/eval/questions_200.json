@@ -827,8 +827,8 @@
     "stt": 105,
     "question": "Chốt sổ em lãnh Bh thât nghiệp đến tháng 3/2025 nhưng giờ trên hệ thống chỉ đến tháng 2/2025, em không lãnh được tiền bhxh vì bị chênh lệch 1 tháng công ty không xử lý cho em. giờ em phải làm như nào để lãnh bảo hiểm được?",
     "group": "Giải Đáp Bảo Hiểm Xã Hội - Tư Vấn BHXH",
-    "gold_answer": "Bạn cần yêu cầu công ty và cơ quan BHXH điều chỉnh lại quá trình đóng cho đúng đến tháng 3/2025. Khi dữ liệu trên hệ thống còn thiếu 1 tháng thì hồ sơ hưởng BHXH 1 lần dễ bị treo hoặc từ chối. Nếu công ty không phối hợp, bạn có thể gửi đơn khiếu nại tới cơ quan BHXH quản lý đơn vị hoặc Thanh tra Sở Nội vụ/Lao động để yêu cầu xác minh, truy đóng hoặc điều chỉnh dữ liệu.",
-    "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]",
+    "gold_answer": "Căn cứ Điều 4 và Điều 5 Quyết định 366/QĐ-BHXH có hiệu lực từ ngày 01/5/2026, người tham gia BHXH, BHYT, BHTN khi cần điều chỉnh thông tin phải kê khai Mẫu TK1-TS, kèm giấy tờ liên quan nếu có, và nộp cho đơn vị sử dụng lao động, tổ chức hỗ trợ hoặc cơ quan BHXH; trường hợp hồ sơ hoặc dữ liệu chưa đầy đủ, chính xác, cơ quan tiếp nhận có trách nhiệm hướng dẫn bổ sung, hoàn thiện hoặc trả lại hồ sơ kèm lý do trong thời hạn không quá 03 ngày làm việc. Do đó, bạn cần chuẩn bị Mẫu TK1-TS và tài liệu liên quan để đề nghị cơ quan BHXH xác nhận lại quá trình đóng BHTN đến tháng 3/2025, làm cơ sở thực hiện thủ tục hưởng bảo hiểm thất nghiệp hoặc các chế độ liên quan theo quy định.",
+    "gold_citations_raw": "[Quyết định 366/QĐ-BHXH, Điều 4]\n[Quyết định 366/QĐ-BHXH, Điều 5]",
     "source_url": "https://www.facebook.com/groups/317030731459985/permalink/833033986526321/"
   },
   {
@@ -1011,8 +1011,8 @@
     "stt": 128,
     "question": "mình đi làm hồ sơ lãnh lương hưu thì bên bhxh tra trên hệ thống và báo rằng tên mình có 2 số sổ, và số sổ kia đã chốt và nhận tiền rồi, mà mình chưa từng làm ở công ty đó, bây giờ mình phải làm sao?",
     "group": "Giải Đáp Bảo Hiểm Xã Hội - Tư Vấn BHXH",
-    "gold_answer": "Đây là dấu hiệu có thể bị trùng/nhầm mã số BHXH hoặc có người dùng thông tin của bạn. Bạn cần đề nghị BHXH kiểm tra, đối chiếu CCCD, quá trình đóng, hồ sơ gốc của 2 số sổ và yêu cầu tạm dừng giải quyết cho số bất thường nếu có dấu hiệu giả mạo. Nếu đúng có việc sử dụng thông tin trái phép, bạn có quyền khiếu nại và đề nghị chuyển cơ quan công an xử lý.",
-    "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]",
+    "gold_answer": "Đây là dấu hiệu có thể bị trùng/nhầm mã số BHXH hoặc có người dùng thông tin của bạn. Căn cứ Điều 46 Quyết định 595/QĐ-BHXH của Bảo hiểm xã hội Việt Nam và các văn bản sửa đổi, bổ sung có liên quan, trường hợp một người có từ hai sổ BHXH trở lên thì cơ quan BHXH có trách nhiệm rà soát, thu hồi, hoàn chỉnh dữ liệu và xử lý theo quy định. Bạn cần đề nghị BHXH kiểm tra, đối chiếu CCCD, quá trình đóng, hồ sơ gốc của 2 số sổ và yêu cầu tạm dừng giải quyết cho số bất thường nếu có dấu hiệu giả mạo. Nếu đúng có việc sử dụng thông tin trái phép, bạn có quyền khiếu nại và đề nghị chuyển cơ quan công an xử lý.",
+    "gold_citations_raw": "[Quyết định 595/QĐ-BHXH, Điều 46]",
     "source_url": "https://www.facebook.com/groups/317030731459985/permalink/833248733171513/"
   },
   {
@@ -1227,8 +1227,8 @@
     "stt": 155,
     "question": "Minh mat so bhxh , còn nhớ số sổ , làm sao tra được quá trình đóng bhxh?",
     "group": "Giải Đáp Bảo Hiểm Xã Hội - Tư Vấn BHXH",
-    "gold_answer": "Nếu nhớ số sổ/mã số BHXH, bạn có thể tra quá trình đóng trên VssID, VNeID, cổng thông tin BHXH Việt Nam hoặc đến cơ quan BHXH để xin xác nhận quá trình đóng. Trường hợp mất sổ giấy, bạn vẫn làm thủ tục cấp lại được. Nên mang CCCD để cơ quan BHXH đối chiếu nhanh hơn.",
-    "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]",
+    "gold_answer": "Căn cứ Điều 10 Luật BHXH 2024: người tham gia BHXH có quyền được cơ quan BHXH cung cấp thông tin về việc đóng BHXH qua phương tiện điện tử và xác nhận thông tin đóng BHXH khi có yêu cầu. Điều 25 Luật BHXH 2024 cũng quy định sổ BHXH có bản điện tử và bản giấy, có giá trị pháp lý như nhau. Nếu nhớ số sổ/mã số BHXH, bạn có thể tra quá trình đóng trên VssID, VNeID, cổng thông tin BHXH Việt Nam hoặc đến cơ quan BHXH để xin xác nhận quá trình đóng. Trường hợp mất sổ giấy, bạn vẫn làm thủ tục cấp lại được. Nên mang CCCD để cơ quan BHXH đối chiếu nhanh hơn.",
+    "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 10]\n[Luật BHXH 2024 (41/2024/QH15), Điều 25]",
     "source_url": "https://www.facebook.com/groups/317030731459985/permalink/833256709837382/"
   },
   {

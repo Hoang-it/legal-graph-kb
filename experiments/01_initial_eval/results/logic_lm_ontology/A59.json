@@ -3,16 +3,8 @@
   "stt": 59,
   "question": "Em làm nhân viên parttime được 1,5 năm nhưng đến tháng 1/2026 bắt đầu kí hợp đồng lao động 6 tháng và đóng bhxh. Tháng 3 e có bầu, dự sinh ngày 22/11, nếu chỉ đóng đủ 6 tháng theo hợp đồng thì có được hưởng bảo hiểm thai sản không?",
   "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmprvy9nwq_.pl:2:737: Syntax error: Operator expected]",
-  "citations": [
-    "[Điều 53 khoản 5]",
-    "[Điều 50 khoản 4]",
-    "[Điều 53 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A53.K5",
-    "L41_2024.A50.K4",
-    "L41_2024.A53.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0,
     1,
@@ -28,5 +20,10 @@
   "completion_tokens": 1659,
   "error": null,
   "gold_answer": "Nếu bạn ký HĐLĐ từ 1/2026 và đóng BHXH bắt buộc đủ 6 tháng trong 12 tháng trước khi sinh vào 22/11/2026 thì về nguyên tắc đủ điều kiện hưởng thai sản. Thời gian làm part-time trước đó chỉ được tính nếu thuộc diện có đóng BHXH bắt buộc hợp pháp. Vì vậy, mốc quan trọng là số tháng đóng vào quỹ ốm đau - thai sản trong 12 tháng liền kề trước sinh, không phải số năm làm việc part-time.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 50"
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A53.K5",
+    "L41_2024.A50.K4",
+    "L41_2024.A53.K1"
+  ]
 }

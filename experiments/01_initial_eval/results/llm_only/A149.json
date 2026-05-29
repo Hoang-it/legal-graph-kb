@@ -3,15 +3,14 @@
   "stt": 149,
   "question": "Rút BHXH 1 lần thì bao lâu nhận được? e bắt đầu tham gia từ 2020 đến giờ thì có được rút không? e ở TP.HCM thì ra đâu rút được?",
   "answer": "Theo quy định, người lao động có thể rút BHXH 1 lần nếu đáp ứng đủ điều kiện, trong đó có việc tham gia BHXH tối thiểu 1 năm. Bạn đã tham gia từ năm 2020 đến nay, nên bạn có đủ điều kiện để rút BHXH 1 lần.\n\nThời gian nhận tiền sau khi nộp hồ sơ rút BHXH 1 lần thường là 5 ngày làm việc kể từ ngày cơ quan BHXH nhận đủ hồ sơ hợp lệ [Điều 60 khoản 1].\n\nĐể rút BHXH 1 lần, bạn cần đến cơ quan BHXH nơi bạn cư trú hoặc làm việc. Tại TP.HCM, bạn có thể đến Bảo hiểm xã hội TP.HCM hoặc các chi nhánh của họ để thực hiện thủ tục này.",
-  "citations": [
-    "[Điều 60 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A60.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "elapsed_s": 3.985,
   "prompt_tokens": 201,
   "completion_tokens": 177,
   "gold_answer": "Thời gian giải quyết BHXH 1 lần thường khoảng 05 ngày làm việc kể từ khi cơ quan BHXH nhận đủ hồ sơ hợp lệ. Bạn tham gia từ 2020 đến nay chỉ được rút nếu thuộc trường hợp luật cho phép, phổ biến là đã nghỉ và sau 12 tháng không tiếp tục tham gia BHXH. Ở TP.HCM, bạn nộp tại cơ quan BHXH nơi thường trú hoặc tạm trú.",
-  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A60.K1"
+  ]
 }

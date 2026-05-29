@@ -3,12 +3,8 @@
   "stt": 84,
   "question": "Mình muốn đóng bảo hiểm tự nguyện mà bây giờ họ không làm số, vậy có cách nào biết là mình đóng được bao nhiêu thời gian ko?",
   "answer": "Issue: Người dùng muốn biết cách xác định thời gian đã đóng bảo hiểm tự nguyện khi không có số liệu cụ thể.\n\nRule: \"Thời gian đóng bảo hiểm xã hội là tổng thời gian đã đóng bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện theo quy định của Luật này, trừ trường hợp điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên có quy định khác.\" (Luật BHXH 2024 (41/2024/QH15), Điều 3, Khoản 6)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để tính toán.\n\nConclusion: Hệ thống không thể tính toán được thời gian đóng bảo hiểm xã hội tự nguyện do không có giá trị nào trong các slot.",
-  "citations": [
-    "[Điều 3 khoản 6]"
-  ],
-  "citation_ids": [
-    "L41_2024.A3.K6"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 412,
   "error": null,
   "gold_answer": "Hiện việc quản lý BHXH chủ yếu theo mã số và dữ liệu điện tử, nên dù không 'làm số' bằng cách hiểu cũ thì bạn vẫn có thể tra cứu thời gian đã đóng qua VssID, Cổng BHXH Việt Nam hoặc trực tiếp tại cơ quan BHXH. Nếu chưa biết mã số, dùng CCCD/họ tên/ngày sinh để tra cứu. Khi có mã số BHXH, hệ thống sẽ thể hiện thời gian tham gia BHXH tự nguyện đã được ghi nhận.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn tra cứu BHXH điện tử"
+  "gold_citations_raw": "Luật BHXH 2024 Điều 25; hướng dẫn tra cứu BHXH điện tử",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A3.K6"
+  ]
 }

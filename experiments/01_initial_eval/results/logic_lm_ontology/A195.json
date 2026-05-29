@@ -3,16 +3,8 @@
   "stt": 195,
   "question": "mik đang đi làm đóng bảo hiển xh mà mik xin nghỉ đội 1-2 tháng đi thụ tinh nhân tạo thì có được hưởng ít bảo hiểm nào không?",
   "answer": "Issue: Người lao động đang tham gia bảo hiểm xã hội và xin nghỉ để thụ tinh nhân tạo có được hưởng bảo hiểm nào không?\n\nRule: \"1. Người lao động là công dân Việt Nam thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc bao gồm: a) Người làm việc theo hợp đồng lao động không xác định thời hạn, hợp đồng lao động xác định thời hạn có thời hạn từ đủ 01 tháng trở lên...\" (Luật BHXH 2024 (41/2024/QH15), Điều 2, Khoản 1)  \n\"1. Đối tượng quy định tại khoản 1 Điều 2 của Luật này đã chấm dứt tham gia bảo hiểm xã hội mà có đề nghị thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây: a) Đủ tuổi hưởng lương hưu mà chưa đủ 15 năm đóng bảo hiểm xã hội...\" (Luật BHXH 2024 (41/2024/QH15), Điều 70, Khoản 1)\n\nApplication: Không có slot_bindings nào được cung cấp trong truy vấn. Do đó, không có thông tin nào được tiêu thụ từ các slot.\n\nConclusion: Hệ thống không thể tính toán số liệu cuối cùng vì không có dữ liệu đầu vào nào được cung cấp.",
-  "citations": [
-    "[Điều 2 khoản 1]",
-    "[Điều 2]",
-    "[Điều 70 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A2.K1",
-    "L41_2024.A2",
-    "L41_2024.A70.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0,
     1
@@ -32,5 +24,10 @@
   "completion_tokens": 617,
   "error": null,
   "gold_answer": "Nếu bạn đang đóng BHXH mà xin nghỉ 1-2 tháng để đi thụ tinh nhân tạo thì quyền lợi phụ thuộc loại nghỉ và giấy tờ y tế. Nếu nghỉ ốm/điều trị theo chỉ định của cơ sở khám chữa bệnh có thẩm quyền thì có thể được xem xét chế độ ốm đau. Nếu chỉ tự nghỉ không lương mà không có hồ sơ y tế phù hợp thì thường không có chế độ BHXH riêng cho việc đó.",
-  "gold_citations_raw": "Điều 42, 43, 47 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "Điều 42, 43, 47 Luật BHXH 2024; Quyết định 166/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A2.K1",
+    "L41_2024.A2",
+    "L41_2024.A70.K1"
+  ]
 }

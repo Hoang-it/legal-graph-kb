@@ -41,7 +41,8 @@ PWD = os.getenv("NEO4J_PASSWORD")
 DB = os.getenv("NEO4J_DATABASE", "neo4j")
 
 GRAPH_PATH = Path("data/graph/processed/merged_graph.json")
-EMBED_PATH = Path("data/graph/processed/embeddings.parquet")
+DEFAULT_EMBED_PATH = Path("data/graph/processed/embeddings.parquet")
+DEFAULT_EMBED_PROP = "embedding"
 SCHEMA_PATH = Path("schema/schema.cypher")
 
 STRUCTURAL_EDGE_TYPES = {
@@ -244,12 +245,25 @@ def _split_edge(e: dict, keep_top: list[str]) -> dict:
 # ---------------------------------------------------------------------------
 
 
-def load_embeddings(driver: Driver, db: str) -> int:
-    print("\n=== LOAD EMBEDDINGS ===")
-    if not EMBED_PATH.exists():
-        print(f"  WARN: thiếu {EMBED_PATH} — skip")
+def load_embeddings(
+    driver: Driver,
+    db: str,
+    embed_path: Path = DEFAULT_EMBED_PATH,
+    embed_prop: str = DEFAULT_EMBED_PROP,
+) -> int:
+    """Load embeddings into a node vector property.
+
+    Default writes ``n.embedding`` from ``data/graph/processed/embeddings.parquet``.
+    Sprint 2 Phase 3 calls this with ``embed_path=…/embeddings_tuned.parquet`` and
+    ``embed_prop='embedding_tuned'`` so vanilla and tuned vectors coexist on
+    the same Article/Clause/Point nodes, each indexed under its own vector
+    index (``clause_vec`` vs ``clause_vec_tuned``).
+    """
+    print(f"\n=== LOAD EMBEDDINGS ({embed_path.name} -> n.{embed_prop}) ===")
+    if not embed_path.exists():
+        print(f"  WARN: thiếu {embed_path} — skip")
         return 0
-    df = pd.read_parquet(EMBED_PATH)
+    df = pd.read_parquet(embed_path)
     print(f"  Loaded {len(df)} embeddings từ parquet")
 
     BATCH = 100
@@ -270,7 +284,7 @@ def load_embeddings(driver: Driver, db: str) -> int:
                     f"""
                     UNWIND $batch AS row
                     MATCH (n:{label} {{id: row.id}})
-                    CALL db.create.setNodeVectorProperty(n, 'embedding', row.vec)
+                    CALL db.create.setNodeVectorProperty(n, '{embed_prop}', row.vec)
                     """,
                     batch=batch,
                 )
@@ -379,6 +393,26 @@ def main() -> int:
     p.add_argument(
         "--sanity-only", action="store_true", help="Chỉ chạy sanity queries, không load gì."
     )
+    p.add_argument(
+        "--embeddings",
+        type=Path,
+        default=DEFAULT_EMBED_PATH,
+        help=f"Parquet path. Default {DEFAULT_EMBED_PATH}. "
+             "Phase 3 convention: --embeddings data/graph/processed/embeddings_tuned.parquet",
+    )
+    p.add_argument(
+        "--embed-prop",
+        type=str,
+        default=DEFAULT_EMBED_PROP,
+        help=f"Node vector property name. Default '{DEFAULT_EMBED_PROP}'. "
+             "Phase 3 convention: --embed-prop embedding_tuned (paired with clause_vec_tuned index).",
+    )
+    p.add_argument(
+        "--embeddings-only",
+        action="store_true",
+        help="Skip nodes+edges load; only push embeddings. Use for Phase 3 to "
+             "add tuned vectors without re-loading the whole graph.",
+    )
     args = p.parse_args()
 
     if not all([URI, USER, PWD]):
@@ -411,18 +445,21 @@ def main() -> int:
         if args.apply_schema:
             apply_schema(driver, DB)
 
-        if not GRAPH_PATH.exists():
-            print(f"FAIL: thiếu {GRAPH_PATH}. Chạy B4 trước.", file=sys.stderr)
-            return 1
-        print(f"\nLoading {GRAPH_PATH}...")
-        with GRAPH_PATH.open(encoding="utf-8") as f:
-            graph = json.load(f)
-
         t0 = time.time()
-        load_nodes(driver, DB, graph)
-        load_edges(driver, DB, graph)
+
+        if not args.embeddings_only:
+            if not GRAPH_PATH.exists():
+                print(f"FAIL: thiếu {GRAPH_PATH}. Chạy B4 trước.", file=sys.stderr)
+                return 1
+            print(f"\nLoading {GRAPH_PATH}...")
+            with GRAPH_PATH.open(encoding="utf-8") as f:
+                graph = json.load(f)
+            load_nodes(driver, DB, graph)
+            load_edges(driver, DB, graph)
+
         if not args.skip_embeddings:
-            load_embeddings(driver, DB)
+            load_embeddings(driver, DB, args.embeddings, args.embed_prop)
+
         print(f"\nLoad time: {time.time() - t0:.1f}s")
 
         sanity(driver, DB)

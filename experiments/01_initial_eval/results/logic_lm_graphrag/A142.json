@@ -3,14 +3,8 @@
   "stt": 142,
   "question": "Mình nghĩ công ty được khoảng hơn 2 năm rồi, mà chưa vào lấy được số bảo hiểm, nhưng có tờ rời, giờ vào có lấy được số bảo hiểm, hay ở nhà vẫn lấy được?",
   "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmpvqgv7575.pl:2:260: Syntax error: Operator expected]",
-  "citations": [
-    "[Điều 25 khoản 2]",
-    "[Điều 28 khoản 4]"
-  ],
-  "citation_ids": [
-    "L41_2024.A25.K2",
-    "L41_2024.A28.K4"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0,
     1
@@ -25,5 +19,9 @@
   "completion_tokens": 1118,
   "error": null,
   "gold_answer": "Số BHXH là mã số cá nhân quản lý trên hệ thống, không phụ thuộc việc bạn có cầm sổ giấy hay không. Bạn có thể tra cứu trên ứng dụng VssID, VNeID, cổng BHXH Việt Nam hoặc tới cơ quan BHXH để xin xác nhận. Nếu đã có tờ rời thì thường vẫn đối chiếu được số sổ. Không nhất thiết phải về công ty mới biết số BHXH.",
-  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A25.K2",
+    "L41_2024.A28.K4"
+  ]
 }

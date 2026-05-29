@@ -3,12 +3,8 @@
   "stt": 155,
   "question": "Minh mat so bhxh , còn nhớ số sổ , làm sao tra được quá trình đóng bhxh?",
   "answer": "Issue: Người dùng muốn biết cách tra cứu quá trình đóng bảo hiểm xã hội khi đã mất số bảo hiểm xã hội nhưng còn nhớ số sổ.\n\nRule: \"Dữ liệu về sổ bảo hiểm xã hội được cập nhật chính xác, kịp thời, đối chiếu thông tin và quản lý theo quy định.\" (Luật BHXH 2024 (41/2024/QH15), Điều 25, Khoản 3)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog đã sử dụng quy tắc để xác định rằng có thể tra cứu quá trình đóng bảo hiểm xã hội thông qua cơ quan bảo hiểm xã hội.\n\nConclusion: Prolog đã trả về giá trị \"Có thể tra cứu quá trình đóng bảo hiểm xã hội thông qua cơ quan bảo hiểm xã hội.\" cho biến Conditions. Không có slot nào bị thiếu, và hệ thống đã tính toán thành công.",
-  "citations": [
-    "[Điều 25 khoản 3]"
-  ],
-  "citation_ids": [
-    "L41_2024.A25.K3"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 552,
   "error": null,
   "gold_answer": "Nếu nhớ số sổ/mã số BHXH, bạn có thể tra quá trình đóng trên VssID, VNeID, cổng thông tin BHXH Việt Nam hoặc đến cơ quan BHXH để xin xác nhận quá trình đóng. Trường hợp mất sổ giấy, bạn vẫn làm thủ tục cấp lại được. Nên mang CCCD để cơ quan BHXH đối chiếu nhanh hơn.",
-  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "Điều 27, 29 Luật BHXH 2024; Quyết định 595/QĐ-BHXH; Quyết định 166/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A25.K3"
+  ]
 }

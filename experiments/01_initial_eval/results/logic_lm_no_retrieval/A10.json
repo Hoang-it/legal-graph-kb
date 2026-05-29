@@ -4,12 +4,8 @@
   "question": "Bà Thị Hạnh năm nay 53 tuổi, đóng BHXH tự nguyện được 5 năm.\nBà Hạnh hỏi, bà tiếp tục đóng BHXH tự nguyện đến năm 60 tuổi thì có được nhận lương hưu không?",
   "answer": "[Pipeline không trả về kết luận. prolog_status=derived_false, repair_rounds=2, error=Prolog produced no solutions]",
   "plain_answer": "",
-  "citations": [
-    "[Luật BHXH 2024 (41/2024/QH15), Điều 64 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A64.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [],
   "prolog_success": false,
   "prolog_status": "derived_false",
@@ -23,5 +19,8 @@
   "completion_tokens": 1011,
   "error": null,
   "gold_answer": "Theo quy định của Luật BHXH mới có hiệu lực thi hành từ ngày 1/7/2025, người tham gia BHXH tự nguyện được hưởng lương hưu khi đủ tuổi nghỉ hưu theo quy định tại Khoản 2 Điều 169 của Bộ luật Lao động và có thời gian đóng BHXH từ đủ 15 năm trở lên.\nTheo quy định tại Khoản 2 Điều 169 Bộ luật Lao động năm 2019 và Nghị định số 135/2020/NĐ-CP ngày 18/11/2020 của Chính phủ thì kể từ ngày 1/1/2021 tuổi nghỉ hưu của lao động nữ là 55 tuổi 4 tháng; sau đó, cứ mỗi năm tăng thêm 4 tháng cho đến khi đủ 60 tuổi vào năm 2035.\nTrường hợp của bà, năm nay 53 tuổi có thời gian đóng BHXH là 5 năm, nếu bà đóng BHXH tự nguyện liên tục đến khi 60 tuổi (năm 2031) thì khi đó bà có thời gian đóng BHXH là 12 năm chưa đủ điều kiện về thời gian đóng BHXH để hưởng chế độ hưu trí.\nDo vậy, bà nên tiếp tục tham gia BHXH tự nguyện cho đến khi đủ 15 năm đóng BHXH để được hưởng lương hưu hằng tháng đến trọn đời, khi đó bà còn được cấp thẻ BHYT miễn phí và được hưởng các chế độ liên quan của người hưởng lương hưu.",
-  "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 169]"
+  "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 169]",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A64.K1"
+  ]
 }

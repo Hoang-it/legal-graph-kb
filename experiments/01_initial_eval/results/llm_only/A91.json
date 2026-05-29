@@ -3,15 +3,14 @@
   "stt": 91,
   "question": "trường hợp nghỉ bệnh hưởng BHXH thì nộp hồ sơ trong vòng bao lâu sẽ được chi trả vậy?",
   "answer": "Theo quy định tại Luật Bảo hiểm xã hội số 41/2024/QH15, người lao động khi nghỉ bệnh và muốn hưởng chế độ bảo hiểm xã hội cần nộp hồ sơ trong vòng 30 ngày kể từ ngày đầu tiên nghỉ việc. Sau khi nộp hồ sơ đầy đủ, cơ quan bảo hiểm xã hội sẽ xem xét và chi trả chế độ trong thời gian quy định. Cụ thể, thời gian chi trả sẽ được thực hiện trong vòng 10 ngày làm việc kể từ ngày nhận đủ hồ sơ hợp lệ [Điều 100 khoản 1].",
-  "citations": [
-    "[Điều 100 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A100.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "elapsed_s": 2.533,
   "prompt_tokens": 182,
   "completion_tokens": 122,
   "gold_answer": "Người lao động phải nộp hồ sơ hưởng ốm đau cho doanh nghiệp hoặc cơ quan BHXH theo thời hạn luật định sau khi trở lại làm việc; doanh nghiệp sau đó phải lập hồ sơ gửi cơ quan BHXH trong thời hạn quy định. Khi nhận đủ hồ sơ hợp lệ, cơ quan BHXH phải giải quyết và chi trả trong thời hạn luật quy định. Nếu hồ sơ kéo dài bất thường, bạn nên kiểm tra xem doanh nghiệp đã nộp hay chưa và hồ sơ y tế có hợp lệ không.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 46, Điều 116"
+  "gold_citations_raw": "Luật BHXH 2024 Điều 46, Điều 116",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A100.K1"
+  ]
 }

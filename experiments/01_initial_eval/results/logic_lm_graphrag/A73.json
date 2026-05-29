@@ -3,12 +3,8 @@
   "stt": 73,
   "question": "Mình nghỉ việc mà công ty không in tờ rời bhxh cho mình , giờ mình liên hệ với ai để nhận tờ rời?",
   "answer": "Issue: Mình nghỉ việc mà công ty không in tờ rời bhxh cho mình, giờ mình liên hệ với ai để nhận tờ rời?\n\nRule: \"Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm cấp sổ bảo hiểm xã hội; trường hợp không cấp sổ bảo hiểm xã hội thì phải trả lời bằng văn bản và nêu rõ lý do.\" (Luật BHXH 2024 (41/2024/QH15), article 28, clause 4)\n\nApplication: Không có slot nào được gán giá trị trong trường hợp này. Prolog đã sử dụng quy tắc để xác định rằng người dùng nên liên hệ với cơ quan bảo hiểm xã hội.\n\nConclusion: Hệ thống không thể tính toán một số cuối cùng vì không có giá trị nào được gán cho các slot.",
-  "citations": [
-    "[Điều 28 khoản 4]"
-  ],
-  "citation_ids": [
-    "L41_2024.A28.K4"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     2
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 379,
   "error": null,
   "gold_answer": "Bạn nên liên hệ trước hết với công ty cũ bằng văn bản yêu cầu trả tờ rời/sổ BHXH. Nếu công ty không thực hiện, liên hệ cơ quan BHXH nơi công ty đóng BHXH hoặc cơ quan BHXH nơi bạn cư trú để được hướng dẫn cấp lại/xác nhận quá trình tham gia. Doanh nghiệp có trách nhiệm phối hợp xác nhận thời gian đóng và trả giấy tờ cho người lao động khi chấm dứt HĐLĐ, nên việc giữ hoặc không in trả là không đúng quy định.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48"
+  "gold_citations_raw": "Luật BHXH 2024 Điều 13; Bộ luật Lao động 2019 Điều 48",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A28.K4"
+  ]
 }

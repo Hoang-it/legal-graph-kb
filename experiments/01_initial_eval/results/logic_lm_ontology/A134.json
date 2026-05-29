@@ -3,12 +3,8 @@
   "stt": 134,
   "question": "quyết định nghỉ thất nghiệp của tôi hết ngày 21/4. Nhưng tháng 3 tôi đi làm giám định sức khoẻ để nghỉ hưu thì có được không?",
   "answer": "Issue: Người lao động có thể thực hiện giám định sức khoẻ để nghỉ hưu trong thời gian nghỉ thất nghiệp hay không?\n\nRule: \"10. Người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên và có văn bản của cơ quan bảo hiểm xã hội xác nhận về việc chờ đủ điều kiện về tuổi đời để hưởng lương hưu được quy định tại Nghị định số 12/CP ngày 26 tháng 01 năm 1995 được sửa đổi, bổ sung một số điều theo Nghị định số 01/2003/NĐ-CP ngày 09 tháng 01 năm 2003 của Chính phủ thì được hưởng lương hưu khi nam đủ 60 tuổi, nữ đủ 55 tuổi.\" (Luật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 10)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để xác định điều kiện nghỉ hưu liên quan đến giám định sức khoẻ.\n\nConclusion: Hệ thống không thể tính toán được kết quả cuối cùng do không có giá trị nào được gán cho các slot.",
-  "citations": [
-    "[Điều 141 khoản 10]"
-  ],
-  "citation_ids": [
-    "L41_2024.A141.K10"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     3
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 569,
   "error": null,
   "gold_answer": "Nếu quyết định hưởng trợ cấp thất nghiệp của bạn hết ngày 21/4 thì việc đi giám định sức khỏe để làm hồ sơ hưu vào tháng 3 không tự động làm mất quyền hưởng phần TCTN đang chi trả. Tuy nhiên khi bạn đủ điều kiện và bắt đầu hưởng lương hưu thì TCTN sẽ chấm dứt từ thời điểm đó. Vì vậy cần tính mốc nộp hồ sơ hưu và thời điểm hưởng hưu cho hợp lý.",
-  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A141.K10"
+  ]
 }

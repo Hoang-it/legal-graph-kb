@@ -1,0 +1,185 @@
+{
+  "arm": "graphrag_v5",
+  "stt": 26,
+  "question": "Bà Thị Thuận (Lào Cai) đóng BHXH được 6 năm 3 tháng, do điều kiện gia đình nên bà xin nghỉ việc và được cơ quan BHXH xác nhận tổng thời gian tham gia BHXH, bảo hiểm thất nghiệp trên sổ BHXH.\nBà đề nghị cơ quan có thẩm quyền hướng dẫn quy trình hưởng trợ cấp thất nghiệp.",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 6]\n- [Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 5]",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 6]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 18 khoản 5]"
+  ],
+  "citation_ids": [
+    "L41_2024.A18.K6",
+    "L41_2024.A18.K5"
+  ],
+  "citation_verified": {
+    "L41_2024.A18.K6": true,
+    "L41_2024.A18.K5": true
+  },
+  "n_final_hits": 12,
+  "n_seeds": 15,
+  "n_neighbors_added": 3,
+  "retrieval_audit": {
+    "event_date": "2026-05-29",
+    "n_dense": 30,
+    "n_sparse": 30,
+    "n_after_temporal": 36,
+    "n_after_fusion": 36,
+    "n_dropped_by_temporal": 20
+  },
+  "hits": [
+    {
+      "rank": 1,
+      "rerank2_score": 0.8164,
+      "kind": "seed",
+      "clause_id": "L41_2024.A13.K3",
+      "article_id": "L41_2024.A13",
+      "law_id": "L41_2024",
+      "article_n": 13,
+      "article_title": "Trách nhiệm của người sử dụng lao động",
+      "clause_n": 3,
+      "rerank1_score": 0.8163962960243225
+    },
+    {
+      "rank": 2,
+      "rerank2_score": 0.7004,
+      "kind": "seed",
+      "clause_id": "L41_2024.A23.K2",
+      "article_id": "L41_2024.A23",
+      "law_id": "L41_2024",
+      "article_n": 23,
+      "article_title": "Chế độ đối với người lao động không đủ điều kiện hưởng lương hưu và chưa đủ tuổi hưởng trợ cấp hưu trí xã hội",
+      "clause_n": 2,
+      "rerank1_score": 0.7003698945045471
+    },
+    {
+      "rank": 3,
+      "rerank2_score": 0.4228,
+      "kind": "seed",
+      "clause_id": "L41_2024.A18.K6",
+      "article_id": "L41_2024.A18",
+      "law_id": "L41_2024",
+      "article_n": 18,
+      "article_title": "Trách nhiệm của cơ quan bảo hiểm xã hội",
+      "clause_n": 6,
+      "rerank1_score": 0.4227713644504547
+    },
+    {
+      "rank": 4,
+      "rerank2_score": 0.3139,
+      "kind": "seed",
+      "clause_id": "L41_2024.A81.K1",
+      "article_id": "L41_2024.A81",
+      "law_id": "L41_2024",
+      "article_n": 81,
+      "article_title": "Giải quyết tiếp tục hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng trong trường hợp đã bị tạm dừng hoặc chấm dứt hưởng",
+      "clause_n": 1,
+      "rerank1_score": 0.3138602077960968
+    },
+    {
+      "rank": 5,
+      "rerank2_score": 0.2796,
+      "kind": "seed",
+      "clause_id": "L41_2024.A18.K5",
+      "article_id": "L41_2024.A18",
+      "law_id": "L41_2024",
+      "article_n": 18,
+      "article_title": "Trách nhiệm của cơ quan bảo hiểm xã hội",
+      "clause_n": 5,
+      "rerank1_score": 0.27959680557250977
+    },
+    {
+      "rank": 6,
+      "rerank2_score": 0.2558,
+      "kind": "seed",
+      "clause_id": "L45_2019.A46.K2",
+      "article_id": "L45_2019.A46",
+      "law_id": "L45_2019",
+      "article_n": 46,
+      "article_title": "Trợ cấp thôi việc",
+      "clause_n": 2,
+      "rerank1_score": 0.255832701921463
+    },
+    {
+      "rank": 7,
+      "rerank2_score": 0.1956,
+      "kind": "seed",
+      "clause_id": "L45_2019.A47.K2",
+      "article_id": "L45_2019.A47",
+      "law_id": "L45_2019",
+      "article_n": 47,
+      "article_title": "Trợ cấp mất việc làm",
+      "clause_n": 2,
+      "rerank1_score": 0.19557048380374908
+    },
+    {
+      "rank": 8,
+      "rerank2_score": 0.1866,
+      "kind": "seed",
+      "clause_id": "L41_2024.A5.K6",
+      "article_id": "L41_2024.A5",
+      "law_id": "L41_2024",
+      "article_n": 5,
+      "article_title": "Nguyên tắc bảo hiểm xã hội",
+      "clause_n": 6,
+      "rerank1_score": 0.18656134605407715
+    },
+    {
+      "rank": 9,
+      "rerank2_score": 0.1619,
+      "kind": "seed",
+      "clause_id": "L41_2024.A76.K4",
+      "article_id": "L41_2024.A76",
+      "law_id": "L41_2024",
+      "article_n": 76,
+      "article_title": "Trợ cấp một lần đối với người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hằng tháng ra nước ngoài để định cư",
+      "clause_n": 4,
+      "rerank1_score": 0.16186994314193726
+    },
+    {
+      "rank": 10,
+      "rerank2_score": 0.1562,
+      "kind": "seed",
+      "clause_id": "L41_2024.A100.K1",
+      "article_id": "L41_2024.A100",
+      "law_id": "L41_2024",
+      "article_n": 100,
+      "article_title": "Trợ cấp một lần khi nghỉ hưu",
+      "clause_n": 1,
+      "rerank1_score": 0.15617170929908752
+    },
+    {
+      "rank": 11,
+      "rerank2_score": 0.1562,
+      "kind": "seed",
+      "clause_id": "L41_2024.A68.K1",
+      "article_id": "L41_2024.A68",
+      "law_id": "L41_2024",
+      "article_n": 68,
+      "article_title": "Trợ cấp một lần khi nghỉ hưu",
+      "clause_n": 1,
+      "rerank1_score": 0.15617170929908752
+    },
+    {
+      "rank": 12,
+      "rerank2_score": 0.1492,
+      "kind": "seed",
+      "clause_id": "L41_2024.A33.K7",
+      "article_id": "L41_2024.A33",
+      "law_id": "L41_2024",
+      "article_n": 33,
+      "article_title": "Mức đóng, phương thức và thời hạn đóng bảo hiểm xã hội bắt buộc của người lao động",
+      "clause_n": 7,
+      "rerank1_score": 0.1491895467042923
+    }
+  ],
+  "elapsed_s": 29.747,
+  "elapsed_breakdown": {
+    "retrieve": 0.355,
+    "rerank1": 16.961,
+    "expand": 0.025,
+    "rerank2": 9.515,
+    "llm": 2.891
+  },
+  "gold_answer": "Khoản 3 Điều 34 Chương VIII Nghị định số 374/2025/NĐ-CP ngày 31/12/2025 của Chính phủ quy định chi tiết một số điều của Luật Việc làm về bảo hiểm thất nghiệp có quy định về trách nhiệm của tổ chức dịch vụ việc làm công, trong đó nêu rõ:\n\"Tổ chức tiếp nhận, xem xét và thực hiện các thủ tục giải quyết hồ sơ đề nghị hưởng trợ cấp thất nghiệp, hỗ trợ đào tạo, bồi dưỡng, nâng cao trình độ kỹ năng nghề. Trường hợp trong quá trình thực hiện dịch vụ công trực tuyến, dữ liệu điện tử về dân cư, bảo hiểm xã hội, bảo hiểm thất nghiệp của người lao động không thống nhất với thông tin trên các giấy tờ có giá trị pháp lý như Căn cước công dân, sổ bảo hiểm xã hội hoặc giấy tờ hợp pháp khác, tổ chức dịch vụ việc làm công có trách nhiệm hướng dẫn người lao động đề nghị cơ quan có thẩm quyền rà soát, đối chiếu, điều chỉnh dữ liệu điện tử và thực hiện nộp hồ sơ trực tiếp theo quy định\".\nTheo đó, để được giải quyết hưởng trợ cấp thất nghiệp, đề nghị bà Thuận liên hệ Trung tâm Dịch vụ việc làm trực thuộc Sở Nội vụ tại địa phương nơi bà có nhu cầu nhận trợ cấp thất nghiệp (không phụ thuộc vào nơi đã làm việc trước đó) để được hướng dẫn, tiếp nhận và giải quyết hồ sơ theo quy định.\nCơ quan BHXH thực hiện chi trả trợ cấp thất nghiệp cho người lao động sau khi nhận được Quyết định hưởng trợ cấp thất nghiệp do Sở Nội vụ ban hành và chuyển đến cơ quan BHXH.",
+  "gold_citations_raw": "[Nghị định 374/2025/NĐ-CP, Điều 34]"
+}

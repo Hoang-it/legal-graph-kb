@@ -3,14 +3,8 @@
   "stt": 182,
   "question": "Rút Bhxh là tính từ ngày có giấy quyết định nghỉ việc tròn một năm hay là thời điểm mình đi nộp sổ?",
   "answer": "Issue: Rút bảo hiểm xã hội là tính từ ngày có giấy quyết định nghỉ việc tròn một năm hay là thời điểm nộp sổ?\n\nRule: \"Thời điểm kết thúc ngày cuối cùng của tháng dừng đóng bảo hiểm xã hội hoặc tháng chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện giải quyết hưởng bảo hiểm xã hội một lần đối với trường hợp người hưởng bảo hiểm xã hội theo quy định tại điểm đ khoản 1 Điều 102 của Luật này.\" (Luật BHXH 2024 (41/2024/QH15), Điều 107, Khoản 2)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Tuy nhiên, Prolog đã xác định rằng thời điểm chấm dứt hợp đồng lao động là căn cứ để xác định thời điểm đủ điều kiện hưởng bảo hiểm xã hội một lần.\n\nConclusion: Prolog đã trả về giá trị \"thời điểm chấm dứt hợp đồng lao động\" cho biến Time.",
-  "citations": [
-    "[Điều 102]",
-    "[Điều 107 khoản 2]"
-  ],
-  "citation_ids": [
-    "L41_2024.A102",
-    "L41_2024.A107.K2"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     3
   ],
@@ -29,5 +23,9 @@
   "completion_tokens": 438,
   "error": null,
   "gold_answer": "Mốc 1 năm để xét BHXH 1 lần thường được hiểu là sau 12 tháng bạn không còn thuộc diện tham gia BHXH bắt buộc và cũng không tham gia BHXH tự nguyện. Vì vậy không chỉ nhìn vào ngày ký quyết định nghỉ việc, mà phải xét thực tế quá trình tham gia sau đó. Khi đủ 12 tháng ngừng tham gia thì bạn mới nộp hồ sơ nếu thuộc trường hợp được hưởng.",
-  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A102",
+    "L41_2024.A107.K2"
+  ]
 }

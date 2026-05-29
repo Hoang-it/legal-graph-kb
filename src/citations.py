@@ -313,22 +313,53 @@ def parse_gold_citations_raw(
     )
 
 
+_BRACKET_BLOCK_RE = re.compile(r"\[([^\[\]]+)\]")
+
+
 def parse_displayed_citations(
     answer_text: str,
     registry: dict[str, SourceInfo] | None = None,
 ) -> list[CitationRef]:
-    """Parse strict displayed citations with explicit authority and article."""
+    """Parse displayed citations.
+
+    A citation is accepted **only** when an authority alias and the article spec
+    co-occur inside the same square-bracket block ``[ ... ]``. Inline mentions
+    of authority or article anywhere outside brackets are intentionally ignored.
+
+    This eliminates cross-stream false positives where ``"Bộ luật Lao động"``
+    appearing in one sentence is silently paired with ``"Điều 64"`` from another
+    sentence — a failure mode observed in v5 Sprint 1.
+
+    Format the LLM must emit (enforced by the prompt):
+        ``[<authority alias>, Điều X]``
+        ``[<authority alias>, Điều X khoản Y]``
+        ``[<authority alias>, Điều X khoản Y điểm z]``
+    """
     registry = registry or load_registry()
-    folded = fold_text(answer_text or "")
     refs: dict[str, CitationRef] = {}
-    for start, end, source_key, _alias in _source_occurrences(folded, registry):
-        right = folded[end : min(len(folded), end + 180)]
-        left = folded[max(0, start - 120) : start]
-        article_matches = list(_iter_article_clause_point(right))
-        if not article_matches:
-            article_matches = list(_iter_article_clause_point(left))
-        for article, clause, point in article_matches:
-            ref = CitationRef(source=source_key, article=article, clause=clause, point=point)
+    for m in _BRACKET_BLOCK_RE.finditer(answer_text or ""):
+        block_text = m.group(1)
+        block_folded = fold_text(block_text)
+        if not block_folded:
+            continue
+        source_occ = _source_occurrences(block_folded, registry)
+        if not source_occ:
+            continue
+        # In a well-formed bracket the authority always appears first.
+        # If multiple authorities are matched (shouldn't normally happen), we
+        # refuse the block — it's ambiguous, not a legitimate citation.
+        if len(source_occ) > 1:
+            continue
+        _start, end, source_key, _alias = source_occ[0]
+        # Article spec must appear AFTER the authority alias inside this block.
+        tail = block_folded[end:]
+        for article, clause, point in _iter_article_clause_point(tail):
+            ref = CitationRef(
+                source=source_key,
+                article=article,
+                clause=clause,
+                point=point,
+            )
             refs[ref.item_id] = ref
     return list(refs.values())
 

@@ -3,12 +3,8 @@
   "stt": 151,
   "question": "11 năm lương 9trieu 8 trăm rút xã hội đc bao nhiêu ạ",
   "answer": "Issue: Người dùng hỏi về số tiền nhận được từ bảo hiểm xã hội sau 11 năm đóng góp với mức lương 9 triệu 800 nghìn.\n\nRule: \"3. Người lao động đã có thời gian công tác và tham gia bảo hiểm xã hội trước ngày 01 tháng 01 năm 1995 tại nơi có phụ cấp khu vực, người lao động đã có thời gian đóng bảo hiểm xã hội bao gồm phụ cấp khu vực trước ngày 01 tháng 01 năm 2007 thì được hưởng trợ cấp khu vực một lần khi giải quyết hưởng lương hưu hoặc hưởng bảo hiểm xã hội một lần hoặc hưởng chế độ tử tuất.\" (Luật BHXH 2024 (41/2024/QH15), Điều 141, Khoản 3)\n\nApplication: Không có giá trị nào được gán cho các slot trong phần slot_bindings. Tuy nhiên, Prolog đã sử dụng các giá trị từ các quy tắc đã được xác định, cụ thể là số năm đóng góp là 11 và mức lương trung bình là 9 triệu 800 nghìn.\n\nConclusion: Prolog đã tính toán và trả về giá trị 4900000.0 cho biến Amount.",
-  "citations": [
-    "[Điều 141 khoản 3]"
-  ],
-  "citation_ids": [
-    "L41_2024.A141.K3"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 572,
   "error": null,
   "gold_answer": "Nếu 11 năm đóng của bạn đều từ năm 2014 trở đi thì BHXH 1 lần ước khoảng khoảng 215,6 triệu, chưa tính hệ số điều chỉnh tiền lương. Số thực nhận do cơ quan BHXH tính sẽ căn cứ mức bình quân tiền lương tháng đóng sau điều chỉnh và làm tròn thời gian đóng theo luật. Nếu có thời gian trước 2014 thì phần đó tính theo hệ số 1,5 tháng/năm.",
-  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A141.K3"
+  ]
 }

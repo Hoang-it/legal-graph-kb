@@ -3,24 +3,8 @@
   "stt": 58,
   "question": "e là hộ kinh doanh mới , tham gia bhxh cho hkd thì phải làm như thế nào?",
   "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmphrtojqw9.pl:1:810: Syntax error: Operator expected]",
-  "citations": [
-    "[Điều 17 khoản 2]",
-    "[Điều 13 khoản 2]",
-    "[Điều 13 khoản 1]",
-    "[Điều 27 khoản 2]",
-    "[Điều 3 khoản 9]",
-    "[Điều 28 khoản 1]",
-    "[Điều 12 khoản 3]"
-  ],
-  "citation_ids": [
-    "L41_2024.A17.K2",
-    "L41_2024.A13.K2",
-    "L41_2024.A13.K1",
-    "L41_2024.A27.K2",
-    "L41_2024.A3.K9",
-    "L41_2024.A28.K1",
-    "L41_2024.A12.K3"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0,
     1,
@@ -40,5 +24,14 @@
   "completion_tokens": 2604,
   "error": null,
   "gold_answer": "Nếu bạn là chủ hộ kinh doanh thuộc diện phải tham gia BHXH bắt buộc thì cần liên hệ cơ quan BHXH hoặc tổ chức dịch vụ thu để đăng ký hồ sơ tham gia theo mã số BHXH, kê khai mức tiền lương làm căn cứ đóng và phương thức đóng. Nếu chưa thuộc diện bắt buộc thì có thể tham gia BHXH tự nguyện. Khi đi đăng ký nên mang CCCD, thông tin đăng ký hộ kinh doanh và giấy tờ liên quan đến mã số BHXH nếu đã có.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 25, Điều 31; Nghị định 158/2025/NĐ-CP"
+  "gold_citations_raw": "Luật BHXH 2024 Điều 2, Điều 25, Điều 31; Nghị định 158/2025/NĐ-CP",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A17.K2",
+    "L41_2024.A13.K2",
+    "L41_2024.A13.K1",
+    "L41_2024.A27.K2",
+    "L41_2024.A3.K9",
+    "L41_2024.A28.K1",
+    "L41_2024.A12.K3"
+  ]
 }

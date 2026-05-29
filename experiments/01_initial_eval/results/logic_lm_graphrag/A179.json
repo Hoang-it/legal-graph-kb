@@ -3,12 +3,8 @@
   "stt": 179,
   "question": "mình nghỉ ngang vậy có đc lãnh bảo hiểm thất nghiệp không?",
   "answer": "Issue: Mình nghỉ ngang vậy có đc lãnh bảo hiểm thất nghiệp không?\n\nRule: \"Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp.\" (Luật BHXH 2024 (41/2024/QH15), article 9, clause 2)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để xác định quyền lợi bảo hiểm thất nghiệp.\n\nConclusion: Hệ thống không thể tính toán số liệu cuối cùng do không có giá trị nào được gán cho các slot.",
-  "citations": [
-    "[Điều 4 khoản 4]"
-  ],
-  "citation_ids": [
-    "L41_2024.A4.K4"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 298,
   "error": null,
   "gold_answer": "Nghỉ ngang chỉ được hưởng BHTN nếu việc đơn phương chấm dứt hợp đồng của bạn là đúng pháp luật. Nếu nghỉ ngang trái luật thì không đủ điều kiện hưởng BHTN. Vì vậy cần xem hợp đồng, thời hạn báo trước, lý do nghỉ và việc công ty xác nhận chấm dứt ra sao. Nếu bạn nghỉ đúng luật hoặc hai bên thỏa thuận chấm dứt thì vẫn có thể hưởng BHTN khi đủ điều kiện khác.",
-  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A4.K4"
+  ]
 }

@@ -1,0 +1,188 @@
+{
+  "arm": "graphrag_v5",
+  "stt": 30,
+  "question": "Người lao động sinh con tháng 01/2026, đã nghỉ việc hưởng chế độ thai sản từ thời điểm sinh con.\nKhi thực hiện thủ tục báo giảm lao động, cơ quan BHXH yêu cầu đơn vị phải điều chỉnh nơi đăng ký khám bệnh, chữa bệnh ban đầu của người lao động.\nTuy nhiên, thời điểm hiện tại đã quá hạn đầu quý I/2026 nên đơn vị chưa thể thực hiện thủ tục điều chỉnh khám bệnh, chữa bệnh, dự kiến đến đầu quý II/2026 mới thực hiện được.\nBà Thị Oanh (TPHCM) hỏi, vậy trong thời gian chờ để điều chỉnh nơi khám bệnh, chữa bệnh và báo giảm người lao động hưởng thai sản từ tháng 01/2026, đơn vị có phải tiếp tục đóng BHXH cho người lao động này không?\nViệc báo giảm và nộp hồ sơ thai sản muộn so với thời điểm phát sinh có ảnh hưởng đến quyền lợi của người lao động và trách nhiệm của đơn vị không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. \n\nCác Điều liên quan có trong CONTEXT:\n- [Luật BHXH 2024 (41/2024/QH15), Điều 53]\n- [Luật BHXH 2024 (41/2024/QH15), Điều 62]\n- [Luật BHXH 2024 (41/2024/QH15), Điều 97]",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 53]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 62]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 97]"
+  ],
+  "citation_ids": [
+    "L41_2024.A53",
+    "L41_2024.A62",
+    "L41_2024.A97"
+  ],
+  "citation_verified": {
+    "L41_2024.A53": true,
+    "L41_2024.A62": true,
+    "L41_2024.A97": true
+  },
+  "n_final_hits": 12,
+  "n_seeds": 15,
+  "n_neighbors_added": 5,
+  "retrieval_audit": {
+    "event_date": "2026-12-31",
+    "n_dense": 30,
+    "n_sparse": 30,
+    "n_after_temporal": 31,
+    "n_after_fusion": 31,
+    "n_dropped_by_temporal": 19
+  },
+  "hits": [
+    {
+      "rank": 1,
+      "rerank2_score": 0.991,
+      "kind": "seed",
+      "clause_id": "L41_2024.A55.K1",
+      "article_id": "L41_2024.A55",
+      "law_id": "L41_2024",
+      "article_n": 55,
+      "article_title": "Chế độ thai sản của lao động nữ nhờ mang thai hộ",
+      "clause_n": 1,
+      "rerank1_score": 0.9909687638282776
+    },
+    {
+      "rank": 2,
+      "rerank2_score": 0.979,
+      "kind": "seed",
+      "clause_id": "L41_2024.A53.K1",
+      "article_id": "L41_2024.A53",
+      "law_id": "L41_2024",
+      "article_n": 53,
+      "article_title": "Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con",
+      "clause_n": 1,
+      "rerank1_score": 0.9789688587188721
+    },
+    {
+      "rank": 3,
+      "rerank2_score": 0.9547,
+      "kind": "seed",
+      "clause_id": "L41_2024.A53.K8",
+      "article_id": "L41_2024.A53",
+      "law_id": "L41_2024",
+      "article_n": 53,
+      "article_title": "Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con",
+      "clause_n": 8,
+      "rerank1_score": 0.9546709656715393
+    },
+    {
+      "rank": 4,
+      "rerank2_score": 0.9495,
+      "kind": "seed",
+      "clause_id": "L41_2024.A54.K1",
+      "article_id": "L41_2024.A54",
+      "law_id": "L41_2024",
+      "article_n": 54,
+      "article_title": "Chế độ thai sản của lao động nữ mang thai hộ",
+      "clause_n": 1,
+      "rerank1_score": 0.9495286345481873
+    },
+    {
+      "rank": 5,
+      "rerank2_score": 0.9441,
+      "kind": "seed",
+      "clause_id": "L45_2019.A139.K4",
+      "article_id": "L45_2019.A139",
+      "law_id": "L45_2019",
+      "article_n": 139,
+      "article_title": "Nghỉ thai sản",
+      "clause_n": 4,
+      "rerank1_score": 0.9441065788269043
+    },
+    {
+      "rank": 6,
+      "rerank2_score": 0.9374,
+      "kind": "seed",
+      "clause_id": "L41_2024.A97.K1",
+      "article_id": "L41_2024.A97",
+      "law_id": "L41_2024",
+      "article_n": 97,
+      "article_title": "Giải quyết hưởng trợ cấp thai sản",
+      "clause_n": 1,
+      "rerank1_score": 0.9374483227729797
+    },
+    {
+      "rank": 7,
+      "rerank2_score": 0.9324,
+      "kind": "seed",
+      "clause_id": "L41_2024.A51.K2",
+      "article_id": "L41_2024.A51",
+      "law_id": "L41_2024",
+      "article_n": 51,
+      "article_title": "Thời gian nghỉ việc hưởng chế độ thai sản khi khám thai",
+      "clause_n": 2,
+      "rerank1_score": 0.9324350357055664
+    },
+    {
+      "rank": 8,
+      "rerank2_score": 0.932,
+      "kind": "seed",
+      "clause_id": "L41_2024.A62.K1",
+      "article_id": "L41_2024.A62",
+      "law_id": "L41_2024",
+      "article_n": 62,
+      "article_title": "Giải quyết hưởng chế độ thai sản đối với người tham gia bảo hiểm xã hội bắt buộc",
+      "clause_n": 1,
+      "rerank1_score": 0.931971549987793
+    },
+    {
+      "rank": 9,
+      "rerank2_score": 0.9073,
+      "kind": "seed",
+      "clause_id": "L45_2019.A139.K5",
+      "article_id": "L45_2019.A139",
+      "law_id": "L45_2019",
+      "article_n": 139,
+      "article_title": "Nghỉ thai sản",
+      "clause_n": 5,
+      "rerank1_score": 0.9073021411895752
+    },
+    {
+      "rank": 10,
+      "rerank2_score": 0.8982,
+      "kind": "seed",
+      "clause_id": "L41_2024.A57.K1",
+      "article_id": "L41_2024.A57",
+      "law_id": "L41_2024",
+      "article_n": 57,
+      "article_title": "Thời gian nghỉ việc hưởng chế độ khi thực hiện các biện pháp tránh thai",
+      "clause_n": 1,
+      "rerank1_score": 0.8981884121894836
+    },
+    {
+      "rank": 11,
+      "rerank2_score": 0.8705,
+      "kind": "seed",
+      "clause_id": "L41_2024.A53.K7",
+      "article_id": "L41_2024.A53",
+      "law_id": "L41_2024",
+      "article_n": 53,
+      "article_title": "Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con",
+      "clause_n": 7,
+      "rerank1_score": 0.8705409169197083
+    },
+    {
+      "rank": 12,
+      "rerank2_score": 0.859,
+      "kind": "seed",
+      "clause_id": "L41_2024.A50.K4",
+      "article_id": "L41_2024.A50",
+      "law_id": "L41_2024",
+      "article_n": 50,
+      "article_title": "Đối tượng và điều kiện hưởng chế độ thai sản",
+      "clause_n": 4,
+      "rerank1_score": 0.8590342998504639
+    }
+  ],
+  "elapsed_s": 56.837,
+  "elapsed_breakdown": {
+    "retrieve": 0.372,
+    "rerank1": 21.131,
+    "expand": 0.032,
+    "rerank2": 30.28,
+    "llm": 5.022
+  },
+  "gold_answer": "Khoản 1 Điều 13 Luật BHXH 2024 quy định trách nhiệm của người sử dụng lao động: \"Lập hồ sơ để người lao động được hưởng chế độ bảo hiểm xã hội\".\nĐối chiếu với quy định trên, đơn vị có trách nhiệm nộp hồ sơ báo giảm lao động nghỉ thai sản ngay khi người lao động nghỉ việc hưởng chế độ, việc thay đổi nơi đăng ký khám bệnh, chữa bệnh ban đầu không ảnh hưởng đến việc báo giảm.\nTuy nhiên, trường hợp người lao động đăng ký khám bệnh, chữa bệnh ban đầu tại cơ sở khám bệnh, chữa bệnh ban đầu đã ngừng ký hợp đồng khám, chữa bệnh BHYT thì được nộp ngay hồ sơ 613 để chuyển đổi nơi khám bệnh, chữa bệnh khác (không chờ đến 15 ngày của tháng đầu quý).\nTrường hợp khi nộp hồ sơ đề nghị giải quyết hưởng chế độ thai sản cho người lao động chậm so với thời hạn quy định, đề nghị đơn vị giải trình bằng văn bản lý do chậm nộp khi kê khai hồ sơ đề nghị giải quyết chế độ cho cơ quan BHXH, người lao động vẫn được giải quyết chế độ thai sản theo quy định.",
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 13]"
+}

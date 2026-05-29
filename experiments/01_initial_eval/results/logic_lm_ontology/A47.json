@@ -5,14 +5,10 @@
   "answer": "Issue: Người hỏi muốn biết liệu việc nghỉ thai sản trước 2 tháng và nghỉ việc luôn có bị thanh tra không, và liệu quyết định điều chỉnh lương nhận qua email có được chấp nhận không.\nRule: Theo [Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 1], thời gian nghỉ việc hưởng chế độ thai sản của lao động nữ khi sinh con được thực hiện theo quy định tại khoản 1 Điều 139 của Bộ luật Lao động.\nApplication: Không có slot nào được gán giá trị. Prolog không thể tính toán kết quả cuối cùng do thiếu thông tin cần thiết để xác định tình trạng thanh tra.\nConclusion: Hệ thống không thể tính được kết quả cuối cùng do thiếu slot nào đó.",
   "plain_answer": "Hệ thống chưa đủ thông tin để tính chính xác về việc bạn có bị thanh tra hay không. Theo [Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 1], bạn cần cung cấp thêm thông tin về thời gian nghỉ việc và các giấy tờ liên quan để mình có thể hỗ trợ tốt hơn.",
   "citations": [
-    "[Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 1]",
-    "[Luật BHXH 2024 (41/2024/QH15), Điều 139]",
-    "[Bộ luật Lao động 2019 (45/2019/QH14), Điều 139]"
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 53 khoản 1]"
   ],
   "citation_ids": [
-    "L41_2024.A53.K1",
-    "L41_2024.A139",
-    "L45_2019.A139"
+    "L41_2024.A53.K1"
   ],
   "citation_indices": [
     0
@@ -34,5 +30,10 @@
   "completion_tokens": 471,
   "error": null,
   "gold_answer": "Việc tăng lương rồi sau đó nghỉ thai sản không mặc nhiên bị thanh tra hay bị từ chối chế độ. Cơ quan BHXH chỉ kiểm tra khi nghi ngờ việc tăng lương không có căn cứ thực tế, không đúng quy chế hoặc đóng BHXH không đúng bản chất quan hệ lao động. Nếu bạn có quyết định điều chỉnh lương, bổ nhiệm, bảng lương, chứng từ trả lương và việc tăng lương là thật, đúng quy trình thì thường vẫn được chấp nhận. Văn bản điện tử hợp lệ không bắt buộc phải có bản dấu đỏ giấy.",
-  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 53]\n[Bộ luật Lao động 2019, Điều 90]\n[Bộ luật Lao động 2019, Điều 94]"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 53]\n[Bộ luật Lao động 2019, Điều 90]\n[Bộ luật Lao động 2019, Điều 94]",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A53.K1",
+    "L41_2024.A139",
+    "L45_2019.A139"
+  ]
 }

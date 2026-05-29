@@ -3,12 +3,8 @@
   "stt": 200,
   "question": "E tham gia BHXH được 21 năm và có qđ nghỉ việc cuối tháng 6, tuy nhiên từ lúc nghỉ đến nay e không có làm việc j để tham gia bh tiếp tục (gần 10 tháng) như vậy cho e hỏi e muốn rút BHXH 1 lần có được không, mong được phản hồi ạ",
   "answer": "Issue: Người dùng tham gia bảo hiểm xã hội được 21 năm và đã nghỉ việc gần 10 tháng, họ muốn biết có thể rút bảo hiểm xã hội một lần hay không.\n\nRule: \"2. Ban hành mẫu sổ bảo hiểm xã hội, mẫu hồ sơ bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp sau khi có ý kiến thống nhất của Bộ Lao động - Thương binh và Xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 2)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng người dùng có thể rút bảo hiểm xã hội một lần dựa trên các điều kiện đã được quy định.\n\nConclusion: Prolog đã trả về giá trị \"yes\" cho biến Answer, cho thấy người dùng có thể rút bảo hiểm xã hội một lần.",
-  "citations": [
-    "[Điều 18 khoản 2]"
-  ],
-  "citation_ids": [
-    "L41_2024.A18.K2"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 713,
   "error": null,
   "gold_answer": "Bạn đã tham gia BHXH 21 năm và mới nghỉ gần 10 tháng thì chưa đủ điều kiện thông thường để xem xét BHXH 1 lần theo mốc 12 tháng không tham gia. Hơn nữa, từ 01/7/2025 nhiều trường hợp có từ đủ 15 năm đóng trở lên sẽ hướng tới chế độ lương hưu khi đủ tuổi, nên càng cần cân nhắc. Sau khi đủ 12 tháng ngừng tham gia, bạn mới nên đối chiếu lại điều kiện cụ thể với cơ quan BHXH.",
-  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP"
+  "gold_citations_raw": "Điều 70 Luật BHXH 2024; Quyết định 166/QĐ-BHXH; Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A18.K2"
+  ]
 }

@@ -3,14 +3,8 @@
   "stt": 165,
   "question": "Dự sinh của em 18/9. Em đóng bhxh 2 năm rồi. Tháng 1 dương vừa rồi không đủ công nên cty ko đóng tháng 1. Hết tháng 4 này em nghỉ luôn thì em có được hưởng thai sản ko?",
   "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmp82oimtjn.pl:2:295: Syntax error: Operator expected]",
-  "citations": [
-    "[Điều 26 khoản 1]",
-    "[Điều 28 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A26.K1",
-    "L41_2024.A28.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [],
   "prolog_success": false,
   "prolog_status": "syntax_error",
@@ -22,5 +16,9 @@
   "completion_tokens": 996,
   "error": null,
   "gold_answer": "Bạn dự sinh 18/9 và đã đóng BHXH 2 năm, nhưng tháng 1 vừa rồi công ty không đóng thì phải tính lại 12 tháng trước sinh. Nếu từ 9/2025 đến 8/2026 bạn vẫn có đủ ít nhất 06 tháng đóng BHXH thì bạn đủ điều kiện hưởng thai sản dù nghỉ cuối tháng 4. Tháng 1 bị hở không làm mất quyền nếu tổng số tháng đủ 06.",
-  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "Điều 50, 58, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A26.K1",
+    "L41_2024.A28.K1"
+  ]
 }

@@ -4,16 +4,18 @@
   "question": "Mình đóng bhxh từ năm 2024 là 10 tháng \nSau đó vào cty khác đóng tiếp tục 6 tháng cùng luật bảo hiểm 1/7/2025 không cho rút 1 lần \nTổng thời gian mình đóng là 1 năm 4 tháng, giờ mình nghỉ cty luôn thì mình có được rút 1 lần bhxh không?",
   "answer": "Theo quy định tại Luật Bảo hiểm xã hội Việt Nam, để được rút một lần bảo hiểm xã hội, người lao động phải đáp ứng điều kiện có thời gian đóng bảo hiểm xã hội từ đủ 1 năm trở lên và không tiếp tục tham gia bảo hiểm xã hội. \n\nTrong trường hợp của bạn, tổng thời gian bạn đã đóng bảo hiểm xã hội là 1 năm 4 tháng. Nếu bạn nghỉ việc và không tham gia bảo hiểm xã hội ở công ty khác nữa, bạn có quyền rút một lần bảo hiểm xã hội. Điều này được quy định tại Điều 60 Luật Bảo hiểm xã hội 2024, trong đó nêu rõ quyền lợi của người lao động khi nghỉ việc và có thời gian đóng bảo hiểm đủ điều kiện. \n\nVì vậy, bạn có thể rút một lần bảo hiểm xã hội của mình. `[Luật BHXH 2024 (41/2024/QH15), Điều 60 khoản 1]`.",
   "citations": [
-    "[Luật BHXH 2024 (41/2024/QH15), Điều 60]",
     "[Luật BHXH 2024 (41/2024/QH15), Điều 60 khoản 1]"
   ],
   "citation_ids": [
-    "L41_2024.A60",
     "L41_2024.A60.K1"
   ],
   "elapsed_s": 4.532,
   "prompt_tokens": 279,
   "completion_tokens": 204,
   "gold_answer": "Bạn đã có 10 tháng đóng trước 1/7/2025 và thêm 6 tháng sau đó, tổng 1 năm 4 tháng. Nếu hiện đã nghỉ việc, ngừng tham gia đủ 12 tháng và thuộc diện được giải quyết BHXH một lần theo quy định chuyển tiếp của Luật BHXH 2024 thì vẫn có thể được rút đối với thời gian đã đóng. Cần kiểm tra thêm thời điểm đề nghị và việc bạn có tiếp tục tham gia BHXH ở nơi khác hay không.",
-  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 102]\n[Luật BHXH 2024 (41/2024/QH15), Điều 110]"
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 102]\n[Luật BHXH 2024 (41/2024/QH15), Điều 110]",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A60",
+    "L41_2024.A60.K1"
+  ]
 }

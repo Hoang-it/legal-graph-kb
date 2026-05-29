@@ -43,38 +43,80 @@ DEVICE = os.getenv("EMBED_DEVICE", "cuda")
 BATCH_SIZE = int(os.getenv("EMBED_BATCH_SIZE", "16"))  # 16 an toàn cho RTX 3050 4GB
 
 GRAPH_PATH = Path("data/graph/processed/merged_graph.json")
-OUT_PATH = Path("data/graph/processed/embeddings.parquet")
+DEFAULT_OUT_PATH = Path("data/graph/processed/embeddings.parquet")
 
 # Labels có embedding (units văn bản)
 EMBED_LABELS = ("Article", "Clause", "Point")
 
 
 def collect_units(graph: dict) -> list[dict]:
-    """Lấy tất cả Article / Clause / Point có text non-empty."""
+    """Lấy tất cả Article / Clause / Point có text non-empty.
+
+    Clause và Point được enrich với Article title làm prefix để embedding
+    có đủ ngữ cảnh pháp lý, tránh tình trạng clause ngắn bị decontextualized.
+
+    Format:
+      Article  → text gốc (đã có "Điều N. Title\\n..." ở đầu)
+      Clause   → "Điều N. Title\\nKhoản K: {text}"
+      Point    → "Điều N. Title\\nKhoản K, Điểm x: {text}"
+    """
+    article_by_id: dict[str, dict] = {
+        n["id"]: n for n in graph["nodes"].get("Article", [])
+    }
+    clause_by_id: dict[str, dict] = {
+        n["id"]: n for n in graph["nodes"].get("Clause", [])
+    }
+
     units: list[dict] = []
-    for label in EMBED_LABELS:
-        for n in graph["nodes"].get(label, []):
-            text = (n.get("text") or "").strip()
-            if not text:
-                continue
-            units.append(
-                {
-                    "id": n["id"],
-                    "label": label,
-                    "text": text,
-                }
+
+    for n in graph["nodes"].get("Article", []):
+        text = (n.get("text") or "").strip()
+        if not text:
+            continue
+        units.append({"id": n["id"], "label": "Article", "text": text, "embed_text": text})
+
+    for n in graph["nodes"].get("Clause", []):
+        text = (n.get("text") or "").strip()
+        if not text:
+            continue
+        art = article_by_id.get(n.get("article_id", ""), {})
+        art_num = str(art.get("number", "")).strip()
+        art_title = (art.get("title") or "").strip()
+        if art_num and art_title:
+            embed_text = f"Điều {art_num}. {art_title}\nKhoản {n['number']}: {text}"
+        else:
+            embed_text = text
+        units.append({"id": n["id"], "label": "Clause", "text": text, "embed_text": embed_text})
+
+    for n in graph["nodes"].get("Point", []):
+        text = (n.get("text") or "").strip()
+        if not text:
+            continue
+        clause = clause_by_id.get(n.get("clause_id", ""), {})
+        art = article_by_id.get(clause.get("article_id", ""), {})
+        art_num = str(art.get("number", "")).strip()
+        art_title = (art.get("title") or "").strip()
+        cl_num = str(clause.get("number", "")).strip()
+        if art_num and art_title:
+            embed_text = (
+                f"Điều {art_num}. {art_title}\n"
+                f"Khoản {cl_num}, Điểm {n['letter']}: {text}"
             )
+        else:
+            embed_text = text
+        units.append({"id": n["id"], "label": "Point", "text": text, "embed_text": embed_text})
+
     return units
 
 
-def encode_all(units: list[dict], model) -> np.ndarray:
-    """Encode toàn bộ units (chuẩn hoá L2)."""
-    texts = [u["text"] for u in units]
-    print(f"Encoding {len(texts)} texts (batch_size={BATCH_SIZE}, device={DEVICE})...")
+def encode_all(units: list[dict], model, batch_size: int = BATCH_SIZE) -> np.ndarray:
+    """Encode toàn bộ units dùng embed_text (chuẩn hoá L2)."""
+    texts = [u["embed_text"] for u in units]
+    print(f"Encoding {len(texts)} texts (batch_size={batch_size}, device={DEVICE})...")
     t0 = time.time()
     embeddings = model.encode(
         texts,
-        batch_size=BATCH_SIZE,
+        batch_size=batch_size,
         show_progress_bar=True,
         normalize_embeddings=True,
         convert_to_numpy=True,
@@ -90,6 +132,7 @@ def save_parquet(units: list[dict], embeddings: np.ndarray, out: Path) -> None:
             "id": [u["id"] for u in units],
             "label": [u["label"] for u in units],
             "text_preview": [u["text"][:200] for u in units],
+            "embed_text_preview": [u["embed_text"][:200] for u in units],
             # Convert mỗi vector thành list[float] để parquet/Neo4j parse tốt
             "embedding": [e.astype(np.float32).tolist() for e in embeddings],
         }
@@ -152,17 +195,38 @@ def sanity_check(units: list[dict], embeddings: np.ndarray) -> None:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="B5 — Embedding với BGE-M3")
+    parser = argparse.ArgumentParser(description="B5 — Embedding với BGE-M3 (vanilla or LoRA-adapted)")
     parser.add_argument("--force", action="store_true", help="Bỏ qua cache, encode lại từ đầu.")
     parser.add_argument("--limit", type=int, default=0, help="Chỉ encode N unit đầu tiên (debug).")
+    parser.add_argument(
+        "--adapter-path",
+        type=Path,
+        default=None,
+        help="Path tới LoRA adapter directory (chứa adapter_config.json). "
+             "Khi set, encode bằng BGE-M3 + adapter merged.",
+    )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=DEFAULT_OUT_PATH,
+        help=f"Parquet output path. Default {DEFAULT_OUT_PATH}. "
+             "Convention khi dùng --adapter-path: embeddings_tuned.parquet",
+    )
+    parser.add_argument(
+        "--batch-size",
+        type=int,
+        default=BATCH_SIZE,
+        help=f"Encode batch size. Default {BATCH_SIZE}.",
+    )
     args = parser.parse_args()
 
     if not GRAPH_PATH.exists():
         print(f"FAIL: thiếu {GRAPH_PATH}. Chạy B4 (merge_normalize) trước.", file=sys.stderr)
         return 1
 
-    if OUT_PATH.exists() and not args.force:
-        print(f"OK — {OUT_PATH} đã tồn tại. Dùng --force để encode lại.")
+    out_path: Path = args.output
+    if out_path.exists() and not args.force:
+        print(f"OK — {out_path} đã tồn tại. Dùng --force để encode lại.")
         return 0
 
     print(f"Loading graph from {GRAPH_PATH}...")
@@ -179,25 +243,24 @@ def main() -> int:
         units = units[: args.limit]
         print(f"\n[DEBUG] Limit {args.limit} units")
 
-    print(f"\nLoading {MODEL_NAME} on {DEVICE}...")
-    # Lazy import (sentence_transformers tải chậm)
-    from sentence_transformers import SentenceTransformer
+    # Centralised loader handles both vanilla and LoRA-adapter cases.
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    from src.bge_m3_loader import load_bge_m3
 
-    t0 = time.time()
-    model = SentenceTransformer(MODEL_NAME, device=DEVICE)
-    print(
-        f"  Model loaded in {time.time() - t0:.1f}s, dim={model.get_sentence_embedding_dimension()}"
-    )
-    if model.get_sentence_embedding_dimension() != EMBED_DIM:
+    print()
+    model = load_bge_m3(adapter_path=args.adapter_path, base_model=MODEL_NAME, device=DEVICE)
+    actual_dim = model.get_sentence_embedding_dimension()
+    print(f"  dim={actual_dim}")
+    if actual_dim != EMBED_DIM:
         print(
-            f"FAIL: model dim ({model.get_sentence_embedding_dimension()}) != EMBED_DIM ({EMBED_DIM})",
+            f"FAIL: model dim ({actual_dim}) != EMBED_DIM ({EMBED_DIM})",
             file=sys.stderr,
         )
         return 2
 
-    embeddings = encode_all(units, model)
+    embeddings = encode_all(units, model, batch_size=args.batch_size)
     sanity_check(units, embeddings)
-    save_parquet(units, embeddings, OUT_PATH)
+    save_parquet(units, embeddings, out_path)
     return 0
 
 

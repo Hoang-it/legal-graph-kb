@@ -3,16 +3,8 @@
   "stt": 87,
   "question": "Lúc trước mình có lm CTY cũ đc 4 tháng. Có đóng BH từ 7 đến 10 . Năm 2025 lúc đó mình bầu đc 1 tháng qua rồi qua CTY mới làm từ 11 năm 2025 đến giờ gần 6 tháng. Cũng đóng BH . Như vậy thì nếu mình đóng đủ 6 tháng có nhận đc tiền thai sản ko?",
   "answer": "[Pipeline không trả về kết luận. prolog_status=syntax_error, repair_rounds=2, error=ERROR: c:/users/admin/appdata/local/temp/tmp2t17wb6b.pl:2:969: Syntax error: Operator expected]",
-  "citations": [
-    "[Điều 50 khoản 4]",
-    "[Điều 59 khoản 1]",
-    "[Điều 53 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A50.K4",
-    "L41_2024.A59.K1",
-    "L41_2024.A53.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     1
   ],
@@ -26,5 +18,10 @@
   "completion_tokens": 2155,
   "error": null,
   "gold_answer": "Nếu trong 12 tháng trước khi sinh bạn đã đóng BHXH bắt buộc đủ từ 6 tháng trở lên thì được hưởng thai sản. Thời gian 4 tháng ở công ty cũ và gần 6 tháng ở công ty mới có thể cộng lại nếu đều là thời gian đóng BHXH bắt buộc hợp pháp trong khoảng 12 tháng trước sinh. Vì vậy, nếu tổng đủ 6 tháng trong khoảng tính luật định thì bạn có thể được hưởng thai sản, kể cả đã chuyển công ty.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 50"
+  "gold_citations_raw": "Luật BHXH 2024 Điều 50",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A50.K4",
+    "L41_2024.A59.K1",
+    "L41_2024.A53.K1"
+  ]
 }

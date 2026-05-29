@@ -1,0 +1,191 @@
+{
+  "arm": "graphrag_v5",
+  "stt": 20,
+  "question": "Vợ chồng bà Hải Bắc làm chung một cơ quan, đã đóng BHXH trên 3 năm.\nBà Bắc hỏi, khi bà nghỉ sinh con thì chồng của bà có được hưởng tiền trợ cấp thai sản không?",
+  "answer": "Chồng của bà Bắc có thể được hưởng tiền trợ cấp thai sản khi bà nghỉ sinh con, nhưng chỉ trong một số trường hợp nhất định. Cụ thể, nếu bà Bắc mang thai hộ và sinh con, thì chồng bà sẽ được nghỉ việc hưởng chế độ thai sản theo quy định. Tuy nhiên, nếu bà Bắc là người sinh con thì chồng bà không được hưởng trợ cấp thai sản mà chỉ có bà mới được hưởng theo quy định của pháp luật về bảo hiểm xã hội.\n\nTheo quy định, chồng của lao động nữ mang thai hộ sẽ được nghỉ việc hưởng chế độ thai sản khi vợ sinh con, còn trong trường hợp lao động nữ sinh con thì chỉ lao động nữ được hưởng chế độ thai sản theo quy định của pháp luật về bảo hiểm xã hội. \n\nDo đó, nếu bà Bắc là người sinh con, chồng bà sẽ không được hưởng tiền trợ cấp thai sản.\n\nCác điều luật liên quan:\n- [Luật BHXH 2024 (41/2024/QH15), Điều 54 khoản 4]\n- [Bộ luật Lao động 2019 (45/2019/QH14), Điều 139 khoản 2]",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 54 khoản 4]",
+    "[Bộ luật Lao động 2019 (45/2019/QH14), Điều 139 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A54.K4",
+    "L45_2019.A139.K2"
+  ],
+  "citation_verified": {
+    "L41_2024.A54.K4": true,
+    "L41_2024.A139.K2": true,
+    "L45_2019.A139.K2": true
+  },
+  "n_final_hits": 12,
+  "n_seeds": 15,
+  "n_neighbors_added": 5,
+  "retrieval_audit": {
+    "event_date": "2026-05-29",
+    "n_dense": 30,
+    "n_sparse": 30,
+    "n_after_temporal": 32,
+    "n_after_fusion": 32,
+    "n_dropped_by_temporal": 11
+  },
+  "hits": [
+    {
+      "rank": 1,
+      "rerank2_score": 0.9132,
+      "kind": "seed",
+      "clause_id": "L41_2024.A54.K4",
+      "article_id": "L41_2024.A54",
+      "law_id": "L41_2024",
+      "article_n": 54,
+      "article_title": "Chế độ thai sản của lao động nữ mang thai hộ",
+      "clause_n": 4,
+      "rerank1_score": 0.9131687879562378
+    },
+    {
+      "rank": 2,
+      "rerank2_score": 0.8849,
+      "kind": "seed",
+      "clause_id": "L45_2019.A139.K2",
+      "article_id": "L45_2019.A139",
+      "law_id": "L45_2019",
+      "article_n": 139,
+      "article_title": "Nghỉ thai sản",
+      "clause_n": 2,
+      "rerank1_score": 0.8848822116851807
+    },
+    {
+      "rank": 3,
+      "rerank2_score": 0.8604,
+      "kind": "seed",
+      "clause_id": "L41_2024.A55.K1",
+      "article_id": "L41_2024.A55",
+      "law_id": "L41_2024",
+      "article_n": 55,
+      "article_title": "Chế độ thai sản của lao động nữ nhờ mang thai hộ",
+      "clause_n": 1,
+      "rerank1_score": 0.8604488372802734
+    },
+    {
+      "rank": 4,
+      "rerank2_score": 0.8025,
+      "kind": "seed",
+      "clause_id": "L41_2024.A94.K1",
+      "article_id": "L41_2024.A94",
+      "law_id": "L41_2024",
+      "article_n": 94,
+      "article_title": "Đối tượng và điều kiện hưởng trợ cấp thai sản",
+      "clause_n": 1,
+      "rerank1_score": 0.8024918437004089
+    },
+    {
+      "rank": 5,
+      "rerank2_score": 0.7897,
+      "kind": "seed",
+      "clause_id": "L41_2024.A53.K1",
+      "article_id": "L41_2024.A53",
+      "law_id": "L41_2024",
+      "article_n": 53,
+      "article_title": "Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con",
+      "clause_n": 1,
+      "rerank1_score": 0.789732038974762
+    },
+    {
+      "rank": 6,
+      "rerank2_score": 0.7771,
+      "kind": "seed",
+      "clause_id": "L41_2024.A95.K1",
+      "article_id": "L41_2024.A95",
+      "law_id": "L41_2024",
+      "article_n": 95,
+      "article_title": "Trợ cấp thai sản",
+      "clause_n": 1,
+      "rerank1_score": 0.7771334648132324
+    },
+    {
+      "rank": 7,
+      "rerank2_score": 0.736,
+      "kind": "seed",
+      "clause_id": "L41_2024.A61.K7",
+      "article_id": "L41_2024.A61",
+      "law_id": "L41_2024",
+      "article_n": 61,
+      "article_title": "Hồ sơ đề nghị hưởng chế độ thai sản",
+      "clause_n": 7,
+      "rerank1_score": 0.7359790205955505
+    },
+    {
+      "rank": 8,
+      "rerank2_score": 0.7124,
+      "kind": "seed",
+      "clause_id": "L41_2024.A55.K2",
+      "article_id": "L41_2024.A55",
+      "law_id": "L41_2024",
+      "article_n": 55,
+      "article_title": "Chế độ thai sản của lao động nữ nhờ mang thai hộ",
+      "clause_n": 2,
+      "rerank1_score": 0.7124316692352295
+    },
+    {
+      "rank": 9,
+      "rerank2_score": 0.6681,
+      "kind": "seed",
+      "clause_id": "L41_2024.A53.K7",
+      "article_id": "L41_2024.A53",
+      "law_id": "L41_2024",
+      "article_n": 53,
+      "article_title": "Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con",
+      "clause_n": 7,
+      "rerank1_score": 0.6681498289108276
+    },
+    {
+      "rank": 10,
+      "rerank2_score": 0.6613,
+      "kind": "seed",
+      "clause_id": "L41_2024.A94.K3",
+      "article_id": "L41_2024.A94",
+      "law_id": "L41_2024",
+      "article_n": 94,
+      "article_title": "Đối tượng và điều kiện hưởng trợ cấp thai sản",
+      "clause_n": 3,
+      "rerank1_score": 0.6612741947174072
+    },
+    {
+      "rank": 11,
+      "rerank2_score": 0.6567,
+      "kind": "seed",
+      "clause_id": "L41_2024.A52.K2",
+      "article_id": "L41_2024.A52",
+      "law_id": "L41_2024",
+      "article_n": 52,
+      "article_title": "Thời gian nghỉ việc hưởng chế độ thai sản khi sảy thai, phá thai, thai chết trong tử cung, thai chết trong khi chuyển dạ, thai ngoài tử cung",
+      "clause_n": 2,
+      "rerank1_score": 0.656735360622406
+    },
+    {
+      "rank": 12,
+      "rerank2_score": 0.6448,
+      "kind": "seed",
+      "clause_id": "L41_2024.A94.K2",
+      "article_id": "L41_2024.A94",
+      "law_id": "L41_2024",
+      "article_n": 94,
+      "article_title": "Đối tượng và điều kiện hưởng trợ cấp thai sản",
+      "clause_n": 2,
+      "rerank1_score": 0.6448063254356384
+    }
+  ],
+  "elapsed_s": 36.944,
+  "elapsed_breakdown": {
+    "retrieve": 0.319,
+    "rerank1": 16.554,
+    "expand": 0.026,
+    "rerank2": 10.971,
+    "llm": 9.064
+  },
+  "gold_answer": "Tại Điểm e Khoản 1 Điều 31 và Khoản 2 Điều 34 Luật BHXH năm 2014 quy định lao động nam đang đóng BHXH có vợ sinh con được nghỉ việc hưởng chế độ thai sản 5 ngày làm việc.\nTrường hợp vợ sinh con phải phẫu thuật, sinh con dưới 32 tuần tuổi được nghỉ 7 ngày làm việc. Trường hợp vợ sinh đôi thì được nghỉ 10 ngày làm việc, từ sinh ba trở lên thì cứ thêm mỗi con được nghỉ thêm 3 ngày làm việc.\nTrường hợp vợ sinh đôi trở lên mà phải phẫu thuật thì được nghỉ 14 ngày làm việc. Thời gian nghỉ việc hưởng chế độ thai sản quy định nêu trên được tính trong khoảng thời gian 30 ngày đầu kể từ ngày vợ sinh con.\nBHXH Việt Nam thông tin để bà Bắc nắm được các quyền lợi về chế độ thai sản.",
+  "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 31]\n[Luật BHXH 2014 (58/2014/QH13), Điều 34]",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A54.K4",
+    "L41_2024.A139.K2",
+    "L45_2019.A139.K2"
+  ]
+}

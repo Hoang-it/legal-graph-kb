@@ -3,12 +3,8 @@
   "stt": 100,
   "question": "Em đóng bh đc 3th tầm hơn 1tr. Bây h nghỉ việc, k có ý định làm lại thì có lấy lại đc khoản mình đã đóng không?",
   "answer": "Issue: Người dùng hỏi về khả năng lấy lại khoản tiền đã đóng bảo hiểm xã hội sau khi nghỉ việc và không có ý định làm lại.\n\nRule: \"Chiếm dụng tiền hưởng bảo hiểm xã hội, bảo hiểm thất nghiệp.\" (Luật BHXH 2024 (41/2024/QH15), article 9, clause 2)\n\nApplication: Không có giá trị nào được gán trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng người dùng có thể nhận lại khoản tiền đã đóng thông qua điều kiện [can_refund].\n\nConclusion: Prolog đã trả về giá trị \"can_refund\" cho biến Conditions, cho thấy người dùng có thể lấy lại khoản tiền đã đóng.",
-  "citations": [
-    "[Điều 9 khoản 2]"
-  ],
-  "citation_ids": [
-    "L41_2024.A9.K2"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -33,5 +29,8 @@
   "plain_answer_tokens": {
     "prompt_tokens": 1617,
     "completion_tokens": 228
-  }
+  },
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A9.K2"
+  ]
 }

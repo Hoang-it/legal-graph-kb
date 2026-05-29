@@ -3,18 +3,8 @@
   "stt": 159,
   "question": "tiền dưỡng sức sau sinh bao lâu thì mình nhận được?",
   "answer": "Issue: Tiền dưỡng sức sau sinh bao lâu thì mình nhận được?\n\nRule: \"Trong thời gian 30 ngày kể từ ngày hết thời gian nghỉ việc hưởng chế độ thai sản quy định tại Điều 52, khoản 1 hoặc khoản 4 Điều 53, điểm a khoản 3 Điều 54 của Luật này, lao động nữ chưa phục hồi sức khỏe thì được nghỉ dưỡng sức, phục hồi sức khoẻ.\" (Luật BHXH 2024 (41/2024/QH15), Điều 60, Khoản 1)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã xác định rằng thời gian nghỉ dưỡng sức là 30 ngày dựa trên quy định trong luật.\n\nConclusion: Prolog đã trả về giá trị 30 cho biến Answer, cho biết thời gian nhận tiền dưỡng sức sau sinh là 30 ngày.",
-  "citations": [
-    "[Điều 52 khoản 1]",
-    "[Điều 53 điểm a]",
-    "[Điều 54]",
-    "[Điều 60 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A52.K1",
-    "L41_2024.A53",
-    "L41_2024.A54",
-    "L41_2024.A60.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     1
   ],
@@ -33,5 +23,11 @@
   "completion_tokens": 394,
   "error": null,
   "gold_answer": "Tiền dưỡng sức sau sinh thường được chi trả sau khi hồ sơ được đơn vị và cơ quan BHXH giải quyết xong; thực tế nhiều nơi nhận trong vài tuần đến khoảng 10 ngày làm việc sau khi có quyết định. Điều kiện là trong 30 ngày đầu đi làm lại sau thai sản mà sức khỏe chưa phục hồi và được đơn vị lập danh sách đề nghị. Nếu công ty chậm nộp hồ sơ thì tiền sẽ chậm theo.",
-  "gold_citations_raw": "Điều 59, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH"
+  "gold_citations_raw": "Điều 59, 61 Luật BHXH 2024; Quyết định 166/QĐ-BHXH",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A52.K1",
+    "L41_2024.A53",
+    "L41_2024.A54",
+    "L41_2024.A60.K1"
+  ]
 }

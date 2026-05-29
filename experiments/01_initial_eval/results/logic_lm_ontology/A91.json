@@ -3,12 +3,8 @@
   "stt": 91,
   "question": "trường hợp nghỉ bệnh hưởng BHXH thì nộp hồ sơ trong vòng bao lâu sẽ được chi trả vậy?",
   "answer": "Issue: Trường hợp nghỉ bệnh hưởng BHXH thì nộp hồ sơ trong vòng bao lâu sẽ được chi trả vậy?\n\nRule: \"4. Tiếp nhận hồ sơ tham gia bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm thất nghiệp, bảo hiểm y tế và cấp sổ bảo hiểm xã hội, thẻ bảo hiểm y tế cho người lao động.\" (Luật BHXH 2024 (41/2024/QH15), Điều 18, Khoản 4)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog đã thực hiện truy vấn và trả về kết quả với điều kiện rằng \"Hồ sơ phải được nộp trong thời gian quy định để được chi trả đúng hạn.\"\n\nConclusion: Prolog đã trả về giá trị \"Hồ sơ phải được nộp trong thời gian quy định để được chi trả đúng hạn.\" với biến Conditions. Không có slot nào bị thiếu, và hệ thống đã có thể tính toán kết quả đầy đủ.",
-  "citations": [
-    "[Điều 18 khoản 4]"
-  ],
-  "citation_ids": [
-    "L41_2024.A18.K4"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 420,
   "error": null,
   "gold_answer": "Người lao động phải nộp hồ sơ hưởng ốm đau cho doanh nghiệp hoặc cơ quan BHXH theo thời hạn luật định sau khi trở lại làm việc; doanh nghiệp sau đó phải lập hồ sơ gửi cơ quan BHXH trong thời hạn quy định. Khi nhận đủ hồ sơ hợp lệ, cơ quan BHXH phải giải quyết và chi trả trong thời hạn luật quy định. Nếu hồ sơ kéo dài bất thường, bạn nên kiểm tra xem doanh nghiệp đã nộp hay chưa và hồ sơ y tế có hợp lệ không.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 46, Điều 116"
+  "gold_citations_raw": "Luật BHXH 2024 Điều 46, Điều 116",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A18.K4"
+  ]
 }

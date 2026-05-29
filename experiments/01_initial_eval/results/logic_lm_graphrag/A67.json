@@ -3,12 +3,8 @@
   "stt": 67,
   "question": "Công ty em có 1 nhân sự nghỉ thai sản nhưng báo giảm sai tháng (giảm đúng T12 nhưng báo giảm T11 và đã được duyệt). Em có báo On thai sản vào T11 để giảm lại T12 cho đúng nhưng BH không duyệt với lý do \"Nlđ nghỉ ts từ T11-T4 nên không phát sinh tăng vào T11 được\"\nGiờ mình phải làm sao?",
   "answer": "Issue: Công ty bạn gặp vấn đề về việc báo giảm sai tháng cho nhân sự nghỉ thai sản và không được bảo hiểm xã hội duyệt yêu cầu điều chỉnh.\n\nRule: \"Được nghỉ việc hưởng chế độ thai sản từ thời điểm nhận con cho đến khi con đủ 06 tháng tuổi. Trường hợp sinh đôi trở lên thì được nghỉ thêm 01 tháng cho mỗi con tính từ con thứ hai trở đi.\" (Luật BHXH 2024 (41/2024/QH15), Điều 55, Khoản 1)\n\nApplication: Không có giá trị nào được gán cho các slot trong truy vấn. Do đó, không có thông tin nào được sử dụng để thực hiện truy vấn.\n\nConclusion: Hệ thống không thể tính toán giá trị cuối cùng do không có giá trị nào được gán cho các slot.",
-  "citations": [
-    "[Điều 55 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A55.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 408,
   "error": null,
   "gold_answer": "Trường hợp đã báo giảm sai tháng và hồ sơ đã duyệt, bạn nên làm văn bản giải trình kèm hồ sơ điều chỉnh gửi cơ quan BHXH, nêu rõ NLĐ thực tế nghỉ thai sản từ tháng nào và đề nghị điều chỉnh dữ liệu thay vì báo tăng giả tạo rồi giảm lại. Cơ quan BHXH từ chối 'báo On' tháng 11 là hợp lý nếu NLĐ thực tế đang nghỉ thai sản trong toàn giai đoạn đó. Cách xử lý đúng là điều chỉnh hồ sơ đã sai, không tạo phát sinh không có thật.",
-  "gold_citations_raw": "Luật BHXH 2024 Điều 53; quy trình hồ sơ điện tử của BHXH Việt Nam"
+  "gold_citations_raw": "Luật BHXH 2024 Điều 53; quy trình hồ sơ điện tử của BHXH Việt Nam",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A55.K1"
+  ]
 }

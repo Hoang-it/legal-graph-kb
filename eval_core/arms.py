@@ -13,6 +13,7 @@ ALL_ARMS = (
     "logic_lm_no_retrieval",
     "logic_lm_ontology",
     "logic_lm_graphrag",
+    "graphrag_v5",
 )
 
 MAIN_EXPERIMENT_ARMS = (
@@ -21,6 +22,7 @@ MAIN_EXPERIMENT_ARMS = (
     "logic_lm_no_retrieval",
     "logic_lm_ontology",
     "logic_lm_graphrag",
+    "graphrag_v5",
 )
 
 

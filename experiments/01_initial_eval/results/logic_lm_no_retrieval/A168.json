@@ -3,12 +3,8 @@
   "stt": 168,
   "question": "Cho mình hỏi cuối tháng 4 mình bắt đầu làm công ty mới và đến cuối tháng 6 mình bắt đầu được đóng BHXH. Đầu tháng 5 thì mình mới xin được tờ rời và quyết định nghỉ việc của công ty cũ. Như thế thì mình có xin được trợ cấp thất nghiệp trong tháng 5 hoặc tháng 6 không?",
   "answer": "Issue: Người hỏi muốn biết liệu họ có đủ điều kiện nhận trợ cấp thất nghiệp trong tháng 5 hoặc tháng 6 sau khi bắt đầu làm việc tại công ty mới và có quyết định nghỉ việc từ công ty cũ.\n\nRule: \"Người lao động có quyền hưởng trợ cấp thất nghiệp khi chấm dứt hợp đồng lao động và có đủ điều kiện về thời gian đóng BHXH.\" (law_bhxh_2024, article_49, clause_1)\n\nApplication: Không có giá trị nào được gán cho các slot trong slot_bindings. Tuy nhiên, Prolog đã xác định rằng người hỏi đủ điều kiện nhận trợ cấp thất nghiệp trong tháng 5.\n\nConclusion: Prolog đã trả về giá trị \"may\" cho biến Month, cho thấy người hỏi có thể xin trợ cấp thất nghiệp trong tháng 5. Không có giá trị nào khác được tính toán cho tháng 6.",
-  "citations": [
-    "[Điều 49 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A49.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [],
   "prolog_success": true,
   "prolog_status": "success",
@@ -25,5 +21,8 @@
   "completion_tokens": 493,
   "error": null,
   "gold_answer": "Bạn chỉ được nộp hồ sơ BHTN trong 03 tháng kể từ ngày chấm dứt HĐLĐ với công ty cũ. Nếu đến tháng 5 hoặc tháng 6 vẫn còn trong hạn 03 tháng và chưa có việc làm thuộc diện phải tham gia BHTN thì có thể nộp. Tuy nhiên nếu cuối tháng 4 đã vào công ty mới và đến thời điểm nộp hồ sơ đã thuộc diện phải tham gia BHTN ở nơi mới thì nguy cơ không đủ điều kiện hưởng.",
-  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+  "gold_citations_raw": "Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A49.K1"
+  ]
 }

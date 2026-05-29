@@ -3,14 +3,8 @@
   "stt": 174,
   "question": "Nữ sinh 13/6/1974, e làm công nhân may, đã đóng bảo hiểm được 30 năm, theo quy định thì 6/2026 là e đủ điều kiện được về hưu, tháng 8/2025 e đã làm để hưởng bảo hiểm thất nghiệp và vẫn hưởng đến nay. E muốn hỏi , sau khi hưởng nốt thất nghiệp của tháng 5/2026 thì e đi làm thủ tục cắt hỗ trợ thất nghiệp sau đó e nộp hồ sơ để hưởng lương hưu luôn để được hưởng lương hưu từ tháng 6/2026 thì có được không?",
   "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'pension_application_timing(user']",
-  "citations": [
-    "[Điều 141 khoản 9]",
-    "[Điều 79 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A141.K9",
-    "L41_2024.A79.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0,
     1
@@ -25,5 +19,9 @@
   "completion_tokens": 1296,
   "error": null,
   "gold_answer": "Bạn cần phân biệt thời điểm đủ điều kiện hưu và thời điểm bắt đầu hưởng hưu. Khi đang hưởng BHTN, nếu đủ điều kiện và làm thủ tục để hưởng lương hưu thì TCTN sẽ bị chấm dứt từ thời điểm hưởng lương hưu. Vì vậy về nguyên tắc có thể làm thủ tục để nối sang chế độ hưu, nhưng cần tính đúng mốc tháng bắt đầu hưởng hưu để không chồng chéo hoặc bị thu hồi.",
-  "gold_citations_raw": "Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013"
+  "gold_citations_raw": "Điều 64, 66 Luật BHXH 2024; Điều 169 Bộ luật Lao động 2019; Nghị định 135/2020/NĐ-CP; Điều 38-40 Luật Việc làm 2025; Điều 46, 49, 50 Luật Việc làm 2013",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A141.K9",
+    "L41_2024.A79.K1"
+  ]
 }

@@ -1,0 +1,185 @@
+{
+  "arm": "graphrag_v5",
+  "stt": 25,
+  "question": "Bà Nguyễn Anh (Vĩnh Long) đóng BHXH được 10 năm, nghỉ việc tháng 9/2025.\nTháng 11/2025, bà sinh con, vậy bà có được hưởng chế độ thai sản hay không? Tại địa bàn tỉnh Vĩnh Long, sinh con trước 35 tuổi có được hưởng chế độ gì không?",
+  "answer": "Bà Nguyễn Anh có đủ điều kiện để hưởng chế độ thai sản. Theo quy định, đối tượng có thời gian đóng bảo hiểm xã hội từ đủ 06 tháng trở lên trong thời gian 12 tháng trước khi sinh con sẽ được hưởng trợ cấp thai sản. Bà đã đóng bảo hiểm xã hội được 10 năm, do đó đủ điều kiện này.\n\nVề việc sinh con trước 35 tuổi, theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Luật BHXH 2024 (41/2024/QH15), Điều 50 khoản 4]\n- [Luật BHXH 2024 (41/2024/QH15), Điều 94 khoản 1]",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 50 khoản 4]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 94 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A50.K4",
+    "L41_2024.A94.K1"
+  ],
+  "citation_verified": {
+    "L41_2024.A50.K4": true,
+    "L41_2024.A94.K1": true
+  },
+  "n_final_hits": 12,
+  "n_seeds": 15,
+  "n_neighbors_added": 2,
+  "retrieval_audit": {
+    "event_date": "2025-12-31",
+    "n_dense": 30,
+    "n_sparse": 30,
+    "n_after_temporal": 24,
+    "n_after_fusion": 24,
+    "n_dropped_by_temporal": 17
+  },
+  "hits": [
+    {
+      "rank": 1,
+      "rerank2_score": 0.9082,
+      "kind": "seed",
+      "clause_id": "L41_2024.A50.K4",
+      "article_id": "L41_2024.A50",
+      "law_id": "L41_2024",
+      "article_n": 50,
+      "article_title": "Đối tượng và điều kiện hưởng chế độ thai sản",
+      "clause_n": 4,
+      "rerank1_score": 0.9081577658653259
+    },
+    {
+      "rank": 2,
+      "rerank2_score": 0.8996,
+      "kind": "seed",
+      "clause_id": "L45_2019.A139.K2",
+      "article_id": "L45_2019.A139",
+      "law_id": "L45_2019",
+      "article_n": 139,
+      "article_title": "Nghỉ thai sản",
+      "clause_n": 2,
+      "rerank1_score": 0.8995678424835205
+    },
+    {
+      "rank": 3,
+      "rerank2_score": 0.8952,
+      "kind": "seed",
+      "clause_id": "L41_2024.A55.K1",
+      "article_id": "L41_2024.A55",
+      "law_id": "L41_2024",
+      "article_n": 55,
+      "article_title": "Chế độ thai sản của lao động nữ nhờ mang thai hộ",
+      "clause_n": 1,
+      "rerank1_score": 0.8951836228370667
+    },
+    {
+      "rank": 4,
+      "rerank2_score": 0.8533,
+      "kind": "seed",
+      "clause_id": "L41_2024.A53.K1",
+      "article_id": "L41_2024.A53",
+      "law_id": "L41_2024",
+      "article_n": 53,
+      "article_title": "Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con",
+      "clause_n": 1,
+      "rerank1_score": 0.8533326387405396
+    },
+    {
+      "rank": 5,
+      "rerank2_score": 0.7993,
+      "kind": "seed",
+      "clause_id": "L45_2019.A139.K5",
+      "article_id": "L45_2019.A139",
+      "law_id": "L45_2019",
+      "article_n": 139,
+      "article_title": "Nghỉ thai sản",
+      "clause_n": 5,
+      "rerank1_score": 0.7993237972259521
+    },
+    {
+      "rank": 6,
+      "rerank2_score": 0.7954,
+      "kind": "seed",
+      "clause_id": "L41_2024.A53.K8",
+      "article_id": "L41_2024.A53",
+      "law_id": "L41_2024",
+      "article_n": 53,
+      "article_title": "Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con",
+      "clause_n": 8,
+      "rerank1_score": 0.7953759431838989
+    },
+    {
+      "rank": 7,
+      "rerank2_score": 0.7056,
+      "kind": "seed",
+      "clause_id": "L41_2024.A94.K1",
+      "article_id": "L41_2024.A94",
+      "law_id": "L41_2024",
+      "article_n": 94,
+      "article_title": "Đối tượng và điều kiện hưởng trợ cấp thai sản",
+      "clause_n": 1,
+      "rerank1_score": 0.7055826783180237
+    },
+    {
+      "rank": 8,
+      "rerank2_score": 0.6966,
+      "kind": "seed",
+      "clause_id": "L41_2024.A54.K4",
+      "article_id": "L41_2024.A54",
+      "law_id": "L41_2024",
+      "article_n": 54,
+      "article_title": "Chế độ thai sản của lao động nữ mang thai hộ",
+      "clause_n": 4,
+      "rerank1_score": 0.696573793888092
+    },
+    {
+      "rank": 9,
+      "rerank2_score": 0.6782,
+      "kind": "seed",
+      "clause_id": "L41_2024.A52.K2",
+      "article_id": "L41_2024.A52",
+      "law_id": "L41_2024",
+      "article_n": 52,
+      "article_title": "Thời gian nghỉ việc hưởng chế độ thai sản khi sảy thai, phá thai, thai chết trong tử cung, thai chết trong khi chuyển dạ, thai ngoài tử cung",
+      "clause_n": 2,
+      "rerank1_score": 0.6782283782958984
+    },
+    {
+      "rank": 10,
+      "rerank2_score": 0.6764,
+      "kind": "seed",
+      "clause_id": "L41_2024.A61.K2",
+      "article_id": "L41_2024.A61",
+      "law_id": "L41_2024",
+      "article_n": 61,
+      "article_title": "Hồ sơ đề nghị hưởng chế độ thai sản",
+      "clause_n": 2,
+      "rerank1_score": 0.6763713955879211
+    },
+    {
+      "rank": 11,
+      "rerank2_score": 0.6542,
+      "kind": "seed",
+      "clause_id": "L41_2024.A53.K2",
+      "article_id": "L41_2024.A53",
+      "law_id": "L41_2024",
+      "article_n": 53,
+      "article_title": "Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con",
+      "clause_n": 2,
+      "rerank1_score": 0.6542403101921082
+    },
+    {
+      "rank": 12,
+      "rerank2_score": 0.644,
+      "kind": "seed",
+      "clause_id": "L41_2024.A56.K1",
+      "article_id": "L41_2024.A56",
+      "law_id": "L41_2024",
+      "article_n": 56,
+      "article_title": "Chế độ thai sản khi nhận nuôi con nuôi dưới 06 tháng tuổi",
+      "clause_n": 1,
+      "rerank1_score": 0.6440021991729736
+    }
+  ],
+  "elapsed_s": 29.685,
+  "elapsed_breakdown": {
+    "retrieve": 0.134,
+    "rerank1": 12.113,
+    "expand": 0.016,
+    "rerank2": 11.335,
+    "llm": 6.082
+  },
+  "gold_answer": "Căn cứ khoản 2, 3, 5 Điều 50 Luật BHXH năm 2024:\n\"Điều 50. Đối tượng và điều kiện hưởng chế độ thai sản\n… 2. Đối tượng quy định tại các điểm b, c, d và đ khoản 1 Điều này phải đóng bảo hiểm xã hội bắt buộc từ đủ 06 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con hoặc nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 06 tháng tuổi.\n3. Đối tượng quy định tại điểm b và điểm c khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 12 tháng trở lên mà khi mang thai phải nghỉ việc để dưỡng thai theo chỉ định của người hành nghề khám bệnh, chữa bệnh thuộc cơ sở khám bệnh, chữa bệnh thì phải đóng bảo hiểm xã hội bắt buộc từ đủ 03 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con.\n… 5. Đối tượng quy định tại điểm b khoản 1 Điều này đã đóng bảo hiểm xã hội bắt buộc từ đủ 06 tháng trở lên trong thời gian 24 tháng liền kề trước khi sinh con đối với trường hợp phải nghỉ việc để điều trị vô sinh\".\nNhư vậy, căn cứ quy định trên trong trường hợp bình thường thì bà Nguyễn Anh nếu đã đóng BHXH từ đủ 6 tháng trở lên trong thời hạn 12 tháng liền kề trước khi sinh là đủ điều kiện hưởng thai sản.\nTrường hợp phải nghỉ việc dưỡng thai theo chỉ định của người hành nghề khám bệnh, chữa bệnh thì đóng BHXH từ đủ 3 tháng trong thời hạn 12 tháng liền kề trước khi sinh là đủ điều kiện.\nTrường hợp phải nghỉ việc điều trị vô sinh thì đóng BHXH từ đủ 6 tháng trở lên trong thời hạn 24 tháng liền kề trước khi sinh là đủ điều kiện.\nVề chế độ sinh con trước 35 tuổi trên địa bàn tỉnh Vĩnh Long, đề nghị bà liên hệ với UBND xã, phường nơi cư trú để được hướng dẫn cụ thể.",
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+}

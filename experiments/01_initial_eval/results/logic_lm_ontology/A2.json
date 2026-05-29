@@ -4,14 +4,8 @@
   "question": "Bà Minh Châu (Long An) ký hợp đồng lao động theo diện làm việc bán thời gian.\nBà Châu hỏi, bà có được mua BHXH bắt buộc theo đối tượng cá nhân không? Nếu được thì mức đóng được tính như thế nào?",
   "answer": "[Pipeline không trả về kết luận. prolog_status=invalid_query, repair_rounds=2, error=query argument must be variable or user, got 'insurance_contribution_rate(ContributionRate']",
   "plain_answer": "",
-  "citations": [
-    "[Luật BHXH 2024 (41/2024/QH15), Điều 2 khoản 1]",
-    "[Luật BHXH 2024 (41/2024/QH15), Điều 33 khoản 2]"
-  ],
-  "citation_ids": [
-    "L41_2024.A2.K1",
-    "L41_2024.A33.K2"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0,
     1
@@ -28,5 +22,9 @@
   "completion_tokens": 1107,
   "error": null,
   "gold_answer": "Pháp luật về BHXH hiện hành không có quy định đối với trường hợp người lao động tự tham gia BHXH bắt buộc.\nDo vậy, trường hợp của bà ký hợp đồng lao động làm việc không trọn thời gian, không thuộc đối tượng tham gia BHXH bắt buộc thì có thể liên hệ tới cơ quan BHXH tại nơi cư trú để tham gia BHXH tự nguyện.",
-  "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 2]"
+  "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 2]",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A2.K1",
+    "L41_2024.A33.K2"
+  ]
 }

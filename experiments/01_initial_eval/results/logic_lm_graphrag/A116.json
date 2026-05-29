@@ -3,12 +3,8 @@
   "stt": 116,
   "question": "Đi làm công ty mức lương: 5tr5 mà cty bắt đóng bảo hiểm 1tr700 là sao?",
   "answer": "Issue: Người lao động có mức lương 5 triệu 500 nghìn đồng nhưng công ty yêu cầu đóng bảo hiểm 1 triệu 700 nghìn đồng. Tại sao lại như vậy?\n\nRule: \"Người lao động đóng theo quy định.\" (Luật BHXH 2024 (41/2024/QH15), Điều 117, Khoản 2)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Tuy nhiên, Prolog đã sử dụng các thông tin về mức lương trung bình và số tiền đóng bảo hiểm để đưa ra kết luận.\n\nConclusion: Hệ thống không thể tính toán một số cuối cùng vì không có giá trị nào được gán cho các slot.",
-  "citations": [
-    "[Điều 117 khoản 2]"
-  ],
-  "citation_ids": [
-    "L41_2024.A117.K2"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 462,
   "error": null,
   "gold_answer": "Nếu lương đóng BHXH là 5,5 triệu thì phần người lao động phải đóng BHXH, BHYT, BHTN thông thường khoảng 10,5%, tức khoảng 577.500 đồng/tháng; doanh nghiệp đóng thêm phần của họ. Nếu công ty đang trừ bạn 1,7 triệu thì cần yêu cầu bảng tính cụ thể vì có thể đang trừ cả phần doanh nghiệp, truy thu tháng cũ hoặc trừ sai. Công ty không được bắt NLĐ gánh phần nghĩa vụ của NSDLĐ.",
-  "gold_citations_raw": "Điều 13, 14 Luật BHXH 2024; Luật BHYT; Luật Việc làm 2013/2025"
+  "gold_citations_raw": "Điều 13, 14 Luật BHXH 2024; Luật BHYT; Luật Việc làm 2013/2025",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A117.K2"
+  ]
 }

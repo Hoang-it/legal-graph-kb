@@ -3,12 +3,8 @@
   "stt": 133,
   "question": "Làm sao để đăng ký Bhxh không hướng lượng cho chủ doanh nghiệp?",
   "answer": "Issue: Làm sao để đăng ký Bhxh không hướng lượng cho chủ doanh nghiệp?\n\nRule: \"Từ chối thực hiện yêu cầu không đúng quy định của pháp luật về bảo hiểm xã hội.\" (Luật BHXH 2024 (41/2024/QH15), Điều 12, Khoản 1)\n\nApplication: Không có giá trị nào được gán cho các slot trong trường hợp này. Prolog không thể thực hiện truy vấn do thiếu thông tin cần thiết.\n\nConclusion: Hệ thống không thể tính toán số liệu cuối cùng vì không có giá trị nào được gán cho các slot.",
-  "citations": [
-    "[Điều 12 khoản 1]"
-  ],
-  "citation_ids": [
-    "L41_2024.A12.K1"
-  ],
+  "citations": [],
+  "citation_ids": [],
   "citation_indices": [
     0
   ],
@@ -27,5 +23,8 @@
   "completion_tokens": 331,
   "error": null,
   "gold_answer": "Nếu bạn là chủ doanh nghiệp/chủ hộ thuộc diện tham gia BHXH bắt buộc theo quy định mới thì phải đăng ký tham gia tại cơ quan BHXH qua đơn vị hoặc mã đơn vị của doanh nghiệp/hộ kinh doanh. Khái niệm 'không hưởng lương' chỉ ảnh hưởng căn cứ đóng ở từng nhóm đối tượng, không phải ai cũng được tự chọn không tham gia. Bạn nên đối chiếu đúng loại hình doanh nghiệp và chức danh quản lý của mình.",
-  "gold_citations_raw": "Điều 2 Luật BHXH 2024; Nghị định 158/2025/NĐ-CP"
+  "gold_citations_raw": "Điều 2 Luật BHXH 2024; Nghị định 158/2025/NĐ-CP",
+  "citation_ids_pre_strict_parser": [
+    "L41_2024.A12.K1"
+  ]
 }

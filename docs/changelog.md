@@ -7,7 +7,100 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
+### Changed — citation parser strict mode (v5 Sprint 2 Phase 0a)
+
+**Rationale**: v5 Sprint 1 audit showed loose `parse_displayed_citations` cross-stream
+matching produced false positives (e.g. inline mention "Bộ luật Lao động" paired with
+"Điều 64" from a separate sentence → spurious `L45_2019.A64`). User-stated requirement:
+*"citation phải đúng luật, đúng điều khoản. ko thể đúng điều khoản mà sai luật được"*.
+
+**Change**: `src/citations.parse_displayed_citations` now accepts citations **only**
+when authority alias and `Điều X[ khoản Y[ điểm z]]` co-occur inside the **same**
+square-bracket `[...]` block. Inline mentions outside brackets, and brackets with
+multiple authorities, are rejected.
+
+**Impact on frozen baseline `experiments/01_initial_eval/`** (re-aggregated, skill Rule 2):
+
+| arm | recall_macro old (loose) | recall_macro new (strict) | Δ |
+|---|---:|---:|---:|
+| graphrag (own regex parser, untouched) | 0.1292 | 0.1120 | -0.017 (metric-engine drift only) |
+| llm_only | 0.0142 | 0.0067 | -0.0075 |
+| logic_lm_no_retrieval | — | 0.0023 | — |
+| logic_lm_ontology | — | 0.0073 | — |
+| logic_lm_graphrag | — | 0.0175 | — |
+
+**Impact on `experiments/03_v5_sprint1_vanilla/`** (graphrag_v5 arm re-aggregated):
+
+| metric | old (loose) | new (strict) | Δ |
+|---|---:|---:|---:|
+| recall_macro | 0.2361 | 0.2361 | 0 (no true positive dropped) |
+| precision_macro | 0.1867 | 0.2133 | +0.027 (+14% relative) |
+| f1_macro | 0.1915 | 0.2093 | +0.018 |
+
+**Why the asymmetry**: v5 vanilla prompt already enforced template emission; strict
+parser only dropped FPs. Logic-LM arms emit verbose IRAC text with inline mentions;
+strict mode rejects those mentions → recall tumbles. This reveals that prior numbers
+were partially-inflated by loose-mode catching inline cites; new numbers reflect what
+the LLM emits in canonical citation format.
+
+**Re-parse tool**: `scripts/reparse_citations.py` walks an experiment's records,
+re-parses `record["answer"]` with the current strict parser, and writes back
+`citation_ids` / `citations` (keeps the original list under
+`citation_ids_pre_strict_parser` for one-time audit).
+
+### Added — citation parser strict mode (Phase 0a continued)
+
+- `src/citations._BRACKET_BLOCK_RE` — only-source-of-truth regex for the new strict mode.
+- `prompts/runtime/graphrag_v5_system.md` rewritten to enforce template emission
+  with explicit DO/DON'T examples.
+
+### Added — v5 Sprint 2 Phase 0b: hash-sealed eval split
+
+- `scripts/seal_eval_split.py` — stratified 150 test / 50 dev split with SHA256 lock.
+- Strata (gold_citations_raw corpus type): in_corpus 151, mixed 5, ooc 9, unparseable 35.
+- Outputs (now exception-listed in `.gitignore`):
+  - `data/eval/questions_150_test.json` (n=150)
+  - `data/eval/questions_50_dev.json` (n=50)
+  - `data/eval/eval_split_hashes.json` (lock record)
+- Use `--verify` in CI to assert lock integrity.
+
+### Added — v5 Sprint 2 Phase 1: synthetic Q/clause training data
+
+- `prompts/offline/synthetic_query_gen.md` + `synthetic_pair_verifier.md`.
+- `offline/build_synthetic_qa.py` — async pipeline, idempotent, resumable. Per clause:
+  query generation → graph proximity candidates → vanilla BGE-M3 distance filter
+  → LLM verifier (YES/PARTIAL/NO) → multi-positive row with hard negatives + easy
+  random negatives. Eval-leak invariant: reads only `data/graph/processed/merged_graph.json`.
+- Output `data/finetune-bge/qa_pairs_v1.jsonl` (committed via `.gitignore` exception).
+- Cost estimate (1585 clauses, gpt-4o-mini): ~$5.2.
+
+### Added — v5 Sprint 2 Phase 2: Colab fine-tune notebook
+
+- `notebooks/finetune_bge_m3.ipynb` — single-notebook flow:
+  clone repo → style spot-check → LoRA (r=16) → train (2 epoch, MNRL) →
+  dev recall@K sanity → save adapter to Drive.
+- LoRA target_modules = `[query, key, value, dense]` on XLM-RoBERTa transformer
+  inside BGE-M3.
+
+### Added — v5 Sprint 2 Phase 3: tuned-index plumbing
+
+- `src/bge_m3_loader.py` — single loader for BGE-M3 with optional LoRA adapter,
+  used by both `offline/embed.py` and `src/retrieval/pipeline.py` so corpus
+  and query encoding stay symmetric.
+- `offline/embed.py` — `--adapter-path`, `--output`, `--batch-size` flags.
+- `offline/load_neo4j.py` — `--embeddings`, `--embed-prop`, `--embeddings-only`
+  flags so tuned vectors load into `n.embedding_tuned` next to vanilla
+  `n.embedding`.
+- `schema/schema.cypher` — added `article_vec_tuned`, `clause_vec_tuned`,
+  `point_vec_tuned` indexes (additive, `IF NOT EXISTS`).
+- `src/retrieval/hybrid_retriever.py` — `dense_index` / `sparse_index`
+  constructor params (default keeps Sprint 1 behaviour).
+- `src/retrieval/pipeline.py` — `adapter_path`, `dense_index`, `reranker_model`
+  constructor + env fall-backs (`BGE_M3_ADAPTER_PATH`, `V5_DENSE_INDEX`,
+  `V5_RERANKER_MODEL`). One env var flip swaps the entire encoding stack.
+
+### Added — academic metrics pipeline (original Unreleased line)
+
 - Academic metrics pipeline:
   `evaluation.compute_academic_metrics` core over preloaded record lists,
   experiment-owned result loading in `experiments.compute_academic_metrics`,
