@@ -28,7 +28,7 @@ The project has been refactored: the old `elite/` package was renamed to `logic_
 |---|---|
 | KG (Neo4j) | 543 Clauses, 141 Articles, vector index `clause_vec` (1024-d BGE-M3) |
 | Inference arms | `graphrag`, `llm_only`, `logic_lm_no_retrieval`, `logic_lm_ontology`, `logic_lm_graphrag` |
-| R1 / R2 results in `data/eval/results/` and `data/eval/multimodel/results/` | Committed |
+| R1 / R2 frozen baseline in `experiments/01_initial_eval/results/` and `.../results/multimodel/` | Committed |
 | Headline evaluation | Academic metrics only (citation recall/precision/F1, display rate, latency, BERTScore, 3 Prolog rates). Judge metrics fail-closed by design. |
 | Active plan | `reports/plan_v5_general_retrieval.md` — general/scalable citation retrieval (Sprint 1 = vanilla pipeline + audit) |
 
@@ -47,7 +47,7 @@ legal-graph-kb/
 │   ├── load_neo4j.py                 # B6 — load Neo4j (constraints + vector index)
 │   └── build_logic_lm_corpus_2024.py # Build Logic-LM corpus + ontology
 │
-├── runtime/                          # Inference runtime
+├── runtime/                          # Inference runtime (per-question)
 │   ├── rag_query.py                  # B7 — RagPipeline (vector_search, expand, fetch_facts, ask)
 │   ├── chat.py                       # Interactive REPL (rich)
 │   ├── llm_only.py                   # Pure LLM baseline pipeline
@@ -61,12 +61,23 @@ legal-graph-kb/
 │   │   ├── solvers/                  # SWI-Prolog wrapper
 │   │   └── cli/                      # answer_with_program, build_bhxh_ontology, query_ontology
 │   ├── logic_lm_pipelines.py         # 3 arm-aware wrappers (NoRetrieval / Ontology / GraphRAG)
-│   ├── graphrag_retriever_adapter.py # Adapt RagPipeline as logic-LM retriever
-│   ├── run_inference.py              # Batch inference orchestrator (single arm or 'main')
-│   ├── run_multimodel_inference.py   # 2D arm × model orchestrator
-│   └── rerender_plain_answer.py      # Backfill plain_answer field on legacy records
+│   └── graphrag_retriever_adapter.py # Adapt RagPipeline as logic-LM retriever
 │
-├── src/                              # Shared utilities (used by offline AND runtime)
+├── eval_core/                        # Shared experiment infrastructure (was experiments/ + evaluation/)
+│   ├── experiment.py                 # Experiment class + inheritance from parent
+│   ├── paths.py                      # Standard experiment-folder layout constants
+│   ├── arms.py                       # ALL_ARMS, MAIN_EXPERIMENT_ARMS, parse_*_arms
+│   ├── inference.py                  # run_experiment(experiment, arms, ...)
+│   ├── multimodel.py                 # run_experiment_multimodel(experiment, arms, models)
+│   ├── rerender.py                   # plain_answer backfill (experiment-aware)
+│   ├── gold.py                       # Strict gold_citations_raw validator
+│   ├── metrics.py                    # Deterministic metric engine (pure-computational)
+│   ├── report.py                     # CSV + Markdown writers (single + multi-arm)
+│   ├── runners.py                    # compute_metrics_for_experiment(...) — owns multi-arm flow
+│   ├── judge.py                      # Fail-closed placeholder
+│   └── cli.py / __main__.py          # `python -m eval_core <run|multimodel|metrics|all> <exp>`
+│
+├── src/                              # Shared utilities (used by offline AND runtime AND eval_core)
 │   ├── ids.py                        # ID convention + reverse parser
 │   ├── schema.py                     # Pydantic models (provenance invariants)
 │   ├── legal_metadata.py             # Multi-law metadata registry
@@ -74,8 +85,7 @@ legal-graph-kb/
 │   └── prompts.py                    # Prompt loader (with LEGAL_KG_PROMPTS_DIR override)
 │
 ├── prompts/                          # SINGLE SOURCE OF TRUTH for all system prompts
-│   ├── offline/
-│   │   └── llm_extract.md            # B3 LLM extraction prompt (SYSTEM/USER sections)
+│   ├── offline/llm_extract.md        # B3 LLM extraction prompt
 │   └── runtime/
 │       ├── graphrag_system.md        # GraphRAG generator system prompt
 │       ├── llm_only_system.md        # LLM-only baseline system prompt
@@ -85,36 +95,33 @@ legal-graph-kb/
 │           ├── irac_render.md        # Default IRAC renderer
 │           └── irac_with_plain.md    # IRAC + plain_answer combined renderer
 │
-├── experiments/                      # Eval orchestration + arm definitions
-│   ├── arms.py                       # ALL_ARMS, MAIN_EXPERIMENT_ARMS, parse_run_arms/parse_metrics_arms
-│   ├── compute_academic_metrics.py   # Experiment-owned loader; delegates to evaluation/
-│   ├── text_normalize.py             # IRAC → prose helper for BERTScore fairness
-│   └── README.md                     # Eval pipeline diagram + caveats
+├── experiments/                      # ONE folder per experiment
+│   ├── README.md                     # Layout, naming, inheritance, git policy
+│   ├── _template/                    # Starter (copy → rename → edit)
+│   │   ├── config.yaml
+│   │   ├── README.md
+│   │   └── .gitignore                #   results/ ignored by default
+│   └── 01_initial_eval/              # Frozen R1+R2 baseline (RECORDS COMMITTED for inheritance)
+│       ├── config.yaml               #   declares 5 arms (mode: run) + 2-arm × 3-model multimodel
+│       ├── README.md                 #   WHAT/WHY of this snapshot
+│       ├── .gitignore                #   un-ignores results/ so they ARE tracked
+│       ├── results/<arm>/A<stt>.json
+│       ├── results/multimodel/<arm>__<model>/A<stt>.json
+│       ├── metrics/{academic_metrics.json,csv,gold_citations_normalized.json}
+│       └── report/academic_report.md
 │
-├── evaluation/                       # Headline metric engine (deterministic, dataset-based)
-│   ├── compute_academic_metrics.py   # citation recall/precision/F1, display rate, latency, BERTScore, prolog rates
-│   ├── validate_gold_citations.py    # Strict parse of gold_citations_raw against registry
-│   ├── compute_judge_metrics.py      # Fail-closed placeholder (judge metrics intentionally NOT in main)
-│   └── samples/                      # Worked-example fixtures
-│
-├── data/
+├── data/                             # KG + raw law + ontology (NO experiment output here)
 │   ├── legal_metadata.yaml           # Multi-law metadata source of truth
 │   ├── legal_sources.yaml            # Citation authority registry
 │   ├── raw/                          # Source .docx files
 │   ├── interim/                      # B1–B3 intermediate JSON (gitignored)
 │   ├── processed/                    # merged_graph.json + embeddings.parquet (committed)
-│   ├── logic_lm/                     # Logic-LM intermediate data
-│   └── eval/
-│       ├── questions_200.json        # 200 BHXH questions (committed)
-│       ├── logic_lm_corpus_2024.jsonl    # Logic-LM corpus
-│       ├── logic_lm_ontology_2024.json   # Logic-LM ontology (concepts + thresholds)
-│       ├── academic_metrics.{json,csv}   # Headline metrics (committed)
-│       ├── academic/                 # gold_citations_normalized.json
-│       ├── results/{arm}/A*.json     # R1 inference records (committed)
-│       └── multimodel/results/{arm__model}/A*.json   # R2 records (committed)
+│   ├── logic_lm/                     # Logic-LM corpus + ontology (corpus_2024.jsonl, ontology_2024.json, ...)
+│   └── eval/questions_200.json       # 200 BHXH questions (input only — NOT output)
 │
 ├── schema/schema.cypher              # Neo4j constraints + vector indexes
 ├── scripts/                          # PowerShell wrappers (chat, install_b5, install_bge_m3) + verify_b5.py
+├── tests/                            # 110+ pytest cases (provenance + Experiment + metrics)
 └── reports/
     └── plan_v5_general_retrieval.md  # ← CURRENT PLAN (vanilla → audit → conditional modules)
 ```
@@ -130,10 +137,11 @@ legal-graph-kb/
 - LLM extraction output is validated against Pydantic schema in `src/schema.py` AND post-checked that `source_text` appears verbatim inside `source_clause`. Fabrication = drop edge.
 
 ### Headline-metric discipline
-- Main experiment = `python -m eval_core.inference --arms main --n 200` + `python -m eval_core.runners --arms main`.
+- Recompute the frozen baseline (no API calls): `python -m eval_core metrics experiments/01_initial_eval`.
+- For a new experiment: `python -m eval_core all experiments/<NN_name>` runs inference (mode=run arms only — inherited arms skip), multimodel (if configured), then metrics + report. Outputs all land in the experiment folder.
 - Citation metrics compare `record["citation_ids"]` to `gold_citations_raw` after strict parse via `src/citations.py`. No per-script authority hardcoding.
-- BERTScore runs fail-soft (skips if dep/model missing); citation metrics never silently fail — `validate_gold_citations` fails-hard before any metric runs.
-- `evaluation.compute_judge_metrics` is **intentionally fail-closed** as a placeholder. Don't reintroduce judge metrics into the main flow without redesigning the rubric and getting buy-in.
+- BERTScore runs fail-soft (skips if dep/model missing); citation metrics never silently fail — `eval_core.gold.validate_gold_citations` fails-hard before any metric runs.
+- `eval_core.judge` is **intentionally fail-closed** as a placeholder. Don't reintroduce judge metrics into the main flow without redesigning the rubric and getting buy-in.
 
 ### Prompt management
 - Every system prompt lives in `prompts/` and is read through `src.prompts.load_prompt(rel_path)`. No long string literals in Python.
@@ -150,13 +158,14 @@ legal-graph-kb/
 In this order:
 
 1. **`reports/plan_v5_general_retrieval.md`** — current planning doc (vanilla → audit → conditional modules). Sprint 1 is "vanilla pipeline + audit" before any new module ships.
-2. **`runtime/rag_query.py`** — `RagPipeline.vector_search` / `expand` / `fetch_facts` / `traverse` / `ask` / `verify_citations`. The retrieval surface you'll extend.
-3. **`runtime/logic_lm_pipelines.py`** — three arm wrappers (`LogicLMNoRetrievalPipeline`, `LogicLMOntologyPipeline`, `LogicLMGraphRAGPipeline`). Each returns a `LogicLMAnswer` dataclass.
-4. **`runtime/logic_lm/pipelines/program_pipeline.py`** — actual Prolog generation + repair loop (`_attempt`, `_validate_predicate_inputs`, `_verify`).
-5. **`evaluation/compute_academic_metrics.py`** — exactly which metrics are headline + how `gold_articles` flow through. Don't add new metrics without reading this first.
-6. **`src/citations.py`** — citation parsing + canonical formatting + the authority registry. All eval scripts must use this; never write a per-script parser.
-7. **`prompts/runtime/logic_lm/irac_with_plain.md`** — well-structured JSON-emitting prompt; good template for new structured-output prompts.
-8. **`schema/schema.cypher`** — current Neo4j constraints + vector indexes. Any new node label / edge type lands here first.
+2. **`eval_core/README.md`** + **`experiments/README.md`** — how an experiment is laid out, how the CLI dispatches, how inheritance works. These are the design contracts to follow.
+3. **`runtime/rag_query.py`** — `RagPipeline.vector_search` / `expand` / `fetch_facts` / `traverse` / `ask` / `verify_citations`. The retrieval surface you'll extend.
+4. **`runtime/logic_lm_pipelines.py`** — three arm wrappers (`LogicLMNoRetrievalPipeline`, `LogicLMOntologyPipeline`, `LogicLMGraphRAGPipeline`). Each returns a `LogicLMAnswer` dataclass.
+5. **`runtime/logic_lm/pipelines/program_pipeline.py`** — actual Prolog generation + repair loop (`_attempt`, `_validate_predicate_inputs`, `_verify`).
+6. **`eval_core/metrics.py`** + **`eval_core/runners.py`** — exactly which metrics are headline + how `gold_articles` flow through. Don't add new metrics without reading these first.
+7. **`src/citations.py`** — citation parsing + canonical formatting + the authority registry. All eval scripts must use this; never write a per-script parser.
+8. **`prompts/runtime/logic_lm/irac_with_plain.md`** — well-structured JSON-emitting prompt; good template for new structured-output prompts.
+9. **`schema/schema.cypher`** — current Neo4j constraints + vector indexes. Any new node label / edge type lands here first.
 
 ---
 
@@ -177,7 +186,7 @@ In this order:
 |---|---|---|
 | Pydantic v2 | All schemas in `src/schema.py` | Pydantic docs + existing models |
 | PowerShell on Windows | Primary dev environment is Windows | `scripts/*.ps1` |
-| Pandas / Parquet | `embeddings.parquet`, metric CSVs | `offline/embed.py`, `evaluation/compute_academic_metrics.py` |
+| Pandas / Parquet | `embeddings.parquet`, metric CSVs | `offline/embed.py`, `eval_core/metrics.py` |
 | Regex (Vietnamese) | ID / citation / number parsing | `src/ids.py`, `src/citations.py` |
 
 ### Nice-to-have
@@ -198,7 +207,7 @@ In this order:
 5. **Path("experiments/prompts/...")**: gone. All prompts now under `prompts/`; load via `src.prompts.load_prompt(rel)`.
 6. **Module paths**: nothing in `runtime/` may import from `offline/` (and vice versa). Both may import from `src/`. Cross-imports between offline and runtime should go through `src/` shared utilities.
 7. **REPO_ROOT**: `runtime/logic_lm/cli/*.py` uses `Path(__file__).resolve().parents[3]` — depth from CLI file to repo root is exactly 3 levels (`cli → logic_lm → runtime → repo`). Don't change this without auditing the CLI entry-points.
-8. **plain_answer backfill**: pre-2026-05-27 records lack `plain_answer`. Generate via `python -m eval_core.rerender --combos all` (~$0.72 on gpt-4o-mini).
+8. **plain_answer backfill**: pre-2026-05-27 records lack `plain_answer`. Generate via `python -m eval_core.rerender experiments/<exp> --combos all` (~$0.72 on gpt-4o-mini for the initial-eval baseline).
 9. **B5 embedding env**: torch 2.6.0+cu124, datasets 3.0.1, pyarrow 17 on Windows — pin all three together (see project memory `feedback_b5_pin_versions.md`). Wrong combo causes 3 cascading errors.
 10. **Reports directory**: only `reports/*.md` files explicitly listed in `.gitignore` exception are tracked. `plan_v5_general_retrieval.md` is the current canonical plan.
 
@@ -207,13 +216,12 @@ In this order:
 ## Recommended workflow
 
 ### Adding a new inference arm
-1. Decide the arm name (e.g. `logic_lm_decomposed`). Add it to `ALL_ARMS` and `MAIN_EXPERIMENT_ARMS` in `experiments/arms.py` if it belongs to the headline set.
-2. Build the pipeline class in `runtime/<your_arm>.py` returning `LogicLMAnswer` (or `RagAnswer` shape), so the inference orchestrator can route it uniformly.
+1. Decide the arm name (e.g. `logic_lm_decomposed`). Add it to `ALL_ARMS` (and `MAIN_EXPERIMENT_ARMS` if it belongs to the headline set) in `eval_core/arms.py`.
+2. Build the pipeline class in `runtime/<your_arm>.py` returning `LogicLMAnswer` (or `RagAnswer` shape).
 3. If you need a new prompt: add `.md` under `prompts/runtime/<your_arm>/...` and load via `src.prompts.load_prompt(...)`.
-4. Wire a runner in `runtime/run_inference.py:ARM_RUNNERS`.
-5. Pilot: `python -m eval_core.inference --arms <your_arm> --n 10`.
-6. Full: `python -m eval_core.inference --arms <your_arm> --n 200`.
-7. Headline metrics: `python -m eval_core.runners --arms <your_arm>` (or `main` to include it in the comparison set).
+4. Wire a runner in `eval_core/inference.py:ARM_RUNNERS`.
+5. Create the experiment folder by copying `experiments/_template/`, name it `NN_<your_idea>/`. Declare your arm with `mode: run` plus the baseline arms with `mode: inherit` from `01_initial_eval`. Edit the README.
+6. Pilot then full: `python -m eval_core all experiments/<NN_your_idea>` (set `dataset.n` in config to a small number for the pilot pass).
 
 ### Adding a new node label / edge type
 1. Edit `schema/schema.cypher` (constraints + index if needed). Idempotent `IF NOT EXISTS`.
@@ -224,6 +232,7 @@ In this order:
 
 ### Running the full pipeline end-to-end
 ```powershell
+# Build the KG once (writes to data/processed/ + Neo4j)
 python -m offline.parse_docx
 python -m offline.rule_extract
 python -m offline.llm_extract
@@ -232,9 +241,9 @@ python -m offline.embed
 python -m offline.load_neo4j --apply-schema
 python -m offline.build_logic_lm_corpus_2024   # only if logic-LM arms will run
 
-python -m eval_core.inference --arms main --n 200
-python -m eval_core.gold
-python -m eval_core.runners --arms main
+# Per experiment: inference + metrics + report (records land in
+# experiments/<NN>/results/, metrics in metrics/, report in report/)
+python -m eval_core all experiments/<NN_name>
 ```
 
 ### Commit hygiene
@@ -261,8 +270,10 @@ NEO4J_PASSWORD=...
 NEO4J_DATABASE=neo4j
 EMBED_DEVICE=cuda                  # or cpu
 HF_HUB_DISABLE_SYMLINKS_WARNING=1  # silences HF warnings on Windows
-# Optional — point at an alternate prompts directory for ablations:
-# LEGAL_KG_PROMPTS_DIR=experiments/my_ablation_prompts
+# Optional — point at an alternate prompts directory for ablations.
+# Usually set automatically by eval_core from config.yaml's
+# prompts_override_dir, but you can also set it manually:
+# LEGAL_KG_PROMPTS_DIR=experiments/<NN>/prompts_override
 
 # External services
 - Neo4j 5.x (Aura cloud or local with vector-index support)

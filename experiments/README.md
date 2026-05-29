@@ -1,87 +1,98 @@
-# Experiments — GraphRAG vs LLM-only
+# experiments/
 
-So sánh **GraphRAG** (Neo4j + BGE-M3 + GPT-4o-mini) với **LLM thuần** (chỉ GPT-4o-mini, không context) trên 200 câu hỏi BHXH thu thập từ FB group.
+One folder per experiment. The folder owns *everything* that defines the
+experiment: config, inputs metadata, generated records, computed metrics,
+report. Shared logic lives in [`eval_core/`](../eval_core/) — no orchestration
+code belongs here.
 
-## Dataset
-
-`data/eval/questions_200.json` — 200 câu đầu từ sheet `Tiền xử lý` của file
-`_Câu hỏi BHXH trên group facebook.xlsx`. Cấu trúc mỗi câu:
-- `stt`, `question`, `group`
-- `gold_answer` (198/200 có)
-- `gold_citations_raw` (196/200 có) — đa số chỉ Luật BHXH 2024 (kế thừa Luật 58/2014 ở vài điểm)
-
-**Lưu ý version**: KG build từ Luật **41/2024/QH15** mới. ~151/200 câu refer Luật 2024 (khớp KG), 2 câu refer Luật 2014 cũ, còn lại không rõ. Sẽ tag mỗi câu + breakdown trong report.
-
-## Pipeline
+## Layout
 
 ```
-inference (eval_core.inference)
-   ├── arm A: GraphRAG  → runtime.rag_query.RagPipeline.ask()
-   └── arm B: LLM-only  → runtime.llm_only.LlmOnlyPipeline.ask()
-                          (cùng SYSTEM prompt yêu cầu citation, KHÔNG có context)
-
-→ data/eval/results/{graphrag,llm_only}/A{stt}.json
-
-validate_gold_citations (eval_core/gold.py)
-   └── Parse gold_citations_raw strict theo registry; fail nếu thiếu/sai
-
-eval_core.runners (multi-arm orchestrator)
-   ├── Load result folders + selected arms
-   ├── Attach validated gold_articles and group records by experiment arm
-   └── Call eval_core.metrics.compute_academic_metrics(records) per experiment arm
-
-eval_core.metrics.compute_academic_metrics(records)
-   ├── Dataset-based: citation_recall, citation_precision, citation_f1
-   ├── Answer display: citation_display_rate từ citation_ids vs answer
-   ├── Objective: latency_s, prolog_first_try_solution_rate,
-   │   repair_invoked_rate, repair_success_rate
-   └── Semantic: BERTScore vs gold_answer (fail-soft nếu thiếu dependency/model)
-
-→ metrics/academic_metrics.json + metrics/academic_metrics.csv
-→ metrics/academic_report.md
-→ metrics/academic/gold_citations_normalized.json
+experiments/
+├── README.md                 ← this file
+├── _template/                ← copy this to start a new experiment
+│   ├── config.yaml
+│   ├── README.md
+│   └── .gitignore            ← results/ ignored by default
+└── <NN_short_name>/
+    ├── config.yaml           ← arms, dataset, parent, models, prompt overrides
+    ├── README.md             ← WHAT/WHY of this experiment
+    ├── .gitignore            ← override here if you want to commit results/
+    ├── results/              ← raw inference records
+    │   ├── <arm>/A<stt>.json
+    │   └── multimodel/<arm>__<model_safe>/A<stt>.json
+    ├── metrics/              ← academic_metrics.json + .csv + gold_normalized
+    ├── report/               ← academic_report.md
+    └── prompts_override/     ← optional per-experiment prompt overrides
 ```
 
-## Metrics hiện tại
+The standard layout is encoded in [`eval_core/paths.py`](../eval_core/paths.py).
+Don't write to other locations — downstream tools look here.
 
-Headline metrics không dùng judge model. Citation recall/precision/F1 so sánh
-`record["citation_ids"]` với `gold_citations_raw` sau khi parse strict theo
-article-level authority. `citation_display_rate` đo citation ID nào trong
-pipeline thật sự được thể hiện trong answer với đủ văn bản + điều/khoản.
-BERTScore giữ chuẩn Zhang et al. ICLR 2020 và chạy fail-soft.
+## Naming
 
-Judge-model metrics không chạy trong main experiment. Entrypoint
-`eval_core.judge` hiện fail-closed để tránh vô tình dùng lại
-công thức cũ; khi cần judge metrics sẽ thiết kế rubric riêng.
+`NN_short_name/` — two-digit prefix for ordering + a short
+descriptive name. Date goes in `config.yaml`. Example:
 
-## Giới hạn (caveats — sẽ ghi rõ trong report)
+```
+01_initial_eval/
+02_logic_decomposition/
+03_multilaw_phase1/
+```
 
-1. **Gold citation quality**: `gold_citations_raw` là source of truth; validator sẽ dừng nếu thiếu/sai hoặc không parse được.
-2. **Law/source mismatch**: predicted citation phải đúng văn bản và đúng điều. Khác văn bản là sai hoàn toàn.
-3. **BERTScore**: chỉ là semantic reference vs `gold_answer`; headline citation metrics vẫn lấy từ dataset gold.
-4. **Judge metrics**: không nằm trong main workflow và không được tính ngầm.
-
-## Chạy
+## Creating a new experiment
 
 ```powershell
-# 1. Inference main experiment arms
-python -m eval_core.inference --arms main --n 200
+Copy-Item -Recurse experiments/_template experiments/03_my_idea
+# Edit experiments/03_my_idea/config.yaml
+# Edit experiments/03_my_idea/README.md (WHAT + WHY + expected outcome)
 
-# 2. Validate gold citations; lệnh experiment metrics cũng tự gọi bước này
-python -m eval_core.gold
-
-# 3. Compute deterministic academic metrics for the same main arms
-python -m eval_core.runners --arms main
+python -m eval_core all experiments/03_my_idea
 ```
 
-Đổi thư mục lưu toàn bộ artifact bằng `--output-dir <folder>`.
+`all` runs `run` (inference for every `mode: run` arm) + `multimodel`
+(if configured) + `metrics`. Use the individual subcommands when you
+want to step through the lifecycle.
 
-Pilot trước với `--n 10` để xác nhận pipeline.
+## Inheritance
 
-## Tính trung thực
+Frozen experiments can hand their records down. Declare the parent and
+mark inherited arms in `config.yaml`:
 
-- Metrics hiện tại dùng registry citation chung trong `data/legal_sources.yaml` và
-  parser chung `src/citations.py`; không hardcode authority trong từng script.
-- Mọi LLM call thật → API.
-- Mọi metric headline tính từ output thật + dataset gold; judge metrics tách riêng.
-- Per-question result lưu đầy đủ (question, answer, citations) → reproducible/auditable.
+```yaml
+parent: 01_initial_eval
+arms:
+  graphrag:              { mode: inherit }
+  llm_only:              { mode: inherit }
+  logic_lm_no_retrieval: { mode: inherit }
+  logic_lm_ontology:     { mode: inherit }
+  logic_lm_graphrag:     { mode: inherit }
+  my_new_arm:            { mode: run, model: gpt-4o-mini }
+```
+
+`eval_core.metrics_for_experiment` reads the inherited arms from the
+parent folder without re-running inference. Reports include a
+`records_source` map so the provenance is visible.
+
+Cycle detection guards the parent chain (depth ≤ 10).
+
+## Git policy
+
+The repo's root `.gitignore` ignores `experiments/*/results/` by default.
+A frozen baseline that wants to share its records (so others can inherit
+them) adds an exception in its own `.gitignore` — see
+[`01_initial_eval/.gitignore`](01_initial_eval/.gitignore).
+
+`metrics/` and `report/` are always tracked: they're small, auditable,
+and they're what the experiment claims.
+
+## Headline metric discipline
+
+- Citation recall / precision / F1 / display rate come from the canonical
+  [registry](../data/legal_sources.yaml) parsed by
+  [`src.citations`](../src/citations.py). No per-experiment authority
+  hardcoding.
+- BERTScore runs fail-soft (skips if dep / model missing); citation
+  metrics never silently fail — gold validation fails-hard.
+- `eval_core.judge` is fail-closed by design. Judge metrics are
+  intentionally outside the main flow.

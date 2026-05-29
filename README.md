@@ -130,20 +130,35 @@ Lệnh trong REPL: `/help`, `/sources`, `/verify`, `/save chat.md`, `/quit`.
 
 ## 📊 Evaluation (200 câu BHXH real)
 
-```bash
-python -m eval_core.inference --arms main --n 200
-python -m eval_core.runners
+Mỗi thí nghiệm là một thư mục dưới `experiments/`. Snapshot ban đầu (5 arms × 200
+câu × gpt-4o-mini + 2 logic-LM arms × 4 models × 200 câu) đã được commit ở
+[`experiments/01_initial_eval/`](experiments/01_initial_eval/) cùng với metrics
+và report — không cần chạy lại API.
+
+```powershell
+# Recompute metrics + report từ records đã commit
+python -m eval_core metrics experiments/01_initial_eval
+
+# Tạo thí nghiệm mới
+Copy-Item -Recurse experiments/_template experiments/02_my_idea
+# (edit config.yaml + README)
+python -m eval_core all experiments/02_my_idea
 ```
 
-Output mặc định: `metrics/academic_metrics.json`, `metrics/academic_metrics.csv`,
-và `metrics/academic_report.md`. Có thể đổi thư mục bằng `--output-dir`. Script sẽ dừng
-nếu `gold_citations_raw` thiếu hoặc không parse được.
+Output mỗi experiment: `metrics/academic_metrics.json`, `metrics/academic_metrics.csv`,
+`metrics/gold_citations_normalized.json`, `report/academic_report.md` — luôn nằm
+trong folder của chính experiment đó.
 
 Headline metrics là deterministic/dataset-based: citation recall,
 citation precision, citation F1, citation display rate, latency, BERTScore
 và 3 prolog rates. Judge-model metrics được tách khỏi headline và không chạy
-trong main experiment. Entrypoint `evaluation.compute_judge_metrics` hiện fail-closed
-cho đến khi judge metrics được thiết kế và duyệt riêng.
+trong main experiment. Entrypoint `eval_core.judge` hiện fail-closed cho đến
+khi judge metrics được thiết kế và duyệt riêng.
+
+Thí nghiệm mới có thể **kế thừa** records của thí nghiệm trước qua
+`parent: <name>` + `mode: inherit` per-arm trong `config.yaml`. Xem
+[`experiments/README.md`](experiments/README.md) và
+[`eval_core/README.md`](eval_core/README.md) chi tiết hơn.
 
 ## 📁 Project structure
 
@@ -163,32 +178,48 @@ legal-graph-kb/
 │   ├── llm_only.py              # LLM-only baseline pipeline
 │   ├── logic_lm/                # Symbolic-LLM hybrid package
 │   ├── logic_lm_pipelines.py    # 3 arm-aware logic-LM wrappers
-│   ├── graphrag_retriever_adapter.py  # Adapt RagPipeline as logic-LM retriever
-│   ├── run_inference.py         # Batch inference orchestrator
-│   ├── run_multimodel_inference.py    # Batch inference across models
-│   └── rerender_plain_answer.py # Backfill plain_answer field
-├── src/                         # Shared utilities (used by both offline + runtime)
+│   └── graphrag_retriever_adapter.py  # Adapt RagPipeline as logic-LM retriever
+├── eval_core/                   # Shared experiment infrastructure
+│   ├── experiment.py            # Experiment class + inheritance
+│   ├── paths.py                 # Standard experiment-folder layout
+│   ├── arms.py                  # Arm definitions + CLI parsing
+│   ├── inference.py             # Per-arm inference orchestrator
+│   ├── multimodel.py            # arm × model matrix orchestrator
+│   ├── rerender.py              # plain_answer backfill
+│   ├── gold.py                  # Gold-citation validator
+│   ├── metrics.py               # Deterministic metric engine
+│   ├── report.py                # CSV + Markdown writers
+│   ├── runners.py               # Multi-arm metric loader
+│   ├── judge.py                 # Fail-closed placeholder
+│   └── cli.py / __main__.py     # `python -m eval_core <cmd> <exp>`
+├── experiments/                 # One folder per experiment
+│   ├── _template/               # Starter skeleton
+│   └── 01_initial_eval/         # Frozen R1+R2 baseline (committed records)
+├── src/                         # Shared utilities (used everywhere)
 │   ├── ids.py                   # ID convention + reverse parser
 │   ├── schema.py                # Pydantic models (provenance invariants)
 │   ├── legal_metadata.py        # Multi-law metadata registry
-│   └── citations.py             # Citation parsing + registry
-├── experiments/                 # Eval orchestration helpers (arms, metrics)
-├── tests/                       # 95+ pytest cases (provenance focus)
-├── schema/schema.cypher         # Neo4j constraints + vector indexes
+│   ├── citations.py             # Citation parsing + registry
+│   └── prompts.py               # Prompt loader (with override env var)
 ├── prompts/                     # Single source of truth for ALL system prompts
 │   ├── offline/llm_extract.md           # B3 LLM extraction
 │   ├── runtime/graphrag_system.md       # GraphRAG generator
 │   ├── runtime/llm_only_system.md       # LLM-only baseline
 │   └── runtime/logic_lm/                # Logic-LM Prolog gen + IRAC render variants
+├── schema/schema.cypher         # Neo4j constraints + vector indexes
 ├── docs/neo4j-setup.md          # Neo4j Desktop installation guide
 ├── scripts/                     # PowerShell wrappers (Windows-friendly)
 │   ├── install_b5.ps1           #   B5 deps + model pre-download
 │   ├── verify_b5.py             #   B5 env verify
 │   └── chat.ps1                 #   chat REPL with UTF-8 console
-├── data/raw/                    # Source law document
-├── data/interim/                # (ignored) B1-B3 intermediate JSON
-├── data/processed/              # (ignored) B4-B5 final artifacts
-├── reports/                     # (ignored except this README) Markdown reports
+├── tests/                       # 110+ pytest cases (provenance focus)
+├── data/                        # KG + raw law + ontology (NOT experiment output)
+│   ├── raw/                     #   Source law .docx
+│   ├── interim/                 #   (ignored) B1-B3 intermediate JSON
+│   ├── processed/               #   (ignored) B4-B5 final artifacts
+│   ├── logic_lm/                #   Logic-LM corpus + ontology
+│   └── eval/questions_200.json  #   200-question benchmark (input only)
+├── reports/                     # (ignored except plan docs) Markdown reports
 ├── pyproject.toml               # Build, deps, ruff, pytest, coverage, mypy
 ├── .github/                     # CI + issue/PR templates
 ├── README.md                    # ← bạn đang đọc
@@ -214,7 +245,7 @@ pytest tests/test_ids.py tests/test_schema.py tests/test_parse_docx.py
 pytest
 
 # Type check
-mypy src/ offline/ runtime/
+mypy src/ offline/ runtime/ eval_core/
 
 # Eval extras
 pip install -e ".[eval]"
