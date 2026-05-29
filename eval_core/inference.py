@@ -1,14 +1,13 @@
 """Chạy inference nhiều arms trên N câu hỏi.
 
 Output mỗi arm 1 file JSON / câu hỏi:
-    data/eval/results/{arm}/A{stt}.json
+    <results_root>/<arm>/A<stt>.json
 
 Idempotent — skip nếu file đã tồn tại (dùng --force để chạy lại).
 
 CLI:
-    python -m eval_core.inference --arms graphrag,llm_only --n 200
-    python -m eval_core.inference --arms main --n 10
-    python -m eval_core.inference --arms logic_lm_ontology,logic_lm_graphrag --n 200
+    python -m eval_core.inference <experiment_path> [--arms ...] [--n ...] [--force]
+    python -m eval_core run <experiment_path>                        # via eval_core.cli
 """
 
 from __future__ import annotations
@@ -30,12 +29,9 @@ os.environ.setdefault("HF_HUB_DISABLE_SYMLINKS_WARNING", "1")
 if not (os.environ.get("OPENAI_BASE_URL") or "").strip():
     os.environ.pop("OPENAI_BASE_URL", None)
 
-QUESTIONS_PATH = Path("data/eval/questions_200.json")
-OUT_ROOT = Path("data/eval/results")
 
-
-def load_questions(n: int | None = None) -> list[dict]:
-    with QUESTIONS_PATH.open(encoding="utf-8") as f:
+def load_questions(questions_path: Path, n: int | None = None) -> list[dict]:
+    with Path(questions_path).open(encoding="utf-8") as f:
         qs = json.load(f)
     if n:
         qs = qs[:n]
@@ -55,14 +51,20 @@ def _parse_arms(s: str) -> list[str]:
 
 
 # ---------------------------------------------------------------------------
-# Arm runners
+# Arm runners — each writes to <results_root>/<arm>/
 # ---------------------------------------------------------------------------
 
-def run_graphrag(questions: list[dict], force: bool, verbose: bool) -> None:
+
+def run_graphrag(
+    questions: list[dict],
+    results_root: Path,
+    force: bool,
+    verbose: bool,
+) -> None:
     from runtime.rag_query import RagPipeline
 
     arm = "graphrag"
-    out_dir = OUT_ROOT / arm
+    out_dir = results_root / arm
     pipeline = RagPipeline()
     _ = pipeline.embed_model  # pre-load
 
@@ -117,11 +119,16 @@ def run_graphrag(questions: list[dict], force: bool, verbose: bool) -> None:
           f"({time.time() - t_total:.1f}s)")
 
 
-def run_llm_only(questions: list[dict], force: bool, verbose: bool) -> None:
+def run_llm_only(
+    questions: list[dict],
+    results_root: Path,
+    force: bool,
+    verbose: bool,
+) -> None:
     from runtime.llm_only import LlmOnlyPipeline
 
     arm = "llm_only"
-    out_dir = OUT_ROOT / arm
+    out_dir = results_root / arm
     pipeline = LlmOnlyPipeline()
 
     n_done, n_skipped, n_failed = 0, 0, 0
@@ -171,11 +178,12 @@ def _run_logic_lm(
     arm: str,
     pipeline,
     questions: list[dict],
+    results_root: Path,
     force: bool,
     verbose: bool,
 ) -> None:
     """Generic runner cho 3 logic-lm arms (cùng LogicLMAnswer dataclass)."""
-    out_dir = OUT_ROOT / arm
+    out_dir = results_root / arm
     n_done, n_skipped, n_failed = 0, 0, 0
     t_total = time.time()
     try:
@@ -234,22 +242,22 @@ def _run_logic_lm(
           f"({time.time() - t_total:.1f}s)")
 
 
-def run_logic_lm_no_retrieval(questions, force, verbose):
+def run_logic_lm_no_retrieval(questions, results_root, force, verbose):
     from runtime.logic_lm_pipelines import LogicLMNoRetrievalPipeline
     p = LogicLMNoRetrievalPipeline()
-    _run_logic_lm("logic_lm_no_retrieval", p, questions, force, verbose)
+    _run_logic_lm("logic_lm_no_retrieval", p, questions, results_root, force, verbose)
 
 
-def run_logic_lm_ontology(questions, force, verbose):
+def run_logic_lm_ontology(questions, results_root, force, verbose):
     from runtime.logic_lm_pipelines import LogicLMOntologyPipeline
     p = LogicLMOntologyPipeline()
-    _run_logic_lm("logic_lm_ontology", p, questions, force, verbose)
+    _run_logic_lm("logic_lm_ontology", p, questions, results_root, force, verbose)
 
 
-def run_logic_lm_graphrag(questions, force, verbose):
+def run_logic_lm_graphrag(questions, results_root, force, verbose):
     from runtime.logic_lm_pipelines import LogicLMGraphRAGPipeline
     p = LogicLMGraphRAGPipeline()  # tự tạo + warm up RagPipeline bên trong
-    _run_logic_lm("logic_lm_graphrag", p, questions, force, verbose)
+    _run_logic_lm("logic_lm_graphrag", p, questions, results_root, force, verbose)
 
 
 ARM_RUNNERS = {
@@ -261,46 +269,110 @@ ARM_RUNNERS = {
 }
 
 
+# ---------------------------------------------------------------------------
+# Experiment-aware entry point
+# ---------------------------------------------------------------------------
+
+
+def run_experiment(
+    experiment,
+    arms: list[str] | None = None,
+    force: bool = False,
+    verbose: bool = False,
+) -> None:
+    """Run inference for an :class:`eval_core.experiment.Experiment`.
+
+    - ``arms``: optional override of which arms to run. If ``None``, runs
+      every arm with ``mode=run`` in the experiment config.
+    - Inherits arms (``mode=inherit``) are skipped — their records come
+      from the parent and don't need to be re-generated.
+    - Sets ``LEGAL_KG_PROMPTS_DIR`` to ``experiment.prompts_override_dir``
+      for the duration of the run when one is configured.
+    """
+    from eval_core.experiment import Experiment
+
+    if not isinstance(experiment, Experiment):
+        raise TypeError(f"expected Experiment, got {type(experiment).__name__}")
+
+    experiment.validate()
+    runnable_arms = [
+        name for name, spec in experiment.arms.items() if spec.mode == "run"
+    ]
+    if arms is None:
+        arms = runnable_arms
+    else:
+        unknown = [a for a in arms if a not in runnable_arms]
+        if unknown:
+            raise ValueError(
+                f"arms {unknown} are not declared with mode=run in {experiment.name!r}"
+            )
+
+    questions = load_questions(experiment.dataset.questions, experiment.dataset.n)
+    print(f"Loaded {len(questions)} questions from {experiment.dataset.questions}")
+    print(f"Arms to run: {arms}")
+    print(f"Results dir: {experiment.results_dir}")
+
+    override_dir = experiment.prompts_override_dir
+    previous_override = os.environ.get("LEGAL_KG_PROMPTS_DIR")
+    if override_dir is not None:
+        os.environ["LEGAL_KG_PROMPTS_DIR"] = str(override_dir)
+        print(f"Prompt override dir: {override_dir}")
+
+    try:
+        results_root = experiment.results_dir
+        results_root.mkdir(parents=True, exist_ok=True)
+        for arm in arms:
+            runner = ARM_RUNNERS.get(arm)
+            if runner is None:
+                print(f"✗ Unknown arm: {arm}", file=sys.stderr)
+                continue
+            print(f"\n=== ARM: {arm} ===")
+            runner(questions, results_root, force, verbose)
+    finally:
+        if override_dir is not None:
+            if previous_override is None:
+                os.environ.pop("LEGAL_KG_PROMPTS_DIR", None)
+            else:
+                os.environ["LEGAL_KG_PROMPTS_DIR"] = previous_override
+
+
 def main() -> int:
+    from eval_core.experiment import Experiment
+
     p = argparse.ArgumentParser(
-        description="Run inference cho N câu hỏi × các arm chỉ định."
+        description="Run inference for an experiment folder."
     )
-    p.add_argument("--n", type=int, default=200,
-                   help="Số câu đầu tiên (default 200).")
-    p.add_argument("--arms", type=str, default="main",
-                   help=(
-                       "Comma-separated arms, 'main' "
-                       "(approved academic experiment set), or 'all'. "
-                       f"Available: {', '.join(ALL_ARMS)}"
-                   ))
+    p.add_argument("experiment", type=Path, help="Path to experiment folder.")
+    p.add_argument(
+        "--arms",
+        type=str,
+        default=None,
+        help=(
+            "Comma-separated arms to run (subset of arms with mode=run). "
+            "Default = every mode=run arm in the experiment config. "
+            f"Available: {', '.join(ALL_ARMS)}"
+        ),
+    )
     p.add_argument("--force", action="store_true",
-                   help="Chạy lại dù file đã có.")
+                   help="Re-run even if record file already exists.")
     p.add_argument("--verbose", action="store_true")
-    # Backward-compat: --arm (cũ) single-arm hoặc 'both'
-    p.add_argument("--arm", type=str, default=None,
-                   help="(Deprecated) Single arm hoặc 'both' (legacy graphrag+llm_only).")
     args = p.parse_args()
 
-    # Resolve arms list
-    if args.arm == "both":
-        arms = ["graphrag", "llm_only"]
-    elif args.arm:
-        arms = [args.arm]
-    else:
-        arms = _parse_arms(args.arms)
+    try:
+        experiment = Experiment.from_path(args.experiment)
+    except (FileNotFoundError, ValueError) as exc:
+        print(f"FAIL: {exc}", file=sys.stderr)
+        return 2
 
-    questions = load_questions(args.n)
-    print(f"Loaded {len(questions)} questions từ {QUESTIONS_PATH}")
-    print(f"Arms to run: {arms}")
+    arms = None
+    if args.arms:
+        arms = [a.strip() for a in args.arms.split(",") if a.strip()]
 
-    for arm in arms:
-        runner = ARM_RUNNERS.get(arm)
-        if runner is None:
-            print(f"✗ Unknown arm: {arm}", file=sys.stderr)
-            continue
-        print(f"\n=== ARM: {arm} ===")
-        runner(questions, args.force, args.verbose)
-
+    try:
+        run_experiment(experiment, arms=arms, force=args.force, verbose=args.verbose)
+    except Exception as exc:
+        print(f"FAIL: {type(exc).__name__}: {exc}", file=sys.stderr)
+        return 1
     return 0
 
 

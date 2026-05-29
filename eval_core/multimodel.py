@@ -1,21 +1,20 @@
-"""Multi-model inference: chạy 2 logic-lm arms × N OpenAI models trên dataset 200 câu.
+"""Multi-model inference: chạy logic-lm arms × N OpenAI models trên dataset.
 
 Output mỗi (arm, model) 1 thư mục:
-    data/eval/multimodel/results/{arm}__{model_safe}/A{stt}.json
+    <results_root>/multimodel/{arm}__{model_safe}/A{stt}.json
 
 Idempotent — skip nếu file đã tồn tại (--force để chạy lại).
 
-Real API + real Prolog: dùng cùng OpenAILLMClient/SWI-Prolog như eval cũ,
-chỉ swap model parameter. Khi reasoning model reject `temperature`/`response_format`,
-elite_pipelines tự fallback (xem `_TokenTrackingLLMClient._chat_with_fallback`).
+Real API + real Prolog: dùng cùng OpenAILLMClient/SWI-Prolog như inference
+arms thường, chỉ swap model parameter. Khi reasoning model reject
+``temperature`` / ``response_format``, logic_lm_pipelines tự fallback
+(xem ``_TokenTrackingLLMClient._chat_with_fallback``).
 
 CLI:
-    python -m eval_core.multimodel \\
-        --models gpt-4.1,gpt-4o,gpt-5,gpt-5-mini \\
-        --arms logic_lm_no_retrieval,logic_lm_graphrag \\
-        --n 1            # smoke
-    python -m eval_core.multimodel --n 10  # pilot
-    python -m eval_core.multimodel --n 200 # full
+    python -m eval_core.multimodel <experiment_path> \\
+        [--models gpt-4.1,gpt-4o,...] \\
+        [--arms logic_lm_no_retrieval,logic_lm_graphrag] \\
+        [--n 1] [--force]
 """
 
 from __future__ import annotations
@@ -30,33 +29,30 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
+from eval_core import paths
+
 load_dotenv()
 os.environ.setdefault("HF_HUB_DISABLE_SYMLINKS_WARNING", "1")
 if not (os.environ.get("OPENAI_BASE_URL") or "").strip():
     os.environ.pop("OPENAI_BASE_URL", None)
 
-QUESTIONS_PATH = Path("data/eval/questions_200.json")
-OUT_ROOT = Path("data/eval/multimodel/results")
-
-DEFAULT_MODELS = ("gpt-4.1", "gpt-4o", "gpt-5", "gpt-5-mini")
-DEFAULT_ARMS = ("logic_lm_no_retrieval", "logic_lm_graphrag")
 ALL_ARMS = ("logic_lm_no_retrieval", "logic_lm_ontology", "logic_lm_graphrag")
 
 
 def model_safe(model: str) -> str:
     """Chuyển model name về form an toàn cho filesystem.
 
-    'gpt-4.1' -> 'gpt-4_1'   'gpt-4o' -> 'gpt-4o'   'gpt-5-mini' -> 'gpt-5-mini'
+    ``gpt-4.1`` -> ``gpt-4_1``   ``gpt-4o`` -> ``gpt-4o``   ``gpt-5-mini`` -> ``gpt-5-mini``
     """
     return re.sub(r"[^a-zA-Z0-9_-]", "_", model)
 
 
-def combo_dir(arm: str, model: str) -> Path:
-    return OUT_ROOT / f"{arm}__{model_safe(model)}"
+def combo_dir(results_root: Path, arm: str, model: str) -> Path:
+    return results_root / paths.MULTIMODEL_SUBDIR / f"{arm}__{model_safe(model)}"
 
 
-def load_questions(n: int | None = None) -> list[dict]:
-    with QUESTIONS_PATH.open(encoding="utf-8") as f:
+def load_questions(questions_path: Path, n: int | None = None) -> list[dict]:
+    with Path(questions_path).open(encoding="utf-8") as f:
         qs = json.load(f)
     if n:
         qs = qs[:n]
@@ -69,11 +65,11 @@ def _save(path: Path, data: dict) -> None:
 
 
 def _make_pipeline(arm: str, model: str, shared_rag=None):
-    """Khởi tạo pipeline cho 1 (arm, model). shared_rag chỉ dùng cho elite_graphrag."""
+    """Khởi tạo pipeline cho 1 (arm, model). shared_rag chỉ dùng cho logic_lm_graphrag."""
     from runtime.logic_lm_pipelines import (
+        LogicLMGraphRAGPipeline,
         LogicLMNoRetrievalPipeline,
         LogicLMOntologyPipeline,
-        LogicLMGraphRAGPipeline,
     )
 
     if arm == "logic_lm_no_retrieval":
@@ -89,12 +85,13 @@ def _run_combo(
     arm: str,
     model: str,
     questions: list[dict],
+    results_root: Path,
     force: bool,
     verbose: bool,
     shared_rag=None,
 ) -> dict:
     """Chạy 1 (arm, model) trên tất cả questions. Trả về summary dict."""
-    out_dir = combo_dir(arm, model)
+    out_dir = combo_dir(results_root, arm, model)
     out_dir.mkdir(parents=True, exist_ok=True)
     label = f"{arm} | {model}"
 
@@ -167,67 +164,135 @@ def _run_combo(
             "elapsed_s": round(elapsed, 1)}
 
 
-def main() -> int:
-    p = argparse.ArgumentParser(
-        description="Chạy logic-lm arms × multiple OpenAI models trên N câu hỏi."
-    )
-    p.add_argument("--n", type=int, default=200, help="Số câu đầu tiên (default 200).")
-    p.add_argument("--models", type=str,
-                   default=",".join(DEFAULT_MODELS),
-                   help=f"Comma-separated. Default: {','.join(DEFAULT_MODELS)}")
-    p.add_argument("--arms", type=str,
-                   default=",".join(DEFAULT_ARMS),
-                   help=f"Comma-separated. Default: {','.join(DEFAULT_ARMS)}")
-    p.add_argument("--force", action="store_true", help="Chạy lại dù file đã có.")
-    p.add_argument("--verbose", action="store_true")
-    args = p.parse_args()
+# ---------------------------------------------------------------------------
+# Experiment-aware entry point
+# ---------------------------------------------------------------------------
 
-    models = [m.strip() for m in args.models.split(",") if m.strip()]
-    arms = [a.strip() for a in args.arms.split(",") if a.strip()]
-    invalid = [a for a in arms if a not in ALL_ARMS]
+
+def run_experiment_multimodel(
+    experiment,
+    arms: list[str] | None = None,
+    models: list[str] | None = None,
+    force: bool = False,
+    verbose: bool = False,
+) -> list[dict]:
+    """Run the multimodel matrix for an :class:`eval_core.experiment.Experiment`.
+
+    Reads ``experiment.multimodel`` from config (arms × models). Arguments
+    override those defaults when provided.
+    """
+    from eval_core.experiment import Experiment
+
+    if not isinstance(experiment, Experiment):
+        raise TypeError(f"expected Experiment, got {type(experiment).__name__}")
+
+    mm = experiment.multimodel
+    arms_to_run = list(arms or (mm.arms if mm else ()))
+    models_to_run = list(models or (mm.models if mm else ()))
+    if not arms_to_run or not models_to_run:
+        raise ValueError(
+            f"{experiment.name!r}: multimodel requires arms + models. "
+            f"Got arms={arms_to_run}, models={models_to_run}"
+        )
+    invalid = [a for a in arms_to_run if a not in ALL_ARMS]
     if invalid:
-        raise SystemExit(f"Unknown arm(s): {invalid}. Valid: {list(ALL_ARMS)}")
+        raise ValueError(f"Unknown multimodel arm(s): {invalid}. Valid: {list(ALL_ARMS)}")
 
-    questions = load_questions(args.n)
-    print(f"Loaded {len(questions)} questions từ {QUESTIONS_PATH}")
-    print(f"Models : {models}")
-    print(f"Arms   : {arms}")
-    print(f"Output : {OUT_ROOT}")
-    print(f"Total combos: {len(models)} × {len(arms)} = {len(models) * len(arms)}")
-    print()
+    questions = load_questions(experiment.dataset.questions, experiment.dataset.n)
+    results_root = experiment.results_dir
+    print(f"Loaded {len(questions)} questions from {experiment.dataset.questions}")
+    print(f"Models : {models_to_run}")
+    print(f"Arms   : {arms_to_run}")
+    print(f"Output : {results_root / paths.MULTIMODEL_SUBDIR}")
+    print(f"Total combos: {len(models_to_run)} × {len(arms_to_run)} = {len(models_to_run) * len(arms_to_run)}")
 
-    # Share RagPipeline across all elite_graphrag combos to amortize warm-up
+    override_dir = experiment.prompts_override_dir
+    previous_override = os.environ.get("LEGAL_KG_PROMPTS_DIR")
+    if override_dir is not None:
+        os.environ["LEGAL_KG_PROMPTS_DIR"] = str(override_dir)
+        print(f"Prompt override dir: {override_dir}")
+
+    # Share RagPipeline across all logic_lm_graphrag combos to amortize warm-up
     shared_rag = None
-    if "logic_lm_graphrag" in arms:
+    if "logic_lm_graphrag" in arms_to_run:
         from runtime.rag_query import RagPipeline
         shared_rag = RagPipeline()
         _ = shared_rag.embed_model  # warm up
-        print("RagPipeline warmed (shared across elite_graphrag combos)\n",
-              flush=True)
+        print("RagPipeline warmed (shared across logic_lm_graphrag combos)\n", flush=True)
 
-    summaries = []
-    for arm in arms:
-        for model in models:
-            print(f"\n=== COMBO: arm={arm}  model={model} ===")
+    summaries: list[dict] = []
+    try:
+        for arm in arms_to_run:
+            for model in models_to_run:
+                print(f"\n=== COMBO: arm={arm}  model={model} ===")
+                try:
+                    s = _run_combo(
+                        arm, model, questions, results_root, force, verbose,
+                        shared_rag=shared_rag if arm == "logic_lm_graphrag" else None,
+                    )
+                    summaries.append(s)
+                except Exception as e:
+                    print(f"!! COMBO {arm}/{model} crashed: {type(e).__name__}: {e}",
+                          file=sys.stderr, flush=True)
+                    summaries.append({"arm": arm, "model": model,
+                                      "fatal_error": f"{type(e).__name__}: {e}"})
+    finally:
+        if shared_rag is not None:
             try:
-                s = _run_combo(arm, model, questions, args.force, args.verbose,
-                               shared_rag=shared_rag if arm == "logic_lm_graphrag" else None)
-                summaries.append(s)
-            except Exception as e:
-                print(f"!! COMBO {arm}/{model} crashed: {type(e).__name__}: {e}",
-                      file=sys.stderr, flush=True)
-                summaries.append({"arm": arm, "model": model,
-                                  "fatal_error": f"{type(e).__name__}: {e}"})
-
-    if shared_rag is not None:
-        try:
-            shared_rag.close()
-        except Exception:
-            pass
+                shared_rag.close()
+            except Exception:
+                pass
+        if override_dir is not None:
+            if previous_override is None:
+                os.environ.pop("LEGAL_KG_PROMPTS_DIR", None)
+            else:
+                os.environ["LEGAL_KG_PROMPTS_DIR"] = previous_override
 
     print("\n\n=== SUMMARY ===")
     for s in summaries:
         print(f"  {s}")
+    return summaries
+
+
+def main() -> int:
+    from eval_core.experiment import Experiment
+
+    p = argparse.ArgumentParser(
+        description="Run the multimodel matrix for an experiment folder."
+    )
+    p.add_argument("experiment", type=Path, help="Path to experiment folder.")
+    p.add_argument(
+        "--models",
+        type=str,
+        default=None,
+        help="Comma-separated. Overrides experiment.multimodel.models.",
+    )
+    p.add_argument(
+        "--arms",
+        type=str,
+        default=None,
+        help="Comma-separated. Overrides experiment.multimodel.arms.",
+    )
+    p.add_argument("--force", action="store_true", help="Re-run even if file exists.")
+    p.add_argument("--verbose", action="store_true")
+    args = p.parse_args()
+
+    try:
+        experiment = Experiment.from_path(args.experiment)
+    except (FileNotFoundError, ValueError) as exc:
+        print(f"FAIL: {exc}", file=sys.stderr)
+        return 2
+
+    arms = [a.strip() for a in args.arms.split(",") if a.strip()] if args.arms else None
+    models = [m.strip() for m in args.models.split(",") if m.strip()] if args.models else None
+
+    try:
+        run_experiment_multimodel(
+            experiment, arms=arms, models=models, force=args.force, verbose=args.verbose,
+        )
+    except Exception as exc:
+        print(f"FAIL: {type(exc).__name__}: {exc}", file=sys.stderr)
+        return 1
     return 0
 
 

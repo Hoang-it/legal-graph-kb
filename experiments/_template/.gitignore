@@ -1,0 +1,10 @@
+# Default for a new experiment: don't track inference outputs.
+# If you want to freeze and commit this experiment's records (e.g.
+# so a future experiment can inherit them), add explicit exceptions:
+#
+#   !results/                                  # (un-ignore the whole dir)
+#   !results/**/*.json
+#
+# Keep metrics/ and report/ committed — they're small, auditable, and
+# define what the experiment claims.
+results/

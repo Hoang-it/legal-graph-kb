@@ -1,0 +1,46 @@
+# Experiment config template — copy this folder, rename to NN_short_name,
+# fill out every field. The eval_core CLI reads this file to drive
+# inference / metrics / report.
+
+name: "Short human-readable title"
+description: |
+  What hypothesis does this experiment test? What's new vs the parent?
+  Why is this worth running?
+
+date: "YYYY-MM-DD"
+
+# Dataset paths are relative to repo root and must already exist on disk.
+dataset:
+  questions: data/eval/questions_200.json
+  n: null                                  # null = full dataset
+
+# Single parent experiment (folder name, sibling under experiments/). The
+# inheritance chain is walked when an arm's mode is 'inherit'. Cycles are
+# detected; depth capped at 10.
+parent: null
+
+# Optional per-experiment prompt overrides. Path is relative to this
+# experiment folder. When set, the value is exported as
+# LEGAL_KG_PROMPTS_DIR for the duration of every CLI command — the
+# loader in src.prompts checks override paths first, falls back to
+# the canonical prompts/ tree.
+prompts_override_dir: null
+
+# Single-model arms. Each entry chooses how its records are produced.
+# - mode: run     — `python -m eval_core run` produces records here.
+# - mode: inherit — records come from the parent's results/<arm>/.
+arms: {}
+  # Example:
+  # graphrag:                { mode: run, model: gpt-4o-mini }
+  # llm_only:                { mode: inherit }
+  # logic_lm_no_retrieval:   { mode: run, model: gpt-4o-mini }
+  # logic_lm_ontology:       { mode: inherit }
+  # logic_lm_graphrag:       { mode: inherit }
+
+# Optional multi-model matrix. Each (arm, model) pair becomes a combo
+# under results/multimodel/<arm>__<model_safe>/. Combos always live in
+# this experiment — no inheritance for multimodel today.
+multimodel: null
+  # Example:
+  # arms:   [logic_lm_graphrag, logic_lm_no_retrieval]
+  # models: ["gpt-4.1", "gpt-4o", "gpt-5-mini"]
