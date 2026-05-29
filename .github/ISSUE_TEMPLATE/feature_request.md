@@ -21,7 +21,7 @@ assignees: ""
 ## Ảnh hưởng đến provenance invariant?
 
 > Reminder: mọi node/edge phải truy ngược về điều luật gốc (xem
-> CONTRIBUTING.md mục "Provenance principle").
+> `docs/contributing.md` mục "Provenance principle").
 
 - [ ] Có — và đã thiết kế để giữ invariant (giải thích bên dưới)
 - [ ] Không — chỉ ảnh hưởng UX/tooling/infra

@@ -16,19 +16,19 @@ them together.
 
 | Module | Role |
 |---|---|
-| [`paths.py`](paths.py) | Standard on-disk layout of an experiment folder. Single source of truth for `results/`, `metrics/`, `report/`, file names. |
-| [`experiment.py`](experiment.py) | `Experiment` class. Loads `config.yaml`, resolves the parent chain lazily, returns inheritance-aware records via `records_for_arm()`. Cycle detection. |
-| [`arms.py`](arms.py) | `ALL_ARMS`, `MAIN_EXPERIMENT_ARMS`, plus `parse_run_arms` / `parse_metrics_arms` for CLI selection. |
-| [`inference.py`](inference.py) | `run_experiment(experiment, arms=None, force, verbose)`. Per-arm runners that wrap `runtime.rag_query`, `runtime.llm_only`, `runtime.logic_lm_pipelines.*`. Writes records to `experiment.results_dir / <arm>`. |
-| [`multimodel.py`](multimodel.py) | `run_experiment_multimodel(experiment, arms=None, models=None, ...)`. Same shape as `inference.py` but iterates the `multimodel:` matrix from config. Writes to `results/multimodel/<arm>__<model_safe>/`. |
-| [`gold.py`](gold.py) | Strict parse of `gold_citations_raw` against the citation registry. Writes `gold_citations_normalized.json` + `gold_citation_validation_errors.csv`. Fail-hard. |
-| [`metrics.py`](metrics.py) | Deterministic metric engine (pure-computational). Reads records with `gold_articles` attached, returns the metric dict. No I/O for reports. |
-| [`report.py`](report.py) | CSV + Markdown writers. Single-arm and multi-arm flavours. |
-| [`runners.py`](runners.py) | Multi-arm loader: pulls records (own + inherited + multimodel combos), calls gold + metrics + report, writes outputs to the experiment folder. |
-| [`rerender.py`](rerender.py) | Backfill `plain_answer` on legacy logic-LM records of an experiment. Walks `results/` for `logic_lm*` directories. |
-| [`text_normalize.py`](text_normalize.py) | IRAC → prose helper used to keep BERTScore comparable between IRAC and prose arms. |
-| [`judge.py`](judge.py) | Fail-closed placeholder. Judge metrics are intentionally outside the main flow. |
-| [`cli.py`](cli.py) + [`__main__.py`](__main__.py) | Unified subcommand CLI: `run`, `multimodel`, `metrics`, `all`. |
+| [`paths.py`](../eval_core/paths.py) | Standard on-disk layout of an experiment folder. Single source of truth for `results/`, `metrics/`, `report/`, file names. |
+| [`experiment.py`](../eval_core/experiment.py) | `Experiment` class. Loads `config.yaml`, resolves the parent chain lazily, returns inheritance-aware records via `records_for_arm()`. Cycle detection. |
+| [`arms.py`](../eval_core/arms.py) | `ALL_ARMS`, `MAIN_EXPERIMENT_ARMS`, plus `parse_run_arms` / `parse_metrics_arms` for CLI selection. |
+| [`inference.py`](../eval_core/inference.py) | `run_experiment(experiment, arms=None, force, verbose)`. Per-arm runners that wrap `runtime.rag_query`, `runtime.llm_only`, `runtime.logic_lm_pipelines.*`. Writes records to `experiment.results_dir / <arm>`. |
+| [`multimodel.py`](../eval_core/multimodel.py) | `run_experiment_multimodel(experiment, arms=None, models=None, ...)`. Same shape as `inference.py` but iterates the `multimodel:` matrix from config. Writes to `results/multimodel/<arm>__<model_safe>/`. |
+| [`gold.py`](../eval_core/gold.py) | Strict parse of `gold_citations_raw` against the citation registry. Writes `gold_citations_normalized.json` + `gold_citation_validation_errors.csv`. Fail-hard. |
+| [`metrics.py`](../eval_core/metrics.py) | Deterministic metric engine (pure-computational). Reads records with `gold_articles` attached, returns the metric dict. No I/O for reports. |
+| [`report.py`](../eval_core/report.py) | CSV + Markdown writers. Single-arm and multi-arm flavours. |
+| [`runners.py`](../eval_core/runners.py) | Multi-arm loader: pulls records (own + inherited + multimodel combos), calls gold + metrics + report, writes outputs to the experiment folder. |
+| [`rerender.py`](../eval_core/rerender.py) | Backfill `plain_answer` on legacy logic-LM records of an experiment. Walks `results/` for `logic_lm*` directories. |
+| [`text_normalize.py`](../eval_core/text_normalize.py) | IRAC → prose helper used to keep BERTScore comparable between IRAC and prose arms. |
+| [`judge.py`](../eval_core/judge.py) | Fail-closed placeholder. Judge metrics are intentionally outside the main flow. |
+| [`cli.py`](../eval_core/cli.py) + [`__main__.py`](../eval_core/__main__.py) | Unified subcommand CLI: `run`, `multimodel`, `metrics`, `all`. |
 
 ## CLI
 
@@ -74,5 +74,5 @@ rarely a 1:1 match across experiments.
 [`tests/test_experiment.py`](../tests/test_experiment.py) covers config
 parsing, inheritance, cycle detection, validation, and standard paths.
 [`tests/test_evaluation_sample_metrics.py`](../tests/test_evaluation_sample_metrics.py)
-exercises the metric engine end-to-end on the [`samples/`](samples/)
-fixture.
+exercises the metric engine end-to-end on the
+[`eval_core/samples/`](../eval_core/samples) fixture.

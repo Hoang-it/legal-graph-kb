@@ -10,7 +10,7 @@ description: Continuing work on the Legal KG project — Vietnamese Social-Insur
 - Designing or migrating schema in `schema/schema.cypher`
 - Adding / rewriting prompts under `prompts/`
 - Running or evolving the academic-metrics evaluation in `evaluation/` + `experiments/`
-- Following up on `reports/plan_v5_general_retrieval.md` (current planning doc)
+- Following up on `docs/plans/v5_general_retrieval.md` (current planning doc)
 - Touching `runtime/rag_query.py`, `runtime/logic_lm_pipelines.py`, `runtime/logic_lm/`, or the offline B1–B6 pipeline in `offline/`
 
 ## Project context (read first)
@@ -30,7 +30,7 @@ The project has been refactored: the old `elite/` package was renamed to `logic_
 | Inference arms | `graphrag`, `llm_only`, `logic_lm_no_retrieval`, `logic_lm_ontology`, `logic_lm_graphrag` |
 | R1 / R2 frozen baseline in `experiments/01_initial_eval/results/` and `.../results/multimodel/` | Committed |
 | Headline evaluation | Academic metrics only (citation recall/precision/F1, display rate, latency, BERTScore, 3 Prolog rates). Judge metrics fail-closed by design. |
-| Active plan | `reports/plan_v5_general_retrieval.md` — general/scalable citation retrieval (Sprint 1 = vanilla pipeline + audit) |
+| Active plan | `docs/plans/v5_general_retrieval.md` — general/scalable citation retrieval (Sprint 1 = vanilla pipeline + audit) |
 
 ---
 
@@ -157,8 +157,8 @@ legal-graph-kb/
 
 In this order:
 
-1. **`reports/plan_v5_general_retrieval.md`** — current planning doc (vanilla → audit → conditional modules). Sprint 1 is "vanilla pipeline + audit" before any new module ships.
-2. **`eval_core/README.md`** + **`experiments/README.md`** — how an experiment is laid out, how the CLI dispatches, how inheritance works. These are the design contracts to follow.
+1. **`docs/plans/v5_general_retrieval.md`** — current planning doc (vanilla → audit → conditional modules). Sprint 1 is "vanilla pipeline + audit" before any new module ships.
+2. **`docs/eval_core.md`** + **`docs/experiments.md`** — how an experiment is laid out, how the CLI dispatches, how inheritance works. These are the design contracts to follow.
 3. **`runtime/rag_query.py`** — `RagPipeline.vector_search` / `expand` / `fetch_facts` / `traverse` / `ask` / `verify_citations`. The retrieval surface you'll extend.
 4. **`runtime/logic_lm_pipelines.py`** — three arm wrappers (`LogicLMNoRetrievalPipeline`, `LogicLMOntologyPipeline`, `LogicLMGraphRAGPipeline`). Each returns a `LogicLMAnswer` dataclass.
 5. **`runtime/logic_lm/pipelines/program_pipeline.py`** — actual Prolog generation + repair loop (`_attempt`, `_validate_predicate_inputs`, `_verify`).
@@ -326,6 +326,32 @@ python -m offline.build_logic_lm_corpus_2024   # only if logic-LM arms will run
 python -m eval_core all experiments/<NN_name>
 ```
 
+### Where docs live — single source of truth in `docs/`
+
+Every project-level document lives under [`docs/`](../../../docs). When
+reading or adding documentation, look there first; never create a new
+README/plan/guide at the repo root or inside a package folder.
+
+- `docs/README.md` is the index.
+- `docs/quickstart.md` + `docs/architecture.md` cover install + system overview.
+- `docs/eval_core.md` + `docs/experiments.md` are the design contracts for evaluation.
+- `docs/plans/<name>.md` is where new plans go.
+- `docs/changelog.md` / `docs/contributing.md` / `docs/code-of-conduct.md` are the meta files.
+
+Only files that *must* sit at the root for tooling reasons live there:
+`README.md` (a thin stub pointing into `docs/`) and `LICENSE`.
+
+**Stays co-located** (these are part of the artifact, not project docs):
+- `experiments/<NN>/README.md` — per-experiment write-up.
+- `experiments/_template/README.md` — template that becomes a new
+  experiment's README on copy.
+- `eval_core/samples/README.md` — describes a specific test fixture.
+- `prompts/**/*.md` — functional prompts, not documentation.
+
+**Build artifact, not a doc**: `data/processed/extraction_summary.md` is
+written by `offline.merge_normalize` (B4). Don't edit it by hand and
+don't move it back into `docs/`.
+
 ### Commit hygiene
 - Use existing commit-message style: `feat:`, `fix:`, `refactor:`, `docs:`, `data:`, `chore:`.
 - One coherent change per commit. The repo history is small and audited — don't bundle unrelated changes.
@@ -365,6 +391,6 @@ HF_HUB_DISABLE_SYMLINKS_WARNING=1  # silences HF warnings on Windows
 
 ## When you finish a task
 
-- Update `reports/plan_v5_general_retrieval.md` if the plan itself changed.
+- Update `docs/plans/v5_general_retrieval.md` if the plan itself changed.
 - Update this skill file when the architecture or workflow changes (file paths, arm list, eval flow).
 - If a new defensible empirical claim emerges, document it next to the metrics CSV / JSON it depends on.

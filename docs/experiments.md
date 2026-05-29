@@ -2,14 +2,13 @@
 
 One folder per experiment. The folder owns *everything* that defines the
 experiment: config, inputs metadata, generated records, computed metrics,
-report. Shared logic lives in [`eval_core/`](../eval_core/) — no orchestration
+report. Shared logic lives in [`eval_core/`](eval_core.md) — no orchestration
 code belongs here.
 
 ## Layout
 
 ```
 experiments/
-├── README.md                 ← this file
 ├── _template/                ← copy this to start a new experiment
 │   ├── config.yaml
 │   ├── README.md
@@ -26,8 +25,9 @@ experiments/
     └── prompts_override/     ← optional per-experiment prompt overrides
 ```
 
-The standard layout is encoded in [`eval_core/paths.py`](../eval_core/paths.py).
-Don't write to other locations — downstream tools look here.
+The standard layout is encoded in [`eval_core/paths.py`](../eval_core/paths.py)
+(see [`eval_core.md`](eval_core.md) for a guide). Don't write to other
+locations — downstream tools look here.
 
 ## Naming
 
@@ -81,7 +81,7 @@ Cycle detection guards the parent chain (depth ≤ 10).
 The repo's root `.gitignore` ignores `experiments/*/results/` by default.
 A frozen baseline that wants to share its records (so others can inherit
 them) adds an exception in its own `.gitignore` — see
-[`01_initial_eval/.gitignore`](01_initial_eval/.gitignore).
+[`experiments/01_initial_eval/.gitignore`](../experiments/01_initial_eval/.gitignore).
 
 `metrics/` and `report/` are always tracked: they're small, auditable,
 and they're what the experiment claims.

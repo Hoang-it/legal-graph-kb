@@ -34,7 +34,7 @@
 ## Provenance check
 
 > Reminder: mọi node/edge mới PHẢI có `source_clause` + reverse-traceable.
-> Xem CONTRIBUTING.md mục "Provenance principle".
+> Xem `docs/contributing.md` mục "Provenance principle".
 
 - [ ] Tôi đã đọc Provenance principle và xác nhận PR không vi phạm
 - [ ] (Nếu thêm semantic edge/node mới) đã update schema constraints + test
@@ -42,7 +42,7 @@
 
 ## Changelog
 
-- [ ] Đã thêm entry vào `CHANGELOG.md` mục `[Unreleased]`
+- [ ] Đã thêm entry vào `docs/changelog.md` mục `[Unreleased]`
 - [ ] Không cần (PR chỉ là docs/chore/internal refactor)
 
 ## Screenshots / output (nếu áp dụng)

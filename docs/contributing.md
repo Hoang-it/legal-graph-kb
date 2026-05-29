@@ -95,7 +95,7 @@ Ví dụ: `feat(rag): add hybrid keyword+vector search`
    - `pytest tests/test_ids.py tests/test_schema.py tests/test_parse_docx.py` xanh
    - `ruff check .` không có error
    - `ruff format --check .` không có diff
-3. **CHANGELOG.md** — thêm 1 dòng dưới `## [Unreleased]`
+3. **`docs/changelog.md`** — thêm 1 dòng dưới `## [Unreleased]`
 4. **Push + open PR** với mô tả ngắn gọn (vấn đề giải quyết, cách thay đổi,
    test bạn đã chạy)
 5. PR được review → merge sau khi CI xanh

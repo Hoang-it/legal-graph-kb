@@ -92,7 +92,7 @@ all = [
 Homepage      = "https://github.com/USER/legal-graph-kb"
 Repository    = "https://github.com/USER/legal-graph-kb"
 Issues        = "https://github.com/USER/legal-graph-kb/issues"
-Changelog     = "https://github.com/USER/legal-graph-kb/blob/main/CHANGELOG.md"
+Changelog     = "https://github.com/USER/legal-graph-kb/blob/main/docs/changelog.md"
 
 # Console entry points — cho phép gọi `legal-kg-* ...` thay vì `python -m offline.*` /
 # `python -m runtime.*`.

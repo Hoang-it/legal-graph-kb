@@ -205,19 +205,9 @@ data/eval/questions_*.json
 # Logs
 logs/
 
-# Auxiliary CSV outputs (regenerable)
-reports/*.csv
-
 # Allow placeholder files so empty dirs are kept
 !data/**/.gitkeep
 !data/raw/.gitkeep
-
-# Generated reports
-reports/*.md
-!reports/.gitkeep
-# Human-written documentation (commit these)
-!reports/extraction_summary.md
-!reports/plan_v5_general_retrieval.md
 
 # ─── Experiment results — ignored by default, per-experiment opt-in ───
 # Each experiment can override this in its own .gitignore (see e.g.

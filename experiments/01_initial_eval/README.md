@@ -49,7 +49,7 @@ See:
 
 The defensible claims that survived four audit rounds are documented in
 the project skill (`.claude/skills/legal-kg-logic-extraction/SKILL.md`)
-and in `reports/plan_v5_general_retrieval.md`. The headline finding —
+and in `docs/plans/v5_general_retrieval.md`. The headline finding —
 `llm_only` beats `graphrag` pairwise — is what motivates the v5
 retrieval plan.
 

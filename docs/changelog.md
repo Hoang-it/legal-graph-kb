@@ -47,8 +47,10 @@ Initial public release.
   questions with generated per-question results for later metric computation.
 - **Tests**: 95 unit/integration tests covering provenance integrity
   (byte-for-byte source verification, dst-must-exist, reverse-DB lookups).
-- **Docs**: `README.md`, `docs/neo4j-setup.md`, `prompts/extract_v1.md`,
-  `experiments/README.md`, `reports/extraction_summary.md`.
+- **Docs**: `README.md`, `docs/neo4j-setup.md`,
+  `prompts/offline/llm_extract.md` (was `prompts/extract_v1.md` pre-refactor),
+  `docs/experiments.md` (was `experiments/README.md` pre-refactor),
+  `data/processed/extraction_summary.md` (was `reports/extraction_summary.md` pre-refactor).
 
 ### Security
 - `.env` excluded via `.gitignore` since first commit; `.env.example`

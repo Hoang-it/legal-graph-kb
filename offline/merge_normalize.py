@@ -9,8 +9,8 @@
     data/interim/llm_extractions/A*.json
 
 Đầu ra:
-    data/processed/merged_graph.json  — cấu trúc {nodes: {label: [...]}, edges: {type: [...]}}
-    reports/extraction_summary.md      — báo cáo cho con người
+    data/processed/merged_graph.json        — cấu trúc {nodes: {label: [...]}, edges: {type: [...]}}
+    data/processed/extraction_summary.md    — báo cáo cho con người
 
 NGUYÊN TẮC:
 - Dedup semantic node theo canonical ID; gộp `mentioned_in` (union).
@@ -34,7 +34,7 @@ from src.legal_metadata import load_law_metadata, load_order
 INTERIM = Path("data/interim")
 LLM_DIR = INTERIM / "llm_extractions"
 OUT = Path("data/processed/merged_graph.json")
-REPORT = Path("reports/extraction_summary.md")
+REPORT = Path("data/processed/extraction_summary.md")
 
 
 # ---------------------------------------------------------------------------
