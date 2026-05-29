@@ -4,7 +4,7 @@ so `experiments/run_inference.py` can route them uniformly.
 
 3 arms:
 - LogicLMNoRetrievalPipeline   — Arm C — empty context + relaxed prompt
-- LogicLMOntologyPipeline      — Arm D — OntologyRetrieval (data/logic_lm/ontology_2024.json)
+- LogicLMOntologyPipeline      — Arm D — OntologyRetrieval (data/ontology/ontology_2024.json)
 - LogicLMGraphRAGPipeline      — Arm E — wrap RagPipeline qua adapter
 
 Provenance/tracking:
@@ -67,7 +67,12 @@ from src.citations import (
 )
 from src.prompts import load_prompt, resolve_prompt_path
 
-LOGIC_LM_ONTOLOGY_PATH = Path("data/logic_lm/ontology_2024.json")
+LOGIC_LM_ONTOLOGY_PATH = (
+    _REPO_ROOT
+    / logic_lm_settings.DATA_DIR_NAME
+    / logic_lm_settings.ONTOLOGY_DIR_NAME
+    / logic_lm_settings.DEFAULT_ONTOLOGY_FILENAME
+)
 NO_RETRIEVAL_PROMPT_REL = "runtime/logic_lm/rule_gen_no_retrieval.md"
 IRAC_WITH_PLAIN_PROMPT_REL = "runtime/logic_lm/irac_with_plain.md"
 
@@ -826,7 +831,7 @@ class LogicLMOntologyPipeline(_LogicLMBasePipeline):
         if not LOGIC_LM_ONTOLOGY_PATH.exists():
             raise FileNotFoundError(
                 f"Ontology not found: {LOGIC_LM_ONTOLOGY_PATH}. "
-                f"Run `python -m offline.build_logic_lm_corpus_2024` first."
+                f"Run `python -m offline.build_ontology` first."
             )
         retriever = OntologyRetrieval()
         retriever.index_ontology(LOGIC_LM_ONTOLOGY_PATH)

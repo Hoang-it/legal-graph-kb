@@ -9,5 +9,5 @@ auxiliary artifacts before any inference can happen:
 - merge_normalize (B4) — dedup + validate
 - embed (B5) — BGE-M3 embeddings
 - load_neo4j (B6) — load nodes/edges/vectors into Neo4j
-- build_logic_lm_corpus_2024 — build the logic-LM corpus + ontology files
+- build_ontology — build the logic-LM corpus (JSONL) + concept-graph ontology
 """

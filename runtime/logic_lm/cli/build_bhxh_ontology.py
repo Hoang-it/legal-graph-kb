@@ -21,16 +21,16 @@ for _stream in (sys.stdout, sys.stderr):
 
 def make_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Build a BHXH ontology JSON file from corpus_bhxh JSONL."
+        description="Build a BHXH ontology JSON file from a corpus JSONL."
     )
     parser.add_argument(
         settings.CLI_ARGUMENT_CORPUS,
-        default=str(REPO_ROOT / settings.DATA_DIR_NAME / settings.LOGIC_LM_DATA_SUBDIR / settings.DEFAULT_CORPUS_FILENAME),
+        default=str(REPO_ROOT / settings.DATA_DIR_NAME / settings.ONTOLOGY_DIR_NAME / settings.DEFAULT_CORPUS_FILENAME),
         help=settings.CLI_HELP_CORPUS,
     )
     parser.add_argument(
         "--out",
-        default=str(REPO_ROOT / settings.DATA_DIR_NAME / settings.LOGIC_LM_DATA_SUBDIR / settings.DEFAULT_ONTOLOGY_FILENAME),
+        default=str(REPO_ROOT / settings.DATA_DIR_NAME / settings.ONTOLOGY_DIR_NAME / settings.DEFAULT_ONTOLOGY_FILENAME),
         help="Output ontology JSON path.",
     )
     parser.add_argument(

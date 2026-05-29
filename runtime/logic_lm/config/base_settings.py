@@ -15,12 +15,15 @@ MAIN_MODULE_NAME = "__main__"
 
 SRC_DIR_NAME = "src"
 DATA_DIR_NAME = "data"
-# Sub-directory under data/ where logic-lm corpus & ontology live after
-# the v5 refactor (former `elite/data/` is now `data/logic_lm/`).
-LOGIC_LM_DATA_SUBDIR = "logic_lm"
-DEFAULT_CORPUS_FILENAME = "corpus_bhxh.jsonl"
-DEFAULT_ONTOLOGY_FILENAME = "ontology_bhxh.json"
-GENERATED_DIR_NAME = "generated"
+# Sub-directory under data/ where the logic-LM knowledge base (corpus +
+# ontology) lives. `data/` is read-only KG input — only the KB sits here.
+ONTOLOGY_DIR_NAME = "ontology"
+DEFAULT_CORPUS_FILENAME = "corpus_2024.jsonl"
+DEFAULT_ONTOLOGY_FILENAME = "ontology_2024.json"
+# Runtime-generated Prolog programs land at the repo root under
+# `artifacts/logic_lm/programs/` — NOT under `data/` (data is input-only).
+ARTIFACTS_DIR_NAME = "artifacts"
+LOGIC_LM_ARTIFACTS_SUBDIR = "logic_lm"
 PROGRAM_ARTIFACTS_DIR_NAME = "programs"
 
 FILE_SUFFIX_FAILED_JSON = ".failed.json"

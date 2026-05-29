@@ -163,7 +163,7 @@ def test_experiment_parsers_use_strict_displayed_citations():
     assert parse_llm_citations("[Điều 64 khoản 1]") == ([], [])
 
 
-def test_elite_parser_uses_registry_and_legal_source_law_id():
+def test_logic_lm_parser_uses_registry_and_legal_source_law_id():
     from runtime.logic_lm_pipelines import (
         _parse_citations_from_irac,
         _parse_citations_from_legal_sources,

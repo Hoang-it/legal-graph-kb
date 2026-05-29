@@ -3,12 +3,12 @@
 > **Status: design under review, post-grilling rev 2. Not committed; updated locally
 > until Sprint 1 (vanilla pipeline + audit) lands.**
 > Supersedes: `plan_phase6_completion.md`, `plan_phase6_prolog_multilaw.md`, the
-> entire `elite_graphrag_logic_rt_v*` arm family (v1 → v4).
+> entire `logic_lm_graphrag_logic_rt_v*` arm family (v1 → v4).
 > Owner: Hoàng — UIT MSc thesis.
 
 ## 1. Why v4 was discarded
 
-v4 (`elite_graphrag_logic_rt_v4`) was a workaround layer. Its core mechanism —
+v4 (`logic_lm_graphrag_logic_rt_v4`) was a workaround layer. Its core mechanism —
 `data/legal_issue_taxonomy.yaml` + `src/legal_issue_planner.py` + per-domain
 slot dependency map — encoded a hand-curated rule set per legal domain. That
 blocks the only scaling axis that matters for the thesis: number of laws and

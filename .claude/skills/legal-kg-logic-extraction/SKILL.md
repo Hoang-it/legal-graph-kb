@@ -24,9 +24,12 @@ Read them before touching `experiments/` or `eval_core`.
 
 ### Rule 1 — `data/` is the read-only source of truth
 
-- `data/raw/`, `data/interim/`, `data/processed/`, `data/logic_lm/`,
+- `data/raw/`, `data/interim/`, `data/processed/`, `data/ontology/`,
   `data/eval/questions_*.json`, `data/legal_*.yaml` are project input
   data + KG artifacts. Treat them as the input side of the pipeline.
+- Runtime-generated artifacts (e.g. Prolog programs from the logic-LM
+  CLI) land at the repo root under `artifacts/<arm>/<...>/` — never
+  under `data/`. The folder is `.gitignore`d.
 - **Never** write experiment outputs (records, metrics, reports,
   ablation variants, regenerated artifacts) into `data/`. Every output
   of an experiment lands in that experiment's own folder via
@@ -129,7 +132,7 @@ legal-graph-kb/
 │   ├── merge_normalize.py            # B4 — dedup + validate
 │   ├── embed.py                      # B5 — BGE-M3 embeddings
 │   ├── load_neo4j.py                 # B6 — load Neo4j (constraints + vector index)
-│   └── build_logic_lm_corpus_2024.py # Build Logic-LM corpus + ontology
+│   └── build_ontology.py             # Build Logic-LM corpus (JSONL) + concept-graph ontology
 │
 ├── runtime/                          # Inference runtime (per-question)
 │   ├── rag_query.py                  # B7 — RagPipeline (vector_search, expand, fetch_facts, ask)
@@ -200,8 +203,11 @@ legal-graph-kb/
 │   ├── raw/                          # Source .docx files
 │   ├── interim/                      # B1–B3 intermediate JSON (gitignored)
 │   ├── processed/                    # merged_graph.json + embeddings.parquet (committed)
-│   ├── logic_lm/                     # Logic-LM corpus + ontology (corpus_2024.jsonl, ontology_2024.json, ...)
+│   ├── ontology/                     # Logic-LM knowledge base (corpus_2024.jsonl, ontology_2024.json) — input to runtime/logic_lm
 │   └── eval/questions_200.json       # 200 BHXH questions (input only — NOT output)
+│
+├── artifacts/                        # Runtime-generated artifacts (gitignored, peer of source)
+│   └── logic_lm/programs/            # Prolog programs from logic_lm CLI (timestamped .pl + .json)
 │
 ├── schema/schema.cypher              # Neo4j constraints + vector indexes
 ├── scripts/                          # PowerShell wrappers (chat, install_b5, install_bge_m3) + verify_b5.py
@@ -403,7 +409,7 @@ python -m offline.llm_extract
 python -m offline.merge_normalize
 python -m offline.embed
 python -m offline.load_neo4j --apply-schema
-python -m offline.build_logic_lm_corpus_2024   # only if logic-LM arms will run
+python -m offline.build_ontology               # only if logic-LM arms will run
 
 # Per experiment: inference + metrics + report (records land in
 # experiments/<NN>/results/, metrics in metrics/, report in report/)

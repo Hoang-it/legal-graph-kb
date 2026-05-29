@@ -28,7 +28,7 @@ def normalize_for_prose_metric(
     Args:
         answer_text: Raw answer (may be IRAC or free prose).
         irac_sections: Pre-parsed dict {'issue':..., 'rule':..., 'application':...,
-                       'conclusion':...} từ elite_pipelines._parse_irac_sections.
+                       'conclusion':...} từ logic_lm_pipelines._parse_irac_sections.
                        None → text được xem là free prose (no normalize).
         mode: 'app_conclusion' (default) — keep Application + Conclusion only.
               'conclusion_only' — only Conclusion.

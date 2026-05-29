@@ -1,2 +1,0 @@
-legal_source(law_bhxh_2014, law_bhxh_2014, article_29, clause_2, none, 'Mức hưởng một ngày bằng 30% mức lương cơ sở. Số ngày nghỉ dưỡng sức, phục hồi sức khoẻ tối đa 10 ngày (sau phẫu thuật), 7 ngày (mắc bệnh cần điều trị dài ngày), 5 ngày (trường hợp khác).').
-sick_leave_max_days_for_long_term_illness(Days, Trace) :- Days = 7, Trace = [step(conclusion, sick_leave_max_days_for_long_term_illness(Days), based_on(law_bhxh_2014))].

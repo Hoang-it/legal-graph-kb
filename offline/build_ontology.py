@@ -13,9 +13,9 @@ Clause.full_text từ B1).
 
 Sau khi sinh JSONL, gọi `build_ontology_file` từ logic-lm để build ontology.
 
-Output:
-    data/logic_lm/corpus_2024.jsonl
-    data/logic_lm/ontology_2024.json
+Output paths come from `runtime/logic_lm/config/base_settings.py` so
+both this script and the runtime pipelines stay in sync (currently
+`data/ontology/corpus_2024.jsonl` + `data/ontology/ontology_2024.json`).
 """
 from __future__ import annotations
 
@@ -28,10 +28,15 @@ _REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
+from runtime.logic_lm.config import settings as logic_lm_settings
+
 
 STRUCTURED_PATH = Path("data/interim/structured_law.json")
-OUT_CORPUS = Path("data/logic_lm/corpus_2024.jsonl")
-OUT_ONTOLOGY = Path("data/logic_lm/ontology_2024.json")
+_ONTOLOGY_DIR = (
+    Path(logic_lm_settings.DATA_DIR_NAME) / logic_lm_settings.ONTOLOGY_DIR_NAME
+)
+OUT_CORPUS = _ONTOLOGY_DIR / logic_lm_settings.DEFAULT_CORPUS_FILENAME
+OUT_ONTOLOGY = _ONTOLOGY_DIR / logic_lm_settings.DEFAULT_ONTOLOGY_FILENAME
 
 DOCUMENT_LABEL = "Luật BHXH 2024 (41/2024/QH15)"
 

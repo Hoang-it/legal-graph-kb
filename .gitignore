@@ -215,6 +215,10 @@ logs/
 # freeze its baseline records for inheritance by future experiments).
 experiments/*/results/
 
+# ─── Runtime-generated artifacts (Prolog programs from logic-LM CLI etc.) ───
+# Peer of source dirs (runtime/, offline/, src/). Regenerable; do NOT commit.
+artifacts/
+
 # Model caches & weights (downloaded on demand via scripts/install_b5.ps1)
 .cache/
 *.safetensors

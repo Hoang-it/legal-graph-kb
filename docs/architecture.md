@@ -66,7 +66,7 @@ legal-graph-kb/
 │   ├── merge_normalize.py       # B4 — dedup + validate
 │   ├── embed.py                 # B5 — BGE-M3 embeddings
 │   ├── load_neo4j.py            # B6 — load Neo4j
-│   └── build_logic_lm_corpus_2024.py  # logic-LM corpus + ontology build
+│   └── build_ontology.py              # logic-LM corpus + concept-graph ontology build
 ├── runtime/                     # Inference runtime (B7 + chat + logic-LM arms)
 │   ├── rag_query.py             # B7 — GraphRAG pipeline + ask()
 │   ├── chat.py                  # Interactive REPL
@@ -112,8 +112,10 @@ legal-graph-kb/
 │   ├── raw/                     #   Source law .docx
 │   ├── interim/                 #   (ignored) B1-B3 intermediate JSON
 │   ├── processed/               #   (ignored) B4-B5 final artifacts + extraction_summary
-│   ├── logic_lm/                #   Logic-LM corpus + ontology
+│   ├── ontology/                #   Logic-LM knowledge base (corpus_2024.jsonl + ontology_2024.json)
 │   └── eval/questions_200.json  #   200-question benchmark (input only)
+├── artifacts/                   # (gitignored) Runtime-generated artifacts — peer of source dirs
+│   └── logic_lm/programs/       #   Prolog programs from logic_lm CLI (.pl + .json)
 ├── pyproject.toml               # Build, deps, ruff, pytest, coverage, mypy
 ├── .github/                     # CI + issue/PR templates
 ├── README.md                    # Brief entry point — points here

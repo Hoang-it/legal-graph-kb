@@ -1,7 +1,7 @@
 """logic_lm — symbolic-LLM hybrid pipeline.
 
-Originally the top-level `elite/` package; flattened into `src/logic_lm/`
-and renamed during the v5 refactor. Comprises:
+Lives at `runtime/logic_lm/` (post-v5 refactor; previously `elite/` then
+`src/logic_lm/`). Comprises:
 
 - config/    — typed settings (paths, LLM, retrieval, Prolog, prompts)
 - indexes/   — HNSW dense + keyword sparse stores

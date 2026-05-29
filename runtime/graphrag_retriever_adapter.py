@@ -5,7 +5,7 @@ RetrievedKnowledgeChunk]` và `.scores: Dict[str, float]`. GraphRAG trả
 về `List[SearchHit]` (clause_id, score, text, article_n, clause_n, ...).
 Adapter convert.
 
-Mục đích: cho phép arm `elite_graphrag` dùng Neo4j vector search thay vì
+Mục đích: cho phép arm `logic_lm_graphrag` dùng Neo4j vector search thay vì
 logic-lm's ontology/hybrid retrieval, để compare retrieval quality.
 """
 from __future__ import annotations

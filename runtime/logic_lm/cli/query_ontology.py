@@ -35,12 +35,12 @@ def make_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         settings.CLI_ARGUMENT_CORPUS,
-        default=str(REPO_ROOT / settings.DATA_DIR_NAME / settings.LOGIC_LM_DATA_SUBDIR / settings.DEFAULT_CORPUS_FILENAME),
+        default=str(REPO_ROOT / settings.DATA_DIR_NAME / settings.ONTOLOGY_DIR_NAME / settings.DEFAULT_CORPUS_FILENAME),
         help=settings.CLI_HELP_CORPUS,
     )
     parser.add_argument(
         settings.CLI_ARGUMENT_ONTOLOGY,
-        default=str(REPO_ROOT / settings.DATA_DIR_NAME / settings.LOGIC_LM_DATA_SUBDIR / settings.DEFAULT_ONTOLOGY_FILENAME),
+        default=str(REPO_ROOT / settings.DATA_DIR_NAME / settings.ONTOLOGY_DIR_NAME / settings.DEFAULT_ONTOLOGY_FILENAME),
         help=settings.CLI_HELP_ONTOLOGY,
     )
     parser.add_argument(
