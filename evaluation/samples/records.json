@@ -1,0 +1,49 @@
+[
+  {
+    "question": "Dummy question with one correct gold article.",
+    "answer": "Eligible according to [41/2024/QH15, Dieu 64 khoan 1].",
+    "citation_ids": [
+      "L41_2024.A64.K1"
+    ],
+    "elapsed_s": 1.0,
+    "gold_articles": [
+      "L41_2024.A64"
+    ]
+  },
+  {
+    "question": "Dummy question used for wrong or missing predicted citations.",
+    "answer": "Wrong source displayed as [41/2024/QH15, Dieu 51].",
+    "citation_ids": [
+      "L41_2024.A51",
+      "BAD_ID"
+    ],
+    "elapsed_s": 3.0,
+    "gold_articles": [
+      "L41_2024.A50"
+    ]
+  },
+  {
+    "question": "Dummy question with one correct gold article.",
+    "answer": "Issue: sample. Rule: [41/2024/QH15, Dieu 64]. Application: sample. Conclusion: yes.",
+    "citation_ids": [
+      "L41_2024.A64"
+    ],
+    "elapsed_s": 2.0,
+    "prolog_success": true,
+    "n_repair_rounds": 0,
+    "gold_articles": [
+      "L41_2024.A64"
+    ]
+  },
+  {
+    "question": "Dummy question used for wrong or missing predicted citations.",
+    "answer": "",
+    "citation_ids": [],
+    "elapsed_s": 4.0,
+    "prolog_success": false,
+    "n_repair_rounds": 1,
+    "gold_articles": [
+      "L41_2024.A50"
+    ]
+  }
+]

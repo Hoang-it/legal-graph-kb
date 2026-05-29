@@ -1,0 +1,71 @@
+{
+  "records": {
+    "1": {
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "citation_f1": 1.0,
+      "citation_display_rate": 1.0,
+      "precision_denom": 1,
+      "pred_parse_errors": []
+    },
+    "2": {
+      "citation_recall": 0.0,
+      "citation_precision": 0.0,
+      "citation_f1": 0.0,
+      "citation_display_rate": 0.5,
+      "precision_denom": 2,
+      "pred_parse_errors": [
+        "BAD_ID"
+      ]
+    },
+    "3": {
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "citation_f1": 1.0,
+      "citation_display_rate": 1.0,
+      "precision_denom": 1,
+      "pred_parse_errors": []
+    },
+    "4": {
+      "citation_recall": 0.0,
+      "citation_precision": 0.0,
+      "citation_f1": 0.0,
+      "citation_display_rate": null,
+      "precision_denom": 0,
+      "pred_parse_errors": []
+    }
+  },
+  "aggregate": {
+    "n_records": 4,
+    "macro": {
+      "citation_recall": 0.5,
+      "citation_precision": 0.5,
+      "citation_f1": 0.5,
+      "citation_display_rate": 0.8333,
+      "latency_s": 2.5
+    },
+    "micro": {
+      "citation_recall": 0.5,
+      "citation_precision": 0.5,
+      "citation_display_rate": 0.75,
+      "recall_num": 2,
+      "recall_denom": 4,
+      "precision_num": 2,
+      "precision_denom": 4,
+      "display_num": 3,
+      "display_denom": 4
+    },
+    "prolog": {
+      "n_prolog_records": 2,
+      "prolog_first_try_solution_rate": 0.5,
+      "repair_invoked_rate": 0.5,
+      "repair_success_rate": 0.0,
+      "repair_success_num": 0,
+      "repair_success_denom": 1
+    },
+    "error_counts": {
+      "pred_citation_parse_errors": 1,
+      "records_with_no_pred_citations": 1
+    }
+  }
+}

@@ -135,14 +135,14 @@ python -m experiments.run_inference --arms main --n 200
 python -m experiments.compute_academic_metrics
 ```
 
-Output: `data/eval/academic_metrics.json`, `data/eval/academic_metrics.csv`,
-và [`reports/academic_report.md`](reports/academic_report.md). Script sẽ dừng
+Output mặc định: `metrics/academic_metrics.json`, `metrics/academic_metrics.csv`,
+và `metrics/academic_report.md`. Có thể đổi thư mục bằng `--output-dir`. Script sẽ dừng
 nếu `gold_citations_raw` thiếu hoặc không parse được.
 
 Headline metrics là deterministic/dataset-based: citation recall,
 citation precision, citation F1, citation display rate, latency, BERTScore
 và 3 prolog rates. Judge-model metrics được tách khỏi headline và không chạy
-trong main experiment. Entrypoint `experiments.compute_judge_metrics` hiện fail-closed
+trong main experiment. Entrypoint `evaluation.compute_judge_metrics` hiện fail-closed
 cho đến khi judge metrics được thiết kế và duyệt riêng.
 
 ## 📁 Project structure

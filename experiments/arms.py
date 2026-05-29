@@ -1,6 +1,6 @@
 """Shared experiment arm definitions.
 
-`main` is the approved comparison set for the academic-metrics phase.  It is
+`main` is the approved comparison set for the academic-metrics phase. It is
 intentionally narrower than `all`: experimental arms can exist in the repo
 without entering the headline evaluation.
 """
@@ -48,3 +48,4 @@ def parse_metrics_arms(raw: str | None) -> list[str] | None:
     if raw == "all":
         return None
     return parse_run_arms(raw)
+

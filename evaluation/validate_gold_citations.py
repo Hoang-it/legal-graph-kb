@@ -21,7 +21,7 @@ from src.citations import (
 )
 
 DEFAULT_QUESTIONS = Path("data/eval/questions_200.json")
-DEFAULT_OUT_DIR = Path("data/eval/academic")
+DEFAULT_OUT_DIR = Path("metrics/academic")
 NORMALIZED_OUT = "gold_citations_normalized.json"
 ERRORS_OUT = "gold_citation_validation_errors.csv"
 

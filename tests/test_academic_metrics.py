@@ -1,10 +1,10 @@
-from experiments.arms import MAIN_EXPERIMENT_ARMS, parse_metrics_arms, parse_run_arms
-from experiments.compute_academic_metrics import (
-    _aggregate_arm,
+from evaluation.compute_academic_metrics import (
+    _aggregate_records,
     _clean_answer_for_semantic,
     compute_citation_metrics,
     compute_prolog_fields,
 )
+from experiments.arms import MAIN_EXPERIMENT_ARMS, parse_metrics_arms, parse_run_arms
 from src.citations import (
     format_citation,
     load_registry,
@@ -120,9 +120,9 @@ def test_clean_answer_for_semantic_prefers_plain_answer():
 def test_prolog_aggregate_formulas_count_failures():
     records = []
     for rec in [
-        {"arm": "logic_lm_graphrag", "prolog_success": True, "n_repair_rounds": 0},
-        {"arm": "logic_lm_graphrag", "prolog_success": True, "n_repair_rounds": 1},
-        {"arm": "logic_lm_graphrag", "prolog_success": False, "n_repair_rounds": 2},
+        {"prolog_success": True, "n_repair_rounds": 0},
+        {"prolog_success": True, "n_repair_rounds": 1},
+        {"prolog_success": False, "n_repair_rounds": 2},
     ]:
         records.append(
             {
@@ -147,7 +147,7 @@ def test_prolog_aggregate_formulas_count_failures():
             }
         )
 
-    agg = _aggregate_arm(records)["prolog"]
+    agg = _aggregate_records(records)["prolog"]
     assert agg["prolog_first_try_solution_rate"] == 0.3333
     assert agg["repair_invoked_rate"] == 0.6667
     assert agg["repair_success_rate"] == 0.5

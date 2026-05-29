@@ -22,18 +22,24 @@ inference (run_inference.py)
 
 → data/eval/results/{graphrag,llm_only}/A{stt}.json
 
-validate_gold_citations (validate_gold_citations.py)
+validate_gold_citations (evaluation/validate_gold_citations.py)
    └── Parse gold_citations_raw strict theo registry; fail nếu thiếu/sai
 
-compute_academic_metrics (compute_academic_metrics.py)
+compute_academic_metrics (experiments/compute_academic_metrics.py)
+   ├── Load result folders + selected arms
+   ├── Attach validated gold_articles and group records by experiment arm
+   └── Call evaluation.compute_academic_metrics(records) per experiment arm
+
+evaluation.compute_academic_metrics(records)
    ├── Dataset-based: citation_recall, citation_precision, citation_f1
    ├── Answer display: citation_display_rate từ citation_ids vs answer
    ├── Objective: latency_s, prolog_first_try_solution_rate,
    │   repair_invoked_rate, repair_success_rate
    └── Semantic: BERTScore vs gold_answer (fail-soft nếu thiếu dependency/model)
 
-→ data/eval/academic_metrics.json + academic_metrics.csv
-→ reports/academic_report.md
+→ metrics/academic_metrics.json + metrics/academic_metrics.csv
+→ metrics/academic_report.md
+→ metrics/academic/gold_citations_normalized.json
 ```
 
 ## Metrics hiện tại
@@ -45,7 +51,7 @@ pipeline thật sự được thể hiện trong answer với đủ văn bản +
 BERTScore giữ chuẩn Zhang et al. ICLR 2020 và chạy fail-soft.
 
 Judge-model metrics không chạy trong main experiment. Entrypoint
-`experiments.compute_judge_metrics` hiện fail-closed để tránh vô tình dùng lại
+`evaluation.compute_judge_metrics` hiện fail-closed để tránh vô tình dùng lại
 công thức cũ; khi cần judge metrics sẽ thiết kế rubric riêng.
 
 ## Giới hạn (caveats — sẽ ghi rõ trong report)
@@ -61,12 +67,14 @@ công thức cũ; khi cần judge metrics sẽ thiết kế rubric riêng.
 # 1. Inference main experiment arms
 python -m experiments.run_inference --arms main --n 200
 
-# 2. Validate gold citations; lệnh metrics cũng tự gọi bước này
-python -m experiments.validate_gold_citations
+# 2. Validate gold citations; lệnh experiment metrics cũng tự gọi bước này
+python -m evaluation.validate_gold_citations
 
 # 3. Compute deterministic academic metrics for the same main arms
 python -m experiments.compute_academic_metrics --arms main
 ```
+
+Đổi thư mục lưu toàn bộ artifact bằng `--output-dir <folder>`.
 
 Pilot trước với `--n 10` để xác nhận pipeline.
 

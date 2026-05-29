@@ -1,159 +1,229 @@
 # Plan v5 — General, scalable legal citation retrieval
 
-> Status: **approved by user, not yet implemented**.
-> Supersedes: `plan_phase6_completion.md`, `plan_phase6_prolog_multilaw.md`, the entire `elite_graphrag_logic_rt_v*` arm family (v1 → v4).
+> **Status: design under review, post-grilling rev 2. Not committed; updated locally
+> until Sprint 1 (vanilla pipeline + audit) lands.**
+> Supersedes: `plan_phase6_completion.md`, `plan_phase6_prolog_multilaw.md`, the
+> entire `elite_graphrag_logic_rt_v*` arm family (v1 → v4).
 > Owner: Hoàng — UIT MSc thesis.
 
-## 1. Why v4 must be discarded
+## 1. Why v4 was discarded
 
-v4 (`elite_graphrag_logic_rt_v4`) was a workaround layer. Its core mechanism — `data/legal_issue_taxonomy.yaml` + `src/legal_issue_planner.py` + per-domain slot dependency map — encodes a hand-curated rule set per legal domain (maternity, pension, lump_sum, …). This blocks scaling along the only axis that matters for the thesis: **number of laws and number of questions**.
+v4 (`elite_graphrag_logic_rt_v4`) was a workaround layer. Its core mechanism —
+`data/legal_issue_taxonomy.yaml` + `src/legal_issue_planner.py` + per-domain
+slot dependency map — encoded a hand-curated rule set per legal domain. That
+blocks the only scaling axis that matters for the thesis: number of laws and
+number of questions.
 
-Concretely, evidence from the 50-question phase6 cut:
+Evidence from the 50-question phase6 cut:
 
 | Bucket (in-corpus gold = 31) | Count | Root cause |
 |---|---:|---|
 | Article-level hit | 13 | — |
-| Predicted but wrong article | 11 | retrieval miss (gold not in top-K context) for 9/11; LLM pick lệch for 2/11 |
+| Predicted but wrong article | 11 | retrieval miss for 9/11; LLM pick lệch for 2/11 |
 | Blocked by `evidence_gap` (source_family hard gate) | 3 | taxonomy filter too narrow |
-| Blocked by `citation_validation_failed` | 6 | validator rules `missing_required_slot_citation` / `used_citation_without_claim` rejecting otherwise valid envelopes |
+| Blocked by `citation_validation_failed` | 6 | validator over-strict |
 | Other (OOC-declared false, unknown gold) | 2 | — |
 
-**73% of all failing cases have the gold article missing from the retrieval context delivered to the LLM**. Validator and planner over-strictness only inflate the loss; the underlying retriever is the bottleneck. v4 cannot be patched into a general solution — its abstraction is wrong.
+73% of all failing in-corpus cases have the gold article missing from the
+retrieval context the LLM saw. Validator/planner over-strictness only inflated
+the loss; the underlying retriever is the bottleneck.
 
 ## 2. Problem decomposition
 
-Citation retrieval for Vietnamese legal QA is **three problems stacked**, not one:
+Citation retrieval for Vietnamese legal QA is **three problems stacked**:
 
-1. **Domain-adapted dense retrieval**. BGE-M3 vanilla never saw Vietnamese statutory text during pretraining; lexical and syntactic distance between user-question phrasing and statutory phrasing is large.
-2. **Multi-evidence aggregation for legal reasoning chains**. Median gold cites = 2–4 per question. Reasoning is a chain (applicability → eligibility → quantity → procedure) and frequently crosses laws (e.g. L41 BHXH ↔ L45 BLLĐ).
-3. **Temporal / version-aware filtering**. Event date in the question selects which law version is in force (sự kiện 2014 → L58; sự kiện 2026 → L41). This is a property of node metadata, not a rule.
+1. **Domain-adapted dense retrieval.** BGE-M3 vanilla never saw Vietnamese
+   statutory text during pretraining; lexical/syntactic distance between user
+   phrasing and statutory phrasing is large.
+2. **Multi-evidence aggregation for legal reasoning chains.** Median gold
+   citations per question = 2–4. Reasoning is a chain (applicability →
+   eligibility → quantity → procedure) and frequently crosses laws.
+3. **Temporal / version-aware filtering.** Event date in the question selects
+   which law version is in force. This is a property of node metadata, not a
+   rule.
 
-v4 conflates all three behind a YAML taxonomy.
+## 3. Design principles
 
-## 3. Design principles for v5
+1. **No YAML / Python file may contain patterns keyed by law name or legal
+   domain.** Adding Luật Đất đai = re-run indexing, zero code change.
+2. **Every ranking / filter decision is driven by signal already in the
+   data** (embedding score, BM25 score, `effective_from/until`, citation
+   edges). No handwritten rules.
+3. **Retrieval recall improves through representation learning** when
+   needed, not through widening thresholds or hardcoded include lists.
+4. **Each module is measurable in isolation**: bottlenecks must surface from
+   metrics, not from inspection.
+5. **The citation graph is first-class structure.** Cross-law dependencies
+   emerge from `REFERS_TO` edges.
+6. **Build vanilla first; add modules only when audit data justifies them.**
+   Defer fine-tune, defer verifier, defer query decomposition. Add when an
+   empirical signal — not a hunch — calls for them.
 
-1. **No YAML / Python file may contain patterns keyed by law name or legal domain.** Adding Luật Đất đai = re-run the indexing pipeline, edit zero lines of code.
-2. **Every ranking / filter decision is driven by signal already in the data**: embedding score, BM25 score, `effective_from/until` metadata, citation edges. No handwritten rules.
-3. **Retrieval recall improves through representation learning**, not by widening thresholds or hardcoded include lists.
-4. **Each module is measurable in isolation**: retriever recall@K, reranker recall@K, verifier precision. Bottlenecks must surface from metrics, not from inspection.
-5. **The citation graph is first-class structure**. Cross-law dependencies emerge from `REFERS_TO` edges, never from `if domain == pension then include L45.A169`.
+## 4. Architecture — sprint-based, conditional
 
-## 4. v5 architecture — six modules
+### Sprint 1 — Vanilla pipeline (always)
 
-### M1 · Indexing layer (offline, scales O(n) with number of laws)
-
-Each clause / article node carries:
-- **Dense vector** (BGE-M3 dense, eventually fine-tuned — see M2)
-- **Sparse vector** (BGE-M3 sparse + BM25) — catches rare statutory terms (`điều khoản chuyển tiếp`, `trợ cấp một lần`) where dense models smear meaning
-- **Metadata**: `law_code`, `effective_from`, `effective_until`, `parent_article_id`, `position_in_article`
-- **Citation edges**: `REFERS_TO`, `CITES_EXTERNAL` (already extracted by B2 rule extractor) — promoted to first-class Neo4j relationships, queryable in retrieval
-
-Adding a new law = parse → embed → load. No code change.
-
-### M2 · Domain-adapted retriever + reranker — core effort
-
-This is ~70% of v5 effort and is the precondition for hitting recall ≥ 80%.
-
-- **Synthetic Q–Clause data**. For each Khoản (≈1,585 currently), GPT-4o-mini generates 5–8 natural-language questions targeting that clause. Yields ~10k query-positive pairs. Cost ≈ $3-5 OpenAI.
-- **Hard negative mining**. For each query, BM25 retrieves top-50, remove positives, take 15 lexically-close-but-wrong as hard negatives.
-- **Fine-tune BGE-M3** with Multiple Negatives Ranking Loss (MNRL) + in-batch negatives. Output: a checkpoint specific to Vietnamese legal corpus.
-- **Fine-tune cross-encoder reranker** (BGE-reranker-v2-m3 base) with margin MSE loss on the same hard negatives.
-- **Held-out eval**: 20% of data is test split → measure recall@10 / recall@50 / recall@100 pre vs post fine-tune.
-
-**Accept gate**: fine-tuned retriever recall@100 ≥ 0.95 on held-out synthetic; reranker recall@10 ≥ 0.85. If gates miss, debug data quality, not model architecture.
-
-### M3 · LLM query decomposition (no taxonomy)
-
-One LLM call (`gpt-4o-mini`, ~$0.001/query) returns JSON:
-
-```json
-{
-  "sub_questions": ["...", "..."],
-  "event_dates": ["2014-12"],
-  "subjects": ["lao động nữ"],
-  "actions": ["hưởng chế độ thai sản", "hồ sơ"]
-}
+```
+M1 Indexing (offline)
+  ├─ Dense vectors: BGE-M3 dense (vanilla)
+  ├─ Sparse vectors: BGE-M3 sparse OR Lucene BM25
+  ├─ Metadata: law_code, effective_from/until, parent_article_id
+  └─ Citation graph: REFERS_TO / CITES_EXTERNAL as first-class edges
+                       ↓
+M4 Hybrid retrieval (online)
+  ├─ raw query → dense top-30 + sparse top-30
+  ├─ Temporal filter native in Cypher (effective_from <= event_date <
+  │   effective_until)
+  └─ RRF fusion → top-50
+                       ↓
+M5 Rerank + graph expansion
+  ├─ Cross-encoder rerank top-50 → top-15
+  ├─ For each of top-15, follow REFERS_TO 2-3 hops in Neo4j
+  ├─ Add referenced articles to pool, dedupe, re-rerank
+  └─ Final top-12 → into LLM context
+                       ↓
+Generator
+  ├─ GPT-4o-mini, strict prompt (no invention, cite only from context)
+  └─ Output: answer + citation_ids
 ```
 
-The prompt is **domain-agnostic**: it asks the LLM to decompose along legal aspects of the question, without enumerating domains. Each `sub_question` is an independent retrieval intent. This replaces v4's hardcoded `LegalQueryPlan`; generalisation cost is essentially zero.
+End of Sprint 1: `citation_recall` + `citation_precision` measured on 30-case
+probe and full 150-test.
 
-### M4 · Multi-query hybrid retrieval with native temporal filter
+### Sprint 2 — Conditional additions
 
-For each `sub_question`:
-- top-30 dense + top-30 sparse
-- **Reciprocal Rank Fusion** → top-50
-- **Temporal filter in Cypher pre-rerank**: `WHERE article.effective_from <= $event_date AND (article.effective_until IS NULL OR article.effective_until > $event_date)`
+Decisions in Sprint 2 are driven entirely by Sprint 1 audit. Possible
+additions (zero, one, or several):
 
-Union all sub_question candidates → dedupe → top-100 globally.
-
-### M5 · Cross-encoder rerank + citation-graph expansion
-
-- Cross-encoder reranks top-100 → top-15
-- For each of top-15, follow `REFERS_TO` 1 hop in Neo4j → add referenced articles
-- Rerank the expanded pool → final top-12
-
-Cross-law dependencies (e.g. L41.A64 → L45.A169 for retirement age) emerge naturally from edges. If the B2 rule extractor missed an edge, fix it at B2 (data quality), never patch at runtime.
-
-### M6 · Answer + self-verification loop
-
-- LLM (`gpt-4o`) answers and cites from top-12
-- **Verifier** (second LLM call or NLI model): for each `(claim, cited_clause_text)`, score entailment — does the clause actually support the claim?
-- Citations kept iff entailment score > threshold; tangential cites dropped.
-- **Coverage check**: if any M3 `sub_question` is not covered by retained citations → re-retrieve for that sub_question with higher K → iterate, max 2 rounds.
-
-The verifier is the general mechanism for hitting precision ≥ 90%: measure entailment, do not encode validator rules.
-
-## 5. Phased plan
-
-| Phase | Goal | Output | Duration |
-|---|---|---|---|
-| **0** | Prove the bottleneck: raw hybrid retrieval (vanilla BGE-M3 dense + BM25, RRF) on 200 questions, measure recall@100 vs in-corpus gold | Decision: skip vs invest in Phase 1 | 1 day |
-| **1** | Synthetic data + fine-tune retriever + reranker | 2 model checkpoints + held-out metrics | 1–2 weeks |
-| **2** | New retrieval pipeline (M1 + M4 + M5) replacing v4 evidence builder | `src/retrieval/` module + recall@K eval | 4 days |
-| **3** | LLM query decomposition (M3) | `src/query_decompose/` module | 2 days |
-| **4** | Verifier + iterative re-retrieval (M6) | `src/verifier/` module | 3 days |
-| **5** | Full 200-question eval, A/B against v3/v4 baseline rows, paper-ready metrics | Final report + thesis chapter | 3 days |
-
-Total ≈ 3–4 weeks of full-time work for one person.
-
-## 6. Phase 0 — first thing to do once cleanup lands
-
-Single script:
-
-> Run hybrid retrieval (BGE-M3 dense + BM25 sparse, RRF fusion, top-100 clauses) on the 200-question evaluation set. Measure recall@100 at article level on the in-corpus subset.
-
-Three outcomes:
-- **recall@100 ≥ 0.90** → embedding is already fine; skip Phase 1, go straight to Phase 2-4.
-- **recall@100 ∈ [0.70, 0.90)** → Phase 1 fine-tune is justified, target lifting to ≥ 0.95.
-- **recall@100 < 0.70** → corpus problem (parsing errors, embedding mismatch); fix data before fine-tuning.
-
-~50 lines of Python on existing infra, ~15 min to run.
-
-## 7. Acceptance gates for v5
-
-| Metric | Threshold | Measured by |
+| Trigger | Add | Cost |
 |---|---|---|
-| Article-level recall@10 (in-corpus gold) | ≥ 0.85 | M5 output vs gold |
-| Citation precision after verifier | ≥ 0.90 | verifier-kept × entailment-correct |
-| OOC detection F1 | ≥ 0.90 | gold-OOC vs predicted-OOC |
+| Probe shows gold systematically missing from top-12 even with 2-3 hop expansion | **M2 — Fine-tune BGE-M3** (LoRA on synthetic Q–clause pairs, then re-eval) | ~$10–20 GPU, ~$5 synthetic data, ~1 week |
+| Multi-aspect queries (A1, A47-style) fail systematically | **M3 — HyDE** (1 LLM call sinh hypothetical answer → embed → retrieve, fused) | ~$0.001/query, ~3-5s latency, 2 days build |
+| Precision e2e < 80% (tangential cites) | **M6 — Verifier** (entailment check, drop low-confidence cites) | ~$0.002/query, +1s latency, 3 days build |
+| Reasoning-heavy cases (A30-style) > expected 5–8% | **M5+ hops** OR document as limitation | depends |
+
+### Sprint 3 — Final evaluation + paper
+
+Full 150-test run on all baselines (v4 archived + Sprint 2 finalized v5)
+with adaptive granularity policy. Stratified analysis: in-corpus vs OOC vs
+reasoning-heavy.
+
+## 5. Metric framework
+
+### Primary metric: `citation_recall` and `citation_precision` end-to-end
+
+Defined in `evaluation.compute_academic_metrics:compute_citation_metrics()`.
+
+**Granularity policy: adaptive.**
+- Gold cites with khoản → match strict (Điều + khoản must both match)
+- Gold cites article-only (no khoản) → match lenient (Điều only)
+- Implementation note: requires updating `compute_citation_metrics()` to read
+  gold granularity per-citation and switch comparison key dynamically. v4
+  baselines must be re-aggregated under the new policy before A/B.
+
+### No `retrieval_recall@K` as standalone study
+
+`retrieval_recall@K` does not directly improve `citation_recall` — they live
+at different pipeline layers. The relationship is an upper-bound diagnostic,
+which can be derived post-hoc from any pipeline run's retrieval log.
+Phase 0 as a separate study is dropped.
+
+If/when a retrieval-vs-generator bottleneck analysis is needed (e.g.,
+during Sprint 1 audit), it is computed per-case from the existing
+`retrieval` field in result records, not as a separate experiment.
+
+### Test set: 150 / 50 stratified split
+
+- 200 questions in `data/eval/questions_200.json`
+- Split 150 test / 50 dev, stratified by gold corpus type (in / out / mixed)
+- Dev: threshold calibration (verifier, if added), early stopping
+  (fine-tune, if added). Dev never used for final report numbers.
+- Test: final paper metrics.
+
+Power: 150 detects ≥ 8% recall difference at p<0.05 binomial. Acceptable
+for relative-improvement claims; insufficient for absolute claims with
+small effect sizes.
+
+### Target — multi-tier
+
+| Tier | recall | precision | Meaning |
+|---|---:|---:|---|
+| Minimum | 70% | 80% | Defensible thesis: improvement over v4 |
+| Target | 85% | 90% | Successful v5 |
+| Stretch | 95% | 95% | Excellent — competitive with claimed industry benchmarks |
+
+Paper frames results against these tiers; no single arbitrary number.
+
+## 6. Reasoning-heavy failure mode scope
+
+Audit of v4 50-case cut identifies ~5–8% of test set as
+**reasoning-required**, not retrieval-required (A30 needs "báo giảm → thẻ"
+inference; A22 needs temporal + transitional law inference). These cases
+are *not* solved by better embedding.
+
+**v5 strategy**:
+- Extend M5 graph expansion to **2-3 hops** instead of 1, leveraging the
+  REFERS_TO edges already extracted by `rule_extract.py`.
+- Some reasoning cases will still miss. Accept as a documented limitation
+  in the paper; do *not* add a dedicated "reasoning module" for v5.
+- **Sanity check before committing 2-3 hop**: measure REFERS_TO edge
+  coverage in the current graph; if many cross-law refs are missing,
+  fix at extractor level first.
+
+## 7. Phased plan
+
+| Sprint | Goal | Output | Time |
+|---|---|---|---|
+| **1** | Build vanilla v5 pipeline (M1+M4+M5+generator); run on 30-case probe + full 150 test | `src/retrieval/` module, recall/precision numbers, per-case audit | 2 weeks |
+| **2** | Conditional additions (M2 fine-tune, M3 HyDE, M6 verifier) — based on Sprint 1 audit | Modules added with A/B vs Sprint 1 vanilla | 2 weeks |
+| **3** | Full eval on 150 test, A/B against v4 baseline (re-aggregated under adaptive policy), paper-ready tables and analysis | Thesis chapter, final metric report | 2 weeks |
+
+Total: **6 weeks** full-time. Matches budget cap.
+
+## 8. Budget
+
+| Item | Estimate | Cap |
+|---|---|---:|
+| Synthetic data ($0.001/pair × 10k pairs) | $5–10 | only if M2 triggered |
+| GPU rental (A100 × 8h) for fine-tune | $10–15 | only if M2 triggered |
+| Eval API costs (150 × 5 arms × $0.005 + ablations) | $20–40 | recurring |
+| Probe + iteration | $5–10 | recurring |
+| **Total** | | **$200 hard cap** |
+
+Time: **6 weeks hard cap**. Money: **$200 hard cap**. If a sprint blocks,
+report + propose alternative scope reduction rather than overrun.
+
+## 9. Risk register
+
+| Risk | Mitigation |
+|---|---|
+| Synthetic data drift from real query distribution | If M2 triggered, sample 30 synthetic queries, spot-check style vs real test queries; consider seeding from 50 dev cases. |
+| Cross-encoder rerank latency on top-100 | Cap rerank candidates at 50; switch to BGE-M3 ColBERT-style late interaction if > 5s/query. |
+| HyDE hallucination (if M3 triggered) | Low temperature, prompt constraint "trả lời theo style văn bản luật"; verify on 10 examples. |
+| REFERS_TO graph coverage thin → 2-3 hop unproductive | Measure edge coverage upfront; if low, fix `rule_extract.py` before expanding hops. |
+| Verifier same-source bias (if M6 triggered) | Use different model family (Claude or local NLI) instead of same OpenAI family. |
+| Sample size 150 insufficient for absolute claims | Frame paper as relative improvement vs v4 baseline; document multi-tier targets. |
+
+## 10. Acceptance gates
+
+Cross-cutting (apply at end of Sprint 3):
+
+| Metric | Threshold (Minimum tier) | Measured by |
+|---|---|---|
+| `citation_recall` end-to-end on 150 test (adaptive policy) | ≥ 0.70 | `evaluation.compute_academic_metrics` |
+| `citation_precision` end-to-end | ≥ 0.80 | same |
+| OOC detection F1 | ≥ 0.80 | derived |
 | Median latency per question | ≤ 30s | end-to-end |
-| Scale test: indexing a new law (e.g. Luật Việc làm) requires zero code change | pass | run pipeline on 50 new synthetic Qs |
+| Reproducibility: re-index with 1 new law (e.g., Luật Việc làm) requires zero code change | pass | manual test |
 
-## 8. Risks
+Target tier (85/90) and stretch tier (95/95) are bonus.
 
-- **Synthetic data drift** — LLM-generated queries may differ stylistically from real user queries. Mitigation: spot-check 100 samples; filter low-reranker-score samples.
-- **GPU cost** — BGE-M3 ≈ 568M params, batch 16 fp16, ≈10–15h on RTX 3090. Rentable A100 colab/runpod at ~$1–2/h × ~6h is the alternative.
-- **Eval API cost** — 200 questions × 3 LLM calls × ~$0.005 ≈ $3/run. Negligible.
-- **Reranker latency** — cross-encoder over 100 candidates ≈ 3–5s. Fallback: BGE-M3 ColBERT-style late interaction (vector-space rerank, no LLM).
+## 11. Open questions, settled or deferred
 
-## 9. Open questions, to confirm before Phase 0 starts
-
-1. Synthetic data via `gpt-4o-mini` accepted? (Yes assumed unless human-curated is required.)
-2. Adding M3 + M6 LLM calls (3 calls per query total, ~$0.01) accepted given the latency/cost?
-3. Corpus scope for the thesis: stay at 3 laws (BHXH 41, BHXH 58, BLLĐ 45) for v5 launch, or expand immediately? Expansion requires source docx files staged in `data/raw/`.
-
-## 10. What gets removed from the repo before v5 implementation begins
-
-The cleanup pass (separate task) removes: the v1–v4 phase0/phase6 prolog runtime arms, `legal_issue_taxonomy.yaml`, `legal_issue_planner.py`, `legal_evidence.py`, `legal_citation_validator.py`, the Prolog stack (`extract_prolog.py`, `load_prolog.py`, `validate_prolog.py`, `prolog_utils.py`), and the elite_pipelines arm wiring for `*_logic_rt_v*`. Baseline arms (`graphrag`, `llm_only`, `elite_no_retrieval`, `elite_ontology`, `elite_graphrag`) are kept as comparison anchors for the v5 paper.
+1. ~~Synthetic data via `gpt-4o-mini` accepted?~~ → Deferred until M2 triggered.
+2. ~~Adding M3 + M6 LLM calls accepted given latency/cost?~~ → Deferred; only
+   if Sprint 1 audit motivates.
+3. **Corpus scope**: stay at 3 laws (BHXH 41, BHXH 58, BLLĐ 45). Multi-law
+   scaling test happens at Sprint 3 acceptance gate.
 
 End of plan.

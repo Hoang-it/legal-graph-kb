@@ -9,9 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Academic metrics pipeline:
-  `experiments.compute_academic_metrics`, strict `gold_citations_raw` validation,
-  shared citation registry, citation recall/precision/F1, citation display rate,
-  latency, BERTScore, and Prolog reliability.
+  `evaluation.compute_academic_metrics` core over preloaded record lists,
+  experiment-owned result loading in `experiments.compute_academic_metrics`,
+  strict `gold_citations_raw` validation, shared citation registry, citation
+  recall/precision/F1, citation display rate, latency, BERTScore, and Prolog
+  reliability.
 
 ### Changed
 - Main experiment evaluation now uses only academic metrics. Legacy judge-based
