@@ -4,7 +4,7 @@
 
 .DESCRIPTION
     Wrapper script that sets UTF-8 encoding for Windows console + Python I/O,
-    then runs `python -m src.chat`. Without these env vars, Vietnamese input
+    then runs `python -m runtime.chat`. Without these env vars, Vietnamese input
     via PowerShell may be garbled.
 
 .PARAMETER TopK
@@ -41,7 +41,7 @@ $env:HF_HUB_DISABLE_SYMLINKS_WARNING = '1'
 $env:PYTHONPATH = $PSScriptRoot + '\..'
 
 # Build args
-$pyArgs = @('-m', 'src.chat', '--top-k', $TopK)
+$pyArgs = @('-m', 'runtime.chat', '--top-k', $TopK)
 if ($NoVerify) { $pyArgs += '--no-verify' }
 if ($NoRich)   { $pyArgs += '--no-rich' }
 

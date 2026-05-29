@@ -1,4 +1,4 @@
-"""Test cho src/rule_extract.py — đảm bảo extraction không bịa.
+"""Test cho offline/rule_extract.py — đảm bảo extraction không bịa.
 
 Trụ cột:
 - Mọi span PHẢI khớp byte-for-byte với text gốc tại char_offset.
@@ -10,7 +10,7 @@ import json
 
 import pytest
 
-from src import rule_extract
+from offline import rule_extract
 
 
 @pytest.fixture(scope="module")

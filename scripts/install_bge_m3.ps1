@@ -128,11 +128,11 @@ if ($modelDir.Sum) {
 }
 
 Write-Host "`n==============================================" -ForegroundColor Green
-Write-Host " HOAN TAT — san sang chay 'python -m src.embed'" -ForegroundColor Green
+Write-Host " HOAN TAT — san sang chay 'python -m offline.embed'" -ForegroundColor Green
 Write-Host "==============================================" -ForegroundColor Green
 Write-Host ""
 Write-Host "Buoc tiep theo (sau khi B5 da co):" -ForegroundColor Yellow
-Write-Host "  python -m src.embed"
+Write-Host "  python -m offline.embed"
 Write-Host ""
 Write-Host "Neu muon dung GPU NVIDIA (nhanh hon 10-20x):"
 Write-Host "  1. Cai CUDA toolkit"

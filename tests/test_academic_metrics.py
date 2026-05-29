@@ -154,7 +154,7 @@ def test_prolog_aggregate_formulas_count_failures():
 
 
 def test_experiment_parsers_use_strict_displayed_citations():
-    from experiments.llm_only import _parse_citations as parse_llm_citations
+    from runtime.llm_only import _parse_citations as parse_llm_citations
 
     text = "Đủ điều kiện theo [Luật BHXH 2024 (41/2024/QH15), Điều 64 khoản 1]."
     expected_citation = "[Luật BHXH 2024 (41/2024/QH15), Điều 64 khoản 1]"
@@ -164,7 +164,7 @@ def test_experiment_parsers_use_strict_displayed_citations():
 
 
 def test_elite_parser_uses_registry_and_legal_source_law_id():
-    from experiments.logic_lm_pipelines import (
+    from runtime.logic_lm_pipelines import (
         _parse_citations_from_irac,
         _parse_citations_from_legal_sources,
     )

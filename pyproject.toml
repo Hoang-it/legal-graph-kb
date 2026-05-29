@@ -94,30 +94,30 @@ Repository    = "https://github.com/USER/legal-graph-kb"
 Issues        = "https://github.com/USER/legal-graph-kb/issues"
 Changelog     = "https://github.com/USER/legal-graph-kb/blob/main/CHANGELOG.md"
 
-# Console entry points — cho phép gọi `legal-kg-* ...` thay vì `python -m src.*`
-# (vẫn giữ `python -m src.x` để backwards-compat).
+# Console entry points — cho phép gọi `legal-kg-* ...` thay vì `python -m offline.*` /
+# `python -m runtime.*`.
 [project.scripts]
-legal-kg-parse          = "src.parse_docx:main"
-legal-kg-extract-rules  = "src.rule_extract:main"
-legal-kg-extract-llm    = "src.llm_extract:main"
-legal-kg-merge          = "src.merge_normalize:main"
-legal-kg-embed          = "src.embed:main"
-legal-kg-load           = "src.load_neo4j:main"
-legal-kg-ask            = "src.rag_query:main"
-legal-kg-chat           = "src.chat:main"
+legal-kg-parse          = "offline.parse_docx:main"
+legal-kg-extract-rules  = "offline.rule_extract:main"
+legal-kg-extract-llm    = "offline.llm_extract:main"
+legal-kg-merge          = "offline.merge_normalize:main"
+legal-kg-embed          = "offline.embed:main"
+legal-kg-load           = "offline.load_neo4j:main"
+legal-kg-ask            = "runtime.rag_query:main"
+legal-kg-chat           = "runtime.chat:main"
 
 # ---------------------------------------------------------------------------
-# Packaging — `src/` flat package + experiment/evaluation helpers.
+# Packaging — `offline/` (build-time) + `runtime/` (inference) + shared `src/`
+# (ids, schema, legal_metadata, citations) + experiment/evaluation helpers.
 # ---------------------------------------------------------------------------
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["src*", "experiments*", "evaluation*"]
+include = ["src*", "offline*", "runtime*", "experiments*", "evaluation*"]
 exclude = ["tests*", "scripts*", "docs*", "data*", "reports*", "prompts*"]
 
 [tool.setuptools.package-data]
 "src" = ["py.typed"]
-"experiments" = ["prompts/*.md"]
 "evaluation" = [
     "samples/*.json",
     "samples/*.md",
@@ -207,7 +207,7 @@ filterwarnings = [
 # ---------------------------------------------------------------------------
 
 [tool.coverage.run]
-source = ["src"]
+source = ["src", "offline", "runtime"]
 branch = true
 omit = [
     "tests/*",

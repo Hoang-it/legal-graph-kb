@@ -27,7 +27,7 @@ pytestmark = pytest.mark.skipif(
 
 @pytest.fixture(scope="module")
 def pipeline():
-    from src.rag_query import RagPipeline
+    from runtime.rag_query import RagPipeline
 
     p = RagPipeline()
     yield p

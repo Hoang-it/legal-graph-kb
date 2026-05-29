@@ -1,4 +1,4 @@
-"""Test cho src/merge_normalize.py — đảm bảo graph thống nhất + truy nguyên."""
+"""Test cho offline/merge_normalize.py — đảm bảo graph thống nhất + truy nguyên."""
 
 import json
 from pathlib import Path
@@ -12,7 +12,7 @@ def graph() -> dict:
     path = Path("data/processed/merged_graph.json")
     if not path.exists():
         pytest.skip(
-            "data/processed/merged_graph.json không tồn tại. Chạy `python -m src.merge_normalize` trước."
+            "data/processed/merged_graph.json không tồn tại. Chạy `python -m offline.merge_normalize` trước."
         )
     with path.open(encoding="utf-8") as f:
         return json.load(f)

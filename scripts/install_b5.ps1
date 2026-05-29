@@ -127,7 +127,7 @@ $verifyCode = $LASTEXITCODE
 Write-Step "Done"
 if ($verifyCode -eq 0) {
     Write-Host "OK - everything ready for Step 5." -ForegroundColor Green
-    Write-Host "Run: python -m src.embed"
+    Write-Host "Run: python -m offline.embed"
 } else {
     Write-Warning "Verify returned exit code $verifyCode. See log above."
 }

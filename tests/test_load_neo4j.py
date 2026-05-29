@@ -22,7 +22,7 @@ try:
     with _driver.session(database=DB) as _s:
         _n = _s.run("MATCH (n) RETURN count(n) AS c").single()["c"]
     if _n == 0:
-        pytest.skip("Neo4j trống — chạy `python -m src.load_neo4j` trước.", allow_module_level=True)
+        pytest.skip("Neo4j trống — chạy `python -m offline.load_neo4j` trước.", allow_module_level=True)
 except Exception as e:
     pytest.skip(f"Không kết nối được Neo4j: {e}", allow_module_level=True)
 

@@ -1,4 +1,4 @@
-"""Test cho src/embed.py — verify parquet output đúng schema + semantic OK."""
+"""Test cho offline/embed.py — verify parquet output đúng schema + semantic OK."""
 
 import json
 from pathlib import Path
@@ -15,14 +15,14 @@ EMBED_DIM = 1024
 @pytest.fixture(scope="module")
 def df() -> pd.DataFrame:
     if not EMBED_PATH.exists():
-        pytest.skip(f"{EMBED_PATH} không tồn tại. Chạy `python -m src.embed --force` trước.")
+        pytest.skip(f"{EMBED_PATH} không tồn tại. Chạy `python -m offline.embed --force` trước.")
     return pd.read_parquet(EMBED_PATH)
 
 
 @pytest.fixture(scope="module")
 def graph() -> dict:
     if not GRAPH_PATH.exists():
-        pytest.skip(f"{GRAPH_PATH} không tồn tại. Chạy `python -m src.merge_normalize` trước.")
+        pytest.skip(f"{GRAPH_PATH} không tồn tại. Chạy `python -m offline.merge_normalize` trước.")
     with GRAPH_PATH.open(encoding="utf-8") as f:
         return json.load(f)
 

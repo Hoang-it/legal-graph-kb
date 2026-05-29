@@ -15,9 +15,9 @@ So sánh **GraphRAG** (Neo4j + BGE-M3 + GPT-4o-mini) với **LLM thuần** (ch�
 ## Pipeline
 
 ```
-inference (run_inference.py)
-   ├── arm A: GraphRAG  → src.rag_query.RagPipeline.ask()
-   └── arm B: LLM-only  → experiments.llm_only.LlmOnlyPipeline.ask()
+inference (runtime.run_inference)
+   ├── arm A: GraphRAG  → runtime.rag_query.RagPipeline.ask()
+   └── arm B: LLM-only  → runtime.llm_only.LlmOnlyPipeline.ask()
                           (cùng SYSTEM prompt yêu cầu citation, KHÔNG có context)
 
 → data/eval/results/{graphrag,llm_only}/A{stt}.json
@@ -65,7 +65,7 @@ công thức cũ; khi cần judge metrics sẽ thiết kế rubric riêng.
 
 ```powershell
 # 1. Inference main experiment arms
-python -m experiments.run_inference --arms main --n 200
+python -m runtime.run_inference --arms main --n 200
 
 # 2. Validate gold citations; lệnh experiment metrics cũng tự gọi bước này
 python -m evaluation.validate_gold_citations

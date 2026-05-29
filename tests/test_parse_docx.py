@@ -1,4 +1,4 @@
-"""Test cho src/parse_docx.py — kiểm tra toàn vẹn cấu trúc và **đối chiếu
+"""Test cho offline/parse_docx.py — kiểm tra toàn vẹn cấu trúc và **đối chiếu
 nguyên văn** với paragraph gốc trong docx (không bịa).
 """
 
@@ -7,7 +7,8 @@ from pathlib import Path
 import pytest
 from docx import Document
 
-from src import ids, parse_docx
+from offline import parse_docx
+from src import ids
 
 DOCX_PATH = Path("data/raw/Luật-41-2024-QH15.docx")
 
