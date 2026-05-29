@@ -10,12 +10,12 @@ chỉ swap model parameter. Khi reasoning model reject `temperature`/`response_f
 elite_pipelines tự fallback (xem `_TokenTrackingLLMClient._chat_with_fallback`).
 
 CLI:
-    python -m experiments.run_multimodel_inference \\
+    python -m runtime.run_multimodel_inference \\
         --models gpt-4.1,gpt-4o,gpt-5,gpt-5-mini \\
         --arms logic_lm_no_retrieval,logic_lm_graphrag \\
         --n 1            # smoke
-    python -m experiments.run_multimodel_inference --n 10  # pilot
-    python -m experiments.run_multimodel_inference --n 200 # full
+    python -m runtime.run_multimodel_inference --n 10  # pilot
+    python -m runtime.run_multimodel_inference --n 200 # full
 """
 
 from __future__ import annotations
@@ -70,7 +70,7 @@ def _save(path: Path, data: dict) -> None:
 
 def _make_pipeline(arm: str, model: str, shared_rag=None):
     """Khởi tạo pipeline cho 1 (arm, model). shared_rag chỉ dùng cho elite_graphrag."""
-    from experiments.logic_lm_pipelines import (
+    from runtime.logic_lm_pipelines import (
         LogicLMNoRetrievalPipeline,
         LogicLMOntologyPipeline,
         LogicLMGraphRAGPipeline,
@@ -199,7 +199,7 @@ def main() -> int:
     # Share RagPipeline across all elite_graphrag combos to amortize warm-up
     shared_rag = None
     if "logic_lm_graphrag" in arms:
-        from src.rag_query import RagPipeline
+        from runtime.rag_query import RagPipeline
         shared_rag = RagPipeline()
         _ = shared_rag.embed_model  # warm up
         print("RagPipeline warmed (shared across elite_graphrag combos)\n",

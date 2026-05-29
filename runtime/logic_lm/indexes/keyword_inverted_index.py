@@ -2,7 +2,7 @@ from typing import Dict, List, Tuple
 from collections import defaultdict
 import re
 
-from src.logic_lm.config import settings
+from runtime.logic_lm.config import settings
 
 try:
     from rank_bm25 import BM25Okapi

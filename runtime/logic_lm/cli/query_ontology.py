@@ -9,7 +9,7 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from src.logic_lm.config import settings
+from runtime.logic_lm.config import settings
 
 for _stream in (sys.stdout, sys.stderr):
     if hasattr(_stream, settings.STREAM_RECONFIGURE_METHOD):
@@ -53,8 +53,8 @@ def make_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: Optional[Iterable[str]] = None) -> int:
-    from src.logic_lm.knowledge.bhxh_ontology import build_ontology_file
-    from src.logic_lm.knowledge.ontology_retrieval import OntologyRetrieval
+    from runtime.logic_lm.knowledge.bhxh_ontology import build_ontology_file
+    from runtime.logic_lm.knowledge.ontology_retrieval import OntologyRetrieval
 
     args = make_parser().parse_args(list(argv) if argv is not None else None)
     question = _resolve_question(args)

@@ -4,14 +4,14 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any, DefaultDict, Dict, Iterable, List, Mapping, Optional, Set, Union
 
-from src.logic_lm.config import settings
-from src.logic_lm.indexes.keyword_inverted_index import KeywordInvertedIndex
-from src.logic_lm.knowledge.bhxh_ontology import (
+from runtime.logic_lm.config import settings
+from runtime.logic_lm.indexes.keyword_inverted_index import KeywordInvertedIndex
+from runtime.logic_lm.knowledge.bhxh_ontology import (
     extract_query_threshold_ids,
     match_query_concept_ids,
     normalize_for_matching,
 )
-from src.logic_lm.knowledge.hybrid_retrieval import RetrievedKnowledgeChunk, RetrievedKnowledgeContext
+from runtime.logic_lm.knowledge.hybrid_retrieval import RetrievedKnowledgeChunk, RetrievedKnowledgeContext
 
 
 class OntologyRetrieval:

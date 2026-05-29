@@ -36,6 +36,7 @@ from tenacity import (
     wait_exponential,
 )
 
+from src.prompts import load_prompt
 from src.schema import LLMArticleExtraction
 
 load_dotenv()
@@ -44,7 +45,6 @@ MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 CONCURRENCY = int(os.getenv("OPENAI_CONCURRENCY", "5"))
 BASE_URL = os.getenv("OPENAI_BASE_URL") or None
 
-PROMPTS_DIR = Path("prompts")
 STRUCTURED_PATH = Path("data/interim/structured_law.json")
 OUT_DIR = Path("data/interim/llm_extractions")
 
@@ -53,15 +53,19 @@ OUT_DIR = Path("data/interim/llm_extractions")
 # Prompt loading
 # ---------------------------------------------------------------------------
 
+EXTRACT_PROMPT_REL = "offline/llm_extract.md"
+
 
 def _load_system_prompt() -> str:
-    """Đọc phần SYSTEM từ prompts/extract_v1.md."""
-    md = (PROMPTS_DIR / "extract_v1.md").read_text(encoding="utf-8")
+    """Đọc phần SYSTEM từ prompt offline/llm_extract.md."""
+    md = load_prompt(EXTRACT_PROMPT_REL)
     # Phần SYSTEM kết thúc khi gặp "# USER"
     start = md.find("# SYSTEM")
     end = md.find("# USER")
     if start == -1 or end == -1:
-        raise RuntimeError("prompts/extract_v1.md thiếu header # SYSTEM / # USER")
+        raise RuntimeError(
+            f"Prompt {EXTRACT_PROMPT_REL} thiếu header # SYSTEM / # USER"
+        )
     return md[start + len("# SYSTEM") : end].strip()
 
 

@@ -1,7 +1,7 @@
 import os
 
-from src.logic_lm.config import settings
-from src.logic_lm.llm.client import LLMClient, OpenAILLMClient
+from runtime.logic_lm.config import settings
+from runtime.logic_lm.llm.client import LLMClient, OpenAILLMClient
 
 
 def create_default_llm_client() -> LLMClient:

@@ -2,10 +2,10 @@ import re
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Mapping, Optional, Tuple
 
-from src.logic_lm.config import settings
-from src.logic_lm.llm.client import LLMClient
-from src.logic_lm.llm.factory import create_default_llm_client
-from src.logic_lm.solvers.prolog_solver import PrologSolver
+from runtime.logic_lm.config import settings
+from runtime.logic_lm.llm.client import LLMClient
+from runtime.logic_lm.llm.factory import create_default_llm_client
+from runtime.logic_lm.solvers.prolog_solver import PrologSolver
 
 
 @dataclass

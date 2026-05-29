@@ -2,7 +2,7 @@ import json
 import re
 from typing import Any, Dict, List
 
-from src.logic_lm.config import settings
+from runtime.logic_lm.config import settings
 
 
 class LLMClient:

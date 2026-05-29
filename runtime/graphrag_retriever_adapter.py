@@ -1,4 +1,4 @@
-"""Adapter: dùng main GraphRAG (`src/rag_query.py`) làm retriever cho logic-lm.
+"""Adapter: dùng main GraphRAG (`runtime/rag_query.py`) làm retriever cho logic-lm.
 
 Logic-LM pipeline expect `context` object có attribute `.chunks: List[
 RetrievedKnowledgeChunk]` và `.scores: Dict[str, float]`. GraphRAG trả
@@ -13,12 +13,12 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-# Make repo root importable for absolute `src.logic_lm.*` paths.
+# Make repo root importable for absolute `runtime.logic_lm.*` paths.
 _REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
-from src.logic_lm.knowledge.hybrid_retrieval import (
+from runtime.logic_lm.knowledge.hybrid_retrieval import (
     RetrievedKnowledgeChunk,
     RetrievedKnowledgeContext,
 )
@@ -27,7 +27,7 @@ DOCUMENT_LABEL = "Luật BHXH 2024 (41/2024/QH15)"
 
 
 class GraphRAGAsLogicLMRetriever:
-    """Wrap `RagPipeline` từ src/rag_query.py để dùng làm retriever cho logic-lm.
+    """Wrap `RagPipeline` từ runtime/rag_query.py để dùng làm retriever cho logic-lm.
 
     Khác biệt với native logic-lm retrievers:
     - Score = cosine similarity từ Neo4j vector index (range 0..1)
@@ -38,7 +38,7 @@ class GraphRAGAsLogicLMRetriever:
     """
 
     def __init__(self, rag_pipeline):
-        # rag_pipeline = instance của src.rag_query.RagPipeline
+        # rag_pipeline = instance của runtime.rag_query.RagPipeline
         # Đã pre-load model + connect Neo4j
         self._rag = rag_pipeline
 
@@ -70,7 +70,7 @@ if __name__ == "__main__":
     if not (os.environ.get("OPENAI_BASE_URL") or "").strip():
         os.environ.pop("OPENAI_BASE_URL", None)
 
-    from src.rag_query import RagPipeline  # noqa
+    from runtime.rag_query import RagPipeline  # noqa
 
     rag = RagPipeline()
     try:

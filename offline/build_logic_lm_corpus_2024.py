@@ -1,7 +1,7 @@
 """Build logic-lm-compatible corpus + ontology from Luật BHXH 41/2024/QH15.
 
 Convert `data/interim/structured_law.json` (B1 parse output) thành JSONL
-format mà `src/logic_lm/knowledge/bhxh_ontology.py:build_bhxh_ontology` expect:
+format mà `runtime/logic_lm/knowledge/bhxh_ontology.py:build_bhxh_ontology` expect:
 
     {"id": "c<seq>", "text": "<clause text>",
      "document": "Luật BHXH 2024 (41/2024/QH15)",
@@ -23,7 +23,7 @@ import json
 import sys
 from pathlib import Path
 
-# Make repo root importable so `src.logic_lm.*` absolute paths resolve.
+# Make repo root importable so `runtime.logic_lm.*` absolute paths resolve.
 _REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
@@ -40,7 +40,7 @@ def build_corpus_jsonl() -> int:
     """Trả về số chunks generated."""
     if not STRUCTURED_PATH.exists():
         print(
-            f"FAIL: thiếu {STRUCTURED_PATH}. Chạy `python -m src.parse_docx` trước.",
+            f"FAIL: thiếu {STRUCTURED_PATH}. Chạy `python -m offline.parse_docx` trước.",
             file=sys.stderr,
         )
         return 0
@@ -113,7 +113,7 @@ def build_corpus_jsonl() -> int:
 
 def build_ontology() -> dict:
     """Gọi logic-lm's build_ontology_file để gen ontology JSON."""
-    from src.logic_lm.knowledge.bhxh_ontology import build_ontology_file
+    from runtime.logic_lm.knowledge.bhxh_ontology import build_ontology_file
 
     ontology = build_ontology_file(OUT_CORPUS, OUT_ONTOLOGY, pretty=True)
     n_nodes = ontology.get("node_count", 0)

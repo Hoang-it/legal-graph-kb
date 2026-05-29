@@ -3,7 +3,7 @@ import re
 from threading import Lock
 from typing import Dict, List, Optional, Union
 
-from src.logic_lm.config import settings
+from runtime.logic_lm.config import settings
 
 
 try:

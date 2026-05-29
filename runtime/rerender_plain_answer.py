@@ -1,6 +1,6 @@
 """rerender_plain_answer.py — Backfill plain_answer field cho logic-lm records cũ.
 
-Re-render IRAC using new prompt (experiments/prompts/irac_with_plain.md) which
+Re-render IRAC using new prompt (prompts/runtime/logic_lm/irac_with_plain.md) which
 outputs JSON with BOTH `irac` (preserves analysis) AND `plain_answer` (prose form
 suitable cho fair compare với prose arms).
 
@@ -12,8 +12,8 @@ Skips:
 - Records already có plain_answer non-empty (idempotent)
 
 Usage:
-    python -m experiments.rerender_plain_answer --combos all --pilot 10
-    python -m experiments.rerender_plain_answer --combos all  # full
+    python -m runtime.rerender_plain_answer --combos all --pilot 10
+    python -m runtime.rerender_plain_answer --combos all  # full
 
 Cost (gpt-4o-mini backfill model, không phải original inference model):
     ~$0.002 per record × ~1700 logic-lm records ≈ $3.4
@@ -30,6 +30,8 @@ import time
 from pathlib import Path
 
 from dotenv import load_dotenv
+
+from src.prompts import load_prompt
 
 load_dotenv()
 os.environ.setdefault("HF_HUB_DISABLE_SYMLINKS_WARNING", "1")
@@ -52,12 +54,12 @@ R2_COMBOS = {
 }
 ALL_COMBOS = {**R1_COMBOS, **R2_COMBOS}
 
-PROMPT_PATH = Path("experiments/prompts/irac_with_plain.md")
+PROMPT_REL = "runtime/logic_lm/irac_with_plain.md"
 BACKFILL_MODEL = os.getenv("BACKFILL_MODEL", "gpt-4o-mini")
 
 
 def _load_prompt() -> str:
-    return PROMPT_PATH.read_text(encoding="utf-8")
+    return load_prompt(PROMPT_REL)
 
 
 def _build_trace_from_record(rec: dict) -> dict:

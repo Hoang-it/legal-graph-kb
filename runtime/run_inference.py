@@ -6,9 +6,9 @@ Output mỗi arm 1 file JSON / câu hỏi:
 Idempotent — skip nếu file đã tồn tại (dùng --force để chạy lại).
 
 CLI:
-    python -m experiments.run_inference --arms graphrag,llm_only --n 200
-    python -m experiments.run_inference --arms main --n 10
-    python -m experiments.run_inference --arms logic_lm_ontology,logic_lm_graphrag --n 200
+    python -m runtime.run_inference --arms graphrag,llm_only --n 200
+    python -m runtime.run_inference --arms main --n 10
+    python -m runtime.run_inference --arms logic_lm_ontology,logic_lm_graphrag --n 200
 """
 
 from __future__ import annotations
@@ -59,7 +59,7 @@ def _parse_arms(s: str) -> list[str]:
 # ---------------------------------------------------------------------------
 
 def run_graphrag(questions: list[dict], force: bool, verbose: bool) -> None:
-    from src.rag_query import RagPipeline
+    from runtime.rag_query import RagPipeline
 
     arm = "graphrag"
     out_dir = OUT_ROOT / arm
@@ -118,7 +118,7 @@ def run_graphrag(questions: list[dict], force: bool, verbose: bool) -> None:
 
 
 def run_llm_only(questions: list[dict], force: bool, verbose: bool) -> None:
-    from experiments.llm_only import LlmOnlyPipeline
+    from runtime.llm_only import LlmOnlyPipeline
 
     arm = "llm_only"
     out_dir = OUT_ROOT / arm
@@ -235,19 +235,19 @@ def _run_logic_lm(
 
 
 def run_logic_lm_no_retrieval(questions, force, verbose):
-    from experiments.logic_lm_pipelines import LogicLMNoRetrievalPipeline
+    from runtime.logic_lm_pipelines import LogicLMNoRetrievalPipeline
     p = LogicLMNoRetrievalPipeline()
     _run_logic_lm("logic_lm_no_retrieval", p, questions, force, verbose)
 
 
 def run_logic_lm_ontology(questions, force, verbose):
-    from experiments.logic_lm_pipelines import LogicLMOntologyPipeline
+    from runtime.logic_lm_pipelines import LogicLMOntologyPipeline
     p = LogicLMOntologyPipeline()
     _run_logic_lm("logic_lm_ontology", p, questions, force, verbose)
 
 
 def run_logic_lm_graphrag(questions, force, verbose):
-    from experiments.logic_lm_pipelines import LogicLMGraphRAGPipeline
+    from runtime.logic_lm_pipelines import LogicLMGraphRAGPipeline
     p = LogicLMGraphRAGPipeline()  # tự tạo + warm up RagPipeline bên trong
     _run_logic_lm("logic_lm_graphrag", p, questions, force, verbose)
 

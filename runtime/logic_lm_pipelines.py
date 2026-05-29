@@ -37,17 +37,17 @@ load_dotenv()
 if not (os.environ.get("OPENAI_BASE_URL") or "").strip():
     os.environ.pop("OPENAI_BASE_URL", None)
 
-# Make repo root importable so absolute `src.logic_lm.*` paths resolve when
-# this module is loaded as a script (e.g. via `python -m experiments.run_inference`).
+# Make repo root importable so absolute `runtime.logic_lm.*` paths resolve when
+# this module is loaded as a script (e.g. via `python -m runtime.run_inference`).
 _REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
-from src.logic_lm.config import settings as logic_lm_settings
-from src.logic_lm.knowledge.hybrid_retrieval import RetrievedKnowledgeContext
-from src.logic_lm.knowledge.ontology_retrieval import OntologyRetrieval
-from src.logic_lm.llm.client import LLMClient, OpenAILLMClient
-from src.logic_lm.pipelines.program_pipeline import (
+from runtime.logic_lm.config import settings as logic_lm_settings
+from runtime.logic_lm.knowledge.hybrid_retrieval import RetrievedKnowledgeContext
+from runtime.logic_lm.knowledge.ontology_retrieval import OntologyRetrieval
+from runtime.logic_lm.llm.client import LLMClient, OpenAILLMClient
+from runtime.logic_lm.pipelines.program_pipeline import (
     ExecutionResult,
     ProgramEnvelope,
     _absorb_response,
@@ -57,7 +57,7 @@ from src.logic_lm.pipelines.program_pipeline import (
     _validate_query_no_literals,
     _verify,
 )
-from src.logic_lm.solvers.prolog_solver import PrologSolver  # noqa: F401
+from runtime.logic_lm.solvers.prolog_solver import PrologSolver  # noqa: F401
 
 from src.citations import (
     format_citation,
@@ -65,10 +65,11 @@ from src.citations import (
     parse_internal_citation_id,
     ref_from_prolog_terms,
 )
+from src.prompts import load_prompt, resolve_prompt_path
 
 LOGIC_LM_ONTOLOGY_PATH = Path("data/eval/logic_lm_ontology_2024.json")
-NO_RETRIEVAL_PROMPT_PATH = Path("experiments/prompts/logic_lm_no_retrieval.md")
-IRAC_WITH_PLAIN_PROMPT_PATH = Path("experiments/prompts/irac_with_plain.md")
+NO_RETRIEVAL_PROMPT_REL = "runtime/logic_lm/rule_gen_no_retrieval.md"
+IRAC_WITH_PLAIN_PROMPT_REL = "runtime/logic_lm/irac_with_plain.md"
 
 
 # ---------------------------------------------------------------------------
@@ -598,10 +599,13 @@ class _LogicLMBasePipeline:
         self.retriever = retriever
         self.prompt_override = prompt_override
         # IRAC prompt override: nếu None và enable_plain_answer=True, dùng
-        # IRAC_WITH_PLAIN_PROMPT_PATH (output JSON với irac + plain_answer)
+        # irac_with_plain.md (output JSON với irac + plain_answer). Vẫn check
+        # tồn tại để giữ behavior cũ — pipeline rơi về IRAC_RENDER_PROMPT
+        # mặc định nếu prompt không có ở vị trí đó (kể cả khi user set
+        # LEGAL_KG_PROMPTS_DIR mà thiếu file).
         if irac_prompt_override is None and enable_plain_answer:
-            if IRAC_WITH_PLAIN_PROMPT_PATH.exists():
-                irac_prompt_override = IRAC_WITH_PLAIN_PROMPT_PATH.read_text(encoding="utf-8")
+            if resolve_prompt_path(IRAC_WITH_PLAIN_PROMPT_REL).exists():
+                irac_prompt_override = load_prompt(IRAC_WITH_PLAIN_PROMPT_REL)
         self.irac_prompt_override = irac_prompt_override
         self.max_repair_rounds = max_repair_rounds
         self.top_k = top_k
@@ -805,7 +809,7 @@ class LogicLMNoRetrievalPipeline(_LogicLMBasePipeline):
     skip_citation_check = True
 
     def __init__(self, **kwargs):
-        prompt = NO_RETRIEVAL_PROMPT_PATH.read_text(encoding="utf-8")
+        prompt = load_prompt(NO_RETRIEVAL_PROMPT_REL)
         super().__init__(
             retriever=None,
             prompt_override=prompt,
@@ -822,7 +826,7 @@ class LogicLMOntologyPipeline(_LogicLMBasePipeline):
         if not LOGIC_LM_ONTOLOGY_PATH.exists():
             raise FileNotFoundError(
                 f"Ontology not found: {LOGIC_LM_ONTOLOGY_PATH}. "
-                f"Run `python -m experiments.build_logic_lm_corpus_2024` first."
+                f"Run `python -m offline.build_logic_lm_corpus_2024` first."
             )
         retriever = OntologyRetrieval()
         retriever.index_ontology(LOGIC_LM_ONTOLOGY_PATH)
@@ -835,9 +839,9 @@ class LogicLMGraphRAGPipeline(_LogicLMBasePipeline):
     arm_name = "logic_lm_graphrag"
 
     def __init__(self, rag_pipeline=None, **kwargs):
-        from experiments.graphrag_retriever_adapter import GraphRAGAsLogicLMRetriever
+        from runtime.graphrag_retriever_adapter import GraphRAGAsLogicLMRetriever
         if rag_pipeline is None:
-            from src.rag_query import RagPipeline
+            from runtime.rag_query import RagPipeline
             rag_pipeline = RagPipeline()
             _ = rag_pipeline.embed_model  # warm up
         self._owned_rag = rag_pipeline  # so close() can dispose

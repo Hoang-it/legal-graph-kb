@@ -1,10 +1,10 @@
 """Interactive REPL chat với hệ thống RAG.
 
 Usage:
-    python -m src.chat                  # mặc định
-    python -m src.chat --top-k 12       # tăng số Clause retrieve
-    python -m src.chat --no-verify      # bỏ verify citation (nhanh hơn)
-    python -m src.chat --no-rich        # plain text, không màu
+    python -m runtime.chat                  # mặc định
+    python -m runtime.chat --top-k 12       # tăng số Clause retrieve
+    python -m runtime.chat --no-verify      # bỏ verify citation (nhanh hơn)
+    python -m runtime.chat --no-rich        # plain text, không màu
 
 Trong REPL:
     /help               liệt kê lệnh
@@ -78,7 +78,7 @@ Mọi text khác → câu hỏi cho RAG.
 def run(top_k: int, auto_verify: bool, use_rich: bool):
     # Lazy import — sau khi env vars đã load
     print("Loading RAG pipeline (BGE-M3 + Neo4j + OpenAI)...", file=sys.stderr)
-    from src.rag_query import RagPipeline
+    from runtime.rag_query import RagPipeline
 
     pipeline = RagPipeline()
     # Pre-load embed model để câu đầu không chậm

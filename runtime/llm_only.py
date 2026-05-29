@@ -16,6 +16,7 @@ from dataclasses import dataclass, field
 from dotenv import load_dotenv
 
 from src.citations import format_citation, parse_displayed_citations
+from src.prompts import load_prompt
 
 load_dotenv()
 if not (os.environ.get("OPENAI_BASE_URL") or "").strip():
@@ -26,15 +27,7 @@ OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 
 # Prompt KHÔNG nhắc tới CONTEXT (vì không có). Vẫn yêu cầu citation canonical.
 # Mục tiêu: fair comparison — cả 2 arm đều output cùng format.
-SYSTEM_PROMPT_LLM_ONLY = """Bạn là trợ lý pháp lý chuyên về Luật Bảo hiểm xã hội Việt Nam.
-
-QUY TẮC:
-1. Trả lời câu hỏi bằng tiếng Việt.
-2. Mọi khẳng định pháp lý PHẢI kèm citation inline ngay sau claim liên quan, theo format canonical `[Luật BHXH 2024 (41/2024/QH15), Điều X khoản Y]` hoặc `[Luật BHXH 2024 (41/2024/QH15), Điều X khoản Y điểm z]`. KHÔNG dùng citation mơ hồ như `[Điều X]` nếu thiếu tên văn bản.
-3. Nếu không chắc chắn về quy định nào, hãy nói rõ "tôi không có đủ thông tin chính xác để trả lời câu hỏi này".
-4. KHÔNG bịa số liệu, ngày tháng, mức tiền.
-5. Ngắn gọn nhưng đầy đủ.
-"""
+SYSTEM_PROMPT_LLM_ONLY = load_prompt("runtime/llm_only_system.md")
 
 
 @dataclass

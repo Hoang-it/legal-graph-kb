@@ -3,9 +3,9 @@ import json
 from pathlib import Path
 from typing import Dict, List, Mapping, Optional, Tuple, Union
 
-from src.logic_lm.config import settings
-from src.logic_lm.indexes.hnsw_embedding_index import EmbeddingHNSW
-from src.logic_lm.indexes.keyword_inverted_index import KeywordInvertedIndex
+from runtime.logic_lm.config import settings
+from runtime.logic_lm.indexes.hnsw_embedding_index import EmbeddingHNSW
+from runtime.logic_lm.indexes.keyword_inverted_index import KeywordInvertedIndex
 
 
 @dataclass(frozen=True)

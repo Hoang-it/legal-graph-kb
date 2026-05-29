@@ -4,7 +4,7 @@ import unicodedata
 from pathlib import Path
 from typing import Any, Dict, List, Mapping, Optional, Sequence, Set, Tuple, Union
 
-from src.logic_lm.config import settings
+from runtime.logic_lm.config import settings
 
 
 ConceptSpec = Dict[str, Any]

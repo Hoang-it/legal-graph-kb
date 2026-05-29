@@ -1,8 +1,8 @@
 from typing import Dict, List, Tuple
 import math
 
-from src.logic_lm.config import settings
-from src.logic_lm.services.encoder import get_encoder
+from runtime.logic_lm.config import settings
+from runtime.logic_lm.services.encoder import get_encoder
 
 try:
     import hnswlib
