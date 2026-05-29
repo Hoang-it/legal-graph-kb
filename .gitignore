@@ -188,20 +188,15 @@ cython_debug/
 # whitelist below). Use `dir/*` form so we CAN re-include specific files.
 data/interim/*
 data/processed/*
-data/eval/results/*
-data/eval/metrics.json
-data/eval/metrics.csv
-data/eval/metrics*.json
-data/eval/metrics*.csv
-data/eval/academic_metrics_*.json
-data/eval/academic_metrics_*.csv
-data/eval/academic/first*/
-data/eval/academic/*_results/
-data/eval/academic/questions_*.json
-data/eval/judge_cache.jsonl
-data/eval/multimodel/judge_cache.jsonl
-data/eval/multimodel/metrics*.json
-data/eval/multimodel/metrics*.csv
+
+# User-provided evaluation data — except 200-question benchmark
+data/eval/questions_*.json
+
+# ─── EXCEPTIONS: KG artifacts needed to reproduce inference ───
+!data/eval/questions_200.json
+!data/interim/structured_law.json
+!data/processed/merged_graph.json
+!data/processed/embeddings.parquet
 
 # Backup snapshots from audit fixes
 *.bak
@@ -213,25 +208,6 @@ logs/
 # Auxiliary CSV outputs (regenerable)
 reports/*.csv
 
-# User-provided evaluation data — except 200-question benchmark
-data/eval/questions_*.json
-
-# ─── EXCEPTIONS: files needed for Colab notebooks to reproduce experiment ───
-!data/eval/questions_200.json
-!data/interim/structured_law.json
-!data/processed/merged_graph.json
-!data/processed/embeddings.parquet
-
-# ─── R1 experiment snapshot (committed cho reproducibility, ~10MB total) ───
-# Re-include results/ dir + downstream artifacts. User có thể skip Phase 2
-# inference trên Colab và nhảy thẳng vào metric compute / report rendering.
-!data/eval/results/
-!data/eval/results/**
-!data/eval/academic_metrics.json
-!data/eval/academic_metrics.csv
-!data/eval/academic/
-!data/eval/academic/gold_citations_normalized.json
-
 # Allow placeholder files so empty dirs are kept
 !data/**/.gitkeep
 !data/raw/.gitkeep
@@ -240,9 +216,14 @@ data/eval/questions_*.json
 reports/*.md
 !reports/.gitkeep
 # Human-written documentation (commit these)
-!reports/academic_report.md
 !reports/extraction_summary.md
 !reports/plan_v5_general_retrieval.md
+
+# ─── Experiment results — ignored by default, per-experiment opt-in ───
+# Each experiment can override this in its own .gitignore (see e.g.
+# experiments/01_initial_eval/.gitignore which un-ignores results/ to
+# freeze its baseline records for inheritance by future experiments).
+experiments/*/results/
 
 # Model caches & weights (downloaded on demand via scripts/install_b5.ps1)
 .cache/

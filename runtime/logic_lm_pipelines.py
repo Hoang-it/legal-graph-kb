@@ -4,7 +4,7 @@ so `experiments/run_inference.py` can route them uniformly.
 
 3 arms:
 - LogicLMNoRetrievalPipeline   — Arm C — empty context + relaxed prompt
-- LogicLMOntologyPipeline      — Arm D — OntologyRetrieval (logic_lm_ontology_2024.json)
+- LogicLMOntologyPipeline      — Arm D — OntologyRetrieval (data/logic_lm/ontology_2024.json)
 - LogicLMGraphRAGPipeline      — Arm E — wrap RagPipeline qua adapter
 
 Provenance/tracking:
@@ -67,7 +67,7 @@ from src.citations import (
 )
 from src.prompts import load_prompt, resolve_prompt_path
 
-LOGIC_LM_ONTOLOGY_PATH = Path("data/eval/logic_lm_ontology_2024.json")
+LOGIC_LM_ONTOLOGY_PATH = Path("data/logic_lm/ontology_2024.json")
 NO_RETRIEVAL_PROMPT_REL = "runtime/logic_lm/rule_gen_no_retrieval.md"
 IRAC_WITH_PLAIN_PROMPT_REL = "runtime/logic_lm/irac_with_plain.md"
 
