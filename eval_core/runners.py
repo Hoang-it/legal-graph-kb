@@ -7,14 +7,11 @@ arm, then calls :func:`eval_core.metrics.compute_academic_metrics` for each arm.
 
 from __future__ import annotations
 
-import argparse
 import json
-import sys
 from pathlib import Path
 from typing import Any
 
 from eval_core import paths
-from eval_core.arms import MAIN_EXPERIMENT_ARMS, parse_metrics_arms
 from eval_core.gold import (
     DEFAULT_QUESTIONS,
     NORMALIZED_OUT,
@@ -27,8 +24,6 @@ from eval_core.metrics import (
 )
 from eval_core.report import write_grouped_academic_metrics_outputs
 from src.citations import DEFAULT_REGISTRY_PATH, load_registry
-
-DEFAULT_RESULTS_ROOT = Path("data/eval/results")
 
 
 def _load_gold_map(path: Path) -> dict[int, list[str]]:
@@ -103,7 +98,7 @@ def build_metric_record_groups(
 
 
 def load_academic_metric_records(
-    results_root: Path = DEFAULT_RESULTS_ROOT,
+    results_root: Path,
     questions_path: Path = DEFAULT_QUESTIONS,
     registry_path: Path = DEFAULT_REGISTRY_PATH,
     academic_dir: Path = DEFAULT_OUTPUT_DIR / "academic",
@@ -165,7 +160,7 @@ def compute_grouped_academic_metrics(
 
 
 def compute_experiment_academic_metrics(
-    results_root: Path = DEFAULT_RESULTS_ROOT,
+    results_root: Path,
     questions_path: Path = DEFAULT_QUESTIONS,
     registry_path: Path = DEFAULT_REGISTRY_PATH,
     output_dir: Path = DEFAULT_OUTPUT_DIR,
@@ -365,55 +360,8 @@ def compute_metrics_for_experiment(
     )
 
 
-def main() -> int:
-    p = argparse.ArgumentParser(description="Load experiment records and compute metrics.")
-    p.add_argument("--results-root", type=Path, default=DEFAULT_RESULTS_ROOT)
-    p.add_argument("--questions", type=Path, default=DEFAULT_QUESTIONS)
-    p.add_argument("--registry", type=Path, default=DEFAULT_REGISTRY_PATH)
-    p.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
-    p.add_argument("--academic-dir", type=Path, default=None)
-    p.add_argument("--metrics-out", type=Path, default=None)
-    p.add_argument("--csv-out", type=Path, default=None)
-    p.add_argument("--report-out", type=Path, default=None)
-    p.add_argument(
-        "--arms",
-        type=str,
-        default="main",
-        help=(
-            "Arm selection: 'main' (default), 'all' to discover every result dir, "
-            "or comma-separated arms. Main = "
-            + ",".join(MAIN_EXPERIMENT_ARMS)
-        ),
-    )
-    args = p.parse_args()
-    try:
-        arms = parse_metrics_arms(args.arms)
-    except ValueError as exc:
-        print(f"FAIL: {exc}", file=sys.stderr)
-        return 2
-
-    try:
-        result = compute_experiment_academic_metrics(
-            results_root=args.results_root,
-            questions_path=args.questions,
-            registry_path=args.registry,
-            output_dir=args.output_dir,
-            academic_dir=args.academic_dir,
-            metrics_out=args.metrics_out,
-            csv_out=args.csv_out,
-            report_out=args.report_out,
-            arms=arms,
-        )
-    except Exception as exc:
-        print(f"FAIL: {exc}", file=sys.stderr)
-        return 1
-
-    print(
-        f"OK: wrote {result['metrics_out']}, {result['csv_out']}, {result['report_out']} "
-        f"for {len(result['records'])} arms."
-    )
-    return 0
-
-
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(
+        "eval_core.runners is no longer a CLI entry point. "
+        "Use `python -m eval_core metrics <experiment_path>` instead."
+    )

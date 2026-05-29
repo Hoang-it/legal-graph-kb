@@ -1,4 +1,4 @@
-"""rerender_plain_answer.py — Backfill plain_answer field cho logic-lm records cũ.
+"""Backfill plain_answer field cho logic-lm records of an experiment.
 
 Re-render IRAC using new prompt (prompts/runtime/logic_lm/irac_with_plain.md) which
 outputs JSON with BOTH `irac` (preserves analysis) AND `plain_answer` (prose form
@@ -12,11 +12,12 @@ Skips:
 - Records already có plain_answer non-empty (idempotent)
 
 Usage:
-    python -m eval_core.rerender --combos all --pilot 10
-    python -m eval_core.rerender --combos all  # full
+    python -m eval_core.rerender <experiment_path>                        # all logic-lm combos
+    python -m eval_core.rerender <experiment_path> --combos logic_lm_graphrag,logic_lm_graphrag__gpt-4_1
+    python -m eval_core.rerender <experiment_path> --pilot 10             # smoke
 
 Cost (gpt-4o-mini backfill model, không phải original inference model):
-    ~$0.002 per record × ~1700 logic-lm records ≈ $3.4
+    ~$0.002 per record × N logic-lm records.
 """
 
 from __future__ import annotations
@@ -31,6 +32,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
+from eval_core import paths
 from src.prompts import load_prompt
 
 load_dotenv()
@@ -38,24 +40,34 @@ os.environ.setdefault("HF_HUB_DISABLE_SYMLINKS_WARNING", "1")
 if not (os.environ.get("OPENAI_BASE_URL") or "").strip():
     os.environ.pop("OPENAI_BASE_URL", None)
 
-# Map of combos → result directory
-R1_COMBOS = {
-    "logic_lm_no_retrieval": Path("data/eval/results/logic_lm_no_retrieval"),
-    "logic_lm_ontology":     Path("data/eval/results/logic_lm_ontology"),
-    "logic_lm_graphrag":     Path("data/eval/results/logic_lm_graphrag"),
-}
-R2_COMBOS = {
-    "elite_no_retrieval__gpt-4_1":    Path("data/eval/multimodel/results/logic_lm_no_retrieval__gpt-4_1"),
-    "elite_no_retrieval__gpt-4o":     Path("data/eval/multimodel/results/logic_lm_no_retrieval__gpt-4o"),
-    "elite_no_retrieval__gpt-5-mini": Path("data/eval/multimodel/results/logic_lm_no_retrieval__gpt-5-mini"),
-    "elite_graphrag__gpt-4_1":        Path("data/eval/multimodel/results/logic_lm_graphrag__gpt-4_1"),
-    "elite_graphrag__gpt-4o":         Path("data/eval/multimodel/results/logic_lm_graphrag__gpt-4o"),
-    "elite_graphrag__gpt-5-mini":     Path("data/eval/multimodel/results/logic_lm_graphrag__gpt-5-mini"),
-}
-ALL_COMBOS = {**R1_COMBOS, **R2_COMBOS}
-
 PROMPT_REL = "runtime/logic_lm/irac_with_plain.md"
 BACKFILL_MODEL = os.getenv("BACKFILL_MODEL", "gpt-4o-mini")
+
+
+def discover_logic_lm_combos(experiment) -> dict[str, Path]:
+    """Return a {combo_name: results_dir} map for every logic-lm result dir.
+
+    Combo name = the on-disk subdirectory name. Includes both single-model
+    arms (results/<arm>/) and multimodel combos (results/multimodel/<arm__model>/).
+    Filtered to those whose name starts with ``logic_lm``.
+    """
+    combos: dict[str, Path] = {}
+    results_root = experiment.results_dir
+    if not results_root.is_dir():
+        return combos
+    # Single-model arms
+    for arm_dir in sorted(p for p in results_root.iterdir() if p.is_dir()):
+        if arm_dir.name == paths.MULTIMODEL_SUBDIR:
+            continue
+        if arm_dir.name.startswith("logic_lm"):
+            combos[arm_dir.name] = arm_dir
+    # Multimodel combos
+    mm_dir = results_root / paths.MULTIMODEL_SUBDIR
+    if mm_dir.is_dir():
+        for combo_dir in sorted(p for p in mm_dir.iterdir() if p.is_dir()):
+            if combo_dir.name.startswith("logic_lm"):
+                combos[combo_dir.name] = combo_dir
+    return combos
 
 
 def _load_prompt() -> str:
@@ -230,36 +242,72 @@ def process_combo(combo: str, results_dir: Path, prompt: str, model: str,
 
 
 def main() -> int:
-    p = argparse.ArgumentParser(description="Backfill plain_answer cho logic-lm records.")
-    p.add_argument("--combos", type=str, default="all",
-                   help=f"Comma-separated combo names hoặc 'all'. Available: {list(ALL_COMBOS)}")
-    p.add_argument("--pilot", type=int, default=0, help="Chỉ chạy N records đầu (debug)")
-    p.add_argument("--force", action="store_true", help="Re-do dù plain_answer đã có")
+    from eval_core.experiment import Experiment
+
+    p = argparse.ArgumentParser(
+        description="Backfill plain_answer for logic-lm records of an experiment.",
+    )
+    p.add_argument("experiment", type=Path, help="Path to experiment folder.")
+    p.add_argument(
+        "--combos",
+        type=str,
+        default="all",
+        help=(
+            "Comma-separated combo names (matching subdirectory names under "
+            "results/ or results/multimodel/) or 'all' to discover every "
+            "logic_lm* result directory."
+        ),
+    )
+    p.add_argument("--pilot", type=int, default=0, help="Only process the first N records (debug).")
+    p.add_argument("--force", action="store_true", help="Re-do even if plain_answer is set.")
     p.add_argument("--verbose", action="store_true")
-    p.add_argument("--model", type=str, default=BACKFILL_MODEL,
-                   help=f"Model dùng backfill (default {BACKFILL_MODEL}). Có thể override với env BACKFILL_MODEL.")
+    p.add_argument(
+        "--model",
+        type=str,
+        default=BACKFILL_MODEL,
+        help=f"Backfill model (default {BACKFILL_MODEL}). Override via env BACKFILL_MODEL.",
+    )
     args = p.parse_args()
 
+    try:
+        experiment = Experiment.from_path(args.experiment)
+    except (FileNotFoundError, ValueError) as exc:
+        print(f"FAIL: {exc}", file=sys.stderr)
+        return 2
+
+    available = discover_logic_lm_combos(experiment)
+    if not available:
+        print(
+            f"No logic_lm* result directories under {experiment.results_dir}",
+            file=sys.stderr,
+        )
+        return 1
+
     if args.combos == "all":
-        combos = list(ALL_COMBOS)
+        combos = list(available)
     else:
         combos = [c.strip() for c in args.combos.split(",") if c.strip()]
-    invalid = [c for c in combos if c not in ALL_COMBOS]
+    invalid = [c for c in combos if c not in available]
     if invalid:
-        raise SystemExit(f"Unknown combo(s): {invalid}")
+        print(
+            f"FAIL: unknown combo(s): {invalid}. Available: {list(available)}",
+            file=sys.stderr,
+        )
+        return 2
 
     prompt = _load_prompt()
     from openai import OpenAI
     client = OpenAI()
 
+    print(f"Experiment   : {experiment.name} ({experiment.path})")
     print(f"Backfill model: {args.model}")
-    print(f"Combos: {combos}")
-    print(f"Pilot: {args.pilot or 'full'}\n")
+    print(f"Combos       : {combos}")
+    print(f"Pilot        : {args.pilot or 'full'}\n")
 
     summaries = []
     for c in combos:
         print(f"=== {c} ===")
-        s = process_combo(c, ALL_COMBOS[c], prompt, args.model,
+        s = process_combo(c, available[c], prompt, args.model,
                           args.pilot or None, args.force, client, args.verbose)
         summaries.append(s)
         print(f"  Summary: {s}\n")
