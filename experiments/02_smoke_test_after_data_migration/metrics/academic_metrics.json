@@ -1,0 +1,1586 @@
+{
+  "metric_version": "academic_v1",
+  "n_input_records": 25,
+  "registry_path": "data\\legal_sources.yaml",
+  "gold_source": "record.gold_articles",
+  "metadata": {
+    "experiment_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration",
+    "experiment_name": "Smoke test sau khi migrate data/ → data/graph/ + data/ontology/",
+    "questions_path": "data\\eval\\questions_200.json",
+    "gold_artifact": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\metrics\\gold_citations_normalized.json",
+    "arms_filter": null,
+    "records_source": {
+      "graphrag": "Smoke test sau khi migrate data/ → data/graph/ + data/ontology/",
+      "llm_only": "Smoke test sau khi migrate data/ → data/graph/ + data/ontology/",
+      "logic_lm_no_retrieval": "Smoke test sau khi migrate data/ → data/graph/ + data/ontology/",
+      "logic_lm_ontology": "Smoke test sau khi migrate data/ → data/graph/ + data/ontology/",
+      "logic_lm_graphrag": "Smoke test sau khi migrate data/ → data/graph/ + data/ontology/"
+    }
+  },
+  "bertscore_metadata": {
+    "graphrag": {
+      "status": "ok",
+      "model_type": "bert-base-multilingual-cased",
+      "lang": "vi",
+      "device": "cuda",
+      "rescale_with_baseline": false
+    },
+    "llm_only": {
+      "status": "ok",
+      "model_type": "bert-base-multilingual-cased",
+      "lang": "vi",
+      "device": "cuda",
+      "rescale_with_baseline": false
+    },
+    "logic_lm_no_retrieval": {
+      "status": "ok",
+      "model_type": "bert-base-multilingual-cased",
+      "lang": "vi",
+      "device": "cuda",
+      "rescale_with_baseline": false
+    },
+    "logic_lm_ontology": {
+      "status": "ok",
+      "model_type": "bert-base-multilingual-cased",
+      "lang": "vi",
+      "device": "cuda",
+      "rescale_with_baseline": false
+    },
+    "logic_lm_graphrag": {
+      "status": "ok",
+      "model_type": "bert-base-multilingual-cased",
+      "lang": "vi",
+      "device": "cuda",
+      "rescale_with_baseline": false
+    }
+  },
+  "records": {
+    "graphrag": [
+      {
+        "record_index": 1,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\graphrag\\A1.json",
+        "citation": {
+          "gold_articles": [
+            "ND115_2015.A28",
+            "ND152_2006.A53"
+          ],
+          "pred_articles": [
+            "L41_2024.A62"
+          ],
+          "pred_items": [
+            "L41_2024.A62.K1"
+          ],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 2,
+          "precision_num": 0,
+          "precision_denom": 1,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [],
+            "matched_pipeline_items": [],
+            "display_num": 0,
+            "display_denom": 1,
+            "citation_display_rate": 0.0
+          }
+        },
+        "latency": {
+          "latency_s": 16.03
+        },
+        "prolog": {
+          "prolog_first_try_solution": null,
+          "repair_invoked": null,
+          "repair_success": null
+        },
+        "record_id": "1",
+        "bertscore": {
+          "bertscore_p": 0.7501,
+          "bertscore_r": 0.6683,
+          "bertscore_f1": 0.7068,
+          "candidate_source": "cleaned_answer",
+          "status": "ok"
+        }
+      },
+      {
+        "record_index": 2,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\graphrag\\A2.json",
+        "citation": {
+          "gold_articles": [
+            "L58_2014.A2"
+          ],
+          "pred_articles": [
+            "L41_2024.A36",
+            "L41_2024.A5",
+            "L41_2024.A87"
+          ],
+          "pred_items": [
+            "L41_2024.A36.K1",
+            "L41_2024.A5.K2",
+            "L41_2024.A87.K1"
+          ],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 1,
+          "precision_num": 0,
+          "precision_denom": 3,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [],
+            "matched_pipeline_items": [],
+            "display_num": 0,
+            "display_denom": 3,
+            "citation_display_rate": 0.0
+          }
+        },
+        "latency": {
+          "latency_s": 4.74
+        },
+        "prolog": {
+          "prolog_first_try_solution": null,
+          "repair_invoked": null,
+          "repair_success": null
+        },
+        "record_id": "2",
+        "bertscore": {
+          "bertscore_p": 0.6921,
+          "bertscore_r": 0.7008,
+          "bertscore_f1": 0.6964,
+          "candidate_source": "cleaned_answer",
+          "status": "ok"
+        }
+      },
+      {
+        "record_index": 3,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\graphrag\\A3.json",
+        "citation": {
+          "gold_articles": [
+            "L45_2019.A48",
+            "L58_2014.A21"
+          ],
+          "pred_articles": [
+            "L41_2024.A13",
+            "L41_2024.A18",
+            "L41_2024.A19",
+            "L41_2024.A21"
+          ],
+          "pred_items": [
+            "L41_2024.A13.K3",
+            "L41_2024.A18.K2",
+            "L41_2024.A19.K2",
+            "L41_2024.A21.K5"
+          ],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 2,
+          "precision_num": 0,
+          "precision_denom": 4,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [],
+            "matched_pipeline_items": [],
+            "display_num": 0,
+            "display_denom": 4,
+            "citation_display_rate": 0.0
+          }
+        },
+        "latency": {
+          "latency_s": 5.61
+        },
+        "prolog": {
+          "prolog_first_try_solution": null,
+          "repair_invoked": null,
+          "repair_success": null
+        },
+        "record_id": "3",
+        "bertscore": {
+          "bertscore_p": 0.6888,
+          "bertscore_r": 0.6284,
+          "bertscore_f1": 0.6572,
+          "candidate_source": "cleaned_answer",
+          "status": "ok"
+        }
+      },
+      {
+        "record_index": 4,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\graphrag\\A4.json",
+        "citation": {
+          "gold_articles": [
+            "L58_2014.A31",
+            "L58_2014.A34"
+          ],
+          "pred_articles": [
+            "L41_2024.A61"
+          ],
+          "pred_items": [
+            "L41_2024.A61.K5"
+          ],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 2,
+          "precision_num": 0,
+          "precision_denom": 1,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [],
+            "matched_pipeline_items": [],
+            "display_num": 0,
+            "display_denom": 1,
+            "citation_display_rate": 0.0
+          }
+        },
+        "latency": {
+          "latency_s": 6.57
+        },
+        "prolog": {
+          "prolog_first_try_solution": null,
+          "repair_invoked": null,
+          "repair_success": null
+        },
+        "record_id": "4",
+        "bertscore": {
+          "bertscore_p": 0.7014,
+          "bertscore_r": 0.6433,
+          "bertscore_f1": 0.6711,
+          "candidate_source": "cleaned_answer",
+          "status": "ok"
+        }
+      },
+      {
+        "record_index": 5,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\graphrag\\A5.json",
+        "citation": {
+          "gold_articles": [
+            "QD595_BHXH.A23",
+            "QD838_BHXH.A4",
+            "QD838_BHXH.A7"
+          ],
+          "pred_articles": [
+            "L41_2024.A27",
+            "L41_2024.A28",
+            "L41_2024.A3"
+          ],
+          "pred_items": [
+            "L41_2024.A27.K2",
+            "L41_2024.A28.K1",
+            "L41_2024.A3.K9"
+          ],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 3,
+          "precision_num": 0,
+          "precision_denom": 3,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [],
+            "matched_pipeline_items": [],
+            "display_num": 0,
+            "display_denom": 3,
+            "citation_display_rate": 0.0
+          }
+        },
+        "latency": {
+          "latency_s": 5.28
+        },
+        "prolog": {
+          "prolog_first_try_solution": null,
+          "repair_invoked": null,
+          "repair_success": null
+        },
+        "record_id": "5",
+        "bertscore": {
+          "bertscore_p": 0.6689,
+          "bertscore_r": 0.6022,
+          "bertscore_f1": 0.6338,
+          "candidate_source": "cleaned_answer",
+          "status": "ok"
+        }
+      }
+    ],
+    "llm_only": [
+      {
+        "record_index": 1,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\llm_only\\A1.json",
+        "citation": {
+          "gold_articles": [
+            "ND115_2015.A28",
+            "ND152_2006.A53"
+          ],
+          "pred_articles": [
+            "L41_2024.A38"
+          ],
+          "pred_items": [
+            "L41_2024.A38.K1"
+          ],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 2,
+          "precision_num": 0,
+          "precision_denom": 1,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [
+              "L41_2024.A38.K1"
+            ],
+            "matched_pipeline_items": [
+              "L41_2024.A38.K1"
+            ],
+            "display_num": 1,
+            "display_denom": 1,
+            "citation_display_rate": 1.0
+          }
+        },
+        "latency": {
+          "latency_s": 8.148
+        },
+        "prolog": {
+          "prolog_first_try_solution": null,
+          "repair_invoked": null,
+          "repair_success": null
+        },
+        "record_id": "1",
+        "bertscore": {
+          "bertscore_p": 0.7621,
+          "bertscore_r": 0.6858,
+          "bertscore_f1": 0.7219,
+          "candidate_source": "cleaned_answer",
+          "status": "ok"
+        }
+      },
+      {
+        "record_index": 2,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\llm_only\\A2.json",
+        "citation": {
+          "gold_articles": [
+            "L58_2014.A2"
+          ],
+          "pred_articles": [
+            "L41_2024.A85",
+            "L41_2024.A87"
+          ],
+          "pred_items": [
+            "L41_2024.A85.K1",
+            "L41_2024.A87"
+          ],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 1,
+          "precision_num": 0,
+          "precision_denom": 2,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [
+              "L41_2024.A85.K1",
+              "L41_2024.A87"
+            ],
+            "matched_pipeline_items": [
+              "L41_2024.A85.K1",
+              "L41_2024.A87"
+            ],
+            "display_num": 2,
+            "display_denom": 2,
+            "citation_display_rate": 1.0
+          }
+        },
+        "latency": {
+          "latency_s": 8.869
+        },
+        "prolog": {
+          "prolog_first_try_solution": null,
+          "repair_invoked": null,
+          "repair_success": null
+        },
+        "record_id": "2",
+        "bertscore": {
+          "bertscore_p": 0.7301,
+          "bertscore_r": 0.7918,
+          "bertscore_f1": 0.7597,
+          "candidate_source": "cleaned_answer",
+          "status": "ok"
+        }
+      },
+      {
+        "record_index": 3,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\llm_only\\A3.json",
+        "citation": {
+          "gold_articles": [
+            "L45_2019.A48",
+            "L58_2014.A21"
+          ],
+          "pred_articles": [],
+          "pred_items": [],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 2,
+          "precision_num": 0,
+          "precision_denom": 0,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [],
+            "matched_pipeline_items": [],
+            "display_num": 0,
+            "display_denom": 0,
+            "citation_display_rate": null
+          }
+        },
+        "latency": {
+          "latency_s": 5.718
+        },
+        "prolog": {
+          "prolog_first_try_solution": null,
+          "repair_invoked": null,
+          "repair_success": null
+        },
+        "record_id": "3",
+        "bertscore": {
+          "bertscore_p": 0.747,
+          "bertscore_r": 0.7045,
+          "bertscore_f1": 0.7251,
+          "candidate_source": "cleaned_answer",
+          "status": "ok"
+        }
+      },
+      {
+        "record_index": 4,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\llm_only\\A4.json",
+        "citation": {
+          "gold_articles": [
+            "L58_2014.A31",
+            "L58_2014.A34"
+          ],
+          "pred_articles": [
+            "L41_2024.A34"
+          ],
+          "pred_items": [
+            "L41_2024.A34.K1"
+          ],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 2,
+          "precision_num": 0,
+          "precision_denom": 1,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [
+              "L41_2024.A34.K1"
+            ],
+            "matched_pipeline_items": [
+              "L41_2024.A34.K1"
+            ],
+            "display_num": 1,
+            "display_denom": 1,
+            "citation_display_rate": 1.0
+          }
+        },
+        "latency": {
+          "latency_s": 4.452
+        },
+        "prolog": {
+          "prolog_first_try_solution": null,
+          "repair_invoked": null,
+          "repair_success": null
+        },
+        "record_id": "4",
+        "bertscore": {
+          "bertscore_p": 0.6842,
+          "bertscore_r": 0.6263,
+          "bertscore_f1": 0.654,
+          "candidate_source": "cleaned_answer",
+          "status": "ok"
+        }
+      },
+      {
+        "record_index": 5,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\llm_only\\A5.json",
+        "citation": {
+          "gold_articles": [
+            "QD595_BHXH.A23",
+            "QD838_BHXH.A4",
+            "QD838_BHXH.A7"
+          ],
+          "pred_articles": [],
+          "pred_items": [],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 3,
+          "precision_num": 0,
+          "precision_denom": 0,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [],
+            "matched_pipeline_items": [],
+            "display_num": 0,
+            "display_denom": 0,
+            "citation_display_rate": null
+          }
+        },
+        "latency": {
+          "latency_s": 8.456
+        },
+        "prolog": {
+          "prolog_first_try_solution": null,
+          "repair_invoked": null,
+          "repair_success": null
+        },
+        "record_id": "5",
+        "bertscore": {
+          "bertscore_p": 0.7489,
+          "bertscore_r": 0.6883,
+          "bertscore_f1": 0.7173,
+          "candidate_source": "cleaned_answer",
+          "status": "ok"
+        }
+      }
+    ],
+    "logic_lm_no_retrieval": [
+      {
+        "record_index": 1,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\logic_lm_no_retrieval\\A1.json",
+        "citation": {
+          "gold_articles": [
+            "ND115_2015.A28",
+            "ND152_2006.A53"
+          ],
+          "pred_articles": [
+            "L41_2024.A31"
+          ],
+          "pred_items": [
+            "L41_2024.A31.K1"
+          ],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 2,
+          "precision_num": 0,
+          "precision_denom": 1,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [
+              "L41_2024.A31.K1"
+            ],
+            "matched_pipeline_items": [
+              "L41_2024.A31.K1"
+            ],
+            "display_num": 1,
+            "display_denom": 1,
+            "citation_display_rate": 1.0
+          }
+        },
+        "latency": {
+          "latency_s": 16.223
+        },
+        "prolog": {
+          "prolog_first_try_solution": true,
+          "repair_invoked": false,
+          "repair_success": null
+        },
+        "record_id": "1",
+        "bertscore": {
+          "bertscore_p": 0.7409,
+          "bertscore_r": 0.6468,
+          "bertscore_f1": 0.6906,
+          "candidate_source": "plain_answer",
+          "status": "ok"
+        }
+      },
+      {
+        "record_index": 2,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\logic_lm_no_retrieval\\A2.json",
+        "citation": {
+          "gold_articles": [
+            "L58_2014.A2"
+          ],
+          "pred_articles": [
+            "L41_2024.A2",
+            "L41_2024.A86"
+          ],
+          "pred_items": [
+            "L41_2024.A2.K1",
+            "L41_2024.A86.K1"
+          ],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 1,
+          "precision_num": 0,
+          "precision_denom": 2,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [],
+            "matched_pipeline_items": [],
+            "display_num": 0,
+            "display_denom": 2,
+            "citation_display_rate": 0.0
+          }
+        },
+        "latency": {
+          "latency_s": 296.306
+        },
+        "prolog": {
+          "prolog_first_try_solution": false,
+          "repair_invoked": true,
+          "repair_success": false
+        },
+        "record_id": "2",
+        "bertscore": {
+          "bertscore_p": 0.0,
+          "bertscore_r": 0.0,
+          "bertscore_f1": 0.0,
+          "candidate_source": "cleaned_answer",
+          "status": "ok"
+        }
+      },
+      {
+        "record_index": 3,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\logic_lm_no_retrieval\\A3.json",
+        "citation": {
+          "gold_articles": [
+            "L45_2019.A48",
+            "L58_2014.A21"
+          ],
+          "pred_articles": [],
+          "pred_items": [],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 2,
+          "precision_num": 0,
+          "precision_denom": 0,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [],
+            "matched_pipeline_items": [],
+            "display_num": 0,
+            "display_denom": 0,
+            "citation_display_rate": null
+          }
+        },
+        "latency": {
+          "latency_s": 8.518
+        },
+        "prolog": {
+          "prolog_first_try_solution": true,
+          "repair_invoked": false,
+          "repair_success": null
+        },
+        "record_id": "3",
+        "bertscore": {
+          "bertscore_p": 0.7131,
+          "bertscore_r": 0.6338,
+          "bertscore_f1": 0.6711,
+          "candidate_source": "plain_answer",
+          "status": "ok"
+        }
+      },
+      {
+        "record_index": 4,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\logic_lm_no_retrieval\\A4.json",
+        "citation": {
+          "gold_articles": [
+            "L58_2014.A31",
+            "L58_2014.A34"
+          ],
+          "pred_articles": [],
+          "pred_items": [],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 2,
+          "precision_num": 0,
+          "precision_denom": 0,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [],
+            "matched_pipeline_items": [],
+            "display_num": 0,
+            "display_denom": 0,
+            "citation_display_rate": null
+          }
+        },
+        "latency": {
+          "latency_s": 11.005
+        },
+        "prolog": {
+          "prolog_first_try_solution": true,
+          "repair_invoked": false,
+          "repair_success": null
+        },
+        "record_id": "4",
+        "bertscore": {
+          "bertscore_p": 0.7041,
+          "bertscore_r": 0.6305,
+          "bertscore_f1": 0.6653,
+          "candidate_source": "plain_answer",
+          "status": "ok"
+        }
+      },
+      {
+        "record_index": 5,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\logic_lm_no_retrieval\\A5.json",
+        "citation": {
+          "gold_articles": [
+            "QD595_BHXH.A23",
+            "QD838_BHXH.A4",
+            "QD838_BHXH.A7"
+          ],
+          "pred_articles": [],
+          "pred_items": [],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 3,
+          "precision_num": 0,
+          "precision_denom": 0,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [],
+            "matched_pipeline_items": [],
+            "display_num": 0,
+            "display_denom": 0,
+            "citation_display_rate": null
+          }
+        },
+        "latency": {
+          "latency_s": 15.595
+        },
+        "prolog": {
+          "prolog_first_try_solution": false,
+          "repair_invoked": true,
+          "repair_success": false
+        },
+        "record_id": "5",
+        "bertscore": {
+          "bertscore_p": 0.0,
+          "bertscore_r": 0.0,
+          "bertscore_f1": 0.0,
+          "candidate_source": "cleaned_answer",
+          "status": "ok"
+        }
+      }
+    ],
+    "logic_lm_ontology": [
+      {
+        "record_index": 1,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\logic_lm_ontology\\A1.json",
+        "citation": {
+          "gold_articles": [
+            "ND115_2015.A28",
+            "ND152_2006.A53"
+          ],
+          "pred_articles": [
+            "L41_2024.A53"
+          ],
+          "pred_items": [
+            "L41_2024.A53.K8"
+          ],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 2,
+          "precision_num": 0,
+          "precision_denom": 1,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [
+              "L41_2024.A53.K8"
+            ],
+            "matched_pipeline_items": [
+              "L41_2024.A53.K8"
+            ],
+            "display_num": 1,
+            "display_denom": 1,
+            "citation_display_rate": 1.0
+          }
+        },
+        "latency": {
+          "latency_s": 15.247
+        },
+        "prolog": {
+          "prolog_first_try_solution": true,
+          "repair_invoked": false,
+          "repair_success": null
+        },
+        "record_id": "1",
+        "bertscore": {
+          "bertscore_p": 0.748,
+          "bertscore_r": 0.6557,
+          "bertscore_f1": 0.6988,
+          "candidate_source": "plain_answer",
+          "status": "ok"
+        }
+      },
+      {
+        "record_index": 2,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\logic_lm_ontology\\A2.json",
+        "citation": {
+          "gold_articles": [
+            "L58_2014.A2"
+          ],
+          "pred_articles": [
+            "L41_2024.A33"
+          ],
+          "pred_items": [
+            "L41_2024.A33.K2"
+          ],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 1,
+          "precision_num": 0,
+          "precision_denom": 1,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [
+              "L41_2024.A33.K2"
+            ],
+            "matched_pipeline_items": [
+              "L41_2024.A33.K2"
+            ],
+            "display_num": 1,
+            "display_denom": 1,
+            "citation_display_rate": 1.0
+          }
+        },
+        "latency": {
+          "latency_s": 14.861
+        },
+        "prolog": {
+          "prolog_first_try_solution": true,
+          "repair_invoked": false,
+          "repair_success": null
+        },
+        "record_id": "2",
+        "bertscore": {
+          "bertscore_p": 0.6974,
+          "bertscore_r": 0.7367,
+          "bertscore_f1": 0.7166,
+          "candidate_source": "plain_answer",
+          "status": "ok"
+        }
+      },
+      {
+        "record_index": 3,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\logic_lm_ontology\\A3.json",
+        "citation": {
+          "gold_articles": [
+            "L45_2019.A48",
+            "L58_2014.A21"
+          ],
+          "pred_articles": [
+            "L41_2024.A18"
+          ],
+          "pred_items": [
+            "L41_2024.A18.K7"
+          ],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 2,
+          "precision_num": 0,
+          "precision_denom": 1,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [
+              "L41_2024.A18.K7"
+            ],
+            "matched_pipeline_items": [
+              "L41_2024.A18.K7"
+            ],
+            "display_num": 1,
+            "display_denom": 1,
+            "citation_display_rate": 1.0
+          }
+        },
+        "latency": {
+          "latency_s": 10.571
+        },
+        "prolog": {
+          "prolog_first_try_solution": true,
+          "repair_invoked": false,
+          "repair_success": null
+        },
+        "record_id": "3",
+        "bertscore": {
+          "bertscore_p": 0.701,
+          "bertscore_r": 0.661,
+          "bertscore_f1": 0.6804,
+          "candidate_source": "plain_answer",
+          "status": "ok"
+        }
+      },
+      {
+        "record_index": 4,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\logic_lm_ontology\\A4.json",
+        "citation": {
+          "gold_articles": [
+            "L58_2014.A31",
+            "L58_2014.A34"
+          ],
+          "pred_articles": [
+            "L41_2024.A61"
+          ],
+          "pred_items": [
+            "L41_2024.A61.K3"
+          ],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 2,
+          "precision_num": 0,
+          "precision_denom": 1,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [
+              "L41_2024.A61.K3"
+            ],
+            "matched_pipeline_items": [
+              "L41_2024.A61.K3"
+            ],
+            "display_num": 1,
+            "display_denom": 1,
+            "citation_display_rate": 1.0
+          }
+        },
+        "latency": {
+          "latency_s": 12.357
+        },
+        "prolog": {
+          "prolog_first_try_solution": true,
+          "repair_invoked": false,
+          "repair_success": null
+        },
+        "record_id": "4",
+        "bertscore": {
+          "bertscore_p": 0.6775,
+          "bertscore_r": 0.6184,
+          "bertscore_f1": 0.6466,
+          "candidate_source": "plain_answer",
+          "status": "ok"
+        }
+      },
+      {
+        "record_index": 5,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\logic_lm_ontology\\A5.json",
+        "citation": {
+          "gold_articles": [
+            "QD595_BHXH.A23",
+            "QD838_BHXH.A4",
+            "QD838_BHXH.A7"
+          ],
+          "pred_articles": [
+            "L41_2024.A18"
+          ],
+          "pred_items": [
+            "L41_2024.A18.K5",
+            "L41_2024.A18.K7"
+          ],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 3,
+          "precision_num": 0,
+          "precision_denom": 1,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [],
+            "matched_pipeline_items": [],
+            "display_num": 0,
+            "display_denom": 2,
+            "citation_display_rate": 0.0
+          }
+        },
+        "latency": {
+          "latency_s": 23.065
+        },
+        "prolog": {
+          "prolog_first_try_solution": false,
+          "repair_invoked": true,
+          "repair_success": false
+        },
+        "record_id": "5",
+        "bertscore": {
+          "bertscore_p": 0.0,
+          "bertscore_r": 0.0,
+          "bertscore_f1": 0.0,
+          "candidate_source": "cleaned_answer",
+          "status": "ok"
+        }
+      }
+    ],
+    "logic_lm_graphrag": [
+      {
+        "record_index": 1,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\logic_lm_graphrag\\A1.json",
+        "citation": {
+          "gold_articles": [
+            "ND115_2015.A28",
+            "ND152_2006.A53"
+          ],
+          "pred_articles": [
+            "L41_2024.A50",
+            "L41_2024.A62"
+          ],
+          "pred_items": [
+            "L41_2024.A50.K4",
+            "L41_2024.A62.K1"
+          ],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 2,
+          "precision_num": 0,
+          "precision_denom": 2,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [
+              "L41_2024.A50.K4",
+              "L41_2024.A62.K1"
+            ],
+            "matched_pipeline_items": [
+              "L41_2024.A50.K4",
+              "L41_2024.A62.K1"
+            ],
+            "display_num": 2,
+            "display_denom": 2,
+            "citation_display_rate": 1.0
+          }
+        },
+        "latency": {
+          "latency_s": 28.838
+        },
+        "prolog": {
+          "prolog_first_try_solution": true,
+          "repair_invoked": false,
+          "repair_success": null
+        },
+        "record_id": "1",
+        "bertscore": {
+          "bertscore_p": 0.7327,
+          "bertscore_r": 0.6742,
+          "bertscore_f1": 0.7022,
+          "candidate_source": "plain_answer",
+          "status": "ok"
+        }
+      },
+      {
+        "record_index": 2,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\logic_lm_graphrag\\A2.json",
+        "citation": {
+          "gold_articles": [
+            "L58_2014.A2"
+          ],
+          "pred_articles": [
+            "L41_2024.A5"
+          ],
+          "pred_items": [
+            "L41_2024.A5.K2"
+          ],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 1,
+          "precision_num": 0,
+          "precision_denom": 1,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [
+              "L41_2024.A5.K2"
+            ],
+            "matched_pipeline_items": [
+              "L41_2024.A5.K2"
+            ],
+            "display_num": 1,
+            "display_denom": 1,
+            "citation_display_rate": 1.0
+          }
+        },
+        "latency": {
+          "latency_s": 17.872
+        },
+        "prolog": {
+          "prolog_first_try_solution": true,
+          "repair_invoked": false,
+          "repair_success": null
+        },
+        "record_id": "2",
+        "bertscore": {
+          "bertscore_p": 0.6885,
+          "bertscore_r": 0.7254,
+          "bertscore_f1": 0.7064,
+          "candidate_source": "plain_answer",
+          "status": "ok"
+        }
+      },
+      {
+        "record_index": 3,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\logic_lm_graphrag\\A3.json",
+        "citation": {
+          "gold_articles": [
+            "L45_2019.A48",
+            "L58_2014.A21"
+          ],
+          "pred_articles": [
+            "L58_2014.A21"
+          ],
+          "pred_items": [
+            "L58_2014.A21.K5"
+          ],
+          "pred_parse_errors": [],
+          "n_correct_articles": 1,
+          "correct_articles": [
+            "L58_2014.A21"
+          ],
+          "recall_num": 1,
+          "recall_denom": 2,
+          "precision_num": 1,
+          "precision_denom": 1,
+          "citation_recall": 0.5,
+          "citation_precision": 1.0,
+          "citation_f1": 0.6667,
+          "citation_display": {
+            "displayed_items": [
+              "L58_2014.A21.K5"
+            ],
+            "matched_pipeline_items": [
+              "L58_2014.A21.K5"
+            ],
+            "display_num": 1,
+            "display_denom": 1,
+            "citation_display_rate": 1.0
+          }
+        },
+        "latency": {
+          "latency_s": 10.941
+        },
+        "prolog": {
+          "prolog_first_try_solution": true,
+          "repair_invoked": false,
+          "repair_success": null
+        },
+        "record_id": "3",
+        "bertscore": {
+          "bertscore_p": 0.7374,
+          "bertscore_r": 0.6971,
+          "bertscore_f1": 0.7167,
+          "candidate_source": "plain_answer",
+          "status": "ok"
+        }
+      },
+      {
+        "record_index": 4,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\logic_lm_graphrag\\A4.json",
+        "citation": {
+          "gold_articles": [
+            "L58_2014.A31",
+            "L58_2014.A34"
+          ],
+          "pred_articles": [
+            "L41_2024.A61",
+            "L41_2024.A97"
+          ],
+          "pred_items": [
+            "L41_2024.A61.K4",
+            "L41_2024.A97.K1"
+          ],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 2,
+          "precision_num": 0,
+          "precision_denom": 2,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [
+              "L41_2024.A61.K4",
+              "L41_2024.A97.K1"
+            ],
+            "matched_pipeline_items": [
+              "L41_2024.A61.K4",
+              "L41_2024.A97.K1"
+            ],
+            "display_num": 2,
+            "display_denom": 2,
+            "citation_display_rate": 1.0
+          }
+        },
+        "latency": {
+          "latency_s": 14.043
+        },
+        "prolog": {
+          "prolog_first_try_solution": true,
+          "repair_invoked": false,
+          "repair_success": null
+        },
+        "record_id": "4",
+        "bertscore": {
+          "bertscore_p": 0.7108,
+          "bertscore_r": 0.644,
+          "bertscore_f1": 0.6757,
+          "candidate_source": "plain_answer",
+          "status": "ok"
+        }
+      },
+      {
+        "record_index": 5,
+        "_record_path": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\results\\logic_lm_graphrag\\A5.json",
+        "citation": {
+          "gold_articles": [
+            "QD595_BHXH.A23",
+            "QD838_BHXH.A4",
+            "QD838_BHXH.A7"
+          ],
+          "pred_articles": [
+            "L41_2024.A27",
+            "L41_2024.A3"
+          ],
+          "pred_items": [
+            "L41_2024.A27",
+            "L41_2024.A27.K2",
+            "L41_2024.A3.K9"
+          ],
+          "pred_parse_errors": [],
+          "n_correct_articles": 0,
+          "correct_articles": [],
+          "recall_num": 0,
+          "recall_denom": 3,
+          "precision_num": 0,
+          "precision_denom": 2,
+          "citation_recall": 0.0,
+          "citation_precision": 0.0,
+          "citation_f1": 0.0,
+          "citation_display": {
+            "displayed_items": [
+              "L41_2024.A27",
+              "L41_2024.A27.K2",
+              "L41_2024.A3.K9"
+            ],
+            "matched_pipeline_items": [
+              "L41_2024.A27",
+              "L41_2024.A27.K2",
+              "L41_2024.A3.K9"
+            ],
+            "display_num": 3,
+            "display_denom": 3,
+            "citation_display_rate": 1.0
+          }
+        },
+        "latency": {
+          "latency_s": 18.473
+        },
+        "prolog": {
+          "prolog_first_try_solution": true,
+          "repair_invoked": false,
+          "repair_success": null
+        },
+        "record_id": "5",
+        "bertscore": {
+          "bertscore_p": 0.6866,
+          "bertscore_r": 0.628,
+          "bertscore_f1": 0.656,
+          "candidate_source": "plain_answer",
+          "status": "ok"
+        }
+      }
+    ]
+  },
+  "aggregates": {
+    "graphrag": {
+      "n_records": 5,
+      "macro": {
+        "citation_recall": 0.0,
+        "citation_precision": 0.0,
+        "citation_f1": 0.0,
+        "citation_display_rate": 0.0,
+        "bertscore_p": 0.7003,
+        "bertscore_r": 0.6486,
+        "bertscore_f1": 0.6731,
+        "latency_s": 7.646
+      },
+      "std": {
+        "citation_recall": 0.0,
+        "citation_precision": 0.0,
+        "citation_f1": 0.0,
+        "citation_display_rate": 0.0,
+        "bertscore_f1": 0.0295,
+        "latency_s": 4.7338
+      },
+      "micro": {
+        "citation_recall": 0.0,
+        "citation_precision": 0.0,
+        "citation_display_rate": 0.0,
+        "recall_num": 0,
+        "recall_denom": 10,
+        "precision_num": 0,
+        "precision_denom": 12,
+        "display_num": 0,
+        "display_denom": 12
+      },
+      "prolog": {
+        "n_prolog_records": 0,
+        "prolog_first_try_solution_rate": null,
+        "repair_invoked_rate": null,
+        "repair_success_rate": null
+      },
+      "error_counts": {
+        "pred_citation_parse_errors": 0,
+        "records_with_no_pred_citations": 0
+      }
+    },
+    "llm_only": {
+      "n_records": 5,
+      "macro": {
+        "citation_recall": 0.0,
+        "citation_precision": 0.0,
+        "citation_f1": 0.0,
+        "citation_display_rate": 1.0,
+        "bertscore_p": 0.7345,
+        "bertscore_r": 0.6993,
+        "bertscore_f1": 0.7156,
+        "latency_s": 7.1286
+      },
+      "std": {
+        "citation_recall": 0.0,
+        "citation_precision": 0.0,
+        "citation_f1": 0.0,
+        "citation_display_rate": 0.0,
+        "bertscore_f1": 0.0383,
+        "latency_s": 1.9355
+      },
+      "micro": {
+        "citation_recall": 0.0,
+        "citation_precision": 0.0,
+        "citation_display_rate": 1.0,
+        "recall_num": 0,
+        "recall_denom": 10,
+        "precision_num": 0,
+        "precision_denom": 4,
+        "display_num": 4,
+        "display_denom": 4
+      },
+      "prolog": {
+        "n_prolog_records": 0,
+        "prolog_first_try_solution_rate": null,
+        "repair_invoked_rate": null,
+        "repair_success_rate": null
+      },
+      "error_counts": {
+        "pred_citation_parse_errors": 0,
+        "records_with_no_pred_citations": 2
+      }
+    },
+    "logic_lm_no_retrieval": {
+      "n_records": 5,
+      "macro": {
+        "citation_recall": 0.0,
+        "citation_precision": 0.0,
+        "citation_f1": 0.0,
+        "citation_display_rate": 0.5,
+        "bertscore_p": 0.4316,
+        "bertscore_r": 0.3822,
+        "bertscore_f1": 0.4054,
+        "latency_s": 69.5294
+      },
+      "std": {
+        "citation_recall": 0.0,
+        "citation_precision": 0.0,
+        "citation_f1": 0.0,
+        "citation_display_rate": 0.7071,
+        "bertscore_f1": 0.3702,
+        "latency_s": 126.8125
+      },
+      "micro": {
+        "citation_recall": 0.0,
+        "citation_precision": 0.0,
+        "citation_display_rate": 0.3333,
+        "recall_num": 0,
+        "recall_denom": 10,
+        "precision_num": 0,
+        "precision_denom": 3,
+        "display_num": 1,
+        "display_denom": 3
+      },
+      "prolog": {
+        "n_prolog_records": 5,
+        "prolog_first_try_solution_rate": 0.6,
+        "repair_invoked_rate": 0.4,
+        "repair_success_rate": 0.0,
+        "repair_success_num": 0,
+        "repair_success_denom": 2
+      },
+      "error_counts": {
+        "pred_citation_parse_errors": 0,
+        "records_with_no_pred_citations": 3
+      }
+    },
+    "logic_lm_ontology": {
+      "n_records": 5,
+      "macro": {
+        "citation_recall": 0.0,
+        "citation_precision": 0.0,
+        "citation_f1": 0.0,
+        "citation_display_rate": 0.8,
+        "bertscore_p": 0.5648,
+        "bertscore_r": 0.5344,
+        "bertscore_f1": 0.5485,
+        "latency_s": 15.2202
+      },
+      "std": {
+        "citation_recall": 0.0,
+        "citation_precision": 0.0,
+        "citation_f1": 0.0,
+        "citation_display_rate": 0.4472,
+        "bertscore_f1": 0.3077,
+        "latency_s": 4.7824
+      },
+      "micro": {
+        "citation_recall": 0.0,
+        "citation_precision": 0.0,
+        "citation_display_rate": 0.6667,
+        "recall_num": 0,
+        "recall_denom": 10,
+        "precision_num": 0,
+        "precision_denom": 5,
+        "display_num": 4,
+        "display_denom": 6
+      },
+      "prolog": {
+        "n_prolog_records": 5,
+        "prolog_first_try_solution_rate": 0.8,
+        "repair_invoked_rate": 0.2,
+        "repair_success_rate": 0.0,
+        "repair_success_num": 0,
+        "repair_success_denom": 1
+      },
+      "error_counts": {
+        "pred_citation_parse_errors": 0,
+        "records_with_no_pred_citations": 0
+      }
+    },
+    "logic_lm_graphrag": {
+      "n_records": 5,
+      "macro": {
+        "citation_recall": 0.1,
+        "citation_precision": 0.2,
+        "citation_f1": 0.1333,
+        "citation_display_rate": 1.0,
+        "bertscore_p": 0.7112,
+        "bertscore_r": 0.6737,
+        "bertscore_f1": 0.6914,
+        "latency_s": 18.0334
+      },
+      "std": {
+        "citation_recall": 0.2236,
+        "citation_precision": 0.4472,
+        "citation_f1": 0.2982,
+        "citation_display_rate": 0.0,
+        "bertscore_f1": 0.0249,
+        "latency_s": 6.7673
+      },
+      "micro": {
+        "citation_recall": 0.1,
+        "citation_precision": 0.125,
+        "citation_display_rate": 1.0,
+        "recall_num": 1,
+        "recall_denom": 10,
+        "precision_num": 1,
+        "precision_denom": 8,
+        "display_num": 9,
+        "display_denom": 9
+      },
+      "prolog": {
+        "n_prolog_records": 5,
+        "prolog_first_try_solution_rate": 1.0,
+        "repair_invoked_rate": 0.0,
+        "repair_success_rate": null,
+        "repair_success_num": 0,
+        "repair_success_denom": 0
+      },
+      "error_counts": {
+        "pred_citation_parse_errors": 0,
+        "records_with_no_pred_citations": 0
+      }
+    }
+  },
+  "output_dir": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\metrics",
+  "metrics_out": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\metrics\\academic_metrics.json",
+  "csv_out": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\metrics\\academic_metrics.csv",
+  "report_out": "E:\\legal-graph-kb\\experiments\\02_smoke_test_after_data_migration\\report\\academic_report.md"
+}
