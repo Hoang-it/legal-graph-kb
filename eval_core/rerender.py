@@ -12,8 +12,8 @@ Skips:
 - Records already có plain_answer non-empty (idempotent)
 
 Usage:
-    python -m runtime.rerender_plain_answer --combos all --pilot 10
-    python -m runtime.rerender_plain_answer --combos all  # full
+    python -m eval_core.rerender --combos all --pilot 10
+    python -m eval_core.rerender --combos all  # full
 
 Cost (gpt-4o-mini backfill model, không phải original inference model):
     ~$0.002 per record × ~1700 logic-lm records ≈ $3.4

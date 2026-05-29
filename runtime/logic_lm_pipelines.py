@@ -38,7 +38,7 @@ if not (os.environ.get("OPENAI_BASE_URL") or "").strip():
     os.environ.pop("OPENAI_BASE_URL", None)
 
 # Make repo root importable so absolute `runtime.logic_lm.*` paths resolve when
-# this module is loaded as a script (e.g. via `python -m runtime.run_inference`).
+# this module is loaded as a script (e.g. via `python -m eval_core.inference`).
 _REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))

@@ -108,17 +108,17 @@ legal-kg-chat           = "runtime.chat:main"
 
 # ---------------------------------------------------------------------------
 # Packaging — `offline/` (build-time) + `runtime/` (inference) + shared `src/`
-# (ids, schema, legal_metadata, citations) + experiment/evaluation helpers.
+# (ids, schema, legal_metadata, citations) + `eval_core/` (evaluation infra).
 # ---------------------------------------------------------------------------
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["src*", "offline*", "runtime*", "experiments*", "evaluation*"]
-exclude = ["tests*", "scripts*", "docs*", "data*", "reports*", "prompts*"]
+include = ["src*", "offline*", "runtime*", "eval_core*"]
+exclude = ["tests*", "scripts*", "docs*", "data*", "reports*", "prompts*", "experiments*"]
 
 [tool.setuptools.package-data]
 "src" = ["py.typed"]
-"evaluation" = [
+"eval_core" = [
     "samples/*.json",
     "samples/*.md",
 ]
@@ -156,7 +156,7 @@ ignore = [
 "tests/*" = [
     "E402",   # late imports OK in test fixtures (Pytest skip conditions)
 ]
-"experiments/*" = [
+"eval_core/*" = [
     "E402",
     "E701",   # multi-statement line — OK trong research scripts
     "E741",   # ambiguous var name (`l` for llm-only OK trong limited scope)
@@ -164,7 +164,7 @@ ignore = [
     "B023",   # function in loop captures var — OK khi gọi ngay trong cùng iter
     "RUF005", # list concat — minor style preference
 ]
-"evaluation/*" = [
+"experiments/*" = [
     "E402",
     "E701",
     "E741",
@@ -207,12 +207,11 @@ filterwarnings = [
 # ---------------------------------------------------------------------------
 
 [tool.coverage.run]
-source = ["src", "offline", "runtime"]
+source = ["src", "offline", "runtime", "eval_core"]
 branch = true
 omit = [
     "tests/*",
     "experiments/*",
-    "evaluation/*",
     "scripts/*",
 ]
 
@@ -239,5 +238,5 @@ check_untyped_defs = false
 ignore_missing_imports = true
 
 [[tool.mypy.overrides]]
-module = ["tests.*", "experiments.*", "scripts.*"]
+module = ["tests.*", "experiments.*", "eval_core.*", "scripts.*"]
 ignore_errors = true

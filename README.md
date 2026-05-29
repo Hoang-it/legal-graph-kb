@@ -131,8 +131,8 @@ Lệnh trong REPL: `/help`, `/sources`, `/verify`, `/save chat.md`, `/quit`.
 ## 📊 Evaluation (200 câu BHXH real)
 
 ```bash
-python -m runtime.run_inference --arms main --n 200
-python -m experiments.compute_academic_metrics
+python -m eval_core.inference --arms main --n 200
+python -m eval_core.runners
 ```
 
 Output mặc định: `metrics/academic_metrics.json`, `metrics/academic_metrics.csv`,

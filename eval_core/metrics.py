@@ -4,12 +4,14 @@ The core evaluator receives an already-loaded list of records. It does not
 decide where records live on disk, how records are grouped, or how question
 files are joined to result files. Each record must already include
 `gold_articles`.
+
+Report / CSV writing lives in :mod:`eval_core.report` so the metric engine
+stays pure-computational.
 """
 
 from __future__ import annotations
 
 import argparse
-import csv
 import json
 import os
 import re
@@ -298,132 +300,6 @@ def _aggregate_prolog(prolog_records: list[dict[str, Any]], repaired: list[dict[
     }
 
 
-def _write_csv(rows: list[dict[str, Any]], path: Path) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    fields = [
-        "record_index",
-        "record_id",
-        "citation_recall",
-        "citation_precision",
-        "citation_f1",
-        "citation_display_rate",
-        "bertscore_p",
-        "bertscore_r",
-        "bertscore_f1",
-        "latency_s",
-        "prolog_first_try_solution",
-        "repair_invoked",
-        "repair_success",
-        "pred_citation_parse_errors",
-        "record_path",
-    ]
-    with path.open("w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fields)
-        writer.writeheader()
-        for r in rows:
-            writer.writerow(
-                {
-                    "record_index": r["record_index"],
-                    "record_id": r.get("record_id", ""),
-                    "citation_recall": r["citation"]["citation_recall"],
-                    "citation_precision": r["citation"]["citation_precision"],
-                    "citation_f1": r["citation"]["citation_f1"],
-                    "citation_display_rate": r["citation"]["citation_display"][
-                        "citation_display_rate"
-                    ],
-                    "bertscore_p": r.get("bertscore", {}).get("bertscore_p"),
-                    "bertscore_r": r.get("bertscore", {}).get("bertscore_r"),
-                    "bertscore_f1": r.get("bertscore", {}).get("bertscore_f1"),
-                    "latency_s": r["latency"]["latency_s"],
-                    "prolog_first_try_solution": r["prolog"]["prolog_first_try_solution"],
-                    "repair_invoked": r["prolog"]["repair_invoked"],
-                    "repair_success": r["prolog"]["repair_success"],
-                    "pred_citation_parse_errors": "|".join(
-                        r["citation"]["pred_parse_errors"]
-                    ),
-                    "record_path": r.get("_record_path", ""),
-                }
-            )
-
-
-def _fmt(v: Any) -> str:
-    if v is None:
-        return "N/A"
-    if isinstance(v, float):
-        return f"{v:.4f}"
-    return str(v)
-
-
-def _write_report(result: dict[str, Any], path: Path) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    agg = result["aggregate"]
-    macro = agg["macro"]
-    micro = agg["micro"]
-    pr = agg["prolog"]
-    errors = agg["error_counts"]
-    lines = [
-        "# Academic Metrics Report",
-        "",
-        f"- metric_version: `{result['metric_version']}`",
-        f"- n_input_records: `{result['n_input_records']}`",
-        f"- gold source: `{result['gold_source']}`",
-        "- judge metrics: not included",
-        "",
-        "## Headline Macro Metrics",
-        "",
-        "| n | citation_recall | citation_precision | citation_f1 | citation_display_rate | bertscore_f1 | latency_s |",
-        "|---:|---:|---:|---:|---:|---:|---:|",
-        "| "
-        + " | ".join(
-            [
-                str(agg["n_records"]),
-                _fmt(macro["citation_recall"]),
-                _fmt(macro["citation_precision"]),
-                _fmt(macro["citation_f1"]),
-                _fmt(macro["citation_display_rate"]),
-                _fmt(macro["bertscore_f1"]),
-                _fmt(macro["latency_s"]),
-            ]
-        )
-        + " |",
-        "",
-        "## Citation Micro Metrics",
-        "",
-        "| recall | precision | display_rate |",
-        "|---:|---:|---:|",
-        f"| {_fmt(micro['citation_recall'])} "
-        f"(sum={micro['recall_num']}/{micro['recall_denom']}) | "
-        f"{_fmt(micro['citation_precision'])} "
-        f"(sum={micro['precision_num']}/{micro['precision_denom']}) | "
-        f"{_fmt(micro['citation_display_rate'])} "
-        f"(sum={micro['display_num']}/{micro['display_denom']}) |",
-        "",
-        "## Prolog Metrics",
-        "",
-        "| n_prolog | first_try_solution | repair_invoked | repair_success |",
-        "|---:|---:|---:|---:|",
-        f"| {pr['n_prolog_records']} | "
-        f"{_fmt(pr['prolog_first_try_solution_rate'])} | "
-        f"{_fmt(pr['repair_invoked_rate'])} | "
-        f"{_fmt(pr['repair_success_rate'])} "
-        f"(sum={pr.get('repair_success_num', 0)}/{pr.get('repair_success_denom', 0)}) |",
-        "",
-        "## BERTScore Status",
-        "",
-        "```json",
-        json.dumps(result["bertscore_metadata"], ensure_ascii=False, indent=2),
-        "```",
-        "",
-        "## Error Counts",
-        "",
-        "| pred_citation_parse_errors | records_with_no_pred_citations |",
-        "|---:|---:|",
-        f"| {errors['pred_citation_parse_errors']} | "
-        f"{errors['records_with_no_pred_citations']} |",
-    ]
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-
-
 def _coerce_gold_articles(record: dict[str, Any]) -> set[str]:
     raw = record.get("gold_articles")
     if raw is None:
@@ -490,56 +366,6 @@ def compute_academic_metrics(
     return result
 
 
-def write_academic_metrics_outputs(
-    result: dict[str, Any],
-    output_dir: Path = DEFAULT_OUTPUT_DIR,
-    metrics_out: Path | None = None,
-    csv_out: Path | None = None,
-    report_out: Path | None = None,
-) -> dict[str, Any]:
-    output_dir = Path(output_dir)
-    metrics_out = metrics_out or output_dir / "academic_metrics.json"
-    csv_out = csv_out or output_dir / "academic_metrics.csv"
-    report_out = report_out or output_dir / "academic_report.md"
-
-    result = dict(result)
-    result["output_dir"] = str(output_dir)
-    result["metrics_out"] = str(metrics_out)
-    result["csv_out"] = str(csv_out)
-    result["report_out"] = str(report_out)
-
-    metrics_out.parent.mkdir(parents=True, exist_ok=True)
-    metrics_out.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
-    _write_csv(result["records"], csv_out)
-    _write_report(result, report_out)
-    return result
-
-
-def compute_and_write_academic_metrics(
-    records: list[dict[str, Any]],
-    registry=None,
-    registry_path: Path = DEFAULT_REGISTRY_PATH,
-    metadata: dict[str, Any] | None = None,
-    output_dir: Path = DEFAULT_OUTPUT_DIR,
-    metrics_out: Path | None = None,
-    csv_out: Path | None = None,
-    report_out: Path | None = None,
-) -> dict[str, Any]:
-    result = compute_academic_metrics(
-        records=records,
-        registry=registry,
-        registry_path=registry_path,
-        metadata=metadata,
-    )
-    return write_academic_metrics_outputs(
-        result,
-        output_dir=output_dir,
-        metrics_out=metrics_out,
-        csv_out=csv_out,
-        report_out=report_out,
-    )
-
-
 def _load_records_json(path: Path) -> list[dict[str, Any]]:
     data = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(data, list):
@@ -550,6 +376,10 @@ def _load_records_json(path: Path) -> list[dict[str, Any]]:
 
 
 def main() -> int:
+    # Late import: report writers live in eval_core.report, which imports
+    # from this module — keep the import inside main() to avoid a cycle.
+    from eval_core.report import compute_and_write_academic_metrics
+
     p = argparse.ArgumentParser(description="Compute deterministic academic metrics.")
     p.add_argument(
         "--records",

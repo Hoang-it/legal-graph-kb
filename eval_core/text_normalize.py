@@ -6,7 +6,7 @@ BERTScore bias). Keep Application + Conclusion = logic-lm's actual reasoning
 + final answer, comparable to prose.
 
 Usage:
-    from experiments.text_normalize import normalize_for_prose_metric
+    from eval_core.text_normalize import normalize_for_prose_metric
     normed = normalize_for_prose_metric(answer, irac_sections, mode="app_conclusion")
 """
 

@@ -6,9 +6,9 @@ Output mỗi arm 1 file JSON / câu hỏi:
 Idempotent — skip nếu file đã tồn tại (dùng --force để chạy lại).
 
 CLI:
-    python -m runtime.run_inference --arms graphrag,llm_only --n 200
-    python -m runtime.run_inference --arms main --n 10
-    python -m runtime.run_inference --arms logic_lm_ontology,logic_lm_graphrag --n 200
+    python -m eval_core.inference --arms graphrag,llm_only --n 200
+    python -m eval_core.inference --arms main --n 10
+    python -m eval_core.inference --arms logic_lm_ontology,logic_lm_graphrag --n 200
 """
 
 from __future__ import annotations
@@ -23,7 +23,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-from experiments.arms import ALL_ARMS, parse_run_arms
+from eval_core.arms import ALL_ARMS, parse_run_arms
 
 load_dotenv()
 os.environ.setdefault("HF_HUB_DISABLE_SYMLINKS_WARNING", "1")

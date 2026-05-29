@@ -130,7 +130,7 @@ legal-graph-kb/
 - LLM extraction output is validated against Pydantic schema in `src/schema.py` AND post-checked that `source_text` appears verbatim inside `source_clause`. Fabrication = drop edge.
 
 ### Headline-metric discipline
-- Main experiment = `python -m runtime.run_inference --arms main --n 200` + `python -m experiments.compute_academic_metrics --arms main`.
+- Main experiment = `python -m eval_core.inference --arms main --n 200` + `python -m eval_core.runners --arms main`.
 - Citation metrics compare `record["citation_ids"]` to `gold_citations_raw` after strict parse via `src/citations.py`. No per-script authority hardcoding.
 - BERTScore runs fail-soft (skips if dep/model missing); citation metrics never silently fail — `validate_gold_citations` fails-hard before any metric runs.
 - `evaluation.compute_judge_metrics` is **intentionally fail-closed** as a placeholder. Don't reintroduce judge metrics into the main flow without redesigning the rubric and getting buy-in.
@@ -198,7 +198,7 @@ In this order:
 5. **Path("experiments/prompts/...")**: gone. All prompts now under `prompts/`; load via `src.prompts.load_prompt(rel)`.
 6. **Module paths**: nothing in `runtime/` may import from `offline/` (and vice versa). Both may import from `src/`. Cross-imports between offline and runtime should go through `src/` shared utilities.
 7. **REPO_ROOT**: `runtime/logic_lm/cli/*.py` uses `Path(__file__).resolve().parents[3]` — depth from CLI file to repo root is exactly 3 levels (`cli → logic_lm → runtime → repo`). Don't change this without auditing the CLI entry-points.
-8. **plain_answer backfill**: pre-2026-05-27 records lack `plain_answer`. Generate via `python -m runtime.rerender_plain_answer --combos all` (~$0.72 on gpt-4o-mini).
+8. **plain_answer backfill**: pre-2026-05-27 records lack `plain_answer`. Generate via `python -m eval_core.rerender --combos all` (~$0.72 on gpt-4o-mini).
 9. **B5 embedding env**: torch 2.6.0+cu124, datasets 3.0.1, pyarrow 17 on Windows — pin all three together (see project memory `feedback_b5_pin_versions.md`). Wrong combo causes 3 cascading errors.
 10. **Reports directory**: only `reports/*.md` files explicitly listed in `.gitignore` exception are tracked. `plan_v5_general_retrieval.md` is the current canonical plan.
 
@@ -211,9 +211,9 @@ In this order:
 2. Build the pipeline class in `runtime/<your_arm>.py` returning `LogicLMAnswer` (or `RagAnswer` shape), so the inference orchestrator can route it uniformly.
 3. If you need a new prompt: add `.md` under `prompts/runtime/<your_arm>/...` and load via `src.prompts.load_prompt(...)`.
 4. Wire a runner in `runtime/run_inference.py:ARM_RUNNERS`.
-5. Pilot: `python -m runtime.run_inference --arms <your_arm> --n 10`.
-6. Full: `python -m runtime.run_inference --arms <your_arm> --n 200`.
-7. Headline metrics: `python -m experiments.compute_academic_metrics --arms <your_arm>` (or `main` to include it in the comparison set).
+5. Pilot: `python -m eval_core.inference --arms <your_arm> --n 10`.
+6. Full: `python -m eval_core.inference --arms <your_arm> --n 200`.
+7. Headline metrics: `python -m eval_core.runners --arms <your_arm>` (or `main` to include it in the comparison set).
 
 ### Adding a new node label / edge type
 1. Edit `schema/schema.cypher` (constraints + index if needed). Idempotent `IF NOT EXISTS`.
@@ -232,9 +232,9 @@ python -m offline.embed
 python -m offline.load_neo4j --apply-schema
 python -m offline.build_logic_lm_corpus_2024   # only if logic-LM arms will run
 
-python -m runtime.run_inference --arms main --n 200
-python -m evaluation.validate_gold_citations
-python -m experiments.compute_academic_metrics --arms main
+python -m eval_core.inference --arms main --n 200
+python -m eval_core.gold
+python -m eval_core.runners --arms main
 ```
 
 ### Commit hygiene

@@ -1,13 +1,13 @@
 # Academic Metrics Dummy Sample
 
-Dummy dataset de chay thu core `evaluation.compute_academic_metrics`.
+Dummy dataset de chay thu core `eval_core.metrics`.
 
 `records.json` la mot list records. Core evaluation khong biet folder, group,
 `arm`, hoac `stt`.
 
 ```powershell
-python -m evaluation.compute_academic_metrics `
-  --records evaluation/samples/records.json `
+python -m eval_core.metrics `
+  --records eval_core/samples/records.json `
   --output-dir metrics/sample_academic
 ```
 

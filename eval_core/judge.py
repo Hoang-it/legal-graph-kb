@@ -14,7 +14,7 @@ def main() -> int:
     print(
         "Judge metrics are optional and are not implemented in the current "
         "academic-metrics phase. Main evaluation is `python -m "
-        "evaluation.compute_academic_metrics`.",
+        "eval_core.runners`.",
         file=sys.stderr,
     )
     return 2

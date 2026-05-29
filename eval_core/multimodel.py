@@ -10,12 +10,12 @@ chỉ swap model parameter. Khi reasoning model reject `temperature`/`response_f
 elite_pipelines tự fallback (xem `_TokenTrackingLLMClient._chat_with_fallback`).
 
 CLI:
-    python -m runtime.run_multimodel_inference \\
+    python -m eval_core.multimodel \\
         --models gpt-4.1,gpt-4o,gpt-5,gpt-5-mini \\
         --arms logic_lm_no_retrieval,logic_lm_graphrag \\
         --n 1            # smoke
-    python -m runtime.run_multimodel_inference --n 10  # pilot
-    python -m runtime.run_multimodel_inference --n 200 # full
+    python -m eval_core.multimodel --n 10  # pilot
+    python -m eval_core.multimodel --n 200 # full
 """
 
 from __future__ import annotations

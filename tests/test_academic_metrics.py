@@ -1,10 +1,10 @@
-from evaluation.compute_academic_metrics import (
+from eval_core.arms import MAIN_EXPERIMENT_ARMS, parse_metrics_arms, parse_run_arms
+from eval_core.metrics import (
     _aggregate_records,
     _clean_answer_for_semantic,
     compute_citation_metrics,
     compute_prolog_fields,
 )
-from experiments.arms import MAIN_EXPERIMENT_ARMS, parse_metrics_arms, parse_run_arms
 from src.citations import (
     format_citation,
     load_registry,

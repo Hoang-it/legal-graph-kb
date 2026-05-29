@@ -5,13 +5,14 @@ import json
 from pathlib import Path
 from typing import Any
 
-import evaluation.compute_academic_metrics as metrics_module
-from experiments.compute_academic_metrics import (
+import eval_core.metrics as metrics_module
+from eval_core.report import compute_and_write_academic_metrics
+from eval_core.runners import (
     build_metric_record_groups,
     compute_experiment_academic_metrics,
 )
 
-SAMPLE_DIR = Path(__file__).resolve().parents[1] / "evaluation" / "samples"
+SAMPLE_DIR = Path(__file__).resolve().parents[1] / "eval_core" / "samples"
 FIXTURE_DIR = Path(__file__).resolve().parent / "fixtures" / "academic_metrics"
 SAMPLE_ARMS = ["graphrag", "logic_lm_graphrag"]
 GOLD_RAW_BY_STT = {
@@ -38,7 +39,7 @@ def test_sample_academic_metrics_end_to_end(tmp_path: Path) -> None:
     report_out = tmp_path / "academic_report.md"
     records = json.loads((SAMPLE_DIR / "records.json").read_text(encoding="utf-8"))
 
-    result = metrics_module.compute_and_write_academic_metrics(
+    result = compute_and_write_academic_metrics(
         records=records,
         output_dir=tmp_path / "metrics",
         metrics_out=metrics_out,
@@ -123,7 +124,7 @@ def test_sample_academic_metrics_aggregates_bertscore_results(
     csv_out = tmp_path / "academic_metrics.csv"
     records = json.loads((SAMPLE_DIR / "records.json").read_text(encoding="utf-8"))
 
-    result = metrics_module.compute_and_write_academic_metrics(
+    result = compute_and_write_academic_metrics(
         records=records,
         output_dir=tmp_path / "metrics",
         csv_out=csv_out,

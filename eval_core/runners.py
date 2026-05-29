@@ -2,29 +2,29 @@
 
 This module knows the experiment result-folder layout and arm selection rules.
 It loads records, attaches validated gold articles, groups records by experiment
-arm, then calls ``evaluation.compute_academic_metrics`` for each arm.
+arm, then calls :func:`eval_core.metrics.compute_academic_metrics` for each arm.
 """
 
 from __future__ import annotations
 
 import argparse
-import csv
 import json
 import sys
 from pathlib import Path
 from typing import Any
 
-from evaluation.compute_academic_metrics import (
-    DEFAULT_OUTPUT_DIR,
-    METRIC_VERSION,
-    compute_academic_metrics,
-)
-from evaluation.validate_gold_citations import (
+from eval_core.arms import MAIN_EXPERIMENT_ARMS, parse_metrics_arms
+from eval_core.gold import (
     DEFAULT_QUESTIONS,
     NORMALIZED_OUT,
     validate_gold_citations,
 )
-from experiments.arms import MAIN_EXPERIMENT_ARMS, parse_metrics_arms
+from eval_core.metrics import (
+    DEFAULT_OUTPUT_DIR,
+    METRIC_VERSION,
+    compute_academic_metrics,
+)
+from eval_core.report import write_grouped_academic_metrics_outputs
 from src.citations import DEFAULT_REGISTRY_PATH, load_registry
 
 DEFAULT_RESULTS_ROOT = Path("data/eval/results")
@@ -128,14 +128,6 @@ def load_academic_metric_records(
     return record_groups, metadata
 
 
-def _fmt(v: Any) -> str:
-    if v is None:
-        return "N/A"
-    if isinstance(v, float):
-        return f"{v:.4f}"
-    return str(v)
-
-
 def compute_grouped_academic_metrics(
     record_groups: dict[str, list[dict[str, Any]]],
     registry_path: Path = DEFAULT_REGISTRY_PATH,
@@ -169,185 +161,6 @@ def compute_grouped_academic_metrics(
         "records": result_records,
         "aggregates": aggregates,
     }
-
-
-def _write_experiment_csv(rows: list[dict[str, Any]], path: Path) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    fields = [
-        "arm",
-        "stt",
-        "citation_recall",
-        "citation_precision",
-        "citation_f1",
-        "citation_display_rate",
-        "bertscore_p",
-        "bertscore_r",
-        "bertscore_f1",
-        "latency_s",
-        "prolog_first_try_solution",
-        "repair_invoked",
-        "repair_success",
-        "pred_citation_parse_errors",
-        "record_path",
-    ]
-    with path.open("w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fields)
-        writer.writeheader()
-        for r in rows:
-            writer.writerow(
-                {
-                    "arm": r["arm"],
-                    "stt": r.get("record_id", r["record_index"]),
-                    "citation_recall": r["citation"]["citation_recall"],
-                    "citation_precision": r["citation"]["citation_precision"],
-                    "citation_f1": r["citation"]["citation_f1"],
-                    "citation_display_rate": r["citation"]["citation_display"][
-                        "citation_display_rate"
-                    ],
-                    "bertscore_p": r.get("bertscore", {}).get("bertscore_p"),
-                    "bertscore_r": r.get("bertscore", {}).get("bertscore_r"),
-                    "bertscore_f1": r.get("bertscore", {}).get("bertscore_f1"),
-                    "latency_s": r["latency"]["latency_s"],
-                    "prolog_first_try_solution": r["prolog"]["prolog_first_try_solution"],
-                    "repair_invoked": r["prolog"]["repair_invoked"],
-                    "repair_success": r["prolog"]["repair_success"],
-                    "pred_citation_parse_errors": "|".join(
-                        r["citation"]["pred_parse_errors"]
-                    ),
-                    "record_path": r.get("_record_path", ""),
-                }
-            )
-
-
-def _write_experiment_report(result: dict[str, Any], path: Path) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    lines = [
-        "# Academic Metrics Report",
-        "",
-        f"- metric_version: `{result['metric_version']}`",
-        f"- n_input_records: `{result['n_input_records']}`",
-        f"- gold source: `{result['gold_source']}`",
-        "- judge metrics: not included",
-        "",
-        "## Headline Macro Metrics",
-        "",
-        "| Arm | n | citation_recall | citation_precision | citation_f1 | citation_display_rate | bertscore_f1 | latency_s |",
-        "|---|---:|---:|---:|---:|---:|---:|---:|",
-    ]
-    for arm, agg in result["aggregates"].items():
-        macro = agg["macro"]
-        lines.append(
-            "| "
-            + " | ".join(
-                [
-                    arm,
-                    str(agg["n_records"]),
-                    _fmt(macro["citation_recall"]),
-                    _fmt(macro["citation_precision"]),
-                    _fmt(macro["citation_f1"]),
-                    _fmt(macro["citation_display_rate"]),
-                    _fmt(macro["bertscore_f1"]),
-                    _fmt(macro["latency_s"]),
-                ]
-            )
-            + " |"
-        )
-
-    lines.extend(
-        [
-            "",
-            "## Citation Micro Metrics",
-            "",
-            "| Arm | recall | precision | display_rate |",
-            "|---|---:|---:|---:|",
-        ]
-    )
-    for arm, agg in result["aggregates"].items():
-        micro = agg["micro"]
-        lines.append(
-            f"| {arm} | {_fmt(micro['citation_recall'])} "
-            f"(sum={micro['recall_num']}/{micro['recall_denom']}) | "
-            f"{_fmt(micro['citation_precision'])} "
-            f"(sum={micro['precision_num']}/{micro['precision_denom']}) | "
-            f"{_fmt(micro['citation_display_rate'])} "
-            f"(sum={micro['display_num']}/{micro['display_denom']}) |"
-        )
-
-    lines.extend(
-        [
-            "",
-            "## Prolog Metrics",
-            "",
-            "| Arm | n_prolog | first_try_solution | repair_invoked | repair_success |",
-            "|---|---:|---:|---:|---:|",
-        ]
-    )
-    for arm, agg in result["aggregates"].items():
-        pr = agg["prolog"]
-        if pr["n_prolog_records"] == 0:
-            continue
-        lines.append(
-            f"| {arm} | {pr['n_prolog_records']} | "
-            f"{_fmt(pr['prolog_first_try_solution_rate'])} | "
-            f"{_fmt(pr['repair_invoked_rate'])} | "
-            f"{_fmt(pr['repair_success_rate'])} "
-            f"(sum={pr['repair_success_num']}/{pr['repair_success_denom']}) |"
-        )
-
-    lines.extend(
-        [
-            "",
-            "## BERTScore Status",
-            "",
-            "```json",
-            json.dumps(result["bertscore_metadata"], ensure_ascii=False, indent=2),
-            "```",
-            "",
-            "## Error Counts",
-            "",
-            "| Arm | pred_citation_parse_errors | records_with_no_pred_citations |",
-            "|---|---:|---:|",
-        ]
-    )
-    for arm, agg in result["aggregates"].items():
-        e = agg["error_counts"]
-        lines.append(
-            f"| {arm} | {e['pred_citation_parse_errors']} | "
-            f"{e['records_with_no_pred_citations']} |"
-        )
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-
-
-def write_grouped_academic_metrics_outputs(
-    result: dict[str, Any],
-    output_dir: Path = DEFAULT_OUTPUT_DIR,
-    metrics_out: Path | None = None,
-    csv_out: Path | None = None,
-    report_out: Path | None = None,
-) -> dict[str, Any]:
-    output_dir = Path(output_dir)
-    metrics_out = metrics_out or output_dir / "academic_metrics.json"
-    csv_out = csv_out or output_dir / "academic_metrics.csv"
-    report_out = report_out or output_dir / "academic_report.md"
-
-    result = dict(result)
-    result["output_dir"] = str(output_dir)
-    result["metrics_out"] = str(metrics_out)
-    result["csv_out"] = str(csv_out)
-    result["report_out"] = str(report_out)
-
-    flat_rows: list[dict[str, Any]] = []
-    for arm, arm_records in result["records"].items():
-        for record in arm_records:
-            row = dict(record)
-            row["arm"] = arm
-            flat_rows.append(row)
-
-    metrics_out.parent.mkdir(parents=True, exist_ok=True)
-    metrics_out.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
-    _write_experiment_csv(flat_rows, csv_out)
-    _write_experiment_report(result, report_out)
-    return result
 
 
 def compute_experiment_academic_metrics(
