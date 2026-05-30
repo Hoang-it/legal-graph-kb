@@ -241,6 +241,14 @@ sources:
       - "Quyết định số 166/QĐ-BHXH"
       - "166/QĐ-BHXH"
 
+  QD366_BHXH:
+    canonical_title: "Quyết định 366/QĐ-BHXH"
+    type: "decision"
+    aliases:
+      - "Quyết định 366/QĐ-BHXH"
+      - "Quyết định số 366/QĐ-BHXH"
+      - "366/QĐ-BHXH"
+
   QD595_BHXH:
     canonical_title: "Quyết định 595/QĐ-BHXH"
     type: "decision"
