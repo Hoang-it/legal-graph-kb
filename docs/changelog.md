@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added — multi-law KG ingestion (ND143_2018 + QD838_BHXH)
+
+**Scope**: First non-QH legal documents loaded into KG. Adds 2 entries to
+`data/legal_metadata.yaml` + 2 raw `.docx` to `data/graph/raw/`. KG grows from
+3 laws (486 art, 1585 cl) to 5 laws (507 art, 1645 cl).
+
+**Hidden drift fixed**: `src/schema.py::SemanticEdge._must_be_clause_id` còn
+regex literal `^L\d+_\d{4}…` — drift cùng category với `ids._ID_PATTERN` đã
+relax session trước. Relax thành `^[A-Z][A-Z0-9_]*…` để chấp nhận mọi source
+prefix trong registry (ND/QĐ/TT/CV/...). 5 test mới trong `tests/test_schema.py`.
+
+**Documents flagged for follow-up PR**: 4 trong 6 file raw không load được
+do parser limitation — pattern "cover decree + attached procedure" (2 QĐ-BHXH)
+hoặc "main document + appendix" (2 NĐ). Đề xuất: thêm field YAML
+`appendix_markers: [PHỤ LỤC, QUY TRÌNH]` (data-driven, opt-in, ~10 dòng code).
+
+**Operational gotcha**: `OPENAI_BASE_URL=` empty string trong `.env` làm SDK
+fail với APIConnectionError. Workaround inline:
+`OPENAI_BASE_URL=https://api.openai.com/v1 python -m ...`.
+Đề xuất fix code: pop env var nếu rỗng trong `offline/llm_extract.py`.
+
+**Reference**: full report [docs/known_issues_kg_build.md](known_issues_kg_build.md).
+
 ### Changed — citation parser strict mode (v5 Sprint 2 Phase 0a)
 
 **Rationale**: v5 Sprint 1 audit showed loose `parse_displayed_citations` cross-stream
