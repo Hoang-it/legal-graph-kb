@@ -40,22 +40,25 @@ def structural_ids(graph) -> set[str]:
 
 
 def test_du_so_node_co_ban(graph):
-    assert len(graph["nodes"]["Law"]) == 3
-    assert len(graph["nodes"]["Chapter"]) == 37
+    # Baseline: 5 luật (L41/L58/L45/ND143/QD838).
+    # +6 chapters (5 ND143 + 1 synth QD838), +21 articles, +60 clauses, +33 points.
+    assert len(graph["nodes"]["Law"]) == 5
+    assert len(graph["nodes"]["Chapter"]) == 43
     assert len(graph["nodes"]["Section"]) == 46
-    assert len(graph["nodes"]["Article"]) == 486
-    assert len(graph["nodes"]["Clause"]) == 1585
-    assert len(graph["nodes"]["Point"]) == 829
+    assert len(graph["nodes"]["Article"]) == 507
+    assert len(graph["nodes"]["Clause"]) == 1645
+    assert len(graph["nodes"]["Point"]) == 862
 
 
 def test_structural_edges_dung_so(graph):
     e = graph["edges"]
-    assert len(e["HAS_CHAPTER"]) == 37
+    assert len(e["HAS_CHAPTER"]) == 43
     assert len(e["HAS_SECTION"]) == 46
-    assert len(e["HAS_ARTICLE"]) == 486
-    assert len(e["HAS_CLAUSE"]) == 1585
-    assert len(e["HAS_POINT"]) == 829
-    assert len(e["NEXT"]) == 483
+    assert len(e["HAS_ARTICLE"]) == 507
+    assert len(e["HAS_CLAUSE"]) == 1645
+    assert len(e["HAS_POINT"]) == 862
+    # NEXT = Σ(articles per law) - n_laws (mỗi luật N-1 cạnh NEXT)
+    assert len(e["NEXT"]) == 502
 
 
 # ---------- 2. Provenance: mọi semantic node có mentioned_in ----------

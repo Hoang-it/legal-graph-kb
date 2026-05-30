@@ -35,12 +35,13 @@ def test_columns_dung_format(df):
 
 
 def test_du_so_row(df):
-    # 486 Article + 1585 Clause + 829 Point = 2900 across 3 laws.
-    assert len(df) == 2900
+    # Baseline: 5 luật (L41/L58/L45/ND143/QD838).
+    # 507 Article + 1645 Clause + 862 Point = 3014.
+    assert len(df) == 3014
     by_label = df["label"].value_counts().to_dict()
-    assert by_label["Article"] == 486
-    assert by_label["Clause"] == 1585
-    assert by_label["Point"] == 829
+    assert by_label["Article"] == 507
+    assert by_label["Clause"] == 1645
+    assert by_label["Point"] == 862
 
 
 def test_id_la_duy_nhat(df):

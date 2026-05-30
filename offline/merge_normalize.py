@@ -72,17 +72,37 @@ def _load_law_inputs() -> list[dict]:
     return out
 
 
+def _llm_files_for(law_id: str) -> list[dict]:
+    """Đọc file LLM extraction của 1 luật theo layout multi-law.
+
+    Layout canonical (B3 mới): ``llm_extractions/<law_id>/A*.json``.
+
+    Fallback cho L41 legacy: nếu subdir ``llm_extractions/L41_2024/`` chưa
+    tồn tại nhưng các file phẳng ``llm_extractions/A*.json`` còn ở local
+    (B3 cũ ghi ra đó), B4 vẫn đọc được. Pattern này mirror fallback đã có
+    cho ``structured_law.json`` trong ``_load_law_inputs``.
+    """
+    subdir = LLM_DIR / law_id
+    if subdir.exists():
+        paths = sorted(subdir.glob("A*.json"), key=lambda p: int(p.stem[1:]))
+    elif law_id == "L41_2024" and LLM_DIR.exists():
+        paths = sorted(LLM_DIR.glob("A*.json"), key=lambda p: int(p.stem[1:]))
+    else:
+        return []
+    out: list[dict] = []
+    for fp in paths:
+        with fp.open(encoding="utf-8") as f:
+            out.append(json.load(f))
+    return out
+
+
 def load_all() -> dict:
     """Load multi-law structural/rule sources into one dict."""
-    sources = {
-        "laws": _load_law_inputs(),
-        "llm_files": [],
-    }
-    if LLM_DIR.exists():
-        for fp in sorted(LLM_DIR.glob("A*.json"), key=lambda p: int(p.stem[1:])):
-            with fp.open(encoding="utf-8") as f:
-                sources["llm_files"].append(json.load(f))
-    return sources
+    laws_inputs = _load_law_inputs()
+    llm_files: list[dict] = []
+    for item in laws_inputs:
+        llm_files.extend(_llm_files_for(item["law_id"]))
+    return {"laws": laws_inputs, "llm_files": llm_files}
 
 
 # ---------------------------------------------------------------------------

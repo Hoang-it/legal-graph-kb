@@ -2,96 +2,96 @@
 
 ## Tổng quan
 
-- **Tổng số node:** 3,268
-- **Tổng số edge:** 5,371
+- **Tổng số node:** 3,415
+- **Tổng số edge:** 5,628
 
 ## Nodes theo label
 
 | Label | Số lượng |
 |---|---:|
-| `Clause` | 1,585 |
-| `Point` | 829 |
-| `Article` | 486 |
-| `Obligation` | 72 |
-| `Condition` | 47 |
+| `Clause` | 1,645 |
+| `Point` | 862 |
+| `Article` | 507 |
+| `Obligation` | 77 |
+| `Subject` | 50 |
+| `Condition` | 50 |
 | `Section` | 46 |
-| `Subject` | 45 |
-| `Chapter` | 37 |
-| `Benefit` | 34 |
+| `Chapter` | 43 |
+| `Benefit` | 40 |
 | `LegalConcept` | 22 |
 | `Organization` | 21 |
-| `ExternalLaw` | 15 |
+| `ExternalLaw` | 18 |
 | `ProhibitedAct` | 11 |
 | `Right` | 7 |
 | `Fund` | 6 |
-| `Law` | 3 |
-| `Table` | 1 |
+| `Law` | 5 |
+| `Table` | 4 |
 | `Role` | 1 |
 
 ## Edges theo type
 
 | Type | Số lượng |
 |---|---:|
-| `HAS_CLAUSE` | 1,585 |
-| `HAS_POINT` | 829 |
-| `REFERENCES` | 763 |
-| `HAS_ARTICLE` | 486 |
-| `BELONGS_TO` | 486 |
-| `NEXT` | 483 |
+| `HAS_CLAUSE` | 1,645 |
+| `HAS_POINT` | 862 |
+| `REFERENCES` | 817 |
+| `HAS_ARTICLE` | 507 |
+| `BELONGS_TO` | 507 |
+| `NEXT` | 502 |
 | `IN_SECTION` | 348 |
-| `ENTITLED_TO` | 82 |
-| `HAS_OBLIGATION` | 70 |
-| `CITES_EXTERNAL` | 50 |
+| `ENTITLED_TO` | 91 |
+| `HAS_OBLIGATION` | 79 |
+| `CITES_EXTERNAL` | 65 |
 | `HAS_SECTION` | 46 |
-| `HAS_CHAPTER` | 37 |
+| `HAS_CHAPTER` | 43 |
 | `DEFINES` | 28 |
-| `REFERS_TO` | 25 |
-| `REQUIRES` | 13 |
+| `REFERS_TO` | 26 |
+| `REQUIRES` | 17 |
+| `APPLIES_TO` | 8 |
 | `AMENDS` | 7 |
 | `REPLACES` | 7 |
-| `APPLIES_TO` | 7 |
 | `RESPONSIBLE_FOR` | 7 |
 | `MANAGES` | 6 |
+| `HAS_TABLE` | 4 |
+| `PAID_FROM` | 3 |
 | `REPEALS` | 2 |
-| `PAID_FROM` | 2 |
-| `HAS_TABLE` | 1 |
 | `HAS_RIGHT` | 1 |
 
 ## Top 10 Subjects theo độ degree
 
 | Name | Degree | Xuất hiện trong (#Clause) |
 |---|---:|---:|
-| Người lao động | 61 | 103 |
-| Người sử dụng lao động | 19 | 38 |
+| Người lao động | 71 | 121 |
+| Người sử dụng lao động | 23 | 41 |
 | Cơ quan bảo hiểm xã hội | 15 | 33 |
-| Thân nhân | 10 | 21 |
-| Lao động nữ | 5 | 22 |
+| Thân nhân | 10 | 22 |
+| Lao động nữ | 6 | 25 |
 | Hội đồng quản lý bảo hiểm xã hội | 4 | 11 |
 | Công dân Việt Nam | 4 | 3 |
 | Người tham gia bảo hiểm xã hội tự nguyện | 3 | 7 |
+| Người đang hưởng lương hưu | 3 | 6 |
 | Người thụ hưởng | 2 | 3 |
-| Người tham gia | 2 | 5 |
 
 ## Top 10 Benefits
 
 | Name | Category | Degree |
 |---|---|---:|
-| Lương hưu | `huu_tri` | 17 |
+| Lương hưu | `huu_tri` | 18 |
 | Chế độ thai sản | `khac` | 16 |
+| trợ cấp một lần | `khac` | 15 |
 | Hưu trí | `khac` | 13 |
-| trợ cấp một lần | `khac` | 12 |
-| Chế độ khi chăm sóc con ốm đau | `om_dau` | 8 |
-| Bảo hiểm xã hội một lần | `khac` | 6 |
+| Chế độ khi chăm sóc con ốm đau | `om_dau` | 12 |
+| Bảo hiểm xã hội một lần | `khac` | 7 |
 | trợ cấp mai táng | `khac` | 6 |
 | Trợ cấp hưu trí xã hội | `khac` | 5 |
-| Ốm đau | `khac` | 4 |
+| Ốm đau | `khac` | 5 |
 | Trợ cấp tuất hằng tháng | `khac` | 4 |
 
 ## External laws được viện dẫn
 
 | Code | Title | #Cite |
 |---|---|---:|
-| `—` | Bộ luật Lao động | 26 |
+| `—` | Bộ luật Lao động | 28 |
 | `—` | Bộ luật Tố tụng hình | 1 |
 | `—` | Bộ luật Hình sự | 1 |
 | `58/2014/QH13` | Luật Bảo hiểm xã hội | 6 |
@@ -106,6 +106,9 @@
 | `93/2015/QH13` | Nghị quyết | 1 |
 | `01/2003/NĐ-CP` | Nghị định | 1 |
 | `09/1998/NĐ-CP` | Nghị định | 1 |
+| `11/2016/NĐ-CP` | Nghị định | 1 |
+| `115/2015/NĐ-CP` | Luật | 7 |
+| `37/2016/NĐ-CP` | Nghị định | 5 |
 
 ## Article có ít/nhiều semantic edges nhất
 
@@ -117,14 +120,14 @@
 | L41_2024.A3 — Giải thích từ ngữ | 12 |
 | L45_2019.A3 — Giải thích từ ngữ | 9 |
 | L58_2014.A3 — Giải thích từ ngữ | 7 |
-| L41_2024.A15 — Quyền và trách nhiệm của tổ chức đại diện người sử dụng lao  | 5 |
 | L41_2024.A111 — Chế độ hưu trí và chế độ tử tuất đối với người vừa có thời g | 5 |
 | L41_2024.A119 — Sử dụng quỹ bảo hiểm xã hội | 5 |
+| L41_2024.A15 — Quyền và trách nhiệm của tổ chức đại diện người sử dụng lao  | 5 |
 | L41_2024.A58 — Trợ cấp một lần khi sinh con, nhận con khi nhờ mang thai hộ  | 5 |
 | L41_2024.A94 — Đối tượng và điều kiện hưởng trợ cấp thai sản | 5 |
 | L41_2024.A13 — Trách nhiệm của người sử dụng lao động | 4 |
 
-**Số Article không có semantic edge nào:** 391 / 486
+**Số Article không có semantic edge nào:** 402 / 507
 
 <details><summary>Danh sách (cần review B3 prompt hoặc rerun)</summary>
 
@@ -178,6 +181,6 @@
 - L41_2024.A98: Đối tượng và điều kiện hưởng lương hưu
 - L45_2019.A1: Phạm vi điều chỉnh
 - L45_2019.A10: Quyền làm việc của người lao động
-- ... và 341 điều khác
+- ... và 352 điều khác
 
 </details>

@@ -254,12 +254,42 @@ class _State:
     in_postamble: bool = False
     in_nested_quote: bool = False
 
+    # Khi document không có dòng "Chương …" (NĐ/QĐ/TT — opt-in qua YAML
+    # `allow_no_chapter: true`), lazy-synth 1 Chapter ảo lúc gặp Mục/Điều đầu
+    # tiên để state machine có parent hợp lệ. Tắt mặc định ⇒ luật QH không đổi.
+    allow_no_chapter: bool = False
+    synth_chapter_title: str = ""
+
 
 def _finalize_title(st: _State) -> None:
     if st.title_buffer is not None and st.title_owner is not None:
         st.title_owner["title"] = " ".join(t.strip() for t in st.title_buffer if t.strip()).strip()
     st.title_buffer = None
     st.title_owner = None
+
+
+def _ensure_chapter(st: _State, law: str) -> None:
+    """Lazy-synth Chương I khi `allow_no_chapter` bật và chưa thấy Chương nào.
+
+    Văn bản dưới luật (NĐ/QĐ/TT) thường mở đầu trực tiếp bằng Mục/Điều — state
+    machine chính cần một parent `Chapter` hợp lệ để chấp nhận chúng. Helper
+    này được gọi ngay trước nhánh Section/Article; khi `allow_no_chapter=False`
+    (mặc định), nó là no-op nên không ảnh hưởng các luật QH hiện hữu.
+    """
+    if st.current_chapter is not None or not st.allow_no_chapter:
+        return
+    ch = {
+        "id": ids.chapter_id(law, 1),
+        "law_code": law,
+        "number": 1,
+        "roman": "I",
+        "title": st.synth_chapter_title,
+        "sections": [],
+        "articles": [],
+    }
+    st.chapters.append(ch)
+    st.current_chapter = ch
+    st.seen_first_chapter = True
 
 
 def _update_quote_state(st: _State, text: str) -> None:
@@ -344,6 +374,8 @@ def _handle_paragraph(text: str, st: _State, law: str) -> None:
             return
 
     m = RE_SECTION.match(text)
+    if m and st.current_chapter is None:
+        _ensure_chapter(st, law)
     if m and st.current_chapter is not None:
         sec_n = int(m.group(1))
         sec = {
@@ -365,6 +397,8 @@ def _handle_paragraph(text: str, st: _State, law: str) -> None:
         return
 
     m = RE_ARTICLE.match(text)
+    if m and st.current_chapter is None:
+        _ensure_chapter(st, law)
     if m and st.current_chapter is not None:
         art_n = int(m.group(1))
         art = {
@@ -502,6 +536,8 @@ def parse_docx(
     doc = open_document(path)
     law = meta.id
     st = _State()
+    st.allow_no_chapter = meta.allow_no_chapter
+    st.synth_chapter_title = meta.canonical_title
 
     for kind, block in iter_block_items(doc):
         if kind == "tbl":

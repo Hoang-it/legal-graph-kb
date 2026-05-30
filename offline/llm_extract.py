@@ -36,6 +36,7 @@ from tenacity import (
     wait_exponential,
 )
 
+from src.legal_metadata import LawMetadata, load_law_metadata, load_order, metadata_for
 from src.prompts import load_prompt
 from src.schema import LLMArticleExtraction
 
@@ -45,8 +46,33 @@ MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 CONCURRENCY = int(os.getenv("OPENAI_CONCURRENCY", "5"))
 BASE_URL = os.getenv("OPENAI_BASE_URL") or None
 
-STRUCTURED_PATH = Path("data/graph/interim/structured_law.json")
-OUT_DIR = Path("data/graph/interim/llm_extractions")
+# Layout multi-law (Phase 6+):
+#   data/graph/interim/llm_extractions/<law_id>/A{n}.json   ← canonical
+#   data/graph/interim/llm_extractions/A{n}.json            ← legacy L41-only (B4 fallback)
+INTERIM_DIR = Path("data/graph/interim")
+LLM_ROOT = INTERIM_DIR / "llm_extractions"
+
+
+def structured_path_for(law_id: str) -> Path:
+    """Mirror fallback của B4 cho luật L41 legacy.
+
+    Ưu tiên file per-law `structured_law_<law_id>.json` (B1 multi-law). Khi
+    chạy L41 ở local mà người dùng chỉ có file legacy `structured_law.json`,
+    fallback đọc file legacy đó — y hệt pattern B4 đã có ở
+    `merge_normalize._load_law_inputs`.
+    """
+    per_law = INTERIM_DIR / f"structured_law_{law_id}.json"
+    if per_law.exists():
+        return per_law
+    legacy = INTERIM_DIR / "structured_law.json"
+    if law_id == "L41_2024" and legacy.exists():
+        return legacy
+    return per_law  # path không tồn tại — caller báo lỗi với đường dẫn canonical
+
+
+def out_dir_for(law_id: str) -> Path:
+    """Per-law output subdir. Layout cũ (flat) chỉ còn được B4 đọc-fallback."""
+    return LLM_ROOT / law_id
 
 
 # ---------------------------------------------------------------------------
@@ -434,20 +460,26 @@ async def extract_article(
     art: dict,
     chapter: dict,
     section: dict | None,
+    meta: LawMetadata,
     skip_existing: bool = True,
 ) -> dict | None:
     """Trả về dict {article_id, ok, extraction, drop_stats, usage, elapsed_s, error?}
-    hoặc None nếu skip."""
+    hoặc None nếu skip.
+
+    Layout output: ``out_dir_for(meta.id) / f"A{n}.json"``. Skip rule là
+    data-driven qua ``meta.llm_skip_articles``.
+    """
     art_id = art["id"]
     art_n = art["number"]
-    out_path = OUT_DIR / f"A{art_n}.json"
+    out_dir = out_dir_for(meta.id)
+    out_path = out_dir / f"A{art_n}.json"
 
     if skip_existing and out_path.exists():
         return None
 
     if not art["clauses"]:
         # Không có clause → không thể anchor edge. Lưu file trống để skip lần sau.
-        OUT_DIR.mkdir(parents=True, exist_ok=True)
+        out_dir.mkdir(parents=True, exist_ok=True)
         out_path.write_text(
             json.dumps(
                 {
@@ -461,15 +493,16 @@ async def extract_article(
         )
         return {"article_id": art_id, "ok": True, "skipped": True}
 
-    if art_n == 141:
-        # Điều 141 chuyển tiếp — phức tạp, skip ở phase này theo prompt rule
-        OUT_DIR.mkdir(parents=True, exist_ok=True)
+    if art_n in meta.llm_skip_articles:
+        # Skip data-driven theo legal_metadata.yaml (mỗi luật khai báo riêng).
+        reason = (
+            meta.llm_skip_reason
+            or f"law_metadata.yaml: llm_skip_articles contains {art_n}"
+        )
+        out_dir.mkdir(parents=True, exist_ok=True)
         out_path.write_text(
             json.dumps(
-                {
-                    "article_id": art_id,
-                    "skipped_reason": "transitional clauses (Điều 141) — handled separately",
-                },
+                {"article_id": art_id, "skipped_reason": reason},
                 ensure_ascii=False,
                 indent=2,
             ),
@@ -503,7 +536,7 @@ async def extract_article(
         "elapsed_s": round(elapsed, 2),
         "model": MODEL,
     }
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    out_dir.mkdir(parents=True, exist_ok=True)
     out_path.write_text(
         json.dumps(out_data, ensure_ascii=False, indent=2),
         encoding="utf-8",
@@ -524,6 +557,7 @@ async def extract_article(
 
 
 async def run(
+    meta: LawMetadata,
     articles_to_process: list[int] | None = None,
     skip_existing: bool = True,
 ) -> int:
@@ -531,11 +565,12 @@ async def run(
         print("FAIL: thiếu OPENAI_API_KEY trong .env", file=sys.stderr)
         return 1
 
-    if not STRUCTURED_PATH.exists():
-        print(f"FAIL: không có {STRUCTURED_PATH}. Chạy B1 trước.", file=sys.stderr)
+    structured_path = structured_path_for(meta.id)
+    if not structured_path.exists():
+        print(f"FAIL: không có {structured_path}. Chạy B1 cho {meta.id} trước.", file=sys.stderr)
         return 1
 
-    with STRUCTURED_PATH.open(encoding="utf-8") as f:
+    with structured_path.open(encoding="utf-8") as f:
         structured = json.load(f)
 
     # Build (article, chapter, section) tuples
@@ -553,8 +588,9 @@ async def run(
             tasks_input.append((art, ch, sec))
 
     print(
-        f"Chuẩn bị extract {len(tasks_input)} Article(s) "
-        f"với model={MODEL}, concurrency={CONCURRENCY}, skip_existing={skip_existing}"
+        f"[{meta.id}] Chuẩn bị extract {len(tasks_input)} Article(s) "
+        f"từ {structured_path.name} → {out_dir_for(meta.id)} "
+        f"(model={MODEL}, concurrency={CONCURRENCY}, skip_existing={skip_existing})"
     )
 
     client = AsyncOpenAI(base_url=BASE_URL) if BASE_URL else AsyncOpenAI()
@@ -562,7 +598,7 @@ async def run(
 
     t0 = time.monotonic()
     coros = [
-        extract_article(client, sem, art, ch, sec, skip_existing=skip_existing)
+        extract_article(client, sem, art, ch, sec, meta, skip_existing=skip_existing)
         for art, ch, sec in tasks_input
     ]
 
@@ -577,14 +613,14 @@ async def run(
             print(f"  [{n_done:>3}/{len(coros)}] {elapsed:6.1f}s elapsed")
 
     elapsed = time.monotonic() - t0
-    print(f"\nXong trong {elapsed:.1f}s")
+    print(f"\n[{meta.id}] Xong trong {elapsed:.1f}s")
 
     # Stats
     ok = [r for r in results if r.get("ok") and not r.get("skipped")]
     skipped = [r for r in results if r.get("skipped")]
     failed = [r for r in results if not r.get("ok")]
 
-    print("\n=== STATS ===")
+    print(f"\n=== STATS [{meta.id}] ===")
     print(f"  Thành công    : {len(ok)}")
     print(f"  Đã skip       : {len(skipped)}")
     print(f"  Thất bại      : {len(failed)}")
@@ -620,6 +656,16 @@ async def run(
 def main():
     parser = argparse.ArgumentParser(description="B3 — LLM extraction (OpenAI)")
     parser.add_argument(
+        "--law",
+        default=None,
+        help="Canonical law id/code/alias (vd 'L41_2024'). Bỏ trống = mặc định L41_2024.",
+    )
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="Chạy tuần tự cho mọi luật trong load_order của legal_metadata.yaml.",
+    )
+    parser.add_argument(
         "--articles",
         type=str,
         default="",
@@ -634,7 +680,19 @@ def main():
     to_process = (
         [int(x.strip()) for x in args.articles.split(",") if x.strip()] if args.articles else None
     )
-    return asyncio.run(run(to_process, skip_existing=not args.force))
+
+    laws = load_law_metadata()
+    selected = load_order() if args.all else [args.law or "L41_2024"]
+
+    rc = 0
+    for law_key in selected:
+        try:
+            meta = metadata_for(law_key, laws)
+        except KeyError as exc:
+            print(f"FAIL: {exc}", file=sys.stderr)
+            return 1
+        rc = max(rc, asyncio.run(run(meta, to_process, skip_existing=not args.force)))
+    return rc
 
 
 if __name__ == "__main__":

@@ -105,3 +105,64 @@ def test_co_du_label_va_edge_types():
     assert "ENTITLED_TO" in S.SEMANTIC_EDGE_TYPES
     assert "REFERENCES" in S.REFERENCE_EDGE_TYPES
     assert "HAS_CHAPTER" in S.STRUCTURAL_EDGE_TYPES
+
+
+# ---------- Multi-law prefix: source_clause chấp nhận mọi source registry ----------
+
+
+def test_semantic_edge_source_clause_nghi_dinh():
+    """Đồng bộ với ids._ID_PATTERN: prefix [A-Z][A-Z0-9_]* cover NĐ/QĐ/TT/..."""
+    e = S.SemanticEdge(
+        type="ENTITLED_TO",
+        src="subject:nguoi-lao-dong-nuoc-ngoai",
+        dst="benefit:huu-tri",
+        source_clause="ND143_2018.A9.K1",
+        source_text="Người lao động là công dân nước ngoài được hưởng chế độ hưu trí...",
+    )
+    assert e.source_clause == "ND143_2018.A9.K1"
+
+
+def test_semantic_edge_source_clause_quyet_dinh():
+    e = S.SemanticEdge(
+        type="HAS_OBLIGATION",
+        src="org:bao-hiem-xa-hoi-viet-nam",
+        dst="oblig:thu-bhxh",
+        source_clause="QD595_BHXH.A28.K1",
+        source_text="Cơ quan BHXH có trách nhiệm thu BHXH bắt buộc...",
+    )
+    assert e.source_clause == "QD595_BHXH.A28.K1"
+
+
+def test_semantic_edge_source_clause_thong_tu_point():
+    e = S.SemanticEdge(
+        type="REQUIRES",
+        src="benefit:huu-tri",
+        dst="cond:du-tuoi",
+        source_clause="TT18_2022_BYT.A3.K2.a",
+        source_text="Người lao động phải đủ tuổi nghỉ hưu...",
+    )
+    assert e.source_clause == "TT18_2022_BYT.A3.K2.a"
+
+
+def test_semantic_edge_source_clause_reject_lowercase_prefix():
+    """Vẫn reject prefix chữ thường (giữ chặn input rác)."""
+    with pytest.raises(ValidationError):
+        S.SemanticEdge(
+            type="ENTITLED_TO",
+            src="subject:x",
+            dst="benefit:y",
+            source_clause="nd143_2018.A1.K1",  # lowercase
+            source_text="text",
+        )
+
+
+def test_semantic_edge_source_clause_reject_digit_prefix():
+    """Vẫn reject prefix bắt đầu bằng số."""
+    with pytest.raises(ValidationError):
+        S.SemanticEdge(
+            type="ENTITLED_TO",
+            src="subject:x",
+            dst="benefit:y",
+            source_clause="143_2018.A1.K1",  # bắt đầu bằng số
+            source_text="text",
+        )

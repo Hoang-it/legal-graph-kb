@@ -77,6 +77,50 @@
           "law_bhxh_2024"
         ],
         "session": "Khóa XV, kỳ họp thứ 7"
+      },
+      {
+        "id": "ND143_2018",
+        "code": "ND143_2018",
+        "full_id": "143/2018/NĐ-CP",
+        "title": "Nghị định quy định chi tiết Luật BHXH và Luật ATVSLĐ về BHXH bắt buộc đối với người lao động là công dân nước ngoài làm việc tại Việt Nam",
+        "canonical_title": "Nghị định 143/2018/NĐ-CP",
+        "type": "decree",
+        "issuer": "Chính phủ",
+        "issued_date": "2018-10-15",
+        "effective_date": "2018-12-01",
+        "repealed_date": null,
+        "hierarchy_level": "nghị định",
+        "priority": 80,
+        "aliases": [
+          "Nghị định 143/2018/NĐ-CP",
+          "Nghị định số 143/2018/NĐ-CP",
+          "143/2018/NĐ-CP"
+        ],
+        "prolog_law_ids": [
+          "law_nd_143_2018"
+        ]
+      },
+      {
+        "id": "QD838_BHXH",
+        "code": "QD838_BHXH",
+        "full_id": "838/QĐ-BHXH",
+        "title": "Quyết định công bố Danh mục dịch vụ công trực tuyến toàn trình thuộc thẩm quyền giải quyết của Bảo hiểm xã hội Việt Nam",
+        "canonical_title": "Quyết định 838/QĐ-BHXH",
+        "type": "decision",
+        "issuer": "Bảo hiểm xã hội Việt Nam",
+        "issued_date": "2024-06-05",
+        "effective_date": "2024-06-05",
+        "repealed_date": null,
+        "hierarchy_level": "quyết định",
+        "priority": 70,
+        "aliases": [
+          "Quyết định 838/QĐ-BHXH",
+          "Quyết định số 838/QĐ-BHXH",
+          "838/QĐ-BHXH"
+        ],
+        "prolog_law_ids": [
+          "law_qd_838_bhxh"
+        ]
       }
     ],
     "Chapter": [
@@ -338,6 +382,48 @@
         "number": 11,
         "roman": "XI",
         "title": "ĐIỀU KHOẢN THI HÀNH"
+      },
+      {
+        "id": "ND143_2018.C1",
+        "law_code": "ND143_2018",
+        "number": 1,
+        "roman": "I",
+        "title": "QUY ĐỊNH CHUNG"
+      },
+      {
+        "id": "ND143_2018.C2",
+        "law_code": "ND143_2018",
+        "number": 2,
+        "roman": "II",
+        "title": "CÁC CHẾ ĐỘ BẢO HIỂM XÃ HỘI BẮT BUỘC"
+      },
+      {
+        "id": "ND143_2018.C3",
+        "law_code": "ND143_2018",
+        "number": 3,
+        "roman": "III",
+        "title": "QUỸ BẢO HIỂM XÃ HỘI"
+      },
+      {
+        "id": "ND143_2018.C4",
+        "law_code": "ND143_2018",
+        "number": 4,
+        "roman": "IV",
+        "title": "TRÌNH TỰ, THỦ TỤC THỰC HIỆN BẢO HIỂM XÃ HỘI"
+      },
+      {
+        "id": "ND143_2018.C5",
+        "law_code": "ND143_2018",
+        "number": 5,
+        "roman": "V",
+        "title": "ĐIỀU KHOẢN THI HÀNH"
+      },
+      {
+        "id": "QD838_BHXH.C1",
+        "law_code": "QD838_BHXH",
+        "number": 1,
+        "roman": "I",
+        "title": "Quyết định 838/QĐ-BHXH"
       }
     ],
     "Article": [
@@ -4713,6 +4799,195 @@
         "title": "Quy định chuyển tiếp",
         "text": "Điều 141. Quy định chuyển tiếp\n1. Người đang hưởng trợ cấp mất sức lao động, trợ cấp tai nạn lao động, bệnh nghề nghiệp, trợ cấp tuất hằng tháng, trợ cấp hằng tháng đối với cán bộ xã, phường, thị trấn đã nghỉ việc, trợ cấp hằng tháng đối với công nhân cao su và người đang hưởng trợ cấp hằng tháng sau khi đã hết thời hạn hưởng trợ cấp mất sức lao động được điều chỉnh mức hưởng theo quy định của Chính phủ.\n2. Người bị đình chỉ, tạm dừng hưởng bảo hiểm xã hội do chấp hành hình phạt tù nhưng không được hưởng án treo trước ngày 01 tháng 01 năm 2016 thì thực hiện theo quy định của pháp luật về bảo hiểm xã hội tại thời điểm bị đình chỉ, tạm dừng.\n3. Người lao động đã có thời gian công tác và tham gia bảo hiểm xã hội trước ngày 01 tháng 01 năm 1995 tại nơi có phụ cấp khu vực, người lao động đã có thời gian đóng bảo hiểm xã hội bao gồm phụ cấp khu vực trước ngày 01 tháng 01 năm 2007 thì được hưởng trợ cấp khu vực một lần khi giải quyết hưởng lương hưu hoặc hưởng bảo hiểm xã hội một lần hoặc hưởng chế độ tử tuất.\n4. Người đang hưởng lương hưu, trợ cấp mất sức lao động, trợ cấp tai nạn lao động, bệnh nghề nghiệp hằng tháng mà đồng thời đang hưởng phụ cấp khu vực hằng tháng tại nơi thường trú có phụ cấp khu vực thì được tiếp tục hưởng phụ cấp khu vực theo mức đang hưởng. Khi thay đổi nơi thường trú thì việc xác định hưởng phụ cấp khu vực thực hiện theo quy định của Chính phủ.\n5. Kể từ ngày Luật này có hiệu lực thi hành mà người lao động đang nghỉ việc hưởng chế độ ốm đau do mắc bệnh thuộc danh mục bệnh cần chữa trị dài ngày do Bộ trưởng Bộ Y tế ban hành hoặc đang nghỉ việc hưởng chế độ thai sản theo quy định của Luật số 58/2014/QH13 thì tiếp tục thực hiện đến hết thời hạn đã được giải quyết.\n6. Người đang hưởng trợ cấp mất sức lao động, đang hưởng trợ cấp hằng tháng sau khi đã hết thời hạn hưởng trợ cấp mất sức lao động, đang hưởng trợ cấp hằng tháng đối với công nhân cao su, đang hưởng trợ cấp hằng tháng đối với cán bộ xã, phường, thị trấn đã nghỉ việc khi chết thì thân nhân được giải quyết chế độ tử tuất theo quy định của Chính phủ.\n7. Người lao động có thời gian làm việc trong khu vực nhà nước trước ngày 01 tháng 01 năm 1995 thì thời gian này được tính để hưởng bảo hiểm xã hội theo quy định của Chính phủ.\n8. Hằng năm, Nhà nước chuyển từ ngân sách một khoản kinh phí vào quỹ bảo hiểm xã hội để bảo đảm trả đủ lương hưu, trợ cấp bảo hiểm xã hội đối với người hưởng lương hưu, trợ cấp bảo hiểm xã hội trước ngày 01 tháng 01 năm 1995.\n9. Người tham gia bảo hiểm xã hội tự nguyện trước ngày 01 tháng 01 năm 2021 và đủ 20 năm đóng bảo hiểm xã hội tự nguyện trở lên thì được hưởng lương hưu khi đủ 60 tuổi đối với nam, đủ 55 tuổi đối với nữ, trừ trường hợp người lao động có nguyện vọng hưởng lương hưu theo quy định tại Điều 98 của Luật này.\n10. Người lao động có từ đủ 15 năm đóng bảo hiểm xã hội trở lên và có văn bản của cơ quan bảo hiểm xã hội xác nhận về việc chờ đủ điều kiện về tuổi đời để hưởng lương hưu được quy định tại Nghị định số 12/CP ngày 26 tháng 01 năm 1995 được sửa đổi, bổ sung một số điều theo Nghị định số 01/2003/NĐ-CP ngày 09 tháng 01 năm 2003 của Chính phủ thì được hưởng lương hưu khi nam đủ 60 tuổi, nữ đủ 55 tuổi.\nCán bộ xã thuộc đối tượng điều chỉnh của Nghị định số 09/1998/NĐ-CP ngày 23 tháng 01 năm 1998 của Chính phủ đã có quyết định hoặc giấy chứng nhận chờ đủ điều kiện về tuổi đời để hưởng trợ cấp hằng tháng của cơ quan bảo hiểm xã hội thì được hưởng trợ cấp hằng tháng khi nam đủ 55 tuổi, nữ đủ 50 tuổi.\n11. Đối tượng quy định tại điểm a, b, c, d, đ, g và i khoản 1 Điều 2 của Luật này đã tham gia bảo hiểm xã hội trước ngày Luật này có hiệu lực thi hành mà có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 20 năm trở lên thì mức lương hưu hằng tháng thấp nhất bằng mức tham chiếu.\n12. Đối với số tiền bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp mà người sử dụng lao động có trách nhiệm đóng theo quy định của Luật số 58/2014/QH13, Luật Việc làm số 38/2013/QH13 nhưng đến hết ngày 30 tháng 6 năm 2025 mà không đóng hoặc không đóng đầy đủ thì được xử lý theo quy định về chậm đóng, trốn đóng của Luật này.\n13. Khi chưa bãi bỏ mức lương cơ sở thì mức tham chiếu quy định tại Luật này bằng mức lương cơ sở. Tại thời điểm mức lương cơ sở bị bãi bỏ thì mức tham chiếu không thấp hơn mức lương cơ sở đó.\n14. Văn bản ủy quyền cho người khác nhận lương hưu, trợ cấp bảo hiểm xã hội và chế độ khác theo quy định của Luật số 58/2014/QH13 được tiếp tục thực hiện đến hết ngày 30 tháng 6 năm 2026.\n15. Chính phủ quy định chi tiết Điều này.",
         "chapter_id": "L41_2024.C11",
+        "section_id": null
+      },
+      {
+        "id": "ND143_2018.A1",
+        "law_code": "ND143_2018",
+        "number": 1,
+        "title": "Phạm vi điều chỉnh",
+        "text": "Điều 1. Phạm vi điều chỉnh\nNghị định này quy định chi tiết Luật bảo hiểm xã hội và Luật an toàn, vệ sinh lao động về bảo hiểm xã hội bắt buộc đối với người lao động là công dân nước ngoài làm việc tại Việt Nam.",
+        "chapter_id": "ND143_2018.C1",
+        "section_id": null
+      },
+      {
+        "id": "ND143_2018.A2",
+        "law_code": "ND143_2018",
+        "number": 2,
+        "title": "Đối tượng áp dụng",
+        "text": "Điều 2. Đối tượng áp dụng\n1. Người lao động là công dân nước ngoài làm việc tại Việt Nam thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc khi có giấy phép lao động hoặc chứng chỉ hành nghề hoặc giấy phép hành nghề do cơ quan có thẩm quyền của Việt Nam cấp và có hợp đồng lao động không xác định thời hạn, hợp đồng lao động xác định thời hạn từ đủ 01 năm trở lên với người sử dụng lao động tại Việt Nam.\n2. Người lao động quy định tại khoản 1 Điều này không thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc theo quy định tại Nghị định này khi thuộc một trong các trường hợp sau:\na) Di chuyển trong nội bộ doanh nghiệp theo quy định tại khoản 1 Điều 3 của Nghị định số 11/2016/NĐ-CP ngày 03 tháng 02 năm 2016 của Chính phủ quy định chi tiết thi hành một số điều của Bộ luật Lao động về lao động nước ngoài làm việc tại Việt Nam;\nb) Người lao động đã đủ tuổi nghỉ hưu theo quy định tại khoản 1 Điều 187 của Bộ luật Lao động.\n3. Người sử dụng lao động tham gia bảo hiểm xã hội bắt buộc bao gồm cơ quan nhà nước, đơn vị sự nghiệp, tổ chức chính trị, tổ chức chính trị - xã hội, tổ chức chính trị xã hội - nghề nghiệp, tổ chức xã hội - nghề nghiệp, tổ chức xã hội khác; cơ quan, tổ chức nước ngoài, tổ chức quốc tế hoạt động trên lãnh thổ Việt Nam; doanh nghiệp, hợp tác xã, hộ kinh doanh cá thể, tổ hợp tác, tổ chức khác và cá nhân được phép hoạt động kinh doanh theo quy định của pháp luật có thuê mướn, sử dụng lao động theo hợp đồng lao động.\n4. Cơ quan, tổ chức và cá nhân có liên quan đến bảo hiểm xã hội bắt buộc đối với người lao động là công dân nước ngoài.",
+        "chapter_id": "ND143_2018.C1",
+        "section_id": null
+      },
+      {
+        "id": "ND143_2018.A3",
+        "law_code": "ND143_2018",
+        "number": 3,
+        "title": "Quyền và trách nhiệm của người lao động và người sử dụng lao động",
+        "text": "Điều 3. Quyền và trách nhiệm của người lao động và người sử dụng lao động\nNgười lao động và người sử dụng lao động quy định tại Nghị định này có đầy đủ quyền và trách nhiệm theo quy định của Luật bảo hiểm xã hội và Luật an toàn, vệ sinh lao động.",
+        "chapter_id": "ND143_2018.C1",
+        "section_id": null
+      },
+      {
+        "id": "ND143_2018.A4",
+        "law_code": "ND143_2018",
+        "number": 4,
+        "title": "Khiếu nại, tố cáo và xử lý vi phạm về bảo hiểm xã hội",
+        "text": "Điều 4. Khiếu nại, tố cáo và xử lý vi phạm về bảo hiểm xã hội\nViệc khiếu nại, tố cáo và xử lý vi phạm về bảo hiểm xã hội đối với đối tượng quy định tại Điều 2 của Nghị định này được thực hiện theo quy định tại Chương VIII của Luật bảo hiểm xã hội.",
+        "chapter_id": "ND143_2018.C1",
+        "section_id": null
+      },
+      {
+        "id": "ND143_2018.A5",
+        "law_code": "ND143_2018",
+        "number": 5,
+        "title": "Các chế độ bảo hiểm xã hội bắt buộc",
+        "text": "Điều 5. Các chế độ bảo hiểm xã hội bắt buộc\n1. Người lao động quy định tại khoản 1 Điều 2 của Nghị định này thực hiện các chế độ bảo hiểm xã hội bắt buộc sau đây: ốm đau; thai sản; bảo hiểm tai nạn lao động, bệnh nghề nghiệp; hưu trí và tử tuất.\n2. Chế độ bảo hiểm xã hội bắt buộc đối với người lao động quy định tại khoản 1 Điều 2 của Nghị định này tính trên thời gian người lao động tham gia bảo hiểm xã hội theo quy định tại Nghị định này.",
+        "chapter_id": "ND143_2018.C2",
+        "section_id": null
+      },
+      {
+        "id": "ND143_2018.A6",
+        "law_code": "ND143_2018",
+        "number": 6,
+        "title": "Chế độ ốm đau",
+        "text": "Điều 6. Chế độ ốm đau\n1. Điều kiện hưởng chế độ ốm đau thực hiện theo quy định tại Điều 25 của Luật bảo hiểm xã hội.\n2. Thời gian hưởng chế độ ốm đau\na) Thời gian hưởng chế độ ốm đau thực hiện theo quy định tại Điều 26 của Luật bảo hiểm xã hội;\nb) Thời gian hưởng chế độ khi con ốm đau thực hiện theo quy định tại Điều 27 của Luật bảo hiểm xã hội.\n3. Mức hưởng chế độ ốm đau thực hiện theo quy định tại Điều 28 của Luật bảo hiểm xã hội.\n4. Dưỡng sức, phục hồi sức khỏe sau khi ốm đau thực hiện theo quy định tại Điều 29 của Luật bảo hiểm xã hội.",
+        "chapter_id": "ND143_2018.C2",
+        "section_id": null
+      },
+      {
+        "id": "ND143_2018.A7",
+        "law_code": "ND143_2018",
+        "number": 7,
+        "title": "Chế độ thai sản",
+        "text": "Điều 7. Chế độ thai sản\n1. Điều kiện hưởng chế độ thai sản thực hiện theo quy định tại Điều 31 của Luật bảo hiểm xã hội.\n2. Thời gian hưởng chế độ thai sản\na) Thời gian hưởng chế độ khi khám thai thực hiện theo quy định tại Điều 32 của Luật bảo hiểm xã hội;\nb) Thời gian hưởng chế độ khi sẩy thai, nạo, hút thai, thai chết lưu hoặc phá thai bệnh lý thực hiện theo quy định tại Điều 33 của Luật bảo hiểm xã hội;\nc) Thời gian hưởng chế độ khi sinh con thực hiện theo quy định tại Điều 34 của Luật bảo hiểm xã hội;\nd) Thời gian hưởng chế độ khi nhận nuôi con nuôi thực hiện theo quy định tại Điều 36 của Luật bảo hiểm xã hội;\nđ) Thời gian hưởng chế độ khi thực hiện các biện pháp tránh thai thực hiện theo quy định tại Điều 37 của Luật bảo hiểm xã hội.\n3. Mức hưởng chế độ thai sản\na) Lao động nữ sinh con, người lao động nhận nuôi con nuôi được trợ cấp một lần theo quy định tại Điều 38 của Luật bảo hiểm xã hội;\nb) Mức hưởng chế độ thai sản thực hiện theo quy định tại Điều 39 của Luật bảo hiểm xã hội.\n4. Lao động nữ đi làm trước khi hết thời hạn nghỉ sinh con thực hiện theo quy định tại Điều 40 của Luật bảo hiểm xã hội.\n5. Chế độ thai sản của lao động nữ mang thai hộ và người mẹ nhờ mang thai hộ thực hiện theo quy định tại Điều 35 của Luật bảo hiểm xã hội và Điều 3, Điều 4 của Nghị định số 115/2015/NĐ-CP ngày 11 tháng 11 năm 2015 của Chính phủ quy định chi tiết một số điều của Luật bảo hiểm xã hội về bảo hiểm xã hội bắt buộc (sau đây gọi là Nghị định số 115/2015/NĐ-CP).\n6. Dưỡng sức, phục hồi sức khỏe sau thai sản thực hiện theo quy định tại Điều 41 của Luật bảo hiểm xã hội.",
+        "chapter_id": "ND143_2018.C2",
+        "section_id": null
+      },
+      {
+        "id": "ND143_2018.A8",
+        "law_code": "ND143_2018",
+        "number": 8,
+        "title": "Chế độ bảo hiểm tai nạn lao động, bệnh nghề nghiệp",
+        "text": "Điều 8. Chế độ bảo hiểm tai nạn lao động, bệnh nghề nghiệp\n1. Điều kiện hưởng\na) Điều kiện hưởng chế độ tai nạn lao động thực hiện theo quy định tại Điều 45 của Luật an toàn, vệ sinh lao động;\nb) Điều kiện hưởng chế độ bệnh nghề nghiệp thực hiện theo quy định tại khoản 1 Điều 46 của Luật an toàn, vệ sinh lao động.\n2. Giám định mức suy giảm khả năng lao động thực hiện theo quy định tại Điều 47 của Luật an toàn, vệ sinh lao động.\n3. Mức hưởng chế độ bảo hiểm tai nạn lao động, bệnh nghề nghiệp\na) Trợ cấp một lần thực hiện theo quy định tại Điều 48 của Luật An toàn, vệ sinh lao động;\nb) Trợ cấp hàng tháng thực hiện theo quy định tại các khoản 1, 2, 3, 4 và khoản 6 Điều 49 của Luật an toàn, vệ sinh lao động.\n4. Phương tiện trợ giúp sinh hoạt, dụng cụ chỉnh hình thực hiện theo quy định tại Điều 51 của Luật an toàn, vệ sinh lao động.\n5. Trợ cấp phục vụ thực hiện theo quy định tại Điều 52 của Luật an toàn, vệ sinh lao động.\n6. Thời điểm hưởng trợ cấp thực hiện theo quy định tại Điều 50 của Luật an toàn, vệ sinh lao động.\n7. Trợ cấp khi người lao động chết do tai nạn lao động, bệnh nghề nghiệp thực hiện theo quy định tại Điều 53 của Luật an toàn, vệ sinh lao động và Điều 10 của Nghị định này.\n8. Dưỡng sức, phục hồi sức khỏe sau khi điều trị thương tật, bệnh tật thực hiện theo quy định tại Điều 54 của Luật an toàn, vệ sinh lao động.\n9. Chế độ bảo hiểm tai nạn lao động, bệnh nghề nghiệp đối với người lao động giao kết hợp đồng lao động với nhiều người sử dụng lao động thực hiện theo quy định tại Điều 5 của Nghị định số 37/2016/NĐ-CP ngày 15 tháng 5 năm 2016 của Chính phủ quy định chi tiết và hướng dẫn thi hành một số điều của Luật an toàn, vệ sinh lao động về bảo hiểm tai nạn lao động, bệnh nghề nghiệp bắt buộc (sau đây gọi là Nghị định số 37/2016/NĐ-CP).\n10. Hỗ trợ chuyển đổi nghề nghiệp cho người bị tai nạn lao động, bệnh nghề nghiệp khi trở lại làm việc thực hiện theo quy định tại Điều 55 của Luật an toàn, vệ sinh lao động và Điều 7 và Điều 8 của Nghị định số 37/2016/NĐ-CP.\n11. Hỗ trợ các hoạt động phòng ngừa, chia sẻ rủi ro về tai nạn lao động, bệnh nghề nghiệp thực hiện theo quy định tại khoản 1, điểm a, b và điểm d khoản 2, khoản 3 Điều 56 của Luật an toàn, vệ sinh lao động và các Điều 11, 12, 15, 16,19, 20, 23 và Điều 24 của Nghị định số 37/2016/NĐ-CP.",
+        "chapter_id": "ND143_2018.C2",
+        "section_id": null
+      },
+      {
+        "id": "ND143_2018.A9",
+        "law_code": "ND143_2018",
+        "number": 9,
+        "title": "Chế độ hưu trí",
+        "text": "Điều 9. Chế độ hưu trí\n1. Người lao động quy định tại khoản 1 Điều 2 của Nghị định này được hưởng lương hưu khi đáp ứng điều kiện hưởng lương hưu theo quy định tại khoản 1 Điều 54 của Luật bảo hiểm xã hội và Điều 6 của Nghị định số 115/2015/NĐ-CP.\n2. Mức hưởng\na) Mức lương hưu hàng tháng thực hiện theo quy định tại khoản 2 Điều 56 của Luật bảo hiểm xã hội và khoản 1 và khoản 2 Điều 7 của Nghị định số 115/2015/NĐ-CP;\nb) Trợ cấp một lần khi nghỉ hưu thực hiện theo quy định tại Điều 58 của Luật bảo hiểm xã hội;\nc) Mức bình quân tiền lương tháng đóng bảo hiểm xã hội để tính lương hưu, trợ cấp một lần thực hiện theo quy định tại khoản 2 Điều 62 của Luật bảo hiểm xã hộii.\n3. Điều chỉnh tiền lương đã đóng bảo hiểm xã hội thực hiện theo quy định tại khoản 2 Điều 63 của Luật bảo hiểm xã hội.\n4. Điều chỉnh lương hưu thực hiện theo quy định tại Điều 57 của Luật bảo hiểm xã hội và khoản 2 Điều 10 của Nghị định số 115/2015/NĐ-CP.\n5. Thời điểm hưởng lương hưu thực hiện theo quy định tại khoản 1 và khoản 3 Điều 59 của Luật bảo hiểm xã hội.\n6. Các trường hợp hưởng bảo hiểm xã hội một lần\nNgười lao động quy định tại khoản 1 Điều 2 của Nghị định này mà có yêu cầu thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây:\na) Đủ tuổi hưởng lương hưu theo quy định tại khoản 1 Điều này mà chưa đủ 20 năm đóng bảo hiểm xã hội;\nb) Người đang bị mắc một trong những bệnh nguy hiểm đến tính mạng như ung thư, bại liệt, xơ gan cổ chướng, phong, lao nặng, nhiễm HIV đã chuyển sang giai đoạn AIDS và những bệnh khác theo quy định của Bộ Y tế;\nc) Người lao động đủ điều kiện hưởng lương hưu theo quy định tại khoản 1 Điều này nhưng không tiếp tục cư trú tại Việt Nam;\nd) Người lao động khi chấm dứt hợp đồng lao động hoặc giấy phép lao động, chứng chỉ hành nghề, giấy phép hành nghề hết hiệu lực mà không được gia hạn.\n7. Mức hưởng bảo hiểm xã hội một lần thực hiện theo quy định tại điểm b khoản 2 Điều 60 của Luật bảo hiểm xã hội.\n8. Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm ghi trong quyết định của cơ quan bảo hiểm xã hội. Việc điều chỉnh tiền lương đã đóng bảo hiểm xã hội để tính hưởng bảo hiểm xã hội một lần căn cứ vào thời điểm ghi trong Quyết định của cơ quan bảo hiểm xã hội.\n9. Bảo lưu thời gian đóng bảo hiểm xã hội\nNgười lao động khi nghỉ việc mà chưa đủ điều kiện hưởng lương hưu theo quy định tại khoản 1 Điều này hoặc chưa hưởng bảo hiểm xã hội một lần theo quy định tại khoản 6 Điều này thì được bảo lưu thời gian đóng bảo hiểm xã hội.\n10. Tạm dừng, hưởng tiếp lương hưu, trợ cấp bảo hiểm xã hội hàng tháng\na) Các trường hợp tạm dừng, hưởng tiếp lương hưu, trợ cấp bảo hiểm xã hội hàng tháng thực hiện theo quy định tại khoản 1 Điều 64 của Luật bảo hiểm xã hội;\nb) Lương hưu, trợ cấp bảo hiểm xã hội hằng tháng được tiếp tục thực hiện khi người xuất cảnh trở lại và cư trú tại Việt Nam. Trường hợp có quyết định có hiệu lực pháp luật của Tòa án hủy bỏ quyết định tuyên bố mất tích thì ngoài việc tiếp tục được hưởng lương hưu, trợ cấp còn được truy lĩnh tiền lương hưu, trợ cấp bảo hiểm xã hội hằng tháng kể từ thời điểm dừng hưởng;\nc) Cơ quan bảo hiểm xã hội khi quyết định tạm dừng hưởng theo quy định tại điểm a khoản này phải thông báo bằng văn bản và nêu rõ lý do. Trong thời hạn 30 ngày kể từ ngày tạm dừng hưởng, cơ quan bảo hiểm xã hội phải ra quyết định giải quyết hưởng; trường hợp quyết định chấm dứt hưởng bảo hiểm xã hội thì phải nêu rõ lý do.",
+        "chapter_id": "ND143_2018.C2",
+        "section_id": null
+      },
+      {
+        "id": "ND143_2018.A10",
+        "law_code": "ND143_2018",
+        "number": 10,
+        "title": "Chế độ tử tuất",
+        "text": "Điều 10. Chế độ tử tuất\n1. Trợ cấp mai táng thực hiện theo quy định tại Điều 66 của Luật Bảo hiểm xã hội.\n2. Trợ cấp tuất hằng tháng\na) Các trường hợp hưởng trợ cấp tuất hằng tháng thực hiện theo quy định tại Điều 67 của Luật bảo hiểm xã hội;\nb) Mức trợ cấp tuất hằng tháng thực hiện theo quy định tại Điều 68 của Luật bảo hiểm xã hội.\n3. Trợ cấp tuất một lần\na) Các trường hợp hưởng trợ cấp tuất một lần thực hiện theo quy định tại Điều 69 của Luật bảo hiểm xã hội;\nb) Trường hợp người lao động chết mà có thân nhân đủ điều kiện hưởng trợ cấp hàng tháng nhưng không cư trú ở Việt Nam thì được giải quyết trợ cấp tuất một lần;\nc) Mức trợ cấp tuất một lần thực hiện theo quy định tại Điều 70 của Luật bảo hiểm xã hội.",
+        "chapter_id": "ND143_2018.C2",
+        "section_id": null
+      },
+      {
+        "id": "ND143_2018.A11",
+        "law_code": "ND143_2018",
+        "number": 11,
+        "title": "Thực hiện chuyển đổi chế độ bảo hiểm xã hội đối với người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hàng tháng không còn cư trú tại Việt Nam",
+        "text": "Điều 11. Thực hiện chuyển đổi chế độ bảo hiểm xã hội đối với người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hàng tháng không còn cư trú tại Việt Nam\n1. Người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hàng tháng khi không tiếp tục cư trú tại Việt Nam có thể ủy quyền cho người khác nhận lương hưu, trợ cấp bảo hiểm xã hội. Trường hợp có nguyện vọng thì được giải quyết hưởng trợ cấp một lần.\n2. Mức trợ cấp một lần đối với người lao động quy định tại khoản 1 Điều này thực hiện theo quy định tại khoản 2 và khoản 3 Điều 65 của Luật bảo hiểm xã hội.",
+        "chapter_id": "ND143_2018.C2",
+        "section_id": null
+      },
+      {
+        "id": "ND143_2018.A12",
+        "law_code": "ND143_2018",
+        "number": 12,
+        "title": "Mức đóng và phương thức đóng của người lao động",
+        "text": "Điều 12. Mức đóng và phương thức đóng của người lao động\n1. Từ ngày 01 tháng 01 năm 2022, người lao động quy định tại khoản 1 Điều 2 của Nghị định này, hàng tháng đóng bằng 8% mức tiền lương tháng vào quỹ hưu trí và tử tuất.\n2. Người lao động không làm việc và không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì không đóng bảo hiểm xã hội tháng đó. Thời gian này không được tính để hưởng bảo hiểm xã hội, trừ trường hợp nghỉ việc hưởng chế độ thai sản.",
+        "chapter_id": "ND143_2018.C3",
+        "section_id": null
+      },
+      {
+        "id": "ND143_2018.A13",
+        "law_code": "ND143_2018",
+        "number": 13,
+        "title": "Mức đóng và phương thức đóng của người sử dụng lao động",
+        "text": "Điều 13. Mức đóng và phương thức đóng của người sử dụng lao động\n1. Người sử dụng lao động quy định tại khoản 3 Điều 2 của Nghị định này, hàng tháng đóng trên quỹ tiền lương tháng đóng bảo hiểm xã hội của người lao động như sau:\na) 3% vào quỹ ốm đau và thai sản;\nb) 0,5% vào quỹ bảo hiểm tai nạn lao động, bệnh nghề nghiệp;\nc) 14% vào quỹ hưu trí và tử tuất từ ngày 01 tháng 01 năm 2022.\n2. Người sử dụng lao động không phải đóng bảo hiểm xã hội cho người lao động quy định tại khoản 2 Điều 12 của Nghị định này.\n3. Căn cứ vào khả năng cân đối quỹ bảo hiểm tai nạn lao động, bệnh nghề nghiệp, Chính phủ xem xét điều chỉnh mức đóng tại điểm b khoản 1 Điều này từ ngày 01 tháng 01 năm 2020.\n4. Người lao động mà giao kết hợp đồng lao động với nhiều người sử dụng lao động và thuộc diện áp dụng bảo hiểm xã hội bắt buộc thì người lao động và người sử dụng lao động chỉ đóng bảo hiểm xã hội đối với hợp đồng lao động giao kết đầu tiên. Riêng tham gia vào quỹ bảo hiểm tai nạn lao động, bệnh nghề nghiệp thì người sử dụng lao động phải đóng theo từng hợp đồng lao động đã giao kết.",
+        "chapter_id": "ND143_2018.C3",
+        "section_id": null
+      },
+      {
+        "id": "ND143_2018.A14",
+        "law_code": "ND143_2018",
+        "number": 14,
+        "title": "Tiền lương tháng đóng bảo hiểm xã hội",
+        "text": "Điều 14. Tiền lương tháng đóng bảo hiểm xã hội\nTiền lương tháng đóng bảo hiểm xã hội quy định tại khoản 1 Điều 12 và khoản 1 Điều 13 của Nghị định này thực hiện theo quy định tại khoản 2 và khoản 3 Điều 89 của Luật bảo hiểm xã hội và khoản 2 và khoản 3 Điều 17 của Nghị định số 115/2015/NĐ-CP.",
+        "chapter_id": "ND143_2018.C3",
+        "section_id": null
+      },
+      {
+        "id": "ND143_2018.A15",
+        "law_code": "ND143_2018",
+        "number": 15,
+        "title": "Trình tự, thủ tục tham gia, giải quyết bảo hiểm xã hội",
+        "text": "Điều 15. Trình tự, thủ tục tham gia, giải quyết bảo hiểm xã hội\n1. Trình tự, thủ tục tham gia bảo hiểm xã hội và trình tự, thủ tục giải quyết chế độ bảo hiểm xã hội của người lao động quy định tại khoản 1 Điều 2 của Nghị định này thực hiện theo trình tự, thủ tục đối với lao động Việt Nam và thực hiện theo quy định tại Chương VII của Luật bảo hiểm xã hội; Điều 57, 58, 59, 60, 61 và 62 của Luật an toàn, vệ sinh lao động; Điều 5 của Nghị định số 115/2015/NĐ-CP; Điều 9, 10, 13, 14, 17, 18, 21, 22, 25 và Điều 26 Nghị định số 37/2016/NĐ-CP trừ quy định tại khoản 3 Điều này và Điều 16 của Nghị định này.\n2. Hồ sơ tham gia, giải quyết chế độ bảo hiểm xã hội của người lao động tại khoản 1 Điều này do cơ quan nước ngoài cấp thì phải được dịch ra tiếng Việt và chứng thực theo quy định của pháp luật Việt Nam.\n3. Giải quyết hưởng bảo hiểm xã hội một lần\nTrong thời hạn 10 ngày tính đến thời điểm chấm dứt hợp đồng lao động hoặc thời điểm giấy phép lao động, chứng chỉ hành nghề, giấy phép hành nghề hết hiệu lực (tùy thuộc điều kiện nào đến trước) mà người lao động không tiếp tục làm việc theo hợp đồng lao động hoặc không được gia hạn giấy phép, người lao động có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ theo quy định cho cơ quan bảo hiểm xã hội.\nTrong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết và tổ chức chi trả cho người lao động, trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.",
+        "chapter_id": "ND143_2018.C4",
+        "section_id": null
+      },
+      {
+        "id": "ND143_2018.A16",
+        "law_code": "ND143_2018",
+        "number": 16,
+        "title": "Trình tự, giải quyết chuyển đổi hưởng chế độ bảo hiểm xã hội đối với người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hàng tháng không còn cư trú tại Việt Nam",
+        "text": "Điều 16. Trình tự, giải quyết chuyển đổi hưởng chế độ bảo hiểm xã hội đối với người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hàng tháng không còn cư trú tại Việt Nam\n1. Người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hàng tháng không còn cư trú tại Việt Nam có nguyện vọng nhận trợ cấp một lần nộp đơn đề nghị cho cơ quan bảo hiểm xã hội.\n2. Trong thời hạn 05 ngày làm việc kể từ ngày nhận được đơn đề nghị, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết cho người lao động, trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.",
+        "chapter_id": "ND143_2018.C4",
+        "section_id": null
+      },
+      {
+        "id": "ND143_2018.A17",
+        "law_code": "ND143_2018",
+        "number": 17,
+        "title": "Hiệu lực thi hành",
+        "text": "Điều 17. Hiệu lực thi hành\n1. Nghị định này có hiệu lực thi hành từ ngày 01 tháng 12 năm 2018.\n2. Các chế độ quy định tại Điều 9 và Điều 10 của Nghị định này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2022.\n3. Trường hợp có sự khác nhau giữa quy định của Nghị định này và điều ước quốc tế mà Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên về cùng một vấn đề thì áp dụng quy định của điều ước quốc tế.",
+        "chapter_id": "ND143_2018.C5",
+        "section_id": null
+      },
+      {
+        "id": "ND143_2018.A18",
+        "law_code": "ND143_2018",
+        "number": 18,
+        "title": "Trách nhiệm tổ chức thi hành",
+        "text": "Điều 18. Trách nhiệm tổ chức thi hành\n1. Bộ trưởng Bộ Lao động - Thương binh và Xã hội có trách nhiệm tổ chức triển khai, giám sát thi hành Nghị định này và chủ trì phối hợp với các bộ, ngành tiến hành đề xuất đàm phán, ký kết các Hiệp định song phương, đa phương về bảo hiểm xã hội.\n2. Tổng Giám đốc Bảo hiểm xã hội Việt Nam có trách nhiệm rà soát, ban hành mẫu, biểu tham gia, giải quyết chế độ bảo hiểm xã hội đối với người lao động nước ngoài bằng tiếng Việt và tiếng Anh.\n3. Bộ trưởng Bộ Y tế có trách nhiệm rà soát, ban hành mẫu cấp giấy ra viện, trích sao hồ sơ bệnh án, giấy chứng nhận nghỉ việc, giấy chứng nhận nghỉ dưỡng thai, giấy chứng nhận không đủ sức khỏe chăm sóc con sau sinh, khám giám định mức suy giảm khả năng lao động để giải quyết chế độ bảo hiểm xã hội đối với người lao động tại khoản 1 Điều 2 của Nghị định này.\n4. Các Bộ trưởng, Thủ trưởng cơ quan ngang bộ, Thủ trưởng cơ quan thuộc Chính phủ, Chủ tịch Ủy ban nhân dân tỉnh, thành phố trực thuộc trung ương chịu trách nhiệm thi hành Nghị định này./.",
+        "chapter_id": "ND143_2018.C5",
+        "section_id": null
+      },
+      {
+        "id": "QD838_BHXH.A1",
+        "law_code": "QD838_BHXH",
+        "number": 1,
+        "title": "Công bố kèm theo Quyết định này Danh mục dịch vụ công trực tuyến toàn trình thuộc thẩm quyền giải quyết của Bảo hiểm xã hội Việt Nam, gồm: 70",
+        "text": "Điều 1. Công bố kèm theo Quyết định này Danh mục dịch vụ công trực tuyến toàn trình thuộc thẩm quyền giải quyết của Bảo hiểm xã hội Việt Nam, gồm: 70\nDịch vụ công trực tuyến toàn trình tại Phụ lục kèm theo.",
+        "chapter_id": "QD838_BHXH.C1",
+        "section_id": null
+      },
+      {
+        "id": "QD838_BHXH.A2",
+        "law_code": "QD838_BHXH",
+        "number": 2,
+        "title": "Quyết định này có hiệu lực kể từ ngày ký.",
+        "text": "Điều 2. Quyết định này có hiệu lực kể từ ngày ký.",
+        "chapter_id": "QD838_BHXH.C1",
+        "section_id": null
+      },
+      {
+        "id": "QD838_BHXH.A3",
+        "law_code": "QD838_BHXH",
+        "number": 3,
+        "title": "Chánh Văn phòng Bảo hiểm xã hội Việt Nam, Thủ trưởng các đơn vị trực thuộc Bảo hiểm xã hội Việt Nam, Giám đốc Bảo hiểm xã hội các tỉnh, thành phố trực thuộc Trung ương và các cá nhân, tổ chức có liên quan chịu trách nhiệm thi hành Quyết định này./.",
+        "text": "Điều 3. Chánh Văn phòng Bảo hiểm xã hội Việt Nam, Thủ trưởng các đơn vị trực thuộc Bảo hiểm xã hội Việt Nam, Giám đốc Bảo hiểm xã hội các tỉnh, thành phố trực thuộc Trung ương và các cá nhân, tổ chức có liên quan chịu trách nhiệm thi hành Quyết định này./.\nPHỤ LỤC\nDANH MỤC DỊCH VỤ CÔNG TRỰC TUYẾN TOÀN TRÌNH THUỘC THẨM QUYỀN GIẢI QUYẾT CỦA BẢO HIỂM XÃ HỘI VIỆT NAM\n(Ban hành kèm theo Quyết định số 838/QĐ-BHXH ngày 05 tháng 6 năm 2024 của Bảo hiểm xã hội Việt Nam)",
+        "chapter_id": "QD838_BHXH.C1",
         "section_id": null
       }
     ],
@@ -15811,6 +16086,426 @@
         "number": 15,
         "text": "Chính phủ quy định chi tiết Điều này.",
         "article_id": "L41_2024.A141"
+      },
+      {
+        "id": "ND143_2018.A2.K1",
+        "law_code": "ND143_2018",
+        "number": 1,
+        "text": "Người lao động là công dân nước ngoài làm việc tại Việt Nam thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc khi có giấy phép lao động hoặc chứng chỉ hành nghề hoặc giấy phép hành nghề do cơ quan có thẩm quyền của Việt Nam cấp và có hợp đồng lao động không xác định thời hạn, hợp đồng lao động xác định thời hạn từ đủ 01 năm trở lên với người sử dụng lao động tại Việt Nam.",
+        "article_id": "ND143_2018.A2"
+      },
+      {
+        "id": "ND143_2018.A2.K2",
+        "law_code": "ND143_2018",
+        "number": 2,
+        "text": "Người lao động quy định tại khoản 1 Điều này không thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc theo quy định tại Nghị định này khi thuộc một trong các trường hợp sau:",
+        "article_id": "ND143_2018.A2"
+      },
+      {
+        "id": "ND143_2018.A2.K3",
+        "law_code": "ND143_2018",
+        "number": 3,
+        "text": "Người sử dụng lao động tham gia bảo hiểm xã hội bắt buộc bao gồm cơ quan nhà nước, đơn vị sự nghiệp, tổ chức chính trị, tổ chức chính trị - xã hội, tổ chức chính trị xã hội - nghề nghiệp, tổ chức xã hội - nghề nghiệp, tổ chức xã hội khác; cơ quan, tổ chức nước ngoài, tổ chức quốc tế hoạt động trên lãnh thổ Việt Nam; doanh nghiệp, hợp tác xã, hộ kinh doanh cá thể, tổ hợp tác, tổ chức khác và cá nhân được phép hoạt động kinh doanh theo quy định của pháp luật có thuê mướn, sử dụng lao động theo hợp đồng lao động.",
+        "article_id": "ND143_2018.A2"
+      },
+      {
+        "id": "ND143_2018.A2.K4",
+        "law_code": "ND143_2018",
+        "number": 4,
+        "text": "Cơ quan, tổ chức và cá nhân có liên quan đến bảo hiểm xã hội bắt buộc đối với người lao động là công dân nước ngoài.",
+        "article_id": "ND143_2018.A2"
+      },
+      {
+        "id": "ND143_2018.A5.K1",
+        "law_code": "ND143_2018",
+        "number": 1,
+        "text": "Người lao động quy định tại khoản 1 Điều 2 của Nghị định này thực hiện các chế độ bảo hiểm xã hội bắt buộc sau đây: ốm đau; thai sản; bảo hiểm tai nạn lao động, bệnh nghề nghiệp; hưu trí và tử tuất.",
+        "article_id": "ND143_2018.A5"
+      },
+      {
+        "id": "ND143_2018.A5.K2",
+        "law_code": "ND143_2018",
+        "number": 2,
+        "text": "Chế độ bảo hiểm xã hội bắt buộc đối với người lao động quy định tại khoản 1 Điều 2 của Nghị định này tính trên thời gian người lao động tham gia bảo hiểm xã hội theo quy định tại Nghị định này.",
+        "article_id": "ND143_2018.A5"
+      },
+      {
+        "id": "ND143_2018.A6.K1",
+        "law_code": "ND143_2018",
+        "number": 1,
+        "text": "Điều kiện hưởng chế độ ốm đau thực hiện theo quy định tại Điều 25 của Luật bảo hiểm xã hội.",
+        "article_id": "ND143_2018.A6"
+      },
+      {
+        "id": "ND143_2018.A6.K2",
+        "law_code": "ND143_2018",
+        "number": 2,
+        "text": "Thời gian hưởng chế độ ốm đau",
+        "article_id": "ND143_2018.A6"
+      },
+      {
+        "id": "ND143_2018.A6.K3",
+        "law_code": "ND143_2018",
+        "number": 3,
+        "text": "Mức hưởng chế độ ốm đau thực hiện theo quy định tại Điều 28 của Luật bảo hiểm xã hội.",
+        "article_id": "ND143_2018.A6"
+      },
+      {
+        "id": "ND143_2018.A6.K4",
+        "law_code": "ND143_2018",
+        "number": 4,
+        "text": "Dưỡng sức, phục hồi sức khỏe sau khi ốm đau thực hiện theo quy định tại Điều 29 của Luật bảo hiểm xã hội.",
+        "article_id": "ND143_2018.A6"
+      },
+      {
+        "id": "ND143_2018.A7.K1",
+        "law_code": "ND143_2018",
+        "number": 1,
+        "text": "Điều kiện hưởng chế độ thai sản thực hiện theo quy định tại Điều 31 của Luật bảo hiểm xã hội.",
+        "article_id": "ND143_2018.A7"
+      },
+      {
+        "id": "ND143_2018.A7.K2",
+        "law_code": "ND143_2018",
+        "number": 2,
+        "text": "Thời gian hưởng chế độ thai sản",
+        "article_id": "ND143_2018.A7"
+      },
+      {
+        "id": "ND143_2018.A7.K3",
+        "law_code": "ND143_2018",
+        "number": 3,
+        "text": "Mức hưởng chế độ thai sản",
+        "article_id": "ND143_2018.A7"
+      },
+      {
+        "id": "ND143_2018.A7.K4",
+        "law_code": "ND143_2018",
+        "number": 4,
+        "text": "Lao động nữ đi làm trước khi hết thời hạn nghỉ sinh con thực hiện theo quy định tại Điều 40 của Luật bảo hiểm xã hội.",
+        "article_id": "ND143_2018.A7"
+      },
+      {
+        "id": "ND143_2018.A7.K5",
+        "law_code": "ND143_2018",
+        "number": 5,
+        "text": "Chế độ thai sản của lao động nữ mang thai hộ và người mẹ nhờ mang thai hộ thực hiện theo quy định tại Điều 35 của Luật bảo hiểm xã hội và Điều 3, Điều 4 của Nghị định số 115/2015/NĐ-CP ngày 11 tháng 11 năm 2015 của Chính phủ quy định chi tiết một số điều của Luật bảo hiểm xã hội về bảo hiểm xã hội bắt buộc (sau đây gọi là Nghị định số 115/2015/NĐ-CP).",
+        "article_id": "ND143_2018.A7"
+      },
+      {
+        "id": "ND143_2018.A7.K6",
+        "law_code": "ND143_2018",
+        "number": 6,
+        "text": "Dưỡng sức, phục hồi sức khỏe sau thai sản thực hiện theo quy định tại Điều 41 của Luật bảo hiểm xã hội.",
+        "article_id": "ND143_2018.A7"
+      },
+      {
+        "id": "ND143_2018.A8.K1",
+        "law_code": "ND143_2018",
+        "number": 1,
+        "text": "Điều kiện hưởng",
+        "article_id": "ND143_2018.A8"
+      },
+      {
+        "id": "ND143_2018.A8.K2",
+        "law_code": "ND143_2018",
+        "number": 2,
+        "text": "Giám định mức suy giảm khả năng lao động thực hiện theo quy định tại Điều 47 của Luật an toàn, vệ sinh lao động.",
+        "article_id": "ND143_2018.A8"
+      },
+      {
+        "id": "ND143_2018.A8.K3",
+        "law_code": "ND143_2018",
+        "number": 3,
+        "text": "Mức hưởng chế độ bảo hiểm tai nạn lao động, bệnh nghề nghiệp",
+        "article_id": "ND143_2018.A8"
+      },
+      {
+        "id": "ND143_2018.A8.K4",
+        "law_code": "ND143_2018",
+        "number": 4,
+        "text": "Phương tiện trợ giúp sinh hoạt, dụng cụ chỉnh hình thực hiện theo quy định tại Điều 51 của Luật an toàn, vệ sinh lao động.",
+        "article_id": "ND143_2018.A8"
+      },
+      {
+        "id": "ND143_2018.A8.K5",
+        "law_code": "ND143_2018",
+        "number": 5,
+        "text": "Trợ cấp phục vụ thực hiện theo quy định tại Điều 52 của Luật an toàn, vệ sinh lao động.",
+        "article_id": "ND143_2018.A8"
+      },
+      {
+        "id": "ND143_2018.A8.K6",
+        "law_code": "ND143_2018",
+        "number": 6,
+        "text": "Thời điểm hưởng trợ cấp thực hiện theo quy định tại Điều 50 của Luật an toàn, vệ sinh lao động.",
+        "article_id": "ND143_2018.A8"
+      },
+      {
+        "id": "ND143_2018.A8.K7",
+        "law_code": "ND143_2018",
+        "number": 7,
+        "text": "Trợ cấp khi người lao động chết do tai nạn lao động, bệnh nghề nghiệp thực hiện theo quy định tại Điều 53 của Luật an toàn, vệ sinh lao động và Điều 10 của Nghị định này.",
+        "article_id": "ND143_2018.A8"
+      },
+      {
+        "id": "ND143_2018.A8.K8",
+        "law_code": "ND143_2018",
+        "number": 8,
+        "text": "Dưỡng sức, phục hồi sức khỏe sau khi điều trị thương tật, bệnh tật thực hiện theo quy định tại Điều 54 của Luật an toàn, vệ sinh lao động.",
+        "article_id": "ND143_2018.A8"
+      },
+      {
+        "id": "ND143_2018.A8.K9",
+        "law_code": "ND143_2018",
+        "number": 9,
+        "text": "Chế độ bảo hiểm tai nạn lao động, bệnh nghề nghiệp đối với người lao động giao kết hợp đồng lao động với nhiều người sử dụng lao động thực hiện theo quy định tại Điều 5 của Nghị định số 37/2016/NĐ-CP ngày 15 tháng 5 năm 2016 của Chính phủ quy định chi tiết và hướng dẫn thi hành một số điều của Luật an toàn, vệ sinh lao động về bảo hiểm tai nạn lao động, bệnh nghề nghiệp bắt buộc (sau đây gọi là Nghị định số 37/2016/NĐ-CP).",
+        "article_id": "ND143_2018.A8"
+      },
+      {
+        "id": "ND143_2018.A8.K10",
+        "law_code": "ND143_2018",
+        "number": 10,
+        "text": "Hỗ trợ chuyển đổi nghề nghiệp cho người bị tai nạn lao động, bệnh nghề nghiệp khi trở lại làm việc thực hiện theo quy định tại Điều 55 của Luật an toàn, vệ sinh lao động và Điều 7 và Điều 8 của Nghị định số 37/2016/NĐ-CP.",
+        "article_id": "ND143_2018.A8"
+      },
+      {
+        "id": "ND143_2018.A8.K11",
+        "law_code": "ND143_2018",
+        "number": 11,
+        "text": "Hỗ trợ các hoạt động phòng ngừa, chia sẻ rủi ro về tai nạn lao động, bệnh nghề nghiệp thực hiện theo quy định tại khoản 1, điểm a, b và điểm d khoản 2, khoản 3 Điều 56 của Luật an toàn, vệ sinh lao động và các Điều 11, 12, 15, 16,19, 20, 23 và Điều 24 của Nghị định số 37/2016/NĐ-CP.",
+        "article_id": "ND143_2018.A8"
+      },
+      {
+        "id": "ND143_2018.A9.K1",
+        "law_code": "ND143_2018",
+        "number": 1,
+        "text": "Người lao động quy định tại khoản 1 Điều 2 của Nghị định này được hưởng lương hưu khi đáp ứng điều kiện hưởng lương hưu theo quy định tại khoản 1 Điều 54 của Luật bảo hiểm xã hội và Điều 6 của Nghị định số 115/2015/NĐ-CP.",
+        "article_id": "ND143_2018.A9"
+      },
+      {
+        "id": "ND143_2018.A9.K2",
+        "law_code": "ND143_2018",
+        "number": 2,
+        "text": "Mức hưởng",
+        "article_id": "ND143_2018.A9"
+      },
+      {
+        "id": "ND143_2018.A9.K3",
+        "law_code": "ND143_2018",
+        "number": 3,
+        "text": "Điều chỉnh tiền lương đã đóng bảo hiểm xã hội thực hiện theo quy định tại khoản 2 Điều 63 của Luật bảo hiểm xã hội.",
+        "article_id": "ND143_2018.A9"
+      },
+      {
+        "id": "ND143_2018.A9.K4",
+        "law_code": "ND143_2018",
+        "number": 4,
+        "text": "Điều chỉnh lương hưu thực hiện theo quy định tại Điều 57 của Luật bảo hiểm xã hội và khoản 2 Điều 10 của Nghị định số 115/2015/NĐ-CP.",
+        "article_id": "ND143_2018.A9"
+      },
+      {
+        "id": "ND143_2018.A9.K5",
+        "law_code": "ND143_2018",
+        "number": 5,
+        "text": "Thời điểm hưởng lương hưu thực hiện theo quy định tại khoản 1 và khoản 3 Điều 59 của Luật bảo hiểm xã hội.",
+        "article_id": "ND143_2018.A9"
+      },
+      {
+        "id": "ND143_2018.A9.K6",
+        "law_code": "ND143_2018",
+        "number": 6,
+        "text": "Các trường hợp hưởng bảo hiểm xã hội một lần\nNgười lao động quy định tại khoản 1 Điều 2 của Nghị định này mà có yêu cầu thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây:",
+        "article_id": "ND143_2018.A9"
+      },
+      {
+        "id": "ND143_2018.A9.K7",
+        "law_code": "ND143_2018",
+        "number": 7,
+        "text": "Mức hưởng bảo hiểm xã hội một lần thực hiện theo quy định tại điểm b khoản 2 Điều 60 của Luật bảo hiểm xã hội.",
+        "article_id": "ND143_2018.A9"
+      },
+      {
+        "id": "ND143_2018.A9.K8",
+        "law_code": "ND143_2018",
+        "number": 8,
+        "text": "Thời điểm tính hưởng bảo hiểm xã hội một lần là thời điểm ghi trong quyết định của cơ quan bảo hiểm xã hội. Việc điều chỉnh tiền lương đã đóng bảo hiểm xã hội để tính hưởng bảo hiểm xã hội một lần căn cứ vào thời điểm ghi trong Quyết định của cơ quan bảo hiểm xã hội.",
+        "article_id": "ND143_2018.A9"
+      },
+      {
+        "id": "ND143_2018.A9.K9",
+        "law_code": "ND143_2018",
+        "number": 9,
+        "text": "Bảo lưu thời gian đóng bảo hiểm xã hội\nNgười lao động khi nghỉ việc mà chưa đủ điều kiện hưởng lương hưu theo quy định tại khoản 1 Điều này hoặc chưa hưởng bảo hiểm xã hội một lần theo quy định tại khoản 6 Điều này thì được bảo lưu thời gian đóng bảo hiểm xã hội.",
+        "article_id": "ND143_2018.A9"
+      },
+      {
+        "id": "ND143_2018.A9.K10",
+        "law_code": "ND143_2018",
+        "number": 10,
+        "text": "Tạm dừng, hưởng tiếp lương hưu, trợ cấp bảo hiểm xã hội hàng tháng",
+        "article_id": "ND143_2018.A9"
+      },
+      {
+        "id": "ND143_2018.A10.K1",
+        "law_code": "ND143_2018",
+        "number": 1,
+        "text": "Trợ cấp mai táng thực hiện theo quy định tại Điều 66 của Luật Bảo hiểm xã hội.",
+        "article_id": "ND143_2018.A10"
+      },
+      {
+        "id": "ND143_2018.A10.K2",
+        "law_code": "ND143_2018",
+        "number": 2,
+        "text": "Trợ cấp tuất hằng tháng",
+        "article_id": "ND143_2018.A10"
+      },
+      {
+        "id": "ND143_2018.A10.K3",
+        "law_code": "ND143_2018",
+        "number": 3,
+        "text": "Trợ cấp tuất một lần",
+        "article_id": "ND143_2018.A10"
+      },
+      {
+        "id": "ND143_2018.A11.K1",
+        "law_code": "ND143_2018",
+        "number": 1,
+        "text": "Người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hàng tháng khi không tiếp tục cư trú tại Việt Nam có thể ủy quyền cho người khác nhận lương hưu, trợ cấp bảo hiểm xã hội. Trường hợp có nguyện vọng thì được giải quyết hưởng trợ cấp một lần.",
+        "article_id": "ND143_2018.A11"
+      },
+      {
+        "id": "ND143_2018.A11.K2",
+        "law_code": "ND143_2018",
+        "number": 2,
+        "text": "Mức trợ cấp một lần đối với người lao động quy định tại khoản 1 Điều này thực hiện theo quy định tại khoản 2 và khoản 3 Điều 65 của Luật bảo hiểm xã hội.",
+        "article_id": "ND143_2018.A11"
+      },
+      {
+        "id": "ND143_2018.A12.K1",
+        "law_code": "ND143_2018",
+        "number": 1,
+        "text": "Từ ngày 01 tháng 01 năm 2022, người lao động quy định tại khoản 1 Điều 2 của Nghị định này, hàng tháng đóng bằng 8% mức tiền lương tháng vào quỹ hưu trí và tử tuất.",
+        "article_id": "ND143_2018.A12"
+      },
+      {
+        "id": "ND143_2018.A12.K2",
+        "law_code": "ND143_2018",
+        "number": 2,
+        "text": "Người lao động không làm việc và không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì không đóng bảo hiểm xã hội tháng đó. Thời gian này không được tính để hưởng bảo hiểm xã hội, trừ trường hợp nghỉ việc hưởng chế độ thai sản.",
+        "article_id": "ND143_2018.A12"
+      },
+      {
+        "id": "ND143_2018.A13.K1",
+        "law_code": "ND143_2018",
+        "number": 1,
+        "text": "Người sử dụng lao động quy định tại khoản 3 Điều 2 của Nghị định này, hàng tháng đóng trên quỹ tiền lương tháng đóng bảo hiểm xã hội của người lao động như sau:",
+        "article_id": "ND143_2018.A13"
+      },
+      {
+        "id": "ND143_2018.A13.K2",
+        "law_code": "ND143_2018",
+        "number": 2,
+        "text": "Người sử dụng lao động không phải đóng bảo hiểm xã hội cho người lao động quy định tại khoản 2 Điều 12 của Nghị định này.",
+        "article_id": "ND143_2018.A13"
+      },
+      {
+        "id": "ND143_2018.A13.K3",
+        "law_code": "ND143_2018",
+        "number": 3,
+        "text": "Căn cứ vào khả năng cân đối quỹ bảo hiểm tai nạn lao động, bệnh nghề nghiệp, Chính phủ xem xét điều chỉnh mức đóng tại điểm b khoản 1 Điều này từ ngày 01 tháng 01 năm 2020.",
+        "article_id": "ND143_2018.A13"
+      },
+      {
+        "id": "ND143_2018.A13.K4",
+        "law_code": "ND143_2018",
+        "number": 4,
+        "text": "Người lao động mà giao kết hợp đồng lao động với nhiều người sử dụng lao động và thuộc diện áp dụng bảo hiểm xã hội bắt buộc thì người lao động và người sử dụng lao động chỉ đóng bảo hiểm xã hội đối với hợp đồng lao động giao kết đầu tiên. Riêng tham gia vào quỹ bảo hiểm tai nạn lao động, bệnh nghề nghiệp thì người sử dụng lao động phải đóng theo từng hợp đồng lao động đã giao kết.",
+        "article_id": "ND143_2018.A13"
+      },
+      {
+        "id": "ND143_2018.A15.K1",
+        "law_code": "ND143_2018",
+        "number": 1,
+        "text": "Trình tự, thủ tục tham gia bảo hiểm xã hội và trình tự, thủ tục giải quyết chế độ bảo hiểm xã hội của người lao động quy định tại khoản 1 Điều 2 của Nghị định này thực hiện theo trình tự, thủ tục đối với lao động Việt Nam và thực hiện theo quy định tại Chương VII của Luật bảo hiểm xã hội; Điều 57, 58, 59, 60, 61 và 62 của Luật an toàn, vệ sinh lao động; Điều 5 của Nghị định số 115/2015/NĐ-CP; Điều 9, 10, 13, 14, 17, 18, 21, 22, 25 và Điều 26 Nghị định số 37/2016/NĐ-CP trừ quy định tại khoản 3 Điều này và Điều 16 của Nghị định này.",
+        "article_id": "ND143_2018.A15"
+      },
+      {
+        "id": "ND143_2018.A15.K2",
+        "law_code": "ND143_2018",
+        "number": 2,
+        "text": "Hồ sơ tham gia, giải quyết chế độ bảo hiểm xã hội của người lao động tại khoản 1 Điều này do cơ quan nước ngoài cấp thì phải được dịch ra tiếng Việt và chứng thực theo quy định của pháp luật Việt Nam.",
+        "article_id": "ND143_2018.A15"
+      },
+      {
+        "id": "ND143_2018.A15.K3",
+        "law_code": "ND143_2018",
+        "number": 3,
+        "text": "Giải quyết hưởng bảo hiểm xã hội một lần\nTrong thời hạn 10 ngày tính đến thời điểm chấm dứt hợp đồng lao động hoặc thời điểm giấy phép lao động, chứng chỉ hành nghề, giấy phép hành nghề hết hiệu lực (tùy thuộc điều kiện nào đến trước) mà người lao động không tiếp tục làm việc theo hợp đồng lao động hoặc không được gia hạn giấy phép, người lao động có yêu cầu hưởng bảo hiểm xã hội một lần nộp hồ sơ theo quy định cho cơ quan bảo hiểm xã hội.\nTrong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết và tổ chức chi trả cho người lao động, trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.",
+        "article_id": "ND143_2018.A15"
+      },
+      {
+        "id": "ND143_2018.A16.K1",
+        "law_code": "ND143_2018",
+        "number": 1,
+        "text": "Người đang hưởng lương hưu, trợ cấp bảo hiểm xã hội hàng tháng không còn cư trú tại Việt Nam có nguyện vọng nhận trợ cấp một lần nộp đơn đề nghị cho cơ quan bảo hiểm xã hội.",
+        "article_id": "ND143_2018.A16"
+      },
+      {
+        "id": "ND143_2018.A16.K2",
+        "law_code": "ND143_2018",
+        "number": 2,
+        "text": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận được đơn đề nghị, cơ quan bảo hiểm xã hội có trách nhiệm giải quyết cho người lao động, trường hợp không giải quyết thì phải trả lời bằng văn bản và nêu rõ lý do.",
+        "article_id": "ND143_2018.A16"
+      },
+      {
+        "id": "ND143_2018.A17.K1",
+        "law_code": "ND143_2018",
+        "number": 1,
+        "text": "Nghị định này có hiệu lực thi hành từ ngày 01 tháng 12 năm 2018.",
+        "article_id": "ND143_2018.A17"
+      },
+      {
+        "id": "ND143_2018.A17.K2",
+        "law_code": "ND143_2018",
+        "number": 2,
+        "text": "Các chế độ quy định tại Điều 9 và Điều 10 của Nghị định này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2022.",
+        "article_id": "ND143_2018.A17"
+      },
+      {
+        "id": "ND143_2018.A17.K3",
+        "law_code": "ND143_2018",
+        "number": 3,
+        "text": "Trường hợp có sự khác nhau giữa quy định của Nghị định này và điều ước quốc tế mà Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên về cùng một vấn đề thì áp dụng quy định của điều ước quốc tế.",
+        "article_id": "ND143_2018.A17"
+      },
+      {
+        "id": "ND143_2018.A18.K1",
+        "law_code": "ND143_2018",
+        "number": 1,
+        "text": "Bộ trưởng Bộ Lao động - Thương binh và Xã hội có trách nhiệm tổ chức triển khai, giám sát thi hành Nghị định này và chủ trì phối hợp với các bộ, ngành tiến hành đề xuất đàm phán, ký kết các Hiệp định song phương, đa phương về bảo hiểm xã hội.",
+        "article_id": "ND143_2018.A18"
+      },
+      {
+        "id": "ND143_2018.A18.K2",
+        "law_code": "ND143_2018",
+        "number": 2,
+        "text": "Tổng Giám đốc Bảo hiểm xã hội Việt Nam có trách nhiệm rà soát, ban hành mẫu, biểu tham gia, giải quyết chế độ bảo hiểm xã hội đối với người lao động nước ngoài bằng tiếng Việt và tiếng Anh.",
+        "article_id": "ND143_2018.A18"
+      },
+      {
+        "id": "ND143_2018.A18.K3",
+        "law_code": "ND143_2018",
+        "number": 3,
+        "text": "Bộ trưởng Bộ Y tế có trách nhiệm rà soát, ban hành mẫu cấp giấy ra viện, trích sao hồ sơ bệnh án, giấy chứng nhận nghỉ việc, giấy chứng nhận nghỉ dưỡng thai, giấy chứng nhận không đủ sức khỏe chăm sóc con sau sinh, khám giám định mức suy giảm khả năng lao động để giải quyết chế độ bảo hiểm xã hội đối với người lao động tại khoản 1 Điều 2 của Nghị định này.",
+        "article_id": "ND143_2018.A18"
+      },
+      {
+        "id": "ND143_2018.A18.K4",
+        "law_code": "ND143_2018",
+        "number": 4,
+        "text": "Các Bộ trưởng, Thủ trưởng cơ quan ngang bộ, Thủ trưởng cơ quan thuộc Chính phủ, Chủ tịch Ủy ban nhân dân tỉnh, thành phố trực thuộc trung ương chịu trách nhiệm thi hành Nghị định này./.",
+        "article_id": "ND143_2018.A18"
       }
     ],
     "Point": [
@@ -21616,6 +22311,237 @@
         "letter": "e",
         "text": "Sửa đổi, bổ sung khoản 3 Điều 53 như sau:\n“3. Người lao động bị chết trong thời gian điều trị thương tật, bệnh tật mà chưa được giám định mức suy giảm khả năng lao động.\nHồ sơ hưởng chế độ tử tuất trong trường hợp người lao động bị chết do tai nạn lao động, bệnh nghề nghiệp thực hiện theo quy định tại khoản 1 Điều 90 của Luật Bảo hiểm xã hội.”.",
         "clause_id": "L41_2024.A139.K1"
+      },
+      {
+        "id": "ND143_2018.A2.K2.a",
+        "law_code": "ND143_2018",
+        "letter": "a",
+        "text": "Di chuyển trong nội bộ doanh nghiệp theo quy định tại khoản 1 Điều 3 của Nghị định số 11/2016/NĐ-CP ngày 03 tháng 02 năm 2016 của Chính phủ quy định chi tiết thi hành một số điều của Bộ luật Lao động về lao động nước ngoài làm việc tại Việt Nam;",
+        "clause_id": "ND143_2018.A2.K2"
+      },
+      {
+        "id": "ND143_2018.A2.K2.b",
+        "law_code": "ND143_2018",
+        "letter": "b",
+        "text": "Người lao động đã đủ tuổi nghỉ hưu theo quy định tại khoản 1 Điều 187 của Bộ luật Lao động.",
+        "clause_id": "ND143_2018.A2.K2"
+      },
+      {
+        "id": "ND143_2018.A6.K2.a",
+        "law_code": "ND143_2018",
+        "letter": "a",
+        "text": "Thời gian hưởng chế độ ốm đau thực hiện theo quy định tại Điều 26 của Luật bảo hiểm xã hội;",
+        "clause_id": "ND143_2018.A6.K2"
+      },
+      {
+        "id": "ND143_2018.A6.K2.b",
+        "law_code": "ND143_2018",
+        "letter": "b",
+        "text": "Thời gian hưởng chế độ khi con ốm đau thực hiện theo quy định tại Điều 27 của Luật bảo hiểm xã hội.",
+        "clause_id": "ND143_2018.A6.K2"
+      },
+      {
+        "id": "ND143_2018.A7.K2.a",
+        "law_code": "ND143_2018",
+        "letter": "a",
+        "text": "Thời gian hưởng chế độ khi khám thai thực hiện theo quy định tại Điều 32 của Luật bảo hiểm xã hội;",
+        "clause_id": "ND143_2018.A7.K2"
+      },
+      {
+        "id": "ND143_2018.A7.K2.b",
+        "law_code": "ND143_2018",
+        "letter": "b",
+        "text": "Thời gian hưởng chế độ khi sẩy thai, nạo, hút thai, thai chết lưu hoặc phá thai bệnh lý thực hiện theo quy định tại Điều 33 của Luật bảo hiểm xã hội;",
+        "clause_id": "ND143_2018.A7.K2"
+      },
+      {
+        "id": "ND143_2018.A7.K2.c",
+        "law_code": "ND143_2018",
+        "letter": "c",
+        "text": "Thời gian hưởng chế độ khi sinh con thực hiện theo quy định tại Điều 34 của Luật bảo hiểm xã hội;",
+        "clause_id": "ND143_2018.A7.K2"
+      },
+      {
+        "id": "ND143_2018.A7.K2.d",
+        "law_code": "ND143_2018",
+        "letter": "d",
+        "text": "Thời gian hưởng chế độ khi nhận nuôi con nuôi thực hiện theo quy định tại Điều 36 của Luật bảo hiểm xã hội;",
+        "clause_id": "ND143_2018.A7.K2"
+      },
+      {
+        "id": "ND143_2018.A7.K2.đ",
+        "law_code": "ND143_2018",
+        "letter": "đ",
+        "text": "Thời gian hưởng chế độ khi thực hiện các biện pháp tránh thai thực hiện theo quy định tại Điều 37 của Luật bảo hiểm xã hội.",
+        "clause_id": "ND143_2018.A7.K2"
+      },
+      {
+        "id": "ND143_2018.A7.K3.a",
+        "law_code": "ND143_2018",
+        "letter": "a",
+        "text": "Lao động nữ sinh con, người lao động nhận nuôi con nuôi được trợ cấp một lần theo quy định tại Điều 38 của Luật bảo hiểm xã hội;",
+        "clause_id": "ND143_2018.A7.K3"
+      },
+      {
+        "id": "ND143_2018.A7.K3.b",
+        "law_code": "ND143_2018",
+        "letter": "b",
+        "text": "Mức hưởng chế độ thai sản thực hiện theo quy định tại Điều 39 của Luật bảo hiểm xã hội.",
+        "clause_id": "ND143_2018.A7.K3"
+      },
+      {
+        "id": "ND143_2018.A8.K1.a",
+        "law_code": "ND143_2018",
+        "letter": "a",
+        "text": "Điều kiện hưởng chế độ tai nạn lao động thực hiện theo quy định tại Điều 45 của Luật an toàn, vệ sinh lao động;",
+        "clause_id": "ND143_2018.A8.K1"
+      },
+      {
+        "id": "ND143_2018.A8.K1.b",
+        "law_code": "ND143_2018",
+        "letter": "b",
+        "text": "Điều kiện hưởng chế độ bệnh nghề nghiệp thực hiện theo quy định tại khoản 1 Điều 46 của Luật an toàn, vệ sinh lao động.",
+        "clause_id": "ND143_2018.A8.K1"
+      },
+      {
+        "id": "ND143_2018.A8.K3.a",
+        "law_code": "ND143_2018",
+        "letter": "a",
+        "text": "Trợ cấp một lần thực hiện theo quy định tại Điều 48 của Luật An toàn, vệ sinh lao động;",
+        "clause_id": "ND143_2018.A8.K3"
+      },
+      {
+        "id": "ND143_2018.A8.K3.b",
+        "law_code": "ND143_2018",
+        "letter": "b",
+        "text": "Trợ cấp hàng tháng thực hiện theo quy định tại các khoản 1, 2, 3, 4 và khoản 6 Điều 49 của Luật an toàn, vệ sinh lao động.",
+        "clause_id": "ND143_2018.A8.K3"
+      },
+      {
+        "id": "ND143_2018.A9.K2.a",
+        "law_code": "ND143_2018",
+        "letter": "a",
+        "text": "Mức lương hưu hàng tháng thực hiện theo quy định tại khoản 2 Điều 56 của Luật bảo hiểm xã hội và khoản 1 và khoản 2 Điều 7 của Nghị định số 115/2015/NĐ-CP;",
+        "clause_id": "ND143_2018.A9.K2"
+      },
+      {
+        "id": "ND143_2018.A9.K2.b",
+        "law_code": "ND143_2018",
+        "letter": "b",
+        "text": "Trợ cấp một lần khi nghỉ hưu thực hiện theo quy định tại Điều 58 của Luật bảo hiểm xã hội;",
+        "clause_id": "ND143_2018.A9.K2"
+      },
+      {
+        "id": "ND143_2018.A9.K2.c",
+        "law_code": "ND143_2018",
+        "letter": "c",
+        "text": "Mức bình quân tiền lương tháng đóng bảo hiểm xã hội để tính lương hưu, trợ cấp một lần thực hiện theo quy định tại khoản 2 Điều 62 của Luật bảo hiểm xã hộii.",
+        "clause_id": "ND143_2018.A9.K2"
+      },
+      {
+        "id": "ND143_2018.A9.K6.a",
+        "law_code": "ND143_2018",
+        "letter": "a",
+        "text": "Đủ tuổi hưởng lương hưu theo quy định tại khoản 1 Điều này mà chưa đủ 20 năm đóng bảo hiểm xã hội;",
+        "clause_id": "ND143_2018.A9.K6"
+      },
+      {
+        "id": "ND143_2018.A9.K6.b",
+        "law_code": "ND143_2018",
+        "letter": "b",
+        "text": "Người đang bị mắc một trong những bệnh nguy hiểm đến tính mạng như ung thư, bại liệt, xơ gan cổ chướng, phong, lao nặng, nhiễm HIV đã chuyển sang giai đoạn AIDS và những bệnh khác theo quy định của Bộ Y tế;",
+        "clause_id": "ND143_2018.A9.K6"
+      },
+      {
+        "id": "ND143_2018.A9.K6.c",
+        "law_code": "ND143_2018",
+        "letter": "c",
+        "text": "Người lao động đủ điều kiện hưởng lương hưu theo quy định tại khoản 1 Điều này nhưng không tiếp tục cư trú tại Việt Nam;",
+        "clause_id": "ND143_2018.A9.K6"
+      },
+      {
+        "id": "ND143_2018.A9.K6.d",
+        "law_code": "ND143_2018",
+        "letter": "d",
+        "text": "Người lao động khi chấm dứt hợp đồng lao động hoặc giấy phép lao động, chứng chỉ hành nghề, giấy phép hành nghề hết hiệu lực mà không được gia hạn.",
+        "clause_id": "ND143_2018.A9.K6"
+      },
+      {
+        "id": "ND143_2018.A9.K10.a",
+        "law_code": "ND143_2018",
+        "letter": "a",
+        "text": "Các trường hợp tạm dừng, hưởng tiếp lương hưu, trợ cấp bảo hiểm xã hội hàng tháng thực hiện theo quy định tại khoản 1 Điều 64 của Luật bảo hiểm xã hội;",
+        "clause_id": "ND143_2018.A9.K10"
+      },
+      {
+        "id": "ND143_2018.A9.K10.b",
+        "law_code": "ND143_2018",
+        "letter": "b",
+        "text": "Lương hưu, trợ cấp bảo hiểm xã hội hằng tháng được tiếp tục thực hiện khi người xuất cảnh trở lại và cư trú tại Việt Nam. Trường hợp có quyết định có hiệu lực pháp luật của Tòa án hủy bỏ quyết định tuyên bố mất tích thì ngoài việc tiếp tục được hưởng lương hưu, trợ cấp còn được truy lĩnh tiền lương hưu, trợ cấp bảo hiểm xã hội hằng tháng kể từ thời điểm dừng hưởng;",
+        "clause_id": "ND143_2018.A9.K10"
+      },
+      {
+        "id": "ND143_2018.A9.K10.c",
+        "law_code": "ND143_2018",
+        "letter": "c",
+        "text": "Cơ quan bảo hiểm xã hội khi quyết định tạm dừng hưởng theo quy định tại điểm a khoản này phải thông báo bằng văn bản và nêu rõ lý do. Trong thời hạn 30 ngày kể từ ngày tạm dừng hưởng, cơ quan bảo hiểm xã hội phải ra quyết định giải quyết hưởng; trường hợp quyết định chấm dứt hưởng bảo hiểm xã hội thì phải nêu rõ lý do.",
+        "clause_id": "ND143_2018.A9.K10"
+      },
+      {
+        "id": "ND143_2018.A10.K2.a",
+        "law_code": "ND143_2018",
+        "letter": "a",
+        "text": "Các trường hợp hưởng trợ cấp tuất hằng tháng thực hiện theo quy định tại Điều 67 của Luật bảo hiểm xã hội;",
+        "clause_id": "ND143_2018.A10.K2"
+      },
+      {
+        "id": "ND143_2018.A10.K2.b",
+        "law_code": "ND143_2018",
+        "letter": "b",
+        "text": "Mức trợ cấp tuất hằng tháng thực hiện theo quy định tại Điều 68 của Luật bảo hiểm xã hội.",
+        "clause_id": "ND143_2018.A10.K2"
+      },
+      {
+        "id": "ND143_2018.A10.K3.a",
+        "law_code": "ND143_2018",
+        "letter": "a",
+        "text": "Các trường hợp hưởng trợ cấp tuất một lần thực hiện theo quy định tại Điều 69 của Luật bảo hiểm xã hội;",
+        "clause_id": "ND143_2018.A10.K3"
+      },
+      {
+        "id": "ND143_2018.A10.K3.b",
+        "law_code": "ND143_2018",
+        "letter": "b",
+        "text": "Trường hợp người lao động chết mà có thân nhân đủ điều kiện hưởng trợ cấp hàng tháng nhưng không cư trú ở Việt Nam thì được giải quyết trợ cấp tuất một lần;",
+        "clause_id": "ND143_2018.A10.K3"
+      },
+      {
+        "id": "ND143_2018.A10.K3.c",
+        "law_code": "ND143_2018",
+        "letter": "c",
+        "text": "Mức trợ cấp tuất một lần thực hiện theo quy định tại Điều 70 của Luật bảo hiểm xã hội.",
+        "clause_id": "ND143_2018.A10.K3"
+      },
+      {
+        "id": "ND143_2018.A13.K1.a",
+        "law_code": "ND143_2018",
+        "letter": "a",
+        "text": "3% vào quỹ ốm đau và thai sản;",
+        "clause_id": "ND143_2018.A13.K1"
+      },
+      {
+        "id": "ND143_2018.A13.K1.b",
+        "law_code": "ND143_2018",
+        "letter": "b",
+        "text": "0,5% vào quỹ bảo hiểm tai nạn lao động, bệnh nghề nghiệp;",
+        "clause_id": "ND143_2018.A13.K1"
+      },
+      {
+        "id": "ND143_2018.A13.K1.c",
+        "law_code": "ND143_2018",
+        "letter": "c",
+        "text": "14% vào quỹ hưu trí và tử tuất từ ngày 01 tháng 01 năm 2022.",
+        "clause_id": "ND143_2018.A13.K1"
       }
     ],
     "Section": [
@@ -21948,6 +22874,24 @@
         "law_code": "L58_2014",
         "article_id": "L58_2014.A125",
         "rows_json": "[[\"\", \"CHỦ TỊCH QUỐC HỘI\\n\\n\\n\\n\\n\\n     Nguyễn Sinh Hùng\"]]"
+      },
+      {
+        "id": "ND143_2018.A18.T1",
+        "law_code": "ND143_2018",
+        "article_id": "ND143_2018.A18",
+        "rows_json": "[[\"Nơi nhận:\\n- Ban Bí thư Trung ương Đảng;\\n- Thủ tướng, các Phó Thủ tướng Chính phủ;\\n- Các bộ, cơ quan ngang bộ, cơ quan thuộc Chính phủ;\\n- HĐND, UBND các tỉnh, thành phố trực thuộc trung ương;\\n- Văn phòng Trung ương và các Ban của Đảng;\\n- Văn phòng Tổng Bí thư;\\n- Văn phòng Chủ tịch nước;\\n- Hội đồng dân tộc và các Ủy ban của Quốc hội;\\n- Văn phòng Quốc hội;\\n- Tòa án nhân dân tối cao;\\n- Viện kiểm sát nhân dân tối cao;\\n- Kiểm toán nhà nước;\\n- Ủy ban Giám sát tài chính Quốc gia;\\n- Ngân hàng Chính sách xã hội;\\n- Ngân hàng Phát triển Việt Nam;\\n- Ủy ban trung ương Mặt trận Tổ quốc Việt Nam;\\n- Cơ quan trung ương của các đoàn thể;\\n- VPCP: BTCN, các PCN, Trợ lý TTg, TGĐ Cổng TTĐT,\\ncác Vụ, Cục, đơn vị trực thuộc, Công báo;\\n- Lưu: VT, KTTH (2b). PC\", \"TM. CHÍNH PHỦ\\nTHỦ TƯỚNG\\n\\n\\n\\n\\nNguyễn Xuân Phúc\"]]"
+      },
+      {
+        "id": "QD838_BHXH.A3.T1",
+        "law_code": "QD838_BHXH",
+        "article_id": "QD838_BHXH.A3",
+        "rows_json": "[[\"Nơi nhận:\\n- Như Điều 3;\\n- Tổ Công tác triển khai Đề án 06 của CP; (để b/c)\\n- Tổ cải cách TTHC của Thủ tướng CP; (để b/c)\\n- Văn phòng Chính phủ (Cục KSTTHC); (để b/c)\\n- Các Phó Tổng Giám đốc;\\n- Cổng thông tin điện tử BHXH Việt Nam;\\n- Lưu: VT, VP.\", \"TỔNG GIÁM ĐỐC\\n\\n\\n\\n\\nNguyễn Thế Mạnh\"]]"
+      },
+      {
+        "id": "QD838_BHXH.A3.T2",
+        "law_code": "QD838_BHXH",
+        "article_id": "QD838_BHXH.A3",
+        "rows_json": "[[\"STT\", \"STT\", \"Mã TTHC/Dịch vụ công\", \"Tên TTHC/ Dịch vụ công\", \"Quyết định công bố Dịch vụ công\", \"Quyết định công bố Dịch vụ công\", \"Đối tượng áp dụng\", \"Đối tượng áp dụng\"], [\"I.\", \"I.\", \"LĨNH VỰC THU BHXH, BHYT, BHTN, BHTNLĐ-BNN\", \"LĨNH VỰC THU BHXH, BHYT, BHTN, BHTNLĐ-BNN\", \"LĨNH VỰC THU BHXH, BHYT, BHTN, BHTNLĐ-BNN\", \"LĨNH VỰC THU BHXH, BHYT, BHTN, BHTNLĐ-BNN\", \"LĨNH VỰC THU BHXH, BHYT, BHTN, BHTNLĐ-BNN\", \"LĨNH VỰC THU BHXH, BHYT, BHTN, BHTNLĐ-BNN\"], [\"\", \"1\", \"1.002051\", \"TTHC: Đăng ký, điều chỉnh đóng BHXH, BHYT, BHTN, BHTNLĐ, BNN; cấp sổ BHXH, thẻ BHYT\", \"TTHC: Đăng ký, điều chỉnh đóng BHXH, BHYT, BHTN, BHTNLĐ, BNN; cấp sổ BHXH, thẻ BHYT\", \"TTHC: Đăng ký, điều chỉnh đóng BHXH, BHYT, BHTN, BHTNLĐ, BNN; cấp sổ BHXH, thẻ BHYT\", \"TTHC: Đăng ký, điều chỉnh đóng BHXH, BHYT, BHTN, BHTNLĐ, BNN; cấp sổ BHXH, thẻ BHYT\", \"TTHC: Đăng ký, điều chỉnh đóng BHXH, BHYT, BHTN, BHTNLĐ, BNN; cấp sổ BHXH, thẻ BHYT\"], [\"1\", \"1.1\", \"1.002051.03\", \"Đăng ký, thay đổi thông tin đóng BHXH, BHYT, BHTN, BHTNLĐ, BNN\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Tổ chức\", \"Tổ chức\"], [\"2\", \"1.2\", \"1.002051.04\", \"Đăng ký, truy đóng BHXH bắt buộc đối với NLĐ làm việc có thời hạn ở nước ngoài sau khi về nước\", \"nt\", \"nt\", \"Tổ chức\", \"Tổ chức\"], [\"3\", \"1.3\", \"1.002051.05\", \"Đăng ký, truy đóng BHXH bắt buộc đối với NLĐ làm việc có thời hạn ở nước ngoài sau khi về nước\", \"nt\", \"nt\", \"Cá nhân\", \"Cá nhân\"], [\"4\", \"1.4\", \"1.002051.01\", \"Báo tăng, báo giảm, điều chỉnh đóng BHXH, BHYT, BHTN, BHTNLĐ, BNN\", \"nt\", \"nt\", \"Tổ chức\", \"Tổ chức\"], [\"5\", \"1.5\", \"1.002051.06\", \"Truy đóng BHXH, BHYT, BHTN, BHTNLĐ, BNN\", \"nt\", \"nt\", \"Tổ chức\", \"Tổ chức\"], [\"6\", \"1.6\", \"1.002051.07\", \"Tạm dừng đóng vào quỹ hưu trí và tử tuất theo quy định tại Điều 88 Luật BHXH năm 2014\", \"nt\", \"nt\", \"Tổ chức\", \"Tổ chức\"], [\"7\", \"1.7\", \"1.002051.02\", \"Tạm dừng đóng vào quỹ hưu trí và tử tuất theo theo Nghị quyết số 68/NQ-CP ngày 01/7/2021 của Chính phủ.\", \"nt\", \"nt\", \"Tổ chức\", \"Tổ chức\"], [\"8\", \"1.8\", \"1.002051.08\", \"Gộp sổ BHXH trong trường hợp một người có từ 2 sổ trở lên\", \"nt\", \"nt\", \"Tổ chức\", \"Tổ chức\"], [\"9\", \"1.9\", \"1.002051.09\", \"Gộp sổ BHXH trong trường hợp một người có từ 2 sổ trở lên\", \"nt\", \"nt\", \"Cá nhân\", \"Cá nhân\"], [\"10\", \"1.10\", \"1.002051.10\", \"Đóng BHXH, BHYT, BHTN, BHTNLĐ-BNN\", \"nt\", \"nt\", \"Tổ chức\", \"Tổ chức\"], [\"\", \"2\", \"1.002179\", \"TTHC: Đăng ký, đăng ký lại, điều chỉnh đóng BHXH tự nguyện; cấp sổ BHXH\", \"TTHC: Đăng ký, đăng ký lại, điều chỉnh đóng BHXH tự nguyện; cấp sổ BHXH\", \"TTHC: Đăng ký, đăng ký lại, điều chỉnh đóng BHXH tự nguyện; cấp sổ BHXH\", \"TTHC: Đăng ký, đăng ký lại, điều chỉnh đóng BHXH tự nguyện; cấp sổ BHXH\", \"TTHC: Đăng ký, đăng ký lại, điều chỉnh đóng BHXH tự nguyện; cấp sổ BHXH\"], [\"11\", \"2.1\", \"1.002179.01\", \"Đăng ký; đăng ký lại (bao gồm cả đóng bù cho thời gian chưa đóng); điều chỉnh phương thức đóng, căn cứ đóng BHXH tự nguyện\", \"Đăng ký; đăng ký lại (bao gồm cả đóng bù cho thời gian chưa đóng); điều chỉnh phương thức đóng, căn cứ đóng BHXH tự nguyện\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Tổ chức\"], [\"12\", \"2.2\", \"1.002179.05\", \"Đăng ký; đăng ký lại (bao gồm cả đóng bù cho thời gian chưa đóng); điều chỉnh phương thức đóng, căn cứ đóng BHXH tự nguyện\", \"Đăng ký; đăng ký lại (bao gồm cả đóng bù cho thời gian chưa đóng); điều chỉnh phương thức đóng, căn cứ đóng BHXH tự nguyện\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Cá nhân\"], [\"13\", \"2.5\", \"1.002179.02\", \"Đóng tiếp BHXH tự nguyện\", \"Đóng tiếp BHXH tự nguyện\", \"nt\", \"nt\", \"Cá nhân\"], [\"14\", \"2.6\", \"1.002179.06\", \"Đăng ký tham gia BHXH tự nguyện trên Cổng Dịch vụ công\", \"Đăng ký tham gia BHXH tự nguyện trên Cổng Dịch vụ công\", \"QĐ số 49/QĐ- BHXH ngày 19/01/2023\", \"QĐ số 49/QĐ- BHXH ngày 19/01/2023\", \"Cá nhân\"], [\"\", \"3\", \"1.001939\", \"TTHC: Đăng ký đóng, cấp thẻ BHYT đối với người chỉ tham gia BHYT\", \"TTHC: Đăng ký đóng, cấp thẻ BHYT đối với người chỉ tham gia BHYT\", \"TTHC: Đăng ký đóng, cấp thẻ BHYT đối với người chỉ tham gia BHYT\", \"TTHC: Đăng ký đóng, cấp thẻ BHYT đối với người chỉ tham gia BHYT\", \"TTHC: Đăng ký đóng, cấp thẻ BHYT đối với người chỉ tham gia BHYT\"], [\"15\", \"3.1\", \"1.001939.08\", \"Đăng ký đóng BHYT đối với người chỉ tham gia BHYT\", \"Đăng ký đóng BHYT đối với người chỉ tham gia BHYT\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Tổ chức\"], [\"16\", \"3.2\", \"1.001939.02\", \"Đăng ký đóng BHYT đối với người chỉ tham gia BHYT\", \"Đăng ký đóng BHYT đối với người chỉ tham gia BHYT\", \"nt\", \"nt\", \"Cá nhân\"], [\"17\", \"3.3\", \"1.001939.03\", \"Đăng ký cấp thẻ BHYT đối với trẻ em dưới 6 tuổi\", \"Đăng ký cấp thẻ BHYT đối với trẻ em dưới 6 tuổi\", \"nt\", \"nt\", \"Tổ chức\"], [\"18\", \"3.8\", \"1.001939.01\", \"Gia hạn thẻ BHYT theo hộ gia đình\", \"Gia hạn thẻ BHYT theo hộ gia đình\", \"nt\", \"nt\", \"Cá nhân\"], [\"19\", \"3.9\", \"1.001939.09\", \"Gia hạn thẻ BHYT theo hộ gia đình tích hợp giảm trừ mức đóng trên Cổng dịch vụ công\", \"Gia hạn thẻ BHYT theo hộ gia đình tích hợp giảm trừ mức đóng trên Cổng dịch vụ công\", \"Quyết định số 1231/QĐ- BHXH ngày 02/6/2022\", \"Quyết định số 1231/QĐ- BHXH ngày 02/6/2022\", \"Cá nhân\"], [\"20\", \"3.10\", \"1.001939.10\", \"Đăng ký đóng, cấp thẻ BHYT đối với người chỉ tham gia BHYT trên Cổng Dịch vụ công\", \"Đăng ký đóng, cấp thẻ BHYT đối với người chỉ tham gia BHYT trên Cổng Dịch vụ công\", \"Quyết định số 50/QĐ-BHXH ngày 19/01/2023\", \"Quyết định số 50/QĐ-BHXH ngày 19/01/2023\", \"Cá nhân\"], [\"II.\", \"II.\", \"LĨNH VỰC CẤP SỔ BHXH, THẺ BHYT\", \"LĨNH VỰC CẤP SỔ BHXH, THẺ BHYT\", \"LĨNH VỰC CẤP SỔ BHXH, THẺ BHYT\", \"LĨNH VỰC CẤP SỔ BHXH, THẺ BHYT\", \"LĨNH VỰC CẤP SỔ BHXH, THẺ BHYT\", \"LĨNH VỰC CẤP SỔ BHXH, THẺ BHYT\"], [\"\", \"1\", \"1.002759\", \"TTHC: Cấp lại, đổi, điều chỉnh thông tin trên sổ BHXH, thẻ BHYT\", \"TTHC: Cấp lại, đổi, điều chỉnh thông tin trên sổ BHXH, thẻ BHYT\", \"TTHC: Cấp lại, đổi, điều chỉnh thông tin trên sổ BHXH, thẻ BHYT\", \"TTHC: Cấp lại, đổi, điều chỉnh thông tin trên sổ BHXH, thẻ BHYT\", \"TTHC: Cấp lại, đổi, điều chỉnh thông tin trên sổ BHXH, thẻ BHYT\"], [\"21\", \"1.1\", \"1.002759.06\", \"Cấp lại sổ BHXH không thay đổi thông tin\", \"Cấp lại sổ BHXH không thay đổi thông tin\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Tổ chức\"], [\"22\", \"1.2\", \"1.002759.03\", \"Cấp lại sổ BHXH không thay đổi thông tin\", \"Cấp lại sổ BHXH không thay đổi thông tin\", \"nt\", \"nt\", \"Cá nhân\"], [\"23\", \"1.3\", \"1.002759.02\", \"Cấp lại sổ BHXH do thay đổi thông tin\", \"Cấp lại sổ BHXH do thay đổi thông tin\", \"nt\", \"nt\", \"Tổ chức\"], [\"24\", \"1.4\", \"1.002759.04\", \"Cấp lại sổ BHXH do thay đổi thông tin\", \"Cấp lại sổ BHXH do thay đổi thông tin\", \"nt\", \"nt\", \"Cá nhân\"], [\"25\", \"1.5\", \"1.002759.05\", \"Cấp lại, đổi thẻ BHYT do mất, hỏng không thay đổi thông tin\", \"Cấp lại, đổi thẻ BHYT do mất, hỏng không thay đổi thông tin\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Tổ chức\"], [\"26\", \"1.6\", \"1.002759.01\", \"\", \"\", \"nt\", \"nt\", \"Cá nhân\"], [\"27\", \"1.7\", \"1.002759.07\", \"Cấp lại, đổi thẻ BHYT do thay đổi thời điểm đủ 05 năm liên tục, nơi KCB ban đầu\", \"Cấp lại, đổi thẻ BHYT do thay đổi thời điểm đủ 05 năm liên tục, nơi KCB ban đầu\", \"nt\", \"nt\", \"Tổ chức\"], [\"28\", \"1.8\", \"1.002759.08\", \"Cấp lại, đổi thẻ BHYT do thay đổi thời điểm đủ 05 năm liên tục, nơi KCB ban đầu\", \"Cấp lại, đổi thẻ BHYT do thay đổi thời điểm đủ 05 năm liên tục, nơi KCB ban đầu\", \"nt\", \"nt\", \"Cá nhân\"], [\"29\", \"1.9\", \"1.002759.09\", \"Cấp lại, đổi thẻ BHYT do thay đổi thông tin về nhân thân, mã đối tượng, mã quyền lợi, mã nơi đối tượng sinh sống\", \"Cấp lại, đổi thẻ BHYT do thay đổi thông tin về nhân thân, mã đối tượng, mã quyền lợi, mã nơi đối tượng sinh sống\", \"nt\", \"nt\", \"Tổ chức\"], [\"30\", \"1.10\", \"1.002759.10\", \"Cấp lại, đổi thẻ BHYT do thay đổi thông tin về nhân thân, mã đối tượng, mã quyền lợi, mã nơi đối tượng sinh sống\", \"Cấp lại, đổi thẻ BHYT do thay đổi thông tin về nhân thân, mã đối tượng, mã quyền lợi, mã nơi đối tượng sinh sống\", \"nt\", \"nt\", \"Cá nhân\"], [\"III.\", \"III.\", \"LĨNH VỰC THỰC HIỆN CHÍNH SÁCH BHXH\", \"LĨNH VỰC THỰC HIỆN CHÍNH SÁCH BHXH\", \"LĨNH VỰC THỰC HIỆN CHÍNH SÁCH BHXH\", \"LĨNH VỰC THỰC HIỆN CHÍNH SÁCH BHXH\", \"LĨNH VỰC THỰC HIỆN CHÍNH SÁCH BHXH\", \"LĨNH VỰC THỰC HIỆN CHÍNH SÁCH BHXH\"], [\"\", \"1\", \"1.001667\", \"TTHC: Giải quyết hưởng chế độ ốm đau\", \"TTHC: Giải quyết hưởng chế độ ốm đau\", \"TTHC: Giải quyết hưởng chế độ ốm đau\", \"TTHC: Giải quyết hưởng chế độ ốm đau\", \"TTHC: Giải quyết hưởng chế độ ốm đau\"], [\"31\", \"1.1\", \"1.001667.01\", \"Giải quyết hưởng chế độ ốm đau\", \"Giải quyết hưởng chế độ ốm đau\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Tổ chức\"], [\"32\", \"1.2\", \"1.001667.02\", \"Giải quyết hưởng chế độ ốm đau, thai sản, trợ cấp dưỡng sức phục hồi sức khỏe sau ốm đau, thai sản, tai nạn lao động, bệnh nghề nghiệp\", \"Giải quyết hưởng chế độ ốm đau, thai sản, trợ cấp dưỡng sức phục hồi sức khỏe sau ốm đau, thai sản, tai nạn lao động, bệnh nghề nghiệp\", \"Quyết định số 1199/QĐ- BHXH ngày 25/05/2022\", \"Quyết định số 1199/QĐ- BHXH ngày 25/05/2022\", \"Tổ chức\"], [\"\", \"2\", \"2.000693\", \"TTHC: Giải quyết hưởng chế độ thai sản\", \"TTHC: Giải quyết hưởng chế độ thai sản\", \"TTHC: Giải quyết hưởng chế độ thai sản\", \"TTHC: Giải quyết hưởng chế độ thai sản\", \"TTHC: Giải quyết hưởng chế độ thai sản\"], [\"33\", \"2.1\", \"2.000693.01\", \"Giải quyết hưởng chế độ thai sản đối với người lao động đang đóng BHXH\", \"Giải quyết hưởng chế độ thai sản đối với người lao động đang đóng BHXH\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Tổ chức\"], [\"34\", \"2.2\", \"2.000693.02\", \"Giải quyết hưởng chế độ thai sản đối với người lao động thôi việc trước thời điểm sinh con, nhận nuôi con nuôi\", \"Giải quyết hưởng chế độ thai sản đối với người lao động thôi việc trước thời điểm sinh con, nhận nuôi con nuôi\", \"nt\", \"nt\", \"Cá nhân\"], [\"\", \"3\", \"1.001598\", \"TTHC: Giải quyết hưởng trợ cấp dưỡng sức, phục hồi sức khỏe sau ốm đau, thai sản, tai nạn lao động, bệnh nghề nghiệp\", \"TTHC: Giải quyết hưởng trợ cấp dưỡng sức, phục hồi sức khỏe sau ốm đau, thai sản, tai nạn lao động, bệnh nghề nghiệp\", \"TTHC: Giải quyết hưởng trợ cấp dưỡng sức, phục hồi sức khỏe sau ốm đau, thai sản, tai nạn lao động, bệnh nghề nghiệp\", \"TTHC: Giải quyết hưởng trợ cấp dưỡng sức, phục hồi sức khỏe sau ốm đau, thai sản, tai nạn lao động, bệnh nghề nghiệp\", \"TTHC: Giải quyết hưởng trợ cấp dưỡng sức, phục hồi sức khỏe sau ốm đau, thai sản, tai nạn lao động, bệnh nghề nghiệp\"], [\"35\", \"3.1\", \"1.001598.01\", \"Giải quyết hưởng trợ cấp dưỡng sức, phục hồi sức khỏe sau ốm đau, thai sản, tai nạn lao động, bệnh nghề nghiệp\", \"Giải quyết hưởng trợ cấp dưỡng sức, phục hồi sức khỏe sau ốm đau, thai sản, tai nạn lao động, bệnh nghề nghiệp\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Tổ chức\"], [\"\", \"4\", \"1.001632\", \"TTHC: Giải quyết hưởng chế độ TNLĐ, BNN đối với trường hợp bị TNLĐ, BNN lần đầu\", \"TTHC: Giải quyết hưởng chế độ TNLĐ, BNN đối với trường hợp bị TNLĐ, BNN lần đầu\", \"TTHC: Giải quyết hưởng chế độ TNLĐ, BNN đối với trường hợp bị TNLĐ, BNN lần đầu\", \"TTHC: Giải quyết hưởng chế độ TNLĐ, BNN đối với trường hợp bị TNLĐ, BNN lần đầu\", \"TTHC: Giải quyết hưởng chế độ TNLĐ, BNN đối với trường hợp bị TNLĐ, BNN lần đầu\"], [\"36\", \"4.1\", \"1.001632.01\", \"Giải quyết hưởng chế độ TNLĐ đối với trường hợp bị TNLĐ lần đầu\", \"Giải quyết hưởng chế độ TNLĐ đối với trường hợp bị TNLĐ lần đầu\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Tổ chức\"], [\"37\", \"4.2\", \"1.001632.02\", \"Giải quyết hưởng chế độ BNN đối với trường hợp bị BNN lần đầu\", \"Giải quyết hưởng chế độ BNN đối với trường hợp bị BNN lần đầu\", \"nt\", \"nt\", \"Tổ chức\"], [\"38\", \"4.3\", \"1.001632.03\", \"Giải quyết hưởng chế độ BNN đối với người lao động phát hiện bị BNN khi không còn làm trong các nghề, công việc có nguy cơ bị BNN\", \"Giải quyết hưởng chế độ BNN đối với người lao động phát hiện bị BNN khi không còn làm trong các nghề, công việc có nguy cơ bị BNN\", \"nt\", \"nt\", \"Tổ chức\"], [\"39\", \"4.4\", \"1.001632.04\", \"Giải quyết hưởng chế độ BNN đối với người lao động phát hiện bị BNN khi đã nghỉ hưu, thôi việc\", \"Giải quyết hưởng chế độ BNN đối với người lao động phát hiện bị BNN khi đã nghỉ hưu, thôi việc\", \"nt\", \"nt\", \"Cá nhân\"], [\"\", \"5\", \"1.001521\", \"TTHC: Giải quyết hưởng chế độ TNLĐ, BNN do thương tật, bệnh tật tái phát\", \"TTHC: Giải quyết hưởng chế độ TNLĐ, BNN do thương tật, bệnh tật tái phát\", \"TTHC: Giải quyết hưởng chế độ TNLĐ, BNN do thương tật, bệnh tật tái phát\", \"TTHC: Giải quyết hưởng chế độ TNLĐ, BNN do thương tật, bệnh tật tái phát\", \"TTHC: Giải quyết hưởng chế độ TNLĐ, BNN do thương tật, bệnh tật tái phát\"], [\"40\", \"5.1\", \"1.001521.01\", \"Giải quyết hưởng chế độ TNLĐ do thương tật tái phát\", \"Giải quyết hưởng chế độ TNLĐ do thương tật tái phát\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Cá nhân\"], [\"41\", \"5.2\", \"1.001521.02\", \"Giải quyết hưởng chế độ BNN do bệnh tật tái phát\", \"Giải quyết hưởng chế độ BNN do bệnh tật tái phát\", \"nt\", \"nt\", \"Cá nhân\"], [\"\", \"6\", \"1.001643\", \"TTHC: Giải quyết hưởng chế độ TNLĐ, BNN đối với trường hợp đã bị TNLĐ, BNN nay tiếp tục bị TNLĐ hoặc BNN\", \"TTHC: Giải quyết hưởng chế độ TNLĐ, BNN đối với trường hợp đã bị TNLĐ, BNN nay tiếp tục bị TNLĐ hoặc BNN\", \"TTHC: Giải quyết hưởng chế độ TNLĐ, BNN đối với trường hợp đã bị TNLĐ, BNN nay tiếp tục bị TNLĐ hoặc BNN\", \"TTHC: Giải quyết hưởng chế độ TNLĐ, BNN đối với trường hợp đã bị TNLĐ, BNN nay tiếp tục bị TNLĐ hoặc BNN\", \"TTHC: Giải quyết hưởng chế độ TNLĐ, BNN đối với trường hợp đã bị TNLĐ, BNN nay tiếp tục bị TNLĐ hoặc BNN\"], [\"42\", \"6.1\", \"1.001643.01\", \"Giải quyết hưởng trợ cấp TNLĐ, BNN đối với NLĐ đã bị TNLĐ, BNN nay tiếp tục bị TNLĐ hoặc BNN\", \"Giải quyết hưởng trợ cấp TNLĐ, BNN đối với NLĐ đã bị TNLĐ, BNN nay tiếp tục bị TNLĐ hoặc BNN\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Tổ chức\"], [\"\", \"7\", \"2.000821\", \"TTHC: Giải quyết hưởng chế độ tử tuất\", \"TTHC: Giải quyết hưởng chế độ tử tuất\", \"TTHC: Giải quyết hưởng chế độ tử tuất\", \"TTHC: Giải quyết hưởng chế độ tử tuất\", \"TTHC: Giải quyết hưởng chế độ tử tuất\"], [\"43\", \"7.1\", \"2.000821.01\", \"Giải quyết hưởng chế độ tử tuất đối với người đang tham gia đóng BHXH bắt buộc chết\", \"Giải quyết hưởng chế độ tử tuất đối với người đang tham gia đóng BHXH bắt buộc chết\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Tổ chức\"], [\"44\", \"7.2\", \"2.000821.02\", \"Giải quyết hưởng chế độ tử tuất đối với người đang tham gia BHXH tự nguyện, bảo lưu thời gian đóng BHXH chết\", \"Giải quyết hưởng chế độ tử tuất đối với người đang tham gia BHXH tự nguyện, bảo lưu thời gian đóng BHXH chết\", \"nt\", \"nt\", \"Cá nhân\"], [\"45\", \"7.3\", \"2.000821.03\", \"Giải quyết hưởng chế độ tử tuất đối với người đang hưởng hoặc đang tạm dừng hưởng lương hưu, trợ cấp BHXH hàng tháng chết\", \"Giải quyết hưởng chế độ tử tuất đối với người đang hưởng hoặc đang tạm dừng hưởng lương hưu, trợ cấp BHXH hàng tháng chết\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Cá nhân\"], [\"\", \"8\", \"2.000762\", \"TTHC: Giải quyết hưởng trợ cấp hàng tháng theo Quyết định số 613/QĐ-TTg\", \"TTHC: Giải quyết hưởng trợ cấp hàng tháng theo Quyết định số 613/QĐ-TTg\", \"TTHC: Giải quyết hưởng trợ cấp hàng tháng theo Quyết định số 613/QĐ-TTg\", \"TTHC: Giải quyết hưởng trợ cấp hàng tháng theo Quyết định số 613/QĐ-TTg\", \"TTHC: Giải quyết hưởng trợ cấp hàng tháng theo Quyết định số 613/QĐ-TTg\"], [\"46\", \"8.1\", \"2.000762.01\", \"Giải quyết hưởng trợ cấp hàng tháng theo Quyết định số 613/QĐ-TTg\", \"Giải quyết hưởng trợ cấp hàng tháng theo Quyết định số 613/QĐ-TTg\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Cá nhân\"], [\"47\", \"8.2\", \"2.000762.02\", \"Giải quyết hưởng trợ cấp hàng tháng theo Quyết định số 613/QĐ-TTg đối với người đủ điều kiện hưởng trợ cấp hàng tháng nhưng chưa được giải quyết mà bị chết từ ngày 1/7/2010 trở đi\", \"Giải quyết hưởng trợ cấp hàng tháng theo Quyết định số 613/QĐ-TTg đối với người đủ điều kiện hưởng trợ cấp hàng tháng nhưng chưa được giải quyết mà bị chết từ ngày 1/7/2010 trở đi\", \"nt\", \"nt\", \"Cá nhân\"], [\"\", \"9\", \"1.001613\", \"TTHC: Giải quyết hưởng BHXH một lần\", \"TTHC: Giải quyết hưởng BHXH một lần\", \"TTHC: Giải quyết hưởng BHXH một lần\", \"TTHC: Giải quyết hưởng BHXH một lần\", \"TTHC: Giải quyết hưởng BHXH một lần\"], [\"48\", \"9.1\", \"1.001613.01\", \"Giải quyết hưởng BHXH một lần đối với trường hợp đủ tuổi hưởng lương hưu theo quy định mà chưa đủ 20 năm đóng BHXH hoặc chưa đủ 15 năm đóng BHXH bắt buộc đối với trường hợp lao động nữ là người hoạt động chuyên trách hoặc không chuyên trách ở xã, phường, thị trấn và không tiếp tục tham gia BHXH tự nguyện\", \"Giải quyết hưởng BHXH một lần đối với trường hợp đủ tuổi hưởng lương hưu theo quy định mà chưa đủ 20 năm đóng BHXH hoặc chưa đủ 15 năm đóng BHXH bắt buộc đối với trường hợp lao động nữ là người hoạt động chuyên trách hoặc không chuyên trách ở xã, phường, thị trấn và không tiếp tục tham gia BHXH tự nguyện\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Cá nhân\"], [\"49\", \"9.2\", \"1.001613.02\", \"Giải quyết hưởng BHXH một lần đối với người lao động ra nước ngoài để định cư\", \"Giải quyết hưởng BHXH một lần đối với người lao động ra nước ngoài để định cư\", \"nt\", \"nt\", \"Cá nhân\"], [\"50\", \"9.3\", \"1.001613.03\", \"Giải quyết hưởng BHXH một lần đối với người lao động đang mắc một trong những bệnh nguy hiểm đến tính mạng\", \"Giải quyết hưởng BHXH một lần đối với người lao động đang mắc một trong những bệnh nguy hiểm đến tính mạng\", \"nt\", \"nt\", \"Cá nhân\"], [\"51\", \"9.4\", \"1.001613.04\", \"Giải quyết hưởng BHXH một lần đối với NLĐ tham gia BHXH bắt buộc sau một năm nghỉ việc, người tham gia BHXH tự nguyện sau một năm không tiếp tục đóng BHXH mà chưa đủ 20 năm đóng BHXH\", \"Giải quyết hưởng BHXH một lần đối với NLĐ tham gia BHXH bắt buộc sau một năm nghỉ việc, người tham gia BHXH tự nguyện sau một năm không tiếp tục đóng BHXH mà chưa đủ 20 năm đóng BHXH\", \"nt\", \"nt\", \"Cá nhân\"], [\"52\", \"9.5\", \"1.001613.05\", \"Giải quyết hưởng BHXH một lần đối với NLĐ là công dân nước ngoài vào làm việc tại Việt Nam (có hiệu lực từ 01/01/2022)\", \"Giải quyết hưởng BHXH một lần đối với NLĐ là công dân nước ngoài vào làm việc tại Việt Nam (có hiệu lực từ 01/01/2022)\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Cá nhân\"], [\"53\", \"9.6\", \"1.001613.06\", \"Giải quyết hưởng BHXH một lần đối với NLĐ phục viên, xuất ngũ, thôi việc\", \"Giải quyết hưởng BHXH một lần đối với NLĐ phục viên, xuất ngũ, thôi việc\", \"nt\", \"nt\", \"Cá nhân\"], [\"54\", \"9.7\", \"1.001613.07\", \"Giải quyết hưởng BHXH một lần áp dụng thí điểm xác thực qua chữ ký số được tích hợp trong ứng dụng trên thiết bị di động theo Quyết định số 422/QĐ- TTg ngày 04/4/2022 của Thủ tướng Chính phủ phê duyệt Danh mục dịch vụ công trực tuyến tích hợp, cung cấp trên Cổng Dịch vụ công quốc gia năm 2022.\", \"Giải quyết hưởng BHXH một lần áp dụng thí điểm xác thực qua chữ ký số được tích hợp trong ứng dụng trên thiết bị di động theo Quyết định số 422/QĐ- TTg ngày 04/4/2022 của Thủ tướng Chính phủ phê duyệt Danh mục dịch vụ công trực tuyến tích hợp, cung cấp trên Cổng Dịch vụ công quốc gia năm 2022.\", \"\", \"\", \"Cá nhân\"], [\"\", \"10\", \"2.000605\", \"TTHC: Giải quyết hưởng lương hưu, trợ cấp hàng tháng đối với cán bộ xã\", \"TTHC: Giải quyết hưởng lương hưu, trợ cấp hàng tháng đối với cán bộ xã\", \"TTHC: Giải quyết hưởng lương hưu, trợ cấp hàng tháng đối với cán bộ xã\", \"TTHC: Giải quyết hưởng lương hưu, trợ cấp hàng tháng đối với cán bộ xã\", \"TTHC: Giải quyết hưởng lương hưu, trợ cấp hàng tháng đối với cán bộ xã\"], [\"55\", \"10.1\", \"2.000605.01\", \"Giải quyết hưởng lương hưu đối với người đang tham gia BHXH bắt buộc\", \"Giải quyết hưởng lương hưu đối với người đang tham gia BHXH bắt buộc\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Tổ chức\"], [\"56\", \"10.2\", \"2.000605.02\", \"Giải quyết hưởng lương hưu đối với người đang tham gia BHXH tự nguyện, bảo lưu thời gian đóng BHXH\", \"Giải quyết hưởng lương hưu đối với người đang tham gia BHXH tự nguyện, bảo lưu thời gian đóng BHXH\", \"nt\", \"nt\", \"Cá nhân\"], [\"57\", \"10.3\", \"2.000605.03\", \"Giải quyết hưởng lương hưu, trợ cấp BHXH hàng tháng đối với người có Quyết định hoặc Giấy chứng nhận chờ đủ điều kiện về tuổi đời để hưởng lương hưu hoặc hưởng trợ cấp hàng tháng theo Nghị định số 09/1998/NĐ-CP\", \"Giải quyết hưởng lương hưu, trợ cấp BHXH hàng tháng đối với người có Quyết định hoặc Giấy chứng nhận chờ đủ điều kiện về tuổi đời để hưởng lương hưu hoặc hưởng trợ cấp hàng tháng theo Nghị định số 09/1998/NĐ-CP\", \"nt\", \"nt\", \"Cá nhân\"], [\"\", \"11\", \"2.000755\", \"TTHC: Giải quyết hưởng trợ cấp BHXH một lần đối với người đang hưởng lương hưu, trợ cấp BHXH hàng tháng ra nước ngoài để định cư và công dân nước ngoài đang hưởng lương hưu, trợ cấp BHXH hàng tháng không còn cư trú ở Việt Nam\", \"TTHC: Giải quyết hưởng trợ cấp BHXH một lần đối với người đang hưởng lương hưu, trợ cấp BHXH hàng tháng ra nước ngoài để định cư và công dân nước ngoài đang hưởng lương hưu, trợ cấp BHXH hàng tháng không còn cư trú ở Việt Nam\", \"TTHC: Giải quyết hưởng trợ cấp BHXH một lần đối với người đang hưởng lương hưu, trợ cấp BHXH hàng tháng ra nước ngoài để định cư và công dân nước ngoài đang hưởng lương hưu, trợ cấp BHXH hàng tháng không còn cư trú ở Việt Nam\", \"TTHC: Giải quyết hưởng trợ cấp BHXH một lần đối với người đang hưởng lương hưu, trợ cấp BHXH hàng tháng ra nước ngoài để định cư và công dân nước ngoài đang hưởng lương hưu, trợ cấp BHXH hàng tháng không còn cư trú ở Việt Nam\", \"TTHC: Giải quyết hưởng trợ cấp BHXH một lần đối với người đang hưởng lương hưu, trợ cấp BHXH hàng tháng ra nước ngoài để định cư và công dân nước ngoài đang hưởng lương hưu, trợ cấp BHXH hàng tháng không còn cư trú ở Việt Nam\"], [\"58\", \"11.1\", \"2.000755.01\", \"Giải quyết hưởng trợ cấp BHXH một lần đối với người đang hưởng lương hưu, trợ cấp BHXH hàng tháng ra nước ngoài để định cư\", \"Giải quyết hưởng trợ cấp BHXH một lần đối với người đang hưởng lương hưu, trợ cấp BHXH hàng tháng ra nước ngoài để định cư\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Cá nhân\"], [\"59\", \"11.2\", \"2.000755.02\", \"Giải quyết hưởng trợ cấp BHXH một lần đối với công dân nước ngoài đang hưởng lương hưu, trợ cấp BHXH hàng tháng không còn cư trú ở Việt Nam\", \"Giải quyết hưởng trợ cấp BHXH một lần đối với công dân nước ngoài đang hưởng lương hưu, trợ cấp BHXH hàng tháng không còn cư trú ở Việt Nam\", \"nt\", \"nt\", \"Cá nhân\"], [\"\", \"12\", \"2.000809\", \"TTHC: Giải quyết hưởng tiếp lương hưu, trợ cấp BHXH hàng tháng đối với người chấp hành xong hình phạt tù, người xuất cảnh trái phép trở về nước định cư hợp pháp, người được Tòa án hủy quyết định tuyên bố mất tích\", \"TTHC: Giải quyết hưởng tiếp lương hưu, trợ cấp BHXH hàng tháng đối với người chấp hành xong hình phạt tù, người xuất cảnh trái phép trở về nước định cư hợp pháp, người được Tòa án hủy quyết định tuyên bố mất tích\", \"TTHC: Giải quyết hưởng tiếp lương hưu, trợ cấp BHXH hàng tháng đối với người chấp hành xong hình phạt tù, người xuất cảnh trái phép trở về nước định cư hợp pháp, người được Tòa án hủy quyết định tuyên bố mất tích\", \"TTHC: Giải quyết hưởng tiếp lương hưu, trợ cấp BHXH hàng tháng đối với người chấp hành xong hình phạt tù, người xuất cảnh trái phép trở về nước định cư hợp pháp, người được Tòa án hủy quyết định tuyên bố mất tích\", \"TTHC: Giải quyết hưởng tiếp lương hưu, trợ cấp BHXH hàng tháng đối với người chấp hành xong hình phạt tù, người xuất cảnh trái phép trở về nước định cư hợp pháp, người được Tòa án hủy quyết định tuyên bố mất tích\"], [\"60\", \"12.1\", \"2.000809.01\", \"Giải quyết hưởng tiếp lương hưu, trợ cấp BHXH hàng tháng đối với người chấp hành xong hình phạt tù, người xuất cảnh trái phép trở về nước định cư hợp pháp, người được Tòa án hủy quyết định tuyên bố mất tích\", \"Giải quyết hưởng tiếp lương hưu, trợ cấp BHXH hàng tháng đối với người chấp hành xong hình phạt tù, người xuất cảnh trái phép trở về nước định cư hợp pháp, người được Tòa án hủy quyết định tuyên bố mất tích\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Cá nhân\"], [\"\", \"13\", \"1.001742\", \"TTHC: Giải quyết chuyển hưởng sang địa bàn khác đối với người đang hưởng lương hưu, trợ cấp BHXH hàng tháng và người chờ hưởng lương hưu, trợ cấp hàng tháng\", \"TTHC: Giải quyết chuyển hưởng sang địa bàn khác đối với người đang hưởng lương hưu, trợ cấp BHXH hàng tháng và người chờ hưởng lương hưu, trợ cấp hàng tháng\", \"TTHC: Giải quyết chuyển hưởng sang địa bàn khác đối với người đang hưởng lương hưu, trợ cấp BHXH hàng tháng và người chờ hưởng lương hưu, trợ cấp hàng tháng\", \"TTHC: Giải quyết chuyển hưởng sang địa bàn khác đối với người đang hưởng lương hưu, trợ cấp BHXH hàng tháng và người chờ hưởng lương hưu, trợ cấp hàng tháng\", \"TTHC: Giải quyết chuyển hưởng sang địa bàn khác đối với người đang hưởng lương hưu, trợ cấp BHXH hàng tháng và người chờ hưởng lương hưu, trợ cấp hàng tháng\"], [\"61\", \"13.1\", \"1.001742.01\", \"Giải quyết chuyển hưởng sang địa bàn khác đối với người đang hưởng lương hưu, trợ cấp BHXH hàng tháng và người chờ hưởng lương hưu, trợ cấp hàng tháng\", \"Giải quyết chuyển hưởng sang địa bàn khác đối với người đang hưởng lương hưu, trợ cấp BHXH hàng tháng và người chờ hưởng lương hưu, trợ cấp hàng tháng\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Cá nhân\"], [\"\", \"14\", \"1.001710\", \"TTHC: Giải quyết điều chỉnh, hủy quyết định, chấm dứt hưởng BHXH\", \"TTHC: Giải quyết điều chỉnh, hủy quyết định, chấm dứt hưởng BHXH\", \"TTHC: Giải quyết điều chỉnh, hủy quyết định, chấm dứt hưởng BHXH\", \"TTHC: Giải quyết điều chỉnh, hủy quyết định, chấm dứt hưởng BHXH\", \"TTHC: Giải quyết điều chỉnh, hủy quyết định, chấm dứt hưởng BHXH\"], [\"62\", \"14.1\", \"1.001710.01\", \"Giải quyết điều chỉnh, hủy quyết định, chấm dứt hưởng BHXH\", \"Giải quyết điều chỉnh, hủy quyết định, chấm dứt hưởng BHXH\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Tổ chức\"], [\"63\", \"14.2\", \"1.001710.02\", \"Giải quyết điều chỉnh, hủy quyết định, chấm dứt hưởng BHXH\", \"Giải quyết điều chỉnh, hủy quyết định, chấm dứt hưởng BHXH\", \"nt\", \"nt\", \"Cá nhân\"], [\"\", \"15\", \"1.001646\", \"TTHC: Giải quyết hưởng trợ cấp đối với nhà giáo đã nghỉ hưu chưa được hưởng chế độ phụ cấp thâm niên trong lương hưu theo Nghị định số 14/2020/NĐ-CP của Chính phủ\", \"TTHC: Giải quyết hưởng trợ cấp đối với nhà giáo đã nghỉ hưu chưa được hưởng chế độ phụ cấp thâm niên trong lương hưu theo Nghị định số 14/2020/NĐ-CP của Chính phủ\", \"TTHC: Giải quyết hưởng trợ cấp đối với nhà giáo đã nghỉ hưu chưa được hưởng chế độ phụ cấp thâm niên trong lương hưu theo Nghị định số 14/2020/NĐ-CP của Chính phủ\", \"TTHC: Giải quyết hưởng trợ cấp đối với nhà giáo đã nghỉ hưu chưa được hưởng chế độ phụ cấp thâm niên trong lương hưu theo Nghị định số 14/2020/NĐ-CP của Chính phủ\", \"TTHC: Giải quyết hưởng trợ cấp đối với nhà giáo đã nghỉ hưu chưa được hưởng chế độ phụ cấp thâm niên trong lương hưu theo Nghị định số 14/2020/NĐ-CP của Chính phủ\"], [\"64\", \"15.1\", \"1.001646.01\", \"Giải quyết hưởng trợ cấp đối với nhà giáo đang hưởng lương hưu nhưng chưa được hưởng chế độ phụ cấp thâm niên trong lương hưu theo Nghị định số 14/2020/NĐ-CP\", \"Giải quyết hưởng trợ cấp đối với nhà giáo đang hưởng lương hưu nhưng chưa được hưởng chế độ phụ cấp thâm niên trong lương hưu theo Nghị định số 14/2020/NĐ-CP\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Cá nhân\"], [\"65\", \"15.2\", \"1.001646.02\", \"Giải quyết hưởng trợ cấp đối với nhà giáo đủ điều kiện hưởng trợ cấp, chưa được giải quyết chế độ mà từ trần từ ngày 01/01/2012 trở về sau theo Nghị định số 14/2020/NĐ-CP\", \"Giải quyết hưởng trợ cấp đối với nhà giáo đủ điều kiện hưởng trợ cấp, chưa được giải quyết chế độ mà từ trần từ ngày 01/01/2012 trở về sau theo Nghị định số 14/2020/NĐ-CP\", \"nt\", \"nt\", \"Cá nhân\"], [\"66\", \"16\", \"1.001978\", \"Chi trả trợ cấp thất nghiệp\", \"Chi trả trợ cấp thất nghiệp\", \"Quyết định số 1433/QĐ- BHXH ngày 18/7/2022\", \"Quyết định số 1433/QĐ- BHXH ngày 18/7/2022\", \"Cá nhân\"], [\"IV\", \"LĨNH VỰC THỰC HIỆN CHÍNH SÁCH BHYT\", \"LĨNH VỰC THỰC HIỆN CHÍNH SÁCH BHYT\", \"LĨNH VỰC THỰC HIỆN CHÍNH SÁCH BHYT\", \"LĨNH VỰC THỰC HIỆN CHÍNH SÁCH BHYT\", \"LĨNH VỰC THỰC HIỆN CHÍNH SÁCH BHYT\", \"LĨNH VỰC THỰC HIỆN CHÍNH SÁCH BHYT\", \"LĨNH VỰC THỰC HIỆN CHÍNH SÁCH BHYT\"], [\"\", \"1\", \"1.001798\", \"TTHC: Ký hợp đồng khám, chữa bệnh bảo hiểm y tế\", \"TTHC: Ký hợp đồng khám, chữa bệnh bảo hiểm y tế\", \"\", \"\", \"\"], [\"67\", \"1.2\", \"1.001798.02\", \"Ký hợp đồng với cơ sở KCB hàng năm\", \"Ký hợp đồng với cơ sở KCB hàng năm\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Tổ chức\"], [\"V\", \"LĨNH VỰC CHI TRẢ CÁC CHẾ ĐỘ BHXH\", \"LĨNH VỰC CHI TRẢ CÁC CHẾ ĐỘ BHXH\", \"LĨNH VỰC CHI TRẢ CÁC CHẾ ĐỘ BHXH\", \"LĨNH VỰC CHI TRẢ CÁC CHẾ ĐỘ BHXH\", \"LĨNH VỰC CHI TRẢ CÁC CHẾ ĐỘ BHXH\", \"LĨNH VỰC CHI TRẢ CÁC CHẾ ĐỘ BHXH\", \"LĨNH VỰC CHI TRẢ CÁC CHẾ ĐỘ BHXH\"], [\"\", \"1\", \"2.00740\", \"TTHC: Người hưởng lĩnh chế độ BHXH bằng tiền mặt chuyển sang lĩnh bằng tài khoản cá nhân và ngược lại, hoặc thay đổi thông tin cá nhân\", \"TTHC: Người hưởng lĩnh chế độ BHXH bằng tiền mặt chuyển sang lĩnh bằng tài khoản cá nhân và ngược lại, hoặc thay đổi thông tin cá nhân\", \"TTHC: Người hưởng lĩnh chế độ BHXH bằng tiền mặt chuyển sang lĩnh bằng tài khoản cá nhân và ngược lại, hoặc thay đổi thông tin cá nhân\", \"TTHC: Người hưởng lĩnh chế độ BHXH bằng tiền mặt chuyển sang lĩnh bằng tài khoản cá nhân và ngược lại, hoặc thay đổi thông tin cá nhân\", \"TTHC: Người hưởng lĩnh chế độ BHXH bằng tiền mặt chuyển sang lĩnh bằng tài khoản cá nhân và ngược lại, hoặc thay đổi thông tin cá nhân\"], [\"68\", \"1.1\", \"2.00740.01\", \"Người hưởng lĩnh chế độ BHXH bằng tiền mặt chuyển sang lĩnh bằng tài khoản cá nhân và ngược lại, hoặc thay đổi thông tin cá nhân\", \"Người hưởng lĩnh chế độ BHXH bằng tiền mặt chuyển sang lĩnh bằng tài khoản cá nhân và ngược lại, hoặc thay đổi thông tin cá nhân\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Quyết định số 896/QĐ-BHXH ngày 16/9/2021\", \"Cá nhân\"], [\"VI\", \"NHÓM DỊCH VỤ CÔNG LIÊN THÔNG\", \"NHÓM DỊCH VỤ CÔNG LIÊN THÔNG\", \"NHÓM DỊCH VỤ CÔNG LIÊN THÔNG\", \"NHÓM DỊCH VỤ CÔNG LIÊN THÔNG\", \"NHÓM DỊCH VỤ CÔNG LIÊN THÔNG\", \"NHÓM DỊCH VỤ CÔNG LIÊN THÔNG\", \"NHÓM DỊCH VỤ CÔNG LIÊN THÔNG\"], [\"69\", \"1\", \"2.000986\", \"DVC liên thông: Đăng ký khai sinh - Đăng ký thường trú - Cấp thẻ BHYT cho trẻ em dưới 6 tuổi trên Cổng dịch vụ công quốc gia\", \"DVC liên thông: Đăng ký khai sinh - Đăng ký thường trú - Cấp thẻ BHYT cho trẻ em dưới 6 tuổi trên Cổng dịch vụ công quốc gia\", \"Công văn số 2084/VPCP- KSTT ngày 30/3/2023\", \"Công văn số 2084/VPCP- KSTT ngày 30/3/2023\", \"Cá nhân\"], [\"70\", \"2\", \"1.011027\", \"DVC liên thông: Đăng ký khai tử - xóa đăng ký thường trú - trợ cấp mai táng phí trên Cổng dịch vụ công quốc gia\", \"DVC liên thông: Đăng ký khai tử - xóa đăng ký thường trú - trợ cấp mai táng phí trên Cổng dịch vụ công quốc gia\", \"Công văn số 2084/VPCP- KSTT ngày 30/3/2023\", \"Công văn số 2084/VPCP- KSTT ngày 30/3/2023\", \"Cá nhân/Tổ chức\"], [\"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\"]]"
       }
     ],
     "LegalConcept": [
@@ -22246,6 +23190,24 @@
         "code": "09/1998/NĐ-CP",
         "title": "Nghị định",
         "target_law": null
+      },
+      {
+        "id": "ext:11/2016/NĐ-CP",
+        "code": "11/2016/NĐ-CP",
+        "title": "Nghị định",
+        "target_law": null
+      },
+      {
+        "id": "ext:115/2015/NĐ-CP",
+        "code": "115/2015/NĐ-CP",
+        "title": "Luật",
+        "target_law": null
+      },
+      {
+        "id": "ext:37/2016/NĐ-CP",
+        "code": "37/2016/NĐ-CP",
+        "title": "Nghị định",
+        "target_law": null
       }
     ],
     "Subject": [
@@ -22354,7 +23316,25 @@
           "L41_2024.A127.K2",
           "L41_2024.A135.K4",
           "L41_2024.A139.K1.b",
-          "L41_2024.A139.K1.e"
+          "L41_2024.A139.K1.e",
+          "ND143_2018.A2.K1",
+          "ND143_2018.A2.K2",
+          "ND143_2018.A2.K4",
+          "ND143_2018.A5.K1",
+          "ND143_2018.A5.K2",
+          "ND143_2018.A8.K9",
+          "ND143_2018.A8.K10",
+          "ND143_2018.A9.K1",
+          "ND143_2018.A9.K6",
+          "ND143_2018.A9.K9",
+          "ND143_2018.A11.K2",
+          "ND143_2018.A12.K1",
+          "ND143_2018.A12.K2",
+          "ND143_2018.A15.K1",
+          "ND143_2018.A15.K2",
+          "ND143_2018.A15.K3",
+          "ND143_2018.A16.K1",
+          "ND143_2018.A16.K2"
         ],
         "name": "Người lao động",
         "type": "group"
@@ -22399,7 +23379,10 @@
           "L41_2024.A125.K1",
           "L41_2024.A127.K2",
           "L41_2024.A135.K4",
-          "L41_2024.A139.K1.b"
+          "L41_2024.A139.K1.b",
+          "ND143_2018.A13.K1",
+          "ND143_2018.A13.K2",
+          "ND143_2018.A13.K4"
         ],
         "name": "Người sử dụng lao động",
         "type": "group"
@@ -22586,7 +23569,10 @@
           "L41_2024.A61.K6",
           "L41_2024.A61.K7",
           "L41_2024.A94.K1.a",
-          "L41_2024.A95.K1"
+          "L41_2024.A95.K1",
+          "ND143_2018.A7.K3.a",
+          "ND143_2018.A7.K4",
+          "ND143_2018.A7.K5"
         ],
         "name": "Lao động nữ",
         "type": "group"
@@ -22707,7 +23693,8 @@
           "L41_2024.A76.K2",
           "L41_2024.A82.K1",
           "L41_2024.A115.K1",
-          "L41_2024.A115.K2"
+          "L41_2024.A115.K2",
+          "ND143_2018.A11.K1"
         ],
         "name": "Người đang hưởng lương hưu",
         "type": "individual"
@@ -22751,7 +23738,8 @@
           "L41_2024.A110.K4",
           "L41_2024.A112.K1.a",
           "L41_2024.A112.K1.b",
-          "L41_2024.A112.K2.a"
+          "L41_2024.A112.K2.a",
+          "ND143_2018.A10.K3.b"
         ],
         "name": "Thân nhân",
         "type": "group"
@@ -22840,7 +23828,8 @@
         "mentioned_in": [
           "L41_2024.A134.K2",
           "L41_2024.A134.K3",
-          "L41_2024.A134.K5"
+          "L41_2024.A134.K5",
+          "ND143_2018.A18.K1"
         ],
         "name": "Bộ Lao động - Thương binh và Xã hội",
         "type": "organization"
@@ -22868,7 +23857,8 @@
       {
         "id": "subject:bao-hiem-xa-hoi-viet-nam",
         "mentioned_in": [
-          "L41_2024.A134.K5"
+          "L41_2024.A134.K5",
+          "ND143_2018.A18.K2"
         ],
         "name": "Bảo hiểm xã hội Việt Nam",
         "type": "organization"
@@ -22890,6 +23880,47 @@
         ],
         "name": "Bộ Lao động - Thương binh và Xã hội",
         "type": "organization"
+      },
+      {
+        "id": "subject:bo-y-te",
+        "mentioned_in": [
+          "ND143_2018.A18.K3"
+        ],
+        "name": "Bộ Y tế",
+        "type": "organization"
+      },
+      {
+        "id": "subject:bo-truong",
+        "mentioned_in": [
+          "ND143_2018.A18.K1",
+          "ND143_2018.A18.K3"
+        ],
+        "name": "Bộ trưởng",
+        "type": "role"
+      },
+      {
+        "id": "subject:thu-truong-co-quan-ngang-bo",
+        "mentioned_in": [
+          "ND143_2018.A18.K4"
+        ],
+        "name": "Thủ trưởng cơ quan ngang bộ",
+        "type": "role"
+      },
+      {
+        "id": "subject:thu-truong-co-quan-thuoc-chinh-phu",
+        "mentioned_in": [
+          "ND143_2018.A18.K4"
+        ],
+        "name": "Thủ trưởng cơ quan thuộc Chính phủ",
+        "type": "role"
+      },
+      {
+        "id": "subject:chu-tich-uy-ban-nhan-dan",
+        "mentioned_in": [
+          "ND143_2018.A18.K4"
+        ],
+        "name": "Chủ tịch Ủy ban nhân dân",
+        "type": "role"
       }
     ],
     "Condition": [
@@ -22906,7 +23937,8 @@
           "L41_2024.A65.K1.a",
           "L41_2024.A65.K1.b",
           "L41_2024.A65.K2.a",
-          "L41_2024.A102.K1.a"
+          "L41_2024.A102.K1.a",
+          "ND143_2018.A2.K2.b"
         ],
         "description": "Có tuổi thấp hơn tối đa 05 tuổi so với tuổi quy định tại điểm a khoản 1 Điều 64"
       },
@@ -23095,7 +24127,8 @@
         "id": "condition:du-tuoi-huong-luong-huu",
         "mentioned_in": [
           "L41_2024.A70.K1.a",
-          "L41_2024.A70.K2.a"
+          "L41_2024.A70.K2.a",
+          "ND143_2018.A9.K6.a"
         ],
         "description": "Đủ tuổi hưởng lương hưu mà chưa đủ 15 năm đóng bảo hiểm xã hội."
       },
@@ -23133,14 +24166,16 @@
       {
         "id": "condition:khong-tiep-tuc-cu-tru-tai-vn",
         "mentioned_in": [
-          "L41_2024.A70.K2.d"
+          "L41_2024.A70.K2.d",
+          "ND143_2018.A9.K6.c"
         ],
         "description": "Không tiếp tục cư trú tại Việt Nam."
       },
       {
         "id": "condition:cham-dut-hop-dong-lao-dong",
         "mentioned_in": [
-          "L41_2024.A70.K2.đ"
+          "L41_2024.A70.K2.đ",
+          "ND143_2018.A9.K6.d"
         ],
         "description": "Chấm dứt hợp đồng lao động hoặc giấy phép lao động, chứng chỉ hành nghề, giấy phép hành nghề hết hiệu lực mà không được gia hạn."
       },
@@ -23264,6 +24299,27 @@
           "L41_2024.A111.K1.c"
         ],
         "description": "Có từ đủ 12 tháng đóng bảo hiểm xã hội bắt buộc trở lên"
+      },
+      {
+        "id": "condition:thoi-gian-huong-chinh-sach",
+        "mentioned_in": [
+          "ND143_2018.A7.K2"
+        ],
+        "description": "Thời gian hưởng chế độ thai sản"
+      },
+      {
+        "id": "condition:du-20-nam-dong-bhxh",
+        "mentioned_in": [
+          "ND143_2018.A9.K6.a"
+        ],
+        "description": "Chưa đủ 20 năm đóng bảo hiểm xã hội"
+      },
+      {
+        "id": "condition:khong-huong-tien-luong",
+        "mentioned_in": [
+          "ND143_2018.A12.K2"
+        ],
+        "description": "Không làm việc và không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng"
       }
     ],
     "Benefit": [
@@ -23313,7 +24369,8 @@
           "L41_2024.A79.K1",
           "L41_2024.A79.K3",
           "L41_2024.A102.K5",
-          "L41_2024.A111.K1.a"
+          "L41_2024.A111.K1.a",
+          "ND143_2018.A5.K1"
         ],
         "name": "Hưu trí",
         "category": "khac"
@@ -23326,7 +24383,8 @@
           "L41_2024.A42.K2",
           "L41_2024.A43.K1",
           "L41_2024.A43.K2",
-          "L41_2024.A43.K3"
+          "L41_2024.A43.K3",
+          "ND143_2018.A5.K1"
         ],
         "name": "Ốm đau",
         "category": "khac"
@@ -23339,7 +24397,8 @@
           "L41_2024.A54.K1",
           "L41_2024.A54.K2",
           "L41_2024.A54.K3",
-          "L41_2024.A54.K4"
+          "L41_2024.A54.K4",
+          "ND143_2018.A5.K1"
         ],
         "name": "Thai sản",
         "category": "khac"
@@ -23356,7 +24415,8 @@
           "L41_2024.A33.K4.a",
           "L41_2024.A33.K7",
           "L41_2024.A112.K1.a",
-          "L41_2024.A112.K1.b"
+          "L41_2024.A112.K1.b",
+          "ND143_2018.A5.K1"
         ],
         "name": "Tử tuất",
         "category": "khac"
@@ -23455,7 +24515,11 @@
           "L41_2024.A47.K2",
           "L41_2024.A47.K3",
           "L41_2024.A48.K2",
-          "L41_2024.A119.K2.đ"
+          "L41_2024.A119.K2.đ",
+          "ND143_2018.A6.K1",
+          "ND143_2018.A6.K2",
+          "ND143_2018.A6.K3",
+          "ND143_2018.A6.K4"
         ],
         "name": "Chế độ khi chăm sóc con ốm đau",
         "category": "om_dau"
@@ -23504,7 +24568,8 @@
           "L41_2024.A94.K5",
           "L41_2024.A94.K6",
           "L41_2024.A95.K1",
-          "L41_2024.A119.K2.c"
+          "L41_2024.A119.K2.c",
+          "ND143_2018.A7.K3.a"
         ],
         "name": "Chế độ thai sản",
         "category": "khac"
@@ -23538,7 +24603,9 @@
           "L41_2024.A76.K3",
           "L41_2024.A100.K1",
           "L41_2024.A100.K2",
-          "L41_2024.A115.K1"
+          "L41_2024.A115.K1",
+          "ND143_2018.A11.K1",
+          "ND143_2018.A16.K1"
         ],
         "name": "trợ cấp một lần",
         "category": "khac"
@@ -23577,7 +24644,10 @@
           "L41_2024.A101.K2",
           "L41_2024.A101.K3",
           "L41_2024.A107.K1",
-          "L41_2024.A119.K2.a"
+          "L41_2024.A119.K2.a",
+          "ND143_2018.A9.K1",
+          "ND143_2018.A9.K5",
+          "ND143_2018.A9.K10"
         ],
         "name": "Lương hưu",
         "category": "huu_tri"
@@ -23594,7 +24664,9 @@
           "L41_2024.A78.K1",
           "L41_2024.A102.K1",
           "L41_2024.A102.K5",
-          "L41_2024.A107.K2"
+          "L41_2024.A107.K2",
+          "ND143_2018.A9.K6",
+          "ND143_2018.A9.K7"
         ],
         "name": "Bảo hiểm xã hội một lần",
         "category": "khac"
@@ -23625,7 +24697,8 @@
       {
         "id": "benefit:tro-cap-bao-hiem-xa-hoi",
         "mentioned_in": [
-          "L41_2024.A81.K1"
+          "L41_2024.A81.K1",
+          "ND143_2018.A9.K10"
         ],
         "name": "trợ cấp bảo hiểm xã hội hằng tháng",
         "category": "khac"
@@ -23639,7 +24712,8 @@
           "L41_2024.A109.K1",
           "L41_2024.A109.K3",
           "L41_2024.A111.K1.c",
-          "L41_2024.A112.K1.c"
+          "L41_2024.A112.K1.c",
+          "ND143_2018.A10.K1"
         ],
         "name": "trợ cấp mai táng",
         "category": "khac"
@@ -23662,7 +24736,8 @@
         "mentioned_in": [
           "L41_2024.A87.K1",
           "L41_2024.A87.K2",
-          "L41_2024.A87.K3"
+          "L41_2024.A87.K3",
+          "ND143_2018.A10.K2"
         ],
         "name": "Trợ cấp tuất hằng tháng",
         "category": "tu_tuat"
@@ -23673,7 +24748,10 @@
           "L41_2024.A90.K2",
           "L41_2024.A119.K2.b",
           "L41_2024.A139.K1.d",
-          "L41_2024.A139.K1.đ"
+          "L41_2024.A139.K1.đ",
+          "ND143_2018.A8.K3",
+          "ND143_2018.A8.K7",
+          "ND143_2018.A8.K10"
         ],
         "name": "Trợ cấp tai nạn lao động",
         "category": "khac"
@@ -23684,7 +24762,8 @@
           "L41_2024.A110.K1",
           "L41_2024.A110.K2",
           "L41_2024.A110.K3",
-          "L41_2024.A110.K4"
+          "L41_2024.A110.K4",
+          "ND143_2018.A10.K3"
         ],
         "name": "Trợ cấp tuất một lần",
         "category": "khac"
@@ -23712,6 +24791,56 @@
         ],
         "name": "Chế độ tử tuất",
         "category": "khac"
+      },
+      {
+        "id": "benefit:tai-nan-lao-dong",
+        "mentioned_in": [
+          "ND143_2018.A5.K1"
+        ],
+        "name": "bảo hiểm tai nạn lao động, bệnh nghề nghiệp",
+        "category": "khac"
+      },
+      {
+        "id": "benefit:tro-cap-benh-nghe-nghiep",
+        "mentioned_in": [
+          "ND143_2018.A8.K3",
+          "ND143_2018.A8.K7",
+          "ND143_2018.A8.K10"
+        ],
+        "name": "Trợ cấp bệnh nghề nghiệp",
+        "category": "khac"
+      },
+      {
+        "id": "benefit:quy-om-dau-va-thai-san",
+        "mentioned_in": [
+          "ND143_2018.A13.K1.a"
+        ],
+        "name": "quỹ ốm đau và thai sản",
+        "category": "khac"
+      },
+      {
+        "id": "benefit:quy-bao-hiem-tai-nan-lao-dong-benh-nghe-nghiep",
+        "mentioned_in": [
+          "ND143_2018.A13.K1.b"
+        ],
+        "name": "quỹ bảo hiểm tai nạn lao động, bệnh nghề nghiệp",
+        "category": "khac"
+      },
+      {
+        "id": "benefit:quy-huu-tri-va-tu-tuat",
+        "mentioned_in": [
+          "ND143_2018.A13.K1.c"
+        ],
+        "name": "quỹ hưu trí và tử tuất",
+        "category": "khac"
+      },
+      {
+        "id": "benefit:tro-cap-xa-hoi",
+        "mentioned_in": [
+          "ND143_2018.A15.K3"
+        ],
+        "name": "Bảo hiểm xã hội một lần",
+        "category": "khac"
       }
     ],
     "Obligation": [
@@ -23732,9 +24861,12 @@
       {
         "id": "oblig:dong-bao-hiem-xa-hoi",
         "mentioned_in": [
-          "L41_2024.A11.K1.a"
+          "L41_2024.A11.K1.a",
+          "ND143_2018.A12.K1",
+          "ND143_2018.A13.K1",
+          "ND143_2018.A13.K4"
         ],
-        "description": "Đóng bảo hiểm xã hội theo quy định của Luật này"
+        "description": "Đóng bằng 8% mức tiền lương tháng vào quỹ hưu trí và tử tuất"
       },
       {
         "id": "oblig:theo-doi-trach-nhiem-bao-hiem-xa-hoi",
@@ -23796,7 +24928,9 @@
           "L41_2024.A39.K1",
           "L41_2024.A50.K2",
           "L41_2024.A50.K3",
-          "L41_2024.A53.K1"
+          "L41_2024.A53.K1",
+          "ND143_2018.A2.K1",
+          "ND143_2018.A2.K3"
         ],
         "description": "Đóng bảo hiểm xã hội bắt buộc cho người lao động theo quy định tại Điều 34 của Luật này."
       },
@@ -24275,6 +25409,41 @@
           "L41_2024.A138.K2.đ"
         ],
         "description": "Kiến nghị với cơ quan nhà nước có thẩm quyền sửa đổi, bổ sung chính sách, pháp luật về bảo hiểm xã hội"
+      },
+      {
+        "id": "oblig:chiu-trach-nhiem-giai-quyet",
+        "mentioned_in": [
+          "ND143_2018.A15.K3"
+        ],
+        "description": "Cơ quan bảo hiểm xã hội có trách nhiệm giải quyết và tổ chức chi trả cho người lao động"
+      },
+      {
+        "id": "oblig:gia-quyet-don-de-nghi",
+        "mentioned_in": [
+          "ND143_2018.A16.K2"
+        ],
+        "description": "cơ quan bảo hiểm xã hội có trách nhiệm giải quyết cho người lao động"
+      },
+      {
+        "id": "oblig:to-chuc-trien-khai-giam-sat-thi-hanh",
+        "mentioned_in": [
+          "ND143_2018.A18.K1"
+        ],
+        "description": "có trách nhiệm tổ chức triển khai, giám sát thi hành Nghị định này"
+      },
+      {
+        "id": "oblig:ra-soat-ban-hanh-mau-bieu",
+        "mentioned_in": [
+          "ND143_2018.A18.K2"
+        ],
+        "description": "có trách nhiệm rà soát, ban hành mẫu, biểu tham gia, giải quyết chế độ bảo hiểm xã hội"
+      },
+      {
+        "id": "oblig:ra-soat-ban-hanh-mau-cap-giay-ra-vien",
+        "mentioned_in": [
+          "ND143_2018.A18.K3"
+        ],
+        "description": "có trách nhiệm rà soát, ban hành mẫu cấp giấy ra viện, trích sao hồ sơ bệnh án, giấy chứng nhận nghỉ việc, giấy chứng nhận nghỉ dưỡng thai, giấy chứng nhận không đủ sức khỏe chăm sóc con sau sinh, khám giám định mức suy giảm khả năng lao động"
       }
     ],
     "Fund": [
@@ -24308,7 +25477,8 @@
           "L41_2024.A32.K2",
           "L41_2024.A34.K1.b",
           "L41_2024.A34.K2",
-          "L41_2024.A118.K1.b"
+          "L41_2024.A118.K1.b",
+          "ND143_2018.A12.K1"
         ],
         "name": "Quỹ hưu trí và tử tuất"
       },
@@ -24424,7 +25594,9 @@
           "L41_2024.A112.K2.b",
           "L41_2024.A113.K1",
           "L41_2024.A115.K1",
-          "L41_2024.A115.K2"
+          "L41_2024.A115.K2",
+          "ND143_2018.A16.K1",
+          "ND143_2018.A16.K2"
         ],
         "name": "Cơ quan bảo hiểm xã hội",
         "type": "social_insurance_agency"
@@ -24541,7 +25713,8 @@
           "L41_2024.A130.K4.a",
           "L41_2024.A130.K4.b",
           "L41_2024.A130.K5.a",
-          "L41_2024.A130.K5.b"
+          "L41_2024.A130.K5.b",
+          "ND143_2018.A15.K3"
         ],
         "name": "Cơ quan bảo hiểm xã hội",
         "type": "social_insurance_agency"
@@ -24915,6 +26088,30 @@
       {
         "src": "L41_2024",
         "dst": "L41_2024.C11"
+      },
+      {
+        "src": "ND143_2018",
+        "dst": "ND143_2018.C1"
+      },
+      {
+        "src": "ND143_2018",
+        "dst": "ND143_2018.C2"
+      },
+      {
+        "src": "ND143_2018",
+        "dst": "ND143_2018.C3"
+      },
+      {
+        "src": "ND143_2018",
+        "dst": "ND143_2018.C4"
+      },
+      {
+        "src": "ND143_2018",
+        "dst": "ND143_2018.C5"
+      },
+      {
+        "src": "QD838_BHXH",
+        "dst": "QD838_BHXH.C1"
       }
     ],
     "HAS_ARTICLE": [
@@ -26861,6 +28058,90 @@
       {
         "src": "L41_2024.C11",
         "dst": "L41_2024.A141"
+      },
+      {
+        "src": "ND143_2018.C1",
+        "dst": "ND143_2018.A1"
+      },
+      {
+        "src": "ND143_2018.C1",
+        "dst": "ND143_2018.A2"
+      },
+      {
+        "src": "ND143_2018.C1",
+        "dst": "ND143_2018.A3"
+      },
+      {
+        "src": "ND143_2018.C1",
+        "dst": "ND143_2018.A4"
+      },
+      {
+        "src": "ND143_2018.C2",
+        "dst": "ND143_2018.A5"
+      },
+      {
+        "src": "ND143_2018.C2",
+        "dst": "ND143_2018.A6"
+      },
+      {
+        "src": "ND143_2018.C2",
+        "dst": "ND143_2018.A7"
+      },
+      {
+        "src": "ND143_2018.C2",
+        "dst": "ND143_2018.A8"
+      },
+      {
+        "src": "ND143_2018.C2",
+        "dst": "ND143_2018.A9"
+      },
+      {
+        "src": "ND143_2018.C2",
+        "dst": "ND143_2018.A10"
+      },
+      {
+        "src": "ND143_2018.C2",
+        "dst": "ND143_2018.A11"
+      },
+      {
+        "src": "ND143_2018.C3",
+        "dst": "ND143_2018.A12"
+      },
+      {
+        "src": "ND143_2018.C3",
+        "dst": "ND143_2018.A13"
+      },
+      {
+        "src": "ND143_2018.C3",
+        "dst": "ND143_2018.A14"
+      },
+      {
+        "src": "ND143_2018.C4",
+        "dst": "ND143_2018.A15"
+      },
+      {
+        "src": "ND143_2018.C4",
+        "dst": "ND143_2018.A16"
+      },
+      {
+        "src": "ND143_2018.C5",
+        "dst": "ND143_2018.A17"
+      },
+      {
+        "src": "ND143_2018.C5",
+        "dst": "ND143_2018.A18"
+      },
+      {
+        "src": "QD838_BHXH.C1",
+        "dst": "QD838_BHXH.A1"
+      },
+      {
+        "src": "QD838_BHXH.C1",
+        "dst": "QD838_BHXH.A2"
+      },
+      {
+        "src": "QD838_BHXH.C1",
+        "dst": "QD838_BHXH.A3"
       }
     ],
     "BELONGS_TO": [
@@ -28807,6 +30088,90 @@
       {
         "src": "L41_2024.A141",
         "dst": "L41_2024"
+      },
+      {
+        "src": "ND143_2018.A1",
+        "dst": "ND143_2018"
+      },
+      {
+        "src": "ND143_2018.A2",
+        "dst": "ND143_2018"
+      },
+      {
+        "src": "ND143_2018.A3",
+        "dst": "ND143_2018"
+      },
+      {
+        "src": "ND143_2018.A4",
+        "dst": "ND143_2018"
+      },
+      {
+        "src": "ND143_2018.A5",
+        "dst": "ND143_2018"
+      },
+      {
+        "src": "ND143_2018.A6",
+        "dst": "ND143_2018"
+      },
+      {
+        "src": "ND143_2018.A7",
+        "dst": "ND143_2018"
+      },
+      {
+        "src": "ND143_2018.A8",
+        "dst": "ND143_2018"
+      },
+      {
+        "src": "ND143_2018.A9",
+        "dst": "ND143_2018"
+      },
+      {
+        "src": "ND143_2018.A10",
+        "dst": "ND143_2018"
+      },
+      {
+        "src": "ND143_2018.A11",
+        "dst": "ND143_2018"
+      },
+      {
+        "src": "ND143_2018.A12",
+        "dst": "ND143_2018"
+      },
+      {
+        "src": "ND143_2018.A13",
+        "dst": "ND143_2018"
+      },
+      {
+        "src": "ND143_2018.A14",
+        "dst": "ND143_2018"
+      },
+      {
+        "src": "ND143_2018.A15",
+        "dst": "ND143_2018"
+      },
+      {
+        "src": "ND143_2018.A16",
+        "dst": "ND143_2018"
+      },
+      {
+        "src": "ND143_2018.A17",
+        "dst": "ND143_2018"
+      },
+      {
+        "src": "ND143_2018.A18",
+        "dst": "ND143_2018"
+      },
+      {
+        "src": "QD838_BHXH.A1",
+        "dst": "QD838_BHXH"
+      },
+      {
+        "src": "QD838_BHXH.A2",
+        "dst": "QD838_BHXH"
+      },
+      {
+        "src": "QD838_BHXH.A3",
+        "dst": "QD838_BHXH"
       }
     ],
     "NEXT": [
@@ -30741,6 +32106,82 @@
       {
         "src": "L41_2024.A140",
         "dst": "L41_2024.A141"
+      },
+      {
+        "src": "ND143_2018.A1",
+        "dst": "ND143_2018.A2"
+      },
+      {
+        "src": "ND143_2018.A2",
+        "dst": "ND143_2018.A3"
+      },
+      {
+        "src": "ND143_2018.A3",
+        "dst": "ND143_2018.A4"
+      },
+      {
+        "src": "ND143_2018.A4",
+        "dst": "ND143_2018.A5"
+      },
+      {
+        "src": "ND143_2018.A5",
+        "dst": "ND143_2018.A6"
+      },
+      {
+        "src": "ND143_2018.A6",
+        "dst": "ND143_2018.A7"
+      },
+      {
+        "src": "ND143_2018.A7",
+        "dst": "ND143_2018.A8"
+      },
+      {
+        "src": "ND143_2018.A8",
+        "dst": "ND143_2018.A9"
+      },
+      {
+        "src": "ND143_2018.A9",
+        "dst": "ND143_2018.A10"
+      },
+      {
+        "src": "ND143_2018.A10",
+        "dst": "ND143_2018.A11"
+      },
+      {
+        "src": "ND143_2018.A11",
+        "dst": "ND143_2018.A12"
+      },
+      {
+        "src": "ND143_2018.A12",
+        "dst": "ND143_2018.A13"
+      },
+      {
+        "src": "ND143_2018.A13",
+        "dst": "ND143_2018.A14"
+      },
+      {
+        "src": "ND143_2018.A14",
+        "dst": "ND143_2018.A15"
+      },
+      {
+        "src": "ND143_2018.A15",
+        "dst": "ND143_2018.A16"
+      },
+      {
+        "src": "ND143_2018.A16",
+        "dst": "ND143_2018.A17"
+      },
+      {
+        "src": "ND143_2018.A17",
+        "dst": "ND143_2018.A18"
+      },
+      {
+        "src": "QD838_BHXH.A1",
+        "dst": "QD838_BHXH.A2"
+      },
+      {
+        "src": "QD838_BHXH.A2",
+        "dst": "QD838_BHXH.A3"
       }
     ],
     "HAS_CLAUSE": [
@@ -37083,6 +38524,246 @@
       {
         "src": "L41_2024.A141",
         "dst": "L41_2024.A141.K15"
+      },
+      {
+        "src": "ND143_2018.A2",
+        "dst": "ND143_2018.A2.K1"
+      },
+      {
+        "src": "ND143_2018.A2",
+        "dst": "ND143_2018.A2.K2"
+      },
+      {
+        "src": "ND143_2018.A2",
+        "dst": "ND143_2018.A2.K3"
+      },
+      {
+        "src": "ND143_2018.A2",
+        "dst": "ND143_2018.A2.K4"
+      },
+      {
+        "src": "ND143_2018.A5",
+        "dst": "ND143_2018.A5.K1"
+      },
+      {
+        "src": "ND143_2018.A5",
+        "dst": "ND143_2018.A5.K2"
+      },
+      {
+        "src": "ND143_2018.A6",
+        "dst": "ND143_2018.A6.K1"
+      },
+      {
+        "src": "ND143_2018.A6",
+        "dst": "ND143_2018.A6.K2"
+      },
+      {
+        "src": "ND143_2018.A6",
+        "dst": "ND143_2018.A6.K3"
+      },
+      {
+        "src": "ND143_2018.A6",
+        "dst": "ND143_2018.A6.K4"
+      },
+      {
+        "src": "ND143_2018.A7",
+        "dst": "ND143_2018.A7.K1"
+      },
+      {
+        "src": "ND143_2018.A7",
+        "dst": "ND143_2018.A7.K2"
+      },
+      {
+        "src": "ND143_2018.A7",
+        "dst": "ND143_2018.A7.K3"
+      },
+      {
+        "src": "ND143_2018.A7",
+        "dst": "ND143_2018.A7.K4"
+      },
+      {
+        "src": "ND143_2018.A7",
+        "dst": "ND143_2018.A7.K5"
+      },
+      {
+        "src": "ND143_2018.A7",
+        "dst": "ND143_2018.A7.K6"
+      },
+      {
+        "src": "ND143_2018.A8",
+        "dst": "ND143_2018.A8.K1"
+      },
+      {
+        "src": "ND143_2018.A8",
+        "dst": "ND143_2018.A8.K2"
+      },
+      {
+        "src": "ND143_2018.A8",
+        "dst": "ND143_2018.A8.K3"
+      },
+      {
+        "src": "ND143_2018.A8",
+        "dst": "ND143_2018.A8.K4"
+      },
+      {
+        "src": "ND143_2018.A8",
+        "dst": "ND143_2018.A8.K5"
+      },
+      {
+        "src": "ND143_2018.A8",
+        "dst": "ND143_2018.A8.K6"
+      },
+      {
+        "src": "ND143_2018.A8",
+        "dst": "ND143_2018.A8.K7"
+      },
+      {
+        "src": "ND143_2018.A8",
+        "dst": "ND143_2018.A8.K8"
+      },
+      {
+        "src": "ND143_2018.A8",
+        "dst": "ND143_2018.A8.K9"
+      },
+      {
+        "src": "ND143_2018.A8",
+        "dst": "ND143_2018.A8.K10"
+      },
+      {
+        "src": "ND143_2018.A8",
+        "dst": "ND143_2018.A8.K11"
+      },
+      {
+        "src": "ND143_2018.A9",
+        "dst": "ND143_2018.A9.K1"
+      },
+      {
+        "src": "ND143_2018.A9",
+        "dst": "ND143_2018.A9.K2"
+      },
+      {
+        "src": "ND143_2018.A9",
+        "dst": "ND143_2018.A9.K3"
+      },
+      {
+        "src": "ND143_2018.A9",
+        "dst": "ND143_2018.A9.K4"
+      },
+      {
+        "src": "ND143_2018.A9",
+        "dst": "ND143_2018.A9.K5"
+      },
+      {
+        "src": "ND143_2018.A9",
+        "dst": "ND143_2018.A9.K6"
+      },
+      {
+        "src": "ND143_2018.A9",
+        "dst": "ND143_2018.A9.K7"
+      },
+      {
+        "src": "ND143_2018.A9",
+        "dst": "ND143_2018.A9.K8"
+      },
+      {
+        "src": "ND143_2018.A9",
+        "dst": "ND143_2018.A9.K9"
+      },
+      {
+        "src": "ND143_2018.A9",
+        "dst": "ND143_2018.A9.K10"
+      },
+      {
+        "src": "ND143_2018.A10",
+        "dst": "ND143_2018.A10.K1"
+      },
+      {
+        "src": "ND143_2018.A10",
+        "dst": "ND143_2018.A10.K2"
+      },
+      {
+        "src": "ND143_2018.A10",
+        "dst": "ND143_2018.A10.K3"
+      },
+      {
+        "src": "ND143_2018.A11",
+        "dst": "ND143_2018.A11.K1"
+      },
+      {
+        "src": "ND143_2018.A11",
+        "dst": "ND143_2018.A11.K2"
+      },
+      {
+        "src": "ND143_2018.A12",
+        "dst": "ND143_2018.A12.K1"
+      },
+      {
+        "src": "ND143_2018.A12",
+        "dst": "ND143_2018.A12.K2"
+      },
+      {
+        "src": "ND143_2018.A13",
+        "dst": "ND143_2018.A13.K1"
+      },
+      {
+        "src": "ND143_2018.A13",
+        "dst": "ND143_2018.A13.K2"
+      },
+      {
+        "src": "ND143_2018.A13",
+        "dst": "ND143_2018.A13.K3"
+      },
+      {
+        "src": "ND143_2018.A13",
+        "dst": "ND143_2018.A13.K4"
+      },
+      {
+        "src": "ND143_2018.A15",
+        "dst": "ND143_2018.A15.K1"
+      },
+      {
+        "src": "ND143_2018.A15",
+        "dst": "ND143_2018.A15.K2"
+      },
+      {
+        "src": "ND143_2018.A15",
+        "dst": "ND143_2018.A15.K3"
+      },
+      {
+        "src": "ND143_2018.A16",
+        "dst": "ND143_2018.A16.K1"
+      },
+      {
+        "src": "ND143_2018.A16",
+        "dst": "ND143_2018.A16.K2"
+      },
+      {
+        "src": "ND143_2018.A17",
+        "dst": "ND143_2018.A17.K1"
+      },
+      {
+        "src": "ND143_2018.A17",
+        "dst": "ND143_2018.A17.K2"
+      },
+      {
+        "src": "ND143_2018.A17",
+        "dst": "ND143_2018.A17.K3"
+      },
+      {
+        "src": "ND143_2018.A18",
+        "dst": "ND143_2018.A18.K1"
+      },
+      {
+        "src": "ND143_2018.A18",
+        "dst": "ND143_2018.A18.K2"
+      },
+      {
+        "src": "ND143_2018.A18",
+        "dst": "ND143_2018.A18.K3"
+      },
+      {
+        "src": "ND143_2018.A18",
+        "dst": "ND143_2018.A18.K4"
       }
     ],
     "HAS_POINT": [
@@ -40401,6 +42082,138 @@
       {
         "src": "L41_2024.A139.K1",
         "dst": "L41_2024.A139.K1.e"
+      },
+      {
+        "src": "ND143_2018.A2.K2",
+        "dst": "ND143_2018.A2.K2.a"
+      },
+      {
+        "src": "ND143_2018.A2.K2",
+        "dst": "ND143_2018.A2.K2.b"
+      },
+      {
+        "src": "ND143_2018.A6.K2",
+        "dst": "ND143_2018.A6.K2.a"
+      },
+      {
+        "src": "ND143_2018.A6.K2",
+        "dst": "ND143_2018.A6.K2.b"
+      },
+      {
+        "src": "ND143_2018.A7.K2",
+        "dst": "ND143_2018.A7.K2.a"
+      },
+      {
+        "src": "ND143_2018.A7.K2",
+        "dst": "ND143_2018.A7.K2.b"
+      },
+      {
+        "src": "ND143_2018.A7.K2",
+        "dst": "ND143_2018.A7.K2.c"
+      },
+      {
+        "src": "ND143_2018.A7.K2",
+        "dst": "ND143_2018.A7.K2.d"
+      },
+      {
+        "src": "ND143_2018.A7.K2",
+        "dst": "ND143_2018.A7.K2.đ"
+      },
+      {
+        "src": "ND143_2018.A7.K3",
+        "dst": "ND143_2018.A7.K3.a"
+      },
+      {
+        "src": "ND143_2018.A7.K3",
+        "dst": "ND143_2018.A7.K3.b"
+      },
+      {
+        "src": "ND143_2018.A8.K1",
+        "dst": "ND143_2018.A8.K1.a"
+      },
+      {
+        "src": "ND143_2018.A8.K1",
+        "dst": "ND143_2018.A8.K1.b"
+      },
+      {
+        "src": "ND143_2018.A8.K3",
+        "dst": "ND143_2018.A8.K3.a"
+      },
+      {
+        "src": "ND143_2018.A8.K3",
+        "dst": "ND143_2018.A8.K3.b"
+      },
+      {
+        "src": "ND143_2018.A9.K2",
+        "dst": "ND143_2018.A9.K2.a"
+      },
+      {
+        "src": "ND143_2018.A9.K2",
+        "dst": "ND143_2018.A9.K2.b"
+      },
+      {
+        "src": "ND143_2018.A9.K2",
+        "dst": "ND143_2018.A9.K2.c"
+      },
+      {
+        "src": "ND143_2018.A9.K6",
+        "dst": "ND143_2018.A9.K6.a"
+      },
+      {
+        "src": "ND143_2018.A9.K6",
+        "dst": "ND143_2018.A9.K6.b"
+      },
+      {
+        "src": "ND143_2018.A9.K6",
+        "dst": "ND143_2018.A9.K6.c"
+      },
+      {
+        "src": "ND143_2018.A9.K6",
+        "dst": "ND143_2018.A9.K6.d"
+      },
+      {
+        "src": "ND143_2018.A9.K10",
+        "dst": "ND143_2018.A9.K10.a"
+      },
+      {
+        "src": "ND143_2018.A9.K10",
+        "dst": "ND143_2018.A9.K10.b"
+      },
+      {
+        "src": "ND143_2018.A9.K10",
+        "dst": "ND143_2018.A9.K10.c"
+      },
+      {
+        "src": "ND143_2018.A10.K2",
+        "dst": "ND143_2018.A10.K2.a"
+      },
+      {
+        "src": "ND143_2018.A10.K2",
+        "dst": "ND143_2018.A10.K2.b"
+      },
+      {
+        "src": "ND143_2018.A10.K3",
+        "dst": "ND143_2018.A10.K3.a"
+      },
+      {
+        "src": "ND143_2018.A10.K3",
+        "dst": "ND143_2018.A10.K3.b"
+      },
+      {
+        "src": "ND143_2018.A10.K3",
+        "dst": "ND143_2018.A10.K3.c"
+      },
+      {
+        "src": "ND143_2018.A13.K1",
+        "dst": "ND143_2018.A13.K1.a"
+      },
+      {
+        "src": "ND143_2018.A13.K1",
+        "dst": "ND143_2018.A13.K1.b"
+      },
+      {
+        "src": "ND143_2018.A13.K1",
+        "dst": "ND143_2018.A13.K1.c"
       }
     ],
     "HAS_SECTION": [
@@ -41987,6 +43800,18 @@
       {
         "src": "L58_2014.A125",
         "dst": "L58_2014.A125.T1"
+      },
+      {
+        "src": "ND143_2018.A18",
+        "dst": "ND143_2018.A18.T1"
+      },
+      {
+        "src": "QD838_BHXH.A3",
+        "dst": "QD838_BHXH.A3.T1"
+      },
+      {
+        "src": "QD838_BHXH.A3",
+        "dst": "QD838_BHXH.A3.T2"
       }
     ],
     "REPEALS": [
@@ -42777,6 +44602,186 @@
         "external_point": null,
         "target_law": "L58_2014",
         "target_article_id": null
+      },
+      {
+        "src": "ND143_2018.A2.K2.a",
+        "dst": "ext:11/2016/NĐ-CP",
+        "source_clause": "ND143_2018.A2.K2",
+        "span": "khoản 1 Điều 3 của Nghị định số 11/2016/NĐ-CP",
+        "char_offset": 54,
+        "external_article": 3,
+        "external_clause": 1,
+        "external_point": null,
+        "target_law": null,
+        "target_article_id": null
+      },
+      {
+        "src": "ND143_2018.A2.K2.a",
+        "dst": "ext:Bộ luật Lao động",
+        "source_clause": "ND143_2018.A2.K2",
+        "span": "Bộ luật Lao động",
+        "char_offset": 183,
+        "external_article": null,
+        "external_clause": null,
+        "external_point": null,
+        "target_law": "L45_2019",
+        "target_article_id": null
+      },
+      {
+        "src": "ND143_2018.A2.K2.b",
+        "dst": "ext:Bộ luật Lao động",
+        "source_clause": "ND143_2018.A2.K2",
+        "span": "khoản 1 Điều 187 của Bộ luật Lao động",
+        "char_offset": 53,
+        "external_article": 187,
+        "external_clause": 1,
+        "external_point": null,
+        "target_law": "L45_2019",
+        "target_article_id": "L45_2019.A187"
+      },
+      {
+        "src": "ND143_2018.A7.K5",
+        "dst": "ext:115/2015/NĐ-CP",
+        "source_clause": "ND143_2018.A7.K5",
+        "span": "Điều 35 của Luật bảo hiểm xã hội và Điều 3, Điều 4 của Nghị định số 115/2015/NĐ-CP",
+        "char_offset": 102,
+        "external_article": 35,
+        "external_clause": null,
+        "external_point": null,
+        "target_law": null,
+        "target_article_id": null
+      },
+      {
+        "src": "ND143_2018.A7.K5",
+        "dst": "ext:115/2015/NĐ-CP",
+        "source_clause": "ND143_2018.A7.K5",
+        "span": "Nghị định số 115/2015/NĐ-CP",
+        "char_offset": 324,
+        "external_article": null,
+        "external_clause": null,
+        "external_point": null,
+        "target_law": null,
+        "target_article_id": null
+      },
+      {
+        "src": "ND143_2018.A8.K9",
+        "dst": "ext:37/2016/NĐ-CP",
+        "source_clause": "ND143_2018.A8.K9",
+        "span": "Điều 5 của Nghị định số 37/2016/NĐ-CP",
+        "char_offset": 162,
+        "external_article": 5,
+        "external_clause": null,
+        "external_point": null,
+        "target_law": null,
+        "target_article_id": null
+      },
+      {
+        "src": "ND143_2018.A8.K9",
+        "dst": "ext:37/2016/NĐ-CP",
+        "source_clause": "ND143_2018.A8.K9",
+        "span": "Nghị định số 37/2016/NĐ-CP",
+        "char_offset": 398,
+        "external_article": null,
+        "external_clause": null,
+        "external_point": null,
+        "target_law": null,
+        "target_article_id": null
+      },
+      {
+        "src": "ND143_2018.A8.K10",
+        "dst": "ext:37/2016/NĐ-CP",
+        "source_clause": "ND143_2018.A8.K10",
+        "span": "Điều 55 của Luật an toàn, vệ sinh lao động và Điều 7 và Điều 8 của Nghị định số 37/2016/NĐ-CP",
+        "char_offset": 127,
+        "external_article": 55,
+        "external_clause": null,
+        "external_point": null,
+        "target_law": null,
+        "target_article_id": null
+      },
+      {
+        "src": "ND143_2018.A8.K11",
+        "dst": "ext:37/2016/NĐ-CP",
+        "source_clause": "ND143_2018.A8.K11",
+        "span": "Điều 24 của Nghị định số 37/2016/NĐ-CP",
+        "char_offset": 244,
+        "external_article": 24,
+        "external_clause": null,
+        "external_point": null,
+        "target_law": null,
+        "target_article_id": null
+      },
+      {
+        "src": "ND143_2018.A9.K1",
+        "dst": "ext:115/2015/NĐ-CP",
+        "source_clause": "ND143_2018.A9.K1",
+        "span": "khoản 1 Điều 54 của Luật bảo hiểm xã hội và Điều 6 của Nghị định số 115/2015/NĐ-CP",
+        "char_offset": 138,
+        "external_article": 54,
+        "external_clause": 1,
+        "external_point": null,
+        "target_law": null,
+        "target_article_id": null
+      },
+      {
+        "src": "ND143_2018.A9.K2.a",
+        "dst": "ext:115/2015/NĐ-CP",
+        "source_clause": "ND143_2018.A9.K2",
+        "span": "khoản 2 Điều 56 của Luật bảo hiểm xã hội và khoản 1 và khoản 2 Điều 7 của Nghị định số 115/2015/NĐ-CP",
+        "char_offset": 53,
+        "external_article": 56,
+        "external_clause": 2,
+        "external_point": null,
+        "target_law": null,
+        "target_article_id": null
+      },
+      {
+        "src": "ND143_2018.A9.K4",
+        "dst": "ext:115/2015/NĐ-CP",
+        "source_clause": "ND143_2018.A9.K4",
+        "span": "Điều 57 của Luật bảo hiểm xã hội và khoản 2 Điều 10 của Nghị định số 115/2015/NĐ-CP",
+        "char_offset": 49,
+        "external_article": 57,
+        "external_clause": null,
+        "external_point": null,
+        "target_law": null,
+        "target_article_id": null
+      },
+      {
+        "src": "ND143_2018.A14",
+        "dst": "ext:115/2015/NĐ-CP",
+        "source_clause": "ND143_2018.A14",
+        "span": "khoản 3 Điều 89 của Luật bảo hiểm xã hội và khoản 2 và khoản 3 Điều 17 của Nghị định số 115/2015/NĐ-CP",
+        "char_offset": 143,
+        "external_article": 89,
+        "external_clause": 3,
+        "external_point": null,
+        "target_law": null,
+        "target_article_id": null
+      },
+      {
+        "src": "ND143_2018.A15.K1",
+        "dst": "ext:115/2015/NĐ-CP",
+        "source_clause": "ND143_2018.A15.K1",
+        "span": "Điều 5 của Nghị định số 115/2015/NĐ-CP",
+        "char_offset": 356,
+        "external_article": 5,
+        "external_clause": null,
+        "external_point": null,
+        "target_law": null,
+        "target_article_id": null
+      },
+      {
+        "src": "ND143_2018.A15.K1",
+        "dst": "ext:37/2016/NĐ-CP",
+        "source_clause": "ND143_2018.A15.K1",
+        "span": "Nghị định số 37/2016/NĐ-CP",
+        "char_offset": 446,
+        "external_article": null,
+        "external_clause": null,
+        "external_point": null,
+        "target_law": null,
+        "target_article_id": null
       }
     ],
     "REFERS_TO": [
@@ -43053,6 +45058,17 @@
         "law": "L45_2019",
         "external_article": 169,
         "external_clause": 2,
+        "external_point": null
+      },
+      {
+        "src": "ND143_2018.A2.K2.b",
+        "dst": "L45_2019.A187",
+        "source_clause": "ND143_2018.A2.K2",
+        "span": "khoản 1 Điều 187 của Bộ luật Lao động",
+        "char_offset": 53,
+        "law": "L45_2019",
+        "external_article": 187,
+        "external_clause": 1,
         "external_point": null
       }
     ],
@@ -50081,6 +52097,492 @@
         "char_offset": 120,
         "kind": "REFERENCES_CLAUSE",
         "is_self": false
+      },
+      {
+        "src": "ND143_2018.A2.K2",
+        "dst": "ND143_2018.A2",
+        "source_clause": "ND143_2018.A2.K2",
+        "span": "Điều này",
+        "char_offset": 36,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": true
+      },
+      {
+        "src": "ND143_2018.A6.K1",
+        "dst": "ND143_2018.A2",
+        "source_clause": "ND143_2018.A6.K1",
+        "span": "Điều 2",
+        "char_offset": 58,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A6.K2.a",
+        "dst": "ND143_2018.A2",
+        "source_clause": "ND143_2018.A6.K2",
+        "span": "Điều 2",
+        "char_offset": 58,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A6.K2.b",
+        "dst": "ND143_2018.A2",
+        "source_clause": "ND143_2018.A6.K2",
+        "span": "Điều 2",
+        "char_offset": 66,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A6.K3",
+        "dst": "ND143_2018.A2",
+        "source_clause": "ND143_2018.A6.K3",
+        "span": "Điều 2",
+        "char_offset": 52,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A6.K4",
+        "dst": "ND143_2018.A2",
+        "source_clause": "ND143_2018.A6.K4",
+        "span": "Điều 2",
+        "char_offset": 72,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A7.K1",
+        "dst": "ND143_2018.A3",
+        "source_clause": "ND143_2018.A7.K1",
+        "span": "Điều 3",
+        "char_offset": 60,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A7.K2.a",
+        "dst": "ND143_2018.A3",
+        "source_clause": "ND143_2018.A7.K2",
+        "span": "Điều 3",
+        "char_offset": 65,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A7.K2.b",
+        "dst": "ND143_2018.A3",
+        "source_clause": "ND143_2018.A7.K2",
+        "span": "Điều 3",
+        "char_offset": 116,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A7.K2.c",
+        "dst": "ND143_2018.A3",
+        "source_clause": "ND143_2018.A7.K2",
+        "span": "Điều 3",
+        "char_offset": 64,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A7.K2.d",
+        "dst": "ND143_2018.A3",
+        "source_clause": "ND143_2018.A7.K2",
+        "span": "Điều 3",
+        "char_offset": 74,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A7.K2.đ",
+        "dst": "ND143_2018.A3",
+        "source_clause": "ND143_2018.A7.K2",
+        "span": "Điều 3",
+        "char_offset": 90,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A7.K3.a",
+        "dst": "ND143_2018.A3",
+        "source_clause": "ND143_2018.A7.K3",
+        "span": "Điều 3",
+        "char_offset": 95,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A7.K3.b",
+        "dst": "ND143_2018.A3",
+        "source_clause": "ND143_2018.A7.K3",
+        "span": "Điều 3",
+        "char_offset": 54,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A7.K4",
+        "dst": "ND143_2018.A4",
+        "source_clause": "ND143_2018.A7.K4",
+        "span": "Điều 4",
+        "char_offset": 84,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A7.K6",
+        "dst": "ND143_2018.A4",
+        "source_clause": "ND143_2018.A7.K6",
+        "span": "Điều 4",
+        "char_offset": 70,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A8.K1.a",
+        "dst": "ND143_2018.A4",
+        "source_clause": "ND143_2018.A8.K1",
+        "span": "Điều 4",
+        "char_offset": 68,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A8.K2",
+        "dst": "ND143_2018.A4",
+        "source_clause": "ND143_2018.A8.K2",
+        "span": "Điều 4",
+        "char_offset": 69,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A8.K3.a",
+        "dst": "ND143_2018.A4",
+        "source_clause": "ND143_2018.A8.K3",
+        "span": "Điều 4",
+        "char_offset": 44,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A8.K4",
+        "dst": "ND143_2018.A5",
+        "source_clause": "ND143_2018.A8.K4",
+        "span": "Điều 5",
+        "char_offset": 79,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A8.K5",
+        "dst": "ND143_2018.A5",
+        "source_clause": "ND143_2018.A8.K5",
+        "span": "Điều 5",
+        "char_offset": 44,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A8.K6",
+        "dst": "ND143_2018.A5",
+        "source_clause": "ND143_2018.A8.K6",
+        "span": "Điều 5",
+        "char_offset": 52,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A8.K7",
+        "dst": "ND143_2018.A5",
+        "source_clause": "ND143_2018.A8.K7",
+        "span": "Điều 5",
+        "char_offset": 98,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A8.K7",
+        "dst": "ND143_2018.A1",
+        "source_clause": "ND143_2018.A8.K7",
+        "span": "Điều 1",
+        "char_offset": 144,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A8.K8",
+        "dst": "ND143_2018.A5",
+        "source_clause": "ND143_2018.A8.K8",
+        "span": "Điều 5",
+        "char_offset": 95,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A8.K11",
+        "dst": "ND143_2018.A5.K2",
+        "source_clause": "ND143_2018.A8.K11",
+        "span": "khoản 2, khoản 3 Điều 5",
+        "char_offset": 143,
+        "kind": "REFERENCES_CLAUSE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A8.K11",
+        "dst": "ND143_2018.A11",
+        "source_clause": "ND143_2018.A8.K11",
+        "span": "các Điều 11",
+        "char_offset": 206,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A9.K2.b",
+        "dst": "ND143_2018.A5",
+        "source_clause": "ND143_2018.A9.K2",
+        "span": "Điều 5",
+        "char_offset": 57,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A9.K2.c",
+        "dst": "ND143_2018.A6.K2",
+        "source_clause": "ND143_2018.A9.K2",
+        "span": "khoản 2 Điều 6",
+        "char_offset": 115,
+        "kind": "REFERENCES_CLAUSE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A9.K3",
+        "dst": "ND143_2018.A6.K2",
+        "source_clause": "ND143_2018.A9.K3",
+        "span": "khoản 2 Điều 6",
+        "char_offset": 74,
+        "kind": "REFERENCES_CLAUSE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A9.K5",
+        "dst": "ND143_2018.A5.K1",
+        "source_clause": "ND143_2018.A9.K5",
+        "span": "khoản 1 và khoản 3 Điều 5",
+        "char_offset": 54,
+        "kind": "REFERENCES_CLAUSE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A9.K6.a",
+        "dst": "ND143_2018.A9",
+        "source_clause": "ND143_2018.A9.K6",
+        "span": "Điều này",
+        "char_offset": 50,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": true
+      },
+      {
+        "src": "ND143_2018.A9.K6.c",
+        "dst": "ND143_2018.A9",
+        "source_clause": "ND143_2018.A9.K6",
+        "span": "Điều này",
+        "char_offset": 70,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": true
+      },
+      {
+        "src": "ND143_2018.A9.K7",
+        "dst": "ND143_2018.A6.K2.b",
+        "source_clause": "ND143_2018.A9.K7",
+        "span": "điểm b khoản 2 Điều 6",
+        "char_offset": 62,
+        "kind": "REFERENCES_POINT",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A9.K9",
+        "dst": "ND143_2018.A9",
+        "source_clause": "ND143_2018.A9.K9",
+        "span": "Điều này",
+        "char_offset": 131,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": true
+      },
+      {
+        "src": "ND143_2018.A9.K9",
+        "dst": "ND143_2018.A9",
+        "source_clause": "ND143_2018.A9.K9",
+        "span": "Điều này",
+        "char_offset": 206,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": true
+      },
+      {
+        "src": "ND143_2018.A9.K10.a",
+        "dst": "ND143_2018.A6.K1",
+        "source_clause": "ND143_2018.A9.K10",
+        "span": "khoản 1 Điều 6",
+        "char_offset": 110,
+        "kind": "REFERENCES_CLAUSE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A9.K10.c",
+        "dst": "ND143_2018.A9.K10",
+        "source_clause": "ND143_2018.A9.K10",
+        "span": "khoản này",
+        "char_offset": 79,
+        "kind": "REFERENCES_CLAUSE",
+        "is_self": true
+      },
+      {
+        "src": "ND143_2018.A10.K1",
+        "dst": "ND143_2018.A6",
+        "source_clause": "ND143_2018.A10.K1",
+        "span": "Điều 6",
+        "char_offset": 45,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A10.K2.a",
+        "dst": "ND143_2018.A6",
+        "source_clause": "ND143_2018.A10.K2",
+        "span": "Điều 6",
+        "char_offset": 73,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A10.K2.b",
+        "dst": "ND143_2018.A6",
+        "source_clause": "ND143_2018.A10.K2",
+        "span": "Điều 6",
+        "char_offset": 56,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A10.K3.a",
+        "dst": "ND143_2018.A6",
+        "source_clause": "ND143_2018.A10.K3",
+        "span": "Điều 6",
+        "char_offset": 70,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A10.K3.c",
+        "dst": "ND143_2018.A7",
+        "source_clause": "ND143_2018.A10.K3",
+        "span": "Điều 7",
+        "char_offset": 53,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A11.K2",
+        "dst": "ND143_2018.A6.K2",
+        "source_clause": "ND143_2018.A11.K2",
+        "span": "khoản 2 và khoản 3 Điều 6",
+        "char_offset": 101,
+        "kind": "REFERENCES_CLAUSE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A11.K2",
+        "dst": "ND143_2018.A6.K3",
+        "source_clause": "ND143_2018.A11.K2",
+        "span": "khoản 2 và khoản 3 Điều 6",
+        "char_offset": 101,
+        "kind": "REFERENCES_CLAUSE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A11.K2",
+        "dst": "ND143_2018.A11",
+        "source_clause": "ND143_2018.A11.K2",
+        "span": "Điều này",
+        "char_offset": 64,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": true
+      },
+      {
+        "src": "ND143_2018.A13.K3",
+        "dst": "ND143_2018.A13",
+        "source_clause": "ND143_2018.A13.K3",
+        "span": "Điều này",
+        "char_offset": 134,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": true
+      },
+      {
+        "src": "ND143_2018.A14",
+        "dst": "ND143_2018.A12.K1",
+        "source_clause": "ND143_2018.A14",
+        "span": "khoản 1 Điều 12",
+        "char_offset": 51,
+        "kind": "REFERENCES_CLAUSE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A15.K1",
+        "dst": "ND143_2018.A9",
+        "source_clause": "ND143_2018.A15.K1",
+        "span": "Điều 9",
+        "char_offset": 396,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A15.K1",
+        "dst": "ND143_2018.A1",
+        "source_clause": "ND143_2018.A15.K1",
+        "span": "Điều 1",
+        "char_offset": 510,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A15.K1",
+        "dst": "ND143_2018.A15",
+        "source_clause": "ND143_2018.A15.K1",
+        "span": "Điều này",
+        "char_offset": 498,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": true
+      },
+      {
+        "src": "ND143_2018.A15.K2",
+        "dst": "ND143_2018.A15",
+        "source_clause": "ND143_2018.A15.K2",
+        "span": "Điều này",
+        "char_offset": 81,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": true
+      },
+      {
+        "src": "ND143_2018.A17.K2",
+        "dst": "ND143_2018.A9",
+        "source_clause": "ND143_2018.A17.K2",
+        "span": "Điều 9 và Điều 1",
+        "char_offset": 24,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
+      },
+      {
+        "src": "ND143_2018.A17.K2",
+        "dst": "ND143_2018.A1",
+        "source_clause": "ND143_2018.A17.K2",
+        "span": "Điều 9 và Điều 1",
+        "char_offset": 24,
+        "kind": "REFERENCES_ARTICLE",
+        "is_self": false
       }
     ],
     "ENTITLED_TO": [
@@ -50575,6 +53077,60 @@
         "dst": "benefit:che-do-tu-tuat",
         "source_clause": "L41_2024.A139.K1.e",
         "source_text": "Hồ sơ hưởng chế độ tử tuất trong trường hợp người lao động bị chết do tai nạn lao động, bệnh nghề nghiệp thực hiện theo quy định tại khoản 1 Điều 90 của Luật Bảo hiểm xã hội."
+      },
+      {
+        "src": "subject:nguoi-lao-dong",
+        "dst": "benefit:om-dau",
+        "source_clause": "ND143_2018.A5.K1",
+        "source_text": "Người lao động quy định tại khoản 1 Điều 2 của Nghị định này thực hiện các chế độ bảo hiểm xã hội bắt buộc sau đây: ốm đau;"
+      },
+      {
+        "src": "subject:nguoi-lao-dong",
+        "dst": "benefit:luong-huu",
+        "source_clause": "ND143_2018.A9.K1",
+        "source_text": "Người lao động quy định tại khoản 1 Điều 2 của Nghị định này được hưởng lương hưu khi đáp ứng điều kiện hưởng lương hưu"
+      },
+      {
+        "src": "subject:nguoi-lao-dong",
+        "dst": "benefit:bao-hiem-xa-hoi-mot-lan",
+        "source_clause": "ND143_2018.A9.K6",
+        "source_text": "Người lao động quy định tại khoản 1 Điều 2 của Nghị định này mà có yêu cầu thì được hưởng bảo hiểm xã hội một lần nếu thuộc một trong các trường hợp sau đây:"
+      },
+      {
+        "src": "subject:nguoi-dang-huong-luong-huu",
+        "dst": "benefit:tro-cap-mot-lan",
+        "source_clause": "ND143_2018.A11.K1",
+        "source_text": "được giải quyết hưởng trợ cấp một lần."
+      },
+      {
+        "src": "subject:nguoi-lao-dong",
+        "dst": "benefit:tro-cap-mot-lan",
+        "source_clause": "ND143_2018.A11.K2",
+        "source_text": "Mức trợ cấp một lần đối với người lao động quy định tại khoản 1 Điều này"
+      },
+      {
+        "src": "subject:nguoi-su-dung-lao-dong",
+        "dst": "benefit:quy-om-dau-va-thai-san",
+        "source_clause": "ND143_2018.A13.K1.a",
+        "source_text": "3% vào quỹ ốm đau và thai sản;"
+      },
+      {
+        "src": "subject:nguoi-su-dung-lao-dong",
+        "dst": "benefit:quy-bao-hiem-tai-nan-lao-dong-benh-nghe-nghiep",
+        "source_clause": "ND143_2018.A13.K1.b",
+        "source_text": "0,5% vào quỹ bảo hiểm tai nạn lao động, bệnh nghề nghiệp;"
+      },
+      {
+        "src": "subject:nguoi-su-dung-lao-dong",
+        "dst": "benefit:quy-huu-tri-va-tu-tuat",
+        "source_clause": "ND143_2018.A13.K1.c",
+        "source_text": "14% vào quỹ hưu trí và tử tuất từ ngày 01 tháng 01 năm 2022."
+      },
+      {
+        "src": "subject:nguoi-lao-dong",
+        "dst": "benefit:tro-cap-mot-lan",
+        "source_clause": "ND143_2018.A16.K1",
+        "source_text": "có nguyện vọng nhận trợ cấp một lần nộp đơn đề nghị cho cơ quan bảo hiểm xã hội."
       }
     ],
     "APPLIES_TO": [
@@ -50619,6 +53175,12 @@
         "dst": "subject:nguoi-lao-dong",
         "source_clause": "L41_2024.A139.K1.e",
         "source_text": "Hồ sơ hưởng chế độ tử tuất trong trường hợp người lao động bị chết do tai nạn lao động, bệnh nghề nghiệp thực hiện theo quy định tại khoản 1 Điều 90 của Luật Bảo hiểm xã hội."
+      },
+      {
+        "src": "benefit:tro-cap-om-dau",
+        "dst": "subject:nguoi-lao-dong",
+        "source_clause": "ND143_2018.A6.K1",
+        "source_text": "Điều kiện hưởng chế độ ốm đau thực hiện theo quy định tại Điều 25 của Luật bảo hiểm xã hội."
       }
     ],
     "HAS_OBLIGATION": [
@@ -51041,6 +53603,60 @@
         "dst": "oblig:boi-thuong-thiet-hai",
         "source_clause": "L41_2024.A132.K2",
         "source_text": "nếu gây thiệt hại thì phải bồi thường theo quy định của pháp luật."
+      },
+      {
+        "src": "subject:nguoi-lao-dong",
+        "dst": "oblig:dong-bao-hiem-xa-hoi-bat-buoc",
+        "source_clause": "ND143_2018.A2.K1",
+        "source_text": "Người lao động là công dân nước ngoài làm việc tại Việt Nam thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc"
+      },
+      {
+        "src": "subject:lao-dong-nu",
+        "dst": "condition:thoi-gian-huong-chinh-sach",
+        "source_clause": "ND143_2018.A7.K2",
+        "source_text": "Thời gian hưởng chế độ thai sản"
+      },
+      {
+        "src": "subject:nguoi-lao-dong",
+        "dst": "condition:du-tuoi-huong-luong-huu",
+        "source_clause": "ND143_2018.A9.K6.a",
+        "source_text": "Đủ tuổi hưởng lương hưu theo quy định tại khoản 1 Điều này mà chưa đủ 20 năm đóng bảo hiểm xã hội"
+      },
+      {
+        "src": "subject:nguoi-lao-dong",
+        "dst": "oblig:dong-bao-hiem-xa-hoi",
+        "source_clause": "ND143_2018.A12.K1",
+        "source_text": "người lao động quy định tại khoản 1 Điều 2 của Nghị định này, hàng tháng đóng bằng 8% mức tiền lương tháng vào quỹ hưu trí và tử tuất."
+      },
+      {
+        "src": "subject:nguoi-su-dung-lao-dong",
+        "dst": "oblig:dong-bao-hiem-xa-hoi",
+        "source_clause": "ND143_2018.A13.K1",
+        "source_text": "Người sử dụng lao động quy định tại khoản 3 Điều 2 của Nghị định này, hàng tháng đóng trên quỹ tiền lương tháng đóng bảo hiểm xã hội của người lao động như sau:"
+      },
+      {
+        "src": "subject:nguoi-lao-dong",
+        "dst": "oblig:gia-quyet-don-de-nghi",
+        "source_clause": "ND143_2018.A16.K2",
+        "source_text": "cơ quan bảo hiểm xã hội có trách nhiệm giải quyết cho người lao động"
+      },
+      {
+        "src": "subject:bo-lao-dong-thuong-binh-xa-hoi",
+        "dst": "oblig:to-chuc-trien-khai-giam-sat-thi-hanh",
+        "source_clause": "ND143_2018.A18.K1",
+        "source_text": "có trách nhiệm tổ chức triển khai, giám sát thi hành Nghị định này"
+      },
+      {
+        "src": "subject:bao-hiem-xa-hoi-viet-nam",
+        "dst": "oblig:ra-soat-ban-hanh-mau-bieu",
+        "source_clause": "ND143_2018.A18.K2",
+        "source_text": "có trách nhiệm rà soát, ban hành mẫu, biểu tham gia, giải quyết chế độ bảo hiểm xã hội"
+      },
+      {
+        "src": "subject:bo-y-te",
+        "dst": "oblig:ra-soat-ban-hanh-mau-cap-giay-ra-vien",
+        "source_clause": "ND143_2018.A18.K3",
+        "source_text": "có trách nhiệm rà soát, ban hành mẫu cấp giấy ra viện, trích sao hồ sơ bệnh án, giấy chứng nhận nghỉ việc, giấy chứng nhận nghỉ dưỡng thai, giấy chứng nhận không đủ sức khỏe chăm sóc con sau sinh, khám giám định mức suy giảm khả năng lao động"
       }
     ],
     "RESPONSIBLE_FOR": [
@@ -51211,6 +53827,30 @@
         "dst": "cond:du-12-thang-dong-bhxh-bat-buoc",
         "source_clause": "L41_2024.A111.K1.c",
         "source_text": "Có từ đủ 12 tháng đóng bảo hiểm xã hội bắt buộc trở lên"
+      },
+      {
+        "src": "benefit:tro-cap-om-dau",
+        "dst": "condition:du-tuoi-nghi-huu",
+        "source_clause": "ND143_2018.A6.K2.b",
+        "source_text": "Thời gian hưởng chế độ khi con ốm đau thực hiện theo quy định tại Điều 27 của Luật bảo hiểm xã hội."
+      },
+      {
+        "src": "benefit:tro-cap-om-dau",
+        "dst": "condition:du-tuoi-nghi-huu",
+        "source_clause": "ND143_2018.A6.K3",
+        "source_text": "Mức hưởng chế độ ốm đau thực hiện theo quy định tại Điều 28 của Luật bảo hiểm xã hội."
+      },
+      {
+        "src": "benefit:tro-cap-om-dau",
+        "dst": "condition:du-tuoi-nghi-huu",
+        "source_clause": "ND143_2018.A6.K4",
+        "source_text": "Dưỡng sức, phục hồi sức khỏe sau khi ốm đau thực hiện theo quy định tại Điều 29 của Luật bảo hiểm xã hội."
+      },
+      {
+        "src": "oblig:dong-bao-hiem-xa-hoi",
+        "dst": "condition:khong-huong-tien-luong",
+        "source_clause": "ND143_2018.A12.K2",
+        "source_text": "Người lao động không làm việc và không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì không đóng bảo hiểm xã hội tháng đó."
       }
     ],
     "PAID_FROM": [
@@ -51225,6 +53865,12 @@
         "dst": "fund:quy-bao-hiem-xa-hoi",
         "source_clause": "L41_2024.A119.K1",
         "source_text": "Chi trả các chế độ bảo hiểm xã hội bắt buộc"
+      },
+      {
+        "src": "oblig:dong-bao-hiem-xa-hoi",
+        "dst": "fund:quy-huu-tri-va-tu-tuat",
+        "source_clause": "ND143_2018.A12.K1",
+        "source_text": "đóng bằng 8% mức tiền lương tháng vào quỹ hưu trí và tử tuất."
       }
     ]
   }

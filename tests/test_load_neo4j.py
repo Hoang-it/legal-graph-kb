@@ -42,12 +42,13 @@ def session():
 @pytest.mark.parametrize(
     "label,expected",
     [
-        ("Law", 3),
-        ("Chapter", 37),
+        # Baseline: 5 luật (L41/L58/L45/ND143/QD838) — xem docs/known_issues_kg_build.md.
+        ("Law", 5),
+        ("Chapter", 43),
         ("Section", 46),
-        ("Article", 486),
-        ("Clause", 1585),
-        ("Point", 829),
+        ("Article", 507),
+        ("Clause", 1645),
+        ("Point", 862),
     ],
 )
 def test_node_counts(session, label, expected):
@@ -109,7 +110,8 @@ def test_moi_semantic_node_co_mentioned_in(session):
 
 
 def test_embedding_coverage(session):
-    for label, expected in [("Article", 486), ("Clause", 1585), ("Point", 829)]:
+    # Baseline: 5 luật — xem docs/known_issues_kg_build.md.
+    for label, expected in [("Article", 507), ("Clause", 1645), ("Point", 862)]:
         n = session.run(
             f"MATCH (n:{label}) WHERE n.embedding IS NOT NULL RETURN count(n) AS c"
         ).single()["c"]

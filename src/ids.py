@@ -31,17 +31,30 @@ def slug(text: str) -> str:
 
 
 def law_id(code: str = "41/2024/QH15") -> str:
-    """Return canonical ``L<số>_<năm>`` law ID.
+    """Return canonical law ID.
 
-    Accepts both official full IDs such as ``41/2024/QH15`` and already
-    canonical IDs such as ``L41_2024``.
+    Chấp nhận 2 dạng input:
+
+    1. **Canonical** — bất kỳ ID đã đăng ký trong ``data/legal_metadata.yaml``
+       / ``data/legal_sources.yaml`` (Luật ``L41_2024``, Nghị định
+       ``ND143_2018``, Quyết định ``QD366_BHXH``, Thông tư
+       ``TT18_2022_BYT``, …). Trả lại nguyên ID.
+    2. **Mã luật QH** dạng ``XX/YYYY/QH<n>`` (Luật/Bộ luật do Quốc hội ban
+       hành) → convert sang canonical ``L<XX>_<YYYY>``.
+
+    Mã NĐ/QĐ/TT/CV/… không có rule chung từ official code sang canonical
+    (vd ``366/QĐ-BHXH`` không có năm cố định ở vị trí 2 nên không thể derive
+    slug); caller phải truyền canonical ID đã đăng ký YAML.
     """
-    if re.match(r"^L\d+_\d{4}$", code or ""):
+    code = code or ""
+    # 1. Đã canonical — pass-through (giữ chính xác slug user đã đặt YAML)
+    if re.match(r"^[A-Z][A-Z0-9_]*$", code):
         return code
-    m = re.match(r"(\d+)/(\d{4})/", code)
-    if not m:
-        raise ValueError(f"Mã luật không hợp lệ: {code}")
-    return f"L{m.group(1)}_{m.group(2)}"
+    # 2. Mã QH XX/YYYY/QH<n> — convert được vì luôn có năm ở vị trí 2
+    m = re.match(r"^(\d+)/(\d{4})/QH\d+$", code)
+    if m:
+        return f"L{m.group(1)}_{m.group(2)}"
+    raise ValueError(f"Mã luật không hợp lệ: {code}")
 
 
 def chapter_id(law: str, n: int) -> str:
@@ -120,8 +133,14 @@ def external_law_id(code: str) -> str:
 
 # ----- Parser ngược (provenance) -----
 
+# Prefix luật chấp nhận mọi key canonical trong data/legal_sources.yaml:
+# Luật QH (L41_2024), Nghị định (ND143_2018), Quyết định (QD366_BHXH),
+# Thông tư (TT18_2022_BYT), Hiệp định (HIEPDINH_VN_KR_BHXH), Pháp lệnh
+# (PHAPLENH_NCC), Bộ luật khác (BLDS_2015), … — đồng bộ shape với
+# `citations._INTERNAL_ID_RE`. Semantic validity (có phải source đăng ký
+# trong registry không) check ở tầng citations.py qua registry.
 _ID_PATTERN = re.compile(
-    r"^(?P<law>L\d+_\d{4})"
+    r"^(?P<law>[A-Z][A-Z0-9_]*)"
     r"(?:\.C(?P<chapter>\d+))?"
     r"(?:\.A(?P<article>\d+))?"
     r"(?:\.K(?P<clause>\d+))?"

@@ -257,11 +257,13 @@ class SemanticEdge(BaseModel):
     @field_validator("source_clause")
     @classmethod
     def _must_be_clause_id(cls, v: str) -> str:
-        # Định dạng Lxx_yyyy.Aa.Kb hoặc Lxx_yyyy.Aa.Kb.x
-        # Letter point gồm a-z + đ (bảng chữ cái VN dùng trong luật)
+        # Đồng bộ shape với `ids._ID_PATTERN` + `citations._INTERNAL_ID_RE`:
+        # prefix luật canonical bất kỳ trong registry (L41_2024, ND143_2018,
+        # QD366_BHXH, TT18_2022_BYT, …). Letter point gồm a-z + đ (bảng chữ
+        # cái VN dùng trong luật).
         import re
 
-        if not re.match(r"^L\d+_\d{4}\.A\d+\.K\d+(\.[a-zđ])?$", v):
+        if not re.match(r"^[A-Z][A-Z0-9_]*\.A\d+\.K\d+(\.[a-zđ])?$", v):
             raise ValueError(f"source_clause phải là Clause.id hoặc Point.id, nhận: {v}")
         return v
 

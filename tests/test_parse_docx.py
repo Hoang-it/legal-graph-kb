@@ -9,6 +9,7 @@ from docx import Document
 
 from offline import parse_docx
 from src import ids
+from src.legal_metadata import LawMetadata
 
 DOCX_PATH = Path("data/graph/raw/Luật-41-2024-QH15.docx")
 
@@ -206,3 +207,140 @@ def test_section_chi_co_o_chuong_co_muc(parsed):
                     f"Chương {ch['number']} có {len(ch['sections'])} Mục "
                     f"nhưng Điều {art['number']} không thuộc Mục nào"
                 )
+
+
+# ============================================================================
+# allow_no_chapter — văn bản dưới luật (NĐ/QĐ/TT) không có "Chương"
+# ============================================================================
+
+
+def _meta_for(law_id: str, source: Path, *, allow_no_chapter: bool) -> LawMetadata:
+    return LawMetadata(
+        id=law_id,
+        code=law_id,
+        full_id=law_id,
+        title=f"{law_id} title",
+        canonical_title=f"{law_id} canonical",
+        type="decree",
+        hierarchy_level="nghị định",
+        priority=80,
+        source_file=source,
+        allow_no_chapter=allow_no_chapter,
+    )
+
+
+def _write_paragraphs(path: Path, paragraphs: list[str]) -> None:
+    doc = Document()
+    for text in paragraphs:
+        doc.add_paragraph(text)
+    doc.save(str(path))
+
+
+def test_allow_no_chapter_off_default_giu_nguyen_hanh_vi(tmp_path):
+    """Mặc định (flag tắt) — Điều không có Chương cha vẫn bị bỏ qua như cũ."""
+    src = tmp_path / "no_chapter_default.docx"
+    _write_paragraphs(
+        src,
+        [
+            "CHÍNH PHỦ",
+            "NGHỊ ĐỊNH",
+            "Điều 1. Phạm vi điều chỉnh",
+            "1. Nội dung khoản 1 của Điều 1.",
+            "Điều 2. Đối tượng áp dụng",
+            "1. Nội dung khoản 1 của Điều 2.",
+        ],
+    )
+    meta = _meta_for("L143_2018", src, allow_no_chapter=False)
+    result = parse_docx.parse_docx(src, metadata=meta)
+    assert result["chapters"] == [], (
+        "Khi flag tắt, không được tự tạo Chương — phải giữ hành vi cũ"
+    )
+
+
+def test_allow_no_chapter_on_synth_chuong_va_nhan_dieu(tmp_path):
+    """Khi flag bật — synth Chương I và nhận đầy đủ Điều/Khoản."""
+    src = tmp_path / "no_chapter_on.docx"
+    _write_paragraphs(
+        src,
+        [
+            "CHÍNH PHỦ",
+            "NGHỊ ĐỊNH",
+            "Điều 1. Phạm vi điều chỉnh",
+            "1. Nghị định này quy định phạm vi.",
+            "2. Một số trường hợp đặc biệt.",
+            "Điều 2. Đối tượng áp dụng",
+            "1. Nội dung khoản 1.",
+            "a) Điểm a của khoản 1.",
+            "b) Điểm b của khoản 1.",
+        ],
+    )
+    meta = _meta_for("L143_2018", src, allow_no_chapter=True)
+    result = parse_docx.parse_docx(src, metadata=meta)
+
+    assert len(result["chapters"]) == 1
+    ch = result["chapters"][0]
+    assert ch["id"] == "L143_2018.C1"
+    assert ch["number"] == 1
+    assert ch["roman"] == "I"
+    assert ch["title"] == meta.canonical_title  # không hardcode chuỗi
+
+    assert [a["number"] for a in ch["articles"]] == [1, 2]
+    a1, a2 = ch["articles"]
+    assert a1["id"] == "L143_2018.A1"
+    assert [c["number"] for c in a1["clauses"]] == [1, 2]
+    assert a2["clauses"][0]["points"][0]["letter"] == "a"
+    assert a2["clauses"][0]["points"][1]["letter"] == "b"
+
+
+def test_allow_no_chapter_validate_pass_voi_expected_synth(tmp_path):
+    """Validate phải pass khi YAML khai báo `expected.chapters=1` cho synth."""
+    src = tmp_path / "no_chapter_validate.docx"
+    _write_paragraphs(
+        src,
+        [
+            "Điều 1. Tiêu đề",
+            "1. Khoản 1.",
+            "Điều 2. Tiêu đề 2",
+            "1. Khoản 1.",
+        ],
+    )
+    meta = _meta_for("L146_2018", src, allow_no_chapter=True)
+    result = parse_docx.parse_docx(src, metadata=meta)
+    # Synth Chương 1, 2 Điều, 0 Mục — validate phải pass với expected khớp.
+    parse_docx.validate(
+        result, expect_chapters=1, expect_sections=0, expect_articles=2
+    )
+
+
+def test_allow_no_chapter_synth_voi_muc_truoc_dieu(tmp_path):
+    """Document mở đầu bằng Mục (không có Chương) — synth Chương vẫn pickup Mục."""
+    src = tmp_path / "muc_before_dieu.docx"
+    _write_paragraphs(
+        src,
+        [
+            "Mục 1. Quy định chung",
+            "Điều 1. Phạm vi",
+            "1. Nội dung.",
+            "Mục 2. Quy định riêng",
+            "Điều 2. Đối tượng",
+            "1. Nội dung.",
+        ],
+    )
+    meta = _meta_for("L158_2025", src, allow_no_chapter=True)
+    result = parse_docx.parse_docx(src, metadata=meta)
+
+    assert len(result["chapters"]) == 1
+    ch = result["chapters"][0]
+    assert [s["number"] for s in ch["sections"]] == [1, 2]
+    assert [a["number"] for a in ch["articles"]] == [1, 2]
+    # Điều 1 thuộc Mục 1, Điều 2 thuộc Mục 2
+    assert ch["articles"][0]["section_id"] == "L158_2025.C1.M1"
+    assert ch["articles"][1]["section_id"] == "L158_2025.C1.M2"
+
+
+def test_l41_2024_metadata_default_allow_no_chapter_false():
+    """Luật 41/2024 trong YAML không khai báo flag → mặc định False — không đổi."""
+    from src.legal_metadata import metadata_for
+
+    meta = metadata_for("L41_2024")
+    assert meta.allow_no_chapter is False

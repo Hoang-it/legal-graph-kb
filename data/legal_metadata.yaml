@@ -73,6 +73,8 @@ laws:
       chapters: 11
       sections: 13
       articles: 141
+    llm_skip_articles: [141]
+    llm_skip_reason: "transitional clauses (Điều 141) — handled separately"
     repeals:
       - L58_2014
     aliases:
@@ -85,7 +87,60 @@ laws:
     prolog_law_ids:
       - law_bhxh_2024
 
+  ND143_2018:
+    id: ND143_2018
+    code: ND143_2018
+    full_id: "143/2018/NĐ-CP"
+    title: "Nghị định quy định chi tiết Luật BHXH và Luật ATVSLĐ về BHXH bắt buộc đối với người lao động là công dân nước ngoài làm việc tại Việt Nam"
+    canonical_title: "Nghị định 143/2018/NĐ-CP"
+    type: decree
+    hierarchy_level: "nghị định"
+    priority: 80
+    issuer: "Chính phủ"
+    issued_date: 2018-10-15
+    effective_date: 2018-12-01
+    repealed_date:
+    source_file: "data/graph/raw/143_2018_ND-CP_346012.docx"
+    expected:
+      chapters: 5
+      sections: 0
+      articles: 18
+    aliases:
+      - "Nghị định 143/2018/NĐ-CP"
+      - "Nghị định số 143/2018/NĐ-CP"
+      - "143/2018/NĐ-CP"
+    prolog_law_ids:
+      - law_nd_143_2018
+
+  QD838_BHXH:
+    id: QD838_BHXH
+    code: QD838_BHXH
+    full_id: "838/QĐ-BHXH"
+    title: "Quyết định công bố Danh mục dịch vụ công trực tuyến toàn trình thuộc thẩm quyền giải quyết của Bảo hiểm xã hội Việt Nam"
+    canonical_title: "Quyết định 838/QĐ-BHXH"
+    type: decision
+    hierarchy_level: "quyết định"
+    priority: 70
+    issuer: "Bảo hiểm xã hội Việt Nam"
+    issued_date: 2024-06-05
+    effective_date: 2024-06-05
+    repealed_date:
+    source_file: "data/graph/raw/838_QD-BHXH_612897.docx"
+    expected:
+      chapters: 1
+      sections: 0
+      articles: 3
+    allow_no_chapter: true
+    aliases:
+      - "Quyết định 838/QĐ-BHXH"
+      - "Quyết định số 838/QĐ-BHXH"
+      - "838/QĐ-BHXH"
+    prolog_law_ids:
+      - law_qd_838_bhxh
+
 load_order:
   - L45_2019
   - L58_2014
   - L41_2024
+  - ND143_2018
+  - QD838_BHXH

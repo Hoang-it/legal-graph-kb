@@ -128,6 +128,8 @@ sources:
       - "Nghị định 143/2018/NĐ-CP"
       - "Nghị định số 143/2018/NĐ-CP"
       - "143/2018/NĐ-CP"
+    prolog_law_ids:
+      - "law_nd_143_2018"
 
   ND146_2018:
     canonical_title: "Nghị định 146/2018/NĐ-CP"
@@ -264,6 +266,8 @@ sources:
       - "Quyết định 838/QĐ-BHXH"
       - "Quyết định số 838/QĐ-BHXH"
       - "838/QĐ-BHXH"
+    prolog_law_ids:
+      - "law_qd_838_bhxh"
 
   CV2068_BYT_BH:
     canonical_title: "Công văn 2068/BYT-BH"

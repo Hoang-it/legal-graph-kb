@@ -43,6 +43,9 @@ class LawMetadata:
     aliases: tuple[str, ...] = ()
     prolog_law_ids: tuple[str, ...] = ()
     repeals: tuple[str, ...] = ()
+    allow_no_chapter: bool = False
+    llm_skip_articles: tuple[int, ...] = ()
+    llm_skip_reason: str = ""
     raw: dict[str, Any] = field(default_factory=dict)
 
     @property
@@ -93,6 +96,9 @@ def _law_from_mapping(key: str, value: dict[str, Any]) -> LawMetadata:
         aliases=tuple(str(a) for a in (value.get("aliases") or [])),
         prolog_law_ids=tuple(str(a) for a in (value.get("prolog_law_ids") or [])),
         repeals=tuple(str(a) for a in (value.get("repeals") or [])),
+        allow_no_chapter=bool(value.get("allow_no_chapter") or False),
+        llm_skip_articles=tuple(int(x) for x in (value.get("llm_skip_articles") or [])),
+        llm_skip_reason=str(value.get("llm_skip_reason") or ""),
         raw=dict(value),
     )
 
