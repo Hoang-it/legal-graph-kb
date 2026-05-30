@@ -1,0 +1,44 @@
+name: "HyDE retrieval — Qwen 2.5 3B Instruct hypothetical doc on BGE-M3 dense channel"
+description: |
+  Tests Gao et al. 2022 (HyDE) on top of the BGE-M3 LoRA dense channel of
+  V5RetrievalPipeline. Generator: Qwen/Qwen2.5-3B-Instruct on Colab Free
+  T4 (fp16, N=1 hypothetical doc per question, max_new_tokens=400).
+
+  Plug-in point: replace the dense query embedding only — sparse channel
+  keeps the raw question (plan §D3, isolates HyDE contribution to dense).
+
+  Four arms — all retrieval-only, no LLM, no E2E:
+
+    dense              → V5RetrievalPipeline.retrieve_dense_only
+                         (BGE-M3 LoRA + clause_vec_tuned, dense_k=100)
+    dense_hyde         → V5RetrievalPipeline.retrieve_dense_only_hyde
+                         (same, but dense query = embedding of Qwen-generated
+                         hypothetical doc)
+    full_rerank        → retrieve_only on pipeline WITHOUT hyde
+                         (full v5: dense+sparse+temporal+RRF+rerank+expand)
+    full_rerank_hyde   → retrieve_only on pipeline WITH hyde
+                         (same pipeline, dense channel uses HyDE embedding)
+
+  Both retrieval pipelines share the same encoder + dense index + reranker
+  as exp 07 (scaled-up knobs) so K up to 100 is meaningful.
+
+  No inheritance from prior experiments (plan §D7 — strict no-inherit).
+  Records produced by scripts/exp08_run.py; metrics by scripts/exp08_metrics.py;
+  funnel by scripts/exp08_funnel.py. eval_core CLI is not used for this
+  retrieval-only audit (so `arms: {}` below is intentional).
+
+date: "2026-05-31"
+
+dataset:
+  questions: data/eval/questions_200.json
+  n: 200
+
+parent: null
+
+prompts_override_dir: null
+
+# Retrieval-only audit — eval_core arm runners are not applicable.
+# Metrics are computed by scripts/exp08_metrics.py.
+arms: {}
+
+multimodel: null

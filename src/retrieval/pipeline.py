@@ -40,6 +40,7 @@ from src.retrieval.hybrid_retriever import (
     RetrievalAudit,
     _dedupe_articles_in_order,
 )
+from src.retrieval.hyde import QwenHydeGenerator
 from src.retrieval.reranker import CrossEncoderReranker
 
 load_dotenv()
@@ -137,6 +138,7 @@ class V5RetrievalPipeline:
         dense_index: str | None = None,
         reranker_model: str | None = None,
         temporal_mode: str = "strict_today_default",
+        hyde: QwenHydeGenerator | None = None,
     ):
         from neo4j import GraphDatabase
 
@@ -164,6 +166,7 @@ class V5RetrievalPipeline:
         self.dense_index = dense_index or env_dense
         self.reranker_model = reranker_model  # None → reranker defaults from env / module const
         self.temporal_mode = temporal_mode
+        self.hyde = hyde
 
         # Static deps
         self._registry = load_registry(DEFAULT_REGISTRY_PATH)
@@ -190,6 +193,15 @@ class V5RetrievalPipeline:
     @property
     def retriever(self) -> HybridRetriever:
         if self._retriever is None:
+            # HyDE wiring: when self.hyde is set, build a query encoder
+            # closure that swaps the raw question for the embedding of N
+            # HyDE-generated docs. Sparse channel keeps the raw question
+            # (plan §D3 — isolates HyDE contribution to dense only).
+            query_encoder = (
+                self.hyde.embed_query_callable(self.embed_model)
+                if self.hyde is not None
+                else None
+            )
             self._retriever = HybridRetriever(
                 driver=self.driver,
                 db=self.db,
@@ -200,6 +212,7 @@ class V5RetrievalPipeline:
                 rrf_k=self.rrf_k,
                 dense_index=self.dense_index,
                 temporal_mode=self.temporal_mode,
+                query_encoder=query_encoder,
             )
         return self._retriever
 
@@ -273,6 +286,67 @@ class V5RetrievalPipeline:
             config=config_snapshot,
         )
 
+    def retrieve_dense_only_hyde(
+        self, question: str, top_k: int | None = None
+    ) -> RetrievalOnlyAnswer:
+        """Pure dense retrieval using HyDE embedding. Requires ``hyde`` to be set.
+
+        Mirrors :meth:`retrieve_dense_only` but the dense query is the
+        mean-pooled embedding of N HyDE-generated hypothetical documents
+        rather than the raw question. No sparse, no temporal, no RRF, no
+        rerank, no graph expand — used as the ``dense_hyde`` arm in
+        experiment 08.
+
+        Embedding is computed via the same closure the HybridRetriever
+        uses when wired through ``self.retriever``, so the cached HyDE
+        doc + the cached embedding are shared across arms within the
+        same pipeline instance.
+        """
+        if self.hyde is None:
+            raise RuntimeError(
+                "retrieve_dense_only_hyde requires a QwenHydeGenerator passed "
+                "via V5RetrievalPipeline(hyde=...)."
+            )
+
+        t0 = time.time()
+        timings: dict[str, float] = {}
+
+        k = top_k if top_k is not None else self.dense_k
+
+        # Reuse the retriever's dense path so a single code path handles
+        # both vanilla and HyDE encoding. ``self.retriever`` already has
+        # query_encoder=self.hyde.embed_query_callable(self.embed_model)
+        # because self.hyde is non-None at construction.
+        t = time.time()
+        rows = self.retriever._dense_search(question, k)
+        timings["dense"] = round(time.time() - t, 3)
+
+        article_ids = _dedupe_articles_in_order(r["article_id"] for r in rows)
+
+        config_snapshot = {
+            "mode": "dense_only_hyde",
+            "dense_k": k,
+            "adapter_path": self.adapter_path,
+            "dense_index": self.dense_index,
+            "hyde": {
+                "model_id": self.hyde.model_id,
+                "n": self.hyde.n,
+                "max_new_tokens": self.hyde.max_new_tokens,
+                "dtype": self.hyde.dtype,
+                "prompt_sha": self.hyde.prompt_sha,
+            },
+        }
+
+        return RetrievalOnlyAnswer(
+            question=question,
+            dense_article_ids=article_ids,
+            final_article_ids=article_ids,
+            n_final=len(article_ids),
+            elapsed_s=round(time.time() - t0, 3),
+            elapsed_breakdown=timings,
+            config=config_snapshot,
+        )
+
     def retrieve_only(self, question: str) -> RetrievalOnlyAnswer:
         """Run dense + sparse + temporal + RRF + rerank1 + expand + rerank2.
 
@@ -300,6 +374,17 @@ class V5RetrievalPipeline:
             "dense_index": self.dense_index,
             "reranker_model": self.reranker_model,
             "temporal_mode": self.temporal_mode,
+            "hyde": (
+                None
+                if self.hyde is None
+                else {
+                    "model_id": self.hyde.model_id,
+                    "n": self.hyde.n,
+                    "max_new_tokens": self.hyde.max_new_tokens,
+                    "dtype": self.hyde.dtype,
+                    "prompt_sha": self.hyde.prompt_sha,
+                }
+            ),
         }
 
         if not candidates:

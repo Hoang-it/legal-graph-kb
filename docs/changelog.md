@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Planned — HyDE retrieval with Qwen 2.5 3B on Colab Free (experiment 08)
+
+**Scope**: Hypothetical Document Embeddings on the BGE-M3 dense channel
+of `V5RetrievalPipeline`. Generator = Qwen 2.5 3B Instruct local on
+Colab Free T4 (no OpenAI API). 4 arms — `dense`, `dense_hyde`,
+`full_rerank`, `full_rerank_hyde` — same metric suite as experiment 07.
+
+**Motivation**: experiment 06 funnel showed dense is the dominant
+signal source, but BHXH questions are written in casual narrative style
+while KG clauses are formal legal text. HyDE should bridge that style
+gap.
+
+**Plan**: [`docs/plans/hyde_qwen_colab.md`](plans/hyde_qwen_colab.md) —
+fully self-contained: 15 locked decisions (D1-D15), file-by-file code
+surface, phase plan, gate criteria, risks, prerequisites. Ready for
+implementation in a fresh session.
+
+**Status**: design accepted 2026-05-30. Implementation phases 1-10
+pending. Branch strategy: `exp/08-hyde` from `main`.
+
+**Success criteria** (in_corpus stratum): R@12 ≥ +3pp absolute, or
+NDCG@10 ≥ +5% rel, or R-Precision ≥ +15% rel. Win triggers ADR 002.
+
 ### Decided — retrieval default = `full_rerank` arm at K=12 (Decision 001)
 
 **Scope**: Ratifies the existing `V5RetrievalPipeline.rerank2_top_k=12`

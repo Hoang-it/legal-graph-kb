@@ -17,7 +17,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 from datetime import date
-from typing import Iterable, Sequence
+from typing import Callable, Iterable, Sequence
 
 # ---------------------------------------------------------------------------
 # Public dataclasses
@@ -151,6 +151,7 @@ class HybridRetriever:
         dense_index: str | None = None,
         sparse_index: str | None = None,
         temporal_mode: str = "strict_today_default",
+        query_encoder: Callable[[str], "Iterable[float]"] | None = None,
     ):
         """``temporal_mode``:
 
@@ -163,6 +164,15 @@ class HybridRetriever:
           queries while not dropping repealed-but-still-relevant laws on
           date-agnostic ones.
         - ``always_skip``: never filter (debug / ablation only).
+
+        ``query_encoder`` (optional) — callable ``str → 1-D float vector`` used
+        in place of ``embed_model.encode([query])[0]`` for the DENSE channel
+        only. Set by :class:`V5RetrievalPipeline` when running with a HyDE
+        generator so the dense search embeds the hypothetical document
+        instead of the raw question. Sparse channel still uses raw question
+        text — keeps the HyDE ablation isolated to dense (see plan §D3).
+        When ``None``, behaviour is byte-for-byte identical to the pre-HyDE
+        path.
         """
         self._driver = driver
         self._db = db
@@ -176,15 +186,24 @@ class HybridRetriever:
         if temporal_mode not in {"strict_today_default", "skip_when_no_date", "always_skip"}:
             raise ValueError(f"unknown temporal_mode: {temporal_mode!r}")
         self.temporal_mode = temporal_mode
+        self._query_encoder = query_encoder
 
     # ------------------------------------------------------------------
     # Per-signal queries
     # ------------------------------------------------------------------
 
     def _dense_search(self, query: str, top_k: int) -> list[dict]:
-        q_emb = self._embed_model.encode(
-            [query], normalize_embeddings=True, show_progress_bar=False
-        )[0].tolist()
+        if self._query_encoder is not None:
+            vec = self._query_encoder(query)
+            # Tolerate numpy arrays, torch tensors, plain lists.
+            if hasattr(vec, "tolist"):
+                q_emb = vec.tolist()
+            else:
+                q_emb = list(vec)
+        else:
+            q_emb = self._embed_model.encode(
+                [query], normalize_embeddings=True, show_progress_bar=False
+            )[0].tolist()
         with self._driver.session(database=self._db) as s:
             rows = s.run(
                 f"""

@@ -29,6 +29,9 @@ project-level docs.
 ### Plans
 - [plans/v5_general_retrieval.md](plans/v5_general_retrieval.md) —
   current planning doc (Sprint 1 = vanilla pipeline + audit).
+- [plans/hyde_qwen_colab.md](plans/hyde_qwen_colab.md) — HyDE retrieval
+  with Qwen 2.5 3B on Colab Free T4 (accepted 2026-05-30,
+  experiment 08, ready to implement).
 
 ### Decisions (ADRs)
 - [decisions/001_retrieval_k_and_arm.md](decisions/001_retrieval_k_and_arm.md) —
