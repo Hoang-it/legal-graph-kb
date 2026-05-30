@@ -1,0 +1,183 @@
+{
+  "arm": "graphrag_v5_m2",
+  "stt": 29,
+  "question": "Bà Nhật Lệ (TPHCM) sinh con thứ hai vào tháng 01/2026. Bà được biết Nhà nước đang xem xét điều chỉnh thời gian nghỉ thai sản lên 7 tháng, tuy nhiên bà chưa rõ thời điểm hiệu lực của quy định này.\nBà Lệ hỏi, bà có thuộc diện được áp dụng chế độ nghỉ thai sản 7 tháng không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các điều luật liên quan trong CONTEXT bao gồm:\n\n- [Luật BHXH 2024 (41/2024/QH15), Điều 55 khoản 1]\n- [Bộ luật Lao động 2019 (45/2019/QH14), Điều 139 khoản 1]",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 55 khoản 1]",
+    "[Bộ luật Lao động 2019 (45/2019/QH14), Điều 139 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A55.K1",
+    "L45_2019.A139.K1"
+  ],
+  "citation_verified": {
+    "L41_2024.A55.K1": true,
+    "L45_2019.A139.K1": true
+  },
+  "n_final_hits": 12,
+  "n_seeds": 15,
+  "n_neighbors_added": 2,
+  "retrieval_audit": {
+    "event_date": "2026-12-31",
+    "n_dense": 30,
+    "n_sparse": 30,
+    "n_after_temporal": 32,
+    "n_after_fusion": 32,
+    "n_dropped_by_temporal": 13
+  },
+  "hits": [
+    {
+      "rank": 1,
+      "rerank2_score": 0.8082,
+      "kind": "seed",
+      "clause_id": "L41_2024.A53.K9",
+      "article_id": "L41_2024.A53",
+      "law_id": "L41_2024",
+      "article_n": 53,
+      "article_title": "Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con",
+      "clause_n": 9,
+      "rerank1_score": 0.8081825375556946
+    },
+    {
+      "rank": 2,
+      "rerank2_score": 0.8064,
+      "kind": "seed",
+      "clause_id": "L41_2024.A57.K2",
+      "article_id": "L41_2024.A57",
+      "law_id": "L41_2024",
+      "article_n": 57,
+      "article_title": "Thời gian nghỉ việc hưởng chế độ khi thực hiện các biện pháp tránh thai",
+      "clause_n": 2,
+      "rerank1_score": 0.8064333200454712
+    },
+    {
+      "rank": 3,
+      "rerank2_score": 0.7354,
+      "kind": "seed",
+      "clause_id": "L41_2024.A60.K4",
+      "article_id": "L41_2024.A60",
+      "law_id": "L41_2024",
+      "article_n": 60,
+      "article_title": "Dưỡng sức, phục hồi sức khoẻ sau thai sản",
+      "clause_n": 4,
+      "rerank1_score": 0.735403835773468
+    },
+    {
+      "rank": 4,
+      "rerank2_score": 0.7324,
+      "kind": "seed",
+      "clause_id": "L41_2024.A55.K1",
+      "article_id": "L41_2024.A55",
+      "law_id": "L41_2024",
+      "article_n": 55,
+      "article_title": "Chế độ thai sản của lao động nữ nhờ mang thai hộ",
+      "clause_n": 1,
+      "rerank1_score": 0.7323704361915588
+    },
+    {
+      "rank": 5,
+      "rerank2_score": 0.6626,
+      "kind": "seed",
+      "clause_id": "L45_2019.A139.K1",
+      "article_id": "L45_2019.A139",
+      "law_id": "L45_2019",
+      "article_n": 139,
+      "article_title": "Nghỉ thai sản",
+      "clause_n": 1,
+      "rerank1_score": 0.6626455783843994
+    },
+    {
+      "rank": 6,
+      "rerank2_score": 0.504,
+      "kind": "seed",
+      "clause_id": "L41_2024.A51.K2",
+      "article_id": "L41_2024.A51",
+      "law_id": "L41_2024",
+      "article_n": 51,
+      "article_title": "Thời gian nghỉ việc hưởng chế độ thai sản khi khám thai",
+      "clause_n": 2,
+      "rerank1_score": 0.5040277242660522
+    },
+    {
+      "rank": 7,
+      "rerank2_score": 0.3877,
+      "kind": "seed",
+      "clause_id": "L45_2019.A137.K4",
+      "article_id": "L45_2019.A137",
+      "law_id": "L45_2019",
+      "article_n": 137,
+      "article_title": "Bảo vệ thai sản",
+      "clause_n": 4,
+      "rerank1_score": 0.3876916468143463
+    },
+    {
+      "rank": 8,
+      "rerank2_score": 0.355,
+      "kind": "seed",
+      "clause_id": "L45_2019.A139.K3",
+      "article_id": "L45_2019.A139",
+      "law_id": "L45_2019",
+      "article_n": 139,
+      "article_title": "Nghỉ thai sản",
+      "clause_n": 3,
+      "rerank1_score": 0.3549592196941376
+    },
+    {
+      "rank": 9,
+      "rerank2_score": 0.3365,
+      "kind": "seed",
+      "clause_id": "L41_2024.A56.K1",
+      "article_id": "L41_2024.A56",
+      "law_id": "L41_2024",
+      "article_n": 56,
+      "article_title": "Chế độ thai sản khi nhận nuôi con nuôi dưới 06 tháng tuổi",
+      "clause_n": 1,
+      "rerank1_score": 0.3364582359790802
+    },
+    {
+      "rank": 10,
+      "rerank2_score": 0.2773,
+      "kind": "seed",
+      "clause_id": "L41_2024.A95.K2",
+      "article_id": "L41_2024.A95",
+      "law_id": "L41_2024",
+      "article_n": 95,
+      "article_title": "Trợ cấp thai sản",
+      "clause_n": 2,
+      "rerank1_score": 0.2772905230522156
+    },
+    {
+      "rank": 11,
+      "rerank2_score": 0.2534,
+      "kind": "neighbor",
+      "target_id": "L41_2024.A52",
+      "target_label": "Article",
+      "target_title": "Thời gian nghỉ việc hưởng chế độ thai sản khi sảy thai, phá thai, thai chết trong tử cung, thai chết trong khi chuyển dạ, thai ngoài tử cung",
+      "seed_clause_id": "L41_2024.A60.K1",
+      "hop_distance": 1
+    },
+    {
+      "rank": 12,
+      "rerank2_score": 0.1731,
+      "kind": "seed",
+      "clause_id": "L41_2024.A60.K1",
+      "article_id": "L41_2024.A60",
+      "law_id": "L41_2024",
+      "article_n": 60,
+      "article_title": "Dưỡng sức, phục hồi sức khoẻ sau thai sản",
+      "clause_n": 1,
+      "rerank1_score": 0.17314215004444122
+    }
+  ],
+  "elapsed_s": 3.398,
+  "elapsed_breakdown": {
+    "retrieve": 0.305,
+    "rerank1": 0.805,
+    "expand": 0.015,
+    "rerank2": 0.403,
+    "llm": 1.87
+  },
+  "gold_answer": "Luật Dân số năm 2025 có hiệu lực kể từ ngày 1/7/2026 quy định sửa đổi, bổ sung một số điều của các luật có liên quan đến công tác dân số tại khoản 1 Điều 29 như sau:\n\"Sửa đổi, bổ sung khoản 1 Điều 139 Bộ luật Lao động số 49/2019/QH14 đã được sửa đổi, bố sung theo Luật số 71/2025/QH15 như sau:\n\"1. Lao động nữ được nghỉ thai sản trước và sau khi sinh con là 06 tháng; trường hợp sinh con thứ hai, lao động nữ được nghỉ thai sản trước và sau khi sinh con là 07 tháng; thời gian nghỉ trước khi sinh không quá 02 tháng.\nTrường hợp lao động nữ sinh đôi trở lên thì tính từ con thứ hai trở đi, cứ mỗi con, người mẹ được nghỉ thêm 01 tháng\"\".\nĐối chiếu với quy định nêu trên và theo thông tin bà cung cấp thì bà sinh con thứ hai vào tháng 01/2026 thì bà chưa thuộc trường hợp áp dụng nghỉ chế độ thai sản 7 tháng.",
+  "gold_citations_raw": "[Luật Dân số 2025, Điều 29]\n[Bộ luật Lao động 2019, Điều 139]"
+}

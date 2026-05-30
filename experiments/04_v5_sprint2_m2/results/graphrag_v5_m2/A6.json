@@ -1,0 +1,185 @@
+{
+  "arm": "graphrag_v5_m2",
+  "stt": 6,
+  "question": "Bà Thảo hỏi, trên giấy ra viện có ghi chú người lao động được nghỉ lao động 10 ngày, vậy, có cần xin thêm Giấy chứng nhận nghỉ việc hưởng BHXH để hưởng 10 ngày đó không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Luật BHXH 2024 (41/2024/QH15), Điều 46 khoản 1]\n- [Luật BHXH 2024 (41/2024/QH15), Điều 43 khoản 3]",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 46 khoản 1]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 43 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A46.K1",
+    "L41_2024.A43.K3"
+  ],
+  "citation_verified": {
+    "L41_2024.A46.K1": true,
+    "L41_2024.A43.K3": true
+  },
+  "n_final_hits": 12,
+  "n_seeds": 15,
+  "n_neighbors_added": 3,
+  "retrieval_audit": {
+    "event_date": "2026-05-30",
+    "n_dense": 30,
+    "n_sparse": 30,
+    "n_after_temporal": 27,
+    "n_after_fusion": 27,
+    "n_dropped_by_temporal": 21
+  },
+  "hits": [
+    {
+      "rank": 1,
+      "rerank2_score": 0.6881,
+      "kind": "seed",
+      "clause_id": "L41_2024.A78.K3",
+      "article_id": "L41_2024.A78",
+      "law_id": "L41_2024",
+      "article_n": 78,
+      "article_title": "Hồ sơ đề nghị hưởng bảo hiểm xã hội một lần",
+      "clause_n": 3,
+      "rerank1_score": 0.6880918741226196
+    },
+    {
+      "rank": 2,
+      "rerank2_score": 0.6145,
+      "kind": "seed",
+      "clause_id": "L41_2024.A106.K3",
+      "article_id": "L41_2024.A106",
+      "law_id": "L41_2024",
+      "article_n": 106,
+      "article_title": "Hồ sơ đề nghị hưởng bảo hiểm xã hội một lần",
+      "clause_n": 3,
+      "rerank1_score": 0.6144629120826721
+    },
+    {
+      "rank": 3,
+      "rerank2_score": 0.5438,
+      "kind": "seed",
+      "clause_id": "L41_2024.A46.K1",
+      "article_id": "L41_2024.A46",
+      "law_id": "L41_2024",
+      "article_n": 46,
+      "article_title": "Dưỡng sức, phục hồi sức khoẻ sau khi ốm đau",
+      "clause_n": 1,
+      "rerank1_score": 0.5438052415847778
+    },
+    {
+      "rank": 4,
+      "rerank2_score": 0.2817,
+      "kind": "seed",
+      "clause_id": "L41_2024.A25.K1",
+      "article_id": "L41_2024.A25",
+      "law_id": "L41_2024",
+      "article_n": 25,
+      "article_title": "Sổ bảo hiểm xã hội",
+      "clause_n": 1,
+      "rerank1_score": 0.2816915810108185
+    },
+    {
+      "rank": 5,
+      "rerank2_score": 0.2086,
+      "kind": "seed",
+      "clause_id": "L41_2024.A43.K3",
+      "article_id": "L41_2024.A43",
+      "law_id": "L41_2024",
+      "article_n": 43,
+      "article_title": "Thời gian hưởng chế độ ốm đau",
+      "clause_n": 3,
+      "rerank1_score": 0.20861874520778656
+    },
+    {
+      "rank": 6,
+      "rerank2_score": 0.1736,
+      "kind": "seed",
+      "clause_id": "L41_2024.A48.K2",
+      "article_id": "L41_2024.A48",
+      "law_id": "L41_2024",
+      "article_n": 48,
+      "article_title": "Giải quyết hưởng trợ cấp ốm đau",
+      "clause_n": 2,
+      "rerank1_score": 0.17364294826984406
+    },
+    {
+      "rank": 7,
+      "rerank2_score": 0.1704,
+      "kind": "seed",
+      "clause_id": "L45_2019.A115.K2",
+      "article_id": "L45_2019.A115",
+      "law_id": "L45_2019",
+      "article_n": 115,
+      "article_title": "Nghỉ việc riêng, nghỉ không hưởng lương",
+      "clause_n": 2,
+      "rerank1_score": 0.1703639030456543
+    },
+    {
+      "rank": 8,
+      "rerank2_score": 0.1542,
+      "kind": "seed",
+      "clause_id": "L45_2019.A113.K6",
+      "article_id": "L45_2019.A113",
+      "law_id": "L45_2019",
+      "article_n": 113,
+      "article_title": "Nghỉ hằng năm",
+      "clause_n": 6,
+      "rerank1_score": 0.1541750729084015
+    },
+    {
+      "rank": 9,
+      "rerank2_score": 0.1164,
+      "kind": "seed",
+      "clause_id": "L41_2024.A61.K5",
+      "article_id": "L41_2024.A61",
+      "law_id": "L41_2024",
+      "article_n": 61,
+      "article_title": "Hồ sơ đề nghị hưởng chế độ thai sản",
+      "clause_n": 5,
+      "rerank1_score": 0.1164081022143364
+    },
+    {
+      "rank": 10,
+      "rerank2_score": 0.1132,
+      "kind": "seed",
+      "clause_id": "L41_2024.A57.K1",
+      "article_id": "L41_2024.A57",
+      "law_id": "L41_2024",
+      "article_n": 57,
+      "article_title": "Thời gian nghỉ việc hưởng chế độ khi thực hiện các biện pháp tránh thai",
+      "clause_n": 1,
+      "rerank1_score": 0.11317071318626404
+    },
+    {
+      "rank": 11,
+      "rerank2_score": 0.1071,
+      "kind": "seed",
+      "clause_id": "L41_2024.A141.K10",
+      "article_id": "L41_2024.A141",
+      "law_id": "L41_2024",
+      "article_n": 141,
+      "article_title": "Quy định chuyển tiếp",
+      "clause_n": 10,
+      "rerank1_score": 0.10707993805408478
+    },
+    {
+      "rank": 12,
+      "rerank2_score": 0.1024,
+      "kind": "seed",
+      "clause_id": "L41_2024.A62.K1",
+      "article_id": "L41_2024.A62",
+      "law_id": "L41_2024",
+      "article_n": 62,
+      "article_title": "Giải quyết hưởng chế độ thai sản đối với người tham gia bảo hiểm xã hội bắt buộc",
+      "clause_n": 1,
+      "rerank1_score": 0.10244979709386826
+    }
+  ],
+  "elapsed_s": 2.693,
+  "elapsed_breakdown": {
+    "retrieve": 0.258,
+    "rerank1": 0.452,
+    "expand": 0.031,
+    "rerank2": 0.382,
+    "llm": 1.536
+  },
+  "gold_answer": "Tại Khoản 14 Điều 1 Thông tư số 18/2022/TT-BYT ngày 31/12/2022 của Bộ trưởng Bộ Y tế sửa đổi, bổ sung một số điều của Thông tư số 56/2017/TT-BYT ngày 29/12/2017 của Bộ trưởng Bộ Y tế quy định chi tiết thi hành Luật BHXH và Luật An toàn, vệ sinh lao động thuộc lĩnh y tế quy định như sau:\nTrường hợp người bệnh cần nghỉ để điều trị ngoại trú sau khi ra viện thì cơ quan BHXH căn cứ số ngày nghỉ ghi tại phần ghi chú của giấy ra viện để làm căn cứ thanh toán chế độ BHXH theo quy định.\nĐối chiếu quy định nêu trên, việc cơ sở khám bệnh, chữa bệnh ghi thêm số ngày nghỉ để điều trị ngoại trú tại phần ghi chú trên giấy ra viện là đúng quy định và số ngày nghỉ điều trị ngoại trú đó sẽ được cơ quan BHXH căn cứ để giải quyết chế độ BHXH đối với bà theo quy định.\nDo đó, bà không phải xin cấp thêm Giấy chứng nhận nghỉ việc hưởng BHXH đối với 10 ngày nghỉ việc điều trị ngoại trú nêu trên",
+  "gold_citations_raw": "[Thông tư 18/2022/TT-BYT, Điều 1]"
+}

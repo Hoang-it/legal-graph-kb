@@ -1,0 +1,182 @@
+{
+  "arm": "graphrag_v5_m2",
+  "stt": 28,
+  "question": "Bà Hoàng Tuyết Mây nhận nuôi con nuôi ngày 13/10/2025 (có biên bản làm việc viết tay của chính quyền, có dấu).\nNgày 12/11/2025, bà được cấp giấy chứng nhận nuôi con nuôi. Ngày 17/11/2025 con của bà có Giấy khai sinh, tên bố mẹ bổ sung ở mặt sau giấy khai sinh của con.\nBà Mây hỏi, bà được hưởng trợ cấp thai sản như thế nào? Bắt đầu được nghỉ thai sản từ thời điểm nào?",
+  "answer": "Theo quy định, bà Hoàng Tuyết Mây được nghỉ việc hưởng chế độ thai sản kể từ ngày giao nhận con nuôi cho đến khi con đủ 06 tháng tuổi. Trong trường hợp của bà, ngày giao nhận con nuôi là ngày 13/10/2025, do đó bà sẽ bắt đầu được nghỉ thai sản từ thời điểm này.\n\nVề trợ cấp thai sản, bà Mây sẽ được hưởng trợ cấp thai sản theo quy định tại Điều 56 của Luật BHXH 2024. Cụ thể, bà sẽ nhận trợ cấp thai sản cho thời gian từ ngày 13/10/2025 cho đến khi con đủ 06 tháng tuổi.\n\nTóm lại, bà Hoàng Tuyết Mây được nghỉ thai sản từ ngày 13/10/2025 và sẽ được hưởng trợ cấp thai sản theo quy định.\n\n- [Luật BHXH 2024 (41/2024/QH15), Điều 56 khoản 1]",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 56 khoản 1]"
+  ],
+  "citation_ids": [
+    "L41_2024.A56.K1"
+  ],
+  "citation_verified": {
+    "L41_2024.A56.K1": true
+  },
+  "n_final_hits": 12,
+  "n_seeds": 15,
+  "n_neighbors_added": 4,
+  "retrieval_audit": {
+    "event_date": "2025-12-31",
+    "n_dense": 30,
+    "n_sparse": 30,
+    "n_after_temporal": 30,
+    "n_after_fusion": 30,
+    "n_dropped_by_temporal": 14
+  },
+  "hits": [
+    {
+      "rank": 1,
+      "rerank2_score": 0.9395,
+      "kind": "seed",
+      "clause_id": "L41_2024.A55.K1",
+      "article_id": "L41_2024.A55",
+      "law_id": "L41_2024",
+      "article_n": 55,
+      "article_title": "Chế độ thai sản của lao động nữ nhờ mang thai hộ",
+      "clause_n": 1,
+      "rerank1_score": 0.9395162463188171
+    },
+    {
+      "rank": 2,
+      "rerank2_score": 0.8506,
+      "kind": "seed",
+      "clause_id": "L41_2024.A56.K1",
+      "article_id": "L41_2024.A56",
+      "law_id": "L41_2024",
+      "article_n": 56,
+      "article_title": "Chế độ thai sản khi nhận nuôi con nuôi dưới 06 tháng tuổi",
+      "clause_n": 1,
+      "rerank1_score": 0.8506314158439636
+    },
+    {
+      "rank": 3,
+      "rerank2_score": 0.8009,
+      "kind": "seed",
+      "clause_id": "L41_2024.A53.K3",
+      "article_id": "L41_2024.A53",
+      "law_id": "L41_2024",
+      "article_n": 53,
+      "article_title": "Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con",
+      "clause_n": 3,
+      "rerank1_score": 0.8009069561958313
+    },
+    {
+      "rank": 4,
+      "rerank2_score": 0.6743,
+      "kind": "seed",
+      "clause_id": "L41_2024.A94.K2",
+      "article_id": "L41_2024.A94",
+      "law_id": "L41_2024",
+      "article_n": 94,
+      "article_title": "Đối tượng và điều kiện hưởng trợ cấp thai sản",
+      "clause_n": 2,
+      "rerank1_score": 0.6742523908615112
+    },
+    {
+      "rank": 5,
+      "rerank2_score": 0.6132,
+      "kind": "seed",
+      "clause_id": "L45_2019.A139.K1",
+      "article_id": "L45_2019.A139",
+      "law_id": "L45_2019",
+      "article_n": 139,
+      "article_title": "Nghỉ thai sản",
+      "clause_n": 1,
+      "rerank1_score": 0.6132063865661621
+    },
+    {
+      "rank": 6,
+      "rerank2_score": 0.5834,
+      "kind": "seed",
+      "clause_id": "L41_2024.A55.K2",
+      "article_id": "L41_2024.A55",
+      "law_id": "L41_2024",
+      "article_n": 55,
+      "article_title": "Chế độ thai sản của lao động nữ nhờ mang thai hộ",
+      "clause_n": 2,
+      "rerank1_score": 0.5833583474159241
+    },
+    {
+      "rank": 7,
+      "rerank2_score": 0.551,
+      "kind": "seed",
+      "clause_id": "L41_2024.A58.K4",
+      "article_id": "L41_2024.A58",
+      "law_id": "L41_2024",
+      "article_n": 58,
+      "article_title": "Trợ cấp một lần khi sinh con, nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 06 tháng tuổi",
+      "clause_n": 4,
+      "rerank1_score": 0.5510006546974182
+    },
+    {
+      "rank": 8,
+      "rerank2_score": 0.5453,
+      "kind": "seed",
+      "clause_id": "L41_2024.A59.K3",
+      "article_id": "L41_2024.A59",
+      "law_id": "L41_2024",
+      "article_n": 59,
+      "article_title": "Trợ cấp thai sản",
+      "clause_n": 3,
+      "rerank1_score": 0.5453369617462158
+    },
+    {
+      "rank": 9,
+      "rerank2_score": 0.5115,
+      "kind": "seed",
+      "clause_id": "L41_2024.A53.K5",
+      "article_id": "L41_2024.A53",
+      "law_id": "L41_2024",
+      "article_n": 53,
+      "article_title": "Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con",
+      "clause_n": 5,
+      "rerank1_score": 0.5114691257476807
+    },
+    {
+      "rank": 10,
+      "rerank2_score": 0.2557,
+      "kind": "seed",
+      "clause_id": "L41_2024.A61.K1",
+      "article_id": "L41_2024.A61",
+      "law_id": "L41_2024",
+      "article_n": 61,
+      "article_title": "Hồ sơ đề nghị hưởng chế độ thai sản",
+      "clause_n": 1,
+      "rerank1_score": 0.2557130455970764
+    },
+    {
+      "rank": 11,
+      "rerank2_score": 0.2402,
+      "kind": "seed",
+      "clause_id": "L41_2024.A61.K2",
+      "article_id": "L41_2024.A61",
+      "law_id": "L41_2024",
+      "article_n": 61,
+      "article_title": "Hồ sơ đề nghị hưởng chế độ thai sản",
+      "clause_n": 2,
+      "rerank1_score": 0.24016700685024261
+    },
+    {
+      "rank": 12,
+      "rerank2_score": 0.2274,
+      "kind": "seed",
+      "clause_id": "L41_2024.A50.K4",
+      "article_id": "L41_2024.A50",
+      "law_id": "L41_2024",
+      "article_n": 50,
+      "article_title": "Đối tượng và điều kiện hưởng chế độ thai sản",
+      "clause_n": 4,
+      "rerank1_score": 0.227449432015419
+    }
+  ],
+  "elapsed_s": 3.986,
+  "elapsed_breakdown": {
+    "retrieve": 0.311,
+    "rerank1": 0.613,
+    "expand": 0.016,
+    "rerank2": 0.385,
+    "llm": 2.661
+  },
+  "gold_answer": "Về đối tượng và điều kiện hưởng chế độ thai sản, điểm đ khoản 1 Điều 50 Luật BHXH năm 2024 quy định:\n\"1. Đối tượng quy định tại các điểm a, b, c, d, i, k, l, m và n khoản 1 và khoản 2 Điều 2 của Luật này được hưởng chế độ thai sản khi thuộc một trong các trường hợp sau đây:\nđ) Người lao động nhận nuôi con nuôi dưới 06 tháng tuổi;\"\nTại Khoản 2 Điều 50 Luật BHXH năm 2024 quy định, đối tượng quy định tại các điểm b, c, d và đ khoản 1 Điều này (người lao động nhận nuôi con nuôi dưới 06 tháng tuổi) phải đóng BHXH bắt buộc từ đủ 06 tháng trở lên trong thời gian 12 tháng liền kề trước khi sinh con hoặc nhận con khi nhờ mang thai hộ hoặc nhận nuôi con nuôi dưới 6 tháng tuổi.\nVề chế độ thai sản khi nhận nuôi con nuôi dưới 6 tháng tuổi, tại Điều 56 Luật BHXH năm 2024 quy định, người lao động nhận nuôi con nuôi dưới 6 tháng tuổi được nghỉ việc hưởng chế độ thai sản kể từ ngày giao nhận con nuôi cho đến khi con đủ 6 tháng tuổi.\nTrường hợp cả cha và mẹ cùng tham gia BHXH bắt buộc đủ điều kiện hưởng chế độ thai sản quy định tại khoản 2 Điều 50 của Luật này thì chỉ cha hoặc mẹ được nghỉ việc hưởng chế độ thai sản.\nNgười lao động nhận nuôi con nuôi dưới 6 tháng tuổi được hưởng trợ cấp một lần theo quy định tại Điều 58 của Luật này.\nVề trợ cấp một lần khi nhận nuôi con nuôi dưới 6 tháng tuổi, tại khoản 3, khoản 4 Điều 58 Luật BHXH năm 2024 quy định, người lao động nhận nuôi con nuôi dưới 6 tháng tuổi đủ điều kiện theo quy định tại khoản 2 Điều 50 của Luật này thì được trợ cấp một lần. Mức trợ cấp một lần cho mỗi con quy định tại khoản 3 Điều này bằng 2 lần mức tham chiếu tại tháng người lao động nhận nuôi con nuôi.\nVề hồ sơ đề nghị hưởng chế độ thai sản, tại khoản 4 Điều 61 Luật BHXH năm 2024 quy định hồ sơ đề nghị hưởng chế độ thai sản đối với người lao động nhận nuôi con nuôi dưới 6 tháng tuổi bao gồmbản sao giấy chứng nhận nuôi con nuôi và biên bản giao nhận con.\nDo bà chưa cung cấp đầy đủ thông tin về quá trình tham gia BHXH bắt buộc của bà nên BHXH Việt Nam chưa có đủ căn cứ trả lời. Vì vậy, đề nghị bà đến cơ quan BHXH nơi gần nhất và cung cấp đầy đủ thông tin để được trả lời và tư vấn cụ thể.",
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+}

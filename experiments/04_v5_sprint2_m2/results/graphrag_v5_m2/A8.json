@@ -1,0 +1,188 @@
+{
+  "arm": "graphrag_v5_m2",
+  "stt": 8,
+  "question": "Năm 2022, ông Bình Châu (Tây Ninh) có 11 tháng thất nghiệp nhưng chưa hưởng trợ cấp. Tháng 1-7/2024 ông thất nghiệp.\nÔng Châu hỏi, trường hợp của ông có được đăng ký hưởng trợ cấp thất nghiệp không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Bộ luật Lao động 2019 (45/2019/QH14), Điều 46 khoản 2]\n- [Bộ luật Lao động 2019 (45/2019/QH14), Điều 47 khoản 2]\n- [Bộ luật Lao động 2019 (45/2019/QH14), Điều 168 khoản 1]",
+  "citations": [
+    "[Bộ luật Lao động 2019 (45/2019/QH14), Điều 46 khoản 2]",
+    "[Bộ luật Lao động 2019 (45/2019/QH14), Điều 47 khoản 2]",
+    "[Bộ luật Lao động 2019 (45/2019/QH14), Điều 168 khoản 1]"
+  ],
+  "citation_ids": [
+    "L45_2019.A46.K2",
+    "L45_2019.A47.K2",
+    "L45_2019.A168.K1"
+  ],
+  "citation_verified": {
+    "L45_2019.A46.K2": true,
+    "L45_2019.A47.K2": true,
+    "L45_2019.A168.K1": true
+  },
+  "n_final_hits": 12,
+  "n_seeds": 15,
+  "n_neighbors_added": 2,
+  "retrieval_audit": {
+    "event_date": "2024-12-31",
+    "n_dense": 30,
+    "n_sparse": 30,
+    "n_after_temporal": 25,
+    "n_after_fusion": 25,
+    "n_dropped_by_temporal": 29
+  },
+  "hits": [
+    {
+      "rank": 1,
+      "rerank2_score": 0.2385,
+      "kind": "seed",
+      "clause_id": "L45_2019.A46.K2",
+      "article_id": "L45_2019.A46",
+      "law_id": "L45_2019",
+      "article_n": 46,
+      "article_title": "Trợ cấp thôi việc",
+      "clause_n": 2,
+      "rerank1_score": 0.23853632807731628
+    },
+    {
+      "rank": 2,
+      "rerank2_score": 0.1943,
+      "kind": "seed",
+      "clause_id": "L45_2019.A48.K2",
+      "article_id": "L45_2019.A48",
+      "law_id": "L45_2019",
+      "article_n": 48,
+      "article_title": "Trách nhiệm khi chấm dứt hợp đồng lao động",
+      "clause_n": 2,
+      "rerank1_score": 0.19434843957424164
+    },
+    {
+      "rank": 3,
+      "rerank2_score": 0.1403,
+      "kind": "seed",
+      "clause_id": "L45_2019.A47.K2",
+      "article_id": "L45_2019.A47",
+      "law_id": "L45_2019",
+      "article_n": 47,
+      "article_title": "Trợ cấp mất việc làm",
+      "clause_n": 2,
+      "rerank1_score": 0.14029748737812042
+    },
+    {
+      "rank": 4,
+      "rerank2_score": 0.0234,
+      "kind": "seed",
+      "clause_id": "L45_2019.A168.K1",
+      "article_id": "L45_2019.A168",
+      "law_id": "L45_2019",
+      "article_n": 168,
+      "article_title": "Tham gia bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp",
+      "clause_n": 1,
+      "rerank1_score": 0.02335616946220398
+    },
+    {
+      "rank": 5,
+      "rerank2_score": 0.0179,
+      "kind": "seed",
+      "clause_id": "L45_2019.A115.K2",
+      "article_id": "L45_2019.A115",
+      "law_id": "L45_2019",
+      "article_n": 115,
+      "article_title": "Nghỉ việc riêng, nghỉ không hưởng lương",
+      "clause_n": 2,
+      "rerank1_score": 0.017950089648365974
+    },
+    {
+      "rank": 6,
+      "rerank2_score": 0.0165,
+      "kind": "seed",
+      "clause_id": "L58_2014.A111.K2",
+      "article_id": "L58_2014.A111",
+      "law_id": "L58_2014",
+      "article_n": 111,
+      "article_title": "Hồ sơ hưởng chế độ tử tuất",
+      "clause_n": 2,
+      "rerank1_score": 0.016513867303729057
+    },
+    {
+      "rank": 7,
+      "rerank2_score": 0.0157,
+      "kind": "seed",
+      "clause_id": "L45_2019.A172.K4",
+      "article_id": "L45_2019.A172",
+      "law_id": "L45_2019",
+      "article_n": 172,
+      "article_title": "Thành lập, gia nhập tổ chức của người lao động tại doanh nghiệp",
+      "clause_n": 4,
+      "rerank1_score": 0.01565808430314064
+    },
+    {
+      "rank": 8,
+      "rerank2_score": 0.0146,
+      "kind": "seed",
+      "clause_id": "L58_2014.A123.K3",
+      "article_id": "L58_2014.A123",
+      "law_id": "L58_2014",
+      "article_n": 123,
+      "article_title": "Quy định chuyển tiếp",
+      "clause_n": 3,
+      "rerank1_score": 0.014576269313693047
+    },
+    {
+      "rank": 9,
+      "rerank2_score": 0.0132,
+      "kind": "seed",
+      "clause_id": "L58_2014.A113.K1",
+      "article_id": "L58_2014.A113",
+      "law_id": "L58_2014",
+      "article_n": 113,
+      "article_title": "Hồ sơ hưởng tiếp lương hưu, trợ cấp bảo hiểm xã hội hằng tháng đối với người xuất cảnh trái phép trở về nước định cư hợp pháp và người bị Tòa án tuyên bố mất tích trở về",
+      "clause_n": 1,
+      "rerank1_score": 0.013247202150523663
+    },
+    {
+      "rank": 10,
+      "rerank2_score": 0.0114,
+      "kind": "seed",
+      "clause_id": "L58_2014.A23.K13",
+      "article_id": "L58_2014.A23",
+      "law_id": "L58_2014",
+      "article_n": 23,
+      "article_title": "Trách nhiệm của cơ quan bảo hiểm xã hội",
+      "clause_n": 13,
+      "rerank1_score": 0.011402875185012817
+    },
+    {
+      "rank": 11,
+      "rerank2_score": 0.0106,
+      "kind": "seed",
+      "clause_id": "L58_2014.A123.K6",
+      "article_id": "L58_2014.A123",
+      "law_id": "L58_2014",
+      "article_n": 123,
+      "article_title": "Quy định chuyển tiếp",
+      "clause_n": 6,
+      "rerank1_score": 0.010621117427945137
+    },
+    {
+      "rank": 12,
+      "rerank2_score": 0.0062,
+      "kind": "seed",
+      "clause_id": "L58_2014.A17.K8",
+      "article_id": "L58_2014.A17",
+      "law_id": "L58_2014",
+      "article_n": 17,
+      "article_title": "Các hành vi bị nghiêm cấm",
+      "clause_n": 8,
+      "rerank1_score": 0.0061545902863144875
+    }
+  ],
+  "elapsed_s": 3.387,
+  "elapsed_breakdown": {
+    "retrieve": 0.509,
+    "rerank1": 0.62,
+    "expand": 0.032,
+    "rerank2": 0.35,
+    "llm": 1.877
+  },
+  "gold_answer": "Tại Điều 49 Luật Việc làm quy định, người lao động đang đóng bảo hiểm thất nghiệp được hưởng trợ cấp thất nghiệp khi có đủ các điều kiện sau đây:\n- Chấm dứt hợp đồng lao động hoặc hợp đồng làm việc, trừ các trường hợp sau đây:\n+ Người lao động đơn phương chấm dứt hợp đồng lao động, hợp đồng làm việc trái pháp luật;\n+ Hưởng lương hưu, trợ cấp mất sức lao động hằng tháng.\n- Đã đóng bảo hiểm thất nghiệp từ đủ:\n+ 12 tháng trở lên trong thời gian 24 tháng trước khi chấm dứt hợp đồng lao động đối với các trường hợp: hợp đồng lao động có xác định và không xác định thời hạn;\n+ 12 tháng trở lên trong thời gian 36 tháng trước khi chấm dứt hợp đồng lao động đối với các trường hợp: ký hợp đồng lao động theo mùa vụ hoặc theo một công việc nhất định có thời hạn từ đủ 3 tháng đến dưới 12 tháng.\n- Đã nộp hồ sơ hưởng trợ cấp thất nghiệp tại Trung tâm dịch vụ việc làm trong thời hạn 3 tháng kể từ ngày chấm dứt hợp đồng lao động hoặc hợp đồng làm việc.\n- Chưa tìm được việc làm sau 15 ngày, kể từ ngày nộp hồ sơ hưởng bảo hiểm thất nghiệp, trừ các trường hợp sau đây:\n+ Thực hiện nghĩa vụ quân sự, nghĩa vụ công an;\n+ Đi học tập có thời hạn từ đủ 12 tháng trở lên;\n+ Chấp hành quyết định áp dụng biện pháp đưa vào trường giáo dưỡng, cơ sở giáo dục bắt buộc, cơ sở cai nghiện bắt buộc;\n+ Bị tạm giam; chấp hành hình phạt tù;\n+ Ra nước ngoài định cư; đi lao động ở nước ngoài theo hợp đồng;\n+ Chết.\nTại Khoản 1 Điều 45 Luật Việc làm quy định, thời gian đóng bảo hiểm thất nghiệp để xét hưởng bảo hiểm thất nghiệp là tổng các khoảng thời gian đã đóng bảo hiểm thất nghiệp liên tục hoặc không liên tục được cộng dồn từ khi bắt đầu đóng bảo hiểm thất nghiệp cho đến khi người lao động chấm dứt hợp đồng lao động hoặc hợp đồng làm việc theo quy định của pháp luật mà chưa hưởng trợ cấp thất nghiệp.\nBHXH Việt Nam thông tin quy định của chính sách đến ông Châu để ông nắm được và đối chiếu với trường hợp cụ thể của bản thân để xác định quyền lợi về hưởng trợ cấp thất nghiệp của mình.",
+  "gold_citations_raw": "[Luật Việc làm 2013, Điều 49]\n[Luật Việc làm 2013, Điều 45]"
+}

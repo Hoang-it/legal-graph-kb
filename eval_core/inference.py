@@ -326,6 +326,82 @@ def run_graphrag_v5(
           f"({time.time() - t_total:.1f}s)")
 
 
+def run_graphrag_v5_m2(
+    questions: list[dict],
+    results_root: Path,
+    force: bool,
+    verbose: bool,
+) -> None:
+    """v5 Sprint 2 M2 arm: fine-tuned BGE-M3 + bge-reranker-base + tuned index.
+
+    Identical logic to ``run_graphrag_v5`` except the arm name (so records go to
+    ``results/graphrag_v5_m2/``) and the pipeline is constructed with the M2
+    swap points (adapter, tuned dense index, base reranker). Each swap point
+    falls back to its env var when constructor args are None, so the same
+    pipeline class supports both vanilla and tuned modes.
+    """
+    from src.retrieval import V5RetrievalPipeline
+
+    arm = "graphrag_v5_m2"
+    out_dir = results_root / arm
+    pipeline = V5RetrievalPipeline(
+        adapter_path="models/bge-m3-bhxh-lora",
+        dense_index="clause_vec_tuned",
+        reranker_model="BAAI/bge-reranker-base",
+    )
+    _ = pipeline.embed_model
+    _ = pipeline.reranker.model
+
+    n_done, n_skipped, n_failed = 0, 0, 0
+    t_total = time.time()
+    try:
+        for i, q in enumerate(questions, 1):
+            stt = q["stt"]
+            out_path = out_dir / f"A{stt}.json"
+            if out_path.exists() and not force:
+                n_skipped += 1
+                continue
+            try:
+                result = pipeline.ask(q["question"])
+                verified = pipeline.verify_citations(result.citation_ids)
+                record = {
+                    "arm": arm,
+                    "stt": stt,
+                    "question": q["question"],
+                    "answer": result.answer,
+                    "citations": result.citations,
+                    "citation_ids": result.citation_ids,
+                    "citation_verified": verified,
+                    "n_final_hits": result.n_final,
+                    "n_seeds": result.n_seeds,
+                    "n_neighbors_added": result.n_neighbors_added,
+                    "retrieval_audit": result.retrieval_audit,
+                    "hits": result.hits,
+                    "elapsed_s": result.elapsed_s,
+                    "elapsed_breakdown": result.elapsed_breakdown,
+                    "gold_answer": q.get("gold_answer"),
+                    "gold_citations_raw": q.get("gold_citations_raw"),
+                }
+                _save(out_path, record)
+                n_done += 1
+                if verbose or i % 5 == 0:
+                    print(
+                        f"  [{arm:<16} {i:>3}/{len(questions)}] stt={stt} "
+                        f"({result.elapsed_s:.1f}s, seeds={result.n_seeds}, "
+                        f"+neigh={result.n_neighbors_added}, cits={len(result.citation_ids)})",
+                        flush=True,
+                    )
+            except Exception as e:
+                n_failed += 1
+                print(f"  ✗ [{arm} {stt}] {type(e).__name__}: {e}", file=sys.stderr)
+                _save(out_path.with_suffix(".error.json"),
+                      {"arm": arm, "stt": stt, "error": f"{type(e).__name__}: {e}"})
+    finally:
+        pipeline.close()
+    print(f"\n{arm} done: {n_done} new, {n_skipped} skipped, {n_failed} failed "
+          f"({time.time() - t_total:.1f}s)")
+
+
 ARM_RUNNERS = {
     "graphrag": run_graphrag,
     "llm_only": run_llm_only,
@@ -333,6 +409,7 @@ ARM_RUNNERS = {
     "logic_lm_ontology": run_logic_lm_ontology,
     "logic_lm_graphrag": run_logic_lm_graphrag,
     "graphrag_v5": run_graphrag_v5,
+    "graphrag_v5_m2": run_graphrag_v5_m2,
 }
 
 

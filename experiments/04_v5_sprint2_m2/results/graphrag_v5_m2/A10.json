@@ -1,0 +1,179 @@
+{
+  "arm": "graphrag_v5_m2",
+  "stt": 10,
+  "question": "Bà Thị Hạnh năm nay 53 tuổi, đóng BHXH tự nguyện được 5 năm.\nBà Hạnh hỏi, bà tiếp tục đóng BHXH tự nguyện đến năm 60 tuổi thì có được nhận lương hưu không?",
+  "answer": "Theo quy định, để được hưởng lương hưu, người tham gia bảo hiểm xã hội tự nguyện cần có thời gian đóng bảo hiểm xã hội từ đủ 15 năm trở lên và đủ tuổi nghỉ hưu theo quy định. Bà Thị Hạnh hiện 53 tuổi và đã đóng bảo hiểm xã hội tự nguyện được 5 năm. Nếu bà tiếp tục đóng bảo hiểm xã hội tự nguyện đến 60 tuổi, bà sẽ có tổng thời gian đóng là 12 năm (5 năm + 7 năm). Như vậy, bà không đủ điều kiện về thời gian đóng bảo hiểm xã hội để được hưởng lương hưu, vì bà cần ít nhất 15 năm đóng bảo hiểm xã hội.\n\nDo đó, bà Hạnh sẽ không được nhận lương hưu khi đủ 60 tuổi.\n\n- [Luật BHXH 2024 (41/2024/QH15), Điều 98]\n- [Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 9]",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 98]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 141 khoản 9]"
+  ],
+  "citation_ids": [
+    "L41_2024.A98",
+    "L41_2024.A141.K9"
+  ],
+  "citation_verified": {
+    "L41_2024.A98": true,
+    "L41_2024.A141.K9": true
+  },
+  "n_final_hits": 12,
+  "n_seeds": 15,
+  "n_neighbors_added": 5,
+  "retrieval_audit": {
+    "event_date": "2026-05-30",
+    "n_dense": 30,
+    "n_sparse": 30,
+    "n_after_temporal": 33,
+    "n_after_fusion": 33,
+    "n_dropped_by_temporal": 20
+  },
+  "hits": [
+    {
+      "rank": 1,
+      "rerank2_score": 0.9825,
+      "kind": "seed",
+      "clause_id": "L41_2024.A141.K9",
+      "article_id": "L41_2024.A141",
+      "law_id": "L41_2024",
+      "article_n": 141,
+      "article_title": "Quy định chuyển tiếp",
+      "clause_n": 9,
+      "rerank1_score": 0.9825006127357483
+    },
+    {
+      "rank": 2,
+      "rerank2_score": 0.9678,
+      "kind": "seed",
+      "clause_id": "L41_2024.A101.K2",
+      "article_id": "L41_2024.A101",
+      "law_id": "L41_2024",
+      "article_n": 101,
+      "article_title": "Thời điểm hưởng lương hưu",
+      "clause_n": 2,
+      "rerank1_score": 0.9678030610084534
+    },
+    {
+      "rank": 3,
+      "rerank2_score": 0.8949,
+      "kind": "seed",
+      "clause_id": "L41_2024.A101.K3",
+      "article_id": "L41_2024.A101",
+      "law_id": "L41_2024",
+      "article_n": 101,
+      "article_title": "Thời điểm hưởng lương hưu",
+      "clause_n": 3,
+      "rerank1_score": 0.8948667645454407
+    },
+    {
+      "rank": 4,
+      "rerank2_score": 0.8947,
+      "kind": "seed",
+      "clause_id": "L45_2019.A169.K1",
+      "article_id": "L45_2019.A169",
+      "law_id": "L45_2019",
+      "article_n": 169,
+      "article_title": "Tuổi nghỉ hưu",
+      "clause_n": 1,
+      "rerank1_score": 0.8946583271026611
+    },
+    {
+      "rank": 5,
+      "rerank2_score": 0.8892,
+      "kind": "seed",
+      "clause_id": "L41_2024.A141.K10",
+      "article_id": "L41_2024.A141",
+      "law_id": "L41_2024",
+      "article_n": 141,
+      "article_title": "Quy định chuyển tiếp",
+      "clause_n": 10,
+      "rerank1_score": 0.8892152905464172
+    },
+    {
+      "rank": 6,
+      "rerank2_score": 0.7141,
+      "kind": "neighbor",
+      "target_id": "L41_2024.A98",
+      "target_label": "Article",
+      "target_title": "Đối tượng và điều kiện hưởng lương hưu",
+      "seed_clause_id": "L41_2024.A141.K9",
+      "hop_distance": 1
+    },
+    {
+      "rank": 7,
+      "rerank2_score": 0.5958,
+      "kind": "seed",
+      "clause_id": "L41_2024.A5.K2",
+      "article_id": "L41_2024.A5",
+      "law_id": "L41_2024",
+      "article_n": 5,
+      "article_title": "Nguyên tắc bảo hiểm xã hội",
+      "clause_n": 2,
+      "rerank1_score": 0.5957692861557007
+    },
+    {
+      "rank": 8,
+      "rerank2_score": 0.5757,
+      "kind": "seed",
+      "clause_id": "L41_2024.A5.K3",
+      "article_id": "L41_2024.A5",
+      "law_id": "L41_2024",
+      "article_n": 5,
+      "article_title": "Nguyên tắc bảo hiểm xã hội",
+      "clause_n": 3,
+      "rerank1_score": 0.5757302045822144
+    },
+    {
+      "rank": 9,
+      "rerank2_score": 0.56,
+      "kind": "neighbor",
+      "target_id": "L41_2024.A64",
+      "target_label": "Article",
+      "target_title": "Đối tượng và điều kiện hưởng lương hưu",
+      "seed_clause_id": "L41_2024.A68.K2",
+      "hop_distance": 1
+    },
+    {
+      "rank": 10,
+      "rerank2_score": 0.5096,
+      "kind": "seed",
+      "clause_id": "L41_2024.A36.K3",
+      "article_id": "L41_2024.A36",
+      "law_id": "L41_2024",
+      "article_n": 36,
+      "article_title": "Mức đóng, phương thức và thời hạn đóng bảo hiểm xã hội của người tham gia bảo hiểm xã hội tự nguyện",
+      "clause_n": 3,
+      "rerank1_score": 0.509644627571106
+    },
+    {
+      "rank": 11,
+      "rerank2_score": 0.4626,
+      "kind": "neighbor",
+      "target_id": "L41_2024.A65",
+      "target_label": "Article",
+      "target_title": "Đối tượng và điều kiện hưởng lương hưu khi suy giảm khả năng lao động",
+      "seed_clause_id": "L41_2024.A68.K2",
+      "hop_distance": 1
+    },
+    {
+      "rank": 12,
+      "rerank2_score": 0.4392,
+      "kind": "seed",
+      "clause_id": "L41_2024.A3.K4",
+      "article_id": "L41_2024.A3",
+      "law_id": "L41_2024",
+      "article_n": 3,
+      "article_title": "Giải thích từ ngữ",
+      "clause_n": 4,
+      "rerank1_score": 0.43915900588035583
+    }
+  ],
+  "elapsed_s": 4.71,
+  "elapsed_breakdown": {
+    "retrieve": 0.251,
+    "rerank1": 0.73,
+    "expand": 0.051,
+    "rerank2": 0.353,
+    "llm": 3.31
+  },
+  "gold_answer": "Theo quy định của Luật BHXH mới có hiệu lực thi hành từ ngày 1/7/2025, người tham gia BHXH tự nguyện được hưởng lương hưu khi đủ tuổi nghỉ hưu theo quy định tại Khoản 2 Điều 169 của Bộ luật Lao động và có thời gian đóng BHXH từ đủ 15 năm trở lên.\nTheo quy định tại Khoản 2 Điều 169 Bộ luật Lao động năm 2019 và Nghị định số 135/2020/NĐ-CP ngày 18/11/2020 của Chính phủ thì kể từ ngày 1/1/2021 tuổi nghỉ hưu của lao động nữ là 55 tuổi 4 tháng; sau đó, cứ mỗi năm tăng thêm 4 tháng cho đến khi đủ 60 tuổi vào năm 2035.\nTrường hợp của bà, năm nay 53 tuổi có thời gian đóng BHXH là 5 năm, nếu bà đóng BHXH tự nguyện liên tục đến khi 60 tuổi (năm 2031) thì khi đó bà có thời gian đóng BHXH là 12 năm chưa đủ điều kiện về thời gian đóng BHXH để hưởng chế độ hưu trí.\nDo vậy, bà nên tiếp tục tham gia BHXH tự nguyện cho đến khi đủ 15 năm đóng BHXH để được hưởng lương hưu hằng tháng đến trọn đời, khi đó bà còn được cấp thẻ BHYT miễn phí và được hưởng các chế độ liên quan của người hưởng lương hưu.",
+  "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 169]"
+}

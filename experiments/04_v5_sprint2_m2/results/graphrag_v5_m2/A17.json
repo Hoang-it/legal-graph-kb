@@ -1,0 +1,185 @@
+{
+  "arm": "graphrag_v5_m2",
+  "stt": 17,
+  "question": "Bà Hiền Thanh (Tây Ninh) hỏi, từ ngày 1/7/2025 phụ cấp ăn ca và các khoản tiền: xăng xe, điện thoại, nhà ở, hỗ trợ nuôi con nhỏ, trang phục, có ghi mức hưởng cụ thể tại hợp đồng lao động thì có phải tính đóng BHXH không?",
+  "answer": "Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này. Các Điều liên quan có trong CONTEXT là:\n\n- [Luật BHXH 2024 (41/2024/QH15), Điều 31 khoản 1]\n- [Bộ luật Lao động 2019 (45/2019/QH14), Điều 95 khoản 3]",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 31 khoản 1]",
+    "[Bộ luật Lao động 2019 (45/2019/QH14), Điều 95 khoản 3]"
+  ],
+  "citation_ids": [
+    "L41_2024.A31.K1",
+    "L45_2019.A95.K3"
+  ],
+  "citation_verified": {
+    "L41_2024.A31.K1": true,
+    "L45_2019.A95.K3": true
+  },
+  "n_final_hits": 12,
+  "n_seeds": 15,
+  "n_neighbors_added": 9,
+  "retrieval_audit": {
+    "event_date": "2025-12-31",
+    "n_dense": 30,
+    "n_sparse": 30,
+    "n_after_temporal": 37,
+    "n_after_fusion": 37,
+    "n_dropped_by_temporal": 16
+  },
+  "hits": [
+    {
+      "rank": 1,
+      "rerank2_score": 0.9835,
+      "kind": "seed",
+      "clause_id": "L41_2024.A33.K5",
+      "article_id": "L41_2024.A33",
+      "law_id": "L41_2024",
+      "article_n": 33,
+      "article_title": "Mức đóng, phương thức và thời hạn đóng bảo hiểm xã hội bắt buộc của người lao động",
+      "clause_n": 5,
+      "rerank1_score": 0.9835012555122375
+    },
+    {
+      "rank": 2,
+      "rerank2_score": 0.9405,
+      "kind": "seed",
+      "clause_id": "L41_2024.A53.K8",
+      "article_id": "L41_2024.A53",
+      "law_id": "L41_2024",
+      "article_n": 53,
+      "article_title": "Thời gian nghỉ việc hưởng chế độ thai sản khi sinh con",
+      "clause_n": 8,
+      "rerank1_score": 0.9404624104499817
+    },
+    {
+      "rank": 3,
+      "rerank2_score": 0.743,
+      "kind": "seed",
+      "clause_id": "L41_2024.A31.K1",
+      "article_id": "L41_2024.A31",
+      "law_id": "L41_2024",
+      "article_n": 31,
+      "article_title": "Căn cứ đóng bảo hiểm xã hội",
+      "clause_n": 1,
+      "rerank1_score": 0.7430410385131836
+    },
+    {
+      "rank": 4,
+      "rerank2_score": 0.7372,
+      "kind": "seed",
+      "clause_id": "L45_2019.A95.K3",
+      "article_id": "L45_2019.A95",
+      "law_id": "L45_2019",
+      "article_n": 95,
+      "article_title": "Trả lương",
+      "clause_n": 3,
+      "rerank1_score": 0.737215518951416
+    },
+    {
+      "rank": 5,
+      "rerank2_score": 0.7317,
+      "kind": "seed",
+      "clause_id": "L41_2024.A102.K3",
+      "article_id": "L41_2024.A102",
+      "law_id": "L41_2024",
+      "article_n": 102,
+      "article_title": "Hưởng bảo hiểm xã hội một lần",
+      "clause_n": 3,
+      "rerank1_score": 0.7317298054695129
+    },
+    {
+      "rank": 6,
+      "rerank2_score": 0.6523,
+      "kind": "seed",
+      "clause_id": "L41_2024.A141.K4",
+      "article_id": "L41_2024.A141",
+      "law_id": "L41_2024",
+      "article_n": 141,
+      "article_title": "Quy định chuyển tiếp",
+      "clause_n": 4,
+      "rerank1_score": 0.6523373126983643
+    },
+    {
+      "rank": 7,
+      "rerank2_score": 0.6178,
+      "kind": "seed",
+      "clause_id": "L41_2024.A70.K4",
+      "article_id": "L41_2024.A70",
+      "law_id": "L41_2024",
+      "article_n": 70,
+      "article_title": "Hưởng bảo hiểm xã hội một lần",
+      "clause_n": 4,
+      "rerank1_score": 0.617847740650177
+    },
+    {
+      "rank": 8,
+      "rerank2_score": 0.5749,
+      "kind": "seed",
+      "clause_id": "L41_2024.A120.K2",
+      "article_id": "L41_2024.A120",
+      "law_id": "L41_2024",
+      "article_n": 120,
+      "article_title": "Chi tổ chức và hoạt động bảo hiểm xã hội",
+      "clause_n": 2,
+      "rerank1_score": 0.5748686194419861
+    },
+    {
+      "rank": 9,
+      "rerank2_score": 0.5661,
+      "kind": "seed",
+      "clause_id": "L41_2024.A17.K3",
+      "article_id": "L41_2024.A17",
+      "law_id": "L41_2024",
+      "article_n": 17,
+      "article_title": "Quyền hạn của cơ quan bảo hiểm xã hội",
+      "clause_n": 3,
+      "rerank1_score": 0.5660873055458069
+    },
+    {
+      "rank": 10,
+      "rerank2_score": 0.5563,
+      "kind": "seed",
+      "clause_id": "L45_2019.A67.K1",
+      "article_id": "L45_2019.A67",
+      "law_id": "L45_2019",
+      "article_n": 67,
+      "article_title": "Nội dung thương lượng tập thể",
+      "clause_n": 1,
+      "rerank1_score": 0.5563223361968994
+    },
+    {
+      "rank": 11,
+      "rerank2_score": 0.5326,
+      "kind": "seed",
+      "clause_id": "L41_2024.A50.K4",
+      "article_id": "L41_2024.A50",
+      "law_id": "L41_2024",
+      "article_n": 50,
+      "article_title": "Đối tượng và điều kiện hưởng chế độ thai sản",
+      "clause_n": 4,
+      "rerank1_score": 0.532611072063446
+    },
+    {
+      "rank": 12,
+      "rerank2_score": 0.3951,
+      "kind": "seed",
+      "clause_id": "L41_2024.A87.K1",
+      "article_id": "L41_2024.A87",
+      "law_id": "L41_2024",
+      "article_n": 87,
+      "article_title": "Mức trợ cấp tuất hằng tháng",
+      "clause_n": 1,
+      "rerank1_score": 0.3950982093811035
+    }
+  ],
+  "elapsed_s": 3.505,
+  "elapsed_breakdown": {
+    "retrieve": 0.22,
+    "rerank1": 0.737,
+    "expand": 0.035,
+    "rerank2": 0.563,
+    "llm": 1.95
+  },
+  "gold_answer": "Căn cứ quy định của Luật BHXH số 41/2024/QH15, tiền lương làm căn cứ đóng BHXH bắt buộc được quy định như sau:\nNgười lao động thuộc đối tượng thực hiện chế độ tiền lương do người sử dụng lao động quyết định thì tiền lương làm căn cứ đóng BHXH bắt buộc là tiền lương tháng, bao gồm mức lương theo công việc hoặc chức danh, phụ cấp lương và các khoản bổ sung khác được thỏa thuận trả thường xuyên, ổn định trong mỗi kỳ trả lương.\nCăn cứ quy định tại Điều 3 Thông tư số 10/2020/TT-BLĐTBXH ngày 12/11/2020 quy định chi tiết và hướng dẫn thi hành một số điều của Bộ luật Lao động về nội dung của hợp đồng lao động, hội đồng thương lượng tập thể và nghề, công việc có ảnh hưởng xấu tới chức năng sinh sản, nuôi con:\n\"c) Các khoản bổ sung khác theo thỏa thuận của hai bên như sau:\n... c2) Các khoản bổ sung không xác định được mức tiền cụ thể cùng với mức lương thỏa thuận trong hợp đồng lao động, trả thường xuyên hoặc không thường xuyên trong mỗi kỳ trả lương gắn với quá trình làm việc, kết quả thực hiện công việc của người lao động.\nĐối với các chế độ và phúc lợi khác như thưởng theo quy định tại Điều 104 của Bộ luật Lao động, tiền thưởng sáng kiến; tiền ăn giữa ca; các khoản hỗ trợ xăng xe, điện thoại, đi lại, tiền nhà ở, tiền giữ trẻ, nuôi con nhỏ; hỗ trợ khi người lao động có thân nhân bị chết, người lao động có người thân kết hôn, sinh nhật của người lao động, trợ cấp cho người lao động gặp hoàn cảnh khó khăn khi bị tai nạn lao động, bệnh nghề nghiệp và các khoản hỗ trợ, trợ cấp khác thì ghi thành mục riêng trong hợp đồng lao động\".\nNhư vậy, bà có thể đối chiếu với quy định trên để biết các loại phụ cấp phải đóng BHXH.\nĐối với phụ cấp ăn ca, xăng xe, điện thoại, nhà ở, hỗ trợ nuôi con nhỏ, trang phục nếu được ghi thành mục riêng trong hợp đồng lao động thì đây là khoản không tính đóng BHXH.",
+  "gold_citations_raw": "[Thông tư 10/2020/TT-BLĐTBXH, Điều 3]"
+}

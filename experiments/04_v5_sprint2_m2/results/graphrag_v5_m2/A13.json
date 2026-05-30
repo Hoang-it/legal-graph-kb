@@ -1,0 +1,185 @@
+{
+  "arm": "graphrag_v5_m2",
+  "stt": 13,
+  "question": "Ông Nguyễn Thành Luân (Đồng Tháp) là chủ hộ kinh doanh. Ông hỏi, thủ tục tham gia BHXH bắt buộc như thế nào, nộp hồ sơ ở đâu?",
+  "answer": "Theo quy định, thủ tục tham gia bảo hiểm xã hội bắt buộc cho ông Nguyễn Thành Luân, chủ hộ kinh doanh, bao gồm việc nộp hồ sơ đăng ký tham gia bảo hiểm xã hội. Hồ sơ này sẽ được nộp cho cơ quan bảo hiểm xã hội. Cụ thể, nếu ông tự nộp, hồ sơ sẽ là tờ khai quy định tại điểm b khoản 1 Điều 27 của Luật BHXH 2024. \n\nÔng cần thực hiện việc nộp hồ sơ trong thời hạn 30 ngày kể từ ngày thuộc đối tượng tham gia bảo hiểm xã hội bắt buộc. \n\nDanh sách citation:\n- [Luật BHXH 2024 (41/2024/QH15), Điều 28 khoản 2]\n- [Luật BHXH 2024 (41/2024/QH15), Điều 27 khoản 2]",
+  "citations": [
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 28 khoản 2]",
+    "[Luật BHXH 2024 (41/2024/QH15), Điều 27 khoản 2]"
+  ],
+  "citation_ids": [
+    "L41_2024.A28.K2",
+    "L41_2024.A27.K2"
+  ],
+  "citation_verified": {
+    "L41_2024.A28.K2": true,
+    "L41_2024.A27.K2": true
+  },
+  "n_final_hits": 12,
+  "n_seeds": 15,
+  "n_neighbors_added": 1,
+  "retrieval_audit": {
+    "event_date": "2026-05-30",
+    "n_dense": 30,
+    "n_sparse": 30,
+    "n_after_temporal": 34,
+    "n_after_fusion": 34,
+    "n_dropped_by_temporal": 11
+  },
+  "hits": [
+    {
+      "rank": 1,
+      "rerank2_score": 0.9394,
+      "kind": "seed",
+      "clause_id": "L41_2024.A28.K2",
+      "article_id": "L41_2024.A28",
+      "law_id": "L41_2024",
+      "article_n": 28,
+      "article_title": "Đăng ký tham gia bảo hiểm xã hội và cấp sổ bảo hiểm xã hội",
+      "clause_n": 2,
+      "rerank1_score": 0.9394399523735046
+    },
+    {
+      "rank": 2,
+      "rerank2_score": 0.8872,
+      "kind": "seed",
+      "clause_id": "L41_2024.A13.K1",
+      "article_id": "L41_2024.A13",
+      "law_id": "L41_2024",
+      "article_n": 13,
+      "article_title": "Trách nhiệm của người sử dụng lao động",
+      "clause_n": 1,
+      "rerank1_score": 0.8871937990188599
+    },
+    {
+      "rank": 3,
+      "rerank2_score": 0.8502,
+      "kind": "seed",
+      "clause_id": "L41_2024.A27.K2",
+      "article_id": "L41_2024.A27",
+      "law_id": "L41_2024",
+      "article_n": 27,
+      "article_title": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện",
+      "clause_n": 2,
+      "rerank1_score": 0.8501737117767334
+    },
+    {
+      "rank": 4,
+      "rerank2_score": 0.8126,
+      "kind": "seed",
+      "clause_id": "L41_2024.A2.K6",
+      "article_id": "L41_2024.A2",
+      "law_id": "L41_2024",
+      "article_n": 2,
+      "article_title": "Đối tượng tham gia bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện",
+      "clause_n": 6,
+      "rerank1_score": 0.8125536441802979
+    },
+    {
+      "rank": 5,
+      "rerank2_score": 0.7974,
+      "kind": "seed",
+      "clause_id": "L41_2024.A3.K9",
+      "article_id": "L41_2024.A3",
+      "law_id": "L41_2024",
+      "article_n": 3,
+      "article_title": "Giải thích từ ngữ",
+      "clause_n": 9,
+      "rerank1_score": 0.797360360622406
+    },
+    {
+      "rank": 6,
+      "rerank2_score": 0.7542,
+      "kind": "seed",
+      "clause_id": "L41_2024.A27.K1",
+      "article_id": "L41_2024.A27",
+      "law_id": "L41_2024",
+      "article_n": 27,
+      "article_title": "Hồ sơ đăng ký tham gia bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện",
+      "clause_n": 1,
+      "rerank1_score": 0.7541574835777283
+    },
+    {
+      "rank": 7,
+      "rerank2_score": 0.7293,
+      "kind": "seed",
+      "clause_id": "L41_2024.A79.K1",
+      "article_id": "L41_2024.A79",
+      "law_id": "L41_2024",
+      "article_n": 79,
+      "article_title": "Giải quyết hưởng lương hưu, hưởng bảo hiểm xã hội một lần",
+      "clause_n": 1,
+      "rerank1_score": 0.7292782068252563
+    },
+    {
+      "rank": 8,
+      "rerank2_score": 0.714,
+      "kind": "seed",
+      "clause_id": "L41_2024.A17.K2",
+      "article_id": "L41_2024.A17",
+      "law_id": "L41_2024",
+      "article_n": 17,
+      "article_title": "Quyền hạn của cơ quan bảo hiểm xã hội",
+      "clause_n": 2,
+      "rerank1_score": 0.7140153050422668
+    },
+    {
+      "rank": 9,
+      "rerank2_score": 0.6266,
+      "kind": "seed",
+      "clause_id": "L41_2024.A18.K4",
+      "article_id": "L41_2024.A18",
+      "law_id": "L41_2024",
+      "article_n": 18,
+      "article_title": "Trách nhiệm của cơ quan bảo hiểm xã hội",
+      "clause_n": 4,
+      "rerank1_score": 0.6266169548034668
+    },
+    {
+      "rank": 10,
+      "rerank2_score": 0.5857,
+      "kind": "seed",
+      "clause_id": "L41_2024.A30.K1",
+      "article_id": "L41_2024.A30",
+      "law_id": "L41_2024",
+      "article_n": 30,
+      "article_title": "Xác định đối tượng tham gia bảo hiểm xã hội bắt buộc và phát triển đối tượng tham gia bảo hiểm xã hội tự nguyện",
+      "clause_n": 1,
+      "rerank1_score": 0.585720956325531
+    },
+    {
+      "rank": 11,
+      "rerank2_score": 0.5421,
+      "kind": "seed",
+      "clause_id": "L41_2024.A3.K3",
+      "article_id": "L41_2024.A3",
+      "law_id": "L41_2024",
+      "article_n": 3,
+      "article_title": "Giải thích từ ngữ",
+      "clause_n": 3,
+      "rerank1_score": 0.5421345233917236
+    },
+    {
+      "rank": 12,
+      "rerank2_score": 0.4565,
+      "kind": "seed",
+      "clause_id": "L41_2024.A38.K2",
+      "article_id": "L41_2024.A38",
+      "law_id": "L41_2024",
+      "article_n": 38,
+      "article_title": "Chậm đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp",
+      "clause_n": 2,
+      "rerank1_score": 0.45654991269111633
+    }
+  ],
+  "elapsed_s": 4.068,
+  "elapsed_breakdown": {
+    "retrieve": 0.127,
+    "rerank1": 0.879,
+    "expand": 0.016,
+    "rerank2": 0.233,
+    "llm": 2.813
+  },
+  "gold_answer": "Căn cứ theo các quy định hiện hành về việc đóng BHXH bắt buộc cho chủ hộ kinh doanh: Luật BHXH 2024; Nghị định số 158/2025/NĐ-CP ngày 25/06/2025 của Chính phủ quy định chi tiết và hướng dẫn một số điều của Luật BHXH về BHXH bắt buộc; chủ hộ kinh doanh của hộ kinh doanh có đăng ký kinh doanh quy định tham gia BHXH bắt buộc bao gồm: Chủ hộ kinh doanh của hộ kinh doanh có đăng ký kinh doanh nộp thuế theo phương pháp kê khai tham gia từ ngày 1/7/2025; chủ hộ kinh doanh của hộ kinh doanh khác thuộc đối tượng tham gia BHXH bắt buộc từ ngày 1/7/2029.\nChủ hộ kinh doanh không thuộc đối tượng tham gia BHXH, BHYT bắt buộc nếu đã đủ tuổi nghỉ hưu theo quy định tại khoản 2 Điều 169 của Bộ luật Lao động (năm 2025: 61 tuổi 3 tháng đối với nam, 56 tuổi 8 tháng đối với nữ), trừ trường hợp thời gian đóng BHXH bắt buộc còn thiếu tối đa 6 tháng để đủ điều kiện hưởng lương hưu hoặc trợ cấp tuất hằng tháng.\nTrường hợp chủ hộ kinh doanh đồng thời thuộc nhiều đối tượng tham gia khác nhau thì thực hiện thì tham gia BHXH bắt buộc theo đối tượng tương ứng quy định tại điểm b, c, d, đ, e, i, a, 1, k, n, h hoặc g khoản 1 Điều 2 Luật BHXH 2024.\nVề hồ sơ, thủ tục đăng ký tham gia:\nLập hồ sơ đăng ký tham gia BHXH, BHYT, BHTN, BHTNLĐ-BNN lần đầu (đối với đơn vị mới, theo Mẫu TK3-TS kèm bản sao các văn bản pháp lý liên quan đến việc thành lập, điều chỉnh thông tin của đơn vị);\nTờ khai tham gia điều chỉnh thông tin BHXH, BHYT (Mẫu TK1-TS) nếu đăng ký trực tiếp tại cơ quan BHXH.\nBáo tăng lao động (Mẫu D02-LT) nếu đăng ký thông qua đơn vị.\nVề nơi tiếp nhận hồ sơ tham gia:\nSau khi chuẩn bị đầy đủ các hồ sơ trên, hộ kinh doanh nộp hồ sơ tại cơ quan BHXH cơ sở trực thuộc BHXH nơi cư trú bằng một trong các hình thức sau:\n- Trực tiếp tại cơ quan BHXH hoặc Trung tâm phục vụ Hành chính công.\n- Trực tuyến qua Cổng Dịch vụ công Quốc gia hoặc Cổng BHXH điện tử (lưu ý cần có chữ ký số để xác nhận khi nộp hồ sơ theo phương thức này).\n- Gửi qua dịch vụ bưu điện.\nHiện nay, cơ quan BHXH ưu tiên thực hiện các thủ tục liên quan thông qua Cổng dịch vụ công trực tuyến hoặc qua các phần mềm kê khai bảo hiểm trực tuyến.\nNếu hộ kinh doanh có chữ ký số thì có thể đăng ký tài khoản trên Cổng dịch vụ công trực tuyến hoặc phần mềm để sử dụng.",
+  "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]\n[Luật BHXH 2024 (41/2024/QH15), Điều 27]\n[Nghị định 158/2025/NĐ-CP, Điều 7]"
+}
