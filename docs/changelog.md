@@ -7,6 +7,46 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Decided — retrieval default = `full_rerank` arm at K=12 (Decision 001)
+
+**Scope**: Ratifies the existing `V5RetrievalPipeline.rerank2_top_k=12`
+default + the full M2 pipeline (hybrid + RRF + rerank + REFERS_TO expand
++ rerank2) as the production retrieval arm. No code change — this
+documents the choice with evidence so future PRs do not drift the
+default without re-running the audit.
+
+**Evidence**: experiments 06 (K=12 A/B) and 07 (K extended to 100) on
+200 BHXH questions show:
+- `full_rerank` K=12 wins all rank-aware metrics on in_corpus stratum:
+  R-Precision +103%, NDCG@10 +33%, F1@12 +52% vs `dense_only`.
+- Marginal recall per added K plateaus after K=30 (ΔR/ΔK drops from
+  0.010 in 12→20 to 0.0002 in 50→70). Going to K=30+ buys recall but
+  exceeds the `MAX_CONTEXT_CHARS=7000` LLM budget — extra retrieval
+  cost not visible to generator.
+
+**Doc**: [docs/decisions/001_retrieval_k_and_arm.md](decisions/001_retrieval_k_and_arm.md).
+
+**Triggers to revisit** are listed in the decision record — corpus
+growth, context-budget bump, reranker swap, registry alias fixes, or
+a new arm beating R-Precision at K=12.
+
+### Added — exp 06 + exp 07: retrieval-only A/B experiments
+
+- [experiments/06_retrieval_dense_vs_full](../experiments/06_retrieval_dense_vs_full/):
+  `dense_only` vs `full_rerank` at K∈{5,10,12,20,30,all} on full 200
+  questions. Adds R-Precision, MRR, NDCG@10 rank-aware metrics on top
+  of recall / precision / F1.
+- [experiments/07_retrieval_extended_k](../experiments/07_retrieval_extended_k/):
+  same arms scaled up (full pipeline rerank2_top_k=100, dense_k=100)
+  at K∈{12,20,30,50,70,100,all}. Reveals the elbow at K=20-30 and the
+  plateau after K=50 that underpins Decision 001.
+
+**New code**: [`src/retrieval/pipeline.py::retrieve_dense_only`](../src/retrieval/pipeline.py),
+[`scripts/exp06_run.py`](../scripts/exp06_run.py),
+[`scripts/exp06_metrics.py`](../scripts/exp06_metrics.py),
+[`scripts/exp07_run.py`](../scripts/exp07_run.py),
+[`scripts/exp07_metrics.py`](../scripts/exp07_metrics.py).
+
 ### Added — multi-law KG ingestion (ND143_2018 + QD838_BHXH)
 
 **Scope**: First non-QH legal documents loaded into KG. Adds 2 entries to

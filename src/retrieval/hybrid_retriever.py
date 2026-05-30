@@ -48,12 +48,16 @@ _RE_DATE_DMY = re.compile(r"\b(\d{1,2})[\/\.\-](\d{1,2})[\/\.\-](\d{4})\b")
 _RE_YEAR = re.compile(r"\b(19[5-9]\d|20\d{2})\b")
 
 
-def detect_event_date(question: str, default: date | None = None) -> date:
+def detect_event_date(question: str, default: date | None = None) -> date | None:
     """Detect the latest legally-relevant date mentioned in the question.
 
     Priority: explicit DD/MM/YYYY > standalone YYYY. Picks the *latest* hit so
     that a question referencing both an old event and a current law-version
     resolves to the current state.
+
+    Returns ``None`` when no date is found and no ``default`` is given. Callers
+    decide whether to fall back (e.g. today) or skip temporal filtering — see
+    :class:`HybridRetriever`'s ``temporal_mode`` parameter.
     """
     candidates: list[date] = []
     for m in _RE_DATE_DMY.finditer(question):
@@ -68,7 +72,7 @@ def detect_event_date(question: str, default: date | None = None) -> date:
             pass
     if candidates:
         return max(candidates)
-    return default or date.today()
+    return default
 
 
 # ---------------------------------------------------------------------------
@@ -99,13 +103,26 @@ def reciprocal_rank_fusion(
 
 @dataclass
 class RetrievalAudit:
-    """Per-query diagnostics — surfaced in records for Sprint 1 audit."""
+    """Per-query diagnostics — surfaced in records for Sprint 1 + Week 1 audit.
+
+    Stage-by-stage article ID lists added in Week 1 (Phase 7 follow-up) to
+    diagnose gold drop-off at each retrieval stage. Article-level dedupe is
+    applied per stage (so a clause-heavy dense hit appears once in the article
+    list); within-stage rank order is preserved.
+    """
     event_date: str = ""
     n_dense: int = 0
     n_sparse: int = 0
     n_after_temporal: int = 0
     n_after_fusion: int = 0
     n_dropped_by_temporal: int = 0
+    # Article-level diagnostics — populated by retrieve() unconditionally.
+    dense_article_ids: list[str] = field(default_factory=list)
+    sparse_article_ids: list[str] = field(default_factory=list)
+    post_temporal_article_ids: list[str] = field(default_factory=list)
+    fused_article_ids: list[str] = field(default_factory=list)
+    # Per-query temporal-filter law decisions for auditability.
+    in_force_laws: list[str] = field(default_factory=list)
 
 
 class HybridRetriever:
@@ -133,7 +150,20 @@ class HybridRetriever:
         rrf_k: int = 60,
         dense_index: str | None = None,
         sparse_index: str | None = None,
+        temporal_mode: str = "strict_today_default",
     ):
+        """``temporal_mode``:
+
+        - ``strict_today_default`` (default, Sprint 1/2 behaviour): use the
+          date detected from the question, or *today* if none. Filters out
+          any law not in force at that date.
+        - ``skip_when_no_date``: use the detected date when present; when no
+          date is found in the question, **skip the temporal filter** (all
+          KG-loaded laws pass). Keeps temporal correctness for date-specific
+          queries while not dropping repealed-but-still-relevant laws on
+          date-agnostic ones.
+        - ``always_skip``: never filter (debug / ablation only).
+        """
         self._driver = driver
         self._db = db
         self._embed_model = embed_model
@@ -143,6 +173,9 @@ class HybridRetriever:
         self.rrf_k = rrf_k
         self.dense_index = dense_index or self.DEFAULT_DENSE_INDEX
         self.sparse_index = sparse_index or self.DEFAULT_SPARSE_INDEX
+        if temporal_mode not in {"strict_today_default", "skip_when_no_date", "always_skip"}:
+            raise ValueError(f"unknown temporal_mode: {temporal_mode!r}")
+        self.temporal_mode = temporal_mode
 
     # ------------------------------------------------------------------
     # Per-signal queries
@@ -237,8 +270,23 @@ class HybridRetriever:
     # ------------------------------------------------------------------
 
     def retrieve(self, query: str, event_date: date | None = None) -> tuple[list[Candidate], RetrievalAudit]:
-        ev_date = event_date or detect_event_date(query)
-        audit = RetrievalAudit(event_date=ev_date.isoformat())
+        detected = event_date or detect_event_date(query)
+        # Resolve effective date based on temporal_mode.
+        if detected is not None:
+            ev_date: date | None = detected
+            temporal_action = "filter_by_date"
+        elif self.temporal_mode == "strict_today_default":
+            ev_date = date.today()
+            temporal_action = "filter_by_today"
+        else:
+            ev_date = None
+            temporal_action = "skip"
+        if self.temporal_mode == "always_skip":
+            ev_date = None
+            temporal_action = "skip"
+        audit = RetrievalAudit(
+            event_date=(ev_date.isoformat() if ev_date else ""),
+        )
 
         dense_rows = self._dense_search(query, self.dense_k)
         sparse_rows = self._sparse_search(query, self.sparse_k)
@@ -264,14 +312,32 @@ class HybridRetriever:
             by_id[cid].sparse_score = float(r["score"])
             sparse_ranked.append(cid)
 
-        # Temporal filter — drop candidates whose law was not in force
-        in_force = self._in_force_law_ids(ev_date)
+        # Article-level diagnostic snapshots — pre-temporal-filter pools.
+        audit.dense_article_ids = _dedupe_articles_in_order(
+            by_id[cid].article_id for cid in dense_ranked
+        )
+        audit.sparse_article_ids = _dedupe_articles_in_order(
+            by_id[cid].article_id for cid in sparse_ranked
+        )
+
+        # Temporal filter — drop candidates whose law was not in force.
+        # When temporal_mode resolved to "skip", all laws pass.
+        if temporal_action == "skip":
+            in_force = {c.law_id for c in by_id.values() if c.law_id}
+        else:
+            in_force = self._in_force_law_ids(ev_date)
+        audit.in_force_laws = sorted(in_force)
         before = len(by_id)
         kept_ids = {cid for cid, c in by_id.items() if c.law_id in in_force}
         audit.n_dropped_by_temporal = before - len(kept_ids)
         audit.n_after_temporal = len(kept_ids)
 
-        # RRF — fuse the two rank lists (after restricting to kept ids)
+        # Post-temporal article-level snapshot.
+        audit.post_temporal_article_ids = _dedupe_articles_in_order(
+            by_id[cid].article_id for cid in (dense_ranked + sparse_ranked) if cid in kept_ids
+        )
+
+        # RRF — fuse the two rank lists (after restricting to kept ids).
         dense_kept = [d for d in dense_ranked if d in kept_ids]
         sparse_kept = [d for d in sparse_ranked if d in kept_ids]
         fused = reciprocal_rank_fusion([dense_kept, sparse_kept], k=self.rrf_k)
@@ -285,6 +351,7 @@ class HybridRetriever:
                 break
 
         audit.n_after_fusion = len(ordered)
+        audit.fused_article_ids = _dedupe_articles_in_order(c.article_id for c in ordered)
         return ordered, audit
 
 
@@ -308,6 +375,20 @@ def _lucene_escape(q: str) -> str:
             out.append("\\")
         out.append(ch)
     return "".join(out)
+
+
+def _dedupe_articles_in_order(article_ids):
+    """Dedupe-while-preserving-order — first occurrence wins.
+
+    Used by the per-stage diagnostic snapshots to surface article-level pools
+    without losing rank information (the first time an article appears decides
+    its position in the audit list).
+    """
+    seen: dict[str, None] = {}
+    for aid in article_ids:
+        if aid:
+            seen.setdefault(aid, None)
+    return list(seen.keys())
 
 
 def _row_to_candidate(r: dict) -> Candidate:

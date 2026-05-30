@@ -1,0 +1,36 @@
+name: "Retrieval-only A/B at extended K — K ∈ {12, 20, 30, 50, 70, 100, all}"
+description: |
+  Extension of experiment 06. Scales every retrieval stage up so both arms
+  can actually emit ≥100 articles per question. Measures recall, precision,
+  F1, R-Precision, MRR, NDCG@K at K ∈ {12, 20, 30, 50, 70, 100, all}.
+
+  Arm A — dense:
+    BGE-M3 LoRA (models/bge-m3-bhxh-lora) → Neo4j vector clause_vec_tuned,
+    dense_k = 100 (vs 50 in exp 06), article-dedup. No sparse, no temporal,
+    no rerank, no expand.
+
+  Arm B — full_rerank (scaled):
+    dense_k = 100, sparse_k = 100, top_after_fusion = 150,
+    rerank1_top_k = 50, per_seed_neighbors = 15, max_hops = 3,
+    rerank2_top_k = 100, temporal_mode = strict_today_default,
+    reranker = BAAI/bge-reranker-base.
+
+  Both arms share encoder + dense index (production setup). Higher K means
+  bigger reranker pool — wall time per question scales ~3-4× vs exp 06.
+
+  No inheritance from prior experiments. Records produced by
+  scripts/exp07_run.py; metrics by scripts/exp07_metrics.py.
+
+date: "2026-05-30"
+
+dataset:
+  questions: data/eval/questions_200.json
+  n: 200
+
+parent: null
+
+prompts_override_dir: null
+
+arms: {}
+
+multimodel: null

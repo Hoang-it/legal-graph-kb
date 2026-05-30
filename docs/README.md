@@ -30,6 +30,11 @@ project-level docs.
 - [plans/v5_general_retrieval.md](plans/v5_general_retrieval.md) —
   current planning doc (Sprint 1 = vanilla pipeline + audit).
 
+### Decisions (ADRs)
+- [decisions/001_retrieval_k_and_arm.md](decisions/001_retrieval_k_and_arm.md) —
+  production retrieval default: `full_rerank` arm at K=12, ratified
+  2026-05-30 with exp 06/07 evidence.
+
 ### Meta
 - [Changelog](changelog.md)
 - [Contributing](contributing.md)

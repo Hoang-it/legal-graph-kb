@@ -1,0 +1,3 @@
+# Heavy retrieval-only records — per repo-wide convention (experiments/*/results
+# is ignored by default unless we explicitly un-ignore for inheritance).
+results/

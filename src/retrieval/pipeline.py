@@ -34,7 +34,12 @@ from src.citations import (
 from src.legal_metadata import load_law_metadata
 from src.prompts import load_prompt
 from src.retrieval.graph_expansion import GraphExpander, Neighbor
-from src.retrieval.hybrid_retriever import Candidate, HybridRetriever, RetrievalAudit
+from src.retrieval.hybrid_retriever import (
+    Candidate,
+    HybridRetriever,
+    RetrievalAudit,
+    _dedupe_articles_in_order,
+)
 from src.retrieval.reranker import CrossEncoderReranker
 
 load_dotenv()
@@ -77,6 +82,34 @@ class V5Answer:
     elapsed_breakdown: dict[str, float] = field(default_factory=dict)
 
 
+@dataclass
+class RetrievalOnlyAnswer:
+    """Output of ``V5RetrievalPipeline.retrieve_only`` — no LLM call.
+
+    Captures the article ids that survived each retrieval stage so the Week 1
+    audit can pinpoint where gold drops off. Field order mirrors the stage
+    order in :meth:`V5RetrievalPipeline.retrieve_only`.
+    """
+    question: str
+    # Stage pools — article-level, ordered, deduped (first occurrence wins)
+    dense_article_ids: list[str] = field(default_factory=list)
+    sparse_article_ids: list[str] = field(default_factory=list)
+    post_temporal_article_ids: list[str] = field(default_factory=list)
+    fused_article_ids: list[str] = field(default_factory=list)
+    rerank1_article_ids: list[str] = field(default_factory=list)
+    expanded_article_ids: list[str] = field(default_factory=list)  # seeds + neighbours (pre rerank2)
+    final_article_ids: list[str] = field(default_factory=list)     # top-K after rerank2
+    # Metadata
+    retrieval_audit: dict[str, Any] = field(default_factory=dict)
+    n_seeds: int = 0
+    n_neighbors_added: int = 0
+    n_final: int = 0
+    elapsed_s: float = 0.0
+    elapsed_breakdown: dict[str, float] = field(default_factory=dict)
+    # Knob snapshot — so audit records carry the config they were produced under
+    config: dict[str, Any] = field(default_factory=dict)
+
+
 # ---------------------------------------------------------------------------
 # Pipeline
 # ---------------------------------------------------------------------------
@@ -103,6 +136,7 @@ class V5RetrievalPipeline:
         adapter_path: str | None = None,
         dense_index: str | None = None,
         reranker_model: str | None = None,
+        temporal_mode: str = "strict_today_default",
     ):
         from neo4j import GraphDatabase
 
@@ -129,6 +163,7 @@ class V5RetrievalPipeline:
         env_dense = (os.environ.get("V5_DENSE_INDEX") or "").strip() or None
         self.dense_index = dense_index or env_dense
         self.reranker_model = reranker_model  # None → reranker defaults from env / module const
+        self.temporal_mode = temporal_mode
 
         # Static deps
         self._registry = load_registry(DEFAULT_REGISTRY_PATH)
@@ -164,6 +199,7 @@ class V5RetrievalPipeline:
                 top_after_fusion=self.top_after_fusion,
                 rrf_k=self.rrf_k,
                 dense_index=self.dense_index,
+                temporal_mode=self.temporal_mode,
             )
         return self._retriever
 
@@ -199,6 +235,141 @@ class V5RetrievalPipeline:
     # ------------------------------------------------------------------
     # Public entry
     # ------------------------------------------------------------------
+
+    def retrieve_dense_only(self, question: str, top_k: int | None = None) -> RetrievalOnlyAnswer:
+        """Pure BGE-M3 dense retrieval — no sparse, no temporal, no RRF, no
+        rerank, no graph expand.
+
+        Used as the "dense" arm in experiment 06. ``top_k`` defaults to
+        ``self.dense_k``. Returns a :class:`RetrievalOnlyAnswer` where
+        ``dense_article_ids`` and ``final_article_ids`` both carry the same
+        article-deduped, rank-preserving list so downstream metric code can
+        treat the arm as a final-stage output without special-casing.
+        """
+        t0 = time.time()
+        timings: dict[str, float] = {}
+
+        k = top_k if top_k is not None else self.dense_k
+        t = time.time()
+        rows = self.retriever._dense_search(question, k)
+        timings["dense"] = round(time.time() - t, 3)
+
+        article_ids = _dedupe_articles_in_order(r["article_id"] for r in rows)
+
+        config_snapshot = {
+            "mode": "dense_only",
+            "dense_k": k,
+            "adapter_path": self.adapter_path,
+            "dense_index": self.dense_index,
+        }
+
+        return RetrievalOnlyAnswer(
+            question=question,
+            dense_article_ids=article_ids,
+            final_article_ids=article_ids,
+            n_final=len(article_ids),
+            elapsed_s=round(time.time() - t0, 3),
+            elapsed_breakdown=timings,
+            config=config_snapshot,
+        )
+
+    def retrieve_only(self, question: str) -> RetrievalOnlyAnswer:
+        """Run dense + sparse + temporal + RRF + rerank1 + expand + rerank2.
+
+        Skips the LLM generator step entirely — no OpenAI call, no citation
+        parsing. Returns the article id pool at every stage so audit scripts
+        can compute ``recall@K_stage`` and pinpoint gold drop-off.
+        """
+        t0 = time.time()
+        timings: dict[str, float] = {}
+
+        t = time.time()
+        candidates, audit = self.retriever.retrieve(question)
+        timings["retrieve"] = round(time.time() - t, 3)
+
+        config_snapshot = {
+            "dense_k": self.dense_k,
+            "sparse_k": self.sparse_k,
+            "top_after_fusion": self.top_after_fusion,
+            "rerank1_top_k": self.rerank1_top_k,
+            "rerank2_top_k": self.rerank2_top_k,
+            "max_hops": self.max_hops,
+            "rrf_k": self.rrf_k,
+            "per_seed_neighbors": self.per_seed_neighbors,
+            "adapter_path": self.adapter_path,
+            "dense_index": self.dense_index,
+            "reranker_model": self.reranker_model,
+            "temporal_mode": self.temporal_mode,
+        }
+
+        if not candidates:
+            return RetrievalOnlyAnswer(
+                question=question,
+                retrieval_audit=audit.__dict__,
+                elapsed_s=round(time.time() - t0, 3),
+                elapsed_breakdown=timings,
+                config=config_snapshot,
+            )
+
+        # Rerank pass 1 — seed set
+        t = time.time()
+        rerank1 = self.reranker.rerank(
+            question,
+            [c.text for c in candidates],
+            top_k=self.rerank1_top_k,
+        )
+        seed_indices = [i for i, _ in rerank1]
+        seeds = [candidates[i] for i in seed_indices]
+        timings["rerank1"] = round(time.time() - t, 3)
+        rerank1_article_ids = _dedupe_articles_in_order(c.article_id for c in seeds)
+
+        # Graph expansion
+        t = time.time()
+        neighbors = self.expander.expand([c.clause_id for c in seeds])
+        timings["expand"] = round(time.time() - t, 3)
+
+        # Pool = seeds + dedup-ed neighbours
+        pool_texts: list[str] = []
+        pool_article_ids: list[str] = []
+        seen_target_ids: set[str] = set()
+        for c in seeds:
+            pool_texts.append(c.text)
+            pool_article_ids.append(c.article_id)
+            seen_target_ids.add(c.article_id)
+        n_neighbors_added = 0
+        for nb in neighbors:
+            if nb.target_id in seen_target_ids or not nb.target_text:
+                continue
+            pool_texts.append(nb.target_text)
+            pool_article_ids.append(nb.target_id)
+            seen_target_ids.add(nb.target_id)
+            n_neighbors_added += 1
+
+        # Rerank pass 2 — final top-K
+        t = time.time()
+        rerank2 = self.reranker.rerank(question, pool_texts, top_k=self.rerank2_top_k)
+        timings["rerank2"] = round(time.time() - t, 3)
+        final_article_ids = _dedupe_articles_in_order(
+            pool_article_ids[i] for i, _ in rerank2
+        )
+
+        return RetrievalOnlyAnswer(
+            question=question,
+            dense_article_ids=list(audit.dense_article_ids),
+            sparse_article_ids=list(audit.sparse_article_ids),
+            post_temporal_article_ids=list(audit.post_temporal_article_ids),
+            fused_article_ids=list(audit.fused_article_ids),
+            rerank1_article_ids=rerank1_article_ids,
+            expanded_article_ids=pool_article_ids,
+            final_article_ids=final_article_ids,
+            retrieval_audit=audit.__dict__,
+            n_seeds=len(seeds),
+            n_neighbors_added=n_neighbors_added,
+            n_final=len(final_article_ids),
+            elapsed_s=round(time.time() - t0, 3),
+            elapsed_breakdown=timings,
+            config=config_snapshot,
+        )
 
     def ask(self, question: str) -> V5Answer:
         t0 = time.time()

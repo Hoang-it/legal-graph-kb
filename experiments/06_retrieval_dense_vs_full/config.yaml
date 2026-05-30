@@ -1,0 +1,40 @@
+name: "Retrieval-only A/B — dense vs full (rerank+expand) on 200 questions"
+description: |
+  Retrieval-only experiment (no LLM, no E2E). Two arms compute citation
+  recall / precision / F1 at article granularity against the strict
+  parsed gold from gold_citations_raw.
+
+  Arm A — dense:
+    BGE-M3 LoRA (models/bge-m3-bhxh-lora) → Neo4j vector index
+    clause_vec_tuned, top dense_k=50, article-dedupe. No sparse, no
+    temporal filter, no RRF, no cross-encoder rerank, no graph hop.
+
+  Arm B — full_rerank (current production retrieval pipeline):
+    dense + sparse (Lucene BM25) + temporal filter + RRF + bge-reranker-base
+    rerank1 (top-15 seeds) + REFERS_TO 1..3-hop expansion + rerank2 (top-12
+    final). Matches the baseline_m2 knobs from experiment 05.
+
+  Both arms share the same encoder + dense index — so the A/B isolates the
+  contribution of sparse / temporal / RRF / rerank / graph expansion on top
+  of dense.
+
+  No inheritance from prior experiments. Records are produced by a
+  dedicated runner script (scripts/exp06_run.py) that calls real Neo4j +
+  BGE-M3 + cross-encoder; eval_core CLI is not used for this retrieval-only
+  audit.
+
+date: "2026-05-30"
+
+dataset:
+  questions: data/eval/questions_200.json
+  n: 200
+
+parent: null
+
+prompts_override_dir: null
+
+# Retrieval-only audit — eval_core arm runners are not applicable.
+# Metrics are computed by scripts/exp06_metrics.py.
+arms: {}
+
+multimodel: null
