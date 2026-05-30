@@ -1,0 +1,14 @@
+{
+  "script_version": "v5-sprint2-phase1-1",
+  "openai_model": "gpt-4o-mini",
+  "graph_sha256": "57cb319bb32d3604308be8ee9b0f0a9ee6dd3f14110d663e313fd0ef2db5e20b",
+  "graph_path": "data\\graph\\processed\\merged_graph.json",
+  "n_clauses_in_kg": 1585,
+  "distance_filter": {
+    "min": 0.3,
+    "max": 0.85
+  },
+  "n_candidates_per_query": 8,
+  "n_easy_negatives": 3,
+  "seed": 42
+}

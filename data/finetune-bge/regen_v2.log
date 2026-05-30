@@ -1,0 +1,378 @@
+Loading BAAI/bge-m3 on cuda...
+  base loaded in 22.9s
+Loaded 1585 clauses from KG
+To process: 1585
+  [  25/1585] rows=50 yes=0 no=325 partial-drop=75 (63s elapsed)
+  [  50/1585] rows=100 yes=4 no=655 partial-drop=141 (133s elapsed)
+  [  75/1585] rows=150 yes=8 no=910 partial-drop=282 (194s elapsed)
+  [ 100/1585] rows=200 yes=8 no=1225 partial-drop=367 (253s elapsed)
+  [ 125/1585] rows=250 yes=12 no=1570 partial-drop=418 (298s elapsed)
+  [ 150/1585] rows=300 yes=14 no=1885 partial-drop=501 (364s elapsed)
+  [ 175/1585] rows=350 yes=17 no=2154 partial-drop=629 (431s elapsed)
+  [ 200/1585] rows=400 yes=22 no=2358 partial-drop=820 (494s elapsed)
+  [ 225/1585] rows=450 yes=33 no=2570 partial-drop=997 (550s elapsed)
+  [ 250/1585] rows=500 yes=36 no=2814 partial-drop=1150 (603s elapsed)
+  [ 275/1585] rows=550 yes=39 no=3105 partial-drop=1256 (662s elapsed)
+  [ 300/1585] rows=600 yes=44 no=3409 partial-drop=1347 (734s elapsed)
+  [ 325/1585] rows=650 yes=45 no=3700 partial-drop=1455 (797s elapsed)
+  [ 350/1585] rows=700 yes=51 no=3926 partial-drop=1623 (874s elapsed)
+  [ 375/1585] rows=750 yes=54 no=4227 partial-drop=1679 (938s elapsed)
+  [ 400/1585] rows=800 yes=56 no=4496 partial-drop=1808 (1004s elapsed)
+  [ 425/1585] rows=850 yes=69 no=4710 partial-drop=1981 (1084s elapsed)
+  [ 450/1585] rows=900 yes=71 no=5067 partial-drop=2022 (1142s elapsed)
+  [ 475/1585] rows=950 yes=71 no=5432 partial-drop=2053 (1229s elapsed)
+  [ 500/1585] rows=1000 yes=73 no=5613 partial-drop=2258 (1319s elapsed)
+  [ 525/1585] rows=1050 yes=74 no=5823 partial-drop=2447 (1420s elapsed)
+  [ 550/1585] rows=1100 yes=83 no=6076 partial-drop=2585 (1492s elapsed)
+  [ 575/1585] rows=1150 yes=93 no=6326 partial-drop=2725 (1571s elapsed)
+  [ 600/1585] rows=1200 yes=96 no=6588 partial-drop=2858 (1647s elapsed)
+  [ 625/1585] rows=1250 yes=99 no=6862 partial-drop=2980 (1723s elapsed)
+  [ 650/1585] rows=1300 yes=103 no=7124 partial-drop=3074 (1791s elapsed)
+  [ 675/1585] rows=1350 yes=105 no=7437 partial-drop=3159 (1859s elapsed)
+  [ 700/1585] rows=1400 yes=105 no=7770 partial-drop=3226 (1931s elapsed)
+  [ 725/1585] rows=1450 yes=105 no=8129 partial-drop=3267 (2040s elapsed)
+  [ 750/1585] rows=1500 yes=105 no=8445 partial-drop=3351 (2108s elapsed)
+  [ 775/1585] rows=1550 yes=114 no=8614 partial-drop=3573 (2180s elapsed)
+  [ 800/1585] rows=1600 yes=125 no=8844 partial-drop=3732 (2243s elapsed)
+  [ 825/1585] rows=1650 yes=129 no=9103 partial-drop=3869 (2309s elapsed)
+  [ 850/1585] rows=1700 yes=133 no=9390 partial-drop=3977 (2383s elapsed)
+  [ 875/1585] rows=1750 yes=135 no=9673 partial-drop=4092 (2447s elapsed)
+  [ 900/1585] rows=1800 yes=137 no=9937 partial-drop=4226 (2501s elapsed)
+  [ 925/1585] rows=1850 yes=137 no=10252 partial-drop=4311 (2572s elapsed)
+  [ 950/1585] rows=1900 yes=143 no=10532 partial-drop=4425 (2625s elapsed)
+  [ 975/1585] rows=1950 yes=147 no=10832 partial-drop=4521 (2681s elapsed)
+  [1000/1585] rows=2000 yes=147 no=11193 partial-drop=4560 (2742s elapsed)
+  [1025/1585] rows=2050 yes=151 no=11471 partial-drop=4674 (2801s elapsed)
+  [1050/1585] rows=2100 yes=157 no=11717 partial-drop=4822 (2863s elapsed)
+  [1075/1585] rows=2150 yes=157 no=12040 partial-drop=4899 (2920s elapsed)
+  [1100/1585] rows=2200 yes=158 no=12320 partial-drop=5018 (2985s elapsed)
+  [1125/1585] rows=2250 yes=160 no=12619 partial-drop=5117 (3054s elapsed)
+  [1150/1585] rows=2300 yes=160 no=12869 partial-drop=5267 (3122s elapsed)
+  [1175/1585] rows=2350 yes=160 no=13146 partial-drop=5390 (3180s elapsed)
+  [1200/1585] rows=2400 yes=161 no=13456 partial-drop=5479 (3243s elapsed)
+  [1225/1585] rows=2450 yes=167 no=13761 partial-drop=5568 (3308s elapsed)
+  [1250/1585] rows=2500 yes=168 no=14036 partial-drop=5690 (3360s elapsed)
+  [1275/1585] rows=2550 yes=178 no=14226 partial-drop=5890 (3422s elapsed)
+  [1300/1585] rows=2600 yes=190 no=14434 partial-drop=6070 (3479s elapsed)
+  [1325/1585] rows=2650 yes=211 no=14638 partial-drop=6245 (3541s elapsed)
+  [1350/1585] rows=2700 yes=217 no=14915 partial-drop=6361 (3593s elapsed)
+  [1375/1585] rows=2750 yes=230 no=15182 partial-drop=6481 (3642s elapsed)
+  [1400/1585] rows=2800 yes=230 no=15502 partial-drop=6559 (3704s elapsed)
+  [1425/1585] rows=2850 yes=234 no=15770 partial-drop=6686 (3766s elapsed)
+  [1450/1585] rows=2900 yes=236 no=16075 partial-drop=6779 (3820s elapsed)
+  [1475/1585] rows=2950 yes=238 no=16410 partial-drop=6842 (3876s elapsed)
+  [1500/1585] rows=3000 yes=238 no=16755 partial-drop=6897 (3938s elapsed)
+  [1525/1585] rows=3050 yes=242 no=16905 partial-drop=7143 (3996s elapsed)
+  [1550/1585] rows=3100 yes=245 no=17212 partial-drop=7233 (4056s elapsed)
+  [1575/1585] rows=3150 yes=246 no=17503 partial-drop=7341 (4124s elapsed)
+  [1585/1585] rows=3170 yes=246 no=17642 partial-drop=7362 (4150s elapsed)
+
+=== DONE ===
+{
+  "n_clauses_total": 1585,
+  "n_clauses_processed": 1585,
+  "n_clauses_skipped_empty": 0,
+  "n_queries_emitted": 3170,
+  "n_candidates_total": 25264,
+  "n_dropped_by_distance": 14,
+  "n_dropped_partial": 7362,
+  "n_kept_yes": 246,
+  "n_kept_no": 17642,
+  "n_rows_written": 3170,
+  "n_multi_positive_rows": 218,
+  "sum_pos_per_row": 3416,
+  "sum_neg_per_row": 27152,
+  "api_calls_query_gen": 1585,
+  "api_calls_verifier": 25250,
+  "elapsed_s": 4149.5,
+  "errors": [],
+  "mean_pos_per_row": 1.078,
+  "mean_neg_per_row": 8.565,
+  "pct_multi_positive": 6.9
+}
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x000001C7F8037C70>
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 116, in __del__
+    self.close()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\proactor_events.py", line 108, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
