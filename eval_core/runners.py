@@ -26,11 +26,25 @@ from eval_core.report import write_grouped_academic_metrics_outputs
 from src.citations import DEFAULT_REGISTRY_PATH, load_registry
 
 
-def _load_gold_map(path: Path) -> dict[int, list[str]]:
+def _load_gold_map(path: Path) -> dict[int, dict[str, list[str]]]:
+    """Return per-stt mapping with both granularities.
+
+    `gold_items` is the strict-tuple list (full item_id) used by the
+    E2E primary metric. `gold_articles` is the article-deduped list
+    kept for backward compat with retrieval-only diagnostic scripts.
+    See v5 plan §5 scope distinction.
+    """
     data = json.loads(path.read_text(encoding="utf-8"))
-    out: dict[int, list[str]] = {}
+    out: dict[int, dict[str, list[str]]] = {}
     for stt, rec in (data.get("records") or {}).items():
-        out[int(stt)] = list(rec.get("gold_articles") or [])
+        items = list(rec.get("gold_items") or [])
+        articles = list(rec.get("gold_articles") or [])
+        # Backward compat: older normalized JSONs (pre-2026-05-31) only
+        # wrote `gold_articles`. Treat them as items=articles since the
+        # old normalizer never extracted khoản either.
+        if not items and articles:
+            items = list(articles)
+        out[int(stt)] = {"gold_items": items, "gold_articles": articles}
     return out
 
 
@@ -69,18 +83,44 @@ def load_result_records(
     return records
 
 
+def _normalize_gold_entry(value: Any) -> dict[str, list[str]]:
+    """Accept old-shape (``list[str]``) or new-shape (``dict``) per-stt entry.
+
+    Pre-2026-05-31 callers passed ``{stt: list[str]}`` of article ids.
+    Post-2026-05-31 callers pass ``{stt: {"gold_items": [...], "gold_articles": [...]}}``.
+    Old-shape values are coerced to items==articles since the legacy
+    normalizer never extracted khoản.
+    """
+    if isinstance(value, dict):
+        items = list(value.get("gold_items") or [])
+        articles = list(value.get("gold_articles") or [])
+        if not items and articles:
+            items = list(articles)
+        return {"gold_items": items, "gold_articles": articles}
+    seq = list(value or [])
+    return {"gold_items": list(seq), "gold_articles": list(seq)}
+
+
 def build_metric_record_groups(
     records: list[dict[str, Any]],
-    gold_map: dict[int, list[str]],
+    gold_map: dict[int, Any],
     question_map: dict[int, dict[str, Any]],
 ) -> dict[str, list[dict[str, Any]]]:
-    """Attach validated gold fields and group records by experiment arm."""
+    """Attach validated gold fields and group records by experiment arm.
+
+    Each metric record gets both ``gold_items`` (strict-tuple list for the
+    E2E primary metric) and ``gold_articles`` (article-deduped, kept for
+    backward compat with retrieval-only diagnostics). ``gold_map`` values
+    may be old-shape (``list[str]``) or new-shape (``dict``) — both are
+    normalised in-place.
+    """
     out: dict[str, list[dict[str, Any]]] = {}
     for rec in records:
         arm = str(rec["arm"])
         stt = int(rec["stt"])
         if stt not in gold_map:
             raise RuntimeError(f"No validated gold citations for stt={stt}")
+        gold = _normalize_gold_entry(gold_map[stt])
         q = question_map.get(stt, {})
         enriched = {
             key: value
@@ -88,7 +128,8 @@ def build_metric_record_groups(
             if key not in {"arm", "stt"}
         }
         enriched["record_id"] = str(stt)
-        enriched["gold_articles"] = gold_map[stt]
+        enriched["gold_items"] = list(gold["gold_items"])
+        enriched["gold_articles"] = list(gold["gold_articles"])
         if not enriched.get("gold_answer"):
             enriched["gold_answer"] = q.get("gold_answer")
         if not enriched.get("gold_citations_raw"):
@@ -199,7 +240,7 @@ def compute_experiment_academic_metrics(
 
 def _enrich_records_with_gold(
     records: list[dict[str, Any]],
-    gold_map: dict[int, list[str]],
+    gold_map: dict[int, Any],
     question_map: dict[int, dict[str, Any]],
 ) -> list[dict[str, Any]]:
     """Variant of build_metric_record_groups but returns flat list with arm kept.
@@ -207,16 +248,23 @@ def _enrich_records_with_gold(
     The Experiment-based flow keeps `arm` on each record because records are
     pulled from arm-named subfolders (or inherited from a parent experiment).
     Records carry the arm tag so downstream grouping is by record["arm"].
+
+    Each enriched record gets both ``gold_items`` (strict-tuple list for
+    the E2E primary metric) and ``gold_articles`` (article-deduped,
+    backward compat for diagnostics). ``gold_map`` values may be old-shape
+    (``list[str]``) or new-shape (``dict``); see ``_normalize_gold_entry``.
     """
     out: list[dict[str, Any]] = []
     for rec in records:
         stt = int(rec["stt"])
         if stt not in gold_map:
             raise RuntimeError(f"No validated gold citations for stt={stt}")
+        gold = _normalize_gold_entry(gold_map[stt])
         q = question_map.get(stt, {})
         enriched = dict(rec)
         enriched["record_id"] = str(stt)
-        enriched["gold_articles"] = gold_map[stt]
+        enriched["gold_items"] = list(gold["gold_items"])
+        enriched["gold_articles"] = list(gold["gold_articles"])
         if not enriched.get("gold_answer"):
             enriched["gold_answer"] = q.get("gold_answer")
         if not enriched.get("gold_citations_raw"):

@@ -49,7 +49,13 @@ def validate_gold_citations(
         "registry_path": str(registry_path),
         "registry_sha256": _sha256(registry_path),
         "source": "gold_citations_raw",
-        "granularity": "article",
+        # `granularity` = "tuple" since 2026-05-31: each record carries
+        # `gold_items` as the full (law_id, article, clause, point) tuple
+        # used by the strict-tuple-equal E2E metric (v5 plan §5).
+        # `gold_articles` is kept as a derived field (article-level dedupe)
+        # for retrieval-only diagnostic experiments that compare against
+        # the dense article pool — see plan §5 scope distinction.
+        "granularity": "tuple",
         "records": {},
     }
     errors: list[dict[str, Any]] = []
@@ -58,7 +64,12 @@ def validate_gold_citations(
         stt = q.get("stt")
         raw = q.get("gold_citations_raw")
         result = parse_gold_citations_raw(raw, registry)
-        refs = sorted({r.article_id for r in result.refs})
+        # Full tuple per gold citation. For the current 200-question dataset
+        # 0/200 gold cites have khoản/điểm so `gold_items == gold_articles`;
+        # the field exists so that a future dataset extension carrying
+        # khoản-level gold is handled by the same code path.
+        gold_items = sorted({r.item_id for r in result.refs})
+        gold_articles = sorted({r.article_id for r in result.refs})
         if result.errors:
             for err in result.errors:
                 errors.append(
@@ -73,7 +84,8 @@ def validate_gold_citations(
                     }
                 )
         normalized["records"][str(stt)] = {
-            "gold_articles": refs,
+            "gold_items": gold_items,
+            "gold_articles": gold_articles,
             "gold_citations_raw": raw,
         }
 

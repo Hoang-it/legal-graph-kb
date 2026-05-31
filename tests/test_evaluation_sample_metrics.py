@@ -189,7 +189,16 @@ def test_experiment_loader_builds_metric_records_from_sample_layout(tmp_path: Pa
 
     assert result["metadata"]["results_root"] == str(results_root)
     assert result["metadata"]["arms_filter"] == SAMPLE_ARMS
-    assert result["aggregates"]["graphrag"]["macro"]["citation_recall"] == 0.5
+    # Under academic_v2 (strict tuple-equal, 2026-05-31):
+    #   graphrag arm = records #1 (cite L41_2024.A64.K1 vs gold L41_2024.A64)
+    #                  and #2 (cite L41_2024.A51 vs gold L41_2024.A50)
+    #   → record #1 MISS (over-specified khoản), #2 MISS (wrong article)
+    #   → macro recall 0.0 (was 0.5 under v1 which counted #1 as HIT
+    #     via article-only intersection).
+    assert result["aggregates"]["graphrag"]["macro"]["citation_recall"] == 0.0
+    # logic_lm_graphrag arm = records #3 (cite L41_2024.A64 vs gold L41_2024.A64)
+    # and #4 (empty citations) → 1 HIT + 1 MISS → recall 0.5 (unchanged).
+    assert result["aggregates"]["logic_lm_graphrag"]["macro"]["citation_recall"] == 0.5
     assert result["aggregates"]["logic_lm_graphrag"]["prolog"][
         "prolog_first_try_solution_rate"
     ] == 0.5

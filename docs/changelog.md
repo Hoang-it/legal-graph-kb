@@ -7,6 +7,77 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed — Citation metric `academic_v1` → `academic_v2` (strict tuple-equal, 2026-05-31)
+
+**What landed**: implemented the strict tuple-equal policy decided
+earlier in the same session (see "Decided" entry below for the
+rationale and example table). `eval_core/metrics.py` now compares
+`pred_items ∩ gold_items` on the full 4-tuple `(law_id, article,
+clause, point)` instead of the previous article-only intersection.
+
+**Files changed**:
+- `eval_core/gold.py` — normalizer emits `gold_items` (full tuple)
+  alongside `gold_articles` (article-deduped, kept for backward
+  compat). Granularity flag flipped to `"tuple"`.
+- `eval_core/metrics.py` — `compute_citation_metrics` rewritten;
+  `_coerce_gold_articles` → `_coerce_gold_items` with legacy fallback.
+  `METRIC_VERSION = "academic_v2"`.
+- `eval_core/runners.py` — both gold-attachment helpers accept either
+  old (`list[str]`) or new (`dict`) gold map shape for backward compat.
+- `tests/test_academic_metrics.py` — old article-only test renamed to
+  `test_citation_metrics_strict_tuple_policy_v5_plan_section_5` and
+  rewritten to assert the 6-row HIT/MISS table from plan §5. Added a
+  legacy-records backward-compat test and a partial-match arithmetic
+  test.
+- `tests/test_evaluation_sample_metrics.py` — assertions updated to
+  the new arithmetic (sample record #1's `K1` over-specification is now
+  a MISS).
+- `tests/fixtures/academic_metrics/expected_summary.json` — fixture
+  values rewritten for `academic_v2`; an inline `_note` field
+  documents the version bump.
+
+Full test suite: **175/175 pass** (excluding 2 pre-existing failures
+unrelated to this change: `test_main_arm_preset_is_shared_between_runner_and_metrics`
+and `test_columns_dung_format`).
+
+**v4 baseline re-aggregated** (`experiments/01_initial_eval/metrics/academic_metrics.json`).
+Records (`results/*.json`) are immutable; only the metrics aggregation
++ report were rewritten. Per-arm shift on macro citation recall:
+
+| arm | `v1` (article-only) | `v2` (strict tuple) | Δ |
+|---|---:|---:|---:|
+| graphrag | 0.1120 | 0.0000 | **−0.1120** |
+| llm_only | 0.0067 | 0.0000 | −0.0067 |
+| logic_lm_no_retrieval | 0.0023 | 0.0000 | −0.0023 |
+| logic_lm_ontology | 0.0073 | 0.0000 | −0.0073 |
+| logic_lm_graphrag | 0.0175 | 0.0000 | −0.0175 |
+| logic_lm_graphrag__gpt-4_1 | 0.1565 | 0.0338 | **−0.1227** |
+| logic_lm_graphrag__gpt-4o | 0.1407 | 0.0260 | **−0.1147** |
+| logic_lm_graphrag__gpt-5-mini | 0.0785 | 0.0315 | −0.0470 |
+| logic_lm_no_retrieval__gpt-4_1 | 0.0433 | 0.0008 | −0.0425 |
+| logic_lm_no_retrieval__gpt-4o | 0.0400 | 0.0033 | −0.0367 |
+| logic_lm_no_retrieval__gpt-5-mini | 0.0081 | 0.0000 | −0.0081 |
+
+Reading the shift: 5 of 11 arms collapse to **0.0 recall** under
+strict tuple. The legacy GraphRAG generator emits citations with
+`khoản` granularity (e.g. `Điều 64 khoản 1`) while every gold cite
+in the dataset is article-only — under `v2` those count as MISS. The
+Logic-LM `__gpt-4_*` arms retain some recall because Prolog forces
+their citation output to match facts loaded into the program, and the
+trace-only `logic_lm_graphrag` arm (without an explicit answerer model)
+drops to 0 because its emitted citations are all clause/point-level.
+
+**Tier re-calibration**: per the §10 caveat in the v5 plan, we do
+NOT shift the acceptance tiers (70/80, 85/90, 95/95) preemptively.
+The new v4 numbers above are the de facto baseline; v5 results will
+be compared against these, and any tier adjustment must be reasoned
+from the actual `v2` v5 numbers — not anticipated.
+
+**A/B impact**: any v5-vs-v4 comparison published after 2026-05-31
+must cite the post-rewrite v4 numbers in this table. Old `v1` numbers
+in earlier paper drafts / commits are deprecated. The frozen `v4`
+records remain immutable — only their aggregation changed.
+
 ### Decided — Strict tuple-equal citation matching for E2E (2026-05-31)
 
 **Scope**: Updated [`docs/plans/v5_general_retrieval.md`](plans/v5_general_retrieval.md)

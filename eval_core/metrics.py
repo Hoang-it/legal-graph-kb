@@ -3,7 +3,19 @@
 The core evaluator receives an already-loaded list of records. It does not
 decide where records live on disk, how records are grouped, or how question
 files are joined to result files. Each record must already include
-`gold_articles`.
+``gold_items`` (strict tuple, the primary E2E metric basis); ``gold_articles``
+is accepted for backward compat and used as a fallback.
+
+**Citation matching policy: STRICT TUPLE-EQUAL** (v5 plan §5, locked
+2026-05-31). A predicted citation matches a gold citation iff the full
+4-tuple ``(law_id, article, clause, point)`` is identical — no component
+may differ, be missing, or be over-specified. A wrong khoản may not exist
+in the law; a missing khoản leaves the reader unable to locate the rule.
+
+This policy applies to the primary E2E metric only — retrieval-only
+diagnostic scripts (``scripts/exp{06,07,08}_metrics.py``) intentionally
+stay article-deduped, since they probe "did dense surface the right Điều"
+before the LLM commits to a specific khoản.
 
 Report / CSV writing lives in :mod:`eval_core.report` so the metric engine
 stays pure-computational.
@@ -33,7 +45,9 @@ DEFAULT_OUTPUT_DIR = Path("metrics")
 METRICS_OUT = DEFAULT_OUTPUT_DIR / "academic_metrics.json"
 CSV_OUT = DEFAULT_OUTPUT_DIR / "academic_metrics.csv"
 REPORT_OUT = DEFAULT_OUTPUT_DIR / "academic_report.md"
-METRIC_VERSION = "academic_v1"
+# v2 (2026-05-31): switched citation matching from article-only to strict
+# tuple-equal on (law_id, article, clause, point). See module docstring.
+METRIC_VERSION = "academic_v2"
 
 
 def _safe_div(num: int | float, denom: int | float) -> float | None:
@@ -66,9 +80,25 @@ def _clean_answer_for_semantic(record: dict[str, Any]) -> tuple[str, str]:
 
 def compute_citation_metrics(
     record: dict[str, Any],
-    gold_articles: set[str],
+    gold_items: set[str],
     registry,
+    gold_articles: set[str] | None = None,
 ) -> dict[str, Any]:
+    """Compute strict-tuple citation recall / precision / F1.
+
+    ``gold_items`` — set of full-tuple gold ids (e.g. ``"L58_2014.A2"``
+    when gold is article-only, ``"L58_2014.A2.K1"`` when gold has khoản).
+    ``gold_articles`` — optional article-deduped set, kept on the output
+    for debugging and for the citation-display rate (which still asks
+    "did the LLM mention the right article at all"). When omitted, it
+    is derived by stripping each item's khoản / điểm suffix.
+
+    Matching policy is strict: ``pred_items ∩ gold_items``. The arm
+    cannot match a gold item by over-specifying (e.g. arm cite
+    ``Điều 2 khoản 1`` against gold ``Điều 2`` is a MISS — the arm
+    may have hallucinated a non-existent khoản) nor by under-specifying.
+    See module docstring for the full rationale.
+    """
     raw_ids = [str(x).strip() for x in (record.get("citation_ids") or []) if str(x).strip()]
     pred_articles: dict[str, CitationRef] = {}
     pred_items: dict[str, CitationRef] = {}
@@ -83,30 +113,43 @@ def compute_citation_metrics(
         pred_articles[ref.article_id] = CitationRef(source=ref.source, article=ref.article)
         pred_items[ref.item_id] = ref
 
+    # Derive article-only views for backward-compat fields. The strict
+    # primary comparison uses items only.
+    if gold_articles is None:
+        gold_articles = {item_id.split(".K", 1)[0] for item_id in gold_items}
+    correct_items = sorted(set(pred_items) & set(gold_items))
     correct_articles = sorted(set(pred_articles) & set(gold_articles))
-    recall = _safe_div(len(correct_articles), len(gold_articles))
-    pred_precision_denom = len(pred_articles) + len(pred_parse_errors)
-    precision = _safe_div(len(correct_articles), pred_precision_denom)
-    if pred_precision_denom == 0 and gold_articles:
+
+    recall = _safe_div(len(correct_items), len(gold_items))
+    pred_precision_denom = len(pred_items) + len(pred_parse_errors)
+    precision = _safe_div(len(correct_items), pred_precision_denom)
+    if pred_precision_denom == 0 and gold_items:
         precision = 0.0
-    if recall is None and gold_articles:
+    if recall is None and gold_items:
         recall = 0.0
     if precision is None or recall is None or precision + recall == 0:
-        f1 = 0.0 if gold_articles else None
+        f1 = 0.0 if gold_items else None
     else:
         f1 = round(2 * precision * recall / (precision + recall), 4)
 
     display = compute_citation_display(record, list(pred_items.values()), len(pred_parse_errors), registry)
     return {
+        "gold_items": sorted(gold_items),
         "gold_articles": sorted(gold_articles),
         "pred_articles": sorted(pred_articles),
         "pred_items": sorted(pred_items),
         "pred_parse_errors": pred_parse_errors,
-        "n_correct_articles": len(correct_articles),
+        # `correct_articles` is kept for debugging / backward-compat with
+        # external readers; the primary correctness count is now
+        # `correct_items`. `recall_num` / `precision_num` reflect the
+        # STRICT TUPLE counts as of academic_v2.
         "correct_articles": correct_articles,
-        "recall_num": len(correct_articles),
-        "recall_denom": len(gold_articles),
-        "precision_num": len(correct_articles),
+        "n_correct_articles": len(correct_articles),
+        "correct_items": correct_items,
+        "n_correct_items": len(correct_items),
+        "recall_num": len(correct_items),
+        "recall_denom": len(gold_items),
+        "precision_num": len(correct_items),
         "precision_denom": pred_precision_denom,
         "citation_recall": recall,
         "citation_precision": precision,
@@ -300,14 +343,30 @@ def _aggregate_prolog(prolog_records: list[dict[str, Any]], repaired: list[dict[
     }
 
 
-def _coerce_gold_articles(record: dict[str, Any]) -> set[str]:
-    raw = record.get("gold_articles")
-    if raw is None:
+def _coerce_gold_items(record: dict[str, Any]) -> tuple[set[str], set[str]]:
+    """Return ``(gold_items, gold_articles)`` from a metric record.
+
+    Prefers the explicit ``gold_items`` field (strict-tuple, written by
+    the post-2026-05-31 :mod:`eval_core.gold`). Falls back to
+    ``gold_articles`` for older records — in that case items = articles
+    since the legacy normalizer never extracted khoản/điểm.
+
+    Raises if neither field is present.
+    """
+    raw_items = record.get("gold_items")
+    raw_articles = record.get("gold_articles")
+    if raw_items is None and raw_articles is None:
         raise RuntimeError(
-            "Academic metric records must include `gold_articles`; load and validate "
-            "gold citations before calling evaluation."
+            "Academic metric records must include `gold_items` (or legacy "
+            "`gold_articles`); load and validate gold citations before "
+            "calling evaluation."
         )
-    return {str(x).strip() for x in raw if str(x).strip()}
+    items_set = {str(x).strip() for x in (raw_items or raw_articles or []) if str(x).strip()}
+    articles_set = {str(x).strip() for x in (raw_articles or []) if str(x).strip()}
+    if not articles_set:
+        # Derive article-level view from items by stripping khoản/điểm.
+        articles_set = {item_id.split(".K", 1)[0] for item_id in items_set}
+    return items_set, articles_set
 
 
 def _prepare_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -337,11 +396,13 @@ def compute_academic_metrics(
 
     result_records: list[dict[str, Any]] = []
     for rec in prepared_records:
-        gold_articles = _coerce_gold_articles(rec)
+        gold_items, gold_articles = _coerce_gold_items(rec)
         metric_rec = {
             "record_index": int(rec["_metric_index"]),
             "_record_path": rec.get("_record_path", ""),
-            "citation": compute_citation_metrics(rec, gold_articles, registry),
+            "citation": compute_citation_metrics(
+                rec, gold_items, registry, gold_articles=gold_articles
+            ),
             "latency": {"latency_s": rec.get("elapsed_s")},
             "prolog": compute_prolog_fields(rec),
         }
@@ -357,7 +418,7 @@ def compute_academic_metrics(
         "metric_version": METRIC_VERSION,
         "n_input_records": len(prepared_records),
         "registry_path": str(registry_path),
-        "gold_source": "record.gold_articles",
+        "gold_source": "record.gold_items (falls back to gold_articles)",
         "metadata": metadata or {},
         "bertscore_metadata": bs_meta,
         "records": result_records,

@@ -72,23 +72,86 @@ def test_gold_parser_fails_when_article_missing():
     assert result.errors[0].error_type == "article_missing"
 
 
-def test_citation_metrics_use_gold_article_level_and_strict_authority():
+def test_citation_metrics_strict_tuple_policy_v5_plan_section_5():
+    """6-row example table from v5 plan §5 (locked 2026-05-31).
+
+    Each row asserts a per-record verdict. The policy is strict tuple-equal
+    on (law_id, article, clause, point) — predictions cannot match by
+    over-specifying or under-specifying relative to gold.
+    """
+    registry = load_registry()
+    cases = [
+        # (label, gold_items, citation_ids, expected_recall, expected_precision)
+        ("HIT  — exact match (article only)",
+            {"L58_2014.A2"}, ["L58_2014.A2"], 1.0, 1.0),
+        ("MISS — arm over-specifies khoản gold does not have",
+            {"L58_2014.A2"}, ["L58_2014.A2.K1"], 0.0, 0.0),
+        ("HIT  — exact match (article + khoản)",
+            {"L58_2014.A2.K1"}, ["L58_2014.A2.K1"], 1.0, 1.0),
+        ("MISS — arm missing khoản that gold has",
+            {"L58_2014.A2.K1"}, ["L58_2014.A2"], 0.0, 0.0),
+        ("MISS — wrong khoản",
+            {"L58_2014.A2.K1"}, ["L58_2014.A2.K2"], 0.0, 0.0),
+        ("MISS — wrong law id",
+            {"L58_2014.A2.K1"}, ["L41_2024.A2.K1"], 0.0, 0.0),
+    ]
+    for label, gold, preds, exp_recall, exp_precision in cases:
+        record = {"citation_ids": preds, "answer": ""}
+        m = compute_citation_metrics(record, set(gold), registry)
+        assert m["citation_recall"] == exp_recall, (
+            f"{label}: recall expected {exp_recall} got {m['citation_recall']}"
+        )
+        assert m["citation_precision"] == exp_precision, (
+            f"{label}: precision expected {exp_precision} got {m['citation_precision']}"
+        )
+
+
+def test_citation_metrics_partial_match_uses_strict_tuple():
+    """Mixed gold + multi-citation case to anchor recall/precision arithmetic."""
     registry = load_registry()
     record = {
         "answer": "[Luật BHXH 2024 (41/2024/QH15), Điều 50 khoản 4]",
+        # K4 is a HIT (matches gold tuple), K5 is a wrong khoản, BAD_ID
+        # is a parse error → precision_denom = 2 valid + 1 error = 3.
         "citation_ids": ["L41_2024.A50.K4", "L41_2024.A50.K5", "BAD_ID"],
     }
     metrics = compute_citation_metrics(
         record,
-        {"L41_2024.A50", "ND115_2015.A28"},
+        # Gold contains the SPECIFIC khoản (strict). ND115 is unmatched.
+        {"L41_2024.A50.K4", "ND115_2015.A28"},
         registry,
     )
 
+    # 1 of 2 gold items matched (L41_2024.A50.K4)
     assert metrics["citation_recall"] == 0.5
-    assert metrics["citation_precision"] == 0.5
-    assert metrics["citation_f1"] == 0.5
-    assert metrics["precision_denom"] == 2
+    # 1 of 3 prediction slots matched (K4 hit; K5 wrong khoản; BAD_ID parse error)
+    assert metrics["citation_precision"] == round(1 / 3, 4)
+    assert metrics["precision_denom"] == 3
     assert metrics["pred_parse_errors"] == ["BAD_ID"]
+    assert metrics["gold_items"] == ["L41_2024.A50.K4", "ND115_2015.A28"]
+    assert metrics["correct_items"] == ["L41_2024.A50.K4"]
+
+
+def test_citation_metrics_backward_compat_with_legacy_gold_articles_only():
+    """Records persisted before 2026-05-31 only had `gold_articles`.
+
+    When `gold_items` is absent, the coercer treats `gold_articles` as the
+    items set (because the legacy normalizer never extracted khoản).
+    """
+    registry = load_registry()
+    record = {
+        "citation_ids": ["L41_2024.A50"],
+        "answer": "",
+        "gold_articles": ["L41_2024.A50"],
+        # NO gold_items field — simulates legacy record
+    }
+    from eval_core.metrics import _coerce_gold_items
+    items, articles = _coerce_gold_items(record)
+    assert items == {"L41_2024.A50"}
+    assert articles == {"L41_2024.A50"}
+    m = compute_citation_metrics(record, items, registry, gold_articles=articles)
+    assert m["citation_recall"] == 1.0
+    assert m["citation_precision"] == 1.0
 
 
 def test_citation_display_rate_is_item_level_with_article_to_clause_match():
