@@ -1,178 +1,217 @@
-# exp 11 — `graphrag_cypher` pilot (Hybrid: vector seed + LLM-Cypher + fallback)
+# exp 11 (REDO) — `CypherWalkRetriever` retrieval-only audit
+
+> **Status: 50-question pilot run (2026-06-01). Result: `cypher_walk` LOSES.**
+> The component works mechanically (it surfaces new clauses 76% of the time,
+> fixing the previous attempt's `n_cypher_new=0`), but the new clauses are
+> **noise, not gold** — `cypher_walk` recall@12 is **−0.0417 below**
+> `dense_vanilla`. The incidental winner is `dense_then_expand` (+0.0517).
+> See "Result" below.
+>
+> Plan: [`docs/plans/exp11_cypher_walk_retriever.md`](../../docs/plans/exp11_cypher_walk_retriever.md).
+
+## Result — 50-question pilot (2026-06-01)
+
+Stratified pilot (`l41_only=28`, `mixed_l41_other=9`, `no_l41=13`), seed=0.
+gpt-4o-mini Cypher generator, T=0. Cost ≈ **$0.036** (188.5K prompt + 13.1K
+completion tokens). 0 failures. Metrics: [`report/retrieval_report.md`](report/retrieval_report.md),
+[`metrics/academic_metrics.json`](metrics/academic_metrics.json). Funnel:
+[`report/funnel_cypher_walk_K12.md`](report/funnel_cypher_walk_K12.md).
+
+### Article-level recall@K (n=50)
+
+| arm | R@5 | R@12 | R@20 | NDCG@12 | MRR |
+|---|---:|---:|---:|---:|---:|
+| dense_vanilla | 0.1483 | 0.2067 | 0.2067 | 0.1247 | 0.1226 |
+| **dense_then_expand** | 0.1483 | **0.2583** | **0.2750** | **0.1406** | **0.1294** |
+| cypher_walk | 0.1150 | 0.1650 | 0.1650 | 0.1038 | 0.1025 |
+
+`cypher_walk` is **worst on every metric**. `dense_then_expand` (vanilla
+graphrag's REFERENCES/CITES_EXTERNAL expansion, no LLM) is **best**:
+recall@12 +0.0517 vs vanilla.
+
+### Pre-commitment check (plan §5.5) — 2 of 4 FAILED
+
+| prediction | threshold | observed | verdict |
+|---|---|---:|:-:|
+| cypher_used rate | ≥ 0.30 | 0.7600 (38/50) | ✓ |
+| mean n_cypher_new (when used) | 1.5–3.0 | **14.71** | ✗ AUDIT |
+| recall@12 lift vs dense_vanilla | +0.00 to +0.05 | **−0.0417** | ✗ AUDIT |
+| recall@12 lift on no_l41 stratum | near 0 | 0.0000 | ✓ |
+
+### Funnel — why it loses (the honest mechanism)
+
+| stage | avg \|pool\| | recall@all | gold-hits (Σ) |
+|---|---:|---:|---:|
+| seed (vector, top-8) | 6.58 | 0.1583 | 14 |
+| + cypher_new | 10.8 | **0.1583** | **14** |
+| + fallback | 6.98 | 0.1817 | 17 |
+| final (fused top-12) | 7.64 | 0.1650 | 15 |
+
+The Cypher walk adds ~4 new articles per question (≈15 new clauses, mean
+`n_cypher_new=14.71`) but **gold-hits stays 14 → 14** — *not one* of the new
+articles is gold. The LLM writes broad traversals (e.g. "cousin-article
+clauses CONTAINS keyword", LIMIT 30) that dump loosely-related clauses; RRF
+(k=60) then interleaves that noise with the precise dense seed and the top-12
+cap drops good hits. Net: 0.1650 < the 0.2067 you get by just taking the
+top-12 dense hits. The `+ fallback` gold gain (14→17) comes from the 12
+questions where Cypher found nothing and vanilla expand kicked in — which is
+exactly why `dense_then_expand` wins.
+
+### Stratified recall@12
+
+| arm | l41_only (28) | mixed (9) | no_l41 (13) |
+|---|---:|---:|---:|
+| dense_vanilla | 0.2321 | 0.2593 | 0.1154 |
+| dense_then_expand | **0.3244** | 0.2593 | 0.1154 |
+| cypher_walk | 0.1458 | **0.2963** | 0.1154 |
+
+`no_l41` is **identical across all three arms** — the KG has no useful
+outward edges reaching non-L41 gold, so neither expansion nor the walk helps
+the hard subset. `cypher_walk` only ties the best on the small `mixed`
+stratum (n=9).
+
+### Conclusion
+
+The hypothesis "LLM graph-walking improves retrieval" is **refuted** on this
+pilot. The redo fixed the previous attempt's degeneracy (walks now surface
+new clauses), but those clauses carry no gold, so fusing them in degrades
+recall. **Precondition for plan §8 (plug into Logic-LM) is NOT met** —
+`cypher_walk` shows no useful lift, so it should not be promoted. If anything
+is worth pursuing it is `dense_then_expand` (cheap, no LLM, +0.05 recall@12).
+A full-200 run could confirm, but the pilot signal is a clean negative for
+the Cypher walk.
 
 ## What
 
-New inference arm `graphrag_cypher`. Per question:
+A **retrieval-layer** component — peer of `RagPipeline.vector_search` and
+`V5RetrievalPipeline`. It takes a question and returns a ranked set of
+clauses + provenance. **No LLM render, no citation parsing, no answer
+generation.** ([`runtime/retrievers/cypher_walk.py`](../../runtime/retrievers/cypher_walk.py))
 
-1. **Vector seed** — `RagPipeline.vector_search(question, top_k=8)` →
-   list of seed Clause IDs (same dense channel as vanilla `graphrag`).
-2. **LLM-authored Cypher** — `gpt-4o-mini` is given the KG schema
-   (whitelisted labels + edge types), the seed IDs, and the question;
-   it emits a JSON `{cypher, rationale}`. The Cypher MUST reference
-   `$seed_ids` and MUST be read-only.
-3. **Validator** — regex-gated:
-   - rejects any `CREATE / MERGE / DELETE / SET / REMOVE / DROP / LOAD / CALL / FOREACH`;
-   - rejects any `:Label` outside the schema whitelist;
-   - rejects any relationship type outside the edge whitelist
-     (supports `[r:A|B|C]` lists);
-   - requires `$seed_ids` reference, a `clause_id` column in `RETURN`,
-     and a `LIMIT ≤ 30`.
-4. **Execute** — `session.execute_read(...)` (server-enforced read
-   mode) with a 15 s transaction timeout.
-5. **Repair loop** — up to 2 rounds. The LLM is shown its previous
-   Cypher + the validation/execution error / zero-row signal and asked
-   to re-author.
-6. **Fallback** — if all attempts return 0 rows: use vanilla GraphRAG
-   context (`vector_search + expand` neighbor walk). The record marks
-   `fallback_used = true` so the comparison is honest.
-7. **Render** — `gpt-4o-mini` answers from a context that surfaces
-   GRAPH FACTS (Cypher rows) above CLAUSE TEXTS. Same answer prompt
-   discipline as vanilla `graphrag` (citations as `[Điều X khoản Y]`,
-   no outside knowledge).
+Three retrieval-only arms (plan §5.2), all on the **vanilla `clause_vec`**
+dense channel (no v5 tuned index / reranker), so they are comparable to
+vanilla graphrag and to each other — but **not** to exp 06/07/08 absolute
+numbers:
+
+| Arm | Pipeline |
+|---|---|
+| `dense_vanilla` | `RagPipeline.vector_search(top_k=12)` — baseline |
+| `dense_then_expand` | `vector_search(top_k=12)` + `RagPipeline.expand` REFERENCES/CITES_EXTERNAL refs folded in at the article level (vanilla graphrag's retrieval side, minus the LLM) |
+| `cypher_walk` | `CypherWalkRetriever.retrieve` — vector seed → LLM **outward** Cypher walk → fallback expand → RRF (k=60) |
+
+### The one change that matters vs the deprecated arm
+
+The previous attempt's Cypher prompt pinned every row with
+`WHERE r.source_clause IN $seed_ids`, which anchors results to the seed by
+construction → it surfaced **0 new clauses** (mean `n_cypher_new = 0`). The
+redo:
+
+- **forbids the pin** in the validator
+  ([`validate_cypher`](../../runtime/retrievers/cypher_walk.py)) — a query
+  using `<rel>.source_clause IN $seed_ids` is rejected;
+- **requires node-identity seeding** (`<node>.id IN $seed_ids`) so the walk
+  starts at the seed nodes and traverses OUTWARD;
+- **requires** the `RETURN` to expose `target_clause_id` / `target_article_id`
+  of a *traversed* node (not the seed anchor).
+
+`n_cypher_new` (NEW clauses surfaced beyond the seed) is therefore the key
+diagnostic — if it stays 0, the walk is doing nothing the vector seed didn't
+already do.
 
 ## Why
 
-Per the 2026-05-31 discussion (memory ref: "graph-walk question"):
-vanilla GraphRAG does neighbor *expansion* but the LLM never *queries*
-the graph. We hypothesise that letting the LLM choose the traversal
-path conditional on the question gives qualitatively different
-context — but only on questions whose answer is reachable via
-existing semantic edges. The KG audit showed 40 % of L41 Articles have
-zero semantic edges, so we expect a high fallback rate. The arm is
-designed to make that fact *measurable*, not to mask it.
+Vanilla GraphRAG does neighbour *expansion* but the LLM never *queries* the
+graph. Hypothesis: letting the LLM author a schema-constrained walk
+conditional on the question surfaces gold the vector seed missed — but only
+where the relevant outward edges exist. The KG's semantic edges are sparse
+(40% of L41 Articles have 0 semantic edges; many gold laws are
+Nghị định/Thông tư with even thinner coverage), so the realistic expectation
+is a small, measurable lift on a subset, not a large one. This audit is built
+to make that *measurable*, not to mask it.
 
-## Setup
+## Metrics
 
-- 50 questions: first 50 of `data/eval/questions_200.json`
-  (matches the prefix used by the frozen exp 01 baseline → direct
-  apples-to-apples comparison on `graphrag` baseline).
-- Single arm with `mode: run` for `graphrag_cypher`. `graphrag` inherits
-  from exp 01 to anchor the comparison without re-spending API budget.
-- Cypher LLM = gpt-4o-mini, T = 0, JSON response format.
-- Answer LLM = gpt-4o-mini, T = 0 (same as baseline).
-- Max repair rounds = 2 (so worst case = 3 Cypher LLM calls + 1 answer call per question).
+Article-level **recall@K / precision@K / F1@K / NDCG@K** for K ∈ {5, 12, 20,
+all}, plus R-Precision and MRR. Stratified by **L41 presence in gold**:
+`l41_only`, `mixed_l41_other`, `no_l41` (the hard subset). Plus the
+`cypher_walk` provenance diagnostics: `cypher_used` rate, mean `n_cypher_new`
+(overall + conditional on `cypher_used`), `fallback_used` rate, mean
+`cypher_attempts`. Funnel: per-stage article pools + gold-hit counts
+(seed → +cypher_new → +fallback → final).
 
-## Predictions (pre-commitment)
+### Honest limitations
 
-- `cypher_used` rate < 50 % of the 50 questions (sparse semantic
-  edges + many questions reference non-L41 laws not in KG).
-- On `cypher_used = true` subset: citation recall ≥ vanilla
-  graphrag baseline on the same subset (else the Cypher walk is
-  surfacing distracting clauses).
-- Median latency `graphrag_cypher` > `graphrag` by 3–5 s
-  (dominated by Cypher generation calls).
+- **Clause-level recall is NOT measurable on this dataset.** Verified against
+  `eval_core.gold`: **0 / 200** gold citations carry khoản-level detail
+  (`gold_items == gold_articles` for all 200, granularity = `tuple`). The
+  plan (§5.3) asked for clause-level recall, but the gold has none. Reporting
+  one would mean fabricating clause gold. We report article-level only and
+  the metrics script records the probe (`clause_level_note`) so this stays
+  visible. Provenance still keeps `final_clause_ids` for inspection.
+- Absolute numbers are **not** comparable to exp 06/07/08 (those use the v5
+  tuned index + reranker; exp 11 uses vanilla `clause_vec`).
+- The 50-question pilot is stratified by **L41 presence**, not by the
+  in-KG/ooc axis exp 08 used — a different (more direct) cut for this
+  hypothesis. The actual stratum sizes come from the data, not the plan's
+  pre-registration estimate (110 / 37 / 53 L41-only/mixed/no-L41 across the
+  full 200).
 
-## How to run
+## Pre-commitment predictions (plan §5.5)
+
+Stated before the run so the result can't be rationalised. The metrics script
+emits a pass/`AUDIT` table against these:
+
+- `cypher_used` rate (≥1 NEW clause beyond seed): **predict ≥ 30%**.
+- mean `n_cypher_new` given `cypher_used=True`: **predict 1.5–3.0**.
+- recall@12 lift vs `dense_vanilla` (all strata): **predict +0.00 to +0.05**.
+- recall@12 lift on the `no_l41` stratum: **predict near 0**.
+
+> If recall@12 lift > +0.05 across all strata, treat as **suspicious and
+> audit before celebrating** (the metrics report flags it).
+
+## How to run (not yet executed)
 
 ```powershell
-python -m eval_core run experiments/11_graphrag_cypher
-python -m eval_core metrics experiments/11_graphrag_cypher
+# Pilot — 50 stratified questions (only cypher_walk hits OpenAI):
+python -m scripts.exp11_run --pilot-50
+python -m scripts.exp11_metrics            # auto-filters to the pilot subset
+python -m scripts.exp11_funnel             # cypher_walk per-stage funnel
+
+# Full 200 once the pilot signal is useful:
+python -m scripts.exp11_run
+python -m scripts.exp11_metrics --full
+python -m scripts.exp11_funnel --full
 ```
 
-## Result — 50-question pilot (2026-05-31)
+The runner is idempotent (`--force` to overwrite) and aborts pre-flight if
+the Cypher-LLM cost estimate exceeds `--cost-cap` (default $0.50).
 
-50/50 questions ran without exception. Comparison vs vanilla `graphrag`
-on the SAME stt 1–50 (baseline inherited from `01_initial_eval`).
+## Deprecation — the prior `graphrag_cypher` E2E arm (commit `a10f609`)
 
-### Provenance — did the graph actually get walked?
+The original exp 11 shipped a `graphrag_cypher` **E2E arm** that was
+architecturally misplaced (graphrag-family render instead of a retrieval
+component) and whose BERTScore numbers confounded three unrelated changes
+(Cypher walk + context layout + answer prompt). Plan §1 and §7 explain why.
 
-| Quantity | Value |
-|---|---:|
-| cypher_used (≥ 1 Cypher row returned) | **38 / 50** (76 %) |
-| fallback_used (Cypher exhausted 2 repair rounds → fell back to vanilla expand) | 12 / 50 (24 %) |
-| Cypher attempts = 1 | 26 / 50 |
-| Cypher attempts = 2 | 12 / 50 |
-| Cypher attempts = 3 (= max → fallback) | 12 / 50 |
-| Validation errors / Execution errors among fallbacks | 0 / 0 |
-| **New Clause IDs surfaced beyond vector seed (mean / max)** | **0.00 / 0** |
+Per plan §7, the cleanup of that arm — moving
+[`runtime/graphrag_cypher.py`](../../runtime/graphrag_cypher.py), removing
+`"graphrag_cypher"` from `eval_core/arms.py` + `eval_core/inference.py`,
+deleting `prompts/runtime/graphrag_cypher/`, and wiping the old
+`results/graphrag_cypher/` + `metrics/academic_metrics.*` +
+`report/academic_report.md` — happens **after** the retrieval-only redo has
+been run, not before, to avoid leaving the repo in a half-cleaned state. It is
+therefore **out of scope for this change** (retrieval-layer only).
 
-The last row is the most important finding. Every fallback was caused
-by the Cypher returning **zero rows**, not by validation or execution
-failure — i.e. the LLM wrote a valid query that simply found no
-matching semantic edges anchored to the seed clauses. And among the
-38 successful Cypher walks, **not a single one surfaced a Clause that
-vector retrieval had not already seen**. Reason: the canonical pattern
-`WHERE r.source_clause IN $seed_ids` pins the citation anchor to the
-seed set by construction. The Cypher walk therefore enriches the
-context with **named semantic entities** (Subject / Benefit / Condition
-names from the graph), not with **new clause candidates**.
+⚠️ Until that cleanup: the files under `results/graphrag_cypher/`, the
+existing `metrics/academic_metrics.*`, and `report/academic_report.md` are
+**leftovers from the deprecated E2E arm**. They measure the wrong thing on a
+wrongly-built component — **do not cite them.** When `exp11_metrics.py` runs,
+it overwrites `metrics/academic_metrics.*` and writes
+`report/retrieval_report.md` (the deprecated `report/academic_report.md`
+should be removed in the §7 cleanup).
 
-### Answer quality — BERTScore F1 (n=50 paired)
+## Files
 
-| Stratum | n | Cypher arm | Baseline graphrag | Δ |
-|---|---:|---:|---:|---:|
-| **All 50 (paired)** | 50 | **0.7097 ± 0.039** | 0.6658 ± 0.047 | **+0.0439** |
-| cypher_used = True | 38 | 0.7142 | 0.6649 | +0.0494 |
-| fallback_used = True | 12 | 0.6954 | 0.6687 | +0.0267 |
-
-Paired record-level (±0.005 tie band): **Cypher wins 34, baseline wins 8, ties 8**.
-
-Caveat: the +0.027 advantage on the fallback subset is unexpected
-(fallback path uses the same `build_context` as baseline). The
-plausible explanation is the answer-rendering system prompt — it
-keeps the GRAPH FACTS / CLAUSE TEXTS framing even when GRAPH FACTS is
-empty, which slightly nudges phrasing toward the reference style.
-Not investigated further in this pilot.
-
-### Citation metrics
-
-Both arms report `citation_recall = citation_precision = 0` because
-`RagPipeline.parse_citations` only matches `[Điều X khoản Y]` with
-implicit L41 prefix, but the answer LLM routinely cites
-`[Nghị định 143/2018 Điều X]` or `[Luật 41/2024 Điều X]` — the
-brackets contain extra text, regex misses. This is a baseline-wide
-parser limitation, not introduced by the `graphrag_cypher` arm; it
-affects both arms equally. Until the project-wide parser is
-generalised, citation metrics cannot speak to retrieval quality
-here.
-
-### Cost + latency
-
-| | Cypher arm | Baseline | Ratio |
-|---|---:|---:|---:|
-| Mean latency / question | 8.58 s | 4.71 s | 1.82 × |
-| Median latency / question | 7.90 s | 3.92 s | 2.01 × |
-| Prompt tokens (total, 50 q) | 275 463 | — | — |
-| Completion tokens (total, 50 q) | 21 323 | — | — |
-| **Est. cost (50 q, gpt-4o-mini)** | **≈ $0.054** | — | — |
-| Projected cost for full 200 q | ≈ $0.22 | — | — |
-
-### Honest reading
-
-1. **The graph IS walked 76 % of the time** — better than the < 50 %
-   I pre-committed to predict. The schema-constrained LLM-Cypher
-   loop is robust enough that gpt-4o-mini produces a syntactically
-   valid + whitelist-compliant query on the first try in 26/50
-   cases.
-2. **But the walk does not add candidate clauses.** It only adds
-   semantic entity names. The "real graph reasoning" we hoped for
-   (multi-hop retrieval beyond what vector saw) does not happen
-   with the current Cypher templates the LLM produces. To make the
-   walk surface NEW evidence, the prompt would need to *forbid*
-   the `r.source_clause IN $seed_ids` pin and instead start from
-   seeds and follow `(c:Clause)-[:REFERENCES|REFERS_TO]->(target:Clause|Article)`
-   to reach previously-unseen targets.
-3. **BERTScore lifts +0.044 absolute on the paired comparison**,
-   with 34/50 paired wins — a real and material effect. But because
-   the Cypher walk doesn't surface new evidence, the lift must come
-   from the **answer-rendering side**: structured GRAPH FACTS in the
-   context bias the LLM toward more reference-style phrasing.
-4. **Citation recall stays = 0** — strict-tuple matching fails because
-   the citation parser doesn't recognise the multi-law bracket format
-   the LLM uses. Fixing this is a project-wide retrieval-eval gap, not
-   an arm-design issue.
-5. **Cost is negligible** (~$0.054 for the pilot, ~$0.22 for 200).
-6. **Latency is the main trade-off**: ~2 × baseline because of the
-   Cypher LLM round-trip(s).
-
-### Follow-ups worth scoping (not done here)
-
-- Rewrite the Cypher prompt to encourage *out-of-seed* traversal
-  (`REFERENCES`, `REFERS_TO`, `BELONGS_TO` to neighbour clauses /
-  articles), then re-measure `clauses_added_beyond_seed`.
-- Generalise `parse_citations` to recognise `[Nghị định …]`,
-  `[Thông tư …]`, `[Luật …]` — orthogonal to this arm but blocks
-  any meaningful citation comparison.
-- Re-run on the full 200 to confirm the BERTScore lift is
-  stable across the distribution (not concentrated in the easy first 50).
-
+- Component: [`runtime/retrievers/cypher_walk.py`](../../runtime/retrievers/cypher_walk.py) (+ [`runtime/retrievers/__init__.py`](../../runtime/retrievers/__init__.py))
+- Prompt: [`prompts/runtime/cypher_walk/cypher_gen.md`](../../prompts/runtime/cypher_walk/cypher_gen.md)
+- Scripts: [`scripts/exp11_run.py`](../../scripts/exp11_run.py), [`scripts/exp11_metrics.py`](../../scripts/exp11_metrics.py), [`scripts/exp11_funnel.py`](../../scripts/exp11_funnel.py)

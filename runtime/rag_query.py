@@ -169,7 +169,14 @@ class RagPipeline:
         q_emb = self.embed_model.encode(
             ["query: " + query], normalize_embeddings=True, show_progress_bar=False
         )[0].tolist()
+        return self.vector_search_by_vector(q_emb, top_k=top_k)
 
+    def vector_search_by_vector(self, qvec, top_k: int = 8) -> list[SearchHit]:
+        """Same clause_vec search as :meth:`vector_search` but with a
+        precomputed query vector — lets callers swap the raw-question
+        embedding for an alternative (e.g. a HyDE hypothetical-doc
+        embedding) without changing the index path."""
+        vec = qvec.tolist() if hasattr(qvec, "tolist") else list(qvec)
         with self.driver.session(database=DB) as s:
             rows = s.run(
                 """
@@ -182,7 +189,7 @@ class RagPipeline:
                 ORDER BY score DESC
             """,
                 k=top_k,
-                q=q_emb,
+                q=vec,
             ).data()
         return [SearchHit(**r) for r in rows]
 

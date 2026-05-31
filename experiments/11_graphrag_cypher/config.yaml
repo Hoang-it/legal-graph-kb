@@ -1,45 +1,55 @@
-name: "exp 11 — graphrag_cypher pilot (Hybrid: vector seed + LLM-Cypher + fallback)"
+name: "exp 11 (REDO) — CypherWalkRetriever retrieval-only audit"
 description: |
-  Pilot of the new ``graphrag_cypher`` arm: a Hybrid GraphRAG variant where
-  the LLM emits a Cypher query starting from the vector-seeded clauses,
-  the query is validator-gated (whitelist labels/edges, read-only,
-  must reference $seed_ids), executed in a READ transaction, and if it
-  still returns 0 rows after up to 2 repair rounds the pipeline falls
-  back to the vanilla GraphRAG context (vector hits + RagPipeline.expand).
+  Retrieval-only audit of the new ``CypherWalkRetriever`` — a retrieval-LAYER
+  component (peer of RagPipeline.vector_search / V5RetrievalPipeline), NOT an
+  E2E arm. Supersedes the mis-built ``graphrag_cypher`` E2E arm shipped in
+  commit a10f609 (see README "Deprecation").
 
-  Question this experiment answers: does letting an LLM author a
-  schema-constrained Cypher walk give the answerer better context than
-  the static neighbor expansion done by vanilla GraphRAG?
+  Plan: docs/plans/exp11_cypher_walk_retriever.md.
 
-  Predictions / pre-commitment:
-  - cypher_used rate will be UNDER 50% (graph is sparse — 40% of L41
-    Articles have 0 semantic edges, and many questions reference
-    Nghị định / Thông tư which have even less coverage).
-  - On the subset where cypher_used=True, citation recall should be
-    at least as good as vanilla graphrag baseline (else the LLM is
-    surfacing distracting clauses).
-  - Latency will dominate by Cypher generation: ~+3-5s per question
-    over vanilla graphrag.
-  - 50-question pilot: spend ≈ $0.05–$0.10 on gpt-4o-mini at default
-    Cypher LLM temperature 0.
+  Question this experiment answers: when the LLM is *forced to traverse the
+  graph OUTWARD from the vector seed* (forbidding the seed-pin pattern that
+  made the previous attempt surface 0 new clauses), does it move new gold
+  articles into the retrieved set vs vanilla dense / dense+expand?
 
-  Setup: 50 questions (first 50 of questions_200.json — same prefix
-  used by exp 01 baseline, so comparison stays apples-to-apples).
-  Single arm with mode=run. graphrag baseline inherits from exp 01
-  for direct comparison without re-spending API budget.
+  Three retrieval-only arms (NO answer generation, NO BERTScore, NO citation
+  parsing) — all built on the vanilla ``clause_vec`` dense channel so the
+  comparison pulls in no v5 changes (plan §5.2):
 
-date: "2026-05-31"
+    dense_vanilla      → RagPipeline.vector_search(top_k=12). Baseline.
+    dense_then_expand  → vector_search(top_k=12) + RagPipeline.expand
+                         REFERENCES/CITES_EXTERNAL refs folded in (article-
+                         level) — vanilla graphrag's retrieval side, no LLM.
+    cypher_walk        → CypherWalkRetriever.retrieve (vector seed → LLM
+                         outward Cypher walk → fallback expand → RRF k=60).
+
+  Metric granularity: ARTICLE. Clause-level recall is NOT reported — the
+  200-question gold carries 0 khoản-level citations (gold_items ==
+  gold_articles); see README "Honest limitations".
+
+  Scope: 50-question pilot stratified by L41 presence (l41_only /
+  mixed_l41_other / no_l41), persisted at pilot_50_stt.json, then full 200
+  if the pilot signals are useful (plan §5.4). Only cypher_walk calls OpenAI
+  (gpt-4o-mini); worst-case ~$0.075 for the pilot. Cost cap enforced in the
+  runner (--cost-cap, default $0.50).
+
+  eval_core CLI is NOT used for this retrieval-only audit (so ``arms: {}``
+  below is intentional, matching exp 06/07/08). Records produced by
+  scripts/exp11_run.py; metrics by scripts/exp11_metrics.py; funnel by
+  scripts/exp11_funnel.py.
+
+date: "2026-06-01"
 
 dataset:
   questions: data/eval/questions_200.json
   n: 50
 
-parent: 01_initial_eval
+parent: null
 
 prompts_override_dir: null
 
-arms:
-  graphrag_cypher: { mode: run, model: gpt-4o-mini }
-  graphrag:        { mode: inherit }
+# Retrieval-only audit — eval_core arm runners are not applicable.
+# Metrics are computed by scripts/exp11_metrics.py.
+arms: {}
 
 multimodel: null

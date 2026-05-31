@@ -1,7 +1,7 @@
 {
-  "questions_path": "E:\\legal-graph-kb\\data\\eval\\questions_200.json",
+  "questions_path": "data\\eval\\questions_200.json",
   "questions_sha256": "0dea1175bf7ccc687548d9cd00f2762ebe814e225641975779fdef052ea2db73",
-  "registry_path": "E:\\legal-graph-kb\\data\\legal_sources.yaml",
+  "registry_path": "data\\legal_sources.yaml",
   "registry_sha256": "d96a5964b5167bdda6008e6a656d3ff628482dd61b9c125f75a55663c4585503",
   "source": "gold_citations_raw",
   "granularity": "tuple",
