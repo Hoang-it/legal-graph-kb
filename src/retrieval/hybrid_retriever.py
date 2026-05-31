@@ -192,18 +192,13 @@ class HybridRetriever:
     # Per-signal queries
     # ------------------------------------------------------------------
 
-    def _dense_search(self, query: str, top_k: int) -> list[dict]:
-        if self._query_encoder is not None:
-            vec = self._query_encoder(query)
-            # Tolerate numpy arrays, torch tensors, plain lists.
-            if hasattr(vec, "tolist"):
-                q_emb = vec.tolist()
-            else:
-                q_emb = list(vec)
-        else:
-            q_emb = self._embed_model.encode(
-                [query], normalize_embeddings=True, show_progress_bar=False
-            )[0].tolist()
+    def _dense_search_by_vector(self, q_emb: list[float], top_k: int) -> list[dict]:
+        """Issue the dense vector-index Cypher with a pre-computed embedding.
+
+        Used directly by callers that already have a normalized vector (eg.
+        HyDE2's pass-2 final retrieval feeds the grounded hypothetical-doc
+        embedding straight in). For string queries use :meth:`_dense_search`.
+        """
         with self._driver.session(database=self._db) as s:
             rows = s.run(
                 f"""
@@ -221,6 +216,20 @@ class HybridRetriever:
                 q=q_emb,
             ).data()
         return rows
+
+    def _dense_search(self, query: str, top_k: int) -> list[dict]:
+        if self._query_encoder is not None:
+            vec = self._query_encoder(query)
+            # Tolerate numpy arrays, torch tensors, plain lists.
+            if hasattr(vec, "tolist"):
+                q_emb = vec.tolist()
+            else:
+                q_emb = list(vec)
+        else:
+            q_emb = self._embed_model.encode(
+                [query], normalize_embeddings=True, show_progress_bar=False
+            )[0].tolist()
+        return self._dense_search_by_vector(q_emb, top_k)
 
     def _sparse_search(self, query: str, top_k: int) -> list[dict]:
         # Neo4j FULLTEXT requires Lucene-safe query: escape syntax chars.

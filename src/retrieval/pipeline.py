@@ -41,6 +41,7 @@ from src.retrieval.hybrid_retriever import (
     _dedupe_articles_in_order,
 )
 from src.retrieval.hyde import OpenAIHydeGenerator
+from src.retrieval.hyde2 import OpenAIGroundedHydeGenerator
 from src.retrieval.reranker import CrossEncoderReranker
 
 load_dotenv()
@@ -139,6 +140,8 @@ class V5RetrievalPipeline:
         reranker_model: str | None = None,
         temporal_mode: str = "strict_today_default",
         hyde: OpenAIHydeGenerator | None = None,
+        hyde2: OpenAIGroundedHydeGenerator | None = None,
+        hyde2_seed_k: int = 5,
     ):
         from neo4j import GraphDatabase
 
@@ -167,6 +170,8 @@ class V5RetrievalPipeline:
         self.reranker_model = reranker_model  # None → reranker defaults from env / module const
         self.temporal_mode = temporal_mode
         self.hyde = hyde
+        self.hyde2 = hyde2
+        self.hyde2_seed_k = hyde2_seed_k
 
         # Static deps
         self._registry = load_registry(DEFAULT_REGISTRY_PATH)
@@ -334,6 +339,119 @@ class V5RetrievalPipeline:
                 "max_tokens": self.hyde.max_tokens,
                 "temperature": self.hyde.temperature,
                 "prompt_sha": self.hyde.prompt_sha,
+            },
+        }
+
+        return RetrievalOnlyAnswer(
+            question=question,
+            dense_article_ids=article_ids,
+            final_article_ids=article_ids,
+            n_final=len(article_ids),
+            elapsed_s=round(time.time() - t0, 3),
+            elapsed_breakdown=timings,
+            config=config_snapshot,
+        )
+
+    def retrieve_dense_only_hyde2(
+        self, question: str, top_k: int | None = None
+    ) -> RetrievalOnlyAnswer:
+        """Retrieval-grounded iterative HyDE (HyDE2) — pure dense, two-pass.
+
+        Pass 1: BGE-M3+LoRA dense top-``self.hyde2_seed_k`` on the raw
+        question → seed clause set.
+        Pass 2 (LLM): :class:`OpenAIGroundedHydeGenerator` produces N
+        hypothetical-doc passages conditioned on the seed clause texts.
+        Pass 3 (dense): mean-pool the BGE-M3 embeddings of the N HyDE2
+        docs, normalize, then dense top-``top_k`` against the same index.
+
+        Returns a :class:`RetrievalOnlyAnswer` whose ``final_article_ids``
+        is the article-deduped, rank-preserving result of pass 3 — same
+        contract as :meth:`retrieve_dense_only_hyde` so the metrics
+        engine treats this arm identically. ``config`` snapshot includes
+        ``seed_clause_ids`` + ``seed_clause_ids_hash`` so the cache key
+        for this record is reconstructable from the audit alone.
+
+        Used by the ``dense_hyde2`` arm in experiment 09. Plan:
+        ``docs/plans/exp09_hyde2_grounded.md`` §4.
+        """
+        if self.hyde2 is None:
+            raise RuntimeError(
+                "retrieve_dense_only_hyde2 requires an OpenAIGroundedHydeGenerator "
+                "passed via V5RetrievalPipeline(hyde2=...)."
+            )
+
+        import hashlib
+        import numpy as np
+
+        t0 = time.time()
+        timings: dict[str, float] = {}
+
+        seed_k = self.hyde2_seed_k
+        k = top_k if top_k is not None else self.dense_k
+
+        # Pass 1 — seed retrieval on RAW question. We call _dense_search
+        # directly; for a pipe constructed with hyde2 but no hyde, the
+        # retriever's query_encoder is None and the call uses raw BGE-M3
+        # encoding of the question, which is what we want for pass 1.
+        t = time.time()
+        seed_rows = self.retriever._dense_search(question, seed_k)
+        timings["seed_retrieve"] = round(time.time() - t, 3)
+
+        if len(seed_rows) < seed_k:
+            # Index too small? Still try with whatever we got — but error if 0.
+            if not seed_rows:
+                raise RuntimeError(
+                    f"HyDE2 pass-1 returned 0 seeds for question {question!r} — "
+                    f"dense index '{self.dense_index}' is empty or unreachable."
+                )
+
+        seed_clause_ids = [r["clause_id"] for r in seed_rows]
+        seed_texts = [r["text"] for r in seed_rows]
+
+        # Pass 2 — grounded LLM generation. Cache-aware inside generate().
+        t = time.time()
+        docs = self.hyde2.generate(
+            question,
+            context_passages=seed_texts,
+            seed_clause_ids=seed_clause_ids,
+        )
+        timings["hyde_generate"] = round(time.time() - t, 3)
+
+        # Pass 3 — encode docs, mean-pool, normalize, search.
+        t = time.time()
+        embs = self.embed_model.encode(
+            docs, normalize_embeddings=True, show_progress_bar=False
+        )
+        arr = np.asarray(embs, dtype=np.float32)
+        if arr.ndim == 1:
+            arr = arr[None, :]
+        mean_vec = arr.mean(axis=0)
+        norm = float(np.linalg.norm(mean_vec))
+        if norm > 0:
+            mean_vec = mean_vec / norm
+        rows = self.retriever._dense_search_by_vector(mean_vec.tolist(), k)
+        timings["final_retrieve"] = round(time.time() - t, 3)
+
+        article_ids = _dedupe_articles_in_order(r["article_id"] for r in rows)
+
+        seed_ids_hash = hashlib.sha256(
+            ",".join(sorted(seed_clause_ids)).encode("utf-8")
+        ).hexdigest()
+
+        config_snapshot = {
+            "mode": "dense_only_hyde2",
+            "dense_k": k,
+            "seed_k": seed_k,
+            "adapter_path": self.adapter_path,
+            "dense_index": self.dense_index,
+            "hyde2": {
+                "model_id": self.hyde2.model,
+                "n": self.hyde2.n,
+                "max_tokens": self.hyde2.max_tokens,
+                "temperature": self.hyde2.temperature,
+                "prompt_sha": self.hyde2.prompt_sha,
+                "seed_clause_ids": seed_clause_ids,
+                "seed_clause_ids_hash": seed_ids_hash,
             },
         }
 
