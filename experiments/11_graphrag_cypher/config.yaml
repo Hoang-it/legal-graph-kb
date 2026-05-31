@@ -1,0 +1,45 @@
+name: "exp 11 — graphrag_cypher pilot (Hybrid: vector seed + LLM-Cypher + fallback)"
+description: |
+  Pilot of the new ``graphrag_cypher`` arm: a Hybrid GraphRAG variant where
+  the LLM emits a Cypher query starting from the vector-seeded clauses,
+  the query is validator-gated (whitelist labels/edges, read-only,
+  must reference $seed_ids), executed in a READ transaction, and if it
+  still returns 0 rows after up to 2 repair rounds the pipeline falls
+  back to the vanilla GraphRAG context (vector hits + RagPipeline.expand).
+
+  Question this experiment answers: does letting an LLM author a
+  schema-constrained Cypher walk give the answerer better context than
+  the static neighbor expansion done by vanilla GraphRAG?
+
+  Predictions / pre-commitment:
+  - cypher_used rate will be UNDER 50% (graph is sparse — 40% of L41
+    Articles have 0 semantic edges, and many questions reference
+    Nghị định / Thông tư which have even less coverage).
+  - On the subset where cypher_used=True, citation recall should be
+    at least as good as vanilla graphrag baseline (else the LLM is
+    surfacing distracting clauses).
+  - Latency will dominate by Cypher generation: ~+3-5s per question
+    over vanilla graphrag.
+  - 50-question pilot: spend ≈ $0.05–$0.10 on gpt-4o-mini at default
+    Cypher LLM temperature 0.
+
+  Setup: 50 questions (first 50 of questions_200.json — same prefix
+  used by exp 01 baseline, so comparison stays apples-to-apples).
+  Single arm with mode=run. graphrag baseline inherits from exp 01
+  for direct comparison without re-spending API budget.
+
+date: "2026-05-31"
+
+dataset:
+  questions: data/eval/questions_200.json
+  n: 50
+
+parent: 01_initial_eval
+
+prompts_override_dir: null
+
+arms:
+  graphrag_cypher: { mode: run, model: gpt-4o-mini }
+  graphrag:        { mode: inherit }
+
+multimodel: null

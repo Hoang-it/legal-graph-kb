@@ -15,6 +15,7 @@ ALL_ARMS = (
     "logic_lm_graphrag",
     "graphrag_v5",
     "graphrag_v5_m2",
+    "graphrag_cypher",
 )
 
 MAIN_EXPERIMENT_ARMS = (

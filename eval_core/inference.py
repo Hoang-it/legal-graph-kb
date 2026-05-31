@@ -402,6 +402,109 @@ def run_graphrag_v5_m2(
           f"({time.time() - t_total:.1f}s)")
 
 
+def run_graphrag_cypher(
+    questions: list[dict],
+    results_root: Path,
+    force: bool,
+    verbose: bool,
+) -> None:
+    """Hybrid vector-seed → LLM-Cypher → fallback GraphRAG arm.
+
+    Each record captures full Cypher provenance: the rounds it took, the
+    validation/execution errors at each round, whether a non-empty Cypher
+    result was reached (``cypher_used``) and whether the answer ultimately
+    fell back to vanilla vector+expand context (``fallback_used``).
+    """
+    from runtime.graphrag_cypher import GraphRagCypherPipeline
+
+    arm = "graphrag_cypher"
+    out_dir = results_root / arm
+    pipeline = GraphRagCypherPipeline()
+    _ = pipeline.embed_model  # pre-load
+
+    n_done, n_skipped, n_failed = 0, 0, 0
+    n_cypher_success, n_fallback = 0, 0
+    t_total = time.time()
+    try:
+        for i, q in enumerate(questions, 1):
+            stt = q["stt"]
+            out_path = out_dir / f"A{stt}.json"
+            if out_path.exists() and not force:
+                n_skipped += 1
+                continue
+            try:
+                ans = pipeline.ask(q["question"])
+                verified = pipeline.rag.verify_citations(ans.citation_ids)
+                record = {
+                    "arm": arm,
+                    "stt": stt,
+                    "question": q["question"],
+                    "answer": ans.answer,
+                    "citations": ans.citations,
+                    "citation_ids": ans.citation_ids,
+                    "citation_verified": verified,
+                    "n_vector_hits": len(ans.vector_hits),
+                    "vector_hits": [
+                        {"clause_id": h.clause_id, "score": h.score,
+                         "text_preview": h.text[:200]}
+                        for h in ans.vector_hits[:5]
+                    ],
+                    "cypher_used": ans.cypher_used,
+                    "fallback_used": ans.fallback_used,
+                    "cypher_rows_count": len(ans.cypher_rows),
+                    "cypher_clause_ids_added": ans.cypher_clause_ids_added,
+                    "cypher_attempts": [
+                        {
+                            "round": a.round,
+                            "cypher": a.cypher,
+                            "rationale": a.rationale,
+                            "valid": a.valid,
+                            "validation_error": a.validation_error,
+                            "executed": a.executed,
+                            "execution_error": a.execution_error,
+                            "n_rows": a.n_rows,
+                            "rows_preview": a.rows_preview,
+                        }
+                        for a in ans.cypher_attempts
+                    ],
+                    "cypher_rows": ans.cypher_rows,
+                    "elapsed_s": ans.elapsed_s,
+                    "elapsed_breakdown": ans.elapsed_breakdown,
+                    "prompt_tokens": ans.prompt_tokens,
+                    "completion_tokens": ans.completion_tokens,
+                    "gold_answer": q.get("gold_answer"),
+                    "gold_citations_raw": q.get("gold_citations_raw"),
+                }
+                _save(out_path, record)
+                n_done += 1
+                if ans.cypher_used:
+                    n_cypher_success += 1
+                if ans.fallback_used:
+                    n_fallback += 1
+                if verbose or i % 5 == 0:
+                    tag = "GRAPH" if ans.cypher_used else "fallback"
+                    print(
+                        f"  [{arm:<16} {i:>3}/{len(questions)}] stt={stt} "
+                        f"({ans.elapsed_s:.1f}s, {tag}, "
+                        f"rounds={len(ans.cypher_attempts)}, "
+                        f"+cls={len(ans.cypher_clause_ids_added)}, "
+                        f"cits={len(ans.citation_ids)})",
+                        flush=True,
+                    )
+            except Exception as e:
+                n_failed += 1
+                print(f"  ✗ [{arm} {stt}] {type(e).__name__}: {e}", file=sys.stderr)
+                _save(out_path.with_suffix(".error.json"),
+                      {"arm": arm, "stt": stt, "error": f"{type(e).__name__}: {e}"})
+    finally:
+        pipeline.close()
+    print(
+        f"\n{arm} done: {n_done} new, {n_skipped} skipped, {n_failed} failed "
+        f"(cypher_used={n_cypher_success}, fallback={n_fallback}, "
+        f"{time.time() - t_total:.1f}s)"
+    )
+
+
 ARM_RUNNERS = {
     "graphrag": run_graphrag,
     "llm_only": run_llm_only,
@@ -410,6 +513,7 @@ ARM_RUNNERS = {
     "logic_lm_graphrag": run_logic_lm_graphrag,
     "graphrag_v5": run_graphrag_v5,
     "graphrag_v5_m2": run_graphrag_v5_m2,
+    "graphrag_cypher": run_graphrag_cypher,
 }
 
 
