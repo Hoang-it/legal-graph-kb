@@ -1,0 +1,25 @@
+# HyDE2 context block — stt=56
+# What this file is:
+#   The exact substring substituted into the {context} placeholder of
+#   prompts/runtime/hyde_generate_grounded.md when HyDE2 generates the
+#   hypothetical doc for question stt=56 of data/eval/questions_200.json.
+# How it was produced:
+#   src.retrieval.hyde2._format_context(texts) where `texts` is the list of
+#   body fields of the 5 seed Clause nodes returned by
+#   HybridRetriever._dense_search(question, k=5).
+# Seed clause IDs (rank 1..5, dense cosine on raw question):
+#   L41_2024.A33.K5, L45_2019.A105.K2, L45_2019.A105.K1, L45_2019.A146.K1, L45_2019.A97.K1
+# Gold articles: L41_2024.A2, L45_2019.A13 (neither is in this context).
+# See experiments/09_hyde2_grounded/README.md result summary for analysis.
+
+[1] Đối tượng quy định tại các điểm a, b, c, d và i khoản 1 và khoản 2 Điều 2 của Luật này mà không hưởng tiền lương từ 14 ngày làm việc trở lên trong tháng thì người lao động không phải đóng bảo hiểm xã hội tháng đó, trừ trường hợp người sử dụng lao động và người lao động có thỏa thuận về việc có đóng bảo hiểm xã hội cho người lao động tháng đó với căn cứ đóng bằng căn cứ đóng bảo hiểm xã hội tháng gần nhất.
+Đối tượng quy định tại các điểm đ, e và k khoản 1 Điều 2 của Luật này mà không làm việc từ 14 ngày làm việc trở lên trong tháng thì thực hiện theo quy định của Chính phủ.
+
+[2] Người sử dụng lao động có quyền quy định thời giờ làm việc theo ngày hoặc tuần nhưng phải thông báo cho người lao động biết; trường hợp theo tuần thì thời giờ làm việc bình thường không quá 10 giờ trong 01 ngày và không quá 48 giờ trong 01 tuần.
+Nhà nước khuyến khích người sử dụng lao động thực hiện tuần làm việc 40 giờ đối với người lao động.
+
+[3] Thời giờ làm việc bình thường không quá 08 giờ trong 01 ngày và không quá 48 giờ trong 01 tuần.
+
+[4] Thời giờ làm việc của người chưa đủ 15 tuổi không được quá 04 giờ trong 01 ngày và 20 giờ trong 01 tuần; không được làm thêm giờ, làm việc vào ban đêm.
+
+[5] Người lao động hưởng lương theo giờ, ngày, tuần thì được trả lương sau giờ, ngày, tuần làm việc hoặc được trả gộp do hai bên thỏa thuận nhưng không quá 15 ngày phải được trả gộp một lần.

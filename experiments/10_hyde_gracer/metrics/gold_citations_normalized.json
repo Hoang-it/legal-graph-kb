@@ -1,0 +1,2214 @@
+{
+  "questions_path": "E:\\legal-graph-kb\\data\\eval\\questions_200.json",
+  "questions_sha256": "0dea1175bf7ccc687548d9cd00f2762ebe814e225641975779fdef052ea2db73",
+  "registry_path": "E:\\legal-graph-kb\\data\\legal_sources.yaml",
+  "registry_sha256": "d96a5964b5167bdda6008e6a656d3ff628482dd61b9c125f75a55663c4585503",
+  "source": "gold_citations_raw",
+  "granularity": "tuple",
+  "records": {
+    "1": {
+      "gold_items": [
+        "ND115_2015.A28",
+        "ND152_2006.A53"
+      ],
+      "gold_articles": [
+        "ND115_2015.A28",
+        "ND152_2006.A53"
+      ],
+      "gold_citations_raw": "[Nghị định 115/2015/NĐ-CP, Điều 28]\n[Nghị định 152/2006/NĐ-CP, Điều 53]"
+    },
+    "2": {
+      "gold_items": [
+        "L58_2014.A2"
+      ],
+      "gold_articles": [
+        "L58_2014.A2"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 2]"
+    },
+    "3": {
+      "gold_items": [
+        "L45_2019.A48",
+        "L58_2014.A21"
+      ],
+      "gold_articles": [
+        "L45_2019.A48",
+        "L58_2014.A21"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 21]\n[Bộ luật Lao động 2019, Điều 48]"
+    },
+    "4": {
+      "gold_items": [
+        "L58_2014.A31",
+        "L58_2014.A34"
+      ],
+      "gold_articles": [
+        "L58_2014.A31",
+        "L58_2014.A34"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 34]\n[Luật BHXH 2014 (58/2014/QH13), Điều 31]"
+    },
+    "5": {
+      "gold_items": [
+        "QD595_BHXH.A23",
+        "QD838_BHXH.A4",
+        "QD838_BHXH.A7"
+      ],
+      "gold_articles": [
+        "QD595_BHXH.A23",
+        "QD838_BHXH.A4",
+        "QD838_BHXH.A7"
+      ],
+      "gold_citations_raw": "[Quyết định 595/QĐ-BHXH, Điều 23]\n[Quyết định 838/QĐ-BHXH, Điều 4]\n[Quyết định 838/QĐ-BHXH, Điều 7]"
+    },
+    "6": {
+      "gold_items": [
+        "TT18_2022_BYT.A1"
+      ],
+      "gold_articles": [
+        "TT18_2022_BYT.A1"
+      ],
+      "gold_citations_raw": "[Thông tư 18/2022/TT-BYT, Điều 1]"
+    },
+    "7": {
+      "gold_items": [
+        "L58_2014.A31"
+      ],
+      "gold_articles": [
+        "L58_2014.A31"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 31]"
+    },
+    "8": {
+      "gold_items": [
+        "LVL_2013.A45",
+        "LVL_2013.A49"
+      ],
+      "gold_articles": [
+        "LVL_2013.A45",
+        "LVL_2013.A49"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2013, Điều 49]\n[Luật Việc làm 2013, Điều 45]"
+    },
+    "9": {
+      "gold_items": [
+        "L58_2014.A34",
+        "L58_2014.A39",
+        "L58_2014.A85",
+        "L58_2014.A86"
+      ],
+      "gold_articles": [
+        "L58_2014.A34",
+        "L58_2014.A39",
+        "L58_2014.A85",
+        "L58_2014.A86"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 34]\n[Luật BHXH 2014 (58/2014/QH13), Điều 39]\n[Luật BHXH 2014 (58/2014/QH13), Điều 85]\n[Luật BHXH 2014 (58/2014/QH13), Điều 86]"
+    },
+    "10": {
+      "gold_items": [
+        "L45_2019.A169"
+      ],
+      "gold_articles": [
+        "L45_2019.A169"
+      ],
+      "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 169]"
+    },
+    "11": {
+      "gold_items": [
+        "L58_2014.A31",
+        "TT59_2015_BLDTBXH.A9"
+      ],
+      "gold_articles": [
+        "L58_2014.A31",
+        "TT59_2015_BLDTBXH.A9"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 31]\n[Thông tư 59/2015/TT-BLĐTBXH, Điều 9]"
+    },
+    "12": {
+      "gold_items": [
+        "ND143_2018.A2",
+        "ND143_2018.A9"
+      ],
+      "gold_articles": [
+        "ND143_2018.A2",
+        "ND143_2018.A9"
+      ],
+      "gold_citations_raw": "[Nghị định 143/2018/NĐ-CP, Điều 2]\n[Nghị định 143/2018/NĐ-CP, Điều 9]"
+    },
+    "13": {
+      "gold_items": [
+        "L41_2024.A2",
+        "L41_2024.A27",
+        "ND158_2025.A7"
+      ],
+      "gold_articles": [
+        "L41_2024.A2",
+        "L41_2024.A27",
+        "ND158_2025.A7"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]\n[Luật BHXH 2024 (41/2024/QH15), Điều 27]\n[Nghị định 158/2025/NĐ-CP, Điều 7]"
+    },
+    "14": {
+      "gold_items": [
+        "ND146_2018.A3",
+        "ND75_2023.A1"
+      ],
+      "gold_articles": [
+        "ND146_2018.A3",
+        "ND75_2023.A1"
+      ],
+      "gold_citations_raw": "[Nghị định 75/2023/NĐ-CP, Điều 1]\n[Nghị định 146/2018/NĐ-CP, Điều 3]"
+    },
+    "15": {
+      "gold_items": [
+        "LBHYT.A39",
+        "LBHYT.A48b"
+      ],
+      "gold_articles": [
+        "LBHYT.A39",
+        "LBHYT.A48b"
+      ],
+      "gold_citations_raw": "[Luật BHYT, Điều 39]\n[Luật BHYT, Điều 48b]"
+    },
+    "16": {
+      "gold_items": [
+        "L41_2024.A64",
+        "L41_2024.A70",
+        "L45_2019.A169"
+      ],
+      "gold_articles": [
+        "L41_2024.A64",
+        "L41_2024.A70",
+        "L45_2019.A169"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 64]\n[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Bộ luật Lao động 2019, Điều 169]"
+    },
+    "17": {
+      "gold_items": [
+        "TT10_2020_BLDTBXH.A3"
+      ],
+      "gold_articles": [
+        "TT10_2020_BLDTBXH.A3"
+      ],
+      "gold_citations_raw": "[Thông tư 10/2020/TT-BLĐTBXH, Điều 3]"
+    },
+    "18": {
+      "gold_items": [
+        "L41_2024.A140",
+        "L41_2024.A2",
+        "L41_2024.A33",
+        "L41_2024.A34",
+        "L51_2024.A1",
+        "L51_2024.A3",
+        "ND158_2025.A7",
+        "ND188_2025.A6"
+      ],
+      "gold_articles": [
+        "L41_2024.A140",
+        "L41_2024.A2",
+        "L41_2024.A33",
+        "L41_2024.A34",
+        "L51_2024.A1",
+        "L51_2024.A3",
+        "ND158_2025.A7",
+        "ND188_2025.A6"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]\n[Luật BHXH 2024 (41/2024/QH15), Điều 33]\n[Luật BHXH 2024 (41/2024/QH15), Điều 34]\n[Luật BHXH 2024 (41/2024/QH15), Điều 140]\n[Nghị định 158/2025/NĐ-CP, Điều 7]\n[Luật sửa đổi Luật BHYT 2024 (51/2024/QH15), Điều 1]\n[Luật sửa đổi Luật BHYT 2024 (51/2024/QH15), Điều 3]\n[Nghị định 188/2025/NĐ-CP, Điều 6]"
+    },
+    "19": {
+      "gold_items": [
+        "HIEPDINH_VN_KR_BHXH.A6"
+      ],
+      "gold_articles": [
+        "HIEPDINH_VN_KR_BHXH.A6"
+      ],
+      "gold_citations_raw": "[Hiệp định Việt Nam - Hàn Quốc về BHXH, Điều 6]"
+    },
+    "20": {
+      "gold_items": [
+        "L58_2014.A31",
+        "L58_2014.A34"
+      ],
+      "gold_articles": [
+        "L58_2014.A31",
+        "L58_2014.A34"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 31]\n[Luật BHXH 2014 (58/2014/QH13), Điều 34]"
+    },
+    "21": {
+      "gold_items": [
+        "L41_2024.A21"
+      ],
+      "gold_articles": [
+        "L41_2024.A21"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 21]"
+    },
+    "22": {
+      "gold_items": [
+        "L41_2024.A141",
+        "L41_2024.A98"
+      ],
+      "gold_articles": [
+        "L41_2024.A141",
+        "L41_2024.A98"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 98]\n[Luật BHXH 2024 (41/2024/QH15), Điều 141]"
+    },
+    "23": {
+      "gold_items": [
+        "L58_2014.A28"
+      ],
+      "gold_articles": [
+        "L58_2014.A28"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2014 (58/2014/QH13), Điều 28]"
+    },
+    "24": {
+      "gold_items": [
+        "ND146_2018.A3",
+        "PHAPLENH_NCC.A25"
+      ],
+      "gold_articles": [
+        "ND146_2018.A3",
+        "PHAPLENH_NCC.A25"
+      ],
+      "gold_citations_raw": "[Pháp lệnh Ưu đãi người có công với cách mạng, Điều 25]\n[Nghị định 146/2018/NĐ-CP, Điều 3]"
+    },
+    "25": {
+      "gold_items": [
+        "L41_2024.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A50"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+    },
+    "26": {
+      "gold_items": [
+        "ND374_2025.A34"
+      ],
+      "gold_articles": [
+        "ND374_2025.A34"
+      ],
+      "gold_citations_raw": "[Nghị định 374/2025/NĐ-CP, Điều 34]"
+    },
+    "27": {
+      "gold_items": [
+        "L41_2024.A53"
+      ],
+      "gold_articles": [
+        "L41_2024.A53"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 53]"
+    },
+    "28": {
+      "gold_items": [
+        "L41_2024.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A50"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+    },
+    "29": {
+      "gold_items": [
+        "L45_2019.A139",
+        "LDS_2025.A29"
+      ],
+      "gold_articles": [
+        "L45_2019.A139",
+        "LDS_2025.A29"
+      ],
+      "gold_citations_raw": "[Luật Dân số 2025, Điều 29]\n[Bộ luật Lao động 2019, Điều 139]"
+    },
+    "30": {
+      "gold_items": [
+        "L41_2024.A13"
+      ],
+      "gold_articles": [
+        "L41_2024.A13"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 13]"
+    },
+    "31": {
+      "gold_items": [
+        "L41_2024.A2"
+      ],
+      "gold_articles": [
+        "L41_2024.A2"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]"
+    },
+    "32": {
+      "gold_items": [
+        "LBHYT.A1"
+      ],
+      "gold_articles": [
+        "LBHYT.A1"
+      ],
+      "gold_citations_raw": "[Luật BHYT, Điều 1]"
+    },
+    "33": {
+      "gold_items": [
+        "ND159_2025.A11"
+      ],
+      "gold_articles": [
+        "ND159_2025.A11"
+      ],
+      "gold_citations_raw": "[Nghị định 159/2025/NĐ-CP, Điều 11]"
+    },
+    "34": {
+      "gold_items": [
+        "ND158_2025.A3"
+      ],
+      "gold_articles": [
+        "ND158_2025.A3"
+      ],
+      "gold_citations_raw": "[Nghị định 158/2025/NĐ-CP, Điều 3]"
+    },
+    "35": {
+      "gold_items": [
+        "L41_2024.A42"
+      ],
+      "gold_articles": [
+        "L41_2024.A42"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 42]"
+    },
+    "36": {
+      "gold_items": [
+        "L41_2024.A53"
+      ],
+      "gold_articles": [
+        "L41_2024.A53"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 53]"
+    },
+    "37": {
+      "gold_items": [
+        "L41_2024.A13",
+        "L45_2019.A48"
+      ],
+      "gold_articles": [
+        "L41_2024.A13",
+        "L45_2019.A48"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 13]\n[Bộ luật Lao động 2019, Điều 48]"
+    },
+    "38": {
+      "gold_items": [
+        "L41_2024.A25"
+      ],
+      "gold_articles": [
+        "L41_2024.A25"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 25]"
+    },
+    "39": {
+      "gold_items": [
+        "L41_2024.A102",
+        "L41_2024.A110",
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A102",
+        "L41_2024.A110",
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 102]\n[Luật BHXH 2024 (41/2024/QH15), Điều 110]"
+    },
+    "40": {
+      "gold_items": [
+        "L41_2024.A50",
+        "L41_2024.A53"
+      ],
+      "gold_articles": [
+        "L41_2024.A50",
+        "L41_2024.A53"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]\n[Luật BHXH 2024 (41/2024/QH15), Điều 53]"
+    },
+    "41": {
+      "gold_items": [
+        "LVL_2013.A46",
+        "LVL_2013.A49",
+        "LVL_2013.A50"
+      ],
+      "gold_articles": [
+        "LVL_2013.A46",
+        "LVL_2013.A49",
+        "LVL_2013.A50"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2013, Điều 46]\n[Luật Việc làm 2013, Điều 49]\n[Luật Việc làm 2013, Điều 50]"
+    },
+    "42": {
+      "gold_items": [
+        "L41_2024.A2",
+        "ND158_2025.A3"
+      ],
+      "gold_articles": [
+        "L41_2024.A2",
+        "ND158_2025.A3"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]\n[Nghị định 158/2025/NĐ-CP, Điều 3]"
+    },
+    "43": {
+      "gold_items": [
+        "L41_2024.A31",
+        "L41_2024.A33",
+        "L41_2024.A70",
+        "LVL_2013.A57"
+      ],
+      "gold_articles": [
+        "L41_2024.A31",
+        "L41_2024.A33",
+        "L41_2024.A70",
+        "LVL_2013.A57"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 31]\n[Luật BHXH 2024 (41/2024/QH15), Điều 33]\n[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật Việc làm 2013, Điều 57]"
+    },
+    "44": {
+      "gold_items": [
+        "L41_2024.A102",
+        "L41_2024.A110",
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A102",
+        "L41_2024.A110",
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 102]\n[Luật BHXH 2024 (41/2024/QH15), Điều 110]"
+    },
+    "45": {
+      "gold_items": [
+        "L41_2024.A104",
+        "L41_2024.A110",
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A104",
+        "L41_2024.A110",
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 104]\n[Luật BHXH 2024 (41/2024/QH15), Điều 110]"
+    },
+    "46": {
+      "gold_items": [
+        "L41_2024.A25"
+      ],
+      "gold_articles": [
+        "L41_2024.A25"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 25]"
+    },
+    "47": {
+      "gold_items": [
+        "L41_2024.A53",
+        "L45_2019.A90",
+        "L45_2019.A94"
+      ],
+      "gold_articles": [
+        "L41_2024.A53",
+        "L45_2019.A90",
+        "L45_2019.A94"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 53]\n[Bộ luật Lao động 2019, Điều 90]\n[Bộ luật Lao động 2019, Điều 94]"
+    },
+    "48": {
+      "gold_items": [
+        "L45_2019.A169"
+      ],
+      "gold_articles": [
+        "L45_2019.A169"
+      ],
+      "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 169]"
+    },
+    "49": {
+      "gold_items": [
+        "L41_2024.A13",
+        "L45_2019.A34",
+        "L45_2019.A48"
+      ],
+      "gold_articles": [
+        "L41_2024.A13",
+        "L45_2019.A34",
+        "L45_2019.A48"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 13]\n[Bộ luật Lao động 2019, Điều 34]\n[Bộ luật Lao động 2019, Điều 48]"
+    },
+    "50": {
+      "gold_items": [
+        "L45_2019.A169"
+      ],
+      "gold_articles": [
+        "L45_2019.A169"
+      ],
+      "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 169]"
+    },
+    "51": {
+      "gold_items": [
+        "L41_2024.A104",
+        "L41_2024.A109",
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A104",
+        "L41_2024.A109",
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 104]\n[Luật BHXH 2024 (41/2024/QH15), Điều 109]"
+    },
+    "52": {
+      "gold_items": [
+        "L41_2024.A13",
+        "L45_2019.A48"
+      ],
+      "gold_articles": [
+        "L41_2024.A13",
+        "L45_2019.A48"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 13]\n[Bộ luật Lao động 2019, Điều 48]"
+    },
+    "53": {
+      "gold_items": [
+        "L41_2024.A13",
+        "L45_2019.A48"
+      ],
+      "gold_articles": [
+        "L41_2024.A13",
+        "L45_2019.A48"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 13]\n[Bộ luật Lao động 2019, Điều 48]"
+    },
+    "54": {
+      "gold_items": [
+        "L41_2024.A94"
+      ],
+      "gold_articles": [
+        "L41_2024.A94"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 94]"
+    },
+    "55": {
+      "gold_items": [
+        "L41_2024.A13",
+        "L45_2019.A35",
+        "L45_2019.A40",
+        "L45_2019.A48"
+      ],
+      "gold_articles": [
+        "L41_2024.A13",
+        "L45_2019.A35",
+        "L45_2019.A40",
+        "L45_2019.A48"
+      ],
+      "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 35]\n[Bộ luật Lao động 2019, Điều 40]\n[Bộ luật Lao động 2019, Điều 48]\n[Luật BHXH 2024 (41/2024/QH15), Điều 13]"
+    },
+    "56": {
+      "gold_items": [
+        "L41_2024.A2",
+        "L45_2019.A13"
+      ],
+      "gold_articles": [
+        "L41_2024.A2",
+        "L45_2019.A13"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]\n[Bộ luật Lao động 2019, Điều 13]"
+    },
+    "57": {
+      "gold_items": [
+        "LVL_2013.A46",
+        "LVL_2013.A49"
+      ],
+      "gold_articles": [
+        "LVL_2013.A46",
+        "LVL_2013.A49"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2013, Điều 46]\n[Luật Việc làm 2013, Điều 49]"
+    },
+    "58": {
+      "gold_items": [
+        "L41_2024.A2",
+        "L41_2024.A25",
+        "L41_2024.A31"
+      ],
+      "gold_articles": [
+        "L41_2024.A2",
+        "L41_2024.A25",
+        "L41_2024.A31"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]\n[Luật BHXH 2024 (41/2024/QH15), Điều 25]\n[Luật BHXH 2024 (41/2024/QH15), Điều 31]"
+    },
+    "59": {
+      "gold_items": [
+        "L41_2024.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A50"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+    },
+    "60": {
+      "gold_items": [
+        "L41_2024.A61"
+      ],
+      "gold_articles": [
+        "L41_2024.A61"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 61]"
+    },
+    "61": {
+      "gold_items": [
+        "LVL_2013.A45",
+        "LVL_2013.A50"
+      ],
+      "gold_articles": [
+        "LVL_2013.A45",
+        "LVL_2013.A50"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2013, Điều 45]\n[Luật Việc làm 2013, Điều 50]"
+    },
+    "62": {
+      "gold_items": [
+        "L41_2024.A13",
+        "L45_2019.A48"
+      ],
+      "gold_articles": [
+        "L41_2024.A13",
+        "L45_2019.A48"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 13]\n[Bộ luật Lao động 2019, Điều 48]"
+    },
+    "63": {
+      "gold_items": [
+        "LVL_2013.A45",
+        "LVL_2013.A49"
+      ],
+      "gold_articles": [
+        "LVL_2013.A45",
+        "LVL_2013.A49"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2013, Điều 45]\n[Luật Việc làm 2013, Điều 49]"
+    },
+    "64": {
+      "gold_items": [
+        "L41_2024.A102",
+        "L41_2024.A36"
+      ],
+      "gold_articles": [
+        "L41_2024.A102",
+        "L41_2024.A36"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 36]\n[Luật BHXH 2024 (41/2024/QH15), Điều 102]"
+    },
+    "65": {
+      "gold_items": [
+        "L41_2024.A25"
+      ],
+      "gold_articles": [
+        "L41_2024.A25"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 25]"
+    },
+    "66": {
+      "gold_items": [
+        "L41_2024.A102",
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A102",
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 102]"
+    },
+    "67": {
+      "gold_items": [
+        "L41_2024.A53"
+      ],
+      "gold_articles": [
+        "L41_2024.A53"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 53]"
+    },
+    "68": {
+      "gold_items": [
+        "L41_2024.A2",
+        "L41_2024.A33",
+        "L45_2019.A13"
+      ],
+      "gold_articles": [
+        "L41_2024.A2",
+        "L41_2024.A33",
+        "L45_2019.A13"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]\n[Luật BHXH 2024 (41/2024/QH15), Điều 33]\n[Bộ luật Lao động 2019, Điều 13]"
+    },
+    "69": {
+      "gold_items": [
+        "L41_2024.A25"
+      ],
+      "gold_articles": [
+        "L41_2024.A25"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 25]"
+    },
+    "70": {
+      "gold_items": [
+        "L41_2024.A116",
+        "L41_2024.A53",
+        "L41_2024.A54"
+      ],
+      "gold_articles": [
+        "L41_2024.A116",
+        "L41_2024.A53",
+        "L41_2024.A54"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 53]\n[Luật BHXH 2024 (41/2024/QH15), Điều 54]\n[Luật BHXH 2024 (41/2024/QH15), Điều 116]"
+    },
+    "71": {
+      "gold_items": [
+        "L41_2024.A70",
+        "LVL_2013.A49",
+        "LVL_2013.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A70",
+        "LVL_2013.A49",
+        "LVL_2013.A50"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2013, Điều 49]\n[Luật Việc làm 2013, Điều 50]\n[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "72": {
+      "gold_items": [
+        "L41_2024.A50",
+        "L41_2024.A53"
+      ],
+      "gold_articles": [
+        "L41_2024.A50",
+        "L41_2024.A53"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]\n[Luật BHXH 2024 (41/2024/QH15), Điều 53]"
+    },
+    "73": {
+      "gold_items": [
+        "L41_2024.A13",
+        "L45_2019.A48"
+      ],
+      "gold_articles": [
+        "L41_2024.A13",
+        "L45_2019.A48"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 13]\n[Bộ luật Lao động 2019, Điều 48]"
+    },
+    "74": {
+      "gold_items": [
+        "L41_2024.A42",
+        "L41_2024.A46"
+      ],
+      "gold_articles": [
+        "L41_2024.A42",
+        "L41_2024.A46"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 42]\n[Luật BHXH 2024 (41/2024/QH15), Điều 46]"
+    },
+    "75": {
+      "gold_items": [
+        "LVL_2013.A45",
+        "LVL_2013.A50"
+      ],
+      "gold_articles": [
+        "LVL_2013.A45",
+        "LVL_2013.A50"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2013, Điều 45]\n[Luật Việc làm 2013, Điều 50]"
+    },
+    "76": {
+      "gold_items": [
+        "L41_2024.A2",
+        "L41_2024.A36",
+        "L41_2024.A50",
+        "L41_2024.A94"
+      ],
+      "gold_articles": [
+        "L41_2024.A2",
+        "L41_2024.A36",
+        "L41_2024.A50",
+        "L41_2024.A94"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]\n[Luật BHXH 2024 (41/2024/QH15), Điều 36]\n[Luật BHXH 2024 (41/2024/QH15), Điều 50]\n[Luật BHXH 2024 (41/2024/QH15), Điều 94]"
+    },
+    "77": {
+      "gold_items": [
+        "L41_2024.A25",
+        "L41_2024.A36"
+      ],
+      "gold_articles": [
+        "L41_2024.A25",
+        "L41_2024.A36"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 25]\n[Luật BHXH 2024 (41/2024/QH15), Điều 36]"
+    },
+    "78": {
+      "gold_items": [
+        "L45_2019.A169"
+      ],
+      "gold_articles": [
+        "L45_2019.A169"
+      ],
+      "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 169]"
+    },
+    "79": {
+      "gold_items": [
+        "L41_2024.A25"
+      ],
+      "gold_articles": [
+        "L41_2024.A25"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 25]"
+    },
+    "80": {
+      "gold_items": [
+        "L41_2024.A2"
+      ],
+      "gold_articles": [
+        "L41_2024.A2"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]"
+    },
+    "81": {
+      "gold_items": [
+        "L41_2024.A111",
+        "L41_2024.A2",
+        "L41_2024.A36",
+        "L41_2024.A85"
+      ],
+      "gold_articles": [
+        "L41_2024.A111",
+        "L41_2024.A2",
+        "L41_2024.A36",
+        "L41_2024.A85"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]\n[Luật BHXH 2024 (41/2024/QH15), Điều 36]\n[Luật BHXH 2024 (41/2024/QH15), Điều 85]\n[Luật BHXH 2024 (41/2024/QH15), Điều 111]"
+    },
+    "82": {
+      "gold_items": [
+        "L41_2024.A110",
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A110",
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 110]"
+    },
+    "83": {
+      "gold_items": [
+        "L41_2024.A25"
+      ],
+      "gold_articles": [
+        "L41_2024.A25"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 25]"
+    },
+    "84": {
+      "gold_items": [
+        "L41_2024.A25"
+      ],
+      "gold_articles": [
+        "L41_2024.A25"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 25]"
+    },
+    "85": {
+      "gold_items": [
+        "LVL_2013.A45",
+        "LVL_2013.A49",
+        "LVL_2013.A50"
+      ],
+      "gold_articles": [
+        "LVL_2013.A45",
+        "LVL_2013.A49",
+        "LVL_2013.A50"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2013, Điều 45]\n[Luật Việc làm 2013, Điều 49]\n[Luật Việc làm 2013, Điều 50]"
+    },
+    "86": {
+      "gold_items": [
+        "L41_2024.A25",
+        "LVL_2013.A46",
+        "LVL_2013.A49"
+      ],
+      "gold_articles": [
+        "L41_2024.A25",
+        "LVL_2013.A46",
+        "LVL_2013.A49"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2013, Điều 46]\n[Luật Việc làm 2013, Điều 49]\n[Luật BHXH 2024 (41/2024/QH15), Điều 25]"
+    },
+    "87": {
+      "gold_items": [
+        "L41_2024.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A50"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+    },
+    "88": {
+      "gold_items": [
+        "L41_2024.A70",
+        "LVL_2013.A45",
+        "LVL_2013.A46"
+      ],
+      "gold_articles": [
+        "L41_2024.A70",
+        "LVL_2013.A45",
+        "LVL_2013.A46"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2013, Điều 46]\n[Luật Việc làm 2013, Điều 45]\n[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "89": {
+      "gold_items": [
+        "L41_2024.A25",
+        "L41_2024.A36"
+      ],
+      "gold_articles": [
+        "L41_2024.A25",
+        "L41_2024.A36"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 25]\n[Luật BHXH 2024 (41/2024/QH15), Điều 36]"
+    },
+    "90": {
+      "gold_items": [
+        "L41_2024.A2",
+        "L41_2024.A25",
+        "L41_2024.A36"
+      ],
+      "gold_articles": [
+        "L41_2024.A2",
+        "L41_2024.A25",
+        "L41_2024.A36"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]\n[Luật BHXH 2024 (41/2024/QH15), Điều 25]\n[Luật BHXH 2024 (41/2024/QH15), Điều 36]"
+    },
+    "91": {
+      "gold_items": [
+        "L41_2024.A116",
+        "L41_2024.A46"
+      ],
+      "gold_articles": [
+        "L41_2024.A116",
+        "L41_2024.A46"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 46]\n[Luật BHXH 2024 (41/2024/QH15), Điều 116]"
+    },
+    "92": {
+      "gold_items": [
+        "L41_2024.A104",
+        "L41_2024.A109",
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A104",
+        "L41_2024.A109",
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 104]\n[Luật BHXH 2024 (41/2024/QH15), Điều 109]"
+    },
+    "93": {
+      "gold_items": [
+        "L41_2024.A110",
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A110",
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 110]"
+    },
+    "94": {
+      "gold_items": [
+        "L41_2024.A2",
+        "ND158_2025.A3"
+      ],
+      "gold_articles": [
+        "L41_2024.A2",
+        "ND158_2025.A3"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]\n[Nghị định 158/2025/NĐ-CP, Điều 3]"
+    },
+    "95": {
+      "gold_items": [
+        "L41_2024.A102",
+        "L41_2024.A110",
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A102",
+        "L41_2024.A110",
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 102]\n[Luật BHXH 2024 (41/2024/QH15), Điều 110]"
+    },
+    "97": {
+      "gold_items": [
+        "L41_2024.A102",
+        "L41_2024.A25"
+      ],
+      "gold_articles": [
+        "L41_2024.A102",
+        "L41_2024.A25"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 25]\n[Luật BHXH 2024 (41/2024/QH15), Điều 102]"
+    },
+    "98": {
+      "gold_items": [
+        "LVL_2013.A45",
+        "LVL_2013.A46"
+      ],
+      "gold_articles": [
+        "LVL_2013.A45",
+        "LVL_2013.A46"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2013, Điều 46]\n[Luật Việc làm 2013, Điều 45]"
+    },
+    "99": {
+      "gold_items": [
+        "L41_2024.A50",
+        "L41_2024.A53"
+      ],
+      "gold_articles": [
+        "L41_2024.A50",
+        "L41_2024.A53"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]\n[Luật BHXH 2024 (41/2024/QH15), Điều 53]"
+    },
+    "100": {
+      "gold_items": [
+        "L41_2024.A102",
+        "L41_2024.A110",
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A102",
+        "L41_2024.A110",
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 102]\n[Luật BHXH 2024 (41/2024/QH15), Điều 110]"
+    },
+    "101": {
+      "gold_items": [
+        "L41_2024.A27"
+      ],
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
+    },
+    "102": {
+      "gold_items": [
+        "L41_2024.A33"
+      ],
+      "gold_articles": [
+        "L41_2024.A33"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 33]"
+    },
+    "103": {
+      "gold_items": [
+        "L41_2024.A70",
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "L41_2024.A70",
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
+    },
+    "104": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "105": {
+      "gold_items": [
+        "QD366_BHXH.A4",
+        "QD366_BHXH.A5"
+      ],
+      "gold_articles": [
+        "QD366_BHXH.A4",
+        "QD366_BHXH.A5"
+      ],
+      "gold_citations_raw": "[Quyết định 366/QĐ-BHXH, Điều 4]\n[Quyết định 366/QĐ-BHXH, Điều 5]"
+    },
+    "106": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "107": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "108": {
+      "gold_items": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
+    },
+    "109": {
+      "gold_items": [
+        "L41_2024.A64",
+        "L45_2019.A169"
+      ],
+      "gold_articles": [
+        "L41_2024.A64",
+        "L45_2019.A169"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 64]\n[Bộ luật Lao động 2019, Điều 169]"
+    },
+    "110": {
+      "gold_items": [
+        "L41_2024.A64",
+        "L41_2024.A70",
+        "L45_2019.A169"
+      ],
+      "gold_articles": [
+        "L41_2024.A64",
+        "L41_2024.A70",
+        "L45_2019.A169"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 64]\n[Bộ luật Lao động 2019, Điều 169]"
+    },
+    "111": {
+      "gold_items": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
+    },
+    "112": {
+      "gold_items": [
+        "L41_2024.A27"
+      ],
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
+    },
+    "113": {
+      "gold_items": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
+    },
+    "114": {
+      "gold_items": [
+        "L41_2024.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A50"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+    },
+    "115": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "116": {
+      "gold_items": [
+        "L41_2024.A13"
+      ],
+      "gold_articles": [
+        "L41_2024.A13"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 13]"
+    },
+    "117": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "118": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "119": {
+      "gold_items": [
+        "L41_2024.A27"
+      ],
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
+    },
+    "120": {
+      "gold_items": [
+        "L41_2024.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A50"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+    },
+    "121": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "122": {
+      "gold_items": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
+    },
+    "123": {
+      "gold_items": [
+        "LATVSLD_2015.A45",
+        "QD166_BHXH.A6"
+      ],
+      "gold_articles": [
+        "LATVSLD_2015.A45",
+        "QD166_BHXH.A6"
+      ],
+      "gold_citations_raw": "[Luật An toàn, vệ sinh lao động 2015, Điều 45]\n[Quyết định 166/QĐ-BHXH, Điều 6]"
+    },
+    "124": {
+      "gold_items": [
+        "QD595_BHXH.A29"
+      ],
+      "gold_articles": [
+        "QD595_BHXH.A29"
+      ],
+      "gold_citations_raw": "[Quyết định 595/QĐ-BHXH, Điều 29]"
+    },
+    "125": {
+      "gold_items": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
+    },
+    "126": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "127": {
+      "gold_items": [
+        "L41_2024.A4",
+        "L41_2024.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A4",
+        "L41_2024.A50"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 4]\n[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+    },
+    "128": {
+      "gold_items": [
+        "QD595_BHXH.A46"
+      ],
+      "gold_articles": [
+        "QD595_BHXH.A46"
+      ],
+      "gold_citations_raw": "[Quyết định 595/QĐ-BHXH, Điều 46]"
+    },
+    "129": {
+      "gold_items": [
+        "L41_2024.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A50"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+    },
+    "130": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "131": {
+      "gold_items": [
+        "L41_2024.A27",
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A27",
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]\n[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "132": {
+      "gold_items": [
+        "L41_2024.A70",
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "L41_2024.A70",
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
+    },
+    "133": {
+      "gold_items": [
+        "L41_2024.A2"
+      ],
+      "gold_articles": [
+        "L41_2024.A2"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]"
+    },
+    "134": {
+      "gold_items": [
+        "L41_2024.A64",
+        "L45_2019.A169",
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "L41_2024.A64",
+        "L45_2019.A169",
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]\n[Luật BHXH 2024 (41/2024/QH15), Điều 64]\n[Bộ luật Lao động 2019, Điều 169]"
+    },
+    "135": {
+      "gold_items": [
+        "L41_2024.A141"
+      ],
+      "gold_articles": [
+        "L41_2024.A141"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 141]"
+    },
+    "136": {
+      "gold_items": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
+    },
+    "137": {
+      "gold_items": [
+        "L41_2024.A27"
+      ],
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
+    },
+    "138": {
+      "gold_items": [
+        "L41_2024.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A50"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+    },
+    "139": {
+      "gold_items": [
+        "L41_2024.A70",
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "L41_2024.A70",
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
+    },
+    "140": {
+      "gold_items": [
+        "L41_2024.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A50"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+    },
+    "141": {
+      "gold_items": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
+    },
+    "142": {
+      "gold_items": [
+        "L41_2024.A27"
+      ],
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
+    },
+    "143": {
+      "gold_items": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
+    },
+    "144": {
+      "gold_items": [
+        "L41_2024.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A50"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+    },
+    "145": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "146": {
+      "gold_items": [
+        "L41_2024.A27"
+      ],
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
+    },
+    "147": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "148": {
+      "gold_items": [
+        "L41_2024.A2"
+      ],
+      "gold_articles": [
+        "L41_2024.A2"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]"
+    },
+    "149": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "150": {
+      "gold_items": [
+        "L41_2024.A2",
+        "LVL_2013.A43",
+        "LVL_2013.A45"
+      ],
+      "gold_articles": [
+        "L41_2024.A2",
+        "LVL_2013.A43",
+        "LVL_2013.A45"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]\n[Luật Việc làm 2013, Điều 43]\n[Luật Việc làm 2013, Điều 45]"
+    },
+    "151": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "152": {
+      "gold_items": [
+        "L41_2024.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A50"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+    },
+    "153": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "154": {
+      "gold_items": [
+        "L41_2024.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A50"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+    },
+    "155": {
+      "gold_items": [
+        "L41_2024.A10",
+        "L41_2024.A25"
+      ],
+      "gold_articles": [
+        "L41_2024.A10",
+        "L41_2024.A25"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 10]\n[Luật BHXH 2024 (41/2024/QH15), Điều 25]"
+    },
+    "156": {
+      "gold_items": [
+        "L41_2024.A27"
+      ],
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
+    },
+    "157": {
+      "gold_items": [
+        "L41_2024.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A50"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+    },
+    "158": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "159": {
+      "gold_items": [
+        "L41_2024.A59"
+      ],
+      "gold_articles": [
+        "L41_2024.A59"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 59]"
+    },
+    "160": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "161": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "162": {
+      "gold_items": [
+        "L41_2024.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A50"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+    },
+    "163": {
+      "gold_items": [
+        "L41_2024.A27",
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A27",
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]\n[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "164": {
+      "gold_items": [
+        "L41_2024.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A50"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+    },
+    "165": {
+      "gold_items": [
+        "L41_2024.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A50"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+    },
+    "166": {
+      "gold_items": [
+        "L41_2024.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A50"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+    },
+    "167": {
+      "gold_items": [
+        "L41_2024.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A50"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+    },
+    "168": {
+      "gold_items": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
+    },
+    "169": {
+      "gold_items": [
+        "L41_2024.A64",
+        "L41_2024.A70",
+        "L45_2019.A169",
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "L41_2024.A64",
+        "L41_2024.A70",
+        "L45_2019.A169",
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 64]\n[Bộ luật Lao động 2019, Điều 169]\n[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]\n[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "171": {
+      "gold_items": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
+    },
+    "172": {
+      "gold_items": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
+    },
+    "173": {
+      "gold_items": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
+    },
+    "174": {
+      "gold_items": [
+        "L41_2024.A64",
+        "L45_2019.A169",
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "L41_2024.A64",
+        "L45_2019.A169",
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 64]\n[Bộ luật Lao động 2019, Điều 169]\n[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
+    },
+    "175": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "176": {
+      "gold_items": [
+        "L41_2024.A64",
+        "L41_2024.A70",
+        "L45_2019.A169"
+      ],
+      "gold_articles": [
+        "L41_2024.A64",
+        "L41_2024.A70",
+        "L45_2019.A169"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 64]\n[Bộ luật Lao động 2019, Điều 169]"
+    },
+    "177": {
+      "gold_items": [
+        "L41_2024.A27"
+      ],
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
+    },
+    "178": {
+      "gold_items": [
+        "L41_2024.A27"
+      ],
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
+    },
+    "179": {
+      "gold_items": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
+    },
+    "180": {
+      "gold_items": [
+        "L41_2024.A64",
+        "L45_2019.A169",
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "L41_2024.A64",
+        "L45_2019.A169",
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]\n[Luật BHXH 2024 (41/2024/QH15), Điều 64]\n[Bộ luật Lao động 2019, Điều 169]"
+    },
+    "181": {
+      "gold_items": [
+        "L41_2024.A27",
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A27",
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]\n[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "182": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "183": {
+      "gold_items": [
+        "L41_2024.A70",
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "L41_2024.A70",
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]\n[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "184": {
+      "gold_items": [
+        "L41_2024.A27"
+      ],
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
+    },
+    "185": {
+      "gold_items": [
+        "L41_2024.A27"
+      ],
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
+    },
+    "186": {
+      "gold_items": [
+        "L41_2024.A27",
+        "L45_2019.A48"
+      ],
+      "gold_articles": [
+        "L41_2024.A27",
+        "L45_2019.A48"
+      ],
+      "gold_citations_raw": "[Bộ luật Lao động 2019, Điều 48]\n[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
+    },
+    "187": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "188": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "189": {
+      "gold_items": [
+        "L41_2024.A2"
+      ],
+      "gold_articles": [
+        "L41_2024.A2"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 2]"
+    },
+    "190": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "191": {
+      "gold_items": [
+        "L41_2024.A50"
+      ],
+      "gold_articles": [
+        "L41_2024.A50"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 50]"
+    },
+    "192": {
+      "gold_items": [
+        "BLDS_2015.A117",
+        "BLDS_2015.A123",
+        "L41_2024.A9"
+      ],
+      "gold_articles": [
+        "BLDS_2015.A117",
+        "BLDS_2015.A123",
+        "L41_2024.A9"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 9]\n[Bộ luật Dân sự 2015, Điều 117]\n[Bộ luật Dân sự 2015, Điều 123]"
+    },
+    "193": {
+      "gold_items": [
+        "L41_2024.A27"
+      ],
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
+    },
+    "194": {
+      "gold_items": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_articles": [
+        "LVL_2013.A46",
+        "LVL_2025.A38",
+        "LVL_2025.A39",
+        "LVL_2025.A40"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2025, Điều 38]\n[Luật Việc làm 2025, Điều 39]\n[Luật Việc làm 2025, Điều 40]\n[Luật Việc làm 2013, Điều 46]"
+    },
+    "195": {
+      "gold_items": [
+        "L41_2024.A42"
+      ],
+      "gold_articles": [
+        "L41_2024.A42"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 42]"
+    },
+    "196": {
+      "gold_items": [
+        "L41_2024.A27"
+      ],
+      "gold_articles": [
+        "L41_2024.A27"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 27]"
+    },
+    "197": {
+      "gold_items": [
+        "L41_2024.A64",
+        "L45_2019.A169"
+      ],
+      "gold_articles": [
+        "L41_2024.A64",
+        "L45_2019.A169"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 64]\n[Bộ luật Lao động 2019, Điều 169]"
+    },
+    "198": {
+      "gold_items": [
+        "L41_2024.A70"
+      ],
+      "gold_articles": [
+        "L41_2024.A70"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]"
+    },
+    "199": {
+      "gold_items": [
+        "L41_2024.A33",
+        "QD595_BHXH.A42"
+      ],
+      "gold_articles": [
+        "L41_2024.A33",
+        "QD595_BHXH.A42"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 33]\n[Quyết định 595/QĐ-BHXH, Điều 42]"
+    },
+    "200": {
+      "gold_items": [
+        "L41_2024.A64",
+        "L41_2024.A70",
+        "L45_2019.A169"
+      ],
+      "gold_articles": [
+        "L41_2024.A64",
+        "L41_2024.A70",
+        "L45_2019.A169"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 70]\n[Luật BHXH 2024 (41/2024/QH15), Điều 64]\n[Bộ luật Lao động 2019, Điều 169]"
+    },
+    "201": {
+      "gold_items": [
+        "LVL_2013.A46"
+      ],
+      "gold_articles": [
+        "LVL_2013.A46"
+      ],
+      "gold_citations_raw": "[Luật Việc làm 2013, Điều 46]"
+    },
+    "202": {
+      "gold_items": [
+        "L41_2024.A25",
+        "QD595_BHXH.A29"
+      ],
+      "gold_articles": [
+        "L41_2024.A25",
+        "QD595_BHXH.A29"
+      ],
+      "gold_citations_raw": "[Luật BHXH 2024 (41/2024/QH15), Điều 25]\n[Quyết định 595/QĐ-BHXH, Điều 29]"
+    }
+  }
+}

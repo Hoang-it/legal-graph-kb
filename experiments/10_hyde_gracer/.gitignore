@@ -1,0 +1,4 @@
+# Default: ignore results/ to keep repo small. If this experiment ever
+# becomes a baseline that future experiments will inherit from, replace
+# this file with the un-ignore pattern used in 01_initial_eval.
+results/
