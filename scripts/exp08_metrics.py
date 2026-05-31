@@ -29,6 +29,7 @@ Outputs:
 """
 from __future__ import annotations
 
+import argparse
 import csv
 import json
 import math
@@ -59,13 +60,19 @@ REGISTRY_PATH = _REPO / "data" / "legal_sources.yaml"
 PILOT_50_PATH = EXP_DIR / "pilot_50_stt.json"
 
 
-def _pilot_subset() -> set[int] | None:
+def _pilot_subset(force_full: bool = False) -> set[int] | None:
     """Return the stt set the pilot covers, or None for the full dataset.
 
     When ``pilot_50_stt.json`` is present (written by ``exp08_run.py
     --pilot-50``), metrics + funnel scripts auto-filter to that subset so
     aggregate numbers reflect exactly what was retrieved.
+
+    Pass ``force_full=True`` (via ``--full``) to ignore the pilot file and
+    score every record on disk — used once the full 200 retrieval run has
+    finished and the metrics should reflect the full dataset.
     """
+    if force_full:
+        return None
     if not PILOT_50_PATH.exists():
         return None
     payload = json.loads(PILOT_50_PATH.read_text(encoding="utf-8"))
@@ -299,7 +306,7 @@ def write_json(per_arm_summary: dict, per_arm_strat: dict) -> Path:
     return out
 
 
-def write_report(per_arm_summary: dict, per_arm_strat: dict) -> Path:
+def write_report(per_arm_summary: dict, per_arm_strat: dict, n_scored: int) -> Path:
     out = REPORT_DIR / "academic_report.md"
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
     field_ks = [("all" if k is None else str(k)) for k in KS]
@@ -307,11 +314,11 @@ def write_report(per_arm_summary: dict, per_arm_strat: dict) -> Path:
     lines: list[str] = []
     lines.append("# Experiment 08 — HyDE retrieval-only 4-arm metrics (K ∈ {12..100, all})")
     lines.append("")
-    lines.append("Dataset: 200 BHXH questions. Metric granularity: article.")
+    lines.append(f"Dataset: {n_scored} BHXH questions. Metric granularity: article.")
     lines.append("Arms: `dense`, `dense_hyde`, `full_rerank`, `full_rerank_hyde`.")
-    lines.append("HyDE generator: Qwen/Qwen2.5-3B-Instruct (Colab Free T4, fp16, N=1).")
+    lines.append("HyDE generator: OpenAI `gpt-4o-mini` (n=1, max_tokens=700, temperature=0.0).")
     lines.append("")
-    lines.append("## Overall macro (n=200 with non-empty gold)")
+    lines.append(f"## Overall macro (n={n_scored} with non-empty gold)")
     lines.append("")
 
     def _table_metric(name: str) -> list[str]:
@@ -486,6 +493,12 @@ def write_report(per_arm_summary: dict, per_arm_strat: dict) -> Path:
 
 
 def main() -> int:
+    p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    p.add_argument("--full", action="store_true",
+                   help="Score every record on disk, ignoring pilot_50_stt.json "
+                        "(use after exp08_run.py finishes the full 200 run).")
+    args = p.parse_args()
+
     METRICS_DIR.mkdir(parents=True, exist_ok=True)
 
     print("[1/4] Validating gold citations ...")
@@ -496,10 +509,13 @@ def main() -> int:
     q_by_stt = {q["stt"]: q for q in questions}
     in_corpus_codes = {m.full_id for m in load_law_metadata().values()}
 
-    stt_subset = _pilot_subset()
+    stt_subset = _pilot_subset(force_full=args.full)
     if stt_subset is not None:
         print(f"      Pilot subset detected ({PILOT_50_PATH.name}): "
               f"scoring n={len(stt_subset)} questions")
+    elif args.full and PILOT_50_PATH.exists():
+        print(f"      --full set — ignoring {PILOT_50_PATH.name}; "
+              f"scoring every record on disk.")
 
     print("[2/4] Loading per-arm records + scoring ...")
     per_arm_rows: dict[str, list[dict]] = {}
@@ -534,7 +550,8 @@ def main() -> int:
     print(f"      {json_path}")
 
     print("[4/4] Writing report ...")
-    report_path = write_report(per_arm_summary, per_arm_strat)
+    n_scored = max((s.get("n") or 0) for s in per_arm_summary.values()) if per_arm_summary else 0
+    report_path = write_report(per_arm_summary, per_arm_strat, n_scored)
     print(f"      {report_path}")
 
     print()

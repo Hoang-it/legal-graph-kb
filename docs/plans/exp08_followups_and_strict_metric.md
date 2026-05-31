@@ -1,8 +1,8 @@
-# Session handoff — exp 08 HyDE pilot + strict-metric v2 landed
+# Session handoff — exp 08 HyDE pilot + full 200 + strict-metric v2 landed
 
-- **Status**: Active. Last updated 2026-05-31 (post task #21).
+- **Status**: Active. Last updated 2026-05-31 (post item A — full 200 retrieval-only).
 - **Owner**: Nguyễn Hữu Hoàng
-- **Branch**: `exp/08-hyde` (3 commits ahead of `origin/exp/08-hyde`)
+- **Branch**: `exp/08-hyde` (5 commits ahead of `origin/exp/08-hyde`)
 - **Purpose**: Single canonical handoff so a future session can resume
   without replaying the chat. Covers (1) current state, (2) policy
   decisions locked, (3) pending implementation tasks with priority +
@@ -152,11 +152,42 @@ for full rationale.
 §10 tier re-calibration: NOT done preemptively per the §10 caveat.
 Decide after seeing actual v2 v5 numbers in Sprint 3.
 
-### Now-immediate items (priority order, post task #21)
+### Now-immediate items (priority order, post item A)
+
+### Item A — Full 200 HyDE retrieval-only ✅ DONE (2026-05-31)
+
+Wall time **654.4s** (10.9 min), cost **$0.0355** (under plan $0.075 do
+2 HyDE arm share cache — 149 cold + 301 hits). 4/4 arms, 0 failures,
+200 records each. Cache: 51 → 200 entries.
+
+**Verdict ổn định pilot→full:**
+
+| # | Criterion | Threshold | Pilot 50 | Full 200 | Verdict |
+|---|---|---:|---:|---:|:---:|
+| 1 | `dense_hyde` R@12 − `dense` R@12 (abs) | +0.030 | +0.1053 | +0.0904 | ✅ PASS (3.0×) |
+| 2 | `dense_hyde` NDCG@12 / `dense` NDCG@12 − 1 | +5.0% | +35.2% | +34.7% | ✅ PASS (~7×) |
+| 3 | `full_hyde` R-Prec / `full_rerank` R-Prec − 1 | +15.0% | −0.5% | −0.6% | ❌ FAIL |
+
+Lift của `dense_hyde` ở **in_corpus n=151**: R@12 +23.6%, NDCG@12 +34.7%,
+R-Prec +108.8%, MRR +34.0%. R@100 đổi dấu so với pilot từ −3% → **+6.4%**
+(pilot n=38 quá nhỏ để stable phân biệt). `full_rerank_hyde` confirm
+**lose nhẹ** ở mọi metric K≤30 (không phải neutral như pilot gợi ý).
+
+Numbers chi tiết + funnel per-stage trong
+[`experiments/08_hyde_retrieval/README.md`](../../experiments/08_hyde_retrieval/README.md)
+section "Full 200 result summary".
+
+Implementation notes:
+- `scripts/exp08_metrics.py` + `scripts/exp08_funnel.py` thêm cờ
+  `--full` để override auto-pilot-detect. Mặc định hành vi không
+  thay đổi (compat với pilot artifacts).
+- Header report bỏ hardcode "Qwen2.5-3B-Instruct" + "n=200" — giờ
+  pull dynamic từ aggregate.
+
+### Now-remaining items (priority order, post item A)
 
 | # | Item | Why | Cost / effort | Owner notes |
 |---|---|---|---|---|
-| **A** | **Scale HyDE pilot 50 → full 200** (retrieval-only) | Confirm pilot magnitude on full dataset. Pilot N=50 is suggestive; thesis chapter needs full-200 numbers + per-stratum stability. Cache covers 50/200 questions → only 150 new LLM calls. | ~$0.075, ~15 min wall time. `python scripts/exp08_run.py` (no `--pilot-50`) runs the full set; idempotent — skips done records, prewarm only the new 150. | Cheap insurance before investing engineering time in #B. |
 | **B** | **Add E2E HyDE arms** (`dense_hyde_e2e`, `full_rerank_hyde_e2e`) | exp 08 today is retrieval-only — measures `final_article_ids` lift. v5 §5 primary metric is **E2E citation recall/precision under academic_v2** (the thesis-defining number). Need to run `V5RetrievalPipeline.ask()` (with LLM generator) on HyDE-augmented retrieval to see whether retrieval lift translates to citation lift. Adapter mismatch caveat: the LLM may still emit khoản with article-only gold → strict-tuple MISS even if retrieval is perfect. | ~$0.20–0.30 for 200 × 2 arms × gpt-4o-mini. ~30 min code + 10 min run. | Needs a new runner script (or extend exp08_run.py with an `--e2e` flag) that records `answer` + `citation_ids` + `latency_s` so academic_v2 metrics apply directly. |
 | **C** | **150 / 50 stratified split seal** | v5 §5: 150 test for paper, 50 dev for calibration. Currently scripts read `data/eval/questions_200.json` raw. `scripts/seal_eval_split.py` exists but unknown whether it was already run + committed. | ~1h verify + run + commit | Audit first: `ls data/eval/questions_*.json`. If `questions_150_test.json` + `questions_50_dev.json` already exist + are stratified seed-locked, mark done. Otherwise run the sealer + commit, then point all exp 08 runner / metrics paths at the test split. |
 | **D** | **OOC detection F1 metric** | v5 §10 gate: F1 ≥ 0.80. Question with OOC gold → arm must declare "không có trong corpus" instead of citing. Currently no metric computes this. The 8 OOC questions in the 200-q dataset are a known weak stratum (0 recall under all arms; rerank funnels confirmed). | ~1 day code + integration | New helper in `eval_core/metrics.py`: classify per-record arm output as `{cites_any, declares_ooc, silent}`. Compare to gold OOC flag. Compute F1 over the OOC class. Add to `aggregate.macro`. |
@@ -164,25 +195,24 @@ Decide after seeing actual v2 v5 numbers in Sprint 3.
 | **F** | **M6 Verifier (conditional)** | v5 §4 Sprint 2 trigger: precision E2E < 80%. Decide AFTER #B numbers exist. | Skip if E2E precision already ≥ 80% under v2; otherwise ~3 days build | A wrong-but-confident citation is the most dangerous failure mode for a legal QA system. If E2E precision is poor, consider Claude or local NLI verifier to drop low-confidence cites. |
 | **G** | **Sprint 3 final eval + thesis chapter** | All baselines on 150-test, A/B v4-vs-v5 (both under `academic_v2`), paper-ready tables, OOC F1, multi-tier framing (70/80, 85/90, 95/95). | 1–2 weeks per v5 plan §7 | The end-state for the v5 plan. Depends on A + B + C + D done. |
 
-### Decision tree (post task #21)
+### Decision tree (post item A)
 
 ```
-Did the full 200 HyDE retrieval-only run finish (item A)?
-├─ NO → run item A first ($0.075, 15 min). Confirms pilot signal at
-│       higher N before investing engineering in #B.
-└─ YES → Did E2E HyDE arm runner exist (item B)?
-         ├─ NO → write the runner + run on full 200 ($0.20-0.30,
-         │       ~30 min code + 10 min run). This produces the
-         │       thesis primary number.
-         └─ YES → branch on item B result:
-                  ├─ E2E precision ≥ 80% under v2 → skip M6 verifier
-                  │       (item F); proceed to items C + D + G.
-                  └─ E2E precision < 80% → triage:
-                        ├─ Low recall → add HyDE to dense further (no
-                        │   action; result speaks).
-                        ├─ Low precision (over-citing) → build M6
-                        │   verifier (item F), re-run E2E, then G.
-                        └─ Both low → document as limitation; G.
+Item A DONE — full 200 confirms pilot. Next is item B.
+
+Did E2E HyDE arm runner exist (item B)?
+├─ NO → write the runner + run on full 200 ($0.20-0.30,
+│       ~30 min code + 10 min run). This produces the
+│       thesis primary number (E2E citation recall under v2).
+└─ YES → branch on item B result:
+         ├─ E2E precision ≥ 80% under v2 → skip M6 verifier
+         │       (item F); proceed to items C + D + G.
+         └─ E2E precision < 80% → triage:
+               ├─ Low recall → add HyDE to dense further (no
+               │   action; result speaks).
+               ├─ Low precision (over-citing) → build M6
+               │   verifier (item F), re-run E2E, then G.
+               └─ Both low → document as limitation; G.
 ```
 
 ### Task #21 follow-up — items NOT in scope but flagged for future
@@ -239,16 +269,22 @@ don't re-discover the same thing.
   - **Defer until thesis publishing**. Local-only is fine for now.
 
 ### Branch hygiene
-- `exp/08-hyde` is 3 commits ahead of `origin/exp/08-hyde`. Sequence:
+- `exp/08-hyde` is now 5 commits ahead of `origin/exp/08-hyde`.
+  Sequence (oldest → newest):
   1. `8fe0a9d` — Qwen → gpt-4o-mini rewrite + docs (incl. this handoff
      in its first version)
   2. `098d32d` — pilot 50 results (metrics + funnel + stratified seed)
   3. `6c03617` — task #21 strict metric + v4 baseline re-aggregation
-- **Not yet pushed** to origin. PR `exp/08-hyde → main` is premature
-  — wait until item A (full 200) + item B (E2E) confirm before merging.
+  4. `3aba1a6` — handoff doc refresh (task #21 done)
+  5. (this commit, pending) — full 200 retrieval results + `--full`
+     flag for metrics/funnel + README full-200 section + handoff
+     refresh
+- **Not yet pushed** to origin. PR `exp/08-hyde → main` still
+  premature — wait until item B (E2E HyDE arm) confirms before
+  merging.
 - If pushing now: `git push origin exp/08-hyde` is safe (these commits
-  modify code + docs + frozen-experiment metrics, no records / no
-  secrets).
+  modify code + docs + frozen-experiment metrics + retrieval records
+  under exp 08 local .gitignore, no secrets).
 
 ## 5. References
 

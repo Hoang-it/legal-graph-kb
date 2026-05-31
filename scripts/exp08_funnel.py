@@ -33,6 +33,7 @@ plus a console summary, stratified by gold-corpus category.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import math
 import re
@@ -62,8 +63,14 @@ REGISTRY_PATH = _REPO / "data" / "legal_sources.yaml"
 PILOT_50_PATH = EXP_DIR / "pilot_50_stt.json"
 
 
-def _pilot_subset() -> set[int] | None:
-    """Return the stt set the pilot covers, or None for the full dataset."""
+def _pilot_subset(force_full: bool = False) -> set[int] | None:
+    """Return the stt set the pilot covers, or None for the full dataset.
+
+    Pass ``force_full=True`` (via ``--full``) to ignore the pilot file and
+    process every record on disk.
+    """
+    if force_full:
+        return None
     if not PILOT_50_PATH.exists():
         return None
     payload = json.loads(PILOT_50_PATH.read_text(encoding="utf-8"))
@@ -271,7 +278,7 @@ def write_markdown(overall: dict, in_corpus: dict, mixed: dict, ooc: dict,
         return str(v)
 
     lines: list[str] = []
-    lines.append(f"# Funnel — `full_rerank_hyde` arm at K={K} (exp 08, n=200)")
+    lines.append(f"# Funnel — `full_rerank_hyde` arm at K={K} (exp 08, n={overall['n']})")
     lines.append("")
     lines.append("Per-stage retrieval recall + rank-aware metrics for the HyDE-")
     lines.append("augmented full pipeline. Computed by")
@@ -317,7 +324,7 @@ def write_markdown(overall: dict, in_corpus: dict, mixed: dict, ooc: dict,
                 )
             lines.append("")
 
-    _section("Overall (all 200)", overall, drops["overall"])
+    _section(f"Overall (all {overall['n']})", overall, drops["overall"])
     _section("in_corpus stratum", in_corpus, drops["in_corpus"])
     _section("mixed stratum", mixed, drops["mixed"])
     _section("ooc stratum", ooc, drops["ooc"])
@@ -337,15 +344,22 @@ def write_markdown(overall: dict, in_corpus: dict, mixed: dict, ooc: dict,
 
 
 def main() -> int:
+    p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    p.add_argument("--full", action="store_true",
+                   help="Process every record on disk, ignoring pilot_50_stt.json.")
+    args = p.parse_args()
+
     gold_map = load_gold()
     questions = json.loads(QUESTIONS_PATH.read_text(encoding="utf-8"))
     q_by_stt = {q["stt"]: q for q in questions}
     in_corpus_codes = {m.full_id for m in load_law_metadata().values()}
 
-    stt_subset = _pilot_subset()
+    stt_subset = _pilot_subset(force_full=args.full)
     if stt_subset is not None:
         print(f"Pilot subset detected ({PILOT_50_PATH.name}): "
               f"funnelling n={len(stt_subset)} questions")
+    elif args.full and PILOT_50_PATH.exists():
+        print(f"--full set — ignoring {PILOT_50_PATH.name}; processing every record on disk.")
 
     records = load_records(stt_subset=stt_subset)
     rows = [compute_per_record(r, gold_map) for r in records]
