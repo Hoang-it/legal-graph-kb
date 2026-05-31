@@ -1,37 +1,66 @@
-"""HyDE (Hypothetical Document Embeddings) generator using Qwen 2.5 3B Instruct.
+"""HyDE (Hypothetical Document Embeddings) generator using OpenAI gpt-4o-mini.
 
 Implements Gao et al. 2022 (https://arxiv.org/abs/2212.10496) on top of the
 BGE-M3 dense retrieval channel of :class:`src.retrieval.V5RetrievalPipeline`.
 
-The generator runs locally — designed for Colab Free T4 (16 GB VRAM,
-fp16 by default; 4-bit via bitsandbytes as OOM fallback). See
-``docs/plans/hyde_qwen_colab.md`` for the design contract.
+The generator calls OpenAI's `gpt-4o-mini` (constructor-overridable) and
+caches every response to disk so re-runs of the same (question, prompt,
+n, model, max_tokens, temperature) combo cost $0.
 
 Per-question flow:
 
 1. ``generate(question)`` → produces N hypothetical legal-document
-   passages via the Qwen chat template + the prompt at
-   ``prompts/runtime/hyde_generate.md``. Cache-aware: cache key is
-   sha256 of question + prompt sha + n + max_new_tokens.
-2. ``embed_query_callable(embed_model)`` returns a closure
+   passages via a system + user chat prompt loaded from
+   ``prompts/runtime/hyde_generate.md``. Cache-aware. Sync — used by the
+   ``embed_query_callable`` closure called inline by
+   :meth:`src.retrieval.HybridRetriever._dense_search`.
+
+2. ``generate_batch(questions)`` → batched, concurrent generation for the
+   exp 08 runner's pre-warm phase. Uses an internal asyncio loop with
+   ``Semaphore(5)`` (matches the project's ``OPENAI_CONCURRENCY=5``
+   default in ``offline/llm_extract.py``) + tenacity retry. Cache writes
+   are atomic per question so a Ctrl+C / network blip never corrupts
+   partial state.
+
+3. ``embed_query_callable(embed_model)`` returns a closure
    ``question → np.ndarray`` that the :class:`HybridRetriever` plugs
    into ``_dense_search`` as the query encoder. With N>1 the
    embeddings of the N docs are mean-pooled then re-normalised so the
    resulting vector remains unit-length for cosine search.
+
+Cost tracking
+-------------
+Every API call records ``prompt_tokens``, ``completion_tokens``,
+``cached_tokens`` (OpenAI prompt-cache hits, not our disk cache) and a
+``cost_usd`` field into the cache payload. The cost formula is reused
+verbatim from :mod:`offline.llm_extract` so all gpt-4o-mini cost
+arithmetic in this repo has a single source of truth.
+
+The generator instance also exposes ``total_cost_usd`` /
+``total_api_calls`` / ``total_cache_hits`` counters so the runner can
+print a per-run cost summary at the end of a batch.
 """
 from __future__ import annotations
 
+import asyncio
 import hashlib
 import json
 import os
 import re
-import time
+import threading
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 
 import numpy as np
+from openai import APIError, AsyncOpenAI, OpenAI, RateLimitError
+from tenacity import (
+    retry,
+    retry_if_exception_type,
+    stop_after_attempt,
+    wait_exponential,
+)
 
 from src.prompts import load_prompt, resolve_prompt_path
 
@@ -67,6 +96,41 @@ def _split_prompt(raw: str) -> tuple[str, str]:
 
 
 # ---------------------------------------------------------------------------
+# gpt-4o-mini pricing — kept in sync with offline/llm_extract.py:637-644
+# ---------------------------------------------------------------------------
+
+# gpt-4o-mini: input $0.15/M, cached-input $0.075/M, output $0.60/M.
+# Any model override at construction time must use the same pricing OR
+# the caller must extend _MODEL_PRICING below. Keeping one constant
+# avoids drifting prices across modules.
+_MODEL_PRICING: dict[str, dict[str, float]] = {
+    "gpt-4o-mini": {
+        "input_per_1m": 0.15,
+        "cached_input_per_1m": 0.075,
+        "output_per_1m": 0.60,
+    },
+}
+
+
+def _estimate_cost_usd(model_id: str, usage: dict[str, int]) -> float:
+    """Compute USD cost from usage dict. Mirrors offline/llm_extract.py."""
+    pricing = _MODEL_PRICING.get(model_id)
+    if pricing is None:
+        # Unknown model — return 0 so cost summary doesn't lie. The cache
+        # still stores the raw usage so a future price-aware audit can
+        # recompute retroactively.
+        return 0.0
+    prompt_t = int(usage.get("prompt_tokens") or 0)
+    cached_t = int(usage.get("cached_tokens") or 0)
+    completion_t = int(usage.get("completion_tokens") or 0)
+    return (
+        max(0, prompt_t - cached_t) * pricing["input_per_1m"] / 1e6
+        + cached_t * pricing["cached_input_per_1m"] / 1e6
+        + completion_t * pricing["output_per_1m"] / 1e6
+    )
+
+
+# ---------------------------------------------------------------------------
 # Cache payload schema
 # ---------------------------------------------------------------------------
 
@@ -75,23 +139,29 @@ def _split_prompt(raw: str) -> tuple[str, str]:
 class _CachePayload:
     question: str
     model_id: str
-    model_revision: str
+    model_returned: str  # snapshot id from resp.model — proxy for "revision"
     prompt_sha: str
     n: int
-    max_new_tokens: int
+    max_tokens: int
+    temperature: float
     generated_at: str
     generated_docs: list[str]
+    usage: dict[str, int]
+    cost_usd: float
 
     def to_dict(self) -> dict[str, Any]:
         return {
             "question": self.question,
             "model_id": self.model_id,
-            "model_revision": self.model_revision,
+            "model_returned": self.model_returned,
             "prompt_sha": self.prompt_sha,
             "n": self.n,
-            "max_new_tokens": self.max_new_tokens,
+            "max_tokens": self.max_tokens,
+            "temperature": self.temperature,
             "generated_at": self.generated_at,
             "generated_docs": list(self.generated_docs),
+            "usage": dict(self.usage),
+            "cost_usd": round(self.cost_usd, 8),
         }
 
 
@@ -100,164 +170,125 @@ class _CachePayload:
 # ---------------------------------------------------------------------------
 
 
-def _model_id_safe(model_id: str) -> str:
-    """Filesystem-safe directory name for a HF model id (``Qwen/Qwen2.5-3B-Instruct``)."""
+def _model_safe(model_id: str) -> str:
+    """Filesystem-safe directory fragment for a model id (``gpt-4o-mini``)."""
     return re.sub(r"[^A-Za-z0-9._-]+", "_", model_id)
 
 
-class QwenHydeGenerator:
-    """Local Qwen-based HyDE doc generator.
+def _strip_openai_base_url_if_blank() -> None:
+    """Mirror the defensive pop used elsewhere in the project.
 
-    Constructor is cheap: model + tokenizer load lazily on first
-    ``generate``/``generate_batch`` call so an instance can be constructed
-    in a non-GPU environment for syntactic checks. Cache writes happen
-    after every (single or batched) generation so a re-run picks up
-    every doc that was produced before a crash.
+    The OpenAI SDK treats ``OPENAI_BASE_URL=""`` as the literal empty URL
+    and raises APIConnectionError. Every runtime entry-point in this repo
+    pops a blank value early; we do the same so the generator can be
+    imported safely from any context.
     """
+    if not (os.environ.get("OPENAI_BASE_URL") or "").strip():
+        os.environ.pop("OPENAI_BASE_URL", None)
 
-    DTYPES = {"fp16", "bf16", "4bit"}
+
+class OpenAIHydeGenerator:
+    """OpenAI-backed HyDE doc generator with on-disk persistent cache.
+
+    Construction is cheap: prompt is read + sha'd eagerly so a malformed
+    prompt fails at __init__, but the OpenAI client is lazy — first call
+    to ``generate`` / ``generate_batch`` opens the connection. This lets
+    unit tests / import smoke run without an API key.
+    """
 
     def __init__(
         self,
-        model_id: str = "Qwen/Qwen2.5-3B-Instruct",
+        model: str = "gpt-4o-mini",
         n: int = 1,
         cache_dir: str | Path = "artifacts/hyde",
         prompt_path: str = "runtime/hyde_generate.md",
-        dtype: str = "fp16",
-        batch_size: int = 4,
-        max_new_tokens: int = 400,
-        device: str = "cuda",
-        seed: int = 0,
+        max_tokens: int = 700,
+        temperature: float = 0.0,
+        concurrency: int = 5,
+        api_key_env: str = "OPENAI_API_KEY",
     ) -> None:
-        if dtype not in self.DTYPES:
-            raise ValueError(f"dtype must be one of {sorted(self.DTYPES)}, got {dtype!r}")
         if n < 1:
             raise ValueError(f"n must be >= 1, got {n}")
-        if max_new_tokens < 1:
-            raise ValueError(f"max_new_tokens must be >= 1, got {max_new_tokens}")
-        if batch_size < 1:
-            raise ValueError(f"batch_size must be >= 1, got {batch_size}")
+        if max_tokens < 1:
+            raise ValueError(f"max_tokens must be >= 1, got {max_tokens}")
+        if concurrency < 1:
+            raise ValueError(f"concurrency must be >= 1, got {concurrency}")
+        if not (0.0 <= temperature <= 2.0):
+            raise ValueError(f"temperature must be in [0, 2], got {temperature}")
 
-        self.model_id = model_id
+        self.model = model
         self.n = n
-        self.cache_dir = Path(cache_dir) / _model_id_safe(model_id)
+        self.cache_dir = Path(cache_dir) / f"openai__{_model_safe(model)}"
         self.prompt_path = prompt_path
-        self.dtype = dtype
-        self.batch_size = batch_size
-        self.max_new_tokens = max_new_tokens
-        self.device = device
-        self.seed = seed
+        self.max_tokens = max_tokens
+        self.temperature = temperature
+        self.concurrency = concurrency
+        self.api_key_env = api_key_env
 
-        # Load prompt eagerly so a missing prompt fails at construction time
-        # (cheap, no GPU). _system / _user_tmpl are immutable after init.
+        # Load prompt eagerly — fails fast on bad prompt.
         raw_prompt = load_prompt(prompt_path)
         self._prompt_sha = hashlib.sha256(raw_prompt.encode("utf-8")).hexdigest()
         self._system, self._user_tmpl = _split_prompt(raw_prompt)
 
-        # Lazy components
-        self._model = None
-        self._tokenizer = None
-        self._model_revision: str | None = None
+        # Cost accounting counters (instance-level; runner reads at the end).
+        self.total_cost_usd: float = 0.0
+        self.total_api_calls: int = 0
+        self.total_cache_hits: int = 0
+        self.total_prompt_tokens: int = 0
+        self.total_completion_tokens: int = 0
+        self.total_cached_tokens: int = 0
+
+        # Counter mutex — generate_batch fires concurrent coroutines on a
+        # background thread; the sync generate() and batched updates must
+        # not race on the totals.
+        self._counter_lock = threading.Lock()
+
+        # Lazy clients.
+        self._sync_client: OpenAI | None = None
 
     # ------------------------------------------------------------------
-    # Model load
+    # Clients
     # ------------------------------------------------------------------
 
-    def _load_model(self) -> None:
-        if self._model is not None:
-            return
-
-        import torch
-        from transformers import AutoModelForCausalLM, AutoTokenizer
-
-        # Capture the resolved HF revision (commit sha) for audit. Best-effort:
-        # if the hub is unreachable we record "unknown" rather than failing —
-        # the generator can still run from a local cache.
-        try:
-            from huggingface_hub import HfApi  # type: ignore
-
-            self._model_revision = HfApi().model_info(self.model_id).sha or "unknown"
-        except Exception:  # noqa: BLE001
-            self._model_revision = "unknown"
-
-        tokenizer = AutoTokenizer.from_pretrained(self.model_id)
-        # Qwen 2.5 ships with pad_token=None; left-padding required for
-        # batched causal generation so all sequences end aligned.
-        if tokenizer.pad_token is None:
-            tokenizer.pad_token = tokenizer.eos_token
-        tokenizer.padding_side = "left"
-
-        model_kwargs: dict[str, Any] = {}
-        if self.dtype == "fp16":
-            model_kwargs["torch_dtype"] = torch.float16
-        elif self.dtype == "bf16":
-            model_kwargs["torch_dtype"] = torch.bfloat16
-        elif self.dtype == "4bit":
-            from transformers import BitsAndBytesConfig
-
-            model_kwargs["quantization_config"] = BitsAndBytesConfig(
-                load_in_4bit=True,
-                bnb_4bit_compute_dtype=torch.float16,
-                bnb_4bit_quant_type="nf4",
-                bnb_4bit_use_double_quant=True,
+    def _ensure_api_key(self) -> str:
+        key = os.environ.get(self.api_key_env)
+        if not key:
+            raise EnvironmentError(
+                f"Missing API key — set ${self.api_key_env} in env (.env / Colab Secret)."
             )
+        return key
 
-        model = AutoModelForCausalLM.from_pretrained(
-            self.model_id,
-            device_map=self.device,
-            **model_kwargs,
-        )
-        model.eval()
-
-        # Deterministic seeding for reproducibility — Qwen uses sampling by
-        # default. We use deterministic greedy below so seed is mainly
-        # belt-and-braces for any future sampling experiments.
-        torch.manual_seed(self.seed)
-        if torch.cuda.is_available():
-            torch.cuda.manual_seed_all(self.seed)
-
-        self._tokenizer = tokenizer
-        self._model = model
-
-    # ------------------------------------------------------------------
-    # Chat template
-    # ------------------------------------------------------------------
-
-    def _apply_chat_template(self, question: str) -> str:
-        """Render the ChatML prompt string for one question."""
-        assert self._tokenizer is not None, "_load_model must be called first"
-        user_msg = self._user_tmpl.replace("{question}", question)
-        messages = [
-            {"role": "system", "content": self._system},
-            {"role": "user", "content": user_msg},
-        ]
-        return self._tokenizer.apply_chat_template(
-            messages,
-            tokenize=False,
-            add_generation_prompt=True,
-        )
+    @property
+    def sync_client(self) -> OpenAI:
+        if self._sync_client is None:
+            _strip_openai_base_url_if_blank()
+            self._sync_client = OpenAI(api_key=self._ensure_api_key())
+        return self._sync_client
 
     # ------------------------------------------------------------------
     # Cache
     # ------------------------------------------------------------------
 
     def _cache_key(self, question: str) -> str:
-        """sha256(question + prompt_sha + n + max_new_tokens) — model_id is
-        already part of the cache_dir layout so it isn't repeated in the key."""
+        """sha256 over every input that influences the response."""
         h = hashlib.sha256()
         h.update(question.encode("utf-8"))
-        h.update(b"|")
+        h.update(b"|sha=")
         h.update(self._prompt_sha.encode("utf-8"))
         h.update(b"|n=")
         h.update(str(self.n).encode("utf-8"))
-        h.update(b"|mnt=")
-        h.update(str(self.max_new_tokens).encode("utf-8"))
+        h.update(b"|model=")
+        h.update(self.model.encode("utf-8"))
+        h.update(b"|mt=")
+        h.update(str(self.max_tokens).encode("utf-8"))
+        h.update(b"|temp=")
+        h.update(f"{self.temperature:.4f}".encode("utf-8"))
         return h.hexdigest()
 
     def _cache_path(self, key: str) -> Path:
         return self.cache_dir / f"{key}.json"
 
-    def _cache_get(self, key: str) -> list[str] | None:
+    def _cache_get(self, key: str) -> dict | None:
         p = self._cache_path(key)
         if not p.exists():
             return None
@@ -270,120 +301,168 @@ class QwenHydeGenerator:
             return None
         if any(not isinstance(d, str) for d in docs):
             return None
-        return docs
+        return data
 
-    def _cache_put(self, key: str, question: str, docs: list[str]) -> None:
+    def _cache_put(self, key: str, payload: _CachePayload) -> None:
         self.cache_dir.mkdir(parents=True, exist_ok=True)
-        payload = _CachePayload(
-            question=question,
-            model_id=self.model_id,
-            model_revision=self._model_revision or "unknown",
-            prompt_sha=self._prompt_sha,
-            n=self.n,
-            max_new_tokens=self.max_new_tokens,
-            generated_at=datetime.now(timezone.utc).isoformat(),
-            generated_docs=docs,
-        )
-        # Atomic write — write to .tmp then rename so a crash mid-write
-        # never leaves a partial JSON in cache.
+        # Atomic write — tmp → rename so a crash mid-write never leaves a
+        # half-JSON file in cache.
         tmp = self._cache_path(key).with_suffix(".json.tmp")
-        tmp.write_text(json.dumps(payload.to_dict(), ensure_ascii=False, indent=2), encoding="utf-8")
+        tmp.write_text(
+            json.dumps(payload.to_dict(), ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
         os.replace(tmp, self._cache_path(key))
 
     # ------------------------------------------------------------------
-    # Generation
+    # Counter updates
     # ------------------------------------------------------------------
 
-    def _generate_raw(self, prompts: list[str]) -> list[str]:
-        """Run the model on a list of fully-rendered chat prompts."""
-        assert self._model is not None and self._tokenizer is not None
+    def _record_call(self, usage: dict[str, int], cost_usd: float) -> None:
+        with self._counter_lock:
+            self.total_api_calls += 1
+            self.total_cost_usd += cost_usd
+            self.total_prompt_tokens += int(usage.get("prompt_tokens") or 0)
+            self.total_completion_tokens += int(usage.get("completion_tokens") or 0)
+            self.total_cached_tokens += int(usage.get("cached_tokens") or 0)
 
-        import torch
+    def _record_cache_hit(self) -> None:
+        with self._counter_lock:
+            self.total_cache_hits += 1
 
-        enc = self._tokenizer(
-            prompts,
-            return_tensors="pt",
-            padding=True,
-            truncation=False,
-        ).to(self._model.device)
-
-        with torch.no_grad():
-            out = self._model.generate(
-                **enc,
-                max_new_tokens=self.max_new_tokens,
-                do_sample=False,             # deterministic greedy
-                temperature=1.0,             # ignored when do_sample=False
-                pad_token_id=self._tokenizer.pad_token_id,
-                eos_token_id=self._tokenizer.eos_token_id,
-            )
-        # out: [batch, prompt_len + gen_len] — slice the gen portion only.
-        gen_only = out[:, enc["input_ids"].shape[1]:]
-        decoded = self._tokenizer.batch_decode(gen_only, skip_special_tokens=True)
-        return [d.strip() for d in decoded]
+    # ------------------------------------------------------------------
+    # Public: sync single-question generate (cache-aware)
+    # ------------------------------------------------------------------
 
     def generate(self, question: str) -> list[str]:
-        """Return N hypothetical legal-document passages. Cache-aware."""
+        """Return N hypothetical legal-document passages for ``question``.
+
+        Cache hit → returns cached docs without touching OpenAI.
+        Cache miss → issues N synchronous API calls, persists payload,
+        returns docs. ``cost_usd`` is added to ``self.total_cost_usd``.
+        """
         key = self._cache_key(question)
         cached = self._cache_get(key)
         if cached is not None:
-            return cached
+            self._record_cache_hit()
+            return list(cached["generated_docs"])
 
-        self._load_model()
-        prompt = self._apply_chat_template(question)
-        # When N>1 we feed the same prompt N times in one batch. Since
-        # do_sample=False is deterministic the N outputs would be identical
-        # — for the plan's D2 (N=1) this is fine. If a future ablation
-        # raises N, swap to sampling here (and re-seed per call).
-        prompts = [prompt] * self.n
-        docs = self._generate_raw(prompts)
-        self._cache_put(key, question, docs)
+        client = self.sync_client
+        usage_total = {"prompt_tokens": 0, "completion_tokens": 0, "cached_tokens": 0}
+        docs: list[str] = []
+        model_returned: str = self.model
+        for _ in range(self.n):
+            doc, usage, m_ret = _call_sync_with_retry(
+                client=client,
+                model=self.model,
+                system=self._system,
+                user=self._user_tmpl.replace("{question}", question),
+                max_tokens=self.max_tokens,
+                temperature=self.temperature,
+            )
+            docs.append(doc)
+            for k in usage_total:
+                usage_total[k] += int(usage.get(k) or 0)
+            model_returned = m_ret  # last wins — OpenAI returns the same id within a call
+
+        cost = _estimate_cost_usd(self.model, usage_total)
+        payload = _CachePayload(
+            question=question,
+            model_id=self.model,
+            model_returned=model_returned,
+            prompt_sha=self._prompt_sha,
+            n=self.n,
+            max_tokens=self.max_tokens,
+            temperature=self.temperature,
+            generated_at=datetime.now(timezone.utc).isoformat(),
+            generated_docs=docs,
+            usage=usage_total,
+            cost_usd=cost,
+        )
+        self._cache_put(key, payload)
+        self._record_call(usage_total, cost)
         return docs
 
-    def generate_batch(self, questions: list[str]) -> list[list[str]]:
-        """Batched single-pass generation across multiple questions.
+    # ------------------------------------------------------------------
+    # Public: batched async generate (cache-aware, concurrent)
+    # ------------------------------------------------------------------
 
-        Cache hits return immediately and never trigger a model load. Only
-        the cache-miss subset is run through the model, in chunks of
-        ``batch_size``. Returned list is parallel to ``questions``.
+    def generate_batch(self, questions: list[str]) -> list[list[str]]:
+        """Batched, concurrent generation. Cache hits return instantly.
+
+        Internally runs an asyncio loop with ``Semaphore(self.concurrency)``
+        + tenacity retry per call. Returned list is parallel to ``questions``.
         """
         results: list[list[str] | None] = [None] * len(questions)
         miss_indices: list[int] = []
-        miss_keys: list[str] = []
         for i, q in enumerate(questions):
             key = self._cache_key(q)
             cached = self._cache_get(key)
             if cached is not None:
-                results[i] = cached
+                results[i] = list(cached["generated_docs"])
+                self._record_cache_hit()
             else:
                 miss_indices.append(i)
-                miss_keys.append(key)
 
-        if miss_indices:
-            self._load_model()
-            for chunk_start in range(0, len(miss_indices), self.batch_size):
-                chunk_idx = miss_indices[chunk_start : chunk_start + self.batch_size]
-                chunk_keys = miss_keys[chunk_start : chunk_start + self.batch_size]
-                # Each question expands to N copies of its prompt; flatten.
-                expanded_prompts: list[str] = []
-                expanded_owner: list[int] = []  # index back into chunk_idx
-                for local_i, q_idx in enumerate(chunk_idx):
-                    prompt = self._apply_chat_template(questions[q_idx])
-                    for _ in range(self.n):
-                        expanded_prompts.append(prompt)
-                        expanded_owner.append(local_i)
+        if not miss_indices:
+            out: list[list[str]] = []
+            for r in results:
+                assert r is not None
+                out.append(r)
+            return out
 
-                decoded = self._generate_raw(expanded_prompts)
+        # Run async batch for cache misses.
+        async def _run() -> dict[int, list[str]]:
+            _strip_openai_base_url_if_blank()
+            async with AsyncOpenAI(api_key=self._ensure_api_key()) as aclient:
+                sem = asyncio.Semaphore(self.concurrency)
 
-                # Re-bucket back to per-question N-tuples and persist cache.
-                per_q_docs: dict[int, list[str]] = {i: [] for i in range(len(chunk_idx))}
-                for owner, doc in zip(expanded_owner, decoded):
-                    per_q_docs[owner].append(doc)
-                for local_i, q_idx in enumerate(chunk_idx):
-                    docs = per_q_docs[local_i]
-                    self._cache_put(chunk_keys[local_i], questions[q_idx], docs)
-                    results[q_idx] = docs
+                async def _one(idx: int) -> tuple[int, list[str]]:
+                    q = questions[idx]
+                    docs: list[str] = []
+                    usage_total = {"prompt_tokens": 0, "completion_tokens": 0, "cached_tokens": 0}
+                    model_returned = self.model
+                    async with sem:
+                        for _ in range(self.n):
+                            doc, usage, m_ret = await _call_async_with_retry(
+                                aclient=aclient,
+                                model=self.model,
+                                system=self._system,
+                                user=self._user_tmpl.replace("{question}", q),
+                                max_tokens=self.max_tokens,
+                                temperature=self.temperature,
+                            )
+                            docs.append(doc)
+                            for k in usage_total:
+                                usage_total[k] += int(usage.get(k) or 0)
+                            model_returned = m_ret
+                    cost = _estimate_cost_usd(self.model, usage_total)
+                    key = self._cache_key(q)
+                    payload = _CachePayload(
+                        question=q,
+                        model_id=self.model,
+                        model_returned=model_returned,
+                        prompt_sha=self._prompt_sha,
+                        n=self.n,
+                        max_tokens=self.max_tokens,
+                        temperature=self.temperature,
+                        generated_at=datetime.now(timezone.utc).isoformat(),
+                        generated_docs=docs,
+                        usage=usage_total,
+                        cost_usd=cost,
+                    )
+                    self._cache_put(key, payload)
+                    self._record_call(usage_total, cost)
+                    return idx, docs
 
-        # All slots must be filled now.
+                coros = [_one(i) for i in miss_indices]
+                out_pairs = await asyncio.gather(*coros)
+                return dict(out_pairs)
+
+        miss_results = asyncio.run(_run())
+        for i, docs in miss_results.items():
+            results[i] = docs
+
         out: list[list[str]] = []
         for r in results:
             assert r is not None
@@ -425,40 +504,107 @@ class QwenHydeGenerator:
         return encode
 
     # ------------------------------------------------------------------
-    # Diagnostics
+    # Diagnostics / accessors
     # ------------------------------------------------------------------
-
-    def cuda_memory_mb(self) -> dict[str, float]:
-        """Return current/peak CUDA memory in MB for the active device.
-
-        Used by the Phase 3 dry-run to report VRAM headroom before / after
-        model load. Returns ``{}`` when CUDA is not available.
-        """
-        try:
-            import torch
-
-            if not torch.cuda.is_available():
-                return {}
-            dev = torch.cuda.current_device()
-            return {
-                "allocated_mb": round(torch.cuda.memory_allocated(dev) / 1024**2, 1),
-                "reserved_mb": round(torch.cuda.memory_reserved(dev) / 1024**2, 1),
-                "max_allocated_mb": round(
-                    torch.cuda.max_memory_allocated(dev) / 1024**2, 1
-                ),
-            }
-        except Exception:  # noqa: BLE001
-            return {}
 
     @property
     def prompt_sha(self) -> str:
-        """sha256 of the loaded prompt file — used for cache keys + audit."""
         return self._prompt_sha
 
     @property
     def prompt_source_path(self) -> Path:
-        """Resolved on-disk path of the prompt file (honours override env)."""
         return resolve_prompt_path(self.prompt_path)
 
+    def cost_summary(self) -> dict[str, Any]:
+        """Snapshot of counters — runner prints this at the end of a batch."""
+        with self._counter_lock:
+            return {
+                "model_id": self.model,
+                "api_calls": self.total_api_calls,
+                "cache_hits": self.total_cache_hits,
+                "total_cost_usd": round(self.total_cost_usd, 6),
+                "prompt_tokens": self.total_prompt_tokens,
+                "completion_tokens": self.total_completion_tokens,
+                "cached_tokens": self.total_cached_tokens,
+            }
 
-__all__ = ["QwenHydeGenerator"]
+
+# ---------------------------------------------------------------------------
+# OpenAI call wrappers — tenacity-retried, sync + async variants
+# ---------------------------------------------------------------------------
+
+# Retry policy matches offline/llm_extract.py:289-294 verbatim so a
+# transient RateLimitError / APIError gets the same handling everywhere.
+_RETRY_KW: dict[str, Any] = dict(
+    stop=stop_after_attempt(5),
+    wait=wait_exponential(multiplier=2, min=4, max=60),
+    retry=retry_if_exception_type((RateLimitError, APIError)),
+    reraise=True,
+)
+
+
+@retry(**_RETRY_KW)
+def _call_sync_with_retry(
+    *,
+    client: OpenAI,
+    model: str,
+    system: str,
+    user: str,
+    max_tokens: int,
+    temperature: float,
+) -> tuple[str, dict[str, int], str]:
+    resp = client.chat.completions.create(
+        model=model,
+        messages=[
+            {"role": "system", "content": system},
+            {"role": "user", "content": user},
+        ],
+        max_tokens=max_tokens,
+        temperature=temperature,
+    )
+    return _extract_doc_usage(resp)
+
+
+@retry(**_RETRY_KW)
+async def _call_async_with_retry(
+    *,
+    aclient: AsyncOpenAI,
+    model: str,
+    system: str,
+    user: str,
+    max_tokens: int,
+    temperature: float,
+) -> tuple[str, dict[str, int], str]:
+    resp = await aclient.chat.completions.create(
+        model=model,
+        messages=[
+            {"role": "system", "content": system},
+            {"role": "user", "content": user},
+        ],
+        max_tokens=max_tokens,
+        temperature=temperature,
+    )
+    return _extract_doc_usage(resp)
+
+
+def _extract_doc_usage(resp) -> tuple[str, dict[str, int], str]:
+    """Pull (doc_text, usage_dict, model_returned) from a chat completion."""
+    if not resp.choices:
+        raise RuntimeError("OpenAI returned 0 choices")
+    content = resp.choices[0].message.content or ""
+    doc = content.strip()
+    if not doc:
+        raise RuntimeError("OpenAI returned empty content")
+    cached = 0
+    if resp.usage is not None and getattr(resp.usage, "prompt_tokens_details", None) is not None:
+        cached = getattr(resp.usage.prompt_tokens_details, "cached_tokens", 0) or 0
+    usage = {
+        "prompt_tokens": int(resp.usage.prompt_tokens) if resp.usage else 0,
+        "completion_tokens": int(resp.usage.completion_tokens) if resp.usage else 0,
+        "cached_tokens": int(cached),
+    }
+    model_returned = str(resp.model or "")
+    return doc, usage, model_returned
+
+
+__all__ = ["OpenAIHydeGenerator"]

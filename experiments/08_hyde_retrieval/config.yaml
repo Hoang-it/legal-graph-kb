@@ -1,18 +1,22 @@
-name: "HyDE retrieval — Qwen 2.5 3B Instruct hypothetical doc on BGE-M3 dense channel"
+name: "HyDE retrieval — gpt-4o-mini hypothetical doc, stratified 50-question pilot"
 description: |
   Tests Gao et al. 2022 (HyDE) on top of the BGE-M3 LoRA dense channel of
-  V5RetrievalPipeline. Generator: Qwen/Qwen2.5-3B-Instruct on Colab Free
-  T4 (fp16, N=1 hypothetical doc per question, max_new_tokens=400).
+  V5RetrievalPipeline. Generator: OpenAI gpt-4o-mini (N=1 hypothetical doc
+  per question, max_tokens=700, temperature=0).
+
+  Scope: PILOT on 50 stratified questions (in_corpus / mixed / ooc /
+  unparseable proportional to the full 200-question dataset, seed=0).
+  Goal — measure cost + retrieval lift before committing to full 200.
 
   Plug-in point: replace the dense query embedding only — sparse channel
-  keeps the raw question (plan §D3, isolates HyDE contribution to dense).
+  keeps the raw question (plan §D4, isolates HyDE contribution to dense).
 
-  Four arms — all retrieval-only, no LLM, no E2E:
+  Four arms — all retrieval-only, no LLM generator, no E2E:
 
     dense              → V5RetrievalPipeline.retrieve_dense_only
                          (BGE-M3 LoRA + clause_vec_tuned, dense_k=100)
     dense_hyde         → V5RetrievalPipeline.retrieve_dense_only_hyde
-                         (same, but dense query = embedding of Qwen-generated
+                         (same, but dense query = embedding of gpt-4o-mini
                          hypothetical doc)
     full_rerank        → retrieve_only on pipeline WITHOUT hyde
                          (full v5: dense+sparse+temporal+RRF+rerank+expand)
@@ -22,16 +26,28 @@ description: |
   Both retrieval pipelines share the same encoder + dense index + reranker
   as exp 07 (scaled-up knobs) so K up to 100 is meaningful.
 
-  No inheritance from prior experiments (plan §D7 — strict no-inherit).
-  Records produced by scripts/exp08_run.py; metrics by scripts/exp08_metrics.py;
-  funnel by scripts/exp08_funnel.py. eval_core CLI is not used for this
+  HyDE generation is cached on disk under artifacts/hyde/openai__gpt-4o-mini/
+  so re-runs cost $0. The cache payload records prompt_tokens /
+  completion_tokens / cached_tokens / cost_usd / model_returned (OpenAI
+  snapshot id, e.g. gpt-4o-mini-2024-07-18) for audit.
+
+  Pilot stt list persisted at pilot_50_stt.json — metrics + funnel
+  auto-filter to that subset.
+
+  Pre-flight cost estimate: ~$0.025 for 50 questions (1 LLM call/q at
+  ~$0.0005). Cap enforced in runner: $0.50 (well above estimate; aborts
+  before any spend if the estimate exceeds the cap).
+
+  No inheritance from prior experiments. Records produced by
+  scripts/exp08_run.py; metrics by scripts/exp08_metrics.py; funnel by
+  scripts/exp08_funnel.py. eval_core CLI is not used for this
   retrieval-only audit (so `arms: {}` below is intentional).
 
 date: "2026-05-31"
 
 dataset:
   questions: data/eval/questions_200.json
-  n: 200
+  n: 50
 
 parent: null
 

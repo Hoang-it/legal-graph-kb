@@ -7,28 +7,79 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Planned — HyDE retrieval with Qwen 2.5 3B on Colab Free (experiment 08)
+### Decided — Strict tuple-equal citation matching for E2E (2026-05-31)
+
+**Scope**: Updated [`docs/plans/v5_general_retrieval.md`](plans/v5_general_retrieval.md)
+§5 to replace the previously-described "adaptive granularity policy"
+with a stricter rule: a predicted citation matches a gold citation
+**iff** the full tuple `(law_id, article_n, clause_n, point_letter)`
+matches exactly — no component may differ, be missing, or be
+over-specified. Rationale: a wrong khoản may not exist in the law;
+a missing khoản leaves a reader unable to locate the rule. Six-row
+example table in plan §5 enumerates HIT / MISS verdicts.
+
+**Scope distinction**: strict tuple applies **only to E2E citation
+metrics** (LLM emits citation → parsed → tuple). Retrieval-only
+experiments (exp 06 / 07 / 08, no LLM) stay article-deduped
+diagnostic — they answer "did dense surface the right Điều at all?"
+The pipeline is also allowed to fetch sibling clauses of a hit
+article to widen LLM context (not a metric leak — the LLM still has
+to emit a strict-correct citation to score). `law_id` MUST match
+at every layer.
+
+**Status**: policy decision committed to plan. Implementation
+**pending** — tracked as task #21 in
+[`docs/plans/exp08_followups_and_strict_metric.md`](plans/exp08_followups_and_strict_metric.md).
+v4 baselines (`experiments/01_initial_eval`) must be re-aggregated
+under the new policy before any v5-vs-v4 A/B can be published.
+
+**Blocker for**: Sprint 3 final eval.
+
+### Done (pilot) — HyDE retrieval with gpt-4o-mini (experiment 08)
 
 **Scope**: Hypothetical Document Embeddings on the BGE-M3 dense channel
-of `V5RetrievalPipeline`. Generator = Qwen 2.5 3B Instruct local on
-Colab Free T4 (no OpenAI API). 4 arms — `dense`, `dense_hyde`,
+of `V5RetrievalPipeline`. Generator = OpenAI `gpt-4o-mini` (N=1,
+max_tokens=700, temperature=0). 4 arms — `dense`, `dense_hyde`,
 `full_rerank`, `full_rerank_hyde` — same metric suite as experiment 07.
 
-**Motivation**: experiment 06 funnel showed dense is the dominant
-signal source, but BHXH questions are written in casual narrative style
-while KG clauses are formal legal text. HyDE should bridge that style
-gap.
+**Pivot from Qwen** (2026-05-31): the original plan was Qwen 2.5 3B
+on Colab Free T4 (see superseded
+[`hyde_qwen_colab.md`](plans/hyde_qwen_colab.md)). Pivoted because the
+Qwen 7B fallback was infeasible on Colab Free VRAM and Qwen 3B output
+quality on Vietnamese legal text felt risky for a thesis-grade
+comparison. gpt-4o-mini is reproducible (snapshot id audit-able),
+trivial cost (~$0.025 / 50-q pilot, ~$0.10 / 200-q full), no GPU
+dependency. New plan: [`hyde_gpt4o_mini.md`](plans/hyde_gpt4o_mini.md).
 
-**Plan**: [`docs/plans/hyde_qwen_colab.md`](plans/hyde_qwen_colab.md) —
-fully self-contained: 15 locked decisions (D1-D15), file-by-file code
-surface, phase plan, gate criteria, risks, prerequisites. Ready for
-implementation in a fresh session.
+**Pilot 50 result** (2026-05-31, stratified seed=0):
 
-**Status**: design accepted 2026-05-30. Implementation phases 1-10
-pending. Branch strategy: `exp/08-hyde` from `main`.
+| Criterion | Threshold | Result | Verdict |
+|---|---:|---:|:---:|
+| `dense_hyde` R@12 in_corpus (abs) | +0.030 | **+0.1053** | ✅ PASS (3.5× margin) |
+| `dense_hyde` NDCG@12 in_corpus (rel) | +5.0% | **+35.2%** | ✅ PASS (7× margin) |
+| `full_hyde` R-Prec in_corpus (rel) | +15.0% | −0.5% | ❌ FAIL |
 
-**Success criteria** (in_corpus stratum): R@12 ≥ +3pp absolute, or
-NDCG@10 ≥ +5% rel, or R-Precision ≥ +15% rel. Win triggers ADR 002.
+`dense_hyde` R-Prec almost doubles (0.075 → 0.148). `full_rerank_hyde`
+is flat — the cross-encoder reranker absorbs the dense-side lift.
+**2/3 criteria pass strongly → strong pilot signal.** Cumulative
+LLM cost over the whole exp 08 cycle: **$0.0122**.
+
+Full result summary, funnel, and decision rationale:
+[`experiments/08_hyde_retrieval/README.md`](../experiments/08_hyde_retrieval/README.md).
+
+**HyDE LLM responses** persisted to disk at
+`artifacts/hyde/openai__gpt-4o-mini/<sha256>.json` (gitignored).
+Cache key over `(question + prompt_sha + n + model + max_tokens +
+temperature)`. Re-runs hit cache → $0.
+
+**Next**: scale to full 200 + run E2E arms (LLM generator on top of
+HyDE retrieval) to verify the retrieval lift translates to E2E
+citation lift. Both blocked on task #21 (strict metric) for
+publishable numbers. See
+[`docs/plans/exp08_followups_and_strict_metric.md`](plans/exp08_followups_and_strict_metric.md).
+
+**Branch**: `exp/08-hyde` (rewrite uncommitted in working tree as of
+2026-05-31 — see handoff doc for suggested commit boundaries).
 
 ### Decided — retrieval default = `full_rerank` arm at K=12 (Decision 001)
 

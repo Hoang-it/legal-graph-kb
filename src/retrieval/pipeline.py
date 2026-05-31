@@ -40,7 +40,7 @@ from src.retrieval.hybrid_retriever import (
     RetrievalAudit,
     _dedupe_articles_in_order,
 )
-from src.retrieval.hyde import QwenHydeGenerator
+from src.retrieval.hyde import OpenAIHydeGenerator
 from src.retrieval.reranker import CrossEncoderReranker
 
 load_dotenv()
@@ -138,7 +138,7 @@ class V5RetrievalPipeline:
         dense_index: str | None = None,
         reranker_model: str | None = None,
         temporal_mode: str = "strict_today_default",
-        hyde: QwenHydeGenerator | None = None,
+        hyde: OpenAIHydeGenerator | None = None,
     ):
         from neo4j import GraphDatabase
 
@@ -304,7 +304,7 @@ class V5RetrievalPipeline:
         """
         if self.hyde is None:
             raise RuntimeError(
-                "retrieve_dense_only_hyde requires a QwenHydeGenerator passed "
+                "retrieve_dense_only_hyde requires a OpenAIHydeGenerator passed "
                 "via V5RetrievalPipeline(hyde=...)."
             )
 
@@ -329,10 +329,10 @@ class V5RetrievalPipeline:
             "adapter_path": self.adapter_path,
             "dense_index": self.dense_index,
             "hyde": {
-                "model_id": self.hyde.model_id,
+                "model_id": self.hyde.model,
                 "n": self.hyde.n,
-                "max_new_tokens": self.hyde.max_new_tokens,
-                "dtype": self.hyde.dtype,
+                "max_tokens": self.hyde.max_tokens,
+                "temperature": self.hyde.temperature,
                 "prompt_sha": self.hyde.prompt_sha,
             },
         }
@@ -378,10 +378,10 @@ class V5RetrievalPipeline:
                 None
                 if self.hyde is None
                 else {
-                    "model_id": self.hyde.model_id,
+                    "model_id": self.hyde.model,
                     "n": self.hyde.n,
-                    "max_new_tokens": self.hyde.max_new_tokens,
-                    "dtype": self.hyde.dtype,
+                    "max_tokens": self.hyde.max_tokens,
+                    "temperature": self.hyde.temperature,
                     "prompt_sha": self.hyde.prompt_sha,
                 }
             ),

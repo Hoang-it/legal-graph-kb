@@ -59,6 +59,15 @@ REPORT_DIR = EXP_DIR / "report"
 METRICS_DIR = EXP_DIR / "metrics"
 QUESTIONS_PATH = _REPO / "data" / "eval" / "questions_200.json"
 REGISTRY_PATH = _REPO / "data" / "legal_sources.yaml"
+PILOT_50_PATH = EXP_DIR / "pilot_50_stt.json"
+
+
+def _pilot_subset() -> set[int] | None:
+    """Return the stt set the pilot covers, or None for the full dataset."""
+    if not PILOT_50_PATH.exists():
+        return None
+    payload = json.loads(PILOT_50_PATH.read_text(encoding="utf-8"))
+    return set(int(s) for s in payload.get("stt_list") or [])
 
 K = 12
 
@@ -136,7 +145,7 @@ def load_gold() -> dict[int, list[str]]:
     return {int(k): v.get("gold_articles") or [] for k, v in data["records"].items()}
 
 
-def load_records() -> list[dict]:
+def load_records(stt_subset: set[int] | None = None) -> list[dict]:
     if not RESULTS_DIR.is_dir():
         print(f"FAIL: results dir not found: {RESULTS_DIR}", file=sys.stderr)
         sys.exit(1)
@@ -144,7 +153,10 @@ def load_records() -> list[dict]:
     for p in sorted(RESULTS_DIR.glob("A*.json")):
         if p.name.endswith(".error.json"):
             continue
-        out.append(json.loads(p.read_text(encoding="utf-8")))
+        rec = json.loads(p.read_text(encoding="utf-8"))
+        if stt_subset is not None and int(rec["stt"]) not in stt_subset:
+            continue
+        out.append(rec)
     return out
 
 
@@ -330,7 +342,12 @@ def main() -> int:
     q_by_stt = {q["stt"]: q for q in questions}
     in_corpus_codes = {m.full_id for m in load_law_metadata().values()}
 
-    records = load_records()
+    stt_subset = _pilot_subset()
+    if stt_subset is not None:
+        print(f"Pilot subset detected ({PILOT_50_PATH.name}): "
+              f"funnelling n={len(stt_subset)} questions")
+
+    records = load_records(stt_subset=stt_subset)
     rows = [compute_per_record(r, gold_map) for r in records]
 
     cats: dict[str, list[dict]] = {"in_corpus": [], "mixed": [], "ooc": [], "unparseable": []}

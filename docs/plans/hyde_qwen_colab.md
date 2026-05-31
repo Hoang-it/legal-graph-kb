@@ -1,10 +1,21 @@
 # Plan — HyDE retrieval with Qwen 2.5 3B Instruct on Colab Free (experiment 08)
 
-- **Status**: Accepted (2026-05-30), ready to implement
+- **Status**: **Superseded** by [`docs/plans/hyde_gpt4o_mini.md`](hyde_gpt4o_mini.md) (2026-05-31)
+- **Supersede reason**: Qwen 7B fallback infeasible on Colab Free T4 (VRAM
+  tight after BGE-M3 + reranker co-residency); Qwen 3B output quality on
+  Vietnamese legal text felt risky for a thesis-grade comparison. Pivoted
+  back to gpt-4o-mini API — reproducible (snapshot id audit-able), cost
+  trivial (~$0.025 / 50-q pilot, ~$0.10 / 200-q full), no GPU dependency.
+  All cached LLM responses persist locally so re-runs cost $0.
+- **Original status**: Accepted (2026-05-30), ready to implement
 - **Owner**: Nguyễn Hữu Hoàng
 - **Target experiment**: `experiments/08_hyde_retrieval/`
 - **Discussion thread**: design iterated through gpt-4o-mini (v1) → local Qwen
-  (v2) → Colab Free Qwen (v3, this plan)
+  (v2) → Colab Free Qwen (v3, this plan) → **gpt-4o-mini API (v4, current)**
+
+> The remainder of this document is kept verbatim as historical record of
+> the Qwen-on-Colab design. Do NOT use it as the active spec — see the
+> superseding plan linked above.
 
 ## TL;DR
 

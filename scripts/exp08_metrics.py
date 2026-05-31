@@ -56,6 +56,20 @@ METRICS_DIR = EXP_DIR / "metrics"
 REPORT_DIR = EXP_DIR / "report"
 QUESTIONS_PATH = _REPO / "data" / "eval" / "questions_200.json"
 REGISTRY_PATH = _REPO / "data" / "legal_sources.yaml"
+PILOT_50_PATH = EXP_DIR / "pilot_50_stt.json"
+
+
+def _pilot_subset() -> set[int] | None:
+    """Return the stt set the pilot covers, or None for the full dataset.
+
+    When ``pilot_50_stt.json`` is present (written by ``exp08_run.py
+    --pilot-50``), metrics + funnel scripts auto-filter to that subset so
+    aggregate numbers reflect exactly what was retrieved.
+    """
+    if not PILOT_50_PATH.exists():
+        return None
+    payload = json.loads(PILOT_50_PATH.read_text(encoding="utf-8"))
+    return set(int(s) for s in payload.get("stt_list") or [])
 
 ARMS = ("dense", "dense_hyde", "full_rerank", "full_rerank_hyde")
 KS: tuple[int | None, ...] = (12, 20, 30, 50, 70, 100, None)
@@ -152,7 +166,7 @@ def load_gold() -> dict[int, list[str]]:
     return {int(k): v.get("gold_articles") or [] for k, v in data["records"].items()}
 
 
-def load_arm_records(arm: str) -> dict[int, dict]:
+def load_arm_records(arm: str, stt_subset: set[int] | None = None) -> dict[int, dict]:
     arm_dir = RESULTS_DIR / arm
     if not arm_dir.is_dir():
         raise FileNotFoundError(arm_dir)
@@ -161,7 +175,10 @@ def load_arm_records(arm: str) -> dict[int, dict]:
         if p.name.endswith(".error.json"):
             continue
         rec = json.loads(p.read_text(encoding="utf-8"))
-        out[int(rec["stt"])] = rec
+        stt = int(rec["stt"])
+        if stt_subset is not None and stt not in stt_subset:
+            continue
+        out[stt] = rec
     return out
 
 
@@ -479,13 +496,18 @@ def main() -> int:
     q_by_stt = {q["stt"]: q for q in questions}
     in_corpus_codes = {m.full_id for m in load_law_metadata().values()}
 
+    stt_subset = _pilot_subset()
+    if stt_subset is not None:
+        print(f"      Pilot subset detected ({PILOT_50_PATH.name}): "
+              f"scoring n={len(stt_subset)} questions")
+
     print("[2/4] Loading per-arm records + scoring ...")
     per_arm_rows: dict[str, list[dict]] = {}
     per_arm_summary: dict[str, dict] = {}
     per_arm_strat: dict[str, dict] = {}
     for arm in ARMS:
         try:
-            recs = load_arm_records(arm)
+            recs = load_arm_records(arm, stt_subset=stt_subset)
         except FileNotFoundError:
             print(f"      WARN: arm {arm!r} has 0 records (dir missing) — skipping",
                   file=sys.stderr)

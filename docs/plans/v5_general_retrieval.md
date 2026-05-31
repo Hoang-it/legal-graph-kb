@@ -112,14 +112,84 @@ reasoning-heavy.
 
 ### Primary metric: `citation_recall` and `citation_precision` end-to-end
 
-Defined in `evaluation.compute_academic_metrics:compute_citation_metrics()`.
+Defined in `eval_core/metrics.py:compute_citation_metrics()` (the module
+was renamed from `evaluation.compute_academic_metrics` during the
+2026-05 refactor; the contract is unchanged).
 
-**Granularity policy: adaptive.**
-- Gold cites with khoản → match strict (Điều + khoản must both match)
-- Gold cites article-only (no khoản) → match lenient (Điều only)
-- Implementation note: requires updating `compute_citation_metrics()` to read
-  gold granularity per-citation and switch comparison key dynamically. v4
-  baselines must be re-aggregated under the new policy before A/B.
+**Granularity policy: STRICT TUPLE-EQUAL** (decision: 2026-05-31, owner).
+
+A predicted citation matches a gold citation **iff** the full tuple
+`(law_id, article_n, clause_n, point_letter)` matches exactly — no
+component may differ, be missing, or be over-specified. A wrong khoản
+might not exist in the law; a missing khoản leaves the reader unable
+to locate the rule. Strict matching aligns the metric with how a
+lawyer reads a citation.
+
+| Gold | Arm cite | Verdict | Why |
+|---|---|---|---|
+| `L58_2014, Điều 2` | `L58_2014, Điều 2` | **HIT** | exact |
+| `L58_2014, Điều 2` | `L58_2014, Điều 2 khoản 1` | **MISS** | over-specified (arm may have hallucinated a khoản) |
+| `L58_2014, Điều 2 khoản 1` | `L58_2014, Điều 2 khoản 1` | **HIT** | exact |
+| `L58_2014, Điều 2 khoản 1` | `L58_2014, Điều 2` | **MISS** | missing khoản |
+| `L58_2014, Điều 2 khoản 1` | `L58_2014, Điều 2 khoản 2` | **MISS** | wrong khoản |
+| `L58_2014, Điều 2 khoản 1` | `L41_2024, Điều 2 khoản 1` | **MISS** | wrong law |
+
+**Scope distinction — strict applies ONLY to E2E citation metrics**:
+
+- **E2E citation metrics** (LLM emits citation string → parsed → tuple)
+  use strict tuple-equal. This is the **primary metric** for thesis
+  acceptance gates §10.
+- **Retrieval-only experiments** (exp 06 / 07 / 08, no LLM) continue to
+  use **article-deduped diagnostic**. They answer "did dense surface the
+  right Điều at all?" — bottleneck analysis before rerank + LLM commit
+  to a specific khoản. The pipeline is also allowed to fetch sibling
+  clauses of a hit article to widen LLM context (this is a feature,
+  not a metric leak: extra clauses become context for the LLM, but
+  the LLM still has to emit a strict-correct citation to score).
+- **`law_id` MUST match at every layer** (both retrieval-only diagnostic
+  and E2E primary). Wrong law is always a miss — non-negotiable, since
+  citing the wrong statute is the most basic form of legal
+  misinformation.
+
+**Implementation plan** (deferred; task #21 — not coded yet):
+
+1. **`eval_core/gold.py:validate_gold_citations`** — keep `clause_n`
+   and `point_letter` on the normalized gold records. Currently the
+   normalizer rolls everything up into `gold_articles: list[str]` (e.g.
+   `["L58_2014.A2"]`) and drops khoản/điểm. After the change, emit
+   `gold_citations_normalized: list[dict]` with full tuple per citation
+   AND keep `gold_articles` as a derived field for backward compat with
+   retrieval-only audits.
+2. **`eval_core/metrics.py:compute_citation_metrics`** — comparison key
+   becomes the full 4-tuple. Recall denominator = |gold_tuples|;
+   precision denominator = |predicted_tuples|.
+3. **`src/citations.py:parse_displayed_citations`** — verify it already
+   emits the 4-tuple from canonical citation format
+   (`"Điều X khoản Y điểm z"`). It should — the parser predates this
+   policy and was always granularity-aware.
+4. **`tests/test_academic_metrics.py`** — add fixtures covering the 6
+   example rows above. Each fixture asserts the per-citation match
+   verdict so a future refactor cannot silently regress the policy.
+5. **Re-run `python -m eval_core metrics experiments/01_initial_eval`**
+   to re-aggregate the frozen v4 baseline under the new policy. v4
+   records (`results/*.json`) are immutable; only the metrics
+   aggregation (`metrics/academic_metrics.json` + report) gets
+   rewritten. This is the **A/B blocker**: any v5-vs-v4 comparison
+   after this date MUST cite the post-rewrite v4 numbers.
+6. **Document** in `docs/changelog.md`: "2026-05-31 — citation metric
+   switched to strict tuple-equal policy; v4 baselines re-aggregated
+   in same commit. All prior published v4 numbers are deprecated."
+7. **Retrieval-only metric scripts (`scripts/exp{06,07,08}_metrics.py`)
+   stay article-deduped** — explicit comment that they are diagnostic,
+   not the primary thesis metric.
+
+**Expected baseline shift**: v4 article-only recall will drop when
+re-aggregated, because strict-tuple is uniformly stricter than the old
+implicit policy. The §10 acceptance tier numbers (70/80, 85/90, 95/95)
+are interpretive targets — they may need re-calibration based on what
+the strict-tuple v4 baseline actually reads. Do NOT change the
+acceptance tiers preemptively; first see the re-aggregated v4 number,
+then decide if a tier shift is warranted (and document the rationale).
 
 ### No `retrieval_recall@K` as standalone study
 
@@ -210,13 +280,23 @@ Cross-cutting (apply at end of Sprint 3):
 
 | Metric | Threshold (Minimum tier) | Measured by |
 |---|---|---|
-| `citation_recall` end-to-end on 150 test (adaptive policy) | ≥ 0.70 | `evaluation.compute_academic_metrics` |
-| `citation_precision` end-to-end | ≥ 0.80 | same |
+| `citation_recall` end-to-end on 150 test (**strict tuple policy** — see §5) | ≥ 0.70 | `eval_core.metrics.compute_citation_metrics` |
+| `citation_precision` end-to-end (strict tuple policy) | ≥ 0.80 | same |
 | OOC detection F1 | ≥ 0.80 | derived |
 | Median latency per question | ≤ 30s | end-to-end |
 | Reproducibility: re-index with 1 new law (e.g., Luật Việc làm) requires zero code change | pass | manual test |
 
 Target tier (85/90) and stretch tier (95/95) are bonus.
+
+**Tier re-calibration caveat**: tiers were authored under the old
+implicit (article-only) policy. The strict tuple-equal policy is
+uniformly stricter, so the **re-aggregated v4 baseline numbers**
+(after task #21) may sit well below the Minimum tier — that doesn't
+necessarily invalidate v4 quality, only the tier definition. Decision
+to keep / shift tiers will be made AFTER the re-aggregation reads,
+not preemptively. Any tier shift must be documented in
+`docs/changelog.md` with the v4 baseline numbers under both policies
+for traceability.
 
 ## 11. Open questions, settled or deferred
 
