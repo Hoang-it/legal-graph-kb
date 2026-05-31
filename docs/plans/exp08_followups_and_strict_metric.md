@@ -1,8 +1,8 @@
-# Session handoff — exp 08 HyDE pilot done, strict-metric policy locked
+# Session handoff — exp 08 HyDE pilot + strict-metric v2 landed
 
-- **Status**: Active. Created 2026-05-31 at end of pilot 50 session.
+- **Status**: Active. Last updated 2026-05-31 (post task #21).
 - **Owner**: Nguyễn Hữu Hoàng
-- **Branch**: `exp/08-hyde` (local commits ahead of `origin/exp/08-hyde`)
+- **Branch**: `exp/08-hyde` (3 commits ahead of `origin/exp/08-hyde`)
 - **Purpose**: Single canonical handoff so a future session can resume
   without replaying the chat. Covers (1) current state, (2) policy
   decisions locked, (3) pending implementation tasks with priority +
@@ -16,22 +16,23 @@ If you are resuming this work, read:
    `hyde_qwen_colab.md`).
 4. [`experiments/08_hyde_retrieval/README.md`](../../experiments/08_hyde_retrieval/README.md)
    (pilot result summary + verdict).
+5. [`docs/changelog.md`](../changelog.md) Unreleased — the
+   "academic_v1 → academic_v2" entry has the full v4 baseline shift table.
 
-## 1. Current state snapshot (2026-05-31)
+## 1. Current state snapshot (2026-05-31, end of session)
 
 ### Branch + worktree
 - Active branch: `exp/08-hyde`.
-- Local working tree has uncommitted changes from this session:
-  - `src/retrieval/hyde.py` (rewritten Qwen → OpenAIHydeGenerator).
-  - `src/retrieval/pipeline.py` (type hint + field-name fix).
-  - `scripts/exp08_{test_one,run,metrics,funnel}.py` (OpenAI-aware).
-  - `experiments/08_hyde_retrieval/{config.yaml,README.md,pilot_50_stt.json}`.
-  - `docs/plans/hyde_qwen_colab.md` (header marked Superseded).
-  - `docs/plans/hyde_gpt4o_mini.md` (new canonical plan).
-  - `docs/plans/v5_general_retrieval.md` §5 + §10 (strict metric policy).
-  - `notebooks/exp08_hyde_colab.ipynb` (deleted).
-- **None of the above is committed yet.** Decide on commit boundaries
-  before starting the next session.
+- **3 commits ahead of `origin/exp/08-hyde`, working tree clean.**
+
+  | SHA | Title |
+  |---|---|
+  | `8fe0a9d` | feat(retrieval): HyDE với gpt-4o-mini + persistent LLM cache; plan strict tuple metric |
+  | `098d32d` | data(exp08): pilot 50 HyDE results — metrics + funnel + stratified seed |
+  | `6c03617` | feat(metrics): strict tuple-equal citation matching (academic_v2) + v4 baseline re-aggregated |
+
+- Branch not yet pushed to origin. PR `exp/08-hyde → main` is
+  premature — wait until full 200 + E2E confirm before merging.
 
 ### Experiment 08 — pilot 50 done
 - Stratified sample (seed=0): in_corpus=38, mixed=1, ooc=2, unparseable=9.
@@ -115,72 +116,99 @@ Full numbers in [`experiments/08_hyde_retrieval/README.md`](../../experiments/08
 
 ## 3. Pending work — ordered by priority
 
-### Task #21 — Implement strict tuple citation metric (BLOCKER for Sprint 3)
-- **Why blocker**: any v5 vs v4 A/B after 2026-05-31 must cite v4
-  numbers re-aggregated under strict tuple. Mixing two metric
-  definitions invalidates A/B claims for the thesis.
-- **Not yet coded** (user explicitly deferred during this session).
-- **Steps** (verbatim from `v5_general_retrieval.md` §5):
-  1. `eval_core/gold.py:validate_gold_citations` — keep `clause_n` +
-     `point_letter` on normalized gold (currently rolled into
-     `gold_articles: list[str]`). Emit
-     `gold_citations_normalized: list[dict]` with full tuple. Keep
-     `gold_articles` as derived field for retrieval-only audits.
-  2. `eval_core/metrics.py:compute_citation_metrics` — comparison key
-     becomes the full 4-tuple. Recall denominator = |gold_tuples|;
-     precision denominator = |predicted_tuples|.
-  3. Verify `src/citations.py:parse_displayed_citations` emits the
-     4-tuple from canonical citation format ("Điều X khoản Y điểm z").
-  4. `tests/test_academic_metrics.py` — add fixtures covering the
-     6-row example table in §5 (6 verdicts: 1 HIT case-2, plus 4 MISS
-     cases, plus 1 trivial HIT). Each fixture asserts a per-citation
-     verdict so a future refactor cannot silently regress.
-  5. Re-run `python -m eval_core metrics experiments/01_initial_eval`
-     to re-aggregate the frozen v4 baseline under the new policy.
-     Records (`results/*.json`) are immutable; only the metrics
-     aggregation (`metrics/academic_metrics.json` + report) gets
-     rewritten.
-  6. `docs/changelog.md` — entry: "2026-XX-XX — citation metric
-     switched to strict tuple-equal; v4 baselines re-aggregated in
-     same commit." Include before-and-after v4 recall/precision so
-     the published numbers in any old paper draft can be reconciled.
-  7. Leave `scripts/exp{06,07,08}_metrics.py` article-deduped with an
-     explicit comment "diagnostic, not primary metric — see v5 plan §5".
-- **Acceptance**: tests pass; v4 baseline numbers in
-  `experiments/01_initial_eval/metrics/academic_metrics.json` change
-  (likely DOWN, since strict > article-only). After re-aggregation,
-  decide whether §10 acceptance tiers (70/80, 85/90, 95/95) need
-  shift — do NOT shift preemptively, see §10 caveat.
-- **Effort**: ~3–4h pure code, $0 (no API calls).
+### Task #21 — Strict tuple citation metric ✅ DONE (commit `6c03617`)
 
-### Other pending items per v5 plan §4 + §10
+Sprint 3 A/B unblocked. v4 baseline re-aggregated under `academic_v2`;
+v4 records still immutable (`experiments/01_initial_eval/results/*.json`
+untouched), only the metrics + report rewritten.
 
-In priority order (assuming Task #21 lands first):
+Tests: **175/175 pass** (excluding the 2 pre-existing failures
+unrelated to this change: `test_main_arm_preset_is_shared_between_runner_and_metrics`
+and `test_columns_dung_format`).
 
-| # | Item | Why | Cost / effort |
-|---|---|---|---|
-| A | Scale HyDE pilot 50 → full 200 | Confirm pilot magnitude on full dataset. Pilot N=50 is suggestive; thesis chapter needs full-200 numbers. | ~$0.05, ~15 min. Idempotent — runner skips done records. |
-| B | Add E2E arms (`dense_hyde_e2e`, `full_rerank_hyde_e2e`) | exp 08 is retrieval-only. v5 §5 primary metric is **E2E citation_recall/precision**, not retrieval recall. Need to run `V5RetrievalPipeline.ask()` (with LLM generator) on HyDE arms to know whether retrieval lift translates to citation lift. | ~$0.20–0.30 for 200 × 2 arms × gpt-4o-mini. |
-| C | OOC detection metric | v5 §10 gate: F1 ≥ 0.80. Not yet implemented. Question with OOC gold → arm must declare "không có trong corpus" instead of citing. | ~1 day code + integration. |
-| D | E2E latency metric | v5 §10 gate: median ≤ 30s/question. Only retrieval latency measured so far (2.2s). | Drop-in metric once E2E arms exist. |
-| E | M6 Verifier (conditional) | v5 §4 Sprint 2 trigger: precision E2E < 80%. Decide AFTER E2E numbers exist. | Skip if E2E precision already ≥ 80%. |
-| F | 150 / 50 stratified split seal | v5 §5: 150 test for paper, 50 dev for calibration. Currently using all 200. `scripts/seal_eval_split.py` exists — verify if it has been run; if not, run + commit splits. | ~1h. |
-| G | Sprint 3 final eval | All baselines on 150-test, A/B v4-vs-v5 under strict policy, paper-ready tables, OOC F1, multi-tier framing. | 1–2 weeks per v5 plan. |
+v4 baseline macro citation recall — academic_v1 → academic_v2:
 
-### Decision tree for next session
+| arm | v1 | v2 | Δ |
+|---|---:|---:|---:|
+| graphrag | 0.1120 | **0.0000** | −0.1120 |
+| llm_only | 0.0067 | 0.0000 | −0.0067 |
+| logic_lm_no_retrieval | 0.0023 | 0.0000 | −0.0023 |
+| logic_lm_ontology | 0.0073 | 0.0000 | −0.0073 |
+| logic_lm_graphrag | 0.0175 | 0.0000 | −0.0175 |
+| logic_lm_graphrag__gpt-4_1 | 0.1565 | **0.0338** | −0.1227 |
+| logic_lm_graphrag__gpt-4o | 0.1407 | 0.0260 | −0.1147 |
+| logic_lm_graphrag__gpt-5-mini | 0.0785 | 0.0315 | −0.0470 |
+| logic_lm_no_retrieval__gpt-4_1 | 0.0433 | 0.0008 | −0.0425 |
+| logic_lm_no_retrieval__gpt-4o | 0.0400 | 0.0033 | −0.0367 |
+| logic_lm_no_retrieval__gpt-5-mini | 0.0081 | 0.0000 | −0.0081 |
+
+Reading: 5/11 arms collapse to 0.0 because they cite with `khoản`
+granularity while every gold cite in the 200-q dataset is article-only.
+Logic-LM with explicit `__gpt-4_*` answerers retain some recall
+because Prolog forces citation cardinality to match facts loaded
+into the program. See `docs/changelog.md` Unreleased "Changed" entry
+for full rationale.
+
+§10 tier re-calibration: NOT done preemptively per the §10 caveat.
+Decide after seeing actual v2 v5 numbers in Sprint 3.
+
+### Now-immediate items (priority order, post task #21)
+
+| # | Item | Why | Cost / effort | Owner notes |
+|---|---|---|---|---|
+| **A** | **Scale HyDE pilot 50 → full 200** (retrieval-only) | Confirm pilot magnitude on full dataset. Pilot N=50 is suggestive; thesis chapter needs full-200 numbers + per-stratum stability. Cache covers 50/200 questions → only 150 new LLM calls. | ~$0.075, ~15 min wall time. `python scripts/exp08_run.py` (no `--pilot-50`) runs the full set; idempotent — skips done records, prewarm only the new 150. | Cheap insurance before investing engineering time in #B. |
+| **B** | **Add E2E HyDE arms** (`dense_hyde_e2e`, `full_rerank_hyde_e2e`) | exp 08 today is retrieval-only — measures `final_article_ids` lift. v5 §5 primary metric is **E2E citation recall/precision under academic_v2** (the thesis-defining number). Need to run `V5RetrievalPipeline.ask()` (with LLM generator) on HyDE-augmented retrieval to see whether retrieval lift translates to citation lift. Adapter mismatch caveat: the LLM may still emit khoản with article-only gold → strict-tuple MISS even if retrieval is perfect. | ~$0.20–0.30 for 200 × 2 arms × gpt-4o-mini. ~30 min code + 10 min run. | Needs a new runner script (or extend exp08_run.py with an `--e2e` flag) that records `answer` + `citation_ids` + `latency_s` so academic_v2 metrics apply directly. |
+| **C** | **150 / 50 stratified split seal** | v5 §5: 150 test for paper, 50 dev for calibration. Currently scripts read `data/eval/questions_200.json` raw. `scripts/seal_eval_split.py` exists but unknown whether it was already run + committed. | ~1h verify + run + commit | Audit first: `ls data/eval/questions_*.json`. If `questions_150_test.json` + `questions_50_dev.json` already exist + are stratified seed-locked, mark done. Otherwise run the sealer + commit, then point all exp 08 runner / metrics paths at the test split. |
+| **D** | **OOC detection F1 metric** | v5 §10 gate: F1 ≥ 0.80. Question with OOC gold → arm must declare "không có trong corpus" instead of citing. Currently no metric computes this. The 8 OOC questions in the 200-q dataset are a known weak stratum (0 recall under all arms; rerank funnels confirmed). | ~1 day code + integration | New helper in `eval_core/metrics.py`: classify per-record arm output as `{cites_any, declares_ooc, silent}`. Compare to gold OOC flag. Compute F1 over the OOC class. Add to `aggregate.macro`. |
+| **E** | **E2E latency metric** | v5 §10 gate: median ≤ 30s/question E2E. Retrieval-only latency measured (full_rerank ~2.2s); LLM generator latency not. | Drop-in once #B exists | The `elapsed_s` field is already collected by the inference runners; just surface its median into the aggregate. |
+| **F** | **M6 Verifier (conditional)** | v5 §4 Sprint 2 trigger: precision E2E < 80%. Decide AFTER #B numbers exist. | Skip if E2E precision already ≥ 80% under v2; otherwise ~3 days build | A wrong-but-confident citation is the most dangerous failure mode for a legal QA system. If E2E precision is poor, consider Claude or local NLI verifier to drop low-confidence cites. |
+| **G** | **Sprint 3 final eval + thesis chapter** | All baselines on 150-test, A/B v4-vs-v5 (both under `academic_v2`), paper-ready tables, OOC F1, multi-tier framing (70/80, 85/90, 95/95). | 1–2 weeks per v5 plan §7 | The end-state for the v5 plan. Depends on A + B + C + D done. |
+
+### Decision tree (post task #21)
 
 ```
-Did Task #21 land?
-├─ NO → Code Task #21 first. Without it, any number from items A–G
-│       is unreportable for the thesis.
-└─ YES → Pick branch:
-         ├─ Item A (full 200 HyDE retrieval) — fastest, $0.05, 15 min.
-         │       Confirms pilot. Cheap insurance before investing in E2E.
-         ├─ Item B (E2E HyDE arms) — main answer to "does HyDE actually
-         │       lift the metric the thesis cares about?". $0.20–0.30,
-         │       ~30 min including code.
-         └─ Items C–G are Sprint 3 territory — defer until A + B done.
+Did the full 200 HyDE retrieval-only run finish (item A)?
+├─ NO → run item A first ($0.075, 15 min). Confirms pilot signal at
+│       higher N before investing engineering in #B.
+└─ YES → Did E2E HyDE arm runner exist (item B)?
+         ├─ NO → write the runner + run on full 200 ($0.20-0.30,
+         │       ~30 min code + 10 min run). This produces the
+         │       thesis primary number.
+         └─ YES → branch on item B result:
+                  ├─ E2E precision ≥ 80% under v2 → skip M6 verifier
+                  │       (item F); proceed to items C + D + G.
+                  └─ E2E precision < 80% → triage:
+                        ├─ Low recall → add HyDE to dense further (no
+                        │   action; result speaks).
+                        ├─ Low precision (over-citing) → build M6
+                        │   verifier (item F), re-run E2E, then G.
+                        └─ Both low → document as limitation; G.
 ```
+
+### Task #21 follow-up — items NOT in scope but flagged for future
+
+These came up while implementing task #21; flagged so future sessions
+don't re-discover the same thing.
+
+1. **`prolog_law_id` registry alias completeness**. The v4 logic_lm
+   arms scored higher under v1 partly because Prolog-emitted
+   citations sometimes match wrong-khoản gold by accident. Under
+   v2 the bound is tight. If a Sprint 3 ablation wants to maximise
+   Logic-LM v4 → re-run with the post-2026-05 registry which has
+   added laws (`ND143_2018`, `QD838_BHXH`) — those law_ids did not
+   exist when v4 records were produced, so any v4 citation referencing
+   them parses as `BAD_ID` under the strict tuple. Acceptable for
+   audit, mention as caveat in any v4-vs-v5 narrative.
+2. **`scripts/exp{06,07,08}_metrics.py` use a local article-only
+   diagnostic** that bypasses `eval_core.metrics`. Per the v5 §5
+   scope distinction this is correct (retrieval-only ≠ primary
+   metric). Do NOT migrate them to `academic_v2` — they would
+   become misleading. The header comment in each file already says
+   "diagnostic, not primary".
+3. **`expected_summary.json` fixture had no version field before**.
+   Now carries an `_note` field for reader context. Future metric
+   policy changes should follow the same pattern: bump
+   `METRIC_VERSION`, regenerate fixture, add a dated `_note`.
 
 ## 4. Operational notes
 
@@ -211,19 +239,16 @@ Did Task #21 land?
   - **Defer until thesis publishing**. Local-only is fine for now.
 
 ### Branch hygiene
-- `exp/08-hyde` has 1 committed commit (`ae0fc4e`) carrying the old
-  Qwen implementation. The current session's rewrite is uncommitted.
-- Suggested commit boundaries before next session:
-  1. One commit for the rewrite + docs (logical pairing: hyde.py +
-     pipeline.py + scripts/exp08_*.py + experiments/08_hyde_retrieval/* +
-     docs/plans/hyde_*.md + docs/plans/v5_general_retrieval.md + this
-     handoff doc).
-  2. Pilot results files (`metrics/`, `report/`,
-     `pilot_50_stt.json`) — commit separately so the rewrite commit
-     stays code-only.
-  3. README "Result summary" update goes in commit (2).
-- After commits, push `exp/08-hyde` to origin. PR `exp/08-hyde → main`
-  is premature — wait for Task #21 + full 200 + E2E before merging.
+- `exp/08-hyde` is 3 commits ahead of `origin/exp/08-hyde`. Sequence:
+  1. `8fe0a9d` — Qwen → gpt-4o-mini rewrite + docs (incl. this handoff
+     in its first version)
+  2. `098d32d` — pilot 50 results (metrics + funnel + stratified seed)
+  3. `6c03617` — task #21 strict metric + v4 baseline re-aggregation
+- **Not yet pushed** to origin. PR `exp/08-hyde → main` is premature
+  — wait until item A (full 200) + item B (E2E) confirm before merging.
+- If pushing now: `git push origin exp/08-hyde` is safe (these commits
+  modify code + docs + frozen-experiment metrics, no records / no
+  secrets).
 
 ## 5. References
 
