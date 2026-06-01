@@ -201,6 +201,7 @@ def _run_logic_lm(
                     "question": q["question"],
                     "answer": ans.answer,
                     "plain_answer": ans.plain_answer,  # NEW: prose form từ IRAC render
+                    "hypothesis": getattr(ans, "hypothesis", ""),  # HyDE-semantic hypothesis (rỗng nếu arm không dùng)
                     "citations": ans.citations,
                     "citation_ids": ans.citation_ids,
                     "citation_indices": ans.citation_indices,
@@ -258,6 +259,18 @@ def run_logic_lm_graphrag(questions, results_root, force, verbose):
     from runtime.logic_lm_pipelines import LogicLMGraphRAGPipeline
     p = LogicLMGraphRAGPipeline()  # tự tạo + warm up RagPipeline bên trong
     _run_logic_lm("logic_lm_graphrag", p, questions, results_root, force, verbose)
+
+
+def run_logic_lm_hyde_semantic(questions, results_root, force, verbose):
+    from runtime.logic_lm_pipelines import LogicLMHydeSemanticPipeline
+    p = LogicLMHydeSemanticPipeline()  # dense_hyde_semantic retrieval + hypothesis vào rule-gen
+    _run_logic_lm("logic_lm_hyde_semantic", p, questions, results_root, force, verbose)
+
+
+def run_logic_lm_hyde_semantic_nohyp(questions, results_root, force, verbose):
+    from runtime.logic_lm_pipelines import LogicLMHydeSemanticNoHypPipeline
+    p = LogicLMHydeSemanticNoHypPipeline()  # control: cùng retrieval, không hypothesis
+    _run_logic_lm("logic_lm_hyde_semantic_nohyp", p, questions, results_root, force, verbose)
 
 
 def run_graphrag_v5(
@@ -511,6 +524,8 @@ ARM_RUNNERS = {
     "logic_lm_no_retrieval": run_logic_lm_no_retrieval,
     "logic_lm_ontology": run_logic_lm_ontology,
     "logic_lm_graphrag": run_logic_lm_graphrag,
+    "logic_lm_hyde_semantic": run_logic_lm_hyde_semantic,
+    "logic_lm_hyde_semantic_nohyp": run_logic_lm_hyde_semantic_nohyp,
     "graphrag_v5": run_graphrag_v5,
     "graphrag_v5_m2": run_graphrag_v5_m2,
     "graphrag_cypher": run_graphrag_cypher,

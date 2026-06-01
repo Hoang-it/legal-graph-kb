@@ -548,6 +548,46 @@ class V5RetrievalPipeline:
             config=config_snapshot,
         )
 
+    def dense_hyde_semantic_rows(
+        self,
+        question: str,
+        frame_text: str,
+        context_key_ids: list[str],
+        top_k: int | None = None,
+    ) -> tuple[list[dict], list[str]]:
+        """HyDE-semantic dense search returning raw clause rows + hypothesis docs.
+
+        Same retrieval mechanics as :meth:`retrieve_dense_only_hyde_semantic`
+        (concept-frame-grounded HyDE → BGE-M3 mean-pool → dense search), but
+        returns the per-clause rows (``clause_id`` / ``article_*`` / ``law_id`` /
+        ``text`` / ``score``) instead of an article-deduped id list, plus the raw
+        hypothesis ``docs``. Lets a logic-LM retriever adapter reuse the exact
+        Tier-1 dense_hyde_semantic path for BOTH the context chunks and the
+        hypothesis passage. Does not modify
+        :meth:`retrieve_dense_only_hyde_semantic`.
+        """
+        if self.hyde_semantic is None:
+            raise RuntimeError(
+                "dense_hyde_semantic_rows requires an OpenAISemanticHydeGenerator "
+                "passed via V5RetrievalPipeline(hyde_semantic=...)."
+            )
+        import numpy as np
+
+        k = top_k if top_k is not None else self.dense_k
+        docs = self.hyde_semantic.generate(question, frame_text, context_key_ids)
+        embs = self.embed_model.encode(
+            docs, normalize_embeddings=True, show_progress_bar=False
+        )
+        arr = np.asarray(embs, dtype=np.float32)
+        if arr.ndim == 1:
+            arr = arr[None, :]
+        mean_vec = arr.mean(axis=0)
+        norm = float(np.linalg.norm(mean_vec))
+        if norm > 0:
+            mean_vec = mean_vec / norm
+        rows = self.retriever._dense_search_by_vector(mean_vec.tolist(), k)
+        return rows, docs
+
     def retrieve_only(self, question: str) -> RetrievalOnlyAnswer:
         """Run dense + sparse + temporal + RRF + rerank1 + expand + rerank2.
 

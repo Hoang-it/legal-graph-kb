@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mockup — Legal KG chatbot (Logic-LM + HyDE-semantic)</title>
+<!--
+  MOCKUP TĨNH — chỉ minh hoạ giao diện cho ui/app.py (Streamlit). KHÔNG gọi backend.
+  Dữ liệu bên dưới là GIẢ ĐỊNH minh hoạ, KHÔNG phải kết quả thật của hệ thống/experiment.
+  Mapping field → stage: xem docs/plans/ui_logic_lm_chatbot.md §"Data contract".
+-->
+<style>
+  :root{
+    --bg:#0f1419; --panel:#1a212b; --panel2:#222b36; --line:#2d3845;
+    --txt:#e6edf3; --muted:#9aa7b4; --accent:#4f9cf9; --green:#3fb950;
+    --amber:#d29922; --chip:#27313d; --code:#0b0f14;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Segoe UI",system-ui,Arial,sans-serif;background:var(--bg);color:var(--txt)}
+  .app{display:flex;min-height:100vh}
+  /* sidebar */
+  .sidebar{width:260px;background:var(--panel);border-right:1px solid var(--line);padding:18px 16px;flex-shrink:0}
+  .sidebar h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 14px}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+  .seg{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .seg button{flex:1;background:transparent;color:var(--txt);border:0;padding:8px;font-size:13px;cursor:pointer}
+  .seg button.on{background:var(--accent);color:#06101f;font-weight:600}
+  .row{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+  .pill{background:var(--chip);border:1px solid var(--line);border-radius:6px;padding:3px 8px;font-size:12px}
+  .toggle{width:38px;height:22px;background:var(--accent);border-radius:11px;position:relative}
+  .toggle::after{content:"";position:absolute;right:3px;top:3px;width:16px;height:16px;border-radius:50%;background:#06101f}
+  /* main */
+  .main{flex:1;display:flex;flex-direction:column}
+  .topbar{padding:16px 28px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px}
+  .topbar h1{font-size:17px;margin:0}
+  .badge-mock{margin-left:auto;background:var(--amber);color:#1a1200;font-weight:700;font-size:11px;padding:4px 10px;border-radius:6px}
+  .chat{flex:1;padding:24px 28px;max-width:980px;width:100%;margin:0 auto}
+  .msg{display:flex;gap:12px;margin-bottom:18px}
+  .avatar{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+  .av-user{background:#33405a}
+  .av-bot{background:#1f3a2b}
+  .bubble{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;flex:1}
+  .bubble p{margin:0 0 8px}
+  .cites{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .cite{background:var(--chip);border:1px solid var(--line);border-radius:14px;padding:4px 11px;font-size:12.5px}
+  .cite .ok{color:var(--green);font-weight:700}
+  /* reasoning */
+  .reason{margin-top:14px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .reason summary{cursor:pointer;list-style:none;padding:11px 14px;background:var(--panel2);font-weight:600;font-size:14px}
+  .reason summary::-webkit-details-marker{display:none}
+  .stages{padding:6px 14px 14px}
+  .stage{border-top:1px solid var(--line);padding:14px 0}
+  .stage:first-child{border-top:0}
+  .stage .h{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+  .num{width:22px;height:22px;border-radius:6px;background:var(--accent);color:#06101f;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+  .stage .h b{font-size:14px}
+  .stage .cap{color:var(--muted);font-size:12.5px;margin:-4px 0 9px 31px}
+  .chips{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 10px 31px}
+  .chip{background:var(--chip);border:1px solid var(--line);border-radius:13px;padding:3px 10px;font-size:12px;color:#cfe0ff}
+  .hyp{margin-left:31px;background:#10202f;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:11px 14px;font-size:13.5px;line-height:1.55;color:#d7e6f5}
+  .badges{display:flex;gap:8px;margin:0 0 10px 31px;flex-wrap:wrap}
+  .b{font-size:12px;padding:3px 9px;border-radius:6px;border:1px solid var(--line)}
+  .b-ok{background:#0f2a17;color:var(--green);border-color:#1d4a2b}
+  .b-n{background:var(--chip);color:var(--muted)}
+  pre.code{margin:0 0 0 31px;background:var(--code);border:1px solid var(--line);border-radius:8px;padding:13px 15px;overflow:auto;
+           font-family:"Cascadia Code","Consolas",monospace;font-size:12.5px;line-height:1.5;color:#cdd9e5}
+  .k{color:#ff7b72}.a{color:#79c0ff}.s{color:#a5d6ff}.c{color:#8b949e}
+  .irac{margin-left:31px}
+  .irac .it{margin-bottom:8px;font-size:13.5px;line-height:1.5}
+  .irac .it b{color:var(--accent)}
+  .meta{margin:12px 0 0 31px;color:var(--muted);font-size:12px}
+  /* input */
+  .inputbar{border-top:1px solid var(--line);padding:14px 28px;max-width:980px;width:100%;margin:0 auto}
+  .inputbar .box{display:flex;gap:10px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+  .inputbar input{flex:1;background:transparent;border:0;color:var(--txt);font-size:14px;outline:none}
+  .inputbar .send{background:var(--accent);color:#06101f;border:0;border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="app">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>Cài đặt</h2>
+    <div class="field">
+      <label>Arm sinh câu trả lời</label>
+      <div class="seg">
+        <button class="on">Có hypothesis</button>
+        <button>Control</button>
+      </div>
+    </div>
+    <div class="field">
+      <label>top_k (số khoản retrieve)</label>
+      <div class="row"><span class="pill">8</span><span style="color:var(--muted);font-size:12px">4 — 20</span></div>
+    </div>
+    <div class="field">
+      <div class="row"><label style="margin:0">Hiện reasoning</label><span class="toggle"></span></div>
+    </div>
+    <div class="field">
+      <label>Model</label>
+      <span class="pill">gpt-4o-mini</span>
+    </div>
+    <div class="field" style="margin-top:30px;color:var(--muted);font-size:12px;line-height:1.5">
+      Pipeline: dense_hyde_semantic → Logic-LM (SWI-Prolog) → IRAC.<br/>
+      Cần Neo4j + BGE-M3 + OpenAI + SWI-Prolog.
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="topbar">
+      <h1>⚖️ Legal KG — Hỏi đáp BHXH</h1>
+      <span style="color:var(--muted);font-size:13px">Logic-LM + HyDE-semantic</span>
+      <span class="badge-mock">MOCKUP · dữ liệu minh hoạ</span>
+    </div>
+
+    <div class="chat">
+      <!-- user -->
+      <div class="msg">
+        <div class="avatar av-user">🧑</div>
+        <div class="bubble">
+          <p>Lao động nữ sinh con thì được nghỉ chế độ thai sản trong bao lâu?</p>
+        </div>
+      </div>
+
+      <!-- assistant -->
+      <div class="msg">
+        <div class="avatar av-bot">🤖</div>
+        <div class="bubble">
+          <p>Lao động nữ sinh con được nghỉ việc hưởng chế độ thai sản tổng cộng
+             <b>06 tháng</b>. Trường hợp sinh đôi trở lên thì tính từ con thứ hai,
+             mỗi con người mẹ được nghỉ thêm <b>01 tháng</b>.</p>
+          <div class="cites">
+            <span class="cite">Điều 139 khoản 1 — Luật BHXH 2024 <span class="ok">✓</span></span>
+          </div>
+
+          <!-- reasoning -->
+          <details class="reason" open>
+            <summary>🔍 Vì sao có câu trả lời này</summary>
+            <div class="stages">
+
+              <!-- 1 -->
+              <div class="stage">
+                <div class="h"><span class="num">1</span><b>Câu hỏi</b></div>
+                <div class="hyp" style="border-left-color:#33405a;background:#161d27">
+                  Lao động nữ sinh con thì được nghỉ chế độ thai sản trong bao lâu?
+                </div>
+              </div>
+
+              <!-- 2 -->
+              <div class="stage">
+                <div class="h"><span class="num">2</span><b>Hypothesis</b></div>
+                <div class="cap">Khung khái niệm BHXH khớp từ câu hỏi → đoạn “văn bản luật giả định” (dùng để dense-search; không chứa số Điều/Khoản).</div>
+                <div class="chips">
+                  <span class="chip">Chế độ thai sản</span>
+                  <span class="chip">Lao động nữ</span>
+                  <span class="chip">Thời gian nghỉ hưởng</span>
+                  <span class="chip">Người lao động</span>
+                  <span class="chip">Trợ cấp thai sản</span>
+                </div>
+                <div class="hyp">
+                  Lao động nữ khi sinh con thuộc đối tượng được hưởng chế độ thai sản theo
+                  pháp luật về bảo hiểm xã hội. Thời gian nghỉ việc hưởng chế độ thai sản khi
+                  sinh con được xác định trên cơ sở số con được sinh và điều kiện lao động,
+                  trong đó pháp luật ấn định một khoảng thời gian nghỉ cơ bản tính cả trước và
+                  sau khi sinh. Trường hợp sinh nhiều con trong một lần, thời gian nghỉ được
+                  cộng thêm tương ứng với số con tính từ người con thứ hai. Trong thời gian
+                  nghỉ, người lao động được hưởng trợ cấp thay cho tiền lương, xác định theo
+                  mức bình quân tiền lương tháng đóng bảo hiểm xã hội của thời gian liền kề
+                  trước khi nghỉ.
+                </div>
+              </div>
+
+              <!-- 3 -->
+              <div class="stage">
+                <div class="h"><span class="num">3</span><b>Chương trình Prolog</b></div>
+                <div class="badges">
+                  <span class="b b-ok">prolog_success ✓</span>
+                  <span class="b b-n">status = success</span>
+                  <span class="b b-n">repair_rounds = 0</span>
+                </div>
+<pre class="code"><span class="c">% legal_sources (grounded từ retrieved_chunks)</span>
+<span class="a">legal_source</span>(source_c139, law_bhxh_2024, article_139, clause_1, none,
+             <span class="s">'Lao động nữ sinh con được nghỉ ... 06 tháng ...'</span>).
+
+<span class="c">% rules</span>
+<span class="a">maternity_leave_months</span>(Person, Months, Trace) <span class="k">:-</span>
+    gender(Person, female),
+    event(Person, sinh_con),
+    base_months(BM), BM = 6,
+    Months = BM,
+    Trace = [ step(condition, gender(Person, female), based_on(source_c139)),
+              step(condition, event(Person, sinh_con), based_on(source_c139)),
+              step(conclusion, maternity_leave_months(Person, Months), based_on(source_c139)) ].
+
+<span class="c">% query</span>
+<span class="k">?-</span> maternity_leave_months(user, Months, Trace).</pre>
+                <div class="cap" style="margin-top:11px">Trace thực thi (SWI-Prolog):</div>
+<pre class="code">Months = 6,
+Trace = [ step(condition,  gender(user, female),               based_on(source_c139)),
+          step(condition,  event(user, sinh_con),               based_on(source_c139)),
+          step(conclusion, maternity_leave_months(user, 6),     based_on(source_c139)) ].</pre>
+              </div>
+
+              <!-- 4 -->
+              <div class="stage">
+                <div class="h"><span class="num">4</span><b>Kết luận (IRAC)</b></div>
+                <div class="irac">
+                  <div class="it"><b>Issue:</b> Thời gian lao động nữ được nghỉ hưởng chế độ thai sản khi sinh con.</div>
+                  <div class="it"><b>Rule:</b> Lao động nữ sinh con thuộc đối tượng hưởng chế độ thai sản; thời gian nghỉ cơ bản là 06 tháng (Điều 139 khoản 1 Luật BHXH 2024).</div>
+                  <div class="it"><b>Application:</b> Người hỏi là lao động nữ sinh con → áp dụng mức nghỉ cơ bản 06 tháng; câu hỏi không nêu sinh đôi nên không cộng thêm tháng.</div>
+                  <div class="it"><b>Conclusion:</b> Được nghỉ <b>06 tháng</b>.</div>
+                </div>
+                <div class="meta">⏱ 4.7s · tokens 1 842 + 613 · n_repair 0 · arm logic_lm_hyde_semantic</div>
+              </div>
+
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <!-- input -->
+    <div class="inputbar">
+      <div class="box">
+        <span style="color:var(--muted)">💬</span>
+        <input type="text" placeholder="Nhập câu hỏi BHXH..." />
+        <button class="send">Gửi</button>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

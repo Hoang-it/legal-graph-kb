@@ -75,6 +75,15 @@ LOGIC_LM_ONTOLOGY_PATH = (
 )
 NO_RETRIEVAL_PROMPT_REL = "runtime/logic_lm/rule_gen_no_retrieval.md"
 IRAC_WITH_PLAIN_PROMPT_REL = "runtime/logic_lm/irac_with_plain.md"
+HYDE_SEMANTIC_RULE_GEN_PROMPT_REL = "runtime/logic_lm/rule_gen_hyde_semantic.md"
+
+# Header cho input thứ 3 (hypothesis) của rule-gen. Chỉ được nối vào user message
+# khi pipeline cung cấp hypothesis khác rỗng → prompt byte-identical cho các arm
+# không dùng (3 arm logic-lm gốc).
+_HYPOTHESIS_HEADER = (
+    "# KHUNG PHÁP LÝ GIẢ ĐỊNH (hypothesis — chỉ để định hướng; "
+    "KHÔNG trích dẫn, KHÔNG lấy fact/ngưỡng/số Điều từ đây)"
+)
 
 
 # ---------------------------------------------------------------------------
@@ -86,6 +95,7 @@ class LogicLMAnswer:
     question: str
     answer: str = ""                # IRAC rendered text
     plain_answer: str = ""          # NEW: prose-form answer cho fair compare với prose arms
+    hypothesis: str = ""            # HyDE-semantic hypothesis fed into rule-gen ("" cho arm không dùng)
     citations: list[str] = field(default_factory=list)       # canonical displayed citations
     citation_ids: list[str] = field(default_factory=list)     # registry-backed citation IDs
     citation_indices: list[int] = field(default_factory=list)  # raw from envelope (chunk indices)
@@ -243,10 +253,12 @@ class _TokenTrackingLLMClient(LLMClient):
         base_client: OpenAILLMClient,
         override_logic_prompt: Optional[str] = None,
         override_irac_prompt: Optional[str] = None,
+        hypothesis: Optional[str] = None,
     ):
         self._base = base_client
         self._override = override_logic_prompt
         self._override_irac = override_irac_prompt
+        self._hypothesis = (hypothesis or "").strip()
         self.prompt_tokens = 0
         self.completion_tokens = 0
         # Khi True → bỏ temperature khỏi mọi call sau đó
@@ -297,6 +309,10 @@ class _TokenTrackingLLMClient(LLMClient):
             if chunks
             else logic_lm_settings.LLM_USER_EMPTY_CHUNKS,
         ]
+        if self._hypothesis:
+            user_parts.append("")
+            user_parts.append(_HYPOTHESIS_HEADER)
+            user_parts.append(self._hypothesis)
         if previous_error:
             user_parts.append("")
             user_parts.append(logic_lm_settings.LLM_PREVIOUS_ATTEMPT_REPAIR_MESSAGE)
@@ -620,6 +636,13 @@ class _LogicLMBasePipeline:
     def _empty_context(self) -> RetrievedKnowledgeContext:
         return RetrievedKnowledgeContext(chunks=[], scores={})
 
+    def _rule_gen_hypothesis(self) -> str:
+        """Optional 3rd input to the Prolog rule generator (HyDE-semantic
+        hypothesis). Default empty → no-op: the 3 original logic-lm arms keep a
+        byte-identical rule-gen prompt. A subclass whose retriever exposes a
+        hypothesis overrides this to return it."""
+        return ""
+
     def _make_llm(self) -> _TokenTrackingLLMClient:
         if self.model:
             base = OpenAILLMClient(model=self.model)
@@ -629,6 +652,7 @@ class _LogicLMBasePipeline:
             base_client=base,
             override_logic_prompt=self.prompt_override,
             override_irac_prompt=self.irac_prompt_override,
+            hypothesis=self._rule_gen_hypothesis() or None,
         )
 
     def ask(self, question: str) -> LogicLMAnswer:
@@ -702,6 +726,7 @@ class _LogicLMBasePipeline:
                 question=question,
                 answer=irac_text or self._failure_message(result, n_rounds),
                 plain_answer=plain_answer,
+                hypothesis=self._rule_gen_hypothesis(),
                 citations=citations,
                 citation_ids=citation_ids,
                 citation_indices=list(envelope.citation_indices),
@@ -856,6 +881,55 @@ class LogicLMGraphRAGPipeline(_LogicLMBasePipeline):
     def close(self):
         try:
             self._owned_rag.close()
+        except Exception:
+            pass
+
+
+class LogicLMHydeSemanticPipeline(_LogicLMBasePipeline):
+    """Arm: dense_hyde_semantic retrieval + HyDE-semantic hypothesis bơm vào bước
+    sinh Prolog (rule-gen). Clause để cite vẫn từ dense_hyde_semantic."""
+
+    arm_name = "logic_lm_hyde_semantic"
+
+    def __init__(self, retriever=None, **kwargs):
+        from runtime.retrievers.dense_hyde_semantic_logic_adapter import (
+            DenseHydeSemanticAsLogicLMRetriever,
+        )
+        if retriever is None:
+            retriever = DenseHydeSemanticAsLogicLMRetriever()
+        prompt = load_prompt(HYDE_SEMANTIC_RULE_GEN_PROMPT_REL)
+        super().__init__(retriever=retriever, prompt_override=prompt, **kwargs)
+
+    def _rule_gen_hypothesis(self) -> str:
+        return getattr(self.retriever, "last_hypothesis", "") or ""
+
+    def close(self):
+        try:
+            self.retriever.close()
+        except Exception:
+            pass
+
+
+class LogicLMHydeSemanticNoHypPipeline(_LogicLMBasePipeline):
+    """Control arm: cùng dense_hyde_semantic retrieval (cùng cache) nhưng KHÔNG
+    bơm hypothesis vào rule-gen (dùng rule_gen.md mặc định). Cô lập đúng một biến
+    — tác động của hypothesis."""
+
+    arm_name = "logic_lm_hyde_semantic_nohyp"
+
+    def __init__(self, retriever=None, **kwargs):
+        from runtime.retrievers.dense_hyde_semantic_logic_adapter import (
+            DenseHydeSemanticAsLogicLMRetriever,
+        )
+        if retriever is None:
+            retriever = DenseHydeSemanticAsLogicLMRetriever()
+        super().__init__(retriever=retriever, **kwargs)
+
+    # _rule_gen_hypothesis() giữ "" (base default) → không bơm hypothesis.
+
+    def close(self):
+        try:
+            self.retriever.close()
         except Exception:
             pass
 
