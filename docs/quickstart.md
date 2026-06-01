@@ -58,7 +58,8 @@ Copy-Item -Recurse experiments/_template experiments/01_my_idea
 
 # qa: inference + metrics + report
 python -m eval_core all experiments/01_my_idea
-# retrieval: produce results/<arm>/A*.json with your Tier-1 script, then score:
+# retrieval: put the Tier-1 producer inside the experiment folder, run it, then score:
+# python experiments/01_my_idea/run_retrieval.py
 python -m eval_core metrics experiments/01_my_idea
 ```
 

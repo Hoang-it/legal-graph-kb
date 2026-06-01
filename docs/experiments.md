@@ -2,8 +2,13 @@
 
 One folder per experiment. The folder owns *everything* that defines the
 experiment: config, inputs metadata, generated records, computed metrics,
-report. Shared logic lives in [`eval_core/`](eval_core.md) — no orchestration
-code belongs here.
+report, and any **experiment-specific** producer code.
+
+Shared orchestration lives in [`eval_core/`](eval_core.md). Reusable repo-level
+utilities live in `scripts/`. Do not put one-off experiment producers in
+`scripts/`; for retrieval-family experiments, the bespoke Tier-1 producer
+belongs inside that experiment folder, for example
+`experiments/<NN_short_name>/run_retrieval.py`.
 
 ## Layout
 
@@ -22,12 +27,14 @@ experiments/
     │   └── multimodel/<arm>__<model_safe>/A<stt>.json
     ├── metrics/              ← academic_metrics.json + .csv + gold_normalized
     ├── report/               ← academic_report.md
+    ├── run_retrieval.py       ← retrieval family only: Tier-1 producer
     └── prompts_override/     ← optional per-experiment prompt overrides
 ```
 
 The standard layout is encoded in [`eval_core/paths.py`](../eval_core/paths.py)
-(see [`eval_core.md`](eval_core.md) for a guide). Don't write to other
-locations — downstream tools look here.
+(see [`eval_core.md`](eval_core.md) for a guide). Don't write experiment
+artifacts or one-off experiment producers to other locations — downstream
+tools and reviewers should be able to audit the experiment from this folder.
 
 ## Naming
 
@@ -53,6 +60,14 @@ python -m eval_core all experiments/03_my_idea
 `all` runs `run` (inference for every `mode: run` arm) + `multimodel`
 (if configured) + `metrics`. Use the individual subcommands when you
 want to step through the lifecycle.
+
+Retrieval-family experiments are the exception to `eval_core run`: Tier-1 is a
+bespoke online producer colocated in the experiment folder. The usual shape is:
+
+```powershell
+python experiments/03_my_idea/run_retrieval.py
+python -m eval_core metrics experiments/03_my_idea --full
+```
 
 ## Inheritance
 

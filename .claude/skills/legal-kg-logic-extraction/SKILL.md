@@ -229,9 +229,11 @@ all prior ones:
 > ("not generic, no refactor"). The metric half is now the generic, config-driven
 > `eval_core.retrieval_metrics` (single source of truth for all metrics), so the
 > old per-experiment metrics/funnel scripts were deleted. Tier-1 retrieval
-> inference is still an online script you write per experiment; it (and the
-> experiment folder) live in this producer repo — `experiments/` stays here and
-> finished folders are copied over to compare, not relocated.
+> inference is still an online script you write per experiment, but new
+> experiment-specific producers live **inside** `experiments/<NN>/` (usually
+> `run_retrieval.py`), not in `scripts/`. `scripts/` is only for reusable
+> repo-level utilities. `experiments/` stays here and finished folders are copied
+> over to compare, not relocated.
 
 ---
 
@@ -349,8 +351,9 @@ legal-graph-kb/
 ├── schema/schema.cypher              # Neo4j constraints + vector indexes
 ├── scripts/                          # Utility + audit scripts (retrieval audits, citation
 │                                     #   reparse, eval-split seal, run_retrieval_only) + PowerShell
-│                                     #   wrappers (chat, install_b5/bge_m3, verify_b5). Retrieval
-│                                     #   Tier-1 inference is written per experiment as needed;
+│                                     #   wrappers (chat, install_b5/bge_m3, verify_b5). Do not put
+│                                     #   one-off experiment producers here; retrieval Tier-1
+│                                     #   inference is written inside experiments/<NN>/ as needed;
 │                                     #   Tier-2 metrics live in eval_core/retrieval_metrics.py.
 ├── tests/                            # pytest (provenance + Experiment + metrics + experiment_contract)
 │
@@ -558,8 +561,9 @@ do **not** write a metrics script. Only Tier-1 (the actual retrieval) is bespoke
    `recompute: eval_core`, `arms: {}`, and fill the `retrieval:` block — at minimum
    `arms: [...]` and `ks: [...]` (optionally `record_field` / `pilot_subset`). Write
    WHAT/WHY + the pre-registered bar (which prior arm it must beat, on which stratum).
-2. Write the Tier-1 online retrieval producer (your own script — Neo4j + embeddings
-   + OpenAI; cache LLM calls under `artifacts/` so re-runs are $0). It writes
+2. Write the Tier-1 online retrieval producer inside the experiment folder
+   (usually `experiments/<NN>/run_retrieval.py`; Neo4j + embeddings + OpenAI;
+   cache LLM calls under `artifacts/` so re-runs are $0). It writes
    `experiments/<NN>/results/<arm>/A<stt>.json`, each with the ranked article ids at
    `retrieval_only.final_article_ids` (or set `retrieval.record_field` to match).
 3. Tier-2 (offline, no code): `python -m eval_core metrics experiments/<NN>` — the

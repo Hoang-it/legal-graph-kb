@@ -6,8 +6,9 @@
 #                fill `arms` / `multimodel`).
 #   retrieval  — `python -m eval_core metrics` scores it from the `retrieval:`
 #                block below (generic engine, config-driven). Leave `arms: {}`.
-#                Tier-1 results/<arm>/A*.json come from your own online retrieval
-#                script (Tier-1 is not owned by eval_core).
+#                Tier-1 results/<arm>/A*.json come from an experiment-local
+#                online retrieval script, e.g. run_retrieval.py inside the
+#                experiment folder (Tier-1 is not owned by eval_core).
 
 name: "Short human-readable title"
 description: |

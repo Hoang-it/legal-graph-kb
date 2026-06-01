@@ -23,11 +23,17 @@ python -m eval_core all     experiments/NN_your_short_name
 ### family: retrieval  (config-driven metrics via eval_core)
 
 ```powershell
-# Tier-1 (online): your own retrieval script writes results/<arm>/A*.json
+# Tier-1 (online): write an experiment-local producer, usually:
+#   experiments/NN_your_short_name/run_retrieval.py
+# It writes results/<arm>/A*.json
 #   (Neo4j + embeddings + LLM), with ranked ids at retrieval_only.final_article_ids.
 #   Declare the arms + K cutoffs in config.yaml's `retrieval:` block.
 python -m eval_core metrics experiments/NN_your_short_name   # Tier-2: metrics/  (offline)
 ```
+
+Do not create a one-off `scripts/exp<NN>_*.py` for a retrieval experiment.
+`scripts/` is for reusable repo-level utilities; experiment-specific Tier-1
+producers stay with the experiment folder so the folder is self-contained.
 
 Keep `recompute: eval_core` (the default) so the offline Tier-2 step is
 discoverable by `expkit --recompute` in the experiments repo — the generic
