@@ -8,7 +8,7 @@
     python -m eval_core all     <experiment_path> [--force] [--verbose]
 
 Each subcommand operates on a single experiment folder. The path can be
-relative (e.g. ``experiments/01_initial_eval``) or absolute. The CLI lives
+relative (e.g. ``experiments/01_my_experiment``) or absolute. The CLI lives
 in this single module so adding a new command means editing one file.
 """
 
@@ -29,15 +29,38 @@ def _load(path: Path) -> Experiment:
         raise SystemExit(2) from exc
 
 
+def _is_retrieval(experiment: Experiment) -> bool:
+    """A retrieval-family experiment: declared ``family: retrieval`` or carrying
+    a ``retrieval:`` config block. Its metrics come from
+    :mod:`eval_core.retrieval_metrics`, not the qa arm runners."""
+    cfg = experiment.config or {}
+    fam = str(cfg.get("family") or "").strip().lower()
+    if fam == "retrieval":
+        return True
+    if fam in ("qa", "qa_citation"):
+        return False
+    return bool(cfg.get("retrieval"))
+
+
 # ---------------------------------------------------------------------------
 # Subcommand handlers
 # ---------------------------------------------------------------------------
 
 
 def cmd_run(args: argparse.Namespace) -> int:
+    experiment = _load(args.experiment)
+    if _is_retrieval(experiment):
+        print(
+            "NOTE: retrieval-family Tier-1 inference runs outside eval_core "
+            "(its own online producer). eval_core only owns the offline metrics "
+            f"step — run `python -m eval_core metrics {args.experiment}` once "
+            "results/<arm>/A*.json exist.",
+            file=sys.stderr,
+        )
+        return 0
+
     from eval_core.inference import run_experiment
 
-    experiment = _load(args.experiment)
     arms = [a.strip() for a in args.arms.split(",") if a.strip()] if args.arms else None
     run_experiment(experiment, arms=arms, force=args.force, verbose=args.verbose)
     return 0
@@ -56,12 +79,25 @@ def cmd_multimodel(args: argparse.Namespace) -> int:
 
 
 def cmd_metrics(args: argparse.Namespace) -> int:
-    from eval_core.runners import compute_metrics_for_experiment
-
     experiment = _load(args.experiment)
     arms_filter = (
         [a.strip() for a in args.arms.split(",") if a.strip()] if args.arms else None
     )
+
+    if _is_retrieval(experiment):
+        from eval_core.retrieval_metrics import compute_retrieval_metrics
+
+        result = compute_retrieval_metrics(
+            experiment, arms_filter=arms_filter, force_full=args.full,
+        )
+        print(
+            f"OK: wrote {result['metrics_out']}, {result['csv_out']}, {result['report_out']} "
+            f"for {len(result['records'])} arms (retrieval, n={result['n_scored']})."
+        )
+        return 0
+
+    from eval_core.runners import compute_metrics_for_experiment
+
     result = compute_metrics_for_experiment(
         experiment,
         arms_filter=arms_filter,
@@ -75,11 +111,26 @@ def cmd_metrics(args: argparse.Namespace) -> int:
 
 
 def cmd_all(args: argparse.Namespace) -> int:
+    experiment = _load(args.experiment)
+    if _is_retrieval(experiment):
+        from eval_core.retrieval_metrics import compute_retrieval_metrics
+
+        print(
+            "NOTE: retrieval-family Tier-1 inference runs outside eval_core; "
+            "computing offline metrics only.",
+            file=sys.stderr,
+        )
+        result = compute_retrieval_metrics(experiment)
+        print(
+            f"OK: wrote {result['metrics_out']}, {result['csv_out']}, {result['report_out']} "
+            f"for {len(result['records'])} arms (retrieval, n={result['n_scored']})."
+        )
+        return 0
+
     from eval_core.inference import run_experiment
     from eval_core.multimodel import run_experiment_multimodel
     from eval_core.runners import compute_metrics_for_experiment
 
-    experiment = _load(args.experiment)
     run_experiment(experiment, force=args.force, verbose=args.verbose)
     if experiment.multimodel:
         run_experiment_multimodel(experiment, force=args.force, verbose=args.verbose)
@@ -125,6 +176,11 @@ def _build_parser() -> argparse.ArgumentParser:
         "--no-multimodel",
         action="store_true",
         help="Skip multimodel combos under results/multimodel/.",
+    )
+    met_p.add_argument(
+        "--full",
+        action="store_true",
+        help="Retrieval family: ignore retrieval.pilot_subset and score every record on disk.",
     )
     met_p.set_defaults(func=cmd_metrics)
 

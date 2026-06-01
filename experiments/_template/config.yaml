@@ -1,12 +1,13 @@
 # Experiment config template — copy this folder, rename to NN_short_name,
 # fill out every field. See ../../CONTRACT.md for the full shared contract.
 #
-# Two families (set `family` below):
-#   qa         — driven by `python -m eval_core run|metrics` (generic engine,
-#                config-only; fill `arms` / `multimodel`).
-#   retrieval  — driven by a per-experiment pair scripts/expNN_run.py (Tier-1,
-#                online) + scripts/expNN_metrics.py (Tier-2, offline). Leave
-#                `arms: {}` and point `recompute` at the metrics module.
+# Two families (set `family` below). BOTH score through eval_core:
+#   qa         — `python -m eval_core run|metrics` (generic engine, config-only;
+#                fill `arms` / `multimodel`).
+#   retrieval  — `python -m eval_core metrics` scores it from the `retrieval:`
+#                block below (generic engine, config-driven). Leave `arms: {}`.
+#                Tier-1 results/<arm>/A*.json come from your own online retrieval
+#                script (Tier-1 is not owned by eval_core).
 
 name: "Short human-readable title"
 description: |
@@ -40,19 +41,18 @@ prompts_override_dir: null
 
 # How to regenerate metrics/academic_metrics.json from results/ OFFLINE
 # (Tier-2). Read by `expkit --recompute` and `experiment_contract validate`.
-#   qa        -> `eval_core`  (default; runs `python -m eval_core metrics <exp>`)
-#   retrieval -> the metrics module, e.g. `scripts.exp15_metrics`
-# Omit to use the family default (qa -> eval_core; retrieval -> scripts.expNN_metrics
-# inferred from the folder number). Examples:
-#   recompute: eval_core
-#   recompute: scripts.exp15_metrics
-#   recompute: { command: [python, -m, scripts.exp15_metrics, --full] }
+# Both families recompute through eval_core:
+#   recompute: eval_core   ->  `python -m eval_core metrics <exp>`
+# The CLI dispatches on `family` (qa -> arm runners; retrieval -> the
+# config-driven engine eval_core.retrieval_metrics). The family default is
+# `eval_core` for both, so this line can be omitted.
 recompute: eval_core
 
 # Single-model arms (qa family). Each entry chooses how its records are made.
 # - mode: run     — `python -m eval_core run` produces records here.
 # - mode: inherit — records come from the parent's results/<arm>/.
-# Retrieval family: leave this empty (`arms: {}`) — records come from expNN_run.py.
+# Retrieval family: leave this empty (`arms: {}`) — its arms are declared in the
+# `retrieval:` block below and scored from results/<arm>/A*.json.
 arms: {}
   # Example (qa):
   # graphrag:                { mode: run, model: gpt-4o-mini }
@@ -68,3 +68,13 @@ multimodel: null
   # Example:
   # arms:   [logic_lm_graphrag, logic_lm_no_retrieval]
   # models: ["gpt-4.1", "gpt-4o", "gpt-5-mini"]
+
+# Retrieval family ONLY — tells eval_core.retrieval_metrics what to score.
+# Ignored by the qa family. Headline stratum is `in_corpus`.
+retrieval: null
+  # arms: [dense, dense_hyde, dense_hyde2]          # arms to score (REQUIRED)
+  # ks: [12, 20, 30, 50, 70, 100, all]              # K cutoffs (`all` = full list)
+  # record_field: retrieval_only.final_article_ids  # where the ranked ids live (default)
+  # latency_field: retrieval_only.elapsed_s         # per-record latency (default)
+  # pilot_subset: null                              # optional {stt_list:[...]} json path
+  # registry: data/legal_sources.yaml               # citation authority registry (default)

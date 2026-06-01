@@ -194,17 +194,17 @@ data/eval/questions_*.json
 
 # ─── EXCEPTIONS: KG artifacts needed to reproduce inference ───
 !data/eval/questions_200.json
-# v5 Sprint 2 Phase 0b — hash-sealed split (committed, must stay bit-identical)
+# Hash-sealed eval split (committed, must stay bit-identical)
 !data/eval/questions_150_test.json
 !data/eval/questions_50_dev.json
 !data/eval/eval_split_hashes.json
 !data/graph/interim/structured_law.json
 !data/graph/processed/merged_graph.json
 !data/graph/processed/embeddings.parquet
-# v5 Sprint 2 Phase 3 — tuned embeddings are large + reproducible from the
-# adapter, so they remain gitignored.
+# Tuned embeddings are large + reproducible from the adapter, so they
+# remain gitignored.
 data/graph/processed/embeddings_tuned.parquet
-# v5 Sprint 2 Phase 1 — synthetic training data + audit artifacts (committed)
+# BGE-M3 fine-tuning data (synthetic training set, committed)
 !data/finetune-bge/
 !data/finetune-bge/**
 
@@ -220,9 +220,9 @@ logs/
 !data/graph/raw/.gitkeep
 
 # ─── Experiment results — ignored by default, per-experiment opt-in ───
-# Each experiment can override this in its own .gitignore (see e.g.
-# experiments/01_initial_eval/.gitignore which un-ignores results/ to
-# freeze its baseline records for inheritance by future experiments).
+# Each experiment can override this in its own experiments/<NN>/.gitignore
+# that un-ignores results/ to freeze its records for inheritance by future
+# experiments.
 experiments/*/results/
 
 # ─── Runtime-generated artifacts (Prolog programs from logic-LM CLI etc.) ───

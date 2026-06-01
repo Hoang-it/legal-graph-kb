@@ -70,7 +70,7 @@ REPORT_DIRNAME = "report"
 METRICS_JSON = "academic_metrics.json"
 METRICS_REL = f"{METRICS_DIRNAME}/{METRICS_JSON}"
 
-# An experiment directory's name starts with its number: ``13_hyde_semantic``.
+# An experiment directory's name starts with its number: ``15_my_experiment``.
 EXP_DIR_RE = re.compile(r"^\d+[_-]")
 
 # --------------------------------------------------------------------------- #
@@ -100,7 +100,7 @@ def is_experiment_dir(path: Path | str) -> bool:
 
 
 def experiment_number(slug: str) -> int | None:
-    """``13_hyde_semantic`` -> 13;  a non-numeric slug -> ``None``."""
+    """``15_my_experiment`` -> 15;  a non-numeric slug -> ``None``."""
     m = re.match(r"(\d+)", slug)
     return int(m.group(1)) if m else None
 
@@ -176,7 +176,7 @@ class RecomputeSpec:
     """
 
     runner: str  # "module" | "eval_core_metrics" | "command"
-    module: str | None = None  # runner="module": e.g. "scripts.exp13_metrics"
+    module: str | None = None  # runner="module": e.g. "some.metrics_module"
     command: list[str] | None = None  # runner="command": explicit argv (no python)
     source: str = ""  # "config" | "default" — where the spec came from
 
@@ -190,14 +190,15 @@ def recompute_spec(
 
     ``config['recompute']`` (explicit) wins; accepted forms::
 
-        recompute: eval_core                  # qa: run `eval_core metrics <exp>`
-        recompute: scripts.exp15_metrics      # retrieval: run that module
-        recompute: { module: scripts.exp15_metrics }
-        recompute: { command: [python, -m, scripts.exp15_metrics, --full] }
+        recompute: eval_core                  # run `python -m eval_core metrics <exp>`
+        recompute: some.metrics_module        # run that module: `python -m some.metrics_module`
+        recompute: { module: some.metrics_module }
+        recompute: { command: [python, -m, some.metrics_module, --full] }
 
-    Otherwise a family default is used::
+    Otherwise the family default is used. Both families recompute through
+    eval_core; the CLI dispatches retrieval -> eval_core.retrieval_metrics::
 
-        retrieval -> module  scripts.exp<NN>_metrics   (NN from the slug)
+        retrieval -> eval_core_metrics
         qa        -> eval_core_metrics
 
     Returns ``None`` when the family is unknown / no entry point can be derived.
@@ -222,12 +223,9 @@ def recompute_spec(
         if str(rc.get("runner", "")).startswith("eval_core"):
             return RecomputeSpec(runner="eval_core_metrics", source="config")
 
-    if fam == RETRIEVAL:
-        nn = experiment_number(slug)
-        if nn is None:
-            return None
-        return RecomputeSpec(runner="module", module=f"scripts.exp{nn:02d}_metrics", source="default")
-    if fam == QA:
+    if fam in (RETRIEVAL, QA):
+        # Both families recompute offline through `python -m eval_core metrics <exp>`;
+        # the CLI dispatches on family (retrieval -> eval_core.retrieval_metrics).
         return RecomputeSpec(runner="eval_core_metrics", source="default")
     return None
 

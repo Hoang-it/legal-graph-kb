@@ -20,15 +20,18 @@ python -m eval_core metrics experiments/NN_your_short_name   # Tier-2: metrics/ 
 python -m eval_core all     experiments/NN_your_short_name
 ```
 
-### family: retrieval  (per-experiment scripts)
+### family: retrieval  (config-driven metrics via eval_core)
 
 ```powershell
-python -m scripts.expNN_run        # Tier-1: results/  (online: Neo4j + embeddings + LLM)
-python -m scripts.expNN_metrics    # Tier-2: metrics/  (offline, pure article-overlap)
+# Tier-1 (online): your own retrieval script writes results/<arm>/A*.json
+#   (Neo4j + embeddings + LLM), with ranked ids at retrieval_only.final_article_ids.
+#   Declare the arms + K cutoffs in config.yaml's `retrieval:` block.
+python -m eval_core metrics experiments/NN_your_short_name   # Tier-2: metrics/  (offline)
 ```
 
-Set `recompute: scripts.expNN_metrics` in `config.yaml` so the offline Tier-2
-step is discoverable by `expkit --recompute` in the experiments repo.
+Keep `recompute: eval_core` (the default) so the offline Tier-2 step is
+discoverable by `expkit --recompute` in the experiments repo — the generic
+`eval_core.retrieval_metrics` engine reads the `retrieval:` block.
 
 ### Validate before comparing / copying over
 
@@ -38,8 +41,8 @@ python -m experiment_contract validate experiments/NN_your_short_name
 
 A folder is **comparable** once it has a valid `metrics/academic_metrics.json`
 and a resolvable `family`. Copy the folder into the experiments repo and it is
-auto-discovered into the leaderboard; for offline recompute there, also bring
-`scripts/expNN_metrics.py` (retrieval). See [`../../CONTRACT.md`](../../CONTRACT.md).
+auto-discovered into the leaderboard; offline recompute there uses the consumer's
+own `eval_core` (both families) — nothing else to copy. See [`../../CONTRACT.md`](../../CONTRACT.md).
 
 ## Required sections to fill in this README
 

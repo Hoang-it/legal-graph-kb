@@ -46,20 +46,20 @@ Each step is idempotent: re-runs skip existing outputs (override with `--force`)
 
 ## Run an experiment (B7 inference + metrics)
 
-The repo ships with [`experiments/01_initial_eval/`](../experiments/01_initial_eval/)
-— 5 single-model arms × 200 questions + a 2-arm × 3-model multimodel matrix,
-records committed.
+Experiments are created from [`experiments/_template/`](../experiments/_template/).
+Result folders are **not** committed to this producer repo — each experiment's
+records / metrics / report live only under its own `experiments/<NN>/`.
 
 ```powershell
-# Recompute metrics + report from committed records (no API calls)
-python -m eval_core metrics experiments/01_initial_eval
+# Create a new experiment from the template
+Copy-Item -Recurse experiments/_template experiments/01_my_idea
+# Edit experiments/01_my_idea/config.yaml (name, family, arms — or the `retrieval:` block)
+# Edit experiments/01_my_idea/README.md (WHAT/WHY + pre-registered success bar)
 
-# Create a new experiment that inherits the baseline
-Copy-Item -Recurse experiments/_template experiments/02_my_idea
-# Edit experiments/02_my_idea/config.yaml (set parent: 01_initial_eval, your arm: mode: run)
-# Edit experiments/02_my_idea/README.md (WHAT/WHY + expected outcome)
-
-python -m eval_core all experiments/02_my_idea
+# qa: inference + metrics + report
+python -m eval_core all experiments/01_my_idea
+# retrieval: produce results/<arm>/A*.json with your Tier-1 script, then score:
+python -m eval_core metrics experiments/01_my_idea
 ```
 
 See [`eval_core.md`](eval_core.md) and [`experiments.md`](experiments.md) for the

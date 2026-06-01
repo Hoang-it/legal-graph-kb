@@ -16,7 +16,7 @@ Config schema (YAML)::
       questions: data/eval/questions_200.json   # path relative to repo root
       n: 200                                    # null = full
 
-    parent: 01_initial_eval                     # sibling folder under experiments/
+    parent: 01_baseline                         # sibling folder under experiments/
                                                 # or null when no parent
 
     prompts_override_dir: prompts_override      # relative to experiment folder,

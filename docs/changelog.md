@@ -7,6 +7,42 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed — Retrieval metrics consolidated into `eval_core` (single source of truth)
+
+All metric computation now lives in `eval_core`, for **both** families. The
+retrieval family previously had one bespoke `scripts/exp<NN>_metrics.py` per
+experiment; the pure IR primitives (recall/precision/r_precision/mrr/ndcg/
+categorize) were copy-pasted across `exp06–11` (with drift) and `exp12–14`
+imported them cross-experiment — a maintenance hazard and a self-containment
+(Rule 6) risk. This change reverses the 2026-06-01 "retrieval producer is not
+generic / no refactor" decision.
+
+- `eval_core/retrieval_metrics.py` — **new** generic, config-driven retrieval
+  metric engine. Reads the experiment's `retrieval:` block (`arms`, `ks`,
+  `record_field`, `latency_field`, `pilot_subset`), scores `results/<arm>/
+  A*.json`, writes `metrics/academic_metrics.json` (`overall_macro` +
+  `stratified` + `Ks`) + CSV + report. Primitives ported **verbatim** from the
+  retired `exp09_metrics.py` — no metric definition changed, so numbers are
+  unaffected (Rule 2).
+- `eval_core/cli.py` — `metrics` (and `all`) dispatch on `config.family`:
+  retrieval → `retrieval_metrics`, qa → the existing arm runners. `run`/`all`
+  print a guard for retrieval (Tier-1 inference is not owned by `eval_core`).
+  Added `--full` (ignore `retrieval.pilot_subset`).
+- `experiment_contract.py` — the retrieval recompute **default** is now
+  `eval_core_metrics` (was `module: scripts.exp<NN>_metrics`); both families
+  recompute via `python -m eval_core metrics <exp>`. Docstrings/examples updated.
+- Deleted all 22 orphaned `scripts/exp*.py` (9 `_metrics` + 9 `_run` + 3
+  `_funnel` + `exp08_test_one`). The metric scripts are superseded by the
+  engine above; the run/funnel scripts were already orphaned (their
+  `experiments/<NN>/` targets had been purged).
+- `experiments/_template/config.yaml`, `CONTRACT.md`, and the
+  `legal-kg-logic-extraction` skill — updated to the unified flow (retrieval
+  metrics via `eval_core`, config `retrieval:` block, no per-experiment script).
+- `tests/test_retrieval_metrics.py` — **new** (primitives pinned to hand-computed
+  values + end-to-end shape). `tests/test_experiment_contract.py` — retrieval
+  default now asserts `eval_core_metrics`; real-folder checks rebuilt on
+  synthetic fixtures (no dependency on purged experiment data).
+
 ### Changed — Citation metric engine: strict tuple-equal (`academic_v2`)
 
 `eval_core/metrics.py` compares `pred_items ∩ gold_items` on the full

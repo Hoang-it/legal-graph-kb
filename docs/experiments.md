@@ -35,7 +35,7 @@ locations — downstream tools look here.
 descriptive name. Date goes in `config.yaml`. Example:
 
 ```
-01_initial_eval/
+01_baseline/
 02_logic_decomposition/
 03_multilaw_phase1/
 ```
@@ -60,7 +60,7 @@ Frozen experiments can hand their records down. Declare the parent and
 mark inherited arms in `config.yaml`:
 
 ```yaml
-parent: 01_initial_eval
+parent: 01_baseline
 arms:
   graphrag:              { mode: inherit }
   llm_only:              { mode: inherit }
@@ -80,8 +80,8 @@ Cycle detection guards the parent chain (depth ≤ 10).
 
 The repo's root `.gitignore` ignores `experiments/*/results/` by default.
 A frozen baseline that wants to share its records (so others can inherit
-them) adds an exception in its own `.gitignore` — see
-[`experiments/01_initial_eval/.gitignore`](../experiments/01_initial_eval/.gitignore).
+them) adds an exception in its own `experiments/<NN>/.gitignore` that
+un-ignores `results/`.
 
 `metrics/` and `report/` are always tracked: they're small, auditable,
 and they're what the experiment claims.

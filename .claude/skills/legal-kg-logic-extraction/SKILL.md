@@ -1,12 +1,12 @@
 ---
 name: legal-kg-logic-extraction
-description: Continuing work on the Legal KG project — Vietnamese Social-Insurance-Law GraphRAG + Logic-LM stack with offline/runtime/prompts split. **Required reading before running, designing, analysing, or COMPARING ANY experiment** (anything that touches `experiments/<NN>/`, invokes `python -m eval_core ...` or `python -m scripts.exp<NN>_run|_metrics`, or uses the shared `experiment_contract.py` / standalone `experiments_repo/` + `expkit` leaderboard). Also use when extending the inference pipeline, adding a logic-LM arm or a retrieval experiment, designing Neo4j schema, or touching any file under offline/, runtime/, eval_core/, scripts/, experiments/, or experiments_repo/.
+description: Continuing work on the Legal KG project — Vietnamese Social-Insurance-Law GraphRAG + Logic-LM stack with offline/runtime/prompts split. **Required reading before running, designing, analysing, or COMPARING ANY experiment** (anything that touches `experiments/<NN>/`, invokes `python -m eval_core ...` (qa or retrieval metrics) or a retrieval Tier-1 producer, or uses the shared `experiment_contract.py` / standalone `experiments_repo/` + `expkit` leaderboard). Also use when extending the inference pipeline, adding a logic-LM arm or a retrieval experiment, designing Neo4j schema, or touching any file under offline/, runtime/, eval_core/, scripts/, experiments/, or experiments_repo/.
 ---
 
 # Legal KG — Continuation Skill
 
 ## When to invoke
-- **Any** experiment lifecycle command — **qa family:** `python -m eval_core <run|multimodel|metrics|all>` / `python -m eval_core.rerender`; **retrieval family:** `python -m scripts.exp<NN>_run` / `python -m scripts.exp<NN>_metrics` — against any folder under `experiments/`. The inviolable rules below MUST be applied to every such run.
+- **Any** experiment lifecycle command — **metrics (both families):** `python -m eval_core <metrics|all>` (qa also `run|multimodel`, `python -m eval_core.rerender`); **retrieval Tier-1:** the experiment's own online retrieval script that writes `results/<arm>/A*.json` — against any folder under `experiments/`. The inviolable rules below MUST be applied to every such run.
 - Adding a new experiment (copy `_template/`, set `family` + `recompute`, write README). See **Experiment contract** below.
 - Validating or **comparing** experiments — `python -m experiment_contract validate ...`, or copying a folder into `experiments_repo/` and running `python -m expkit leaderboard|validate ...`.
 - Drawing conclusions from an experiment's metrics or report.
@@ -44,18 +44,19 @@ Read them before touching `experiments/` or `eval_core`.
 
 ### Rule 2 — Academic metrics are THE metrics. Respect them.
 
-- **Every** experiment runs its family's deterministic metric engine — there are
-  no shortcuts and no eyeballing:
-  - **qa:** `python -m eval_core metrics <exp>` (or `eval_core all <exp>`).
-  - **retrieval:** `python -m scripts.exp<NN>_metrics`.
-  Both write the same contract artifact `metrics/academic_metrics.json`.
+- **Every** experiment runs `eval_core`'s deterministic metric engine — there are
+  no shortcuts and no eyeballing. Both families go through the same command:
+  - `python -m eval_core metrics <exp>` (qa also has `eval_core all <exp>`).
+  The CLI dispatches on `config.family`. Both write the same contract artifact
+  `metrics/academic_metrics.json`.
 - The headline metrics by family:
   - **qa** (`eval_core/metrics.py`, aggregated by `runners.py` + `report.py`):
     citation recall / precision / F1, citation display rate, latency, BERTScore
     (fail-soft), and 3 Prolog reliability rates.
-  - **retrieval** (`scripts/exp<NN>_metrics.py` reusing `scripts/exp09_metrics.py`
-    primitives): article-level recall@k, precision@k, r_precision, mrr, ndcg@k,
-    stratified by gold corpus type (`in_corpus` is the pre-registered headline).
+  - **retrieval** (`eval_core/retrieval_metrics.py`, config-driven from the
+    `retrieval:` block): article-level recall@k, precision@k, r_precision, mrr,
+    ndcg@k, stratified by gold corpus type (`in_corpus` is the pre-registered
+    headline).
   Treat whichever set as the contract.
 - **Do not modify the metric definitions to make a report look better.**
   If a metric returns a number you don't like, fix the underlying
@@ -175,25 +176,25 @@ there. **If you edit one copy, copy it to the other** (`diff` must be empty).
 | Family | Exps | Producer (Tier-1 → Tier-2) | metrics shape | Headline |
 |---|---|---|---|---|
 | **qa** | 01–04 | generic `eval_core run` → `eval_core metrics` (config-only) | `aggregates[arm].macro` (+`.prolog`) | citation R/P/F1, display_rate, BERTScore, latency, Prolog rates |
-| **retrieval** | 06–14 | per-experiment `scripts/exp<NN>_run.py` → `scripts/exp<NN>_metrics.py` | `overall_macro` + `stratified` + `Ks` | recall@k, precision@k, r_precision, mrr, ndcg@k (headline stratum `in_corpus`) |
+| **retrieval** | 06–14 | Tier-1: experiment's own online retrieval script → Tier-2: generic `eval_core metrics` (config-driven from the `retrieval:` block) | `overall_macro` + `stratified` + `Ks` | recall@k, precision@k, r_precision, mrr, ndcg@k (headline stratum `in_corpus`) |
 
 `config.yaml` declares the family + how to recompute its metrics offline:
 
 ```yaml
 family: qa            # or: retrieval   — REQUIRED for new experiments
-recompute: eval_core  # qa default; retrieval: scripts.exp<NN>_metrics
+recompute: eval_core  # both families recompute via eval_core (CLI dispatches on family)
 ```
 
-The **14 legacy folders already committed omit `family`**; the consumer infers it
-from the metrics-JSON shape, so don't backfill them (decision 2026-06-01). New
-experiments MUST set `family` — the `_template` already does.
+New experiments MUST set `family` — the `_template` already does. (Decision
+2026-06-01: a consumer may also infer family from the metrics-JSON shape for any
+older folder that omits it — don't rely on that for new work.)
 
 ### Three reproducibility tiers
 
 | Tier | Artifact | Producer | Offline? | Lives where |
 |---|---|---|---|---|
-| 1 | `results/<arm>/A<stt>.json` | `eval_core run` / `exp<NN>_run.py` (Neo4j + embeddings + OpenAI/GPU) | ❌ | **producer repo only** |
-| 2 | `metrics/academic_metrics.json` | `eval_core metrics` / `exp<NN>_metrics.py` from `results/` | ✅ | both repos |
+| 1 | `results/<arm>/A<stt>.json` | qa: `eval_core run`; retrieval: experiment's own online retrieval script (Neo4j + embeddings + OpenAI/GPU) | ❌ | **producer repo only** |
+| 2 | `metrics/academic_metrics.json` | `eval_core metrics` from `results/` (both families) | ✅ | both repos |
 | 3 | leaderboard | `expkit` from `metrics/` | ✅ | `experiments_repo/` |
 
 **Tier-1 always runs in THIS (producer) repo** — `experiments_repo/` ships no
@@ -216,19 +217,21 @@ resolvable family. `validate` prints hard `error:` (blocks comparison) vs
 all prior ones:
 
 1. Generate + validate it here (Tier-1 → Tier-2 → `validate`).
-2. **Copy the whole folder** into `experiments_repo/experiments/<NN>/`. For
-   offline `--recompute` of a *retrieval* experiment there, also copy its
-   `scripts/exp<NN>_metrics.py`.
+2. **Copy the whole folder** into `experiments_repo/experiments/<NN>/`. Offline
+   `--recompute` of *either* family there uses the consumer's own `eval_core`
+   (metrics-side) — there is no per-experiment metrics script to copy.
 3. In `experiments_repo/`: `python -m expkit leaderboard --all` ranks it against
    every prior experiment (family-aware, one leaderboard per family);
    `python -m expkit validate --all` checks the whole tree.
 
-> **Relocating `experiments/` *out* of this repo is NOT supported for retrieval** —
-> all 18 `scripts/exp<NN>_{run,metrics}.py` hardcode `_REPO / "experiments" /
-> "<slug>"`. qa (`eval_core`) is path-portable, but retrieval is not. Decision
-> (2026-06-01): keep `experiments/` here + copy folders over, not relocate. To
-> change that later: add env `LEGAL_KG_EXPERIMENTS_DIR` + a contract
-> `experiments_root()` helper and rewrite those 24 hardcoded lines.
+> **Decision 2026-06-01 (REVERSED in the metrics-consolidation change):** the
+> retrieval producer used to be per-experiment `scripts/exp<NN>_{run,metrics}.py`
+> ("not generic, no refactor"). The metric half is now the generic, config-driven
+> `eval_core.retrieval_metrics` (single source of truth for all metrics), so the
+> old per-experiment metrics/funnel scripts were deleted. Tier-1 retrieval
+> inference is still an online script you write per experiment; it (and the
+> experiment folder) live in this producer repo — `experiments/` stays here and
+> finished folders are copied over to compare, not relocated.
 
 ---
 
@@ -290,11 +293,12 @@ legal-graph-kb/
 │   ├── multimodel.py                 # run_experiment_multimodel(experiment, arms, models)
 │   ├── rerender.py                   # plain_answer backfill (experiment-aware)
 │   ├── gold.py                       # Strict gold_citations_raw validator
-│   ├── metrics.py                    # Deterministic metric engine (pure-computational)
+│   ├── metrics.py                    # qa deterministic metric engine (pure-computational)
+│   ├── retrieval_metrics.py          # retrieval metric engine (generic, config-driven from `retrieval:`)
 │   ├── report.py                     # CSV + Markdown writers (single + multi-arm)
 │   ├── runners.py                    # compute_metrics_for_experiment(...) — owns multi-arm flow
 │   ├── judge.py                      # Fail-closed placeholder
-│   └── cli.py / __main__.py          # `python -m eval_core <run|multimodel|metrics|all> <exp>`
+│   └── cli.py / __main__.py          # `python -m eval_core <run|multimodel|metrics|all> <exp>` (family-aware)
 │
 ├── src/                              # Shared utilities (used by offline AND runtime AND eval_core)
 │   ├── ids.py                        # ID convention + reverse parser
@@ -343,9 +347,11 @@ legal-graph-kb/
 │   └── logic_lm/programs/            # Prolog programs from logic_lm CLI (timestamped .pl + .json)
 │
 ├── schema/schema.cypher              # Neo4j constraints + vector indexes
-├── scripts/                          # RETRIEVAL producers: exp<NN>_run.py (Tier-1, online)
-│                                     #   + exp<NN>_metrics.py / exp<NN>_funnel.py (Tier-2, offline);
-│                                     #   plus PowerShell wrappers (chat, install_b5, verify_b5.py)
+├── scripts/                          # Utility + audit scripts (retrieval audits, citation
+│                                     #   reparse, eval-split seal, run_retrieval_only) + PowerShell
+│                                     #   wrappers (chat, install_b5/bge_m3, verify_b5). Retrieval
+│                                     #   Tier-1 inference is written per experiment as needed;
+│                                     #   Tier-2 metrics live in eval_core/retrieval_metrics.py.
 ├── tests/                            # pytest (provenance + Experiment + metrics + experiment_contract)
 │
 ├── experiment_contract.py            # ★ SHARED experiment contract — byte-identical in experiments_repo/
@@ -393,7 +399,7 @@ In this order:
 3. **`runtime/rag_query.py`** — `RagPipeline.vector_search` / `expand` / `fetch_facts` / `traverse` / `ask` / `verify_citations`. The retrieval surface you'll extend.
 4. **`runtime/logic_lm_pipelines.py`** — three arm wrappers (`LogicLMNoRetrievalPipeline`, `LogicLMOntologyPipeline`, `LogicLMGraphRAGPipeline`). Each returns a `LogicLMAnswer` dataclass.
 5. **`runtime/logic_lm/pipelines/program_pipeline.py`** — actual Prolog generation + repair loop (`_attempt`, `_validate_predicate_inputs`, `_verify`).
-6. **`eval_core/metrics.py`** + **`eval_core/runners.py`** — exactly which metrics are headline + how `gold_articles` flow through. Don't add new metrics without reading these first.
+6. **`eval_core/metrics.py`** + **`eval_core/runners.py`** (qa) and **`eval_core/retrieval_metrics.py`** (retrieval) — exactly which metrics are headline + how `gold_articles` flow through. Don't add new metrics without reading these first.
 7. **`src/citations.py`** — citation parsing + canonical formatting + the authority registry. All eval scripts must use this; never write a per-script parser.
 8. **`prompts/runtime/logic_lm/irac_with_plain.md`** — well-structured JSON-emitting prompt; good template for new structured-output prompts.
 9. **`schema/schema.cypher`** — current Neo4j constraints + vector indexes. Any new node label / edge type lands here first.
@@ -438,7 +444,7 @@ In this order:
 5. **Path("experiments/prompts/...")**: gone. All prompts now under `prompts/`; load via `src.prompts.load_prompt(rel)`.
 6. **Module paths**: nothing in `runtime/` may import from `offline/` (and vice versa). Both may import from `src/`. Cross-imports between offline and runtime should go through `src/` shared utilities.
 7. **REPO_ROOT**: `runtime/logic_lm/cli/*.py` uses `Path(__file__).resolve().parents[3]` — depth from CLI file to repo root is exactly 3 levels (`cli → logic_lm → runtime → repo`). Don't change this without auditing the CLI entry-points.
-8. **plain_answer backfill**: pre-2026-05-27 records lack `plain_answer`. Generate via `python -m eval_core.rerender experiments/<exp> --combos all` (~$0.72 on gpt-4o-mini for the initial-eval baseline).
+8. **plain_answer backfill**: pre-2026-05-27 records lack `plain_answer`. Generate via `python -m eval_core.rerender experiments/<exp> --combos all` (cost scales with record count × model; estimate per experiment before running).
 9. **B5 embedding env**: torch 2.6.0+cu124, datasets 3.0.1, pyarrow 17 on Windows — pin all three together (see project memory `feedback_b5_pin_versions.md`). Wrong combo causes 3 cascading errors.
 10. **Reports directory**: only `reports/*.md` files explicitly listed in the `.gitignore` exception are tracked.
 
@@ -482,17 +488,18 @@ Every empirical change to the system is an *experiment*. Treat the
    `config.yaml`, run `python -m eval_core all experiments/<NN>`,
    eyeball the output, then bump `n` back to 200 and rerun. Inference
    is idempotent — already-written records get skipped on the full pass.
-6. **Drive everything through the family's entry point.**
+6. **Drive metrics through `eval_core` for both families.**
    - **qa** — `python -m eval_core <cmd> <exp>`: `run` (mode:run arms), `multimodel`
      (arm × model matrix), `metrics` (gold validate + compute + report), `all`.
-   - **retrieval** — `python -m scripts.exp<NN>_run` (Tier-1) then
-     `python -m scripts.exp<NN>_metrics` (Tier-2). `eval_core` arm runners are not
-     used (config has `arms: {}`).
+   - **retrieval** — Tier-1 results are produced by the experiment's own online
+     retrieval script (config has `arms: {}`); then `python -m eval_core metrics
+     <exp>` scores them via the config-driven `retrieval:` block.
 7. **Validate, then copy the folder to `experiments_repo/` to compare.** Run
    `python -m experiment_contract validate experiments/<NN>` (must say OK), then
-   copy the folder into `experiments_repo/experiments/<NN>/` (+ its
-   `scripts/exp<NN>_metrics.py` if retrieval) and rank it with
-   `python -m expkit leaderboard --all`. The leaderboard auto-discovers it.
+   copy the folder into `experiments_repo/experiments/<NN>/` and rank it with
+   `python -m expkit leaderboard --all`. Offline recompute (both families) uses the
+   consumer's own `eval_core` — no per-experiment metrics script to copy. The
+   leaderboard auto-discovers it.
 8. **Commit metrics and report, ignore results by default.** The root
    `.gitignore` ignores `experiments/*/results/` so disk-heavy artifacts
    don't bloat the repo. If your experiment becomes a baseline that
@@ -545,23 +552,23 @@ Every empirical change to the system is an *experiment*. Treat the
 6. Pilot then full: `python -m eval_core all experiments/<NN_your_idea>` (set `dataset.n` in config to a small number for the pilot pass).
 
 ### Adding a retrieval experiment (retrieval family)
-Retrieval experiments are **not** config-only — each ships its own producer pair
-(intentional; the retrieval producer is not generic, per the 2026-06-01 "no
-refactor" decision):
+Tier-2 metrics are **generic + config-driven** (`eval_core.retrieval_metrics`) — you
+do **not** write a metrics script. Only Tier-1 (the actual retrieval) is bespoke:
 1. Copy `experiments/_template/`, name `NN_<idea>/`, set `family: retrieval`,
-   `recompute: scripts.exp<NN>_metrics`, `arms: {}`. Write WHAT/WHY + the
-   pre-registered bar (which prior arm it must beat, on which stratum).
-2. Write `scripts/exp<NN>_run.py` (Tier-1) — reuse a sibling's helpers (e.g.
-   `from scripts.exp09_run import ...`); it sets `EXP_DIR = _REPO /
-   "experiments" / "<NN>_<idea>"` and writes `results/<arm>/A<stt>.json`. Online:
-   Neo4j + embeddings + OpenAI; cache LLM calls under `artifacts/` so re-runs are $0.
-3. Write `scripts/exp<NN>_metrics.py` (Tier-2) — reuse `scripts/exp09_metrics.py`
-   primitives (recall/precision/ndcg/mrr/r_precision + `in_corpus` stratify). It
-   writes `metrics/academic_metrics.json` in the retrieval shape. Pure stdlib, offline.
-4. Pilot (scripts auto-detect `experiments/08_hyde_retrieval/pilot_50_stt.json`)
-   then `--full`. Then `python -m experiment_contract validate experiments/<NN>`.
-5. Copy the folder **plus `scripts/exp<NN>_metrics.py`** into `experiments_repo/`
-   and rank: `python -m expkit leaderboard --all`.
+   `recompute: eval_core`, `arms: {}`, and fill the `retrieval:` block — at minimum
+   `arms: [...]` and `ks: [...]` (optionally `record_field` / `pilot_subset`). Write
+   WHAT/WHY + the pre-registered bar (which prior arm it must beat, on which stratum).
+2. Write the Tier-1 online retrieval producer (your own script — Neo4j + embeddings
+   + OpenAI; cache LLM calls under `artifacts/` so re-runs are $0). It writes
+   `experiments/<NN>/results/<arm>/A<stt>.json`, each with the ranked article ids at
+   `retrieval_only.final_article_ids` (or set `retrieval.record_field` to match).
+3. Tier-2 (offline, no code): `python -m eval_core metrics experiments/<NN>` — the
+   engine reads the `retrieval:` block and writes `metrics/academic_metrics.json`
+   (recall/precision/f1/ndcg@k + r_precision + mrr, `in_corpus` stratify). Pilot via
+   `retrieval.pilot_subset`; `--full` ignores it and scores every record on disk.
+4. `python -m experiment_contract validate experiments/<NN>` (must say OK).
+5. Copy the folder into `experiments_repo/` and rank: `python -m expkit leaderboard
+   --all`. Recompute there uses the consumer's own `eval_core` — nothing else to copy.
 
 ### Adding a new node label / edge type
 1. Edit `schema/schema.cypher` (constraints + index if needed). Idempotent `IF NOT EXISTS`.

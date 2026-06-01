@@ -87,14 +87,14 @@ legal-graph-kb/
 │   ├── runners.py               # Multi-arm metric loader
 │   ├── judge.py                 # Fail-closed placeholder
 │   └── cli.py / __main__.py     # `python -m eval_core <cmd> <exp>`
-├── experiments/                 # One folder per experiment
-│   ├── _template/               # Starter skeleton
-│   └── 01_initial_eval/         # Frozen R1+R2 baseline (committed records)
+├── experiments/                 # One folder per experiment (results NOT committed here)
+│   └── _template/               # Starter skeleton (copy → NN_name)
 ├── src/                         # Shared utilities (used everywhere)
 │   ├── ids.py                   # ID convention + reverse parser
 │   ├── schema.py                # Pydantic models (provenance invariants)
 │   ├── legal_metadata.py        # Multi-law metadata registry
 │   ├── citations.py             # Citation parsing + registry
+│   ├── retrieval/               # V5 retrieval pipeline (hyde / hyde2 / hybrid / rerank)
 │   └── prompts.py               # Prompt loader (with override env var)
 ├── prompts/                     # Single source of truth for ALL system prompts
 │   ├── offline/llm_extract.md           # B3 LLM extraction

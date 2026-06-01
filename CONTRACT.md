@@ -43,21 +43,22 @@ experiments/<NN>_<slug>/
 `recompute` accepts:
 
 ```yaml
-recompute: eval_core                 # qa: python -m eval_core metrics <exp>
-recompute: scripts.exp15_metrics     # retrieval: python -m scripts.exp15_metrics
-recompute: { module: scripts.exp15_metrics }
-recompute: { command: [python, -m, scripts.exp15_metrics, --full] }
+recompute: eval_core                 # python -m eval_core metrics <exp>  (both families)
+recompute: some.metrics_module       # python -m some.metrics_module      (custom override)
+recompute: { module: some.metrics_module }
+recompute: { command: [python, -m, some.metrics_module, --full] }
 ```
 
-Omit it and the family default applies: `qa → eval_core`,
-`retrieval → scripts.exp<NN>_metrics` (inferred from `<NN>`).
+Omit it and the family default applies — **both families recompute via
+`eval_core`**. The CLI dispatches on `family`: `qa` → the arm runners,
+`retrieval` → the config-driven engine `eval_core.retrieval_metrics`.
 
 ## Two families
 
 | Family | Experiments | `metrics/academic_metrics.json` shape | Producer |
 |---|---|---|---|
 | **qa** | 01–04 | `aggregates[arm].macro` (+ `.prolog`) — citation R/P/F1, display rate, BERTScore, latency, Prolog rates | generic `eval_core` (config-only) |
-| **retrieval** | 06–14 | `overall_macro[arm]` + `stratified[arm][stratum]` + `Ks` — recall@k, precision@k, r_precision, mrr, ndcg@k | per-experiment `scripts/exp<NN>_run.py` + `scripts/exp<NN>_metrics.py` |
+| **retrieval** | 06–14 | `overall_macro[arm]` + `stratified[arm][stratum]` + `Ks` — recall@k, precision@k, r_precision, mrr, ndcg@k | Tier-1: your online retrieval script → `results/<arm>/A*.json`; Tier-2: generic `eval_core` (reads the `retrieval:` config block) |
 
 The consumer detects the family from `config.family` first, then from these JSON
 keys (so the 14 pre-existing folders keep working without edits).
@@ -66,8 +67,8 @@ keys (so the 14 pre-existing folders keep working without edits).
 
 | Tier | Artifact | Produced by | Offline? | Available in |
 |---|---|---|---|---|
-| 1 | `results/` | `eval_core run` / `exp<NN>_run.py` (Neo4j + embeddings + LLM) | ❌ | producer only |
-| 2 | `metrics/` | `eval_core metrics` / `exp<NN>_metrics.py` from `results/` | ✅ | both repos |
+| 1 | `results/` | qa: `eval_core run`; retrieval: your online retrieval script (Neo4j + embeddings + LLM) | ❌ | producer only |
+| 2 | `metrics/` | `eval_core metrics` from `results/` (both families) | ✅ | both repos |
 | 3 | leaderboard | `expkit` from `metrics/` | ✅ | both repos |
 
 The consumer repo deliberately has **no Tier-1 code** (no inference). It commits
@@ -81,8 +82,9 @@ for Tier-3 comparison.
 2. **Generate data** (Tier-1 → Tier-2) per family (see the template README).
 3. **Validate**: `python -m experiment_contract validate experiments/NN_slug`
    (must report `OK` / comparable).
-4. **Copy the folder** into the consumer at `experiments/NN_slug/`. For offline
-   retrieval recompute there, also copy `scripts/expNN_metrics.py`.
+4. **Copy the folder** into the consumer at `experiments/NN_slug/`. Offline
+   recompute (both families) uses the consumer's own `eval_core` — no
+   per-experiment metrics script to copy.
 5. **Compare**: in the consumer, `python -m expkit leaderboard --all` —
    the new folder is auto-discovered and ranked against every prior experiment.
    `python -m expkit validate --all` checks every folder against this contract.
