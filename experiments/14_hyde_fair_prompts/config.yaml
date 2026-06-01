@@ -1,0 +1,45 @@
+name: "exp14 — Fair-prompt re-test (grounded + semantic HyDE)"
+description: |
+  Re-tests the grounding arms of exp 09 (HyDE2, clause-text grounding) and
+  exp 13 (semantic, concept-frame grounding) after bringing their prompts to
+  BYTE-PARITY with HyDE1's skeleton — same role + same ~20-term BHXH vocabulary
+  scaffold + same prohibitions + same examples — so the ONLY variable is the
+  grounding block.
+
+  Motivation: the 2026-06-01 code audit found that the canonical grounded /
+  semantic prompts had DROPPED HyDE1's static vocabulary list (Confound A) and
+  the grounded prompt carried a self-contradiction ("use context vocab" +
+  "don't copy verbatim", Confound B). The earlier head-to-head was therefore
+  NOT a clean single-variable comparison. exp 10 (GRACE-R) independently showed
+  that removing HyDE1's vocab templating costs ~0.012 R@12, so the missing list
+  was doing measurable work for the incumbent.
+
+  This experiment isolates the grounding variable. Canonical prompts and the
+  frozen exp 08/09/13 records are left UNTOUCHED — the parity prompts live as
+  overrides selected via LEGAL_KG_PROMPTS_DIR (set by scripts/exp14_run.py).
+
+  Arms (retrieval-only, article granularity, tuned stack — comparable to 08/09/13):
+    dense               → V5RetrievalPipeline.retrieve_dense_only (raw)
+    dense_hyde          → retrieve_dense_only_hyde (HyDE1, canonical prompt) — the bar
+    dense_hyde2         → retrieve_dense_only_hyde2 (grounded, PARITY prompt)
+    dense_hyde_semantic → retrieve_dense_only_hyde_semantic (semantic, PARITY prompt)
+
+  Runner:  python -m scripts.exp14_run --pilot-50
+  Metrics: python -m scripts.exp14_metrics
+
+date: "2026-06-01"
+
+dataset:
+  questions: data/eval/questions_200.json
+  n: null
+
+parent: null
+
+# Parity prompts for grounded + semantic; HyDE1 falls back to canonical.
+prompts_override_dir: experiments/14_hyde_fair_prompts/prompts_override
+
+# Retrieval-only audit — eval_core arm runners not applicable (like exp 08/09/13).
+# Records by scripts/exp14_run.py; metrics by scripts/exp14_metrics.py.
+arms: {}
+
+multimodel: null
