@@ -132,6 +132,33 @@ result as surely as editing a metric does.
   flatter the method you hope wins. Then read `metrics/academic_metrics.json` as
   it is and report losses as plainly as wins.
 
+### Rule 6 — Each experiment is self-contained; results never leak out
+
+An experiment's results must live entirely inside `experiments/<NN>/`, so that
+deleting that folder removes **every trace** of its outcomes from the repo.
+(This rule exists because a cleanup found prior-experiment results scattered
+across changelog, docs, decision records, code docstrings, and memory — turning
+deletion into a repo-wide hunt and leaving anchors that bias later work.)
+
+- **Results stay in the folder.** Numbers, metrics, verdicts ("X wins / Y
+  loses"), funnels, and the result write-up belong only in
+  `experiments/<NN>/{results,metrics,report,README.md}`.
+- **Never leak a result outward.** Do not paste experiment numbers / verdicts /
+  conclusions into `docs/` (changelog, decisions, plans), the `.claude/` skill,
+  code docstrings/comments, prompts, or memory. Those may describe *code /
+  mechanism* and may *link* to an experiment README — never copy its outcomes.
+  A number or verdict found in changelog/docs/docstring is a leak; fix it at the
+  source.
+- **The delete test.** Before closing an experiment, ask: "if I delete
+  `experiments/<NN>/`, is every result and assumption of it gone from the repo?"
+  If something survives elsewhere, move it back in.
+- **Don't pull from `experiments_repo/` into new work.** Designing or running a
+  new experiment must not silently import prior results, judgments, or summaries
+  from the archive. Cross-experiment comparison is a separate, deliberate step
+  (copy the finished folder over → `expkit leaderboard`), not an input that
+  steers what you try (cf. Rule 5: prior *measured numbers* are an objective bar
+  only; prior *interpretations* are never inherited).
+
 ---
 
 ## Experiment contract & the two families (shared with `experiments_repo/`)
