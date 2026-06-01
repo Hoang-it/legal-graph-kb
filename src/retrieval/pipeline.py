@@ -42,6 +42,7 @@ from src.retrieval.hybrid_retriever import (
 )
 from src.retrieval.hyde import OpenAIHydeGenerator
 from src.retrieval.hyde2 import OpenAIGroundedHydeGenerator
+from src.retrieval.hyde_semantic import OpenAISemanticHydeGenerator
 from src.retrieval.reranker import CrossEncoderReranker
 
 load_dotenv()
@@ -142,6 +143,7 @@ class V5RetrievalPipeline:
         hyde: OpenAIHydeGenerator | None = None,
         hyde2: OpenAIGroundedHydeGenerator | None = None,
         hyde2_seed_k: int = 5,
+        hyde_semantic: OpenAISemanticHydeGenerator | None = None,
     ):
         from neo4j import GraphDatabase
 
@@ -172,6 +174,7 @@ class V5RetrievalPipeline:
         self.hyde = hyde
         self.hyde2 = hyde2
         self.hyde2_seed_k = hyde2_seed_k
+        self.hyde_semantic = hyde_semantic
 
         # Static deps
         self._registry = load_registry(DEFAULT_REGISTRY_PATH)
@@ -452,6 +455,87 @@ class V5RetrievalPipeline:
                 "prompt_sha": self.hyde2.prompt_sha,
                 "seed_clause_ids": seed_clause_ids,
                 "seed_clause_ids_hash": seed_ids_hash,
+            },
+        }
+
+        return RetrievalOnlyAnswer(
+            question=question,
+            dense_article_ids=article_ids,
+            final_article_ids=article_ids,
+            n_final=len(article_ids),
+            elapsed_s=round(time.time() - t0, 3),
+            elapsed_breakdown=timings,
+            config=config_snapshot,
+        )
+
+    def retrieve_dense_only_hyde_semantic(
+        self,
+        question: str,
+        frame_text: str,
+        context_key_ids: list[str],
+        top_k: int | None = None,
+    ) -> RetrievalOnlyAnswer:
+        """Semantic-grounded HyDE (exp 13) — pure dense, NO seed pass.
+
+        The hypothetical doc is grounded on a precomputed BHXH **concept
+        frame** (built upstream by
+        ``runtime.retrievers.semantic_context.build_semantic_context`` —
+        query→concepts, no dense clause seed → attacks exp 09's domain-noisy
+        seed). We encode the doc with BGE-M3(+LoRA), mean-pool + normalize,
+        then dense top-``top_k`` against the same index. Same
+        :class:`RetrievalOnlyAnswer` contract as the other dense arms.
+
+        ``frame_text`` may be empty (no concept matched) — the generator
+        soft-falls-back to a HyDE1-style general passage; ``context_key_ids``
+        still keys the cache deterministically.
+        """
+        if self.hyde_semantic is None:
+            raise RuntimeError(
+                "retrieve_dense_only_hyde_semantic requires an "
+                "OpenAISemanticHydeGenerator passed via "
+                "V5RetrievalPipeline(hyde_semantic=...)."
+            )
+        import numpy as np
+
+        t0 = time.time()
+        timings: dict[str, float] = {}
+        k = top_k if top_k is not None else self.dense_k
+
+        # Pass A — grounded LLM generation (cache-aware inside generate()).
+        t = time.time()
+        docs = self.hyde_semantic.generate(question, frame_text, context_key_ids)
+        timings["hyde_generate"] = round(time.time() - t, 3)
+
+        # Pass B — encode docs, mean-pool, normalize, dense search by vector.
+        t = time.time()
+        embs = self.embed_model.encode(
+            docs, normalize_embeddings=True, show_progress_bar=False
+        )
+        arr = np.asarray(embs, dtype=np.float32)
+        if arr.ndim == 1:
+            arr = arr[None, :]
+        mean_vec = arr.mean(axis=0)
+        norm = float(np.linalg.norm(mean_vec))
+        if norm > 0:
+            mean_vec = mean_vec / norm
+        rows = self.retriever._dense_search_by_vector(mean_vec.tolist(), k)
+        timings["final_retrieve"] = round(time.time() - t, 3)
+
+        article_ids = _dedupe_articles_in_order(r["article_id"] for r in rows)
+
+        config_snapshot = {
+            "mode": "dense_only_hyde_semantic",
+            "dense_k": k,
+            "adapter_path": self.adapter_path,
+            "dense_index": self.dense_index,
+            "hyde_semantic": {
+                "model_id": self.hyde_semantic.model,
+                "n": self.hyde_semantic.n,
+                "max_tokens": self.hyde_semantic.max_tokens,
+                "temperature": self.hyde_semantic.temperature,
+                "prompt_sha": self.hyde_semantic.prompt_sha,
+                "n_context_key_ids": len(context_key_ids),
+                "concept_match": bool(frame_text),
             },
         }
 
