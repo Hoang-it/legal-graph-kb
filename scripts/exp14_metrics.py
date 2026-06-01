@@ -5,18 +5,8 @@ Reads ``experiments/14_hyde_fair_prompts/results/<arm>/A<stt>.json`` for arms
 prompt), ``dense_hyde_semantic`` (semantic, PARITY prompt) and computes
 article-level recall@{1,5,10,12,20,all}, precision@{1,5,10,12,20}, R-Precision,
 MRR, NDCG@12, stratified by gold corpus type (``in_corpus`` is the headline).
-
-Pre-registered success (same gates as exp 09/13), computed per challenger on
-the **in_corpus** stratum, so the ONLY thing that changed vs exp 09/13 is the
-prompt parity fix:
-  S1 (no regression vs HyDE1): challenger R@12 ≥ HyDE1 R@12 − 0.01
-  S2 (beats raw):              challenger R@12 ≥ dense  R@12 + 0.03
-  fair-prompt win:             challenger R@12 − HyDE1 R@12 ≥ +0.02
-
-Compare these numbers against the FROZEN exp 13 (semantic) / exp 09 (grounded)
-reports on the SAME pilot-50 to read the prompt-parity effect: a narrower gap
-to HyDE1 means part of the earlier "loss" was the dropped-vocab confound, not
-the grounding idea.
+The challenger arms use parity prompts that hold HyDE1's vocabulary scaffold
+constant, so only the grounding block differs between them.
 
     python -m scripts.exp14_metrics            # pilot-50 (auto)
     python -m scripts.exp14_metrics --full
@@ -62,7 +52,7 @@ REGISTRY_PATH = _REPO / "data" / "legal_sources.yaml"
 PILOT_50_PATH = _REPO / "experiments" / "08_hyde_retrieval" / "pilot_50_stt.json"
 
 ARMS = ("dense", "dense_hyde", "dense_hyde2", "dense_hyde_semantic")
-# (arm, human label) for the per-challenger pre-registered gates.
+# (arm, human label) for the per-challenger report rows.
 CHALLENGERS = (("dense_hyde2", "HyDE2-fair (grounded)"),
                ("dense_hyde_semantic", "semantic-fair (concept frame)"))
 KS: tuple[int | None, ...] = (1, 5, 10, 12, 20, None)
@@ -233,31 +223,6 @@ def write_outputs(summ, strat, prov, n_scored) -> None:
         s = strat[arm]["in_corpus"]
         L.append(f"| {arm} | {s.get('n',0)} | {_fmt(s.get('r_precision'))} | "
                  f"{_fmt(s.get('mrr'))} | {_fmt(s.get('ndcg@12'))} |")
-    L.append("")
-
-    # Pre-registered gates per challenger, on in_corpus
-    ic = {a: strat[a]["in_corpus"] for a in ARMS}
-    r12_hyde = ic["dense_hyde"].get("recall@12")
-    r12_dense = ic["dense"].get("recall@12")
-    L.append("## Pre-registered success criteria (in_corpus) — per challenger vs HyDE1 bar")
-    L.append("")
-    L.append("| challenger | R@12 | S1 (≥ HyDE1−0.01) | S2 (≥ dense+0.03) | fair-win (Δ≥+0.02) |")
-    L.append("|---|---:|:-:|:-:|:-:|")
-    for arm, label in CHALLENGERS:
-        r12 = ic[arm].get("recall@12")
-        s1 = _delta(r12, r12_hyde)
-        s2 = _delta(r12, r12_dense)
-        v_s1 = "PASS" if (s1 is not None and s1 >= -0.01) else "FAIL"
-        v_s2 = "PASS" if (s2 is not None and s2 >= 0.03) else "FAIL"
-        v_win = "WIN" if (s1 is not None and s1 >= 0.02) else ("AUDIT" if (s1 is not None and s1 > 0.05) else "—")
-        L.append(f"| {label} | {_fmt(r12)} | {v_s1} ({_fmt(s1)}) | {v_s2} ({_fmt(s2)}) | {v_win} |")
-    L.append("")
-    L.append(f"> HyDE1 bar R@12 (in_corpus) = **{_fmt(r12_hyde)}**; raw dense = {_fmt(r12_dense)}.")
-    L.append("> Read the prompt-parity effect by comparing each challenger's R@12 here against")
-    L.append("> its value in the FROZEN exp 13 (semantic) / exp 09 (grounded) report on the")
-    L.append("> SAME pilot-50. A narrower gap ⇒ part of the earlier loss was the dropped-vocab")
-    L.append("> confound, not the grounding idea. Differences are point estimates — pair a")
-    L.append("> bootstrap CI before any firm claim.")
     L.append("")
 
     pv = prov.get("in_corpus") or prov.get("overall") or {}

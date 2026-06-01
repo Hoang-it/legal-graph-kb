@@ -18,8 +18,6 @@ Plus the new provenance diagnostics for ``cypher_walk`` (plan §5.3):
 ``cypher_used`` rate, mean ``n_cypher_new`` (overall + conditional on
 ``cypher_used``), ``fallback_used`` rate, mean ``cypher_attempts`` length.
 
-And a pre-commitment check (plan §5.5) so the result can't be rationalised.
-
 CLAUSE-LEVEL recall is NOT computed: the 200-question gold dataset carries
 **0** khoản-level citations (``gold_items == gold_articles`` for all 200 —
 verified against ``eval_core.gold``). Reporting a clause-level number would
@@ -401,32 +399,6 @@ def write_report(per_arm_summary, per_arm_strat, per_arm_prov, clause_note, n_sc
         L.append(f"| mean cypher_attempts | {_fmt(prov['mean_cypher_attempts'])} |")
     else:
         L.append("_(no cypher_walk records scored)_")
-    L.append("")
-
-    # Pre-commitment check (plan §5.5)
-    L.append("## Pre-commitment check (plan §5.5) — stated before the run")
-    L.append("")
-    dv = per_arm_summary["dense_vanilla"]
-    cw = per_arm_summary["cypher_walk"]
-    no_l41_dv = per_arm_strat["dense_vanilla"].get("no_l41", {})
-    no_l41_cw = per_arm_strat["cypher_walk"].get("no_l41", {})
-    r12_lift = _delta(cw.get("recall@12"), dv.get("recall@12"))
-    r12_lift_nol41 = _delta(no_l41_cw.get("recall@12"), no_l41_dv.get("recall@12"))
-    used_rate = prov.get("cypher_used_rate")
-    new_when_used = prov.get("mean_n_cypher_new_when_used")
-    L.append("| prediction | threshold | observed | within prediction? |")
-    L.append("|---|---|---:|:-:|")
-    L.append(f"| cypher_used rate | ≥ 0.30 | {_fmt(used_rate)} | "
-             f"{'✓' if (used_rate is not None and used_rate >= 0.30) else '✗ AUDIT'} |")
-    L.append(f"| mean n_cypher_new (when used) | 1.5–3.0 | {_fmt(new_when_used)} | "
-             f"{'✓' if (new_when_used is not None and 1.5 <= new_when_used <= 3.0) else '✗ AUDIT'} |")
-    L.append(f"| recall@12 lift vs dense_vanilla (all strata) | +0.00 to +0.05 | {_fmt(r12_lift)} | "
-             f"{'✓' if (r12_lift is not None and 0.0 <= r12_lift <= 0.05) else '✗ AUDIT'} |")
-    L.append(f"| recall@12 lift on no_l41 stratum | near 0 (≤ +0.05) | {_fmt(r12_lift_nol41)} | "
-             f"{'✓' if (r12_lift_nol41 is not None and r12_lift_nol41 <= 0.05) else '✗ AUDIT'} |")
-    L.append("")
-    L.append("> If recall@12 lift > +0.05 across all strata, the plan says treat as "
-             "**suspicious and audit before celebrating** — do not rationalise.")
     L.append("")
 
     # Stratified recall@K

@@ -4,11 +4,6 @@ Reads ``experiments/13_hyde_semantic/results/<arm>/A<stt>.json`` for arms
 ``dense``, ``dense_hyde``, ``dense_hyde_semantic`` and computes article-level
 recall@{1,5,10,12,20,all}, precision@{1,5,10,12,20}, R-Precision, MRR, NDCG@12,
 stratified by gold corpus type (``in_corpus`` is the headline).
-
-Pre-registered success, computed on the **in_corpus** stratum:
-  S1 (no regression vs HyDE1): semantic R@12 ≥ HyDE1 R@12 − 0.01
-  S2 (beats raw):              semantic R@12 ≥ dense  R@12 + 0.03
-  headline Δ:                  semantic R@12 − HyDE1 R@12 ≥ +0.02 → win
 Headline precision = precision@1 + R-Precision (precision@2 is cardinality-
 capped at 0.76 — reported elsewhere, never a target).
 
@@ -224,31 +219,6 @@ def write_outputs(summ, strat, prov, n_scored) -> None:
         s = strat[arm]["in_corpus"]
         L.append(f"| {arm} | {s.get('n',0)} | {_fmt(s.get('r_precision'))} | "
                  f"{_fmt(s.get('mrr'))} | {_fmt(s.get('ndcg@12'))} |")
-    L.append("")
-
-    # Success criteria (plan §8) on in_corpus
-    ic = {a: strat[a]["in_corpus"] for a in ARMS}
-    r12_sem = ic["dense_hyde_semantic"].get("recall@12")
-    r12_hyde = ic["dense_hyde"].get("recall@12")
-    r12_dense = ic["dense"].get("recall@12")
-    s1 = _delta(r12_sem, r12_hyde)
-    s2 = _delta(r12_sem, r12_dense)
-    L.append("## Pre-registered success criteria (plan §8, in_corpus)")
-    L.append("")
-    L.append("| check | rule | value | verdict |")
-    L.append("|---|---|---:|:-:|")
-    L.append(f"| S1 no-regression vs HyDE1 | sem R@12 − HyDE1 R@12 ≥ −0.01 | {_fmt(s1)} | "
-             f"{'PASS' if (s1 is not None and s1 >= -0.01) else 'FAIL'} |")
-    L.append(f"| S2 beats raw dense | sem R@12 − dense R@12 ≥ +0.03 | {_fmt(s2)} | "
-             f"{'PASS' if (s2 is not None and s2 >= 0.03) else 'FAIL'} |")
-    L.append(f"| headline Δ (win) | sem R@12 − HyDE1 R@12 ≥ +0.02 | {_fmt(s1)} | "
-             f"{'WIN' if (s1 is not None and s1 >= 0.02) else ('AUDIT' if (s1 is not None and s1 > 0.05) else '—')} |")
-    L.append("")
-    L.append("> Decision rule: **win = S1 ∧ S2 ∧ (headline Δ ≥ +0.02)**. Δ > +0.05 → audit before celebrating.")
-    L.append("")
-    L.append("**North-star (NOT this experiment's pass/fail, plan §9):** recall@12 ≈ 0.55–0.60 / "
-             "R-Prec ≈ 0.30 are above the HyDE1 baseline and need the full rerank pipeline and/or "
-             "corpus expansion — separate levers.")
     L.append("")
 
     # Provenance

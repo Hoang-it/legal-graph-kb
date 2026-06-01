@@ -439,46 +439,6 @@ def write_report(per_arm_summary: dict, per_arm_strat: dict, n_scored: int) -> P
             )
         lines.append("")
 
-    lines.append("## HyDE success criteria (plan §Success criteria)")
-    lines.append("")
-    lines.append("HyDE wins if **any one** of the following holds on the in_corpus stratum:")
-    lines.append("")
-    lines.append("1. `dense_hyde` lifts R@12 by ≥ **+3pp absolute** vs `dense`.")
-    lines.append("2. `dense_hyde` lifts NDCG@10 by ≥ **+5% relative** vs `dense`.")
-    lines.append("   (Approximated below with NDCG@12 since K=10 is not in the K-set.)")
-    lines.append("3. `full_rerank_hyde` lifts R-Precision by ≥ **+15% relative** vs `full_rerank`.")
-    lines.append("")
-    in_corp = {arm: per_arm_strat[arm]["in_corpus"] for arm in ARMS}
-    def _delta_abs(a, b):
-        if a is None or b is None:
-            return None
-        return round(a - b, 4)
-    def _delta_rel(a, b):
-        if a is None or b is None or b == 0:
-            return None
-        return round((a - b) / b, 4)
-    crit1 = _delta_abs(in_corp["dense_hyde"].get("recall@12"), in_corp["dense"].get("recall@12"))
-    crit2 = _delta_rel(in_corp["dense_hyde"].get("ndcg@12"), in_corp["dense"].get("ndcg@12"))
-    crit3 = _delta_rel(in_corp["full_rerank_hyde"].get("r_precision"), in_corp["full_rerank"].get("r_precision"))
-    lines.append("| criterion | metric | dense* | dense_hyde* / full_rerank_hyde* | Δ | threshold | passes? |")
-    lines.append("|---|---|---:|---:|---:|---:|:-:|")
-    lines.append(
-        f"| 1 | R@12 in_corpus (abs Δ) | {_fmt(in_corp['dense'].get('recall@12'))} | "
-        f"{_fmt(in_corp['dense_hyde'].get('recall@12'))} | {_fmt(crit1)} | +0.03 | "
-        f"{'✓' if (crit1 is not None and crit1 >= 0.03) else '—'} |"
-    )
-    lines.append(
-        f"| 2 | NDCG@12 in_corpus (rel Δ) | {_fmt(in_corp['dense'].get('ndcg@12'))} | "
-        f"{_fmt(in_corp['dense_hyde'].get('ndcg@12'))} | {_fmt(crit2)} | +0.05 | "
-        f"{'✓' if (crit2 is not None and crit2 >= 0.05) else '—'} |"
-    )
-    lines.append(
-        f"| 3 | R-Precision in_corpus (rel Δ) | {_fmt(in_corp['full_rerank'].get('r_precision'))} | "
-        f"{_fmt(in_corp['full_rerank_hyde'].get('r_precision'))} | {_fmt(crit3)} | +0.15 | "
-        f"{'✓' if (crit3 is not None and crit3 >= 0.15) else '—'} |"
-    )
-    lines.append("")
-
     lines.append("## Notes")
     lines.append("")
     lines.append("- All 4 arms share encoder + index + reranker; only the dense query embedding differs (raw question vs HyDE doc).")

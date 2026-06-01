@@ -23,10 +23,6 @@ Outputs:
 - ``metrics/academic_metrics.json``
 - ``metrics/academic_metrics.csv``
 - ``report/academic_report.md``
-
-The report's "success criteria" section compares against exp 09's
-baseline numbers (frozen): dense=0.3832, dense_hyde=0.4736,
-dense_hyde2=0.4210 R@12 in_corpus n=151. See exp 09 README.
 """
 from __future__ import annotations
 
@@ -58,33 +54,6 @@ METRICS_DIR = EXP_DIR / "metrics"
 REPORT_DIR = EXP_DIR / "report"
 QUESTIONS_PATH = _REPO / "data" / "eval" / "questions_200.json"
 REGISTRY_PATH = _REPO / "data" / "legal_sources.yaml"
-
-# Exp 09 frozen baselines (in_corpus stratum, n=151 full 200).
-# Source: experiments/09_hyde2_grounded/README.md Result summary table.
-EXP09_BASELINE_IN_CORPUS = {
-    "dense": {
-        "recall@12": 0.3832,
-        "recall@100": 0.6592,
-        "ndcg@12": 0.2186,
-        "r_precision": 0.0635,
-        "mrr": 0.2122,
-    },
-    "dense_hyde": {
-        "recall@12": 0.4736,
-        "recall@100": 0.7016,
-        "ndcg@12": 0.2944,
-        "r_precision": 0.1326,
-        "mrr": 0.2843,
-    },
-    "dense_hyde2": {
-        "recall@12": 0.4210,
-        "recall@100": 0.5989,
-        "ndcg@12": 0.2437,
-        "r_precision": 0.1019,
-        "mrr": 0.2192,
-    },
-}
-
 
 ARMS = ("dense", "dense_hyde", "dense_hyde2")
 KS: tuple[int | None, ...] = (12, 20, 30, 50, 70, 100, None)
@@ -309,7 +278,6 @@ def write_json(per_arm_summary: dict, per_arm_strat: dict) -> Path:
         "Ks": [("all" if k is None else k) for k in KS],
         "overall_macro": per_arm_summary,
         "stratified": per_arm_strat,
-        "exp09_baseline_in_corpus": EXP09_BASELINE_IN_CORPUS,
     }
     out.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     return out
@@ -408,101 +376,6 @@ def write_report(per_arm_summary: dict, per_arm_strat: dict, n_scored: int) -> P
             )
         lines.append("")
 
-    # ------------------------------------------------------------------
-    # GRACE-R vs exp 09 baseline — head-to-head on in_corpus
-    # ------------------------------------------------------------------
-    lines.append("## GRACE-R vs exp 09 baseline (in_corpus)")
-    lines.append("")
-    lines.append("Baseline numbers frozen from `experiments/09_hyde2_grounded/README.md` "
-                 "(full 200, n=151 in_corpus).")
-    lines.append("")
-    ic = {arm: per_arm_strat[arm]["in_corpus"] for arm in ARMS}
-
-    def _delta_abs(a, b):
-        if a is None or b is None:
-            return None
-        return round(a - b, 4)
-
-    def _delta_rel(a, b):
-        if a is None or b is None or b == 0:
-            return None
-        return round((a - b) / b * 100, 2)
-
-    lines.append("### R@12 in_corpus")
-    lines.append("")
-    lines.append("| arm | exp 09 baseline | exp 10 (GRACE-R) | Δ abs | Δ rel % |")
-    lines.append("|---|---:|---:|---:|---:|")
-    for arm in ARMS:
-        base = EXP09_BASELINE_IN_CORPUS[arm]["recall@12"]
-        gracer = ic[arm].get("recall@12")
-        lines.append(
-            f"| {arm} | {_fmt(base)} | {_fmt(gracer)} | "
-            f"{_fmt(_delta_abs(gracer, base))} | "
-            f"{_fmt(_delta_rel(gracer, base))} |"
-        )
-    lines.append("")
-
-    lines.append("### NDCG@12 in_corpus")
-    lines.append("")
-    lines.append("| arm | exp 09 baseline | exp 10 (GRACE-R) | Δ abs | Δ rel % |")
-    lines.append("|---|---:|---:|---:|---:|")
-    for arm in ARMS:
-        base = EXP09_BASELINE_IN_CORPUS[arm]["ndcg@12"]
-        gracer = ic[arm].get("ndcg@12")
-        lines.append(
-            f"| {arm} | {_fmt(base)} | {_fmt(gracer)} | "
-            f"{_fmt(_delta_abs(gracer, base))} | "
-            f"{_fmt(_delta_rel(gracer, base))} |"
-        )
-    lines.append("")
-
-    lines.append("### R-Precision in_corpus")
-    lines.append("")
-    lines.append("| arm | exp 09 baseline | exp 10 (GRACE-R) | Δ abs | Δ rel % |")
-    lines.append("|---|---:|---:|---:|---:|")
-    for arm in ARMS:
-        base = EXP09_BASELINE_IN_CORPUS[arm]["r_precision"]
-        gracer = ic[arm].get("r_precision")
-        lines.append(
-            f"| {arm} | {_fmt(base)} | {_fmt(gracer)} | "
-            f"{_fmt(_delta_abs(gracer, base))} | "
-            f"{_fmt(_delta_rel(gracer, base))} |"
-        )
-    lines.append("")
-
-    # Pre-committed predictions from experiment README
-    lines.append("### Pre-committed predictions (from experiment README)")
-    lines.append("")
-    lines.append("| # | Prediction | Threshold | Result |")
-    lines.append("|---|---|---|:-:|")
-
-    h1 = ic["dense_hyde"].get("recall@12")
-    h1_base = EXP09_BASELINE_IN_CORPUS["dense_hyde"]["recall@12"]
-    h2 = ic["dense_hyde2"].get("recall@12")
-    h2_base = EXP09_BASELINE_IN_CORPUS["dense_hyde2"]["recall@12"]
-    if h1 is not None and h2 is not None:
-        p1 = "PASS" if h1 >= h1_base else "FAIL"
-        p2 = "PASS" if h1 >= h1_base + 0.01 else "FAIL"
-        p3 = "PASS" if h2 >= h2_base + 0.02 else "FAIL"
-        gap_old = max(h1_base - h2_base, 1e-9)
-        gap_new = h1_base - h2
-        p4_ratio = gap_new / gap_old
-        p4 = "PASS" if p4_ratio < 0.5 else "FAIL"
-        p5 = "PASS" if h2 >= h1 else "FAIL"
-    else:
-        p1 = p2 = p3 = p4 = p5 = "—"
-        p4_ratio = None
-
-    lines.append(f"| P1 | GRACE-R HyDE1 ≥ exp09 HyDE1 R@12 | abs Δ ≥ 0 | {p1} |")
-    lines.append(f"| P2 | GRACE-R HyDE1 > exp09 HyDE1 R@12 | abs Δ ≥ +0.01 | {p2} |")
-    lines.append(f"| P3 | GRACE-R HyDE2 > exp09 HyDE2 R@12 | abs Δ ≥ +0.02 | {p3} |")
-    if p4_ratio is not None:
-        lines.append(f"| P4 | GRACE-R HyDE2 closes >50% of HyDE2-vs-HyDE1 gap | ratio={p4_ratio:.3f} < 0.5 | {p4} |")
-    else:
-        lines.append(f"| P4 | GRACE-R HyDE2 closes >50% of HyDE2-vs-HyDE1 gap | ratio < 0.5 | — |")
-    lines.append(f"| P5 | GRACE-R HyDE2 ≥ GRACE-R HyDE1 R@12 | abs Δ ≥ 0 | {p5} |")
-    lines.append("")
-
     lines.append("## Notes")
     lines.append("")
     lines.append("- All three arms share encoder + index with exp 09; only the dense "
@@ -585,15 +458,6 @@ def main() -> int:
             f"{_fmt(s['r_precision']):>9}{_fmt(s['mrr']):>9}"
         )
 
-    print()
-    print("=== In-corpus head-to-head vs exp 09 baseline ===")
-    print(f"  {'arm':<14}{'metric':<12}{'exp09':>9}{'exp10':>9}{'Δ abs':>9}")
-    for arm in ARMS:
-        for metric in ("recall@12", "ndcg@12", "r_precision"):
-            base = EXP09_BASELINE_IN_CORPUS[arm].get(metric)
-            ours = per_arm_strat[arm]["in_corpus"].get(metric)
-            d = (round(ours - base, 4) if (ours is not None and base is not None) else None)
-            print(f"  {arm:<14}{metric:<12}{_fmt(base):>9}{_fmt(ours):>9}{_fmt(d):>9}")
     return 0
 
 

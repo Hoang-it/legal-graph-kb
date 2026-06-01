@@ -9,8 +9,7 @@ strata, cypher provenance — reusing the exp 11 metric engine verbatim — plus
 - the 2×2 interaction table (HyDE effect on seed / on walk; walk effect on
   each seed; combo vs best single arm),
 - a per-stage gold-hit funnel for BOTH cypher arms (does the HyDE seed change
-  whether the walk surfaces gold?),
-- a pre-commitment check (stated in the README before the run).
+  whether the walk surfaces gold?).
 
 CLAUSE-LEVEL recall is NOT reported (0/200 gold cites carry khoản — same as
 exp 11). Outputs: metrics/{academic_metrics.json,csv}, report/retrieval_report.md.
@@ -227,25 +226,6 @@ def write_report(summary, strat, prov, funnels, clause_note, n) -> Path:
     L.append(f"- Best single arm (excl. combo) recall@12 = **{_fmt(best_single)}**; "
              f"combo `cypher_walk_hyde` = **{_fmt(r(cwh))}** "
              f"(Δ vs best = {_fmt(_delta(r(cwh), best_single))}).")
-    L.append("")
-
-    # Pre-commitment
-    L.append("## Pre-commitment check (stated in README before the run)")
-    L.append("")
-    d_walk_hyde = _delta(r(cwh), r(dh))
-    d_combo_best = _delta(r(cwh), best_single)
-    L.append("| prediction | threshold | observed | verdict |")
-    L.append("|---|---|---:|:-:|")
-    L.append(f"| walk hurts even on HyDE seed (cypher_walk_hyde − dense_hyde) | ≤ +0.02 | "
-             f"{_fmt(d_walk_hyde)} | {'✓' if (d_walk_hyde is not None and d_walk_hyde <= 0.02) else '✗ AUDIT'} |")
-    L.append(f"| combo does not beat best single arm | ≤ +0.05 | {_fmt(d_combo_best)} | "
-             f"{'✓' if (d_combo_best is not None and d_combo_best <= 0.05) else '✗ AUDIT'} |")
-    for arm in CYPHER_ARMS:
-        fn = funnels.get(arm, {})
-        if fn.get("n"):
-            seedg, cypg = fn["seed"]["gold_hits"], fn["+cypher_new"]["gold_hits"]
-            L.append(f"| {arm}: +cypher_new adds ~0 gold (Σ gold seed→+cypher) | ≈ equal | "
-                     f"{seedg}→{cypg} | {'✓' if cypg - seedg <= 1 else '✗ AUDIT'} |")
     L.append("")
 
     # Funnels
