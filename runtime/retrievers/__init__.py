@@ -13,8 +13,7 @@ meant to be drop-in replacements for any code path that today calls
 Current members:
 
 - :class:`CypherWalkRetriever` — vector seed → LLM-authored outward Cypher
-  walk → fallback expand → RRF fusion. See
-  ``docs/plans/exp11_cypher_walk_retriever.md``.
+  walk → fallback expand → RRF fusion.
 """
 
 from runtime.retrievers.cypher_walk import (

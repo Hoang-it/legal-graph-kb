@@ -33,8 +33,6 @@ tenacity retry, and cost accounting. What changes:
   needs the *raw-question* dense encoder, not a HyDE2-augmented
   one). The orchestration lives in
   :meth:`V5RetrievalPipeline.retrieve_dense_only_hyde2` instead.
-
-See ``docs/plans/exp09_hyde2_grounded.md`` §4 + §D-EXP09-6.
 """
 from __future__ import annotations
 

@@ -10,9 +10,7 @@ Arms:
 
 The semantic arm grounds the HyDE doc on a **BHXH concept frame** built by
 ``runtime.retrievers.semantic_context.build_semantic_context`` (query →
-concepts + KG entities from ``ontology_kg_full.json``; NO dense clause seed —
-attacks exp 09's domain-noisy seed). See
-``docs/plans/exp13_hyde_semantic.md``.
+concepts + KG entities from ``ontology_kg_full.json``; NO dense clause seed).
 
 Reuses exp 09's runner helpers + the exact tuned dense config so ``dense`` /
 ``dense_hyde`` are byte-comparable to exp 08/09 (and HyDE1 hits the shared

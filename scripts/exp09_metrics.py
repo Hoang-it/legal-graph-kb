@@ -485,9 +485,7 @@ def write_report(per_arm_summary: dict, per_arm_strat: dict, n_scored: int) -> P
                  "index changes (because seed sets shift).")
     lines.append("- All three arms share encoder + index; only the dense query "
                  "embedding differs (raw question / HyDE1 doc / HyDE2 doc).")
-    lines.append("- This is a retrieval-only diagnostic at article granularity. "
-                 "The thesis-defining E2E metric (academic_v2 strict tuple) lives "
-                 "in item B of `docs/plans/exp08_followups_and_strict_metric.md`.")
+    lines.append("- This is a retrieval-only diagnostic at article granularity.")
     lines.append("")
 
     out.write_text("\n".join(lines), encoding="utf-8")

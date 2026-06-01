@@ -1,6 +1,6 @@
 ---
 name: legal-kg-logic-extraction
-description: Continuing work on the Legal KG project — Vietnamese Social-Insurance-Law GraphRAG + Logic-LM stack with offline/runtime/prompts split. **Required reading before running, designing, analysing, or COMPARING ANY experiment** (anything that touches `experiments/<NN>/`, invokes `python -m eval_core ...` or `python -m scripts.exp<NN>_run|_metrics`, or uses the shared `experiment_contract.py` / standalone `experiments_repo/` + `expkit` leaderboard). Also use when extending the inference pipeline, adding a logic-LM arm or a retrieval experiment, designing Neo4j schema, following the v5 / HyDE retrieval plans, or touching any file under offline/, runtime/, eval_core/, scripts/, experiments/, or experiments_repo/.
+description: Continuing work on the Legal KG project — Vietnamese Social-Insurance-Law GraphRAG + Logic-LM stack with offline/runtime/prompts split. **Required reading before running, designing, analysing, or COMPARING ANY experiment** (anything that touches `experiments/<NN>/`, invokes `python -m eval_core ...` or `python -m scripts.exp<NN>_run|_metrics`, or uses the shared `experiment_contract.py` / standalone `experiments_repo/` + `expkit` leaderboard). Also use when extending the inference pipeline, adding a logic-LM arm or a retrieval experiment, designing Neo4j schema, or touching any file under offline/, runtime/, eval_core/, scripts/, experiments/, or experiments_repo/.
 ---
 
 # Legal KG — Continuation Skill
@@ -13,7 +13,7 @@ description: Continuing work on the Legal KG project — Vietnamese Social-Insur
 - Extending or modifying the inference runtime in `runtime/`.
 - Adding / rewriting prompts under `prompts/`.
 - Designing or migrating schema in `schema/schema.cypher`.
-- Following up on the active retrieval plans in `docs/plans/` (HyDE line: exp08–14).
+- Following up on a retrieval plan under `docs/plans/`.
 
 ---
 
@@ -220,9 +220,9 @@ The project has been refactored: the old `elite/` package was renamed to `logic_
 |---|---|
 | KG (Neo4j) | 543 Clauses, 141 Articles, vector index `clause_vec` (1024-d BGE-M3) |
 | Inference arms | `graphrag`, `llm_only`, `logic_lm_no_retrieval`, `logic_lm_ontology`, `logic_lm_graphrag` |
-| R1 / R2 frozen baseline in `experiments/01_initial_eval/results/` and `.../results/multimodel/` | Committed |
+| Frozen baselines + prior experiment results | Archived in `experiments_repo/` (not in this producer repo) |
 | Headline evaluation | Academic metrics only (citation recall/precision/F1, display rate, latency, BERTScore, 3 Prolog rates). Judge metrics fail-closed by design. |
-| Active plan | `docs/plans/v5_general_retrieval.md` — general/scalable citation retrieval (Sprint 1 = vanilla pipeline + audit) |
+| Plans | `docs/plans/` — per-plan files added as work is designed |
 
 ---
 
@@ -320,8 +320,6 @@ legal-graph-kb/
 │                                     #   + exp<NN>_metrics.py / exp<NN>_funnel.py (Tier-2, offline);
 │                                     #   plus PowerShell wrappers (chat, install_b5, verify_b5.py)
 ├── tests/                            # pytest (provenance + Experiment + metrics + experiment_contract)
-├── reports/
-│   └── plan_v5_general_retrieval.md  # legacy plan (active line = docs/plans/ HyDE exp08–14)
 │
 ├── experiment_contract.py            # ★ SHARED experiment contract — byte-identical in experiments_repo/
 ├── CONTRACT.md                       #   human-readable spec of the contract + 3-tier reproducibility
@@ -363,7 +361,7 @@ legal-graph-kb/
 
 In this order:
 
-1. **`docs/plans/v5_general_retrieval.md`** — current planning doc (vanilla → audit → conditional modules). Sprint 1 is "vanilla pipeline + audit" before any new module ships.
+1. **`docs/architecture.md`** — system overview: pipeline (B1–B7), what each top-level package does, the prompt loader, the Experiment model.
 2. **`docs/eval_core.md`** + **`docs/experiments.md`** — how an experiment is laid out, how the CLI dispatches, how inheritance works. These are the design contracts to follow.
 3. **`runtime/rag_query.py`** — `RagPipeline.vector_search` / `expand` / `fetch_facts` / `traverse` / `ask` / `verify_citations`. The retrieval surface you'll extend.
 4. **`runtime/logic_lm_pipelines.py`** — three arm wrappers (`LogicLMNoRetrievalPipeline`, `LogicLMOntologyPipeline`, `LogicLMGraphRAGPipeline`). Each returns a `LogicLMAnswer` dataclass.
@@ -415,7 +413,7 @@ In this order:
 7. **REPO_ROOT**: `runtime/logic_lm/cli/*.py` uses `Path(__file__).resolve().parents[3]` — depth from CLI file to repo root is exactly 3 levels (`cli → logic_lm → runtime → repo`). Don't change this without auditing the CLI entry-points.
 8. **plain_answer backfill**: pre-2026-05-27 records lack `plain_answer`. Generate via `python -m eval_core.rerender experiments/<exp> --combos all` (~$0.72 on gpt-4o-mini for the initial-eval baseline).
 9. **B5 embedding env**: torch 2.6.0+cu124, datasets 3.0.1, pyarrow 17 on Windows — pin all three together (see project memory `feedback_b5_pin_versions.md`). Wrong combo causes 3 cascading errors.
-10. **Reports directory**: only `reports/*.md` files explicitly listed in `.gitignore` exception are tracked. `plan_v5_general_retrieval.md` is the current canonical plan.
+10. **Reports directory**: only `reports/*.md` files explicitly listed in the `.gitignore` exception are tracked.
 
 ---
 

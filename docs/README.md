@@ -5,9 +5,7 @@ docs live here (or in `docs/plans/` for design plans). The repo root
 holds only the README stub + `LICENSE`; package directories hold code,
 not docs.
 
-Per-experiment write-ups (e.g.
-[`experiments/01_initial_eval/README.md`](../experiments/01_initial_eval/README.md))
-and the experiment starter template
+Per-experiment write-ups and the experiment starter template
 ([`experiments/_template/README.md`](../experiments/_template/README.md))
 stay co-located because they're part of the experiment artifact, not
 project-level docs.
@@ -27,16 +25,7 @@ project-level docs.
   git policy.
 
 ### Plans
-- [plans/v5_general_retrieval.md](plans/v5_general_retrieval.md) —
-  current planning doc (Sprint 1 = vanilla pipeline + audit).
-- [plans/hyde_qwen_colab.md](plans/hyde_qwen_colab.md) — HyDE retrieval
-  with Qwen 2.5 3B on Colab Free T4 (accepted 2026-05-30,
-  experiment 08, ready to implement).
-
-### Decisions (ADRs)
-- [decisions/001_retrieval_k_and_arm.md](decisions/001_retrieval_k_and_arm.md) —
-  production retrieval default: `full_rerank` arm at K=12, ratified
-  2026-05-30 with exp 06/07 evidence.
+- [`plans/`](plans/) — design plans for upcoming work (one file per plan).
 
 ### Meta
 - [Changelog](changelog.md)

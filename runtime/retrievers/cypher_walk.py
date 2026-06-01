@@ -1,19 +1,19 @@
 """``CypherWalkRetriever`` — a retrieval-layer component.
 
-Position in the architecture (see ``docs/plans/exp11_cypher_walk_retriever.md`` §2):
-it is a *peer* of ``RagPipeline.vector_search`` / ``V5RetrievalPipeline`` —
+Position in the architecture: it is a *peer* of
+``RagPipeline.vector_search`` / ``V5RetrievalPipeline`` —
 it takes a question and returns a ranked set of clauses + provenance.
 
     NO LLM render. NO citation parsing. NO answer generation.
 
-Pipeline (plan §4):
+Pipeline:
 
     [1] vector_search(question, top_k_seed)                → seed clauses
     [2] LLM Cypher gen (constrained, with repair)          → outward walk
           MUST seed from node identity (`<node>.id IN $seed_ids`)
           MUST traverse OUTWARD and RETURN target_clause_id / target_article_id
-          MUST NOT pin on `r.source_clause IN $seed_ids` (the previous
-          attempt's degeneracy — it surfaced 0 new clauses by construction)
+          MUST NOT pin on `r.source_clause IN $seed_ids` (that anchors
+          every row to the seed set by construction)
     [3] execute on Neo4j (READ_ACCESS, timeout 15s)
           success = >=1 row whose clause is NOT in the seed set
           (else repair, up to max_repair_rounds)
@@ -26,7 +26,7 @@ Pipeline (plan §4):
 The component reuses ``RagPipeline.vector_search`` for the dense seed and
 ``RagPipeline.driver`` for Neo4j access, but it does not depend on the v5
 retrieval stack — that keeps the exp 11 audit comparable to vanilla
-graphrag without pulling in v5 changes (plan §5.2).
+graphrag without pulling in v5 changes.
 """
 
 from __future__ import annotations
@@ -301,7 +301,7 @@ class CypherWalkRetriever:
     """Vector seed + LLM-authored outward Cypher walk + fallback + RRF fusion.
 
     Pure retrieval — returns a :class:`CypherWalkResult`. No answer, no
-    citations. See ``docs/plans/exp11_cypher_walk_retriever.md``.
+    citations.
     """
 
     def __init__(

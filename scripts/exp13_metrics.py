@@ -3,11 +3,10 @@
 Reads ``experiments/13_hyde_semantic/results/<arm>/A<stt>.json`` for arms
 ``dense``, ``dense_hyde``, ``dense_hyde_semantic`` and computes article-level
 recall@{1,5,10,12,20,all}, precision@{1,5,10,12,20}, R-Precision, MRR, NDCG@12,
-stratified by gold corpus type (``in_corpus`` is the headline — see
-``docs/plans/exp13_hyde_semantic.md`` §7).
+stratified by gold corpus type (``in_corpus`` is the headline).
 
-Pre-registered success (plan §8), computed on the **in_corpus** stratum:
-  S1 (no regression vs HyDE1): semantic R@12 ≥ HyDE1 R@12 − 0.01   ← exp09 failed this
+Pre-registered success, computed on the **in_corpus** stratum:
+  S1 (no regression vs HyDE1): semantic R@12 ≥ HyDE1 R@12 − 0.01
   S2 (beats raw):              semantic R@12 ≥ dense  R@12 + 0.03
   headline Δ:                  semantic R@12 − HyDE1 R@12 ≥ +0.02 → win
 Headline precision = precision@1 + R-Precision (precision@2 is cardinality-

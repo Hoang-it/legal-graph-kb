@@ -15,7 +15,7 @@ All project documentation lives in [`docs/`](docs/). Start there.
 - 🚀 [Quickstart](docs/quickstart.md) — install, env vars, first inference run.
 - 🏗️ [Architecture](docs/architecture.md) — pipeline diagram (B1–B7), packages, prompt loader, experiment model.
 - 🧪 [eval_core](docs/eval_core.md) and [experiments](docs/experiments.md) — how to add an experiment, inheritance, headline metrics.
-- 🗺️ [Plans](docs/plans/) — current design plan: [`v5_general_retrieval.md`](docs/plans/v5_general_retrieval.md).
+- 🗺️ [Plans](docs/plans/) — design plans for upcoming work.
 - 📜 [Changelog](docs/changelog.md) · [Contributing](docs/contributing.md) · [Code of conduct](docs/code-of-conduct.md).
 
 ## Legal disclaimer

@@ -4,12 +4,8 @@ Re-runs the grounding arms of exp 09 (HyDE2, clause-text grounding) and
 exp 13 (semantic, concept-frame grounding) with their prompts brought to
 **byte-parity** with HyDE1's skeleton — same role, same ~20-term BHXH
 vocabulary scaffold, same prohibitions, same examples — the ONLY delta being
-the grounding block. This removes the prompt-resource confound found in the
-2026-06-01 code audit (Confound A): the canonical grounded/semantic prompts
-had DROPPED HyDE1's static vocabulary list, so the earlier head-to-head was
-not a clean single-variable comparison. The grounded prompt's internal
-contradiction ("use context vocab" + "don't copy verbatim", Confound B) is
-also resolved (phrase-level reuse now allowed).
+the grounding block, so the comparison isolates the grounding variable
+(prompt scaffold held constant; phrase-level vocabulary reuse allowed).
 
 The parity prompts live as OVERRIDES under
 ``experiments/14_hyde_fair_prompts/prompts_override/`` and are selected via

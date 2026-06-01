@@ -1,7 +1,5 @@
 """Phase 1 of v5 Sprint 2 — synthetic Q/clause training data for BGE-M3 LoRA fine-tune.
 
-Per [docs/plans/v5_sprint2_implementation.md §3 Phase 1](../docs/plans/v5_sprint2_implementation.md).
-
 Pipeline for each clause in the KG (1585 total):
 
 1. **Query generation** — ``gpt-4o-mini`` reads clause text and emits 2 natural

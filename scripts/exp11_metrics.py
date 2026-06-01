@@ -339,7 +339,6 @@ def write_report(per_arm_summary, per_arm_strat, per_arm_prov, clause_note, n_sc
     L.append(f"Dataset: {n_scored} BHXH questions. Metric granularity: **article**.")
     L.append("Arms: `dense_vanilla`, `dense_then_expand`, `cypher_walk`.")
     L.append("Retrieval-only: no answer generation, no BERTScore, no citation parsing.")
-    L.append("Plan: [`docs/plans/exp11_cypher_walk_retriever.md`](../../../docs/plans/exp11_cypher_walk_retriever.md).")
     L.append("")
 
     L.append("## Honest limitations (read first)")

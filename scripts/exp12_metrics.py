@@ -179,7 +179,7 @@ def write_report(summary, strat, prov, funnels, clause_note, n) -> Path:
     L.append(f"Dataset: {n} BHXH questions (same pilot subset as exp 11).")
     L.append("All arms on the **vanilla `clause_vec`** stack (not v5 tuned) so the HyDE")
     L.append("effect is isolated; numbers are NOT comparable to exp 08 absolute values.")
-    L.append("Plan motivation: exp 11 showed `cypher_walk` loses — does a HyDE seed fix it?")
+    L.append("Plan motivation: does a HyDE seed change the Cypher walk's effect on retrieval?")
     L.append("")
     L.append(f"- **Clause-level recall NOT reported**: {clause_note['n_gold_citations_with_clause_level']} "
              f"clause-level gold cites (article-level only).")

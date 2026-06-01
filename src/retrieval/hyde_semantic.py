@@ -4,9 +4,7 @@ Like :class:`src.retrieval.hyde2.OpenAIGroundedHydeGenerator`, but the
 grounding context is a **BHXH concept frame** built by
 ``runtime.retrievers.semantic_context.build_semantic_context`` (query →
 concepts/subjects/benefits, NO dense clause seed) instead of clause text
-from a dense seed pass. This directly attacks exp 09's root cause: the
-domain-noisy raw-question dense seed (see
-``docs/plans/exp13_hyde_semantic.md`` §1).
+from a dense seed pass.
 
 Differences vs the base generators:
 

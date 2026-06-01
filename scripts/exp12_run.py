@@ -1,10 +1,9 @@
 """Experiment 12 runner — HyDE × CypherWalk retrieval-only 2×2 factorial.
 
-Follow-on to exp 11. exp 11 showed `cypher_walk` LOSES vs vanilla dense
-because the LLM Cypher walk surfaces new clauses that carry no gold. The
-walk seeds from a raw-question vector search; this experiment asks whether
-a **better seed** (HyDE hypothetical-doc embedding) changes that — i.e. is
-the loss a weak-seed problem or an intrinsic walk-adds-noise problem?
+Follow-on to exp 11. The Cypher walk seeds from a raw-question vector
+search; this experiment varies the seed (raw vs HyDE hypothetical-doc
+embedding) to isolate whether seed quality changes the walk's effect on
+retrieval — a weak-seed factor vs an intrinsic walk-behaviour factor.
 
 2×2 factorial — seed {raw, hyde} × walk {off, on}, ALL on the *same*
 vanilla `RagPipeline` / `clause_vec` stack as exp 11 (NOT the v5 tuned

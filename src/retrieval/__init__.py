@@ -1,7 +1,6 @@
 """Plan v5 Sprint 1 — vanilla hybrid retrieval pipeline.
 
-Public entry point: :class:`V5RetrievalPipeline`. See
-``docs/plans/v5_general_retrieval.md`` for the design contract.
+Public entry point: :class:`V5RetrievalPipeline`.
 
 Module boundary:
 - ``hybrid_retriever`` — M4: BGE-M3 dense + Lucene BM25 + temporal filter + RRF fusion

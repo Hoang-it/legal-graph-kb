@@ -374,8 +374,7 @@ class V5RetrievalPipeline:
         ``seed_clause_ids`` + ``seed_clause_ids_hash`` so the cache key
         for this record is reconstructable from the audit alone.
 
-        Used by the ``dense_hyde2`` arm in experiment 09. Plan:
-        ``docs/plans/exp09_hyde2_grounded.md`` §4.
+        Used by the ``dense_hyde2`` arm in experiment 09.
         """
         if self.hyde2 is None:
             raise RuntimeError(

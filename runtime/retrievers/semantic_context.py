@@ -1,7 +1,7 @@
 """``build_semantic_context`` — query → BHXH concept frame (no dense seed).
 
-This is the "get semantic relevance" step of exp 13 (semantic-grounded HyDE,
-``docs/plans/exp13_hyde_semantic.md`` §4). It maps a user question to a
+This is the "get semantic relevance" step (semantic-grounded HyDE). It maps
+a user question to a
 **concept frame** drawn from:
 
 1. the 32 curated BHXH concepts (``runtime.logic_lm.knowledge.bhxh_ontology``
