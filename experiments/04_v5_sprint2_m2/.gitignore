@@ -1,3 +1,0 @@
-# Track everything by default (override the repo-root rule that ignores results/).
-!results/
-!results/**

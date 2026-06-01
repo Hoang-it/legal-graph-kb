@@ -1,4 +1,0 @@
-# Default for new experiments: ignore results/ to keep repo small. If this
-# experiment ever becomes a baseline that future experiments inherit from,
-# replace this file with an un-ignore pattern (see 01_initial_eval/.gitignore).
-results/

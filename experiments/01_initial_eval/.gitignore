@@ -1,5 +1,0 @@
-# 01_initial_eval intentionally TRACKS results/ so future experiments
-# can inherit baseline records without re-running the API calls.
-# This overrides the default-ignore policy applied to other experiments.
-!results/
-!results/**
