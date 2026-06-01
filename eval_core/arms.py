@@ -15,6 +15,7 @@ ALL_ARMS = (
     "logic_lm_graphrag",
     "logic_lm_hyde_semantic",
     "logic_lm_hyde_semantic_nohyp",
+    "qa_hyde_semantic",
     "graphrag_v5",
     "graphrag_v5_m2",
     "graphrag_cypher",

@@ -58,6 +58,10 @@ def _write_csv(rows: list[dict[str, Any]], path: Path) -> None:
         "bertscore_p",
         "bertscore_r",
         "bertscore_f1",
+        "rouge1",
+        "rouge2",
+        "rougeL",
+        "bleu",
         "latency_s",
         "prolog_first_try_solution",
         "repair_invoked",
@@ -82,6 +86,10 @@ def _write_csv(rows: list[dict[str, Any]], path: Path) -> None:
                     "bertscore_p": r.get("bertscore", {}).get("bertscore_p"),
                     "bertscore_r": r.get("bertscore", {}).get("bertscore_r"),
                     "bertscore_f1": r.get("bertscore", {}).get("bertscore_f1"),
+                    "rouge1": r.get("text_overlap", {}).get("rouge1"),
+                    "rouge2": r.get("text_overlap", {}).get("rouge2"),
+                    "rougeL": r.get("text_overlap", {}).get("rougeL"),
+                    "bleu": r.get("text_overlap", {}).get("bleu"),
                     "latency_s": r["latency"]["latency_s"],
                     "prolog_first_try_solution": r["prolog"]["prolog_first_try_solution"],
                     "repair_invoked": r["prolog"]["repair_invoked"],
@@ -127,6 +135,21 @@ def _write_report(result: dict[str, Any], path: Path) -> None:
         )
         + " |",
         "",
+        "## Text-overlap Macro Metrics (ROUGE / BLEU)",
+        "",
+        "| rouge1 | rouge2 | rougeL | bleu |",
+        "|---:|---:|---:|---:|",
+        "| "
+        + " | ".join(
+            [
+                _fmt(macro.get("rouge1")),
+                _fmt(macro.get("rouge2")),
+                _fmt(macro.get("rougeL")),
+                _fmt(macro.get("bleu")),
+            ]
+        )
+        + " |",
+        "",
         "## Citation Micro Metrics",
         "",
         "| recall | precision | display_rate |",
@@ -152,6 +175,12 @@ def _write_report(result: dict[str, Any], path: Path) -> None:
         "",
         "```json",
         json.dumps(result["bertscore_metadata"], ensure_ascii=False, indent=2),
+        "```",
+        "",
+        "## Text-overlap Status (ROUGE / BLEU)",
+        "",
+        "```json",
+        json.dumps(result.get("text_overlap_metadata", {}), ensure_ascii=False, indent=2),
         "```",
         "",
         "## Error Counts",
@@ -231,6 +260,10 @@ def _write_experiment_csv(rows: list[dict[str, Any]], path: Path) -> None:
         "bertscore_p",
         "bertscore_r",
         "bertscore_f1",
+        "rouge1",
+        "rouge2",
+        "rougeL",
+        "bleu",
         "latency_s",
         "prolog_first_try_solution",
         "repair_invoked",
@@ -255,6 +288,10 @@ def _write_experiment_csv(rows: list[dict[str, Any]], path: Path) -> None:
                     "bertscore_p": r.get("bertscore", {}).get("bertscore_p"),
                     "bertscore_r": r.get("bertscore", {}).get("bertscore_r"),
                     "bertscore_f1": r.get("bertscore", {}).get("bertscore_f1"),
+                    "rouge1": r.get("text_overlap", {}).get("rouge1"),
+                    "rouge2": r.get("text_overlap", {}).get("rouge2"),
+                    "rougeL": r.get("text_overlap", {}).get("rougeL"),
+                    "bleu": r.get("text_overlap", {}).get("bleu"),
                     "latency_s": r["latency"]["latency_s"],
                     "prolog_first_try_solution": r["prolog"]["prolog_first_try_solution"],
                     "repair_invoked": r["prolog"]["repair_invoked"],
@@ -296,6 +333,32 @@ def _write_experiment_report(result: dict[str, Any], path: Path) -> None:
                     _fmt(macro["citation_display_rate"]),
                     _fmt(macro["bertscore_f1"]),
                     _fmt(macro["latency_s"]),
+                ]
+            )
+            + " |"
+        )
+
+    lines.extend(
+        [
+            "",
+            "## Text-overlap Macro Metrics (ROUGE / BLEU)",
+            "",
+            "| Arm | n | rouge1 | rouge2 | rougeL | bleu |",
+            "|---|---:|---:|---:|---:|---:|",
+        ]
+    )
+    for arm, agg in result["aggregates"].items():
+        macro = agg["macro"]
+        lines.append(
+            "| "
+            + " | ".join(
+                [
+                    arm,
+                    str(agg["n_records"]),
+                    _fmt(macro.get("rouge1")),
+                    _fmt(macro.get("rouge2")),
+                    _fmt(macro.get("rougeL")),
+                    _fmt(macro.get("bleu")),
                 ]
             )
             + " |"
@@ -349,6 +412,12 @@ def _write_experiment_report(result: dict[str, Any], path: Path) -> None:
             "",
             "```json",
             json.dumps(result["bertscore_metadata"], ensure_ascii=False, indent=2),
+            "```",
+            "",
+            "## Text-overlap Status (ROUGE / BLEU)",
+            "",
+            "```json",
+            json.dumps(result.get("text_overlap_metadata", {}), ensure_ascii=False, indent=2),
             "```",
             "",
             "## Error Counts",

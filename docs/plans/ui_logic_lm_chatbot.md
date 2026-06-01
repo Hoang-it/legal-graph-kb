@@ -15,7 +15,10 @@ với mỗi câu trả lời, **trực quan hóa vì sao** ra kết quả đó t
 
 ## Trạng thái hiện tại (2026-06-01)
 
-### ✅ Backend arm `logic_lm_hyde_semantic` — ĐÃ implement (code), CHƯA verify/eval
+### ✅ Backend arm `logic_lm_hyde_semantic` — ĐÃ implement + smoke-verified (CHƯA chạy eval)
+Smoke 1 câu qua cả 2 arm (treatment + control), gọi thật Neo4j + BGE-M3 + OpenAI +
+SWI-Prolog: pipeline chạy end-to-end, Prolog solve, citation verify được trên Neo4j,
+treatment bơm hypothesis vào rule-gen còn control thì không. Eval đầy đủ (B5) CHƯA chạy.
 Files đã tạo/sửa (theo `docs/plans/logic_lm_hyde_semantic.md`):
 - **Mới**
   - `prompts/runtime/logic_lm/rule_gen_hyde_semantic.md` — rule-gen prompt + input `hypothesis`.
@@ -31,14 +34,18 @@ Files đã tạo/sửa (theo `docs/plans/logic_lm_hyde_semantic.md`):
   - `eval_core/arms.py` — `+ "logic_lm_hyde_semantic"`, `+ "logic_lm_hyde_semantic_nohyp"` vào `ALL_ARMS`.
   - `eval_core/inference.py` — 2 runner + `ARM_RUNNERS` + `"hypothesis"` vào record.
 
-### ⛔ CHƯA làm
-1. **Verify backend** (chưa chạy lần nào): smoke 1 câu + pilot `n:8` (xem §Verify).
-2. **UI Streamlit** `ui/app.py` (mockup đã có, code chưa có).
+### ✅ UI Streamlit — ĐÃ build + verified (serves HTTP 200, render data thật)
+- `ui/app.py` — chat + sidebar (arm treatment/control, top_k, toggle reasoning) +
+  expander 4 stage. **Share 1 retriever** cho cả 2 arm (`@st.cache_resource` →
+  BGE-M3 load đúng 1 lần, vừa GPU 4GB; cô lập đúng biến hypothesis).
+- `.streamlit/config.toml` — dark theme khớp mockup. `scripts/ui.ps1` — launcher Windows (UTF-8).
+- `experiments/02_logic_lm_hyde_semantic/{config.yaml,README.md,.gitignore}` — folder eval (B5),
+  config valid; eval CHƯA chạy (contract validate báo thiếu `metrics/` — đúng chủ đích).
 
 ### ➡️ Việc tiếp theo cho session sau
-1. Smoke test pipeline (đảm bảo Neo4j + BGE-M3 + SWI-Prolog + OPENAI_API_KEY sẵn sàng).
-2. Dựng `ui/app.py` theo §"Spec Streamlit" + mockup.
-3. (Tách riêng, tốn tiền) chạy eval arm 02 → metrics → validate → leaderboard.
+1. (Tách riêng, tốn tiền) chạy eval arm 02: `python -m eval_core all experiments/02_logic_lm_hyde_semantic`
+   → `experiment_contract validate` → copy sang `experiments_repo/` → `expkit leaderboard`.
+2. (Tùy chọn) pilot `n:8` trước khi chạy full 200 câu.
 
 ---
 

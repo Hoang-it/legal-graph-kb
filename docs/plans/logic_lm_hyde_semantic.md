@@ -1,8 +1,10 @@
 # Plan — Arm `logic_lm_hyde_semantic`: feed HyDE-semantic hypothesis vào Logic-LM
 
-> **Status (cập nhật 2026-06-01):** Backend arm ĐÃ implement (code) — danh sách file
-> ở `docs/plans/ui_logic_lm_chatbot.md` §"Trạng thái hiện tại". CHƯA verify (smoke/pilot)
-> và CHƯA chạy eval. Khi chạy eval xong, WHAT/WHY + kết quả nằm trong
+> **Status (cập nhật 2026-06-01):** Backend arm ĐÃ implement + **smoke-verified** (1 câu,
+> cả 2 arm, gọi thật Neo4j + BGE-M3 + OpenAI + SWI-Prolog) — danh sách file ở
+> `docs/plans/ui_logic_lm_chatbot.md` §"Trạng thái hiện tại". Experiment folder
+> `experiments/02_logic_lm_hyde_semantic/` đã tạo (config valid). CHƯA chạy eval (pilot/full).
+> Khi chạy eval xong, WHAT/WHY + kết quả nằm trong
 > `experiments/02_logic_lm_hyde_semantic/README.md` (plan này không chứa kết quả — Rule 6).
 
 ## Context (vì sao)

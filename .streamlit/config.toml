@@ -1,0 +1,11 @@
+# Dark theme cho UI chatbot BHXH (ui/app.py) — bám palette mockup
+# docs/plans/ui_logic_lm_chatbot_mockup.html.
+[theme]
+base = "dark"
+primaryColor = "#4f9cf9"
+backgroundColor = "#0f1419"
+secondaryBackgroundColor = "#1a212b"
+textColor = "#e6edf3"
+
+[browser]
+gatherUsageStats = false

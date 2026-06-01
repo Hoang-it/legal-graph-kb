@@ -588,6 +588,85 @@ class V5RetrievalPipeline:
         rows = self.retriever._dense_search_by_vector(mean_vec.tolist(), k)
         return rows, docs
 
+    def ask_dense_hyde_semantic(
+        self,
+        question: str,
+        frame_text: str,
+        context_key_ids: list[str],
+        top_k: int | None = None,
+    ) -> V5Answer:
+        """Direct QA over dense_hyde_semantic retrieval — NO logic-LM, NO rerank/expand.
+
+        Retrieves clauses exactly like :meth:`dense_hyde_semantic_rows`
+        (concept-frame-grounded HyDE → BGE-M3 mean-pool → dense top-k), then
+        reuses the SAME generator as :meth:`ask` (identical system prompt,
+        context format via :meth:`_build_context`, citation parsing) to produce
+        a prose answer. This is the "hyde only" QA arm: same retrieval as the
+        logic-LM-hyde-semantic arms, but the answer comes straight from the
+        generator instead of a Prolog program — isolating the contribution of
+        the logic-LM layer. Does not touch :meth:`ask`.
+        """
+        t0 = time.time()
+        timings: dict[str, float] = {}
+
+        t = time.time()
+        rows, _docs = self.dense_hyde_semantic_rows(
+            question, frame_text=frame_text, context_key_ids=context_key_ids, top_k=top_k
+        )
+        timings["retrieve"] = round(time.time() - t, 3)
+
+        if not rows:
+            return V5Answer(
+                question=question,
+                answer="Theo các điều luật được cung cấp, tôi không có đủ thông tin để trả lời chính xác câu hỏi này.",
+                elapsed_s=round(time.time() - t0, 3),
+                elapsed_breakdown=timings,
+            )
+
+        # Map dense rows → the (meta, text, score) shape _build_context expects
+        # for a "seed" chunk, so the LLM sees the exact same header/citation
+        # format as the graphrag_v5 arm.
+        final: list[tuple[dict[str, Any], str, float]] = []
+        for r in rows:
+            meta = {
+                "kind": "seed",
+                "clause_id": r["clause_id"],
+                "article_id": r.get("article_id"),
+                "law_id": str(r.get("law_id") or ""),
+                "article_n": r.get("article_n"),
+                "article_title": r.get("article_title"),
+                "clause_n": r.get("clause_n"),
+            }
+            final.append((meta, str(r.get("text") or ""), float(r.get("score") or 0.0)))
+
+        t = time.time()
+        context_str = self._build_context(final)
+        resp = self.openai.chat.completions.create(
+            model=self.openai_model,
+            messages=[
+                {"role": "system", "content": self._system_prompt},
+                {"role": "user", "content": f"CONTEXT:\n{context_str}\n\n---\n\nCÂU HỎI: {question}"},
+            ],
+            temperature=0,
+        )
+        answer_text = resp.choices[0].message.content or ""
+        timings["llm"] = round(time.time() - t, 3)
+
+        citations, citation_ids = self._parse_citations(answer_text)
+        return V5Answer(
+            question=question,
+            answer=answer_text,
+            citations=citations,
+            citation_ids=citation_ids,
+            hits=[
+                {"rank": i + 1, "score": round(float(score), 4), **meta}
+                for i, (meta, _txt, score) in enumerate(final)
+            ],
+            n_final=len(final),
+            elapsed_s=round(time.time() - t0, 3),
+            elapsed_breakdown=timings,
+        )
+
     def retrieve_only(self, question: str) -> RetrievalOnlyAnswer:
         """Run dense + sparse + temporal + RRF + rerank1 + expand + rerank2.
 

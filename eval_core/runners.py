@@ -174,6 +174,7 @@ def compute_grouped_academic_metrics(
     result_records: dict[str, list[dict[str, Any]]] = {}
     aggregates: dict[str, dict[str, Any]] = {}
     bertscore_metadata: dict[str, dict[str, Any]] = {}
+    text_overlap_metadata: dict[str, dict[str, Any]] = {}
     n_input_records = 0
 
     for arm, records in record_groups.items():
@@ -186,6 +187,7 @@ def compute_grouped_academic_metrics(
         result_records[arm] = arm_result["records"]
         aggregates[arm] = arm_result["aggregate"]
         bertscore_metadata[arm] = arm_result["bertscore_metadata"]
+        text_overlap_metadata[arm] = arm_result.get("text_overlap_metadata", {})
         n_input_records += arm_result["n_input_records"]
 
     return {
@@ -195,6 +197,7 @@ def compute_grouped_academic_metrics(
         "gold_source": "record.gold_articles",
         "metadata": metadata or {},
         "bertscore_metadata": bertscore_metadata,
+        "text_overlap_metadata": text_overlap_metadata,
         "records": result_records,
         "aggregates": aggregates,
     }

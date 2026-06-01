@@ -273,6 +273,65 @@ def run_logic_lm_hyde_semantic_nohyp(questions, results_root, force, verbose):
     _run_logic_lm("logic_lm_hyde_semantic_nohyp", p, questions, results_root, force, verbose)
 
 
+def run_qa_hyde_semantic(
+    questions: list[dict],
+    results_root: Path,
+    force: bool,
+    verbose: bool,
+) -> None:
+    """dense_hyde_semantic retrieval → direct generation (no logic-LM)."""
+    from runtime.qa_hyde_semantic import QAHydeSemanticPipeline
+
+    arm = "qa_hyde_semantic"
+    out_dir = results_root / arm
+    pipeline = QAHydeSemanticPipeline()  # warms BGE-M3 in ctor
+
+    n_done, n_skipped, n_failed = 0, 0, 0
+    t_total = time.time()
+    try:
+        for i, q in enumerate(questions, 1):
+            stt = q["stt"]
+            out_path = out_dir / f"A{stt}.json"
+            if out_path.exists() and not force:
+                n_skipped += 1
+                continue
+            try:
+                result = pipeline.ask(q["question"])
+                verified = pipeline.verify_citations(result.citation_ids)
+                record = {
+                    "arm": arm,
+                    "stt": stt,
+                    "question": q["question"],
+                    "answer": result.answer,
+                    "citations": result.citations,
+                    "citation_ids": result.citation_ids,
+                    "citation_verified": verified,
+                    "n_final_hits": result.n_final,
+                    "hits": result.hits[:5],
+                    "elapsed_s": result.elapsed_s,
+                    "elapsed_breakdown": result.elapsed_breakdown,
+                    "gold_answer": q.get("gold_answer"),
+                    "gold_citations_raw": q.get("gold_citations_raw"),
+                }
+                _save(out_path, record)
+                n_done += 1
+                if verbose or i % 10 == 0:
+                    print(
+                        f"  [{arm:<22} {i:>3}/{len(questions)}] stt={stt} "
+                        f"({result.elapsed_s:.1f}s, {len(result.citation_ids)} cits)",
+                        flush=True,
+                    )
+            except Exception as e:
+                n_failed += 1
+                print(f"  ✗ [{arm} {stt}] {type(e).__name__}: {e}", file=sys.stderr)
+                _save(out_path.with_suffix(".error.json"),
+                      {"arm": arm, "stt": stt, "error": f"{type(e).__name__}: {e}"})
+    finally:
+        pipeline.close()
+    print(f"\n{arm} done: {n_done} new, {n_skipped} skipped, {n_failed} failed "
+          f"({time.time() - t_total:.1f}s)")
+
+
 def run_graphrag_v5(
     questions: list[dict],
     results_root: Path,
@@ -526,6 +585,7 @@ ARM_RUNNERS = {
     "logic_lm_graphrag": run_logic_lm_graphrag,
     "logic_lm_hyde_semantic": run_logic_lm_hyde_semantic,
     "logic_lm_hyde_semantic_nohyp": run_logic_lm_hyde_semantic_nohyp,
+    "qa_hyde_semantic": run_qa_hyde_semantic,
     "graphrag_v5": run_graphrag_v5,
     "graphrag_v5_m2": run_graphrag_v5_m2,
     "graphrag_cypher": run_graphrag_cypher,

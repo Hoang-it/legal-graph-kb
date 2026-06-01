@@ -254,6 +254,70 @@ def compute_bertscore(records: list[dict[str, Any]]) -> tuple[dict[str, dict], d
     }
 
 
+def compute_text_overlap(records: list[dict[str, Any]]) -> tuple[dict[str, dict], dict]:
+    """ROUGE-1 / ROUGE-2 / ROUGE-L (F-measure) + BLEU of the answer vs gold.
+
+    Lexical-overlap counterpart to :func:`compute_bertscore` (which is
+    semantic). It scores the SAME candidate BERTScore uses — ``plain_answer``
+    when present, otherwise the citation/IRAC-stripped ``answer`` (see
+    :func:`_clean_answer_for_semantic`) — so the numbers are comparable across
+    prose arms (llm_only / graphrag / qa_hyde_semantic) and the logic-LM arms.
+
+    Fail-soft, exactly like BERTScore: a missing dependency or a runtime error
+    skips the metric (status recorded in metadata) rather than failing the run.
+    Citation metrics remain the hard contract; text overlap is auxiliary.
+
+    BLEU uses sacrebleu sentence BLEU, normalised to ``[0, 1]`` (sacrebleu/100)
+    so it shares the 0–1 scale of ROUGE/BERTScore. ROUGE uses no stemmer
+    (English Porter stemming is meaningless for Vietnamese).
+    """
+    to_records = []
+    for r in records:
+        candidate, source = _clean_answer_for_semantic(r)
+        if not r.get("gold_answer"):
+            continue
+        to_records.append(
+            {
+                "key": str(r["_metric_key"]),
+                "candidate": candidate,
+                "reference": str(r["gold_answer"]),
+                "candidate_source": source,
+            }
+        )
+    if not to_records:
+        return {}, {"status": "no_records_with_gold_answer"}
+
+    try:
+        import sacrebleu
+        from rouge_score import rouge_scorer
+    except ImportError as exc:
+        return {}, {"status": "text_overlap_unavailable", "error": str(exc)}
+
+    try:
+        scorer = rouge_scorer.RougeScorer(["rouge1", "rouge2", "rougeL"], use_stemmer=False)
+        out: dict[str, dict] = {}
+        for rec in to_records:
+            cand, ref = rec["candidate"], rec["reference"]
+            rs = scorer.score(ref, cand)  # rouge_score API: score(target, prediction)
+            bleu = sacrebleu.sentence_bleu(cand, [ref], tokenize="13a").score / 100.0
+            out[rec["key"]] = {
+                "rouge1": round(float(rs["rouge1"].fmeasure), 4),
+                "rouge2": round(float(rs["rouge2"].fmeasure), 4),
+                "rougeL": round(float(rs["rougeL"].fmeasure), 4),
+                "bleu": round(float(bleu), 4),
+                "candidate_source": rec["candidate_source"],
+                "status": "ok",
+            }
+    except Exception as exc:  # fail-soft by design
+        return {}, {"status": "text_overlap_failed", "error": f"{type(exc).__name__}: {exc}"}
+
+    return out, {
+        "status": "ok",
+        "rouge": {"types": ["rouge1", "rouge2", "rougeL"], "score": "fmeasure", "use_stemmer": False},
+        "bleu": {"impl": "sacrebleu.sentence_bleu", "tokenize": "13a", "scale": "[0,1] = sacrebleu/100"},
+    }
+
+
 def _aggregate_records(records: list[dict[str, Any]]) -> dict[str, Any]:
     def vals(path: tuple[str, ...]) -> list[float | None]:
         out = []
@@ -286,6 +350,10 @@ def _aggregate_records(records: list[dict[str, Any]]) -> dict[str, Any]:
             "bertscore_p": _safe_mean(vals(("bertscore", "bertscore_p"))),
             "bertscore_r": _safe_mean(vals(("bertscore", "bertscore_r"))),
             "bertscore_f1": _safe_mean(vals(("bertscore", "bertscore_f1"))),
+            "rouge1": _safe_mean(vals(("text_overlap", "rouge1"))),
+            "rouge2": _safe_mean(vals(("text_overlap", "rouge2"))),
+            "rougeL": _safe_mean(vals(("text_overlap", "rougeL"))),
+            "bleu": _safe_mean(vals(("text_overlap", "bleu"))),
             "latency_s": _safe_mean(vals(("latency", "latency_s"))),
         },
         "std": {
@@ -296,6 +364,8 @@ def _aggregate_records(records: list[dict[str, Any]]) -> dict[str, Any]:
                 vals(("citation", "citation_display", "citation_display_rate"))
             ),
             "bertscore_f1": _safe_std(vals(("bertscore", "bertscore_f1"))),
+            "rougeL": _safe_std(vals(("text_overlap", "rougeL"))),
+            "bleu": _safe_std(vals(("text_overlap", "bleu"))),
             "latency_s": _safe_std(vals(("latency", "latency_s"))),
         },
         "micro": {
@@ -393,6 +463,7 @@ def compute_academic_metrics(
     registry = registry or load_registry(registry_path)
     prepared_records = _prepare_records(records)
     bs_results, bs_meta = compute_bertscore(prepared_records)
+    to_results, to_meta = compute_text_overlap(prepared_records)
 
     result_records: list[dict[str, Any]] = []
     for rec in prepared_records:
@@ -411,6 +482,9 @@ def compute_academic_metrics(
         bs = bs_results.get(str(rec["_metric_key"]))
         if bs:
             metric_rec["bertscore"] = bs
+        to = to_results.get(str(rec["_metric_key"]))
+        if to:
+            metric_rec["text_overlap"] = to
         result_records.append(metric_rec)
 
     aggregate = _aggregate_records(result_records)
@@ -421,6 +495,7 @@ def compute_academic_metrics(
         "gold_source": "record.gold_items (falls back to gold_articles)",
         "metadata": metadata or {},
         "bertscore_metadata": bs_meta,
+        "text_overlap_metadata": to_meta,
         "records": result_records,
         "aggregate": aggregate,
     }

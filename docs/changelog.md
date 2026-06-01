@@ -7,6 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added — Text-overlap metrics (ROUGE / BLEU) + `qa_hyde_semantic` arm
+
+- `eval_core/metrics.py` — **new** `compute_text_overlap()` adds ROUGE-1,
+  ROUGE-2, ROUGE-L (F-measure) and BLEU (sacrebleu sentence BLEU, normalised to
+  `[0,1]`) of the answer vs `gold_answer`. Lexical-overlap counterpart to
+  BERTScore: scores the *same* candidate (`plain_answer`, else the
+  citation/IRAC-stripped `answer`) and is **fail-soft** (a missing
+  `rouge-score`/`sacrebleu` dep or a runtime error skips it, status recorded in
+  metadata). Existing metric definitions are unchanged — these are additive
+  auxiliary metrics, so frozen baselines' citation/BERTScore numbers are
+  unaffected (Rule 2); a recompute simply gains the ROUGE/BLEU fields. Surfaced
+  in the macro aggregate, per-record JSON, CSV, and report (new "Text-overlap
+  Macro Metrics" table + status section in `eval_core/report.py`; per-arm
+  metadata collected in `eval_core/runners.py`). New deps: `rouge-score`,
+  `sacrebleu`.
+- `src/retrieval/pipeline.py` — **new** additive
+  `V5RetrievalPipeline.ask_dense_hyde_semantic()`: dense_hyde_semantic retrieval
+  → the existing GraphRAG generator (same system prompt, `_build_context`, and
+  citation parsing as `ask()`), with no rerank/expand and no logic-LM. `ask()`
+  is untouched, so `graphrag_v5` behaviour is unchanged.
+- `runtime/qa_hyde_semantic.py` — **new** `QAHydeSemanticPipeline` wrapping the
+  above (builds the BHXH concept frame, shares the logic-LM HyDE cache dir).
+- `eval_core/arms.py` + `eval_core/inference.py` — register the
+  `qa_hyde_semantic` arm (in `ALL_ARMS`, not `MAIN_EXPERIMENT_ARMS`) + its
+  runner.
+
 ### Changed — Retrieval metrics consolidated into `eval_core` (single source of truth)
 
 All metric computation now lives in `eval_core`, for **both** families. The
