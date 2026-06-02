@@ -1,0 +1,2 @@
+# Don't track inference outputs (Tier-1). metrics/ and report/ stay committed.
+results/

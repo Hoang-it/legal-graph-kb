@@ -1,0 +1,44 @@
+# Experiment 02 — Logic-LM × HyDE-semantic hypothesis.
+# See ../../CONTRACT.md for the shared contract; README.md for WHAT/WHY.
+
+name: "Logic-LM × HyDE-semantic hypothesis"
+description: |
+  Feed the dense_hyde_semantic hypothesis (a machine-generated hypothetical
+  legal passage) into Logic-LM's Prolog rule-generation step as a 3rd input —
+  background framing only (which predicates / conditions / Vietnamese legal
+  terms to model), never a source of user facts, thresholds, article/clause
+  numbers, or citations. A/B against a control arm that runs the identical
+  dense_hyde_semantic retrieval (+ shares the same HyDE cache) but does NOT
+  inject the hypothesis, isolating exactly one variable.
+
+date: "2026-06-01"
+
+family: qa
+
+dataset:
+  questions: data/eval/questions_200.json
+  n: null
+
+# No qa baseline lives in this producer repo → no parent to inherit; both arms
+# run. Cross-experiment comparison happens by copying this folder into
+# experiments_repo/ and running expkit leaderboard (Rule 6).
+parent: null
+
+# Prompt selection is baked into the pipeline classes (treatment loads the
+# canonical rule_gen_hyde_semantic.md; control uses the canonical rule_gen.md),
+# so no per-experiment override dir is needed.
+prompts_override_dir: null
+
+recompute: eval_core
+
+arms:
+  logic_lm_hyde_semantic:        { mode: run }   # treatment — hypothesis → rule-gen → Prolog
+  logic_lm_hyde_semantic_nohyp:  { mode: run }   # control   — same retrieval, no hypothesis
+  # Direct-answer arms (no logic-LM; answer returned straight from the generator):
+  qa_hyde_semantic:              { mode: run }   # hyde only — SAME retrieval, no Prolog layer
+  graphrag:                      { mode: run }   # graph RAG — Neo4j vector retrieval → generate
+  llm_only:                      { mode: run }   # llm only  — no retrieval
+
+multimodel: null
+
+retrieval: null
