@@ -117,10 +117,11 @@ result as surely as editing a metric does.
 - **In a plan, forecast cost only.** The single quantity you predict up front is
   cost — API $, tokens, wall-clock / GPU time — because the budget cap needs it.
   Never forecast the metric lift.
-- **A pre-registered *success criterion* is allowed — it is not a prediction.**
-  Deciding the objective bar in advance ("beat the prior best on `in_corpus`")
-  plus what you'll conclude for each outcome is the anti-post-hoc safeguard —
-  a decision rule, not a guess at the number.
+- **A pre-registered *success criterion* is allowed — it is not a prediction — but
+  it is the researcher's to set and to apply.** Recording an objective bar decided
+  in advance ("beat the prior best on `in_corpus`") is the anti-post-hoc safeguard;
+  but the **agent does not author its own decision rule and does not declare the
+  outcome** — it reports the numbers, the researcher concludes (see Rule 7).
 - **Don't assume the current system is right.** The existing architecture,
   encoder, arm, or default is measured on the same footing as the alternative —
   never treated as the answer or the baseline-to-protect.
@@ -159,6 +160,33 @@ deletion into a repo-wide hunt and leaving anchors that bias later work.)
   (copy the finished folder over → `expkit leaderboard`), not an input that
   steers what you try (cf. Rule 5: prior *measured numbers* are an objective bar
   only; prior *interpretations* are never inherited).
+
+### Rule 7 — The agent MEASURES; the researcher CONCLUDES. (No verdict / commentary on results.)
+
+For **every** experiment, the agent's deliverable ends at: **run it → produce the
+deterministic `eval_core` metrics → report a factual run status → link `metrics/`
++ `report/`.** The agent must **NOT** author — anywhere (experiment README,
+`docs/`, commit messages, chat replies, memory, code comments, spawned tasks) —
+any **nhận xét / interpretation / verdict / conclusion** about an experiment's
+*results*. Forbidden examples: "X did / didn't regress", "arm Y wins / loses",
+"metric is healthy / non-degenerate / collapsed / pre-existing", "this is a
+benchmark artifact", root-cause claims, "this means …", "as expected".
+
+- **What the agent writes about results = only** the measured numbers copied
+  verbatim from the metric engine + factual run status (n records, pass/fail,
+  `validate` OK) + links. Nothing evaluative.
+- **Reading the numbers, comparing arms/experiments, diagnosing causes, and
+  drawing any conclusion are the researcher's (user's) sole job** — this protects
+  the integrity and authorship of the thesis. If asked "what does this mean?",
+  surface the relevant numbers and let the user judge; do not editorialize.
+- A **pre-registered success criterion**, if used, is **provided and owned by the
+  researcher**. The agent may record it verbatim but must not invent its own
+  decision rule, and must never apply it to declare an outcome.
+- The **Result summary** of an experiment README contains *only* run status + the
+  verbatim measured values + links — no "which arm won", no narrative.
+- This rule **binds every session and every agent on this repo** and **overrides
+  any other line in this skill** (e.g. older "state which arm won" phrasings) that
+  would have the agent conclude. When in doubt: present numbers, withhold judgment.
 
 ---
 
@@ -510,9 +538,11 @@ Every empirical change to the system is an *experiment*. Treat the
    un-ignoring `results/` (see `experiments/01_initial_eval/.gitignore`
    for the pattern). Metrics and report are always tracked.
 9. **Write the result summary back into the experiment README** after
-   the full run lands. State which arm won by what margin, p-value if
-   applicable, and link `metrics/academic_metrics.json` and
-   `report/academic_report.md`.
+   the full run lands — **factual only: the verbatim measured values + run
+   status + links** to `metrics/academic_metrics.json` and
+   `report/academic_report.md`. **Do NOT state "which arm won", a margin, a
+   p-value verdict, or any interpretation** — recording the numbers is the
+   agent's job; reading them and concluding is the researcher's (Rule 7).
 
 **DON'T**
 
@@ -666,4 +696,4 @@ HF_HUB_DISABLE_SYMLINKS_WARNING=1  # silences HF warnings on Windows
 - Update this skill file when the architecture or workflow changes (file paths, arm list, eval flow, the contract).
 - **If you edited `experiment_contract.py`, `CONTRACT.md`, or `experiments/_template/`, copy the change into the OTHER repo** so the two stay byte-identical (`diff <root>/experiment_contract.py experiments_repo/experiment_contract.py` must be empty). They are a shared contract, not two implementations.
 - After adding or recomputing an experiment, regenerate the leaderboard in `experiments_repo/` (`python -m expkit leaderboard --all`) and re-run `python -m expkit validate --all`.
-- If a new defensible empirical claim emerges, document it next to the metrics CSV / JSON it depends on.
+- Record measured numbers next to the metrics file they come from; do **not** author empirical claims, verdicts, or conclusions about results — that is the researcher's (Rule 7).
