@@ -18,7 +18,7 @@ from __future__ import annotations
 import os
 import sys
 from pathlib import Path
-from typing import Optional
+from typing import Callable, Optional
 
 # Make repo root importable for absolute `runtime.*` / `src.*` paths.
 _REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -73,18 +73,43 @@ class DenseHydeSemanticAsLogicLMRetriever:
         self._pipe = pipeline
         _ = self._pipe.embed_model  # warm BGE-M3 so per-question timings are clean
 
-    def retrieve(self, query: str, top_k: int = 8) -> RetrievedKnowledgeContext:
+    def set_llm_model(self, model: str) -> None:
+        """Switch the OpenAI model used for hypothesis generation (HyDE) and the
+        underlying V5 prose generator in place, so a single UI control drives
+        every LLM call routed through this retriever.
+
+        BGE-M3 is model-independent and stays loaded — only the per-call model id
+        changes. The HyDE disk cache is namespaced by model (see
+        ``OpenAIGroundedHydeGenerator._cache_key_grounded``), so switching never
+        mixes cached results across models.
+        """
+        if not model:
+            return
+        generator = getattr(self._pipe, "hyde_semantic", None)
+        if generator is not None:
+            generator.model = model
+        self._pipe.openai_model = model
+
+    def retrieve(
+        self,
+        query: str,
+        top_k: int = 8,
+        on_step: Optional[Callable[[str], None]] = None,
+    ) -> RetrievedKnowledgeContext:
         self.last_hypothesis = ""
         self.last_semantic_context = None
         if not query or top_k <= 0:
             return RetrievedKnowledgeContext(chunks=[], scores={})
 
+        if on_step is not None:
+            on_step("understand")
         ctx = build_semantic_context(query, ontology_path=self.ontology_path)
         rows, docs = self._pipe.dense_hyde_semantic_rows(
             query,
             frame_text=ctx.frame_text,
             context_key_ids=ctx.context_key_ids,
             top_k=top_k,
+            on_step=on_step,
         )
         self.last_semantic_context = ctx
         self.last_hypothesis = docs[0] if docs else ""

@@ -29,7 +29,7 @@ import sys
 import time
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Mapping, Optional
+from typing import Any, Callable, Mapping, Optional
 
 from dotenv import load_dotenv
 
@@ -636,6 +636,21 @@ class _LogicLMBasePipeline:
     def _empty_context(self) -> RetrievedKnowledgeContext:
         return RetrievedKnowledgeContext(chunks=[], scores={})
 
+    def _retrieve(
+        self,
+        question: str,
+        on_step: Optional[Callable[[str], None]] = None,
+    ) -> RetrievedKnowledgeContext:
+        """Retrieval hook. The base emits a single coarse ``"search"`` step and
+        does not forward ``on_step`` to the retriever (most retrievers expose no
+        step callback). Arms whose retriever reports finer-grained progress
+        (e.g. HyDE-semantic: understand → hypothesis → search) override this."""
+        if self.retriever is None:
+            return self._empty_context()
+        if on_step is not None:
+            on_step("search")
+        return self.retriever.retrieve(question, top_k=self.top_k)
+
     def _rule_gen_hypothesis(self) -> str:
         """Optional 3rd input to the Prolog rule generator (HyDE-semantic
         hypothesis). Default empty → no-op: the 3 original logic-lm arms keep a
@@ -655,16 +670,25 @@ class _LogicLMBasePipeline:
             hypothesis=self._rule_gen_hypothesis() or None,
         )
 
-    def ask(self, question: str) -> LogicLMAnswer:
+    def ask(
+        self,
+        question: str,
+        *,
+        on_step: Optional[Callable[[str], None]] = None,
+    ) -> LogicLMAnswer:
+        """Run the full arm. ``on_step`` (optional) is invoked with stable phase
+        keys — ``understand`` / ``hypothesis`` / ``search`` / ``reason`` /
+        ``conclude`` — so a UI can show live progress. It is purely a progress
+        hook: passing it never changes any computed result, so eval/experiment
+        callers simply omit it."""
         t0 = time.time()
         try:
             # 1. Retrieve
-            if self.retriever is not None:
-                context = self.retriever.retrieve(question, top_k=self.top_k)
-            else:
-                context = self._empty_context()
+            context = self._retrieve(question, on_step=on_step)
 
             # 2. LLM gen Prolog + execute (with repair)
+            if on_step is not None:
+                on_step("reason")
             llm = self._make_llm()
             executor = (
                 _generate_and_execute_no_citation_check
@@ -686,6 +710,8 @@ class _LogicLMBasePipeline:
             irac_sections: dict[str, str] = {}
 
             # 4. Render IRAC (only if prolog success + trace exists)
+            if on_step is not None:
+                on_step("conclude")
             if prolog_success and trace_value is not None:
                 render_payload = self._build_render_payload(
                     question, context, envelope, result
@@ -899,6 +925,11 @@ class LogicLMHydeSemanticPipeline(_LogicLMBasePipeline):
             retriever = DenseHydeSemanticAsLogicLMRetriever()
         prompt = load_prompt(HYDE_SEMANTIC_RULE_GEN_PROMPT_REL)
         super().__init__(retriever=retriever, prompt_override=prompt, **kwargs)
+
+    def _retrieve(self, question, on_step=None):
+        # This arm's retriever reports granular progress
+        # (understand → hypothesis → search); forward the callback.
+        return self.retriever.retrieve(question, top_k=self.top_k, on_step=on_step)
 
     def _rule_gen_hypothesis(self) -> str:
         return getattr(self.retriever, "last_hypothesis", "") or ""

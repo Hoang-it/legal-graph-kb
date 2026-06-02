@@ -6,13 +6,6 @@ from typing import Dict, List, Optional, Union
 from runtime.logic_lm.config import settings
 
 
-try:
-    from sentence_transformers import SentenceTransformer
-    _SBT_AVAILABLE = True
-except Exception:
-    _SBT_AVAILABLE = False
-
-
 DenseVector = List[float]
 SparseVector = Dict[str, float]
 AnyVector = Union[DenseVector, SparseVector]
@@ -34,7 +27,15 @@ class EncoderService:
         if self._init_attempted:
             return
         self._init_attempted = True
-        if not _SBT_AVAILABLE:
+        # Lazy import: `sentence_transformers` pulls in torch + transformers
+        # (~15s). Deferring it to the first encode() keeps importing this module
+        # (and everything that transitively imports it — the Streamlit UI, eval
+        # routing) cheap, since those callers only need the retrieval dataclasses
+        # and never the in-house encoder. Behaviour is unchanged: if the import
+        # fails we fall back to the sparse bag-of-words encoding below.
+        try:
+            from sentence_transformers import SentenceTransformer
+        except Exception:
             self._model = None
             return
         try:

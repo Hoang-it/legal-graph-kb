@@ -20,7 +20,7 @@ import os
 import sys
 import time
 from dataclasses import dataclass, field
-from typing import Any
+from typing import Any, Callable, Optional
 
 from dotenv import load_dotenv
 
@@ -554,6 +554,7 @@ class V5RetrievalPipeline:
         frame_text: str,
         context_key_ids: list[str],
         top_k: int | None = None,
+        on_step: Optional[Callable[[str], None]] = None,
     ) -> tuple[list[dict], list[str]]:
         """HyDE-semantic dense search returning raw clause rows + hypothesis docs.
 
@@ -574,7 +575,11 @@ class V5RetrievalPipeline:
         import numpy as np
 
         k = top_k if top_k is not None else self.dense_k
+        if on_step is not None:
+            on_step("hypothesis")
         docs = self.hyde_semantic.generate(question, frame_text, context_key_ids)
+        if on_step is not None:
+            on_step("search")
         embs = self.embed_model.encode(
             docs, normalize_embeddings=True, show_progress_bar=False
         )
