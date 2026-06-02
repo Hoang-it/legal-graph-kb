@@ -241,6 +241,9 @@ models/
 # Neo4j dumps
 *.dump
 
+# Neo4j KG backups (scripts/remove_logic_layer.py --backup) — large + local-only
+backups/
+
 # Scratch / temp files at repo root
 scratch_*.py
 tmp_*.py
