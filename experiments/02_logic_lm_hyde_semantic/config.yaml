@@ -15,8 +15,14 @@ date: "2026-06-01"
 
 family: qa
 
+# PILOT RUN (2026-06-02): 50-record seeded random subset of questions_200.json
+# (random.Random(42).sample(qs, 50), sorted by stt, frozen to
+# questions_50_seed42.json for reproducibility). This is NOT the pre-registered
+# full run. To run the official N=200 experiment, restore:
+#   questions: data/eval/questions_200.json
+#   n: null
 dataset:
-  questions: data/eval/questions_200.json
+  questions: experiments/02_logic_lm_hyde_semantic/questions_50_seed42.json
   n: null
 
 # No qa baseline lives in this producer repo → no parent to inherit; both arms

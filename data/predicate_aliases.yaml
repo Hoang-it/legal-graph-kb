@@ -1,0 +1,25 @@
+aliases:
+  eligible_pension:
+    - pension_eligibility
+    - eligible_retirement
+    - du_dieu_kien_huong_luong_huu
+    - huong_luong_huu
+  years_contributed:
+    - contribution_years
+    - total_contribution_years
+    - so_nam_dong_bhxh
+    - thoi_gian_dong_bhxh
+  age:
+    - person_age
+    - tuoi
+    - tuoi_nguoi_lao_dong
+  monthly_pension:
+    - pension_amount
+    - muc_luong_huu_hang_thang
+  social_insurance_participant:
+    - bhxh_participant
+    - nguoi_tham_gia_bhxh
+  employer:
+    - nguoi_su_dung_lao_dong
+  employee:
+    - nguoi_lao_dong
